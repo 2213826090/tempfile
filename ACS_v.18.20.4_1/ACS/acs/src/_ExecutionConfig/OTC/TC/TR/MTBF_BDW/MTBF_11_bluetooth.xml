@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="13.37">
+    <UseCase>EXEC</UseCase>
+    <Description>General execution use case</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters>
+        <Parameter>
+            <!-- Bluetooth -->
+            <Name>RUN_CMD</Name>
+            <Value>adb shell am start -a android.intent.action.MAIN -n com.android.settings/.bluetooth.BluetoothSettings</Value>
+        </Parameter>
+        <Parameter>
+            <Name>RUN_TIMEOUT</Name>
+            <Value>5</Value>
+        </Parameter>
+        <Parameter>
+            <Name>RUN_EXPECT_RESULT</Name>
+            <Value>Starting: Intent { act=android.intent.action.MAIN cmp=com.android.settings/.bluetooth.BluetoothSettings }</Value>
+        </Parameter>
+
+        <Parameter>
+            <Name>RUN_CMD1</Name>
+            <Value>adb shell am instrument -w -e class android.bluetooth.cts.BasicAdapterTest#test_enableDisable com.android.cts.bluetooth/android.test.InstrumentationCtsTestRunner</Value>
+        </Parameter>
+        <Parameter>
+            <Name>RUN_TIMEOUT1</Name>
+            <Value>25</Value>
+        </Parameter>
+        <Parameter>
+            <Name>RUN_EXPECT_RESULT1</Name>
+            <Value>OK (1 test)</Value>
+        </Parameter>
+
+        <Parameter>
+            <Name>RUN_CMD2</Name>
+            <Value>adb shell service call bluetooth_manager 8</Value>
+        </Parameter>
+        <Parameter>
+            <Name>RUN_TIMEOUT2</Name>
+            <Value>5</Value>
+        </Parameter>
+        <Parameter>
+            <Name>RUN_EXPECT_RESULT2</Name>
+            <Value>Result: Parcel(00000000 00000001   '........')</Value>
+        </Parameter>
+
+        <Parameter>
+            <Name>RUN_CMD3</Name>
+            <Value>adb shell input keyevent 3</Value>
+        </Parameter>
+        <Parameter>
+            <Name>RUN_TIMEOUT3</Name>
+            <Value>5</Value>
+        </Parameter>
+        <Parameter>
+            <Name>RUN_EXPECT_RESULT3</Name>
+            <Value></Value>
+        </Parameter>
+
+      </Parameters>
+</TestCase>

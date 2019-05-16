@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='ASCII'?>
+<TestCase>
+    <UseCase>Testlib</UseCase>
+    <Description>wifi</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <TcMaxAttempt>3</TcMaxAttempt>
+
+    <TestSteps>
+        <Setup>
+            <TestStep Id="GET_ARTIFACT" EQT="ARTIFACT_MANAGER" ARTIFACT="CERTIFICATE/WIFI/OTC/client.p12"
+                      ARTIFACT_SOURCE="FROM_BENCH:ARTIFACT_MANAGER:URI" TRANSFER_TIMEOUT="DEFAULT"
+                      STORED_FILE_PATH="DEFAULT"/>
+            <TestStep Id="INSTALL_FILE" DEVICE="PHONE1"
+                      FILE_PATH="FROM_CTX:DEFAULT"
+                      TYPE="media" DESTINATION="/sdcard"
+                      DESTINATION_STORED_PATH="/sdcard"
+                      TIMEOUT="DEFAULT"/>
+        </Setup>
+    </TestSteps>
+
+    <Parameters>
+        <Parameter>
+            <Name>test</Name>
+            <Value>scripts/wireless/wifi_generic/tests/pin_and_certificate.py</Value>
+        </Parameter>
+        <Parameter>
+            <Name>script-args</Name>
+            <Value>dut_pin=1234 cert_pass=whatever</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

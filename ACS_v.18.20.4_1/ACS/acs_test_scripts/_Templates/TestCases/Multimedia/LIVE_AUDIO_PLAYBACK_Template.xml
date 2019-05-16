@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="13.45">
+    <UseCase>LIVE_AUDIO_PLAYBACK</UseCase>
+    <Description>Audio playback</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>False</b2bContinuousMode>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters>
+        <Parameter>
+            <!-- Path to audio file to play, path can't contain '(', ')', or other illegal characters -->
+            <Name>AUDIO_FILE</Name>
+            <Value>MP3_Lame_16bit_Mono_11025Hz_48Kbps_60s_0.3Mb.mp3</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Volume value in percent from 0 to 100 -->
+            <Name>VOLUME</Name>
+            <Value>80</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Duration of the playback in millisecond -->
+            <Name>LENGTH</Name>
+            <Value>60185</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Deviation rate for total playtime check in percent from 1 to 100 -->
+            <Name>DEVIATION_RATE</Name>
+            <Value>5</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Whether to record the sound played by target on PC, True|False -->
+            <Name>RECORD</Name>
+            <Value>False</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Whether to play the music in silent mode, True|False|none -->
+            <!-- if set as "none", will keep default setting, nothing will be done -->
+            <Name>SILENT_MODE</Name>
+            <Value>False</Value>
+        </Parameter>
+        <Parameter>
+            <!-- The device used for output, speaker|headset|none -->
+            <!-- if set as "none", will keep default setting, nothing will be done -->
+            <Name>AUDIO_OUTPUT</Name>
+            <Value>none</Value>
+        </Parameter>
+        <Parameter>
+            <!-- [OPTIONAL] parameters for host pc audio record  -->
+            <!-- if RECORD set as True, user can specify the record device HOST_RECORD_DEVICE, int -->
+            <!-- leave it blank or remove this parameter will use the default device -->
+            <Name>HOST_RECORD_DEVICE</Name>
+            <Value></Value>
+        </Parameter>
+        <Parameter>
+            <!-- [OPTIONAL] If 'ON', Bluetooth is activated prior to the test to perform FIT tests, and is restaured to initial value at the end of the test. If 'OFF', BT is de-activated. -->
+            <Name>WHILE_BLUETOOTH_ON</Name>
+            <Value></Value>
+        </Parameter>
+    </Parameters>
+    <TestSteps>
+        <Initialize>
+            <!-- Get the artifact on local host -->
+            <TestStep Id="GET_ARTIFACT" ARTIFACT="MISCELLANEOUS/MP3/[+]FROM_TC:AUDIO_FILE"
+                      ARTIFACT_SOURCE="FROM_BENCH:ARTIFACT_MANAGER:URI" TRANSFER_TIMEOUT="DEFAULT"
+                      STORED_FILE_PATH="FILE_PATH_IN_CACHE1" EQT="DEFAULT"/>
+            <!-- Then, Push it on the device. Device destination folder will be the default device media folder (/sdcard/acs_media) -->
+            <!-- FILE_PATH is retrieved from test step context -->
+            <TestStep Id="INSTALL_FILE" DEVICE="PHONE1" FILE_PATH="FROM_CTX:FILE_PATH_IN_CACHE1" TYPE="media"
+                      DESTINATION="FROM_DEVICE:PHONE1:userdataPath" TIMEOUT="DEFAULT" DESTINATION_STORED_PATH="FILE_PATH_IN_CACHE1"/>
+        </Initialize>
+        <Finalize>
+            <!-- When test has been run, we can remove the mp3 files if necessary -->
+            <TestStep Id="UNINSTALL_FILE" DEVICE="PHONE1" DEVICE_FOLDER="FROM_DEVICE:PHONE1:userdataPath"
+                      FILENAME="FROM_TC:AUDIO_FILE"/>
+        </Finalize>
+    </TestSteps>
+</TestCase>

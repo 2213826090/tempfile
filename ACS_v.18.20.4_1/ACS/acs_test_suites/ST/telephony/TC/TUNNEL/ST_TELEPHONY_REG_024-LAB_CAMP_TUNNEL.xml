@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase>
+    <UseCase>LAB_CAMP_TUNNEL</UseCase>
+    <Description>Network registration from NS1 cell technology to a NS2 cell</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <Parameters>
+        <Parameter>
+            <!-- Number of cell reselections to perform (switch between 2 equipments) -->
+            <Name>CELL_JUMP_NUMBER</Name>
+            <Value>1</Value>
+        </Parameter>
+        <Parameter>
+            <!-- NS1 Cell Technology (2G|3G) -->
+            <Name>NS1_CELL_TECH</Name>
+            <Value>3G</Value>
+        </Parameter>
+        <Parameter>
+            <!-- NS1 Cell Band
+                For 2G : EGSM|GSM850|PCS|DCS
+                For 3G : 1,2,5,8
+            -->
+            <Name>NS1_CELL_BAND</Name>
+            <Value>8</Value>
+        </Parameter>
+        <Parameter>
+            <!-- NS1 Cell LAC, For 2G and 3G: 0 to 65535-->
+            <Name>NS1_LAC</Name>
+            <Value>10</Value>
+        </Parameter>
+        <Parameter>
+            <!-- NS1 Cell Routing Area, For 2G and 3G: 1 to 255-->
+            <Name>NS1_RAC</Name>
+            <Value>111</Value>
+    </Parameter>
+        <Parameter>
+            <!-- NS1 ARFCN -->
+            <Name>NS1_ARFCN</Name>
+            <Value>3000</Value>
+        </Parameter>
+        <Parameter>
+            <!-- NS1 Cell Service ( (GSM|GPRS|EGPRS) for 2G CELL, (PACKET|CIRCUIT_PACKET) for 3G CELL) -->
+            <Name>NS1_CELL_SERVICE</Name>
+            <Value>PACKET</Value>
+        </Parameter>
+        <Parameter>
+            <!-- NS1 Cell power in dBm -->
+            <Name>NS1_CELL_POWER</Name>
+            <Value>-70</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Limit power to stop the back out of coverage power if reached (after a timeout) -->
+            <Name>NS1_LIMIT_POWER</Name>
+            <Value>-110</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Decrementation step for NS1 cell power in dBm (must be positive, can be decimal value like 0,20 or 2,6) -->
+            <Name>DECREMENTATION_STEP_POWER</Name>
+            <Value>3</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Decrementation step timer in seconds between 2 steps (must be positive, can be decimal value like 0,3 or 3,5) -->
+            <Name>DECREMENTATION_STEP_TIMER</Name>
+            <Value>4</Value>
+        </Parameter>
+        <Parameter>
+            <!-- NS2 Cell Technology (2G|3G) -->
+            <Name>NS2_CELL_TECH</Name>
+            <Value>3G</Value>
+        </Parameter>
+        <Parameter>
+            <!-- NS2 Cell Band
+                For 2G : EGSM|GSM850|PCS|DCS
+                For 3G : 1,2,5,8
+            -->
+            <Name>NS2_CELL_BAND</Name>
+            <Value>8</Value>
+        </Parameter>
+        <Parameter>
+            <!-- NS2 Cell LAC, For 2G and 3G: 0 to 65535-->
+            <Name>NS2_LAC</Name>
+            <Value>10</Value>
+        </Parameter>
+        <Parameter>
+            <!-- NS2 Cell Routing Area, For 2G and 3G: 1 to 255-->
+            <Name>NS2_RAC</Name>
+            <Value>1</Value>
+    </Parameter>
+        <Parameter>
+            <!-- NS2 Arfcn -->
+            <Name>NS2_ARFCN</Name>
+            <Value>3000</Value>
+        </Parameter>
+        <Parameter>
+            <!-- NS2 Cell Service ( (GSM|GPRS|EGPRS) for 2G CELL, (PACKET|CIRCUIT_PACKET) for 3G CELL) -->
+            <Name>NS2_CELL_SERVICE</Name>
+            <Value>PACKET</Value>
+        </Parameter>
+        <Parameter>
+            <!-- NS2 Cell power in dBm -->
+            <Name>NS2_CELL_POWER</Name>
+            <Value>-110</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Limit power to stop the back out of coverage power if reached (after a timeout) -->
+            <Name>NS2_LIMIT_POWER</Name>
+            <Value>-70</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Incrementation step for NS1 cell power in dBm (must be positive, can be decimal value like 0,20 or 2,6) -->
+            <Name>INCREMENTATION_STEP_POWER</Name>
+            <Value>3</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Incrementation step timer in seconds between 2 steps (must be positive, can be decimal value like 0,3 or 3,5) -->
+            <Name>INCREMENTATION_STEP_TIMER</Name>
+            <Value>4</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

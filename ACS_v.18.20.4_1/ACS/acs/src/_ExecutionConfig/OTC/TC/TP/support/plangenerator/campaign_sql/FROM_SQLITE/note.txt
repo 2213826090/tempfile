@@ -1,0 +1,7 @@
+folder: /OTC/TC/TP/support/plangenerator:
+
+#Create database
+python prepare_sqlite_db.py
+
+#Create campaign
+campaignname=`python gen_campaign_from_sqlite_db.py  --android_version O --platform e_feature_id_broxton_p_ivi_o --domain Graphics_Display --template_sql test_template.sql`

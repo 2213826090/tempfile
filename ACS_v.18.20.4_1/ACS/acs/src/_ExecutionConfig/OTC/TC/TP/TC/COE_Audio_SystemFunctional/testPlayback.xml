@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="13.37">
+    <UseCase>EXEC</UseCase>
+    <Description>Test Basic Playback</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <TcExpectedResult>PASS</TcExpectedResult>
+
+    <Parameters>
+        <Parameter>
+            <!-- Action to be run, should be in the executable path of the system -->
+            <!-- (mandatory) -->
+            <!-- For this template, we are running windows only command -->
+            <Name>RUN_CMD</Name>
+            <Value>bash ./scripts/testPlayback.sh</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase>
+    <UseCase>LAB_AUDIO_QUALITY_VOIP</UseCase>
+    <Description>Check Audio Quality during VOIP Call on real network with a specified accessories</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>False</b2bContinuousMode>
+    <Parameters>
+        <Parameter>
+            <!-- DUT SIP address -->
+            <Name>DUT_SIP_ADDRESS</Name>
+            <Value>apxdut@192.168.0.150</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Peer SIP address -->
+            <Name>PEER_SIP_ADDRESS</Name>
+            <Value>apxrefphone@192.168.0.150</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Call origin (MO|MT) -->
+            <Name>CALL_ORIGIN_TYPE</Name>
+            <Value>MO</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Accessorie type (EARPIECE|SPEAKER|HEADSET|BLUETOOTHA2DP|BLUETOOTHHSP) -->
+            <Name>ACC_TYPE</Name>
+            <Value>SPEAKER</Value>
+        </Parameter>
+        <Parameter>
+             <!-- >Stream Call Volume in percent of dut phone -->
+            <Name>CALL_VOLUME_DUT</Name>
+            <Value>90</Value>
+        </Parameter>
+        <Parameter>
+             <!-- >Stream Call Volume in percent of ref phone -->
+            <Name>CALL_VOLUME_REF</Name>
+            <Value>80</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Call end type (NR|MR) -->
+            <Name>CALL_END_TYPE</Name>
+            <Value>MR</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Call type (2G|3G|VOIP) -->
+            <Name>CALL_TYPE</Name>
+            <Value>VOIP</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Signal tested direction (UL|DL) -->
+            <Name>SIGNAL_TESTED_DIRECTION</Name>
+            <Value>both</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Call duration in seconds -->
+            <Name>DURATION</Name>
+            <Value>5</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

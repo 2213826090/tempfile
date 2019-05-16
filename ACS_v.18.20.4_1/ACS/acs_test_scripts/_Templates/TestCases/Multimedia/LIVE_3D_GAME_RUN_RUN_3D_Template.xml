@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase>
+    <UseCase>LIVE_3D_GAME_RUN_RUN_3D</UseCase>
+    <Description></Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>False</b2bContinuousMode>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters>
+        <Parameter>
+            <Name>LIBRARY_IMAGE_PATH</Name>
+            <Description>Path in host to the library of reference icons</Description>
+        </Parameter>
+        <Parameter>
+            <Name>ICONS</Name>
+            <Description>Name of icons less extension (.png), icons should be in the icons library. This parameter is a list of icon names as follow : icon_name1;icon_name2;icon_name3 ...</Description>
+        </Parameter>
+        <Parameter>
+            <!-- DUT's default orientations, reverse_landscape for tablet, protrait for phone, this parameter
+            should be one of {portrait, reverse_landscape}
+             -->
+            <Name>DEFAULT_ORIENTATION</Name>
+            <Value></Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

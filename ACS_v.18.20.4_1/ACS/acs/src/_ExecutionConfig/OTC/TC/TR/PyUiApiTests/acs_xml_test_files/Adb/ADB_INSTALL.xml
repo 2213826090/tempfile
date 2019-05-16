@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase>
+    <UseCase>EXEC</UseCase>
+    <Description>Run "adb install" command to install an already installed APK to DUT</Description>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <TestSteps>
+        <Setup>
+            <TestStep Id="UNINSTALL_APP" DEVICE="PHONE1" APP_NAME="com.antutu.ABenchMark" TIMEOUT="DEFAULT" BACKUP_APP_NAME="NO_BACKUP" BACKUP_FILE_PATH="APP_BACKUP_PATH"/>
+            <TestStep Id="GET_ARTIFACT" EQT="ARTIFACT_MANAGER" ARTIFACT="BENCHMARKS/ANTUTU/AnTuTu-5.6.apk"
+                      ARTIFACT_SOURCE="FROM_BENCH:ARTIFACT_MANAGER:URI" TRANSFER_TIMEOUT="DEFAULT"
+                      STORED_FILE_PATH="DEFAULT"/>
+        </Setup>
+    </TestSteps>
+    <Parameters>
+        <Parameter>
+            <!-- Action to be run, should be in the executable path of the system -->
+            <!-- (mandatory) -->
+            <!-- For this template, we are running windows only command -->
+            <Name>RUN_CMD</Name>
+            <Value>python ../../entry_point_scripts/Adb/ADB_INSTALL.py</Value>
+        </Parameter>
+        <Parameter>
+            <Name>RUN_FROM_TCDIRECTORY</Name>
+            <Value>True</Value>
+        </Parameter>
+        <Parameter>
+            <Name>RUN_TIMEOUT</Name>
+            <Value>500</Value>
+        </Parameter>
+        <Parameter>
+            <Name>RUN_EXPECT_RESULT</Name>
+            <Value>PASS</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

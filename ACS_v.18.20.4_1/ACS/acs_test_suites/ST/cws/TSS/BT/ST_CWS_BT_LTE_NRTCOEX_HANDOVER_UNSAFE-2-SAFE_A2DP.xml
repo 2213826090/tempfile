@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<Include>
+    <TestStepSet Id="ST_CWS_BT_LTE_NRTCOEX_HANDOVER_UNSAFE-2-SAFE_A2DP-SETUP">
+        <TestStep SetId="FT_CWS_BT_LTE_NRTCOEX_HANDOVER_UNSAFE-2-SAFE-SETUP" />
+    </TestStepSet>
+    <TestStepSet Id="ST_CWS_BT_LTE_NRTCOEX_HANDOVER_UNSAFE-2-SAFE_A2DP-RUNTEST">
+        <TestStep Id="SYSDEBUG_START_ACQUISITION" DEVICE="PHONE1" />
+        <!-- Enable BT -->
+        <TestStep Id="BT_SET_POWER" POWER="ON" />
+        <!-- check if frequency range is reduced -->
+        <TestStep SetId="BT_NRT_CHECK_REDUCED_FREQUENCY_RANGE" LTE_CHANNEL="FROM_TC:LTE_INITIAL_CHANNEL" />
+        <!-- set headset as pairable -->
+        <TestStep Id="BT_SET_HEADSET_POWER" EQT="BT_HEADSET" STATE="RESET_OFF,PAIRABLE" />
+        <!-- pair headset and check pairing -->
+        <TestStep Id="BT_PAIR" DEVICE="PHONE1" BDADDR="FROM_BENCH:BT_HEADSET:BD_Address" UNPAIR_FIRST="true" ACCEPT_PAIRING="True" PASS_KEY="0" PIN_CODE="0000" />
+        <TestStep Id="BT_CHECK_PAIRED" DEVICE="PHONE1" BDADDR="FROM_BENCH:BT_HEADSET:BD_Address" />
+        <!-- check A2DP profile -->
+        <TestStep Id="BT_CONNECT_PROFILE" DEVICE="PHONE1" BDADDR="FROM_BENCH:BT_HEADSET:BD_Address" PROFILE="A2DP" CONNECT="True" />
+        <TestStep Id="BT_CHECK_PROFILE_STATUS" DEVICE="PHONE1" BDADDR="FROM_BENCH:BT_HEADSET:BD_Address" PROFILE="A2DP" FAIL_IF="disconnected" SAVE_AS="PROFILE_STATUS" />
+        <!-- run A2DP - play music -->
+        <TestStep Id="BT_CONTROL_A2DP_MEDIA_PLAYER" DEVICE="PHONE1" ACTION_CONTROL="START_PLAYER" FILENAME="FROM_TC:FILENAME" TIMEOUT="600" />
+        <TestStep Id="SUSPEND" DURATION_IN_SEC="20" />
+        <!-- LTE cell handover from safe to unsafe band -->
+        <TestStep SetId="INITIATE_HANDOVER" />
+        <!-- check if LTE handover is successful -->
+        <TestStep SetId="CHECK_LTE_2ND_CHANNEL_HANDOVER" />
+        <!-- Check LTE attachment -->
+        <TestStep Id="CHECK_RAT_WITH_PREFERRED_NETWORK" PREFERRED_NETWORK="4G_ONLY" TIMEOUT="FROM_DEVICE:PHONE1:registrationTimeout" />
+        <TestStep SetId="CHECK_RRC_CONNECTION_OK" />
+        <!-- check if frequency range is default -->
+        <TestStep SetId="BT_NRT_CHECK_FULL_FREQUENCY_RANGE" />
+        <!-- run A2DP - pause music -->
+        <TestStep Id="BT_CONTROL_A2DP_MEDIA_PLAYER" DEVICE="PHONE1" ACTION_CONTROL="PAUSE" FILENAME="FROM_TC:FILENAME" TIMEOUT="600" />
+        <!-- run A2DP - play music -->
+        <TestStep Id="BT_CONTROL_A2DP_MEDIA_PLAYER" DEVICE="PHONE1" ACTION_CONTROL="PLAY" FILENAME="FROM_TC:FILENAME" TIMEOUT="600" />
+    </TestStepSet>
+    <TestStepSet Id="ST_CWS_BT_LTE_NRTCOEX_HANDOVER_UNSAFE-2-SAFE_A2DP-TEARDOWN">
+        <!-- run A2DP - stop music -->
+        <TestStep Id="BT_CONTROL_A2DP_MEDIA_PLAYER" DEVICE="PHONE1" ACTION_CONTROL="STOP_PLAYER" FILENAME="FROM_TC:FILENAME" TIMEOUT="600" />
+        <!-- disconnect A2DP profile -->
+        <TestStep Id="BT_CONNECT_PROFILE" DEVICE="PHONE1" BDADDR="FROM_BENCH:BT_HEADSET:BD_Address" PROFILE="A2DP" CONNECT="False" />
+        <TestStep Id="BT_CHECK_PROFILE_STATUS" DEVICE="PHONE1" BDADDR="FROM_BENCH:BT_HEADSET:BD_Address" PROFILE="A2DP" FAIL_IF="connected" SAVE_AS="PROFILE_STATUS" />
+        <!-- unpair the headset -->
+        <TestStep Id="BT_UNPAIR" DEVICE="PHONE1" BDADDR="FROM_BENCH:BT_HEADSET:BD_Address" />
+        <!-- swith off headset -->
+        <TestStep Id="BT_SET_HEADSET_POWER" EQT="BT_HEADSET" STATE="OFF" />
+        <!-- common teardown -->
+        <TestStep SetId="FT_CWS_BT_LTE_NRTCOEX_HANDOVER_UNSAFE-2-SAFE-TEARDOWN" />
+    </TestStepSet>
+</Include>

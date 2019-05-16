@@ -1,0 +1,44 @@
+{
+    "Configuration": {
+        "Boot": {
+            "ACCEPT_EULA": true
+        },
+        "BootVars": null,
+        "Custom": null,
+        "Flash": {},
+        "Inherit": {
+            "BOARD": "sofia"
+        },
+        "Logs": null,
+        "Timeout": null,
+        "WorkAround": {
+            "TestCase": [
+                {
+                    "Issue": "Automation not working.",
+                    "Name": "FastbootForwardFlashingTestCase",
+                    "Skip": true
+                },
+                {
+                    "Issue": "Unstable on master branch.",
+                    "Name": "OtaForwardFlashingTestCase",
+                    "Skip": true
+                }
+            ]
+        },
+        "TestDescription": {
+            "engineering": [
+                {
+                    "name": "default",
+                    "build_tag": "bootota_",
+                    "testing": [
+                        {
+                            "build_target": "r2_sltquanta-userdebug",
+                            "campaign": "BOOTOTA_PREINTEGRATION"
+                        }
+                    ]
+                }
+            ]
+        }
+
+    }
+}

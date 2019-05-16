@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<UI_SEQ xsi:noNamespaceSchemaLocation="ACS_ANDROID_UI_CHECK.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <ACTION>
+    <CMD>open_settings_menu</CMD>
+    <TIMEOUT>1</TIMEOUT>
+    <TRIG_LOG>com.android.settings/.Settings</TRIG_LOG>
+  </ACTION>
+  <ACTION>
+    <CMD>open_network_settings_menu</CMD>
+    <TIMEOUT>1</TIMEOUT>
+    <!--<TRIG_LOG>Displayed com.android.settings/.WirelessSettings</TRIG_LOG>-->
+  </ACTION>
+   <ACTION>
+    <CMD>open_mobile_network_settings_menu</CMD>
+    <TIMEOUT>1</TIMEOUT>
+     <!--<TRIG_LOG>Displayed com.android.phone/.Settings</TRIG_LOG>-->
+  </ACTION>
+   	<ACTION>
+		<CMD>touch</CMD>
+		<PARAMETERS>160;270</PARAMETERS>
+	</ACTION>
+	<ACTION>
+		<CMD>wait</CMD>
+		<PARAMETERS>20</PARAMETERS>
+	</ACTION>
+  <ACTION>
+    <CMD>keypress</CMD>
+    <PARAMETERS>KEYCODE_BACK</PARAMETERS>
+  </ACTION>
+  <ACTION>
+    <CMD>keypress</CMD>
+    <PARAMETERS>KEYCODE_BACK</PARAMETERS>
+  </ACTION>
+  <ACTION>
+    <CMD>keypress</CMD>
+    <PARAMETERS>KEYCODE_BACK</PARAMETERS>
+  </ACTION>
+  
+</UI_SEQ>

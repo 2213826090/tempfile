@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase>
+    <UseCase>LIVE_GPS_POWER_SEQUENCE</UseCase>
+    <Description></Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>False</b2bContinuousMode>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters>
+        <Parameter>
+            <!-- turn on off sequence, if the first element of the sequence
+                 and gps's initial state are the same, gps is turned to the
+                 opposite state on the set_up() -->
+            <Name>GPS_POWER_SEQUENCE</Name>
+            <Value>OFF ON OFF ON</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

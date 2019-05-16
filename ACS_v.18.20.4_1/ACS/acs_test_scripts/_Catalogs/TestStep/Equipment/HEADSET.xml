@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestSteps xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../acs/src/_Catalogs/TestStep/teststep.xsd">
+    <TestStep Id="CONNECT_HEADSET" Domain="EQUIPMENT" SubDomain="BT_HEADSET" Feature="" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Equipment.Headset.ConnectHeadset.ConnectHeadset</ClassName>
+        <Description>Connect the headset using an io card</Description>
+        <Environment name="ANY">
+            <Capabilities>EQT_USB_RLY08</Capabilities>
+        </Environment>
+        <Parameters>
+            <Parameter name="EQT" type="STRING" isOptional="false">
+                <Description>The equipment name shall refer to an existing equipment the Bench config</Description>
+                <PossibleValues/>
+                <DefaultValue>IO_CARD</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="DISCONNECT_HEADSET" Domain="EQUIPMENT" SubDomain="BT_HEADSET" Feature="" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Equipment.Headset.DisconnectHeadset.DisconnectHeadset</ClassName>
+        <Description>Disconnect the headset using an io card</Description>
+        <Environment name="ANY">
+            <Capabilities>EQT_USB_RLY08</Capabilities>
+        </Environment>
+        <Parameters>
+            <Parameter name="EQT" type="STRING" isOptional="false">
+                <Description>The equipment name shall refer to an existing equipment the Bench config</Description>
+                <PossibleValues/>
+                <DefaultValue>IO_CARD</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+</TestSteps>

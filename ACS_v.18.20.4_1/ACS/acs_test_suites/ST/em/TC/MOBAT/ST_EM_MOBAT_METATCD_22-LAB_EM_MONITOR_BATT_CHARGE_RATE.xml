@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase>
+    <UseCase>LAB_EM_MONITOR_BATT_CHARGE_RATE</UseCase>
+    <Description>Monitor Battery charge rate while charger present (P_IUC_3002).</Description>
+    <b2bIteration>1</b2bIteration>
+    <TcMaxAttempt>2</TcMaxAttempt>
+    <TcAcceptanceCriteria>1</TcAcceptanceCriteria>
+    <b2bContinuousMode>False</b2bContinuousMode>
+    <Parameters>
+        <Parameter>
+            <!-- Initial Battery voltage -->
+            <Name>VBATT_INIT</Name>
+            <Value>4.1</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Vbatt Voltage -->
+            <Name>VBATT_LIST</Name>
+            <Value>3.6;3.75;3.9;4.1;4.2</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Voltage from which phone can start Main OS -->
+            <Name>VBATT_START_MOS</Name>
+            <Value>3.75</Value>
+        </Parameter>
+        <Parameter>
+            <!-- USB Voltage to set on the power supply -->
+            <Name>VUSB</Name>
+            <Value>6.0</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="13.37">
+    <UseCase>LIVE_DUAL_PHONE_BT_TETHERING_PING</UseCase>
+    <Description>Use Bluetooth tethering between 2 phones and ping remote server through the tethered connection</Description>
+    <b2bIteration>20</b2bIteration>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters>
+        <Parameter>
+            <!-- Indicates the role of the DUT (PHONE1). NAP device is the phone that tethered the connection. PAN-User is the client phone. Allowed value: NAP, PAN-U -->
+            <Name>NAP_OR_PAN_TEST</Name>
+            <Value>NAP</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Defines who initiates the pairing request. Allowed values are PHONE1 or PHONE2 -->
+            <Name>PAIRING_INITIATOR</Name>
+            <Value>PHONE1</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Defines who disconnect the tethering link (NAP or PAN-U. Default is PAN-U) -->
+            <Name>WHO_DISCONNECT</Name>
+            <Value>NAP</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Who restarts its BT interface after pairing, but before connect (None, NAP or PAN-U) -->
+            <Name>WHO_RESTARTS_BT_BEFORE_TEST</Name>
+            <Value>None</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Defines what type of connection to share (CELLULAR or WIFI) -->
+            <Name>CONNECTION_TO_SHARE</Name>
+            <Value>CELLULAR</Value>
+        </Parameter>
+        <Parameter>
+            <!--if CONNECTION_TO_SHARE is WIFI, Access Point on which NAP device will connect to. Must refers to a LIVE wifi router's name (equipment name of the bench config) -->
+            <Name>WIFI_ACCESS_POINT</Name>
+            <Value></Value>
+        </Parameter>
+        <Parameter>
+            <!--Enable / Disable PAN-User disconnection initiated by the NAP device (True/False) -->
+            <Name>ENABLE_BT_TETHERING_DEACTIVATION_TEST</Name>
+            <Value>False</Value>
+        </Parameter>
+        <Parameter>
+            <!--Enable / Disable Long Lasting test: b2b continuous mode will loop on ping only (without reconnection). 1 ping (or 1 iteration) every minute (True/False) -->
+            <Name>ENABLE_LOLA_TEST</Name>
+            <Value>True</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Server to ping (for CELLULAR test only. AccessPoint IP is used for WIFI test) -->
+            <Name>SERVER_TO_PING</Name>
+            <Value>www.intel.com</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Number of Packets to be sent -->
+            <Name>PACKET_COUNT</Name>
+            <Value>2</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Size of a data packet (in bytes) sent when trying to ping the network -->
+            <Name>PACKET_SIZE</Name>
+            <Value>128</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Target of Ping Packet Loss Rate (in %) -->
+            <Name>TARGET_PACKET_LOSS_RATE</Name>
+            <Value>0</Value>
+        </Parameter>
+        <Parameter>
+            <!-- [Optional] Is set to True, the flight mode will be enables before setting bt on and disabled at tear down. This parameter will be ignored if using CELLULAR option -->
+            <Name>FLIGHT_MODE</Name>
+            <Value>False</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

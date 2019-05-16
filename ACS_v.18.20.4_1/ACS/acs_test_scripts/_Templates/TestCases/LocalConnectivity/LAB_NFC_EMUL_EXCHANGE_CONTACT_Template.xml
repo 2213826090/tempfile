@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="13.37">
+    <UseCase>LAB_NFC_EMUL_EXCHANGE_CONTACT</UseCase>
+    <Description>Exchange a contact between emulator and DUT</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>False</b2bContinuousMode>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters>
+        <Parameter>
+            <!-- If 'YES', the robot move will take into account the antenna position on the DUT as an offset -->
+            <Name>USE_ANTENNA_OFFSET</Name>
+            <Value></Value>
+        </Parameter>
+        <Parameter>
+            <!-- Define dut's role : INITIATOR or TARGET -->
+            <Name>ROLE</Name>
+            <Value>TARGET</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Define dut's mode : ACTIVE or PASSIVE -->
+            <Name>MODE</Name>
+            <Value>PASSIVE</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Define bitrate. Expected values are : 106, 212, 424 -->
+            <Name>BITRATE</Name>
+            <Value>106</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Define communication direction from DUT point of view. Expected values are : RECEIVE or SEND -->
+            <Name>DIRECTION</Name>
+            <Value>RECEIVE</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

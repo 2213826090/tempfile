@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase>
+    <UseCase>LAB_EM_THERMAL_SEQUENCE_TEST</UseCase>
+    <Description>The Energy Management Thermal Sequence Test UseCase.
+          The user can define a sequence of critical shutdown test on differents zones
+          And a sequence of threshold/zones to test. Current, frequency, brightness and
+          charge level can be measured. You have to fullfil the EM target file to get
+          the correct measurement in the test verdict report.</Description>
+    <b2bIteration>1</b2bIteration>
+    <TcMaxAttempt>2</TcMaxAttempt>
+    <TcAcceptanceCriteria>1</TcAcceptanceCriteria>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <b2bContinuousMode>False</b2bContinuousMode>
+    <Parameters>
+        <Parameter>
+            <!-- Initial value for the thermal poll_delay in second -->
+            <Name>POLL_DELAY</Name>
+            <Value>30</Value>
+        </Parameter>
+        <Parameter>
+            <!-- The supported OS for this test: 'MOS' or 'COS' or 'ROS' -->
+            <Name>OS</Name>
+            <Value>MOS</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Additionnal degrees to add to the trheshold in order to set
+            the temperature on the fake sensor of the zone (have to be in integer) -->
+            <Name>ADD_DEGREES</Name>
+            <Value>1</Value>
+        </Parameter>
+        <Parameter>
+            <!-- The test sequence for thermal critical shutdown on this ZONE :
+                 'BACKSKIN' or 'FRONTSKIN' or 'BATTERY' or 'DTS' or 'GPUSKIN'
+                 Then add the measure id with _X -->
+            <Name>ZONE_ON_CRITICAL</Name>
+            <Value>BACKSKIN_1;FRONTSKIN_2;GPUSKIN_3;BATTERY_4</Value>
+        </Parameter>
+        <Parameter>
+            <!-- The sequence for thermal general test (except critical shutdown).
+                 You have to define a list of couple with on zone and one threshold type:
+                 -ZONE : 'BACKSKIN' or 'FRONTSKIN' or 'BATTERY' or 'DTS' or 'GPUSKIN'
+                 -THRESHOLD : 'TM_OFF' or 'NORMAL' or 'WARNING' or 'ALERT' or 'CRITICAL'
+                 Then add the measure id with _X-->
+            <Name>ZONE_ON_THRESHOLD</Name>
+            <Value>GPUSKIN_TM_OFF_12;GPUSKIN_NORMAL_13;GPUSKIN_WARNING_14;GPUSKIN_NORMAL_15;GPUSKIN_TM_OFF_16;BACKSKIN_TM_OFF_1;BACKSKIN_NORMAL_2;BACKSKIN_WARNING_3;BACKSKIN_NORMAL_4;BACKSKIN_TM_OFF_5;FRONTSKIN_NORMAL_6;FRONTSKIN_WARNING_7;FRONTSKIN_NORMAL_8;FRONTSKIN_TM_OFF_9;DTS_CRITICAL_10;DTS_TM_OFF_11</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

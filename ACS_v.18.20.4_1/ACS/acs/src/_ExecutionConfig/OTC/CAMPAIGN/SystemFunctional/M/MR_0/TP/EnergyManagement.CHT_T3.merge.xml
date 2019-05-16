@@ -1,0 +1,56 @@
+<?xml version="1.0" ?>
+<Campaign version="13.49">
+    <Parameters>
+        <Parameter isControlledPSUsed="False"/>
+        <Parameter isIoCardUsed="True"/>
+        <Parameter skipBootOnPowerCycle="False"/>
+        <Parameter bootRetryNumber="0"/>
+        <Parameter runHookScripts="False"/>
+        <Parameter powerCycleBetweenTC="False"/>
+        <Parameter powerCycleOnFailure="False"/>
+        <Parameter finalDutState="NoChange"/>
+        <Parameter stopCampaignOnCriticalFailure="False"/>
+        <Parameter stopCampaignOnFirstFailure="False"/>
+        <Parameter loggingLevel="debug"/>
+        <Parameter CampaignType="Other"/>
+        <Parameter TCRReportViaRESTAPI="True"/>
+    </Parameters>
+    <TestCases>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/init.set_adb_root.AdbRoot.testAdbRoot"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/init.start_rpc_server.StartRPCServer.testStartRPCServer"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/init.set_orientation_vertical.SetOrientationVertical.testSetOrientationVertical"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/init.wake_up_and_unlock.WakeUnlock.testWakeUnlock"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/init.config_first_boot_wizard.ConfigFirstBootWizard.testConfigFirstBootWizard"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/init.enable_developer_option.EnableDeveloperOption.testEnableDeveloperOption"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/init.disable_verify_apps.DisableVerifyApp.testDisableVerifyApp"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/init.set_language_to_United_States.SetLanguageUS.testSetLanguageUS"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/battery_saver/test_backlight_mitigation_low_battery"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/Monitor_battery/test_check_FG_driver_registration"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/Monitor_battery/test_check_interrupts_capacity_discharge_sleep"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/Monitor_battery/test_FG_graceful_shutdown_aplogs"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/Low_battery_situation/test_battery_icon_0_percent"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/Low_battery_situation/test_battery_icon_4_percent"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/Battery_capability/test_screen_wake_after_usb_plugged"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/Battery_capability/test_screen_off_connect_SDP_charger"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/Battery_capability/test_sleep_time_in_lock_screen"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/Battery_capability/test_sdp_charger_insertion_when_device_on"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/Battery_capability/test_screen_off_press_volume_key"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/Battery_capability/test_battery_usage_data"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/Battery_capability/test_SDP_charging"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/Battery_capability/test_power_show_charging_status"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/Battery_capability/test_screen_off_connect_hub_charger"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/Battery_capability/test_power_gauge_app"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/Battery_capability/test_power_show_charging_icon"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/Battery_capability/test_battery_show_percentage_on_home"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/Battery_capability/test_charged_by_usb_cable"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/Battery_capability/test_COS_remove_SDP_charger"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/Battery_capability/test_SDP_charging_power_off_enter_COS"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/Battery_capability/test_COS_remove_HUB_charger"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/Battery_capability/test_root_system_permission_sysfs"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/Manage_battery/test_battery_show_percentage_in_settings"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/Manage_battery/test_power_show_battery_status"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/Manage_battery/test_power_show_battery_icon"/>
+        <TestCase Id="../../../../../TC/TP/TC/Post_Test/postTestRemoveGoogleAccount"/>
+        <TestCase Id="../../../../../TC/TP/TC/Post_Test/postTestWifiOff"/>
+    </TestCases>
+</Campaign>

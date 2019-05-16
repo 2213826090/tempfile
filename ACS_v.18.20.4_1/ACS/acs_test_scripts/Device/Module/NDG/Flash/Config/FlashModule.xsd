@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="ModuleConfiguration">
+        <xs:complexType>
+            <xs:sequence>
+        <xs:element name="OSflashTool" type="xs:string"/>
+        <xs:element name="flashBIOS" type="xs:boolean"/>
+                <xs:element name="BIOSflashTool">
+                    <xs:complexType>
+                        <xs:simpleContent>
+                            <xs:extension base="xs:string">
+                                <xs:attribute name="voltage" type="xs:string" use="optional"/>
+                            </xs:extension>
+                        </xs:simpleContent>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="flashTimeout" type="xs:unsignedInt"/>
+                <xs:element name="flashUserData" type="xs:boolean"/>
+                <xs:element name="flashOptions" type="xs:string" minOccurs="0" maxOccurs="1"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

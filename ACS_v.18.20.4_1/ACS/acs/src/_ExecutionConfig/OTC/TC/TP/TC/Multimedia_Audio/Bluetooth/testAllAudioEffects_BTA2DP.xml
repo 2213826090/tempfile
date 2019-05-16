@@ -1,0 +1,18 @@
+<?xml version="1.0" ?>
+<TestCase>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Discription>Verify that EFFECT BassBoost/EnvironmentalReverb/Equalizer/Preset Reverb/Virtualizer works well during audio playback with BT A2DP</Discription>
+    <UseCase>PY_UNIT</UseCase>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <b2bIteration>1</b2bIteration>
+    <Parameters>
+        <Parameter>
+            <Name>TEST_DATA_ROOT</Name>
+            <Value>testplan/Multimedia_Audio</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TEST_CASE</Name>
+            <Value>tests.Multimedia_Audio.Bluetooth.bt_audio_test.BTAudioTest.testAllAudioEffects_BTA2DP</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

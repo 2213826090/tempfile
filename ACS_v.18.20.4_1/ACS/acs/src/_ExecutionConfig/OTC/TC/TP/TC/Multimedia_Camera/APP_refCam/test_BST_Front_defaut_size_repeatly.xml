@@ -1,0 +1,26 @@
+<?xml version="1.0" ?>
+<TestCase>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters/>
+    <Discription> 
+&lt;div align=&quot;left&quot; style=&quot;min-height:9pt&quot;&gt;
+&lt;font face=&quot;Arial&quot;&gt;&lt;span style=&quot;font-size:8pt&quot;&gt;Verify front burst function works normally when repeat capture a lots of photos&amp;nbsp;&lt;/span&gt;&lt;/font&gt;
+&lt;/div&gt;  
+</Discription>
+    <Parameters/>
+    <UseCase>PY_UNIT</UseCase>
+    <Parameters/>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <Parameters/>
+    <b2bIteration>1</b2bIteration>
+    <Parameters>
+        <Parameter>
+            <Name>TEST_DATA_ROOT</Name>
+            <Value>testplan/Multimedia_Camera</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TEST_CASE</Name>
+            <Value>tests.Multimedia_Camera.APP_refCam.camera.CameraTest.test_BST_Front_defaut_size_repeatly</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

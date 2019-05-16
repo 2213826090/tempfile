@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<TestCase>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters/>
+    <Discription> 
+&lt;div align=&quot;left&quot; style=&quot;min-height:9pt&quot;&gt;
+&lt;font face=&quot;Arial&quot;&gt;&lt;span style=&quot;font-size:8pt&quot;&gt;The device shall support Google's &amp;quot;adb reboot&amp;quot; command in MAIN mode.&lt;/span&gt;&lt;/font&gt;
+&lt;/div&gt; 
+&lt;div align=&quot;left&quot; style=&quot;min-height:9pt&quot;&gt;
+&lt;font face=&quot;Arial&quot;&gt;&lt;span style=&quot;font-size:8pt&quot;&gt;The standard parameters the user can pass to this command are: - bootloader to enter FASTBOOT mode - recovery to enter RECOVERY mode - &amp;lt;no parameter&amp;gt; to enter MAIN mode&lt;/span&gt;&lt;/font&gt;
+&lt;/div&gt;  
+</Discription>
+    <Parameters/>
+    <UseCase>PY_UNIT</UseCase>
+    <Parameters/>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <Parameters/>
+    <b2bIteration>1</b2bIteration>
+    <Parameters>
+        <Parameter>
+            <Name>TEST_DATA_ROOT</Name>
+            <Value>testplan/System_FastBoot</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TEST_CASE</Name>
+            <Value>tests.System_FastBoot.P1-RESET-ModesTransitions.Main-to-Fastboot</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

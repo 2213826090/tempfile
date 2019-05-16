@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Campaign>
+    <Parameters>
+        <Parameter isControlledPSUsed="False"/>
+        <Parameter isIoCardUsed="False"/>
+        <!-- Set skipBootOnPowerCycle to True to disable the acs boot procedure -->
+        <!-- Important, it means that boot will be handle inside the campaign/tc -->
+        <Parameter skipBootOnPowerCycle="False"/>
+        <Parameter runHookScripts="False"/>
+        <Parameter powerCycleBetweenTC="False"/>
+        <Parameter powerCycleOnFailure="False"/>
+        <Parameter finalDutState="NoChange"/>
+        <Parameter stopCampaignOnCriticalFailure="False"/>
+        <Parameter stopCampaignOnFirstFailure="False"/>
+        <!-- LoggingLevel possible values: info | warning | debug | error -->
+        <Parameter loggingLevel="info"/>
+        <!-- CampaignType format -> <TEAM>_<CAMPAIGNTYPE>
+            Possible values:
+            FT(Feature Team)-> SANITY | REGRESSION | STRESS, RELIABILTY | MTBF
+            ST(System Test)-> SANITY | REGRESSION | STRESS, RELIABILTY | MTBF
+            SI(System Integration)-> EAT | STAB | PACT | CAT0 | RELIABILITY | MTBF
+            Otherwise "Others" should be used -->
+        <Parameter CampaignType="ST_SANITY"/>
+        <Parameter TCRReportViaRESTAPI="true"/>
+    </Parameters>
+    <Targets>
+        <!-- Target Values -->
+        <Target targetB2bPassRate="100"/>
+    </Targets>
+    <TestCases>
+
+
+        <TestCase Id="../TC/WIFI/SLEEP_POLICIES/ST_CWS_WLAN_SLEEP01_001-LAB_WIFI_SLEEP_POLICY"/>
+        <TestCase Id="../TC/WIFI/SLEEP_POLICIES/ST_CWS_WLAN_SLEEP01_002-LAB_WIFI_SLEEP_POLICY"/>
+        <TestCase Id="../TC/WIFI/SLEEP_POLICIES/ST_CWS_WLAN_SLEEP01_003-LAB_WIFI_SLEEP_POLICY"/>
+        <TestCase Id="../TC/WIFI/SLEEP_POLICIES/ST_CWS_WLAN_SLEEP02_001-LAB_WIFI_SLEEP_POLICY"/>
+        <TestCase Id="../TC/WIFI/SLEEP_POLICIES/ST_CWS_WLAN_SLEEP02_002-LAB_WIFI_SLEEP_POLICY"/>
+        <TestCase Id="../TC/WIFI/SLEEP_POLICIES/ST_CWS_WLAN_SLEEP02_003-LAB_WIFI_SLEEP_POLICY"/>
+        <TestCase Id="../TC/WIFI/SLEEP_POLICIES/ST_CWS_WLAN_SLEEP02_004-LAB_WIFI_SLEEP_POLICY"/>
+        <TestCase Id="../TC/WIFI/SLEEP_POLICIES/ST_CWS_WLAN_SLEEP03_001-LAB_WIFI_SLEEP_POLICY"/>
+        <TestCase Id="../TC/WIFI/SLEEP_POLICIES/ST_CWS_WLAN_SLEEP03_002-LAB_WIFI_SLEEP_POLICY"/>
+        <TestCase Id="../TC/WIFI/SLEEP_POLICIES/ST_CWS_WLAN_SLEEP03_004-LAB_WIFI_SLEEP_POLICY"/>
+        <TestCase Id="../TC/WIFI/SLEEP_POLICIES/ST_CWS_WLAN_SLEEP01_004-LAB_WIFI_SLEEP_POLICY"/>
+        <TestCase Id="../TC/WIFI/SLEEP_POLICIES/ST_CWS_WLAN_SLEEP01_005-LAB_WIFI_SLEEP_POLICY"/>
+        <TestCase Id="../TC/WIFI/SLEEP_POLICIES/ST_CWS_WLAN_SLEEP03_005-LAB_WIFI_SLEEP_POLICY"/>
+        <TestCase Id="../TC/WIFI/SLEEP_POLICIES/ST_CWS_WLAN_SLEEP01_006-LAB_WIFI_SLEEP_POLICY"/>
+        <TestCase Id="../TC/WIFI/SLEEP_POLICIES/ST_CWS_WLAN_SLEEP02_005-LAB_WIFI_SLEEP_POLICY"/>
+        <TestCase Id="../TC/WIFI/SLEEP_POLICIES/ST_CWS_WLAN_SLEEP02_006-LAB_WIFI_SLEEP_POLICY"/>
+        <TestCase Id="../TC/WIFI/SLEEP_POLICIES/ST_CWS_WLAN_SLEEP02_007-LAB_WIFI_SLEEP_POLICY"/>
+        <TestCase Id="../TC/WIFI/SLEEP_POLICIES/ST_CWS_WLAN_SLEEP03_006-LAB_WIFI_SLEEP_POLICY"/>
+        <TestCase Id="../TC/WIFI/SLEEP_POLICIES/ST_CWS_WLAN_SLEEP03_007-LAB_WIFI_SLEEP_POLICY"/>
+        <TestCase Id="../TC/WIFI/ST_CWS_WLAN_SLEEP_003-LAB_WIFI_WAKES_UP"/>
+
+
+    </TestCases>
+</Campaign>

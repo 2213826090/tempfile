@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCase version="13.49">
+    <UseCase>LIVE_EM_BATT_SDP_DISCHARGE</UseCase>
+    <Description>Testing charge and capacity variation after unplug and plug</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>False</b2bContinuousMode>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters>
+        <Parameter>
+            <!-- Time between UNPLUG and PLUG in seconds, shoul be at minimum 120 seconds -->
+            <Name>UNPLUG_PLUG_TIMEOUT</Name>
+            <Value>500</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Maximum of charge variation, on percent -->
+            <Name>CHARGE_VARIATION</Name>
+            <Value>10</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Minimum value of battery's capacity to execute the test, on percent -->
+            <Name>MINIMUM_CAPCITY</Name>
+            <Value>14</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Maximum charge duration in seconds, used only if DUT's capacity is under MINIMUM_CAPCITY  -->
+            <Name>CHARGING_TIMEOUT</Name>
+            <Value>300</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

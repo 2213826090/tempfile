@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='ASCII'?>
+<Campaign version="13.49">
+    <Parameters>
+        <Parameter isControlledPSUsed="False"/>
+        <Parameter isIoCardUsed="False"/>
+        <!-- Set skipBootOnPowerCycle to True to disable the accs boot procedure -->
+        <!-- Important, it means that boot will be handle inside the campaign/tc -->
+        <Parameter skipBootOnPowerCycle="False"/>
+        <!-- Set bootRetryNumber to maximum number of boot retries during the acs boot procedure -->
+        <!-- Important, it means that bootRetryNumber is set by default to 0 if not specified -->
+        <Parameter bootRetryNumber="0"/>
+        <Parameter runHookScripts="False"/>
+        <Parameter powerCycleBetweenTC="False"/>
+        <Parameter powerCycleOnFailure="False"/>
+        <!-- finalDutState allows user to leave the DUT in a specific state at the end of the campaign
+            Possible values: PowerOn | PowerOff | Charging | NoChange
+            By default DUT is leaved in NoChange state.
+            In case the user selects Charging as final state of the DUT and that DUT fails to enter Charging,
+            ACS shall try to switch the DUT off -->
+        <Parameter finalDutState="NoChange"/>
+        <Parameter stopCampaignOnCriticalFailure="False"/>
+        <Parameter stopCampaignOnFirstFailure="False"/>
+        <!-- LoggingLevel possible values: info | warning | debug | error -->
+        <Parameter loggingLevel="debug"/>
+        <!-- CampaignType format -> <TEAM>_<CAMPAIGNTYPE>
+            Possible values:
+            FT(Feature Team)-> SANITY | REGRESSION | STRESS, RELIABILTY | MTBF
+            ST(System Test)-> SANITY | REGRESSION | STRESS, RELIABILTY | MTBF | EM
+            SI(System Integration)-> EAT | STAB | PACT | CAT0 | RELIABILITY | MTBF | CTS | ACS_CI
+            Otherwise "Others" should be used -->
+        <Parameter CampaignType="MTBF"/>
+    </Parameters>
+    <Targets>
+        <!-- Target Values -->
+        <Target targetB2bPassRate="100"/>
+    </Targets>
+    <TestCases>
+        <TestCase Id="../../../../TC/TR/ACS/Applications/Chrome/prereq_ConnectToAP"/>
+        <!-- ensure connection to internet -->
+        <TestCase Id="../../../../TC/TR/ACS/Applications/Chrome/Browser_Chrome_Add.a.bookmark.shortcut.to.homescreen"/>
+        <TestCase Id="../../../../TC/TR/ACS/Applications/Chrome/Browser_Chrome_Check.the.Home.button"/>
+        <!--Leave this as first test as it clears any problems with the initial state-->
+        <TestCase Id="../../../../TC/TR/ACS/Applications/Chrome/Browser_Chrome_TBA_Enter.URL.address"/>
+        <TestCase Id="../../../../TC/TR/ACS/Applications/Chrome/Browser_Chrome_TBA_Navigation"/>
+        <TestCase Id="../../../../TC/TR/ACS/Applications/Chrome/Browser_Chrome_TBA_Open.a.link.in.new.tab"/>
+        <TestCase Id="../../../../TC/TR/ACS/Applications/Chrome/Browser_Chrome_TBA_Print.Option"/>
+        <TestCase Id="../../../../TC/TR/ACS/Applications/Chrome/Browser_Chrome_TBA_Search.Google.for.the.image"/>
+        <TestCase Id="../../../../TC/TR/ACS/Applications/Chrome/Browser_Chrome_Check.Find.in.page.button"/>
+        <TestCase Id="../../../../TC/TR/ACS/Applications/Chrome/Browser_Chrome_Full.Screen.Browsing"/>
+        <TestCase Id="../../../../TC/TR/ACS/Applications/Chrome/Browser_Chrome_Help.and.Feedback"/>
+        <TestCase Id="../../../../TC/TR/ACS/Applications/Chrome/Browser_Chrome_Launch.the.browser.in.landscape.and.portrait.mode"/>
+        <!-- Tests that need more work
+        <TestCase Id="../../../../TC/TR/ACS/Applications/Chrome/Browser_Chrome_TBA_Tabs.Switch.Modes"/>
+        <TestCase Id="../../../../TC/TR/ACS/Applications/Chrome/Browser_Chrome_TBA_Web.Worker"/>
+        -->
+    </TestCases>
+</Campaign>

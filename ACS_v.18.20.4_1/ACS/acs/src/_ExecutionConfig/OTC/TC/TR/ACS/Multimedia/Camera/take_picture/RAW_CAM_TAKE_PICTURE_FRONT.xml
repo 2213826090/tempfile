@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase>
+   <UseCase>LIVE_CAMERA_TAKE_PICTURE</UseCase>
+   <Description>Use Camera to capture image after setting a scene mode</Description>
+   <b2bIteration>1</b2bIteration>
+   <b2bContinuousMode>True</b2bContinuousMode>
+   <TcMaxAttempt>1</TcMaxAttempt>
+   <TcAcceptanceCriteria>1</TcAcceptanceCriteria>
+   <Parameters>
+       <Parameter>
+           <Name>CAMERA</Name>
+            <Value>FRONT</Value>
+       </Parameter>
+       <Parameter>
+           <Name>SAVE_DIRECTORY</Name>
+           <Value>sdcard/</Value>
+       </Parameter>
+   </Parameters>
+</TestCase>

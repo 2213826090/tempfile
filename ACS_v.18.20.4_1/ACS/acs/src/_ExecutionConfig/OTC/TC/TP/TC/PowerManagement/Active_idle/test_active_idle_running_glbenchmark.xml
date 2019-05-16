@@ -1,0 +1,51 @@
+<?xml version="1.0" ?>
+<TestCase>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Discription> 
+&lt;div align=&quot;left&quot; style=&quot;min-height:9pt&quot;&gt;
+&lt;font face=&quot;Arial&quot;&gt;&lt;span style=&quot;font-size:8pt&quot;&gt;Verify that Current freq should be reached Max overclocked frequency when running GLBenchmark APK&lt;/span&gt;&lt;/font&gt;
+&lt;/div&gt; 
+&lt;div align=&quot;left&quot; style=&quot;min-height:9pt&quot;&gt;&lt;/div&gt; 
+&lt;div align=&quot;left&quot; style=&quot;min-height:9pt&quot;&gt;
+&lt;font face=&quot;Arial&quot;&gt;&lt;span style=&quot;font-size:8pt&quot;&gt;preconditions: devices is on, install and running GLBenchmark APK&lt;/span&gt;&lt;/font&gt;
+&lt;/div&gt; 
+&lt;div align=&quot;left&quot; style=&quot;min-height:9pt&quot;&gt;&lt;/div&gt; 
+&lt;div align=&quot;left&quot; style=&quot;min-height:9pt&quot;&gt;
+&lt;font face=&quot;Arial&quot;&gt;&lt;span style=&quot;font-size:8pt&quot;&gt;Post-condition: Command &amp;quot;adb shell cat /d/dri/0/i915_frequency_info&amp;quot;&lt;/span&gt;&lt;/font&gt;
+&lt;/div&gt; 
+&lt;div align=&quot;left&quot; style=&quot;min-height:9pt&quot;&gt;&lt;/div&gt; 
+&lt;div align=&quot;left&quot; style=&quot;min-height:9pt&quot;&gt;
+&lt;font face=&quot;Arial&quot;&gt;&lt;span style=&quot;font-size:8pt&quot;&gt;Action: devices is on, install and running GLBenchmark APK, Command &amp;quot;adb shell cat /d/dri/0/i915_frequency_info&amp;quot;, check Current freq should be reached Max overclocked frequency or not&lt;/span&gt;&lt;/font&gt;
+&lt;/div&gt; 
+&lt;div align=&quot;left&quot; style=&quot;min-height:9pt&quot;&gt;&lt;/div&gt; 
+&lt;div align=&quot;left&quot; style=&quot;min-height:9pt&quot;&gt;
+&lt;font face=&quot;Arial&quot;&gt;&lt;span style=&quot;font-size:8pt&quot;&gt;Expected&amp;nbsp; result:&lt;/span&gt;&lt;/font&gt;
+&lt;/div&gt; 
+&lt;div align=&quot;left&quot; style=&quot;min-height:9pt&quot;&gt;
+&lt;font face=&quot;Arial&quot;&gt;&lt;span style=&quot;font-size:8pt&quot;&gt;Current freq should be reached Max overclocked frequency when running GLBenchmark APK&lt;/span&gt;&lt;/font&gt;
+&lt;/div&gt; 
+&lt;div align=&quot;left&quot; style=&quot;min-height:9pt&quot;&gt;
+&lt;font face=&quot;Arial&quot;&gt;&lt;span style=&quot;font-size:8pt&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/font&gt;
+&lt;/div&gt;  
+</Discription>
+    <Domain>PowerManagement</Domain>
+    <Phase>CORE</Phase>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <Type>FUNCTIONAL</Type>
+    <UseCase>PY_UNIT</UseCase>
+    <b2bIteration>1</b2bIteration>
+    <Parameters>
+        <Parameter>
+            <Name>HpalmName</Name>
+            <Value>active_idle.ActiveIdle.test_active_idle_running_glbenchmark</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TEST_DATA_ROOT</Name>
+            <Value>testplan/PowerManagement</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TEST_CASE</Name>
+            <Value>tests.PowerManagement.Active_idle.active_idle.ActiveIdle.test_active_idle_running_glbenchmark</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

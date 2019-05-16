@@ -1,0 +1,26 @@
+<?xml version="1.0" ?>
+<TestCase>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters/>
+    <Discription>
+Verify that the OEM wallpaper should be restore what ever replaced by others
+&lt;br /&gt;
+&lt;br /&gt;Factory reset after Change OEM wallpaper to another
+</Discription>
+    <Parameters/>
+    <UseCase>PY_UNIT</UseCase>
+    <Parameters/>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <Parameters/>
+    <b2bIteration>1</b2bIteration>
+    <Parameters>
+        <Parameter>
+            <Name>TEST_DATA_ROOT</Name>
+            <Value>testplan/IRDA_OEM_Customization</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TEST_CASE</Name>
+            <Value>tests.IRDA_OEM_Customization.OEM.test_factory_reset_after_change_wallpaper.TestResetAfterChange.testResetAfterChange</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

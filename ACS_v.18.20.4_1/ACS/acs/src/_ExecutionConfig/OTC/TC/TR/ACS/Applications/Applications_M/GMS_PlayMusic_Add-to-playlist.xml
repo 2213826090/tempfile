@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="13.45">
+    <UseCase>ANDROID_INST</UseCase>
+    <Description>Verify that music app is able to add items to a playlist.</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <TcMaxAttempt>2</TcMaxAttempt>
+    <TestSteps>
+        <RunTest>
+            <TestStep Id="RUN_CMD" DEVICE="PHONE1" TIMEOUT="60" FORCE_EXECUTION="False" WAIT_FOR_RESPONSE="True" SILENT_MODE="False" SAVE_AS="out1" COMMAND="adb shell am broadcast -a android.intent.action.MEDIA_MOUNTED -d file://sdcard/Music"/>
+        </RunTest>
+    </TestSteps>
+    <Parameters>
+        <Parameter>
+            <!-- The time until the test times out-->
+            <!-- (mandatory) -->
+            <Name>TIMEOUT</Name>
+            <Value>400</Value>
+        </Parameter>
+        <Parameter>
+            <!-- The package name of the instrumentation and the test runner in the form or package/TestRunner-->
+            <!-- (mandatory) -->
+            <Name>PROCESS_NAME</Name>
+            <Value>com.intel.uitests.test/com.intel.uitests.runner.UiTestRunner</Value>
+        </Parameter>
+        <Parameter>
+            <!-- The parameters to be sent to the test runner. It should start with the -e command and insert it between each parameter-->
+            <!-- (optional, no default value) -->
+            <Name>AM_EXTRA</Name>
+            <Value>-e class com.intel.uitests.tests.apps.playmusic.PlayMusicActions#testAddToPlayList</Value>
+        </Parameter>
+        <Parameter>
+            <!-- The location of the test apks to be installed relative to the acs_test_arifacts folder in the artifactory-->
+            <!-- Multiple apks can be installed, they need to be sepparated by ;-->
+            <!-- ex: INSTRUMENTATION/ANDROID/AtfVideo.apk;INSTRUMENTATION/ANDROID/AtfVideoTests.apk-->
+            <!-- (mandatory) -->
+            <Name>APKS</Name>
+            <Value>UIAUTOMATOR/UiTests_M-debug.apk;UIAUTOMATOR/UiTests_M-debug-androidTest-unaligned.apk</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Extra files that are needed by the test-->
+            <!-- Their path need to be relative to the acs_test_arifacts folder in the artifactory-->
+            <!-- (optional, no default value) -->
+            <Name>TEST_FILES</Name>
+            <Value>AUDIO/AAC/AAC_ELD_3GPP.3gp;AUDIO/AAC/AAC_LC_24kHz_32kbps_Mono.aac;AUDIO/AAC/AAC_LC_64kHz_64kbps_Mono.mp3</Value>
+        </Parameter>
+        <Parameter>
+            <!-- The destination on the DUT where to push the files from TEST_FILES -->
+            <!-- (optional, mandatory only if TEST_FILES is used) -->
+            <Name>TEST_FILES_DEST</Name>
+            <Value>/sdcard/Music/</Value>
+        </Parameter>
+        <Parameter>
+            <!-- DUT Properties using setprop-->
+            <!-- (optional, no default value) -->
+            <Name>SET_PROPS</Name>
+            <Value></Value>
+        </Parameter>
+        <Parameter>
+            <!-- The location of the files from DUT tu be pulled at the end of the test -->
+            <!-- (optional, no default value) -->
+            <Name>RETRIEVE_ARTIFACT</Name>
+            <Value>/sdcard/UITESTS/testFail.png</Value>
+        </Parameter>
+        <Parameter>
+            <Name>PRE_REBOOT</Name>
+            <Value>False</Value>
+        </Parameter>
+        <Parameter>
+            <Name>POST_REBOOT</Name>
+            <Value>False</Value>
+        </Parameter>
+        <Parameter>
+            <Name>POST_REBOOT_NOK</Name>
+            <Value>True</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

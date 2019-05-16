@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="13.37">
+    <UseCase>LAB_BT_A2DP</UseCase>
+    <Description>Connect DUT to remote Headset and received commands from it like play, pause, FW, RW</Description>
+    <b2bIteration>100</b2bIteration>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <Parameters>
+        <Parameter>
+            <!-- Initiator of the connection. Can be "DUT" (default value) or "HEADSET" -->
+            <Name>CONNECT_INITIATOR</Name>
+            <Value>DUT</Value>
+        </Parameter>
+        <Parameter>
+            <Name>FILE_TO_PLAY</Name>
+            <Value>A2DP_template1.mp3</Value>
+        </Parameter>
+        <Parameter>
+            <!--list of Audio command to do on Headset
+                value in ('PLAY', 'STOP', 'PAUSE'). Item separated by coma ','-->
+            <Name>MUSIC_CONTROL_SEQUENCE</Name>
+            <Value>PLAY,PAUSE,PLAY,STOP</Value>
+        </Parameter>
+        <Parameter>
+            <!-- duration in second between to control in the list-->
+            <Name>DURATION</Name>
+            <Value>5</Value>
+        </Parameter>
+        <Parameter>
+            <!--[Optional] Is set to True, the flight mode will be enables before setting bt on
+                and disabled at tear down.-->
+            <Name>FLIGHT_MODE</Name>
+            <Value>False</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

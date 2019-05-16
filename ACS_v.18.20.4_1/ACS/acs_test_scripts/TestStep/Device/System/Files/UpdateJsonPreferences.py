@@ -1,0 +1,53 @@
+"""
+:copyright: (c)Copyright 2014, Intel Corporation All Rights Reserved.
+The source code contained or described here in and all documents related
+to the source code ("Material") are owned by Intel Corporation or its
+suppliers or licensors. Title to the Material remains with Intel Corporation
+or its suppliers and licensors. The Material contains trade secrets and
+proprietary and confidential information of Intel or its suppliers and
+licensors.
+
+The Material is protected by worldwide copyright and trade secret laws and
+treaty provisions. No part of the Material may be used, copied, reproduced,
+modified, published, uploaded, posted, transmitted, distributed, or disclosed
+in any way without Intel's prior express written permission.
+
+No license under any patent, copyright, trade secret or other intellectual
+property right is granted to or conferred upon you by disclosure or delivery
+of the Materials, either expressly, by implication, inducement, estoppel or
+otherwise. Any license under such intellectual property rights must be express
+and approved by Intel in writing.
+
+:organization: INTEL NDG
+:summary: This file implements the step to update preferency Json files on
+          the device.
+:since: 16/12/2014
+:author: pblunie
+"""
+from ErrorHandling.AcsConfigException import AcsConfigException
+from acs_test_scripts.TestStep.Device.System.Files.FileBase import FileBase
+
+
+class UpdateJsonPreferences(FileBase):
+    """
+    Umount partition class
+    """
+
+    def run(self, context):
+        """
+        Runs the test step
+
+        :type context: TestStepContext
+        :param context: test case context
+        """
+        FileBase.run(self, context)
+
+        try:
+            prefdict = eval(self._pars.json_preferences)
+        except SyntaxError as e:
+            msg = "Bad dictionary format in configuration (%s): %s" %\
+                  (self._pars.json_preferences, e)
+            raise AcsConfigException(AcsConfigException.READ_PARAMETER_ERROR,
+                                     msg)
+
+        self._api.set_json_preferences(self._pars.file_path_on_device, prefdict)

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="13.37">
+    <UseCase>EXEC</UseCase>
+    <Description>General execution use case</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters>
+        <Parameter>
+            <!-- WiFi -->
+            <Name>RUN_CMD</Name>
+            <Value>adb shell svc wifi disable</Value>
+        </Parameter>
+        <Parameter>
+            <Name>RUN_TIMEOUT</Name>
+            <Value>5</Value>
+        </Parameter>
+        <Parameter>
+            <Name>RUN_EXPECT_RESULT</Name>
+            <Value></Value>
+        </Parameter>
+
+        <Parameter>
+            <Name>RUN_CMD1</Name>
+            <Value>adb shell settings get global wifi_on</Value>
+        </Parameter>
+        <Parameter>
+            <Name>RUN_TIMEOUT1</Name>
+            <Value>5</Value>
+        </Parameter>
+        <Parameter>
+            <Name>RUN_EXPECT_RESULT1</Name>
+            <Value>[TRIG_LOG]0</Value>
+        </Parameter>
+
+        <Parameter>
+            <Name>RUN_CMD2</Name>
+            <Value>adb shell am instrument -w -e class android.net.wifi.cts.ScanResultTest#testScanResultProperties com.android.cts.net/android.test.InstrumentationCtsTestRunner</Value>
+        </Parameter>
+        <Parameter>
+            <Name>RUN_TIMEOUT2</Name>
+            <Value>30</Value>
+        </Parameter>
+        <Parameter>
+            <Name>RUN_EXPECT_RESULT2</Name>
+            <Value>OK (1 test)</Value>
+        </Parameter>
+
+      </Parameters>
+</TestCase>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="13.41">
+    <UseCase>TEST_STEP_ENGINE</UseCase>
+    <Description>Exec script test step example</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>False</b2bContinuousMode>
+    <TcMaxAttempt>1</TcMaxAttempt>
+    <TcAcceptanceCriteria>1</TcAcceptanceCriteria>
+    <TcExpectedResult>PASS</TcExpectedResult>
+
+    <TestSteps>
+        <Initialize/>
+        <Setup/>
+        <RunTest>
+            <TestStep Id="EXEC_SCRIPT" SCRIPT_PATH="my_exec_script.py"/>
+        </RunTest>
+        <TearDown/>
+    </TestSteps>
+</TestCase>

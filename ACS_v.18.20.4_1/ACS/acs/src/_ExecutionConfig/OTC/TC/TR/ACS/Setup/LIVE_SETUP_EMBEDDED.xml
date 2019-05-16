@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase>
+    <ClassName>UseCase.OTC.Setup.LIVE_SETUP_EMBEDDED.LiveSetupEmbedded</ClassName>
+    <Description>Use case to setup embedded on the DUT. It installs the agent from AGENT_PATH parameter
+        and signs it using the key from BENCHCFG or device catalog.</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>False</b2bContinuousMode>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <TcMaxAttempt>1</TcMaxAttempt>
+    <TcAcceptanceCriteria>1</TcAcceptanceCriteria>
+    <IsCritical>True</IsCritical>
+    <Parameters>
+        <Parameter>
+            <!-- Path for the application to install. -->
+            <Name>AGENT_PATH</Name>
+            <Value>./_Embedded/ANDROID/Kitkat/APPLICATIONS/Intel/ACS_AgentV2_KK.apk;./_Embedded/ANDROID/Kitkat/APPLICATIONS/Intel/ACS_Agent_KK.apk</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

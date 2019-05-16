@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<UI_SEQ xsi:noNamespaceSchemaLocation="ACS_ANDROID_UI_CHECK.xsd"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  phone_unlock
+  <ACTION>
+    <TIMEOUT>1</TIMEOUT>
+    <CMD>phone_unlock</CMD>
+    <TRIG_LOG></TRIG_LOG>
+  </ACTION>
+  <ACTION>
+    <TIMEOUT>1</TIMEOUT>
+    <CMD>init_after_flash</CMD>
+    <TRIG_LOG></TRIG_LOG>
+  </ACTION>
+  <ACTION>
+    <!--Go back to home page-->
+    <CMD>go_home</CMD>
+    <TIMEOUT>1</TIMEOUT>
+  </ACTION>
+  <ACTION>
+    <CMD>wait</CMD>
+    <PARAMETERS>60</PARAMETERS>
+  </ACTION>    
+</UI_SEQ>

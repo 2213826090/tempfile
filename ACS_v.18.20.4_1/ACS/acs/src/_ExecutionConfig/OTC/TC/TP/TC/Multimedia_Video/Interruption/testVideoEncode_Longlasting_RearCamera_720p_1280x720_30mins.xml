@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<TestCase>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Discription>
+Verify video recording by Rear camera: Sync: Record 30 min @ High 720p(1280*720), check AV sync
+</Discription>
+    <Domain>Multimedia_Video</Domain>
+    <Phase>CORE</Phase>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <Type>FUNCTIONAL</Type>
+    <UseCase>PY_UNIT</UseCase>
+    <b2bIteration>1</b2bIteration>
+    <Parameters>
+        <Parameter>
+            <Name>HpalmName</Name>
+            <Value>video_encode.VideoEncode.testVideoEncode_Longlasting_RearCamera_720p_1280x720_30mins</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TEST_DATA_ROOT</Name>
+            <Value>testplan/Multimedia_Video</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TEST_CASE</Name>
+            <Value>tests.Multimedia_Video.Interruption.video_encode.VideoEncode.testVideoEncode_Longlasting_RearCamera_720p_1280x720_30mins</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

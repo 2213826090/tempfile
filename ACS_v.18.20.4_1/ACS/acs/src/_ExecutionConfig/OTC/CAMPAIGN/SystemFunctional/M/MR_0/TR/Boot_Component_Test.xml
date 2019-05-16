@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='ASCII'?>
+<Campaign version="13.49">
+    <Parameters>
+        <Parameter isControlledPSUsed="False"/>
+        <Parameter isIoCardUsed="False"/>
+        <Parameter skipBootOnPowerCycle="False"/>
+        <Parameter bootRetryNumber="0"/>
+        <Parameter runHookScripts="False"/>
+        <Parameter powerCycleBetweenTC="False"/>
+        <Parameter powerCycleOnFailure="False"/>
+        <Parameter finalDutState="NoChange"/>
+        <Parameter stopCampaignOnCriticalFailure="False"/>
+        <Parameter stopCampaignOnFirstFailure="False"/>
+        <Parameter loggingLevel="debug"/>
+        <Parameter CampaignType="Other"/>
+        <Parameter TCRReportViaRESTAPI="True"/>
+    </Parameters>
+    <TestCases>
+        <!-- Minicom related cases -->
+        <TestCase Id="../../../../../TC/TR/TESTLIB/BootComponent/BXT-P/ABL_BootToAndroid"/>
+        <TestCase Id="../../../../../TC/TR/TESTLIB/BootComponent/BXT-P/Boot_to_fastboot_fromSPI"/>
+        <TestCase Id="../../../../../TC/TR/TESTLIB/BootComponent/BXT-P/Flash_ABL_from_Fastboot_menu"/>
+        <TestCase Id="../../../../../TC/TR/TESTLIB/BootComponent/BXT-P/Support_VT-D_enable"/>
+        <TestCase Id="../../../../../TC/TR/TESTLIB/BootComponent/BXT-P/System_partition_should_notbe_modifiable_O"/>
+        <TestCase Id="../../../../../TC/TR/TESTLIB/BootComponent/BXT-P/To_Fastboot_With_Corrupt_Boot_And_Bootloader"/>
+        <TestCase Id="../../../../../TC/TR/TESTLIB/BootComponent/BXT-P/To_Fastboot_With_Erase_Boot_And_Bootloader"/>
+    </TestCases>
+</Campaign>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="13.41">
+    <UseCase>TEST_STEP_ENGINE</UseCase>
+    <Description></Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <TcMaxAttempt>2</TcMaxAttempt>
+    <TcAcceptanceCriteria>1</TcAcceptanceCriteria>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <TestSteps>
+         <Include Src="ST/cws/TSS/WiFi/ST_CWS_WIFI_COMMON.xml" />
+        <Setup>
+            <!-- AUTOMATION - Set default configuration -->
+            <TestStep Id="ENABLE_WIFI_DIRECT" DEVICE="PHONE1" />
+            <TestStep Id="ENABLE_WIFI_DIRECT" DEVICE="PHONE2" />
+            <TestStep Id="WIFI_DIRECT_CONFIGURE" DEVICE="PHONE1" />
+            <TestStep Id="WIFI_DIRECT_CONFIGURE" DEVICE="PHONE2" />
+            <TestStep Id="GET_WIFI_DIRECT_MAC_ADDRESS" DEVICE="PHONE1" SAVE_AS="mac_addr_phone1"/>
+            <TestStep Id="GET_WIFI_DIRECT_MAC_ADDRESS" DEVICE="PHONE2" SAVE_AS="mac_addr_phone2"/>
+        </Setup>
+        <RunTest>
+
+            <Fork Id="P2P_SCAN">
+                <TestStep SetId="ScanAndGetWiFiDirectPeers" DEVICE="PHONE1" STATE="available" SAVE_AS="peers_list_phone1" />
+                <TestStep SetId="ScanAndGetWiFiDirectPeers" DEVICE="PHONE2" STATE="available" SAVE_AS="peers_list_phone2" />
+            </Fork>
+            <TestStep Id="COMPARE" FIRST="FROM_CTX:mac_addr_phone1" SECOND="FROM_CTX:peers_list_phone2" OPERATOR="IN" PASS_IF="true"/>
+            <TestStep Id="COMPARE" FIRST="FROM_CTX:mac_addr_phone2" SECOND="FROM_CTX:peers_list_phone1" OPERATOR="IN" PASS_IF="true"/>
+
+            <Fork Id="P2P_CONNECT">
+                <TestStep Id="WIFI_DIRECT_CONNECT" DEVICE="PHONE1" PEER_DEVICE="FROM_CTX:mac_addr_phone2" CONNECT_TYPE="intent" AUTHENTICATION_TYPE="WPS-PIN" PIN_CODE="71652672" GO_INTENT="0" TIMEOUT="5" P2P_COM_FREQ="2432"/>
+                <TestStep Id="WIFI_DIRECT_CONNECT" DEVICE="PHONE2" PEER_DEVICE="FROM_CTX:mac_addr_phone1" CONNECT_TYPE="intent" AUTHENTICATION_TYPE="WPS-PIN" PIN_CODE="71652672" GO_INTENT="15" TIMEOUT="5" P2P_COM_FREQ="2432"/>
+            </Fork>
+
+        </RunTest>
+        <TearDown>
+            <TestStep Id="WIFI_DIRECT_FLUSH" DEVICE="PHONE1" />
+            <TestStep SetId="WiFiCommonTeardown" DEVICE="PHONE1"/>
+            <TestStep Id="WIFI_DIRECT_FLUSH" DEVICE="PHONE2" />
+            <TestStep SetId="WiFiCommonTeardown" DEVICE="PHONE2"/>
+        </TearDown>
+    </TestSteps>
+</TestCase>

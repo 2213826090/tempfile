@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase>
+    <UseCase>LAB_SYSTEM_BOOT</UseCase>
+    <Description>Boot sequence checking</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>False</b2bContinuousMode>
+    <TcMaxAttempt>1</TcMaxAttempt>
+    <TcAcceptanceCriteria>1</TcAcceptanceCriteria>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <IsCritical>True</IsCritical>
+    <Parameters>
+        <Parameter>
+            <!-- Time left to platform to boot (switch on) in seconds, if empty, defaulted to Device_Catalog.xml value -->
+            <Name>BOOT_TIMEOUT</Name>
+            <Value></Value>
+        </Parameter>
+        <Parameter>
+            <!-- Time left to platform to finalize its initialization in seconds, if empty, defaulted to Device_Catalog.xml value -->
+            <Name>SETTLEDOWN_DURATION</Name>
+            <Value></Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

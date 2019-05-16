@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestSteps xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../acs/src/_Catalogs/TestStep/teststep.xsd">
+    <TestStep Id="CLICK_BUTTON" Domain="APPS" SubDomain="CORE" Feature="BROWSER" Status="DONE">
+            <ClassName>acs_test_scripts.TestStep.Device.Apps.Core.UIAction.ClickButton</ClassName>
+            <Description>
+                        Click on the specified BUTTON in the browser Warning you need uiautomator
+            </Description>
+            <Environment name="ANY"/>
+            <Parameters>
+                <Parameter name="DEVICE" type="STRING" isOptional="false">
+                    <Description>Device name on which the action will be executed</Description>
+                    <PossibleValues/>
+                    <DefaultValue>PHONE1</DefaultValue>
+                </Parameter>
+                <Parameter name="BUTTON_NAME" type="STRING" isOptional="false">
+                    <Description>
+                        BUTTON NAME is the text that you want to perform a click
+                    </Description>
+                    <PossibleValues/>
+                    <DefaultValue/>
+                </Parameter>
+            </Parameters>
+    </TestStep>
+</TestSteps>

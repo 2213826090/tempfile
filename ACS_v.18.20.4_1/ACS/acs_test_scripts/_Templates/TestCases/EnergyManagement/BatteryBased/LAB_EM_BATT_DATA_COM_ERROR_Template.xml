@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCase version="13.37">
+    <UseCase>LAB_EM_BATT_DATA_COM_ERROR</UseCase>
+    <Description>EM - Check the current with a normal communication and an host communication error</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>False</b2bContinuousMode>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters>
+        <Parameter>
+            <!-- USB COMPLIANCY BIT (TRUE, FALSE) -->
+            <Name>USB_COMPLIANCY</Name>
+            <Value>FALSE</Value>
+        </Parameter>
+        <Parameter>
+            <!-- USB SCHEDULE VALUE -->
+            <Name>SCHEDULE_TIME</Name>
+            <Value>28</Value>
+        </Parameter>
+        <Parameter>
+            <!-- USB SAMPLE RATE VALUE -->
+            <Name>SAMPLE_RATE</Name>
+            <Value>10</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

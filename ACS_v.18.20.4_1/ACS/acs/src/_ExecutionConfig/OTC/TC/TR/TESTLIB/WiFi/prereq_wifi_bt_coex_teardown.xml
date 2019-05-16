@@ -1,0 +1,21 @@
+<TestCase>
+    <UseCase>TEST_STEP_ENGINE</UseCase>
+    <Description>wifi</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <TcMaxAttempt>3</TcMaxAttempt>
+    <TestSteps>
+        <Setup></Setup>
+        <RunTest></RunTest>
+        <TearDown>
+            <Fork Id="ForkTeardown">
+                <TestStep Id="BT_SET_POWER" DEVICE="PHONE1" POWER="OFF"/>
+                <TestStep Id="WIFI_SET_POWER" DEVICE="PHONE2" POWER="off"/>
+            </Fork>
+            <Fork Id="ForkTeardown">
+                <TestStep Id="BT_SET_POWER" DEVICE="PHONE2" POWER="OFF"/>
+                <TestStep Id="WIFI_SET_POWER" DEVICE="PHONE1" POWER="off"/>
+            </Fork>
+        </TearDown>
+    </TestSteps>
+</TestCase>

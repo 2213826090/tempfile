@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+<Campaign version="13.49">
+    <Parameters>
+        <Parameter isControlledPSUsed="False"/>
+        <Parameter isIoCardUsed="False"/>
+        <Parameter skipBootOnPowerCycle="False"/>
+        <Parameter bootRetryNumber="0"/>
+        <Parameter runHookScripts="False"/>
+        <Parameter powerCycleBetweenTC="False"/>
+        <Parameter powerCycleOnFailure="False"/>
+        <Parameter finalDutState="NoChange"/>
+        <Parameter stopCampaignOnCriticalFailure="False"/>
+        <Parameter stopCampaignOnFirstFailure="False"/>
+        <Parameter loggingLevel="debug"/>
+        <Parameter CampaignType="Other"/>
+    </Parameters>
+    <TestCases>
+        <TestCase Id="../../../../../TC/TP/TC/IRDA_OEM_Customization/IRDA_OEM_Customization.OEM.init_IRDA_OEM_Customization.InitOEMCustomize.testInitOEMCustomize"/>
+        <TestCase Id="../../../../../TC/TP/TC/IRDA_OEM_Customization/OEM/TestOEMDefalt_Locale"/>
+        <TestCase Id="../../../../../TC/TP/TC/IRDA_OEM_Customization/OEM/testOEM_device_model"/>
+        <TestCase Id="../../../../../TC/TP/TC/IRDA_OEM_Customization/OEM/testOEM_partition"/>
+    </TestCases>
+</Campaign>

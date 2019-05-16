@@ -1,0 +1,79 @@
+<?xml version='1.0' encoding='ASCII'?>
+<TestCase version="13.37">
+    <UseCase>LIVE_APP_SUPPORT_UIAUTOMATOR</UseCase>
+    <Description>AppSupport for GMS-Search by Voice app: Using UIautomator, test opens app and verifies if it remains opened for 10 seconds</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <TcMaxAttempt>1</TcMaxAttempt>
+    <TcAcceptanceCriteria>1</TcAcceptanceCriteria>
+    <TestSteps>
+        <Initialize/>
+        <Setup/>
+        <RunTest/>
+        <TearDown/>
+        <Finalize/>
+    </TestSteps>
+    <Parameters>
+        <Parameter>
+            <!--Parameter to define if DUT needs to be connected to wifi. Possible values: "True" or "False".
+            If "True", one of the following equipments must be declared in bench config: NO_SECURITY_WIFI_ROUTER, WEP_WIFI_ROUTER, WPA2_WIFI_ROUTER, WPA_WIFI_ROUTER-->
+            <Name>USE_WIFI</Name>
+            <Value>True</Value>
+        </Parameter>
+        <Parameter>
+            <!--Path to the uiautomator jar file from the artifactory. ARTIFACT_MANAGER equipment must be declared in bench config-->
+            <Name>UIAUTOMATOR_JAR</Name>
+            <Value>APP_SUPPORT_JAR/GMS/GminGMSAppsSupport.jar</Value>
+        </Parameter>
+        <Parameter>
+            <!--Package name(inside Jar file) of the test to be run-->
+            <Name>PACKAGE_NAME</Name>
+            <Value>com.android.test.UiAutomator</Value>
+        </Parameter>
+        <Parameter>
+            <!--Class name(inside Jar file) of the test to be run-->
+            <Name>CLASS_NAME</Name>
+            <Value>GminGMSAppsSupport</Value>
+        </Parameter>
+        <Parameter>
+            <!--Name(inside Jar file) of the test to be run-->
+            <Name>TEST_NAME</Name>
+            <Value>testGMSVoiceSearch</Value>
+        </Parameter>
+        <Parameter>
+            <!--Parameter to define if a Gmail account is neccesary for UIautomator test to validate the application. Possible values: "True" or "False"-->
+            <Name>USE_ACCOUNT</Name>
+            <Value>False</Value>
+        </Parameter>
+        <Parameter>
+            <!--Gmail account username, mandatory only if an account is needed for validating the application under test-->
+            <Name>ACCOUNT_USERNAME</Name>
+            <Value></Value>
+        </Parameter>
+        <Parameter>
+            <!--Gmail account password, mandatory only if an account is needed for validating the application under test-->
+            <Name>ACCOUNT_PASSWORD</Name>
+            <Value></Value>
+        </Parameter>
+        <Parameter>
+            <!--Maximum time in seconds for running UIautomator test-->
+            <Name>TIMEOUT</Name>
+            <Value>300</Value>
+        </Parameter>
+        <Parameter>
+            <!--Reboot the board before executing the test. Possible values: "True" or "False"-->
+            <Name>PRE_REBOOT</Name>
+            <Value>False</Value>
+        </Parameter>
+        <Parameter>
+            <!--Reboot the board after test execution. Possible values: "True" or "False"-->
+            <Name>POST_REBOOT</Name>
+            <Value>False</Value>
+        </Parameter>
+        <Parameter>
+            <!--Reboot the board after test execution if test verdict is failure. Possible values: "True" or "False"-->
+            <Name>POST_REBOOT_NOK</Name>
+            <Value>True</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

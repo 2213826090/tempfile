@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<TestCase>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Discription>
+Verify Video Codec: 29.970fps_2mn29s_h264_1280x720_5512Kbps_aac-lc_44.1KHz_Variable_stereo_96.0Kbps.mp4 for RTP streaming reception over WLAN
+</Discription>
+    <Domain>Multimedia_Video</Domain>
+    <Phase>CORE</Phase>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <Type>FUNCTIONAL</Type>
+    <UseCase>PY_UNIT</UseCase>
+    <b2bIteration>1</b2bIteration>
+    <Parameters>
+        <Parameter>
+            <Name>HpalmName</Name>
+            <Value>video_api_test.VideoAPITest.testVideo_H264_29_970fps_5mn29s_640x480_MP4_RTP_streaming</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TEST_DATA_ROOT</Name>
+            <Value>testplan/Multimedia_Video</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TEST_CASE</Name>
+            <Value>tests.Multimedia_Video.Decode.video_api_test.VideoAPITest.testVideo_H264_29_970fps_5mn29s_640x480_MP4_RTP_streaming</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

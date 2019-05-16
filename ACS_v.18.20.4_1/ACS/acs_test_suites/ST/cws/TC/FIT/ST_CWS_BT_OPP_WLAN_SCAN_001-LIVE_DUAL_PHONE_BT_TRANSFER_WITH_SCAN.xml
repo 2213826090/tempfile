@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase>
+    <UseCase>LIVE_DUAL_PHONE_BT_TRANSFER_WITH_SCAN</UseCase>
+    <Description>Send file using BT OPP Profile and do a scan in the same time</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>False</b2bContinuousMode>
+    <TcAcceptanceCriteria>PASS</TcAcceptanceCriteria>
+    <TcMaxAttempt>2</TcMaxAttempt>
+    <Parameters>
+        <Parameter>
+            <!-- Configure which component are used in the test : USE_BT, USE_WIFI, USE_BT_AND_WIFI -->
+            <Name>COMPONENT_USE</Name>
+            <Value>USE_WIFI</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Configure the state of DUT : DUT_CLIENT, DUT_SERVER -->
+            <Name>DUT_STATE</Name>
+            <Value>DUT_CLIENT</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Name of the file to send -->
+            <Name>OPP_LOCAL_FILE</Name>
+            <Value>5MB.txt</Value>
+        </Parameter>
+        <Parameter>
+            <!-- [Optional] Live WiFi reference access point -->
+            <Name>WIFI_ACCESS_POINT</Name>
+            <Value>B_ONLY_WIFI_ROUTER</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

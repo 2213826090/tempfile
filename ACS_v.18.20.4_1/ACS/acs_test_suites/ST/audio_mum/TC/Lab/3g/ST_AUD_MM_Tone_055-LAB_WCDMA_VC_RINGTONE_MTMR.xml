@@ -1,0 +1,68 @@
+<TestCase>
+  <UseCase>LAB_WCDMA_VC_RINGTONE_MTMR</UseCase>
+  <Description>Network generates WCDMA call, test terminal ringtone</Description>
+  <b2bIteration>1</b2bIteration>
+  <b2bContinuousMode>False</b2bContinuousMode>
+  <Parameters>
+    <Parameter>
+      
+      <Name>CELL_BAND</Name>
+      <Value>1</Value>
+    </Parameter>
+    <Parameter>
+      
+      <Name>DL_UARFCN</Name>
+      <Value>10700</Value>
+    </Parameter>
+    <Parameter>
+      
+      <Name>CELL_SERVICE</Name>
+      <Value>CIRCUIT</Value>
+    </Parameter>
+    <Parameter>
+      
+      <Name>CELL_POWER</Name>
+      <Value>-60</Value>
+    </Parameter>
+    <Parameter>
+      
+        <Name>VOICE_CODER_RATE</Name>
+	    <!-- Voice NARROWBAND coder rate, possible values:
+            FR_AMR_NB_1220 | FR_AMR_NB_1020 | FR_AMR_NB_795 | FR_AMR_NB_740 | 
+			FR_AMR_NB_670 | FR_AMR_NB_590 | FR_AMR_NB_515 | FR_AMR_NB_475
+
+            Voice WIDEBAND coder rate, possible values::
+            AMR_WB_2385 | AMR_WB_2305 | AMR_WB_1985 | AMR_WB_1825 |
+            AMR_WB_1585 | AMR_WB_1425 | AMR_WB_1265 | AMR_WB_885 |
+            AMR_WB_660
+        -->
+      <Value>FR_AMR_NB_1220</Value>
+    </Parameter>
+
+    <Parameter>
+        
+        <Name>RT_TIME</Name>
+        <Value>20</Value>
+    </Parameter>
+    <Parameter>
+        
+        <Name>RT_NAME</Name>
+        <Value>Cairo</Value>
+    </Parameter> 
+    <Parameter>
+        
+        <Name>AUDIO_OUTPUT</Name>
+        <Value>none</Value>
+    </Parameter>
+    <Parameter>
+        
+        <Name>VIBRA_MODE</Name>
+        <Value>always</Value>
+    </Parameter>
+    <Parameter>
+        
+        <Name>SILENT_MODE</Name>
+        <Value>False</Value>
+    </Parameter> 
+  </Parameters>
+</TestCase>

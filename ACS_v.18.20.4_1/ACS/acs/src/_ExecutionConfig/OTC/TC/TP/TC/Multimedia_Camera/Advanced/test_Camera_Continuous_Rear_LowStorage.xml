@@ -1,0 +1,24 @@
+<?xml version="1.0" ?>
+<TestCase>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters/>
+    <Discription>
+Verify capture images in continuous mode on rear camera until storage is full. There should be a message to indicate the storage is full and capture button is useless.
+</Discription>
+    <Parameters/>
+    <UseCase>PY_UNIT</UseCase>
+    <Parameters/>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <Parameters/>
+    <b2bIteration>1</b2bIteration>
+    <Parameters>
+        <Parameter>
+            <Name>TEST_DATA_ROOT</Name>
+            <Value>testplan/Multimedia_Camera</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TEST_CASE</Name>
+            <Value>tests.Multimedia_Camera.Advanced.camera.CameraTest.test_Camera_Continuous_Rear_LowStorage</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

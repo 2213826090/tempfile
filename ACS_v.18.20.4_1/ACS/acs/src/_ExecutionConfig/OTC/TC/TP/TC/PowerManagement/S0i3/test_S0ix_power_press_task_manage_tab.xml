@@ -1,0 +1,46 @@
+<?xml version="1.0" ?>
+<TestCase>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters/>
+    <Discription> 
+&lt;div align=&quot;left&quot; style=&quot;min-height:10pt&quot;&gt;
+&lt;font face=&quot;Arial&quot;&gt;&lt;span style=&quot;font-size:8pt&quot;&gt;&amp;nbsp;run some programs, after 5 minutes, check the DUT enter S0i3 state &lt;/span&gt;&lt;/font&gt;
+&lt;font face=&quot;Arial Unicode MS&quot;&gt;&lt;span style=&quot;font-size:8pt&quot;&gt;when running&lt;/span&gt;&lt;/font&gt;
+&lt;font face=&quot;Arial&quot;&gt;&lt;span style=&quot;font-size:8pt&quot;&gt; task manage process &lt;/span&gt;&lt;/font&gt;
+&lt;/div&gt; 
+&lt;div align=&quot;left&quot; style=&quot;min-height:9pt&quot;&gt;&lt;/div&gt; 
+&lt;div align=&quot;left&quot; style=&quot;min-height:9pt&quot;&gt;
+&lt;font face=&quot;Arial&quot;&gt;&lt;span style=&quot;font-size:8pt&quot;&gt;Preconditions: (With only battery, run some programs(like top_apps, browser, video, camera, 3D games), turn off screen) &lt;/span&gt;&lt;/font&gt;
+&lt;/div&gt; 
+&lt;div align=&quot;left&quot; style=&quot;min-height:9pt&quot;&gt;
+&lt;font face=&quot;Arial&quot;&gt;&lt;span style=&quot;font-size:8pt&quot;&gt;Postconditions: (Device enter S3 state, some program can running normally) &lt;/span&gt;&lt;/font&gt;
+&lt;/div&gt; 
+&lt;div align=&quot;left&quot; style=&quot;min-height:10pt&quot;&gt;
+&lt;font face=&quot;Arial&quot;&gt;&lt;span style=&quot;font-size:8pt&quot;&gt;Action: run some programs, turn off screen and wait some minutes, check S0i3 status&lt;/span&gt;&lt;/font&gt;
+&lt;/div&gt; 
+&lt;div align=&quot;left&quot; style=&quot;min-height:9pt&quot;&gt;&lt;/div&gt; 
+&lt;div align=&quot;left&quot; style=&quot;min-height:9pt&quot;&gt;
+&lt;font face=&quot;Arial&quot;&gt;&lt;span style=&quot;font-size:8pt&quot;&gt;Expected&amp;nbsp; result:&lt;/span&gt;&lt;/font&gt;
+&lt;/div&gt; 
+&lt;div align=&quot;left&quot; style=&quot;min-height:10pt&quot;&gt;
+&lt;font face=&quot;Arial&quot;&gt;&lt;span style=&quot;font-size:8pt&quot;&gt;System could enter into S3 sleep mode successfully,some program can running normally&lt;/span&gt;&lt;/font&gt;
+&lt;/div&gt; 
+&lt;div align=&quot;left&quot; style=&quot;min-height:9pt&quot;&gt;&lt;/div&gt;  
+</Discription>
+    <Parameters/>
+    <UseCase>PY_UNIT</UseCase>
+    <Parameters/>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <Parameters/>
+    <b2bIteration>1</b2bIteration>
+    <Parameters>
+        <Parameter>
+            <Name>TEST_DATA_ROOT</Name>
+            <Value>testplan/PowerManagement</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TEST_CASE</Name>
+            <Value>tests.PowerManagement.S0i3.S0ix_power_press_task_manage_tab.S0IxTaskManageTab.test_S0ix_power_press_task_manage_tab</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

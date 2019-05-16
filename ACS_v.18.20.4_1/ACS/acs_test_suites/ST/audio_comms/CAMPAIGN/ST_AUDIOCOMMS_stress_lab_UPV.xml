@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<Campaign>
+    <Parameters>
+        <Parameter isControlledPSUsed ="False"/>
+        <Parameter isIoCardUsed ="False"/>
+        <!-- Set skipBootOnPowerCycle to True to disable the accs boot procedure-->
+        <!-- Important, it means that boot will be handle inside the campaign/tc -->
+        <Parameter skipBootOnPowerCycle ="False"/>
+        <Parameter runHookScripts = "False"/>
+        <Parameter powerCycleBetweenTC ="False"/>
+        <Parameter powerCycleOnFailure ="False"/>
+        <Parameter finalPowerOff ="False"/>
+        <Parameter stopCampaignOnCriticalFailure = "False"/>
+        <Parameter stopCampaignOnFirstFailure = "False"/>
+        <!-- LoggingLevel possible values: info | warning | debug | error -->
+        <Parameter loggingLevel = "info"/>
+        <!-- CampaignType format -> <TEAM>_<CAMPAIGNTYPE>
+        Possible values:
+        FT(Feature Team)-> SANITY | REGRESSION | STRESS, RELIABILTY | MTBF
+        ST(System Test)-> SANITY | REGRESSION | STRESS, RELIABILTY | MTBF
+        SI(System Integration)-> EAT | STAB | PACT | CAT0 | RELIABILITY | MTBF | CTS
+        Otherwise "Others" should be used -->
+        <Parameter CampaignType = "ST_STRESS"/>
+        <Parameter TCRReportViaRESTAPI="true"/>
+    </Parameters>
+
+    <Targets>
+        <!-- Target Values -->
+        <Target targetB2bPassRate ="100"/>
+    </Targets>
+
+    <TestCases>
+        <!-- SETUP -->
+        <TestCase Id="..\..\..\SI\BBot_EAT_PACT\TC\COMMON\SYSTEM\SI_SYSTEM_SETUP_EMBEDDED" TcMaxAttempt="2" TcAcceptanceCriteria="1"/>
+
+        <!-- DTMF -->
+        <TestCase Id="..\TC\CSV Calls\DTMF\ST_AUDIOCOMMS_CSV_DTMF_004-LAB_AUDIO_DTMF_CSV" TcMaxAttempt="2" TcAcceptanceCriteria="1"/>
+        <TestCase Id="..\TC\CSV Calls\DTMF\ST_AUDIOCOMMS_CSV_DTMF_005-LAB_AUDIO_DTMF_CSV" TcMaxAttempt="2" TcAcceptanceCriteria="1"/>
+        <TestCase Id="..\TC\CSV Calls\DTMF\ST_AUDIOCOMMS_CSV_DTMF_008-LAB_AUDIO_DTMF_CSV" TcMaxAttempt="2" TcAcceptanceCriteria="1"/>
+        <TestCase Id="..\TC\CSV Calls\DTMF\ST_AUDIOCOMMS_CSV_DTMF_009-LAB_AUDIO_DTMF_CSV" TcMaxAttempt="2" TcAcceptanceCriteria="1"/>
+
+        <!-- FIT -->
+        <TestCase Id="..\TC\FIT\ST_AUDIOCOMMS_FIT_FLIGHTMODE_002-LAB_AUDIO_FIT_FLIGHTMODE" TcMaxAttempt="2" TcAcceptanceCriteria="1"/>
+        <TestCase Id="..\TC\FIT\ST_AUDIOCOMMS_FIT_FLIGHTMODE_004-LAB_AUDIO_FIT_FLIGHTMODE" TcMaxAttempt="2" TcAcceptanceCriteria="1"/>
+    </TestCases>
+</Campaign>

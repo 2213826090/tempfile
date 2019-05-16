@@ -1,0 +1,140 @@
+#!/system/bin/sh
+# $Id: startmm,v 1.7 2005/10/20 16:34:40 tfcreela Exp $
+#
+# TODO Replace tee nonsense with duplicated file descriptor
+#      Simplify silly banner with functions
+#      Get Terminal title working
+
+export PATH=$PATH:.
+
+dir=`dirname $0`
+rm -r $dir/*.log $dir/*.tmp 2> /dev/null
+
+# -----------------------
+# Ensure vanilla grep for reliable output
+# -----------------------
+#unalias grep 
+
+# -----------------------
+# Take the 1st inline command as time by default
+# -----------------------
+if [ ! -z "$1" ]; then
+    runtime=$1
+else
+    echo "Usage: sh startmm <time in minutes>" | tee -a $dir/fail.log
+    exit 1
+fi
+
+echo "================================================================" | tee -a $dir/mm.tmp
+echo "Matrix Multiply Test 1.0"                     | tee -a $dir/mm.tmp
+echo "Intel DPG Compatibility Validation"               | tee -a $dir/mm.tmp
+echo "----------------------------------------------------------------" | tee -a $dir/mm.tmp
+
+# -----------------------
+# Get the number of available processors (OS-specific)
+# -----------------------
+case $OSTYPE in 
+( darwin* )
+    num_cpu=$(sysctl -a hw | grep availcpu); 
+    num_cpu=${num_cpu##*= } ;;
+( linux* )
+    num_cpu=`grep -c processor /proc/cpuinfo` ;;
+( * )
+    echo "Unidentified operating system: $OSTYPE." >& 2
+    if [ -z $2 ]; then
+        num_cpu=2
+    else
+        num_cpu=$2
+    fi;;
+esac
+    
+echo There are $num_cpu processors in the system:           | tee -a $dir/mm.tmp
+echo There are $num_cpu instances of the test will be run.      | tee -a $dir/mm.tmp
+echo "The test is set to run for $runtime minute(s)"            | tee -a $dir/mm.tmp
+echo "======================== start the test  =======================" | tee -a $dir/mm.tmp
+
+echo -n "Start test at:  "                      | tee -a $dir/mm.tmp
+date                                    | tee -a $dir/mm.tmp
+start=`date +%s`
+
+runtime_sec=$(($runtime*60))
+echo "true" > $dir/mm_logic
+
+# -----------------------
+# Launch the test for each processor (OS-specific)
+# FIXME: Under OS X the PATH output in each new Terminal resembles an error
+# -----------------------
+i=1
+subprocess_pids=()
+while [ $i -le $num_cpu ]
+do
+    echo "start mm test $i"                 | tee -a $dir/mm.tmp
+    case $OSTYPE in ( linux* )
+        #konsole -caption "Matrix Multiply test $i" -e runmm $i & 
+        $dir/runmm $i &
+        ;;
+    ( darwin* )
+        osascript TerminalRun.scpt "export PATH=$PATH:$PWD; runmm $i" 
+        osascript -e "tell application \"Terminal\" to set custom title of window $i to \"Matrix Multiply test $i\""
+        ;;
+    ( * )
+        #echo "Unsupported operating system: $OSTYPE." >& 2
+        $dir/runmm $i &
+        subprocess_pids[$i]=$!
+        ;;
+    esac
+    i=$(($i+1))
+done
+
+echo "----------------------------------------------------------------" | tee -a $dir/mm.tmp
+
+endtime=`date +%s`
+elapse=$(($endtime-$start))
+echo "PIDs of tests currently running: ${subprocess_pids[@]}" | tee -a $dir/mm.tmp
+
+while [ $elapse -lt $runtime_sec ] ; do
+    sleep 10
+    cat $dir/mm.tmp >> $dir/mm.log
+    echo "Current time: $(date)"                    | tee -a $dir/mm.log
+    endtime=`date +%s`
+    elapse=$(($endtime-$start))
+    echo "The test is set to run for $runtime_sec seconds ($runtime minutes)"
+    echo "Test has been running for $elapse seconds"        | tee -a $dir/mm.log
+
+    # Check that all the sub-tests are still running
+    for pid in "${subprocess_pids[@]}"
+    do
+        # PS in Android always prints a header row. There will be 2 lines if PID is still running.
+        if [ `ps $pid | wc -l` -lt 2 ]
+        then
+            echo "----------------------------------------------------------------" | tee -a $dir/mm.log
+            echo "Test was terminated before the time it should be stopped."    | tee -a $dir/mm.log
+            mv $dir/mm.log $dir/fail.log
+            exit 1
+            break   
+        fi
+    done
+done
+
+# Signal to the sub-tests to die
+echo "false" > $dir/mm_logic
+
+echo "----------------------------------------------------------------" | tee -a $dir/mm.log
+echo "Time has elapsed, stopping the test ..."  | tee -a $dir/mm.log
+wait
+
+# FIXME: With OS X ps, the old grep process is enumerated, 
+# causing a spurious error from kill (suppressed).
+
+echo "==================== end of the test ===========================" | tee -a $dir/mm.log
+
+elapse_h=$(($elapse/3600))
+elapse_m=$(($(($elapse/60))-$(($elapse_h*60))))
+elapse_s=$(($elapse-$(($elapse_m*60))-$(($elapse_h*3600))))
+
+echo -n "Test finished at: "                        | tee -a $dir/mm.log
+date                                    | tee -a $dir/mm.log
+echo "Total run time is $elapse_h hours $elapse_m minutes $elapse_s seconds." | tee -a $dir/mm.log
+
+cp $dir/mm.log $dir/pass.log
+rm -r $dir/*.tmp

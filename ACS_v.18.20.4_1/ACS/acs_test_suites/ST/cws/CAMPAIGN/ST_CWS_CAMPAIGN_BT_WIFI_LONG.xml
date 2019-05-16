@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Campaign>
+    <Parameters>
+        <Parameter isControlledPSUsed="False"/>
+        <Parameter isIoCardUsed="True"/>
+        <!-- Set skipBootOnPowerCycle to True to disable the acs boot procedure -->
+        <!-- Important, it means that boot will be handle inside the campaign/tc -->
+        <Parameter skipBootOnPowerCycle="False"/>
+        <Parameter runHookScripts="False"/>
+        <Parameter powerCycleBetweenTC="False"/>
+        <Parameter powerCycleOnFailure="True"/>
+        <Parameter finalDutState="NoChange"/>
+        <Parameter stopCampaignOnCriticalFailure="False"/>
+        <Parameter stopCampaignOnFirstFailure="False"/>
+        <!-- LoggingLevel possible values: info | warning | debug | error -->
+        <Parameter loggingLevel="info"/>
+        <!-- CampaignType format -> <TEAM>_<CAMPAIGNTYPE>
+            Possible values:
+            FT(Feature Team)-> SANITY | REGRESSION | STRESS, RELIABILTY | MTBF
+            ST(System Test)-> SANITY | REGRESSION | STRESS, RELIABILTY | MTBF
+            SI(System Integration)-> EAT | STAB | PACT | CAT0 | RELIABILITY | MTBF
+            Otherwise "Others" should be used -->
+        <Parameter CampaignType="ST_SANITY"/>
+        <Parameter TCRReportViaRESTAPI="true"/>
+    </Parameters>
+    <Targets>
+        <!-- Target Values -->
+        <Target targetB2bPassRate="90"/>
+    </Targets>
+    <TestCases>
+
+        <RANDOM>
+
+            <TestCase Id="../TC/BT/ST_CWS_BT_CONNECT_003"/>
+            <TestCase Id="../TC/BT/ST_CWS_BT_FRIENDLY_NAME_CHANGE_ITERATIVE_001"/>
+            <TestCase Id="../TC/BT/ST_CWS_BT_HID_CONNECT_002"/>
+            <TestCase Id="../TC/BT/ST_CWS_BT_HID_CONNECT_ITERATIVE_001"/>
+            <TestCase Id="../TC/BT/ST_CWS_BT_ONOFF_ITERATIVE_RI_001"/>
+            <TestCase Id="../TC/BT/ST_CWS_BT_OPP_CLIENT_ITERATIVE_004"/>
+            <TestCase Id="../TC/BT/ST_CWS_BT_OPP_SERVER_ITERATIVE_003"/>
+            <TestCase Id="../TC/BT/ST_CWS_BT_PAIR_CONNECT_LOLA_001"/>
+            <TestCase Id="../TC/BT/ST_CWS_BT_PAIR_SSPAIR_ITERATIVE_001"/>
+            <TestCase Id="../TC/BT/ST_CWS_BT_PAN_NAP_3G_CONNECT_001"/>
+            <TestCase Id="../TC/BT/ST_CWS_BT_PAN_NAP_CONNECT_001"/>
+            <TestCase Id="../TC/BT/ST_CWS_BT_PAN_NAP_CONNECT_002"/>
+            <TestCase Id="../TC/BT/ST_CWS_BT_PAN_NAP_CONNECT_003"/>
+            <TestCase Id="../TC/BT/ST_CWS_BT_PAN_NAP_CONNECT_ITERATIVE_001"/>
+            <TestCase Id="../TC/BT/ST_CWS_BT_PAN_NAP_CONNECT_ITERATIVE_002"/>
+            <TestCase Id="../TC/BT/ST_CWS_BT_PAN_NAP_CONNECT_ITERATIVE_003"/>
+            <TestCase Id="../TC/BT/ST_CWS_BT_PAN_NAP_CONNECT_ITERATIVE_004"/>
+            <TestCase Id="../TC/BT/ST_CWS_BT_PAN_NAP_LTE_CONNECT_001"/>
+            <TestCase Id="../TC/BT/ST_CWS_BT_PANU_CONNECT_ITERATIVE_001"/>
+            <TestCase Id="../TC/BT/ST_CWS_BT_PANU_CONNECT_ITERATIVE_004"/>
+            <TestCase Id="../TC/BT/ST_CWS_BT_SCAN_003-LOLLIPOP"/>
+            <TestCase Id="../TC/BT/ST_CWS_BT_SCAN_005"/>
+            <TestCase Id="../TC/BT/ST_CWS_BT_SCAN_ITERATIVE_KRI_001"/>
+            <TestCase Id="../TC/BT/ST_CWS_BT_SCAN_ITERATIVE_002"/>
+            <TestCase Id="../TC/WIFI/STRESS-200/ST_CWS_WLAN_AIRPLANE_005-LIVE_CWS_APM_CYCLE_EFFECT-200"/>
+            <TestCase Id="../TC/WIFI/STRESS-200/ST_CWS_WLAN_AIRPLANE_010-LIVE_CWS_APM_CYCLE_EFFECT-200"/>
+            <TestCase Id="../TC/WIFI/STRESS-200/ST_CWS_WLAN_AIRPLANE_013-LIVE_CWS_APM_CYCLE_EFFECT-200"/>
+            <TestCase Id="../TC/WIFI/ST_CWS_WLAN_BROWSE_003"/>
+            <TestCase Id="../TC/WIFI/ST_CWS_WLAN_BROWSE_005"/>
+            <TestCase Id="../TC/WIFI/STRESS-200/ST_CWS_WLAN_BROWSE_013-LAB_WIFI_LIVE_CELLULAR_SWAP-200"/>
+            <TestCase Id="../TC/WIFI/STRESS-IPERF/TCP/ST_CWS_WLAN_CHANNEL_40M_004"/>
+            <TestCase Id="../TC/WIFI/STRESS-200/ST_CWS_WLAN_CHANNEL_40M_011-200"/>
+            <TestCase Id="../TC/WIFI/STRESS-200/ST_CWS_WLAN_CHANNEL_40M_012-200"/>
+            <TestCase Id="../TC/WIFI/STRESS-200/ST_CWS_WLAN_FREQ_BAND_007-LAB_WIFI_DUAL_AP_BAND_SEL_SCAN-200"/>
+            <TestCase Id="../TC/WIFI/STRESS-200/ST_CWS_WLAN_FTP_015-200"/>
+            <TestCase Id="../TC/WIFI/STRESS-IPERF/TCP/ST_CWS_WLAN_FTP_026-LAB_WIFI_IPERF"/>
+            <TestCase Id="../TC/WIFI/STRESS-IPERF/TCP/ST_CWS_WLAN_FTP_027-LAB_WIFI_IPERF"/>
+            <TestCase Id="../TC/WIFI/ST_CWS_WLAN_HIDDENSSID_004"/>
+            <TestCase Id="../TC/WIFI/ST_CWS_WLAN_LTE_TETHERING_001"/>
+            <TestCase Id="../TC/WIFI/ST_CWS_WLAN_LTE_TETHERING_004"/>
+            <TestCase Id="../TC/WIFI/STRESS-200/ST_CWS_WLAN_PROXY_008-200"/>
+            <TestCase Id="../TC/WIFI/STRESS-200/ST_CWS_WLAN_ROAMING_003-LAB_WIFI_DUAL_AP_SWITCH_AP_LOSS-200"/>
+            <TestCase Id="../TC/WIFI/ST_CWS_WLAN_ROAMING_006"/>
+            <TestCase Id="../TC/WIFI/STRESS-200/ST_CWS_WLAN_ROAMING_007-200"/>
+            <TestCase Id="../TC/WIFI/ST_CWS_WLAN_SLEEP_003-LAB_WIFI_WAKES_UP"/>
+            <TestCase Id="../TC/WIFI/STRESS-20/ST_CWS_WLAN_STA_11AC_010-20"/>
+            <TestCase Id="../TC/WIFI/STRESS-200/ST_CWS_WLAN_STATICIP_003-LAB_WIFI_CONNECT_FORGET-200"/>
+            <TestCase Id="../TC/WIFI/ST_CWS_WLAN_TETHERING_001"/>
+            <TestCase Id="../TC/WIFI/ST_CWS_WLAN_TETHERING_002"/>
+            <TestCase Id="../TC/WIFI/ST_CWS_WLAN_TETHERING_006"/>
+            <TestCase Id="../TC/WIFI/ST_CWS_WLAN_TETHERING_007"/>
+            <TestCase Id="../TC/WIFI/ST_CWS_WLAN_TETHERING_008"/>
+            <TestCase Id="../TC/WIFI/ST_CWS_WLAN_TETHERING_012"/>
+            <TestCase Id="../TC/WIFI/ST_CWS_WLAN_TETHERING_013"/>
+            <TestCase Id="../TC/WIFI/ST_CWS_WLAN_TETHERING_014"/>
+            <TestCase Id="../TC/WIFI/STRESS-200/ST_CWS_WLAN_WFD_2.4G_003"/>
+            <TestCase Id="../TC/WIFI/STRESS-200/ST_CWS_WLAN_WFD_2.4G_004"/>
+            <TestCase Id="../TC/WIFI/STRESS-200/ST_CWS_WLAN_WFD_2.4G_007"/>
+            <TestCase Id="../TC/WIFI/STRESS-200/ST_CWS_WLAN_WFD_2.4G_008"/>
+            <TestCase Id="../TC/WIFI/STRESS-200/ST_CWS_WLAN_WFD_5G_004"/>
+            <TestCase Id="../TC/WIFI/STRESS-200/ST_CWS_WLAN_WFD_5G_008"/>
+            <TestCase Id="../TC/WIFI/ST_CWS_WLAN_TETHERING_015"/>
+            <TestCase Id="../TC/WIFI/STRESS-200/ST_CWS_WLAN_UI_003-200"/>
+            <TestCase Id="../TC/WIFI/STRESS-200/ST_CWS_WLAN_UI_013-200"/>
+            <TestCase Id="../TC/WIFI/STRESS-200/ST_CWS_WLAN_WPA2_AES_015-LAB_WIFI_CONNECT_AFTER_LOSS_OF_COVERAGE-200"/>
+            <TestCase Id="../TC/WIFI/STRESS-200/ST_CWS_WLAN_WPA2_TKIP_AES_015-LAB_WIFI_CONNECT_AFTER_LOSS_OF_COVERAGE-200"/>
+
+        </RANDOM>
+
+    </TestCases>
+</Campaign>

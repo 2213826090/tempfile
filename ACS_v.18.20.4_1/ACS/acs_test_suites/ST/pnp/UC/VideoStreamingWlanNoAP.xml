@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="13.41">
+    <TestSteps>
+        <Include Src="ST/pnp/TSS/common.xml" />
+        <Include Src="ST/pnp/TSS/active.xml" />
+        <Include Src="ST/pnp/TSS/browsing.xml" />
+        <Include Src="ST/pnp/TSS/wifi.xml" />
+        <Include Src="ST/cws/TSS/Video/ST_CWS_VIDEO.xml"/>
+        <Initialize>
+            <TestStep SetId="InitializePnPResources" />
+        </Initialize>
+        <Setup>
+            <TestStep Id="SET_FLIGHT_MODE" DEVICE="PHONE1" FLIGHT_MODE="disable"/>
+            <!--All Comms OFF-->
+            <TestStep Id="SET_FLIGHT_MODE" DEVICE="PHONE1" FLIGHT_MODE="enable"/>
+            <TestStep Id="DEACTIVATE_DEVICE_PDP" DEVICE="PHONE1" INTERFACE="None" CHECK="True"/><!--Disable DATA on the DUT and check PdP context is inactive-->
+            <TestStep SetId="ConfigureWifi" />
+            <TestStep Id="CONFIGURE_SYSTEM_SLEEP_MODE" DEVICE="PHONE1" MODE="default"/>
+        </Setup>
+        <RunTest>
+            <TestStep SetId="StartPhPHttpVideoStreamingOnFullScreen" />
+            <TestStep SetId="StartPowerMeasurement" />
+            <TestStep Id="SUSPEND" DURATION_IN_SEC="FROM_TC:TEST_DURATION" REFRESH_STDOUT_IN_SEC="60" />
+            <TestStep SetId="StopPowerMeasurement" />
+            <TestStep Id="STOP_BROWSING" DEVICE="PHONE1" BROWSER_TYPE="chrome"/>
+        </RunTest>
+        <TearDown>
+            <TestStep Id="SET_SCREEN_PROPERTY" DEVICE="PHONE1" PROPERTY="state" VALUE="off"/>
+            <TestStep SetId="TearDown" />
+            <TestStep Id="SET_ORIENTATION" DEVICE="PHONE1" ORIENTATION="auto" API="embedded_api" />
+            <TestStep Id="STOP_BROWSING" DEVICE="PHONE1" BROWSER_TYPE="chrome"/>
+            <TestStep Id="CLEAN_APP_CACHE" DEVICE="PHONE1" APP_NAME="FROM_TC:APP_PACKAGE_NAME" />
+        </TearDown>
+    </TestSteps>
+</TestCase>

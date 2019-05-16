@@ -1,0 +1,41 @@
+<?xml version="1.0" ?>
+<TestCase>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Discription> 
+&lt;div align=&quot;left&quot; style=&quot;min-height:9pt&quot;&gt;
+&lt;font face=&quot;Arial&quot;&gt;&lt;span style=&quot;font-size:8pt&quot;&gt;&lt;br /&gt;As a user I need virtual displays so that applications can use external displays.&lt;/span&gt;&lt;/font&gt;
+&lt;/div&gt; 
+&lt;div align=&quot;left&quot; style=&quot;min-height:9pt&quot;&gt;
+&lt;font face=&quot;Arial&quot;&gt;&lt;span style=&quot;font-size:8pt&quot;&gt;App developer calls DisplayManager to create Virtual display. This can be used in presentation mode or native display mode. &lt;/span&gt;&lt;/font&gt;
+&lt;/div&gt; 
+&lt;div align=&quot;left&quot; style=&quot;min-height:9pt&quot;&gt;
+&lt;font face=&quot;Arial&quot;&gt;&lt;span style=&quot;font-size:8pt&quot;&gt;See CreateVirtualDisplay method:&lt;/span&gt;&lt;/font&gt;
+&lt;/div&gt; 
+&lt;div align=&quot;left&quot; style=&quot;min-height:9pt&quot;&gt;
+&lt;font face=&quot;Arial&quot;&gt;&lt;span style=&quot;font-size:8pt&quot;&gt;http://developer.android.com/reference/android/hardware/display/DisplayManager.html&lt;/span&gt;&lt;/font&gt;
+&lt;/div&gt; 
+&lt;div align=&quot;left&quot; style=&quot;min-height:9pt&quot;&gt;
+&lt;font face=&quot;Arial&quot;&gt;&lt;span style=&quot;font-size:8pt&quot;&gt;The Intel Android Platform shall support virtual display.&lt;/span&gt;&lt;/font&gt;
+&lt;/div&gt;  
+</Discription>
+    <Domain>Graphics_Display</Domain>
+    <Phase>CORE</Phase>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <Type>FUNCTIONAL</Type>
+    <UseCase>PY_UNIT</UseCase>
+    <b2bIteration>1</b2bIteration>
+    <Parameters>
+        <Parameter>
+            <Name>HpalmName</Name>
+            <Value>virtual_display.VirtualDisplay.test_Virtual_DisplayTest</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TEST_DATA_ROOT</Name>
+            <Value>testplan/Graphics_Display</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TEST_CASE</Name>
+            <Value>tests.Graphics_Display.VirtualDisplay.virtual_display.VirtualDisplay.test_Virtual_DisplayTest</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

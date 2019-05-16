@@ -1,0 +1,89 @@
+#!/system/bin/sh
+
+# Wishlist:
+#  - Have -h and --help arguments print help
+#  - Make argument -m or --runtime_minutes provide the time to run
+#  - Make everything at the end be the key values to choose from
+#  keyevents [-m minutes][--runtime_minutes=minutes][-h][--help] Key_Value0 Key_Value1
+
+KEY_CHOICES=(24 220 221)
+
+LOG_FILE=keyevents_output.log
+PASS_LOG_FILE=pass.log
+FAIL_LOG_FILE=fail.log
+CMD_ERROR_LOG=keyevents_cmd_err.log
+
+# Check our arguments
+# Argument 1 is the number of runtime minutes
+if [ "$#" -ge 1 ]
+then
+    ARG_RUN_MINUTES=$1
+else
+    # Default will be 5 minutes
+    ARG_RUN_MINUTES=5
+fi
+# Argument 2 is the number of seconds to sleep between iterations
+if [ "$#" -ge 2 ]
+then
+    ARG_SLEEP_TIME=$2
+else
+    # Default will be 5 seconds
+    ARG_SLEEP_TIME=5
+fi
+
+echo "Running the KeyEvents Test. Using these parameters:" | tee -a $LOG_FILE
+echo "Run time: $ARG_RUN_MINUTES minutes" | tee -a $LOG_FILE
+echo "Sleep time between iterations: $ARG_SLEEP_TIME seconds" | tee -a $LOG_FILE
+echo "Input keys to choose from: ${KEY_CHOICES[@]}" | tee -a $LOG_FILE
+echo "" | tee -a $LOG_FILE
+
+# Clear out our log files
+if [ -f $LOG_FILE ]; then rm $LOG_FILE; fi;
+if [ -f $PASS_LOG_FILE ]; then rm $PASS_LOG_FILE; fi;
+if [ -f $FAIL_LOG_FILE ]; then rm $FAIL_LOG_FILE; fi;
+if [ -f $CMD_ERROR_LOG ]; then rm $CMD_ERROR_LOG; fi;
+
+start_time=`date +%s`
+end_time=$((start_time+($ARG_RUN_MINUTES*60)))
+echo "Start Time (Unix Time): $start_time, End Time: $end_time"
+echo "[ 0000000 ] Start Time (Unix Time): $start_time, End Time: $end_time" >> $LOG_FILE
+echo -n "Keys Pressed:"
+
+keys_printed=0
+while [ `date +%s` -lt $end_time ]
+do
+    if [ "$keys_printed" -ge 20 ]
+    then
+        echo "" | tee -a $LOG_FILE
+        keys_printed=0
+    fi
+    random_int=$RANDOM%${#KEY_CHOICES[@]}
+    key_val=${KEY_CHOICES[random_int]}
+    echo -n " $key_val"
+    time_offset=$((`date +%s`-$start_time))
+    # In our log file, give more info for debug purposes
+    echo "[ +`printf "%06d" $time_offset` ] Executing 'input keyevent $key_val'" >> $LOG_FILE
+    # Place our stderror output into a file to check it
+    input keyevent $key_val 2>$CMD_ERROR_LOG 1>>$LOG_FILE
+    #if we chose to press volume up, immediately press volume down as well so we don't annoy our neighbors
+    if [ $key_val -eq 24 ]
+    then
+        input keyevent 25 2>$CMD_ERROR_LOG 1>>$LOG_FILE
+    fi
+    # Check our return code
+    if [ $? -ne 0 ] || [ -s $CMD_ERROR_LOG ]
+    then
+        echo "\nIssuing the last 'input keyevent' command resulted in a return code of $? and the following error output. Exiting and failing test." | tee -a $LOG_FILE
+        cat $CMD_ERROR_LOG | tee -a $LOG_FILE
+        echo "Finished. Check $FAIL_LOG_FILE for details." | tee -a $LOG_FILE
+        mv $LOG_FILE $FAIL_LOG_FILE
+        if [ -f $CMD_ERROR_LOG ]; then rm $CMD_ERROR_LOG; fi;
+        exit 1
+    fi
+    keys_printed=$(($keys_printed+1))
+    sleep $ARG_SLEEP_TIME
+done
+echo "" | tee -a $LOG_FILE
+echo "Finished. Check $PASS_LOG_FILE for details." | tee -a $LOG_FILE
+mv $LOG_FILE $PASS_LOG_FILE
+if [ -f $CMD_ERROR_LOG ]; then rm $CMD_ERROR_LOG; fi;

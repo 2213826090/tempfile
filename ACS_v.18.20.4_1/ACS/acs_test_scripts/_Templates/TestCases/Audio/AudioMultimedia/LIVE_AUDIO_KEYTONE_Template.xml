@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase>
+    <UseCase>LIVE_AUDIO_KEYTONE</UseCase>
+    <Description>Press every number in call application and check DTMF code</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>False</b2bContinuousMode>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters>
+        <Parameter>
+            <!-- Path to the image library -->
+            <Name>LIBRARY_IMAGE_PATH</Name>
+            <Value>C:/Users/</Value>
+        </Parameter>
+        <!-- Image in library -->
+        <Parameter>
+            <!-- Name of image less extension (.png) , please respect dictionary syntax
+            1:image_1,2:image_2,3:image_3, ...
+            please don't insert space or specific character around every key -->
+            <Name>NUMBER_DICTIONARY</Name>
+            <Value>1:1,2:2,3:3,4:4,5:5,6:6,7:7,8:8,9:9,*:*,0:0,#:#</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Name of keypad icon image less extension (.png) -->
+            <Name>KEYPAD</Name>
+            <Value>open_keypad</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Set the keytone sequence, please let one space " " between each number like this "1 2 3 4 5..." and
+            don't set two consecutive number.
+            Possible value:
+                    - 1 [697 HZ, 1209 Hz]
+                    - 2 [697 Hz, 1336 Hz]
+                    - 3 [697 Hz, 1477 Hz]
+                    - 4 [770 Hz, 1209 Hz]
+                    - 5 [770 Hz, 1336 Hz]
+                    - 6 [770 Hz, 1477 Hz]
+                    - 7 [852 Hz, 1209 Hz]
+                    - 8 [852 Hz, 1336 Hz]
+                    - 9 [852 Hz, 1477 Hz]
+                    - * [941 Hz, 1209 Hz]
+                    - 0 [941 Hz, 1336 Hz]
+                    - # [941 Hz, 1477 Hz] -->
+            <Name>SEQUENCE</Name>
+            <Value>1 2 3 4 5 6 7 8 9 * 0 #</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

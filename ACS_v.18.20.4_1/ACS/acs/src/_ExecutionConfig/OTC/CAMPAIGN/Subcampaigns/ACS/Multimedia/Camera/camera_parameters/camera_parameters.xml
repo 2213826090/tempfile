@@ -1,0 +1,28 @@
+<?xml version="1.0" ?>
+<Campaign>
+      <Parameters>
+            <Parameter isControlledPSUsed="False"/>
+            <Parameter isIoCardUsed="False"/>
+            <Parameter skipBootOnPowerCycle="False"/>
+            <Parameter bootRetryNumber="0"/>
+            <Parameter runHookScripts="False"/>
+            <Parameter powerCycleBetweenTC="False"/>
+            <Parameter powerCycleOnFailure="False"/>
+            <Parameter finalDutState="NoChange"/>
+            <Parameter stopCampaignOnCriticalFailure="False"/>
+            <Parameter stopCampaignOnFirstFailure="False"/>
+            <Parameter loggingLevel="debug"/>
+            <Parameter CampaignType="Other"/>
+      </Parameters>
+      <TestCases>
+            <TestCase Id="../../../../../../TC/TR/ACS/Multimedia/Camera/camera_parameters/RAW_CAM_FACE_DETECTION"/>
+            <TestCase Id="../../../../../../TC/TR/ACS/Multimedia/Camera/camera_parameters/RAW_CAM_SCENE_MODE"/>
+            <TestCase Id="../../../../../../TC/TR/ACS/Multimedia/Camera/camera_parameters/RAW_CAM_COLOR_EFFECT"/>
+            <TestCase Id="../../../../../../TC/TR/ACS/Multimedia/Camera/camera_parameters/RAW_CAM_FLASH"/>
+            <TestCase Id="../../../../../../TC/TR/ACS/Multimedia/Camera/camera_parameters/RAW_CAM_EXPOSURE_MODE"/>
+            <TestCase Id="../../../../../../TC/TR/ACS/Multimedia/Camera/camera_parameters/RAW_CAM_FRONT_BURST"/>
+            <TestCase Id="../../../../../../TC/TR/ACS/Multimedia/Camera/camera_parameters/RAW_CAM_PIC_DETAILS"/>
+            <TestCase Id="../../../../../../TC/TR/ACS/Multimedia/Camera/camera_parameters/RAW_CAM_TAKE_PIC"/>
+            <TestCase Id="../../../../../../TC/TR/ACS/Multimedia/Camera/camera_parameters/RAW_CAM_BURST_MODE"/>
+      </TestCases>
+</Campaign>

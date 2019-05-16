@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="13.45">
+    <UseCase>LIVE_NFC_OTA_APDU_EXCHANGE</UseCase>
+    <Description>Check APDU can be exchanged with embedded/UICC secure element</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>False</b2bContinuousMode>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters>
+        <Parameter>
+            <!-- If 'YES', the robot move will take into account the antenna position on the DUT as an offset -->
+            <Name>USE_ANTENNA_OFFSET</Name>
+            <Value></Value>
+        </Parameter>
+        <Parameter>
+            <!-- Define dut's power state : UNLOCKED, SCREEN_OFF, PHONE_OFF -->
+            <Name>DUT_STATE</Name>
+            <Value>UNLOCKED</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Define secure element to communicate with : EMBEDDED or UICC -->
+            <Name>SECURE_ELEMENT</Name>
+            <Value>EMBEDDED</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Define protocol type. Expected values are : A or B -->
+            <Name>PROTOCOL_TYPE</Name>
+            <Value>A</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Define APDU case. Expected values are : 1, 2, 3, 4 or ALL -->
+            <Name>APDU_CASE</Name>
+            <Value>ALL</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Define bitrate. Expected values are : 106, 212, 424 -->
+            <Name>BITRATE</Name>
+            <Value>106</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Define APDU data length. Expected values are : 1 to 256 -->
+            <Name>DATA_LENGTH</Name>
+            <Value>256</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Define the number of commands to send -->
+            <Name>LOOP</Name>
+            <Value>1</Value>
+        </Parameter>
+        <Parameter>
+            <!-- [OPTIONAL] If True, enable the NFC Beam prior to the test. If False, disable the NFC Beam prior to the test -->
+            <Name>NFC_BEAM_INITIAL_STATE</Name>
+            <Value></Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

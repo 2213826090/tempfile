@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="13.37">
+    <UseCase>LAB_CWS_ETHERNET_COMMUTATION_TOOL</UseCase>
+    <Description>Tool UseCase that allows to switch from Bench ethernet network to Corporate network. This usecase is designed to be called at the beginning and at the end of a campaign</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>False</b2bContinuousMode>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters>
+        <Parameter>
+            <!-- What network should be connected to the ACS host computer ? Possible values: BENCH - CORPORATE -->
+            <Name>ETHERNET_NETWORK_SELECTION</Name>
+            <Value>BENCH</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

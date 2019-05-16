@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase>
+    <UseCase>EXEC</UseCase>
+    <Description>Catch kernel panic test</Description>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters>
+        <Parameter>
+            <Name>RUN_TIMEOUT</Name>
+            <Value>300</Value>
+        </Parameter>
+        <Parameter>
+            <Name>RUN_FROM_TCDIRECTORY</Name>
+            <Value>True</Value>
+        </Parameter>
+        <Parameter>
+            <Name>RUN_CMD</Name>
+            <Value>bash scripts/Manageability_Android_Crash_reporting_encrypted_device.sh</Value>
+        </Parameter>
+        <Parameter>
+            <Name>RUN_EXPECT_RESULT</Name>
+            <Value>PASS</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

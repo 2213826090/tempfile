@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<Campaign>
+      <Parameters>
+            <Parameter isControlledPSUsed="False"/>
+            <Parameter isIoCardUsed="False"/>
+            <Parameter skipBootOnPowerCycle="False"/>
+            <Parameter bootRetryNumber="0"/>
+            <Parameter runHookScripts="False"/>
+            <Parameter powerCycleBetweenTC="False"/>
+            <Parameter powerCycleOnFailure="False"/>
+            <Parameter finalDutState="NoChange"/>
+            <Parameter stopCampaignOnCriticalFailure="False"/>
+            <Parameter stopCampaignOnFirstFailure="False"/>
+            <Parameter loggingLevel="debug"/>
+            <Parameter CampaignType="Other"/>
+      </Parameters>
+      <TestCases>
+            <TestCase Id="TC/TESTLIB/Interface/app_list"/>
+            <TestCase Id="TC/TESTLIB/Interface/app_pagination"/>
+            <TestCase Id="TC/TESTLIB/Interface/installed_apps"/>
+            <TestCase Id="TC/TESTLIB/Interface/no_duplicate_apps"/>
+            <TestCase Id="TC/TESTLIB/Interface/start_app"/>
+            <TestCase Id="TC/TESTLIB/Interface/widget_section"/>
+      </TestCases>
+</Campaign>

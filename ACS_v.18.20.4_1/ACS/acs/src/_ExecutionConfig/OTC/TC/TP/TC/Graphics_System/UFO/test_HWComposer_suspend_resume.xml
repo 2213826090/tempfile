@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<TestCase>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Discription>
+The Intel Android ULT device must support HW Composer 1.5
+</Discription>
+    <Domain>Graphics_System</Domain>
+    <Phase>CORE</Phase>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <Type>FUNCTIONAL</Type>
+    <UseCase>PY_UNIT</UseCase>
+    <b2bIteration>1</b2bIteration>
+    <Parameters>
+        <Parameter>
+            <Name>HpalmName</Name>
+            <Value>HWComposer.HWComposer.test_HWComposer_suspend_resume</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TEST_DATA_ROOT</Name>
+            <Value>testplan/Graphics_System</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TEST_CASE</Name>
+            <Value>tests.Graphics_System.UFO.HWComposer.HWComposer.test_HWComposer_suspend_resume</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

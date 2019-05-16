@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestSteps xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../acs/src/_Catalogs/TestStep/teststep.xsd">
+    <TestStep Id="LOGIC_ANALYZER_CONNECT" Domain="EQUIPMENT" SubDomain="LOGIC_ANALYZER" Feature="COMMON" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Equipment.LogicAnalyzer.LogicAnalyzerConnect.LogicAnalyzerConnect</ClassName>
+        <Description>Initializes a connection to a logic analyzer.</Description>
+        <Environment name="ANY">
+        </Environment>
+        <Parameters>
+            <Parameter name="EQT" type="STRING" isOptional="false">
+                <Description>The equipment name shall refer to an existing equipment the Bench config.</Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="LOGIC_ANALYZER_SET_CAPTURE_RATE" Domain="EQUIPMENT" SubDomain="LOGIC_ANALYZER" Feature="SETTINGS" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Equipment.LogicAnalyzer.LogicAnalyzerSetCaptureRate.LogicAnalyzerSetCaptureRate</ClassName>
+        <Description>Sets the capture rate in the logic analyzer.</Description>
+        <Environment name="ANY">
+        </Environment>
+        <Parameters>
+            <Parameter name="EQT" type="STRING" isOptional="false">
+                <Description>The equipment name shall refer to an existing equipment the Bench config.</Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+            <Parameter name="CAPTURE_RATE" type="STRING" isOptional="false">
+                <Description>The capture rate you want to set.</Description>
+                <PossibleValues />
+                <DefaultValue>10000000</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="LOGIC_ANALYZER_SET_NR_SAMPLES" Domain="EQUIPMENT" SubDomain="LOGIC_ANALYZER" Feature="SETTINGS" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Equipment.LogicAnalyzer.LogicAnalyzerSetNrSamples.LogicAnalyzerSetNrSamples</ClassName>
+        <Description>Sets the number of samples you want to capture.</Description>
+        <Environment name="ANY">
+        </Environment>
+        <Parameters>
+            <Parameter name="EQT" type="STRING" isOptional="false">
+                <Description>The equipment name shall refer to an existing equipment the Bench config.</Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+            <Parameter name="NR_SAMPLES" type="STRING" isOptional="false">
+                <Description>The number of sample you want to capture.</Description>
+                <PossibleValues />
+                <DefaultValue>10000000000</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="LOGIC_ANALYZER_SET_CAPTURE_CHANNELS" Domain="EQUIPMENT" SubDomain="LOGIC_ANALYZER" Feature="SETTINGS" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Equipment.LogicAnalyzer.LogicAnalyzerSetCaptureChannels.LogicAnalyzerSetCaptureChannels</ClassName>
+        <Description>Sets the channels you want to capture the data from.</Description>
+        <Environment name="ANY">
+        </Environment>
+        <Parameters>
+            <Parameter name="EQT" type="STRING" isOptional="false">
+                <Description>The equipment name shall refer to an existing equipment the Bench config.</Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+            <Parameter name="CAPTURE_CHANNELS" type="STRING" isOptional="false">
+                <Description>The channels you want to capture the data from.</Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="LOGIC_ANALYZER_START_CAPTURE" Domain="EQUIPMENT" SubDomain="LOGIC_ANALYZER" Feature="CAPTURE" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Equipment.LogicAnalyzer.LogicAnalyzerStartCapture.LogicAnalyzerStartCapture</ClassName>
+        <Description>Start a capture on a logic analyzer.</Description>
+        <Environment name="ANY">
+        </Environment>
+        <Parameters>
+            <Parameter name="EQT" type="STRING" isOptional="false">
+                <Description>The equipment name shall refer to an existing equipment the Bench config.</Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+            <Parameter name="CAPTURE_DESTINATION" type="STRING" isOptional="false">
+                <Description>The output file where the captured data will be written.</Description>
+                <PossibleValues>MEMORY;FILE</PossibleValues>
+                <DefaultValue>FILE</DefaultValue>
+            </Parameter>
+            <Parameter name="RAW_CAPTURE_FILE" type="STRING" isOptional="true">
+                <Description>if CAPTURE_DESTINATION is MEMORY, The output file where the captured data will be written.</Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="LOGIC_ANALYZER_EXPORT_RAW_CAPTURE_CSV" Domain="EQUIPMENT" SubDomain="LOGIC_ANALYZER" Feature="CAPTURE" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Equipment.LogicAnalyzer.LogicAnalyzerExportCaptureRawCsv.LogicAnalyzerExportCaptureRawCsv</ClassName>
+        <Description>Exports the previously captured file in a RAW, unformatted CSV file.</Description>
+        <Environment name="ANY">
+        </Environment>
+        <Parameters>
+            <Parameter name="EQT" type="STRING" isOptional="false">
+                <Description>The equipment name shall refer to an existing equipment the Bench config.</Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+            <Parameter name="CSV_CAPTURE_FILE" type="STRING" isOptional="true">
+                <Description>The output file where the captured data (in CSV format) will be written.</Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="LOGIC_ANALYZER_EXPORT_FORMATTED_CAPTURE" Domain="EQUIPMENT" SubDomain="LOGIC_ANALYZER" Feature="CAPTURE" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Equipment.LogicAnalyzer.LogicAnalyzerExportFormattedCapture.LogicAnalyzerExportFormattedCapture</ClassName>
+        <Description>Exports the previously captured file parsed with a formatter (for further analysis).</Description>
+        <Environment name="ANY">
+        </Environment>
+        <Parameters>
+            <Parameter name="EQT" type="STRING" isOptional="false">
+                <Description>The equipment name shall refer to an existing equipment the Bench config.</Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+            <Parameter name="FORMATTED_FILE_OUTPUT" type="STRING" isOptional="true">
+                <Description>The output file where the formatted data will be written.</Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+            <Parameter name="LOGIC_ANALYZER_FORMATTER" type="STRING" isOptional="true">
+                <Description>Logic analyzer formatter to parse the traces and put them in another format.</Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="LOGIC_ANALYZER_STOP_CAPTURE" Domain="EQUIPMENT" SubDomain="LOGIC_ANALYZER" Feature="CAPTURE" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Equipment.LogicAnalyzer.LogicAnalyzerStopCapture.LogicAnalyzerStopCapture</ClassName>
+        <Description>Stops a capture on a logic analyzer.</Description>
+        <Environment name="ANY">
+        </Environment>
+        <Parameters>
+            <Parameter name="EQT" type="STRING" isOptional="false">
+                <Description>The equipment name shall refer to an existing equipment the Bench config.</Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+        </Parameters>
+    </TestStep>
+</TestSteps>

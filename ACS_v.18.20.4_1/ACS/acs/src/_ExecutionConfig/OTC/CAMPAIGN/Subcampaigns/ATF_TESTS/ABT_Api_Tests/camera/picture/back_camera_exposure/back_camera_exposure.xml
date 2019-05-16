@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<Campaign>
+      <Parameters>
+            <Parameter isControlledPSUsed="False"/>
+            <Parameter isIoCardUsed="False"/>
+            <Parameter skipBootOnPowerCycle="False"/>
+            <Parameter bootRetryNumber="0"/>
+            <Parameter runHookScripts="False"/>
+            <Parameter powerCycleBetweenTC="False"/>
+            <Parameter powerCycleOnFailure="False"/>
+            <Parameter finalDutState="NoChange"/>
+            <Parameter stopCampaignOnCriticalFailure="False"/>
+            <Parameter stopCampaignOnFirstFailure="False"/>
+            <Parameter loggingLevel="debug"/>
+            <Parameter CampaignType="Other"/>
+      </Parameters>
+      <TestCases>
+            <TestCase Id="../../../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/camera/picture/back_camera_exposure/BACK_CAMERA_Exposure_Compensation_EV_Compensation_0.3EV_step"/>
+            <TestCase Id="../../../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/camera/picture/back_camera_exposure/BACK_CAMERA_Exposure_Compensation_EV_Compensation_0EV"/>
+            <TestCase Id="../../../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/camera/picture/back_camera_exposure/BACK_CAMERA_Exposure_Compensation_EV_Compensation_1EV"/>
+            <TestCase Id="../../../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/camera/picture/back_camera_exposure/BACK_CAMERA_Exposure_Compensation_EV_Compensation_2EV"/>
+            <!--<TestCase Id="../../../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/camera/picture/back_camera_exposure/Exposure_Compensation_EV_Compensation_3EV"/>-->
+            <TestCase Id="../../../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/camera/picture/back_camera_exposure/BACK_CAMERA_Exposure_Compensation_EV_Compensation_-1EV"/>
+            <TestCase Id="../../../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/camera/picture/back_camera_exposure/BACK_CAMERA_Exposure_Compensation_EV_Compensation_-2EV"/>
+            <!--<TestCase Id="../../../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/camera/picture/back_camera_exposure/Exposure_Compensation_EV_Compensation_-3EV"/>-->
+      </TestCases>
+</Campaign>

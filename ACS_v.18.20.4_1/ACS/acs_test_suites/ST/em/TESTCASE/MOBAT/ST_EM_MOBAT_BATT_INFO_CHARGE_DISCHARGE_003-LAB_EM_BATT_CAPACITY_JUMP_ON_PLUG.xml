@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="13.37">
+    <UseCase>LAB_EM_BATT_CAPACITY_JUMP_ON_PLUG</UseCase>
+    <Description>check that there is no capacity jump when a charger is plugged</Description>
+    <b2bIteration>100</b2bIteration>
+    <b2bContinuousMode>False</b2bContinuousMode>
+    <Parameters>
+        <Parameter>
+            <Name>TESTED_CAPACITY</Name>
+            <!-- Value of the capicity where the test is done -->
+            <Value>10</Value>
+        </Parameter>
+        <Parameter>
+            <Name>CHARGER</Name>
+            <!-- charger type -->
+            <Value>DCP</Value>
+        </Parameter>
+        <Parameter>
+            <Name>PLUG_DURATION</Name>
+            <!-- Duration in second of the charger plug action -->
+            <Value>60</Value>
+        </Parameter>
+        <Parameter>
+            <Name>JUMP_ALLOWED</Name>
+            <!-- Max capacity jump in percent -->
+            <Value>2</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Features to enable for the test -->
+            <!-- Features avaible are : -->
+            <!-- VIDEO, AUDIO, WIFI, BLUETOOTH, TORCHLIGHT, VIBRA, SCREEN ON -->
+            <Name>LOAD</Name>
+            <Value>FROM_BENCHCONFIG</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

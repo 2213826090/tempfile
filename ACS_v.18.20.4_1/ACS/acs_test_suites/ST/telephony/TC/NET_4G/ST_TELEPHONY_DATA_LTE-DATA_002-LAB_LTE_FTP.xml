@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase>
+    <UseCase>LAB_LTE_FTP</UseCase>
+    <Description>FTP over LTE simulated network</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>False</b2bContinuousMode>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters>
+        <Parameter>
+            <!-- Physical Cell ID : 0 to 503 -->
+            <Name>PHYSICAL_CELL_ID</Name>
+            <Value>0</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Cell Setup : "A" for A-cell or "B" for B-cell -->
+            <Name>CELL_ID</Name>
+            <Value>A</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Cell power for RFO1 -->
+            <Name>CELL_POWER_RFO1</Name>
+            <Value>-40</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Cell power for RFO2 -->
+            <Name>CELL_POWER_RFO2</Name>
+            <Value>-40</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Mobile Country Code 0 to 999 -->
+            <Name>MCC</Name>
+            <Value>1</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Mobile Network Code 0 to 999 -->
+            <Name>MNC</Name>
+            <Value>1</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Cell Band (from Band 1 to Band 32) -->
+            <Name>CELL_BAND</Name>
+            <Value>1</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Downlink channel -->
+            <Name>DL_EARFCN</Name>
+            <Value>300</Value>
+        </Parameter>
+        <Parameter>
+            <!-- RRC STATE Before FTP start (RRC_CONNECTED | RRC_IDLE )-->
+            <Name>RRC_STATE</Name>
+            <Value>RRC_IDLE</Value>
+        </Parameter>
+        <Parameter>
+            <!-- FTP transfer direction: DL or UL -->
+            <Name>DIRECTION</Name>
+            <Value>DL</Value>
+        </Parameter>
+        <Parameter>
+            <!-- File to download from the server. This file shall be available on the server. If the file to transfer is located in a specific directory, you can specify its path. i.e. : acs/download_file/get5M -->
+            <Name>DL_FILENAME</Name>
+            <Value>get100M</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Transfer timeout in s -->
+            <Name>XFER_TIMEOUT</Name>
+            <Value>20</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

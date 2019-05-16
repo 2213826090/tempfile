@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase>
+    <UseCase>LIVE_CAMERA_SCENE_MODE</UseCase>
+    <Description>Use Camera to capture image after setting a scene mode</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>False</b2bContinuousMode>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters>
+        <Parameter>
+            <!-- Camera to open, possible values :
+               - BACK
+               - FRONT
+              -->
+            <Name>CAMERA</Name>
+            <Description>Camera to open</Description>
+        </Parameter>
+        <Parameter>
+             <!-- Scene mode to set, possible values :
+               - auto : not yet supported by treatment scripts
+               - night : supported
+               - action : not yet supported by treatment scripts
+               - barcode : not yet supported by treatment scripts
+               - beach : not yet supported by treatment scripts
+               - candlelight : not yet supported by treatment scripts
+               - sports : not yet supported by treatment scripts
+                -->
+            <Name>SCENE_MODE</Name>
+            <Description>Scene mode  to set</Description>
+        </Parameter>
+        <Parameter>
+            <!-- Directory where to save pictures taken  -->
+            <Name>SAVE_DIRECTORY</Name>
+            <Description>Directory where to save pictures taken</Description>
+        </Parameter>
+    </Parameters>
+</TestCase>

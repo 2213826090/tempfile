@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='ASCII'?>
+<TestCase>
+    <UseCase>Testlib</UseCase>
+    <Description>wifi</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <TcMaxAttempt>3</TcMaxAttempt>
+    <Parameters>
+        <Parameter>
+            <Name>test</Name>
+            <Value>scripts/wireless/wifi_generic/tests/connect_disconnect_from_UI.py</Value>
+        </Parameter>
+        <Parameter>
+            <Name>script-args</Name>
+            <Value>ap_name=addwrtdap  security=wpa2 mode=n ap1_security=wpa2  ap_band=1 password=1234512345 iterations=5 scenario=forget_ap_test ap2_name=ap2 ap2_security=wpa2 ap2_password=1234567890 adb=False </Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

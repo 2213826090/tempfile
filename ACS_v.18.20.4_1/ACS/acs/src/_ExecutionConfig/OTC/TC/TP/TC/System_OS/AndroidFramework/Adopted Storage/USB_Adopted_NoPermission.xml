@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<TestCase>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Discription>
+Application rights over adopted storage when it has no WRITE/READ_EXTERNAL_STORAGE permission
+</Discription>
+    <Domain>System_OS</Domain>
+    <Phase>CORE</Phase>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <Type>FUNCTIONAL</Type>
+    <UseCase>PY_UNIT</UseCase>
+    <b2bIteration>1</b2bIteration>
+    <Parameters>
+        <Parameter>
+            <Name>HpalmName</Name>
+            <Value>Storage.USB_Adopted_NoPermission</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TEST_DATA_ROOT</Name>
+            <Value>testplan/System_OS</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TEST_CASE</Name>
+            <Value>tests.System_OS.AndroidFramework.Adopted Storage.Storage.USB_Adopted_NoPermission</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

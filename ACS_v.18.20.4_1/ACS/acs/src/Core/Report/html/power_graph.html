@@ -1,0 +1,25 @@
+<html>
+ <head>
+  <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+  <script type="text/javascript" src="graph_values.js"></script>
+  <script type="text/javascript">
+google.load("visualization",  "1", {packages:["corechart"]});
+google.setOnLoadCallback(drawChart);
+function drawChart() {
+ var data = google.visualization.arrayToDataTable(getRaws()); // defined in output_graph.js
+ var options = {
+  title: 'power measurement',
+  explorer: { actions: ['dragToZoom', 'rightClickToReset'] },
+  width:1200,
+  height:500
+ };
+ var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
+ chart.draw(data, options);
+}
+  </script>
+ </head>
+ <body>
+  <div id="chart_div" style="width: 1200px; height: 500px;"></div>
+ </body>
+</html>
+

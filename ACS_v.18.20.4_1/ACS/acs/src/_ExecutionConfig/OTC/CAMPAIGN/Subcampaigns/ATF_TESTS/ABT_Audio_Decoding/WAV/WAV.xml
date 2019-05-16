@@ -1,0 +1,37 @@
+<?xml version="1.0" ?>
+<Campaign>
+      <Parameters>
+            <Parameter isControlledPSUsed="False"/>
+            <Parameter isIoCardUsed="False"/>
+            <Parameter skipBootOnPowerCycle="False"/>
+            <Parameter bootRetryNumber="0"/>
+            <Parameter runHookScripts="False"/>
+            <Parameter powerCycleBetweenTC="False"/>
+            <Parameter powerCycleOnFailure="False"/>
+            <Parameter finalDutState="NoChange"/>
+            <Parameter stopCampaignOnCriticalFailure="False"/>
+            <Parameter stopCampaignOnFirstFailure="False"/>
+            <Parameter loggingLevel="debug"/>
+            <Parameter CampaignType="Other"/>
+      </Parameters>
+      <TestCases>
+            <!--TestCase Id="../../../../../TC/TR/ATF_TESTS/ABT_Audio_Decoding/WAV/AIFF_16bit_PCM"/-->
+            <TestCase Id="../../../../../TC/TR/ATF_TESTS/ABT_Audio_Decoding/WAV/GSM_610_WAV"/>
+            <TestCase Id="../../../../../TC/TR/ATF_TESTS/ABT_Audio_Decoding/WAV/WAV_16bit_PCM"/>
+            <TestCase Id="../../../../../TC/TR/ATF_TESTS/ABT_Audio_Decoding/WAV/WAV_44100Hz_16bit"/>
+            <TestCase Id="../../../../../TC/TR/ATF_TESTS/ABT_Audio_Decoding/WAV/WAV_44100Hz_24bit"/>
+            <TestCase Id="../../../../../TC/TR/ATF_TESTS/ABT_Audio_Decoding/WAV/WAV_48000Hz_16bit"/>
+            <TestCase Id="../../../../../TC/TR/ATF_TESTS/ABT_Audio_Decoding/WAV/WAV_48000Hz_24bit"/>
+            <TestCase Id="../../../../../TC/TR/ATF_TESTS/ABT_Audio_Decoding/WAV/WAV_96000Hz_16bit"/>
+            <TestCase Id="../../../../../TC/TR/ATF_TESTS/ABT_Audio_Decoding/WAV/WAV_96000Hz_24bit"/>
+            <TestCase Id="../../../../../TC/TR/ATF_TESTS/ABT_Audio_Decoding/WAV/LPCM/lpcm_11.025KHz"/>
+            <TestCase Id="../../../../../TC/TR/ATF_TESTS/ABT_Audio_Decoding/WAV/LPCM/lpcm_12KHz"/>
+            <TestCase Id="../../../../../TC/TR/ATF_TESTS/ABT_Audio_Decoding/WAV/LPCM/lpcm_16KHz"/>
+            <TestCase Id="../../../../../TC/TR/ATF_TESTS/ABT_Audio_Decoding/WAV/LPCM/lpcm_22.05KHz"/>
+            <TestCase Id="../../../../../TC/TR/ATF_TESTS/ABT_Audio_Decoding/WAV/LPCM/lpcm_24KHz"/>
+            <TestCase Id="../../../../../TC/TR/ATF_TESTS/ABT_Audio_Decoding/WAV/LPCM/lpcm_32KHz"/>
+            <TestCase Id="../../../../../TC/TR/ATF_TESTS/ABT_Audio_Decoding/WAV/LPCM/lpcm_44.1KHz"/>
+            <TestCase Id="../../../../../TC/TR/ATF_TESTS/ABT_Audio_Decoding/WAV/LPCM/lpcm_48KHz"/>
+            <TestCase Id="../../../../../TC/TR/ATF_TESTS/ABT_Audio_Decoding/WAV/LPCM/lpcm_8KHz"/>
+      </TestCases>
+</Campaign>

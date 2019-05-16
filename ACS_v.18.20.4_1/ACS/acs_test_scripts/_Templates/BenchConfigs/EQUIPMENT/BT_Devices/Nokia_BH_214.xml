@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<Equipment version="13.44" name="BT_HEADSET" description="Bluetooth headset device reworked to be used with IOCards.">
+    <!-- Model possible values: NokiaBH214 -->
+    <Parameter name="Model" value="NokiaBH214" />
+    <Parameter name="BD_Address" value="00:0B:E4:99:36:92" />
+    <Parameter name="IOCard" value="IO_CARD2" description="name of the IO_CARD used to manage headset buttons" />
+    <!-- BLUETOOTH headset [Button ; relay of IOCard] table -->
+    <Parameter name="powerButton" value="1" description="Number of the Slave IOCard's relay used to poweronoff the headset" />
+    <Parameter name="volUpButton" value="8" description="Number of the Slave IOCard's relay from Slave IOCard used to increase volume" />
+    <Parameter name="volDownButton" value="7" description="Number of the Slave IOCard's relay from Slave IOCard used to decrease volume" />
+    <Parameter name="callButton" value="2" description="Number of the Slave IOCard's relay used to place a call" />
+    <Parameter name="fwdButton" value="3" description="Number of the Slave IOCard's relay used to fwd music" />
+    <Parameter name="rwdButton" value="4" description="Number of the Slave IOCard's relay used to rwd music" />
+    <Parameter name="playPauseButton" value="6" description="Number of the Slave IOCard's relay used to play/pause audio" />
+    <Parameter name="powerOnTimer" value="3" description="Timer for poweron, in second" />
+    <Parameter name="powerOffTimer" value="5" description="Timer for poweroff, in second" />
+    <Parameter name="defaultShortKeyPressTimer" value="1" description="Timer for default short key press, in second" />
+    <Parameter name="defaultLongKeyPressTimer" value="3" description="Timer for default long key press, in second" />
+    <Parameter name="betweenDoubleKeyPressTimer" value="0.5" description="Timer for pause between double key press, in second" />
+    <Parameter name="pairingTimer" value="6" description="Timer to enter in pairing mode, in second" />
+    <Parameter name="voiceDialTimer" value="2" description="Timer to access to redial option, in second" />
+</Equipment>

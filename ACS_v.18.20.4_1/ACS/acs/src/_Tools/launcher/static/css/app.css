@@ -1,0 +1,348 @@
+/********* QWidget *********/
+
+* {
+ padding: 0;
+ margin: 0;
+}
+
+#ACSLauncher {
+    border-image: url('static/images/background1024x768.png') 0 0 0 0 stretch stretch;
+    border-width: 0px;
+
+    min-width: 650px;
+    max-width: 650px;
+
+    min-height: 680px;
+    max-height: 680px;
+}
+
+/********* End QWidget *********/
+
+/********* QLabel *********/
+
+#ACSLauncher QLabel {
+    font: bold 12px;
+    color: white;
+    /*text-decoration: underline;*/
+}
+
+QLabel#devices_loader,
+QLabel#campaigns_loader,
+QLabel#benches_loader {
+
+    background-color: transparent;
+
+    width: 24px;
+    min-width: 24px;
+    max-width: 24px;
+
+    height: 24px;
+    min-height: 24px;
+    max-height: 24px;
+}
+
+QLabel#lb_exec_conf {
+    margin-left: 10px;
+}
+
+/********* End QLabel *********/
+
+/********* QLineEdit *********/
+
+#ACSLauncher QLineEdit {
+
+    background-color: #FFFFFF;
+
+    min-height: 2.25em;
+    border-radius: 0em;
+
+    font: bold 12px;
+
+    color: #333333;
+}
+
+/********* End QLineEdit *********/
+
+
+/********* QTextEdit *********/
+
+QTextEdit {
+    selection-color: black;
+    selection-background-color: #DFFF7E;
+}
+
+QTextEdit#te_logs {
+    min-width: 45em;
+}
+
+/********* End QTextEdit *********/
+
+/********* QToolButton *********/
+
+QToolButton {
+    background-color: transparent;
+    background-position: center center;
+    background-repeat: no-repeat;
+    outline: none;
+
+    margin: 0;
+    padding: 0;
+    color: transparent;
+
+    min-height: 32px;
+    min-width: 32px;
+}
+
+QToolButton#btn_close {
+    background-image: url('static/images/icons/close.png');
+}
+
+QToolButton#btn_valid {
+    background-image: url('static/images/icons/valid.png');
+}
+
+QToolButton#btn_valid,
+QToolButton#btn_close {
+	margin: 0;
+    padding: 0;
+}
+
+QToolButton#btn_valid:hover,
+QToolButton#btn_close:hover {
+	background-color: transparent;
+    border: none;
+}
+
+QToolButton#btn_settings {
+    background-image: url('static/images/icons/folder_cfg.png');
+    min-width: 36px;
+    min-height: 36px;
+}
+
+QToolButton#btn_settings:hover {
+    border-width: 2px;
+    border-style: outset;
+    border-color: #005f8f;
+    border-radius: 0.3em;
+}
+
+QToolButton#btn_toggle_logs {
+
+    background-image: url('static/images/icons/arrow.png');
+    background-color: #f0f0f0;
+    border-width: 0px;
+    border-style: outset;
+    min-width: 24px;
+    max-width: 24px;
+    margin: 0;
+    padding: 0;
+}
+
+QToolButton#btn_toggle_logs:hover {
+    background-color: #e0e0e0;
+}
+
+QToolButton#btn_toggle_logs:disabled {
+    background-image: url('static/images/icons/arrow_disabled.png');
+}
+
+/********* End QToolButton *********/
+
+/********* QPushButton *********/
+
+#ACSLauncher QPushButton,
+#ACSLauncher QPushButton:default {
+    border-width: 0;
+
+    background-color: transparent !important;
+
+    font: bold 12px;
+    color: white;
+    text-decoration: underline;
+    text-align: center;
+
+    padding: 0;
+    margin: 0;
+
+    outline: none;
+}
+
+#ACSLauncher QPushButton:pressed {
+    border-width: 0;
+    background-color: transparent !important;
+}
+
+#ACSLauncher QPushButton:disabled {
+    text-decoration: none;
+    color: #CCCCCC;
+}
+
+#ACSLauncher QPushButton:hover {
+    border-radius: 10em;
+}
+
+#ACSLauncher QPushButton#btn_awi:hover,
+#ACSLauncher QPushButton#btn_awr:hover,
+#ACSLauncher QPushButton#btn_live_reporting:hover,
+#ACSLauncher QPushButton#btn_pb:hover {
+    border-width: 2px;
+    border-style: outset;
+    border-color: #005f8f;
+    border-radius: 1.5em;
+}
+
+#ACSLauncher QPushButton#btn_benches_search,
+#ACSLauncher QPushButton#btn_campaigns_search,
+#ACSLauncher QPushButton#btn_devices_search {
+
+    image: url('static/images/icons/search.png');
+
+    border-width: 0;
+    border-image: 0;
+    border: none;
+
+    min-height: 25px;
+    min-width: 25px;
+
+    max-height: 25px;
+    max-width: 25px;
+}
+
+#ACSLauncher QPushButton#btn_benches_search:disabled,
+#ACSLauncher QPushButton#btn_campaigns_search:disabled,
+#ACSLauncher QPushButton#btn_devices_search:disabled {
+    image: url('static/images/icons/disabled_search.png');
+}
+
+
+#ACSLauncher QPushButton#btn_update {
+    image: url('static/images/links/update.png');
+}
+
+#ACSLauncher QPushButton#btn_live_reporting {
+    image: url('static/images/links/live_reporting2.png');
+}
+
+#ACSLauncher QPushButton#btn_doc {
+    image: url('static/images/links/pb.png');
+}
+
+#ACSLauncher QPushButton#btn_quickstart_launch {
+    border-width: 0;
+
+    image: url('static/images/go_run.png');
+    min-width: 100px;
+    min-height: 100px;
+    max-width: 100px;
+    max-height: 100px;
+
+    margin: 1em;
+}
+
+#ACSLauncher QPushButton#btn_quickstart_launch:disabled {
+    image: url('static/images/go_run_disabled.png');
+}
+
+/********* End QPushButton *********/
+
+
+/********* QMenu *********/
+
+QMenu {
+    background-color: #A3C2FF;
+    border: .3em solid #f0f0f0;
+    font: bold 12pt;
+}
+
+QMenu:hover {
+    color: white;
+}
+
+/********* End QMenu *********/
+
+
+/********* QComboBox *********/
+
+#ACSLauncher QComboBox {
+    border-width: .1em;
+    padding: .2em;
+
+    margin-left: 0;
+    margin-top: .2em;
+
+    min-height: 2.25em;
+    min-width: 22.5em;
+    border-radius: 0.5em;
+
+    color: #333333;
+    font: bold;
+
+    background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,stop: 0 #D5D5D5, stop: 1 #EEEEEE);
+
+}
+
+#ACSLauncher QComboBox::drop-down:button{
+    background-color: : qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,stop: 0 #D5D5D5, stop: 1 #EEEEEE);
+}
+
+#ACSLauncher QComboBox::drop-down {
+
+     border-image: url('static/images/icons/down.png') 0 0 0 0 stretch stretch;
+
+     subcontrol-origin: padding;
+     subcontrol-position: top right;
+     width: 3em;
+
+     border-left-width: 1em;
+     border-left-color: #A3C2FF;
+     border-left-style: solid; /* just a single line */
+     border-top-right-radius: 1em; /* same radius as the QComboBox */
+     border-bottom-right-radius: 1em;
+}
+
+#ACSLauncher QComboBox:on {
+    background-color: #A3C2FF;
+}
+
+/********* End QComboBox *********/
+
+/********* QDockWidget *********/
+
+QDockWidget::title {
+     text-align: left; /* align the text to the left */
+     background: #A3C2FF;
+     padding-left: 5px;
+}
+
+/********* End QDockWidget *********/
+
+
+/********* QGroupBox *********/
+
+#ACSLauncher QGroupBox {
+    color: white;
+    margin-left: 10px;
+}
+
+#ACSLauncher QGroupBox QCheckBox {
+    font: bold 12px;
+    color: white;
+    text-decoration: underline;
+}
+
+#ACSLauncher QGroupBox QCheckBox:disabled {
+    font: normal 12px;
+    color: #CCCCCC;
+    text-decoration: none;
+}
+
+/********* End QGroupBox *********/
+
+#ACSLauncher QCheckBox#advanced_panel_trigger::indicator {
+    color: white;
+}
+
+#ACSLauncher QCheckBox#advanced_panel_trigger {
+    text-decoration: none;
+}
+

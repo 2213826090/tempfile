@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<Campaign>
+    <Parameters>
+        <Parameter isControlledPSUsed="False" />
+        <Parameter isIoCardUsed="False" />
+        <!-- Set skipBootOnPowerCycle to True to disable the accs boot procedure -->
+        <!-- Important, it means that boot will be handle inside the campaign/tc -->
+        <Parameter skipBootOnPowerCycle="True" />
+        <Parameter bootRetryNumber="2" />
+        <Parameter runHookScripts="False" />
+        <Parameter powerCycleBetweenTC="False" />
+        <Parameter powerCycleOnFailure="False" />
+        <!-- finalDutState allows user to leave the DUT in a specific state at the end of the campaign
+            Possible values: PowerOn | PowerOff | Charging
+            By default DUT is leaved in PowerOff state.
+            In case the user selects Charging as final state of the DUT and that DUT fails to enter Charging,
+            ACS shall try to switch the DUT off-->
+        <Parameter finalDutState="NoChange" />
+        <Parameter stopCampaignOnCriticalFailure="False" />
+        <Parameter stopCampaignOnFirstFailure="False" />
+        <!-- LoggingLevel possible values: info | warning | debug | error -->
+        <Parameter loggingLevel="debug" />
+        <!-- CampaignType format -> <TEAM>_<CAMPAIGNTYPE>
+            Possible values:
+            FT(Feature Team)-> SANITY | REGRESSION | STRESS, RELIABILTY | MTBF
+            ST(System Test)-> SANITY | REGRESSION | STRESS, RELIABILTY | MTBF | EM
+            SI(System Integration)-> EAT | STAB | PACT | CAT0 | RELIABILITY | MTBF | CTS
+            Otherwise "Others" should be used -->
+        <Parameter CampaignType="ST_REGRESSION" />
+        <Parameter TCRReportViaRESTAPI="true"/>
+    </Parameters>
+    <Targets>
+        <!-- Target Values -->
+        <Target targetB2bPassRate="80" />
+    </Targets>
+    <TestCases>
+        <TestCase Id="ST/cws/TC/WIFI/EDISON_SPECIFIC/WIFI_KPI/ST_IPERF_DATA_THRGPT_WLAN_WPA2_UL_TCP_2.4GHZ_20MHZ"/>
+        <TestCase Id="ST/cws/TC/WIFI/EDISON_SPECIFIC/WIFI_KPI/ST_IPERF_DATA_THRGPT_WLAN_WPA2_DL_TCP_2.4GHZ_20MHZ"/>
+        <TestCase Id="ST/cws/TC/WIFI/EDISON_SPECIFIC/WIFI_KPI/ST_IPERF_DATA_THRGPT_WLAN_WPA2_UL_TCP_5GHZ_20MHZ"/>
+        <TestCase Id="ST/cws/TC/WIFI/EDISON_SPECIFIC/WIFI_KPI/ST_IPERF_DATA_THRGPT_WLAN_WPA2_DL_TCP_5GHZ_20MHZ"/>
+        <TestCase Id="ST/cws/TC/WIFI/EDISON_SPECIFIC/WIFI_KPI/ST_IPERF_DATA_THRGPT_WLAN_WPA2_UL_TCP_5GHZ_40MHZ"/>
+        <TestCase Id="ST/cws/TC/WIFI/EDISON_SPECIFIC/WIFI_KPI/ST_IPERF_DATA_THRGPT_WLAN_WPA2_DL_TCP_5GHZ_40MHZ"/>
+    </TestCases>
+</Campaign>

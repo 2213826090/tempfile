@@ -1,0 +1,603 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestSteps xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../acs/src/_Catalogs/TestStep/teststep.xsd">
+    <TestStep Id="INSTALL_FILE" Domain="SYSTEM" SubDomain="FILES" Feature="" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.System.Files.InstallFile.InstallFile</ClassName>
+        <Description>Push a file  or a directory on the device. MD5 check will be done for each file pushed on the device.</Description>
+        <Environment name="ANY"/>
+        <Parameters>
+            <Parameter name="FILE_PATH" type="STRING" isOptional="false">
+                   <Description>Path to the file/directory to push on the phone</Description>
+                   <PossibleValues/>
+                   <DefaultValue/>
+            </Parameter>
+            <Parameter name="DESTINATION" type="STRING" isOptional="false">
+                   <Description>Absolute path on device where the file will be stored</Description>
+                   <PossibleValues/>
+                   <DefaultValue>/sdcard/media/</DefaultValue>
+            </Parameter>
+            <Parameter name="DESTINATION_STORED_PATH" type="CONTEXT" isOptional="false">
+                <Description>
+                    <Key name="INSTALLED_FILE_PATH" type="STRING">Absolute path where file or directory was placed on the device (output)</Key>
+                </Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+            <Parameter name="TIMEOUT" type="INTEGER" isOptional="false">
+                   <Description>Push timeout in second. If 0, default acs setup timeout will be used</Description>
+                   <PossibleValues>[1:1200]</PossibleValues>
+                   <DefaultValue>300</DefaultValue>
+            </Parameter>
+            <Parameter name="TYPE" type="STRING" isOptional="false">
+                   <Description>Type of file to push</Description>
+                   <PossibleValues>xml;media;bin;zipped_tarball;tarball;zipped</PossibleValues>
+                   <DefaultValue>media</DefaultValue>
+            </Parameter>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                   <Description>Device name on which the action will be executed</Description>
+                   <PossibleValues/>
+                   <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="UNINSTALL_FILE" Domain="SYSTEM" SubDomain="FILES" Feature="" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.System.Files.UninstallFile.UninstallFile</ClassName>
+        <Description>Remove file(s) on the device</Description>
+        <Environment name="ANY"/>
+        <Parameters>
+            <Parameter name="DEVICE_FOLDER" type="STRING" isOptional="false">
+                   <Description>Folder on the device where file(s) must be removed</Description>
+                   <PossibleValues/>
+                   <DefaultValue>/sdcard/media/</DefaultValue>
+            </Parameter>
+            <Parameter name="FILENAME" type="STRING" isOptional="false">
+                  <Description>Filename to remove or regex</Description>
+                  <PossibleValues/>
+                  <DefaultValue>.*</DefaultValue>
+            </Parameter>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues/>
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="PUSH_CONFIG_FILE" Domain="SYSTEM" SubDomain="FILES" Feature="" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.System.Files.PushConfigFile.PushConfigFile</ClassName>
+        <Description>Push config file on the device</Description>
+        <Environment name="ANY"/>
+        <Parameters>
+            <Parameter name="SOURCE" type="STRING" isOptional="false">
+                   <Description>Path to the file/directory to push on the phone</Description>
+                   <PossibleValues/>
+                   <DefaultValue/>
+            </Parameter>
+            <Parameter name="DESTINATION" type="STRING" isOptional="false">
+                  <Description>Absolute path on device where the file will be stored</Description>
+                  <PossibleValues/>
+                  <DefaultValue>.*</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="UPLOAD_LOGS" Domain="SYSTEM" SubDomain="FILES" Feature="" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.System.Files.UploadLogs.UploadLogs</ClassName>
+        <Description>Upload non-standard logs from the device</Description>
+        <Environment name="ANY"/>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="FILE_PATH" type="STRING" isOptional="false">
+                   <Description>Directory on the SUT where the desired files are located</Description>
+                   <PossibleValues/>
+                   <DefaultValue/>
+            </Parameter>
+            <Parameter name="HOST_SUBDIR" type="STRING" isOptional="false">
+                   <Description>Relative path on the host, under the campaign report directory, where the files will be stored</Description>
+                   <PossibleValues/>
+                   <DefaultValue/>
+            </Parameter>
+            <Parameter name="FILES" type="STRING" isOptional="false">
+                   <Description>Name of file(s) to upload.  May contain wildcard characters.</Description>
+                   <PossibleValues/>
+                   <DefaultValue>*.log</DefaultValue>
+            </Parameter>
+            <Parameter name="DESTINATION_STORED_PATH" type="CONTEXT" isOptional="false">
+                   <Description>Absolute path where the files were placed on the host (output)</Description>
+                   <PossibleValues/>
+                   <DefaultValue/>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="CHECK_PASS_FAIL_LOG" Domain="SYSTEM" SubDomain="FILES" Feature="" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.System.Files.CheckPassFailLog.CheckPassFailLog</ClassName>
+        <Description>Determine whether a previous test step passed or failed by looking for files indicating pass/fail result in specified directory on device</Description>
+        <Environment name="ANY"/>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="FILE_PATH" type="STRING" isOptional="false">
+                   <Description>Directory on the SUT where the log files are expected</Description>
+                   <PossibleValues/>
+                   <DefaultValue/>
+            </Parameter>
+            <Parameter name="PASS_FILE" type="STRING" isOptional="false">
+                   <Description>Name of file that would indicate the test step passed</Description>
+                   <PossibleValues/>
+                   <DefaultValue/>
+            </Parameter>
+            <Parameter name="FAIL_FILE" type="STRING" isOptional="false">
+                   <Description>Name of file that would indicate the test step failed</Description>
+                   <PossibleValues/>
+                   <DefaultValue/>
+            </Parameter>
+            <Parameter name="RESULT_MSG_STRING" type="STRING" isOptional="false">
+                   <Description>String to use in log messages and exception messages to identify the test step whose result we are checking</Description>
+                   <PossibleValues/>
+                   <DefaultValue/>
+            </Parameter>
+            <Parameter name="TIMEOUT" type="INTEGER" isOptional="false">
+                   <Description>Amount of time (seconds) to wait for pass or fail log to appear</Description>
+                   <PossibleValues>[0:7200]</PossibleValues>
+                   <DefaultValue>10</DefaultValue>
+            </Parameter>
+            <Parameter name="POLLING_INTERVAL" type="INTEGER" isOptional="false">
+                   <Description>Amount of time (seconds) to wait between each check for logs</Description>
+                   <PossibleValues>[0:7200]</PossibleValues>
+                   <DefaultValue>10</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="CHECK_SD_CARD_PRESENCE" Domain="SYSTEM" SubDomain="FILES" Feature="" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.System.Files.CheckSDCardPresence.CheckSDCardPresence</ClassName>
+        <Description>Returns "True" if an SD card is present, and "False" if not.</Description>
+        <Environment name="ANY" />
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="STOP_ON_FAIL" type="BOOLEAN" isOptional="false">
+                <Description>If SD card is not present, throw DeviceException (True)</Description>
+                <PossibleValues />
+                <DefaultValue>False</DefaultValue>
+            </Parameter>
+            <Parameter name="RETURN_VALUE" type="CONTEXT" isOptional="false">
+                <Description>
+                    <Key name="KEY_NAME_DEFINED_BY_USER" type="STRING">Name of the context variable where the return value will be saved.
+                        Value will be "True" if an SD card is present, and "False" if not.</Key>
+                </Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="RUN_STORAGE_TRANSFER_LOOP" Domain="SYSTEM" SubDomain="FILES" Feature="" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.System.Files.RunStorageTransferLoop.RunStorageTransferLoop</ClassName>
+        <Description>Runs some shell scripts that repeatedly copy files between two locations in the file system and do
+            other file operations. This uses a device-side script to maintain the activity for an extended amount of
+            time without intervention from the host. This is done to avoid adding traffic to the host-device connection
+            (e.g. ADB for Android) throughout the test.
+            PREREQUISITES:
+            Android: Unpack the contents of storage_transfer_files.tgz and media.tgz in the path specified by SCRIPTS_PATH.
+                These files can be found in Artifactory at acs_test_artifacts/CONCURRENCY/TESTS/storage_transfer
+            Windows: Device-side scripts not yet created.</Description>
+        <Environment name="ANY"/>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device that will run the test.</Description>
+                <PossibleValues/>
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="DURATION" type="INTEGER" isOptional="false">
+               <Description>How long the test will run, in minutes.</Description>
+               <PossibleValues/>
+               <DefaultValue>5</DefaultValue>
+            </Parameter>
+            <Parameter name="SCRIPTS_PATH" type="STRING" isOptional="false">
+                <Description>Directory on the device where the tarball contents have been unpacked.</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+            <Parameter name="TEST_TYPE" type="STRING" isOptional="false">
+                <Description>Specifies which types of operations to do.  See PossibleValues for what's available.
+                    'concurrency' does simple file copies and comparisons, and tries to adjust the sizes of files
+                    used based on amount of time left in the test, to avoid overtime caused by starting a new
+                    iteration that would take too long.</Description>
+                <PossibleValues>all;concurrency;dd;many2one;one2many;compress;tokenring;touchmount</PossibleValues>
+                <DefaultValue>concurrency</DefaultValue>
+            </Parameter>
+            <Parameter name="TARGET_DEVICES" type="STRING" isOptional="false">
+               <Description>List of devices to target, separated by a space.  Example: "/dev/block/mmcblk0p9 /dev/block/mmcblk1p1".</Description>
+               <PossibleValues/>
+               <DefaultValue/>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="CREATE_FILE" Domain="SYSTEM" SubDomain="FILES" Feature="" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.System.Files.CreateFile.CreateFile</ClassName>
+        <Description>Create a file on a device</Description>
+        <Environment name="ANY"/>
+        <Parameters>
+           <Parameter name="FILE_PATH" type="STRING" isOptional="false">
+                <Description>Drive where to create file on device</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+           </Parameter>
+           <Parameter name="FILE_NAME" type="STRING" isOptional="false">
+                <Description>Filename to create on device</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+           </Parameter>
+           <Parameter name="FILE_SIZE" type="INTEGER" isOptional="false">
+           <Description>Size (in KB) of file to create</Description>
+                <PossibleValues>[10:1000000]</PossibleValues>
+                <DefaultValue>10</DefaultValue>
+           </Parameter>
+           <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues/>
+                <DefaultValue>PHONE1</DefaultValue>
+           </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="COPY_FILE" Domain="SYSTEM" SubDomain="FILES" Feature="" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.System.Files.CopyFile.CopyFile</ClassName>
+        <Description>Copy a file from a path to another on a device</Description>
+        <Environment name="ANY"/>
+        <Parameters>
+            <Parameter name="SRC_PATH" type="STRING" isOptional="false">
+                <Description>Path of source file on device</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+            <Parameter name="DEST_PATH" type="STRING" isOptional="false">
+                <Description>Path of destination file on device</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+            <Parameter name="SRC_FILE" type="STRING" isOptional="false">
+                   <Description>Source filename on device</Description>
+                   <PossibleValues/>
+                   <DefaultValue/>
+            </Parameter>
+            <Parameter name="DEST_FILE" type="STRING" isOptional="false">
+                   <Description>Destination filename on device</Description>
+                   <PossibleValues/>
+                   <DefaultValue/>
+            </Parameter>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                   <Description>Device name on which the action will be executed</Description>
+                   <PossibleValues/>
+                   <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="DELETE_FILE" Domain="SYSTEM" SubDomain="FILES" Feature="" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.System.Files.DeleteFile.DeleteFile</ClassName>
+        <Description>Delete a file on a device</Description>
+        <Environment name="ANY"/>
+        <Parameters>
+            <Parameter name="FILE_PATH" type="STRING" isOptional="false">
+                <Description>Path where to create file on device</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+            <Parameter name="FILE_NAME" type="STRING" isOptional="false">
+                   <Description>Filename to delete on device</Description>
+                   <PossibleValues/>
+                   <DefaultValue/>
+            </Parameter>
+            <Parameter name="MAKE_SECURE_COPY" type="BOOLEAN" isOptional="false">
+                   <Description>Make a copy of the file before deletion</Description>
+                   <PossibleValues/>
+                   <DefaultValue>false</DefaultValue>
+            </Parameter>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                   <Description>Device name on which the action will be executed</Description>
+                   <PossibleValues/>
+                   <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="COMPARE_FILES" Domain="SYSTEM" SubDomain="FILES" Feature="" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.System.Files.CompareFiles.CompareFiles</ClassName>
+        <Description>Compare 2 files on a device</Description>
+        <Environment name="ANY"/>
+        <Parameters>
+            <Parameter name="SRC_PATH" type="STRING" isOptional="false">
+                <Description>Path of source file on device</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+            <Parameter name="DEST_PATH" type="STRING" isOptional="false">
+                <Description>Path of destination file on device</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+            <Parameter name="SRC_FILE" type="STRING" isOptional="false">
+                   <Description>Source filename on device</Description>
+                   <PossibleValues/>
+                   <DefaultValue/>
+            </Parameter>
+            <Parameter name="DEST_FILE" type="STRING" isOptional="false">
+                   <Description>Destination filename on device</Description>
+                   <PossibleValues/>
+                   <DefaultValue/>
+            </Parameter>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                   <Description>Device name on which the action will be executed</Description>
+                   <PossibleValues/>
+                   <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="GET_LAST_PLUG_SD" Domain="SYSTEM" SubDomain="FILES" Feature="" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.System.Files.FindLastPlugSd.FindLastPlugSd</ClassName>
+        <Description>Parse the dmesg to extract the last /dev/sd* device</Description>
+        <Environment name="ANY"/>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                   <Description>Device name on which the action will be executed</Description>
+                   <PossibleValues/>
+                   <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="SAVE_AS" type="CONTEXT" isOptional="false">
+               <Description>
+                    <Key name="SD_DEVICE_NAME" type="STRING">Name of the last inserted device</Key>
+               </Description>
+               <PossibleValues/>
+               <DefaultValue/>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="CREATE_PARTITION" Domain="SYSTEM" SubDomain="FILES" Feature="" Status="PLANNED">
+        <ClassName>acs_test_scripts.TestStep.Device.System.Files.CreatePartition.CreatePartition</ClassName>
+        <Description>Create a partition on a device</Description>
+        <Environment name="ANY"/>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                   <Description>Device name on which the action will be executed</Description>
+                   <PossibleValues/>
+                   <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="BLOCK_DEVICE" type="STRING" isOptional="false">
+                <Description>block device to part</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+            <Parameter name="PARTITION_TYPE" type="STRING" isOptional="false">
+                <Description>Partition type to create</Description>
+                <PossibleValues>primary;logical;extended</PossibleValues>
+                <DefaultValue>primary</DefaultValue>
+            </Parameter>
+            <Parameter name="START" type="INTEGER" isOptional="false">
+                <Description>Start index of the partition by default in megabytes</Description>
+                <PossibleValues/>
+                <DefaultValue>0</DefaultValue>
+            </Parameter>
+            <Parameter name="END" type="INTEGER" isOptional="false">
+                <Description>END index of the partition by default in megabytes. partition size = END - START</Description>
+                <PossibleValues/>
+                <DefaultValue>1024</DefaultValue>
+            </Parameter>
+            <Parameter name="FILE_SYSTEM" type="STRING" isOptional="false">
+                <Description>File system type to apply to the partition</Description>
+                <PossibleValues>ext2;ext3;ext4;msdos;vfat</PossibleValues>
+                <DefaultValue>ext4</DefaultValue>
+            </Parameter>
+            <Parameter name="SAVE_AS" type="CONTEXT" isOptional="false">
+               <Description>
+                    <Key name="SD_PARTITION_NAME" type="STRING">Name of the formated partition</Key>
+               </Description>
+               <PossibleValues/>
+               <DefaultValue/>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="DELETE_PARTITION" Domain="SYSTEM" SubDomain="FILES" Feature="" Status="PLANNED">
+        <ClassName>acs_test_scripts.TestStep.Device.System.Files.DeletePartition.DeletePartition</ClassName>
+        <Description>Delete a partition on a device</Description>
+        <Environment name="ANY"/>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                   <Description>Device name on which the action will be executed</Description>
+                   <PossibleValues/>
+                   <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="BLOCK_DEVICE" type="STRING" isOptional="false">
+                <Description>block device to part</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+            <Parameter name="PARTITION_NUMBER" type="INTEGER" isOptional="false">
+                   <Description>Numero of the partition to delete. If 0, delete ALL partitions</Description>
+                   <PossibleValues/>
+                   <DefaultValue>0</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="MOUNT_PARTITION" Domain="SYSTEM" SubDomain="FILES" Feature="" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.System.Files.MountPartition.MountPartition</ClassName>
+        <Description>Mount a partition on a device</Description>
+        <Environment name="ANY"/>
+        <Parameters>
+            <Parameter name="PARTITION" type="STRING" isOptional="false">
+                <Description>Partition to mount on device</Description>
+                <PossibleValues/>
+                <DefaultValue>Unknown_point</DefaultValue>
+            </Parameter>
+            <Parameter name="MOUNT_POINT" type="STRING" isOptional="false">
+                <Description>Path of the mount point where to mount partition on device</Description>
+                <PossibleValues/>
+                <DefaultValue>/dev/sda</DefaultValue>
+            </Parameter>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                   <Description>Device name on which the action will be executed</Description>
+                   <PossibleValues/>
+                   <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+        <TestStep Id="UNMOUNT_PARTITION" Domain="SYSTEM" SubDomain="FILES" Feature="" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.System.Files.UnmountPartition.UnmountPartition</ClassName>
+        <Description>Unmount a partition on a device</Description>
+        <Environment name="ANY"/>
+        <Parameters>
+            <Parameter name="MOUNT_POINT" type="STRING" isOptional="false">
+                <Description>Path of the mounted partition on device</Description>
+                <PossibleValues/>
+                <DefaultValue>/dev/sda</DefaultValue>
+            </Parameter>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                   <Description>Device name on which the action will be executed</Description>
+                   <PossibleValues/>
+                   <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="INSTALL_SCRIPTS_FROM_LIB" Domain="SYSTEM" SubDomain="FILES" Feature="" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.System.Files.InstallScriptsFromLib.InstallScriptsFromLib</ClassName>
+        <Description>Installs device-side scripts that are stored under acs_test_scripts/Lib/ShellScripts/[OS].
+            [OS] is the subdirectory corresponding to the OS running on the DUT, e.g.
+            Android, Windows or Linux. All files in the specified directory are pushed.
+            In addition, if applicable, it ensures that the user has permission to execute
+            the pushed files.
+            The files will be put in a standard location, based on the target OS.  Under
+            the base destination directory, the same relative path will be used on the
+            target as was used under acs_test_scripts/Lib/ShellScripts/[OS].
+            Following are the standard destination directories:
+                    Android: /data/[relative_source_path]
+                    Windows: TBD/[relative_source_path]
+                    Linux: TBD/[relative_source_path]
+            If successful, the full destination path is returned.
+        </Description>
+        <Environment name="ANY"/>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues/>
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="RELATIVE_SOURCE_PATH" type="STRING" isOptional="false">
+                <Description>Relative path of the source files under acs_test_scripts/Lib/ShellScripts/[OS]</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+            <Parameter name="TIMEOUT" type="INTEGER" isOptional="false">
+                <Description>Maximum number of seconds to wait for the push to complete.</Description>
+                <PossibleValues/>
+                <DefaultValue>30</DefaultValue>
+            </Parameter>
+            <Parameter name="STORED_DEST_PATH" type="CONTEXT" isOptional="false">
+                <Description>
+                    <Key name="KEY_DEST_PATH" type="STRING">Name of the context variable where the return value will be saved.
+                        This will contain the absolute path where the files were placed on the device.</Key>
+                </Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="DELETE_DIR" Domain="SYSTEM" SubDomain="FILES" Feature="" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.System.Files.RemoveDir.RemoveDir</ClassName>
+        <Description>Delete a file on a device</Description>
+        <Environment name="ANY"/>
+        <Parameters>
+            <Parameter name="DEVICE_FOLDER" type="STRING" isOptional="false">
+                <Description>Directory to be deleted on the device</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                   <Description>Device name on which the action will be executed</Description>
+                   <PossibleValues/>
+                   <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="CHECK_PATH_EXIST" Domain="UTILITIES" SubDomain="FILES" Feature="" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.System.Files.CheckPathExist.CheckPathExist</ClassName>
+        <Description>Check if a file exist on the DUT</Description>
+        <Environment name="ANY"/>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>device where test will be executed</Description>
+                <PossibleValues/>
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="PATH_TO_CHECK" type="STRING" isOptional="false">
+                <Description>File to check</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+            <Parameter name="OPERATOR" type="STRING" isOptional="false">
+                <Description>Operation to do on the path</Description>
+                <PossibleValues>EXIST;IS_FILE;IS_DIRECTORY</PossibleValues>
+                <DefaultValue/>
+            </Parameter>
+            <Parameter name="PASS_IF" type="BOOLEAN" isOptional="false">
+                <Description>
+                    Defines whether the test must pass when the comparison succeeds, or fails. In this way it's possible
+                    to make flexible comparisons.
+                </Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="UNTAR" Domain="SYSTEM" SubDomain="FILES" Feature="" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.System.Files.Untar.Untar</ClassName>
+        <Description>Untar an archive on a device</Description>
+        <Environment name="ANY"/>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>device where test will be executed</Description>
+                <PossibleValues/>
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="SRC_PATH" type="STRING" isOptional="false">
+                <Description>Path of source file on device</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+            <Parameter name="DEST_PATH" type="STRING" isOptional="true">
+                <Description>Path of destination file on device</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+            <Parameter name="UNZIP" type="BOOLEAN" isOptional="true">
+                   <Description>Destination filename on device</Description>
+                   <PossibleValues/>
+                   <DefaultValue>False</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="UPDATE_JSON_PREFERENCES" Domain="SYSTEM" SubDomain="FILES" Feature="" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.System.Files.UpdateJsonPreferences.UpdateJsonPreferences</ClassName>
+        <Description>Configure preferences in JSON format on device</Description>
+        <Environment name="ANY"/>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                   <Description>Device name on which the action will be executed</Description>
+                   <PossibleValues/>
+                   <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="FILE_PATH_ON_DEVICE" type="STRING" isOptional="false">
+                <Description>Device file path of JSON preferences</Description>
+                <PossibleValues/>
+                <DefaultValue></DefaultValue>
+            </Parameter>
+            <Parameter name="JSON_PREFERENCES" type="STRING" isOptional="false">
+                <Description>Preferences to update</Description>
+                <PossibleValues/>
+                <DefaultValue></DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+</TestSteps>

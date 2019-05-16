@@ -1,0 +1,362 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestSteps xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../acs/src/_Catalogs/TestStep/teststep.xsd">
+    <TestStep Id="PING" Domain="COMMS" SubDomain="DATA_XFER" Feature="PING" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Comms.DataXfer.Ping.Ping</ClassName>
+        <Description>Pings a given IP address and saves the percentage of packet loss. The protocol to use (IPv4 or IPv6) is computed automatically. If you have several interfaces connected (ethernet, wifi, ...), you may want to specify on which interface the ping come from. You can do this by             specifying a source IP address, thanks to source_address
+            input parameter.         </Description>
+        <Environment name="ANY" />
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="DESTINATION_IP" type="STRING" isOptional="false">
+                <Description>IP address to ping.</Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+            <Parameter name="PACKET_SIZE" type="INTEGER" isOptional="false">
+                <Description>Packet size in bytes.</Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+            <Parameter name="PACKET_COUNT" type="INTEGER" isOptional="false">
+                <Description>Number of packet to send.</Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+            <Parameter name="INTERVAL" type="FLOAT" isOptional="false">
+                <Description>Interval in seconds between pings (only for IPv4).</Description>
+                <PossibleValues />
+                <DefaultValue>1</DefaultValue>
+            </Parameter>
+            <Parameter name="FLOOD_MODE" type="BOOLEAN" isOptional="false">
+                <Description>Interval in seconds between pings (only for IPv4).</Description>
+                <PossibleValues />
+                <DefaultValue>false</DefaultValue>
+            </Parameter>
+            <Parameter name="BLOCKING" type="BOOLEAN" isOptional="false">
+                <Description>True if you want to throw an error when network is UNREACHABLE. The ping will silently fail if this parameter is set to False.
+                </Description>
+                <PossibleValues />
+                <DefaultValue>True</DefaultValue>
+            </Parameter>
+            <Parameter name="SOURCE_IP" type="STRING" isOptional="true">
+                <Description>Warning: This parameter is only used on Windows DUT tests. If you have several DUT interfaces enabled (ethernet, wifi, ...), meaning several IP addresses, you may want to specify from which interface the ping have to be send. You can do this by specifying a source IP
+                    address here.
+                </Description>
+                <PossibleValues />
+                <DefaultValue>None</DefaultValue>
+            </Parameter>
+            <Parameter name="SAVE_AS" type="CONTEXT" isOptional="true">
+                <Description>
+                    <Key name="KEY_NAME_DEFINED_BY_USER" type="STRING">Name of the context variable where the value will be saved.</Key>
+                </Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="FTP_TRANSFER" Domain="COMMS" SubDomain="DATA_XFER" Feature="FTP" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Comms.DataXfer.FTPTransfer.FTPTransfer</ClassName>
+        <Description>Perform a FTP transfer.</Description>
+        <Environment name="ANY" />
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="SERVER_IP" type="STRING" isOptional="false">
+                <Description>IP address of the host.</Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+            <Parameter name="CLIENT_IP" type="STRING" isOptional="true">
+                <Description>IP address of the client. Used for Windows only. Set "none" if not used.</Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+            <Parameter name="DIRECTION" type="STRING" isOptional="true">
+                <Description>States if you upload or download a file into the server.</Description>
+                <PossibleValues>DL;UL</PossibleValues>
+                <DefaultValue>DL</DefaultValue>
+            </Parameter>
+            <Parameter name="USERNAME" type="STRING" isOptional="true">
+                <Description>Username to connect to the FTP server.</Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+            <Parameter name="PASSWORD" type="STRING" isOptional="true">
+                <Description>Password to connect to the FTP server.</Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+            <Parameter name="FILENAME" type="STRING" isOptional="false">
+                <Description>Absolute name of the file you want to transfer.</Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+            <Parameter name="TIMEOUT" type="INTEGER" isOptional="false">
+                <Description>Timeout after which the transfer will be interrupted.</Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+            <Parameter name="SAVE_THROUGHPUT_AS" type="CONTEXT" isOptional="true">
+                <Description>
+                    <Key name="THROUGHPUT:VALUE" type="FLOAT">throughput value.</Key>
+                    <Key name="THROUGHPUT:UNIT" type="STRING">throughput unit. base throughput unit is bits/sec</Key>
+                </Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="RUN_IPERF" Domain="COMMS" SubDomain="DATA_XFER" Feature="IPERF" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Comms.DataXfer.RunIperf.RunIperf</ClassName>
+        <Description>Runs iperf.  Launches both the server and the client.  iperf client commandline arguments
+            that are filled in based on parameters below are -t, -p (based on PROTOCOL), and -c.</Description>
+        <Environment name="COMMS_RUN_IPERF">Bench must have a second device or computer to run iperf,
+            with network connectivity between it and the DUT.</Environment>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device that will run the iperf client</Description>
+                <PossibleValues/>
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="DURATION" type="INTEGER" isOptional="false">
+               <Description>How long the test will run, in minutes.</Description>
+               <PossibleValues/>
+               <DefaultValue>60</DefaultValue>
+            </Parameter>
+            <Parameter name="IPERF_PROTOCOL" type="STRING" isOptional="false">
+                <Description>Network protocol to use.</Description>
+                <PossibleValues>tcp;udp</PossibleValues>
+                <DefaultValue>tcp</DefaultValue>
+            </Parameter>
+            <Parameter name="DIRECTION" type="STRING" isOptional="false">
+                <Description>Direction in which to generate traffic, relative to the iperf client.</Description>
+                <PossibleValues>down;up;both</PossibleValues>
+                <DefaultValue>both</DefaultValue>
+            </Parameter>
+            <Parameter name="SERVER_TYPE" type="STRING" isOptional="false">
+                <Description>Specify whether SERVER_NAME corresponds to a Phone or an Equipment item.</Description>
+                <PossibleValues>phone;equipment</PossibleValues>
+                <DefaultValue>phone</DefaultValue>
+            </Parameter>
+            <Parameter name="SERVER_NAME" type="STRING" isOptional="false">
+                <Description>Name of Phone or Equipment section in bench config corresponding to the system that will run iperf server.</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+            <Parameter name="SERVER_NET_INTERFACE" type="STRING" isOptional="true">
+                <Description>Name of server network interface through which iperf client should talk to server.
+                    Must match what 'ipconfig' shows.  e.g. 'wlan0' for Wifi or 'bt-pan' for BT tether.</Description>
+                <PossibleValues/>
+                <DefaultValue>wlan0</DefaultValue>
+            </Parameter>
+            <Parameter name="NET_INTERFACE" type="STRING" isOptional="false">
+                <Description>Name of network interface through which iperf client should talk to server.  Must match what 'ipconfig' shows.  e.g. 'wlan0' for Wifi or 'bt-pan' for BT tether.</Description>
+                <PossibleValues/>
+                <DefaultValue>wlan0</DefaultValue>
+            </Parameter>
+            <Parameter name="WINDOW_SIZE" type="STRING" isOptional="false">
+                <Description>Sets the socket buffer sizes to the specified value.
+                    You can specify the value of "compute" to make it calculate a size based on expected throughput.
+                    Examples: "512K" or "1M"</Description>
+                <PossibleValues/>
+                <DefaultValue>compute</DefaultValue>
+            </Parameter>
+            <Parameter name="NO_DELAY" type="BOOLEAN" isOptional="false">
+                <Description>Set the TCP no delay option, disabling Nagle's algorithm</Description>
+                <PossibleValues/>
+                <DefaultValue>False</DefaultValue>
+            </Parameter>
+            <Parameter name="NR_OF_THREADS" type="INTEGER" isOptional="false">
+                <Description>Number of iperf threads to use.</Description>
+                <PossibleValues/>
+                <DefaultValue>1</DefaultValue>
+            </Parameter>
+            <Parameter name="IPERF_OPTIONS" type="STRING" isOptional="false">
+               <Description>Additional iperf client options not covered by other parameters.  This string will be used as-is, forming
+                   part of the iperf client commandline.  If none are needed, specify "None" as the value.</Description>
+               <PossibleValues/>
+               <DefaultValue>None</DefaultValue>
+            </Parameter>
+            <Parameter name="MEASURED_THROUGHPUT" type="CONTEXT" isOptional="false">
+               <Description>Parameter bundle containing throughput measurements from iperf client.
+                   <Key name="IPERF_THROUGHPUT:UL_VALUE" type="FLOAT">Upload throughput.</Key>
+                   <Key name="IPERF_THROUGHPUT:UL_UNITS" type="STRING">Upload throughput measurement units.</Key>
+                   <Key name="IPERF_THROUGHPUT:DL_VALUE" type="FLOAT">Download throughput.</Key>
+                   <Key name="IPERF_THROUGHPUT:DL_UNITS" type="STRING">Download throughput measurement units.</Key>
+               </Description>
+               <PossibleValues/>
+               <DefaultValue/>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="HTTP_DOWNLOAD_LOOP" Domain="COMMS" SubDomain="DATA_XFER" Feature="HTTP" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Comms.DataXfer.HttpDownloadLoop.HttpDownloadLoop</ClassName>
+        <Description>Runs a shell script that invokes a HTTP stress test.
+            Prerequisites: the following script must be located in the path /data/http_download_loop in the device:
+                    file_download.sh
+            These files can be found in Artifactory: acs_test_artifacts/CONCURRENCY/TESTS/file_download/file_download.sh.
+            Configuration: one of the following configuration should be selected
+                Option 1: Set SERVE_FROM_HOST = true(default). The local HTTP server must then have a rand_file.bin hosted at its HTTP root directory.
+                    You can use the CREATE_RANDOM_BINARY_FILE test step to create this after launching the server with RUN_HTTP_SERVER_HOST, or use any other file if you wish as long as it's renamed as rand_file.bin. FILE_DOWNLOAD_URL will be ignored.
+                option 2: Set SERVE_FROM_HOST = false and set FILE_DOWNLOAD_URL and EXPECTED_FILE_CHECKSUM.
+                    The remote server specified in FILE_DOWNLOAD_URL will be used instead of running an HTTP server on the ACS host.</Description>
+        <Environment name="ANY"/>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues/>
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="DURATION" type="INTEGER" isOptional="false">
+               <Description>How long the test will run, in minutes.</Description>
+               <PossibleValues/>
+               <DefaultValue>5</DefaultValue>
+            </Parameter>
+            <Parameter name="SCRIPTS_PATH" type="STRING" isOptional="false">
+                <Description>Path on the device where http_download test script is located.</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+            <Parameter name="SERVE_FROM_HOST" type="BOOLEAN" isOptional="true">
+                <Description>Use the host as a HTTP server. If SERVE_FROM_HOST is set to false, FILE_DOWNLOAD_URL should be configured to use a remote HTTP server.</Description>
+                <PossibleValues/>
+                <DefaultValue>true</DefaultValue>
+            </Parameter>
+            <Parameter name="HOST_FILE_NAME" type="STRING" isOptional="true">
+                <Description>filename to download from the host. This will be ignored if SERVE_FROM_HOST is False</Description>
+                <PossibleValues/>
+                <DefaultValue>rand_file.bin</DefaultValue>
+            </Parameter>
+            <Parameter name="SLEEP_TIME" type="INTEGER" isOptional="true">
+                <Description>Sleep time between downloads in seconds</Description>
+                <PossibleValues/>
+                <DefaultValue>0</DefaultValue>
+            </Parameter>
+            <Parameter name="ALLOWED_RETRIES" type="INTEGER" isOptional="true">
+                <Description>The number of allowed retries when a download fails</Description>
+                <PossibleValues/>
+                <DefaultValue>20</DefaultValue>
+            </Parameter>
+            <Parameter name="FILE_DOWNLOAD_URL" type="STRING" isOptional="true">
+                <Description>http/https url to the file to download. This will be ignored if SERVE_FROM_HOST is True</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+            <Parameter name="EXPECTED_FILE_CHECKSUM" type="STRING" isOptional="true">
+                <Description>The MD5 checksum of the file specified in FILE_DOWNLOAD_URL</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="CHECK_BT_IPERF_RESULTS" Domain="COMMS" SubDomain="DATA_XFER" Feature="IPERF" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Comms.DataXfer.CheckBTIperfResults.CheckBTIperfResults</ClassName>
+        <Description>Determine whether throughput measurements from iperf meet the test criteria.</Description>
+        <Environment name="ANY"/>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues/>
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="DIRECTION" type="STRING" isOptional="false">
+                <Description>Direction of traffic generated by iperf.</Description>
+                <PossibleValues>down;up;both</PossibleValues>
+                <DefaultValue>both</DefaultValue>
+            </Parameter>
+            <Parameter name="BT_PROTOCOL" type="STRING" isOptional="false">
+                <Description>Bluetooth protocol (a.k.a. profile) specified in the throughput targets XML for the target categories against which
+                    you want to compare the measured throughput.  Examples: "OPP", "PAN", "HFP".</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+             <Parameter name="STRICT_TARGET" type="BOOLEAN" isOptional="false">
+                <Description>If True, Failure values = Target values.  If False, no failure values are used,
+                    so it will just log the comparison results and never fail the test.</Description>
+                <PossibleValues/>
+                <DefaultValue>True</DefaultValue>
+            </Parameter>
+            <Parameter name="UL_VALUE" type="FLOAT" isOptional="false">
+                <Description>Measured upload throughput.</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+            <Parameter name="DL_VALUE" type="FLOAT" isOptional="false">
+                <Description>Measured download throughput.</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+            <Parameter name="UL_UNITS" type="STRING" isOptional="false">
+                <Description>Units for measured upload throughput.</Description>
+                <PossibleValues>bits/sec;kbits/sec;Mbits/sec</PossibleValues>
+                <DefaultValue/>
+            </Parameter>
+            <Parameter name="DL_UNITS" type="STRING" isOptional="false">
+                <Description>Units for measured download throughput.</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="START_MULTIPLE_HTTP_TRANSFER" Domain="COMMS" SubDomain="DATA_XFER" Feature="PING" Status="DONE">
+           <ClassName>acs_test_scripts.TestStep.Device.Comms.DataXfer.HttpDownloadStart.HttpDownloadStart</ClassName>
+           <Description>Start an http download every X millis for Y seconds</Description>
+           <Environment name="ANY" />
+           <Parameters>
+               <Parameter name="DEVICE" type="STRING" isOptional="false">
+                   <Description>Device name on which the action will be executed</Description>
+                   <PossibleValues />
+                   <DefaultValue>PHONE1</DefaultValue>
+               </Parameter>
+               <Parameter name="URL" type="STRING" isOptional="false">
+                   <Description>File URL to download</Description>
+                   <PossibleValues />
+                   <DefaultValue />
+               </Parameter>
+               <Parameter name="SYNC_INTERVAL" type="INTEGER" isOptional="false">
+                   <Description>Download frequency in millis</Description>
+                   <PossibleValues />
+                   <DefaultValue />
+               </Parameter>
+               <Parameter name="DURATION" type="INTEGER" isOptional="false">
+                   <Description>Time in seconds until download must be done</Description>
+                   <PossibleValues />
+                   <DefaultValue />
+               </Parameter>
+               <Parameter name="AGENT" type="STRING" isOptional="false">
+                      <Description>Agent to use to process download</Description>
+                      <PossibleValues>acs;SPMActiveIdle</PossibleValues>
+                      <DefaultValue>acs</DefaultValue>
+                </Parameter>
+           </Parameters>
+       </TestStep>
+    <TestStep Id="STOP_MULTIPLE_HTTP_TRANSFER" Domain="COMMS" SubDomain="DATA_XFER" Feature="PING" Status="DONE">
+               <ClassName>acs_test_scripts.TestStep.Device.Comms.DataXfer.HttpDownloadStop.HttpDownloadStop</ClassName>
+               <Description>Stop an existing HTTP transfers</Description>
+               <Environment name="ANY" />
+               <Parameters>
+                   <Parameter name="DEVICE" type="STRING" isOptional="false">
+                       <Description>Device name on which the action will be executed</Description>
+                       <PossibleValues />
+                       <DefaultValue>PHONE1</DefaultValue>
+                   </Parameter>
+                   <Parameter name="URL" type="STRING" isOptional="false">
+                      <Description>URL transfer to stop</Description>
+                      <PossibleValues />
+                      <DefaultValue />
+                   </Parameter>
+                   <Parameter name="AGENT" type="STRING" isOptional="false">
+                         <Description>Agent to use to process download</Description>
+                         <PossibleValues>acs;SPMActiveIdle</PossibleValues>
+                         <DefaultValue>acs</DefaultValue>
+                   </Parameter>
+               </Parameters>
+           </TestStep>
+</TestSteps>

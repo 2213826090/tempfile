@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='ASCII'?>
+<TestCase>
+    <UseCase>Testlib</UseCase>
+    <Description>DUT can reboot in safe mode using relay</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <TcMaxAttempt>1</TcMaxAttempt>
+    <TestSteps>
+        <Setup>
+            <TestStep Id="GET_ARTIFACT" EQT="ARTIFACT_MANAGER" ARTIFACT="INSTRUMENTATION/ANDROID/ApiTests.apk" ARTIFACT_SOURCE="FROM_BENCH:ARTIFACT_MANAGER:URI" TRANSFER_TIMEOUT="DEFAULT" STORED_FILE_PATH="FILE_PATH_IN_CACHE1"/>
+            <TestStep Id="INSTALL_APP"
+                      DEVICE="PHONE1"
+                      SIGN="False"
+                      SIGN_KEY_PATH="DEFAULT"
+                      FILE_PATH="FROM_CTX:FILE_PATH_IN_CACHE1"
+                      BACKUP="False"
+                      TIMEOUT="30"
+                      BACKUP_FILE_PATH="/backup"/>
+        </Setup>
+        <TearDown>
+            <TestStep Id="UNINSTALL_APP" DEVICE="PHONE1" TIMEOUT="60" BACKUP_APP_NAME="NO_BACKUP" BACKUP_FILE_PATH="NO_BACKUP" APP_NAME="com.intel.test.apitests"/>
+        </TearDown>
+    </TestSteps>
+    <Parameters>
+        <Parameter>
+            <Name>test</Name>
+            <Value>scripts/android/system_os/tests/SafeModeOperation.py</Value>
+        </Parameter>
+        <Parameter>
+            <Name>script-args</Name>
+            <Value>app_to_find=ApiTests</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

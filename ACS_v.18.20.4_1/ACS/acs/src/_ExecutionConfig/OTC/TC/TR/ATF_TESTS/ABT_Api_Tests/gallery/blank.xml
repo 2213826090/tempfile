@@ -1,0 +1,218 @@
+<?xml version='1.0' encoding='utf-8'?>
+<flashfile version="1.0">
+  <id>fastboot_dnx</id>
+  <platform>coho</platform>
+  <code_group name="emmc">
+    <file TYPE="emmc">
+      <name>emmc.bin</name>
+      <version>unspecified</version>
+    </file>
+  </code_group>
+  <code_group name="loader">
+    <file TYPE="loader">
+      <name>loader.efi</name>
+      <version>unspecified</version>
+    </file>
+  </code_group>
+  <code_group name="fastboot">
+    <file TYPE="fastboot">
+      <name>fastboot.img</name>
+      <version>unspecified</version>
+    </file>
+  </code_group>
+  <code_group name="gpt">
+    <file TYPE="gpt">
+      <name>gpt.ini</name>
+      <version>unspecified</version>
+    </file>
+  </code_group>
+  <code_group name="bootloader">
+    <file TYPE="bootloader">
+      <name>bootloader</name>
+      <version>unspecified</version>
+    </file>
+  </code_group>
+  <code_group name="sfu">
+    <file TYPE="sfu">
+      <name>sfu.fv</name>
+      <version>unspecified</version>
+    </file>
+  </code_group>
+  <code_group name="system">
+    <file TYPE="system">
+      <name>system.img</name>
+      <version>unspecified</version>
+    </file>
+  </code_group>
+  <code_group name="boot">
+    <file TYPE="boot">
+      <name>boot.img</name>
+      <version>unspecified</version>
+    </file>
+  </code_group>
+  <code_group name="recovery">
+    <file TYPE="recovery">
+      <name>recovery.img</name>
+      <version>unspecified</version>
+    </file>
+  </code_group>
+  <code_group name="oemvars">
+    <file TYPE="oemvars">
+      <name>oemvars.txt</name>
+      <version>unspecified</version>
+    </file>
+  </code_group>
+
+  <command>
+    <string>fastboot flash fw_stage2 $emmc_file</string>
+    <timeout>60000</timeout>
+    <retry>2</retry>
+    <description>Flashing fw_stage2 image</description>
+    <mandatory>0</mandatory>
+  </command>
+
+  <command>
+    <string>sleep</string>
+    <timeout>5000</timeout>
+    <retry>2</retry>
+    <description>Sleep for 5 seconds.</description>
+    <mandatory>1</mandatory>
+  </command>
+
+  <command>
+    <string>fastboot flash osloader $loader_file</string>
+    <timeout>60000</timeout>
+    <retry>2</retry>
+    <description>Flashing osloader image</description>
+    <mandatory>1</mandatory>
+  </command>
+
+  <command>
+    <string>fastboot boot $fastboot_file</string>
+    <timeout>60000</timeout>
+    <retry>2</retry>
+    <description>Uploading fastboot image.</description>
+    <mandatory>1</mandatory>
+  </command>
+
+  <command>
+    <string>sleep</string>
+    <timeout>25000</timeout>
+    <retry>2</retry>
+    <description>Sleep for 25 seconds.</description>
+    <mandatory>1</mandatory>
+  </command>
+
+  <command>
+    <string>fastboot oem unlock-noconfirm</string>
+    <timeout>360000</timeout>
+    <retry>3</retry>
+    <description>Unlock device</description>
+    <mandatory>1</mandatory>
+  </command>
+
+  <command>
+    <string>fastboot flash oemvars $oemvars_file</string>
+    <timeout>60000</timeout>
+    <retry>2</retry>
+    <description>Setting OEM Variables</description>
+    <mandatory>1</mandatory>
+  </command>
+
+  <command>
+    <string>fastboot flash gpt $gpt_file</string>
+    <timeout>60000</timeout>
+    <retry>2</retry>
+    <description>Creating partition table</description>
+    <mandatory>1</mandatory>
+  </command>
+
+  <command>
+    <string>fastboot flash bootloader $bootloader_file</string>
+    <timeout>60000</timeout>
+    <retry>2</retry>
+    <description>Writing EFI System Partition</description>
+    <mandatory>1</mandatory>
+  </command>
+
+  <command>
+    <string>fastboot flash fastboot $fastboot_file</string>
+    <timeout>60000</timeout>
+    <retry>2</retry>
+    <description>Writing UserFastboot</description>
+    <mandatory>1</mandatory>
+  </command>
+
+  <command>
+    <string>fastboot flash sfu $sfu_file</string>
+    <timeout>60000</timeout>
+    <retry>2</retry>
+    <description>Staging BIOS capsule</description>
+    <mandatory>1</mandatory>
+  </command>
+
+  <command>
+    <string>fastboot erase factory</string>
+    <timeout>360000</timeout>
+    <retry>2</retry>
+    <description>Erasing factory partition</description>
+    <mandatory>1</mandatory>
+  </command>
+
+  <command>
+    <string>fastboot erase misc</string>
+    <timeout>180000</timeout>
+    <retry>2</retry>
+    <description>Erasing misc partition</description>
+    <mandatory>1</mandatory>
+  </command>
+
+  <command>
+    <string>fastboot erase cache</string>
+    <timeout>240000</timeout>
+    <retry>2</retry>
+    <description>Erasing cache partition</description>
+    <mandatory>1</mandatory>
+  </command>
+
+  <command>
+    <string>fastboot erase userdata</string>
+    <timeout>420000</timeout>
+    <retry>2</retry>
+    <description>Erasing userdata partition</description>
+    <mandatory>1</mandatory>
+  </command>
+
+  <command>
+    <string>fastboot flash system $system_file</string>
+    <timeout>480000</timeout>
+    <retry>2</retry>
+    <description>Flashing system partition</description>
+    <mandatory>1</mandatory>
+  </command>
+
+  <command>
+    <string>fastboot flash boot $boot_file</string>
+    <timeout>60000</timeout>
+    <retry>2</retry>
+    <description>Flashing boot partition</description>
+    <mandatory>1</mandatory>
+  </command>
+
+  <command>
+    <string>fastboot flash recovery $recovery_file</string>
+    <timeout>60000</timeout>
+    <retry>2</retry>
+    <description>Flashing recovery partition</description>
+    <mandatory>1</mandatory>
+  </command>
+
+  <command>
+    <string>fastboot reboot</string>
+    <timeout>60000</timeout>
+    <retry>2</retry>
+    <description>Rebooting</description>
+    <mandatory>1</mandatory>
+  </command>
+
+</flashfile>

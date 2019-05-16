@@ -1,0 +1,44 @@
+{
+    "Configuration": {
+        "Boot": null,
+        "BootVars": null,
+        "Download": {
+            "INTERNAL_DOWNLOAD": [
+                {
+                    "pft_key": "blankphone_SIL",
+                    "buildbot_artifactory_path": {"path": "device_name_id/flash_files/blankphone", "detection": "cactus-absp"},
+                    "regexp_key": "SIL-blankphone",
+                    "flash_file": null,
+                    "configuration": null,
+                    "start_state": "dnx",
+                    "pft_fallback": {
+                        "pft_key": "blankphone"
+                    }
+                },
+                {
+                    "pft_key": "fastboot",
+                    "buildbot_artifactory_path": {"path": "device_name_id/flash_files/build-variant_id", "detection": "cactus-absp"},
+                    "regexp_key": "fastboot",
+                    "flash_file": null,
+                    "configuration": null,
+                    "start_state": "pos"
+                },
+                {
+                    "pft_key": "ota",
+                    "buildbot_artifactory_path": {"path": "device_name_id/flash_files/build-variant_id", "detection": "cactus-absp"},
+                    "regexp_key": ".*ota.*.zip",
+                    "flash_file": null,
+                    "configuration": null,
+                    "start_state": "mos"
+                }
+            ]
+        },
+        "Flash": {},
+        "Inherit": {
+            "BOARD": ""
+        },
+        "Logs": null,
+        "Timeout": null,
+        "WorkAround": null
+    }
+}

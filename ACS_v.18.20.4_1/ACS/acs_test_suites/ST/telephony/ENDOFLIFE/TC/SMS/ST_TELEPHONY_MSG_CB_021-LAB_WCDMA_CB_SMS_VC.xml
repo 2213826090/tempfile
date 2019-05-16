@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase>
+<UseCase>LAB_WCDMA_CB_SMS_VC</UseCase>
+<Description>Mobile Terminated SMS Cell Broadcast over WCDMA during CSV call on simulated network</Description>
+<b2bIteration>1</b2bIteration>
+<b2bContinuousMode>True</b2bContinuousMode>
+<Parameters>
+        <Parameter>
+            <!-- Cell Band (from Band 1 to Band 8) -->
+            <Name>CELL_BAND</Name>
+            <Value>1</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Cell power in dB -->
+            <Name>CELL_POWER</Name>
+            <Value>-60</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Downlink UARFCN Frequency -->
+            <Name>DL_UARFCN</Name>
+            <Value>10700</Value>
+        </Parameter>
+        <Parameter>
+            <!-- SMS text to send -->
+            <Name>SMS_TEXT</Name>
+            <Value>This is a ETWS SMS-CB for earthquake and tsunami combined warning in 3G</Value>
+        </Parameter>
+        <Parameter>
+            <!-- CELL_BROADCAST_MESSAGE_IDENTIFIER -->
+            <Name>CELL_BROADCAST_MESSAGE_IDENTIFIER</Name>
+            <Value>4354</Value>
+        </Parameter>
+        <Parameter>
+            <!-- REPETITION_PERIOD In Seconds -->
+            <Name>REPETITION_PERIOD</Name>
+            <Value>5</Value>
+        </Parameter>
+        <Parameter>
+            <!-- SMS Data coding scheme in hexadecimal -->
+            <Name>DATA_CODING_SCHEME</Name>
+            <Value>00</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Update number should be between 0-15 -->
+            <Name>UPDATE_NUMBER</Name>
+            <Value>0</Value>
+        </Parameter>
+        <Parameter>
+            <!-- SMS transfer timeout in seconds -->
+            <Name>SMS_TRANSFER_TIMEOUT</Name>
+            <Value>60</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Voice call type (MO [Mobile Originated]|MT [Mobile Terminated]) -->
+            <Name>VC_TYPE</Name>
+            <Value>MO</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Voice call type (MO [Mobile Originated]|MT [Mobile Terminated]) -->
+            <Name>PHONE_NUMBER</Name>
+            <Value>11111</Value>
+        </Parameter>
+</Parameters>
+</TestCase>

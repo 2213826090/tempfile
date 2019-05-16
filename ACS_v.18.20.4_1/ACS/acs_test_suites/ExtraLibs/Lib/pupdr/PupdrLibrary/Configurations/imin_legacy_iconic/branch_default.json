@@ -1,0 +1,29 @@
+{
+    "Configuration": {
+        "Boot": {
+            "MODEM": false,
+            "PKP_5S": false,
+            "SHELL_IN_ROS": false
+        },
+        "BootVars": null,
+        "Custom": null,
+        "Flash": {
+            "CHECK_OSLOADER": false,
+            "DEDIPROG": false,
+            "MOOREFIELD": true,
+            "UEFI": false
+        },
+        "Inherit": {
+            "BRANCH": null
+        },
+        "Logs": null,
+        "Timeout": null,
+        "WorkAround": {
+            "Function": {
+                "Issue": "No image check",
+                "Name": "__img_check",
+                "Pattern": ".*"
+            }
+        }
+    }
+}

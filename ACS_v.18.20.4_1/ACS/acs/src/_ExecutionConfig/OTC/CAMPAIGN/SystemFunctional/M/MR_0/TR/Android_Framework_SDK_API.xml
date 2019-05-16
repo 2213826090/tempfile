@@ -1,0 +1,125 @@
+<?xml version='1.0' encoding='ASCII'?>
+<Campaign version="13.49">
+    <Parameters>
+        <Parameter isControlledPSUsed="False"/>
+        <Parameter isIoCardUsed="False"/>
+        <!-- Set skipBootOnPowerCycle to True to disable the accs boot procedure -->
+        <!-- Important, it means that boot will be handle inside the campaign/tc -->
+        <Parameter skipBootOnPowerCycle="False"/>
+        <!-- Set bootRetryNumber to maximum number of boot retries during the acs boot procedure -->
+        <!-- Important, it means that bootRetryNumber is set by default to 0 if not specified -->
+        <Parameter bootRetryNumber="0"/>
+        <Parameter runHookScripts="False"/>
+        <Parameter powerCycleBetweenTC="False"/>
+        <Parameter powerCycleOnFailure="False"/>
+        <!-- finalDutState allows user to leave the DUT in a specific state at the end of the campaign
+            Possible values: PowerOn | PowerOff | Charging | NoChange
+            By default DUT is leaved in NoChange state.
+            In case the user selects Charging as final state of the DUT and that DUT fails to enter Charging,
+            ACS shall try to switch the DUT off -->
+        <Parameter finalDutState="NoChange"/>
+        <Parameter stopCampaignOnCriticalFailure="False"/>
+        <Parameter stopCampaignOnFirstFailure="False"/>
+        <!-- LoggingLevel possible values: info | warning | debug | error -->
+        <Parameter loggingLevel="debug"/>
+        <!-- CampaignType format -> <TEAM>_<CAMPAIGNTYPE>
+            Possible values:
+            FT(Feature Team)-> SANITY | REGRESSION | STRESS, RELIABILTY | MTBF
+            ST(System Test)-> SANITY | REGRESSION | STRESS, RELIABILTY | MTBF | EM
+            SI(System Integration)-> EAT | STAB | PACT | CAT0 | RELIABILITY | MTBF | CTS | ACS_CI
+            Otherwise "Others" should be used -->
+        <Parameter CampaignType="Others"/>
+        <Parameter TCRReportViaRESTAPI="True"/>
+    </Parameters>
+    <Targets>
+        <!-- Target Values -->
+        <Target targetB2bPassRate="100"/>
+    </Targets>
+    <TestCases>
+        <TestCase Id="../../../../../TC/TR/DeviceSetup/prereq_ConnectToAP"/>
+        <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/SystemOS/prerequisites/prereq_Add_google_account_M_dessert"/>
+        <TestCase Id="../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/generic/System_OS_AndroidFramework_AndroidSdkApi_testExternalStorageDirectory"/>
+        <TestCase Id="../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/generic/System_OS_AndroidFramework_AndroidSdkApi_testFileObserver"/>
+        <TestCase Id="../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/generic/System_OS_AndroidFramework_AndroidSdkApi_testCpuAbi2String"/>
+        <TestCase Id="../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/generic/System_OS_AndroidFramework_AndroidSdkApi_testRootDirectory"/>
+        <TestCase Id="../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/generic/System_OS_AndroidFramework_AndroidSdkApi_testSerialString"/>
+        <TestCase Id="../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/generic/System_OS_AndroidFramework_AndroidSdkApi_testAcquireLock"/>
+        <TestCase Id="../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/generic/System_OS_AndroidFramework_AndroidSdkApi_testBrandString"/>
+        <TestCase Id="../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/generic/System_OS_AndroidFramework_AndroidSdkApi_testTagsString"/>
+        <TestCase Id="../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/generic/System_OS_AndroidFramework_AndroidSdkApi_testTypeString"/>
+        <TestCase Id="../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/generic/System_OS_AndroidFramework_AndroidSdkApi_testDownloadCacheDirectory"/>
+        <TestCase Id="../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/generic/System_OS_AndroidFramework_AndroidSdkApi_testProductString"/>
+        <TestCase Id="../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/generic/System_OS_AndroidFramework_AndroidSdkApi_testManufacturerString"/>
+        <TestCase Id="../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/generic/System_OS_AndroidFramework_AndroidSdkApi_testTimeString"/>
+        <TestCase Id="../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/generic/System_OS_AndroidFramework_AndroidSdkApi_testVibrateTime"/>
+        <TestCase Id="../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/generic/System_OS_AndroidFramework_AndroidSdkApi_testAllocateMemoryFile"/>
+        <TestCase Id="../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/generic/System_OS_AndroidFramework_AndroidSdkApi_testBoardString"/>
+        <TestCase Id="../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/generic/System_OS_AndroidFramework_AndroidSdkApi_testCpuAbiString"/>
+        <TestCase Id="../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/generic/System_OS_AndroidFramework_AndroidSdkApi_testModelString"/>
+        <TestCase Id="../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/generic/System_OS_AndroidFramework_AndroidSdkApi_testCreateCanvas"/>
+        <TestCase Id="../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/generic/System_OS_AndroidFramework_AndroidSdkApi_testRadioVersionString"/>
+        <TestCase Id="../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/generic/System_OS_AndroidFramework_AndroidSdkApi_testExternalStorageState"/>
+        <TestCase Id="../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/generic/System_OS_AndroidFramework_AndroidSdkApi_testScreenOn"/>
+        <TestCase Id="../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/generic/System_OS_AndroidFramework_AndroidSdkApi_testReadMemoryFile"/>
+        <TestCase Id="../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/generic/System_OS_AndroidFramework_AndroidSdkApi_testDisplayString"/>
+        <TestCase Id="../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/generic/System_OS_AndroidFramework_AndroidSdkApi_testIdString"/>
+        <TestCase Id="../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/generic/System_OS_AndroidFramework_AndroidSdkApi_testUserString"/>
+        <TestCase Id="../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/generic/System_OS_AndroidFramework_AndroidSdkApi_testVibratePattern"/>
+        <TestCase Id="../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/generic/System_OS_AndroidFramework_AndroidSdkApi_testBootloaderString"/>
+        <TestCase Id="../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/generic/System_OS_AndroidFramework_AndroidSdkApi_testDataDirectory"/>
+        <TestCase Id="../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/generic/System_OS_AndroidFramework_AndroidSdkApi_testWriteMemoryFile"/>
+        <TestCase Id="../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/generic/System_OS_AndroidFramework_AndroidSdkApi_testHostString"/>
+        <TestCase Id="../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/generic/System_OS_AndroidFramework_AndroidSdkApi_testFingerprintString"/>
+        <TestCase Id="../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/generic/System_OS_AndroidFramework_AndroidSdkApi_testDeviceString"/>
+        <TestCase Id="../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/generic/System_OS_AndroidFramework_AndroidSdkApi_testHardwareString"/>
+        <TestCase Id="../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/generic/System_OS_AndroidFramework_AndroidSdkApi_testDimensions"/>
+        <!--TestCase Id="../../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/generic/testSimpleNotification"/-->
+        <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/SystemOS/System_OS_AndroidFramework_Verify_device_displays_20_recents"/>
+        <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/SystemOS/System_OS_AndroidFramework_Saturation_and_Hue_adjustment"/>
+        <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/SystemOS/System_OS_AndroidFramework_Data_Usage"/>
+        <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/SystemOS/System_OS_AndroidFramework_DisplayMetricsReporting_Screen_density_reporting"/>
+        <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/SystemOS/System_OS_AndroidFramework_DisplayMetricsReporting_Screen_size_reporting"/>
+        <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/SystemOS/System_OS_AndroidFramework_MemTrack_Check_loop_read_memtrack"/>
+        <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/SystemOS/System_OS_AndroidFramework_MemTrack_Check_dumpsys_is_reporting_memtrack_graphics_values"/>
+        <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/SystemOS/System_OS_AndroidFramework_MemTrack_Run_the_memtrack_test_from_the_Android_source_tree"/>
+        <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/SystemOS/System_OS_AndroidFramework_MemTrack_Check_long_loop_read_of_memtrack_files"/>
+        <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/SystemOS/System_OS_AndroidFramework_MemTrack_Check-the-memtrack-effect-on-the-frame-rate"/>
+        <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/SystemOS/System_OS_AndroidFramework_Animation"/>
+        <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/SystemOS/System_OS_AndroidFramework_AccountCredentialAuthentication_Run-android.accounts_CTS"/>
+        <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/SystemOS/System_OS_AndroidFramework_AndroidCrashReporting_adb_bugreport"/>
+        <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/SystemOS/System_OS_AndroidFramework_ScreenShot_Width_and_height_check"/>
+        <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/SystemOS/System_OS_AndroidFramework_Screen_Recording"/>
+        <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/SystemOS/System_OS_AndroidFramework_ScreenShot_Approtate"/>
+        <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/SystemOS/System_OS_AndroidFramework_Test-Immersive-Mode"/>
+        <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/SystemOS/System_OS_AndroidFramework_Support_X86_ABI_kernel_64_userspace_32"/>
+        <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/SystemOS/System_OS_AndroidFramework_Support-X86_ABI-kernel-32-userspace-32"/>
+        <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/SystemOS/System_OS_AndroidFramework_Support-X86_ABI-kernel-64-userspace-64"/>
+        <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/SystemOS/System_OS_AndroidFramework_ScreenShot_Videoplayback"/>
+        <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/SystemOS/System_OS_AndroidFramework_Hardware_accelerated_UI_control"/>
+        <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/SystemOS/System_OS_AndroidFramework_Debug_mode_GPU_overdraw"/>
+        <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/SystemOS/System_OS_AndroidFramework_AndroidCrashReporting_Take-bug-report"/>
+        <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/SystemOS/System_OS_AndroidFramework_Notifications_Notifications-Alarms"/>
+        <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/SystemOS/System_OS_AndroidFramework_Debug-mode_ShowGPUViewUpdates"/>
+        <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/SystemOS/System_OS_AndroidFramework_SKIA_lib_existance"/>
+        <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/SystemOS/System_OS_AndroidFramework_GoogleCloudMessaging_Google-Cloud-Messaging"/>
+        <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/SystemOS/System_OS_AndroidFramework_GoogleCloudMessaging_Google-Cloud-Messaging-Web-browsing"/>
+        <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/SystemOS/System_OS_AndroidFramework_GoogleCloudMessaging_Google-Cloud-Messaging-Disconnect-from-WiFi"/>
+        <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/SystemOS/System_OS_AndroidFramework_Test-Immersive-Mode-with-a-3D-Game"/>
+        <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/SystemOS/System_OS_AndroidFramework_HWUI_Optimization"/>
+        <!--TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/SystemOS/System_OS_AndroidFramework_HWUI_hwuitest"/-->
+        <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/SystemOS/System_OS_AndroidFramework_SmartLock-TrustedLocation"/>
+        <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/SystemOS/ST_SYST_SWUPD_MT_036"/>
+        <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/SystemOS/ST_SYST_SWUPD_MT_034"/>
+        <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/SystemOS/System_OS_AndroidFramework_Data-Usage-new-installed-app"/>
+        <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/SystemOS/System_OS_AndroidFramework_Multi_User_Shell_Support"/>
+        <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/SystemOS/CheckMultipleSequentialReminders"/>
+        <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/SystemOS/ReminderGranurality"/>
+        <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/DutSetup/prereq_stop_uiautomator_on_dut"/>
+        <TestCase Id="../../../../../TC/TR/ACS/Applications/Applications_M/prerequisites/prereq_REMOVE_GOOGLE_ACCOUNTS"/>
+        <!-- Testlib tests start here -->
+        <TestCase Id="../../../../../TC/TR/TESTLIB/SystemOS/System_OS_AndroidFramework_SafeModeByProperty"/>
+        <!-- Tests that require reboot, device may not wake again, so leave these at the end of the campaign -->
+        <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/SystemOS/System_OS_AndroidFramework_System-time-update-Off-On"/>
+        <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/SystemOS/System_OS_AndroidFramework_AlarmManagerWindow_Check-clock-alarm-triggered-after-reboot"/>
+    </TestCases>
+</Campaign>

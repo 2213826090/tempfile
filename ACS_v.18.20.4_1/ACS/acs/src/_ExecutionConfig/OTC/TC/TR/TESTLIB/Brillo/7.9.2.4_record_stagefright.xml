@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='ASCII'?>
+<TestCase>
+    <UseCase>Testlib</UseCase>
+    <Description>Test audio record_stagefright</Description>
+    <Description>Command:brillo_audio_test record_stagefright</Description>
+    <Description>Result: records a sound which can be heard seconds later</Description>
+    <Description>Result: Currently we don't use headsets</Description>
+    <Description>Result: We check the command's output code</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <TcMaxAttempt>1</TcMaxAttempt>
+    <Parameters>
+        <Parameter>
+            <Name>test</Name>
+            <Value>scripts/brillo/tests/7.9.2.4_record_stagefright.py</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

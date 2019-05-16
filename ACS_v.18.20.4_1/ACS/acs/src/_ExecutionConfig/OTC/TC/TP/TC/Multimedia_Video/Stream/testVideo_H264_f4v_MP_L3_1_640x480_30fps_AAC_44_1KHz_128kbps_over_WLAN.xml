@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<TestCase>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Discription>
+Verify Video Codec: H264 For .f4v Decode MP_L3.1_640x480_30fps_AAC+_44.1KHz_128kbps over WLAN
+</Discription>
+    <Domain>Multimedia_Video</Domain>
+    <Phase>CORE</Phase>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <Type>FUNCTIONAL</Type>
+    <UseCase>PY_UNIT</UseCase>
+    <b2bIteration>1</b2bIteration>
+    <Parameters>
+        <Parameter>
+            <Name>HpalmName</Name>
+            <Value>video_playback.VideoPlayBack.testVideo_H264_f4v_MP_L3_1_640x480_30fps_AAC_44_1KHz_128kbps_over_WLAN</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TEST_DATA_ROOT</Name>
+            <Value>testplan/Multimedia_Video</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TEST_CASE</Name>
+            <Value>tests.Multimedia_Video.Stream.video_playback.VideoPlayBack.testVideo_H264_f4v_MP_L3_1_640x480_30fps_AAC_44_1KHz_128kbps_over_WLAN</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

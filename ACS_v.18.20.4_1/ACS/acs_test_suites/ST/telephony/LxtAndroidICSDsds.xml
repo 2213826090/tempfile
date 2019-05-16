@@ -1,0 +1,2731 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<operationsets>
+	<operationset name="sms_clear_all_sms">
+		<operation>
+			<command comment="Show menu">keypress</command>
+			<parameter comment="the key to be pressed">KEYCODE_MENU</parameter>
+			<parameter comment="seconds to wait before next action">1</parameter>
+		</operation>
+		<operation>
+	                <command comment="Go to compose button">keypress</command>
+	                <parameter comment="the key to be pressed">KEYCODE_DPAD_DOWN</parameter>
+	                <parameter comment="seconds to wait before next action">1</parameter>
+		</operation>
+		<operation>
+	                <command comment="Go to compose button">keypress</command>
+	                <parameter comment="the key to be pressed">KEYCODE_DPAD_DOWN</parameter>
+	                <parameter comment="seconds to wait before next action">1</parameter>
+		</operation>
+		<operation>
+	                <command comment="action Delete">keypress</command>
+	                <parameter comment="removing conversation list">KEYCODE_DPAD_CENTER</parameter>
+	                <parameter comment="seconds to wait before next action">1</parameter>
+		</operation>
+        <operation>
+	                <command comment="action Delete">keypress</command>
+	                <parameter comment="removing conversation list">KEYCODE_DPAD_RIGHT</parameter>
+	                <parameter comment="seconds to wait before next action">1</parameter>
+		</operation>
+		<operation>
+	                <command comment="action Confirm">keypress</command>
+	                <parameter comment="removing conversation list">KEYCODE_DPAD_CENTER</parameter>
+	                <parameter comment="seconds to wait before next action">2</parameter>
+		</operation>
+		<!--<operation>
+			<command comment="take a screenshot for validation">screenshot</command>
+			<parameter comment="the location for screenshot">sms_clear_conversation_list</parameter>
+			<parameter comment="format of the screenshot">png</parameter>
+			<parameter comment="seconds to wait before next action">2</parameter>
+		</operation>-->
+		<operation>
+			<command comment="press the back key to leave the app">keypress</command>
+			<parameter comment="the key to be pressed">KEYCODE_BACK</parameter>
+		</operation>
+	</operationset>
+	<operationset name="sms_send_sim1">
+		<operation>
+			<command comment="touch > new sms ">touch</command>
+			<parameter comment="x  coordinate">35</parameter>
+			<parameter comment="y coordinate">455</parameter>
+			<parameter comment="seconds to wait before next action">2</parameter>
+		</operation>
+		<operation>
+			<command comment="input the receiver">type</command>
+		</operation>
+        <operation>
+			<command comment="wait 5 sec to record a sound">wait</command>
+			<parameter comment="seconds to wait">2</parameter>
+		</operation>  
+	<!--	<operation>
+			<command comment="Go to sms content">keypress</command>
+			<parameter comment="the key to be pressed">KEYCODE_DPAD_DOWN</parameter>
+			<parameter comment="seconds to wait before next action">1</parameter>
+		</operation> -->
+		<operation>
+			<command comment="Go to sms content">keypress</command>
+			<parameter comment="the key to be pressed">KEYCODE_DPAD_DOWN</parameter>
+			<parameter comment="seconds to wait before next action">1</parameter>
+		</operation>		
+		<operation>
+			<command comment="input the sms content">type</command>
+		</operation>
+        <operation>
+			<command comment="wait 5 sec to record a sound">wait</command>
+			<parameter comment="seconds to wait">10</parameter>
+		</operation>
+        <operation>
+			<command comment="Go to sms content">keypress</command>
+			<parameter comment="the key to be pressed">KEYCODE_DPAD_DOWN</parameter>
+			<parameter comment="seconds to wait before next action">1</parameter>
+		</operation>
+        <operation>
+			<command comment="Go to sms content">keypress</command>
+			<parameter comment="the key to be pressed">KEYCODE_DPAD_LEFT</parameter>
+			<parameter comment="seconds to wait before next action">1</parameter>
+		</operation>
+		<operation>
+			<command comment="Send the sms">keypress</command>
+			<parameter comment="the key to be pressed">KEYCODE_ENTER</parameter>
+			<parameter comment="seconds to wait before next action">2</parameter>
+		</operation>
+        <operation>
+			<command comment="wait 5 sec to record a sound">wait</command>
+			<parameter comment="seconds to wait">5</parameter>
+		</operation>
+		<!--<operation>
+			<command comment="take a screenshot for validation">screenshot</command>
+			<parameter comment="the location for screenshot">sms_send</parameter>
+			<parameter comment="format of the screenshot">png</parameter>
+			<parameter comment="seconds to wait before next action">2</parameter>
+		</operation>-->
+		<operation>
+			<command comment="press the back key to quit input">keypress</command>
+			<parameter comment="the key to be pressed">KEYCODE_BACK</parameter>
+			<parameter comment="seconds to wait before next action">2</parameter>
+		</operation>
+		<operation>
+			<command comment="press the back key to go to conversation list">keypress</command>
+			<parameter comment="the key to be pressed">KEYCODE_BACK</parameter>
+			<parameter comment="seconds to wait before next action">2</parameter>
+		</operation>
+		<operation>
+			<command comment="press the back key to leave the app">keypress</command>
+			<parameter comment="the key to be pressed">KEYCODE_BACK</parameter>
+			<parameter comment="seconds to wait before next action">2</parameter>
+		</operation>
+	</operationset>
+	<operationset name="sms_send_sim2">
+		<operation>
+			<command comment="touch > new sms ">touch</command>
+			<parameter comment="x  coordinate">35</parameter>
+			<parameter comment="y coordinate">455</parameter>
+			<parameter comment="seconds to wait before next action">2</parameter>
+		</operation>
+		<operation>
+			<command comment="input the receiver">type</command>
+		</operation>
+        <operation>
+			<command comment="wait 5 sec to record a sound">wait</command>
+			<parameter comment="seconds to wait">2</parameter>
+		</operation>  
+	<!--	<operation>
+			<command comment="Go to sms content">keypress</command>
+			<parameter comment="the key to be pressed">KEYCODE_DPAD_DOWN</parameter>
+			<parameter comment="seconds to wait before next action">1</parameter>
+		</operation> -->
+		<operation>
+			<command comment="Go to sms content">keypress</command>
+			<parameter comment="the key to be pressed">KEYCODE_DPAD_DOWN</parameter>
+			<parameter comment="seconds to wait before next action">1</parameter>
+		</operation>		
+		<operation>
+			<command comment="input the sms content">type</command>
+		</operation>
+        <operation>
+			<command comment="wait 5 sec to record a sound">wait</command>
+			<parameter comment="seconds to wait">10</parameter>
+		</operation>
+        <operation>
+			<command comment="Go to sms content">keypress</command>
+			<parameter comment="the key to be pressed">KEYCODE_DPAD_DOWN</parameter>
+			<parameter comment="seconds to wait before next action">1</parameter>
+		</operation>
+        <operation>
+			<command comment="Send the sms">keypress</command>
+			<parameter comment="the key to be pressed">KEYCODE_ENTER</parameter>
+			<parameter comment="seconds to wait before next action">2</parameter>
+		</operation>
+        <operation>
+			<command comment="wait 5 sec to record a sound">wait</command>
+			<parameter comment="seconds to wait">5</parameter>
+		</operation>
+		<!--<operation>
+			<command comment="take a screenshot for validation">screenshot</command>
+			<parameter comment="the location for screenshot">sms_send</parameter>
+			<parameter comment="format of the screenshot">png</parameter>
+			<parameter comment="seconds to wait before next action">2</parameter>
+		</operation>-->
+		<operation>
+			<command comment="press the back key to quit input">keypress</command>
+			<parameter comment="the key to be pressed">KEYCODE_BACK</parameter>
+			<parameter comment="seconds to wait before next action">2</parameter>
+		</operation>
+		<operation>
+			<command comment="press the back key to go to conversation list">keypress</command>
+			<parameter comment="the key to be pressed">KEYCODE_BACK</parameter>
+			<parameter comment="seconds to wait before next action">2</parameter>
+		</operation>
+		<operation>
+			<command comment="press the back key to leave the app">keypress</command>
+			<parameter comment="the key to be pressed">KEYCODE_BACK</parameter>
+			<parameter comment="seconds to wait before next action">2</parameter>
+		</operation>
+	</operationset>
+	<operationset name="sms_receive">
+		<operation>
+			<command comment="touch the first conversation item">touch</command>
+			<parameter comment="x coordinate">160</parameter>
+			<parameter comment="y coordinate">105</parameter>
+			<parameter comment="seconds to wait before next action">1</parameter>
+		</operation>
+		<!--<operation>
+			<command comment="take a screenshot for validation">screenshot</command>
+			<parameter comment="the location for screenshot">sms_receive_message_list</parameter>
+			<parameter comment="format of the screenshot">png</parameter>
+			<parameter comment="seconds to wait before next action">3</parameter>
+		</operation>-->
+		<operation>
+			<command comment="press the back key to go to conversation list">keypress</command>
+			<parameter comment="the key to be pressed">KEYCODE_BACK</parameter>
+		</operation>
+		<operation>
+			<command comment="press the back key to leave the app">keypress</command>
+			<parameter comment="the key to be pressed">KEYCODE_BACK</parameter>
+		</operation>
+	</operationset>
+    <operationset name="open_CrashReport_menu">
+        <operation>
+			<command comment="Show menu">keypress</command>
+			<parameter comment="the key to be pressed">KEYCODE_HOME</parameter>
+			<parameter comment="seconds to wait before next action">2</parameter>
+		</operation>
+		<operation>
+			<command comment="exec > CrashReport">exec</command>
+			<parameter comment="command">start -a android.intent.action.MAIN -n com.intel.crashreport/.CrashReportActivity</parameter>
+		</operation>
+	</operationset>
+    <operationset name="disable_Crash_Report">
+		<operation>
+			<command comment="touch > report management">touch</command>
+			<parameter comment="x coordinate">300</parameter>
+			<parameter comment="y coordinate">340</parameter>
+			<parameter comment="seconds to wait before next action">2</parameter>
+		</operation>
+		<operation>
+			<command comment="touch > never report">touch</command>
+			<parameter comment="x coordinate">300</parameter>
+			<parameter comment="y coordinate">650</parameter>
+			<parameter comment="seconds to wait before next action">2</parameter>
+		</operation>
+	</operationset>
+	<operationset name="mms_memo_send">
+		<operation>
+			<command comment="touch > new sms ">touch</command>
+			<parameter comment="x  coordinate">85</parameter>
+			<parameter comment="y coordinate">990</parameter>
+			<parameter comment="seconds to wait before next action">2</parameter>
+		</operation>
+		<operation>
+			<command comment="touch > field for number">touch</command>
+			<parameter comment="x  coordinate">107</parameter>
+			<parameter comment="y  coordinate">149</parameter>
+			<parameter comment="seconds to wait before next action">2</parameter>
+		</operation>
+		<operation>
+			<command comment="input the receiver">type</command>
+		</operation>
+		<operation>
+			<command comment="press the enter key to finish the input">keypress</command>
+			<parameter comment="the key to be pressed">KEYCODE_ENTER</parameter>
+		</operation>
+		<operation>
+			<command comment="touch > sms content field">touch</command>
+			<parameter comment="x  coordinate">132</parameter>
+			<parameter comment="y  coordinate">400</parameter>
+			<parameter comment="seconds to wait before next action">2</parameter>
+		</operation>
+		<operation>
+			<command comment="input the message content">type</command>
+		</operation>
+		<operation>
+			<command comment="press the back key to close message field">keypress</command>
+			<parameter comment="the key to be pressed">KEYCODE_BACK</parameter>
+		</operation>
+		<!-- record the audio start -->
+		<operation>
+			<command comment="press the menu key to start memo recording">keypress</command>
+			<parameter comment="key to press">KEYCODE_MENU</parameter>
+		</operation>
+		<operation>
+			<command comment="touch attach a file">touch</command>
+			<parameter comment="x  coordinate">302</parameter>
+			<parameter comment="y coordinate">848</parameter>
+			<parameter comment="seconds to wait before next action">2</parameter>
+		</operation>
+		<operation>
+			<command comment="touch record">touch</command>
+			<parameter comment="x  coordinate">350</parameter>
+			<parameter comment="y coordinate">926</parameter>
+			<parameter comment="seconds to wait before next action">4</parameter>
+		</operation>
+		<operation>
+			<command comment="touch to start recording">touch</command>
+			<parameter comment="x  coordinate">161</parameter>
+			<parameter comment="y coordinate">1000</parameter>
+			<parameter comment="seconds to wait before next action">3</parameter>
+		</operation>
+		<operation>
+			<command comment="wait some time for recording memo">wait</command>
+		</operation>
+		<operation>
+			<command comment="unlock the screen">wake</command>
+			<parameter comment="seconds to wait before next action">2</parameter>
+		</operation>
+		<operation>
+			<command comment="touch to stop recording">touch</command>
+			<parameter comment="x  coordinate">448</parameter>
+			<parameter comment="y coordinate">987</parameter>
+			<parameter comment="seconds to wait before next action">2</parameter>
+		</operation>
+		<operation>
+			<command comment="confirm using this memo">touch</command>
+			<parameter comment="x  coordinate">170</parameter>
+			<parameter comment="y coordinate">747</parameter>
+			<parameter comment="seconds to wait before next action">2</parameter>
+		</operation>
+		<!-- record the audio end -->
+		<operation>
+			<command comment="touch to send">touch</command>
+			<parameter comment="x  coordinate">558</parameter>
+			<parameter comment="y coordinate">987</parameter>
+			<parameter comment="seconds to wait before next action">2</parameter>
+		</operation>
+		<!--<operation>
+			<command>screenshot</command>
+			<parameter>mms_audio.png</parameter>
+			<parameter>png</parameter>
+			<parameter comment="seconds to wait before next action">2</parameter>
+		</operation>-->
+		<operation>
+			<command comment="press the back key to go to conversation list">keypress</command>
+			<parameter comment="the key to be pressed">KEYCODE_BACK</parameter>
+		</operation>
+		<operation>
+			<command comment="press the  home key to leave the app">keypress</command>
+			<parameter comment="the key to be pressed">KEYCODE_HOME</parameter>
+		</operation>
+	</operationset>
+	<operationset name="mms_send_text_sim1">
+		<operation>
+			<command comment="touch > new sms ">touch</command>
+			<parameter comment="x  coordinate">38</parameter>
+			<parameter comment="y coordinate">461</parameter>
+			<parameter comment="seconds to wait before next action">5</parameter>
+		</operation>
+		<!-- add  of a receiver phone number in the MMS -->
+		<operation>
+			<command comment="input the receiver">type</command>
+		</operation>
+		<operation>
+			<command comment="press the enter key to finish the input">keypress</command>
+			<parameter comment="the key to be pressed">KEYCODE_ENTER</parameter>
+		</operation>
+		<!-- ADD OF A SUBJECT IN THE MMS -->
+		<operation>
+			<command comment="press the menu key to select Subject">keypress</command>
+			<parameter comment="key to press">KEYCODE_MENU</parameter>
+			<parameter comment="seconds to wait before next action">2</parameter>
+		</operation>
+		<operation>	
+			<command comment="touch > select Add a Subject">touch</command>
+			<parameter comment="x  coordinate">162</parameter>
+			<parameter comment="y  coordinate">314</parameter>
+			<parameter comment="seconds to wait before next action">2</parameter>
+		</operation>
+		<operation>
+			<command comment="input the subject">type</command>
+		</operation>
+	    <!-- add of the content in the MMS -->
+		<operation>
+			<command comment="touch > sms content field">touch</command>
+			<parameter comment="x  coordinate">50</parameter>
+			<parameter comment="y  coordinate">193</parameter>
+			<parameter comment="seconds to wait before next action">2</parameter>
+		</operation>
+		<operation>
+			<command comment="input the message content">type</command>
+		</operation>
+		<operation>
+			<command comment="wait 6 sec to record a sound">wait</command>
+			<parameter comment="seconds to wait">10</parameter>
+		</operation>
+		<operation>
+			<command comment="press the back key to close message field">keypress</command>
+			<parameter comment="the key to be pressed">KEYCODE_BACK</parameter>
+		</operation>
+		<operation>
+			<command comment="Go to sms content">keypress</command>
+			<parameter comment="the key to be pressed">KEYCODE_DPAD_DOWN</parameter>
+			<parameter comment="seconds to wait before next action">1</parameter>
+		</operation>
+        <operation>
+			<command comment="Go to sms content">keypress</command>
+			<parameter comment="the key to be pressed">KEYCODE_DPAD_LEFT</parameter>
+			<parameter comment="seconds to wait before next action">1</parameter>
+		</operation>
+		<operation>
+			<command comment="press the enter key to send the MMS">keypress</command>
+			<parameter comment="the key to be pressed">KEYCODE_DPAD_CENTER</parameter>
+		</operation>
+		<operation>
+			<command comment="wait until the MMS is sent">wait</command>
+			<parameter comment="seconds to wait">60</parameter>
+		</operation>
+		<operation>
+			<command comment="press the back key to close message field">keypress</command>
+			<parameter comment="the key to be pressed">KEYCODE_BACK</parameter>
+		</operation>
+		<!-- <operation>
+			<command comment="press the enter key to send the MMS">keypress</command>
+			<parameter comment="the key to be pressed">KEYCODE_ENTER</parameter>
+		</operation>
+		<operation>
+			<command comment="wait until the MMS is sent">wait</command>
+			<parameter comment="seconds to wait">60</parameter>
+		</operation> -->
+	</operationset>
+	<operationset name="mms_send_text_sim2">
+		<operation>
+			<command comment="touch > new sms ">touch</command>
+			<parameter comment="x  coordinate">38</parameter>
+			<parameter comment="y coordinate">461</parameter>
+			<parameter comment="seconds to wait before next action">5</parameter>
+		</operation>
+		<!-- add  of a receiver phone number in the MMS -->
+		<operation>
+			<command comment="input the receiver">type</command>
+		</operation>
+		<operation>
+			<command comment="press the enter key to finish the input">keypress</command>
+			<parameter comment="the key to be pressed">KEYCODE_ENTER</parameter>
+		</operation>
+		<!-- ADD OF A SUBJECT IN THE MMS -->
+		<operation>
+			<command comment="press the menu key to select Subject">keypress</command>
+			<parameter comment="key to press">KEYCODE_MENU</parameter>
+			<parameter comment="seconds to wait before next action">2</parameter>
+		</operation>
+		<operation>	
+			<command comment="touch > select Add a Subject">touch</command>
+			<parameter comment="x  coordinate">162</parameter>
+			<parameter comment="y  coordinate">314</parameter>
+			<parameter comment="seconds to wait before next action">2</parameter>
+		</operation>
+		<operation>
+			<command comment="input the subject">type</command>
+		</operation>
+	    <!-- add of the content in the MMS -->
+		<operation>
+			<command comment="touch > sms content field">touch</command>
+			<parameter comment="x  coordinate">50</parameter>
+			<parameter comment="y  coordinate">193</parameter>
+			<parameter comment="seconds to wait before next action">2</parameter>
+		</operation>
+		<operation>
+			<command comment="input the message content">type</command>
+		</operation>
+		<operation>
+			<command comment="wait 6 sec to record a sound">wait</command>
+			<parameter comment="seconds to wait">10</parameter>
+		</operation>
+		<operation>
+			<command comment="press the back key to close message field">keypress</command>
+			<parameter comment="the key to be pressed">KEYCODE_BACK</parameter>
+		</operation>
+		<operation>
+			<command comment="Go to sms content">keypress</command>
+			<parameter comment="the key to be pressed">KEYCODE_DPAD_DOWN</parameter>
+			<parameter comment="seconds to wait before next action">1</parameter>
+		</operation>
+        <operation>
+			<command comment="press the enter key to send the MMS">keypress</command>
+			<parameter comment="the key to be pressed">KEYCODE_DPAD_CENTER</parameter>
+		</operation>
+		<operation>
+			<command comment="wait until the MMS is sent">wait</command>
+			<parameter comment="seconds to wait">60</parameter>
+		</operation>
+		<operation>
+			<command comment="press the back key to close message field">keypress</command>
+			<parameter comment="the key to be pressed">KEYCODE_BACK</parameter>
+		</operation>
+	</operationset>
+	<operationset name="mms_send_video_sim1">
+	    <operation>
+			<command comment="touch > new sms ">touch</command>
+			<parameter comment="x  coordinate">30</parameter>
+			<parameter comment="y coordinate">445</parameter>
+			<parameter comment="seconds to wait before next action">2</parameter>
+		</operation>
+		<!-- add  of a receiver phone number in the MMS -->
+		<operation>
+			<command comment="input the receiver">type</command>
+		</operation>
+		<operation>
+			<command comment="press the enter key to finish the input">keypress</command>
+			<parameter comment="the key to be pressed">KEYCODE_ENTER</parameter>
+		</operation>
+		<!-- ADD OF A SUBJECT IN THE MMS -->
+		<operation>
+			<command comment="press the menu key to select Subject">keypress</command>
+			<parameter comment="key to press">KEYCODE_MENU</parameter>
+			<parameter comment="seconds to wait before next action">2</parameter>
+		</operation>
+		<operation>	
+			<command comment="touch > select Add a Subject">touch</command>
+			<parameter comment="x  coordinate">162</parameter>
+			<parameter comment="y  coordinate">314</parameter>
+			<parameter comment="seconds to wait before next action">2</parameter>
+		</operation>
+		<operation>
+			<command comment="input the subject">type</command>
+		</operation>
+	    <!-- add of the content in the MMS -->
+		<operation>
+			<command comment="touch > sms content field">touch</command>
+			<parameter comment="x  coordinate">50</parameter>
+			<parameter comment="y  coordinate">193</parameter>
+			<parameter comment="seconds to wait before next action">2</parameter>
+		</operation>
+		<operation>
+			<command comment="input the message content">type</command>
+		</operation>
+		<operation>
+			<command comment="wait 6 sec to record a sound">wait</command>
+			<parameter comment="seconds to wait">10</parameter>
+		</operation>
+		<operation>
+			<command comment="press the back key to close message field">keypress</command>
+			<parameter comment="the key to be pressed">KEYCODE_BACK</parameter>
+		</operation>
+	    <!-- add of the video file -->
+	    <operation>
+	      <command comment="touch attach a file">touch</command>
+	      <parameter comment="x  coordinate">295</parameter>
+	      <parameter comment="y coordinate">50</parameter>
+	      <parameter comment="seconds to wait before next action">2</parameter>
+	    </operation>
+	    <operation>
+	      <command comment="touch video file">touch</command>
+	      <parameter comment="x  coordinate">160</parameter>
+	      <parameter comment="y coordinate">258</parameter>
+	      <parameter comment="seconds to wait before next action">2</parameter>
+	    </operation>
+       
+
+       <!-- to be done when the bug in the gallery is fixed-->
+		<operation>
+			<command comment="touch on the sound to send">touch</command>
+			<parameter comment="x  coordinate">160</parameter>
+			<parameter comment="y coordinate">280</parameter>
+			<parameter comment="seconds to wait before next action">2</parameter>
+		</operation>
+        <operation>
+	      <command comment="touch video file">touch</command>
+	      <parameter comment="x  coordinate">160</parameter>
+	      <parameter comment="y coordinate">250</parameter>
+	      <parameter comment="seconds to wait before next action">2</parameter>
+	    </operation>       
+		<operation>
+			<command comment="wait until the conversion to MMS">wait</command>
+			<parameter comment="seconds to wait">3</parameter>
+		</operation>
+	   <!--	<operation>
+			<command comment="press the enter key to send the MMS">keypress</command>
+			<parameter comment="the key to be pressed">KEYCODE_ENTER</parameter>
+		</operation> -->
+        <operation>
+			<command comment="Go to sms content">keypress</command>
+			<parameter comment="the key to be pressed">KEYCODE_DPAD_DOWN</parameter>
+			<parameter comment="seconds to wait before next action">1</parameter>
+		</operation>
+        <operation>
+			<command comment="Go to sms content">keypress</command>
+			<parameter comment="the key to be pressed">KEYCODE_DPAD_LEFT</parameter>
+			<parameter comment="seconds to wait before next action">1</parameter>
+		</operation>
+		<operation>
+			<command comment="press the enter key to send the MMS">keypress</command>
+			<parameter comment="the key to be pressed">KEYCODE_DPAD_CENTER</parameter>
+		</operation>
+		<operation>
+			<command comment="wait until the MMS is sent">wait</command>
+			<parameter comment="seconds to wait">20</parameter>
+		</operation>
+		<!--<operation>
+			<command>screenshot</command>
+			<parameter>mms_video_sent.png</parameter>
+			<parameter>png</parameter>
+			<parameter comment="seconds to wait before next action">2</parameter>
+		</operation>-->
+		<operation>
+			<command comment="press the back key to go to conversation list">keypress</command>
+			<parameter comment="the key to be pressed">KEYCODE_BACK</parameter>
+		</operation>
+		<operation>
+			<command comment="press the back key to go to conversation list">keypress</command>
+			<parameter comment="the key to be pressed">KEYCODE_BACK</parameter>
+		</operation>
+		<operation>
+			<command comment="press the  home key to leave the app">keypress</command>
+			<parameter comment="the key to be pressed">KEYCODE_HOME</parameter>
+		</operation>
+	</operationset>
+	<operationset name="mms_send_video_sim2">
+	    <operation>
+			<command comment="touch > new sms ">touch</command>
+			<parameter comment="x  coordinate">30</parameter>
+			<parameter comment="y coordinate">445</parameter>
+			<parameter comment="seconds to wait before next action">2</parameter>
+		</operation>
+		<!-- add  of a receiver phone number in the MMS -->
+		<operation>
+			<command comment="input the receiver">type</command>
+		</operation>
+		<operation>
+			<command comment="press the enter key to finish the input">keypress</command>
+			<parameter comment="the key to be pressed">KEYCODE_ENTER</parameter>
+		</operation>
+		<!-- ADD OF A SUBJECT IN THE MMS -->
+		<operation>
+			<command comment="press the menu key to select Subject">keypress</command>
+			<parameter comment="key to press">KEYCODE_MENU</parameter>
+			<parameter comment="seconds to wait before next action">2</parameter>
+		</operation>
+		<operation>	
+			<command comment="touch > select Add a Subject">touch</command>
+			<parameter comment="x  coordinate">162</parameter>
+			<parameter comment="y  coordinate">314</parameter>
+			<parameter comment="seconds to wait before next action">2</parameter>
+		</operation>
+		<operation>
+			<command comment="input the subject">type</command>
+		</operation>
+	    <!-- add of the content in the MMS -->
+		<operation>
+			<command comment="touch > sms content field">touch</command>
+			<parameter comment="x  coordinate">50</parameter>
+			<parameter comment="y  coordinate">193</parameter>
+			<parameter comment="seconds to wait before next action">2</parameter>
+		</operation>
+		<operation>
+			<command comment="input the message content">type</command>
+		</operation>
+		<operation>
+			<command comment="wait 6 sec to record a sound">wait</command>
+			<parameter comment="seconds to wait">10</parameter>
+		</operation>
+		<operation>
+			<command comment="press the back key to close message field">keypress</command>
+			<parameter comment="the key to be pressed">KEYCODE_BACK</parameter>
+		</operation>
+	    <!-- add of the video file -->
+	    <operation>
+	      <command comment="touch attach a file">touch</command>
+	      <parameter comment="x  coordinate">295</parameter>
+	      <parameter comment="y coordinate">50</parameter>
+	      <parameter comment="seconds to wait before next action">2</parameter>
+	    </operation>
+	    <operation>
+	      <command comment="touch video file">touch</command>
+	      <parameter comment="x  coordinate">160</parameter>
+	      <parameter comment="y coordinate">258</parameter>
+	      <parameter comment="seconds to wait before next action">2</parameter>
+	    </operation>
+       
+
+       <!-- to be done when the bug in the gallery is fixed-->
+		<operation>
+			<command comment="touch on the sound to send">touch</command>
+			<parameter comment="x  coordinate">160</parameter>
+			<parameter comment="y coordinate">280</parameter>
+			<parameter comment="seconds to wait before next action">2</parameter>
+		</operation>
+        <operation>
+	      <command comment="touch video file">touch</command>
+	      <parameter comment="x  coordinate">160</parameter>
+	      <parameter comment="y coordinate">250</parameter>
+	      <parameter comment="seconds to wait before next action">2</parameter>
+	    </operation>       
+		<operation>
+			<command comment="wait until the conversion to MMS">wait</command>
+			<parameter comment="seconds to wait">5</parameter>
+		</operation>
+	   <!--	<operation>
+			<command comment="press the enter key to send the MMS">keypress</command>
+			<parameter comment="the key to be pressed">KEYCODE_ENTER</parameter>
+		</operation> -->
+        <operation>
+			<command comment="Go to sms content">keypress</command>
+			<parameter comment="the key to be pressed">KEYCODE_DPAD_DOWN</parameter>
+			<parameter comment="seconds to wait before next action">1</parameter>
+		</operation>
+        <operation>
+			<command comment="press the enter key to send the MMS">keypress</command>
+			<parameter comment="the key to be pressed">KEYCODE_DPAD_CENTER</parameter>
+		</operation>
+		<operation>
+			<command comment="wait until the MMS is sent">wait</command>
+			<parameter comment="seconds to wait">60</parameter>
+		</operation>
+		<!--<operation>
+			<command>screenshot</command>
+			<parameter>mms_video_sent.png</parameter>
+			<parameter>png</parameter>
+			<parameter comment="seconds to wait before next action">2</parameter>
+		</operation>-->
+		<operation>
+			<command comment="press the back key to go to conversation list">keypress</command>
+			<parameter comment="the key to be pressed">KEYCODE_BACK</parameter>
+		</operation>
+		<operation>
+			<command comment="press the back key to go to conversation list">keypress</command>
+			<parameter comment="the key to be pressed">KEYCODE_BACK</parameter>
+		</operation>
+		<operation>
+			<command comment="press the  home key to leave the app">keypress</command>
+			<parameter comment="the key to be pressed">KEYCODE_HOME</parameter>
+		</operation>
+	</operationset>
+	<operationset name="mms_send_picture_taken_by_camera_sim1">
+		<operation>
+			<command comment="touch > new sms ">touch</command>
+			<parameter comment="x  coordinate">38</parameter>
+			<parameter comment="y coordinate">456</parameter>
+			<parameter comment="seconds to wait before next action">2</parameter>
+		</operation>
+		<operation>
+			<command comment="touch > field for number">touch</command>
+			<parameter comment="x  coordinate">41</parameter>
+			<parameter comment="y  coordinate">114</parameter>
+			<parameter comment="seconds to wait before next action">2</parameter>
+		</operation>
+		<operation>
+			<command comment="input the receiver">type</command>
+		</operation>
+		<operation>
+			<command comment="press the enter key to finish the input">keypress</command>
+			<parameter comment="the key to be pressed">KEYCODE_ENTER</parameter>
+		</operation>
+		<!-- ADD OF A SUBJECT IN THE MMS -->
+		<operation>
+			<command comment="press the menu key to select Subject">keypress</command>
+			<parameter comment="key to press">KEYCODE_MENU</parameter>
+			<parameter comment="seconds to wait before next action">2</parameter>
+		</operation>
+		<operation>	
+			<command comment="touch > select Add a Subject">touch</command>
+			<parameter comment="x  coordinate">162</parameter>
+			<parameter comment="y  coordinate">314</parameter>
+			<parameter comment="seconds to wait before next action">2</parameter>
+		</operation>
+		<operation>
+			<command comment="input the subject">type</command>
+		</operation>
+	    <!-- add of the content in the MMS -->
+		<operation>
+			<command comment="touch > sms content field">touch</command>
+			<parameter comment="x  coordinate">50</parameter>
+			<parameter comment="y  coordinate">193</parameter>
+			<parameter comment="seconds to wait before next action">2</parameter>
+		</operation>
+		<operation>
+			<command comment="input the message content">type</command>
+		</operation>
+		<operation>
+			<command comment="wait 6 sec to record a sound">wait</command>
+			<parameter comment="seconds to wait">10</parameter>
+		</operation>
+		<operation>
+			<command comment="press the back key to close message field">keypress</command>
+			<parameter comment="the key to be pressed">KEYCODE_BACK</parameter>
+		</operation>
+		<!-- add of the picture -->
+		<operation>
+			<command comment="touch attach a file">touch</command>
+			<parameter comment="x  coordinate">293</parameter>
+			<parameter comment="y coordinate">56</parameter>
+			<parameter comment="seconds to wait before next action">2</parameter>
+		</operation>
+		<operation>
+			<command comment="touch take a picture from camera">touch</command>
+			<parameter comment="x  coordinate">160</parameter>
+			<parameter comment="y coordinate">198</parameter>
+			<parameter comment="seconds to wait before next action">5</parameter>
+		</operation>
+		<operation>
+			<command comment="touch take a picture from camera">touch</command>
+			<parameter comment="x  coordinate">160</parameter>
+			<parameter comment="y coordinate">460</parameter>
+			<parameter comment="seconds to wait before next action">5</parameter>
+		</operation>
+		<operation>
+			<command comment="touch take a picture from camera">touch</command>
+			<parameter comment="x  coordinate">278</parameter>
+			<parameter comment="y coordinate">460</parameter>
+			<parameter comment="seconds to wait before next action">10</parameter>
+		</operation>
+		<operation>
+			<command comment="Go to sms content">keypress</command>
+			<parameter comment="the key to be pressed">KEYCODE_DPAD_DOWN</parameter>
+			<parameter comment="seconds to wait before next action">1</parameter>
+		</operation>
+        <operation>
+			<command comment="Go to sms content">keypress</command>
+			<parameter comment="the key to be pressed">KEYCODE_DPAD_LEFT</parameter>
+			<parameter comment="seconds to wait before next action">1</parameter>
+		</operation>
+		<operation>
+			<command comment="press the enter key to send the MMS">keypress</command>
+			<parameter comment="the key to be pressed">KEYCODE_DPAD_CENTER</parameter>
+		</operation>
+		<operation>
+			<command comment="wait until the MMS is sent">wait</command>
+			<parameter comment="seconds to wait">60</parameter>
+		</operation>
+		<!--<operation>
+			<command>screenshot</command>
+			<parameter>mms_picture_sent.png</parameter>
+			<parameter>png</parameter>
+			<parameter comment="seconds to wait before next action">3</parameter>
+		</operation>-->
+		<operation>
+			<command comment="press the enter key to send the MMS">keypress</command>
+			<parameter comment="the key to be pressed">KEYCODE_BACK</parameter>
+		</operation>
+		<operation>
+			<command comment="press the back key to go to conversation list">keypress</command>
+			<parameter comment="the key to be pressed">KEYCODE_BACK</parameter>
+		</operation>
+
+		<operation>
+			<command comment="press the home key to leave the app">keypress</command>
+			<parameter comment="the key to be pressed">KEYCODE_HOME</parameter>
+		</operation>
+	</operationset>
+	<operationset name="mms_send_picture_taken_by_camera_sim2">
+		<operation>
+			<command comment="touch > new sms ">touch</command>
+			<parameter comment="x  coordinate">38</parameter>
+			<parameter comment="y coordinate">456</parameter>
+			<parameter comment="seconds to wait before next action">2</parameter>
+		</operation>
+		<operation>
+			<command comment="touch > field for number">touch</command>
+			<parameter comment="x  coordinate">41</parameter>
+			<parameter comment="y  coordinate">114</parameter>
+			<parameter comment="seconds to wait before next action">2</parameter>
+		</operation>
+		<operation>
+			<command comment="input the receiver">type</command>
+		</operation>
+		<operation>
+			<command comment="press the enter key to finish the input">keypress</command>
+			<parameter comment="the key to be pressed">KEYCODE_ENTER</parameter>
+		</operation>
+		<!-- ADD OF A SUBJECT IN THE MMS -->
+		<operation>
+			<command comment="press the menu key to select Subject">keypress</command>
+			<parameter comment="key to press">KEYCODE_MENU</parameter>
+			<parameter comment="seconds to wait before next action">2</parameter>
+		</operation>
+		<operation>	
+			<command comment="touch > select Add a Subject">touch</command>
+			<parameter comment="x  coordinate">162</parameter>
+			<parameter comment="y  coordinate">314</parameter>
+			<parameter comment="seconds to wait before next action">2</parameter>
+		</operation>
+		<operation>
+			<command comment="input the subject">type</command>
+		</operation>
+	    <!-- add of the content in the MMS -->
+		<operation>
+			<command comment="touch > sms content field">touch</command>
+			<parameter comment="x  coordinate">50</parameter>
+			<parameter comment="y  coordinate">193</parameter>
+			<parameter comment="seconds to wait before next action">2</parameter>
+		</operation>
+		<operation>
+			<command comment="input the message content">type</command>
+		</operation>
+		<operation>
+			<command comment="wait 6 sec to record a sound">wait</command>
+			<parameter comment="seconds to wait">10</parameter>
+		</operation>
+		<operation>
+			<command comment="press the back key to close message field">keypress</command>
+			<parameter comment="the key to be pressed">KEYCODE_BACK</parameter>
+		</operation>
+		<!-- add of the picture -->
+		<operation>
+			<command comment="touch attach a file">touch</command>
+			<parameter comment="x  coordinate">293</parameter>
+			<parameter comment="y coordinate">56</parameter>
+			<parameter comment="seconds to wait before next action">2</parameter>
+		</operation>
+		<operation>
+			<command comment="touch take a picture from camera">touch</command>
+			<parameter comment="x  coordinate">160</parameter>
+			<parameter comment="y coordinate">198</parameter>
+			<parameter comment="seconds to wait before next action">5</parameter>
+		</operation>
+		<operation>
+			<command comment="touch take a picture from camera">touch</command>
+			<parameter comment="x  coordinate">160</parameter>
+			<parameter comment="y coordinate">460</parameter>
+			<parameter comment="seconds to wait before next action">5</parameter>
+		</operation>
+		<operation>
+			<command comment="touch take a picture from camera">touch</command>
+			<parameter comment="x  coordinate">278</parameter>
+			<parameter comment="y coordinate">460</parameter>
+			<parameter comment="seconds to wait before next action">5</parameter>
+		</operation>
+		<operation>
+			<command comment="Go to sms content">keypress</command>
+			<parameter comment="the key to be pressed">KEYCODE_DPAD_DOWN</parameter>
+			<parameter comment="seconds to wait before next action">1</parameter>
+		</operation>
+        <operation>
+			<command comment="press the enter key to send the MMS">keypress</command>
+			<parameter comment="the key to be pressed">KEYCODE_DPAD_CENTER</parameter>
+		</operation>
+		<operation>
+			<command comment="wait until the MMS is sent">wait</command>
+			<parameter comment="seconds to wait">60</parameter>
+		</operation>
+		<!--<operation>
+			<command>screenshot</command>
+			<parameter>mms_picture_sent.png</parameter>
+			<parameter>png</parameter>
+			<parameter comment="seconds to wait before next action">3</parameter>
+		</operation>-->
+		<operation>
+			<command comment="press the enter key to send the MMS">keypress</command>
+			<parameter comment="the key to be pressed">KEYCODE_BACK</parameter>
+		</operation>
+		<operation>
+			<command comment="press the back key to go to conversation list">keypress</command>
+			<parameter comment="the key to be pressed">KEYCODE_BACK</parameter>
+		</operation>
+
+		<operation>
+			<command comment="press the home key to leave the app">keypress</command>
+			<parameter comment="the key to be pressed">KEYCODE_HOME</parameter>
+		</operation>
+	</operationset>
+	<operationset name="mms_send_audio_sim1">
+	    <operation>
+			<command comment="touch > new sms ">touch</command>
+			<parameter comment="x  coordinate">30</parameter>
+			<parameter comment="y coordinate">455</parameter>
+			<parameter comment="seconds to wait before next action">2</parameter>
+		</operation>
+		<!-- add  of a receiver phone number in the MMS -->
+		<operation>
+			<command comment="input the receiver">type</command>
+		</operation>
+		<operation>
+			<command comment="press the enter key to finish the input">keypress</command>
+			<parameter comment="the key to be pressed">KEYCODE_ENTER</parameter>
+		</operation>
+		<!-- ADD OF A SUBJECT IN THE MMS -->
+		<operation>
+			<command comment="press the menu key to select Subject">keypress</command>
+			<parameter comment="key to press">KEYCODE_MENU</parameter>
+			<parameter comment="seconds to wait before next action">2</parameter>
+		</operation>
+		<operation>	
+			<command comment="touch > select Add a Subject">touch</command>
+			<parameter comment="x  coordinate">162</parameter>
+			<parameter comment="y  coordinate">314</parameter>
+			<parameter comment="seconds to wait before next action">2</parameter>
+		</operation>
+		<operation>
+			<command comment="input the subject">type</command>
+		</operation>
+	    <!-- add of the content in the MMS -->
+		<operation>
+			<command comment="touch > sms content field">touch</command>
+			<parameter comment="x  coordinate">50</parameter>
+			<parameter comment="y  coordinate">193</parameter>
+			<parameter comment="seconds to wait before next action">2</parameter>
+		</operation>
+		<operation>
+			<command comment="input the message content">type</command>
+		</operation>
+		<operation>
+			<command comment="wait 6 sec to record a sound">wait</command>
+			<parameter comment="seconds to wait">10</parameter>
+		</operation>
+		<operation>
+			<command comment="press the back key to close message field">keypress</command>
+			<parameter comment="the key to be pressed">KEYCODE_BACK</parameter>
+		</operation>
+	    <!-- add of the audio file -->
+	    <operation>
+	      <command comment="touch attach a file">touch</command>
+	      <parameter comment="x  coordinate">300</parameter>
+	      <parameter comment="y coordinate">47</parameter>
+	      <parameter comment="seconds to wait before next action">2</parameter>
+	    </operation>
+	    <operation>
+	      <command comment="touch audio file">touch</command>
+	      <parameter comment="x  coordinate">160</parameter>
+	      <parameter comment="y coordinate">390</parameter>
+	      <parameter comment="seconds to wait before next action">2</parameter>
+	    </operation>
+        <operation>
+			<command comment="touch on the sound to send">touch</command>
+			<parameter comment="x  coordinate">200</parameter>
+			<parameter comment="y coordinate">[RAND(102,415)]</parameter>
+			<parameter comment="seconds to wait before next action">2</parameter>
+		</operation>
+        <operation>
+	      <command comment="touch audio file">touch</command>
+	      <parameter comment="x  coordinate">230</parameter>
+	      <parameter comment="y coordinate">445</parameter>
+	      <parameter comment="seconds to wait before next action">2</parameter>
+	    </operation>       
+		<operation>
+			<command comment="wait until the conversion to MMS">wait</command>
+			<parameter comment="seconds to wait">5</parameter>
+		</operation>
+	<!--	<operation>
+			<command comment="press the enter key to send the MMS">keypress</command>
+			<parameter comment="the key to be pressed">KEYCODE_ENTER</parameter>
+		</operation> -->
+        <operation>
+			<command comment="Go to sms content">keypress</command>
+			<parameter comment="the key to be pressed">KEYCODE_DPAD_DOWN</parameter>
+			<parameter comment="seconds to wait before next action">1</parameter>
+		</operation>
+        <operation>
+			<command comment="Go to sms content">keypress</command>
+			<parameter comment="the key to be pressed">KEYCODE_DPAD_LEFT</parameter>
+			<parameter comment="seconds to wait before next action">1</parameter>
+		</operation>
+		<operation>
+			<command comment="press the enter key to send the MMS">keypress</command>
+			<parameter comment="the key to be pressed">KEYCODE_DPAD_CENTER</parameter>
+		</operation>
+		<operation>
+			<command comment="wait until the MMS is sent">wait</command>
+			<parameter comment="seconds to wait">30</parameter>
+		</operation>
+		<!--<operation>
+			<command>screenshot</command>
+			<parameter>mms_video_sent.png</parameter>
+			<parameter>png</parameter>
+			<parameter comment="seconds to wait before next action">2</parameter>
+		</operation>-->
+		<operation>
+			<command comment="press the back key to go to conversation list">keypress</command>
+			<parameter comment="the key to be pressed">KEYCODE_BACK</parameter>
+		</operation>
+		<operation>
+			<command comment="press the back key to go to conversation list">keypress</command>
+			<parameter comment="the key to be pressed">KEYCODE_BACK</parameter>
+		</operation>
+		<operation>
+			<command comment="press the  home key to leave the app">keypress</command>
+			<parameter comment="the key to be pressed">KEYCODE_HOME</parameter>
+		</operation>
+	</operationset>
+	<operationset name="mms_send_audio_sim2">
+	    <operation>
+			<command comment="touch > new sms ">touch</command>
+			<parameter comment="x  coordinate">30</parameter>
+			<parameter comment="y coordinate">455</parameter>
+			<parameter comment="seconds to wait before next action">2</parameter>
+		</operation>
+		<!-- add  of a receiver phone number in the MMS -->
+		<operation>
+			<command comment="input the receiver">type</command>
+		</operation>
+		<operation>
+			<command comment="press the enter key to finish the input">keypress</command>
+			<parameter comment="the key to be pressed">KEYCODE_ENTER</parameter>
+		</operation>
+		<!-- ADD OF A SUBJECT IN THE MMS -->
+		<operation>
+			<command comment="press the menu key to select Subject">keypress</command>
+			<parameter comment="key to press">KEYCODE_MENU</parameter>
+			<parameter comment="seconds to wait before next action">2</parameter>
+		</operation>
+		<operation>	
+			<command comment="touch > select Add a Subject">touch</command>
+			<parameter comment="x  coordinate">162</parameter>
+			<parameter comment="y  coordinate">314</parameter>
+			<parameter comment="seconds to wait before next action">2</parameter>
+		</operation>
+		<operation>
+			<command comment="input the subject">type</command>
+		</operation>
+	    <!-- add of the content in the MMS -->
+		<operation>
+			<command comment="touch > sms content field">touch</command>
+			<parameter comment="x  coordinate">50</parameter>
+			<parameter comment="y  coordinate">193</parameter>
+			<parameter comment="seconds to wait before next action">2</parameter>
+		</operation>
+		<operation>
+			<command comment="input the message content">type</command>
+		</operation>
+		<operation>
+			<command comment="wait 6 sec to record a sound">wait</command>
+			<parameter comment="seconds to wait">10</parameter>
+		</operation>
+		<operation>
+			<command comment="press the back key to close message field">keypress</command>
+			<parameter comment="the key to be pressed">KEYCODE_BACK</parameter>
+		</operation>
+	    <!-- add of the audio file -->
+	    <operation>
+	      <command comment="touch attach a file">touch</command>
+	      <parameter comment="x  coordinate">300</parameter>
+	      <parameter comment="y coordinate">47</parameter>
+	      <parameter comment="seconds to wait before next action">2</parameter>
+	    </operation>
+	    <operation>
+	      <command comment="touch audio file">touch</command>
+	      <parameter comment="x  coordinate">160</parameter>
+	      <parameter comment="y coordinate">390</parameter>
+	      <parameter comment="seconds to wait before next action">2</parameter>
+	    </operation>
+        <operation>
+			<command comment="touch on the sound to send">touch</command>
+			<parameter comment="x  coordinate">200</parameter>
+			<parameter comment="y coordinate">[RAND(102,415)]</parameter>
+			<parameter comment="seconds to wait before next action">2</parameter>
+		</operation>
+        <operation>
+	      <command comment="touch audio file">touch</command>
+	      <parameter comment="x  coordinate">230</parameter>
+	      <parameter comment="y coordinate">445</parameter>
+	      <parameter comment="seconds to wait before next action">2</parameter>
+	    </operation>       
+		<operation>
+			<command comment="wait until the conversion to MMS">wait</command>
+			<parameter comment="seconds to wait">5</parameter>
+		</operation>
+	<!--	<operation>
+			<command comment="press the enter key to send the MMS">keypress</command>
+			<parameter comment="the key to be pressed">KEYCODE_ENTER</parameter>
+		</operation> -->
+        <operation>
+			<command comment="Go to sms content">keypress</command>
+			<parameter comment="the key to be pressed">KEYCODE_DPAD_DOWN</parameter>
+			<parameter comment="seconds to wait before next action">1</parameter>
+		</operation>
+        <operation>
+			<command comment="press the enter key to send the MMS">keypress</command>
+			<parameter comment="the key to be pressed">KEYCODE_DPAD_CENTER</parameter>
+		</operation>
+		<operation>
+			<command comment="wait until the MMS is sent">wait</command>
+			<parameter comment="seconds to wait">60</parameter>
+		</operation>
+		<!--<operation>
+			<command>screenshot</command>
+			<parameter>mms_video_sent.png</parameter>
+			<parameter>png</parameter>
+			<parameter comment="seconds to wait before next action">2</parameter>
+		</operation>-->
+		<operation>
+			<command comment="press the back key to go to conversation list">keypress</command>
+			<parameter comment="the key to be pressed">KEYCODE_BACK</parameter>
+		</operation>
+		<operation>
+			<command comment="press the back key to go to conversation list">keypress</command>
+			<parameter comment="the key to be pressed">KEYCODE_BACK</parameter>
+		</operation>
+		<operation>
+			<command comment="press the  home key to leave the app">keypress</command>
+			<parameter comment="the key to be pressed">KEYCODE_HOME</parameter>
+		</operation>
+	</operationset>
+    <operationset name="mms_send_picture_sim1">
+	    <operation>
+			<command comment="touch > new sms ">touch</command>
+			<parameter comment="x  coordinate">30</parameter>
+			<parameter comment="y coordinate">455</parameter>
+			<parameter comment="seconds to wait before next action">2</parameter>
+		</operation>
+		<!-- add  of a receiver phone number in the MMS -->
+		<operation>
+			<command comment="input the receiver">type</command>
+		</operation>
+		<operation>
+			<command comment="press the enter key to finish the input">keypress</command>
+			<parameter comment="the key to be pressed">KEYCODE_ENTER</parameter>
+		</operation>
+		<!-- ADD OF A SUBJECT IN THE MMS -->
+		<operation>
+			<command comment="press the menu key to select Subject">keypress</command>
+			<parameter comment="key to press">KEYCODE_MENU</parameter>
+			<parameter comment="seconds to wait before next action">2</parameter>
+		</operation>
+		<operation>	
+			<command comment="touch > select Add a Subject">touch</command>
+			<parameter comment="x  coordinate">162</parameter>
+			<parameter comment="y  coordinate">314</parameter>
+			<parameter comment="seconds to wait before next action">2</parameter>
+		</operation>
+		<operation>
+			<command comment="input the subject">type</command>
+		</operation>
+	    <!-- add of the content in the MMS -->
+		<operation>
+			<command comment="touch > sms content field">touch</command>
+			<parameter comment="x  coordinate">50</parameter>
+			<parameter comment="y  coordinate">193</parameter>
+			<parameter comment="seconds to wait before next action">2</parameter>
+		</operation>
+		<operation>
+			<command comment="input the message content">type</command>
+		</operation>
+		<operation>
+			<command comment="wait 6 sec to record a sound">wait</command>
+			<parameter comment="seconds to wait">10</parameter>
+		</operation>
+		<operation>
+			<command comment="press the back key to close message field">keypress</command>
+			<parameter comment="the key to be pressed">KEYCODE_BACK</parameter>
+		</operation>
+	    <!-- add of the picture file -->
+	    <operation>
+	      <command comment="touch attach a file">touch</command>
+	      <parameter comment="x  coordinate">300</parameter>
+	      <parameter comment="y coordinate">47</parameter>
+	      <parameter comment="seconds to wait before next action">2</parameter>
+	    </operation>
+	    <operation>
+	      <command comment="touch video file">touch</command>
+	      <parameter comment="x  coordinate">160</parameter>
+	      <parameter comment="y coordinate">135</parameter>
+	      <parameter comment="seconds to wait before next action">2</parameter>
+	    </operation>
+       
+
+       <!-- to be done when the bug in the gallery is fixed-->
+		<operation>
+			<command comment="touch on the sound to send">touch</command>
+			<parameter comment="x  coordinate">160</parameter>
+			<parameter comment="y coordinate">280</parameter>
+			<parameter comment="seconds to wait before next action">2</parameter>
+		</operation>
+        <operation>
+	      <command comment="touch picture file">touch</command>
+	      <parameter comment="x  coordinate">160</parameter>
+	      <parameter comment="y coordinate">250</parameter>
+	      <parameter comment="seconds to wait before next action">2</parameter>
+	    </operation>       
+		<operation>
+			<command comment="wait until the conversion to MMS">wait</command>
+			<parameter comment="seconds to wait">5</parameter>
+		</operation>
+	<!--	<operation>
+			<command comment="press the enter key to send the MMS">keypress</command>
+			<parameter comment="the key to be pressed">KEYCODE_ENTER</parameter>
+		</operation> -->
+<operation>
+			<command comment="Go to sms content">keypress</command>
+			<parameter comment="the key to be pressed">KEYCODE_DPAD_DOWN</parameter>
+			<parameter comment="seconds to wait before next action">1</parameter>
+		</operation>
+        <operation>
+			<command comment="Go to sms content">keypress</command>
+			<parameter comment="the key to be pressed">KEYCODE_DPAD_LEFT</parameter>
+			<parameter comment="seconds to wait before next action">1</parameter>
+		</operation>
+		<operation>
+			<command comment="press the enter key to send the MMS">keypress</command>
+			<parameter comment="the key to be pressed">KEYCODE_DPAD_CENTER</parameter>
+		</operation>
+		<operation>
+			<command comment="wait until the MMS is sent">wait</command>
+			<parameter comment="seconds to wait">25</parameter>
+		</operation>
+		<!--<operation>
+			<command>screenshot</command>
+			<parameter>mms_video_sent.png</parameter>
+			<parameter>png</parameter>
+			<parameter comment="seconds to wait before next action">2</parameter>
+		</operation>-->
+		<operation>
+			<command comment="press the back key to go to conversation list">keypress</command>
+			<parameter comment="the key to be pressed">KEYCODE_BACK</parameter>
+		</operation>
+		<operation>
+			<command comment="press the back key to go to conversation list">keypress</command>
+			<parameter comment="the key to be pressed">KEYCODE_BACK</parameter>
+		</operation>
+		<operation>
+			<command comment="press the  home key to leave the app">keypress</command>
+			<parameter comment="the key to be pressed">KEYCODE_HOME</parameter>
+		</operation>
+	</operationset>
+	<operationset name="mms_send_picture_sim2">
+	    <operation>
+			<command comment="touch > new sms ">touch</command>
+			<parameter comment="x  coordinate">30</parameter>
+			<parameter comment="y coordinate">455</parameter>
+			<parameter comment="seconds to wait before next action">2</parameter>
+		</operation>
+		<!-- add  of a receiver phone number in the MMS -->
+		<operation>
+			<command comment="input the receiver">type</command>
+		</operation>
+		<operation>
+			<command comment="press the enter key to finish the input">keypress</command>
+			<parameter comment="the key to be pressed">KEYCODE_ENTER</parameter>
+		</operation>
+		<!-- ADD OF A SUBJECT IN THE MMS -->
+		<operation>
+			<command comment="press the menu key to select Subject">keypress</command>
+			<parameter comment="key to press">KEYCODE_MENU</parameter>
+			<parameter comment="seconds to wait before next action">2</parameter>
+		</operation>
+		<operation>	
+			<command comment="touch > select Add a Subject">touch</command>
+			<parameter comment="x  coordinate">162</parameter>
+			<parameter comment="y  coordinate">314</parameter>
+			<parameter comment="seconds to wait before next action">2</parameter>
+		</operation>
+		<operation>
+			<command comment="input the subject">type</command>
+		</operation>
+	    <!-- add of the content in the MMS -->
+		<operation>
+			<command comment="touch > sms content field">touch</command>
+			<parameter comment="x  coordinate">50</parameter>
+			<parameter comment="y  coordinate">193</parameter>
+			<parameter comment="seconds to wait before next action">2</parameter>
+		</operation>
+		<operation>
+			<command comment="input the message content">type</command>
+		</operation>
+		<operation>
+			<command comment="wait 6 sec to record a sound">wait</command>
+			<parameter comment="seconds to wait">10</parameter>
+		</operation>
+		<operation>
+			<command comment="press the back key to close message field">keypress</command>
+			<parameter comment="the key to be pressed">KEYCODE_BACK</parameter>
+		</operation>
+	    <!-- add of the picture file -->
+	    <operation>
+	      <command comment="touch attach a file">touch</command>
+	      <parameter comment="x  coordinate">300</parameter>
+	      <parameter comment="y coordinate">47</parameter>
+	      <parameter comment="seconds to wait before next action">2</parameter>
+	    </operation>
+	    <operation>
+	      <command comment="touch video file">touch</command>
+	      <parameter comment="x  coordinate">160</parameter>
+	      <parameter comment="y coordinate">135</parameter>
+	      <parameter comment="seconds to wait before next action">2</parameter>
+	    </operation>
+       
+
+       <!-- to be done when the bug in the gallery is fixed-->
+		<operation>
+			<command comment="touch on the sound to send">touch</command>
+			<parameter comment="x  coordinate">160</parameter>
+			<parameter comment="y coordinate">280</parameter>
+			<parameter comment="seconds to wait before next action">2</parameter>
+		</operation>
+        <operation>
+	      <command comment="touch picture file">touch</command>
+	      <parameter comment="x  coordinate">160</parameter>
+	      <parameter comment="y coordinate">250</parameter>
+	      <parameter comment="seconds to wait before next action">2</parameter>
+	    </operation>       
+		<operation>
+			<command comment="wait until the conversion to MMS">wait</command>
+			<parameter comment="seconds to wait">5</parameter>
+		</operation>
+	<!--	<operation>
+			<command comment="press the enter key to send the MMS">keypress</command>
+			<parameter comment="the key to be pressed">KEYCODE_ENTER</parameter>
+		</operation> -->
+        <operation>
+			<command comment="Go to sms content">keypress</command>
+			<parameter comment="the key to be pressed">KEYCODE_DPAD_DOWN</parameter>
+			<parameter comment="seconds to wait before next action">1</parameter>
+		</operation>
+        <operation>
+			<command comment="press the enter key to send the MMS">keypress</command>
+			<parameter comment="the key to be pressed">KEYCODE_DPAD_CENTER</parameter>
+		</operation>
+		<operation>
+			<command comment="wait until the MMS is sent">wait</command>
+			<parameter comment="seconds to wait">60</parameter>
+		</operation>
+		<!--<operation>
+			<command>screenshot</command>
+			<parameter>mms_video_sent.png</parameter>
+			<parameter>png</parameter>
+			<parameter comment="seconds to wait before next action">2</parameter>
+		</operation>-->
+		<operation>
+			<command comment="press the back key to go to conversation list">keypress</command>
+			<parameter comment="the key to be pressed">KEYCODE_BACK</parameter>
+		</operation>
+		<operation>
+			<command comment="press the back key to go to conversation list">keypress</command>
+			<parameter comment="the key to be pressed">KEYCODE_BACK</parameter>
+		</operation>
+		<operation>
+			<command comment="press the  home key to leave the app">keypress</command>
+			<parameter comment="the key to be pressed">KEYCODE_HOME</parameter>
+		</operation>
+	</operationset>
+	<operationset name="mms_send_picture_short_sim2">
+	    <operation>
+			<command comment="touch > new sms ">touch</command>
+			<parameter comment="x  coordinate">30</parameter>
+			<parameter comment="y coordinate">455</parameter>
+			<parameter comment="seconds to wait before next action">2</parameter>
+		</operation>
+		<!-- add  of a receiver phone number in the MMS -->
+		<operation>
+			<command comment="input the receiver">type</command>
+		</operation>
+		<operation>
+			<command comment="press the enter key to finish the input">keypress</command>
+			<parameter comment="the key to be pressed">KEYCODE_ENTER</parameter>
+		</operation>
+		<!-- ADD OF A SUBJECT IN THE MMS -->
+		<operation>
+			<command comment="press the menu key to select Subject">keypress</command>
+			<parameter comment="key to press">KEYCODE_MENU</parameter>
+			<parameter comment="seconds to wait before next action">2</parameter>
+		</operation>
+		<operation>	
+			<command comment="touch > select Add a Subject">touch</command>
+			<parameter comment="x  coordinate">162</parameter>
+			<parameter comment="y  coordinate">314</parameter>
+			<parameter comment="seconds to wait before next action">2</parameter>
+		</operation>
+		<operation>
+			<command comment="input the subject">type</command>
+		</operation>
+	    <!-- add of the content in the MMS -->
+		<operation>
+			<command comment="touch > sms content field">touch</command>
+			<parameter comment="x  coordinate">50</parameter>
+			<parameter comment="y  coordinate">193</parameter>
+			<parameter comment="seconds to wait before next action">2</parameter>
+		</operation>
+		<operation>
+			<command comment="input the message content">type</command>
+		</operation>
+		<operation>
+			<command comment="wait 6 sec to record a sound">wait</command>
+			<parameter comment="seconds to wait">10</parameter>
+		</operation>
+		<operation>
+			<command comment="press the back key to close message field">keypress</command>
+			<parameter comment="the key to be pressed">KEYCODE_BACK</parameter>
+		</operation>
+	    <!-- add of the picture file -->
+	    <operation>
+	      <command comment="touch attach a file">touch</command>
+	      <parameter comment="x  coordinate">300</parameter>
+	      <parameter comment="y coordinate">47</parameter>
+	      <parameter comment="seconds to wait before next action">2</parameter>
+	    </operation>
+	    <operation>
+	      <command comment="touch video file">touch</command>
+	      <parameter comment="x  coordinate">160</parameter>
+	      <parameter comment="y coordinate">135</parameter>
+	      <parameter comment="seconds to wait before next action">2</parameter>
+	    </operation>
+       
+
+       <!-- to be done when the bug in the gallery is fixed-->
+		<operation>
+			<command comment="touch on the sound to send">touch</command>
+			<parameter comment="x  coordinate">160</parameter>
+			<parameter comment="y coordinate">280</parameter>
+			<parameter comment="seconds to wait before next action">2</parameter>
+		</operation>
+        <operation>
+	      <command comment="touch picture file">touch</command>
+	      <parameter comment="x  coordinate">160</parameter>
+	      <parameter comment="y coordinate">250</parameter>
+	      <parameter comment="seconds to wait before next action">2</parameter>
+	    </operation>       
+		<operation>
+			<command comment="wait until the conversion to MMS">wait</command>
+			<parameter comment="seconds to wait">5</parameter>
+		</operation>
+	<!--	<operation>
+			<command comment="press the enter key to send the MMS">keypress</command>
+			<parameter comment="the key to be pressed">KEYCODE_ENTER</parameter>
+		</operation> -->
+        <operation>
+			<command comment="Go to sms content">keypress</command>
+			<parameter comment="the key to be pressed">KEYCODE_DPAD_DOWN</parameter>
+			<parameter comment="seconds to wait before next action">1</parameter>
+		</operation>
+        <operation>
+			<command comment="press the enter key to send the MMS">keypress</command>
+			<parameter comment="the key to be pressed">KEYCODE_DPAD_CENTER</parameter>
+		</operation>
+		<operation>
+			<command comment="wait until the MMS is sent">wait</command>
+			<parameter comment="seconds to wait">5</parameter>
+		</operation>
+		<!--<operation>
+			<command>screenshot</command>
+			<parameter>mms_video_sent.png</parameter>
+			<parameter>png</parameter>
+			<parameter comment="seconds to wait before next action">2</parameter>
+		</operation>-->
+		<operation>
+			<command comment="press the back key to go to conversation list">keypress</command>
+			<parameter comment="the key to be pressed">KEYCODE_BACK</parameter>
+		</operation>
+		<operation>
+			<command comment="press the back key to go to conversation list">keypress</command>
+			<parameter comment="the key to be pressed">KEYCODE_BACK</parameter>
+		</operation>
+		<operation>
+			<command comment="press the  home key to leave the app">keypress</command>
+			<parameter comment="the key to be pressed">KEYCODE_HOME</parameter>
+		</operation>
+	</operationset>
+	<operationset name="mms_send_picture_short_sim1">
+	    <operation>
+			<command comment="touch > new sms ">touch</command>
+			<parameter comment="x  coordinate">30</parameter>
+			<parameter comment="y coordinate">455</parameter>
+			<parameter comment="seconds to wait before next action">2</parameter>
+		</operation>
+		<!-- add  of a receiver phone number in the MMS -->
+		<operation>
+			<command comment="input the receiver">type</command>
+		</operation>
+		<operation>
+			<command comment="press the enter key to finish the input">keypress</command>
+			<parameter comment="the key to be pressed">KEYCODE_ENTER</parameter>
+		</operation>
+		<!-- ADD OF A SUBJECT IN THE MMS -->
+		<operation>
+			<command comment="press the menu key to select Subject">keypress</command>
+			<parameter comment="key to press">KEYCODE_MENU</parameter>
+			<parameter comment="seconds to wait before next action">2</parameter>
+		</operation>
+		<operation>	
+			<command comment="touch > select Add a Subject">touch</command>
+			<parameter comment="x  coordinate">162</parameter>
+			<parameter comment="y  coordinate">314</parameter>
+			<parameter comment="seconds to wait before next action">2</parameter>
+		</operation>
+		<operation>
+			<command comment="input the subject">type</command>
+		</operation>
+	    <!-- add of the content in the MMS -->
+		<operation>
+			<command comment="touch > sms content field">touch</command>
+			<parameter comment="x  coordinate">50</parameter>
+			<parameter comment="y  coordinate">193</parameter>
+			<parameter comment="seconds to wait before next action">2</parameter>
+		</operation>
+		<operation>
+			<command comment="input the message content">type</command>
+		</operation>
+		<operation>
+			<command comment="wait 6 sec to record a sound">wait</command>
+			<parameter comment="seconds to wait">10</parameter>
+		</operation>
+		<operation>
+			<command comment="press the back key to close message field">keypress</command>
+			<parameter comment="the key to be pressed">KEYCODE_BACK</parameter>
+		</operation>
+	    <!-- add of the picture file -->
+	    <operation>
+	      <command comment="touch attach a file">touch</command>
+	      <parameter comment="x  coordinate">300</parameter>
+	      <parameter comment="y coordinate">47</parameter>
+	      <parameter comment="seconds to wait before next action">2</parameter>
+	    </operation>
+	    <operation>
+	      <command comment="touch video file">touch</command>
+	      <parameter comment="x  coordinate">160</parameter>
+	      <parameter comment="y coordinate">135</parameter>
+	      <parameter comment="seconds to wait before next action">2</parameter>
+	    </operation>
+       
+
+       <!-- to be done when the bug in the gallery is fixed-->
+		<operation>
+			<command comment="touch on the sound to send">touch</command>
+			<parameter comment="x  coordinate">160</parameter>
+			<parameter comment="y coordinate">280</parameter>
+			<parameter comment="seconds to wait before next action">2</parameter>
+		</operation>
+        <operation>
+	      <command comment="touch picture file">touch</command>
+	      <parameter comment="x  coordinate">160</parameter>
+	      <parameter comment="y coordinate">250</parameter>
+	      <parameter comment="seconds to wait before next action">2</parameter>
+	    </operation>       
+		<operation>
+			<command comment="wait until the conversion to MMS">wait</command>
+			<parameter comment="seconds to wait">5</parameter>
+		</operation>
+	<!--	<operation>
+			<command comment="press the enter key to send the MMS">keypress</command>
+			<parameter comment="the key to be pressed">KEYCODE_ENTER</parameter>
+		</operation> -->
+        <operation>
+			<command comment="Go to sms content">keypress</command>
+			<parameter comment="the key to be pressed">KEYCODE_DPAD_DOWN</parameter>
+			<parameter comment="seconds to wait before next action">1</parameter>
+		</operation>
+        <operation>
+			<command comment="Go to sms content">keypress</command>
+			<parameter comment="the key to be pressed">KEYCODE_DPAD_LEFT</parameter>
+			<parameter comment="seconds to wait before next action">1</parameter>
+		</operation>
+		<operation>
+			<command comment="press the enter key to send the MMS">keypress</command>
+			<parameter comment="the key to be pressed">KEYCODE_DPAD_CENTER</parameter>
+		</operation>
+		<operation>
+			<command comment="wait until the MMS is sent">wait</command>
+			<parameter comment="seconds to wait">5</parameter>
+		</operation>
+		<!--<operation>
+			<command>screenshot</command>
+			<parameter>mms_video_sent.png</parameter>
+			<parameter>png</parameter>
+			<parameter comment="seconds to wait before next action">2</parameter>
+		</operation>-->
+		<operation>
+			<command comment="press the back key to go to conversation list">keypress</command>
+			<parameter comment="the key to be pressed">KEYCODE_BACK</parameter>
+		</operation>
+		<operation>
+			<command comment="press the back key to go to conversation list">keypress</command>
+			<parameter comment="the key to be pressed">KEYCODE_BACK</parameter>
+		</operation>
+		<operation>
+			<command comment="press the  home key to leave the app">keypress</command>
+			<parameter comment="the key to be pressed">KEYCODE_HOME</parameter>
+		</operation>
+	</operationset>
+    	<operationset name="mms_open_audio">
+		<!--<operation>
+			<command comment="take a screenshot for validation">screenshot</command>
+			<parameter comment="the location for screenshot">mms_receive_conversation_list
+			</parameter>
+			<parameter comment="format of the screenshot">png</parameter>
+			<parameter comment="seconds to wait before next action">3</parameter>
+		</operation>-->
+		<operation>
+			<command comment="touch the first conversation item">touch</command>
+			<parameter comment="x coordinate">160</parameter>
+			<parameter comment="y coordinate">105</parameter>
+			<parameter comment="seconds to wait before next action">1</parameter>
+		</operation>
+		<!--<operation>
+			<command comment="take a screenshot for validation">screenshot</command>
+			<parameter comment="the location for screenshot">mms_receive_message_list</parameter>
+			<parameter comment="format of the screenshot">png</parameter>
+			<parameter comment="seconds to wait before next action">3</parameter>
+		</operation>-->
+		<!-- <operation> <command comment="longtouch to display the menu of the 
+			received mms">longtouch</command> <parameter comment="x coordinate">250</parameter> 
+			<parameter comment="y coordinate">600</parameter> <parameter comment="seconds 
+			to wait before next action">2</parameter> </operation> <operation> <command 
+			comment="touch to play the diaporama">touch</command> <parameter comment="x 
+			coordinate">250</parameter> <parameter comment="y coordinate">300</parameter> 
+			<parameter comment="seconds to wait before next action">2</parameter> </operation> -->
+		<operation>
+			<command comment="touch to play the diaporama">touch</command>
+			<parameter comment="x  coordinate">190</parameter>
+			<parameter comment="y  coordinate">325</parameter>
+			<parameter comment="seconds to wait before next action">2</parameter>
+		</operation>
+		<operation>
+			<command comment="wait for the media to read MMS">wait</command>
+			<parameter comment="seconds to wait before next action">5</parameter>
+		</operation>
+		<!--<operation>
+			<command comment="take a screenshot for validation">screenshot</command>
+			<parameter comment="the location for screenshot">mms_receive_audio_play</parameter>
+			<parameter comment="format of the screenshot">png</parameter>
+			<parameter comment="seconds to wait before next action">3</parameter>
+		</operation>-->
+		<operation>
+			<command comment="press the back key to go to conversation list">keypress</command>
+			<parameter comment="the key to be pressed">KEYCODE_BACK</parameter>
+		</operation>
+		<operation>
+			<command comment="press the back key to go to conversation list">keypress</command>
+			<parameter comment="the key to be pressed">KEYCODE_BACK</parameter>
+		</operation>
+		<operation>
+			<command comment="press the back key to leave the app">keypress</command>
+			<parameter comment="the key to be pressed">KEYCODE_BACK</parameter>
+		</operation>
+	</operationset>
+    <operationset name="mms_open_picture">
+		<!--<operation>
+			<command comment="take a screenshot for validation">screenshot</command>
+			<parameter comment="the location for screenshot">mms_receive_conversation_list
+			</parameter>
+			<parameter comment="format of the screenshot">png</parameter>
+			<parameter comment="seconds to wait before next action">3</parameter>
+		</operation>-->
+		<operation>
+			<command comment="touch the first conversation item">touch</command>
+			<parameter comment="x coordinate">160</parameter>
+			<parameter comment="y coordinate">105</parameter>
+			<parameter comment="seconds to wait before next action">1</parameter>
+		</operation>
+		<!--<operation>
+			<command comment="take a screenshot for validation">screenshot</command>
+			<parameter comment="the location for screenshot">mms_receive_message_list</parameter>
+			<parameter comment="format of the screenshot">png</parameter>
+			<parameter comment="seconds to wait before next action">3</parameter>
+		</operation>-->
+		<!-- <operation> <command comment="longtouch to display the menu of the 
+			received mms">longtouch</command> <parameter comment="x coordinate">250</parameter> 
+			<parameter comment="y coordinate">600</parameter> <parameter comment="seconds 
+			to wait before next action">2</parameter> </operation> <operation> <command 
+			comment="touch to play the diaporama">touch</command> <parameter comment="x 
+			coordinate">250</parameter> <parameter comment="y coordinate">300</parameter> 
+			<parameter comment="seconds to wait before next action">2</parameter> </operation> -->
+		<operation>
+			<command comment="touch to play the diaporama">touch</command>
+			<parameter comment="x  coordinate">190</parameter>
+			<parameter comment="y  coordinate">320</parameter>
+			<parameter comment="seconds to wait before next action">2</parameter>
+		</operation>
+		<operation>
+			<command comment="wait for the media to download">wait</command>
+			<parameter comment="seconds to wait before next action">5</parameter>
+		</operation>
+		<!--<operation>
+			<command comment="take a screenshot for validation">screenshot</command>
+			<parameter comment="the location for screenshot">mms_receive_audio_play</parameter>
+			<parameter comment="format of the screenshot">png</parameter>
+			<parameter comment="seconds to wait before next action">3</parameter>
+		</operation>-->
+		
+		<operation>
+			<command comment="press the back key to go to conversation list">keypress</command>
+			<parameter comment="the key to be pressed">KEYCODE_BACK</parameter>
+		</operation>
+		<operation>
+			<command comment="press the back key to go to conversation list">keypress</command>
+			<parameter comment="the key to be pressed">KEYCODE_BACK</parameter>
+		</operation>
+		<operation>
+			<command comment="press the back key to leave the app">keypress</command>
+			<parameter comment="the key to be pressed">KEYCODE_BACK</parameter>
+		</operation>
+	</operationset>
+	<operationset name="mms_open_video">
+		<!--<operation>
+			<command comment="take a screenshot for validation">screenshot</command>
+			<parameter comment="the location for screenshot">mms_receive_conversation_list
+			</parameter>
+			<parameter comment="format of the screenshot">png</parameter>
+			<parameter comment="seconds to wait before next action">3</parameter>
+		</operation>-->
+		<operation>
+			<command comment="touch the first conversation item">touch</command>
+			<parameter comment="x coordinate">160</parameter>
+			<parameter comment="y coordinate">110</parameter>
+			<parameter comment="seconds to wait before next action">1</parameter>
+		</operation>
+		<!--<operation>
+			<command comment="take a screenshot for validation">screenshot</command>
+			<parameter comment="the location for screenshot">mms_receive_message_list</parameter>
+			<parameter comment="format of the screenshot">png</parameter>
+			<parameter comment="seconds to wait before next action">3</parameter>
+		</operation>-->
+		<!-- <operation> <command comment="longtouch to display the menu of the 
+			received mms">longtouch</command> <parameter comment="x coordinate">250</parameter> 
+			<parameter comment="y coordinate">600</parameter> <parameter comment="seconds 
+			to wait before next action">2</parameter> </operation> <operation> <command 
+			comment="touch to play the diaporama">touch</command> <parameter comment="x 
+			coordinate">250</parameter> <parameter comment="y coordinate">300</parameter> 
+			<parameter comment="seconds to wait before next action">2</parameter> </operation> -->
+		<operation>
+			<command comment="touch to play the diaporama">touch</command>
+			<parameter comment="x  coordinate">190</parameter>
+			<parameter comment="y  coordinate">335</parameter>
+			<parameter comment="seconds to wait before next action">2</parameter>
+		</operation>
+		<operation>
+			<command comment="wait for the media to read the video">wait</command>
+			<parameter comment="seconds to wait before next action">5</parameter>
+		</operation>
+		<!--<operation>
+			<command comment="take a screenshot for validation">screenshot</command>
+			<parameter comment="the location for screenshot">mms_receive_audio_play</parameter>
+			<parameter comment="format of the screenshot">png</parameter>
+			<parameter comment="seconds to wait before next action">3</parameter>
+		</operation>-->
+		<operation>
+			<command comment="press the back key to go to conversation list">keypress</command>
+			<parameter comment="the key to be pressed">KEYCODE_BACK</parameter>
+		</operation>
+		<operation>
+			<command comment="press the back key to go to conversation list">keypress</command>
+			<parameter comment="the key to be pressed">KEYCODE_BACK</parameter>
+		</operation>
+		<operation>
+			<command comment="press the back key to leave the app">keypress</command>
+			<parameter comment="the key to be pressed">KEYCODE_BACK</parameter>
+		</operation>
+	</operationset>
+	<operationset name="mms_memo_play">
+		<!--<operation>
+			<command comment="take a screenshot for validation">screenshot</command>
+			<parameter comment="the location for screenshot">mms_receive_conversation_list
+			</parameter>
+			<parameter comment="format of the screenshot">png</parameter>
+			<parameter comment="seconds to wait before next action">3</parameter>
+		</operation>-->
+		<operation>
+			<command comment="touch the first conversation item">touch</command>
+			<parameter comment="x coordinate">400</parameter>
+			<parameter comment="y coordinate">285</parameter>
+			<parameter comment="seconds to wait before next action">1</parameter>
+		</operation>
+		<!--<operation>
+			<command comment="take a screenshot for validation">screenshot</command>
+			<parameter comment="the location for screenshot">mms_receive_message_list</parameter>
+			<parameter comment="format of the screenshot">png</parameter>
+			<parameter comment="seconds to wait before next action">3</parameter>
+		</operation>-->
+		<operation>
+			<command comment="touch the play button to start playing memo">touch</command>
+			<parameter comment="x  coordinate">503</parameter>
+			<parameter comment="y  coordinate">826</parameter>
+			<parameter comment="seconds to wait before next action">2</parameter>
+		</operation>
+		<!--<operation>
+			<command comment="take a screenshot for validation">screenshot</command>
+			<parameter comment="the location for screenshot">mms_receive_audio_play</parameter>
+			<parameter comment="format of the screenshot">png</parameter>
+			<parameter comment="seconds to wait before next action">3</parameter>
+		</operation>-->
+		<operation>
+			<command comment="wait until the memo played to end">wait</command>
+			<parameter comment="seconds to wait before next action">10</parameter>
+		</operation>
+		<operation>
+			<command comment="press the back key to go to conversation list">keypress</command>
+			<parameter comment="the key to be pressed">KEYCODE_BACK</parameter>
+		</operation>
+		<operation>
+			<command comment="press the back key to leave the app">keypress</command>
+			<parameter comment="the key to be pressed">KEYCODE_BACK</parameter>
+		</operation>
+	</operationset>
+    <operationset name="browsing_youtube">
+		<operation>
+			<command comment="Select a random video">touch</command>
+			<parameter comment="X coordinate">173</parameter>
+			<parameter comment="Y coordinate">[RAND(158,468)]</parameter>
+			<parameter comment="seconds to wait before next action">20</parameter>
+		</operation>
+		<operation>
+			<command comment="Select a random video">touch</command>
+			<parameter comment="X coordinate">165</parameter>
+			<parameter comment="Y coordinate">140</parameter>
+			<parameter comment="seconds to wait before next action">30</parameter>
+		</operation>        
+		<!--<operation>
+			<command comment="take a screenshot for validation">screenshot</command>
+			<parameter comment="the location for screenshot">youtube_video</parameter>
+			<parameter comment="format of the screenshot">png</parameter>
+			<parameter comment="seconds to wait before next action">2</parameter>
+		</operation> -->
+ 		<operation>
+			<command comment="press the back key to leave the app">keypress</command>
+			<parameter comment="the key to be pressed">KEYCODE_BACK</parameter>
+		</operation>	       
+	</operationset>
+    <operationset name="browsing_youku">
+		<operation>
+			<command comment="draging the video list">drag</command>
+			<parameter comment="x coordinate of the starting point">500</parameter>
+			<parameter comment="y coordinate of the starting point">800</parameter>
+			<parameter comment="x coordinate of the ending point">500</parameter>
+			<parameter comment="y coordinate of the ending point">200</parameter>
+			<parameter comment="seconds to wait before next action">15</parameter>
+		</operation>	
+		<operation>
+			<command comment="Select a random video">touch</command>
+			<parameter comment="X coordinate">200</parameter>
+			<parameter comment="Y coordinate">[RAND(550,900)]</parameter>
+			<parameter comment="seconds to wait before next action">15</parameter>
+		</operation>
+		<operation>
+			<command comment="Select a random video">touch</command>
+			<parameter comment="X coordinate">250</parameter>
+			<parameter comment="Y coordinate">645</parameter>
+			<parameter comment="seconds to wait before next action">30</parameter>
+		</operation>        
+		<!--<operation>
+			<command comment="take a screenshot for validation">screenshot</command>
+			<parameter comment="the location for screenshot">youtube_video</parameter>
+			<parameter comment="format of the screenshot">png</parameter>
+			<parameter comment="seconds to wait before next action">2</parameter>
+		</operation> -->
+ 		<operation>
+			<command comment="press the back key to leave the app">keypress</command>
+			<parameter comment="the key to be pressed">KEYCODE_BACK</parameter>
+		</operation>	       
+	</operationset>
+	<!-- IPhoneSystem operation sets -->
+	<operationset name="go_home">
+		<operation>
+			<command comment="press the enter key to finish the input">keypress</command>
+			<parameter comment="the key to be pressed">KEYCODE_HOME</parameter>
+			<parameter comment="seconds to wait before next action">2</parameter>
+			<logcat_ouput></logcat_ouput>
+		</operation>
+	</operationset>
+	<operationset name="phone_lock">
+		<operation>
+			<command comment="press the enter key to finish the input">keypress</command>
+			<parameter comment="the key to be pressed">KEYCODE_POWER</parameter>
+			<parameter comment="seconds to wait before next action">5</parameter>
+		</operation>
+	</operationset>
+	<operationset name="phone_unlock">
+		<operation>
+			<command comment="wake the screen of the device">wake</command>
+			<parameter comment="seconds to wait before next action">2</parameter>
+		</operation>
+		<operation>
+			<command comment="Unlock the phone">drag</command>
+			<parameter comment="x coordinate of the starting point">160</parameter>
+			<parameter comment="y coordinate of the starting point">390</parameter>
+			<parameter comment="x coordinate of the ending point">295</parameter>
+			<parameter comment="y coordinate of the ending point">390</parameter>
+			<parameter comment="seconds to wait before next action">1</parameter>
+		</operation>
+	</operationset>
+	<operationset name="search">
+		<operation>
+			<command comment="press the enter key to start the input">keypress</command>
+			<parameter comment="the key to be pressed">KEYCODE_SEARCH</parameter>
+			<parameter comment="seconds to wait before next action">3</parameter>
+		</operation>
+		<operation>
+			<command comment="url to search">type</command>
+		</operation>
+        <operation>
+			<command comment="wait for typing">wait</command>
+			<parameter comment="seconds to wait">6</parameter>
+		</operation>
+		<operation>
+			<command comment="press the enter key to finish the input">keypress</command>
+			<parameter comment="the key to be pressed">KEYCODE_ENTER</parameter>
+		</operation>
+	</operationset>
+	<!-- IModem operation sets -->
+	<operationset name="settings_toggle_preferred_radio_2G_sim1">
+		<operation>
+			<command comment="toggle the Use only 2G networks button">touch</command>
+			<parameter comment="x  coordinate">265</parameter>
+			<parameter comment="y  coordinate">330</parameter>
+			<parameter comment="seconds to wait before next action">2</parameter>
+		</operation>
+		<operation>
+			<command comment="toggle the Use only 2G networks button">touch</command>
+			<parameter comment="x  coordinate">265</parameter>
+			<parameter comment="y  coordinate">245</parameter>
+			<parameter comment="seconds to wait before next action">60</parameter>
+		</operation>
+	</operationset>
+	<operationset name="settings_toggle_preferred_radio_2G_sim2">
+		<operation>
+			<command comment="toggle the Use only 2G networks button">touch</command>
+			<parameter comment="x  coordinate">160</parameter>
+			<parameter comment="y  coordinate">315</parameter>
+			<parameter comment="seconds to wait before next action">2</parameter>
+		</operation>
+		<operation>
+			<command comment="toggle the Use only 2G networks button">touch</command>
+			<parameter comment="x  coordinate">238</parameter>
+			<parameter comment="y  coordinate">62</parameter>
+			<parameter comment="seconds to wait before next action">2</parameter>
+		</operation>
+		<operation>
+			<command comment="toggle the Use only 2G networks button">touch</command>
+			<parameter comment="x  coordinate">170</parameter>
+			<parameter comment="y  coordinate">235</parameter>
+			<parameter comment="seconds to wait before next action">60</parameter>
+		</operation>
+	</operationset>
+	<!-- INetworking operation sets -->
+	<operationset name="settings_toggle_flight_mode">
+		<operation>
+			<command comment="Toggle the Airplane Mode button">touch</command>
+			<parameter comment="X coordinate">278</parameter>
+			<parameter comment="Y coordinate">116</parameter>
+			<parameter comment="seconds to wait before next action">1</parameter>
+		</operation>
+	</operationset>
+	<operationset name="settings_toggle_wifi_power">
+		<operation>
+			<command comment="Toggle the Wifi button">touch</command>
+			<parameter comment="X coordinate">559</parameter>
+			<parameter comment="Y coordinate">285</parameter>
+			<parameter comment="seconds to wait before next action">2</parameter>
+		</operation>
+	</operationset>
+	<operationset name="settings_toggle_data_access">
+		<operation>
+			<command comment="Toggle the Data Enabled button">touch</command>
+			<parameter comment="X coordinate">562</parameter>
+			<parameter comment="Y coordinate">166</parameter>
+			<parameter comment="seconds to wait before next action">2</parameter>
+		</operation>
+	</operationset>
+
+	<operationset name="delete_last_downloaded_file">
+		<operation>
+			<command comment="select the file to delete in DownloadList">touch</command>
+			<parameter comment="x  coordinate">30</parameter>
+			<parameter comment="y  coordinate">220</parameter>
+			<parameter comment="seconds to wait before next action">2</parameter>
+		</operation>
+		<operation>
+			<command comment="press the delete button">touch</command>
+			<parameter comment="x  coordinate">30</parameter>
+			<parameter comment="y  coordinate">750</parameter>
+			<parameter comment="seconds to wait before next action">2</parameter>
+		</operation>
+	</operationset>
+
+	<!-- IVoiceCall operation sets -->
+	<operationset name="call_dial_sim1">
+		<operation>
+			<command comment="press the call key">keypress</command>
+			<parameter comment="the key to be pressed">KEYCODE_CALL</parameter>
+			<parameter comment="seconds to wait before next action">5</parameter>
+		</operation>
+		<operation>
+			<command comment="Click on Phone menu">touch</command>
+			<parameter comment="x  coordinate">63</parameter>
+			<parameter comment="y  coordinate">65</parameter>
+			<parameter comment="seconds to wait before next action">2</parameter>
+		</operation>
+		<operation>
+			<command comment="Click on Phone menu">touch</command>
+			<parameter comment="x  coordinate">62</parameter>
+			<parameter comment="y  coordinate">125</parameter>
+			<parameter comment="seconds to wait before next action">2</parameter>
+		</operation>
+		<operation>
+			<command comment="input the receiver">type</command>
+		</operation>
+		<operation>
+			<command comment="click on the phone1">touch</command>
+			<parameter comment="x  coordinate">116</parameter>
+			<parameter comment="y  coordinate">456</parameter>
+			<parameter comment="seconds to wait before next action">2</parameter>
+		</operation>
+	</operationset>
+	<operationset name="call_dial_sim2">
+		<operation>
+			<command comment="press the call key">keypress</command>
+			<parameter comment="the key to be pressed">KEYCODE_CALL</parameter>
+			<parameter comment="seconds to wait before next action">5</parameter>
+		</operation>
+		<operation>
+			<command comment="Click on Phone menu">touch</command>
+			<parameter comment="x  coordinate">63</parameter>
+			<parameter comment="y  coordinate">65</parameter>
+			<parameter comment="seconds to wait before next action">2</parameter>
+		</operation>
+		<operation>
+			<command comment="Click on Phone menu">touch</command>
+			<parameter comment="x  coordinate">62</parameter>
+			<parameter comment="y  coordinate">125</parameter>
+			<parameter comment="seconds to wait before next action">2</parameter>
+		</operation>
+		<operation>
+			<command comment="input the receiver">type</command>
+		</operation>
+		<operation>
+			<command comment="click on the phone1">touch</command>
+			<parameter comment="x  coordinate">210</parameter>
+			<parameter comment="y  coordinate">456</parameter>
+			<parameter comment="seconds to wait before next action">2</parameter>
+		</operation>
+	</operationset>
+	<operationset name="call_answer">
+		<operation>
+			<command comment="drag element to answer the call">drag</command>
+			<parameter comment="x coordinate of the starting point">160</parameter>
+			<parameter comment="y coordinate of the starting point">385</parameter>
+			<parameter comment="x coordinate of the ending point">305</parameter>
+			<parameter comment="y coordinate of the ending point">385</parameter>
+			<parameter comment="seconds to wait before next action">2</parameter>
+		</operation>
+	</operationset>
+	<operationset name="call_release">
+		<operation>
+			<command comment="press the release key">keypress</command>
+			<parameter comment="the key to be pressed">KEYCODE_ENDCALL</parameter>
+		</operation>
+        <operation>
+			<command comment="wait 5 seconds">wait</command>
+			<parameter comment="seconds to wait">8</parameter>
+		</operation>
+	</operationset>
+	<operationset name="open_main_menu">
+		<operation>
+			<command comment="press the menu key">keypress</command>
+			<parameter comment="the key to be pressed">KEYCODE_HOME</parameter>
+		</operation>
+		<operation>
+			<command comment="touch show menu">touch</command>
+			<parameter comment="x coordinate">160</parameter>
+			<parameter comment="y coordinate">445</parameter>
+			<parameter comment="seconds to wait before next action">3</parameter>
+		</operation>
+	</operationset>
+	<operationset name="open_settings_menu">
+		<operation>
+			<command comment="open settings menu">exec</command>
+			<parameter>start -a android.settings.SETTINGS -n com.android.settings/.Settings</parameter>
+		</operation>
+	</operationset>
+    <operationset name="open_accounts_and_sync_settings_menu">
+		<!-- To be used after open_settings_menu operationset -->
+		<operation>
+			<command comment="touch accounts and sync">touch</command>
+			<parameter comment="x coordinate">300</parameter>
+			<parameter comment="y coordinate">964</parameter>
+			<parameter comment="seconds to wait before next action">3</parameter>
+		</operation>
+	</operationset>
+    <operationset name="add_google_account">
+		<!-- To be used after open_accounts_and_sync_settings_menu operationset -->
+		<operation>
+			<command comment="touch add">touch</command>
+			<parameter comment="x coordinate">300</parameter>
+			<parameter comment="y coordinate">985</parameter>
+			<parameter comment="seconds to wait before next action">3</parameter>
+		</operation>
+        <operation>
+			<command comment="touch google">touch</command>
+			<parameter comment="x coordinate">300</parameter>
+			<parameter comment="y coordinate">343</parameter>
+			<parameter comment="seconds to wait before next action">3</parameter>
+		</operation>
+        <operation>
+			<command comment="touch Existing">touch</command>
+			<parameter comment="x coordinate">300</parameter>
+			<parameter comment="y coordinate">880</parameter>
+			<parameter comment="seconds to wait before next action">10</parameter>
+		</operation>
+        <operation>
+			<command comment="type account name">type</command>
+		</operation>
+        <operation>
+			<command comment="go down">keypress</command>
+			<parameter comment="down">KEYCODE_DPAD_DOWN</parameter>
+		</operation>
+        <operation>
+			<command comment="type psw">type</command>
+		</operation>
+	    <operation>
+			<command comment="touch Next">touch</command>
+			<parameter comment="x coordinate">488</parameter>
+			<parameter comment="y coordinate">609</parameter>
+			<parameter comment="seconds to wait before next action">3</parameter>
+		</operation>
+	<operation>
+			<command comment="wait">wait</command>
+			<parameter comment="seconds to wait">40</parameter>
+			</operation>
+	<operation>
+			<command comment="touch next">keypress</command>
+			<parameter comment="go back">KEYCODE_DPAD_DOWN</parameter>
+			<parameter comment="seconds to wait before next action">1</parameter>
+		</operation>
+	<operation>
+			<command comment="touch next">keypress</command>
+			<parameter comment="go back">KEYCODE_DPAD_DOWN</parameter>
+			<parameter comment="seconds to wait before next action">1</parameter>
+		</operation>
+	<operation>
+			<command comment="touch next">keypress</command>
+			<parameter comment="go back">KEYCODE_DPAD_CENTER</parameter>
+			<parameter comment="seconds to wait before next action">1</parameter>
+		</operation>
+     
+        <operation>
+			<command comment="touch next">keypress</command>
+			<parameter comment="go back">KEYCODE_BACK</parameter>
+			<parameter comment="seconds to wait before next action">1</parameter>
+		</operation>
+        <operation>
+			<command comment="touch next">keypress</command>
+			<parameter comment="go back">KEYCODE_BACK</parameter>
+			<parameter comment="seconds to wait before next action">1</parameter>
+		</operation>
+	<operation>
+			<command comment="touch next">keypress</command>
+			<parameter comment="go back">KEYCODE_BACK</parameter>
+			<parameter comment="seconds to wait before next action">1</parameter>
+		</operation>
+        <operation>
+			<command comment="touch next">keypress</command>
+			<parameter comment="go back">KEYCODE_BACK</parameter>
+			<parameter comment="seconds to wait before next action">1</parameter>
+		</operation>      
+	<operation>
+			<command comment="touch next">keypress</command>
+			<parameter comment="go back">KEYCODE_BACK</parameter>
+			<parameter comment="seconds to wait before next action">1</parameter>
+		</operation>
+        <operation>
+			<command comment="touch next">keypress</command>
+			<parameter comment="go back">KEYCODE_BACK</parameter>
+			<parameter comment="seconds to wait before next action">1</parameter>
+		</operation>
+	<operation>
+			<command comment="touch next">keypress</command>
+			<parameter comment="go back">KEYCODE_BACK</parameter>
+			<parameter comment="seconds to wait before next action">1</parameter>
+		</operation>
+        <operation>
+			<command comment="touch next">keypress</command>
+			<parameter comment="go back">KEYCODE_BACK</parameter>
+			<parameter comment="seconds to wait before next action">1</parameter>
+		</operation>            
+	</operationset>
+	<operationset name="open_network_settings_menu">
+		<!-- To be used after open_settings_menu operationset -->
+		<operation>
+			<command comment="touch More option">touch</command>
+			<parameter comment="x coordinate">160</parameter>
+			<parameter comment="y coordinate">275</parameter>
+			<parameter comment="seconds to wait before next action">3</parameter>
+		</operation>
+	</operationset>
+	<operationset name="open_mobile_network_settings_menu">
+		<!-- To be used after open_networks_settings_menu operationset -->
+		<!-- <operation>
+			<command comment="draging the video list">drag</command>
+			<parameter comment="x coordinate of the starting point">160</parameter>
+			<parameter comment="y coordinate of the starting point">350</parameter>
+			<parameter comment="x coordinate of the ending point">160</parameter>
+			<parameter comment="y coordinate of the ending point">200</parameter>
+			<parameter comment="seconds to wait before next action">15</parameter>
+		</operation>	-->
+		<operation>
+			<command comment="touch mobile networks menu">touch</command>
+			<parameter comment="x coordinate">160</parameter>
+			<parameter comment="y coordinate">365</parameter>
+			<parameter comment="seconds to wait before next action">3</parameter>
+		</operation>
+	</operationset>
+	<operationset name="open_contact_menu">
+		<!-- <operation> <command comment="touch contact menu">touch</command> 
+			<parameter comment="x coordinate">450</parameter> <parameter comment="y coordinate">105</parameter> 
+			<parameter comment="seconds to wait before next action">3</parameter> </operation> -->
+		<operation>
+			<command comment="exec > contacts application">exec</command>
+			<parameter comment="command">start -a android.intent.action.Main -n com.android.contacts/.DialtactsContactsEntryActivity</parameter>
+		</operation>
+	</operationset>
+	<operationset name="open_sms_menu">
+		<operation>
+			<command comment="Show menu">keypress</command>
+			<parameter comment="the key to be pressed">KEYCODE_HOME</parameter>
+			<parameter comment="seconds to wait before next action">2</parameter>
+		</operation>
+		<operation>
+			<command comment="exec > sms application">exec</command>
+			<parameter comment="command">start -a android.intent.action.Main -n com.android.mms/.ui.ConversationList</parameter>
+		</operation>
+                <!-- unnecessary
+		<operation>
+			<command comment="open message">keypress</command>
+			<parameter comment="the key to be pressed">KEYCODE_DPAD_DOWN</parameter>
+			<parameter comment="seconds to wait before next action">1</parameter>
+		</operation>
+		<operation>
+			<command comment="open message">keypress</command>
+			<parameter comment="the key to be pressed">KEYCODE_DPAD_DOWN</parameter>
+			<parameter comment="seconds to wait before next action">1</parameter>
+		</operation>
+                <operation>
+			<command comment="open message">keypress</command>
+			<parameter comment="the key to be pressed">KEYCODE_DPAD_CENTER</parameter>
+			<parameter comment="seconds to wait before next action">1</parameter>
+		</operation>
+                -->
+	</operationset>
+	<operationset name="open_camera_menu">
+		<operation>
+			<command comment="exec > camera application">exec</command>
+			<parameter comment="command">start -a android.intent.action.Main -n com.android.camera/.Camera</parameter>
+		</operation>
+	</operationset>
+	<operationset name="open_sound_recorder_menu">
+		<operation>
+			<command comment="exec > sound recorder application">exec</command>
+			<parameter comment="command">start -a android.intent.action.Main -n com.android.soundrecorder/.SoundRecorder</parameter>
+		</operation>
+		<!-- <operation> <command comment="touch contact menu">touch</command> 
+			<parameter comment="x coordinate">50</parameter> <parameter comment="y coordinate">375</parameter> 
+			<parameter comment="seconds to wait before next action">3</parameter> </operation> -->
+	</operationset>
+	<operationset name="open_music_playlist_browser">
+		<operation>
+			<command comment="exec > sound recorder application">exec</command>
+			<parameter comment="command">start -a android.intent.action.MAIN -c android.intent.category.LAUNCHER -n com.android.music/.PlaylistBrowserActivity</parameter>
+		</operation>
+	</operationset>
+	<operationset name="open_galery">
+		<operation>
+			<command comment="exec > galery application">exec</command>
+			<parameter comment="command">start -a android.intent.category.LAUNCHER -n com.android.gallery3d/.app.Gallery</parameter>
+		</operation>
+	</operationset>
+	<operationset name="contacts_add_contact">
+		<operation>
+			<command comment="touch on contact menu">touch</command>
+			<parameter comment="x coordinate">160</parameter>
+			<parameter comment="y coordinate">50</parameter>
+			<parameter comment="seconds to wait before next action">3</parameter>
+		</operation>
+        <operation>
+			<command comment="touch on contact menu">touch</command>
+			<parameter comment="x coordinate">288</parameter>
+			<parameter comment="y coordinate">457</parameter>
+			<parameter comment="seconds to wait before next action">3</parameter>
+		</operation>
+        <operation>
+			<command comment="input the receiver">type</command>
+		</operation>
+        <operation>
+            <command comment="Select top contact">keypress</command>
+			<parameter comment="the key to be pressed">KEYCODE_BACK</parameter>
+		</operation>
+        <operation>
+			<command comment="wait 5 sec to record a sound">wait</command>
+			<parameter comment="seconds to wait">1</parameter>
+        </operation>
+        <operation>
+			<command comment="touch on contact menu">touch</command>
+			<parameter comment="x coordinate">100</parameter>
+			<parameter comment="y coordinate">275</parameter>
+			<parameter comment="seconds to wait before next action">3</parameter>
+		</operation>        
+		<operation>
+			<command comment="input the receiver">type</command>
+		</operation>
+        <operation>
+			<command comment="wait 5 sec to record a sound">wait</command>
+			<parameter comment="seconds to wait">1</parameter>
+		</operation>
+		<operation>
+			<command comment="Go the Next field">keypress</command>
+			<parameter comment="the key to be pressed">KEYCODE_BACK</parameter>
+			<parameter comment="seconds to wait before next action">3</parameter>
+		</operation>
+        <operation>
+			<command comment="touch on contact menu">touch</command>
+			<parameter comment="x coordinate">100</parameter>
+			<parameter comment="y coordinate">390</parameter>
+			<parameter comment="seconds to wait before next action">3</parameter>
+		</operation> 
+		<operation>
+			<command comment="input the receiver">type</command>
+		</operation>
+		<operation>
+			<command comment="touch on contact menu">touch</command>
+			<parameter comment="x coordinate">50</parameter>
+			<parameter comment="y coordinate">50</parameter>
+			<parameter comment="seconds to wait before next action">1</parameter>
+		</operation>
+	</operationset>
+	<operationset name="contacts_remove_contact">
+		<operation>
+			<command comment="touch on contact menu">touch</command>
+			<parameter comment="x coordinate">160</parameter>
+			<parameter comment="y coordinate">50</parameter>
+			<parameter comment="seconds to wait before next action">3</parameter>
+		</operation>
+        <operation>
+			<command comment="touch on contact menu">touch</command>
+			<parameter comment="x coordinate">160</parameter>
+			<parameter comment="y coordinate">235</parameter>
+			<parameter comment="seconds to wait before next action">3</parameter>
+		</operation>
+		<operation>
+			<command comment="Select top contact">keypress</command>
+			<parameter comment="the key to be pressed">KEYCODE_MENU</parameter>
+			<parameter comment="seconds to wait before next action">1</parameter>
+		</operation>
+        <operation>
+			<command comment="touch on contact menu">touch</command>
+			<parameter comment="x coordinate">160</parameter>
+			<parameter comment="y coordinate">360</parameter>
+			<parameter comment="seconds to wait before next action">3</parameter>
+		</operation>
+        <operation>
+			<command comment="touch on contact menu">touch</command>
+			<parameter comment="x coordinate">230</parameter>
+			<parameter comment="y coordinate">307</parameter>
+			<parameter comment="seconds to wait before next action">3</parameter>
+		</operation>
+	</operationset>
+	<operationset name="contacts_dial_contact">
+		<operation>
+			<command comment="press the call key">keypress</command>
+			<parameter comment="the key to be pressed">KEYCODE_CALL</parameter>
+			<parameter comment="seconds to wait before next action">2</parameter>
+		</operation>
+		<operation>
+			<command comment="touch on contact menu">touch</command>
+			<parameter comment="x coordinate">375</parameter>
+			<parameter comment="y coordinate">100</parameter>
+			<parameter comment="seconds to wait before next action">2</parameter>
+		</operation>
+		<operation>
+			<command comment="touch on first contact">keypress</command>
+			<parameter comment="the key to be pressed">KEYCODE_DPAD_DOWN</parameter>
+		</operation>
+		<operation>
+			<command comment="touch on call contact">keypress</command>
+			<parameter comment="the key to be pressed">KEYCODE_DPAD_CENTER</parameter>
+			<parameter comment="seconds to wait before next action">1</parameter>
+		</operation>
+		<operation>
+			<command comment="touch on call contact">keypress</command>
+			<parameter comment="the key to be pressed">KEYCODE_DPAD_DOWN</parameter>
+		</operation>
+				<operation>
+			<command comment="touch on call contact">keypress</command>
+			<parameter comment="the key to be pressed">KEYCODE_DPAD_CENTER</parameter>
+			<parameter comment="seconds to wait before next action">2</parameter>
+		</operation>
+		<operation>
+			<command comment="press the back key to leave the app">keypress</command>
+			<parameter comment="the key to be pressed">KEYCODE_BACK</parameter>
+		</operation>
+	</operationset>
+	<operationset name="multimedia_record_video">
+		<operation>
+			<command comment="Press the menu button">keypress</command>
+			<parameter comment="the key to be pressed">KEYCODE_MENU</parameter>
+			<parameter comment="seconds to wait before next action">2</parameter>
+		</operation>
+		<operation>
+			<command comment="Select Switch to video">keypress</command>
+			<parameter comment="the key to be pressed">KEYCODE_DPAD_LEFT</parameter>
+			<parameter comment="seconds to wait before next action">2</parameter>
+		</operation>
+		<operation>
+			<command comment="Click on Switch to video">keypress</command>
+			<parameter comment="the key to be pressed">KEYCODE_DPAD_CENTER</parameter>
+			<parameter comment="seconds to wait before next action">2</parameter>
+		</operation>
+		<operation>
+			<command comment="Start video recording">keypress</command>
+			<parameter comment="the key to be pressed">KEYCODE_DPAD_CENTER</parameter>
+			<parameter comment="seconds to wait before next action">2</parameter>
+		</operation>
+	</operationset>
+	<operationset name="multimedia_playback_video"><!-- to be check and completed -->
+		<operation>
+			<command comment="press the back key to go to the upper folder">keypress</command>
+			<parameter comment="the key to be pressed">KEYCODE_DPAD_CENTER</parameter>
+		</operation>
+		<operation>
+			<command comment="press the back key to go to the upper folder">keypress</command>
+			<parameter comment="the key to be pressed">KEYCODE_DPAD_CENTER</parameter>
+		</operation>
+		<!--<operation>
+			<command comment="take a screenshot for validation">screenshot</command>
+			<parameter comment="the location for screenshot">video_list</parameter>
+			<parameter comment="format of the screenshot">png</parameter>
+			<parameter comment="seconds to wait before next action">3</parameter>
+		</operation>-->
+		<operation>
+			<command comment="press the back key to go to the upper folder">keypress</command>
+			<parameter comment="the key to be pressed">KEYCODE_DPAD_CENTER</parameter>
+		</operation>
+		<operation>
+			<command comment="press the back key to go to the upper folder">keypress</command>
+			<parameter comment="the key to be pressed">KEYCODE_DPAD_CENTER</parameter>
+		</operation>
+		<!--<operation>
+			<command comment="take a screenshot for validation">screenshot</command>
+			<parameter comment="the location for screenshot">video_playback</parameter>
+			<parameter comment="format of the screenshot">png</parameter>
+			<parameter comment="seconds to wait before next action">32</parameter>
+		</operation>-->
+		<operation>
+			<command comment="press the back key to go to the upper folder">keypress</command>
+			<parameter comment="the key to be pressed">KEYCODE_BACK</parameter>
+		</operation>
+		<operation>
+			<command comment="press the back key to leave the app">keypress</command>
+			<parameter comment="the key to be pressed">KEYCODE_BACK</parameter>
+		</operation>
+	</operationset>
+	<operationset name="multimedia_delete_video">
+		<operation>
+			<command comment="touch > camera folder">touch</command>
+			<parameter comment="x coordinate">260</parameter>
+			<parameter comment="y coordinate">215</parameter>
+			<parameter comment="seconds to wait before next action">2</parameter>
+		</operation>
+		<!--<operation>
+			<command comment="take a screenshot for validation">screenshot</command>
+			<parameter comment="the location for screenshot">video_list_before_delete</parameter>
+			<parameter comment="format of the screenshot">png</parameter>
+			<parameter comment="seconds to wait before next action">3</parameter>
+		</operation>-->
+		<operation>
+			<command comment="long touch > first video of the list to be deleted">longtouch</command>
+			<parameter comment="x coordinate">300</parameter>
+			<parameter comment="y coordinate">215</parameter>
+			<parameter comment="seconds to wait before next action">2</parameter>
+		</operation>
+		<operation>
+			<command comment="touch > delete">touch</command>
+			<parameter comment="x coordinate">300</parameter>
+			<parameter comment="y coordinate">1000</parameter>
+			<parameter comment="seconds to wait before next action">2</parameter>
+		</operation>
+		<operation>
+			<command comment="touch > confirm delete">touch</command>
+			<parameter comment="x coordinate">300</parameter>
+			<parameter comment="y coordinate">785</parameter>
+			<parameter comment="seconds to wait before next action">2</parameter>
+		</operation>
+		<!--<operation>
+			<command comment="take a screenshot for validation">screenshot</command>
+			<parameter comment="the location for screenshot">video_list_after_delete</parameter>
+			<parameter comment="format of the screenshot">png</parameter>
+			<parameter comment="seconds to wait before next action">3</parameter>
+		</operation>-->
+		<operation>
+			<command comment="press the back key to go to the upper folder">keypress</command>
+			<parameter comment="the key to be pressed">KEYCODE_BACK</parameter>
+		</operation>
+		<operation>
+			<command comment="press the back key to leave the app">keypress</command>
+			<parameter comment="the key to be pressed">KEYCODE_BACK</parameter>
+		</operation>
+	</operationset>
+	<operationset name="multimedia_take_picture">
+		<operation>
+			<command comment="touch > take a picture">touch</command>
+			<parameter comment="x coordinate">950</parameter>
+			<parameter comment="y coordinate">500</parameter>
+			<parameter comment="seconds to wait before next action">3</parameter>
+		</operation>
+	</operationset>
+	<operationset name="multimedia_open_picture">
+		<operation>
+			<command comment="touch on contact menu">touch</command>
+			<parameter comment="x coordinate">950</parameter>
+			<parameter comment="y coordinate">65</parameter>
+			<parameter comment="seconds to wait before next action">2</parameter>
+		</operation>
+	</operationset>
+	<operationset name="multimedia_delete_gallery_item">
+		<operation>
+			<command comment="select the item">longtouch</command>
+			<parameter comment="x coordinate">155</parameter>
+			<parameter comment="y coordinate">150</parameter>
+			<parameter comment="seconds to wait before next action">1</parameter>
+		</operation>
+		<operation>
+			<command comment="press delete">touch</command>
+			<parameter comment="x coordinate">295</parameter>
+			<parameter comment="y coordinate">25</parameter>
+			<parameter comment="seconds to wait before next action">1</parameter>
+		</operation>
+		<operation>
+			<command comment="press to confirm delection">touch</command>
+			<parameter comment="x coordinate">220</parameter>
+			<parameter comment="y coordinate">70</parameter>
+			<parameter comment="seconds to wait before next action">1</parameter>
+		</operation>
+		<operation>
+			<command comment="press to confirm delection">touch</command>
+			<parameter comment="x coordinate">220</parameter>
+			<parameter comment="y coordinate">70</parameter>
+			<parameter comment="seconds to wait before next action">1</parameter>
+		</operation>
+	</operationset>
+	<operationset name="multimedia_audio_record">
+		<operation>
+			<command comment="move on record button">keypress</command>
+			<parameter comment="the key to be pressed">KEYCODE_DPAD_LEFT</parameter>
+		</operation>
+        <operation>
+			<command comment="validate moving on record button">keypress</command>
+			<parameter comment="the key to be pressed">KEYCODE_DPAD_DOWN</parameter>
+		</operation>
+		<operation>
+			<command comment="record sound">keypress</command>
+			<parameter comment="the key to be pressed">KEYCODE_DPAD_CENTER</parameter>
+		</operation>
+		<operation>
+			<command comment="wait 5 sec to record a sound">wait</command>
+			<parameter comment="seconds to wait">5</parameter>
+		</operation>
+        <operation>
+			<command comment="move on stop button">keypress</command>
+			<parameter comment="the key to be pressed">KEYCODE_DPAD_DOWN</parameter>
+		</operation>
+		<operation>
+			<command comment="stop recording">keypress</command>
+			<parameter comment="the key to be pressed">KEYCODE_DPAD_CENTER</parameter>
+		</operation>
+		<!--<operation>
+			<command comment="touch > use the recorded sound">touch</command>
+			<parameter comment="x coordinate">472</parameter>
+			<parameter comment="y coordinate">700</parameter>
+			<parameter comment="seconds to wait before next action">2</parameter>
+		</operation>-->
+		<operation>
+			<command comment="press the back key to leave the app">keypress</command>
+			<parameter comment="the key to be pressed">KEYCODE_BACK</parameter>
+		</operation>
+	</operationset>
+	<operationset name="multimedia_audio_record_playback">
+		<operation>
+			<command comment="go down to my recordings">keypress</command>
+			<parameter comment="the key to be pressed">KEYCODE_DPAD_DOWN</parameter>
+		</operation>
+        <operation>
+			<command comment="go down to to my recordings">keypress</command>
+			<parameter comment="the key to be pressed">KEYCODE_DPAD_DOWN</parameter>
+		</operation>
+        <operation>
+			<command comment="enter to my recordings">keypress</command>
+			<parameter comment="the key to be pressed">KEYCODE_DPAD_CENTER</parameter>
+		</operation>
+        <operation>
+			<command comment="go down to to the recorded audio">keypress</command>
+			<parameter comment="the key to be pressed">KEYCODE_DPAD_DOWN</parameter>
+		</operation>
+		<operation>
+			<command comment="play the recorded audio">keypress</command>
+			<parameter comment="the key to be pressed">KEYCODE_DPAD_CENTER</parameter>
+		</operation>
+		<operation>
+			<command comment="wait 8 sec to listen to the sound">wait</command>
+			<parameter comment="seconds to wait">8</parameter>
+		</operation>
+		<operation>
+			<command comment="press the back key to return to list of recorded sounds">keypress</command>
+			<parameter comment="the key to be pressed">KEYCODE_BACK</parameter>
+		</operation>
+		<operation>
+			<command comment="press the back key to return to playlist menu">keypress</command>
+			<parameter comment="the key to be pressed">KEYCODE_BACK</parameter>
+		</operation>
+		<operation>
+			<command comment="press the back key to leave the app">keypress</command>
+			<parameter comment="the key to be pressed">KEYCODE_BACK</parameter>
+		</operation>
+	</operationset>
+	<operationset name="multimedia_audio_record_delete">
+		<operation>
+			<command comment="touch > open my recorded sound">touch</command>
+			<parameter comment="x coordinate">160</parameter>
+			<parameter comment="y coordinate">120</parameter>
+			<parameter comment="seconds to wait before next action">2</parameter>
+		</operation>
+		<operation>
+			<command comment="touch > display menu of the first recorded file of the list">longtouch</command>
+			<parameter comment="x coordinate">160</parameter>
+			<parameter comment="y coordinate">80</parameter>
+			<parameter comment="seconds to wait before next action">2</parameter>
+		</operation>
+		<operation>
+			<command comment="touch > select delete the sound">touch</command>
+			<parameter comment="x coordinate">160</parameter>
+			<parameter comment="y coordinate">410</parameter>
+			<parameter comment="seconds to wait before next action">2</parameter>
+		</operation>
+		<operation>
+			<command comment="touch > confirm delete">touch</command>
+			<parameter comment="x coordinate">77</parameter>
+			<parameter comment="y coordinate">270</parameter>
+			<parameter comment="seconds to wait before next action">2</parameter>
+		</operation>
+		<operation>
+			<command comment="press the back key to return to playlist menu">keypress</command>
+			<parameter comment="the key to be pressed">KEYCODE_BACK</parameter>
+		</operation>
+		<operation>
+			<command comment="press the back key to leave the app">keypress</command>
+			<parameter comment="the key to be pressed">KEYCODE_BACK</parameter>
+		</operation>
+	</operationset>
+	<operationset name="open_alarm_menu">
+		<operation>
+			<command comment="exec > alarm application">exec</command>
+			<parameter comment="command">start -a android.intent.action.Main -n com.android.deskclock/.AlarmClock</parameter>
+		</operation>
+	</operationset>
+	<operationset name="increase_alarm_time">
+		<operation>
+			<command comment="move to +">keypress</command>
+			<parameter comment="the key to be pressed">KEYCODE_DPAD_UP</parameter>
+		</operation>
+		<operation>
+			<command comment="Validate">keypress</command>
+			<parameter comment="the key to be pressed">KEYCODE_DPAD_CENTER</parameter>
+		</operation>
+	</operationset>
+	<operationset name="hold_voice_call">
+		<operation>
+			<command comment="touch > Hold button">touch</command>
+			<parameter comment="x coordinate">216</parameter>
+			<parameter comment="y coordinate">453</parameter>
+			<parameter comment="seconds to wait before next action">2</parameter>
+		</operation>
+	</operationset>
+</operationsets>

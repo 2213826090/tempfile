@@ -1,0 +1,52 @@
+
+<Campaign>
+    <Parameters>
+        <Parameter isControlledPSUsed="False"/>
+        <Parameter isIoCardUsed="True"/>
+        <!-- Set skipBootOnPowerCycle to True to disable the accs boot procedure-->
+        <!-- Important, it means that boot will be handle inside the campaign/tc -->
+        <Parameter skipBootOnPowerCycle="False"/>
+        <Parameter runHookScripts="False"/>
+        <Parameter powerCycleBetweenTC="False"/>
+        <Parameter powerCycleOnFailure="False"/>
+        <Parameter finalDutState="NoChange" />
+        <Parameter stopCampaignOnCriticalFailure="True"/>
+        <Parameter stopCampaignOnFirstFailure="False"/>
+        <!-- LoggingLevel possible values: info | warning | debug | error -->
+        <Parameter loggingLevel="debug"/>
+        <!-- CampaignType format -> <TEAM>_<CAMPAIGNTYPE>
+        Possible values:
+        FT(Feature Team)-> SANITY | REGRESSION | STRESS, RELIABILTY | MTBF
+    ST(System Test)-> SANITY | REGRESSION | STRESS, RELIABILTY | MTBF | EM
+        SI(System Integration)-> EAT | STAB | PACT | CAT0 | RELIABILITY | MTBF | CTS
+        Otherwise "Others" should be used -->
+        <Parameter CampaignType="FT_REGRESSION"/>
+        <Parameter TCRReportViaRESTAPI="True"/>
+    </Parameters>
+    <Targets>
+        <!-- Target Values -->
+    <Target targetB2bPassRate ="80"/>
+    </Targets>
+    <TestCases>
+        <TestCase Id="SI\BBot_EAT_PACT\TC\COMMON\SYSTEM\SI_SYSTEM_SETUP_EMBEDDED" />
+        <TestCase Id="ST\telephony\TC\SETUP\ST_TELEPHONY_INSTALL" />
+        <TestCase Id="ST\pnp\TC\Setup\ST_PNP_SYSTEM_CONFIGURATION" />
+
+        <TestCase Id="FT/pnp/TC/SETUP/SETUP_CALIBRATE_BOOT_1800s" />
+        <TestCase Id="ST/pnp/TC/KPI_Power/ST_FLIGHT_MODE_S3_ALL_RADIO_DISABLED"  />
+        <TestCase Id="FT/pnp/TC/SETUP/SETUP_CALIBRATE_BOOT_300s" />
+        <TestCase Id="ST/pnp/TC/KPI_Power/ST_STATIC_CONTENT_ON_DISPLAY_aka_IDLE_DISPLAY_ON" />
+        <TestCase Id="FT/pnp/TC/SETUP/SETUP_CALIBRATE_BOOT_300s" />
+        <TestCase Id="ST/pnp/TC/KPI_Power/ST_MUSIC_PLAYBACK_VIA_WIRED_HEADSET_MP3" />
+        <TestCase Id="FT/pnp/TC/SETUP/SETUP_CALIBRATE_BOOT_300s" />
+        <TestCase Id="ST/pnp/TC/KPI_Power/ST_VIDEO_PLAYBACK_H264_1080P_30FPS_DEVICE_DISPLAY" />
+        <TestCase Id="FT/pnp/TC/SETUP/SETUP_CALIBRATE_BOOT_300s" />
+        <TestCase Id="ST/pnp/TC/KPI_Power/ST_VIDEO_PLAYBACK_H265_2160P_30FPS_DEVICE_DISPLAY" />
+        <TestCase Id="FT/pnp/TC/SETUP/SETUP_CALIBRATE_BOOT_300s" />
+        <TestCase Id="ST/pnp/TC/KPI_Power/ST_USER_MODE_IMAGE_CAPTURE_INTEL_APPLICATION" />
+        <TestCase Id="FT/pnp/TC/SETUP/SETUP_CALIBRATE_BOOT_300s" />
+        <TestCase Id="ST/pnp/TC/KPI_Power/ST_VIDEO_RECORDING_H264_BP_1080p_30FPS_INTEL_APPLICATION" />
+        <TestCase Id="FT/pnp/TC/SETUP/SETUP_CALIBRATE_BOOT_300s" />
+        <TestCase Id="ST/pnp/TC/KPI_Power/ST_GLBENCHMARK_2.7_TREX_HD_OFFSCREEN" />
+    </TestCases>
+</Campaign>

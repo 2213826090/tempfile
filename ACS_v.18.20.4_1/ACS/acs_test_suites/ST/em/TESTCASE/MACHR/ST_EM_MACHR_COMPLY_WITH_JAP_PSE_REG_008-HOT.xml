@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCase version="13.49">
+    <UseCase>LAB_EM_BATT_JAPANESE_REGULATION_COMPLIANCE</UseCase>
+    <Description>Test the Japanese PSE Compliance Regulation: test that the battery/charger adapt their behavior depending of the temperature</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>False</b2bContinuousMode>
+    <TcMaxAttempt>1</TcMaxAttempt>
+    <TcAcceptanceCriteria>1</TcAcceptanceCriteria>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters>
+        <Parameter>
+            <!-- maximum capacity at which the test is run, if you are above a discharge will be done -->
+            <Name>BATT_MAX_CAPACITY</Name>
+            <Value>50</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Temperature at which we want to observed the battery/charger behavior change in degrees Celsius
+                this is the min inclusive value that the test temperature can reach -->
+            <Name>MIN_TEMPERATURE</Name>
+            <Value>46</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Temperature at which we want to observed the battery/charger behavior change in degrees Celsius
+                this is the max inclusive value that the test temperature can reach -->
+            <Name>MAX_TEMPERATURE</Name>
+            <Value>60</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Charger type to plug during the observation. Depending of what your io card can supoport, it can be one among : DCP, SDP, CDP and ACA -->
+            <Name>CHARGER_TYPE</Name>
+            <Value>DCP</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Time in second to let the DUT adjust its charging parameter to the given temperature range -->
+            <Name>TIME_TO_LET_DUT_ADJUST_CHARGING_PARAM</Name>
+            <Value>180</Value>
+        </Parameter>
+        <Parameter>
+            <!-- LOAD to apply to the board when battery capacity is above BATT_MAX_CAPACITY, separated by ;. To be choosen between following loads (can be combinated) : WIFI;BLUETOOTH;TORCHLIGHT;VIBRA;VIDEO -->
+            <Name>LOAD</Name>
+            <Value>FROM_BENCHCONFIG</Value>
+        </Parameter>
+        <Parameter>
+            <!-- this testcase can cover different test when you board reach the temperature targets on this file.
+                it can check different value on charger and battery at this time.
+                These checkable values have special syntaxes that allow you to indicate what sub values you want to evaluate
+                among all that they are able to read.
+                e,g:<Value>EM_INFO.BATTERY.STATUS</Value>
+                the dot allows you specifcy that you want STATUS info from BATTERY for the TAG EM_INFO
+
+                The verdict of your usecase will be based only on the result of target you put here.
+                use ; as separator
+
+                check energy_management.xml on _config folder for details on what can be tested
+            -->
+            <Name>EM_TARGET</Name>
+            <Value>EM_INFO.CHARGER.VOLTAGE</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<Campaign>
+    <Parameters>
+        <Parameter isControlledPSUsed="True" />
+        <Parameter isIoCardUsed="True" />
+        <Parameter skipBootOnPowerCycle="True" />
+        <Parameter runHookScripts="False" />
+        <Parameter powerCycleBetweenTC="False" />
+        <Parameter powerCycleOnFailure="False" />
+        <Parameter finalPowerOff="True" />
+        <Parameter finalDutState="PowerOff" />
+        <Parameter stopCampaignOnCriticalFailure="False" />
+        <Parameter stopCampaignOnFirstFailure="False" />
+        <!-- LoggingLevel possible values: info | warning | debug | error -->
+        <Parameter loggingLevel="debug" />
+        <!-- CampaignType format -> <TEAM>_<CAMPAIGNTYPE>
+            Possible values:
+            FT(Feature Team)-> SANITY | REGRESSION | STRESS, RELIABILTY | MTBF
+            ST(System Test)-> SANITY | REGRESSION | STRESS, RELIABILTY | MTBF
+            SI(System Integration)-> EAT | STAB | PACT | CAT0 | RELIABILITY | MTBF | CTS
+            Otherwise "Others" should be used -->
+        <Parameter CampaignType="ST_EM_PS_REGRESSION" />
+    </Parameters>
+    <Targets>
+        <!-- Target Values -->
+        <Target targetB2bPassRate="49" />
+    </Targets>
+    <TestCases>
+        <!-- Testcase campaigns -->
+        <TestCase Id="..\..\..\TC\MOBAT\ST_EM_MOBAT_METATCD_16_UNDER-LAB_EM_USB_TEST_VOLTAGE" />
+        <TestCase Id="..\..\..\TC\MOBAT\ST_EM_MOBAT_METATCD_54-LAB_EM_PS_BCU" />
+        <TestCase Id="..\..\..\TC\MABAT\ST_EM_MABAT_METATCD_37_DCP-LAB_EM_BATT_INSERTION" />
+        <TestCase Id="..\..\..\TC\MABAT\ST_EM_MABAT_METATCD_37_SDP-LAB_EM_BATT_INSERTION" />
+        <TestCase Id="..\..\..\TC\MABAT\ST_EM_MABAT_METATCD_37_CDP-LAB_EM_BATT_INSERTION" />
+        <TestCase Id="..\..\..\TC\MABAT\ST_EM_MABAT_METATCD_37_NONE-LAB_EM_BATT_INSERTION" />
+        <TestCase Id="..\..\..\TC\PUPDR\ST_EM_PUPDR_METATCD_39-LAB_EM_TURN_OFF_DISPLAY" />
+        <TestCase Id="..\..\..\TC\PUPDR\ST_EM_PUPDR_METATCD_15-LAB_EM_PRESS_SHUTDOWN" />
+        <TestCase Id="..\..\..\TC\PUPDR\ST_EM_PUPDR_METATCD_42-LAB_EM_PS_FORCED_SHUTDOWN" />
+        <TestCase Id="..\..\..\TC\PUPDR\ST_EM_PUPDR_METATCD_43-LAB_EM_PS_HARDWARE_SHUTDOWN" />
+        <TestCase Id="..\..\..\TC\PUPDR\ST_EM_PUPDR_METATCD_23_SDP-LAB_EM_POWER_ON_CHARGER_INSERTION" />
+        <TestCase Id="..\..\..\TC\PUPDR\ST_EM_PUPDR_METATCD_23_DCP-LAB_EM_POWER_ON_CHARGER_INSERTION" />
+        <TestCase Id="..\..\..\TC\PUPDR\ST_EM_PUPDR_METATCD_23_CDP-LAB_EM_POWER_ON_CHARGER_INSERTION" />
+        <TestCase Id="..\..\..\TC\PUPDR\ST_EM_PUPDR_METATCD_17-LAB_EM_BOOT_PRESS_ON" />
+        <TestCase Id="..\..\..\TC\PUPDR\ST_EM_PUPDR_METATCD_52_SOFT-LAB_EM_PS_WATCHDOG_MECHANISM" />
+        <TestCase Id="..\..\..\TC\PUPDR\ST_EM_PUPDR_METATCD_55_3.05V-LAB_EM_PS_BOOT" />
+        <TestCase Id="..\..\..\TC\PUPDR\ST_EM_PUPDR_METATCD_56_3.55V-LAB_EM_PS_BOOT" />
+        <TestCase Id="..\..\..\TC\PUPDR\ST_EM_PUPDR_METATCD_60_NOBATT-LAB_EM_PS_BOOT" />
+        <TestCase Id="..\..\..\TC\PUPDR\ST_EM_PUPDR_METATCD_45-LAB_EM_PS_BOOT_ON_POWER_BUTTON" />
+        <TestCase Id="..\..\..\TC\PUPDR\ST_EM_PUPDR_METATCD_57_3.65V-LAB_EM_PS_BOOT" />
+        <TestCase Id="..\..\..\TC\PUPDR\ST_EM_PUPDR_METATCD_58_MOSTOCOS-LAB_EM_GRACEFUL_SHUTDOWN" />
+        <TestCase Id="..\..\..\TC\PUPDR\ST_EM_PUPDR_METATCD_59_COSTOMOS-LAB_EM_PS_BOOT" />
+        <TestCase Id="..\..\..\TC\PUPDR\ST_EM_PUPDR_METATCD_61_EMULATORBATTERY-LAB_EM_BATT_INSERTION" />
+        <TestCase Id="..\..\..\TC\PUPDR\ST_EM_PUPDR_METATCD_ROSMOS-LAB_PUPDR_BOOT_TRANSITION" />
+        <TestCase Id="..\..\..\TC\PUPDR\ST_EM_PUPDR_METATCD_MOSROS-LAB_PUPDR_BOOT_TRANSITION" />
+        <TestCase Id="..\..\..\TC\MOBAT\ST_EM_MOBAT_METATCD_21-LAB_EM_MONITOR_FUEL_GAUGING" />
+        <TestCase Id="..\..\..\TC\MACHR\ST_EM_MACHR_METATCD_24-LAB_EM_PLUG_NO_BATT" />
+        <TestCase Id="..\..\..\TC\MACHR\ST_EM_MACHR_METATCD_57_DCPBATTEMU-LAB_EM_PLUG_CHARGER" />
+        <TestCase Id="..\..\..\TC\MACHR\ST_EM_MACHR_METATCD_62_EMUNOTCOS-LAB_EM_GRACEFUL_SHUTDOWN" />
+        <TestCase Id="..\..\..\TC\MOBAT\ST_EM_MOBAT_METATCD_22_CTP-LAB_EM_MONITOR_BATT_CHARGE_RATE" />
+        <TestCase Id="..\..\..\TC\MOBAT\ST_EM_MOBAT_METATCD_56_CTP-LAB_EM_PS_LOW_BATT_SHUTDOWN" />
+        <TestCase Id="..\..\..\TC\MACHR\ST_EM_MACHR_METATCD_19_CTP-LAB_EM_BATT_OVER_VOLTAGE" />
+        <TestCase Id="..\..\..\TC\THMGN\ST_EM_THMGN_METATCD_MOS_CONTROL-LAB_EM_THERMAL_SEQUENCE_TEST" />
+        <TestCase Id="..\..\..\TC\MACHR\ST_EM_MACHR_METATCD-LAB_EM_PS_FLASH_LOW_BATT" />
+        <TestCase Id="..\..\..\TC\MACHR\ST_EM_1916204_EXPORT_INFO_ABOUT_CHARGER"/>
+        <TestCase Id="..\..\..\TC\MOBAT\ST_EM_4095_EXPORT_INFO_ABOUT_BATT"/>
+    </TestCases>
+</Campaign>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<UI_SEQ xsi:noNamespaceSchemaLocation="ACS_ANDROID_UI_CHECK.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <ACTION>
+    <CMD>exec</CMD>
+    <PARAMETERS>start -a android.intent.action.MAIN -c android.intent.category.LAUNCHER -n com.android.browser/.BrowserActivity</PARAMETERS>
+    <TIMEOUT>5</TIMEOUT>
+  </ACTION>
+  <ACTION>
+    <CMD>search</CMD>
+    <PARAMETERS>http://m.youtube.com/</PARAMETERS>
+    <TRIG_LOG>calling gs_pRilEnv</TRIG_LOG>		
+  </ACTION>
+  <ACTION>
+    <CMD>wait</CMD>
+    <PARAMETERS>10</PARAMETERS>
+  </ACTION>
+  <ACTION>
+    <!--Go back to home page-->
+    <CMD>go_home</CMD>
+    <TIMEOUT>1</TIMEOUT>
+  </ACTION>  
+  <ACTION>
+    <CMD>open_sms_menu</CMD>
+    <TIMEOUT>1</TIMEOUT>
+  </ACTION>
+  <!-- sending a SMS of 160 characters-->
+  <ACTION>
+    <CMD>mms_send_picture</CMD>
+    <PARAMETERS>0033629059145;MMS with picture;aaaaaaaaaabbbbbbbbbbccccccccccaaaaaaaaaabbbbbbbbbbccccccccccaaaaaaaaaabbbbbbbbbbccccccccccaaaaaaaaaabbbbbbbbbbccccccccccaaaaaaaaaabbbbbbbbbbccccccccccdddddddddd</PARAMETERS>
+    <TIMEOUT>1</TIMEOUT>
+    <!--<TRIG_LOG>[INITING,CONNECTED]</TRIG_LOG>-->
+    <TRIG_LOG>set reason as dataDisabled, for type mms, current state CONNECTED_-_SETUP_DATA_CALL</TRIG_LOG>
+  </ACTION>
+  <ACTION>
+    <!--Go back to home page-->
+    <CMD>go_home</CMD>
+    <TIMEOUT>1</TIMEOUT>
+  </ACTION>
+  <ACTION>
+    <CMD>open_sms_menu</CMD>
+    <TIMEOUT>1</TIMEOUT>
+    <TRIG_LOG></TRIG_LOG>
+  </ACTION>  
+  <ACTION>
+    <CMD>sms_clear_all_sms</CMD>
+    <TIMEOUT>1</TIMEOUT>
+    <TRIG_LOG></TRIG_LOG>
+  </ACTION>
+  <ACTION>
+      <CMD>wait</CMD>
+    <PARAMETERS>20</PARAMETERS>
+    <CMD>exec</CMD>
+    <PARAMETERS>start -a android.intent.action.MAIN -c android.intent.category.LAUNCHER -n com.android.browser/.BrowserActivity</PARAMETERS>
+    <TIMEOUT>10</TIMEOUT>
+  </ACTION>
+  <ACTION>
+    <CMD>wait</CMD>
+    <PARAMETERS>30</PARAMETERS>
+  </ACTION>
+  <ACTION>
+    <!--random touch on youtube website-->
+    <CMD>browsing_youtube</CMD>
+    <ITERATION>2</ITERATION>
+  </ACTION>
+  <ACTION>
+    <!--Go back to home page-->
+    <CMD>keypress</CMD>
+    <PARAMETERS>KEYCODE_HOME</PARAMETERS>
+  </ACTION>
+</UI_SEQ>

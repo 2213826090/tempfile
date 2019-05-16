@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<Include>
+    <!-- Web browsing test step sets -->
+    <!-- Start video streaming and check if video have been totally played (video streaming web page shall output a video ended status in it its javascript console -->
+    <!-- Parameters : DEVICE (phone) -->
+    <TestStepSet Id="HttpVideoStreamingOnFullScreen">
+        <!-- Unlock phone and set display on -->
+        <TestStep Id="SET_PHONE_LOCK" VALUE="unlock"/>
+        <TestStep Id="SET_SCREEN_PROPERTY" PROPERTY="state" VALUE="on"/>
+        <TestStep Id="SET_ORIENTATION"  ORIENTATION="landscape" API="embedded_api" />
+
+        <TestStep Id="START_BROWSING" BROWSER_TYPE="chrome" WEBSITE_URL="FROM_TC:URL" APP_NAME="FROM_TC:APP_PACKAGE_NAME" TIMEOUT="10"/>
+
+        <!-- Select full screen button -->
+        <TestStep Id="ADD_TRIGGER_MSG" TRIGGER_MESSAGE="FROM_TC:REGEX_FULLSCREEN"/>
+        <TestStep Id="ADD_TRIGGER_MSG" TRIGGER_MESSAGE="FROM_TC:REGEX_PLAYING_VIDEO" />
+        <TestStep Id="ADD_TRIGGER_MSG" TRIGGER_MESSAGE="FROM_TC:REGEX_END_VIDEO" />
+
+        <TestStep Id="RUN_CMD" TIMEOUT="5" COMMAND="adb shell input keyevent TAB" FORCE_EXECUTION="False" WAIT_FOR_RESPONSE="False" SILENT_MODE="False" SAVE_AS="output"/>
+        <TestStep Id="SUSPEND" DURATION_IN_SEC="1"/>
+        <TestStep Id="RUN_CMD" TIMEOUT="5" COMMAND="adb shell input keyevent TAB" FORCE_EXECUTION="False" WAIT_FOR_RESPONSE="False" SILENT_MODE="False" SAVE_AS="output"/>
+        <TestStep Id="SUSPEND" DURATION_IN_SEC="1"/>
+        <!-- Switch to full screen -->
+        <TestStep Id="RUN_CMD" TIMEOUT="5" COMMAND="adb shell input keyevent ENTER" FORCE_EXECUTION="False" WAIT_FOR_RESPONSE="False" SILENT_MODE="False" SAVE_AS="output"/>
+        <TestStep Id="CHECK_TRIGGER_MSG_STATUS" TRIGGER_MESSAGE="FROM_TC:REGEX_FULLSCREEN" TIMEOUT="15" OUTPUT_SUCCESS="Screen is successfully switched to full screen"/>
+        <!-- Start video -->
+        <TestStep Id="SUSPEND" DURATION_IN_SEC="5" />
+        <TestStep Id="RUN_CMD" TIMEOUT="5" COMMAND="adb shell input keyevent SPACE" FORCE_EXECUTION="False" WAIT_FOR_RESPONSE="False" SILENT_MODE="False" SAVE_AS="output"/>
+        <!-- Check if video have started by checking web browser javascript output -->
+        <TestStep Id="CHECK_TRIGGER_MSG_STATUS" TRIGGER_MESSAGE="FROM_TC:REGEX_PLAYING_VIDEO" TIMEOUT="30" OUTPUT_SUCCESS="Video start to play properly"/>
+        <!-- Check if video is ended by checking web browser javascript output -->
+        <TestStep Id="CHECK_TRIGGER_MSG_STATUS" TRIGGER_MESSAGE="FROM_TC:REGEX_END_VIDEO" TIMEOUT="FROM_TC:TEST_DURATION" OUTPUT_SUCCESS="Video ended"/>
+
+        <TestStep Id="REMOVE_TRIGGER_MSG" TRIGGER_MESSAGE="FROM_TC:REGEX_FULLSCREEN"/>
+        <TestStep Id="REMOVE_TRIGGER_MSG" TRIGGER_MESSAGE="FROM_TC:REGEX_PLAYING_VIDEO" />
+        <TestStep Id="REMOVE_TRIGGER_MSG" TRIGGER_MESSAGE="FROM_TC:REGEX_END_VIDEO" />
+        <!-- Close web browser -->
+        <TestStep Id="STOP_BROWSING" BROWSER_TYPE="chrome"/>
+    </TestStepSet>
+
+    <!-- Start web browsing -->
+    <!-- Parameters : DEVICE (phone) TRIGGER_MESSAGE ("FROM_TC:REGEX_BROWSING") TIMEOUT (Test Duration)-->
+    <TestStepSet Id="StartWebBrowsing">
+        <TestStep Id="SET_PHONE_LOCK" VALUE="unlock"/>
+        <TestStep Id="SET_SCREEN_PROPERTY" PROPERTY="state" VALUE="on"/>
+        <TestStep Id="ADD_TRIGGER_MSG"/>
+        <TestStep Id="CLEAN_APP_CACHE" APP_NAME="FROM_TC:APP_PACKAGE_NAME" />
+        <!-- Clean web browser cache -->
+        <TestStep Id="UPDATE_JSON_PREFERENCES"
+                  FILE_PATH_ON_DEVICE="/data/data/com.android.chrome/app_chrome/Default/Preferences"
+                  JSON_PREFERENCES="{'translate_blocked_languages': ['en', 'fr']}" />
+        <TestStep Id="START_BROWSING" BROWSER_TYPE="chrome" WEBSITE_URL="FROM_TC:URL"/>
+    </TestStepSet>
+
+    <!-- Stop web browsing -->
+    <!-- Parameters : DEVICE (phone) -->
+    <TestStepSet Id="StopWebBrowsing">
+        <TestStep Id="REMOVE_TRIGGER_MSG" />
+        <TestStep Id="STOP_BROWSING" BROWSER_TYPE="chrome"/>
+    </TestStepSet>
+
+    <!-- Start web browsing and check if page have been correctly loaded (Web page shall output a page loaded status in it its javascript console) -->
+    <!-- Parameters : DEVICE (phone) TRIGGER_MESSAGE ("FROM_TC:REGEX_BROWSING") TIMEOUT (Test Duration)-->
+    <TestStepSet Id="WebBrowsing">
+        <TestStep SetId="StartWebBrowsing"/>
+        <!-- Check if web page have been loaded by checking web browser javascript output -->
+        <TestStep Id="CHECK_TRIGGER_MSG_STATUS" OUTPUT_SUCCESS="Page is loaded"/>
+        <TestStep SetId="StopWebBrowsing" />
+    </TestStepSet>
+
+    <!-- Check if web page is loaded -->
+    <!-- Parameters : DEVICE (phone) TRIGGER_MESSAGE ("FROM_TC:REGEX_BROWSING") TIMEOUT (Test Duration)-->
+    <TestStepSet Id="CheckWebPageLoaded">
+        <!-- Check if web page have been loaded by checking web browser javascript output(Web page shall output a page loaded status in it its javascript console) -->
+        <TestStep Id="CHECK_TRIGGER_MSG_STATUS" OUTPUT_SUCCESS="Page is loaded"/>
+        <!-- Remove triggered message and re-add it for next page browsed -->
+        <TestStep Id="REMOVE_TRIGGER_MSG"/>
+        <TestStep Id="ADD_TRIGGER_MSG"/>
+    </TestStepSet>
+</Include>

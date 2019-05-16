@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase>
+  <UseCase>EXEC</UseCase>
+  <Description>General execution use case</Description>
+  <b2bIteration>1</b2bIteration>
+  <b2bContinuousMode>True</b2bContinuousMode>  
+  <Parameters>
+    <!--__________________________-->
+    <!-- SETUP SECTION (optional) -->
+    <!--__________________________-->
+    <!-- One action or sequence of actions (SETUP_CMD, SETUP_CMD1, SETUP_CMD2, ...) -->
+    <!--    <Parameter> -->
+            <!-- Action to be run, should be in the executable path of the system -->
+            <!-- (mandatory) -->
+            <!-- For this template, we are running windows only command-->
+     <!--       <Name>SETUP_CMD</Name> -->
+     <!--       <Value>echo "ok"</Value> -->
+     <!--   </Parameter> -->
+     <!--   <Parameter> -->
+            <!-- Timeout action in second -->
+            <!-- (optional, default value = 5)-->
+      <!--      <Name>SETUP_TIMEOUT</Name> -->
+      <!--      <Value>1</Value> -->
+      <!--  </Parameter> -->
+      <!--  <Parameter> -->
+            <!-- Expected result int (exec return code) or string (that will be search in the stdout)
+            If you need to check device log, add [TRIG_LOG] <message to trigger> as value -->
+            <!-- (optional, default value = 0)-->
+        <!--    <Name>SETUP_EXPECT_RESULT</Name> -->
+        <!--    <Value>ok</Value> -->
+        <!--</Parameter>            -->
+  
+    <!--_____________-->
+    <!-- RUN SECTION -->
+    <!--_____________-->    
+    <!-- One action or sequence of actions (RUN_CMD, RUN_CMD1, RUN_CMD2, ...) -->
+        <!-- FIRST ACTION -->
+        <Parameter>
+            <!-- Action to be run, should be in the executable path of the system -->
+            <!-- (mandatory) -->
+            <!-- For this template, we are running windows only command-->
+            <!-- accelerometer, compass, gyroscope, orientation, barometer, proximity, light, Linear_accelerometer, Gravity, Rotation_vector -->
+            <Name>RUN_CMD</Name>
+            <Value> python ./_ExecutionConfig/ST/system/TC/Exec/script/testSensorInfo.py range orientation 360 default log.txt 0 0 </Value>
+        </Parameter>
+        <Parameter>
+            <!-- Timeout action in second -->
+            <!-- (optional, default value = 5)-->
+            <Name>RUN_TIMEOUT</Name>
+            <Value>7</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Expected result int (exec return code) or string (that will be search in the stdout)
+            If you need to check device log, add [TRIG_LOG] <message to trigger> as value -->
+            <!-- (optional, default value = 0)-->
+            <Name>RUN_EXPECT_RESULT</Name>
+            <Value>pass</Value>
+        </Parameter>
+
+    
+        <!-- ACTION N (optional, replace N by the next sequence)
+        <Parameter>
+            <Name>RUN_CMDN</Name>
+            <Value>echo "run1"</Value>
+        </Parameter>
+        <Parameter>
+            <Name>RUN_TIMEOUTN</Name>
+            <Value>1</Value>
+        </Parameter>
+        <Parameter>
+            <Name>RUN_EXPECT_RESULTN</Name>
+            <Value>run1</Value>
+        </Parameter>        
+        -->
+
+    <!--______________________________-->        
+    <!-- TEAR DOWN SECTION (optional) -->
+    <!--______________________________--> 
+    <!-- One action or sequence of actions (TEAR_DOWN_CMD, TEAR_DOWN_CMD1, TEAR_DOWN_CMD2, ...) -->    
+    <!--    <Parameter>  -->
+            <!-- Action to be run, should be in the executable path of the system -->
+            <!-- (mandatory) -->
+            <!-- For this template, we are running windows only command-->
+    <!--        <Name>TEAR_DOWN_CMD</Name> -->
+    <!--        <Value>echo "tear down"</Value> -->
+    <!--    </Parameter> -->
+    <!--    <Parameter> -->
+            <!-- Timeout action in second -->
+            <!-- (optional, default value = 5)-->
+     <!--       <Name>TEAR_DOWN_TIMEOUT</Name> -->
+     <!--       <Value>1</Value> -->
+     <!--   </Parameter> -->
+     <!--   <Parameter> -->
+            <!-- Expected result int (exec return code) or string (that will be search in the stdout)
+            If you need to check device log, add [TRIG_LOG] <message to trigger> as value -->
+            <!-- (optional, default value = 0)-->        
+      <!--      <Name>TEAR_DOWN_EXPECT_RESULT</Name> -->
+      <!--      <Value>0</Value> -->
+      <!--  </Parameter> -->
+  </Parameters>  
+</TestCase>

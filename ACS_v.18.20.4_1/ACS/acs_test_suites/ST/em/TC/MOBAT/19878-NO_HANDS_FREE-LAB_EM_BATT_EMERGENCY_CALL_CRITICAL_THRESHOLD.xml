@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCase version="13.37">
+    <UseCase>LAB_EM_BATT_EMERGENCY_CALL_CRITICAL_THRESHOLD</UseCase>
+    <Description>Test emergency call when the battery critical threshold is reached</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>False</b2bContinuousMode>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters>
+        <Parameter>
+            <!-- PATH OF THE VIDEO -->
+            <Name>VIDEO_PATH</Name>
+            <Value>H264_L2.1_BP_CIF_30fps_AAC+_ST_56kb_48KHz.mp4</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Volume of the video (%) -->
+            <Name>VOLUME</Name>
+            <Value>100</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Critical threshold of the battery (%) -->
+            <Name>BATTERY_CRITICAL_THRESHOLD</Name>
+            <Value>5</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Fake emergency phone number -->
+            <Name>PHONE_NUMBER</Name>
+            <Value>123</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Timeout of the call (seconds) -->
+            <Name>CALL_TIMEOUT</Name>
+            <Value>600</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Type of the call (2G, 3G) -->
+            <Name>CALL_TYPE</Name>
+            <Value>3G</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Call must hold during this time => Minimum (In seconds) -->
+            <Name>EMERGENCY_THRESHOLD_TIME_VALUE</Name>
+            <Value>350</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Check time value during emergency call => Check the datas logs (seconds) -->
+            <Name>EMERGENCY_CHECK_TIME_VALUE</Name>
+            <Value>120</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Activation of Hands free (TRUE or FALSE) -->
+            <Name>HANDS_FREE_ACTIVATION</Name>
+            <Value>FALSE</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Discharge time to reached critical threshold (seconds) -->
+            <Name>DISCHARGE_TIME</Name>
+            <Value>600</Value>
+        </Parameter>
+        
+   <!--         CALL PART (2G and 3G possible)         -->
+        
+        <Parameter>
+            <!-- Cell Band (from BAND1 to BAND10) for 3G or Cell Band (PGSM|RGSM|EGSM|GSM450|GSM480|GSM750|GSM850|TGSM810|PCS|DCS) for 2G -->
+            <Name>CELL_BAND</Name>
+            <Value>BAND1</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Cell power in dBm -->
+            <Name>CELL_POWER</Name>
+            <Value>-70</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Choose which device do the call: SIMULATOR|PHONE -->
+            <Name>CALL_ORIGIN</Name>
+            <Value>PHONE</Value>
+        </Parameter>
+        <Parameter>
+            <!-- 3G ONLY:UPLINK ARFCN -->
+            <Name>UL_UARFCN</Name>
+            <Value>9750</Value>
+        </Parameter>
+        <Parameter>
+            <!-- 2G ONLY:Cell Service GSM|GPRS|EGPRS -->
+            <Name>CELL_SERVICE</Name>
+            <Value>GPRS</Value>
+        </Parameter>
+        <Parameter>
+            <!-- 2G ONLY:TCH ARFCN -->
+            <Name>TCH_ARFCN</Name>
+            <Value>62</Value>
+        </Parameter>
+        <Parameter>
+            <!-- 2G ONLY:Uplink data channel in dBm -->
+            <Name>UPLINK_CHANNEL</Name>
+            <Value>33</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

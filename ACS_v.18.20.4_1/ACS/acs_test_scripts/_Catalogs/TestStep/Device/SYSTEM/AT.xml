@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestSteps xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../acs/src/_Catalogs/TestStep/teststep.xsd">
+    <TestStep Id="AT_COMMAND" Domain="SYSTEM" SubDomain="MODEM_MGMT" Feature="MMGR" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.System.AT.ATCommand.ATCommand</ClassName>
+        <Description>Send a command to the modem and store its response in a context variable
+        '\r' and '\n' characters are stripped from the beginning and the end of the command result</Description>
+        <Environment name="ANY"/>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues/>
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="SERIAL_DEVICE" type="STRING" isOptional="false">
+                <Description>Serial device used to communicate with the modem</Description>
+                <PossibleValues/>
+                <DefaultValue>/dev/ttyACM0</DefaultValue>
+            </Parameter>
+            <Parameter name="COMMAND" type="STRING" isOptional="false">
+                <Description>Command to send to the modem</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+            <Parameter name="TIMEOUT" type="INTEGER" isOptional="false">
+                <Description>Timeout (in seconds) to apply to the AT command execution</Description>
+                <PossibleValues/>
+                <DefaultValue>10</DefaultValue>
+            </Parameter>
+            <Parameter name="SAVE_AS" type="CONTEXT" isOptional="false">
+                <Description>
+                    <Key name="KEY_NAME_DEFINED_BY_USER" type="STRING">Name of the context variable where the result string will be saved.</Key>
+                </Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="AT_PROXY" Domain="SYSTEM" SubDomain="MODEM_MGMT" Feature="MMGR" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.System.AT.ATProxy.ATProxy</ClassName>
+        <Description>AT Proxy Tools</Description>
+        <Environment name="ANY"/>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues/>
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="ACTION" type="STRING" isOptional="false">
+                <Description>Action to execute</Description>
+                <PossibleValues>START;STOP</PossibleValues>
+                <DefaultValue/>
+            </Parameter>
+            <Parameter name="BOOT_MODE" type="STRING" isOptional="false">
+                <Description>Boot mode of the device before action is executed</Description>
+                <PossibleValues>POS;MOS</PossibleValues>
+                <DefaultValue/>
+            </Parameter>
+            <Parameter name="PROXY_MODE" type="STRING" isOptional="true">
+                <Description>AT Proxy mode (Normal, Tunneling)</Description>
+                <PossibleValues>NORMAL;TUNNELING</PossibleValues>
+                <DefaultValue>NORMAL</DefaultValue>
+            </Parameter>
+            <Parameter name="SAVE_AT_PROXY_TTY_AS" type="CONTEXT" isOptional="false">
+                <Description>
+                    <Key name="KEY_NAME_DEFINED_BY_USER" type="STRING">Name of the context variable where the AT Proxy TTY will be saved.</Key>
+                </Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+        </Parameters>
+    </TestStep>
+</TestSteps>

@@ -1,0 +1,116 @@
+<?xml version='1.0' encoding='ASCII'?>
+<Campaign version="13.49">
+    <Parameters>
+        <Parameter isControlledPSUsed="False"/>
+        <Parameter isIoCardUsed="True"/>
+        <Parameter skipBootOnPowerCycle="False"/>
+        <Parameter bootRetryNumber="0"/>
+        <Parameter runHookScripts="False"/>
+        <Parameter powerCycleBetweenTC="False"/>
+        <Parameter powerCycleOnFailure="False"/>
+        <Parameter finalDutState="NoChange"/>
+        <Parameter stopCampaignOnCriticalFailure="False"/>
+        <Parameter stopCampaignOnFirstFailure="False"/>
+        <Parameter loggingLevel="debug"/>
+        <Parameter CampaignType="Other"/>
+        <Parameter TCRReportViaRESTAPI="True"/>
+    </Parameters>
+    <TestCases>
+        <!-- Flash related cases -->
+        <TestCase Id="../../../../../TC/TR/TESTLIB/BootComponent/BXT-P/AVB_boot_in_Orange_O"/>
+        <TestCase Id="../../../../../TC/TR/TESTLIB/BootComponent/BXT-P/Boot_Fastboot_OnlyFlash_IOC_IFWI"/>
+        <TestCase Id="../../../../../TC/TR/TESTLIB/BootComponent/BXT-P/Boot_to_fastboot"/>
+        <TestCase Id="../../../../../TC/TR/TESTLIB/BootComponent/BXT-P/Boot_to_fastboot_with_corrupt_boot_image"/>
+        <TestCase Id="../../../../../TC/TR/TESTLIB/BootComponent/BXT-P/Data_is_erased_when_flash_image"/>
+        <TestCase Id="../../../../../TC/TR/TESTLIB/BootComponent/BXT-P/Data_isnot_erased_when_update_boot"/>
+        <TestCase Id="../../../../../TC/TR/TESTLIB/BootComponent/BXT-P/Data_isnot_erased_when_update_bootloader"/>
+        <TestCase Id="../../../../../TC/TR/TESTLIB/BootComponent/BXT-P/Data_isnot_erased_when_update_multiboot"/>
+        <TestCase Id="../../../../../TC/TR/TESTLIB/BootComponent/BXT-P/Data_isnot_erased_when_update_system"/>
+        <TestCase Id="../../../../../TC/TR/TESTLIB/BootComponent/BXT-P/Data_isnot_erased_when_update_vbmeta"/>
+        <TestCase Id="../../../../../TC/TR/TESTLIB/BootComponent/BXT-P/Data_isnot_erased_when_update_vendor"/>
+        <TestCase Id="../../../../../TC/TR/TESTLIB/BootComponent/BXT-P/Device_states_transitions"/>
+        <TestCase Id="../../../../../TC/TR/TESTLIB/BootComponent/BXT-P/DUT_can_enter_MOS_after_reflash_right_image"/>
+        <TestCase Id="../../../../../TC/TR/TESTLIB/BootComponent/BXT-P/DUT_cannot_enter_MOS_after_flash_wrong_image"/>
+        <TestCase Id="../../../../../TC/TR/TESTLIB/BootComponent/BXT-P/Fastboot_boot_common"/>
+        <TestCase Id="../../../../../TC/TR/TESTLIB/BootComponent/BXT-P/Fastboot_Bounds_Checks"/>
+        <TestCase Id="../../../../../TC/TR/TESTLIB/BootComponent/BXT-P/Fastboot_erase_boot"/>
+        <TestCase Id="../../../../../TC/TR/TESTLIB/BootComponent/BXT-P/Fastboot_flashing_lock"/>
+        <TestCase Id="../../../../../TC/TR/TESTLIB/BootComponent/BXT-P/Fastboot_image_integrity"/>
+        <TestCase Id="../../../../../TC/TR/TESTLIB/BootComponent/BXT-P/Flash_build_via_fastboot_commands"/>
+        <TestCase Id="../../../../../TC/TR/TESTLIB/BootComponent/BXT-P/Flash_IFWI"/>
+        <TestCase Id="../../../../../TC/TR/TESTLIB/BootComponent/BXT-P/Flash_IOC_LinuxHost"/>
+        <!-- <TestCase Id="../../../../../TC/TR/TESTLIB/BootComponent/BXT-P/Flash_With_NonfusedImage"/> -->
+        <TestCase Id="../../../../../TC/TR/TESTLIB/BootComponent/BXT-P/Flash_boot_image_in_Fastboot"/>
+        <TestCase Id="../../../../../TC/TR/TESTLIB/BootComponent/BXT-P/Flash_bootloader_image_in_Fastboot"/>
+        <TestCase Id="../../../../../TC/TR/TESTLIB/BootComponent/BXT-P/Flash_multiboot_image_in_Fastboot"/>
+        <TestCase Id="../../../../../TC/TR/TESTLIB/BootComponent/BXT-P/Flash_system_image_in_Fastboot"/>
+        <TestCase Id="../../../../../TC/TR/TESTLIB/BootComponent/BXT-P/Flash_vbmeta_image_in_Fastboot"/>
+        <TestCase Id="../../../../../TC/TR/TESTLIB/BootComponent/BXT-P/Flash_vendor_image_in_Fastboot"/>
+        <TestCase Id="../../../../../TC/TR/TESTLIB/BootComponent/BXT-P/OnlySystemFW_OS_RESCUE"/>
+        <TestCase Id="../../../../../TC/TR/TESTLIB/BootComponent/BXT-P/Remove_USB_cable_during_the_boot_flash"/>
+        <TestCase Id="../../../../../TC/TR/TESTLIB/BootComponent/BXT-P/Remove_USB_cable_during_the_bootloader_flash"/>
+        <TestCase Id="../../../../../TC/TR/TESTLIB/BootComponent/BXT-P/Remove_USB_cable_during_the_multiboot_flash"/>
+        <TestCase Id="../../../../../TC/TR/TESTLIB/BootComponent/BXT-P/Remove_USB_cable_during_the_vendor_flash"/>
+
+        <!-- Flash related cases (N/N-1) -->
+<!--         <TestCase Id="../../../../../TC/TR/TESTLIB/BootComponent/BXT-P/Fastboot_update_userdata_recreation"/>
+        <TestCase Id="../../../../../TC/TR/TESTLIB/BootComponent/BXT-P/Flash_different_image_inABpartition"/>
+        <TestCase Id="../../../../../TC/TR/TESTLIB/BootComponent/BXT-P/Update_boot_image_in_Fastboot"/>
+        <TestCase Id="../../../../../TC/TR/TESTLIB/BootComponent/BXT-P/Update_bootloader_image_in_Fastboot"/>
+        <TestCase Id="../../../../../TC/TR/TESTLIB/BootComponent/BXT-P/Update_multiboot_image_in_Fastboot"/>
+        <TestCase Id="../../../../../TC/TR/TESTLIB/BootComponent/BXT-P/Update_system_image_in_Fastboot"/>
+        <TestCase Id="../../../../../TC/TR/TESTLIB/BootComponent/BXT-P/Update_vbmeta_image_in_Fastboot"/>
+        <TestCase Id="../../../../../TC/TR/TESTLIB/BootComponent/BXT-P/Update_vendor_image_in_Fastboot"/> -->
+
+        <!-- Flash related cases (EB) -->
+<!--         <TestCase Id="../../../../../TC/TR/TESTLIB/BootComponent/BXT-P/AVB_boot_in_Red_O"/>
+        <TestCase Id="../../../../../TC/TR/TESTLIB/BootComponent/BXT-P/Check_ABL_config"/>
+        <TestCase Id="../../../../../TC/TR/TESTLIB/BootComponent/BXT-P/Display_IOError_after_system_datablock_O"/>
+        <TestCase Id="../../../../../TC/TR/TESTLIB/BootComponent/BXT-P/Display_IOError_after_vendor_datablock_O"/>
+        <TestCase Id="../../../../../TC/TR/TESTLIB/BootComponent/BXT-P/System_not_mount_if_hashtree_was_altered_O"/>
+        <TestCase Id="../../../../../TC/TR/TESTLIB/BootComponent/BXT-P/System_not_mount_if_metadata_fail_to_verify_O"/>
+        <TestCase Id="../../../../../TC/TR/TESTLIB/BootComponent/BXT-P/Vendor_not_mount_if_hashtree_was_altered_O"/>
+        <TestCase Id="../../../../../TC/TR/TESTLIB/BootComponent/BXT-P/Vendor_not_mount_if_metadata_fail_to_verify_O"/>
+        <TestCase Id="../../../../../TC/TR/TESTLIB/BootComponent/BXT-P/Verify_rollback_of_software_versions"/> -->
+
+        <!-- Flash related cases (Fused) -->
+<!--         <TestCase Id="../../../../../TC/TR/TESTLIB/BootComponent/BXT-P/Corrupted_ABL_notbe_boot_because_secure_boot"/>
+        <TestCase Id="../../../../../TC/TR/TESTLIB/BootComponent/BXT-P/Fastboot_lock_state_commands_rejected"/>
+        <TestCase Id="../../../../../TC/TR/TESTLIB/BootComponent/BXT-P/Fused_device_will_not_change_the_SBstatus"/>
+        <TestCase Id="../../../../../TC/TR/TESTLIB/BootComponent/BXT-P/Fused_DUT_defaultstate_lock"/>
+        <TestCase Id="../../../../../TC/TR/TESTLIB/BootComponent/BXT-P/Secure_boot_enable_and_EOM_bit_set"/>
+        <TestCase Id="../../../../../TC/TR/TESTLIB/BootComponent/BXT-P/Unverified_multiboot_with_fused"/> -->
+
+        <!-- Minicom related cases -->
+        <TestCase Id="../../../../../TC/TR/TESTLIB/BootComponent/BXT-P/ABL_BootToAndroid"/>
+        <TestCase Id="../../../../../TC/TR/TESTLIB/BootComponent/BXT-P/Boot_to_fastboot_fromSPI"/>
+        <TestCase Id="../../../../../TC/TR/TESTLIB/BootComponent/BXT-P/Flash_ABL_from_Fastboot_menu"/>
+        <TestCase Id="../../../../../TC/TR/TESTLIB/BootComponent/BXT-P/Support_VT-D_enable"/>
+        <TestCase Id="../../../../../TC/TR/TESTLIB/BootComponent/BXT-P/System_partition_should_notbe_modifiable_O"/>
+        <TestCase Id="../../../../../TC/TR/TESTLIB/BootComponent/BXT-P/To_Fastboot_With_Corrupt_Boot_And_Bootloader"/>
+        <TestCase Id="../../../../../TC/TR/TESTLIB/BootComponent/BXT-P/To_Fastboot_With_Erase_Boot_And_Bootloader"/>
+
+        <!-- UI related cases -->
+        <TestCase Id="../../../../../TC/TR/TESTLIB/BootComponent/BXT-P/All_passwd_set_cleared_after_factory_reset"/>
+        <TestCase Id="../../../../../TC/TR/TESTLIB/BootComponent/BXT-P/Contact_record_are_empty_after_factory_reset"/>
+        <TestCase Id="../../../../../TC/TR/TESTLIB/BootComponent/BXT-P/Factory_reset_applications_removed"/>
+        <TestCase Id="../../../../../TC/TR/TESTLIB/BootComponent/BXT-P/Factory_Reset_Data_Reset"/>
+        <TestCase Id="../../../../../TC/TR/TESTLIB/BootComponent/BXT-P/OOBE_when_first_time_enters_to_MOS"/>
+        <TestCase Id="../../../../../TC/TR/TESTLIB/BootComponent/BXT-P/TouchBTWIFI_works_after_flash_build"/>
+        <TestCase Id="../../../../../TC/TR/TESTLIB/BootComponent/BXT-P/Restore_factory_settings_with_reboot_10times"/>
+
+        <!-- Old cases -->
+        <TestCase Id="../../../../../TC/TR/TESTLIB/BootComponent/BXT-P/Boot_to_android"/>
+        <TestCase Id="../../../../../TC/TR/TESTLIB/BootComponent/BXT-P/Class_A_ device_ boot_ in_Green"/>
+        <TestCase Id="../../../../../TC/TR/TESTLIB/BootComponent/BXT-P/Fastboot_continue"/>
+        <TestCase Id="../../../../../TC/TR/TESTLIB/BootComponent/BXT-P/Fastboot_getvar_all"/>
+        <TestCase Id="../../../../../TC/TR/TESTLIB/BootComponent/BXT-P/Fastboot_getvar_serialno"/>
+        <TestCase Id="../../../../../TC/TR/TESTLIB/BootComponent/BXT-P/Fastboot_reboot"/>
+        <TestCase Id="../../../../../TC/TR/TESTLIB/BootComponent/BXT-P/Fastboot_reboot_bootloader"/>
+        <TestCase Id="../../../../../TC/TR/TESTLIB/BootComponent/BXT-P/Main-to-Fastboot"/>
+        <TestCase Id="../../../../../TC/TR/TESTLIB/BootComponent/BXT-P/Main-to-Main"/>
+        <TestCase Id="../../../../../TC/TR/TESTLIB/BootComponent/BXT-P/MOS-TO-MOS-kill-watchdog"/>
+        <TestCase Id="../../../../../TC/TR/TESTLIB/BootComponent/BXT-P/Reboot_by_trigger_kernel_panic"/>
+        <TestCase Id="../../../../../TC/TR/TESTLIB/BootComponent/BXT-P/Main-to-Main_50Times"/>
+    </TestCases>
+</Campaign>

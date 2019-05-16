@@ -1,0 +1,43 @@
+<TestCase>
+	<UseCase>LIVE_AUDIO_PLAYBACK</UseCase>
+	<Description>L_MUSIC Audio Playback ALAC codec with M4a container at 8Khz 24bit</Description>
+	<b2bIteration>1</b2bIteration>
+	<b2bContinuousMode>False</b2bContinuousMode>
+	<Parameters>
+		<Parameter>
+			
+			<Name>AUDIO_FILE</Name>
+			<Value>ALAC_2min_8khz_24bit_stereo.m4a</Value>
+		</Parameter>
+		<Parameter>
+			
+			<Name>VOLUME</Name>
+			<Value>80</Value>
+		</Parameter>
+		<Parameter>
+			
+			<Name>LENGTH</Name>
+			<Value>120000</Value>
+		</Parameter>
+		<Parameter>
+			
+			<Name>DEVIATION_RATE</Name>
+			<Value>5</Value>
+		</Parameter>
+		<Parameter>
+			
+			<Name>RECORD</Name>
+			<Value>True</Value>
+		</Parameter>		
+		<Parameter>
+			
+			<Name>SILENT_MODE</Name>
+			<Value>False</Value>
+		</Parameter>			
+        <Parameter>
+        	
+            <Name>AUDIO_OUTPUT</Name>
+            <Value>none</Value>
+        </Parameter>  					
+	</Parameters>
+</TestCase>

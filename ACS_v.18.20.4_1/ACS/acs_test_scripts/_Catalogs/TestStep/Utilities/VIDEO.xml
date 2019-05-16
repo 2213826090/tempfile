@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestSteps xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../acs/src/_Catalogs/TestStep/teststep.xsd">
+    <TestStep Id="PLAY_VIDEO_WITH_VLC" Domain="UTILITIES" SubDomain="VIDEO" Feature="PLAYBACK" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Utilities.Video.VideoLANClient.PlayVideoWithVLC</ClassName>
+        <Description>Start video with VideoLAN client (VLC). This requires VLC to be installed on the host.</Description>
+        <Environment name="ANY"/>
+        <Parameters>
+            <Parameter name="INSTANCE_NAME" type="STRING" isOptional="false">
+                <Description>Name of the context variable name where to save vlc instance</Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+            <Parameter name="PAYLOAD" type="STRING" isOptional="false">
+                <Description>Path of the payload to be played with VLC</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+            <Parameter name="SCREEN" type="INTEGER" isOptional="true">
+                <Description>Number of the screen where to start VLC instance</Description>
+                <PossibleValues/>
+                <DefaultValue>0</DefaultValue>
+            </Parameter>
+            <Parameter name="VIDEO_TRANSFORM" type="STRING" isOptional="true">
+                <Description>Set the video transform type in VLC</Description>
+                <PossibleValues>0;90;180;270;hflip;vflip;transpose;antitranspose</PossibleValues>
+                <DefaultValue>0</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="STOP_VIDEO_WITH_VLC" Domain="UTILITIES" SubDomain="VIDEO" Feature="PLAYBACK" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Utilities.Video.VideoLANClient.StopVideoWithVLC</ClassName>
+        <Description>Stop VideoLAN client (VLC) instance. This requires VLC to be installed on the host.</Description>
+        <Environment name="ANY"/>
+        <Parameters>
+            <Parameter name="INSTANCE_NAME" type="STRING" isOptional="false">
+                <Description>Name of the context variable name where to save vlc instance</Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+        </Parameters>
+    </TestStep>
+</TestSteps>

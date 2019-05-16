@@ -1,0 +1,67 @@
+<?xml version="1.0" ?>
+<Campaign version="13.49">
+    <Parameters>
+        <Parameter isControlledPSUsed="False"/>
+        <Parameter isIoCardUsed="False"/>
+        <Parameter skipBootOnPowerCycle="False"/>
+        <Parameter bootRetryNumber="0"/>
+        <Parameter runHookScripts="False"/>
+        <Parameter powerCycleBetweenTC="False"/>
+        <Parameter powerCycleOnFailure="False"/>
+        <Parameter finalDutState="NoChange"/>
+        <Parameter stopCampaignOnCriticalFailure="False"/>
+        <Parameter stopCampaignOnFirstFailure="False"/>
+        <Parameter loggingLevel="debug"/>
+        <Parameter CampaignType="Other"/>
+        <Parameter TCRReportViaRESTAPI="True"/>
+    </Parameters>
+    <TestCases>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_Audio/init.start_rpc_server.StartRPCServer.testStartRPCServer"/>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_Audio/init.wake_up_and_unlock.WakeUnlock.testWakeUnlock"/>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_Audio/init.set_orientation_vertical.SetOrientationVertical.testSetOrientationVertical"/>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_Audio/init.config_first_boot_wizard.ConfigFirstBootWizard.testConfigFirstBootWizard"/>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_Audio/init.enable_developer_option.EnableDeveloperOption.testEnableDeveloperOption"/>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_Audio/init.disable_verify_apps.DisableVerifyApp.testDisableVerifyApp"/>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_Audio/init.keep_awake.KeepAwake.testKeepAwake"/>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_Audio/init.disable_screen_lock.DisableLockScreen.testDisableLockScreen"/>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_Audio/init.set_adb_root.AdbRoot.testAdbRoot"/>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_Audio/init.delete_camera_folder_file.DeleteCameraFolderFile.testDeleteCameraFolderFile"/>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_Audio/Interruption/testLocalDecode_InstallSW"/>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_Audio/Interruption/testAudioDecode_JumpNextPrevious_Continuously"/>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_Audio/Decode/testAudioDecode_SDcard_Copy_SDCardSongs_to_PC_SameTime"/>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_Audio/Decode/testAudioDecode_SDcard_Unmount_SDcard_SameTime"/>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_Audio/Decode/testAudioDecode_Lock_Device"/>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_Audio/Decode/testAudioDecode_Playlist_Shuffle"/>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_Audio/Decode/testAudioDecode_Iterative_Receive_LargerFile_from_PC"/>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_Audio/Decode/testPlayback_DefaultApp_RotateScreen"/>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_Audio/Decode/testAudioDecode_Musicwidget_PauseResumeNextBackSong"/>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_Audio/Effect_Control/testPlayback_Speaker_VolumeControl_InSettings"/>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_Audio/Effect_Control/testEffectPlayback_LockUnlockScreenSound"/>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_Audio/Effect_Control/testRotateScreen_VolumeControl_InSettings"/>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_Audio/Effect_Control/testEffectPlayback_VolumeControl_InSettings"/>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_Audio/Encode/testAudioEncode_SoundRecorder_GMSPlayback"/>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_Audio/Stream/testStreaming_RTSP_AMRWB_AMRContainer"/>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_Audio/Stream/testStreaming_Http_Live_Audio_IHF"/>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_Audio/Stream/testStreaming_Http_Live_Audio_LockScreen_Resume"/>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_Audio/Stream/testStreaming_RTP_RTSP_VOD_Audio_ShortDuration"/>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_Audio/Stream/testPlayback_Local_RTP_RTSP"/>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_Audio/Stream/testStreaming_RTP_RTSP_Audio_wsHS"/>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_Audio/Stream/testStreaming_LockScreen_ReceiveIM"/>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_Audio/Stream/testStreaming_AACLC_RTP_RTSP_BroadcastMode"/>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_Audio/Stream/testStreaming_RTSP_AMRNB_AMRContainer"/>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_Audio/Stream/testStreaming_RTP_RTSP_Change_Volume"/>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_Audio/Stream/testStreaming_RTP_RTSP_RotateScreen"/>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_Audio/Stream/testStreaming_Audio_MusicTransferring"/>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_Audio/Tunes/testNotificationsArrive_DoNotInterrupt"/>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_Audio/Tunes/testAdjustVolume_InSetting_AlarmClockAlert"/>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_Audio/Tunes/testChange_Ringtone_IHF_Normal_Ring"/>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_Audio/Tunes/testDeletePlayingFile_ThenPlaybackPrevNextSong"/>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_Audio/Tunes/testScreenLockSound_While_AlarmClockAlert"/>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_Audio/Tunes/testNotificationsArrive_AllowOnlyPriorityInterruptions"/>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_Audio/Tunes/testAlarmClockAlert_HWControl"/>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_Audio/Tunes/testAdjustNotificationSound_InSetting_InterruptEventAppear"/>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_Audio/Tunes/testScreenLockSound_IHF"/>
+        <TestCase Id="../../../../../TC/TP/TC/Post_Test/postTestRemoveGoogleAccount"/>
+        <TestCase Id="../../../../../TC/TP/TC/Post_Test/postTestWifiOff"/>
+    </TestCases>
+</Campaign>

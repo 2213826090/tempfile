@@ -1,0 +1,28 @@
+<?xml version='1.0'?>
+
+<ogl_es_1.1_conf_auto>
+    <test_case name='ogles1.1_conf_ext_EXT_draw_texture' id='000001'>
+        <test_item name=''>
+            <test_step type='fun' fun_name='test_sequence_handler'>
+                <parameter name='push_native_app'>conform_fixed;/data/app</parameter>
+                <parameter name='push_native_app'>conform;/data/app</parameter>
+                <parameter name='adb_cmd'>adb shell chmod -R 777 /data/app</parameter>
+            </test_step>
+            <test_step type='fun' fun_name='ogles_conformance_test_run'>
+                <parameter name='test_file_name'>drawtex.c</parameter>
+                <parameter name='test_bin_name'>conform_fixed;/data/app</parameter>
+                <parameter name='path_0'></parameter>
+                <parameter name='path_1'></parameter>
+                <parameter name='path_2'></parameter>
+                <parameter name='path_3'></parameter>
+                <parameter name='test_bin_name'>conform;/data/app</parameter>
+                <parameter name='path_0'></parameter>
+                <parameter name='path_1'></parameter>
+                <parameter name='path_2'></parameter>
+                <parameter name='path_3'></parameter>
+                <parameter name='result_check_string'>Draw Texture test</parameter>
+            </test_step>
+        </test_item>
+    </test_case>
+</ogl_es_1.1_conf_auto>
+

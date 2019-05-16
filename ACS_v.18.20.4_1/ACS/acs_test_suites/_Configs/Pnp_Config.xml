@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pnpconfig>
+    <!-- How to use this file:
+
+        1- General parameters of TestCase:
+            * Parameter for PATlib:
+                - config_file: Overload Bench_Config PAT configuration file path
+                                (parameter ConfFile of POWER_ANALYZER_TOOL equipment)
+                - verdict_rail: Overload Bench_Config power rail name used for target comparisons
+                                (parameter VerdictRail of POWER_ANALYZER_TOOL equipment)
+
+        2- Test case can define its own specific parameter.
+
+        3- Test case example:
+        <TestCase id="">
+            <Parameter name="pat" config_file="" verdict_rail="" device_model="" />
+            <Parameter device_model="REDHOOKBAY-Android-JB-MR1"
+                       test_case="LAB_PWRMEAS_FLIGHTMODE_S3"
+                       name="patlib"
+                       config_file="pnp/EQUIPTCFG/power_pat.xml"
+                       verdict_rail="V_BATT" />
+        </TestCase>
+    -->
+    <Parameter device_model="" test_case="" name="patlib" config_file="" verdict_rail="" />
+</pnpconfig>

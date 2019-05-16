@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase>
+  <UseCase>LAB_MOBILITY_EXT_HO_VC_AND_CRESEL</UseCase>
+  <Description> Perform several 2G/3G Handovers during Voice Call </Description>
+  <b2bIteration>1000</b2bIteration>
+  <b2bContinuousMode>True</b2bContinuousMode>
+  <Parameters>
+    <Parameter>
+      <!-- CONFIGURATION_FILE parameter representing a xml file name
+      (without extension) in which equipments configuration is described.
+      Configuration files must be stored in _Configs/EquipmentConfiguration directory. -->
+      <Name>CONFIGURATION_FILE</Name>
+      <Value>ST\telephony\Configurations\CONF_ST_COM_VC_CS_316-LAB_MOBILITY_EXT_HO_VC_AND_CRESEL</Value>
+    </Parameter>
+    <Parameter>
+        <!-- Dialled Phone number (MSISDN). If value is [PHONE_NUMBER] the value used will be the phoneNumber defined in the Phone_Catalog.xml -->
+        <Name>PHONE_NUMBER</Name>
+        <Value>0622219252</Value>
+    </Parameter>
+    <Parameter>
+        <!-- Active cell power -->
+        <Name>ACTIVE_CELL_POWER</Name>
+        <Value>-60</Value>
+    </Parameter>
+    <Parameter>
+        <!-- Idle cell power -->
+        <Name>IDLE_CELL_POWER</Name>
+        <Value>-60</Value>
+    </Parameter>
+    <Parameter>
+        <!-- Limit power to stop the cell reselection power if reached (after a timeout) -->
+        <Name>CRESEL_LIMIT_POWER</Name>
+        <Value>-90</Value>
+    </Parameter>
+    <Parameter>
+        <!-- Decrementation step for active cell power in dBm (must be positive, can be decimal value like 0,20 or 2,6) -->
+        <Name>DECREMENTATION_STEP_POWER</Name>
+        <Value>5</Value>
+    </Parameter>
+    <Parameter>
+        <!-- Incrementation step for active cell power in dBm (must be positive, can be decimal value like 0,20 or 2,6) -->
+        <Name>INCREMENTATION_STEP_POWER</Name>
+        <Value>5</Value>
+    </Parameter>
+    <Parameter>
+        <!-- Decrementation step timer in seconds between 2 steps (must be positive, can be decimal value like 0,3 or 3,5) -->
+        <Name>DECREMENTATION_STEP_TIMER</Name>
+        <Value>4</Value>
+    </Parameter>
+    <Parameter>
+        <!-- Incrementation step timer in seconds between 2 steps (must be positive, can be decimal value like 0,3 or 3,5) -->
+        <Name>INCREMENTATION_STEP_TIMER</Name>
+        <Value>4</Value>
+    </Parameter>
+  </Parameters>
+</TestCase>

@@ -1,0 +1,32 @@
+<?xml version="1.0" ?>
+<Campaign>
+      <Parameters>
+            <Parameter isControlledPSUsed="False"/>
+            <Parameter isIoCardUsed="False"/>
+            <Parameter skipBootOnPowerCycle="False"/>
+            <Parameter bootRetryNumber="0"/>
+            <Parameter runHookScripts="False"/>
+            <Parameter powerCycleBetweenTC="False"/>
+            <Parameter powerCycleOnFailure="False"/>
+            <Parameter finalDutState="NoChange"/>
+            <Parameter stopCampaignOnCriticalFailure="False"/>
+            <Parameter stopCampaignOnFirstFailure="False"/>
+            <Parameter loggingLevel="debug"/>
+            <Parameter CampaignType="Other"/>
+      </Parameters>
+      <TestCases>
+            <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/Comms_WIFI_ComponentRelated_BandSelection_Set-Frequency-Band-2GHz"/>
+            <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/Comms_WIFI_ComponentRelated_BandSelection_Set-Frequency-Band-5GHz"/>
+            <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/Comms_WIFI_ComponentRelated_BandSelection_Set-Frequency-Band-Automatic"/>
+            <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/Comms_WIFI_ComponentRelated_BandSelection_Frequency-Band-Setting-Kept-After-WiFi-Turn-OFF-ON"/>
+            <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/postreq_reset_dut_frequency_band"/>
+            <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/Comms_WIFI_ComponentRelated_BandSelection_Frequency-Band-Setting-Kept-After-Reboot"/>
+            <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/postreq_reset_dut_frequency_band"/>
+            <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/Comms_WIFI_ComponentRelated_BandSelection_Reconnect-To-Allowed-AP-2GHz"/>
+            <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/postreq_reset_dut_frequency_band"/>
+            <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/Comms_WIFI_ComponentRelated_BandSelection_Reconnect-To-Allowed-AP-5GHz"/>
+            <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/postreq_reset_dut_frequency_band"/>
+            <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/postreq_reset_AP"/>
+            <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/postreq_reset_AP_5"/>
+      </TestCases>
+</Campaign>

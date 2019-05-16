@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="13.37">
+    <UseCase>LIVE_FIT_TEL_SMS_VC_MOMR</UseCase>
+    <Description>send SMS while Voice Call MOMR is active</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters>
+        <Parameter>
+            <!-- SMS destination phone number. If the value [PHONE_NUMBER] is given, the phoneNumber defined in Phone_Catalog.xml will be used -->
+            <Name>DESTINATION_NUMBER</Name>
+            <Value>[PHONE_NUMBER]</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Voice call destination phone number -->
+            <Name>CALL_NUMBER</Name>
+            <Value>123</Value>
+        </Parameter>
+        <Parameter>
+            <!-- SMS text message -->
+            <Name>MESSAGE_CONTENT</Name>
+            <Value>This is my SMS text !</Value>
+        </Parameter>
+        <Parameter>
+            <!-- SMS transfer timeout in seconds -->
+            <Name>SMS_TRANSFER_TIMEOUT</Name>
+            <Value>30</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

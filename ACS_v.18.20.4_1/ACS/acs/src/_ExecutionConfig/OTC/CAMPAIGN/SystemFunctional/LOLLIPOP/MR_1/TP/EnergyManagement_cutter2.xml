@@ -1,0 +1,57 @@
+<?xml version="1.0" ?>
+<Campaign>
+    <Parameters>
+        <Parameter isControlledPSUsed="False"/>
+        <!-- ioCard -->
+        <Parameter isIoCardUsed="True"/>
+        <Parameter skipBootOnPowerCycle="True"/>
+        <Parameter bootRetryNumber="0"/>
+        <Parameter runHookScripts="False"/>
+        <Parameter powerCycleBetweenTC="False"/>
+        <Parameter powerCycleOnFailure="False"/>
+        <Parameter finalDutState="NoChange"/>
+        <Parameter stopCampaignOnCriticalFailure="True"/>
+        <Parameter stopCampaignOnFirstFailure="False"/>
+        <Parameter loggingLevel="debug"/>
+        <Parameter CampaignType="Other"/>
+    </Parameters>
+    <TestCases>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/s0ix/S0ix_power_press_audio_play/test_S0ix_power_press_audio_play"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/s0ix/S0ix_power_press_video_play/test_S0ix_power_press_video_play"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/s0ix/S0ix_15s_idle_audio_play/test_S0ix_15s_idle_audio_play"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/s0ix/S0ix_15s_idle_video_play/test_S0ix_15s_idle_video_play"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/s0ix/system_resume_power_press_audio_playback/test_system_resume_power_press_audio_playback"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/s0ix/system_resume_power_press_video_playback/test_system_resume_power_press_video_playback"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/s0ix/S0ix_power_press_RockHero/test_S0ix_power_press_RockHero"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/s0ix/S0ix_power_press_ClashofClans/test_S0ix_power_press_ClashofClans"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/s0ix/S0ix_power_press_SubwaySurf/test_S0ix_power_press_SubwaySurf"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/s0ix/S0ix_power_press_BubbleWitch2/test_S0ix_power_press_BubbleWitch2"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/s0ix/S0ix_power_press_Weibo/test_S0ix_power_press_Weibo"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/s0ix/S0ix_power_press_AngryBirds/test_S0ix_power_press_AngryBirds"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/s0ix/S0ix_power_press_Wechat/test_S0ix_power_press_Wechat"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/s0ix/S0ix_power_press_PianoTiles/test_S0ix_power_press_PianoTiles"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/s0ix/S0ix_power_press_TempleRun/test_S0ix_power_press_TempleRun"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/s0ix/S0ix_power_press_CandyCrush/test_S0ix_power_press_CandyCrush"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/s0ix/S0ix_power_press_RiptideGP/test_S0ix_power_press_RiptideGP"/>
+
+        <!-- wifi adb -->
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/s0ix/S0ix_power_press_Webpage_Chrome/test_S0ix_power_press_WebpageChrome"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/s0ix/S0ix_power_press_video_play_chrome/test_S0ix_power_press_video_play_Chrome"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/s0ix/S0ix_power_press_audio_play_chrome/test_S0ix_power_press_audio_play_Chrome"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/s0ix/S0ix_power_press_html5_Chrome/test_S0ix_power_press_html5_Chrome"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/s0ix/S0ix_power_press_webgl_chrome/test_S0ix_power_press_webgl_Chrome"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/charging_battery/battery_show_percentage_in_settings/test_battery_show_percentage_in_settings"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/charging_battery/battery_show_percentage_on_home/test_battery_show_percentage_on_home"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/charging_battery/power_show_battery_status/test_power_show_battery_status"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/charging_battery/power_show_charging_status/test_power_show_charging_status"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/charging_battery/power_show_battery_icon/test_power_show_battery_icon"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/charging_battery/power_show_charging_icon/test_power_show_charging_icon"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/s0ix/system_resume_power_press_wifi_on/test_system_resume_power_press_wifi_on"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/s0ix/screen_off_wifi_download_background/test_screen_off_wifi_download_background"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/s0ix/S0ix_power_press_http_download/test_S0ix_power_press_http_download"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/s0ix/S0ix_battery_15s_idle_http_download/test_S0ix_15s_idle_http_download"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/charging_battery/battery_usage_data_in_settings/test_battery_usage_data"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/power_on_off/power_off_downloadingfrombrowser/test_power_off_downloadingfrombrowser"/>
+
+    </TestCases>
+</Campaign>

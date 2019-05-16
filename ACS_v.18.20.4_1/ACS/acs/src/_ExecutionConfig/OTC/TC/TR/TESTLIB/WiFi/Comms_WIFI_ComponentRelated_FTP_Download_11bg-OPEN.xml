@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='ASCII'?>
+<TestCase>
+    <UseCase>Testlib</UseCase>
+    <Description>wifi</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <TcMaxAttempt>3</TcMaxAttempt>
+    <isCritical>False</isCritical>
+    <Parameters>
+        <Parameter>
+            <Name>test</Name>
+            <Value>scripts/wireless/wifi_generic/tests/file_download.py</Value>
+        </Parameter>
+        <Parameter>
+            <Name>script-args</Name>
+            <Value>protocol=ftp port_number=20211 file_name=generated.bin device_path=/storage/sdcard0/Download/ file_size=10000 mode=bg security=none ap_name=qwe1234 dut_security=None conf_security=NONE airplane_mode=ON compare_method=md5 ap_module=ddwrt_atheros</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

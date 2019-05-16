@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<Campaign>
+    <Parameters>
+        <Parameter isControlledPSUsed="False"/>
+        <Parameter isIoCardUsed="False"/>
+        <Parameter skipBootOnPowerCycle="False"/>
+        <Parameter bootRetryNumber="0"/>
+        <Parameter runHookScripts="False"/>
+        <Parameter powerCycleBetweenTC="False"/>
+        <Parameter powerCycleOnFailure="False"/>
+        <Parameter finalDutState="NoChange"/>
+        <Parameter stopCampaignOnCriticalFailure="False"/>
+        <Parameter stopCampaignOnFirstFailure="False"/>
+        <Parameter loggingLevel="debug"/>
+        <Parameter CampaignType="Other"/>
+    </Parameters>
+    <TestCases>
+        <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/Automatic_stateless_IPv6_Configuration_iterative"/>
+        <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/Automatic_stateless_IPv6_Configuration"/>
+        <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/Automatic_stateless_IPv6_Connection_and_Browsing"/>
+        <!--TestCase Id="../../../../TC/TR/TESTLIB/WiFi/Automatic_stateless_IPv6_Configuration"/>
+        <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/Manually_connect_to_IPv6_AP"/>
+        <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/Connect_with_wrong_IPv6_address_then_correct_IPv6"/>
+        <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/Connect_to_IPv6_AP_Iterative"/>
+        <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/Automatic_stateless_IPv6_Configuration_iterative"/-->
+    </TestCases>
+</Campaign>

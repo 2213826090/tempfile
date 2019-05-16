@@ -1,0 +1,159 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<UI_SEQ xsi:noNamespaceSchemaLocation="ACS_ANDROID_UI_CHECK.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<ACTION>
+		<CMD>exec</CMD>
+		<PARAMETERS>start -a android.intent.action.MAIN -n com.android.contacts/.DialtactsActivity</PARAMETERS>
+		<TIMEOUT>3</TIMEOUT>
+		<TRIG_LOG>act=android.intent.action.MAIN flg=0x10000000 cmp=com.android.contacts/.DialtactsActivity</TRIG_LOG>
+	</ACTION>
+	<ACTION>
+		<CMD>keypress</CMD>
+		<PARAMETERS>KEYCODE_HOME</PARAMETERS>
+		<TIMEOUT>1</TIMEOUT>
+		<TRIG_LOG>act=android.intent.action.MAIN cat=[android.intent.category.HOME] flg=0x10200000 cmp=com.android.launcher/com.android.launcher2.Launcher</TRIG_LOG>
+	</ACTION>
+	<ACTION>
+		<CMD>exec</CMD>
+		<PARAMETERS>start -a android.intent.action.MAIN -n com.android.browser/.BrowserActivity</PARAMETERS>
+		<TIMEOUT>3</TIMEOUT>
+		<TRIG_LOG>act=android.intent.action.MAIN flg=0x10000000 cmp=com.android.browser/.BrowserActivity</TRIG_LOG>
+	</ACTION>
+	<ACTION>
+		<CMD>keypress</CMD>
+		<PARAMETERS>KEYCODE_HOME</PARAMETERS>
+		<TIMEOUT>1</TIMEOUT>
+		<TRIG_LOG>act=android.intent.action.MAIN cat=[android.intent.category.HOME] flg=0x10200000 cmp=com.android.launcher/com.android.launcher2.Launcher</TRIG_LOG>
+	</ACTION>
+	<ACTION>
+		<CMD>exec</CMD>
+		<PARAMETERS>start -a android.intent.action.MAIN -n com.android.calculator2/.Calculator</PARAMETERS>
+		<TIMEOUT>3</TIMEOUT>
+		<TRIG_LOG>act=android.intent.action.MAIN flg=0x10000000 cmp=com.android.calculator2/.Calculator</TRIG_LOG>
+	</ACTION>
+	<ACTION>
+		<CMD>keypress</CMD>
+		<PARAMETERS>KEYCODE_HOME</PARAMETERS>
+		<TIMEOUT>1</TIMEOUT>
+		<TRIG_LOG>act=android.intent.action.MAIN cat=[android.intent.category.HOME] flg=0x10200000 cmp=com.android.launcher/com.android.launcher2.Launcher</TRIG_LOG>
+	</ACTION>
+	<ACTION>
+		<CMD>exec</CMD>
+		<PARAMETERS>start -a android.intent.action.MAIN -n com.android.calendar/.LaunchActivity</PARAMETERS>
+		<TIMEOUT>3</TIMEOUT>
+		<TRIG_LOG>act=android.intent.action.MAIN flg=0x10000000 cmp=com.android.calendar/.LaunchActivity</TRIG_LOG>
+	</ACTION>
+	<ACTION>
+		<CMD>keypress</CMD>
+		<PARAMETERS>KEYCODE_HOME</PARAMETERS>
+		<TIMEOUT>1</TIMEOUT>
+		<TRIG_LOG>act=android.intent.action.MAIN cat=[android.intent.category.HOME] flg=0x10200000 cmp=com.android.launcher/com.android.launcher2.Launcher</TRIG_LOG>
+	</ACTION>
+	<ACTION>
+		<CMD>exec</CMD>
+		<PARAMETERS>start -a android.intent.action.MAIN -n com.android.gallery3d/com.android.camera.CameraLauncher</PARAMETERS>
+		<TIMEOUT>3</TIMEOUT>
+		<TRIG_LOG>cmp=com.android.gallery3d/com.android.camera.CameraLauncher</TRIG_LOG>
+	</ACTION>
+	<ACTION>
+		<CMD>keypress</CMD>
+		<PARAMETERS>KEYCODE_HOME</PARAMETERS>
+		<TIMEOUT>1</TIMEOUT>
+		<TRIG_LOG>act=android.intent.action.MAIN cat=[android.intent.category.HOME] flg=0x10200000 cmp=com.android.launcher/com.android.launcher2.Launcher</TRIG_LOG>
+	</ACTION>
+	<ACTION>
+		<CMD>exec</CMD>
+		<PARAMETERS>start -a android.intent.action.MAIN -n com.android.deskclock/.DeskClock</PARAMETERS>
+		<TIMEOUT>3</TIMEOUT>
+		<TRIG_LOG>act=android.intent.action.MAIN flg=0x10000000 cmp=com.android.deskclock/.DeskClock</TRIG_LOG>
+	</ACTION>
+	<ACTION>
+		<CMD>keypress</CMD>
+		<PARAMETERS>KEYCODE_HOME</PARAMETERS>
+		<TIMEOUT>1</TIMEOUT>
+		<TRIG_LOG>act=android.intent.action.MAIN cat=[android.intent.category.HOME] flg=0x10200000 cmp=com.android.launcher/com.android.launcher2.Launcher</TRIG_LOG>
+	</ACTION>
+	<ACTION>
+		<CMD>exec</CMD>
+		<PARAMETERS>start -a android.intent.action.MAIN -n com.android.contacts/.DialtactsContactsEntryActivity</PARAMETERS>
+		<TIMEOUT>3</TIMEOUT>
+		<TRIG_LOG>act=android.intent.action.MAIN flg=0x10000000 cmp=com.android.contacts/.DialtactsContactsEntryActivity</TRIG_LOG>
+	</ACTION>
+	<ACTION>
+		<CMD>keypress</CMD>
+		<PARAMETERS>KEYCODE_HOME</PARAMETERS>
+		<TIMEOUT>1</TIMEOUT>
+		<TRIG_LOG>act=android.intent.action.MAIN cat=[android.intent.category.HOME] flg=0x10200000 cmp=com.android.launcher/com.android.launcher2.Launcher</TRIG_LOG>
+	</ACTION>
+	<ACTION>
+		<CMD>exec</CMD>
+		<PARAMETERS>start -a android.intent.action.MAIN -n com.android.email/.activity.Welcome</PARAMETERS>
+		<TIMEOUT>3</TIMEOUT>
+		<TRIG_LOG>act=android.intent.action.MAIN flg=0x10000000 cmp=com.android.email/.activity.Welcome</TRIG_LOG>
+	</ACTION>
+	<ACTION>
+		<CMD>keypress</CMD>
+		<PARAMETERS>KEYCODE_HOME</PARAMETERS>
+		<TIMEOUT>1</TIMEOUT>
+		<TRIG_LOG>act=android.intent.action.MAIN cat=[android.intent.category.HOME] flg=0x10200000 cmp=com.android.launcher/com.android.launcher2.Launcher</TRIG_LOG>
+	</ACTION>
+	<ACTION>
+		<CMD>exec</CMD>
+		<PARAMETERS>start -a android.intent.action.MAIN -n com.android.gallery3d/.app.Gallery</PARAMETERS>
+		<TIMEOUT>3</TIMEOUT>
+		<TRIG_LOG>act=android.intent.action.MAIN flg=0x10000000 cmp=com.android.gallery3d/.app.Gallery</TRIG_LOG>
+	</ACTION>
+	<ACTION>
+		<CMD>keypress</CMD>
+		<PARAMETERS>KEYCODE_HOME</PARAMETERS>
+		<TIMEOUT>1</TIMEOUT>
+		<TRIG_LOG>act=android.intent.action.MAIN cat=[android.intent.category.HOME] flg=0x10200000 cmp=com.android.launcher/com.android.launcher2.Launcher</TRIG_LOG>
+	</ACTION>
+	<ACTION>
+		<CMD>exec</CMD>
+		<PARAMETERS>start -a android.intent.action.MAIN -n com.android.vending/.AssetBrowserActivity</PARAMETERS>
+		<TIMEOUT>3</TIMEOUT>
+		<TRIG_LOG>act=android.intent.action.MAIN flg=0x10000000 cmp=com.android.vending/.AssetBrowserActivity</TRIG_LOG>
+	</ACTION>
+	<ACTION>
+		<CMD>keypress</CMD>
+		<PARAMETERS>KEYCODE_HOME</PARAMETERS>
+		<TIMEOUT>1</TIMEOUT>
+		<TRIG_LOG>act=android.intent.action.MAIN cat=[android.intent.category.HOME] flg=0x10200000 cmp=com.android.launcher/com.android.launcher2.Launcher</TRIG_LOG>
+	</ACTION>
+	<ACTION>
+		<CMD>exec</CMD>
+		<PARAMETERS>start -a android.intent.action.MAIN -n com.android.mms/.ui.ConversationList</PARAMETERS>
+		<TIMEOUT>3</TIMEOUT>
+		<TRIG_LOG>act=android.intent.action.MAIN flg=0x10000000 cmp=com.android.mms/.ui.ConversationList</TRIG_LOG>
+	</ACTION>
+	<ACTION>
+		<CMD>keypress</CMD>
+		<PARAMETERS>KEYCODE_HOME</PARAMETERS>
+		<TIMEOUT>1</TIMEOUT>
+		<TRIG_LOG>act=android.intent.action.MAIN cat=[android.intent.category.HOME] flg=0x10200000 cmp=com.android.launcher/com.android.launcher2.Launcher</TRIG_LOG>
+	</ACTION>
+	<ACTION>
+		<CMD>exec</CMD>
+		<PARAMETERS>start -a android.intent.action.MAIN -n com.android.music/.MusicBrowserActivity</PARAMETERS>
+		<TIMEOUT>3</TIMEOUT>
+		<TRIG_LOG>act=android.intent.action.MAIN flg=0x10000000 cmp=com.android.music/.MusicBrowserActivity</TRIG_LOG>
+	</ACTION>
+	<ACTION>
+		<CMD>keypress</CMD>
+		<PARAMETERS>KEYCODE_HOME</PARAMETERS>
+		<TIMEOUT>1</TIMEOUT>
+		<TRIG_LOG>act=android.intent.action.MAIN cat=[android.intent.category.HOME] flg=0x10200000 cmp=com.android.launcher/com.android.launcher2.Launcher</TRIG_LOG>
+	</ACTION>
+	<ACTION>
+		<CMD>exec</CMD>
+		<PARAMETERS>start -a android.intent.action.MAIN -n com.android.settings/.Settings</PARAMETERS>
+		<TIMEOUT>3</TIMEOUT>
+		<TRIG_LOG>act=android.intent.action.MAIN flg=0x10000000 cmp=com.android.settings/.Settings</TRIG_LOG>
+	</ACTION>
+	<ACTION>
+		<CMD>keypress</CMD>
+		<PARAMETERS>KEYCODE_HOME</PARAMETERS>
+		<TIMEOUT>1</TIMEOUT>
+		<TRIG_LOG>act=android.intent.action.MAIN cat=[android.intent.category.HOME] flg=0x10200000 cmp=com.android.launcher/com.android.launcher2.Launcher</TRIG_LOG>
+	</ACTION>
+</UI_SEQ>

@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase>
+    <UseCase>LAB_AUDIO_FIT_FLIGHTMODE</UseCase>
+    <Description>Check Audio is routed successfully to the DUT audio output during MT voice call after exiting flight mode</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <Parameters>
+        <Parameter>
+            <!-- NS1 Cell Technology (2G|3G) -->
+            <Name>NS1_CELL_TECH</Name>
+            <Value>2G</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Cell Band, possible values:
+            3G : from Band 1 to Band 8
+            2G : PGSM|RGSM|EGSM|GSM450|GSM480|GSM750|GSM850|TGSM810|PCS|DCS
+            -->
+            <Name>NS1_CELL_BAND</Name>
+            <Value>EGSM</Value>
+        </Parameter>
+        <Parameter>
+            <!-- NS1 Cell Service, possible values:
+             3G : CIRCUIT | PACKET | CIRCUIT_PACKET | RBTEST
+             2G : GSM|GPRS|EGPRS
+             -->
+            <Name>NS1_CELL_SERVICE</Name>
+            <Value>EGPRS</Value>
+        </Parameter>
+        <Parameter>
+            <!-- NS1 ARFCN -->
+            <Name>NS1_ARFCN</Name>
+            <Value>32</Value>
+        </Parameter>
+        <Parameter>
+            <!--
+            3G :
+                Voice NARROWBAND coder rate, possible values:
+
+                FR_AMR_NB_1220 | FR_AMR_NB_1020 | FR_AMR_NB_795
+                FR_AMR_NB_740 | FR_AMR_NB_670 | FR_AMR_NB_590
+                FR_AMR_NB_515 | FR_AMR_NB_475
+
+                Voice WIDEBAND coder rate, possible values::
+
+                AMR_WB_2385 | AMR_WB_2305 | AMR_WB_1985 | AMR_WB_1825
+                AMR_WB_1585 | AMR_WB_1425 | AMR_WB_1265 | AMR_WB_885
+                AMR_WB_660
+            2G :
+                FR | EFR | HR | FR_AMR_NB_[1220|1020|795|740|670|590|515|475]
+                HR_AMR_NB_[795|740|670|590|515|475]
+            -->
+            <Name>NS1_CODEC</Name>
+            <Value>EFR</Value>
+        </Parameter>
+        <Parameter>
+            <!-- NS1 Cell Technology (2G|3G) -->
+            <Name>NS2_CELL_TECH</Name>
+            <Value>2G</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Cell Band, possible values:
+            3G : from Band 1 to Band 8
+            2G : PGSM|RGSM|EGSM|GSM450|GSM480|GSM750|GSM850|TGSM810|PCS|DCS
+            -->
+            <Name>NS2_CELL_BAND</Name>
+            <Value>EGSM</Value>
+        </Parameter>
+        <Parameter>
+            <!-- NS1 Cell Service, possible values:
+             3G : CIRCUIT | PACKET | CIRCUIT_PACKET | RBTEST
+             2G : GSM|GPRS|EGPRS
+             -->
+            <Name>NS2_CELL_SERVICE</Name>
+            <Value>EGPRS</Value>
+        </Parameter>
+        <Parameter>
+            <!-- NS2 ARFCN -->
+            <Name>NS2_ARFCN</Name>
+            <Value>32</Value>
+        </Parameter>
+        <Parameter>
+            <!--
+            3G :
+                Voice NARROWBAND coder rate, possible values:
+
+                FR_AMR_NB_1220 | FR_AMR_NB_1020 | FR_AMR_NB_795
+                FR_AMR_NB_740 | FR_AMR_NB_670 | FR_AMR_NB_590
+                FR_AMR_NB_515 | FR_AMR_NB_475
+
+                Voice WIDEBAND coder rate, possible values::
+
+                AMR_WB_2385 | AMR_WB_2305 | AMR_WB_1985 | AMR_WB_1825
+                AMR_WB_1585 | AMR_WB_1425 | AMR_WB_1265 | AMR_WB_885
+                AMR_WB_660
+            2G :
+                FR | EFR | HR | FR_AMR_NB_[1220|1020|795|740|670|590|515|475]
+                HR_AMR_NB_[795|740|670|590|515|475]
+            -->
+            <Name>NS2_CODEC</Name>
+            <Value>EFR</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Threshold for audio routing detection  -->
+            <Name>THRESHOLD</Name>
+            <Value>50</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Call volume in % -->
+            <Name>CALL_VOLUME_DUT</Name>
+            <Value>100</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Test signal duration in s -->
+            <Name>TEST_SIGNAL_DURATION</Name>
+            <Value>10</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Flight mode activation toggled (True | False) -->
+            <Name>TOGGLE_FLIGHTMODE</Name>
+            <Value>True</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Wait before flight mode off and registration (True | False) -->
+            <Name>WAIT_REGISTRATION</Name>
+            <Value>True</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Number of back-to-back flight mode activation -->
+            <Name>FLIGHTMODE_ITERATION</Name>
+            <Value>100</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Data services state on the DUT, possible values are:
+                    - NO_DATA (Data is disabled on the DUT, Wifi turned off, BT turned off, GPS turned off)
+                    - DATA_ONLY (Data is enabled on the DUT, Wifi turned off, BT turned off, GPS turned off)
+                    - DATA_CONNECTIVITY (Data is enabled on the DUT, Wifi turned on, BT turned on, GPS turned on)
+            -->
+            <Name>DATA_CONNECTION_TYPE</Name>
+            <Value>NO_DATA</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Keep the recorded audio file whether the test result is good or not (TRUE|FALSE) -->
+            <Name>KEEP_RECORD</Name>
+            <Value>TRUE</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

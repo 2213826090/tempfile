@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<Campaign>
+    <Parameters>
+        <Parameter isControlledPSUsed="False"/>
+        <Parameter isIoCardUsed="True"/>
+        <!-- Set skipBootOnPowerCycle to True to disable the accs boot procedure-->
+        <!-- Important, it means that boot will be handle inside the campaign/tc -->
+        <Parameter skipBootOnPowerCycle="False"/>
+        <Parameter runHookScripts="False"/>
+        <Parameter powerCycleBetweenTC="False"/>
+        <Parameter powerCycleOnFailure="False"/>
+        <Parameter finalDutState="NoChange" />
+        <Parameter stopCampaignOnCriticalFailure="True"/>
+        <Parameter stopCampaignOnFirstFailure="False"/>
+        <!-- LoggingLevel possible values: info | warning | debug | error -->
+        <Parameter loggingLevel="debug"/>
+        <!-- CampaignType format -> <TEAM>_<CAMPAIGNTYPE>
+        Possible values:
+        FT(Feature Team)-> SANITY | REGRESSION | STRESS, RELIABILTY | MTBF
+    ST(System Test)-> SANITY | REGRESSION | STRESS, RELIABILTY | MTBF | EM
+        SI(System Integration)-> EAT | STAB | PACT | CAT0 | RELIABILITY | MTBF | CTS
+        Otherwise "Others" should be used -->
+        <Parameter CampaignType="FT_REGRESSION"/>
+        <Parameter TCRReportViaRESTAPI="True"/>
+    </Parameters>
+    <Targets>
+        <!-- Target Values -->
+    <Target targetB2bPassRate ="30"/>
+    </Targets>
+    <TestCases>
+        <TestCase Id="SI\BBot_EAT_PACT\TC\COMMON\SYSTEM\SI_SYSTEM_SETUP_EMBEDDED" />
+        <TestCase Id="ST\telephony\TC\SETUP\ST_TELEPHONY_INSTALL" />
+        <TestCase Id="ST\pnp\TC\Setup\ST_PNP_SYSTEM_CONFIGURATION" />
+
+        <TestCase Id="FT/pnp/TC/SETUP/SETUP_CALIBRATE_BOOT_NO_SETTLE_TIME" />
+        <TestCase Id="ST/pnp/TC/KPI_Power/ST_FLIGHT_MODE_S3_ALL_RADIO_DISABLED"  />
+
+        <TestCase Id="ST/pnp/TC/KPI_Power/ST_2G_GSM_STANDBY" />
+        <TestCase Id="ST/pnp/TC/KPI_Power/ST_2G_GSM_900_PCL6_29dBm" />
+        <TestCase Id="ST/pnp/TC/KPI_Power/ST_2G_GSM_900_PCL7_29dBm" />
+        <TestCase Id="ST/pnp/TC/KPI_Power/ST_2G_GSM_900_PCL8_29dBm" />
+
+        <TestCase Id="ST/pnp/TC/KPI_Power/ST_3G_WCDMA_STANDBY" />
+        <TestCase Id="ST/pnp/TC/KPI_Power/ST_3G_WCDMA_VOICE_CALL_9dBm" />
+        <TestCase Id="ST/pnp/TC/KPI_Power/ST_3G_WCDMA_VOICE_CALL_10dBm" />
+        <TestCase Id="ST/pnp/TC/KPI_Power/ST_3G_WCDMA_VOICE_CALL_11dBm" />
+
+        <TestCase Id="FT/pnp/TC/SETUP/SETUP_CALIBRATE_BOOT_NO_SETTLE_TIME" />
+        <TestCase Id="FT/pnp/TC/SETUP/LAB_PWRMEAS_INTERNET_ACCESS_VALIDATION_3G"/>
+
+        <TestCase Id="ST/pnp/TC/KPI_Power/ST_3G_ACTIVE_IDLE" />
+        <TestCase Id="ST/pnp/TC/KPI_Power/ST_BROWSING_I_CHROME_3G_WCDMA_HTML5" />
+        <TestCase Id="ST/pnp/TC/KPI_Power/ST_VIDEO_STREAMING_HTML5_3G_DEVICE_DISPLAY_H264_720p" />
+
+    </TestCases>
+</Campaign>

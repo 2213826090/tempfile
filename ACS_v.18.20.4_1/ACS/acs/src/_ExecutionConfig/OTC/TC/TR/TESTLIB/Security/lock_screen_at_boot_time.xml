@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='ASCII'?>
+<TestCase>
+    <UseCase>Testlib</UseCase>
+    <Description>security</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <TcMaxAttempt>1</TcMaxAttempt>
+    <isCritical>True</isCritical>
+    <Parameters>
+        <Parameter><Name>timeout</Name><Value>30000</Value></Parameter>
+        <Parameter>
+            <Name>test</Name>
+            <Value>../testlib/scripts/security/scripts/lock_screen_at_boot_time.py</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

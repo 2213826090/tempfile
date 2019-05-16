@@ -1,0 +1,94 @@
+<?xml version="1.0" ?>
+<Campaign>
+    <Parameters>
+        <Parameter isControlledPSUsed="False"/>
+        <!-- ioCard -->
+        <Parameter isIoCardUsed="False"/>
+        <Parameter skipBootOnPowerCycle="True"/>
+        <Parameter bootRetryNumber="0"/>
+        <Parameter runHookScripts="False"/>
+        <Parameter powerCycleBetweenTC="False"/>
+        <Parameter powerCycleOnFailure="False"/>
+        <Parameter finalDutState="NoChange"/>
+        <Parameter stopCampaignOnCriticalFailure="True"/>
+        <Parameter stopCampaignOnFirstFailure="False"/>
+        <Parameter loggingLevel="debug"/>
+        <Parameter CampaignType="Other"/>
+    </Parameters>
+    <TestCases>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/init.set_adb_root.AdbRoot.testAdbRoot"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/init.start_rpc_server.StartRPCServer.testStartRPCServer"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/init.start_rpc_server.StartRPCServer.testStartRPCServer"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/init.set_orientation_vertical.SetOrientationVertical.testSetOrientationVertical"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/init.wake_up_and_unlock.WakeUnlock.testWakeUnlock"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/init.config_first_boot_wizard.ConfigFirstBootWizard.testConfigFirstBootWizard"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/init.enable_developer_option.EnableDeveloperOption.testEnableDeveloperOption"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/init.keep_awake.KeepAwake.testKeepAwake"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/init.disable_verify_apps.DisableVerifyApp.testDisableVerifyApp"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/init.disable_verify_apps.DisableVerifyApp.testDisableVerifyApp"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/init.set_language_to_United_States.SetLanguageUS.testSetLanguageUS"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/init.set_system_time.SetTimeDate.testSetTimeDate"/>
+
+        <!-- no battery -->
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/charging_battery/DCP_slow_plug_unplug_20_times/test_DCP_slow_plug_unplug_20_times"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/charging_battery/DCP_wakeup_system_in_S0i3/test_DCP_wakeup_system_in_S0i3"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/charging_battery/SDP_CDP_slow_plug_unplug_20_times/test_SDP_CDP_slow_plug_unplug_20_times"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/charging_battery/check_AC_charger/test_check_AC_charger"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/charging_battery/DCP_check_current_voltage/test_DCP_check_current_voltage"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/charging_battery/dcp_charging/test_DCP_charging"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/charging_battery/cdp_charging/test_CDP_charging"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/charging_battery/screen_off_connect_cdp_charger/test_screen_off_connect_cdp_charger"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/charging_battery/screen_off_connect_dcp_charger/test_screen_off_connect_dcp_charger"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/charging_battery/screen_off_connect_hub_charger/test_screen_off_connect_hub_charger"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/charging_battery/screen_off_connect_sdp_charger/test_screen_off_connect_SDP_charger"/>
+        <!-- power supply -->
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/charging_battery/DCP_playing_music_low_battery/test_DCP_playing_music_low_battery"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/charging_battery/DCP_playing_video_low_battery/test_DCP_playing_video_low_battery"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/charging_battery/DCP_taking_image_low_battery/test_DCP_taking_image_low_battery"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/charging_battery/SDP_playing_music_low_battery/test_SDP_playing_music_low_battery"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/charging_battery/SDP_playing_video_low_battery/test_SDP_playing_video_low_battery"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/charging_battery/SDP_taking_image_low_battery/test_SDP_taking_image_low_battery"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/charging_battery/SDP_taking_videorecord_low_battery/test_SDP_taking_videorecord_low_battery"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/charging_battery/SDP_plug_unplug_low_battery/test_SDP_plug_unplug_low_battery"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/charging_battery/DCP_plug_unplug_low_battery/test_DCP_plug_unplug_low_battery"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/charging_battery/DCP_record_camera_low_battery/test_DCP_record_camera_low_battery"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/charging_battery/SDP_lessthan_15_password_lockscreen/test_SDP_lessthan_15_password_lockscreen"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/charging_battery/SDP_lessthan_15_pattern_lockscreen/test_SDP_lessthan_15_pattern_lockscreen"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/charging_battery/SDP_lessthan_15_pin_lockscreen/test_SDP_lessthan_15_pin_lockscreen"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/charging_battery/SDP_lessthan_15_swipe_lockscreen/test_SDP_lessthan_15_swipe_lockscreen"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/charging_battery/stress_CDP_plug_unplug_10_battery/test_stress_CDP_plug_unplug_10_battery"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/charging_battery/SDP_morethan_15_password_lockscreen/test_SDP_morethan_15_password_lockscreen"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/charging_battery/SDP_morethan_15_pattern_lockscreen/test_SDP_morethan_15_pattern_lockscreen"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/charging_battery/SDP_morethan_15_pin_lockscreen/test_SDP_morethan_15_pin_lockscreen"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/charging_battery/SDP_morethan_15_swipe_lockscreen/test_SDP_morethan_15_swipe_lockscreen"/>
+
+        <!-- power on off -->
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/power_on_off/power_off_with_DCP_charger/test_power_off_with_DCP_charger"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/power_on_off/power_off_with_CDP_charger/test_power_off_with_CDP_charger"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/power_on_off/power_off_with_hub/test_power_off_with_hub"/>
+
+        <!-- Internet -->
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/charging_battery/DCP_surfing_internet_low_battery/test_DCP_surfing_internet_low_battery"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/charging_battery/SDP_surfing_internet_low_battery/test_SDP_surfing_internet_low_battery"/>
+
+
+        <!-- long time -->
+        <!-- <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/charging_battery/CDP_plug_unplug_low_battery_50_times/test_CDP_plug_unplug_low_battery_50_times"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/charging_battery/SDP_plug_unplug_low_battery_50_times/test_SDP_plug_unplug_low_battery_50_times"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/charging_battery/SDP_CDP_quickly_plug_unplug_50_times/test_SDP_CDP_quickly_plug_unplug_50_times"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/charging_battery/CDP_DCP_quickly_plug_unplug_50_times/test_CDP_DCP_quickly_plug_unplug_50_times"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/charging_battery/SDP_DCP_quickly_plug_unplug_50_times/test_SDP_DCP_quickly_plug_unplug_50_times"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/charging_battery/DCP_plug_unplug_low_battery_50_times/test_DCP_plug_unplug_low_battery_50_times"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/charging_battery/SDP_CDP_DCP_quickly_plug_unplug_50_times/test_SDP_CDP_DCP_quickly_plug_unplug_50_times"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/charging_battery/em_SDP_plug_unplug_times/test_em_SDP_plug_unplug_times"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/charging_battery/CDP_plug_unplug_times/test_CDP_plug_unplug_times"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/charging_battery/DCP_plug_unplug_times/test_DCP_plug_unplug_times"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/charging_battery/stress_cdp_plug_unplug/test_stress_cdp_plug_unplug"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/charging_battery/stress_dcp_plug_unplug/test_stress_dcp_plug_unplug"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/charging_battery/stress_sdp_plug_unplug/test_stress_sdp_plug_unplug"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/charging_battery/SDP_plug_unplug_in_sleep/test_SDP_plug_unplug_in_sleep"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/charging_battery/CDP_plug_unplug_in_sleep/test_CDP_plug_unplug_in_sleep"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/charging_battery/DCP_plug_unplug_in_sleep/test_DCP_plug_unplug_in_sleep"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/charging_battery/DCP_wakeup_system_S0i3_10_times/test_DCP_wakeup_system_S0i3_10_times"/> -->
+    </TestCases>
+</Campaign>

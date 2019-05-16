@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase>
+    <UseCase>EXEC</UseCase>
+    <Description>Check the mountpoint of primary external storage (emulated)</Description>
+    <b2bIteration>3</b2bIteration>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters>
+        <Parameter>
+            <Name>RUN_CMD</Name>
+            <Value>bash ./scripts/fill_memory.sh 1 /storage/emulated yes</Value>
+        </Parameter>
+        <Parameter>
+            <Name>RUN_FROM_TCDIRECTORY</Name>
+            <Value>True</Value>
+        </Parameter>
+        <Parameter>
+            <Name>RUN_TIMEOUT</Name>
+            <Value>1440000</Value>
+        </Parameter>
+        <Parameter>
+            <Name>RUN_EXPECT_RESULT</Name>
+            <Value>PASS</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

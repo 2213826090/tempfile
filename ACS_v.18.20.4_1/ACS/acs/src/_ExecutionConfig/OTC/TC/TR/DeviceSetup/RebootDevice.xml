@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase>
+<UseCase>TEST_STEP_ENGINE</UseCase>
+    <Description>Setup Prerequisites and Reboot DUT</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>False</b2bContinuousMode>
+    <TcMaxAttempt>5</TcMaxAttempt>
+    <TcAcceptanceCriteria>1</TcAcceptanceCriteria>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <IsCritical>True</IsCritical>
+    <Parameters/>
+    <TestSteps>
+         <Setup/>
+        <RunTest>
+            <TestStep Id="REBOOT_DEVICE" WAY="soft" DEVICE="PHONE1"/>
+        </RunTest>
+        <TearDown>
+            <TestStep Id="CONNECT_DEVICE" DEVICE="PHONE1"/>
+        </TearDown>
+    </TestSteps>
+</TestCase>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCase version="13.49">
+    <UseCase>LAB_EM_BATT_FULL_IDENTIFICATION</UseCase>
+    <Description>test that the battery FULL identification is correctly done at an expected capacity and in time</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>False</b2bContinuousMode>
+    <TcMaxAttempt>1</TcMaxAttempt>
+    <TcAcceptanceCriteria>1</TcAcceptanceCriteria>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters>
+        <Parameter>
+            <!-- Initial Battery Capacity (%) to start the test with -->
+            <Name>BATT_START_CAPACITY</Name>
+            <Value>85</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Charger type to plug during test charging phase (SDP, CDP et DCP ) -->
+            <Name>CHARGER_TYPE</Name>
+            <Value>DCP</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Capacity at which the first battery FULL status should appear -->
+            <Name>CAPACITY_AT_WHICH_FULL_FIRST_APPEAR</Name>
+            <Value>100</Value>
+        </Parameter>
+        <Parameter>
+            <!-- the charge duration to wait in second to reach FULL once BATT_START_CAPACITY is reached -->
+            <Name>CHARGE_TO_FULL_DURATION</Name>
+            <Value>3600</Value>
+        </Parameter>
+        <Parameter>
+            <!-- LOAD to apply to the board when discharging is need to reach BATT_START_CAPACITY separate by ;. To be choosen between following loads (can be combinated) : SCREEN_ON;WIFI;BLUETOOTH;TORCH;VIBRA;VIDEO -->
+            <Name>LOAD_TO_HELP_DISCHARGE_IN_SETUP</Name>
+            <Value>SCREEN_ON;WIFI;BLUETOOTH;TORCH;VIBRA;VIDEO</Value>
+        </Parameter>
+        <Parameter>
+            <!-- path of the file to play if VIDEO or AUDIO is in LOAD -->
+            <Name>MULTIMEDIA_FILE</Name>
+            <Value>01_the_dark_knight-tlr3_H264_CBR_20M_1080p_AAC-LC_48k_320kbps_.mp4</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Volume of the media file in (%) -->
+            <Name>VOLUME</Name>
+            <Value>100</Value>
+        </Parameter>
+        <Parameter>
+            <!-- this testcase can check different things after the charging to FULL phase is done:
+                CAPACITY_JUMP_NEAR_FULL
+                CAPACITY_AT_WHICH_FIRST_FULL_APPEAR
+                TIME_TO_CHARGE_TO_FULL_FROM_START_CAPACITY
+                TIME_TO_SEE_FULL_AT_MAX_CAPACITY
+                CHARGE_STOP_ONCE_FULL
+            -->
+            <Name>WHAT_TO_CHECK</Name>
+            <Value>TIME_TO_CHARGE_TO_FULL_FROM_START_CAPACITY</Value>
+        </Parameter>
+    </Parameters>
+    <TestSteps>
+        <Initialize>
+            <!-- Get the artifact on local host -->
+            <TestStep Id="GET_ARTIFACT" ARTIFACT="VIDEO/1080p/01_the_dark_knight-tlr3_H264_CBR_20M_1080p_AAC-LC_48k_320kbps_.mp4"
+                      ARTIFACT_SOURCE="FROM_BENCH:ARTIFACT_MANAGER:URI" TRANSFER_TIMEOUT="DEFAULT"
+                      STORED_FILE_PATH="FILE_PATH_IN_CACHE1" EQT="DEFAULT"/>
+            <!-- Then, Push it on the device. Device destination folder will be the default device media folder (/sdcard/acs_media) -->
+            <!-- FILE_PATH is retrieved from test step context -->
+            <TestStep Id="INSTALL_FILE" DEVICE="PHONE1" FILE_PATH="FROM_CTX:FILE_PATH_IN_CACHE1" TYPE="media"
+                      DESTINATION="FROM_DEVICE:PHONE1:userdataPath" TIMEOUT="DEFAULT" DESTINATION_STORED_PATH="FILE_PATH_IN_CACHE1"/>
+        </Initialize>
+    </TestSteps>
+</TestCase>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="13.37">
+    <UseCase>LIVE_MODEM_DSDS_SELECT_DATA_SIM</UseCase>
+    <Description>Select the SIM to be used for DATA on DSDS device.</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>False</b2bContinuousMode>
+    <Parameters>
+        <Parameter>
+            <!-- The sim to be used to use data (3G) as int 1/2
+            -->
+            <Name>TARGET_SIM</Name>
+            <Value>2</Value>
+        </Parameter>
+        <Parameter>
+            <!-- The initial DATA sim will be restored after test (TRUE/FALSE)
+            -->
+            <Name>RESTORE_INITIAL</Name>
+            <Value>TRUE</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

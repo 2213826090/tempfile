@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<TestCase>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Discription>
+Check that user is able to delete a file from adopted storage using MTP
+</Discription>
+    <Domain>System_OS</Domain>
+    <Phase>CORE</Phase>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <Type>FUNCTIONAL</Type>
+    <UseCase>PY_UNIT</UseCase>
+    <b2bIteration>1</b2bIteration>
+    <Parameters>
+        <Parameter>
+            <Name>HpalmName</Name>
+            <Value>Storage.USB_Adopted_MTP_Delete_File_Emulated</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TEST_DATA_ROOT</Name>
+            <Value>testplan/System_OS</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TEST_CASE</Name>
+            <Value>tests.System_OS.AndroidFramework.Adopted Storage.Storage.USB_Adopted_MTP_Delete_File_Emulated</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

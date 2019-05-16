@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCase version="13.37">
+    <UseCase>LIVE_PUPDR_FALLBACK_POLICY</UseCase>
+    <Description>PUPDR - Freeze the board during the boot. Crashes are reached between OFF state and MOS.</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>False</b2bContinuousMode>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters>
+        <Parameter>
+            <!-- Timeout value (in seconds) -->
+            <Name>WAIT_END_FREEZE_TIMEOUT</Name>
+            <Value>900</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Choose the start OS (COS, MOS) -->
+            <Name>START_OS</Name>
+            <Value>MOS</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Choose the type of the crash (SECURITY, KERNEL) -->
+            <Name>CRASH_TYPE</Name>
+            <Value>SECURITY</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

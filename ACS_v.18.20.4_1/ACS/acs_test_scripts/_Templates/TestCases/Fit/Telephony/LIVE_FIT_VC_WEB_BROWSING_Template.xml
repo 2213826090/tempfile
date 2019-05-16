@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="13.37">
+    <UseCase>LIVE_FIT_VC_WEB_BROWSING</UseCase>
+    <Description>Loading web page during a voice call</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters>
+        <Parameter>
+            <!-- Voice call destination phone number -->
+            <Name>PHONE_NUMBER</Name>
+            <Value>123</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Webpage loading timeout -->
+            <Name>WEBPAGE_LOADING_TIMEOUT</Name>
+            <Value>10</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Registration timeout -->
+            <Name>REGISTRATION_TIMEOUT</Name>
+            <Value>10</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Browser to use.Possible values : "NATIVE", "ACS_AGENT"
+                Warning ! NATIVE mode is not verbose in term of verdict, because it uses the default
+                browser of the system.
+                So the user should check manually in this mode if the page is correctly loaded -->
+            <Name>BROWSER_TYPE</Name>
+            <Value>ACS_AGENT</Value>
+        </Parameter>
+        <Parameter>
+             <!-- Website url to open String as follow : http://www.intel.com-->
+            <Name>WEBSITE_URL</Name>
+            <Value>http://www.intel.com</Value>
+        </Parameter>
+        <Parameter>
+            <!-- The string value corresponding to the preferred Network Type
+               on which the DUT should be
+                "2G_ONLY"
+                "3G_PREF"
+                "4G_PREF"
+                "3G_ONLY"
+                "2G_3G"
+                "CDMA_PREF"
+                "CDMA_ONLY"
+                "EVDO_ONLY"
+                "GLOBAL"
+                "4G_PREF_US"
+                "WORLD_MODE"
+                "4G_ONLY"
+            -->
+            <Name>PREFERRED_NETWORK_TYPE</Name>
+            <Value>1</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

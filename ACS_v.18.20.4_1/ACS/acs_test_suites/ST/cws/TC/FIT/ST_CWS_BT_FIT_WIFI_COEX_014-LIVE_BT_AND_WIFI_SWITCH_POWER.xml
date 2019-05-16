@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase>
+    <UseCase>LIVE_BT_AND_WIFI_SWITCH_POWER</UseCase>
+    <Description>Switch BT and WiFi iteratively</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>False</b2bContinuousMode>
+    <TcAcceptanceCriteria>PASS</TcAcceptanceCriteria>
+    <TcMaxAttempt>2</TcMaxAttempt>
+    <Parameters>
+        <Parameter>
+            <!-- Duration of the test - Switches will loop all this time-->
+            <Name>DURATION</Name>
+            <Value>60</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

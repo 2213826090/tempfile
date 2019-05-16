@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestSteps xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../acs/src/_Catalogs/TestStep/teststep.xsd">
+    <TestStep Id="FLASH_STM32" Domain="EQUIPMENT" SubDomain="SERIAL_CMD" Feature="" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Equipment.STM32F4.StmFlash.StmFlash</ClassName>
+        <Description>
+           Flash a given .bin program on an STM board
+        </Description>
+        <Environment name="ANY">
+        </Environment>
+        <Parameters>
+            <Parameter name="EQT" type="STRING" isOptional="false">
+                <Description>The equipment name shall refer to an existing equipment the Bench config</Description>
+                <PossibleValues />
+                <DefaultValue/>
+            </Parameter>
+            <Parameter name="FLASHER_PATH" type="STRING" isOptional="false">
+                <Description>The full path to the binary used for flashing given as path_to/flash-binary</Description>
+                <PossibleValues />
+                <DefaultValue/>
+            </Parameter>
+            <Parameter name="BINARY_NAME" type="STRING" isOptional="false">
+                <Description>The full path to the binary that will be flashed on the STM board given as
+                    path_to/binary.bin</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="RESET_STM32" Domain="EQUIPMENT" SubDomain="SERIAL_CMD" Feature="" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Equipment.STM32F4.StmReset.StmReset</ClassName>
+        <Description>
+            Reset a given STM board equipment
+       </Description>
+        <Environment name="ANY">
+        </Environment>
+        <Parameters>
+            <Parameter name="EQT" type="STRING" isOptional="false">
+                <Description>The equipment name shall refer to an existing equipment the Bench config</Description>
+                <PossibleValues />
+                <DefaultValue/>
+            </Parameter>
+            <Parameter name="BINARY_PATH" type="STRING" isOptional="false">
+                <Description>The full path to the binary used for resetting the board given as path_to/reset-binary
+                </Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="GET_INQUIRY_INDEX" Domain="EQUIPMENT" SubDomain="SERIAL_CMD" Feature="" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Equipment.STM32F4.GetInquiryIndex.GetInquiryIndex</ClassName>
+        <Description>This test step will use the output of DisplayInquiryList command sent on the STM board and search
+        through it for the index associated to the given MAC_ADDRESS searched. It will then save this index as a context
+        variable and make it available for further use</Description>
+        <Environment name="ANY" />
+        <Parameters>
+            <Parameter name="EQT" type="STRING" isOptional="false">
+                <Description>The equipment name shall refer to an existing equipment the Bench config</Description>
+                <PossibleValues />
+                <DefaultValue/>
+            </Parameter>
+            <Parameter name="PARSE_OUTPUT" type="STRING" isOptional="false">
+                <Description>This parameter is a string in which the search will be performed and is
+              the result of DisplayInquiryList command on the STM board</Description>
+                <PossibleValues />
+                <DefaultValue/>
+            </Parameter>
+            <Parameter name="MAC_ADDRESS" type="STRING" isOptional="false">
+                <Description>This variable is the MAC address that will be searched for in the output</Description>
+                <PossibleValues />
+                <DefaultValue/>
+            </Parameter>
+            <Parameter name="SAVE_AS" type="CONTEXT" isOptional="true">
+                <Description>This parameter can return the output as a context parameter</Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="FORMAT_BD_ADDRESS" Domain="EQUIPMENT" SubDomain="SERIAL_CMD" Feature="" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Equipment.STM32F4.FormatBDAddress.FormatBDAddress</ClassName>
+        <Description>This test step formats a BT MAC Address either from Android to STM format or from STM to Android
+            format. The formatted result will be saved as a context variable (Uppercase format)</Description>
+        <Environment name="ANY" />
+        <Parameters>
+            <Parameter name="EQT" type="STRING" isOptional="false">
+                <Description>The equipment name shall refer to an existing equipment the Bench config</Description>
+                <PossibleValues />
+                <DefaultValue/>
+            </Parameter>
+            <Parameter name="INPUT_BD_ADDR" type="STRING" isOptional="false">
+                <Description>This parameter is a string that contains the address to format</Description>
+                <PossibleValues />
+                <DefaultValue/>
+            </Parameter>
+            <Parameter name="RETURN_STM_FORMAT" type="BOOLEAN" isOptional="false">
+                <Description>If true STM format is returned (0xAAAAAAAAAAAA), false Android format is
+                    returned (AA:AA:AA:AA:AA:AA)</Description>
+                <PossibleValues />
+                <DefaultValue/>
+            </Parameter>
+            <Parameter name="SAVE_AS" type="CONTEXT" isOptional="false">
+                <Description>This parameter returns the output as a context parameter</Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+        </Parameters>
+    </TestStep>
+</TestSteps>

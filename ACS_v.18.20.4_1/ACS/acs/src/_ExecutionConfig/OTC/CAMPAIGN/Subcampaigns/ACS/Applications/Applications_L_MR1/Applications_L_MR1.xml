@@ -1,0 +1,87 @@
+<?xml version="1.0" ?>
+<Campaign>
+      <Parameters>
+            <Parameter isControlledPSUsed="False"/>
+            <Parameter isIoCardUsed="False"/>
+            <Parameter skipBootOnPowerCycle="False"/>
+            <Parameter bootRetryNumber="0"/>
+            <Parameter runHookScripts="False"/>
+            <Parameter powerCycleBetweenTC="False"/>
+            <Parameter powerCycleOnFailure="False"/>
+            <Parameter finalDutState="NoChange"/>
+            <Parameter stopCampaignOnCriticalFailure="False"/>
+            <Parameter stopCampaignOnFirstFailure="False"/>
+            <Parameter loggingLevel="debug"/>
+            <Parameter CampaignType="Other"/>
+      </Parameters>
+      <TestCases>
+        <!-- Before running these tests, connect DUT to a stable Wi-Fi network.
+            Also, ARTIFACT_MANAGER equipment with URI value="https://mcg-depot.intel.com/artifactory/acs_test_artifacts/"
+            must exist in bench config -->
+
+            <TestCase Id="../../../../../TC/TR/ACS/Applications/Applications_L_MR1/prerequisites/prereq_GMS_Reboot_Device" TcMaxAttempt="2"/>
+
+            <TestCase Id="../../../../../TC/TR/TESTLIB/GMS/GMS_PlayMusic_Search-song" TcMaxAttempt="2"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/GMS/GMS_PlayMusic_Add-to-playlist" TcMaxAttempt="2"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/GMS/GMS_PlayMusic_Go-to-artist" TcMaxAttempt="2"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/GMS/GMS_Gmail_Sign-in-with-a-gmail-account" TcMaxAttempt="2"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/GMS/GMS_Gmail_Send-email-using-gmail-apk" TcMaxAttempt="2"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/GMS/GMS_Gmail_Save-the-new-gmail-to-draft" TcMaxAttempt="2"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/GMS/GMS_Gmail_Setup-email-Account-with-wrong-name" TcMaxAttempt="2"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/GMS/GMS_Gmail_Setup-gmail-wrong-password" TcMaxAttempt="2"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/GMS/GMS_Gmail_Input-character-number-blank-special-characters-in-the-compose" TcMaxAttempt="2"/>
+
+            <TestCase Id="../../../../../TC/TR/ACS/Applications/Applications_L_MR1/prerequisites/prereq_GMS_Reboot_Device" TcMaxAttempt="2"/>
+
+            <TestCase Id="../../../../../TC/TR/TESTLIB/GMS/GMS_Clock_Activate-Alarm" TcMaxAttempt="2"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/GMS/GMS_Clock_Add-an-alarm" TcMaxAttempt="2"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/GMS/GMS_Clock_Add-City-Clock-from-World-Clock" TcMaxAttempt="2"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/GMS/GMS_Clock_Change-Clock-Style" TcMaxAttempt="2"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/GMS/GMS_Clock_Deactivate-Alarm" TcMaxAttempt="2"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/GMS/GMS_Clock_Delete-existing-alarm" TcMaxAttempt="2"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/GMS/GMS_Clock_Edit-existing-alarm" TcMaxAttempt="2"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/GMS/GMS_Clock_Remove-City-Clock-from-World-Clock" TcMaxAttempt="2"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/GMS/GMS_Clock_Restart-the-stopped-timer" TcMaxAttempt="2"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/GMS/GMS_Clock_set-count-down-timer" TcMaxAttempt="2"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/GMS/GMS_Clock_continue-stopwatch-count" TcMaxAttempt="2"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/GMS/GMS_Clock_Set-home-clock" TcMaxAttempt="2"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/GMS/GMS_GoogleSearch_Search-for-Contact" TcMaxAttempt="2"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/GMS/GMS_GoogleSearch_Launch-google-Search-via-tap-search-bar" TcMaxAttempt="2"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/GMS/GMS_GoogleSearch_Search-for-a-contact-using-the-middle-name" TcMaxAttempt="2"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/GMS/GMS_GoogleSearch_Search-in-Tablet-tab-with-internet-connection" TcMaxAttempt="2"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/GMS/GMS_GoogleSearch_Search-in-Tablet-tab-with-no-internet-connection" TcMaxAttempt="2"/>
+
+            <TestCase Id="../../../../../TC/TR/ACS/Applications/Applications_L_MR1/prerequisites/prereq_GMS_Reboot_Device" TcMaxAttempt="2"/>
+
+            <TestCase Id="../../../../../TC/TR/TESTLIB/GMS/GMS_Docs_Add-new-document" TcMaxAttempt="2"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/GMS/GMS_Docs_Delete-document" TcMaxAttempt="2"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/GMS/GMS_Docs_Find-and-replace" TcMaxAttempt="2"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/GMS/GMS_Docs_Insert-comment" TcMaxAttempt="2"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/GMS/GMS_Docs_Keep-on-device-for-a-document" TcMaxAttempt="2"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/GMS/GMS_Docs_Rename-a-file" TcMaxAttempt="2"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/GMS/GMS_Docs_Revoke-undo-revoke-in-document" TcMaxAttempt="2"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/GMS/GMS_Youtube_Check-Search-button" TcMaxAttempt="2"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/GMS/GMS_Youtube_Upload-Video" TcMaxAttempt="2"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/GMS/GMS_Youtube_Sign-out" TcMaxAttempt="2"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/GMS/GMS_Youtube_sign-in" TcMaxAttempt="2"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/GMS/GMS_Youtube_Remove-video-from-playlist" TcMaxAttempt="2"/>
+
+            <TestCase Id="../../../../../TC/TR/ACS/Applications/Applications_L_MR1/prerequisites/prereq_GMS_Reboot_Device" TcMaxAttempt="2"/>
+
+            <TestCase Id="../../../../../TC/TR/TESTLIB/GMS/GMS_Drive_Drive-upload-a-file" TcMaxAttempt="2"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/GMS/GMS_Drive_Remove-file" TcMaxAttempt="2"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/GMS/GMS_Drive_Drive-filter-by" TcMaxAttempt="2"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/GMS/GMS_Drive_Drive-make-available-offline" TcMaxAttempt="2"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/GMS/GMS_Drive_Add-file-to-favorite" TcMaxAttempt="2"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/GMS/GMS_Drive_Drive-search-option" TcMaxAttempt="2"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/GMS/GMS_Drive_View-as-list" TcMaxAttempt="2"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/GMS/GMS_Drive_View-as-Grid" TcMaxAttempt="2"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/GMS/GMS_PlayGames_Play-Games-Settings" TcMaxAttempt="2"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/GMS/GMS_PlayGames_Help" TcMaxAttempt="2"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/GMS/GMS_PlayGames_Inbox-page" TcMaxAttempt="2"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/GMS/GMS_PlayGames_Install-button" TcMaxAttempt="2"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/GMS/GMS_PlayGames_Explore-page" TcMaxAttempt="2"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/GMS/GMS_PlayGames_My-Games-page" TcMaxAttempt="2"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/GMS/GMS_PlayGames_Players" TcMaxAttempt="2"/>
+      </TestCases>
+</Campaign>

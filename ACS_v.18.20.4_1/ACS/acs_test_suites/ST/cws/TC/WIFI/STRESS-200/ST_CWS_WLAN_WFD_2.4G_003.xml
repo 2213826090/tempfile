@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="13.41">
+    <UseCase>TEST_STEP_ENGINE</UseCase>
+    <Description></Description>
+    <b2bIteration>200</b2bIteration>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <TcMaxAttempt>1</TcMaxAttempt>
+    <TcAcceptanceCriteria>1</TcAcceptanceCriteria>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters>
+        <Parameter>
+            <Name>WIFI_REGULATORY_DOMAIN_DUT</Name>
+            <Value>CN</Value>
+        </Parameter>
+        <Parameter>
+            <Name>WIFI_REGULATORY_DOMAIN_REF</Name>
+            <Value>XV</Value>
+        </Parameter>
+        <Parameter>
+            <Name>WIFI_CHANNELS_2_4GHZ</Name>
+            <Value>1|2|3|4|5|6|7|8|9|10|11|12|13|14</Value>
+        </Parameter>
+        <Parameter>
+            <Name>WIFI_DIRECT_MODE_DUT</Name>
+            <Value>GO</Value>
+        </Parameter>
+        <Parameter>
+            <Name>WIFI_DIRECT_MODE_REF</Name>
+            <Value>CLI</Value>
+        </Parameter>
+    </Parameters>
+    <TestSteps>
+        <Include Src="ST/cws/TSS/Common/ST_CWS_COMMON.xml"/>
+        <Include Src="ST/cws/TSS/WiFi/ST_CWS_WIFI_COMMON.xml"/>
+        <Include Src="ST/cws/TSS/WiFi/ST_CWS_WIFI_AP.xml"/>
+
+        <Setup>
+            <!-- AUTOMATION - Set default configuration -->
+            <Fork Id="ForkPhonesConfig">
+                <TestStep SetId="InitPhoneCWS" DEVICE="PHONE1"/>
+                <TestStep SetId="InitPhoneCWS" DEVICE="PHONE2"/>
+            </Fork>
+            <Fork Id="ForkWiFiDirectConfig">
+                <TestStep SetId="WiFiDirectCommonSetup" DEVICE="PHONE1" REGULATORY_DOMAIN="FROM_TC:WIFI_REGULATORY_DOMAIN_DUT" MAC_ADDR="MAC_ADDR_PHONE1"/>
+                <TestStep SetId="WiFiDirectCommonSetup" DEVICE="PHONE2" REGULATORY_DOMAIN="FROM_TC:WIFI_REGULATORY_DOMAIN_REF" MAC_ADDR="MAC_ADDR_PHONE2"/>
+            </Fork>
+            <TestStep Id="SET_WIFI_DIRECT_DEV_NAME" DEVICE="PHONE1" PEER_DEVICE_NAME="FROM_CTX:MAC_ADDR_PHONE1"/>
+            <TestStep Id="SET_WIFI_DIRECT_DEV_NAME" DEVICE="PHONE2" PEER_DEVICE_NAME="FROM_CTX:MAC_ADDR_PHONE2"/>
+
+            <!-- SPEC - Step 1 : Make DUT discoverable -->
+            <TestStep Id="OPEN_WIFI_DIRECT_SETTINGS" DEVICE="PHONE1"/>
+
+            <!-- SPEC - Step 2 : Search peers from DUT -->
+            <TestStep SetId="WiFiDirectScanAndGetPeers" DEVICE="PHONE1" STATE="all" SAVE_AS="PHONE1_VISIBLE_DEVICES"/>
+            <TestStep Id="COMPARE" FIRST="FROM_CTX:MAC_ADDR_PHONE2" SECOND="FROM_CTX:PHONE1_VISIBLE_DEVICES" OPERATOR="IN" PASS_IF="true"/>
+            <TestStep Id="GET_WIFI_DIRECT_DEV_ADDRESS_FROM_NAME" DEVICE="PHONE1" WIFI_DIRECT_NAME="FROM_CTX:MAC_ADDR_PHONE2" SAVE_AS="P2P_MAC_ADDRESS_PHONE2"/>
+        </Setup>
+        <RunTest>
+            <!-- SPEC - Step 3 : Connect DUT to reference device -->
+            <TestStep SetId="WiFiDirectScanAndGetPeers" DEVICE="PHONE2" STATE="all" SAVE_AS="PHONE2_VISIBLE_DEVICES"/>
+            <TestStep Id="COMPARE" FIRST="FROM_CTX:MAC_ADDR_PHONE1" SECOND="FROM_CTX:PHONE2_VISIBLE_DEVICES" OPERATOR="IN" PASS_IF="true"/>
+            <TestStep Id="GET_WIFI_DIRECT_DEV_ADDRESS_FROM_NAME" DEVICE="PHONE2" WIFI_DIRECT_NAME="FROM_CTX:MAC_ADDR_PHONE1" SAVE_AS="P2P_MAC_ADDRESS_PHONE1"/>
+
+            <TestStep Id="WIFI_DIRECT_FORCE_CONFIGURATION" DEVICE="PHONE2" P2P_MODE="FROM_TC:WIFI_DIRECT_MODE_REF"/>
+            <TestStep Id="SUSPEND" DURATION_IN_SEC="2"/>
+            <TestStep Id="WIFI_DIRECT_ACCEPT_CONNECT" DEVICE="PHONE2" PEER_DEV_MAC="FROM_CTX:P2P_MAC_ADDRESS_PHONE1"/>
+            <TestStep Id="SUSPEND" DURATION_IN_SEC="2"/>
+            <TestStep Id="WIFI_DIRECT_CONNECT" DEVICE="PHONE1" PEER_DEVICE="FROM_CTX:P2P_MAC_ADDRESS_PHONE2" TIMEOUT="30"/>
+
+            <!-- Check all Spec requirements -->
+            <TestStep Id="PRINT_MSG" MSG_TO_PRINT="Check result Step 3 : DUT is on 2.4GHz channel, GO and DUT-Peer device is added to the Remembered Group list"/>
+            <TestStep Id="GET_WIFI_DIRECT_INTERFACE" DEVICE="PHONE1" SAVE_AS="INTERFACE_P2P_PHONE1"/>
+            <TestStep Id="WIFI_GET_CHANNEL" DEVICE="PHONE1" INTERFACE="FROM_CTX:INTERFACE_P2P_PHONE1" SAVE_WIFI_CHANNEL="CHANNEL_PHONE1"/>
+            <TestStep Id="COMPARE" FIRST="FROM_CTX:CHANNEL_PHONE1" SECOND="FROM_TC:WIFI_CHANNELS_2_4GHZ" OPERATOR="IN" PASS_IF="true"/>
+            <TestStep Id="WIFI_DIRECT_GET_MODE" DEVICE="PHONE1" INTERFACE="FROM_CTX:INTERFACE_P2P_PHONE1" SAVE_WIFI_DIRECT_MODE="P2P_MODE_PHONE1"/>
+            <TestStep Id="COMPARE" FIRST="FROM_CTX:P2P_MODE_PHONE1" SECOND="FROM_TC:WIFI_DIRECT_MODE_DUT" OPERATOR="IN" PASS_IF="true"/>
+            <TestStep Id="GET_WIFI_DIRECT_REMEMBERED_GROUPS" DEVICE="PHONE1" SAVE_AS="P2P_REMEMBERED_GROUPS_PHONE1"/>
+            <TestStep Id="CHECK_WIFI_DIRECT_GROUPS" DEVICE="PHONE1" REMEMBERED_GROUPS_LIST="FROM_CTX:P2P_REMEMBERED_GROUPS_PHONE1" GROUP_OWNER="FROM_CTX:MAC_ADDR_PHONE1"/>
+
+            <!-- SPEC - Step 4 : Remove "Remembered Groups" list and check list is empty -->
+            <TestStep Id="WIFI_DIRECT_REMOVE_REMEMBERED_GROUPS" DEVICE="PHONE1"/>
+            <TestStep Id="GET_WIFI_DIRECT_REMEMBERED_GROUPS" DEVICE="PHONE1" SAVE_AS="P2P_REMEMBERED_GROUPS_PHONE1"/>
+            <TestStep Id="COMPARE" FIRST="FROM_CTX:P2P_REMEMBERED_GROUPS_PHONE1" SECOND="EMPTY" OPERATOR="EQUAL" PASS_IF="true"/>
+
+            <!-- AUTOMATION - Configure boards for next loop -->
+            <TestStep Id="WIFI_DIRECT_DISCONNECT" DEVICE="PHONE1" WIFI_DIRECT_NAME="FROM_CTX:MAC_ADDR_PHONE2"/>
+            <TestStep Id="WIFI_DIRECT_REMOVE_REMEMBERED_GROUPS" DEVICE="PHONE2"/>
+        </RunTest>
+        <TearDown>
+            <Fork Id="ForkTeardown">
+                <TestStep SetId="WiFiDirectCommonTeardown" DEVICE="PHONE1"/>
+                <TestStep SetId="WiFiDirectCommonTeardown" DEVICE="PHONE2"/>
+            </Fork>
+        </TearDown>
+    </TestSteps>
+</TestCase>

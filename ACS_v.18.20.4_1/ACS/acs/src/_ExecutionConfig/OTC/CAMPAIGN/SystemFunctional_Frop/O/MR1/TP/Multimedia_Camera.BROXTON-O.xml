@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='us-ascii'?>
+<Campaign version="13.49">
+    <Parameters>
+        <Parameter isControlledPSUsed="False" />
+        <Parameter isIoCardUsed="False" />
+        <Parameter skipBootOnPowerCycle="False" />
+        <Parameter bootRetryNumber="0" />
+        <Parameter runHookScripts="False" />
+        <Parameter powerCycleBetweenTC="False" />
+        <Parameter powerCycleOnFailure="False" />
+        <Parameter finalDutState="NoChange" />
+        <Parameter stopCampaignOnCriticalFailure="False" />
+        <Parameter stopCampaignOnFirstFailure="False" />
+        <Parameter loggingLevel="debug" />
+        <Parameter CampaignType="Other" />
+        <Parameter TCRReportViaRESTAPI="True" />
+    </Parameters>
+    <TestCases>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_Camera/IVI_IN_AVM737/test_Camera_Rear_PreviewFormat_NV21" />
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_Camera/IVI_IN_AVM737/test_Camera_Rear_PreviewFormat_RGB565" />
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_Camera/IVI_IN_AVM737/test_Camera_Rear_PreviewFormat_YV12" />
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_Camera/IVI_IN_AVM737/test_Camera_IVI_Rear_Preview_CVBS1" />
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_Camera/IVI_IN_AVM737/test_Camera_Rear_PreviewFormat_YUY2" />
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_Camera/IVI_RVC/test_Camera_IVI_RVC_RunTime_Available" />
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_Camera/IVI_RVC/test_Camera_IVI_RVC_RunTime_Available_10Mins" />
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_Camera/IVI_RVC/test_Camera_IVI_RVC_Preview_Horizontal" />
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_Camera/IVI_RVC/test_Camera_IVI_RVC_RunTime_On_Quickly" />
+        </TestCases>
+</Campaign>

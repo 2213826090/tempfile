@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="13.37">
+    <UseCase>LIVE_SYSTEM_SLEEP_ALARM_WAKE</UseCase>
+    <Description>Sleep 60 seconds in S3 and alarm wake up</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters>
+        <Parameter>
+            <!-- Sleep target duration in seconds -->
+            <Name>DURATION</Name>
+            <Value>60</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Sleep time before 1st iteration, or all for b2bContinuousMode = False -->
+            <Name>SETTLE_TIME</Name>
+            <Value>60</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Sleep time, between ALARM and USB plug,
+                to avoid USB plug wake-up instead of ALARM
+            -->
+            <Name>ALARM_USB_TIMER</Name>
+            <Value>5</Value>
+        </Parameter>
+        <Parameter>
+            <!-- [OPTIONAL] Set to "True" for enabling flight mode. Otherwise flight mode won't be modified -->
+            <Name>USE_FLIGHT_MODE</Name>
+            <Value>True</Value>
+        </Parameter>
+    </Parameters>
+    <TestSteps>
+        <Initialize>
+            <TestStep Id="GET_ARTIFACT"
+                      ARTIFACT="MISCELLANEOUS/APPLICATIONS/ANDROID/StandBy.apk"
+                      ARTIFACT_SOURCE="FROM_BENCH:ARTIFACT_MANAGER:URI"
+                      TRANSFER_TIMEOUT="DEFAULT"
+                      STORED_FILE_PATH="FILE_PATH_IN_CACHE1"
+                      EQT="DEFAULT"/>
+
+            <TestStep Id="INSTALL_APP"
+                      DEVICE="PHONE1"
+                      SIGN="False"
+                      SIGN_KEY_PATH="DEFAULT"
+                      FILE_PATH="FROM_CTX:FILE_PATH_IN_CACHE1"
+                      BACKUP="False"
+                      TIMEOUT="30"
+                      BACKUP_FILE_PATH="/backup"/>
+        </Initialize>
+
+        <Finalize>
+            <TestStep Id="UNINSTALL_APP"
+                      DEVICE="PHONE1"
+                      APP_NAME="StandBy.apk"
+                      BACKUP_APP_NAME="NO_BACKUP"
+                      BACKUP_FILE_PATH="/backup"
+                      TIMEOUT="30" />
+        </Finalize>
+    </TestSteps>
+</TestCase>

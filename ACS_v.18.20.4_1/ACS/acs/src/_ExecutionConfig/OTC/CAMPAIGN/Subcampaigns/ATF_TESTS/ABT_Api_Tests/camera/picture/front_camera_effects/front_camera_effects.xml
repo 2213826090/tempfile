@@ -1,0 +1,37 @@
+<?xml version="1.0" ?>
+<Campaign>
+      <Parameters>
+            <Parameter isControlledPSUsed="False"/>
+            <Parameter isIoCardUsed="False"/>
+            <Parameter skipBootOnPowerCycle="False"/>
+            <Parameter bootRetryNumber="0"/>
+            <Parameter runHookScripts="False"/>
+            <Parameter powerCycleBetweenTC="False"/>
+            <Parameter powerCycleOnFailure="False"/>
+            <Parameter finalDutState="NoChange"/>
+            <Parameter stopCampaignOnCriticalFailure="False"/>
+            <Parameter stopCampaignOnFirstFailure="False"/>
+            <Parameter loggingLevel="debug"/>
+            <Parameter CampaignType="Other"/>
+      </Parameters>
+      <TestCases>
+            <!--Color effect-->
+            <TestCase Id="../../../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/camera/picture/front_camera_effects/FRONT_CAMERA_validateCameraColorEffectSepia"/>
+            <TestCase Id="../../../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/camera/picture/front_camera_effects/FRONT_CAMERA_take_picture_ColorEffect_negative"/>
+            <TestCase Id="../../../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/camera/picture/front_camera_effects/FRONT_CAMERA_take_picture_ColorEffect_mono"/>
+            <TestCase Id="../../../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/camera/picture/front_camera_effects/FRONT_CAMERA_validateCameraColorEffectNegative"/>
+            <TestCase Id="../../../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/camera/picture/front_camera_effects/FRONT_CAMERA_take_picture_ColorEffect_sepia"/>
+            <!--Exposure-->
+            <TestCase Id="../../../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/camera/picture/front_camera_effects/FRONT_CAMERA_take_picture_AutoExposureLock"/>
+
+            <!--White balance-->
+            <TestCase Id="../../../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/camera/picture/front_camera_effects/FRONT_CAMERA_take_picture_AutoWhiteBalanceLock"/>
+            <TestCase Id="../../../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/camera/picture/front_camera_effects/FRONT_CAMERA_take_picture_WhiteBalance_fluorescent"/>
+            <TestCase Id="../../../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/camera/picture/front_camera_effects/FRONT_CAMERA_take_picture_WhiteBalance_incandescent"/>
+            <TestCase Id="../../../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/camera/picture/front_camera_effects/FRONT_CAMERA_take_picture_WhiteBalance_cloudy-daylight"/>
+            <TestCase Id="../../../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/camera/picture/front_camera_effects/FRONT_CAMERA_take_picture_WhiteBalance_daylight"/>
+
+            <!--FlashMode-->
+            <TestCase Id="../../../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/camera/picture/front_camera_effects/FRONT_CAMERA_take_picture_FlashMode_off"/>
+      </TestCases>
+</Campaign>

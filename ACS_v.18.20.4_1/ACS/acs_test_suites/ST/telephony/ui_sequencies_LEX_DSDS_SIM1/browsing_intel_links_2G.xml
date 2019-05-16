@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<UI_SEQ xsi:noNamespaceSchemaLocation="ACS_ANDROID_UI_CHECK.xsd"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <ACTION>
+        <CMD>keypress</CMD>
+		<PARAMETERS>KEYCODE_HOME</PARAMETERS>
+	</ACTION>
+	<ACTION>
+    <!--Go back to home page-->
+    <CMD>go_home</CMD>
+    <TIMEOUT>1</TIMEOUT>
+  </ACTION>  
+   <ACTION>
+    <CMD>exec</CMD>
+    <PARAMETERS>start -a android.intent.action.Main -n com.android.phone/.Settings</PARAMETERS>
+    <TIMEOUT>1</TIMEOUT>
+  </ACTION>
+   <ACTION>
+    <TIMEOUT>1</TIMEOUT>
+    <CMD>settings_toggle_preferred_radio_2G</CMD>
+    <TRIG_LOG>set preferred network type done</TRIG_LOG>
+  </ACTION>
+  <ACTION>
+    <CMD>wait</CMD>
+    <PARAMETERS>60</PARAMETERS>
+    <TIMEOUT />
+    <TRIG_LOG />
+  </ACTION>    
+  <ACTION>
+    <!--Go back to home page-->
+    <CMD>go_home</CMD>
+    <TIMEOUT>1</TIMEOUT>
+  </ACTION>	
+	<ACTION>
+		<CMD>exec</CMD>
+		<PARAMETERS>start -a android.intent.action.MAIN -c
+			android.intent.category.LAUNCHER -n
+			com.android.browser/.BrowserActivity</PARAMETERS>
+		<TIMEOUT>5</TIMEOUT>
+	</ACTION>
+	<ACTION>
+		<CMD>search</CMD>
+		<PARAMETERS>http://www.intel.com/</PARAMETERS>
+		<TIMEOUT>5</TIMEOUT>
+		<TRIG_LOG>calling gs_pRilEnv</TRIG_LOG>	
+	</ACTION>
+	<ACTION>
+		<CMD>wait</CMD>
+		<PARAMETERS>30</PARAMETERS>
+	</ACTION>
+	<ACTION>
+		<CMD>screenshot</CMD>
+		<PARAMETERS>browse_result_intel_links</PARAMETERS>
+	</ACTION>
+	<ACTION>
+		<CMD>keypress</CMD>
+		<PARAMETERS>KEYCODE_DPAD_DOWN</PARAMETERS>
+		<ITERATION>[RAND(5)]</ITERATION>
+	</ACTION>
+	<ACTION>
+		<CMD>keypress</CMD>
+		<PARAMETERS>KEYCODE_DPAD_CENTER </PARAMETERS>
+	</ACTION>
+	<ACTION>
+		<CMD>wait</CMD>
+		<PARAMETERS>30</PARAMETERS>
+	</ACTION>
+	<ACTION>
+		<CMD>keypress</CMD>
+		<PARAMETERS>KEYCODE_DPAD_DOWN</PARAMETERS>
+		<ITERATION>[RAND(5)]</ITERATION>
+	</ACTION>
+	<ACTION>
+		<CMD>keypress</CMD>
+		<PARAMETERS>KEYCODE_DPAD_CENTER </PARAMETERS>
+	</ACTION>
+	<ACTION>
+		<CMD>wait</CMD>
+		<PARAMETERS>30</PARAMETERS>
+	</ACTION>
+	<ACTION>
+		<CMD>screenshot</CMD>
+		<PARAMETERS>browse_result_intel_link</PARAMETERS>
+	</ACTION>
+	<ACTION>
+		<CMD>keypress</CMD>
+		<PARAMETERS>KEYCODE_HOME</PARAMETERS>
+	</ACTION>
+    <!--Close browser-->    
+	<ACTION>
+		<CMD>keypress</CMD>
+		<PARAMETERS>KEYCODE_MENU</PARAMETERS>
+	</ACTION>
+	<ACTION>
+		<!-- Initial position on Menu -->
+		<CMD>keypress</CMD>
+		<PARAMETERS>KEYCODE_DPAD_UP</PARAMETERS>
+	</ACTION>
+	<ACTION>
+		<!-- Go on Manage apps -->
+		<CMD>keypress</CMD>
+		<PARAMETERS>KEYCODE_DPAD_RIGHT</PARAMETERS>
+	</ACTION>
+	<ACTION>
+		<!-- Click on Manage apps -->
+		<CMD>keypress</CMD>
+		<PARAMETERS>KEYCODE_DPAD_CENTER</PARAMETERS>
+		<TIMEOUT>1</TIMEOUT>
+		<TRIG_LOG>com.android.settings/.applications.ManageApplications</TRIG_LOG>
+	</ACTION>
+	<ACTION>
+		<!-- Click on ALL -->
+		<CMD>touch</CMD>
+		<PARAMETERS>225;100</PARAMETERS>
+		<TIMEOUT>1</TIMEOUT>
+	</ACTION>
+	<ACTION>
+		<!-- Go down until browser is found -->
+		<CMD>keypress</CMD>
+		<PARAMETERS>KEYCODE_DPAD_DOWN</PARAMETERS>
+		<ITERATION>11</ITERATION>
+	</ACTION>
+	<ACTION>
+		<!-- Press center pad to select Force close until browser is closed -->
+		<CMD>keypress</CMD>
+		<PARAMETERS>KEYCODE_DPAD_CENTER</PARAMETERS>
+		<ITERATION>3</ITERATION>
+		<TRIG_LOG>act=android.settings.APPLICATION_DETAILS_SETTINGS dat=package:com.android.phone cmp=com.android.settings/.applications.InstalledAppDetails</TRIG_LOG>
+	</ACTION>
+	<ACTION>
+		<CMD>wait</CMD>
+		<PARAMETERS>3</PARAMETERS>
+	</ACTION>
+	<ACTION>
+        <CMD>keypress</CMD>
+        <PARAMETERS>KEYCODE_HOME</PARAMETERS>
+    </ACTION>    
+	    <ACTION>
+        <CMD>keypress</CMD>
+		<PARAMETERS>KEYCODE_HOME</PARAMETERS>
+	</ACTION>
+	<ACTION>
+    <!--Go back to home page-->
+    <CMD>go_home</CMD>
+    <TIMEOUT>1</TIMEOUT>
+  </ACTION>  
+   <ACTION>
+    <CMD>exec</CMD>
+    <PARAMETERS>start -a android.intent.action.Main -n com.android.phone/.Settings</PARAMETERS>
+    <TIMEOUT>1</TIMEOUT>
+  </ACTION>
+   <ACTION>
+    <CMD>settings_toggle_preferred_radio_2G</CMD>
+    <TIMEOUT>1</TIMEOUT>
+    <TRIG_LOG>set preferred network type done</TRIG_LOG>
+  </ACTION>
+    <ACTION>
+    <CMD>wait</CMD>
+    <PARAMETERS>60</PARAMETERS>
+    <TIMEOUT />
+    <TRIG_LOG />
+  </ACTION>    
+  <ACTION>
+    <!--Go back to home page-->
+    <CMD>go_home</CMD>
+    <TIMEOUT>1</TIMEOUT>
+  </ACTION>	
+</UI_SEQ>

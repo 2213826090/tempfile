@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<Include>
+    <!-- Description : this TSS must be called in the setup of each CWS TC for every phone used in the test -->
+    <!-- Parameters : DEVICE (Phone) -->
+    <TestStepSet Id="InitPhoneCWS">
+        <TestStep Id="CONNECT_DEVICE"/>
+        <TestStep Id="SET_FLIGHT_MODE" FLIGHT_MODE="enable"/>
+        <TestStep Id="SET_FLIGHT_MODE" FLIGHT_MODE="disable"/>
+        <TestStep Id="WAKE_SCREEN"/>
+        <TestStep Id="SET_PHONE_LOCK" VALUE="unlock"/>
+        <Fork Id="InitFork">
+            <TestStep Id="GNSS_SET_POWER" POWER="off"/>
+            <TestStep Id="BT_SET_POWER" POWER="OFF"/>
+            <TestStep Id="WIFI_SET_POWER" POWER="off"/>
+            <TestStep Id="NFC_SET_POWER" POWER="off"/>
+            <TestStep Id="SET_STAYON_POLICY" POLICY="true" AGENT="true"/>
+            <TestStep Id="DEACTIVATE_DEVICE_PDP" INTERFACE="None" CHECK="True"/>
+            <TestStep Id="SET_SCREEN_PROPERTY" PROPERTY="timeout" VALUE="0"/>
+            <TestStep Id="SET_SCREEN_PROPERTY" PROPERTY="brightness" VALUE="69"/>
+        </Fork>
+        <TestStep Id="OPEN_HOME_PAGE"/>
+    </TestStepSet>
+
+    <!-- Description : Install iperf on a device. Don't use multiple times in a fork -->
+    <!-- Parameters : DEVICE (Phone) -->
+    <TestStepSet Id="CWSInstallIperfDevice">
+        <TestStep Id="GET_MODULE_CONFIG"
+                  MODULE="CWSModule"
+                  KEY="iperf_app"
+                  MODULE_VALUE="CURRENT_IPERF"/>
+        <TestStep Id="GET_ARTIFACT" EQT="DEFAULT"
+                  ARTIFACT="CWS/iperf/[+]FROM_CTX:CURRENT_IPERF"
+                  ARTIFACT_SOURCE="FROM_BENCH:ARTIFACT_MANAGER:URI"
+                  TRANSFER_TIMEOUT="DEFAULT"
+                  STORED_FILE_PATH="IPERF_FILE_PATH_IN_CACHE"/>
+        <TestStep Id="INSTALL_FILE"
+                  FILE_PATH="FROM_CTX:IPERF_FILE_PATH_IN_CACHE"
+                  DESTINATION="/data/"
+                  DESTINATION_STORED_PATH="NOT_USED"
+                  TIMEOUT="60"
+                  TYPE="bin"/>
+        <TestStep Id="RUN_CMD"
+                  COMMAND="adb shell mv /data/[+]FROM_CTX:CURRENT_IPERF[+] /data/iperf"
+                  TIMEOUT="60"
+                  FORCE_EXECUTION="false"
+                  WAIT_FOR_RESPONSE="true"
+                  SILENT_MODE="false"
+                  SAVE_AS="RESULT"/>
+    </TestStepSet>
+
+    <!-- Description : Install iperf on COMPUTER2. -->
+    <!-- Parameters : DEVICE (device to get iperf version) -->
+    <TestStepSet Id="CWSInstallIperfComputer2">
+            <TestStep Id="GET_MODULE_CONFIG"
+                      MODULE="CWSModule"
+                      KEY="iperf_app"
+                      MODULE_VALUE="current_iperf"/>
+            <TestStep Id="GET_ARTIFACT" EQT="DEFAULT"
+                      ARTIFACT="CWS/iperf/[+]FROM_CTX:current_iperf[+]_COMPUTER"
+                      ARTIFACT_SOURCE="FROM_BENCH:ARTIFACT_MANAGER:URI"
+                      TRANSFER_TIMEOUT="DEFAULT"
+                      STORED_FILE_PATH="IPERF_COMPUTER_FILE_PATH_IN_CACHE"/>
+            <TestStep Id="COMPUTER_INSTALL_IPERF" EQT="COMPUTER2" IPERF_UTILITY="FROM_CTX:IPERF_COMPUTER_FILE_PATH_IN_CACHE"/>
+    </TestStepSet>
+
+
+    <!-- Description : Install regulatory domain utility on a device. Don't use multiple times in a fork -->
+    <!-- Parameters : DEVICE (Phone) -->
+    <TestStepSet Id="CWSInstallRegulatoryUtilityDevice">
+        <TestStep Id="GET_MODULE_CONFIG"
+                  MODULE="CWSModule"
+                  KEY="regulatory_utility"
+                  MODULE_VALUE="CURRENT_REG_UTIL"/>
+        <TestStep Id="GET_ARTIFACT" EQT="DEFAULT"
+                  ARTIFACT="CWS/Utilities/[+]FROM_CTX:CURRENT_REG_UTIL"
+                  ARTIFACT_SOURCE="FROM_BENCH:ARTIFACT_MANAGER:URI"
+                  TRANSFER_TIMEOUT="DEFAULT"
+                  STORED_FILE_PATH="REG_UTIL_FILE_PATH_IN_CACHE"/>
+        <TestStep Id="INSTALL_FILE"
+                  FILE_PATH="FROM_CTX:REG_UTIL_FILE_PATH_IN_CACHE"
+                  DESTINATION="/system/bin/"
+                  DESTINATION_STORED_PATH="NOT_USED"
+                  TIMEOUT="60"
+                  TYPE="bin"/>
+    </TestStepSet>
+</Include>

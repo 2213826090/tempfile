@@ -1,0 +1,23 @@
+{
+    "Configuration": {
+        "Boot": null,
+        "BootVars": null,
+        "Custom": null,
+        "Flash": {
+            "CHECK_FASTBOOT": false,
+            "PARTITIONS": "/(oem_)*config;/cache;/system;/logs;/data"
+        },
+        "Inherit": {
+            "BOARD": "saltbay_pr2"
+        },
+        "Logs": null,
+        "Timeout": null,
+        "WorkAround": {
+            "TC": {
+                "Issue": "Not applicable",
+                "Name": "PUPDR_SPID_CHECK",
+                "Skip": true
+            }
+        }
+    }
+}

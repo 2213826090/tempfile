@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<UseCases xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:noNamespaceSchemaLocation="../../../../acs/src/_Catalogs/UseCase/usecase.xsd">
+    <UseCase Id="LAB_PWRMEAS_WIFI_IDLE_ASS" Domain="PWR_MGMT" SubDomain="WIFI" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.PnP.Power.LAB_PWRMEAS_WIFI_IDLE_ASS.LabPwrMeasWifiIdleAss</ClassName>
+        <Description>Power consumption measurement (in mA) in WLAN Idle mode associated</Description>
+        <Environment name="PNP_POWER">
+            <Dependency>EQT_NI_DAQ</Dependency>
+            <Dependency>EQT_USB_RLY08</Dependency>
+            <Dependency>CAP_SWITCH_ON_OFF</Dependency>
+            <Dependency>CAP_USB_HOST_PC_ON_OFF</Dependency>
+            <Dependency>CAP_WALL_CHARGER_ON_OFF</Dependency>
+            <Dependency>EQT_LIVE_AP</Dependency>
+        </Environment>
+    </UseCase>
+</UseCases>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="13.45">
+    <UseCase>LAB_MOBILITY_EXT_HO_FTP</UseCase>
+    <Description>Perform several 2G/3G Handovers during a FTP transfer</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>False</b2bContinuousMode>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters>
+        <Parameter>
+            <!-- NS1 Cell Technology (2G|3G) -->
+            <Name>NS1_CELL_TECH</Name>
+            <Value>3G</Value>
+        </Parameter>
+        <Parameter>
+            <!-- NS1 Cell Band
+               For 2G : EGSM|GSM850|PCS|DCS
+               For 3G : 1,2,5,8
+            -->
+            <Name>NS1_CELL_BAND</Name>
+            <Value>1</Value>
+        </Parameter>
+        <Parameter>
+            <!-- NS2 Cell Technology (2G|3G) -->
+            <Name>NS2_CELL_TECH</Name>
+            <Value>2G</Value>
+        </Parameter>
+        <Parameter>
+            <!-- NS2 Cell Band
+               For 2G : EGSM|GSM850|PCS|DCS
+               For 3G : 1,2,5,8
+            -->
+            <Name>NS2_CELL_BAND</Name>
+            <Value>DCS</Value>
+        </Parameter>
+        <Parameter>
+            <!-- FTP transfer direction: DL or UL -->
+            <Name>DIRECTION</Name>
+            <Value>DL</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

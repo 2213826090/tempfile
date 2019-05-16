@@ -1,0 +1,106 @@
+<?xml version='1.0' encoding='ASCII'?>
+<Campaign version="13.49">
+    <Parameters>
+        <Parameter isControlledPSUsed="False"/>
+        <Parameter isIoCardUsed="False"/>
+        <!-- Set skipBootOnPowerCycle to True to disable the accs boot procedure -->
+        <!-- Important, it means that boot will be handle inside the campaign/tc -->
+        <Parameter skipBootOnPowerCycle="False"/>
+        <!-- Set bootRetryNumber to maximum number of boot retries during the acs boot procedure -->
+        <!-- Important, it means that bootRetryNumber is set by default to 0 if not specified -->
+        <Parameter bootRetryNumber="0"/>
+        <Parameter runHookScripts="False"/>
+        <Parameter powerCycleBetweenTC="False"/>
+        <Parameter powerCycleOnFailure="False"/>
+        <!-- finalDutState allows user to leave the DUT in a specific state at the end of the campaign
+            Possible values: PowerOn | PowerOff | Charging | NoChange
+            By default DUT is leaved in NoChange state.
+            In case the user selects Charging as final state of the DUT and that DUT fails to enter Charging,
+            ACS shall try to switch the DUT off -->
+        <Parameter finalDutState="NoChange"/>
+        <Parameter stopCampaignOnCriticalFailure="False"/>
+        <Parameter stopCampaignOnFirstFailure="False"/>
+        <!-- LoggingLevel possible values: info | warning | debug | error -->
+        <Parameter loggingLevel="debug"/>
+        <!-- CampaignType format -> <TEAM>_<CAMPAIGNTYPE>
+            Possible values:
+            FT(Feature Team)-> SANITY | REGRESSION | STRESS, RELIABILTY | MTBF
+            ST(System Test)-> SANITY | REGRESSION | STRESS, RELIABILTY | MTBF | EM
+            SI(System Integration)-> EAT | STAB | PACT | CAT0 | RELIABILITY | MTBF | CTS | ACS_CI
+            Otherwise "Others" should be used -->
+        <Parameter CampaignType="MTBF"/>
+        <Parameter TCRReportViaRESTAPI="True"/>
+    </Parameters>
+    <Targets>
+        <!-- Target Values -->
+        <Target targetB2bPassRate="100"/>
+    </Targets>
+      <TestCases>
+        <!-- Before running these tests, connect DUT to a stable Wi-Fi network.
+            Also, ARTIFACT_MANAGER equipment with URI value="https://mcg-depot.intel.com/artifactory/acs_test_artifacts/"
+            must exist in bench config -->
+
+            <TestCase Id="../../../../../TC/TR/DeviceSetup/prereq_ConnectToAP"/>
+
+            <!-- Update all the required GMS apps -->
+            <TestCase Id="../../../../../TC/TR/ACS/Applications/Applications_N/prerequisites/prereq_UPDATE_PLAY_STORE"/>
+            <TestCase Id="../../../../../TC/TR/ACS/Applications/Applications_N/prerequisites/prereq_UPDATE_ALL_APPS"/>
+
+            <!-- The test cases for GMS Maps (noAccount) -->
+            <TestCase Id="../../../../../TC/TR/ACS/Applications/Applications_N/GMS_Maps_Edit-search-box-with-special-characters"/>
+
+            <!-- The test cases for GMS TTS -->
+            <TestCase Id="../../../../../TC/TR/ACS/Applications/Applications_N/GMS_Text-to-speech_Change-language-of-TTS-to-Spanish-Spain"/>
+            <TestCase Id="../../../../../TC/TR/ACS/Applications/Applications_N/GMS_Text-to-speech_Change-language-of-TTS-to-German-Germany"/>
+            <TestCase Id="../../../../../TC/TR/ACS/Applications/Applications_N/GMS_Text-to-speech_Change-language-of-TTS-to-Italian-Italy"/>
+            <TestCase Id="../../../../../TC/TR/ACS/Applications/Applications_N/GMS_Text-to-speech_Change-language-of-TTS-to-English-United-Kingdom"/>
+            <TestCase Id="../../../../../TC/TR/ACS/Applications/Applications_N/GMS_Text-to-speech_Change-language-of-TTS-to-French-France"/>
+            <TestCase Id="../../../../../TC/TR/ACS/Applications/Applications_N/GMS_Text-to-speech_Change-language-of-TTS-to-korean-South-Korea"/>
+            <TestCase Id="../../../../../TC/TR/ACS/Applications/Applications_N/GMS_Text-to-speech_Change-language-of-TTS-to-English-United-States"/>
+
+            <!-- The test cases for GMS Launcher -->
+            <TestCase Id="../../../../../TC/TR/ACS/Applications/Applications_N/GMS_Launcher_Add-name-to-folder"/>
+            <TestCase Id="../../../../../TC/TR/ACS/Applications/Applications_N/GMS_Launcher_Application-shortcuts-can-be-placed-on-the-home-screens"/>
+            <TestCase Id="../../../../../TC/TR/ACS/Applications/Applications_N/GMS_Launcher_Click-dock-item-to-launch-app"/>
+            <TestCase Id="../../../../../TC/TR/ACS/Applications/Applications_N/GMS_Launcher_Create-folder"/>
+            <TestCase Id="../../../../../TC/TR/ACS/Applications/Applications_N/GMS_Launcher_Delete-move-the-shortcuts-on-the-dock-bar"/>
+            <TestCase Id="../../../../../TC/TR/ACS/Applications/Applications_N/GMS_Launcher_Display-of-screen-indicator"/>
+            <TestCase Id="../../../../../TC/TR/ACS/Applications/Applications_N/GMS_Launcher_Launch-apps-from-home-screen"/>
+            <TestCase Id="../../../../../TC/TR/ACS/Applications/Applications_N/GMS_Launcher_Move-item-to-other-screen"/>
+            <TestCase Id="../../../../../TC/TR/ACS/Applications/Applications_N/GMS_Launcher_Multitasking-button"/>
+            <TestCase Id="../../../../../TC/TR/ACS/Applications/Applications_N/GMS_Launcher_recent-app-list-no-recent-app"/>
+            <TestCase Id="../../../../../TC/TR/ACS/Applications/Applications_N/GMS_Launcher_Press-home-button"/>
+            <TestCase Id="../../../../../TC/TR/ACS/Applications/Applications_N/GMS_Launcher_Remove-app-from-Recent-app-list"/>
+            <TestCase Id="../../../../../TC/TR/ACS/Applications/Applications_N/GMS_Launcher_Remove-application-shortcuts-from-the-home-screens"/>
+            <TestCase Id="../../../../../TC/TR/ACS/Applications/Applications_N/GMS_Launcher_Check-that-user-can-switch-between-screens"/>
+
+            <!-- The test cases for GMS Apps Support (noAccount/auto3test/noAccount)-->
+            <TestCase Id="../../../../../TC/TR/ACS/Applications/Applications_N/GMS_AppsSupport_GoogleSearch"/>
+            <TestCase Id="../../../../../TC/TR/ACS/Applications/Applications_N/GMS_AppsSupport_GoogleNow"/>
+            <!-- the previous tests may let the launcher tutorial on the screen, so skip it -->
+            <TestCase Id="../../../../../TC/TR/ACS/Applications/Applications_N/prerequisites/prereq_SKIP_LAUNCHER_TUTORIAL"/>
+            <TestCase Id="../../../../../TC/TR/ACS/Applications/Applications_N/GMS_AppsSupport_Hangouts"/>
+            <TestCase Id="../../../../../TC/TR/ACS/Applications/Applications_N/GMS_AppsSupport_Calendar"/>
+            <TestCase Id="../../../../../TC/TR/ACS/Applications/Applications_N/GMS_AppsSupport_Gmail"/>
+            <TestCase Id="../../../../../TC/TR/ACS/Applications/Applications_N/GMS_AppsSupport_PlayStore"/>
+            <TestCase Id="../../../../../TC/TR/ACS/Applications/Applications_N/GMS_AppsSupport_PlayNewsstand"/>
+            <TestCase Id="../../../../../TC/TR/ACS/Applications/Applications_N/GMS_AppsSupport_Drive"/>
+            <TestCase Id="../../../../../TC/TR/ACS/Applications/Applications_N/GMS_AppsSupport_YouTube-addAccount"/>
+            <TestCase Id="../../../../../TC/TR/ACS/Applications/Applications_N/GMS_AppsSupport_Play-Movies-and-TV"/>
+            <TestCase Id="../../../../../TC/TR/ACS/Applications/Applications_N/GMS_AppsSupport_Launcher"/>
+            <TestCase Id="../../../../../TC/TR/ACS/Applications/Applications_N/GMS_AppsSupport_Chrome"/>
+            <TestCase Id="../../../../../TC/TR/ACS/Applications/Applications_N/GMS_AppsSupport_PlayMusic"/>
+            <TestCase Id="../../../../../TC/TR/ACS/Applications/Applications_N/GMS_AppsSupport_VoiceSearch"/>
+            <TestCase Id="../../../../../TC/TR/ACS/Applications/Applications_N/GMS_AppsSupport_Talkback"/>
+            <TestCase Id="../../../../../TC/TR/ACS/Applications/Applications_N/GMS_AppsSupport_Clock"/>
+            <TestCase Id="../../../../../TC/TR/ACS/Applications/Applications_N/GMS_AppsSupport_Text-to-speech"/>
+            <TestCase Id="../../../../../TC/TR/ACS/Applications/Applications_N/GMS_AppsSupport_YouTube-noAccount"/>
+            <TestCase Id="../../../../../TC/TR/ACS/Applications/Applications_N/GMS_AppsSupport_Photos"/>
+            <TestCase Id="../../../../../TC/TR/ACS/Applications/Applications_N/GMS_AppsSupport_Maps"/>
+            <TestCase Id="../../../../../TC/TR/ACS/Applications/Applications_N/GMS_AppsSupport_GoogleDevicePolicy"/>
+
+            <!-- Clean-up: Remove Google account to not affect next tests-->
+            <TestCase Id="../../../../../TC/TR/ACS/Applications/Applications_N/prerequisites/prereq_REMOVE_GOOGLE_ACCOUNTS"/>
+
+      </TestCases>
+</Campaign>

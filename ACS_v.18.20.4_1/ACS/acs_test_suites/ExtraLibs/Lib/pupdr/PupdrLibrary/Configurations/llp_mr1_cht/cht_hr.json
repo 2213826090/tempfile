@@ -1,0 +1,32 @@
+{
+    "Configuration": {
+        "Boot": null,
+        "BootVars": null,
+        "Custom": null,
+        "Flash": {},
+        "Logs": null,
+        "Timeout": null,
+        "WorkAround": null,
+        "TestDescription": {
+            "warnings": {
+                "PUPDR_PKP_2S_WITHOUT_SDP_MOS_BOOT|BOOTOTA - BOOT - PKP 2S WITHOUT USB": "GMINL-16166: boot instability"
+            },
+            "engineering": [
+                {
+                    "name": "default",
+                    "build_tag": "bootota_",
+                    "testing": [
+                        {
+                            "build_target": "r2_cht_hr-userdebug",
+                            "campaign": "BOOTOTA_PREINTEGRATION"
+                        },
+                        {
+                            "build_target": "cht_hr-userdebug",
+                            "campaign": "BOOTOTA_EAT"
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}

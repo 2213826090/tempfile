@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<UseCases xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:noNamespaceSchemaLocation="../../../../acs/src/_Catalogs/UseCase/usecase.xsd">
+    <UseCase Id="LIVE_CAMERA_TAKE_PICTURE" Domain="MULTIMEDIA" SubDomain="CAMERA" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Multimedia.LIVE_CAMERA_TAKE_PICTURE.LiveCameraTakePicture</ClassName>
+        <Description>Use Camera to capture image after setting a scene mode</Description>
+        <Environment name="ANY">
+        </Environment>
+    </UseCase>
+    <UseCase Id="LIVE_CAMERA_FLASH" Domain="MULTIMEDIA" SubDomain="CAMERA" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Multimedia.LIVE_CAMERA_FLASH.LiveCameraFlash</ClassName>
+        <Description>Test camera flash</Description>
+        <Environment name="ANY">
+        </Environment>
+    </UseCase>
+    <UseCase Id="LIVE_CAMERA_COLOR_EFFECT" Domain="MULTIMEDIA" SubDomain="CAMERA" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Multimedia.LIVE_CAMERA_COLOR_EFFECT.LiveCameraColorEffect</ClassName>
+        <Description>Test camera color effect</Description>
+        <Environment name="ANY">
+        </Environment>
+    </UseCase>
+    <UseCase Id="LIVE_CAMERA_SCENE_MODE" Domain="MULTIMEDIA" SubDomain="CAMERA" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Multimedia.LIVE_CAMERA_SCENE_MODE.LiveCameraSceneMode</ClassName>
+        <Description>Test camera scene mode</Description>
+        <Environment name="ANY">
+        </Environment>
+    </UseCase>
+    <UseCase Id="LIVE_CAMERA_PICTURE_DETAILS" Domain="MULTIMEDIA" SubDomain="CAMERA" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Multimedia.LIVE_CAMERA_PICTURE_DETAILS.LiveCameraPictureDetails</ClassName>
+        <Description>Check picture details after updating camera parameters</Description>
+        <Environment name="ANY">
+        </Environment>
+    </UseCase>
+    <UseCase Id="LIVE_CHECK_ICON_CAMERA" Domain="MULTIMEDIA" SubDomain="CAMERA" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Multimedia.LIVE_CHECK_ICON_CAMERA.LiveCheckIconCamera</ClassName>
+        <Description>Check if icon is display in camera application with rotation</Description>
+        <Environment name="ANY">
+        </Environment>
+    </UseCase>
+    <UseCase Id="LIVE_CAMERA_BURST_MODE" Domain="MULTIMEDIA" SubDomain="CAMERA" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Multimedia.LIVE_CAMERA_BURST_MODE.LiveCameraBurstMode</ClassName>
+        <Description>Use Camera to take pictures in burst mode</Description>
+        <Environment name="ANY">
+        </Environment>
+    </UseCase>
+    <UseCase Id="LIVE_CAMERA_EXPOSURE_MODE" Domain="MULTIMEDIA" SubDomain="CAMERA" OS="ANDROID" Status="DONE">
+         <ClassName>acs_test_scripts.UseCase.Multimedia.LIVE_CAMERA_EXPOSURE_MODE.LiveCameraExposureMode</ClassName>
+         <Description>Use Camera to take pictures after changing exposure value</Description>
+         <Environment name="ANY">
+         </Environment>
+    </UseCase>
+    <UseCase Id="LIVE_CAMERA_VIDEO_FLASH_MODE_TORCH" Domain="MULTIMEDIA" SubDomain="CAMERA" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Multimedia.LIVE_CAMERA_VIDEO_FLASH_MODE_TORCH.LiveCameraVideoFlashModeTorch</ClassName>
+        <Description>Use Camera to record video setting flash mode to torch</Description>
+        <Environment name="ANY">
+        </Environment>
+    </UseCase>
+    <UseCase Id="LIVE_CAMERA_VIDEO_RECORD_HD" Domain="MULTIMEDIA" SubDomain="CAMERA" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Multimedia.LIVE_CAMERA_VIDEO_RECORD_HD.LiveCameraVideoRecordHd</ClassName>
+        <Description>Use Camera to record a video in HD resolution</Description>
+        <Environment name="ANY">
+        </Environment>
+    </UseCase>
+    <UseCase Id="LIVE_CAMERA_FACE_DETECTION" Domain="MULTIMEDIA" SubDomain="CAMERA" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Multimedia.LIVE_CAMERA_FACE_DETECTION.LiveCameraFaceDetection</ClassName>
+        <Description>Use Camera for face detection</Description>
+        <Environment name="ANY">
+        </Environment>
+    </UseCase>
+    <UseCase Id="LIVE_CAMERA_READ_EXIF" Domain="MULTIMEDIA" SubDomain="CAMERA" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.OTC.Media.Camera.LIVE_CAMERA_READ_EXIF.LiveCameraReadExif</ClassName>
+        <Description>Read and validate EXIF metadata of a picture.</Description>
+        <Environment name="ANY">
+        </Environment>
+    </UseCase>
+      <UseCase Id="ANDROID_ITS" Domain="MULTIMEDIA" SubDomain="CAMERA" OS="ANDROID" Status="WIP">
+        <ClassName>acs_test_scripts.UseCase.Multimedia.ANDROID_ITS.ITS</ClassName>
+        <Description>UC that will execute Android ITS (Image Test Suite).</Description>
+        <Environment name="ANY">
+        </Environment>
+    </UseCase>
+</UseCases>

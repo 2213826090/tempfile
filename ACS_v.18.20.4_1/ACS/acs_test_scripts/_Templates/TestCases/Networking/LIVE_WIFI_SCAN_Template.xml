@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="13.45">
+    <UseCase>LIVE_WIFI_SCAN</UseCase>
+    <Description>Wifi Scan of list of devices in range</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters>
+        <Parameter>
+            <!--
+                Wifi access point on which board will connect to.
+                Must refers to a wifi router's name (equipment name of the bench configuration file).
+            -->
+            <Name>AP_TO_SEARCH</Name>
+            <Value></Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

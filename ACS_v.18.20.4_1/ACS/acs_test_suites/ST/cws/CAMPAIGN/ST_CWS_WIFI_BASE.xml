@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Campaign>
+    <Parameters>
+        <Parameter isControlledPSUsed="False"/>
+        <Parameter isIoCardUsed="True"/>
+        <!-- Set skipBootOnPowerCycle to True to disable the acs boot procedure -->
+        <!-- Important, it means that boot will be handle inside the campaign/tc -->
+        <Parameter skipBootOnPowerCycle="False"/>
+        <Parameter runHookScripts="False"/>
+        <Parameter powerCycleBetweenTC="False"/>
+        <Parameter powerCycleOnFailure="True"/>
+        <Parameter finalDutState="NoChange"/>
+        <Parameter stopCampaignOnCriticalFailure="False"/>
+        <Parameter stopCampaignOnFirstFailure="False"/>
+        <!-- LoggingLevel possible values: info | warning | debug | error -->
+        <Parameter loggingLevel="info"/>
+        <!-- CampaignType format -> <TEAM>_<CAMPAIGNTYPE>
+            Possible values:
+            FT(Feature Team)-> SANITY | REGRESSION | STRESS, RELIABILTY | MTBF
+            ST(System Test)-> SANITY | REGRESSION | STRESS, RELIABILTY | MTBF
+            SI(System Integration)-> EAT | STAB | PACT | CAT0 | RELIABILITY | MTBF
+            Otherwise "Others" should be used -->
+        <Parameter CampaignType="ST_SANITY"/>
+        <Parameter TCRReportViaRESTAPI="true"/>
+    </Parameters>
+    <Targets>
+        <!-- Target Values -->
+        <Target targetB2bPassRate="100"/>
+    </Targets>
+    <TestCases>
+
+        <!-- Tests 2.4GHz -->
+        <TestCase Id="../TC/WIFI/ST_CWS_WLAN_11B_001-LAB_WIFI_CONNECT"/>
+        <TestCase Id="../TC/WIFI/ST_CWS_WLAN_11G_001-LAB_WIFI_CONNECT"/>
+        <TestCase Id="../TC/WIFI/ST_CWS_WLAN_11N2.4G_001-LAB_WIFI_CONNECT"/>
+        <TestCase Id="../TC/WIFI/ST_CWS_WLAN_11N_001-LAB_WIFI_CONNECT"/>
+        <TestCase Id="../TC/WIFI/ST_CWS_WLAN_11N_003-LAB_WIFI_CONNECT"/>
+        <TestCase Id="../TC/WIFI/ST_CWS_WLAN_11N_009-LAB_WIFI_CHANGE_SECURITY"/>
+        <TestCase Id="../TC/WIFI/ST_CWS_WLAN_11N_012-LAB_WIFI_CONNECT"/>
+        <TestCase Id="../TC/WIFI/ST_CWS_WLAN_11N_019-LAB_WIFI_CONNECT"/>
+        <TestCase Id="../TC/WIFI/ST_CWS_WLAN_11N_021"/>
+        <TestCase Id="../TC/WIFI/ST_CWS_WLAN_11N_022-LAB_WIFI_CONNECT"/>
+        <TestCase Id="../TC/WIFI/ST_CWS_WLAN_AIRPLANE_002-LIVE_CWS_APM_CYCLE_EFFECT"/>
+        <TestCase Id="../TC/WIFI/ST_CWS_WLAN_AIRPLANE_003-LIVE_CWS_APM_CYCLE_EFFECT"/>
+        <TestCase Id="../TC/WIFI/ST_CWS_WLAN_AIRPLANE_004-LIVE_CWS_APM_CYCLE_EFFECT"/>
+        <TestCase Id="../TC/WIFI/ST_CWS_WLAN_FTP_001-LAB_WIFI_FTP"/>
+        <TestCase Id="../TC/WIFI/ST_CWS_WLAN_FTP_002-LAB_WIFI_FTP"/>
+        <TestCase Id="../TC/WIFI/ST_CWS_WLAN_FTP_003-LAB_WIFI_FTP"/>
+        <TestCase Id="../TC/WIFI/ST_CWS_WLAN_FTP_004-LAB_WIFI_FTP"/>
+        <TestCase Id="../TC/WIFI/ST_CWS_WLAN_FTP_014"/>
+        <TestCase Id="../TC/WIFI/ST_CWS_WLAN_FTP_016"/>
+        <TestCase Id="../TC/WIFI/ST_CWS_WLAN_HIDDENSSID_001-LAB_WIFI_CONNECT"/>
+        <TestCase Id="../TC/WIFI/ST_CWS_WLAN_HIDDENSSID_003"/>
+        <TestCase Id="../TC/WIFI/ST_CWS_WLAN_HIDDENSSID_004"/>
+        <TestCase Id="../TC/WIFI/ST_CWS_WLAN_HIDDENSSID_005-LAB_WIFI_CONNECT"/>
+        <TestCase Id="../TC/WIFI/ST_CWS_WLAN_HIDDENSSID_006-LAB_WIFI_CONNECT"/>
+        <TestCase Id="../TC/WIFI/ST_CWS_WLAN_OPENNETWORK_002-LAB_WIFI_CONNECT_AFTER_LOSS_OF_COVERAGE"/>
+        <TestCase Id="../TC/WIFI/ST_CWS_WLAN_OPENNETWORK_009-LAB_WIFI_CONNECT"/>
+        <TestCase Id="../TC/WIFI/ST_CWS_WLAN_OPENNETWORK_013-LAB_WIFI_FORGET_RECONNECT"/>
+        <TestCase Id="../TC/WIFI/ST_CWS_WLAN_WEP128_OPEN_001-LAB_WIFI_CONNECT"/>
+        <TestCase Id="../TC/WIFI/ST_CWS_WLAN_WEP128_OPEN_002-LAB_WIFI_CONNECT_AFTER_LOSS_OF_COVERAGE"/>
+        <TestCase Id="../TC/WIFI/ST_CWS_WLAN_WEP128_SHAREDKEY_013-LAB_WIFI_FORGET_RECONNECT"/>
+        <TestCase Id="../TC/WIFI/ST_CWS_WLAN_WEP64_OPEN_001-LAB_WIFI_CONNECT"/>
+        <TestCase Id="../TC/WIFI/ST_CWS_WLAN_WPA2_AES_001-LAB_WIFI_CONNECT"/>
+        <TestCase Id="../TC/WIFI/ST_CWS_WLAN_WPA2_AES_002-LAB_WIFI_CONNECT_AFTER_LOSS_OF_COVERAGE"/>
+        <TestCase Id="../TC/WIFI/ST_CWS_WLAN_WPA2_AES_009-LAB_WIFI_CONNECT"/>
+        <TestCase Id="../TC/WIFI/ST_CWS_WLAN_WPA2_AES_011-LAB_WIFI_CONNECTION_FAIL"/>
+        <TestCase Id="../TC/WIFI/ST_CWS_WLAN_WPA2_AES_012"/>
+        <TestCase Id="../TC/WIFI/ST_CWS_WLAN_WPA2_AES_013-LAB_WIFI_FORGET_RECONNECT"/>
+        <TestCase Id="../TC/WIFI/ST_CWS_WLAN_WPA2_EAP_FAST_GTC_001-LAB_WIFI_CONNECT"/>
+        <TestCase Id="../TC/WIFI/ST_CWS_WLAN_WPA2_EAP_FAST_GTC_002-LAB_WIFI_CONNECT_AFTER_LOSS_OF_COVERAGE"/>
+        <TestCase Id="../TC/WIFI/ST_CWS_WLAN_WPA2_EAP_FAST_GTC_009-LAB_WIFI_CONNECT"/>
+        <TestCase Id="../TC/WIFI/ST_CWS_WLAN_WPA2_EAP_FAST_GTC_011-LAB_WIFI_CONNECTION_FAIL"/>
+        <TestCase Id="../TC/WIFI/ST_CWS_WLAN_WPA2_EAP_FAST_GTC_012"/>
+        <TestCase Id="../TC/WIFI/ST_CWS_WLAN_WPA2_EAP_FAST_GTC_013-LAB_WIFI_FORGET_RECONNECT"/>
+        <TestCase Id="../TC/WIFI/ST_CWS_WLAN_WPA2_EAP_PEAP_MSCHAPV2_001-LAB_WIFI_CONNECT"/>
+        <TestCase Id="../TC/WIFI/ST_CWS_WLAN_WPA2_EAP_PEAP_MSCHAPV2_002-LAB_WIFI_CONNECT_AFTER_LOSS_OF_COVERAGE"/>
+        <TestCase Id="../TC/WIFI/ST_CWS_WLAN_WPA2_EAP_PEAP_MSCHAPV2_009-LAB_WIFI_CONNECT"/>
+        <TestCase Id="../TC/WIFI/ST_CWS_WLAN_WPA2_EAP_PEAP_MSCHAPV2_011-LAB_WIFI_CONNECTION_FAIL"/>
+        <TestCase Id="../TC/WIFI/ST_CWS_WLAN_WPA2_EAP_PEAP_MSCHAPV2_012"/>
+        <TestCase Id="../TC/WIFI/ST_CWS_WLAN_WPA2_EAP_PEAP_MSCHAPV2_013-LAB_WIFI_FORGET_RECONNECT"/>
+        <TestCase Id="../TC/WIFI/ST_CWS_WLAN_WPA2_EAP_PEAP_MSCHAPV2_015-LAB_WIFI_CONNECT"/>
+        <TestCase Id="../TC/WIFI/ST_CWS_WLAN_WPA2_EAP_TLS_001-LAB_WIFI_CONNECT"/>
+        <TestCase Id="../TC/WIFI/ST_CWS_WLAN_WPA2_EAP_TLS_002-LAB_WIFI_CONNECT_AFTER_LOSS_OF_COVERAGE"/>
+        <TestCase Id="../TC/WIFI/ST_CWS_WLAN_WPA2_EAP_TLS_005-LAB_WIFI_WEB_BROWSING"/>
+        <TestCase Id="../TC/WIFI/ST_CWS_WLAN_WPA2_EAP_TLS_009-LAB_WIFI_CONNECT"/>
+        <TestCase Id="../TC/WIFI/ST_CWS_WLAN_WPA2_EAP_TLS_011-LAB_WIFI_CONNECTION_FAIL"/>
+        <TestCase Id="../TC/WIFI/ST_CWS_WLAN_WPA2_EAP_TLS_012"/>
+        <TestCase Id="../TC/WIFI/ST_CWS_WLAN_WPA2_EAP_TLS_013-LAB_WIFI_FORGET_RECONNECT"/>
+        <TestCase Id="../TC/WIFI/ST_CWS_WLAN_WPA2_EAP_TTLS_PAP_013-LAB_WIFI_FORGET_RECONNECT"/>
+        <TestCase Id="../TC/WIFI/ST_CWS_WLAN_WPA2_EAP_TTLS_PAP_015-LAB_WIFI_CONNECT"/>
+        <TestCase Id="../TC/WIFI/ST_CWS_WLAN_WPA2_TKIP_AES_001-LAB_WIFI_CONNECT"/>
+        <TestCase Id="../TC/WIFI/ST_CWS_WLAN_WPA2_TKIP_AES_002-LAB_WIFI_CONNECT_AFTER_LOSS_OF_COVERAGE"/>
+        <TestCase Id="../TC/WIFI/ST_CWS_WLAN_WPA2_TKIP_AES_009-LAB_WIFI_CONNECT"/>
+        <TestCase Id="../TC/WIFI/ST_CWS_WLAN_WPA2_TKIP_AES_011-LAB_WIFI_CONNECTION_FAIL"/>
+        <TestCase Id="../TC/WIFI/ST_CWS_WLAN_WPA2_TKIP_AES_012"/>
+        <TestCase Id="../TC/WIFI/ST_CWS_WLAN_WPA2_TKIP_AES_013-LAB_WIFI_FORGET_RECONNECT"/>
+        <TestCase Id="../TC/WIFI/ST_CWS_WLAN_WPA_EAP_FAST_GTC_001-LAB_WIFI_CONNECT"/>
+        <TestCase Id="../TC/WIFI/ST_CWS_WLAN_WPA_EAP_FAST_MSCHAPV2_001-LAB_WIFI_CONNECT"/>
+        <TestCase Id="../TC/WIFI/ST_CWS_WLAN_WPA_EAP_PEAP_GTC_001-LAB_WIFI_CONNECT"/>
+        <TestCase Id="../TC/WIFI/ST_CWS_WLAN_WPA_EAP_PEAP_GTC_009-LAB_WIFI_CONNECT"/>
+        <TestCase Id="../TC/WIFI/ST_CWS_WLAN_WPA_EAP_PEAP_MSCHAPV2_001-LAB_WIFI_CONNECT"/>
+        <TestCase Id="../TC/WIFI/ST_CWS_WLAN_WPA_EAP_PEAP_MSCHAPV2_009-LAB_WIFI_CONNECT"/>
+        <TestCase Id="../TC/WIFI/ST_CWS_WLAN_WPA_EAP_PEAP_NOPHASE2_001-LAB_WIFI_CONNECT"/>
+        <TestCase Id="../TC/WIFI/ST_CWS_WLAN_WPA_EAP_TLS_001-LAB_WIFI_CONNECT"/>
+        <TestCase Id="../TC/WIFI/ST_CWS_WLAN_WPA_EAP_TTLS_MSCHAPV2_001-LAB_WIFI_CONNECT"/>
+        <TestCase Id="../TC/WIFI/ST_CWS_WLAN_WPA_EAP_TTLS_MSCHAP_001-LAB_WIFI_CONNECT"/>
+        <TestCase Id="../TC/WIFI/ST_CWS_WLAN_WPA_EAP_TTLS_PAP_001-LAB_WIFI_CONNECT"/>
+        <TestCase Id="../TC/WIFI/ST_CWS_WLAN_WPA_TKIP_001-LAB_WIFI_CONNECT"/>
+        <TestCase Id="../TC/WIFI/ST_CWS_WLAN_WPA_TKIP_AES_001-LAB_WIFI_CONNECT"/>
+        <TestCase Id="../TC/WIFI/ST_CWS_WLAN_WPA_WPA2_AUTO_001-LAB_WIFI_CONNECT"/>
+        <TestCase Id="../TC/WIFI/ST_CWS_WLAN_WPA_WPA2_AUTO_002-LAB_WIFI_CONNECT_AFTER_LOSS_OF_COVERAGE"/>
+        <TestCase Id="../TC/WIFI/ST_CWS_WLAN_WPA_WPA2_AUTO_009-LAB_WIFI_CONNECT"/>
+        <TestCase Id="../TC/WIFI/ST_CWS_WLAN_WPA_WPA2_AUTO_011-LAB_WIFI_CONNECTION_FAIL"/>
+        <TestCase Id="../TC/WIFI/ST_CWS_WLAN_ROAMING_001-LAB_WIFI_DUAL_AP_SWITCH_AP_LOSS"/>
+        <TestCase Id="../TC/WIFI/ST_CWS_WLAN_ROAMING_006"/>
+        <TestCase Id="../TC/WIFI/ST_CWS_WLAN_SLEEP_003-LAB_WIFI_WAKES_UP"/>
+        <TestCase Id="../TC/WIFI/ST_CWS_WLAN_STA_11AC_001"/>
+        <TestCase Id="../TC/WIFI/ST_CWS_WLAN_STA_11AC_002"/>
+        <TestCase Id="../TC/WIFI/ST_CWS_WLAN_STATICIP_001"/>
+        <TestCase Id="../TC/WIFI/ST_CWS_WLAN_STATICIP_002"/>
+        <TestCase Id="../TC/WIFI/ST_CWS_WLAN_STATICIP_003-LAB_WIFI_CONNECT"/>
+        <TestCase Id="../TC/WIFI/ST_CWS_WLAN_UI_001"/>
+        <TestCase Id="../TC/WIFI/ST_CWS_WLAN_UI_002"/>
+        <TestCase Id="../TC/WIFI/ST_CWS_WLAN_UI_014"/>
+        <TestCase Id="../TC/WIFI/ST_CWS_WLAN_UI_FIT_002"/>
+        <TestCase Id="../TC/WIFI/ST_CWS_WLAN_PROXY_001"/>
+        <TestCase Id="../TC/WIFI/ST_CWS_WLAN_PROXY_003"/>
+        <TestCase Id="../TC/WIFI/ST_CWS_WLAN_PROXY_004"/>
+        <TestCase Id="../TC/WIFI/ST_CWS_WLAN_PROXY_005"/>
+        <TestCase Id="../TC/WIFI/ST_CWS_WLAN_PROXY_006"/>
+        <TestCase Id="../TC/WIFI/ST_CWS_WLAN_PROXY_007"/>
+        <TestCase Id="../TC/WIFI/ST_CWS_WLAN_PROXY_010"/>
+        <TestCase Id="../TC/WIFI/ST_CWS_WLAN_PROXY_012"/>
+        <TestCase Id="../TC/WIFI/ST_CWS_WLAN_PROXY_014"/>
+        <TestCase Id="../TC/WIFI/ST_CWS_WLAN_PROXY_015"/>
+
+        <!-- Tests 5GHz -->
+        <TestCase Id="../TC/WIFI/ST_CWS_WLAN_11A_001-LAB_WIFI_CONNECT"/>
+        <TestCase Id="../TC/WIFI/ST_CWS_WLAN_11N5G_001-LAB_WIFI_CONNECT"/>
+        <TestCase Id="../TC/WIFI/ST_CWS_WLAN_CHANNEL_40M_001"/>
+        <TestCase Id="../TC/WIFI/ST_CWS_WLAN_CHANNEL_40M_009-LAB_WIFI_DUAL_AP_SWITCH_AP_LOSS"/>
+        <TestCase Id="../TC/WIFI/ST_CWS_WLAN_CHANNEL_40M_010-LAB_WIFI_DUAL_AP_SWITCH_AP_LOSS"/>
+        <TestCase Id="../TC/WIFI/ST_CWS_WLAN_FREQ_BAND_001-LAB_WIFI_DUAL_AP_BAND_SEL_SCAN"/>
+        <TestCase Id="../TC/WIFI/ST_CWS_WLAN_FREQ_BAND_002-LAB_WIFI_DUAL_AP_BAND_SEL_SCAN"/>
+        <TestCase Id="../TC/WIFI/ST_CWS_WLAN_FREQ_BAND_003-LAB_WIFI_DUAL_AP_BAND_SEL_SCAN"/>
+        <TestCase Id="../TC/WIFI/ST_CWS_WLAN_FREQ_BAND_004-LAB_WIFI_DUAL_AP_BAND_SEL_CONNECT"/>
+        <TestCase Id="../TC/WIFI/ST_CWS_WLAN_FREQ_BAND_005-LAB_WIFI_DUAL_AP_BAND_SEL_CONNECT"/>
+        <TestCase Id="../TC/WIFI/ST_CWS_WLAN_HOTSPOT_5GN_001"/>
+        <TestCase Id="../TC/WIFI/ST_CWS_WLAN_HOTSPOT_5GN_005"/>
+        <TestCase Id="../TC/WIFI/ST_CWS_WLAN_HOTSPOT_5GN_006"/>
+        <TestCase Id="../TC/WIFI/ST_CWS_WLAN_HOTSPOT_5GN_007"/>
+        <TestCase Id="../TC/WIFI/ST_CWS_WLAN_HOTSPOT_11AC_001"/>
+        <TestCase Id="../TC/WIFI/ST_CWS_WLAN_HOTSPOT_11AC_004"/>
+        <TestCase Id="../TC/WIFI/ST_CWS_WLAN_ROAMING_002-LAB_WIFI_DUAL_AP_SWITCH_AP_LOSS"/>
+
+        <!-- Undefined in Specification -->
+        <!--TestCase Id="../TC/WIFI/ST_CWS_WLAN_ROAMING_004-LAB_WIFI_DUAL_AP_SWITCH_AP_LOSS"/>
+        <TestCase Id="../TC/WIFI/ST_CWS_WLAN_ROAMING_005-LAB_WIFI_DUAL_AP_SWITCH_AP_LOSS"/-->
+        <!-- Require multiple reference devices -->
+        <!--TestCase Id="../TC/WIFI/ST_CWS_WLAN_HOTSPOT_5GN_009"/-->
+
+    </TestCases>
+</Campaign>

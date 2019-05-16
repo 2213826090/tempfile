@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestSteps xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../acs/src/_Catalogs/TestStep/teststep.xsd">
+    <TestStep Id="INSERT_USB" Domain="EQUIPMENT" SubDomain="IO_CARDS" Feature="" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Equipment.IOCards.InsertUsb.InsertUsb</ClassName>
+        <Description>Insert usb cable of the device to host using an io card</Description>
+        <Environment name="ANY">
+            <Capabilities>EQT_USB_RLY08</Capabilities>
+        </Environment>
+        <Parameters>
+            <Parameter name="EQT" type="STRING" isOptional="false">
+                <Description>The equipment name shall refer to an existing equipment the Bench config</Description>
+                <PossibleValues/>
+                <DefaultValue>IO_CARD</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="INSERT_USB_WITH_RETRIES" Domain="EQUIPMENT" SubDomain="IO_CARDS" Feature="" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Equipment.IOCards.InsertUsbWithRetries.InsertUsbWithRetries</ClassName>
+        <Description>Insert usb cable of the device to host using an io card</Description>
+        <Environment name="ANY">
+            <Capabilities>EQT_USB_RLY08</Capabilities>
+        </Environment>
+        <Parameters>
+            <Parameter name="EQT" type="STRING" isOptional="false">
+                <Description>The equipment name shall refer to an existing equipment the Bench config</Description>
+                <PossibleValues/>
+                <DefaultValue>IO_CARD</DefaultValue>
+            </Parameter>
+            <Parameter name="RETRY" type="INTEGER" isOptional="false">
+                <Description>Number of plug retries </Description>
+                <PossibleValues/>
+                <DefaultValue>1</DefaultValue>
+            </Parameter>
+            <Parameter name="SLEEP_BETWEEN_RETRY" type="INTEGER" isOptional="false">
+                <Description>sleep time between two tries</Description>
+                <PossibleValues/>
+                <DefaultValue>10</DefaultValue>
+            </Parameter>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues/>
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="REMOVE_USB" Domain="EQUIPMENT" SubDomain="IO_CARDS" Feature="" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Equipment.IOCards.RemoveUsb.RemoveUsb</ClassName>
+        <Description>Remove usb cable of the device from PC host using an io card</Description>
+        <Environment name="ANY">
+            <Capabilities>EQT_USB_RLY08</Capabilities>
+        </Environment>
+        <Parameters>
+            <Parameter name="EQT" type="STRING" isOptional="false">
+                <Description>The equipment name shall refer to an existing equipment the Bench config</Description>
+                <PossibleValues/>
+                <DefaultValue>IO_CARD</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="PRESS_POWER_BUTTON" Domain="EQUIPMENT" SubDomain="IO_CARDS" Feature="" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Equipment.IOCards.PressPowerButton.PressPowerButton</ClassName>
+        <Description>Press on the power button of the device using an io card</Description>
+        <Environment name="ANY">
+            <Capabilities>EQT_USB_RLY08</Capabilities>
+        </Environment>
+        <Parameters>
+            <Parameter name="EQT" type="STRING" isOptional="false">
+                <Description>The equipment name shall refer to an existing equipment the Bench config</Description>
+                <PossibleValues/>
+                <DefaultValue>IO_CARD</DefaultValue>
+            </Parameter>
+            <Parameter name="TIME" type="FLOAT" isOptional="false">
+                <Description>Time to wait before releasing the power button. It can take value from device catalog
+                using FROM_DEVICE:device_name:key
+                Following keys can be used for example pressPowerBtnTimeSwitchOn, pressPowerBtnTimeSwitchOff</Description>
+                <PossibleValues>[0.1:3600.0]</PossibleValues>
+                <DefaultValue>1.0</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="SET_USB_OTG_TYPE" Domain="EQUIPMENT" SubDomain="IO_CARDS" Feature="" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Equipment.IOCards.SetUsbOtgType.SetUsbOtgType</ClassName>
+        <Description>Switch the USB OTG type (Device or Host) </Description>
+        <Environment name="ANY">
+            <Capabilities>EQT_USB_RLY08</Capabilities>
+        </Environment>
+        <Parameters>
+            <Parameter name="EQT" type="STRING" isOptional="false">
+                <Description>The equipment name shall refer to an existing equipment the Bench config</Description>
+                <PossibleValues/>
+                <DefaultValue>IO_CARD</DefaultValue>
+            </Parameter>
+            <Parameter name="DUT_OTG_TYPE" type="STRING" isOptional="false">
+                <Description>The OTG type that sets the DUT to the mode USB Host (DUT_HOST) or USB Device (DUT_DEVICE).
+                    Note : For relay card USBRLY08, NORMAL is equivalent to DUT_DEVICE</Description>
+                <PossibleValues>DUT_HOST;DUT_DEVICE;NORMAL</PossibleValues>
+                <DefaultValue>NORMAL</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="RUN_THUMBKING_SEQUENCE_LOOP" Domain="EQUIPMENT" SubDomain="IO_CARDS" Feature="" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Equipment.IOCards.RunThumbkingSequenceLoop.RunThumbkingSequenceLoop</ClassName>
+        <Description>Toggle Thumbking's GPIO pins up/down for the test duration. The specific sequence that will be looped for the test duration is determined by the PIN_LIST, PULSE_LENGTH,
+                     and SLEEP_LENGTH parameters.  Where each number in PIN_LIST will represent a GPIO pin on ThumbKing to toggle up/down with PULSE_LENGTH being the time to wait between the up and down toggles.
+                     SLEEP_LENGTH will be the time to sleep before the next pin is toggled up/down.
+                     PREREQUISITES:
+                     Install TTK software from \\goto\teak.  Currently using version 1.6.3.
+                     Install ThumbKing hardware and configure GPIO pin connections as needed for your usecase.
+                        Hardware guide:  http://pcevwiki.amr.corp.intel.com/ttk/docs/Thumbking%20User%20Guide.pdf
+                        Note:  The pin description on p.26 is not correct.  Swap CD numbers to opposite side.  i.e. CD0 -> pin 25, CD1 -> pin 26.
+                     TTkClientLib.dll should be installed at the location given from "SCRIPTS_PATH" onto host PC from Artifactory under:  acs_test_artifacts:CONCURRENCY/TESTS/low_speed_interrupt
+                     These files all put on host PC in same location as TTkClientLib.dll:
+                     Intel Ave Usage Statistics Client.dll
+                     Jayrock.Json.dll
+                     log4net.dll
+                     PinControl.dll
+                     PinControl.pdb
+                     ThumbKingAPI.dll
+                     ThumbKingAPI.pdb
+                     TTkClientLib.dll
+        </Description>
+        <Environment name="ANY">
+        </Environment>
+        <Parameters>
+            <Parameter name="EQT" type="STRING" isOptional="false">
+                <Description>The Bench Config file shall contain entry for a ThumbKing device.  This entry will have a "Device" parameter who's integer value will correspond to which TK device to connect to.</Description>
+                <PossibleValues/>
+                <DefaultValue>ThumbKing1</DefaultValue>
+            </Parameter>
+            <Parameter name="DURATION" type="INTEGER" isOptional="false">
+               <Description>How long the test will run, in minutes.</Description>
+               <PossibleValues/>
+               <DefaultValue>10</DefaultValue>
+            </Parameter>
+            <Parameter name="PULSE_LENGTH" type="FLOAT" isOptional="false">
+               <Description>How long to wait between up and down toggles in seconds.</Description>
+               <PossibleValues/>
+               <DefaultValue>.25</DefaultValue>
+            </Parameter>
+            <Parameter name="SLEEP_LENGTH" type="FLOAT" isOptional="false">
+               <Description>How long, in seconds, to sleep before toggling next pin in the list.</Description>
+               <PossibleValues/>
+               <DefaultValue>4</DefaultValue>
+            </Parameter>
+            <Parameter name="PIN_LIST" type="STRING" isOptional="false">
+                <Description>Comma separated string list of the pins (0-7) to toggle up/down.  The pin sequence will be run repeatedly for the test duration. Example list: '0, 2, 5, 7'
+                 </Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+            <Parameter name="BINARIES_PATH" type="STRING" isOptional="false">
+                <Description>Absolute path on the host to TTkClientLib.dll.</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="INSERT_POWER_SUPPLY" Domain="EQUIPMENT" SubDomain="IO_CARDS" Feature="" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Equipment.IOCards.InsertPowerSupply.InsertPowerSupply</ClassName>
+        <Description>Insert power supply of the device to host using an io card</Description>
+        <Environment name="ANY">
+            <Capabilities>EQT_USB_RLY08</Capabilities>
+        </Environment>
+        <Parameters>
+            <Parameter name="EQT" type="STRING" isOptional="false">
+                <Description>The equipment name shall refer to an existing equipment the Bench config</Description>
+                <PossibleValues/>
+                <DefaultValue>IO_CARD</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="REMOVE_POWER_SUPPLY" Domain="EQUIPMENT" SubDomain="IO_CARDS" Feature="" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Equipment.IOCards.RemovePowerSupply.RemovePowerSupply</ClassName>
+        <Description>Remove power supply of the device from PC host using an io card</Description>
+        <Environment name="ANY">
+            <Capabilities>EQT_USB_RLY08</Capabilities>
+        </Environment>
+        <Parameters>
+            <Parameter name="EQT" type="STRING" isOptional="false">
+                <Description>The equipment name shall refer to an existing equipment the Bench config</Description>
+                <PossibleValues/>
+                <DefaultValue>IO_CARD</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="PUSH_POWER_BUTTON" Domain="EQUIPMENT" SubDomain="IO_CARDS" Feature="" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Equipment.IOCards.PushPowerButton.PushPowerButton</ClassName>
+        <Description>push power button of the device from PC host using an io card</Description>
+        <Environment name="ANY">
+            <Capabilities>EQT_USB_RLY08</Capabilities>
+        </Environment>
+        <Parameters>
+            <Parameter name="EQT" type="STRING" isOptional="false">
+                <Description>The equipment name shall refer to an existing equipment the Bench config</Description>
+                <PossibleValues/>
+                <DefaultValue>IO_CARD</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+
+    <TestStep Id="RELEASE_POWER_BUTTON" Domain="EQUIPMENT" SubDomain="IO_CARDS" Feature="" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Equipment.IOCards.ReleasePowerButton.ReleasePowerButton</ClassName>
+        <Description>Release power button of the device from PC host using an io card</Description>
+        <Environment name="ANY">
+            <Capabilities>EQT_USB_RLY08</Capabilities>
+        </Environment>
+        <Parameters>
+            <Parameter name="EQT" type="STRING" isOptional="false">
+                <Description>The equipment name shall refer to an existing equipment the Bench config</Description>
+                <PossibleValues/>
+                <DefaultValue>IO_CARD</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="INSERT_WALL_CHARGER" Domain="EQUIPMENT" SubDomain="IO_CARDS" Feature="" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Equipment.IOCards.WallCharger.InsertWallCharger</ClassName>
+        <Description>Insert wall charger of the device using an io card</Description>
+        <Environment name="ANY">
+            <Capabilities>EQT_USB_RLY08</Capabilities>
+        </Environment>
+        <Parameters>
+            <Parameter name="EQT" type="STRING" isOptional="false">
+                <Description>The equipment name shall refer to an existing equipment the Bench config</Description>
+                <PossibleValues/>
+                <DefaultValue>IO_CARD</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="REMOVE_WALL_CHARGER" Domain="EQUIPMENT" SubDomain="IO_CARDS" Feature="" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Equipment.IOCards.WallCharger.RemoveWallCharger</ClassName>
+        <Description>Remove wall charger of the device using an io card</Description>
+        <Environment name="ANY">
+            <Capabilities>EQT_USB_RLY08</Capabilities>
+        </Environment>
+        <Parameters>
+            <Parameter name="EQT" type="STRING" isOptional="false">
+                <Description>The equipment name shall refer to an existing equipment the Bench config</Description>
+                <PossibleValues/>
+                <DefaultValue>IO_CARD</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="INSERT_WIRELESS_CHARGER" Domain="EQUIPMENT" SubDomain="IO_CARDS" Feature="" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Equipment.IOCards.WirelessCharger.InsertWirelessCharger</ClassName>
+        <Description>Insert wireless charger of the device using an io card</Description>
+        <Environment name="ANY">
+            <Capabilities>EQT_USB_RLY08</Capabilities>
+        </Environment>
+        <Parameters>
+            <Parameter name="EQT" type="STRING" isOptional="false">
+                <Description>The equipment name shall refer to an existing equipment the Bench config</Description>
+                <PossibleValues/>
+                <DefaultValue>IO_CARD</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="REMOVE_WIRELESS_CHARGER" Domain="EQUIPMENT" SubDomain="IO_CARDS" Feature="" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Equipment.IOCards.WirelessCharger.RemoveWirelessCharger</ClassName>
+        <Description>Remove wireless charger of the device using an io card</Description>
+        <Environment name="ANY">
+            <Capabilities>EQT_USB_RLY08</Capabilities>
+        </Environment>
+        <Parameters>
+            <Parameter name="EQT" type="STRING" isOptional="false">
+                <Description>The equipment name shall refer to an existing equipment the Bench config</Description>
+                <PossibleValues/>
+                <DefaultValue>IO_CARD</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="LAMP_ON" Domain="EQUIPMENT" SubDomain="IO_CARDS" Feature="" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Equipment.IOCards.Lamp.On</ClassName>
+        <Description>Turn on light at the test bench</Description>
+        <Environment name="ANY">
+            <Capabilities>EQT_USB_RLY08</Capabilities>
+        </Environment>
+        <Parameters>
+            <Parameter name="EQT" type="STRING" isOptional="false">
+                <Description>The equipment name shall refer to an existing equipment the Bench config</Description>
+                <PossibleValues/>
+                <DefaultValue>IO_CARD</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="LAMP_OFF" Domain="EQUIPMENT" SubDomain="IO_CARDS" Feature="" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Equipment.IOCards.Lamp.Off</ClassName>
+        <Description>Turn off light at the test bench</Description>
+        <Environment name="ANY">
+            <Capabilities>EQT_USB_RLY08</Capabilities>
+        </Environment>
+        <Parameters>
+            <Parameter name="EQT" type="STRING" isOptional="false">
+                <Description>The equipment name shall refer to an existing equipment the Bench config</Description>
+                <PossibleValues/>
+                <DefaultValue>IO_CARD</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+</TestSteps>

@@ -1,0 +1,38 @@
+{
+    "Configuration": {
+        "Boot": {
+            "MODEM": false,
+            "MOS_CHECK_DEV_BOOTCOMPLETE": false,
+            "MOS_CHECK_INIT_SVC_BOOTANIM": false,
+            "MOS_CHECK_INIT_SVC_ENCRYPT": false,
+            "MOS_CHECK_PATH_ANDROID": false,
+            "MOS_CHECK_SYSTEMUI": false,
+            "MOS_CHECK_SYS_BOOT_COMPLETED": true
+        },
+        "BootVars": null,
+        "Custom": null,
+        "Flash": {
+            "CHECK_FASTBOOT": false,
+            "CHECK_OSLOADER": false,
+            "DEDIPROG": false,
+            "MERRIFIELD": true,
+            "PARTITIONS": "/(oem_)*config;/cache;/system;/logs;/data",
+            "PARTITION_TYPE": "gpt;osip",
+            "UEFI": false
+        },
+        "Inherit": {
+            "BRANCH": null
+        },
+        "Logs": null,
+        "Timeout": {
+            "BOOT_TIMEOUT": 600
+        },
+        "WorkAround": {
+            "Function": {
+                "Issue": "Not applicable",
+                "Name": "__ifwi_check",
+                "Pattern": ".*"
+            }
+        }
+    }
+}

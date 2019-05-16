@@ -1,0 +1,114 @@
+{
+    "Configuration": {
+        "Boot": {
+            "BOOT_COS_ON_FORCED_SHUTDOWN_PLUG": true,
+            "CSE_DNX_BOOT_WITH_COMBO": true,
+            "DNX_BOOT_WITH_COMBO_ONLY": true,
+            "DNX_COMBO": [
+                {"action": "relay", "relay_name": "SwitchOnOff", "relay_state": 2},
+                {"action": "relay", "relay_name": "VolumeUp", "relay_state": true},
+                {"action": "relay", "relay_name": "VolumeDown", "relay_state": true},
+                {"action": "relay", "relay_name": "UsbHostPcConnect", "relay_state": true},
+                {"action": "os", "os_name": "dnx", "timeout": 150},
+                {"action": "relay", "relay_name": "VolumeUp", "relay_state": false},
+                {"action": "relay", "relay_name": "VolumeDown", "relay_state": false}
+            ],
+            "POS_COMBO": [
+                {"action": "relay", "relay_name": "UsbHostPcConnect", "relay_state": false},
+                {"action": "relay", "relay_name": "SwitchOnOff", "relay_state": "PKPOFF"},
+                {"action": "sleep", "duration": 15},
+                {"action": "relay", "relay_name": "SwitchOnOff", "relay_state": 5},
+                {"action": "sleep", "duration": 5},
+                {"action": "relay", "relay_name": "VolumeDown", "relay_state": true},
+                {"action": "sleep", "duration": 5},
+                {"action": "relay", "relay_name": "VolumeDown", "relay_state": false},
+                {"action": "relay", "relay_name": "UsbHostPcConnect", "relay_state": true}
+            ],
+            "WATCHDOG_PATH": "/proc/sysrq-trigger:c"
+        },
+        "BootVars": {
+            "COS_CHECK_AFTER_GRACEFUL_SHUTDOWN": "reset_source=00;reset_type=00;wake_source=02;shutdown_source=00;bootreason=usb_charger_inserted",
+            "COS_CHECK_AFTER_HARD_SHUTDOWN": "reset_source=00;reset_type=00;wake_source=02;shutdown_source=01;bootreason=usb_charger_inserted",
+            "COS_CHECK_AFTER_REBOOT": "reset_source=01;reset_type=01;wake_source=00;shutdown_source=00;bootreason=reboot",
+            "MOS_CHECK_AFTER_BOOT": "reset_source=00;reset_type=00;wake_source=04;shutdown_source=01;bootreason=power_button_pressed",
+            "MOS_CHECK_AFTER_KERNEL_WATCHDOG": "reset_source=04;reset_type=00;wake_source=00;shutdown_source=00;bootreason=watchdog",
+            "MOS_CHECK_AFTER_REBOOT": "reset_source=01;reset_type=01;wake_source=00;shutdown_source=00;bootreason=reboot"
+        },
+        "Custom": null,
+        "Download": {
+            "INTERNAL_DOWNLOAD": [
+                {
+                    "pft_key": "fastboot",
+                    "buildbot_artifactory_path": {"path": "device_name_id/variant_id", "detection": "cactus-absp"},
+                    "regexp_key": ".*flashfiles.*.zip",
+                    "flash_file": null,
+                    "configuration": "blank_board_id",
+                    "start_state": "dnx_fw",
+                    "pft_fallback": null
+                }
+            ],
+            "MULTI_VARIANT_PREFIX": "bxt_(pr[0-9]+_)?"
+        },
+        "Flash": {
+            "DEDIPROG": {
+                "ifwi_regex": "cse_spi.bin"
+            },
+            "IFWI_CHECK": ["firmware-info"],
+            "PARTITIONS": "/(oem_)*config;/cache;/system",
+            "UPDATE_CONFIGURATION": "update_board_id"
+        },
+        "Inherit": {
+            "BRANCH": null
+        },
+        "Logs": null,
+        "Timeout": {
+            "BOOT_TIMEOUT": 1800,
+            "COS_BOOT": 40,
+            "MOS_BOOT": 140,
+            "REBOOT_COMMAND_TIMEOUT": 60
+        },
+        "WorkAround": {
+            "Function":
+            [
+                {
+                    "Issue": "Mandatory Check BIOS",
+                    "Name": "__ifwi_check",
+                    "Pattern": ""
+                }
+            ],
+            "TestCase": [
+                {
+                    "Issue": "applicable on BXT",
+                    "Name": "KernelWatchdogTestCase",
+                    "Skip": false
+                }
+            ]
+        },
+        "TestDescription": {
+            "engineering": [
+                {
+                    "name": "default",
+                    "build_tag": "bootota_",
+                    "testing": [
+                        {
+                            "build_target": "r2_bxt_rvp-userdebug",
+                            "campaign": "BOOTOTA_PREINTEGRATION"
+                        }
+                    ]
+                }
+            ],
+            "release_candidate": [
+                {
+                    "name": "release",
+                    "build_tag": "",
+                    "testing": [
+                        {
+                            "build_target": "r2_bxt_rvp-userdebug",
+                            "campaign": "BOOTOTA_PREINTEGRATION"
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}

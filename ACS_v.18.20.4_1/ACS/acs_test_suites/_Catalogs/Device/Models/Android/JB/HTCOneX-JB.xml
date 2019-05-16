@@ -1,0 +1,96 @@
+<?xml version="1.0"?>
+<DeviceModel xsi:noNamespaceSchemaLocation="../../../../../../acs/src/_Catalogs/Device/Models/AndroidDeviceModel.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <DeviceModule>
+        <SystemModule className="Device.Module.Common.System.SystemModule.SystemModule" config="Config/Default.yaml"/>
+        <PnpModule className = "Device.Module.MCG.Pnp.PnpModule.PnpModule" config = "Config/Default.yaml"/>
+        <EnergyManagementModule className="Device.Module.MCG.EnergyManagement.EmModule.EmModule" config="Config/Default.yaml"/>
+    </DeviceModule>
+    <BootShutdown>
+    </BootShutdown>
+    <Connection>
+        <Parameter handleAdbRestart="true"/>
+        <Parameter adbOverEthernet="false"/>
+        <Parameter ipAddress="192.168.42.129"/>
+        <Parameter adbPort="5555"/>
+        <Parameter serialNumber=""/>
+        <Parameter usbSleep="10"/>
+        <Parameter adbRootTimeout="10"/>
+        <Parameter adbRootCmdTimeout="2"/>
+    </Connection>
+    <Debug>
+        <Parameter logcatCmdLine="adb shell logcat -v threadtime"/>
+        <Parameter retrieveSerialTrace="false"/>
+        <Parameter serialPort=""/>
+        <Parameter serialBaudRate="115200"/>
+        <Parameter serialHdwFlowControl="false"/>
+        <Parameter takeScreenshot="false"/>
+        <Parameter enableSocwatch="false"/>
+    </Debug>
+    <UITesting>
+        <Parameter monkeyPort="8080"/>
+        <Parameter monkeyrunnerTimeout="2"/>
+        <Parameter uiDictionnaryName="HTCOneXJB"/>
+        <Parameter uiTypeTimeout="2"/>
+    </UITesting>
+    <Telephony>
+        <Parameter callSetupTimeout="15"/>
+        <Parameter registrationTimeout="60"/>
+        <Parameter phoneNumber=""/>
+        <Parameter maxDlMultislotConfig="D5U1"/>
+        <Parameter maxUlMultislotConfig="D1U5"/>
+        <Parameter maxDlWcdmaRab="384k"/>
+        <Parameter maxUlWcdmaRab="384k"/>
+        <Parameter maxDlHspaRab="HSDPA_CAT14"/>
+        <Parameter maxUlHspaRab="HSUPA_CAT6"/>
+        <!-- defaultPINCode parameter should be overwritten in bench config instead of here for security purpose (avoid to SIM lock the device). -->
+        <Parameter defaultPINCode=""/>
+        <!-- simPUKCode parameter should be overwritten in bench config instead of here in order to prevent using a bad value -->
+        <Parameter simPUKCode=""/>
+    </Telephony>
+    <EM>
+        <!-- default wall charger: DCP -->
+        <Parameter defaultWallCharger="DCP"/>
+        <!-- tell if you can communicate with board and charge with the same cable, like with the pc to board cable (SDP) -->
+        <Parameter dataWhileCharging="true"/>
+        <!-- mode where adb is available, usecase behavior will be affected by this -->
+        <Parameter adbAvailableMode="MOS"/>
+        <!-- Where autolog and generated task is stored -->
+        <Parameter generatedFilePath="/sdcard*/"/>
+    </EM>
+    <LocalConnectivity>
+        <Parameter TagsAppPackageName="com.android.apps.tag"/>
+        <Parameter DefaultBDAddress=""/>
+        <Parameter TetheringResetAfterBtOffOn="true"/>
+        <Parameter SupportedServiceList="OPP;A2DP-SRC;AVRCP-TG;HSP-AG;PANU;PAN-NAP;HFP-AG;PBAP-PSE"/>
+    </LocalConnectivity>
+    <Devices>
+        <Parameter sdcard_ext="/sdcard"/>
+        <Parameter binPath="/data/"/>
+        <Parameter mmPath="/sdcard/acs_media/"/>
+        <Parameter ftpPath="/sdcard/acs_ftp/"/>
+        <Parameter wlanDevice="wlan0:0"/>
+        <Parameter wlanPhyDevice="phy0"/>
+        <Parameter gpsPropertyKey="gps.serial.interface"/>
+        <Parameter timeBeforeWifiSleep="1200"/>
+        <Parameter wlanInterface="wlan0"/>
+        <Parameter p2pInterface="p2p0"/>
+        <Parameter hotspotExtInterface="wlan0"/>
+        <Parameter hotspotIntInterface="mon.wlan0"/>
+        <Parameter touchsreenEventFile="/dev/input/event7"/>
+        <!-- adb shell getevent -->
+        <Parameter autoWifiRegulatoryDomain="false"/>
+        <Parameter provisioningMethod=""/>
+        <Parameter provisioningPath=""/>
+        <Parameter enableAdbRoot="true"/>
+    </Devices>
+    <Power/>
+    <Implementation>
+        <Parameter deviceCapabilities="Capabilities/phone.xml"
+                   ClassName="Device.Model.AndroidDevice.ReferenceDeviceBase.ReferenceDeviceBase"
+                   UECmd="acs_test_scripts.Device.UECmd.Imp.Android.JB"
+                   OS="ANDROID" OSVersion="JellyBean"
+                   enableIntelImage="true"
+                   defaultTimeout="30"
+                   waitBetweenCmd="2"/>
+    </Implementation>
+</DeviceModel>

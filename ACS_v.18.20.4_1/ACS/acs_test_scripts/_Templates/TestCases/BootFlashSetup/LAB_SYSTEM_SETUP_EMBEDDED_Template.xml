@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="13.45">
+    <UseCase>LAB_SYSTEM_SETUP_EMBEDDED</UseCase>
+    <Description>Use case to install Agent(s) on the DUT</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>False</b2bContinuousMode>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <TcMaxAttempt>3</TcMaxAttempt>
+    <TcAcceptanceCriteria>1</TcAcceptanceCriteria>
+    <IsCritical>True</IsCritical>
+    <TestSteps>
+        <Setup>
+            <!-- Uninstall agent to avoid errors due to apk signature in the Current test case, as Some other TCs might have done it -->
+            <TestStep Id="UNINSTALL_APP" APP_NAME="com.intel.acs.agentv2" TIMEOUT="30" BACKUP_APP_NAME="NO_BACKUP" BACKUP_FILE_PATH="APP_FILE" DEVICE="PHONE1"/>
+            <TestStep Id="UNINSTALL_APP" APP_NAME="com.intel.acs.agent" TIMEOUT="30" BACKUP_APP_NAME="NO_BACKUP" BACKUP_FILE_PATH="APP_FILE" DEVICE="PHONE1"/>
+        </Setup>
+    </TestSteps>
+    <Parameters />
+</TestCase>

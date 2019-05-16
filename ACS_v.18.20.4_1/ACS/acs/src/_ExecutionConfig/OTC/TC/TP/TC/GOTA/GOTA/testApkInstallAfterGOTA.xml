@@ -1,0 +1,28 @@
+<?xml version="1.0" ?>
+<TestCase>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Discription>
+Check the 3rd apk can install/uninstall after GOTA Update
+&lt;br /&gt;Check_apk_can_install/uninstall_after_GOTA
+</Discription>
+    <Domain>GOTA</Domain>
+    <Phase>CORE</Phase>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <Type>FUNCTIONAL</Type>
+    <UseCase>PY_UNIT</UseCase>
+    <b2bIteration>1</b2bIteration>
+    <Parameters>
+        <Parameter>
+            <Name>HpalmName</Name>
+            <Value>check_gota_apk_install_after_gota.ApkInstallAfterGOTA.testApkInstallAfterGOTA</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TEST_DATA_ROOT</Name>
+            <Value>testplan/GOTA</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TEST_CASE</Name>
+            <Value>tests.GOTA.GOTA.check_gota_apk_install_after_gota.ApkInstallAfterGOTA.testApkInstallAfterGOTA</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

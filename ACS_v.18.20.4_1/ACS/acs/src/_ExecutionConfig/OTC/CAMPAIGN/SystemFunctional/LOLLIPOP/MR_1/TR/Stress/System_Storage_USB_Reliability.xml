@@ -1,0 +1,54 @@
+<?xml version='1.0' encoding='ASCII'?>
+<Campaign version="13.49">
+    <Parameters>
+        <Parameter isControlledPSUsed="False"/>
+        <Parameter isIoCardUsed="False"/>
+        <!-- Set skipBootOnPowerCycle to True to disable the accs boot procedure -->
+        <!-- Important, it means that boot will be handle inside the campaign/tc -->
+        <Parameter skipBootOnPowerCycle="False"/>
+        <!-- Set bootRetryNumber to maximum number of boot retries during the acs boot procedure -->
+        <!-- Important, it means that bootRetryNumber is set by default to 0 if not specified -->
+        <Parameter bootRetryNumber="0"/>
+        <Parameter runHookScripts="False"/>
+        <Parameter powerCycleBetweenTC="False"/>
+        <Parameter powerCycleOnFailure="False"/>
+        <!-- finalDutState allows user to leave the DUT in a specific state at the end of the campaign
+            Possible values: PowerOn | PowerOff | Charging | NoChange
+            By default DUT is leaved in NoChange state.
+            In case the user selects Charging as final state of the DUT and that DUT fails to enter Charging,
+            ACS shall try to switch the DUT off -->
+        <Parameter finalDutState="NoChange"/>
+        <Parameter stopCampaignOnCriticalFailure="False"/>
+        <Parameter stopCampaignOnFirstFailure="False"/>
+        <!-- LoggingLevel possible values: info | warning | debug | error -->
+        <Parameter loggingLevel="debug"/>
+        <!-- CampaignType format -> <TEAM>_<CAMPAIGNTYPE>
+            Possible values:
+            FT(Feature Team)-> SANITY | REGRESSION | STRESS, RELIABILTY | MTBF
+            ST(System Test)-> SANITY | REGRESSION | STRESS, RELIABILTY | MTBF | EM
+            SI(System Integration)-> EAT | STAB | PACT | CAT0 | RELIABILITY | MTBF | CTS | ACS_CI
+            Otherwise "Others" should be used -->
+        <Parameter CampaignType="MTBF"/>
+    </Parameters>
+    <Targets>
+        <!-- Target Values -->
+        <Target targetB2bPassRate="100"/>
+    </Targets>
+    <TestCases>
+        <TestCase Id="../../../../../../TC/TR/ACS/System/Storage/Storage.USB_EmulatedStorage_Create10000files"/>
+        <TestCase Id="../../../../../../TC/TR/ACS/System/Storage/Storage.USB_EmulatedStorage_CreateFolderWith255charsName"/>
+        <TestCase Id="../../../../../../TC/TR/ACS/System/Storage/Storage.USB_ExternalStorageAccess_RenameFileWith255charsName"/>
+        <TestCase Id="../../../../../../TC/TR/ACS/System/Storage/Storage.USB_InternalStorage_Copy1GBfileFromEmulatedStorage"/>
+        <TestCase Id="../../../../../../TC/TR/ACS/System/Storage/Storage.USB_EmulatedStorage_Copy65535Files1KbFromInternalStorage"/>
+        <TestCase Id="../../../../../../TC/TR/ACS/System/Storage/Storage.USB_EmulatedStorage_Copy1.5GBfileFromInternalStorage"/>
+        <!-- Test case not automated yet
+        <TestCase Id="../../../../../../TC/TR/ACS/System/Storage/Storage.USB_EmulatedStorage_CopyFileWith255charsName"/>
+        -->
+        <!-- QCTV Test cases -->
+        <TestCase Id="../../../../../../TC/TR/ACS/System/Storage/Storage.USB_SDCard_Format10Times"/>
+        <TestCase Id="../../../../../../TC/TR/ACS/System/Storage/Storage.USB_InternalStorage_Copy10000Files1KbFromEmulated"/>
+        <TestCase Id="../../../../../../TC/TR/ACS/System/Storage/Storage.USB_ADB_Copy10000TimesOnEmulated"/>
+        <TestCase Id="../../../../../../TC/TR/ACS/System/Storage/Storage.USB_SDCard_CreateFileWith255charsName"/>
+        <TestCase Id="../../../../../../TC/TR/ACS/System/Storage/Storage.USB_SDCard_CreateFolderWith255charsName"/>
+    </TestCases>
+</Campaign>

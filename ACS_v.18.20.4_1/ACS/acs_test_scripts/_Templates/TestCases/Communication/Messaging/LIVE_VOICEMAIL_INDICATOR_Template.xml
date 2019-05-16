@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="13.37">
+    <UseCase>LIVE_VOICEMAIL_INDICATOR</UseCase>
+    <Description>VoiceMail</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>False</b2bContinuousMode>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters>
+        <Parameter>
+            <!-- Should be the phone number of the board under
+            test so you can reach the voicemail directly. -->
+            <Name>PHONE_NUMBER</Name>
+            <Value>123</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Call Duration (in seconds). Default value:
+            15 + WELCOME_MSG_DURATION seconds. -->
+            <Name>CALL_DURATION</Name>
+            <Value>20</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Duration in seconds of the welcome message.
+            This duration should be less than the call duration -->
+            <Name>WELCOME_MSG_DURATION</Name>
+            <Value>7</Value>
+        </Parameter>
+        <Parameter>
+            <!-- String to look for in the received SMS to be
+            sure it is the one you are looking for. -->
+            <Name>RESEARCHED_PATTERN</Name>
+            <Value>messagerie Orange</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Time the UseCase waits for the SMS, starting
+            at the begining of the call. Default value 120 seconds. -->
+            <Name>MSG_WAITING_TIME</Name>
+            <Value>120</Value>
+        </Parameter>
+        <Parameter>
+            <!-- .wav file to play on the PC during the call.
+            Should be at least as long as the call duration you
+            choose above. -->
+            <Name>FILE_TO_PLAY</Name>
+            <Value>30secwavfile.wav</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

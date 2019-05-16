@@ -1,0 +1,48 @@
+<?xml version="1.0" ?>
+<TestCase>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Discription> 
+&lt;div align=&quot;left&quot; style=&quot;min-height:10pt&quot;&gt;
+&lt;font face=&quot;Arial&quot;&gt;&lt;span style=&quot;font-size:8pt&quot;&gt;Verify that system should be resume by press power button&lt;/span&gt;&lt;/font&gt;
+&lt;/div&gt; 
+&lt;div align=&quot;left&quot; style=&quot;min-height:9pt&quot;&gt;&lt;/div&gt; 
+&lt;div align=&quot;left&quot; style=&quot;min-height:10pt&quot;&gt;
+&lt;font face=&quot;Arial&quot;&gt;&lt;span style=&quot;font-size:8pt&quot;&gt;Pre-condition: DUT is on &lt;/span&gt;&lt;/font&gt;
+&lt;/div&gt; 
+&lt;div align=&quot;left&quot; style=&quot;min-height:9pt&quot;&gt;&lt;/div&gt; 
+&lt;div align=&quot;left&quot; style=&quot;min-height:10pt&quot;&gt;
+&lt;font face=&quot;Arial&quot;&gt;&lt;span style=&quot;font-size:8pt&quot;&gt;Post-condition: screen is off&lt;/span&gt;&lt;/font&gt;
+&lt;/div&gt; 
+&lt;div align=&quot;left&quot; style=&quot;min-height:9pt&quot;&gt;&lt;/div&gt; 
+&lt;div align=&quot;left&quot; style=&quot;min-height:10pt&quot;&gt;
+&lt;font face=&quot;Arial&quot;&gt;&lt;span style=&quot;font-size:8pt&quot;&gt;Action: 1. DUT is on, 2. press power button or press vehicle Ignition to turn off screen, 3. wait 5 minutes, 4. press power button to resume screen&lt;/span&gt;&lt;/font&gt;
+&lt;/div&gt; 
+&lt;div align=&quot;left&quot; style=&quot;min-height:9pt&quot;&gt;&lt;/div&gt; 
+&lt;div align=&quot;left&quot; style=&quot;min-height:10pt&quot;&gt;
+&lt;font face=&quot;Arial&quot;&gt;&lt;span style=&quot;font-size:8pt&quot;&gt;Expected&amp;nbsp; result:&lt;/span&gt;&lt;/font&gt;
+&lt;/div&gt; 
+&lt;div align=&quot;left&quot; style=&quot;min-height:10pt&quot;&gt;
+&lt;font face=&quot;Arial&quot;&gt;&lt;span style=&quot;font-size:8pt&quot;&gt;System should be resume by press power button&lt;/span&gt;&lt;/font&gt;
+&lt;/div&gt;  
+</Discription>
+    <Domain>PowerManagement</Domain>
+    <Phase>CORE</Phase>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <Type>FUNCTIONAL</Type>
+    <UseCase>PY_UNIT</UseCase>
+    <b2bIteration>1</b2bIteration>
+    <Parameters>
+        <Parameter>
+            <Name>HpalmName</Name>
+            <Value>s0i3_system_apps.S0i3SystemApps.test_s0i3_resume_by_power_button</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TEST_DATA_ROOT</Name>
+            <Value>testplan/PowerManagement</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TEST_CASE</Name>
+            <Value>tests.PowerManagement.S0i3.s0i3_system_apps.S0i3SystemApps.test_s0i3_resume_by_power_button</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

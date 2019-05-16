@@ -1,0 +1,57 @@
+<?xml version="1.0" ?>
+<Campaign>
+    <Parameters>
+        <Parameter isControlledPSUsed="False"/>
+        <Parameter isIoCardUsed="False"/>
+        <Parameter skipBootOnPowerCycle="False"/>
+        <Parameter bootRetryNumber="0"/>
+        <Parameter runHookScripts="False"/>
+        <Parameter powerCycleBetweenTC="False"/>
+        <Parameter powerCycleOnFailure="False"/>
+        <Parameter finalDutState="NoChange"/>
+        <Parameter stopCampaignOnCriticalFailure="False"/>
+        <Parameter stopCampaignOnFirstFailure="False"/>
+        <Parameter loggingLevel="debug"/>
+        <Parameter CampaignType="Other"/>
+    </Parameters>
+    <TestCases>
+        <TestCase Id="../../../../TC/TR/ACS/Communication/Bluetooth/setup/prereq_Bluetooth_SYSTEM_SETUP_EMBEDDED"/>
+
+        <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/prereq_disable_captive_portal_detection"/>
+        <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/prereq_Comms_WIFI_ComponentRelated_FTP_Download_CleanUp"/>
+        <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/prereq_Comms_WIFI_ComponentRelated_FTP_Download_start_server"/>
+
+        <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/prereq_wifi_bt_coex_setup"/>
+
+        <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/WiFi_BT_Coex_BT_Always_ON_WIFI_Toggle_3_times"/>
+        <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/WiFi_BT_Coex_BT_Always_ON_WIFI_Toggle_iteratively"/>
+
+        <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/WiFi_BT_Coex_BT_OPP_Transfer_And_WIFI_Toggles_for_3_times"/>
+        <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/WiFi_BT_Coex_BT_Always_ON_FTP_Transfer_over_WIFI_Once"/>
+        <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/WiFi_BT_Coex_BT_Always_ON_FTP_Transfer_over_WIFI_repeatedly"/>
+
+        <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/WiFi_BT_Coex_WIFI_Always_ON_And_BT_Toggle"/>
+        <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/WiFi_BT_Coex_WIFI_Always_ON_And_BT_Toggle_iteratively"/>
+
+        <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/WiFi_BT_Coex_File_Download_Over_WIFI_Toggle_BT_3_times"/>
+        <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/WiFi_BT_Coex_File_Download_Over_WIFI_Toggle_BT_repeatedly_10_times"/>
+        <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/WiFi_BT_Coex_File_Download_Over_WIFI_Toggle_BT_repeatedly_20_times"/>
+
+        <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/WiFi_BT_Coex_WIFI_Always_ON_And_BT_Pair_DUT_OPP_transfer"/>
+        <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/WiFi_BT_Coex_WIFI_Always_ON_And_BT_Pair_DUT_OPP_transfer_9_times"/>
+
+        <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/WiFi_BT_Coex_BT_ON_OPP_BT_and_FTP_Over_WIFI_Simultaneously"/>
+        <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/WiFi_BT_Coex_BT_ON_OPP_BT_Receive_and_FTP_Over_WIFI_Simultaneously"/>
+        <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/WiFi_BT_Coex_BT_OPP_WIFI_File_Download_Simultaneously"/>
+        <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/WiFi_BT_Coex_BT_OPP_WIFI_File_Download_Simultaneously_multiple_iterations"/>
+
+        <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/WiFi_BT_Coex_Download_transfer_over_WIFI_And_Repeat_BT_transfer_3_times"/>
+
+        <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/WiFi_BT_Coex_BT_Connect_A2DP_device_and_Toggle_WIFI_for_3_times"/>
+
+        <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/prereq_wifi_bt_coex_teardown"/>
+        <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/prereq_Comms_WIFI_ComponentRelated_FTP_Download_CleanUp"/>
+        <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/prereq_enable_captive_portal_detection"/>
+
+    </TestCases>
+</Campaign>

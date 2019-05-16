@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='ASCII'?>
+<TestCase>
+    <UseCase>Testlib</UseCase>
+    <Description>Check that DUT supports PAN 1.0 (NAP, PANU) BT Profile</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <TcMaxAttempt>1</TcMaxAttempt>
+    <TestSteps>
+        <Setup>
+            <!--unlock screen and dismiss eventual crash dialog-->
+            <TestStep Id="RUN_CMD"
+                      DEVICE="PHONE1" TIMEOUT="20" FORCE_EXECUTION="False" WAIT_FOR_RESPONSE="True" SILENT_MODE="False" SAVE_AS="out1"
+                      COMMAND="adb shell input keyevent 82"/>
+            <TestStep Id="DISMISS_ANR_DIALOG" DEVICE="PHONE1" PRESS_HOME_FIRST="True" MAX_ATTEMPTS="5"/>
+        </Setup>
+    </TestSteps>
+    <Parameters>
+        <Parameter>
+            <Name>test</Name>
+            <Value>scripts/wireless/bluetooth/tests/Bluetooth_DUT_suppots_BT_Profile_tests.py</Value>
+        </Parameter>
+        <Parameter>
+            <Name>script-args</Name>
+            <Value>profile=Android___Network___Access___Point version_value=0x0100 profile2=Android___Network___User version_value2=0x0100</Value>
+        </Parameter>
+        <Parameter>
+            <Name>timeout</Name>
+            <Value>10000</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

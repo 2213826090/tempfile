@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='ISO-8859-1'?>
+<BenchConfig>
+    <Phones>
+      <Phone name="PHONE1" description="Phone to use during test campaign. Please refer to Device_Catalog.xml to add device parameters">
+          <Parameter uploadCrashToServer="false"/>
+            <Parameter disableTcReboot="true" description="Disable TC reboot options"/>
+            <Parameter WiFi_Support_Ap_Name="ddwrt" description="WiFi AP name used for running WiFi support and encryption tests"/>
+            <Parameter multipleDevices="false"/>
+            <Parameter serialNumber="_SERIAL_NUMBER_"  />
+            <Parameter WiFi_Connection_Ap_Name="_AP_NAME_" description="WiFi AP name used for running WiFi connection tests"/>
+            <Parameter WiFi_Connection_Passwd="_AP_PASS_" description="WiFi AP password used for running WiFi connection tests"/>
+            <Parameter WiFi_Connection_TestPage="_PAGE_URL_" description="Test Page used for checking WiFi connection worked"/>
+        </Phone>
+        <Phone name="PHONE2"
+               description="Phone to use during test campaign. Please refer to Device_Catalog.xml to add device parameters">
+            <Parameter multipleDevices="false"  />
+            <Parameter cleanDeviceCrashLog="true"  />
+            <Parameter serialNumber="_SERIAL_NUMBER_"  />
+            <Parameter retrieveDeviceCrashLog="false"  />
+            <Parameter disableTcReboot="true" description="Disable TC reboot options" />
+            <Parameter retrieveAPLog="false"  />
+        </Phone>
+    </Phones>
+    <Equipments>
+        <Equipment version="14.09" name="ARTIFACT_MANAGER" description="ArtifactManager configuration to get all test case necessary artifacts">
+          <Parameter name="URI" value="_ARTIFACT_MANAGER_URL_"/>
+        </Equipment>
+        <Equipment name="AccessPoint" description="Wifi router">
+          <Parameter name="Model" value="REMOTE_COMPUTER" description="LOCAL_COMPUTER or REMOTE_COMPUTER (only LOCAL is currently supported)"/>
+            <Parameter name="type" value="ddwrt_atheros" description="ap type"/>
+            <Parameter name="IP" value="_AP_IP_" description="ip address of the equipment"/>
+            <Parameter name="username" value="root" description="login used for the connection"/>
+            <Parameter name="Interface" value="_ETHX_" description="Ethernet interface used for connection"/>
+            <Parameter name="IPv6Prefix" value="" description="IPv6 prefix of the computer."/>
+            <Parameter name="SshPath" value="/usr/bin/ssh" description="[Optional] full path to local SSH client binary (default 'ssh')"/>
+            <Parameter name="ScpPath" value="/usr/bin/scp" description="[Optional] full path to local SCP client binary (default 'scp')"/>
+        </Equipment>
+    </Equipments>
+</BenchConfig>

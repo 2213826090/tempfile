@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<TestCase>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Discription>
+Use apk to get gyroscope jitter: should be below 3%
+</Discription>
+    <Domain>Sensor</Domain>
+    <Phase>CORE</Phase>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <Type>FUNCTIONAL</Type>
+    <UseCase>PY_UNIT</UseCase>
+    <b2bIteration>1</b2bIteration>
+    <Parameters>
+        <Parameter>
+            <Name>HpalmName</Name>
+            <Value>jitter_gyroscope_game.jitter_gyroscope_game.test_jitter_gyroscope_game</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TEST_DATA_ROOT</Name>
+            <Value>testplan/Sensor</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TEST_CASE</Name>
+            <Value>tests.Sensor.Gyroscope.jitter_gyroscope_game.jitter_gyroscope_game.test_jitter_gyroscope_game</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

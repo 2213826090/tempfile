@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="13.37">
+    <UseCase>ANDROID_JUNIT</UseCase>
+    <Description>Sample Google Test for ICS only</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters>
+        <Parameter>
+            <Name>APK_PATH</Name>
+            <Value>com.android.example.spinner.SpinnerActivity.apk;SpinnerActivityTest.apk</Value>
+            <!--<Value>http://localhost/JUnit/com.android.example.spinner.SpinnerActivity.apk;http://localhost/JUnit/SpinnerActivityTest.apk</Value> -->
+        </Parameter>
+        <Parameter>
+            <Name>TEST_CMD_LINES</Name>
+            <Value>adb shell am instrument -w com.android.example.spinner.test/android.test.InstrumentationTestRunner</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TEST_TIMEOUT</Name>
+            <Value>5</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

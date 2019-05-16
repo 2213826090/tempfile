@@ -1,0 +1,27 @@
+{
+    "Configuration": {
+        "Boot": {
+            "ACCEPT_EULA": true
+        },
+        "BootVars": null,
+        "Custom": null,
+        "Flash": {
+            "FORCE_FLASH_ALGO" : ["force_shutdown_during_PFT_execution"]
+        },
+        "Inherit": {
+            "BOARD": "sofia"
+        },
+        "Logs": null,
+        "Timeout": null,
+        "WorkAround": {
+            "TestCase": [
+                {
+                    "Issue": "Automation not working.",
+                    "Name": "FastbootForwardFlashingTestCase",
+                    "Skip": true
+                }
+            ]
+        },
+        "TestDescription": {}
+    }
+}

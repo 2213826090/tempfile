@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="13.37">
+    <UseCase>LAB_EM_BATT_OVER_TEMP</UseCase>
+    <Description>Monitor battery Charge when setting Battery temperature.</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>False</b2bContinuousMode>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters>
+        <Parameter>
+            <!-- Battery Voltage -->
+            <Name>VBATT</Name>
+            <Value>3.8</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Normal battery Temperature (in degree Celsius) -->
+            <Name>BATT_TEMP_NORMAL</Name>
+            <Value>25</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Temperature (in degree Celsius) to put battery under normal temperature state -->
+            <Name>BATT_TEMP_UNDER</Name>
+            <Value>-15</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Temperature (in degree Celsius) to put battery over normal temperature state -->
+            <Name>BATT_TEMP_OVER</Name>
+            <Value>50</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

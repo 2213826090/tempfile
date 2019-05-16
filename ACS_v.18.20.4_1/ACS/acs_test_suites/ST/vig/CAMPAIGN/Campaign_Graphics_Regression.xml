@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Campaign>
+  <Parameters>
+    <Parameter isControlledPSUsed ="False"/>
+    <Parameter isIoCardUsed ="False"/>
+    <Parameter powerCycleOnStart="False"/>
+    <Parameter skipBootOnPowerCycle ="False"/>
+    <Parameter runHookScripts = "False"/>        
+    <Parameter powerCycleBetweenTC ="False"/>
+    <Parameter powerCycleOnFailure ="False"/>
+    <Parameter stopCampaignOnCriticalFailure = "False"/>
+    <!-- LoggingLevel possible values: info | warning | debug | error -->
+    <Parameter loggingLevel = "info"/>
+    <Parameter testEnv = "C:\\Intel\\ACS\\Executable\\_ExecutionConfig\\PnP_Config.xml"/>    
+  </Parameters> 
+  <Targets>
+    <!-- Target Values -->  
+    <Target targetB2bPassRate ="80"/>
+  </Targets>
+  
+  <TestCases>
+    <!-- Testcase campaigns -->
+        
+    
+    
+    <!--TestCase Id="../TC/Graphics/ST_GRAPHICS_NEG_DP_001-LIVE_IMAGE_OPEN"/-->
+    <!--TestCase Id="../TC/Graphics/ST_GRAPHICS_NEG_DP_006-LIVE_IMAGE_OPEN"/-->
+     
+    
+    
+    
+
+    <TestCase Id="../TC/Graphics/ST_IMAGING_DP_BMP_30-LIVE_IMAGE_WALLPAPER"/>
+    <TestCase Id="../TC/Graphics/ST_IMAGING_DP_GIF_36-LIVE_IMAGE_WALLPAPER"/>
+    <TestCase Id="../TC/Graphics/ST_IMAGING_DP_JPG_39-LIVE_IMAGE_WALLPAPER"/>
+    <TestCase Id="../TC/Graphics/ST_IMAGING_DP_PNG_33-LIVE_IMAGE_WALLPAPER"/>
+    <TestCase Id="../TC/Graphics/ST_IMAGING_DP_WBMP_22-LIVE_IMAGE_WALLPAPER"/>
+    
+  </TestCases>
+  
+</Campaign>

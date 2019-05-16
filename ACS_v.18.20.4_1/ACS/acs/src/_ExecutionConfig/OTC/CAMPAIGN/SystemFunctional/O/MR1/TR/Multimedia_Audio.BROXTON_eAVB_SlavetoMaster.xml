@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<Campaign version="13.49">
+    <Parameters>
+        <Parameter isControlledPSUsed="False"/>
+        <Parameter isIoCardUsed="False"/>
+        <Parameter skipBootOnPowerCycle="False"/>
+        <Parameter bootRetryNumber="0"/>
+        <Parameter runHookScripts="False"/>
+        <Parameter powerCycleBetweenTC="False"/>
+        <Parameter powerCycleOnFailure="False"/>
+        <Parameter finalDutState="NoChange"/>
+        <Parameter stopCampaignOnCriticalFailure="False"/>
+        <Parameter stopCampaignOnFirstFailure="False"/>
+        <Parameter loggingLevel="debug"/>
+        <Parameter CampaignType="Other"/>
+        <Parameter TCRReportViaRESTAPI="True"/>
+    </Parameters>
+    <TestCases>
+	<TestCase Id="../../../../../TC/TR/TESTLIB/Audio/Interruption/testAVB_eAVBDeviceSetup"/>
+	<TestCase Id="../../../../../TC/TR/TESTLIB/Audio/Interruption/testAVB_alsa_RX_to_speaker"/>
+	<TestCase Id="../../../../../TC/TR/TESTLIB/Audio/Interruption/testAVB_alsa_RX_to_speaker_eavbNavigation"/>
+	<TestCase Id="../../../../../TC/TR/TESTLIB/Audio/Interruption/testAVB_alsa_RX_to_speaker_eavbHmi"/>
+	<TestCase Id="../../../../../TC/TR/TESTLIB/Audio/Interruption/testAVB_alsa_RX_to_speaker_long"/>
+	<TestCase Id="../../../../../TC/TR/TESTLIB/Audio/Interruption/testAVB_alsa_RX_to_speaker_rate24000"/>
+	<TestCase Id="../../../../../TC/TR/TESTLIB/Audio/Interruption/testAVB_alsa_audio_RX_to_speaker"/>
+    	<TestCase Id="../../../../../TC/TR/TESTLIB/Audio/Interruption/testAVB_alsa_RX_record_to_file"/>
+    	<TestCase Id="../../../../../TC/TR/TESTLIB/Audio/Interruption/testAVB_alsa_RX_record_to_file_24kHz"/>
+    	<TestCase Id="../../../../../TC/TR/TESTLIB/Audio/Interruption/testAVB_alsa_RX_to_file_eavbHmi"/>
+    	<TestCase Id="../../../../../TC/TR/TESTLIB/Audio/Interruption/testAVB_alsa_RX_to_file_eavbNavigation"/>
+    	<TestCase Id="../../../../../TC/TR/TESTLIB/Audio/Interruption/testAVB_alsa_RX_multichannel_record_to_file"/>
+    	<TestCase Id="../../../../../TC/TR/TESTLIB/Audio/Interruption/testAVB_Alsa_RX_to_file_Long"/>
+    </TestCases>
+</Campaign>

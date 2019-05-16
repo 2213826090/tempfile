@@ -1,0 +1,37 @@
+<?xml version="1.0" ?>
+<TestCase>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Discription> 
+&lt;div align=&quot;left&quot; style=&quot;min-height:10pt&quot;&gt;
+&lt;font face=&quot;Arial&quot;&gt;&lt;span style=&quot;font-size:8pt&quot;&gt;Check Temperature value &lt;/span&gt;&lt;/font&gt;
+&lt;font face=&quot;Arial Unicode MS&quot;&gt;&lt;span style=&quot;font-size:8pt&quot;&gt;is right &lt;/span&gt;&lt;/font&gt;
+&lt;font face=&quot;Arial&quot;&gt;&lt;span style=&quot;font-size:8pt&quot;&gt;after devices&amp;nbsp; &lt;/span&gt;&lt;/font&gt;
+&lt;font face=&quot;Arial Unicode MS&quot;&gt;&lt;span style=&quot;font-size:8pt&quot;&gt;reboot&lt;/span&gt;&lt;/font&gt;
+&lt;font face=&quot;Arial&quot;&gt;&lt;span style=&quot;font-size:8pt&quot;&gt;.&amp;nbsp;&lt;/span&gt;&lt;/font&gt;
+&lt;/div&gt; 
+&lt;div align=&quot;left&quot; style=&quot;min-height:9pt&quot;&gt;
+&lt;font face=&quot;Arial&quot;&gt;&lt;span style=&quot;font-size:8pt&quot;&gt;&lt;br /&gt;&lt;/span&gt;&lt;/font&gt;
+&lt;p&gt;&lt;/p&gt; 
+&lt;/div&gt;  
+</Discription>
+    <Domain>Sensor</Domain>
+    <Phase>CORE</Phase>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <Type>FUNCTIONAL</Type>
+    <UseCase>PY_UNIT</UseCase>
+    <b2bIteration>1</b2bIteration>
+    <Parameters>
+        <Parameter>
+            <Name>HpalmName</Name>
+            <Value>temperature_data_after_reboot.TemperatureDataReboot.test_temperature_data_after_reboot</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TEST_DATA_ROOT</Name>
+            <Value>testplan/Sensor</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TEST_CASE</Name>
+            <Value>tests.Sensor.Temperature.temperature_data_after_reboot.TemperatureDataReboot.test_temperature_data_after_reboot</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

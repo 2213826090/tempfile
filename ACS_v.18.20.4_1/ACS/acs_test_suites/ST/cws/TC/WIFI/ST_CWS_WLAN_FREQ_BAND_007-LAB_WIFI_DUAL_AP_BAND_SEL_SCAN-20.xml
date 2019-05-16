@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase>
+  <UseCase>LAB_WIFI_DUAL_AP_BAND_SEL_SCAN</UseCase>
+  <Description>Scan for network after setting Frequency Band selection</Description>
+  <b2bIteration>20</b2bIteration>
+  <b2bContinuousMode>True</b2bContinuousMode>
+  <TcMaxAttempt>2</TcMaxAttempt>
+  <TcAcceptanceCriteria>1</TcAcceptanceCriteria>
+  <Parameters>
+    <Parameter>
+      <!-- AP1: Wifi standard of wifi env to be used for 5GHz Access Point. Can be "a", "n5G" -->
+      <Name>WIFI_STANDARD</Name>
+      <Value>n5G</Value>
+    </Parameter>
+    <Parameter>
+      <!-- AP1: Wifi Security of wifi env to be used. Can be "OPEN", "WEP64","WEP128","WPA-PSK-TKIP", "WPA2-PSK-AES", "EAP-WPA" or "EAP-WPA2" -->
+      <Name>WIFI_SECURITY</Name>
+      <Value>OPEN</Value>
+    </Parameter>
+    <Parameter>
+      <!-- AP2: [Optional] Wifi channel: 36-165 for 5GHz, 0:auto (default is AP current setup if not specified)
+           5GHz real channel values (MHz): 5180,5200,5220,5240,5260,5280,5300,5320,5745,5765,5785,5805,5825
+           Recommended value is: 36, as channel 36(5180) is available in almost every region -->
+      <Name>WIFI_CHANNEL</Name>
+      <Value>36</Value>
+    </Parameter>
+    <Parameter>
+      <!-- AP1: [Optional] Wifi DTIM: 1,3,5 (default is AP current setup if not specified) -->
+      <Name>WIFI_DTIM</Name>
+      <Value></Value>
+    </Parameter>
+    <Parameter>
+      <!-- AP1: [Optional] Wifi beacon interval in ms: 50..500 (default is AP current setup if not specified) -->
+      <Name>WIFI_BEACON</Name>
+      <Value></Value>
+    </Parameter>
+    <Parameter>
+      <!-- AP1: [Optional] Wifi WMM: 0 or 1 (default is AP current setup if not specified) -->
+      <Name>WIFI_WMM</Name>
+      <Value></Value>
+    </Parameter>
+    <Parameter>
+      <!-- AP1: [Optional] Wifi Band: 20 or 40 (MHz) (default is AP current setup if not specified) -->
+      <Name>WIFI_BAND</Name>
+      <Value></Value>
+    </Parameter>
+    <Parameter>
+      <!-- [Optional] Sniffer capture: 0 or 1 (WIFI_CHANNEL must be specified) -->
+      <Name>WIFI_SNIFF</Name>
+      <Value>0</Value>
+    </Parameter>
+    <Parameter>
+      <!-- AP2: Wifi standard of wifi env to be used for 2.4GHz Access Point. Can be "gb", "ngb", "n2.4G" -->
+      <Name>WIFI_STANDARD_AP2</Name>
+      <Value>gb</Value>
+    </Parameter>
+    <Parameter>
+      <!-- AP2: Wifi Security of wifi env to be used. Can be "OPEN", "WEP64","WEP128","WPA-PSK-TKIP", "WPA2-PSK-AES", "EAP-WPA" or "EAP-WPA2" -->
+      <Name>WIFI_SECURITY_AP2</Name>
+      <Value>OPEN</Value>
+    </Parameter>
+    <Parameter>
+      <!-- AP1: Wifi channel: 1-14 for 2.4GHz, 0:auto (default is AP current setup if not specified)
+           2.4GHz real channel values (MHz): 2412,2417,2422,2427,2432,2437,2442,2447,2452,2457,2462,2467,2472,2484
+           Recommanded value is: 1, as channel 1 is available in every region -->
+      <Name>WIFI_CHANNEL_AP2</Name>
+      <Value>1</Value>
+    </Parameter>
+    <Parameter>
+      <!-- AP2: [Optional] Wifi DTIM: 1,3,5 (default is AP current setup if not specified) -->
+      <Name>WIFI_DTIM_AP2</Name>
+      <Value></Value>
+    </Parameter>
+    <Parameter>
+      <!-- AP2: [Optional] Wifi beacon interval in ms: 50..500 (default is AP current setup if not specified) -->
+      <Name>WIFI_BEACON_AP2</Name>
+      <Value></Value>
+    </Parameter>
+    <Parameter>
+      <!-- AP2: [Optional] Wifi WMM: 0 or 1 (default is AP current setup if not specified) -->
+      <Name>WIFI_WMM_AP2</Name>
+      <Value></Value>
+    </Parameter>
+    <Parameter>
+      <!-- AP2: [Optional] Wifi Band: 20 or 40 (MHz) (default is AP current setup if not specified) -->
+      <Name>WIFI_BAND_AP2</Name>
+      <Value></Value>
+    </Parameter>
+    <Parameter>
+      <!-- True/False: Enable/Disable the 2.4GHz scan test -->
+      <Name>RUN_2_4_GHZ_TEST</Name>
+      <Value>true</Value>
+    </Parameter>
+    <Parameter>
+      <!-- True/False: Enable/Disable the 5GHz scan test -->
+      <Name>RUN_5_GHZ_TEST</Name>
+      <Value>false</Value>
+    </Parameter>
+    <Parameter>
+      <!-- True/False: Enable/Disable the auto band selection scan test -->
+      <Name>RUN_AUTO_TEST</Name>
+      <Value>false</Value>
+    </Parameter>
+  </Parameters>
+</TestCase>

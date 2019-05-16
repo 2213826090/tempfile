@@ -1,0 +1,288 @@
+<?xml version='1.0' encoding='ISO-8859-1'?>
+<BenchConfig>
+  <Phones>
+      <Phone name="PHONE1" description="Phone to use during test campaign. Please refer to Device_Catalog.xml to add device parameters">
+          <!-- You can override value of a specific parameter from Device_Catalog
+                e.g:
+
+                <Parameter name="PowerSupply" value="ACCHG" description="Give the Power Supply Output type (e.g: ACCHG1)" />
+                <Parameter name="IoCard" value="IO_CARD" description="Give the IO card name (e.g: IO_CARD1)" />
+                <Parameter name="serialNumber" value="" description="Give the Serial Number of the phone (Used for Android phone only)" />
+                <Parameter name="phoneNumber" value="" description="Give the phone number of the phone" />
+                <Parameter name="adbOverEthernet" value="" description="Use ADB over Ethernet (Used for Android phone only)" />
+                <Parameter name="ipAddress" value="" description="Give the IP address of the phone (Used for Android phone only)" />
+                <Parameter name="adbPort" value="" description="Give ADB ethernet port of the phone (Used for Android phone only)" />
+                <Parameter name="waitBetweenCmd" value="" description="Give the time to wait between ue command execution"/>
+            -->
+        </Phone>
+        <Phone name="PHONE2" description="Reference phone to use during test campaign. Please refer to Device_Catalog.xml to add device parameters">
+          <!-- You can override value of a specific parameter from Device_Catalog
+                e.g:
+
+                <Parameter name="PowerSupply" value="ACCHG" description="Give the Power Supply Output type (e.g: ACCHG1)" />
+                <Parameter name="IoCard" value="IO_CARD" description="Give the IO card name (e.g: IO_CARD1)" />
+                <Parameter name="serialNumber" value="" description="Give the Serial Number of the phone (Used for Android phone only)" />
+                <Parameter name="phoneNumber" value="" description="Give the phone number of the phone" />
+                <Parameter name="adbOverEthernet" value="" description="Use ADB over Ethernet (Used for Android phone only)" />
+                <Parameter name="ipAddress" value="" description="Give the IP address of the phone (Used for Android phone only)" />
+                <Parameter name="adbPort" value="" description="Give ADB ethernet port of the phone (Used for Android phone only)" />
+                <Parameter name="waitBetweenCmd" value="" description="Give the time to wait between ue command execution"/>
+            -->
+        </Phone>
+    </Phones>
+    <Equipments>
+      <Equipment name="WPA2_WIFI_ROUTER" description="Wifi Protected Access II Router">
+          <Parameter name="SSID" value="AP541N-ACS-WPA2"/>
+            <Parameter name="IP" value="192.168.0.4"/>
+            <Parameter name="passphrase" value="acdc123456"/>
+            <!--
+                Wifi Security of wifi env to be used. Can be "OPEN", "WEP","WPA" or "WPA2"
+            -->
+            <Parameter name="WIFI_SECURITY" value="WPA2"/>
+            <Parameter name="standard" value="bgn"/>
+        </Equipment>
+        <Equipment name="WPA_WIFI_ROUTER" description="Wifi Protected Access Router">
+          <Parameter name="SSID" value="AP541N-ACS-WPA"/>
+            <Parameter name="IP" value="192.168.0.3"/>
+            <Parameter name="passphrase" value="acdc123456"/>
+            <!--
+                Wifi Security of wifi env to be used. Can be "OPEN", "WEP","WPA" or "WPA2"
+            -->
+            <Parameter name="WIFI_SECURITY" value="WPA"/>
+            <Parameter name="standard" value="bgn"/>
+        </Equipment>
+        <Equipment name="WEP_WIFI_ROUTER" description="Wired Equivalent Privacy Router">
+          <Parameter name="SSID" value="AP541N-ACS-WEP"/>
+            <Parameter name="IP" value="192.168.0.2"/>
+            <Parameter name="passphrase" value="acdc123456"/>
+            <!--
+                Wifi Security of wifi env to be used. Can be "OPEN", "WEP","WPA" or "WPA2"
+            -->
+            <Parameter name="WIFI_SECURITY" value="WEP"/>
+            <Parameter name="standard" value="bgn"/>
+        </Equipment>
+        <Equipment name="NO_SECURITY_WIFI_ROUTER" description="Not secured Router">
+          <Parameter name="SSID" value="AP541N-ACS-NOSEC"/>
+            <Parameter name="IP" value="192.168.0.1"/>
+            <Parameter name="passphrase" value="None"/>
+            <!--
+                Wifi Security of wifi env to be used. Can be "OPEN", "WEP","WPA" or "WPA2"
+            -->
+            <Parameter name="WIFI_SECURITY" value="OPEN"/>
+            <Parameter name="standard" value="bgn"/>
+        </Equipment>
+        <Equipment name="WIFI_CTS" description="Wifi Protected Access Router">
+          <Parameter name="SSID" value="intel_internet2"/>
+            <Parameter name="IP" value="192.168.0.1"/>
+            <Parameter name="passphrase" value="Passatravers"/>
+            <!--
+                Wifi Security of wifi env to be used. Can be "OPEN", "WEP","WPA" or "WPA2"
+            -->
+            <Parameter name="WIFI_SECURITY" value="WPA2"/>
+            <Parameter name="standard" value="bgn"/>
+        </Equipment>
+        <Equipment name="WAPI_CERT_WIFI_ROUTER" description="WAPI protected Access Point">
+          <!-- IWN_A2410 -->
+            <Parameter name="SSID" value="ACS-WAPI-Cert"/>
+            <Parameter name="WIFI_SECURITY" value="WAPI-CERT"/>
+            <Parameter name="wapi_user_certificate_file" value="wapiuser.cer" description="Filename of the user certificate to be used for WAPI. This .cer file should be placed into: [ACS_ROOT_FOLDER]/Executable/_Embedded/CERTIFICATE"/>
+            <Parameter name="wapi_provider_certificate_file" value="wapiroot.cer" description="Filename of the provider certificate to be used for WAPI. This .cer file should be placed into: [ACS_ROOT_FOLDER]/Executable/_Embedded/CERTIFICATE"/>
+            <Parameter name="standard" value="bgn"/>
+        </Equipment>
+        <Equipment name="WAPI_PSK_WIFI_ROUTER" description="WAPI protected Access Point">
+          <!-- IWN_A2410 -->
+            <Parameter name="SSID" value="ACS-WAPI-PSK"/>
+            <Parameter name="WIFI_SECURITY" value="WAPI-PSK"/>
+            <Parameter name="passphrase" value="wapiwapi" description="passphrase for WAPI"/>
+            <Parameter name="standard" value="bgn"/>
+        </Equipment>
+        <Equipment name="WAPI_OPEN_WIFI_ROUTER" description="WAPI protected Access Point">
+          <!-- IWN_A2410 -->
+            <Parameter name="SSID" value="ACS-WAPI-Open"/>
+            <Parameter name="WIFI_SECURITY" value="WAPI-OPEN"/>
+            <Parameter name="standard" value="bgn"/>
+        </Equipment>
+        <Equipment name="LAB_SERVER" description="Server Configuration used for FTP, IPERF">
+          <Parameter name="IP" value="192.168.1.10"/>
+            <Parameter name="username" value="ftpacs"/>
+            <Parameter name="password" value="ftpacs"/>
+            <Parameter name="iperf" value="/usr/bin/iperf"/>
+        </Equipment>
+        <Equipment name="WIFI_SERVER" description="Server Configuration used for FTP, IPERF">
+          <Parameter name="IP" value="192.168.1.10"/>
+            <Parameter name="username" value="ftpacs"/>
+            <Parameter name="password" value="ftpacs"/>
+        </Equipment>
+        <Equipment name="CONFIGURABLE_AP1" description="Configurable Access Point">
+          <!-- Model possible values: DLINK_DAP2553 | CISCO_1250 | CISCO_WAP4410N | CISCO_WRVS4400N | CISCO_AP541N -->
+            <Parameter name="Model" value="CISCO_1250" description="Model of the equipment to use"/>
+            <Parameter name="IP" value="192.168.1.5" description="ip address of the equipment"/>
+            <Parameter name="ConfigurationWaitingTime" value="30" description="Time to wait after the configuration step (in second)"/>
+            <Parameter name="username" value="Cisco" description="login used for the connection"/>
+            <Parameter name="password" value="Cisco" description="password used for the connection"/>
+            <Parameter name="SSID" value="acs-lab1-5" description="SSID to create"/>
+            <Parameter name="passphrase_WEP64" value="12345" description="passphrase for WEP 64 bits"/>
+            <Parameter name="passphrase_WEP128" value="1234567890123" description="passphrase for WEP 128 bits"/>
+            <Parameter name="passphrase_WPA" value="1234567890123" description="passphrase for WPA"/>
+            <Parameter name="passphrase_WPA2" value="1234567890123" description="passphrase for WPA2"/>
+            <Parameter name="radiusip" value="192.168.1.11" description="IP of the Radius server"/>
+            <Parameter name="radiusport" value="1812" description="Listening port of the radius server"/>
+            <Parameter name="radiussecret" value="acspassz" description="Secret password to connect AP to the Radius server"/>
+            <Parameter name="EAP_user" value="acsusr@intel.com" description="login used for EAP encryption"/>
+            <Parameter name="EAP_password" value="acspassz" description="password used for EAP encryption"/>
+            <Parameter name="EAP_SIM_user" value="acsusr" description="SIM user specified in radius server configuration"/>
+            <Parameter name="EAP_AKA_user" value="acsusr" description="AKA user specified in radius server configuration"/>
+            <Parameter name="Credential_password" value="acspassz" description="credential password for EAP encryption. For ICS, the credential password is also the digit PIN code to lock the phone and the phone should not be initialy locked with a PIN, password nor patern"/>
+            <Parameter name="CA_guard_password" value="acspassz" description="ca guard password for EAP encryption"/>
+            <Parameter name="certificate_file" value="client.p12" description="Filename of the certificate to be used for WPA-enterprise authentication with EAP method=TLS. This .p12 file should be placed into: [ACS_ROOT_FOLDER]/Executable/_Embedded/CERTIFICATE"/>
+        </Equipment>
+        <Equipment name="CONFIGURABLE_AP2" description="Secondary Configurable Access Point">
+          <!-- Model possible values: DLINK_DAP2553 | CISCO_1250 | CISCO_WAP4410N | CISCO_WRVS4400N | CISCO_AP541N -->
+            <Parameter name="Model" value="" description="Model of the equipment to use"/>
+            <Parameter name="IP" value="" description="ip address of the equipment"/>
+            <Parameter name="ConfigurationWaitingTime" value="" description="Time to wait after the configuration step (in second)"/>
+            <Parameter name="username" value="" description="login used for the connection"/>
+            <Parameter name="password" value="" description="password used for the connection"/>
+            <Parameter name="SSID" value="" description="SSID to create"/>
+            <Parameter name="passphrase_WEP64" value="" description="passphrase for WEP 64 bits"/>
+            <Parameter name="passphrase_WEP128" value="" description="passphrase for WEP 128 bits"/>
+            <Parameter name="passphrase_WPA" value="" description="passphrase for WPA"/>
+            <Parameter name="passphrase_WPA2" value="" description="passphrase for WPA2"/>
+            <!-- Same EAP-WAP configuration as AP1 is used. That means same Radius server for the access point and same certificate for the phone -->
+        </Equipment>
+        <Equipment name="IO_CARD" description="Input output card used for power management, energy management on I/O ports of the DUT.">
+          <!-- Model possible values: ACBN (Normal) | ACBP (Prototype) | ACBE (Enhanced) | USB_RLY08 -->
+            <Parameter name="Model" value="USB_RLY08"/>
+            <Parameter name="ComPort" value="/dev/ttyUSB0" description="COM port used for communication"/>
+            <Parameter name="SwitchOnOff" value="5" description="Number of the relay used to boot or stop the board"/>
+            <Parameter name="UsbHostPcConnect" value="6" description="Number of the relay used to plug or unplug USB on host PC"/>
+            <Parameter name="WiringTable" value="00000000" description=""/>
+            <!-- USB_RLY08 parameters -->
+            <!-- <Parameter name="ComPort" value="" description="COM port used for communication"/> -->
+            <!-- <Parameter name="SwitchOnOff" value="" description="Number of the relay used to boot or stop the board"/> -->
+            <!-- <Parameter name="UsbHostPcConnect" value="" description="Number of the relay used to plug or unplug USB on host PC"/> -->
+            <!-- <Parameter name="WallCharger" value="" description="Number of the relay used to plug or unplug USB on host PC"/> -->
+            <!-- Optional PowerSupply parameter (default : unused)
+                 Using this PowerSupply with relay may damage system : If a device is "ON", the initialization of the IO_CARD will
+                 remove power of the device.
+                 Consider using FT/pnp/TC/SETUP/LAB_SYSTEM_ALL_SWITCH_OFF test case
+              -->
+            <!-- <Parameter name="PowerSupply" value="" description="Number of the relay used to link power supply to DUT"/> -->
+            <!-- Optional DefaultStates parameter (default: all relays are opened)
+                This parameter indicates for each relay of the card if the relay
+                is by initially opened or closed when connected to USB Relay card.
+                This parameter is a string of 8 bits value "b8|b7|b6|b5|b4|b3|b2|b1"
+                where bi is the bit representing the relay number i.
+                If the bit is set to 1, the relay is closed.
+                If the bit is set to 0, the relay is opened.
+                For example, if relays 1, 2 and 6 are closed,
+                set default state is "00100011".
+
+                If DefaultStates is present and has empty value the IO_CARD relays state will remains unchanged
+              -->
+            <!-- <Parameter name="DefaultStates" value="00000000" description="Default relay states"/> -->
+            <!-- Optional WiringTable parameter (default: all relays are considered normally opened)
+                This parameter indicates for each relay of the card if the relay
+                is wired to NO (normally opened) or NC (normally closed) terminal.
+                This parameter is a string of 8 bits value "b8|b7|b6|b5|b4|b3|b2|b1"
+                where bi is the bit representing the relay number i.
+                If the bit is set to 1, the relay is normally closed.
+                If the bit is set to 0, the relay is normally opened.
+                For example, if relays 1, 2 and 6 are normally closed,
+                set wiring table "00100011". -->
+            <!-- <Parameter name="WiringTable" value="000000000" description="Wiring Table"/> -->
+            <!-- Parameters for ACBN | ACBP | ACBE | ACBT -->
+            <!-- <Parameter name="serialNumber" value=""/> -->
+        </Equipment>
+        <Equipment name="BT_DEVICE" description="Bluetooth device to use for BT tests (pairing)">
+          <Parameter name="MacAddress" value="00:00:00:00:00:00" description="MAC address of the bluetooth device available on the bench"/>
+        </Equipment>
+        <Equipment name="WIFI_SNIFFER1" description="WiFi Sniffer">
+          <!-- Model possible values: TCPDump | WireShark -->
+            <Parameter name="Model" value="TCPDump" description="Model of the equipment to use"/>
+            <Parameter name="Computer" value="COMPUTER2" description="Computer equipment to use"/>
+        </Equipment>
+        <Equipment name="COMPUTER1" description="Computer connected to the local ethernet network (bench)">
+          <Parameter name="Model" value="LOCAL_COMPUTER" description="LOCAL_COMPUTER or REMOTE_COMPUTER (only LOCAL is currently supported)"/>
+            <Parameter name="USBInterface" value="usb0" description="USB Interface to use (usb0)"/>
+        </Equipment>
+        <Equipment name="COMPUTER2" description="Computer connected to the local ethernet network (bench)">
+          <Parameter name="Model" value="REMOTE_COMPUTER" description="LOCAL_COMPUTER or REMOTE_COMPUTER (only LOCAL is currently supported)"/>
+            <Parameter name="IP" value="localhost" description="ip address of the equipment"/>
+            <Parameter name="username" value="root" description="login used for the connection"/>
+            <Parameter name="Interface" value="wlan1" description="WireLess Interface to use (wlan1/ra0)"/>
+            <Parameter name="SshPath" value="ssh" description="[Optional] full path to local SSH client binary (default 'ssh')"/>
+            <Parameter name="ScpPath" value="scp" description="[Optional] full path to local SCP client binary (default 'scp')"/>
+        </Equipment>
+        <Equipment name="NFC_ROBOT1" description="Robot used for NFC tests">
+          <!-- Model possible values: MICROBOT -->
+            <Parameter name="Model" value="MICROBOT" description="Model of equipment to use. Refer to Equipment_Catalog.xml"/>
+            <Parameter name="ComPort" value="COM5" description="COM port used for communication"/>
+            <Parameter name="NfcReadTime" value="20" description="Time in seconds during which the Robot presents the NFC tag to the DUT for a read operation"/>
+            <Parameter name="NfcWriteTime" value="20" description="Time in seconds during which the Robot presents the NFC tag to the DUT for a write operation"/>
+            <!-- Define external reader coordinates -->
+            <Parameter name="ExternalReaderX" value="0" description="X coordinate for external reader"/>
+            <Parameter name="ExternalReaderY" value="50000" description="Y coordinate for external reader"/>
+            <Parameter name="ExternalReaderUp" value="0" description="Z coordinate (up) for external reader"/>
+            <Parameter name="ExternalReaderDown" value="-65000" description="Z coordinate (down) for external reader"/>
+            <!-- Define TCL2 antenna coordinates -->
+            <Parameter name="PcdAntennaX" value="-60000" description="X coordinate for PCD antenna"/>
+            <Parameter name="PcdAntennaY" value="0" description="Y coordinate for PCD antenna"/>
+            <Parameter name="PcdAntennaUp" value="0" description="Z coordinate (up) for PCD antenna"/>
+            <Parameter name="PcdAntennaDown" value="-65000" description="Z coordinate (down) for PCD antenna"/>
+            <Parameter name="PiccAntennaX" value="-60000" description="X coordinate for PICC antenna"/>
+            <Parameter name="PiccAntennaY" value="0" description="Y coordinate for PICC antenna"/>
+            <Parameter name="PiccAntennaUp" value="0" description="Z coordinate (up) for PICC antenna"/>
+            <Parameter name="PiccAntennaDown" value="-65000" description="Z coordinate (down) for PICC antenna"/>
+            <!-- Define tags coordinates -->
+            <Parameter name="TopazX" value="135000" description="X coordinate for Topaz"/>
+            <Parameter name="TopazY" value="0" description="Y coordinate for Topaz"/>
+            <Parameter name="TopazUp" value="0" description="Z coordinate (up) for Topaz"/>
+            <Parameter name="TopazDown" value="-110000" description="Z coordinate (down) for Topaz"/>
+            <Parameter name="MifareUltralightX" value="135000" description="X coordinate for Mifare Ultralight"/>
+            <Parameter name="MifareUltralightY" value="-70000" description="Y coordinate for Mifare Ultralight"/>
+            <Parameter name="MifareUltralightUp" value="0" description="Z coordinate (up) for Mifare Ultralight"/>
+            <Parameter name="MifareUltralightDown" value="-110000" description="Z coordinate (down) for Mifare Ultralight"/>
+            <Parameter name="MifareUltralightCX" value="120000" description="X coordinate for Mifare Ultralight C"/>
+            <Parameter name="MifareUltralightCY" value="130000" description="Y coordinate for Mifare Ultralight C"/>
+            <Parameter name="MifareUltralightCUp" value="0" description="Z coordinate (up) for Mifare Ultralight C"/>
+            <Parameter name="MifareUltralightCDown" value="-110000" description="Z coordinate (down) for Mifare Ultralight C"/>
+            <Parameter name="FelicaX" value="-130000" description="X coordinate for Felica"/>
+            <Parameter name="FelicaY" value="130000" description="Y coordinate for Felica"/>
+            <Parameter name="FelicaUp" value="0" description="Z coordinate (up) for Felica"/>
+            <Parameter name="FelicaDown" value="-110000" description="Z coordinate (down) for Felica"/>
+            <Parameter name="DesfireX" value="-40000" description="X coordinate for Desfire"/>
+            <Parameter name="DesfireY" value="130000" description="Y coordinate for Desfire"/>
+            <Parameter name="DesfireUp" value="0" description="Z coordinate (up) for Desfire"/>
+            <Parameter name="DesfireDown" value="-110000" description="Z coordinate (down) for Desfire"/>
+            <Parameter name="Type4BX" value="130000" description="X coordinate for Type 4B"/>
+            <Parameter name="Type4BY" value="75000" description="Y coordinate for Type 4B"/>
+            <Parameter name="Type4BUp" value="0" description="Z coordinate (up) for Type 4B"/>
+            <Parameter name="Type4BDown" value="-110000" description="Z coordinate (down) for Type 4B"/>
+            <Parameter name="MifareClassicX" value="-140000" description="X coordinate for Mifare Classic"/>
+            <Parameter name="MifareClassicY" value="50000" description="Y coordinate for Mifare Classic"/>
+            <Parameter name="MifareClassicUp" value="0" description="Z coordinate (up) for Mifare Classic"/>
+            <Parameter name="MifareClassicDown" value="-110000" description="Z coordinate (down) for Mifare Classic"/>
+            <Parameter name="MifareClassic4KX" value="50000" description="X coordinate for Mifare Classic 4K"/>
+            <Parameter name="MifareClassic4KY" value="130000" description="Y coordinate for Mifare Classic 4K"/>
+            <Parameter name="MifareClassic4KUp" value="0" description="Z coordinate (up) for Mifare Classic 4K"/>
+            <Parameter name="MifareClassic4KDown" value="-110000" description="Z coordinate (down) for Mifare Classic 4K"/>
+            <Parameter name="LibraryX" value="-140000" description="X coordinate for Library tag"/>
+            <Parameter name="LibraryY" value="-30000" description="Y coordinate for Library tag"/>
+            <Parameter name="LibraryUp" value="0" description="Z coordinate (up) for Library tag"/>
+            <Parameter name="LibraryDown" value="-110000" description="Z coordinate (down) for Library tag"/>
+            <Parameter name="CenterX" value="0" description="X coordinate for Center tests"/>
+            <Parameter name="CenterY" value="0" description="Y coordinate for Center tests"/>
+            <Parameter name="CenterUp" value="0" description="Z coordinate (up) for Center tests"/>
+            <Parameter name="CenterDown" value="-90000" description="Z coordinate (down) for Center tests"/>
+            <Parameter name="SecondPhoneX" value="60000" description="X coordinate for Center tests"/>
+            <Parameter name="SecondPhoneY" value="0" description="Y coordinate for Center tests"/>
+            <Parameter name="SecondPhoneUp" value="0" description="Z coordinate (up) for Center tests"/>
+            <Parameter name="SecondPhoneDown" value="-105000" description="Z coordinate (down) for Center tests"/>
+        </Equipment>
+        <Equipment name="GPSHELL" description="Software used to manage Smart card">
+          <Parameter name="Path" value="Lib\\GPShell\\GPShell.exe"/>
+        </Equipment>
+    </Equipments>
+</BenchConfig>
+

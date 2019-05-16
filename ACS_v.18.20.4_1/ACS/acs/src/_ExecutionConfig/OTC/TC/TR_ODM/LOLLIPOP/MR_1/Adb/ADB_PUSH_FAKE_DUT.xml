@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase>
+    <UseCase>EXEC</UseCase>
+    <Description>Run "adb push" command to using a existent file on host and a invalid location on DUT</Description>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters>
+        <Parameter>
+               <Name>RUN_TIMEOUT</Name>
+               <Value>100</Value>
+          </Parameter>
+        <!--_____________ -->
+        <!-- RUN SECTION -->
+        <!--_____________ -->
+        <!-- One action or sequence of actions (RUN_CMD, RUN_CMD1, RUN_CMD2, ...) -->
+        <!-- FIRST ACTION -->
+        <Parameter>
+            <!-- Action to be run, should be in the executable path of the system -->
+            <!-- (mandatory) -->
+            <!-- For this template, we are running windows only command -->
+            <Name>RUN_CMD1</Name>
+            <Value>touch ./test_file</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Action to be run, should be in the executable path of the system -->
+            <!-- (mandatory) -->
+            <!-- For this template, we are running windows only command -->
+            <Name>RUN_CMD2</Name>
+            <Value>adb push ./test_file /non/existent</Value>
+        </Parameter>
+        <Parameter>
+            <Name>RUN_EXPECT_RESULT2</Name>
+            <Value>failed to copy './test_file' to '/non/existent':</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Action to be run, should be in the executable path of the system -->
+            <!-- (mandatory) -->
+            <!-- For this template, we are running windows only command -->
+            <Name>RUN_CMD3</Name>
+            <Value>rm ./test_file</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

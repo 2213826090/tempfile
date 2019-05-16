@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<Sequence>
+    <!-- Common gpib commands to send to set the equipment. Those commands are sent first -->
+    <GPIBCommand equipment="NETWORK_SIMULATOR1" setting="COMMON" command="CALL:OPER:MODE OFF" description="Set cell to off" />
+    <GPIBCommand equipment="NETWORK_SIMULATOR1" setting="COMMON" command="CALL:BCH:SCEL GSM" description="Set serving cell. Possible values are : GSM, EGPRS, GPRS" />
+    <GPIBCommand equipment="NETWORK_SIMULATOR1" setting="COMMON" command="CALL:POW:STAT ON;*CLS;:CALL:POW:AMPL -82" description="Set cell power" />
+    <GPIBCommand equipment="NETWORK_SIMULATOR1" setting="COMMON" command="CALL:PAGING:MFRAMES 5" description="Set multiframes paging subchannels" />
+    <GPIBCommand equipment="NETWORK_SIMULATOR1" setting="COMMON" command="CALL:PPR:LAU:T3212 0" description="Set T3212 timer" />
+    <GPIBCommand equipment="NETWORK_SIMULATOR1" setting="COMMON" command="CALL:SMS:CBR:STOP" description="Stop cell broadcast service" />
+    <!-- Specific gpib commands to send in function of the cell band specified in the test case. -->
+    <GPIBCommand equipment="NETWORK_SIMULATOR1" setting="DCS" command="CALL:BAND DCS" description="Set cell band" />
+    <GPIBCommand equipment="NETWORK_SIMULATOR1" setting="DCS" command="CALL:BCH 698" description="Set BCH ARFCN" />
+    <GPIBCommand equipment="NETWORK_SIMULATOR1" setting="DCS" command="CALL:BA:TABL:DCS 512,536,560,585,610,635,660,685,710,735,760,785,810,835,860,885" description="Set BA table" />
+    <GPIBCommand equipment="NETWORK_SIMULATOR1" setting="PCS" command="CALL:BAND PCS" description="Set cell band" />
+    <GPIBCommand equipment="NETWORK_SIMULATOR1" setting="PCS" command="CALL:BCH 660" description="Set BCH ARFCN" />
+    <GPIBCommand equipment="NETWORK_SIMULATOR1" setting="PCS" command="CALL:BA:TABL:PCS 512,530,550,570,590,610,630,650,670,690,710,730,750,770,790,810" description="Set BA table" />
+    <GPIBCommand equipment="NETWORK_SIMULATOR1" setting="RGSM" command="CALL:BAND RGSM" description="Set cell band" />
+    <GPIBCommand equipment="NETWORK_SIMULATOR1" setting="RGSM" command="CALL:BCH 62" description="Set BCH ARFCN" />
+    <GPIBCommand equipment="NETWORK_SIMULATOR1" setting="RGSM" command="CALL:BA:TABL:RGSM 1,9,17,26,34,40,58,67,75,83,91,99,108,116,124" description="Set BA table" />
+    <GPIBCommand equipment="NETWORK_SIMULATOR1" setting="PGSM" command="CALL:BAND PGSM" description="Set cell band" />
+    <GPIBCommand equipment="NETWORK_SIMULATOR1" setting="PGSM" command="CALL:BCH 62" description="Set BCH ARFCN" />
+    <GPIBCommand equipment="NETWORK_SIMULATOR1" setting="PGSM" command="CALL:BA:TABL:PGSM 1,9,17,26,34,40,58,67,75,83,91,99,108,116,124" description="Set BA table" />
+    <GPIBCommand equipment="NETWORK_SIMULATOR1" setting="EGSM" command="CALL:BAND EGSM" description="Set cell band" />
+    <GPIBCommand equipment="NETWORK_SIMULATOR1" setting="EGSM" command="CALL:BCH 62" description="Set BCH ARFCN" />
+    <GPIBCommand equipment="NETWORK_SIMULATOR1" setting="EGSM" command="CALL:BA:TABL:EGSM 1,9,17,26,34,40,58,67,75,83,91,99,108,116,124" description="Set BA table" />
+    <GPIBCommand equipment="NETWORK_SIMULATOR1" setting="GSM450" command="CALL:BAND GSM450" description="Set cell band" />
+    <GPIBCommand equipment="NETWORK_SIMULATOR1" setting="GSM450" command="CALL:BCH 276" description="Set BCH ARFCN" />
+    <GPIBCommand equipment="NETWORK_SIMULATOR1" setting="GSM450" command="CALL:BA:TABL:GSM450 259,262,265,267,269,271,273,275,277,279,281,283,285,287,290,293" description="Set BA table" />
+    <GPIBCommand equipment="NETWORK_SIMULATOR1" setting="GSM480" command="CALL:BAND GSM480" description="Set cell band" />
+    <GPIBCommand equipment="NETWORK_SIMULATOR1" setting="GSM480" command="CALL:BCH 323" description="Set BCH ARFCN" />
+    <GPIBCommand equipment="NETWORK_SIMULATOR1" setting="GSM480" command="CALL:BA:TABL:GSM480 306,309,312,314,316,318,320,322,324,326,328,330,332,334,337,340" description="Set BA table" />
+    <GPIBCommand equipment="NETWORK_SIMULATOR1" setting="GSM850" command="CALL:BAND GSM850" description="Set cell band" />
+    <GPIBCommand equipment="NETWORK_SIMULATOR1" setting="GSM850" command="CALL:BCH 189" description="Set BCH ARFCN" />
+    <GPIBCommand equipment="NETWORK_SIMULATOR1" setting="GSM850" command="CALL:BA:TABL:GSM850 128,137,145,153,161,169,177,185,193,201,209,217,225,233,241,251" description="Set BA table" />
+</Sequence>

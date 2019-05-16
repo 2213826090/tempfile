@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="13.45">
+    <UseCase>LAB_PWRMEAS_FLIGHT_MODE</UseCase>
+    <Description>Power consumption measurement (in mA) in flight mode using a particular sleep mode</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <SavePatRawData>False</SavePatRawData>
+    <PowerCalculation>False</PowerCalculation>
+    <!--
+         Verdict is computed with additionnal csv file.
+
+         The default name is bench_target_fail.csv and must be placed in root of
+         _ExecutionConfig directory
+
+        Another name can be set (ex: FT/pnp/BENCHCFG/bench_target_fail.csv) by setting
+        FailureFile parameter in bench_config (phone section).
+
+        The format of the file is:
+
+        ;TEST_CASE_NAME1;TEST_CASE_NAME2;...;TEST_CASE_NAMEN
+        DEVICE_MODEL;TARGET_TC1;TARGET_TC2;...;TARGET_TCN
+
+        Where:
+            - DEVICE_MODEL is the complete name of the device model (ex: REDHOOKBAY-Android-KK).
+            - DEVICE_MODEL can be DEFAULT to set default targets for test cases
+            - TARGET_TCx are the target to compute verdict. If corresponding residency is lower than
+              this value, test will be FAIL.
+            - TARGET_TCx can be a range of values (separated by ':').
+              If so test will fail if measure is not in that range.
+              ex: 10:100
+
+        The CSV file is bench dependant as we cannot know the name of the test cases that are ran
+        on the bench.
+
+        As information, targets to reached can be also set. This is done in bench_targets.csv and is
+        managed as failure targets file. The bench_config parameter is TargetFile
+
+      -->
+    <Parameters>
+        <Parameter>
+            <!-- Sleep duration before making the measure in seconds -->
+            <Name>SLEEP_DURATION</Name>
+            <Value>30</Value>
+        </Parameter>
+        <Parameter>
+            <!-- s0i1 / s0i3 / s3 / s0 (LDC_ON) -->
+            <Name>MODE</Name>
+            <Value>s3</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Sleep time before 1st iteration in seconds, or all for b2bContinuousMode = False
+                Not used for S0 (lcd on) mode -->
+            <Name>SETTLE_TIME</Name>
+            <Value>60</Value>
+        </Parameter>
+        <Parameter>
+            <!-- [OPTIONAL] Configuration of SysDebug module
+                 - Module is activated with its name
+                 - Modules are separated by semi-colon
+                 - Each parameter may be configured with '='
+                 - Parameters are separated by comma
+              -->
+             <Name>SYSDEBUG_MODULES</Name>
+             <Value>
+                Residency: s3,s0i3,s0i1,lpmp3;
+                Pmu: interval=30;
+                S3Failure;
+                WakeLocks;
+                ModemPanic;
+                CrashInfo;
+                Thermals;
+            </Value>
+        </Parameter>
+     </Parameters>
+</TestCase>

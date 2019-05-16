@@ -1,0 +1,31 @@
+{
+    "Configuration": {
+        "Boot": {
+            "BOOT_ON_FORCED_SHUTDOWN": true
+        },
+        "BootVars": {
+            "COS_CHECK_AFTER_GRACEFUL_SHUTDOWN": "reset_source=00;reset_type=02;wake_source=02;shutdown_source=00;bootreason=usb_charger_inserted",
+            "COS_CHECK_AFTER_HARD_SHUTDOWN": "reset_source=00;reset_type=02;wake_source=02;shutdown_source=01;bootreason=usb_charger_inserted",
+            "COS_CHECK_AFTER_REBOOT": "reset_source=01;reset_type=02;wake_source=00;shutdown_source=00;bootreason=reboot",
+            "MOS_CHECK_AFTER_BOOT": "reset_source=00;reset_type=02;wake_source=04;shutdown_source=01;bootreason=power_button_pressed",
+            "MOS_CHECK_AFTER_KERNEL_WATCHDOG": "reset_source=04;reset_type=01;wake_source=00;shutdown_source=00;bootreason=watchdog",
+            "MOS_CHECK_AFTER_REBOOT": "reset_source=01;reset_type=02;wake_source=00;shutdown_source=00;bootreason=reboot"
+        },
+        "Custom": null,
+        "Flash": {
+            "DEDIPROG": {
+                "ifwi_size": 2,
+                "start_os": "offline",
+                "stage1_spi_location": "device_id/IFWI/ifwi_uefi_device_id/dediprog/variant_id.*SecEnabled_Production_x32_CR.bin",
+                "stage2_emmc_location": "device_id/IFWI/ifwi_uefi_device_id/stage2/variant_id.*SecondStage_Production.bin"
+            },
+            "PARTITIONS": "/cache;/system"
+        },
+        "Logs": null,
+        "Timeout": {
+            "MOS_BOOT": 140
+        },
+        "WorkAround": null,
+        "TestDescription": null
+    }
+}

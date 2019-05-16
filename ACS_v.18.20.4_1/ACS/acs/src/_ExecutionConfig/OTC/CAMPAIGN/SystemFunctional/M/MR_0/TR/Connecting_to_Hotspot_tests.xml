@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+<Campaign>
+      <Parameters>
+            <Parameter isControlledPSUsed="False"/>
+            <Parameter isIoCardUsed="False"/>
+            <Parameter skipBootOnPowerCycle="False"/>
+            <Parameter bootRetryNumber="0"/>
+            <Parameter runHookScripts="False"/>
+            <Parameter powerCycleBetweenTC="False"/>
+            <Parameter powerCycleOnFailure="False"/>
+            <Parameter finalDutState="NoChange"/>
+            <Parameter stopCampaignOnCriticalFailure="False"/>
+            <Parameter stopCampaignOnFirstFailure="False"/>
+            <Parameter loggingLevel="debug"/>
+            <Parameter CampaignType="Other"/>
+            <Parameter TCRReportViaRESTAPI="True"/>
+      </Parameters>
+      <TestCases>
+            <TestCase Id="../OTC/TC/TR/TESTLIB/WiFi/Hotspot_tests/Connect_DUT_to_hotspot_with_open_security_in_2.4Ghz"/>
+            <TestCase Id="../OTC/TC/TR/TESTLIB/WiFi/Hotspot_tests/Connect_DUT_to_hotspot_with_wpa2_security_in_2.4Ghz"/>
+            <TestCase Id="../OTC/TC/TR/TESTLIB/WiFi/Hotspot_tests/Connect_and_Disconnect_DUT_to_same_hotspot_multiple_times-open"/>
+      </TestCases>
+</Campaign>

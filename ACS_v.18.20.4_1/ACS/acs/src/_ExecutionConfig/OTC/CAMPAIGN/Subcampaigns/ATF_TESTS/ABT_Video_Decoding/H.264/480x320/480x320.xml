@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<Campaign>
+      <Parameters>
+            <Parameter isControlledPSUsed="False"/>
+            <Parameter isIoCardUsed="False"/>
+            <Parameter skipBootOnPowerCycle="False"/>
+            <Parameter bootRetryNumber="0"/>
+            <Parameter runHookScripts="False"/>
+            <Parameter powerCycleBetweenTC="False"/>
+            <Parameter powerCycleOnFailure="False"/>
+            <Parameter finalDutState="NoChange"/>
+            <Parameter stopCampaignOnCriticalFailure="False"/>
+            <Parameter stopCampaignOnFirstFailure="False"/>
+            <Parameter loggingLevel="debug"/>
+            <Parameter CampaignType="Other"/>
+      </Parameters>
+      <TestCases>
+            <TestCase Id="../../../../../../TC/TR/ATF_TESTS/ABT_Video_Decoding/H.264/480x320/H264_480x320_25fps_5737kbps_AAC_Main_48kHz_165kbps_Stereo.MP4"/>
+            <TestCase Id="../../../../../../TC/TR/ATF_TESTS/ABT_Video_Decoding/H.264/480x320/H264_480x320_25fps_5737kbps_AMR_NB_8kHz_12.2kbps_Mono.3GP"/>
+      </TestCases>
+</Campaign>

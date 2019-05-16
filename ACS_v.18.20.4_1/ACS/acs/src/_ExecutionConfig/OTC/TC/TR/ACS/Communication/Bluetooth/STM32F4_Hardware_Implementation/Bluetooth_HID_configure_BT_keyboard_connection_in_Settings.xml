@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="13.41">
+    <UseCase>TEST_STEP_ENGINE</UseCase>
+    <Description></Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>False</b2bContinuousMode>
+    <TcMaxAttempt>1</TcMaxAttempt>
+    <TcAcceptanceCriteria>1</TcAcceptanceCriteria>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters />
+    <TestSteps>
+        <Include Src="OTC/TC/TR/ACS/Communication/Bluetooth/setup/BT/OTC_Comms_BT_Common.xml" />
+        <Setup>
+            <TestStep Id="GET_ARTIFACT" EQT="ARTIFACT_MANAGER" ARTIFACT="STM32F4xx/st-flash" ARTIFACT_SOURCE="FROM_BENCH:ARTIFACT_MANAGER:URI" TRANSFER_TIMEOUT="DEFAULT" STORED_FILE_PATH="FILE_PATH_IN_CACHE"/>
+            <TestStep Id="GET_ARTIFACT" EQT="ARTIFACT_MANAGER" ARTIFACT="STM32F4xx/HIDKeyDemo.bin" ARTIFACT_SOURCE="FROM_BENCH:ARTIFACT_MANAGER:URI" TRANSFER_TIMEOUT="DEFAULT" STORED_FILE_PATH="FILE_PATH_IN_CACHE2"/>
+            <TestStep Id="FLASH_STM32" EQT="STM32F4_Discovery" FLASHER_PATH="FROM_CTX:FILE_PATH_IN_CACHE" BINARY_NAME="FROM_CTX:FILE_PATH_IN_CACHE2" />
+
+            <TestStep Id="SERIAL_SEND_COMMAND" COMMAND="Device" EQT="EMBEDDED_SERIAL_DEVICE" />
+            <TestStep Id="SERIAL_READ_STRING" MAX_LINES="4" EQT="EMBEDDED_SERIAL_DEVICE" />
+
+            <!-- AUTOMATION - Set default configuration -->
+            <TestStep SetId="BTFullSetupPhone1" />
+
+            <!-- SPEC - Step 2 : Scan Reference device from DUT -->
+            <TestStep Id="BT_FIND_DEVICE" DEVICE="PHONE1" DEVICE_TO_FIND="FROM_BENCH:EMBEDDED_SERIAL_DEVICE:MAC_ADDRESS" MUST_FIND="true" />
+            <!-- SPEC - Step 3 : Pair and connect to reference device -->
+            <TestStep Id="BT_PAIR" DEVICE="PHONE1" BDADDR="FROM_BENCH:EMBEDDED_SERIAL_DEVICE:MAC_ADDRESS" UNPAIR_FIRST="true" ACCEPT_PAIRING="true" PASS_KEY="0" PIN_CODE="0000" />
+            <TestStep Id="BT_CONNECT_PROFILE" DEVICE="PHONE1" BDADDR="FROM_BENCH:EMBEDDED_SERIAL_DEVICE:MAC_ADDRESS" PROFILE="HID" CONNECT="true" />
+            <TestStep Id="BT_CHECK_PROFILE_STATUS" DEVICE="PHONE1" BDADDR="FROM_BENCH:EMBEDDED_SERIAL_DEVICE:MAC_ADDRESS" PROFILE="HID" FAIL_IF="disconnected" SAVE_AS="PROFILE_STATUS" />
+        </Setup>
+        <RunTest>
+            <!--Disable input device from the pairing menu-->
+            <TestStep Id="BT_SET_DISCOVERABLE" DEVICE="PHONE1" MODE="both" TIMEOUT="120" />
+            <TestStep Id="SUSPEND" DURATION_IN_SEC="20.0" />
+            <TestStep Id="BT_ENABLE_PROFILE" DEVICE="PHONE1" ENABLE="False" PROFILE="HID" DEVICE_NAME="HIDDemo" FAIL_IF_ALREADY="True"/>
+            <TestStep Id="BT_CHECK_PROFILE_STATUS" DEVICE="PHONE1" BDADDR="FROM_BENCH:EMBEDDED_SERIAL_DEVICE:MAC_ADDRESS" PROFILE="HID" FAIL_IF="connected" SAVE_AS="PROFILE_STATUS" />
+            <!--Enable input device from the pairing menu-->
+            <TestStep Id="BT_ENABLE_PROFILE" DEVICE="PHONE1" ENABLE="True" PROFILE="HID" DEVICE_NAME="HIDDemo" FAIL_IF_ALREADY="True"/>
+            <!--Reconnect paired HID mouse-->
+            <TestStep Id="SERIAL_SEND_COMMAND" COMMAND="MouseEvent 0" EQT="EMBEDDED_SERIAL_DEVICE" />
+            <TestStep Id="SUSPEND" DURATION_IN_SEC="5.0"/>
+            <TestStep Id="BT_CHECK_PROFILE_STATUS" DEVICE="PHONE1" BDADDR="FROM_BENCH:EMBEDDED_SERIAL_DEVICE:MAC_ADDRESS" PROFILE="HID" FAIL_IF="disconnected" SAVE_AS="PROFILE_STATUS" />
+        </RunTest>
+        <TearDown>
+            <TestStep Id="BT_UNPAIR" DEVICE="PHONE1" BDADDR="FROM_BENCH:EMBEDDED_SERIAL_DEVICE:MAC_ADDRESS" />
+            <TestStep SetId="BTCommonTeardown" DEVICE="PHONE1" />
+        </TearDown>
+    </TestSteps>
+</TestCase>

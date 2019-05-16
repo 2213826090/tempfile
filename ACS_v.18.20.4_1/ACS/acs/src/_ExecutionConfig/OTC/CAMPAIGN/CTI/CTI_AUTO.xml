@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<Campaign>
+  <Parameters>
+    <Parameter isControlledPSUsed ="False"/>
+    <Parameter isIoCardUsed = "False"/>
+    <Parameter skipBootOnPowerCycle ="True"/>
+    <Parameter bootRetryNumber="0" />
+    <Parameter runHookScripts ="False"/>
+    <Parameter powerCycleBetweenTC ="False"/>
+    <Parameter powerCycleOnFailure ="True"/>
+    <!--Parameter finalDutState="NoChange"-->
+    <Parameter TCRReportViaRESTAPI = "False"/>
+    <Parameter ReportViaMsgBus = "False"/>
+    <Parameter stopCampaignOnCriticalFailure = "True"/>
+    <Parameter stopCampaignOnFirstFailure = "False"/>
+    <Parameter loggingLevel = "debug"/>
+    <Parameter CampaignType = "CTI_AUTO"/>
+  </Parameters>
+
+  <Targets>
+    <!-- Target Values -->
+    <Target targetB2bPassRate ="50"/>
+  </Targets>
+
+  <TestCases>
+    <TestCase Id="../../TC/CTI/CTI_AUTO_TC1"/>
+  </TestCases>
+</Campaign>

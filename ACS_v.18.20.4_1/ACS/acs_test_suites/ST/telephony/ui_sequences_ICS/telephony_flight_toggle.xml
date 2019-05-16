@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<UI_SEQ xsi:noNamespaceSchemaLocation="ACS_ANDROID_UI_CHECK.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <!-- every SMS must be cleared deleted before starting the test-->
+  <ACTION>
+    <!--Go back to home page-->
+    <CMD>go_home</CMD>
+    <TIMEOUT>1</TIMEOUT>
+  </ACTION>  
+  <ACTION> 
+    <CMD>open_settings_menu</CMD> 
+    <TIMEOUT>1</TIMEOUT> 
+    <TRIG_LOG>com.android.settings/.Settings</TRIG_LOG> 
+  </ACTION> 
+  <ACTION> 
+   <CMD>open_network_settings_menu</CMD> 
+   <TIMEOUT>1</TIMEOUT> 
+   <TRIG_LOG>Displayed com.android.settings/.WirelessSettings</TRIG_LOG> 
+  </ACTION>
+   <ACTION>
+    <CMD>settings_toggle_flight_mode</CMD>
+    <TIMEOUT>2</TIMEOUT>
+    <TRIG_LOG></TRIG_LOG> 
+    <!-- <TRIG_LOG>[IDLE,DISCONNECTING]</TRIG_LOG> -->
+    <ITERATION>100</ITERATION>	
+  </ACTION>
+  <ACTION>
+    <CMD>wait</CMD>
+    <PARAMETERS>10</PARAMETERS>
+    <TRIG_LOG></TRIG_LOG>
+  </ACTION> 
+  <!-- Try to make a VC (possible as flight mode is off)--> 
+  <ACTION>
+    <CMD>exec</CMD>
+    <PARAMETERS>start -a android.intent.action.CALL tel://0033493001498</PARAMETERS>
+    <TIMEOUT>1</TIMEOUT>
+    <!-- <TRIG_LOG>+CLCC:1,0,2,0,0</TRIG_LOG> -->
+    <!-- <TRIG_LOG>GET_CURRENT_CALLS_-_[id=1,ACTIVE</TRIG_LOG> -->	
+  </ACTION>
+  <ACTION>
+    <CMD>wait</CMD>
+    <PARAMETERS>20</PARAMETERS>
+    <TRIG_LOG>GET_CURRENT_CALLS_-_[id=1,ACTIVE</TRIG_LOG>
+  </ACTION> 
+<ACTION>
+    <CMD>call_release</CMD>
+    <!-- <TRIG_LOG>+CLCC:1,0,3,0,0</TRIG_LOG> -->
+    <TRIG_LOG>onDisconnect: cause=LOCAL</TRIG_LOG>
+  </ACTION>
+  <ACTION>
+    <CMD>wait</CMD>
+    <PARAMETERS>3</PARAMETERS>
+  </ACTION> 
+  <ACTION>
+    <!--Go back to home page-->
+    <CMD>go_home</CMD>
+    <TIMEOUT>1</TIMEOUT>
+  </ACTION>  
+</UI_SEQ>

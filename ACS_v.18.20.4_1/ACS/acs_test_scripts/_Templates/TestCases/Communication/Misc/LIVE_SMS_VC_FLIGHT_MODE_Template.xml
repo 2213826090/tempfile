@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="13.37">
+    <UseCase>LIVE_SMS_VC_FLIGHT_MODE</UseCase>
+    <Description>Live Voice Call and SMS test while DUT is in Flight Mode [non FIT]</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters>
+        <Parameter>
+            <!-- Optional parameter.
+                You may override the settle_down_duration value
+                from the phone here (value is given in seconds).
+                If not set or left empty the phone's parameter
+                settle_down_duration will be used.
+            -->
+            <Name>OVERRIDE_SETTLEDOWN_DURATION</Name>
+            <Value>60</Value>
+        </Parameter>
+        <Parameter>
+            <!-- SMS destination phone number and Voice Call call number. If the value [PHONE_NUMBER] is given, the phoneNumber defined in Phone_Catalog.xml will be used -->
+            <Name>DESTINATION_NUMBER</Name>
+            <Value>[PHONE_NUMBER]</Value>
+        </Parameter>
+        <Parameter>
+            <!-- SMS text message -->
+            <Name>MESSAGE_CONTENT</Name>
+            <Value>This is my SMS text !</Value>
+        </Parameter>
+        <Parameter>
+            <!-- SMS transfer timeout in seconds -->
+            <Name>SMS_TRANSFER_TIMEOUT</Name>
+            <Value>30</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Call Duration (in seconds) -->
+            <Name>CALL_DURATION</Name>
+            <Value>10</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

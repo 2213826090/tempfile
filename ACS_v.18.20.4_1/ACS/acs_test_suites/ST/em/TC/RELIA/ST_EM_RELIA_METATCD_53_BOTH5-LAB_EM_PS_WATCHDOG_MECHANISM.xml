@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase>
+    <UseCase>LAB_EM_PS_WATCHDOG_MECHANISM</UseCase>
+    <Description>PUPDR Energy Management test watchdog mechanism.</Description>
+    <b2bIteration>5</b2bIteration>
+    <b2bContinuousMode>False</b2bContinuousMode>
+    <Parameters>
+        <Parameter>
+            <!-- Vbatt Voltage -->
+            <Name>VBATT</Name>
+            <Value>3.7</Value>
+        </Parameter>
+        <Parameter>
+            <!-- type of board freeze to do : SOFT (software) or HARD (hardware) -->
+            <Name>FREEZE_TYPE</Name>
+            <Value>BOTH</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Maximum time in second to wait before reboot is done since freeze happen -->
+            <Name>REBOOT_TIMEOUT</Name>
+            <Value>100</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

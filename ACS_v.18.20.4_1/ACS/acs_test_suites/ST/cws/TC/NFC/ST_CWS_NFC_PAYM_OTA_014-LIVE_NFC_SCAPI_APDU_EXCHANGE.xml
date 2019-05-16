@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase>
+  <UseCase>LIVE_NFC_SCAPI_APDU_EXCHANGE</UseCase>
+  <Description>Check data can be exchanged with embedded/UICC secure element</Description>
+  <b2bIteration>1</b2bIteration>
+  <b2bContinuousMode>False</b2bContinuousMode>
+  <TcMaxAttempt>2</TcMaxAttempt>
+  <TcAcceptanceCriteria>1</TcAcceptanceCriteria>
+  <Parameters>
+    <Parameter>
+      <!-- Define the channel to use. Expected values are : BASIC, LOGICAL -->
+      <Name>CHANNEL</Name>
+      <Value>BASIC</Value>
+    </Parameter>
+    <Parameter>
+      <!-- Define the secure element to use. Expected values are : UICC, SMX -->
+      <Name>READER</Name>
+      <Value>SMX</Value>
+    </Parameter>
+    <Parameter>
+      <!-- Define APDU case. Expected values are : 1, 2, 3 or 4 -->
+      <Name>APDU_CASE</Name>
+      <Value>4</Value>
+    </Parameter>
+    <Parameter>
+      <!-- Define APDU data length. Expected values are : 1 to 256 -->
+      <Name>DATA_LENGTH</Name>
+      <Value>256</Value>
+    </Parameter>
+    <Parameter>
+      <!-- Define the number of commands to send -->
+      <Name>LOOP</Name>
+      <Value>100</Value>
+    </Parameter>
+  </Parameters>
+</TestCase>

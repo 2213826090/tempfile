@@ -1,0 +1,10 @@
+{
+    "artifacts_location": "https://mcg-depot.intel.com/artifactory/psi-tools/usb-drivers/",
+    "windows": {
+        "check_exists": ["winreg",
+                         ["SOFTWARE/Microsoft/Windows/CurrentVersion/Uninstall/Intel Android Device USB driver"]],
+        "install": "{bin} /S",
+        "32": "IntelAndroidDrvSetup1.7.1.exe",
+        "64": "IntelAndroidDrvSetup1.7.1.exe"
+    }
+}

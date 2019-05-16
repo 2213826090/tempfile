@@ -1,0 +1,42 @@
+<?xml version="1.0" ?>
+<Campaign>
+      <Parameters>
+            <Parameter isControlledPSUsed="False"/>
+            <Parameter isIoCardUsed="False"/>
+            <Parameter skipBootOnPowerCycle="False"/>
+            <Parameter bootRetryNumber="0"/>
+            <Parameter runHookScripts="False"/>
+            <Parameter powerCycleBetweenTC="False"/>
+            <Parameter powerCycleOnFailure="False"/>
+            <Parameter finalDutState="NoChange"/>
+            <Parameter stopCampaignOnCriticalFailure="False"/>
+            <Parameter stopCampaignOnFirstFailure="False"/>
+            <Parameter loggingLevel="debug"/>
+            <Parameter CampaignType="Other"/>
+      </Parameters>
+      <TestCases>
+            <SubCampaign Id="./ADB"/>
+            <SubCampaign Id="./Misc"/>
+            <SubCampaign Id="./Applications"/>
+            <SubCampaign Id="./Audio_encode_decode"/>
+            <SubCampaign Id="./Audio_playback"/>
+            <SubCampaign Id="./Audio_recording"/>
+            <SubCampaign Id="./Audio_volume_adjust"/>
+            <SubCampaign Id="./Bluetooth"/>
+            <SubCampaign Id="./Camera"/>
+            <SubCampaign Id="./GPS"/>
+            <SubCampaign Id="./Houdini"/>
+            <SubCampaign Id="./Image_encode_decode"/>
+            <SubCampaign Id="./Media_encoder_decoder"/>
+            <SubCampaign Id="./SensorsIOX"/>
+            <SubCampaign Id="./System_OS"/>
+            <SubCampaign Id="./USB_and_storage"/>
+            <SubCampaign Id="./Video_encode_decode"/>
+            <SubCampaign Id="./Video_Playback"/>
+            <SubCampaign Id="./Filesystem"/>
+            <SubCampaign Id="./Monkey_Stress"/>
+            <!--<SubCampaign Id="./Graphics"/>-->
+            <!--<SubCampaign Id="./WiFi"/>-->
+            <!--<SubCampaign Id="./WiFi_Radius"/>-->
+      </TestCases>
+</Campaign>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase>
+    <UseCase>LAB_EM_BATT_PLUG_UNPLUG</UseCase>
+    <Description>Control charger plug and unplug.</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>False</b2bContinuousMode>
+    <Parameters>
+        <Parameter>
+            <!-- Charger to plug and unplug depending of what your platform and io card can support, choose one of these : SDP|DCP|CDP|AC_CHGR -->
+            <Name>CHARGER_TYPE</Name>
+            <Value>AC_CHGR</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Time to wait (in second) in after an action to do the measure. -->
+            <Name>ACTION_TIMEOUT</Name>
+            <Value>35</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Define the action order on the charger: "PLUG;UNPLUG" or "UNPLUG;PLUG". -->
+            <Name>ACTION_ORDER</Name>
+            <Value>PLUG;UNPLUG</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

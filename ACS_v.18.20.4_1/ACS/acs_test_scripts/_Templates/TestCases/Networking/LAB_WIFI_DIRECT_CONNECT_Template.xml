@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="13.41">
+    <UseCase>LAB_WIFI_DIRECT_CONNECT</UseCase>
+    <Description>Test Wifi connect using peer to peer</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>False</b2bContinuousMode>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <TcMaxAttempt>1</TcMaxAttempt>
+    <TcAcceptanceCriteria>1</TcAcceptanceCriteria>
+    <Parameters>
+        <Parameter>
+            <!-- Device name: can be PHONE1 or PHONE2 -->
+            <Name>DEVICE1_NAME</Name>
+            <Value>PHONE1</Value>
+        </Parameter>
+        <Parameter>
+            <!-- p2p connection ip adress to use -->
+            <Name>DEVICE1_IP</Name>
+            <Value>192.168.2.1</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Value can be 0 to 15 -->
+            <Name>DEVICE1_GROUP_OWNER</Name>
+            <Value>15</Value>
+        </Parameter>
+        <Parameter>
+            <!-- p2p connection channel -->
+            <Name>DEVICE1_CHANNEL</Name>
+            <Value>6</Value>
+        </Parameter>
+        <Parameter>
+            <!-- p2p device name -->
+            <Name>DEVICE1_P2P_NAME</Name>
+            <Value>P2P_DEV1</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Device name: can be PHONE1, PHONE2 or COMPUTER1 -->
+            <Name>DEVICE2_NAME</Name>
+            <Value>COMPUTER</Value>
+        </Parameter>
+        <Parameter>
+            <!-- p2p connection ip adress to use -->
+            <Name>DEVICE2_IP</Name>
+            <Value>192.168.2.2</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Value can be 0 to 15 -->
+            <Name>DEVICE2_GROUP_OWNER</Name>
+            <Value>0</Value>
+        </Parameter>
+        <Parameter>
+            <!-- p2p connection channel -->
+            <Name>DEVICE2_CHANNEL</Name>
+            <Value>6</Value>
+        </Parameter>
+        <Parameter>
+            <!-- p2p device name -->
+            <Name>DEVICE2_P2P_NAME</Name>
+            <Value>P2P_DEV2</Value>
+        </Parameter>
+        <Parameter>
+            <!-- wlan interface used if host is COMPUTER host: wlanx -->
+            <Name>DEVICE2_HOST_INTERFACE</Name>
+            <Value>wlan2</Value>
+        </Parameter>
+        <Parameter>
+            <!-- possible connection modes : PBC - PIN -->
+            <Name>CONNECTION_MODE</Name>
+            <Value>PBC</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

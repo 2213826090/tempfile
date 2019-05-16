@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase>
+    <UseCase>LAB_AUDIO_WCDMA_CSV</UseCase>
+    <Description>Check Audio is routed successfully to the DUT audio output in 3G</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <Parameters>
+        <Parameter>
+            <!-- Cell Band (from Band 1 to Band 8) -->
+            <Name>CELL_BAND</Name>
+            <Value>1</Value>
+        </Parameter>
+        <Parameter>
+            <!--Cell Service (CIRCUIT | PACKET | CIRCUIT_PACKET | RBTEST) -->
+            <Name>CELL_SERVICE</Name>
+            <Value>CIRCUIT</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Downlink UARFCN Frequency -->
+            <Name>DL_UARFCN</Name>
+            <Value>10700</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Voice NARROWBAND coder rate, possible values:
+
+                - FR_AMR_NB_1220
+                - FR_AMR_NB_1020
+                - FR_AMR_NB_795
+                - FR_AMR_NB_740
+                - FR_AMR_NB_670
+                - FR_AMR_NB_590
+                - FR_AMR_NB_515
+                - FR_AMR_NB_475
+
+                Voice WIDEBAND coder rate, possible values::
+
+                AMR_WB_2385 | AMR_WB_2305 | AMR_WB_1985 | AMR_WB_1825
+                AMR_WB_1585 | AMR_WB_1425 | AMR_WB_1265 | AMR_WB_885
+                AMR_WB_660
+            -->
+            <Name>CODEC</Name>
+            <Value>FR_AMR_NB_1220</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Voice call type (MO [Mobile Originated]|MT [Mobile Terminated]) -->
+            <Name>VC_TYPE</Name>
+            <Value>MT</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Phone number to dial for a MO CSV Call -->
+            <Name>PHONE_NUMBER</Name>
+            <Value>1234</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Threshold for audio routing detection  -->
+            <Name>THRESHOLD</Name>
+            <Value>20</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Call duration in seconds -->
+            <Name>CALL_DURATION</Name>
+            <Value>30</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Call volume in % -->
+            <Name>CALL_VOLUME</Name>
+            <Value>100</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Test signal duration in s -->
+            <Name>TEST_SIGNAL_DURATION</Name>
+            <Value>10</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Keep the recorded audio file whether the test result is good or not (TRUE|FALSE) -->
+            <Name>KEEP_RECORD</Name>
+            <Value>True</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

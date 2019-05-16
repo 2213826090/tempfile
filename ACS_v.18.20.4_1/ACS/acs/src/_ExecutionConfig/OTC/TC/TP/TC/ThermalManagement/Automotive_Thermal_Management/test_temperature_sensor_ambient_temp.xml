@@ -1,0 +1,55 @@
+<?xml version="1.0" ?>
+<TestCase>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Discription> 
+&lt;div align=&quot;left&quot; style=&quot;min-height:9pt&quot;&gt;
+&lt;font face=&quot;Arial&quot;&gt;&lt;span style=&quot;font-size:8pt&quot;&gt;Verify that devices can monitor ambient temp via t&lt;/span&gt;&lt;/font&gt;
+&lt;font face=&quot;Arial&quot; color=&quot;#1f497d&quot;&gt;&lt;span style=&quot;font-size:8pt&quot;&gt;emperature Sensor&lt;/span&gt;&lt;/font&gt;
+&lt;/div&gt; 
+&lt;div align=&quot;left&quot; style=&quot;min-height:9pt&quot;&gt;&lt;/div&gt; 
+&lt;div align=&quot;left&quot; style=&quot;min-height:9pt&quot;&gt;
+&lt;font face=&quot;Arial&quot;&gt;&lt;span style=&quot;font-size:8pt&quot;&gt;Precondition: 1. Flash latest build to DUT and power on DUT 2. connecting USB cable to DUT&lt;/span&gt;&lt;/font&gt;
+&lt;/div&gt; 
+&lt;div align=&quot;left&quot; style=&quot;min-height:9pt&quot;&gt;&lt;/div&gt; 
+&lt;div align=&quot;left&quot; style=&quot;min-height:9pt&quot;&gt;
+&lt;font face=&quot;Arial&quot;&gt;&lt;span style=&quot;font-size:8pt&quot;&gt;Postcondition: command &lt;/span&gt;&lt;/font&gt;
+&lt;font face=&quot;Arial&quot; color=&quot;#1f497d&quot;&gt;&lt;span style=&quot;font-size:8pt&quot;&gt;adb shell cat /sys/class/thermal/thermal_zone2/temp&lt;/span&gt;&lt;/font&gt;
+&lt;/div&gt; 
+&lt;div align=&quot;left&quot; style=&quot;min-height:9pt&quot;&gt;&lt;/div&gt; 
+&lt;div align=&quot;left&quot; style=&quot;min-height:9pt&quot;&gt;
+&lt;font face=&quot;Arial&quot;&gt;&lt;span style=&quot;font-size:8pt&quot;&gt;Detailed test steps: 1. Flash latest build to DUT and power on DUT 2. connecting USB cable to DUT. 3. command &lt;/span&gt;&lt;/font&gt;
+&lt;font face=&quot;Arial&quot; color=&quot;#1f497d&quot;&gt;&lt;span style=&quot;font-size:8pt&quot;&gt;adb shell cat /sys/class/thermal/thermal_zone2/temp&lt;/span&gt;&lt;/font&gt;
+&lt;/div&gt; 
+&lt;div align=&quot;left&quot; style=&quot;min-height:9pt&quot;&gt;&lt;/div&gt; 
+&lt;div align=&quot;left&quot; style=&quot;min-height:9pt&quot;&gt;
+&lt;font face=&quot;Arial&quot;&gt;&lt;span style=&quot;font-size:8pt&quot;&gt;Expected result: &amp;nbsp;Devices can monitor ambient temp via t&lt;/span&gt;&lt;/font&gt;
+&lt;font face=&quot;Arial&quot; color=&quot;#1f497d&quot;&gt;&lt;span style=&quot;font-size:8pt&quot;&gt;emperature Sensor&lt;/span&gt;&lt;/font&gt;
+&lt;/div&gt; 
+&lt;div align=&quot;left&quot; style=&quot;min-height:9pt&quot;&gt;
+&lt;font face=&quot;Arial&quot;&gt;&lt;span style=&quot;font-size:8pt&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/font&gt;
+&lt;/div&gt; 
+&lt;div align=&quot;left&quot; style=&quot;min-height:9pt&quot;&gt;
+&lt;font face=&quot;Arial&quot; color=&quot;#1f497d&quot;&gt;&lt;span style=&quot;font-size:8pt&quot;&gt;adb shell cat /sys/class/thermal/thermal_zone2/temp: 25000&lt;/span&gt;&lt;/font&gt;
+&lt;/div&gt;  
+</Discription>
+    <Domain>ThermalManagement</Domain>
+    <Phase>CORE</Phase>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <Type>FUNCTIONAL</Type>
+    <UseCase>PY_UNIT</UseCase>
+    <b2bIteration>1</b2bIteration>
+    <Parameters>
+        <Parameter>
+            <Name>HpalmName</Name>
+            <Value>temperature_sensor_ambient_temp.Temp_Sensor_Ambient_Temp.test_temperature_sensor_ambient_temp</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TEST_DATA_ROOT</Name>
+            <Value>testplan/ThermalManagement</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TEST_CASE</Name>
+            <Value>tests.ThermalManagement.Automotive_Thermal_Management.temperature_sensor_ambient_temp.Temp_Sensor_Ambient_Temp.test_temperature_sensor_ambient_temp</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestSteps xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../acs/src/_Catalogs/TestStep/teststep.xsd">
+    <TestStep Id="MCCI_LOOP_USB_CONNECT_DISCONNECT" Domain="EQUIPMENT" SubDomain="USB_EXERCISERS" Feature="" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Equipment.UsbExercisers.MCCILoopUsbConnectDisconnect.MCCILoopUsbConnectDisconnect</ClassName>
+        <Description>This test step will use the MCCI USB Connection Exerciser to connect/disconnect a USB connection.
+                     PREREQUISITES:
+                     MCCI USB Connection Exerciser (Model 2101) devices must be properly setup and connected to the host PC.
+                     mcci2101.exe should be installed at the location given from "SCRIPTS_PATH" onto host PC from Artifactory under:  acs_test_artifacts:CONCURRENCY/TESTS/usb_unplug_plug
+        </Description>
+        <Environment name="ANY">
+        </Environment>
+        <Parameters>
+            <Parameter name="EQT" type="STRING" isOptional="false">
+                <Description>The equipment name shall refer to an existing equipment the Bench config.</Description>
+                <PossibleValues />
+                <DefaultValue>COMPUTER1</DefaultValue>
+            </Parameter>
+            <Parameter name="DURATION" type="INTEGER" isOptional="false">
+               <Description>How long the test will run, in minutes.</Description>
+               <PossibleValues/>
+               <DefaultValue>10</DefaultValue>
+            </Parameter>
+            <Parameter name="USB_SPEED" type="INTEGER" isOptional="false">
+                <Description> Determines the USB speed for MCCI device to use.  Use 1 for high speed (HS) and 2 for super speed (SS).</Description>
+                <PossibleValues>1;2</PossibleValues>
+                <DefaultValue/>
+            </Parameter>
+            <Parameter name="TIME_BETWEEN_UNPLUG" type="FLOAT" isOptional="false">
+                <Description> The time, in minutes, to wait after reconnecting USB before disconnecting again.</Description>
+                <PossibleValues/>
+                <DefaultValue>3</DefaultValue>
+            </Parameter>
+            <Parameter name="TIME_UNPLUG_DURATION" type="FLOAT" isOptional="false">
+                <Description> The time, in minutes, to wait after disconnecting USB before reconnecting again.</Description>
+                <PossibleValues/>
+                <DefaultValue>.6</DefaultValue>
+            </Parameter>
+            <Parameter name="SCRIPTS_PATH" type="STRING" isOptional="false">
+                <Description> Absolute path on the device to mcci2101.exe which has been installed.</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+            <Parameter name="USB_LOCK_WAIT_TIME" type="INTEGER" isOptional="false">
+               <Description>How long in seconds the step will wait for USB connection lock file to be freed.  This mechanism is used to prevent another test step from using USB while it is disconnected.</Description>
+               <PossibleValues/>
+               <DefaultValue>120</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="MCCI_SET_USB_SPEED" Domain="EQUIPMENT" SubDomain="USB_EXERCISERS" Feature="" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Equipment.UsbExercisers.MCCISetUsbSpeed.MCCISetUsbSpeed</ClassName>
+        <Description>This test step will use the MCCI USB Connection Exerciser to set the USB speed.
+                     PREREQUISITES:
+                     MCCI USB Connection Exerciser (Model 2101) devices must be properly setup and connected to the host PC.
+                     mcci2101.exe should be installed at the location given from "SCRIPTS_PATH" onto host PC from Artifactory under:  acs_test_artifacts:CONCURRENCY/TESTS/usb_unplug_plug
+        </Description>
+        <Environment name="ANY">
+        </Environment>
+        <Parameters>
+            <Parameter name="EQT" type="STRING" isOptional="false">
+                <Description>The equipment name shall refer to an existing equipment the Bench config.</Description>
+                <PossibleValues />
+                <DefaultValue>COMPUTER1</DefaultValue>
+            </Parameter>
+            <Parameter name="USB_SPEED" type="INTEGER" isOptional="false">
+                <Description> Determines the USB speed for MCCI device to use.  Use 1 for high speed (HS) and 2 for super speed (SS).</Description>
+                <PossibleValues>1;2</PossibleValues>
+                <DefaultValue>1</DefaultValue>
+            </Parameter>
+            <Parameter name="SCRIPTS_PATH" type="STRING" isOptional="false">
+                <Description> Absolute path on the device to mcci2101.exe which has been installed.</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+</TestSteps>

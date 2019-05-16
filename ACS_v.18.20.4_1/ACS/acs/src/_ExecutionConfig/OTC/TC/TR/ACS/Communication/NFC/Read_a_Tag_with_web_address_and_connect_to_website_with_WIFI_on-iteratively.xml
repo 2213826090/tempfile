@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="13.41">
+    <UseCase>TEST_STEP_ENGINE</UseCase>
+    <Description></Description>
+    <b2bIteration>2</b2bIteration>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <TcMaxAttempt>1</TcMaxAttempt>
+    <TcAcceptanceCriteria>1</TcAcceptanceCriteria>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters>
+        <Parameter>
+            <Name>CLEAR_LOG_COMMAND</Name>
+            <Value>adb shell logcat -c</Value>
+        </Parameter>
+        <Parameter>
+            <Name>DUMP_LOG_COMMAND</Name>
+            <Value>adb logcat -d</Value>
+        </Parameter>
+        <Parameter>
+            <Name>CHECK_STRING</Name>
+            <Value>act=android.nfc.action.NDEF_DISCOVERED dat=http://www.google.com/... pkg=com.android.chrome cmp=com.android.chrome</Value>
+        </Parameter>
+        <Parameter>
+            <Name>FORCE_STOP_CHROME</Name>
+            <Value>adb shell am force-stop com.android.chrome</Value>
+        </Parameter>
+    </Parameters>
+    <TestSteps>
+        <Setup>
+            <!-- Get artifacts for Java TestSteps -->
+            <Fork Id="GetArtifacts">
+                <TestStep Id="GET_ARTIFACT" ARTIFACT="UIAUTOMATOR/UiTests_M-debug.apk"
+                          ARTIFACT_SOURCE="FROM_BENCH:ARTIFACT_MANAGER:URI" TRANSFER_TIMEOUT="DEFAULT"
+                          STORED_FILE_PATH="FILE_PATH_IN_CACHE1" EQT="ARTIFACT_MANAGER"/>
+                <TestStep Id="GET_ARTIFACT" ARTIFACT="UIAUTOMATOR/UiTests_M-debug-androidTest-unaligned.apk"
+                          ARTIFACT_SOURCE="FROM_BENCH:ARTIFACT_MANAGER:URI" TRANSFER_TIMEOUT="DEFAULT"
+                          STORED_FILE_PATH="FILE_PATH_IN_CACHE2" EQT="ARTIFACT_MANAGER"/>
+            </Fork>
+            <!-- Install apps for Java TestSteps -->
+            <TestStep Id="INSTALL_APP" DEVICE="PHONE1" FILE_PATH="FROM_CTX:FILE_PATH_IN_CACHE1"
+                      BACKUP="false" SIGN="false" TIMEOUT="DEFAULT" BACKUP_FILE_PATH="None" SIGN_KEY_PATH="None"/>
+            <TestStep Id="INSTALL_APP" DEVICE="PHONE1" FILE_PATH="FROM_CTX:FILE_PATH_IN_CACHE2"
+                      BACKUP="false" SIGN="false" TIMEOUT="DEFAULT" BACKUP_FILE_PATH="None" SIGN_KEY_PATH="None"/>
+            <!-- Connect to WiFi on DUT -->
+            <TestStep Id="WIFI_REMOVE_NETWORK" DEVICE="PHONE1" SSID="all"/>
+            <TestStep Id="WIFI_SET_POWER" DEVICE="PHONE1" POWER="on"/>
+            <TestStep Id="WIFI_ADD_NETWORK" DEVICE="PHONE1" SSID="FROM_BENCH:WEP_WIFI_ROUTER:SSID"
+                      SECURITY="FROM_BENCH:WEP_WIFI_ROUTER:WIFI_SECURITY"
+                      PASS_PHRASE="FROM_BENCH:WEP_WIFI_ROUTER:passphrase"/>
+            <TestStep Id="WIFI_CONNECT" DEVICE="PHONE1" SSID="FROM_BENCH:WEP_WIFI_ROUTER:SSID" TIMEOUT="30"/>
+            <!-- Skip Chrome first run tutorial -->
+            <TestStep Id="RUN_ANDROID_INST" DEVICE="PHONE1"
+                      RUN_INSTR_CMD="am instrument -e class com.intel.uitests.tests.prerequisites.SkipTutorial#testSkipChrome
+                       -e timeout 15000 -w com.intel.uitests.test/com.intel.uitests.runner.UiTestRunner"
+                      TIMEOUT="60" RETRIEVE_ARTIFACT="/sdcard/UITESTS/testFail.png"/>
+            <!-- Ensure NFC is turned off at this stage-->
+            <TestStep Id="NFC_SET_POWER" DEVICE="PHONE1" POWER="off"/>
+            <!-- Read first serial output to instantiate properly the EMBEDDED_SERIAL_DEVICE-->
+            <TestStep Id="SERIAL_READ_STRING" MAX_LINES="1" EQT="EMBEDDED_SERIAL_DEVICE"/>
+            <!-- Reset NFC robot cradle position to 0 -->
+            <TestStep Id="SERIAL_SEND_COMMAND" COMMAND="reset" EQT="EMBEDDED_SERIAL_DEVICE"/>
+            <TestStep Id="SERIAL_READ_STRING" MAX_LINES="1" EQT="EMBEDDED_SERIAL_DEVICE"/>
+        </Setup>
+        <RunTest>
+            <!-- Stop Chrome app before reading the tag -->
+            <TestStep Id="RUN_CMD" DEVICE="PHONE1" TIMEOUT="10" COMMAND="FROM_TC:FORCE_STOP_CHROME"
+                      FORCE_EXECUTION="False" WAIT_FOR_RESPONSE="True" SILENT_MODE="False" SAVE_AS="False"/>
+            <!-- Move NFC robot cradle to a position before the tag to read -->
+            <TestStep Id="SERIAL_SEND_COMMAND" COMMAND="tag_3" EQT="EMBEDDED_SERIAL_DEVICE"/>
+            <TestStep Id="SERIAL_READ_STRING" MAX_LINES="1" EQT="EMBEDDED_SERIAL_DEVICE"/>
+            <!-- Clear logcat to properly check the NDEF discovery message -->
+            <TestStep Id="RUN_CMD" DEVICE="PHONE1" TIMEOUT="10" COMMAND="FROM_TC:CLEAR_LOG_COMMAND"
+                      FORCE_EXECUTION="False" WAIT_FOR_RESPONSE="True" SILENT_MODE="False" SAVE_AS="False"/>
+            <!-- Send the move to tag command -->
+            <TestStep Id="SERIAL_SEND_COMMAND" COMMAND="tag_4" EQT="EMBEDDED_SERIAL_DEVICE"/>
+            <!-- Power on NFC while the cradle is on its way to the tag -->
+            <TestStep Id="NFC_SET_POWER" DEVICE="PHONE1" POWER="on"/>
+            <TestStep Id="SERIAL_READ_STRING" MAX_LINES="1" EQT="EMBEDDED_SERIAL_DEVICE"/>
+            <!-- Check for the NDEF discovery intent with the desired content is found in logcat -->
+            <TestStep Id="RUN_CMD" DEVICE="PHONE1" TIMEOUT="10" COMMAND="FROM_TC:DUMP_LOG_COMMAND" FORCE_EXECUTION="False"
+                      WAIT_FOR_RESPONSE="True" SILENT_MODE="False" SAVE_AS="CommandOutput"/>
+            <TestStep Id="CHECK_CONTENT_CMD" DEVICE="PHONE1" TIMEOUT="30" OUTPUT_TO_CHECK="FROM_CTX:CommandOutput"
+                      CHECK_CONTENT="FROM_TC:CHECK_STRING"/>
+            <!-- Check the UI for the web page to be loaded in Chrome -->
+            <TestStep Id="RUN_ANDROID_INST" DEVICE="PHONE1"
+                      RUN_INSTR_CMD="am instrument -e class com.intel.uitests.steps.ChromeSteps#testCheckUrlBar
+                       -e website www.google. -e isFullWebsiteExpected false -e waitFirstToLoad true
+                        -w com.intel.uitests.test/com.intel.uitests.runner.UiTestRunner"
+                      TIMEOUT="60" RETRIEVE_ARTIFACT="/sdcard/UITESTS/testFail.png"/>
+            <!-- Power off NFC -->
+            <TestStep Id="NFC_SET_POWER" DEVICE="PHONE1" POWER="off"/>
+        </RunTest>
+        <TearDown>
+            <!-- Stop Chrome app -->
+            <TestStep Id="RUN_CMD" DEVICE="PHONE1" TIMEOUT="10" COMMAND="FROM_TC:FORCE_STOP_CHROME"
+                      FORCE_EXECUTION="False" WAIT_FOR_RESPONSE="True" SILENT_MODE="False" SAVE_AS="False"/>
+            <!-- Disconnect and turn off WiFi on DUT-->
+            <TestStep Id="WIFI_REMOVE_NETWORK" DEVICE="PHONE1" SSID="all"/>
+            <TestStep Id="WIFI_SET_POWER" DEVICE="PHONE1" POWER="off"/>
+            <!-- Reset NFC robot cradle position to 0 -->
+            <TestStep Id="SERIAL_SEND_COMMAND" COMMAND="reset" EQT="EMBEDDED_SERIAL_DEVICE"/>
+            <TestStep Id="SERIAL_READ_STRING" MAX_LINES="1" EQT="EMBEDDED_SERIAL_DEVICE"/>
+        </TearDown>
+    </TestSteps>
+</TestCase>
+

@@ -1,0 +1,24 @@
+<ModuleConfiguration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                     xsi:noNamespaceSchemaLocation="FlashModule.xsd">
+
+    <!-- FLASH MODULE PARAMETERS -->
+
+    <!-- MODEM_FLASH: remove modem flash command in fastboot flash.xml -->
+    <MODEM_FLASH>true</MODEM_FLASH>
+    <!-- DEDIPROG: set to true if board possesses dediprog ability -->
+    <DEDIPROG>true</DEDIPROG>
+    <!-- RECOVERY: set to true to force use of dediprog to flash bios -->
+    <RECOVERY>false</RECOVERY>
+
+    <!-- PUPDR_COMMON PARAMETERS -->
+
+    <!-- UEFI: set to true if board has UEFI boot logic -->
+    <UEFI>false</UEFI>
+    <!-- WAKESRC_ONLY: set to true if no resetsrc/resetirq available -->
+    <WAKESRC_ONLY>true</WAKESRC_ONLY>
+    <!-- PARTITION_TYPE: specify 'osip' or 'gpt'-->
+    <PARTITION_TYPE>osip</PARTITION_TYPE>
+    <!-- CHECK_OSLOADER: (un)able osloader efi application check after flash -->
+    <CHECK_OSLOADER>false</CHECK_OSLOADER>
+
+</ModuleConfiguration>

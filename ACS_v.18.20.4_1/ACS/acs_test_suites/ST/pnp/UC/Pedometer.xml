@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="13.41">
+    <TestSteps>
+        <Include Src="ST/pnp/TSS/common.xml" />
+        <Include Src="ST/pnp/TSS/active.xml" />
+        <Include Src="ST/pnp/TSS/benchmarks.xml" />
+        <Include Src="ST/pnp/TSS/stepcounter.xml" />
+        <Include Src="SI/pnp/perf/TC/DroidbotTestStepSet.xml"/>
+        <Initialize>
+            <TestStep SetId="DISABLE_GMS" />
+            <TestStep SetId="InitializePnPResources" />
+            <TestStep SetId="InstallPedometer" />
+        </Initialize>
+        <Setup>
+            <TestStep Id="CONFIGURE_SYSTEM_SLEEP_MODE" DEVICE="PHONE1" MODE="default" />
+            <TestStep Id="SET_ORIENTATION" DEVICE="PHONE1" ORIENTATION="portrait" API="embedded_api" />
+            <TestStep SetId="SetupBenchmark" />
+        </Setup>
+        <RunTest>
+            <TestStep SetId="LaunchBenchmarkPowerMeasure" />
+            <TestStep Id="SUSPEND" DURATION_IN_SEC="FROM_TC:TEST_DURATION" REFRESH_STDOUT_IN_SEC="300" />
+            <TestStep SetId="StopPowerMeasurement" />
+            <TestStep SetId="StopBenchmark" />
+        </RunTest>
+        <TearDown>
+            <TestStep SetId="TearDownBenchmark" />
+            <TestStep SetId="TearDown" />
+            <TestStep SetId="ENABLE_GMS" />
+            <TestStep SetId="UninstallPedometer" />
+            <TestStep Id="SET_ORIENTATION" DEVICE="PHONE1" ORIENTATION="auto" API="embedded_api" />
+        </TearDown>
+    </TestSteps>
+</TestCase>

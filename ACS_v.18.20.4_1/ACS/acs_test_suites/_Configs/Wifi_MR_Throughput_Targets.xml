@@ -1,0 +1,535 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DeviceModels>
+    <DeviceModel Name="BLACKBAY-Android-JB">
+        <ThroughputTypes>
+            <ThroughputType Name="TARGET" Description="Theoretical throughput values in Kbps">
+                <Categories>
+                    <Category StandardFrequency="2.4G" Bandwidth="20" STADirection="DL" STAProtocole="TCP" P2PDirection="UL" P2PProtocole="UDP" STAThroughput="1000.0" P2PThroughput="1000.0" />
+                    <Category StandardFrequency="5G" Bandwidth="80" STADirection="DL" STAProtocole="TCP" P2PDirection="DL" P2PProtocole="TCP" STAThroughput="1000.0" P2PThroughput="1000.0" />
+                    <Category StandardFrequency="5G" Bandwidth="80" STADirection="UL" STAProtocole="TCP" P2PDirection="UL" P2PProtocole="TCP" STAThroughput="1000.0" P2PThroughput="1000.0" />
+                </Categories>
+            </ThroughputType>
+            <ThroughputType Name="FAILURE" Description="Failure throughput values in Kbps">
+                <Categories>
+                    <Category StandardFrequency="2.4G" Bandwidth="20" STADirection="DL" STAProtocole="TCP" P2PDirection="UL" P2PProtocole="UDP" STAThroughput="100.0" P2PThroughput="100.0" />
+                    <Category StandardFrequency="5G" Bandwidth="80" STADirection="DL" STAProtocole="TCP" P2PDirection="DL" P2PProtocole="TCP" STAThroughput="100.0" P2PThroughput="100.0" />
+                    <Category StandardFrequency="5G" Bandwidth="80" STADirection="UL" STAProtocole="TCP" P2PDirection="UL" P2PProtocole="TCP" STAThroughput="100.0" P2PThroughput="100.0" />
+                </Categories>
+            </ThroughputType>
+        </ThroughputTypes>
+    </DeviceModel>
+    <DeviceModel Name="REDHOOKBAY-Android-JB-MR1">
+        <Alias Name="BLACKBAY-Android-JB" />
+    </DeviceModel>
+    <DeviceModel Name="REDHOOKBAY_XEN-Android-JB-MR1">
+        <Alias Name="BLACKBAY-Android-JB" />
+    </DeviceModel>
+    <DeviceModel Name="GNexus-JB">
+        <Alias Name="BLACKBAY-Android-JB" />
+    </DeviceModel>
+    <DeviceModel Name="NexusS-ICS">
+        <Alias Name="BLACKBAY-Android-JB" />
+    </DeviceModel>
+    <DeviceModel Name="VICTORIABAY-Android-JB-MR1">
+        <Alias Name="REDHOOKBAY-Android-JB-MR1" />
+    </DeviceModel>
+    <DeviceModel Name="BODEGABAY-Android-JB-MR1">
+        <Alias Name="VICTORIABAY-Android-JB-MR1" />
+    </DeviceModel>
+    <DeviceModel Name="SALTBAY-Android-JB-MR1">
+        <Alias Name="VICTORIABAY-Android-JB-MR1" />
+    </DeviceModel>
+    <DeviceModel Name="BAYLAKE-Android-JB-MR1">
+        <Alias Name="VICTORIABAY-Android-JB-MR1" />
+    </DeviceModel>
+    <DeviceModel Name="SALTBAY_NEXT-Android-JB-MR2">
+        <Alias Name="SALTBAY-Android-JB-MR2" />
+    </DeviceModel>
+    <DeviceModel Name="BAYLAKE_NEXT-Android-JB-MR2">
+        <Alias Name="BAYLAKE-Android-JB-MR1" />
+    </DeviceModel>
+    <DeviceModel Name="BYT_T_FFRD10-Android-JB-MR1">
+        <Alias Name="VICTORIABAY-Android-JB-MR1" />
+    </DeviceModel>
+    <DeviceModel Name="BYT_T_FFRD8-Android-JB-MR1">
+        <Alias Name="VICTORIABAY-Android-JB-MR1" />
+    </DeviceModel>
+    <DeviceModel Name="REDHOOKBAY_BCM-Android-JB-MR1">
+        <Alias Name="VICTORIABAY-Android-JB-MR1" />
+    </DeviceModel>
+    <DeviceModel Name="REDHOOKBAY_VV-Android-JB-MR1">
+        <Alias Name="REDHOOKBAY-Android-JB-MR1" />
+    </DeviceModel>
+    <DeviceModel Name="REDHOOKBAY_LNP-Android-JB-MR1">
+        <Alias Name="VICTORIABAY-Android-JB-MR1" />
+    </DeviceModel>
+    <DeviceModel Name="BAYLAKE_XEN-Android-JB-MR1">
+        <Alias Name="VICTORIABAY-Android-JB-MR1" />
+    </DeviceModel>
+    <DeviceModel Name="BYT_M_CRB-Android-JB-MR1">
+        <Alias Name="VICTORIABAY-Android-JB-MR1" />
+    </DeviceModel>
+    <DeviceModel Name="BYT_T_RVP10-Android-JB-MR1">
+        <Alias Name="VICTORIABAY-Android-JB-MR1" />
+    </DeviceModel>
+    <DeviceModel Name="CLT3XX-Android-JB-MR1">
+        <Alias Name="VICTORIABAY-Android-JB-MR1" />
+    </DeviceModel>
+    <DeviceModel Name="CTP7160-Android-JB-MR1">
+        <Alias Name="VICTORIABAY-Android-JB-MR1" />
+    </DeviceModel>
+    <DeviceModel Name="GalaxySII-ICS">
+        <Alias Name="VICTORIABAY-Android-JB-MR1" />
+    </DeviceModel>
+    <DeviceModel Name="Dummy">
+        <Alias Name="BLACKBAY-Android-JB" />
+    </DeviceModel>
+    <DeviceModel Name="HARRISBEACH-Android-JB-MR1">
+        <Alias Name="BLACKBAY-Android-JB" />
+    </DeviceModel>
+    <DeviceModel Name="HARRISBEACH-Android-KK">
+        <Alias Name="HARRISBEACH-Android-JB-MR1" />
+    </DeviceModel>
+    <DeviceModel Name="MOOSEBASIN-Android-JB">
+        <Alias Name="VICTORIABAY-Android-JB-MR1" />
+    </DeviceModel>
+    <DeviceModel Name="Nexus4-JB-MR1">
+        <Alias Name="GalaxySII-ICS" />
+    </DeviceModel>
+    <DeviceModel Name="SALTBAY_LNP-Android-JB-MR1">
+        <Alias Name="SALTBAY-Android-JB-MR1" />
+    </DeviceModel>
+    <DeviceModel Name="S4-JB-MR1">
+        <Alias Name="GalaxySII-ICS" />
+    </DeviceModel>
+    <DeviceModel Name="BAYLAKE-Android-JB-MR2">
+        <Alias Name="BAYLAKE-Android-JB-MR1" />
+    </DeviceModel>
+    <DeviceModel Name="BODEGABAY-Android-JB-MR2">
+        <Alias Name="BODEGABAY-Android-JB-MR1" />
+    </DeviceModel>
+    <DeviceModel Name="CTP7160-Android-JB-MR2">
+        <Alias Name="CTP7160-Android-JB-MR1" />
+    </DeviceModel>
+    <DeviceModel Name="REDHOOKBAY-Android-JB-MR2">
+        <Alias Name="REDHOOKBAY-Android-JB-MR1" />
+    </DeviceModel>
+    <DeviceModel Name="SALTBAY-Android-JB-MR2">
+        <Alias Name="SALTBAY-Android-JB-MR1" />
+    </DeviceModel>
+    <DeviceModel Name="CHERRYTRAIL-Windows8">
+        <Alias Name="SALTBAY-Android-JB-MR2" />
+    </DeviceModel>
+    <DeviceModel Name="SKL-Windows-10-Full">
+        <Alias Name="SALTBAY-Android-JB-MR2" />
+    </DeviceModel>
+    <DeviceModel Name="ASUST100-Windows-10-Full">
+        <Alias Name="SALTBAY-Android-JB-MR2" />
+    </DeviceModel>
+    <DeviceModel Name="BYT_M_CRB-Android-JB-MR2">
+        <Alias Name="BYT_M_CRB-Android-JB-MR1" />
+    </DeviceModel>
+    <DeviceModel Name="BYT_T_FFRD10-Windows-8-Full">
+        <Alias Name="BYT_T_FFRD10-Android-JB-MR2" />
+    </DeviceModel>
+    <DeviceModel Name="BYT_T_FFRD10-Windows-TH-Full">
+        <Alias Name="BYT_T_FFRD10-Android-JB-MR2" />
+    </DeviceModel>
+    <DeviceModel Name="BYT_T_FFRD10-Android-JB-MR2">
+        <Alias Name="BYT_T_FFRD10-Android-JB-MR1" />
+    </DeviceModel>
+    <DeviceModel Name="BYT_T_FFRD8-Android-JB-MR2">
+        <Alias Name="BYT_T_FFRD8-Android-JB-MR1" />
+    </DeviceModel>
+    <DeviceModel Name="BYT_T_FFRD8_DUALOS-Android-JB-MR1">
+        <Alias Name="BYT_T_FFRD8-Android-JB-MR1" />
+    </DeviceModel>
+    <DeviceModel Name="BYT_T_FFRD8_NEXT-Android-JB-MR2">
+        <Alias Name="BYT_T_FFRD8-Android-JB-MR2" />
+    </DeviceModel>
+    <DeviceModel Name="SALTBAY_LNP_NEXT-Android-JB-MR2">
+        <Alias Name="SALTBAY-Android-JB-MR2" />
+    </DeviceModel>
+    <DeviceModel Name="BYT_T_FFRD10_XEN-Android-JB-MR1">
+        <Alias Name="BYT_T_FFRD10-Android-JB-MR1" />
+    </DeviceModel>
+    <DeviceModel Name="BYT_T_RVP10-Android-JB-MR2">
+        <Alias Name="BYT_T_FFRD10-Android-JB-MR2" />
+    </DeviceModel>
+    <DeviceModel Name="CLT3XX-Android-JB-MR2">
+        <Alias Name="BYT_T_FFRD10-Android-JB-MR2" />
+    </DeviceModel>
+    <DeviceModel Name="ME372CL-Android-JB-MR2">
+        <Alias Name="BYT_T_FFRD10-Android-JB-MR2" />
+    </DeviceModel>
+    <DeviceModel Name="ME372CL-Android-KK">
+        <Alias Name="BYT_T_FFRD10-Android-KK" />
+    </DeviceModel>
+    <DeviceModel Name="REDHOOKBAY_BCM-Android-JB-MR2">
+        <Alias Name="REDHOOKBAY-Android-JB-MR2" />
+    </DeviceModel>
+    <DeviceModel Name="REDHOOKBAY_LNP_DS-Android-JB-MR1">
+        <Alias Name="REDHOOKBAY-Android-JB-MR1" />
+    </DeviceModel>
+    <DeviceModel Name="REDHOOKBAY_NEXT-Android-JB-MR2">
+        <Alias Name="REDHOOKBAY-Android-JB-MR2" />
+    </DeviceModel>
+    <DeviceModel Name="REDHOOKBAY_XEN-Android-JB-MR2">
+        <Alias Name="REDHOOKBAY-Android-JB-MR2" />
+    </DeviceModel>
+    <DeviceModel Name="SALTBAY_LNP-Android-JB-MR2">
+        <Alias Name="SALTBAY-Android-JB-MR2" />
+    </DeviceModel>
+    <DeviceModel Name="BYT_T_FFRD8_64-Android-JB-MR2">
+        <Alias Name="BYT_T_FFRD8-Android-JB-MR2" />
+    </DeviceModel>
+    <DeviceModel Name="BYT_T_FFRD8_64-Android-KK">
+        <Alias Name="BYT_T_FFRD8-Android-KK" />
+    </DeviceModel>
+    <DeviceModel Name="BYT_T_FFRD8_EDK2_64-Android-JB-MR2">
+        <Alias Name="BYT_T_FFRD8-Android-JB-MR2" />
+    </DeviceModel>
+    <DeviceModel Name="BYT_T_FFRD8_EDK2_64-Android-KK">
+        <Alias Name="BYT_T_FFRD8-Android-KK" />
+    </DeviceModel>
+    <DeviceModel Name="BYT_T_FFRD8-Android-KK">
+        <Alias Name="BYT_T_FFRD8-Android-JB-MR2" />
+    </DeviceModel>
+    <DeviceModel Name="BYT_T_FFRD8_64-Android-LLP">
+        <Alias Name="BYT_T_FFRD8-Android-KK" />
+    </DeviceModel>
+    <DeviceModel Name="BYT_T_64P-Android-LLP">
+        <Alias Name="BYT_T_FFRD8_64-Android-LLP" />
+        <ThroughputTypes>
+            <ThroughputType Name="TARGET" Description="Theoretical throughput values in Kbps">
+                <Categories>
+                    <Category StandardFrequency="2.4G" Bandwidth="20" STADirection="DL" STAProtocole="TCP" P2PDirection="UL" P2PProtocole="UDP" STAThroughput="15000.0" P2PThroughput="15000.0" />
+                </Categories>
+            </ThroughputType>
+            <ThroughputType Name="FAILURE" Description="Failure throughput values in Kbps">
+                <Categories>
+                    <Category StandardFrequency="2.4G" Bandwidth="20" STADirection="DL" STAProtocole="TCP" P2PDirection="UL" P2PProtocole="UDP" STAThroughput="14550.0" P2PThroughput="14550.0" />
+                </Categories>
+            </ThroughputType>
+        </ThroughputTypes>
+    </DeviceModel>
+    <DeviceModel Name="BYT_T_32O-Android-LLP">
+        <Alias Name="BYT_T_FFRD8_64-Android-LLP" />
+        <ThroughputTypes>
+            <ThroughputType Name="TARGET" Description="Theoretical throughput values in Kbps">
+                <Categories>
+                    <Category StandardFrequency="2.4G" Bandwidth="20" STADirection="DL" STAProtocole="TCP" P2PDirection="UL" P2PProtocole="UDP" STAThroughput="15000.0" P2PThroughput="15000.0" />
+                </Categories>
+            </ThroughputType>
+            <ThroughputType Name="FAILURE" Description="Failure throughput values in Kbps">
+                <Categories>
+                    <Category StandardFrequency="2.4G" Bandwidth="20" STADirection="DL" STAProtocole="TCP" P2PDirection="UL" P2PProtocole="UDP" STAThroughput="14550.0" P2PThroughput="14550.0" />
+                </Categories>
+            </ThroughputType>
+        </ThroughputTypes>
+    </DeviceModel>
+    <DeviceModel Name="BYT_T_FFRD8_NEXT-Android-KK">
+        <Alias Name="BYT_T_FFRD8-Android-KK" />
+    </DeviceModel>
+    <DeviceModel Name="CTP7160-Android-KK">
+        <Alias Name="CTP7160-Android-JB-MR2" />
+    </DeviceModel>
+    <DeviceModel Name="ME560DS-Android-JB-MR2">
+        <Alias Name="REDHOOKBAY-Android-JB-MR2" />
+    </DeviceModel>
+    <DeviceModel Name="PF450CL-Android-LLP">
+        <Alias Name="REDHOOKBAY-Android-KK" />
+    </DeviceModel>
+    <DeviceModel Name="REDHOOKBAY-Android-KK">
+        <Alias Name="REDHOOKBAY-Android-JB-MR2" />
+    </DeviceModel>
+    <DeviceModel Name="REDHOOKBAY-Android-LLP">
+        <Alias Name="REDHOOKBAY-Android-KK" />
+    </DeviceModel>
+    <DeviceModel Name="REDHOOKBAY_BCM-Android-KK">
+        <Alias Name="REDHOOKBAY-Android-KK" />
+    </DeviceModel>
+    <DeviceModel Name="REDHOOKBAY_LOW_RAM-Android-KK">
+        <Alias Name="REDHOOKBAY-Android-KK" />
+    </DeviceModel>
+    <DeviceModel Name="REDHOOKBAY_NEXT-Android-KK">
+        <Alias Name="REDHOOKBAY-Android-KK" />
+    </DeviceModel>
+    <DeviceModel Name="REDHOOKBAY_XEN-Android-KK">
+        <Alias Name="REDHOOKBAY-Android-KK" />
+    </DeviceModel>
+    <DeviceModel Name="SALTBAY_64-Android-JB-MR2">
+        <Alias Name="SALTBAY-Android-JB-MR2" />
+    </DeviceModel>
+    <DeviceModel Name="SALTBAY_64-Android-KK">
+        <Alias Name="SALTBAY-Android-KK" />
+    </DeviceModel>
+    <DeviceModel Name="SALTBAY_64-Android-LLP">
+        <Alias Name="SALTBAY_64-Android-KK" />
+        <ThroughputTypes>
+            <ThroughputType Name="TARGET" Description="Theoretical throughput values in Kbps">
+                <Categories>
+                    <Category StandardFrequency="2.4G" Bandwidth="20" STADirection="DL" STAProtocole="TCP" P2PDirection="UL" P2PProtocole="UDP" STAThroughput="15000.0" P2PThroughput="20000.0" />
+                    <Category StandardFrequency="5G" Bandwidth="80" STADirection="DL" STAProtocole="TCP" P2PDirection="DL" P2PProtocole="TCP" STAThroughput="40000.0" P2PThroughput="40000.0" />
+                    <Category StandardFrequency="5G" Bandwidth="80" STADirection="UL" STAProtocole="TCP" P2PDirection="UL" P2PProtocole="TCP" STAThroughput="40000.0" P2PThroughput="40000.0" />
+                </Categories>
+            </ThroughputType>
+            <ThroughputType Name="FAILURE" Description="Failure throughput values in Kbps">
+                <Categories>
+                    <Category StandardFrequency="2.4G" Bandwidth="20" STADirection="DL" STAProtocole="TCP" P2PDirection="UL" P2PProtocole="UDP" STAThroughput="14550.0" P2PThroughput="19400.0" />
+                    <Category StandardFrequency="5G" Bandwidth="80" STADirection="DL" STAProtocole="TCP" P2PDirection="DL" P2PProtocole="TCP" STAThroughput="38800.0" P2PThroughput="38800.0" />
+                    <Category StandardFrequency="5G" Bandwidth="80" STADirection="UL" STAProtocole="TCP" P2PDirection="UL" P2PProtocole="TCP" STAThroughput="38800.0" P2PThroughput="38800.0" />
+                </Categories>
+            </ThroughputType>
+        </ThroughputTypes>
+    </DeviceModel>
+    <DeviceModel Name="SALTBAY-Android-KK">
+        <Alias Name="SALTBAY-Android-JB-MR2" />
+    </DeviceModel>
+    <DeviceModel Name="SALTBAY_LNP-Android-KK">
+        <Alias Name="SALTBAY-Android-KK" />
+    </DeviceModel>
+    <DeviceModel Name="SALTBAY_LNP_NEXT-Android-KK">
+        <Alias Name="SALTBAY-Android-KK" />
+    </DeviceModel>
+    <DeviceModel Name="SALTBAY_NEXT-Android-KK">
+        <Alias Name="SALTBAY-Android-KK" />
+    </DeviceModel>
+    <DeviceModel Name="BYT_M_CRB-Android-JB-MR1-AIA">
+        <Alias Name="BYT_T_FFRD8-Android-JB-MR1" />
+    </DeviceModel>
+    <DeviceModel Name="BYT_M_CRB-Android-JB-MR2-AIA">
+        <Alias Name="BYT_T_FFRD8-Android-JB-MR2" />
+    </DeviceModel>
+    <DeviceModel Name="BYT_M_CRB-Android-KK-AIA">
+        <Alias Name="BYT_T_FFRD8-Android-KK" />
+    </DeviceModel>
+    <DeviceModel Name="BYT_T_CRV2-Android-KK">
+        <Alias Name="BYT_M_CRB-Android-KK-AIA" />
+    </DeviceModel>
+    <DeviceModel Name="BYT_T_CRV2-Android-LLP">
+        <Alias Name="BYT_T_CRV2-Android-KK" />
+    </DeviceModel>
+    <DeviceModel Name="BYT_T_CRV2_64-Android-KK">
+        <Alias Name="BYT_T_CRV2-Android-KK" />
+    </DeviceModel>
+    <DeviceModel Name="BYT_T_CRV2_64-Android-LLP">
+        <Alias Name="BYT_T_CRV2_64-Android-KK" />
+    </DeviceModel>
+    <DeviceModel Name="BYT_T_CR_32O-Android-LLP">
+        <Alias Name="BYT_T_CRV2_64-Android-LLP" />
+    </DeviceModel>
+    <DeviceModel Name="BYT_T_CRV2_32O-Android-LLP">
+        <Alias Name="BYT_T_CRV2_64-Android-LLP" />
+    </DeviceModel>
+    <DeviceModel Name="BYT_T_FFRD8_EDK2-Android-KK">
+        <Alias Name="BYT_T_FFRD8-Android-KK" />
+    </DeviceModel>
+    <DeviceModel Name="CHT_FFD-Android-LLP">
+        <Alias Name="CHT_RVP_64-Android-KK" />
+        <ThroughputTypes>
+            <ThroughputType Name="TARGET" Description="Theoretical throughput values in Kbps">
+                <Categories>
+                    <Category StandardFrequency="2.4G" Bandwidth="20" STADirection="DL" STAProtocole="TCP" P2PDirection="UL" P2PProtocole="UDP" STAThroughput="50000.0" P2PThroughput="60000.0" />
+                    <Category StandardFrequency="5G" Bandwidth="80" STADirection="DL" STAProtocole="TCP" P2PDirection="DL" P2PProtocole="TCP" STAThroughput="65000.0" P2PThroughput="65000.0" />
+                    <Category StandardFrequency="5G" Bandwidth="80" STADirection="UL" STAProtocole="TCP" P2PDirection="UL" P2PProtocole="TCP" STAThroughput="65000.0" P2PThroughput="65000.0" />
+                </Categories>
+            </ThroughputType>
+            <ThroughputType Name="FAILURE" Description="Failure throughput values in Kbps">
+                <Categories>
+                    <Category StandardFrequency="2.4G" Bandwidth="20" STADirection="DL" STAProtocole="TCP" P2PDirection="UL" P2PProtocole="UDP" STAThroughput="45000.0" P2PThroughput="55000.0" />
+                    <Category StandardFrequency="5G" Bandwidth="80" STADirection="DL" STAProtocole="TCP" P2PDirection="DL" P2PProtocole="TCP" STAThroughput="60000.0" P2PThroughput="60000.0" />
+                    <Category StandardFrequency="5G" Bandwidth="80" STADirection="UL" STAProtocole="TCP" P2PDirection="UL" P2PProtocole="TCP" STAThroughput="60000.0" P2PThroughput="60000.0" />
+                </Categories>
+            </ThroughputType>
+        </ThroughputTypes>
+    </DeviceModel>
+    <DeviceModel Name="CHT_RVP_64-Android-LLP">
+        <Alias Name="CHT_RVP_64-Android-KK" />
+        <ThroughputTypes>
+            <ThroughputType Name="TARGET" Description="Theoretical throughput values in Kbps">
+                <Categories>
+                    <Category StandardFrequency="2.4G" Bandwidth="20" STADirection="DL" STAProtocole="TCP" P2PDirection="UL" P2PProtocole="UDP" STAThroughput="50000.0" P2PThroughput="60000.0" />
+                    <Category StandardFrequency="5G" Bandwidth="80" STADirection="DL" STAProtocole="TCP" P2PDirection="DL" P2PProtocole="TCP" STAThroughput="65000.0" P2PThroughput="65000.0" />
+                    <Category StandardFrequency="5G" Bandwidth="80" STADirection="UL" STAProtocole="TCP" P2PDirection="UL" P2PProtocole="TCP" STAThroughput="65000.0" P2PThroughput="65000.0" />
+                </Categories>
+            </ThroughputType>
+            <ThroughputType Name="FAILURE" Description="Failure throughput values in Kbps">
+                <Categories>
+                    <Category StandardFrequency="2.4G" Bandwidth="20" STADirection="DL" STAProtocole="TCP" P2PDirection="UL" P2PProtocole="UDP" STAThroughput="45000.0" P2PThroughput="55000.0" />
+                    <Category StandardFrequency="5G" Bandwidth="80" STADirection="DL" STAProtocole="TCP" P2PDirection="DL" P2PProtocole="TCP" STAThroughput="60000.0" P2PThroughput="60000.0" />
+                    <Category StandardFrequency="5G" Bandwidth="80" STADirection="UL" STAProtocole="TCP" P2PDirection="UL" P2PProtocole="TCP" STAThroughput="60000.0" P2PThroughput="60000.0" />
+                </Categories>
+            </ThroughputType>
+        </ThroughputTypes>
+    </DeviceModel>
+    <DeviceModel Name="cht_rvp-Android-LLP">
+        <Alias Name="CHT_RVP_64-Android-LLP" />
+    </DeviceModel>
+    <DeviceModel Name="cht_ffd-Android-LLP">
+        <Alias Name="CHT_RVP_64-Android-LLP" />
+    </DeviceModel>
+    <DeviceModel Name="cht_hr-Android-LLP">
+        <Alias Name="CHT_RVP_64-Android-LLP" />
+        <ThroughputTypes>
+            <ThroughputType Name="TARGET" Description="Theoretical throughput values in Kbps">
+                <Categories>
+                    <Category StandardFrequency="2.4G" Bandwidth="20" STADirection="DL" STAProtocole="TCP" P2PDirection="UL" P2PProtocole="UDP" STAThroughput="94000.0" P2PThroughput="15000.0" />
+                     </Categories>
+            </ThroughputType>
+            <ThroughputType Name="FAILURE" Description="Failure throughput values in Kbps">
+                <Categories>
+                    <Category StandardFrequency="2.4G" Bandwidth="20" STADirection="DL" STAProtocole="TCP" P2PDirection="UL" P2PProtocole="UDP" STAThroughput="89000.0" P2PThroughput="14000.0" />
+                    </Categories>
+            </ThroughputType>
+        </ThroughputTypes>
+    </DeviceModel>
+    <DeviceModel Name="cht_cr_rvp-Android-LLP">
+        <Alias Name="CHT_RVP_64-Android-LLP" />
+        <ThroughputTypes>
+            <ThroughputType Name="TARGET" Description="Theoretical throughput values in Kbps">
+                <Categories>
+                    <Category StandardFrequency="2.4G" Bandwidth="20" STADirection="DL" STAProtocole="TCP" P2PDirection="UL" P2PProtocole="UDP" STAThroughput="33000.0" P2PThroughput="15000.0" />
+                     </Categories>
+            </ThroughputType>
+            <ThroughputType Name="FAILURE" Description="Failure throughput values in Kbps">
+                <Categories>
+                    <Category StandardFrequency="2.4G" Bandwidth="20" STADirection="DL" STAProtocole="TCP" P2PDirection="UL" P2PProtocole="UDP" STAThroughput="31000.0" P2PThroughput="14000.0" />
+                    </Categories>
+            </ThroughputType>
+        </ThroughputTypes>
+    </DeviceModel>
+    <DeviceModel Name="CHT_RVP_64-Android-KK">
+        <Alias Name="SALTBAY-Android-KK" />
+    </DeviceModel>
+    <DeviceModel Name="CHT_RVP-Android-KK">
+        <Alias Name="SALTBAY-Android-KK" />
+    </DeviceModel>
+    <DeviceModel Name="CHT_RVP_NEXT-Android-KK">
+        <Alias Name="SALTBAY-Android-KK" />
+    </DeviceModel>
+    <DeviceModel Name="CHT_RVP_64_GEN8-Android-KK">
+        <Alias Name="SALTBAY-Android-KK" />
+    </DeviceModel>
+    <DeviceModel Name="HTCOneX-JB">
+        <Alias Name="SALTBAY-Android-KK" />
+    </DeviceModel>
+    <DeviceModel Name="MOFD_V0-Android-KK">
+        <Alias Name="SALTBAY-Android-KK" />
+    </DeviceModel>
+    <DeviceModel Name="MOFD_V1-Android-KK">
+        <Alias Name="MOFD_V0-Android-KK" />
+    </DeviceModel>
+    <DeviceModel Name="MOFD_V0_64-Android-KK">
+        <Alias Name="MOFD_V0-Android-KK" />
+    </DeviceModel>
+    <DeviceModel Name="MOFD_V1_64-Android-KK">
+        <Alias Name="MOFD_V1-Android-KK" />
+    </DeviceModel>
+    <DeviceModel Name="MOFD_V1_64-Android-LLP">
+        <Alias Name="MOFD_V1_64-Android-KK" />
+        <ThroughputTypes>
+            <ThroughputType Name="TARGET" Description="Theoretical throughput values in Kbps">
+                <Categories>
+                    <Category StandardFrequency="2.4G" Bandwidth="20" STADirection="DL" STAProtocole="TCP" P2PDirection="UL" P2PProtocole="UDP" STAThroughput="25000.0" P2PThroughput="30000.0" />
+                    <Category StandardFrequency="5G" Bandwidth="80" STADirection="DL" STAProtocole="TCP" P2PDirection="DL" P2PProtocole="TCP" STAThroughput="60000.0" P2PThroughput="60000.0" />
+                    <Category StandardFrequency="5G" Bandwidth="80" STADirection="UL" STAProtocole="TCP" P2PDirection="UL" P2PProtocole="TCP" STAThroughput="60000.0" P2PThroughput="60000.0" />
+                </Categories>
+            </ThroughputType>
+            <ThroughputType Name="FAILURE" Description="Failure throughput values in Kbps">
+                <Categories>
+                    <Category StandardFrequency="2.4G" Bandwidth="20" STADirection="DL" STAProtocole="TCP" P2PDirection="UL" P2PProtocole="UDP" STAThroughput="24000.0" P2PThroughput="29000.0" />
+                    <Category StandardFrequency="5G" Bandwidth="80" STADirection="DL" STAProtocole="TCP" P2PDirection="DL" P2PProtocole="TCP" STAThroughput="55000.0" P2PThroughput="55000.0" />
+                    <Category StandardFrequency="5G" Bandwidth="80" STADirection="UL" STAProtocole="TCP" P2PDirection="UL" P2PProtocole="TCP" STAThroughput="55000.0" P2PThroughput="55000.0" />
+                </Categories>
+            </ThroughputType>
+        </ThroughputTypes>
+    </DeviceModel>
+    <DeviceModel Name="MOFD_64P-Android-LLP">
+        <Alias Name="MOFD_V1_64-Android-LLP" />
+    </DeviceModel>
+    <DeviceModel Name="MOFD_32O_MIDRAM-Android-LLP">
+        <Alias Name="MOFD_V1_64-Android-LLP" />
+    </DeviceModel>
+    <DeviceModel Name="MOFD_V1_64_MID_RAM-Android-KK">
+        <Alias Name="MOFD_V1_64-Android-KK" />
+    </DeviceModel>
+    <DeviceModel Name="MOFD_V1_64_MID_RAM-Android-LLP">
+        <Alias Name="MOFD_V1_64-Android-KK" />
+    </DeviceModel>
+    <DeviceModel Name="MOFD_V1_64_NO_MODEM-Android-KK">
+        <Alias Name="MOFD_V1-Android-KK" />
+    </DeviceModel>
+    <DeviceModel Name="MOFD_V1_64_NO_MODEM-Android-LLP">
+        <Alias Name="MOFD_V1_64_NO_MODEM-Android-KK" />
+    </DeviceModel>
+    <DeviceModel Name="MOFD_DS-Android-KK">
+        <Alias Name="MOFD_V0-Android-KK" />
+    </DeviceModel>
+    <DeviceModel Name="MOFD_DSDA-Android-KK">
+        <Alias Name="MOFD_V0-Android-KK" />
+    </DeviceModel>
+    <DeviceModel Name="Nexus4-JB-MR2">
+        <Alias Name="Nexus4-JB-MR1" />
+    </DeviceModel>
+    <DeviceModel Name="Nexus5-LLP">
+        <Alias Name="Nexus4-JB-MR2" />
+    </DeviceModel>
+    <DeviceModel Name="MCKEE2-Android-JB-MR1">
+        <Alias Name="BLACKBAY-Android-JB" />
+    </DeviceModel>
+    <DeviceModel Name="ASUS-T100-Android-GMIN-KK">
+        <Alias Name="BLACKBAY-Android-JB" />
+    </DeviceModel>
+    <DeviceModel Name="ASUS-T100-Android-KK">
+        <Alias Name="BLACKBAY-Android-JB" />
+    </DeviceModel>
+    <DeviceModel Name="MRD7-Android-GMIN-KK">
+        <Alias Name="BLACKBAY-Android-JB" />
+    </DeviceModel>
+    <DeviceModel Name="MRD7-Android-KK">
+        <Alias Name="BLACKBAY-Android-JB" />
+    </DeviceModel>
+    <DeviceModel Name="Broadwell_WillsonBeach-GMIN-KK">
+        <Alias Name="BLACKBAY-Android-JB" />
+    </DeviceModel>
+    <DeviceModel Name="Broadwell_WillsonBeach-KK">
+        <Alias Name="BLACKBAY-Android-JB" />
+    </DeviceModel>
+    <DeviceModel Name="SANTOS103G-Android-KK">
+        <Alias Name="BLACKBAY-Android-JB" />
+    </DeviceModel>
+    <DeviceModel Name="EDISON-Linux">
+        <Alias Name="BLACKBAY-Android-JB" />
+    </DeviceModel>
+    <DeviceModel Name="full_fugu-Android-LLP">
+        <Alias Name="BLACKBAY-Android-JB" />
+    </DeviceModel>
+    <DeviceModel Name="kiwi-Android-LLP">
+        <Alias Name="BLACKBAY-Android-JB" />
+    </DeviceModel>
+    <DeviceModel Name="SF3G_MRD0_P0-Android-LLP">
+        <Alias Name="BLACKBAY-Android-JB" />
+    </DeviceModel>
+    <DeviceModel Name="SF3G_MRD5_P1-Android-LLP">
+        <Alias Name="SF3G_MRD0_P0-Android-LLP" />
+    </DeviceModel>
+    <DeviceModel Name="SF3G_MRD5_P1_V2-Android-LLP">
+        <Alias Name="SF3G_MRD0_P0-Android-LLP" />
+    </DeviceModel>
+    <DeviceModel Name="SF3G_MRD7_P1-Android-LLP">
+        <Alias Name="SF3G_MRD0_P0-Android-LLP" />
+    </DeviceModel>
+    <DeviceModel Name="SF3G_MRD7_P1_V2-Android-LLP">
+        <Alias Name="SF3G_MRD0_P0-Android-LLP" />
+    </DeviceModel>
+    <DeviceModel Name="SF3GL_SVB_V2-Android-LLP">
+        <Alias Name="SF3G_MRD0_P0-Android-LLP" />
+    </DeviceModel>
+    <DeviceModel Name="SF3GR_MRD6_P1-Android-LLP">
+        <Alias Name="SF3G_MRD0_P0-Android-LLP" />
+    </DeviceModel>
+    <DeviceModel Name="SF3GR_MRD6_P2-Android-LLP">
+        <Alias Name="SF3GR_MRD6_P1-Android-LLP" />
+    </DeviceModel>
+</DeviceModels>

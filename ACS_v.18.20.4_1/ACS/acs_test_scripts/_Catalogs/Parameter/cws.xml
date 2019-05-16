@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!-- CWS (Wifi, BT, NFC) Parameters Catalog Template : new template to automatically populate i-TAP database with exhaustive CWS (Wifi, BT, NFC) TC params -->
+<Parameters xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../acs/src/_Catalogs/Parameter/parameter.xsd">
+    <Parameter name="BT_DEVICE_ADDRESS">
+        <Description>BlueTooth device address (BDADDR) - 48 bits - If empty, uses the BT device MAC address in BenchConfig</Description>
+        <Domain>CWS</Domain>
+        <Type>str</Type>
+        <PossibleValues override="false"></PossibleValues>
+        <DefaultValue override="true">00:00:00:00:00:00</DefaultValue>
+        <Blank override="false">true</Blank>
+    </Parameter>
+    <Parameter name="BT_CODE_PIN">
+        <Description>Bluetooth code pin for pairing procedure - 4 digits</Description>
+        <Domain>CWS</Domain>
+        <Type>digit</Type>
+        <PossibleValues override="false">[0:9];[0:9];[0:9];[0:9]</PossibleValues>
+        <DefaultValue override="true">0;0;0;0</DefaultValue>
+        <Blank override="false">true</Blank>
+    </Parameter>
+    <Parameter name="BT_PASSPHRASE">
+        <Description>Bluetooth passphrase for encryption - 4 digits</Description>
+        <Domain>CWS</Domain>
+        <Type>digit</Type>
+        <PossibleValues override="false">[0:9];[0:9];[0:9];[0:9]</PossibleValues>
+        <DefaultValue override="true">0;0;0;0</DefaultValue>
+        <Blank override="false">true</Blank>
+    </Parameter>
+    <Parameter name="WIFI_ACCESS_POINT">
+        <Description>Wifi access point on which board will connect to. Must refers to a wifi router's name (equipment name of the bench config - Ex : WPA_WIFI_ROUTER)</Description>
+        <Domain>CWS</Domain>
+        <Type>str</Type>
+        <PossibleValues override="false"></PossibleValues>
+        <DefaultValue override="false"></DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="WIFI_SECURITY">
+        <Description>Wifi Security</Description>
+        <Domain>CWS</Domain>
+        <Type>str</Type>
+        <PossibleValues override="true">OPEN;WEP64;WEP64-OPEN;WEP128;WEP128-OPEN;WPA-PSK-TKIP;WPA2-PSK-AES;EAP-WPA;EAP-WPA2;WPA-PSK</PossibleValues>
+        <DefaultValue override="true">OPEN</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+</Parameters>

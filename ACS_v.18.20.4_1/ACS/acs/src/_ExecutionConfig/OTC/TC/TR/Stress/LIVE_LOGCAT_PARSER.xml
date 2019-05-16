@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase>
+  <ClassName>UseCase.Misc.LIVE_LOGCAT_PARSER.LogcatParser</ClassName>
+  <Description></Description>
+  <b2bIteration>1</b2bIteration>
+  <b2bContinuousMode>False</b2bContinuousMode>
+  <Parameters>
+    <Parameter>
+      <!-- Parameters to filter by, separated byy commas -->
+      <Name>MESSAGE</Name>
+      <Value>SIGSEGV</Value>
+    </Parameter>
+    <Parameter>
+       <!-- [Optional] Time until logcat dump. If empty, the defaul is 20 seconds -->
+      <Name>TIME</Name>
+      <Value>100</Value>
+    </Parameter>
+  </Parameters>
+</TestCase>

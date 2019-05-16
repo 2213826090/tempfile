@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase>
+    <UseCase>EXEC</UseCase>
+    <Description>Create a file on SD Card</Description>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters>
+        <!--_____________ -->
+        <!-- RUN SECTION -->
+        <!--_____________ -->
+        <!-- One action or sequence of actions (RUN_CMD, RUN_CMD1, RUN_CMD2, ...) -->
+        <!-- FIRST ACTION -->
+        <Parameter>
+            <!-- Action to be run, should be in the executable path of the system -->
+            <!-- (mandatory) -->
+            <!-- For this template, we are running windows only command -->
+            <Name>RUN_CMD</Name>
+            <Value>adb shell touch /mnt/media_rw/sdcard1/test.txt</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Action to be run, should be in the executable path of the system -->
+            <!-- (mandatory) -->
+            <!-- For this template, we are running windows only command -->
+            <Name>RUN_CMD2</Name>
+            <Value>adb shell rm /mnt/media_rw/sdcard1/test.txt</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Action to be run, should be in the executable path of the system -->
+            <!-- (mandatory) -->
+            <!-- For this template, we are running windows only command -->
+            <Name>RUN_CMD3</Name>
+            <Value>adb shell ls /mnt/media_rw/sdcard1/test.txt</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Expected result int (exec return code) or string (that will be search in the stdout)
+                If you need to check device log, add [TRIG_LOG] <message to trigger> as value -->
+            <!-- (optional, default value = 0) -->
+            <Name>RUN_EXPECT_RESULT3</Name>
+            <Value>/mnt/media_rw/sdcard1/test.txt: No such file or directory</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

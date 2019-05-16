@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="13.41">
+    <UseCase>TEST_STEP_ENGINE</UseCase>
+    <Description/>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>False</b2bContinuousMode>
+    <TcMaxAttempt>1</TcMaxAttempt>
+    <TcAcceptanceCriteria>1</TcAcceptanceCriteria>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters>
+        <Parameter>
+            <Name>FTP_FILE_DL</Name>
+            <Value>QCTV_CWS/get500MB</Value>
+        </Parameter>
+        <Parameter>
+            <Name>WIFI_CHANNEL_SNIFF</Name>
+            <Value>44</Value>
+        </Parameter>
+        <Parameter>
+            <Name>AP_TYPE</Name>
+            <Value>CISCO_1262</Value>
+        </Parameter>
+    </Parameters>
+    <TestSteps>
+        <Include Src="ST/cws/TSS/Common/ST_CWS_COMMON.xml"/>
+        <Include Src="ST/cws/TSS/WiFi/ST_CWS_WIFI_COMMON.xml"/>
+        <Include Src="ST/cws/TSS/WiFi/ST_CWS_WIFI_AP.xml"/>
+
+        <Setup>
+            <!-- AUTOMATION - Set default configuration -->
+            <Fork Id="ForkDUTAndWiFiAPs">
+                <TestStep SetId="InitPhoneCWS" DEVICE="PHONE1" />
+                <TestStep SetId="WiFiAPConfigStandardAP1" STANDARD="n5G" AUTHENTICATION_TYPE="WPA2-PSK-AES" PASSPHRASE="FROM_BENCH:CONFIGURABLE_AP1:passphrase_WPA2" CHANNEL="FROM_TC:WIFI_CHANNEL_SNIFF" BANDWIDTH="20"/>
+            </Fork>
+            <TestStep SetId="WiFiCommonSetup" DEVICE="PHONE1" REGULATORY_DOMAIN="FR" />
+            <TestStep Id="GET_MAC_ADDRESS" DEVICE="PHONE1" INTERFACE="wlan0" MAC_ADDR="MAC_ADDR_PHONE1" />
+        </Setup>
+        <RunTest>
+            <!-- SPEC - Step 1 : Connect DUT to AP -->
+            <TestStep SetId="WiFiAddNetwork" DEVICE="PHONE1" SSID="FROM_BENCH:CONFIGURABLE_AP1:SSID" SECURITY="WPA2-PSK-AES" PASS_PHRASE="FROM_BENCH:CONFIGURABLE_AP1:passphrase_WPA2"/>
+            <TestStep Id="WIFI_CONNECT" DEVICE="PHONE1" SSID="FROM_BENCH:CONFIGURABLE_AP1:SSID" TIMEOUT="90"/>
+            <TestStep Id="WIFI_WAIT_FOR_SSID_STATE" DEVICE="PHONE1" SSID="FROM_BENCH:CONFIGURABLE_AP1:SSID" STATE="CONNECTED,REMEMBERED,VISIBLE" TIMEOUT="90"/>
+
+            <!-- SPEC - Step 2&3 : Perform an FTP transfer -->
+            <TestStep Id="FTP_TRANSFER" DEVICE="PHONE1" SERVER_IP="FROM_BENCH:LAB_SERVER:IP" USERNAME="FROM_BENCH:LAB_SERVER:username" PASSWORD="FROM_BENCH:LAB_SERVER:password" DIRECTION="DL" FILENAME="FROM_BENCH:LAB_SERVER:ftp_path[+]/[+]FROM_TC:FTP_FILE_DL" TIMEOUT="1800" CLIENT_IP="none" SAVE_THROUGHPUT_AS="THROUGHPUT_DL_20MHZ"/>
+
+            <!-- SPEC Step 4 : Enable 40MHz on AP -->
+            <TestStep SetId="WiFiAPConfigStandardAP1" STANDARD="n5G" AUTHENTICATION_TYPE="WPA2-PSK-AES" PASSPHRASE="FROM_BENCH:CONFIGURABLE_AP1:passphrase_WPA2" CHANNEL="FROM_TC:WIFI_CHANNEL_SNIFF" BANDWIDTH="40"/>
+
+            <!-- SPEC Step 5 : Connect DUT to AP -->
+            <TestStep Id="WIFI_CONNECT" DEVICE="PHONE1" SSID="FROM_BENCH:CONFIGURABLE_AP1:SSID" TIMEOUT="90"/>
+            <TestStep Id="WIFI_WAIT_FOR_SSID_STATE" DEVICE="PHONE1" SSID="FROM_BENCH:CONFIGURABLE_AP1:SSID" STATE="CONNECTED,REMEMBERED,VISIBLE" TIMEOUT="90"/>
+
+            <!-- SPEC - Step 6&7 : Perform an FTP transfer -->
+            <TestStep Id="FTP_TRANSFER" DEVICE="PHONE1" SERVER_IP="FROM_BENCH:LAB_SERVER:IP" USERNAME="FROM_BENCH:LAB_SERVER:username" PASSWORD="FROM_BENCH:LAB_SERVER:password" DIRECTION="DL" FILENAME="FROM_BENCH:LAB_SERVER:ftp_path[+]/[+]FROM_TC:FTP_FILE_DL" TIMEOUT="1800" CLIENT_IP="none" SAVE_THROUGHPUT_AS="THROUGHPUT_DL_40MHZ"/>
+
+            <!-- AUTOMATION - Compare FTP throughput -->
+            <TestStep Id="COMPARE" FIRST="FROM_CTX:THROUGHPUT_DL_40MHZ:UNIT" SECOND="FROM_CTX:THROUGHPUT_DL_20MHZ:UNIT" OPERATOR="EQUAL" PASS_IF="true"/>
+            <TestStep Id="MATH_OPERATION" FIRST="FROM_CTX:THROUGHPUT_DL_40MHZ:VALUE" SECOND="FROM_CTX:THROUGHPUT_DL_20MHZ:VALUE" OPERATOR="DIVIDE" SAVE_RESULT_AS="FTP_THROUGHPUT_OPERATION"/>
+            <TestStep Id="COMPARE" FIRST="FROM_CTX:FTP_THROUGHPUT_OPERATION" SECOND="1.3" OPERATOR="GREATER" PASS_IF="true"/>
+        </RunTest>
+        <TearDown>
+            <Fork Id="ForkTeardown">
+                <TestStep SetId="WiFiAPShutdown" EQT="CONFIGURABLE_AP1"/>
+                <TestStep SetId="WiFiCommonTeardown" DEVICE="PHONE1"/>
+            </Fork>
+        </TearDown>
+    </TestSteps>
+</TestCase>

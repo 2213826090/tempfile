@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase>
+  <UseCase>LAB_WCDMA_SMS_PS_MT</UseCase>
+  <Description>WCDMA Mobile Terminated SMS over PS on simulated network</Description>
+  <b2bIteration>1</b2bIteration>
+  <Parameters>
+<Parameter>
+      <!-- Cell Band (from Band 1 to Band 8)-->
+      <Name>CELL_BAND</Name>
+      <Value>1</Value>
+    </Parameter>
+    <Parameter>
+      <!-- Cell power in dBm -->
+      <Name>CELL_POWER</Name>
+      <Value>-65</Value>
+    </Parameter>
+    <Parameter>
+      <!-- Downlink UARFCN -->
+      <Name>DL_UARFCN</Name>
+      <Value>10700</Value>
+    </Parameter>
+    <Parameter>
+      <!--Cell Service (CIRCUIT | PACKET | CIRCUIT_PACKET | RBTEST) -->
+      <Name>CELL_SERVICE</Name>
+      <Value>PACKET</Value>
+    </Parameter>
+    <Parameter>
+      <!-- SMS text to send -->
+      <Name>SMS_TEXT</Name>
+      <Value>This is a short SMS text</Value>
+    </Parameter>
+    <Parameter>
+      <!-- SMS Data coding scheme in hexadecimal -->
+      <Name>DATA_CODING_SCHEME</Name>
+      <Value>00</Value>
+    </Parameter>
+    <Parameter>
+      <!-- SMS transfer timeout in seconds -->
+      <Name>SMS_TRANSFER_TIMEOUT</Name>
+      <Value>60</Value>
+    </Parameter>
+  </Parameters>
+</TestCase>

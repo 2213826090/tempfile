@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<UseCases xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:noNamespaceSchemaLocation="../../../../acs/src/_Catalogs/UseCase/usecase.xsd">
+    <UseCase Id="ANDROID_CTS" Domain="MISC" SubDomain="CTS" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Misc.AndroidCTS.AndroidCTS</ClassName>
+        <Description>UC that will execute google CTS tests on Android devices</Description>
+        <Environment name="MISC_CTS">
+            <Dependency>EQT_LIVE_AP</Dependency>
+        </Environment>
+    </UseCase>
+    <UseCase Id="ANDROID_CTS_TESTPLAN" Domain="MISC" SubDomain="CTS" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Misc.AndroidCTSTestPlan.CTSTestPlan</ClassName>
+        <Description>UC that will execute downloadable CTS Test plan.</Description>
+        <Environment name="ANY">
+        </Environment>
+    </UseCase> 
+</UseCases>

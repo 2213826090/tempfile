@@ -1,0 +1,97 @@
+<?xml version="1.0" ?>
+<Campaign>
+      <Parameters>
+            <Parameter isControlledPSUsed="False"/>
+            <Parameter isIoCardUsed="False"/>
+            <Parameter skipBootOnPowerCycle="False"/>
+            <Parameter bootRetryNumber="0"/>
+            <Parameter runHookScripts="False"/>
+            <Parameter powerCycleBetweenTC="False"/>
+            <Parameter powerCycleOnFailure="False"/>
+            <Parameter finalDutState="NoChange"/>
+            <Parameter stopCampaignOnCriticalFailure="False"/>
+            <Parameter stopCampaignOnFirstFailure="False"/>
+            <Parameter loggingLevel="debug"/>
+            <Parameter CampaignType="Other"/>
+      </Parameters>
+      <TestCases>
+        <!-- Before running these tests, connect DUT to a stable Wi-Fi network.
+            Also, ARTIFACT_MANAGER equipment with URI value="https://mcg-depot.intel.com/artifactory/acs_test_artifacts/"
+            must exist in bench config -->
+            <TestCase Id="../../../../../TC/TR/ACS/Applications/Applications/LIVE_AOSP_CONTACTS_CREATE_CONTACT_MULTIPLE_PHONE_NUMBERS" TcMaxAttempt="2"/>
+            <TestCase Id="../../../../../TC/TR/ACS/Applications/Applications/LIVE_AOSP_CONTACTS_CREATE_CONTACT_MULTIPLE_EMAILS" TcMaxAttempt="2"/>
+            <TestCase Id="../../../../../TC/TR/ACS/Applications/Applications/LIVE_AOSP_CONTACTS_EDIT_DELETE_ADDRESS_INFO" TcMaxAttempt="2"/>
+            <TestCase Id="../../../../../TC/TR/ACS/Applications/Applications/LIVE_AOSP_CONTACTS_EDIT_DELETE_NOTE_FIELD" TcMaxAttempt="2"/>
+            <TestCase Id="../../../../../TC/TR/ACS/Applications/Applications/LIVE_AOSP_CONTACTS_CREATE_CONTACT_MULTIPLE_ADDRESSES" TcMaxAttempt="2"/>
+            <TestCase Id="../../../../../TC/TR/ACS/Applications/Applications/LIVE_AOSP_CONTACTS_ADD_CONTACT" TcMaxAttempt="2"/>
+            <TestCase Id="../../../../../TC/TR/ACS/Applications/Applications/LIVE_AOSP_CONTACTS_EDIT_SAVE_CONTACT_INFO" TcMaxAttempt="2"/>
+            <TestCase Id="../../../../../TC/TR/ACS/Applications/Applications/LIVE_AOSP_CONTACTS_ADD_AND_DELETE_CONTACT_WEBSITE" TcMaxAttempt="2"/>
+            <TestCase Id="../../../../../TC/TR/ACS/Applications/Applications/LIVE_AOSP_CONTACTS_CREATE_CONTACT_ONLY_NUMBER" TcMaxAttempt="2"/>
+            <TestCase Id="../../../../../TC/TR/ACS/Applications/Applications/LIVE_AOSP_CONTACTS_ITERATIVE_ADDING_NEW_50_CONTACTS"/>
+
+            <TestCase Id="../../../../../TC/TR/ACS/Applications/Applications/LIVE_GMS_TTS_CHANGE_LANGUAGE_TO_ENGLISH_US" TcMaxAttempt="2"/>
+            <TestCase Id="../../../../../TC/TR/ACS/Applications/Applications/LIVE_GMS_TTS_CHANGE_LANGUAGE_TO_GERMAN" TcMaxAttempt="2"/>
+            <TestCase Id="../../../../../TC/TR/ACS/Applications/Applications/LIVE_GMS_TTS_CHANGE_LANGUAGE_TO_KOREAN" TcMaxAttempt="2"/>
+            <TestCase Id="../../../../../TC/TR/ACS/Applications/Applications/LIVE_GMS_TTS_CHANGE_LANGUAGE_TO_ENGLISH_UK" TcMaxAttempt="2"/>
+            <TestCase Id="../../../../../TC/TR/ACS/Applications/Applications/LIVE_GMS_TTS_CHANGE_LANGUAGE_TO_SPANISH" TcMaxAttempt="2"/>
+            <TestCase Id="../../../../../TC/TR/ACS/Applications/Applications/LIVE_GMS_TTS_CHANGE_LANGUAGE_TO_ITALIAN" TcMaxAttempt="2"/>
+            <TestCase Id="../../../../../TC/TR/ACS/Applications/Applications/LIVE_GMS_TTS_CHANGE_LANGUAGE_TO_FRENCH" TcMaxAttempt="2"/>
+
+            <TestCase Id="../../../../../TC/TR/ACS/Applications/Applications/LIVE_GMS_MAPS_EDIT_SEARCHBOX_SPECIAL_CHARACTERS" TcMaxAttempt="2"/>
+
+            <TestCase Id="../../../../../TC/TR/ACS/Applications/Applications/LIVE_GMS_BLOGGER_LAUNCH_50_TIMES"/>
+
+            <TestCase Id="../../../../../TC/TR/ACS/Applications/Applications/LIVE_APP_SETTINGS_CHECK_STORAGE_SETTINGS" TcMaxAttempt="2"/>
+            <TestCase Id="../../../../../TC/TR/ACS/Applications/Applications/LIVE_APP_SETTINGS_ALLOW_MOCK_LOCATIONS_ENABLE_DISABLE" TcMaxAttempt="2"/>
+            <TestCase Id="../../../../../TC/TR/ACS/Applications/Applications/LIVE_APP_SETTINGS_SHOW_SURFACE_UPDATES_ENABLE_DISABLE" TcMaxAttempt="2"/>
+            <TestCase Id="../../../../../TC/TR/ACS/Applications/Applications/LIVE_APP_SETTINGS_MODIFY_BRIGHTNESS" TcMaxAttempt="2"/>
+            <TestCase Id="../../../../../TC/TR/ACS/Applications/Applications/LIVE_APP_SETTINGS_OWNER_INFO_DISABLED" TcMaxAttempt="2"/>
+            <TestCase Id="../../../../../TC/TR/ACS/Applications/Applications/LIVE_APP_SETTINGS_DAYDREAM_SET_WHILE_CHARGING" TcMaxAttempt="2"/>
+            <TestCase Id="../../../../../TC/TR/ACS/Applications/Applications/LIVE_APP_SETTINGS_SORT_DOWNLOADED_APPLICATIONS" TcMaxAttempt="2"/>
+            <TestCase Id="../../../../../TC/TR/ACS/Applications/Applications/LIVE_APP_SETTINGS_DAYDREAM_ENABLE_DISABLE" TcMaxAttempt="2"/>
+            <TestCase Id="../../../../../TC/TR/ACS/Applications/Applications/LIVE_APP_SETTINGS_FORCE_GPU_RENDERING_ENABLE_DISABLE" TcMaxAttempt="2"/>
+            <TestCase Id="../../../../../TC/TR/ACS/Applications/Applications/LIVE_APP_SETTINGS_CHANGE_WALLPAPER" TcMaxAttempt="2"/>
+            <TestCase Id="../../../../../TC/TR/ACS/Applications/Applications/LIVE_APP_SETTINGS_CHECK_LEGAL_INFO" TcMaxAttempt="2"/>
+            <TestCase Id="../../../../../TC/TR/ACS/Applications/Applications/LIVE_APP_SETTINGS_STRICT_MODE_ENABLED_ENABLE_DISABLE" TcMaxAttempt="2"/>
+            <TestCase Id="../../../../../TC/TR/ACS/Applications/Applications/LIVE_APP_SETTINGS_POINTER_LOCATION_ENABLE_DISABLE" TcMaxAttempt="2"/>
+            <TestCase Id="../../../../../TC/TR/ACS/Applications/Applications/LIVE_APP_SETTINGS_DAYDREAM_CLOCK_STYLE" TcMaxAttempt="2"/>
+            <TestCase Id="../../../../../TC/TR/ACS/Applications/Applications/LIVE_APP_SETTINGS_VIEW_INTERNAL_STORAGE_TOTAL_SPACE" TcMaxAttempt="2"/>
+            <TestCase Id="../../../../../TC/TR/ACS/Applications/Applications/LIVE_APP_SETTINGS_SHOW_TOUCHES_ENABLE_DISABLE" TcMaxAttempt="2"/>
+            <TestCase Id="../../../../../TC/TR/ACS/Applications/Applications/LIVE_APP_SETTINGS_SHOW_CPU_USAGE" TcMaxAttempt="2"/>
+            <TestCase Id="../../../../../TC/TR/ACS/Applications/Applications/LIVE_APP_SETTINGS_DISPLAY_CHANGE_FONT_SIZE" TcMaxAttempt="2"/>
+            <TestCase Id="../../../../../TC/TR/ACS/Applications/Applications/LIVE_APP_SETTINGS_DONT_KEEP_ACTIVITIES_ENABLE_DISABLE" TcMaxAttempt="2"/>
+            <TestCase Id="../../../../../TC/TR/ACS/Applications/Applications/LIVE_APP_SETTINGS_SET_BACKGROUND_PROCESS_LIMIT" TcMaxAttempt="2"/>
+            <TestCase Id="../../../../../TC/TR/ACS/Applications/Applications/LIVE_APP_SETTINGS_SHOW_HARDWARE_LAYERS_UPDATE_ENABLE_DISABLE" TcMaxAttempt="2"/>
+            <TestCase Id="../../../../../TC/TR/ACS/Applications/Applications/LIVE_APP_SETTINGS_DEVICE_ADMINISTRATOR_SCREEN" TcMaxAttempt="2"/>
+            <TestCase Id="../../../../../TC/TR/ACS/Applications/Applications/LIVE_APP_SETTINGS_SET_TRANSITION_ANIMATION_SCALE" TcMaxAttempt="2"/>
+            <TestCase Id="../../../../../TC/TR/ACS/Applications/Applications/LIVE_APP_SETTINGS_FORCE_4X_MSAA_ENABLE_DISABLE" TcMaxAttempt="2"/>
+            <TestCase Id="../../../../../TC/TR/ACS/Applications/Applications/LIVE_APP_SETTINGS_ADJUST_BRIGHTNESS 50_TIMES"/>
+            <TestCase Id="../../../../../TC/TR/ACS/Applications/Applications/LIVE_APP_SETTINGS_DISPLAY_OF_DEV_OPTIONS" TcMaxAttempt="2"/>
+            <TestCase Id="../../../../../TC/TR/ACS/Applications/Applications/LIVE_APP_SETTINGS_SET_DEFINED_LIVE_WALLPAPER" TcMaxAttempt="2"/>
+            <TestCase Id="../../../../../TC/TR/ACS/Applications/Applications/LIVE_APP_SETTINGS_TAKE_BUG_REPORT" TcMaxAttempt="2"/>
+            <TestCase Id="../../../../../TC/TR/ACS/Applications/Applications/LIVE_APP_SETTINGS_VERIFY_SORT_ALL_TAB" TcMaxAttempt="2"/>
+            <TestCase Id="../../../../../TC/TR/ACS/Applications/Applications/LIVE_APP_SETTINGS_SHOW_ALL_ANRS_ENABLE_DISABLE" TcMaxAttempt="2"/>
+            <TestCase Id="../../../../../TC/TR/ACS/Applications/Applications/LIVE_APP_SETTINGS_DAYDREAM_SET_EITHER" TcMaxAttempt="2"/>
+            <TestCase Id="../../../../../TC/TR/ACS/Applications/Applications/LIVE_APP_SETTINGS_SET_WINDOW_ANIMATION_SCALE" TcMaxAttempt="2"/>
+            <TestCase Id="../../../../../TC/TR/ACS/Applications/Applications/LIVE_APP_SETTINGS_BT_STATUS_AIRPLANE_MODE" TcMaxAttempt="2"/>
+            <TestCase Id="../../../../../TC/TR/ACS/Applications/Applications/LIVE_APP_SETTINGS_DISPLAY_STATUS_AIRPLANE_MODE" TcMaxAttempt="2"/>
+            <TestCase Id="../../../../../TC/TR/ACS/Applications/Applications/LIVE_APP_SETTINGS_TURN_ON_OFF_AIRPLANE_MODE_50_TIMES"/>
+
+            <TestCase Id="../../../../../TC/TR/ACS/Applications/Applications/LIVE_ANDROID_SET_DATE_FORMAT"/>
+            <TestCase Id="../../../../../TC/TR/ACS/Applications/Applications/LIVE_ANDROID_SET_TIME_FORMAT"/>
+            <TestCase Id="../../../../../TC/TR/ACS/Applications/Applications/LIVE_ANDROID_SET_DATE_TIME"/>
+            <TestCase Id="../../../../../TC/TR/ACS/Applications/Applications/LIVE_ANDROID_SET_TIMEZONE"/>
+
+            <TestCase Id="../../../../../TC/TR/ACS/Applications/Applications/LIVE_ANDROID_LIVE_WALLPAPER_SPECTRUM"/>
+            <TestCase Id="../../../../../TC/TR/ACS/Applications/Applications/LIVE_ANDROID_LIVE_WALLPAPER_WATER"/>
+            <TestCase Id="../../../../../TC/TR/ACS/Applications/Applications/LIVE_ANDROID_LIVE_WALLPAPER_MAGICSMOKE"/>
+            <TestCase Id="../../../../../TC/TR/ACS/Applications/Applications/LIVE_ANDROID_LIVE_WALLPAPER_NEXUS"/>
+            <TestCase Id="../../../../../TC/TR/ACS/Applications/Applications/LIVE_ANDROID_LIVE_WALLPAPER_HOLOSPIRAL"/>
+            <TestCase Id="../../../../../TC/TR/ACS/Applications/Applications/LIVE_ANDROID_LIVE_WALLPAPER_BUBBLES"/>
+            <TestCase Id="../../../../../TC/TR/ACS/Applications/Applications/LIVE_ANDROID_LIVE_WALLPAPER_BLACKHOLE"/>
+            <TestCase Id="../../../../../TC/TR/ACS/Applications/Applications/LIVE_ANDROID_LIVE_WALLPAPER_PHASEBEAM"/>
+            <TestCase Id="../../../../../TC/TR/ACS/Applications/Applications/LIVE_ANDROID_SETTINGS_LIVE_WALLPAPER_1_TIME"/>
+            <TestCase Id="../../../../../TC/TR/ACS/Applications/Applications/LIVE_ANDROID_SETTINGS_LIVE_WALLPAPER_20_TIMES"/>
+            <TestCase Id="../../../../../TC/TR/ACS/Applications/Applications/LIVE_ANDROID_SETTINGS_LIVE_WALLPAPER_30_TIMES"/>
+      </TestCases>
+</Campaign>

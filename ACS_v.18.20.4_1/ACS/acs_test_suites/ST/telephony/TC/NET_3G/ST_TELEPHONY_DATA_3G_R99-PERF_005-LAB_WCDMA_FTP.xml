@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase>
+  <UseCase>LAB_WCDMA_FTP</UseCase>
+  <Description>FTP upload over WCDMA on simulated network</Description>
+  <b2bIteration>100</b2bIteration>
+  <b2bContinuousMode>True</b2bContinuousMode> 
+  <Parameters>
+    <Parameter>
+      <!-- Cell Band (from Band 1 to Band 8)-->
+      <Name>CELL_BAND</Name>
+      <Value>1</Value>
+    </Parameter>
+    <Parameter>
+      <!-- Downlink UARFCN Frequency -->
+      <Name>DL_UARFCN</Name>
+      <Value>10700</Value>
+    </Parameter>
+    <Parameter>
+      <!--Cell Service (CIRCUIT | PACKET | CIRCUIT_PACKET | RBTEST) -->
+      <Name>CELL_SERVICE</Name>
+      <Value>PACKET</Value>
+    </Parameter>
+    <Parameter>
+      <!-- Cell power in dBm -->
+      <Name>CELL_POWER</Name>
+      <Value>-60</Value>
+    </Parameter>
+    <Parameter>
+      <!-- Uplink Radio Access Bearer (64k | 128k | 384k | MAX [If MAX is selected, value will be taken from DeviceCatalog.xml]) -->
+      <Name>UL_RAB</Name>
+      <Value>384k</Value>
+    </Parameter>
+    <Parameter>
+      <!-- Downlink Radio Access Bearer (64k | 128k | 384k | MAX [If MAX is selected, value will be taken from DeviceCatalog.xml]) -->
+      <Name>DL_RAB</Name>
+      <Value>384k</Value>
+    </Parameter>
+    <Parameter>
+      <!-- FTP transfer direction: DL or UL -->
+      <Name>DIRECTION</Name>
+      <Value>UL</Value>
+    </Parameter>
+    <Parameter>
+      <!-- File to download from the FTP server -->
+      <Name>UL_FILENAME</Name>
+      <Value>put3M</Value>
+    </Parameter>
+    <Parameter>
+      <!-- Transfer timeout in s -->
+      <Name>XFER_TIMEOUT</Name>
+      <Value>120</Value>
+    </Parameter>
+  </Parameters>
+</TestCase>

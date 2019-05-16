@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<Campaign version="13.49">
+    <Parameters>
+        <Parameter isControlledPSUsed="False"/>
+        <Parameter isIoCardUsed="False"/>
+        <Parameter skipBootOnPowerCycle="False"/>
+        <Parameter bootRetryNumber="0"/>
+        <Parameter runHookScripts="False"/>
+        <Parameter powerCycleBetweenTC="False"/>
+        <Parameter powerCycleOnFailure="False"/>
+        <Parameter finalDutState="NoChange"/>
+        <Parameter stopCampaignOnCriticalFailure="False"/>
+        <Parameter stopCampaignOnFirstFailure="False"/>
+        <Parameter loggingLevel="debug"/>
+        <Parameter CampaignType="Other"/>
+        <Parameter TCRReportViaRESTAPI="True"/>
+    </Parameters>
+    <TestCases>
+        <TestCase Id="../../../../../TC/TP/TC/Sensor/init.set_adb_root.AdbRoot.testAdbRoot"/>
+        <TestCase Id="../../../../../TC/TP/TC/Sensor/init.start_rpc_server.StartRPCServer.testStartRPCServer"/>
+        <TestCase Id="../../../../../TC/TP/TC/Sensor/init.wake_up_and_unlock.WakeUnlock.testWakeUnlock"/>
+        <TestCase Id="../../../../../TC/TP/TC/Sensor/init.set_orientation_vertical.SetOrientationVertical.testSetOrientationVertical"/>
+        <TestCase Id="../../../../../TC/TP/TC/Sensor/init.config_first_boot_wizard.ConfigFirstBootWizard.testConfigFirstBootWizard"/>
+        <TestCase Id="../../../../../TC/TP/TC/Sensor/init.enable_developer_option.EnableDeveloperOption.testEnableDeveloperOption"/>
+        <TestCase Id="../../../../../TC/TP/TC/Sensor/init.keep_awake.KeepAwake.testKeepAwake"/>
+        <TestCase Id="../../../../../TC/TP/TC/Sensor/init.disable_verify_apps.DisableVerifyApp.testDisableVerifyApp"/>
+        <TestCase Id="../../../../../TC/TP/TC/Sensor/init.set_system_time.SetTimeDate.testSetTimeDate"/>
+        <TestCase Id="../../../../../TC/TP/TC/Sensor/init.set_language_to_United_States.SetLanguageUS.testSetLanguageUS"/>
+        <TestCase Id="placeholder"/>
+        <TestCase Id="../../../../../TC/TP/TC/Post_Test/postTestRemoveGoogleAccount"/>
+        <TestCase Id="../../../../../TC/TP/TC/Post_Test/postTestWifiOff"/>
+    </TestCases>
+</Campaign>

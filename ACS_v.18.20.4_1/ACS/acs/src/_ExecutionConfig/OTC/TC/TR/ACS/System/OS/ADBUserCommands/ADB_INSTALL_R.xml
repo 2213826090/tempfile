@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase>
+    <UseCase>EXEC</UseCase>
+    <Description>Run "adb install -r" command to install an already installed APK to DUT</Description>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <TestSteps>
+        <Setup>
+            <TestStep Id="GET_ARTIFACT" EQT="ARTIFACT_MANAGER" ARTIFACT="APPLICATIONS/ChessARM.apk"
+                      ARTIFACT_SOURCE="FROM_BENCH:ARTIFACT_MANAGER:URI" TRANSFER_TIMEOUT="DEFAULT"
+                      STORED_FILE_PATH="DEFAULT"/>
+        </Setup>
+    </TestSteps>
+    <Parameters>
+        <Parameter>
+               <Name>RUN_TIMEOUT</Name>
+               <Value>100</Value>
+          </Parameter>
+        <!--_____________ -->
+        <!-- RUN SECTION -->
+        <!--_____________ -->
+        <!-- One action or sequence of actions (RUN_CMD, RUN_CMD1, RUN_CMD2, ...) -->
+        <!-- FIRST ACTION -->
+        <Parameter>
+            <!-- Action to be run, should be in the executable path of the system -->
+            <!-- (mandatory) -->
+            <!-- For this template, we are running windows only command -->
+            <Name>RUN_CMD</Name>
+            <Value>./scripts/ADB_COMMANDS.sh</Value>
+        </Parameter>
+        <Parameter>
+            <Name>RUN_FROM_TCDIRECTORY</Name>
+            <Value>True</Value>
+        </Parameter>
+        <Parameter>
+            <Name>RUN_EXPECTED_RESULT</Name>
+            <Value>Success</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

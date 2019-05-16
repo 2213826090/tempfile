@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase>
+    <TestSteps>
+        <Include Src="ST/telephony/TSS/Common.xml" />
+        <Include Src="ST/telephony/TSS/8960.xml" />
+        <Setup>
+            <!-- Disable all connections on DUT -->
+            <TestStep SetId="AllCommsOff" DEVICE="PHONE1"/>
+            <!-- Initialize 3G cell (cell1) -->
+            <TestStep Id="FIND_NETWORK_SIMULATOR" EQT_NAME="AGILENT8960_SIMULATOR_VISA_3G" FEATURE="2G" />
+            <TestStep SetId="Init8960" EQT="FROM_CTX:AGILENT8960_SIMULATOR_VISA_3G" FEATURE="3G" CONFIG="FROM_TC:3G_CELL_BAND"/>
+            <TestStep SetId="ConfigureWCDMA" EQT="FROM_CTX:AGILENT8960_SIMULATOR_VISA_3G"/>
+            <TestStep Id="NS_SET_PARAM" EQT="FROM_CTX:AGILENT8960_SIMULATOR_VISA_3G" NAME="SetCellOnOff" OPTION="DEFAULT" VALUE="CALL"/>
+            <TestStep Id="NS_SET_PARAM" EQT="FROM_CTX:AGILENT8960_SIMULATOR_VISA_3G" NAME="SetCellPower" OPTION="DEFAULT" VALUE="FROM_TC:INIT_POWER"/>
+            <!-- Initialize 2G cell (cell2) -->
+            <TestStep Id="FIND_NETWORK_SIMULATOR" EQT_NAME="AGILENT8960_SIMULATOR_VISA_2G" FEATURE="2G" />
+            <TestStep SetId="Init8960"  EQT="FROM_CTX:AGILENT8960_SIMULATOR_VISA_2G" FEATURE="2G" CONFIG="FROM_TC:2G_CELL_BAND"/>
+            <TestStep SetId="ConfigureEGPRS" EQT="FROM_CTX:AGILENT8960_SIMULATOR_VISA_2G"/>
+            <TestStep Id="NS_SET_PARAM" EQT="FROM_CTX:AGILENT8960_SIMULATOR_VISA_2G" NAME="SetCellOnOff" OPTION="DEFAULT" VALUE="CALL"/>
+            <TestStep Id="NS_SET_PARAM" EQT="FROM_CTX:AGILENT8960_SIMULATOR_VISA_2G" NAME="SetCellPower" OPTION="DEFAULT" VALUE="-110"/>
+            <!-- Connect 2G cell to 3G cell -->
+            <TestStep Id="NS_SET_EXTERNAL_CONNECTION" EQT1="FROM_CTX:AGILENT8960_SIMULATOR_VISA_3G" EQT2="FROM_CTX:AGILENT8960_SIMULATOR_VISA_2G" STATE="ON"/>
+        
+            <!-- Disable flight mode and wait for phone registration -->
+            <TestStep Id="SET_FLIGHT_MODE" FLIGHT_MODE="disable" DEVICE="PHONE1"/>
+            <TestStep SetId="CheckRegistration2" EQT="FROM_CTX:AGILENT8960_SIMULATOR_VISA_3G" FEATURE="3G" DEVICE="PHONE1" TIMEOUT="FROM_DEVICE:PHONE1:registrationTimeout"/>
+            <!-- Create SMS to be send on 2G cell and 3G cell -->
+            <TestStep Id="CREATE_SMS" DEVICE="PHONE1" EQT="FROM_CTX:AGILENT8960_SIMULATOR_VISA_3G" SMS_TEXT="FROM_TC:SMS_TEXT" PHONE_NUMBER="FROM_TC:PHONE_NUMBER" TRANSPORTATION="CSD" SMS_TRANSFER_TIMEOUT="FROM_TC:TEST_DURATION" SMS_DIRECTION="FROM_TC:SMS_DIRECTION" SMS="SMS_3G" CODING_SCHEME="00" CONTENT_TYPE="CTEX" NB_BITS_PER_CHAR="7" />
+            <TestStep Id="CREATE_SMS" DEVICE="PHONE1" EQT="FROM_CTX:AGILENT8960_SIMULATOR_VISA_2G" SMS_TEXT="FROM_TC:SMS_TEXT" PHONE_NUMBER="FROM_TC:PHONE_NUMBER" TRANSPORTATION="GSM" SMS_TRANSFER_TIMEOUT="FROM_TC:TEST_DURATION" SMS_DIRECTION="FROM_TC:SMS_DIRECTION" SMS="SMS_2G" CODING_SCHEME="00" CONTENT_TYPE="CTEX" NB_BITS_PER_CHAR="7" />
+        </Setup>
+        <RunTest>
+            <!-- Release Voice call -->
+            <TestStep Id="RELEASE_VOICE_CALL" DEVICE="PHONE1" CALL_TO_RELEASE="ALL"/>
+            <!-- Clear SMS on DUT and 8960 -->
+            <TestStep SetId="ClearSms" DEVICE="PHONE1" EQT="FROM_CTX:AGILENT8960_SIMULATOR_VISA_3G"/>
+            <!-- Trig a voice call and wait its activation on DUT and 8960 -->
+            <TestStep SetId="LaunchVoiceCall" DEVICE="PHONE1" EQT="FROM_CTX:AGILENT8960_SIMULATOR_VISA_3G" NUMBER_TO_CALL="FROM_TC:PHONE_NUMBER" TIMEOUT="FROM_DEVICE:PHONE1:callSetupTimeout"/>
+            <!-- Send a MO SMS and check it it has been received -->
+            <TestStep SetId="SendSMS" SMS="SMS_3G" EQT="FROM_CTX:AGILENT8960_SIMULATOR_VISA_3G"/>
+            <!-- Set cell2 power -->
+            <TestStep Id="NS_SET_PARAM" EQT="FROM_CTX:AGILENT8960_SIMULATOR_VISA_2G" NAME="SetCellPower" OPTION="DEFAULT" VALUE="FROM_TC:INIT_POWER"/>
+            <!-- Decrease cell1 power to a target step by step every time step -->
+            <TestStep Id="NS_DECREASE_CELL_POWER_BY_STEP" EQT="FROM_CTX:AGILENT8960_SIMULATOR_VISA_3G" INIT_POWER="FROM_TC:INIT_POWER" END_POWER="FROM_TC:END_POWER" DECREMENTATION_STEP_POWER="FROM_TC:POWER_STEP" DECREMENTATION_STEP_TIMER="FROM_TC:POWER_STEP"/>
+            <!-- Send a MO SMS and check it it has been received -->
+            <TestStep SetId="SendSMS" SMS="SMS_3G" EQT="FROM_CTX:AGILENT8960_SIMULATOR_VISA_3G"/>
+             <!-- Check if VC is still active on cell1 then trigger an handover from cell1 to cell2 -->
+            <TestStep SetId="CheckVCStatusAndTrigHO" DEVICE="PHONE1" EQT="FROM_CTX:AGILENT8960_SIMULATOR_VISA_3G" TIMEOUT="FROM_DEVICE:PHONE1:callSetupTimeout"/>
+            <!-- Check if VC is still active on cell2 -->
+            <TestStep Id="NS_WAIT_STATE" NAME="CallStatus" EQT="FROM_CTX:AGILENT8960_SIMULATOR_VISA_2G" STATE="CONN" OPTION="DEFAULT" TIMEOUT="FROM_DEVICE:PHONE1:callSetupTimeout"/>
+            <!-- Wait 10 sec -->
+            <TestStep Id="SUSPEND" DURATION_IN_SEC="10"/>
+            <!-- Send a MO SMS and check it it has been received -->
+            <TestStep SetId="SendSMS" SMS="SMS_2G" EQT="FROM_CTX:AGILENT8960_SIMULATOR_VISA_2G"/>
+            <!-- Set cell1 power -->
+            <TestStep Id="NS_SET_PARAM" EQT="FROM_CTX:AGILENT8960_SIMULATOR_VISA_3G" NAME="SetCellPower" OPTION="DEFAULT" VALUE="FROM_TC:INIT_POWER"/>
+            <!-- Decrease cell2 power to a target step by step every time step -->
+            <TestStep Id="NS_DECREASE_CELL_POWER_BY_STEP" EQT="FROM_CTX:AGILENT8960_SIMULATOR_VISA_2G" INIT_POWER="FROM_TC:INIT_POWER" END_POWER="FROM_TC:END_POWER" DECREMENTATION_STEP_POWER="FROM_TC:POWER_STEP" DECREMENTATION_STEP_TIMER="FROM_TC:TIME_STEP"/>
+            <!-- Send a MO SMS and check it it has been received -->
+            <TestStep SetId="SendSMS" SMS="SMS_2G" EQT="FROM_CTX:AGILENT8960_SIMULATOR_VISA_2G"/>
+            <!-- Check if VC is still active on cell2 then trigger an handover from cell2 to cell1 -->
+            <TestStep SetId="CheckVCStatusAndTrigHO" DEVICE="PHONE1" EQT="FROM_CTX:AGILENT8960_SIMULATOR_VISA_2G" TIMEOUT="FROM_DEVICE:PHONE1:callSetupTimeout"/>
+            <!-- Check if VC is still active on cell2 -->
+            <TestStep Id="NS_WAIT_STATE" NAME="CallStatus" EQT="FROM_CTX:AGILENT8960_SIMULATOR_VISA_3G" STATE="CONN" OPTION="DEFAULT" TIMEOUT="FROM_DEVICE:PHONE1:callSetupTimeout"/>
+            <!-- Wait 10 sec -->
+            <TestStep Id="SUSPEND" DURATION_IN_SEC="10"/>
+            <!-- Send a MO SMS and check it it has been received -->
+            <TestStep SetId="SendSMS" SMS="SMS_3G" EQT="FROM_CTX:AGILENT8960_SIMULATOR_VISA_3G"/>
+            <!-- Release Voice call -->
+            <TestStep Id="RELEASE_VOICE_CALL" DEVICE="PHONE1" CALL_TO_RELEASE="ALL"/>
+        </RunTest>
+        <TearDown>
+            <!-- Release Voice call -->
+            <TestStep Id="RELEASE_VOICE_CALL" DEVICE="PHONE1" CALL_TO_RELEASE="ALL"/>
+            <!-- Disable all connections on DUT -->
+            <TestStep SetId="AllCommsOff" DEVICE="PHONE1"/>
+            <!-- Stop 8960s -->
+            <TestStep Id="NS_SET_PARAM" EQT="FROM_CTX:AGILENT8960_SIMULATOR_VISA_2G" NAME="SetCellOnOff" OPTION="DEFAULT" VALUE="OFF"/>
+            <TestStep Id="NS_SET_PARAM" EQT="FROM_CTX:AGILENT8960_SIMULATOR_VISA_3G" NAME="SetCellOnOff" OPTION="DEFAULT" VALUE="OFF"/>
+        </TearDown>
+    </TestSteps>
+</TestCase>

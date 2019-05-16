@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<Equipment version="13.44" name="NETWORK_SIMULATOR1" description="Network simulator used for non mobility test cases">
+    <!-- Model possible values: AGILENT_8960 | RS_CMU200 | AGILENT_E6621A | RS_CMW500 -->
+    <Parameter name="Model" value="" />
+    <Parameter name="Transport" value="GPIB" />
+    <Parameter name="GPIBBoardId" value="" />
+    <Parameter name="GPIBAddress" value="" />
+    <Parameter name="AmplitudeOffsetTable" value="Amplitude_Offset_Table" />
+    <Parameter name="IP_Lan1" value="" />
+    <Parameter name="IP_Lan2" value="" />
+    <Parameter name="DUT_IP_Address" value="" />
+    <Parameter name="DUT_IP_Address2" value="" />
+    <Parameter name="DNS1" value="" />
+    <Parameter name="DNS2" value="" />
+    <Parameter name="Subnet_Mask" value="" />
+    <Parameter name="Default_Gateway" value="" />
+    <!-- Enables/Disables the support of Fast dormancy on the network simulator
+        Possible values: disable | enable
+        Setting the parameter to "disable" will send no specific configuration to the equipement -->
+    <Parameter name="Fast_Dormancy" value="disable" />
+</Equipment>

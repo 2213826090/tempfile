@@ -1,0 +1,75 @@
+<?xml version="1.0"?>
+<DeviceModel xsi:noNamespaceSchemaLocation="../../../../../../acs/src/_Catalogs/Device/Models/BrilloDeviceModel.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <DeviceModule>
+        <SystemModule className="Device.Module.Common.System.SystemModule.SystemModule" config="Config/Default.yaml"/>
+        <PnpModule className = "Device.Module.MCG.Pnp.PnpModule.PnpModule" config = "Config/Default.yaml"/>
+        <EnergyManagementModule className="Device.Module.MCG.EnergyManagement.EmModule.EmModule" config="Config/Default.yaml"/>
+    </DeviceModule>
+    <BootShutdown>
+    </BootShutdown>
+    <Connection>
+        <Parameter handleAdbRestart="true"/>
+        <Parameter adbOverEthernet="false"/>
+        <Parameter ipAddress="192.168.42.129"/>
+        <Parameter adbPort="5555"/>
+        <Parameter serialNumber=""/>
+        <Parameter usbSleep="10"/>
+        <Parameter adbRootTimeout="10"/>
+        <Parameter adbRootCmdTimeout="2"/>
+        <Parameter adbConnectTimeout="10"/>
+        <Parameter usbReplugRetries="1"/>
+    </Connection>
+    <Debug>
+        <Parameter logcatCmdLine="adb shell logcat -v threadtime"/>
+        <Parameter retrieveSerialTrace="false"/>
+        <Parameter serialPort=""/>
+        <Parameter serialBaudRate="115200"/>
+        <Parameter serialHdwFlowControl="false"/>
+        <Parameter takeScreenshot="false"/>
+    </Debug>
+    <EM>
+        <!-- default wall charger: DCP -->
+        <Parameter defaultWallCharger="DCP"/>
+        <!-- tell if you can communicate with board and charge with the same cable, like with the pc to board cable (SDP) -->
+        <Parameter dataWhileCharging="true"/>
+        <!-- mode where adb is available, usecase behavior will be affected by this -->
+        <Parameter adbAvailableMode="MOS"/>
+        <!-- Where autolog and generated task is stored -->
+        <Parameter generatedFilePath="/sdcard*/"/>
+    </EM>
+    <LocalConnectivity>
+        <Parameter TagsAppPackageName="com.android.apps.tag"/>
+        <Parameter ChromeAppPackageName="com.android.chrome"/>
+        <Parameter BrowserAppPackageName="com.android.browser"/>
+        <Parameter DefaultBDAddress=""/>
+        <Parameter TetheringResetAfterBtOffOn="true"/>
+    </LocalConnectivity>
+    <Devices>
+        <Parameter sdcard_ext="/sdcard"/>
+        <Parameter userdataPath="/sdcard/acs_files/"/>
+        <Parameter binPath="/data/"/>
+        <Parameter wlanDevice="wlan0:0"/>
+        <Parameter wlanPhyDevice="phy0"/>
+        <Parameter gpsPropertyKey="gps.serial.interface"/>
+        <Parameter timeBeforeWifiSleep="1200"/>
+        <Parameter wlanInterface="wlan0"/>
+        <Parameter p2pInterface="p2p0"/>
+        <Parameter hotspotExtInterface="wlan0"/>
+        <Parameter hotspotIntInterface="mon.wlan0"/>
+        <Parameter touchsreenEventFile="/dev/input/event7"/>
+        <!-- adb shell getevent -->
+        <Parameter autoWifiRegulatoryDomain="false"/>
+        <Parameter provisioningMethod=""/>
+        <Parameter provisioningPath=""/>
+        <Parameter backlightName=""/>
+    </Devices>
+    <Power/>
+    <Implementation>
+        <Parameter deviceCapabilities="Capabilities/phone.xml"
+                   ClassName="Device.Model.AndroidDevice.ReferenceDeviceBase.ReferenceDeviceBase"
+                   UECmd="acs_test_scripts.Device.UECmd.Imp.Android.M"
+                   OS="ANDROID" OSVersion="M"
+                   defaultTimeout="50"
+                   waitBetweenCmd="5"/>
+    </Implementation>
+</DeviceModel>

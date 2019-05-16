@@ -1,0 +1,387 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestSteps xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../acs/src/_Catalogs/TestStep/teststep.xsd">
+    <TestStep Id="FIND_NETWORK_SIMULATOR" Domain="EQUIPMENT" SubDomain="NETWORK_SIMULATOR" Feature="" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Equipment.NetworkSimulator.FindNetworkSimulator.FindNetworkSimulator</ClassName>
+        <Description>retrieves in the BenchConfig the equipment name of the first unused network simulator.
+        The step INIT_NETWORK_SIMULATOR must be called after this one.</Description>
+        <Environment name="ANY"/>
+        <Parameters>
+            <Parameter name="FEATURE" type="STRING" isOptional="false">
+                <Description>indicate which feature is needed on the expected network simulator.
+                feature name must be compatible with EquipmentCatalog.xml content. for example 2G, 3G, 4G</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+            <Parameter name="EQT_NAME" type="CONTEXT" isOptional="false">
+                <Description>
+                    <Key name="EQT_NAME" type="STRING">the returned equipment name.</Key>
+                </Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="INIT_NETWORK_SIMULATOR" Domain="EQUIPMENT" SubDomain="NETWORK_SIMULATOR" Feature="" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Equipment.NetworkSimulator.InitNetworkSimulator.InitNetworkSimulator</ClassName>
+        <Description>Perform initialization step of the network simulator given in parameter.</Description>
+        <Environment name="ANY"/>
+        <Parameters>
+            <Parameter name="FEATURE" type="STRING" isOptional="false">
+                <Description>indicate which features have to be initialized.
+                feature name must be compatible with EquipmentCatalog.xml content. for example 2G|GSM, 3G|WCDMA, TDSCDMA, 4G|LTE
+                It is possible for specific callboxes (Anritsu MD8475A at the moment, CMW500 later) to give a list of features to initialize. 
+                For instance "LTE;2G;3G;LTE": In this case the equipment will create two LTE cells, a 3G cell and a 2G cell.
+                Note that order is important: the index in this list is the cell number for NS_CONFIGURE_CELL test step </Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+            <Parameter name="EQT" type="STRING" isOptional="false">
+                <Description>The equipment name shall refer to an existing equipment in the Bench config</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="NS_CONFIGURE_CELL" Domain="EQUIPMENT" SubDomain="NETWORK_SIMULATOR" Feature="" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Equipment.NetworkSimulator.NsConfigureCell.NsConfigureCell</ClassName>
+        <Description>configures a network simulator cell.</Description>
+        <Environment name="ANY"/>
+        <Parameters>
+            <Parameter name="EQT" type="STRING" isOptional="false">
+                <Description>The equipment name shall refer to an existing equipment in the Bench config</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+            <Parameter name="CELL_NUMBER" type="STRING" isOptional="true">
+                <Description>Cell number. This number comes from INIT_NETWORK_SIMULATOR test step: 
+                             It is the index in the feature list given to "INIT_NETWORK_SIMULATOR" test step
+                             For instance if "LTE;2G;3G;LTE" was the feature list: 
+                                - First LTE cell is cell number 1
+                                - 2G cell is cell number 2
+                                - 3G cell is cell number 3
+                                - second LTE cell is cell number 4</Description>
+                <PossibleValues/>
+                <DefaultValue>1</DefaultValue>
+            </Parameter>
+            <Parameter name="CONFIG" type="STRING" isOptional="false">
+                <Description>The configuration name (see XML file).
+                It is possible to require several configurations at once by providing a semicolon (;) separated list of configuration names.
+                For example: "HSPA;BAND1;R8". Be aware that configurations will be applied in the order of the list.</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+            <Parameter name="CONFIG_FILE_NAME" type="STRING" isOptional="true">
+                <Description>The configuration file to use. If not specified, the default one will be used</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="NS_SET_PARAM" Domain="EQUIPMENT" SubDomain="NETWORK_SIMULATOR" Feature="" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Equipment.NetworkSimulator.NsSetParam.NsSetParam</ClassName>
+        <Description>sets a value for the given parameter name. Valid Parameter names are gathered in a sqlite database.
+            Input parameter names are tested against the database content.</Description>
+        <Environment name="ANY"/>
+        <Parameters>
+            <Parameter name="EQT" type="STRING" isOptional="false">
+                <Description>The equipment name shall refer to an existing equipment in the Bench config</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+            <Parameter name="NAME" type="STRING" isOptional="false">
+                <Description>The parameter name. </Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+            <Parameter name="OPTION" type="STRING" isOptional="false">
+                <Description>if a sub option of the command has to be used, indicate it here.</Description>
+                <PossibleValues/>
+                <DefaultValue>none</DefaultValue>
+            </Parameter>
+            <Parameter name="VALUE" type="STRING" isOptional="true">
+                <Description>The parameter's value.</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="NS_GET_PARAM" Domain="EQUIPMENT" SubDomain="NETWORK_SIMULATOR" Feature="" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Equipment.NetworkSimulator.NsGetParam.NsGetParam</ClassName>
+        <Description>gets the value of a given parameter name. Valid Parameter names are gathered in a sqlite database.
+            Input parameter names are tested against the database content</Description>
+        <Environment name="ANY"/>
+        <Parameters>
+            <Parameter name="EQT" type="STRING" isOptional="false">
+                <Description>The equipment name shall refer to an existing equipment in the Bench config</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+            <Parameter name="NAME" type="STRING" isOptional="false">
+                <Description>The parameter name. </Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+            <Parameter name="OPTION" type="STRING" isOptional="false">
+                <Description>if a sub option of the command has to be used, indicate it here.</Description>
+                <PossibleValues/>
+                <DefaultValue>none</DefaultValue>
+            </Parameter>
+            <Parameter name="VALUE" type="CONTEXT" isOptional="false">
+                <Description>
+                    <Key name="VALUE" type="STRING">the returned value.</Key>
+                </Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="NS_WAIT_STATE" Domain="EQUIPMENT" SubDomain="NETWORK_SIMULATOR" Feature="" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Equipment.NetworkSimulator.NsWaitState.NsWaitState</ClassName>
+        <Description>Waits for a given parameter on a network simulator to reach a given state.
+        refer to commands database for a list of available 'names'</Description>
+        <Environment name="ANY"/>
+        <Parameters>
+            <Parameter name="EQT" type="STRING" isOptional="false">
+                <Description>The equipment name shall refer to an existing equipment in the Bench config</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+            <Parameter name="NAME" type="STRING" isOptional="false">
+                <Description>Parameter name.</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+            <Parameter name="OPTION" type="STRING" isOptional="false">
+                <Description>an option to the command</Description>
+                <PossibleValues/>
+                <DefaultValue>none</DefaultValue>
+            </Parameter>
+            <Parameter name="STATE" type="STRING" isOptional="false">
+                <Description>The expected parameter's state.</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+            <Parameter name="TIMEOUT" type="INTEGER" isOptional="false">
+                <Description>check timeout.</Description>
+                <PossibleValues/>
+                <DefaultValue>none</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="NS_CHECK_STATE" Domain="EQUIPMENT" SubDomain="NETWORK_SIMULATOR" Feature="" Status="PLANNED">
+        <ClassName>acs_test_scripts.TestStep.Equipment.NetworkSimulator.NsCheckState.NsCheckState</ClassName>
+        <Description>Checks a given parameter on network simulator keeps a given state for a time interval.
+        refer to commands database for a list of available parameter names</Description>
+        <Environment name="ANY"/>
+        <Parameters>
+            <Parameter name="EQT" type="STRING" isOptional="false">
+                <Description>The equipment name shall refer to an existing equipment in the Bench config</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+            <Parameter name="NAME" type="STRING" isOptional="false">
+                <Description>Parameter name.</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+            <Parameter name="OPTION" type="STRING" isOptional="false">
+                <Description>an option to the command</Description>
+                <PossibleValues/>
+                <DefaultValue>none</DefaultValue>
+            </Parameter>
+            <Parameter name="STATE" type="STRING" isOptional="false">
+                <Description>The expected parameter's state.</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+            <Parameter name="DURATION" type="INTEGER" isOptional="false">
+                <Description>time interval duration.</Description>
+                <PossibleValues/>
+                <DefaultValue>0</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="NS_CHECK_NO_STATE" Domain="EQUIPMENT" SubDomain="NETWORK_SIMULATOR" Feature="" Status="PLANNED">
+        <ClassName>acs_test_scripts.TestStep.Equipment.NetworkSimulator.NsCheckNoState.NsCheckNoState</ClassName>
+        <Description>Checks a given parameter on network simulator never reaches a given state on a time interval.
+        refer to commands database for a list of available parameter names</Description>
+        <Environment name="ANY"/>
+        <Parameters>
+            <Parameter name="EQT" type="STRING" isOptional="false">
+                <Description>The equipment name shall refer to an existing equipment in the Bench config</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+            <Parameter name="NAME" type="STRING" isOptional="false">
+                <Description>Parameter name.</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+            <Parameter name="OPTION" type="STRING" isOptional="false">
+                <Description>an option to the command</Description>
+                <PossibleValues/>
+                <DefaultValue>none</DefaultValue>
+            </Parameter>
+            <Parameter name="STATE" type="STRING" isOptional="false">
+                <Description>The parameter's undesired state</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+            <Parameter name="DURATION" type="INTEGER" isOptional="false">
+                <Description>time interval duration.</Description>
+                <PossibleValues/>
+                <DefaultValue>0</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="NS_CHECK_DUT_REGISTRATION" Domain="EQUIPMENT" SubDomain="NETWORK_SIMULATOR" Feature="" Status="PLANNED">
+        <ClassName>acs_test_scripts.TestStep.Equipment.NetworkSimulator.NsCheckDutRegistration.NsCheckDutRegistration</ClassName>
+        <Description>Check DUT registration before timeout expires</Description>
+        <Environment name="ANY"/>
+        <Parameters>
+            <Parameter name="EQT" type="STRING" isOptional="false">
+                <Description>The equipment name shall refer to an existing equipment in the Bench config</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+            <Parameter name="IMSI" type="STRING" isOptional="false">
+                <Description>The IMSI of the DUT to check</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+            <Parameter name="TIMEOUT" type="INTEGER" isOptional="false">
+                <Description>time interval duration.</Description>
+                <PossibleValues/>
+                <DefaultValue>120</DefaultValue>
+            </Parameter>
+            <Parameter name="FEATURE" type="STRING" isOptional="false">
+                <Description>indicate which feature is needed on the expected network simulator.
+                feature name must be compatible with EquipmentCatalog.xml content. for example 2G, 3G, 4G</Description>
+                <PossibleValues>2G;3G;4G;LTE;TDSCDMA;TD-SCDMA</PossibleValues>
+                <DefaultValue/>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="NS_CHECK_IMS_CSCF_STATE" Domain="EQUIPMENT" SubDomain="NETWORK_SIMULATOR" Feature="" Status="PLANNED">
+        <ClassName>acs_test_scripts.TestStep.Equipment.NetworkSimulator.NsCheckImsCscfState.NsCheckImsCscfState</ClassName>
+        <Description>Check DUT registration before timeout expires</Description>
+        <Environment name="ANY"/>
+        <Parameters>
+            <Parameter name="EQT" type="STRING" isOptional="false">
+                <Description>The equipment name shall refer to an existing equipment in the Bench config</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+            <Parameter name="STATE" type="STRING" isOptional="false">
+                <Description>State to reached</Description>
+                <PossibleValues>OFF;SIPIDLE;CALLING;RINGING;CONNECTED;UNKNOWN</PossibleValues>
+                <DefaultValue/>
+            </Parameter>
+            <Parameter name="TIMEOUT" type="INTEGER" isOptional="false">
+                <Description>time interval duration.</Description>
+                <PossibleValues/>
+                <DefaultValue>120</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="NS_DECREASE_CELL_POWER_BY_STEP" Domain="EQUIPMENT" SubDomain="NETWORK_SIMULATOR" Feature="" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Equipment.NetworkSimulator.NsDecreaseCellPowerByStep.NsDecreaseCellPowerByStep</ClassName>
+        <Description>Decrease cell power step by step</Description>
+        <Environment name="ANY"/>
+        <Parameters>
+            <Parameter name="EQT" type="STRING" isOptional="false">
+                <Description>The equipment name shall refer to an existing equipment in the Bench config</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+            <Parameter name="INIT_POWER" type="FLOAT" isOptional="false">
+                <Description>Initial Power</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+            <Parameter name="END_POWER" type="FLOAT" isOptional="false">
+                <Description>Power at the end of the decrementation</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+            <Parameter name="DECREMENTATION_STEP_POWER" type="FLOAT" isOptional="false">
+                <Description>Decrementation power step</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+            <Parameter name="DECREMENTATION_STEP_TIMER" type="FLOAT" isOptional="false">
+                <Description>Time between each decrementation step</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="NS_SET_EXTERNAL_CONNECTION" Domain="EQUIPMENT" SubDomain="NETWORK_SIMULATOR" Feature="" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Equipment.NetworkSimulator.NsSetExternalConnection.NsSetExternalConnection</ClassName>
+        <Description>Connect one 8960 to another one</Description>
+        <Environment name="ANY"/>
+        <Parameters>
+            <Parameter name="EQT1" type="STRING" isOptional="false">
+                <Description>The equipment name shall refer to an existing equipment in the Bench config</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+            <Parameter name="EQT2" type="STRING" isOptional="false">
+                <Description>The equipment name shall refer to an existing equipment in the Bench config</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+            <Parameter name="STATE" type="STRING" isOptional="false">
+                <Description>Connection State to set</Description>
+                <PossibleValues>ON;OFF</PossibleValues>
+                <DefaultValue/>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="NS_CONFIGURE_IMS" Domain="EQUIPMENT" SubDomain="NETWORK_SIMULATOR" Feature="" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Equipment.NetworkSimulator.NsConfigureIMS.NsConfigureIMS</ClassName>
+        <Description>Configure IMS services on equipment</Description>
+        <Environment name="ANY"/>
+        <Parameters>
+            <Parameter name="EQT" type="STRING" isOptional="false">
+                <Description>The equipment name shall refer to an existing equipment in the Bench config</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="NS_START_IMS" Domain="EQUIPMENT" SubDomain="NETWORK_SIMULATOR" Feature="" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Equipment.NetworkSimulator.NsStartIMS.NsStartIMS</ClassName>
+        <Description>Start IMS services on equipment</Description>
+        <Environment name="ANY"/>
+        <Parameters>
+            <Parameter name="EQT" type="STRING" isOptional="false">
+                <Description>The equipment name shall refer to an existing equipment in the Bench config</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="SET_SIM_OPERATOR_INFO" Domain="EQUIPMENT" SubDomain="NETWORK_SIMULATOR" Feature="" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Equipment.NetworkSimulator.SetSimOperatorInfo.SetSimOperatorInfo</ClassName>
+        <Description>Set MCC/MNC on equipment</Description>
+        <Environment name="ANY"/>
+        <Parameters>
+            <Parameter name="EQT" type="STRING" isOptional="false">
+                <Description>The equipment name shall refer to an existing equipment in the Bench config</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+            <Parameter name="MNC" type="STRING" isOptional="false">
+                <Description>MNC to set</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+            <Parameter name="MCC" type="STRING" isOptional="false">
+                <Description>MCC to set</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+</TestSteps>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<PlatformList>
+    <Platform id="REDHOOKBAY-Android-JB-MR1|BLACKBAY-Android-JB|BLACKBAY-Android-KK">
+        <!-- choose between a range of temperature (high_temperature="20" low_temperature="0")
+            or a fixed value (temperature="25"). If both is set, fixed value will be checked first
+        -->
+        <Target temperature="room_temperature">
+            <Parameters>
+                <Parameter lo_soc="0" hi_soc="22" lo_slope="0.011818" lo_intercept="3.44" hi_slope="0.011818" hi_intercept="3.54" />
+                <Parameter lo_soc="22" hi_soc="55" lo_slope="0.002121" lo_intercept="3.653333" hi_slope="0.002121" hi_intercept="3.753333" />
+                <Parameter lo_soc="55" hi_soc="80" lo_slope="0.0064" lo_intercept="3.418" hi_slope="0.0064" hi_intercept="3.518" />
+                <Parameter lo_soc="80" hi_soc="100" lo_slope="0.01" lo_intercept="3.13" hi_slope="0.01" hi_intercept="3.23" />
+            </Parameters>
+        </Target>
+    </Platform>
+    <Platform id="REDHOOKBAY-Android-JB-MR1|BLACKBAY-Android-JB|BLACKBAY-Android-KK">
+        <Target temperature="25">
+            <Parameters>
+                <Parameter lo_soc="0" hi_soc="22" lo_slope="0.011818" lo_intercept="3.44" hi_slope="0.011818" hi_intercept="3.54" />
+                <Parameter lo_soc="22" hi_soc="55" lo_slope="0.002121" lo_intercept="3.653333" hi_slope="0.002121" hi_intercept="3.753333" />
+                <Parameter lo_soc="55" hi_soc="80" lo_slope="0.0064" lo_intercept="3.418" hi_slope="0.0064" hi_intercept="3.518" />
+                <Parameter lo_soc="80" hi_soc="100" lo_slope="0.01" lo_intercept="3.13" hi_slope="0.01" hi_intercept="3.23" />
+            </Parameters>
+        </Target>
+    </Platform>
+</PlatformList>

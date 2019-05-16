@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase>
+    <UseCase>LAB_NFC_ADAPTER_ON_OFF_FIELDON</UseCase>
+    <Description>Enable/Disable NFC adapter using Android Setting application while DUT is exposed to RF field of a NFC reader</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters>
+        <Parameter>
+            <!-- [OPTIONAL] If True, enable the NFC Beam prior to the test. If False, disable the NFC Beam prior to the test -->
+            <Name>NFC_BEAM_INITIAL_STATE</Name>
+            <Value></Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

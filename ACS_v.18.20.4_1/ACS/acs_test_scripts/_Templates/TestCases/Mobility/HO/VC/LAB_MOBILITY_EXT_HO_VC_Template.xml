@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="13.49">
+    <UseCase>LAB_MOBILITY_EXT_HO_VC</UseCase>
+    <Description> Perform several 2G/3G Handovers during Voice Call</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters>
+        <Parameter>
+            <!-- NS1 Cell Technology (2G|3G) -->
+            <Name>NS1_CELL_TECH</Name>
+            <Value>2G</Value>
+        </Parameter>
+        <Parameter>
+            <!-- NS1 Cell Band
+               For 2G : EGSM|GSM850|PCS|DCS
+               For 3G : 1,2,5,8
+            -->
+            <Name>NS1_CELL_BAND</Name>
+            <Value>EGSM</Value>
+        </Parameter>
+        <Parameter>
+            <!-- NS2 Cell Technology (2G|3G) -->
+            <Name>NS2_CELL_TECH</Name>
+            <Value>2G</Value>
+        </Parameter>
+        <Parameter>
+            <!-- NS2 Cell Band
+               For 2G : EGSM|GSM850|PCS|DCS
+               For 3G : 1,2,5,8
+            -->
+            <Name>NS2_CELL_BAND</Name>
+            <Value>DCS</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Dialled Phone number (MSISDN). If value is [PHONE_NUMBER] the value used will be the phoneNumber defined in the Phone_Catalog.xml -->
+            <Name>PHONE_NUMBER</Name>
+            <Value>[PHONE_NUMBER]</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Campaign>
+    <Parameters>
+        <Parameter isControlledPSUsed="False"/>
+        <Parameter isIoCardUsed="True"/>
+        <!-- Set skipBootOnPowerCycle to True to disable the acs boot procedure-->
+        <!-- Important, it means that boot will be handle inside the campaign/tc -->
+        <Parameter skipBootOnPowerCycle="False"/>
+        <Parameter runHookScripts="False"/>
+        <Parameter powerCycleBetweenTC="False"/>
+        <Parameter powerCycleOnFailure="False"/>
+        <Parameter finalPowerOff="False"/>
+        <Parameter finalDutState="NoChange"/>
+        <Parameter stopCampaignOnCriticalFailure="False"/>
+        <Parameter stopCampaignOnFirstFailure="False"/>
+        <!-- LoggingLevel possible values: info | warning | debug | error -->
+        <Parameter loggingLevel="debug"/>
+        <!-- CampaignType format -> <TEAM>_<CAMPAIGNTYPE>
+            Possible values:
+            FT(Feature Team)-> SANITY | REGRESSION | STRESS, RELIABILTY | MTBF
+            ST(System Test)-> SANITY | REGRESSION | STRESS, RELIABILTY | MTBF
+            SI(System Integration)-> EAT | STAB | PACT | CAT0 | RELIABILITY | MTBF | CTS
+            Otherwise "Others" should be used -->
+        <Parameter CampaignType="ST_RELIABILTY"/>
+        <Parameter TCRReportViaRESTAPI="true"/>
+    </Parameters>
+    <Targets>
+        <!-- Target Values -->
+        <Target targetB2bPassRate="100"/>
+    </Targets>
+    <!-- Testcase campaigns -->
+    <TestCases>
+        <!-- BLUETOOTH SECTION Win10 -->
+            <!-- BLUETOOTH OPP CLIENT SECTION -->
+            <TestCase Id="../TC/BT/WINDOWS_SPECIFIC/ST_CWS_BT_PI_OPP_CLIENT_001"/>
+            <!-- END OF BLUETOOTH OPP CLIENT SECTION -->
+            <!-- BLUETOOTH OPP SERVER SECTION -->
+            <TestCase Id="../TC/BT/WINDOWS_SPECIFIC/ST_CWS_BT_PI_OPP_SERVER_001"/>
+            <!-- END OF BLUETOOTH OPP SERVER SECTION -->
+        <!-- END OF BLUETOOTH SECTION -->
+    </TestCases>
+</Campaign>

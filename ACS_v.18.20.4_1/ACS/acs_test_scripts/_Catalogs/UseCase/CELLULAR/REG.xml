@@ -1,0 +1,403 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<UseCases xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:noNamespaceSchemaLocation="../../../../acs/src/_Catalogs/UseCase/usecase.xsd">
+    <UseCase Id="LAB_GSM_CAMP" Domain="CELLULAR" SubDomain="REG" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Communication.Camp.LAB_GSM_CAMP.LabGsmCamp</ClassName>
+        <Description>GSM Network Registration on simulated network</Description>
+        <Environment name="TEL">
+            <Capabilities>EQT_AG_8960</Capabilities>
+        </Environment>
+        <Parameters>
+            <Parameter name="CELL_BAND" type="CELL_BAND_2G" isOptional="false">
+                <!-- Field optional (PossibleValues, DefaultValue, Blank) if possible value not override available -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue>RGSM</DefaultValue>
+                <Blank/>
+                <Dependencies>
+                    <Dependency isOptional="false">BCH_ARFCN</Dependency>
+                </Dependencies>
+            </Parameter>
+            <Parameter name="CELL_SERVICE" type="CELL_SERVICE_2G" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="CELL_POWER" type="CELL_POWER_IN_DBM" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="MCC" type="MCC" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="MNC" type="MNC" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="SWITCH_MODE" type="SWITCH_MODE" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+        </Parameters>
+    </UseCase>
+    <UseCase Id="LAB_WCDMA_CAMP" Domain="CELLULAR" SubDomain="REG" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Communication.Camp.LAB_WCDMA_CAMP.LabWcdmaCamp</ClassName>
+        <Description>WCDMA Network Registration on simulated network</Description>
+        <Environment name="TEL">
+            <Capabilities>EQT_AG_8960</Capabilities>
+        </Environment>
+        <Parameters>
+            <Parameter name="CELL_BAND" type="CELL_BAND_3G" isOptional="false">
+                <!-- Field optional (PossibleValues, DefaultValue, Blank) if possible value not override available -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue>1</DefaultValue>
+                <Blank/>
+                <Dependencies>
+                    <Dependency isOptional="false">DL_UARFCN</Dependency>
+                </Dependencies>
+            </Parameter>
+            <Parameter name="CELL_SERVICE" type="CELL_SERVICE_3G" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="CELL_POWER" type="CELL_POWER_IN_DBM" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="MCC" type="MCC" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="MNC" type="MNC" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="SWITCH_MODE" type="SWITCH_MODE" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+        </Parameters>
+    </UseCase>
+    <UseCase Id="LAB_TDSCDMA_CAMP" Domain="CELLULAR" SubDomain="REG" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Communication.Camp.LAB_TDSCDMA_CAMP.LabTdscdmaCamp</ClassName>
+        <Description>TD-SCDMA Network Registration on simulated network</Description>
+        <Environment name="TEL">
+            <Capabilities>EQT_AG_8960</Capabilities>
+        </Environment>
+        <Parameters>
+            <Parameter name="CELL_POWER" type="CELL_POWER_IN_DBM" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="CELL_BAND" type="CELL_BAND_TDSCDMA" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+        </Parameters>
+    </UseCase>
+    <UseCase Id="LIVE_CELLULAR_CAMP" Domain="CELLULAR" SubDomain="REG" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Communication.Camp.LIVE_CELLULAR_CAMP.LiveCellularCamp</ClassName>
+        <Description>Live Cellular Camp</Description>
+        <Environment name="TEL">
+            <Capabilities>EQT_LIVE_USIM</Capabilities>
+        </Environment>
+        <Parameters>
+            <Parameter name="HPLMN_COVERAGE" type="IS_HPLMN_COVERAGE_AVAILABLE" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="DEACTIVATE_DATA" type="IS_DATA_ENABLED" isOptional="true">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="PREFERRED_NETWORK_TYPE" type="NETWORK_PREFERENCES" isOptional="true">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="MCC" type="MCC" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="MNC" type="MNC" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="MCC_2" type="MCC" isOptional="true">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="MNC_2" type="MNC" isOptional="true">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+        </Parameters>
+    </UseCase>
+    <UseCase Id="LIVE_LTE_IMS_REG" Domain="CELLULAR" SubDomain="REG" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Networking.LIVE_LTE_IMS_REG.LiveLteImsReg</ClassName>
+        <Description>IMS registration over LTE</Description>
+        <Environment name="TEL">
+            <Capabilities>EQT_LIVE_USIM</Capabilities>
+        </Environment>
+        <Parameters>
+            <Parameter name="IMS_REGISTRATION_TIMEOUT" type="TIMEOUT_IN_SEC" isOptional="false">
+                <Description>The additional timeout for IMS registration.</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="IMS_PARAMETER_FILE" type="IMS_CONFIG_FILE" isOptional="false">
+                <Description> The path to the IMS parameter file to use to create the IMS_Config.ini file on the device. </Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="IMS_AUTHENTICATION" type="IMS_PARAMETER" isOptional="false">
+                <Description>The authentication mode to use ("digest"|"aka").</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="IMS_PRECONDITIONS" type="IMS_PARAMETER" isOptional="false">
+                <Description>The precondition parameters ("3gpp" with preconditions, "ietf" without preconditions).</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="IMS_DIGEST_PASSWORD" type="IMS_PARAMETER" isOptional="true">
+                <Description>The DIGEST password to use when chosing DIGEST authentication mode.</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="DEREGISTRATION_METHOD" type="DEREGISTRATION_METHOD" isOptional="true">
+                <Description>Registration OFF/ON type (None, AIRPLANE_ON_OFF, AT_COMMAND)</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="IP_VERSION" type="IP_VERSION" isOptional="true">
+                <Description>IP version used for the APN to connect to the C4I network. IPV4 | IPV6 | IPV4V6</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="AIRPLANE_ON_OFF" type="AIRPLANE_ON_OFF" isOptional="true">
+                <Description>Perform airplane ON-OFF and check the IMS registration status</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+        </Parameters>
+    </UseCase>
+    <UseCase Id="LAB_LTE_REG" Domain="CELLULAR" SubDomain="REG" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Networking.LAB_LTE_REG.LabLteReg</ClassName>
+        <Description>Registration over LTE simulated network and then Ping</Description>
+        <Environment name="TEL">
+            <Capabilities>EQT_AG_E6621A</Capabilities>
+            <Capabilities>EQT_RS_CMW500</Capabilities>
+            <Capabilities>CAP_CALLBOX</Capabilities>
+        </Environment>
+    </UseCase>
+    <UseCase Id="LAB_LTE_IMS_REG" Domain="CELLULAR" SubDomain="REG" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Networking.LAB_LTE_IMS_REG.LabLteImsReg</ClassName>
+        <Description>Registration over LTE simulated network and then Ping</Description>
+        <Environment name="TEL">
+            <Capabilities>EQT_RS_CMW500</Capabilities>
+        </Environment>
+        <Parameters>
+            <Parameter name="IMS" type="IS_IMS_ENABLED" isOptional="false">
+                <!-- Description: IMS service status on call box : on or off -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="MIMO" type="IS_MIMO_ENABLED" isOptional="false">
+                <!-- Description: Multiple-Input Multiple-Output to set : TRUE or FALSE -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="ANTENNAS_NUMBER" type="ANTENNA" isOptional="false">
+                <!-- Description: number of antennas to set : 1 or 2 -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="TRANSMISSION_MODE" type="LTE_TRANSMISSION_MODE" isOptional="false">
+                <!-- Description: TRANSMISSION_MODE to set: TM1, TM2, TM3,TM4 ... -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="DL_RB_SIZE" type="LTE_RB_SIZE" isOptional="false">
+                <!-- Description: DL RB_SIZE to set: 1.4 MHz = 1 to 6 3 MHz = 1 to 15 5 MHz = 1 to 25 10 MHz = 1 to 50 15 MHz = 1 to 75 20 MHz = 1 to 100 -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="UL_RB_SIZE" type="LTE_RB_SIZE" isOptional="false">
+                <!-- Description: UL RB_SIZE to set: 1.4 MHz = 1 to 6 3 MHz = 1 to 15 5 MHz = 1 to 25 10 MHz = 1 to 50 15 MHz = 1 to 75 20 MHz = 1 to 100 -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="TYPE0_BITMAP" type="TYPE0_BITMAP" isOptional="true">
+                <!-- Description: TYPE0_BITMAP to set: requires to set TM3 or TM4 profile, MIMO to be set in scenario file 1.4 MHz = 1 to 63 (0x3F) 3 MHz = 1 to 255 (0xFF) 5 MHz = 1 to 8191 (0x1FFF) 10 MHz = 1 to 131071 (0x1FFFF) 15 MHz = 1 to 524287 (0x7FFFF) 20 MHz = 1 to 33554431 (0x1FFFFFF) -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="UL_GRANT_MODE" type="UL_GRANT_MODE" isOptional="false">
+                <!-- Description: UL GRANT MODE to set: AUTO or FIXEDMAC -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="DL_I_MCS" type="DL_I_MCS" isOptional="false">
+                <!-- Description: DL_I_MCS to set: 0 to 28 -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="UL_I_MCS" type="UL_I_MCS" isOptional="false">
+                <!-- Description: UL_I_MCS to set: 0 to 23, and 29 -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="CELL_CHANNEL_BANDWIDTH" type="LTE_CELL_CHANNEL_BANDWIDTH" isOptional="false">
+                <!-- Description: Cell Channel Bandwidth in MHz -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="SIGNAL_MODE" type="LTE_SIGNAL_MODE" isOptional="false">
+                <!-- Description: Operation mode to set : BSE or SA -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="PHYSICAL_CELL_ID" type="LTE_PHYSICAL_CELL_ID" isOptional="false">
+                <!-- Description: Physical Cell ID : 0 to 503 -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="CELL_ID" type="CELL_ID" isOptional="true">
+                <!-- Description: Cell Setup : "A" for A-cell or "B" for B-cell -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="CELL_POWER_RFO1" type="CELL_POWER_IN_DBM" isOptional="false">
+                <!-- Description: Cell power for RFO1 -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="CELL_POWER_RFO2" type="CELL_POWER_IN_DBM" isOptional="false">
+                <!-- Description: Cell power for RFO2 -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="MCC" type="MCC" isOptional="false">
+                <!-- Description: Mobile Country Code 0 to 999 -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="MNC" type="MNC" isOptional="false">
+                <!-- Description: Mobile Network Code 0 to 999 -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="CELL_BAND" type="CELL_BAND_4G" isOptional="false">
+                <!-- Description: Cell Band (from Band 1 to Band 32 for FDD; from Band 33 to Band 63 for TDD) -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="DL_EARFCN" type="DL_EARFCN" isOptional="false">
+                <!-- Description: Downlink channel -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="IP_VERSION" type="IP_VERSION" isOptional="true">
+                <!-- Description>the IP version to use to connect to the mobile network. IPV4 | IPV6 | IPV4V6 -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="SCENARIO_PATH" type="SCENARIO_PATH" isOptional="true">
+                <!-- Description: Path to the scenario filename to load on PXT -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+        </Parameters>
+    </UseCase>
+</UseCases>

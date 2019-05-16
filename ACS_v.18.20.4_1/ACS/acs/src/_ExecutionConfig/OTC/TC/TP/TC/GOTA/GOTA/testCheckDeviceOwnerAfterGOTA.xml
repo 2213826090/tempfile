@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<TestCase>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Discription>
+Setup device owner on prev. build, then GOTA device to check the device owner exist or not in Settings-&amp;gt;Security-&amp;gt;Device administrators -&amp;gt; DPC apps checked without could be changed.
+</Discription>
+    <Domain>GOTA</Domain>
+    <Phase>CORE</Phase>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <Type>FUNCTIONAL</Type>
+    <UseCase>PY_UNIT</UseCase>
+    <b2bIteration>1</b2bIteration>
+    <Parameters>
+        <Parameter>
+            <Name>HpalmName</Name>
+            <Value>check_AFW_device_owner_after_gota.CheckDeviceOwnerAfterGOTA.testCheckDeviceOwnerAfterGOTA</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TEST_DATA_ROOT</Name>
+            <Value>testplan/GOTA</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TEST_CASE</Name>
+            <Value>tests.GOTA.GOTA.check_AFW_device_owner_after_gota.CheckDeviceOwnerAfterGOTA.testCheckDeviceOwnerAfterGOTA</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

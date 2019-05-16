@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="13.37">
+    <UseCase>LIVE_DUAL_PHONE_BT_CHECK_DISCOVERABLE_TO</UseCase>
+    <Description>Check BlueTooth discoverable mode and timeout with another devices(reference phone).</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>False</b2bContinuousMode>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters>
+        <Parameter>
+            <!--required discoverable mode. Could be on or off, or 1 or 0 -->
+            <Name>DISCOV_MODE</Name>
+            <Value>on</Value>
+        </Parameter>
+        <Parameter>
+            <!--discoverable timeout. Could be 0 (for never), 120, 300 or 3600 (in seconds) -->
+            <Name>DISCOV_TIMEOUT</Name>
+            <Value>120</Value>
+        </Parameter>
+        <Parameter>
+            <!-- [Optional] Is set to True, the flight mode will be enables before setting bt on
+                and disabled at tear down. -->
+            <Name>FLIGHT_MODE</Name>
+            <Value>False</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

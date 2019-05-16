@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='ASCII'?>
+<TestCase>
+    <UseCase>Testlib</UseCase>
+    <Description>Test Brillo watchdog functionality</Description>
+    <Description>Command: kill `pgrep watchdogd`</Description>
+    <Description>Command: repeat 4 times</Description>
+    <Description>Result: device reboots after killing watchdog 5 times</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <TcMaxAttempt>1</TcMaxAttempt>
+    <Parameters>
+        <Parameter>
+            <Name>test</Name>
+            <Value>scripts/brillo/tests/8.1_kill_watchdogd_five_times.py</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

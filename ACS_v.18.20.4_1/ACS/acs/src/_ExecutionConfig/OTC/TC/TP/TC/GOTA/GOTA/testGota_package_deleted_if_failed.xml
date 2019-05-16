@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<TestCase>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Discription>
+Check the update.zip package is automatically deleted if the GOTA package upgrade fails
+</Discription>
+    <Domain>GOTA</Domain>
+    <Phase>CORE</Phase>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <Type>FUNCTIONAL</Type>
+    <UseCase>PY_UNIT</UseCase>
+    <b2bIteration>1</b2bIteration>
+    <Parameters>
+        <Parameter>
+            <Name>HpalmName</Name>
+            <Value>check_gota_package_deleted_if_failed.Gota_package_deleted_if_failed.testGota_package_deleted_if_failed</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TEST_DATA_ROOT</Name>
+            <Value>testplan/GOTA</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TEST_CASE</Name>
+            <Value>tests.GOTA.GOTA.check_gota_package_deleted_if_failed.Gota_package_deleted_if_failed.testGota_package_deleted_if_failed</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

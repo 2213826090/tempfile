@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<Campaign>
+    <Parameters>
+        <Parameter isControlledPSUsed="True" />
+        <Parameter isIoCardUsed="True" />
+        <Parameter skipBootOnPowerCycle="True" />
+        <Parameter runHookScripts="False" />
+        <Parameter powerCycleBetweenTC="False" />
+        <Parameter powerCycleOnFailure="False" />
+        <Parameter finalPowerOff="True" />
+        <Parameter finalDutState="PowerOff" />
+        <Parameter stopCampaignOnCriticalFailure="False" />
+        <Parameter stopCampaignOnFirstFailure="False" />
+        <!-- LoggingLevel possible values: info | warning | debug | error -->
+        <Parameter loggingLevel="debug" />
+        <!-- CampaignType format -> <TEAM>_<CAMPAIGNTYPE>
+            Possible values:
+            FT(Feature Team)-> SANITY | REGRESSION | STRESS, RELIABILTY | MTBF
+            ST(System Test)-> SANITY | REGRESSION | STRESS, RELIABILTY | MTBF
+            SI(System Integration)-> EAT | STAB | PACT | CAT0 | RELIABILITY | MTBF | CTS
+            Otherwise "Others" should be used -->
+        <Parameter CampaignType="ST_EM_PS_REGRESSION" />
+    </Parameters>
+    <Targets>
+        <!-- Target Values -->
+        <Target targetB2bPassRate="49" />
+    </Targets>
+    <TestCases>
+        <!-- Testcase campaigns -->
+        <TestCase Id="..\..\TESTCASE\MOBAT\ST_EM_MOBAT_BATT_INFO_CHARGE_DISCHARGE_003-LAB_EM_BATT_CAPACITY_JUMP_ON_PLUG" />
+        <TestCase Id="..\..\TESTCASE\MOBAT\ST_EM_MOBAT_BATT_INFO_CHARGE_DISCHARGE_004-LAB_EM_BATT_CAPACITY_JUMP_ON_PLUG" />
+        <TestCase Id="..\..\TESTCASE\MOBAT\ST_EM_MOBAT_BATT_INFO_CHARGE_DISCHARGE_005-LAB_EM_BATT_CAPACITY_JUMP_ON_PLUG" />
+        <TestCase Id="..\..\TESTCASE\MACHR\ST_EM_MACHR_USB_SDP_CHGR_CABLE_005-LAB_EM_BATT_CHECK_CHARGING_STATUS_WITH_LOAD" />
+        <TestCase Id="..\..\TESTCASE\MACHR\ST_EM_MACHR_USB_WALL_PLUG_DCP_CHG_MEASURE_04-LAB_EM_BATT_CHECK_CHARGING_STATUS_WITH_LOAD" />
+    </TestCases>
+</Campaign>

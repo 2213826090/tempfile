@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='ASCII'?>
+<TestCase>
+    <UseCase>Testlib</UseCase>
+    <Description>Rename a file</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <TcMaxAttempt>1</TcMaxAttempt>
+    <Parameters>
+        <Parameter>
+            <Name>timeout</Name>
+            <Value>500</Value>
+        </Parameter>
+        <Parameter>
+            <Name>script-args</Name>
+            <Value>{"account":"auto2test@gmail.com","password":"testing12345"}</Value>
+        </Parameter>
+        <Parameter>
+            <Name>test</Name>
+            <Value>scripts/gms/docs/tests/rename_document.py</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

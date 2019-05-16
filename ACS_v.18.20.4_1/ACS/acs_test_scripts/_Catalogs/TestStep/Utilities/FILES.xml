@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestSteps xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../acs/src/_Catalogs/TestStep/teststep.xsd">
+    <TestStep Id="HTTP_DOWNLOAD" Domain="UTILITIES" SubDomain="FILES" Feature="" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Utilities.Files.HttpDownloader.HttpDownloader</ClassName>
+        <Description>Get a file from http/https server</Description>
+        <Environment name="ANY"/>
+        <Parameters>
+            <Parameter name="URL" type="STRING" isOptional="false">
+                  <Description>http/https url to the file to download</Description>
+                  <PossibleValues/>
+                  <DefaultValue/>
+            </Parameter>
+            <Parameter name="DESTINATION" type="STRING" isOptional="false">
+                   <Description>Place where file will be stored. Could be a directory path or a file path. Could be relative to acs source folder or a full path</Description>
+                   <PossibleValues/>
+                   <DefaultValue>_ExecutionConfig</DefaultValue>
+            </Parameter>
+            <Parameter name="CREDENTIAL" type="STRING" isOptional="false">
+                   <Description>Credential to use for authentication as "user:password". For anonymous download, use "anonymous" parameter value</Description>
+                   <PossibleValues/>
+                   <DefaultValue>anonymous</DefaultValue>
+            </Parameter>
+            <Parameter name="HTTP_TIMEOUT" type="FLOAT" isOptional="false">
+                <Description>Http timeout in seconds</Description>
+                <PossibleValues>[1.0:60.0]</PossibleValues>
+                <DefaultValue>10.0</DefaultValue>
+            </Parameter>
+            <Parameter name="TRANSFER_TIMEOUT" type="INTEGER" isOptional="false">
+                <Description>Http timeout</Description>
+                <PossibleValues/>
+                <DefaultValue>600</DefaultValue>
+            </Parameter>
+            <Parameter name="HTTP_PROXY" type="STRING" isOptional="false">
+                <Description>http proxy to use. no_proxy = empty proxy to use, system = use system proxy or a proxy url</Description>
+                <PossibleValues/>
+                <DefaultValue>no_proxy</DefaultValue>
+            </Parameter>
+            <Parameter name="OVERRIDE_FILE" type="BOOLEAN" isOptional="false">
+                <Description>If destination is an existing file, can we erase it ?</Description>
+                <PossibleValues/>
+                <DefaultValue>True</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="EXPORT_PATHS" Domain="UTILITIES" SubDomain="FILES" Feature="" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Utilities.Files.ExportPath.ExportPath</ClassName>
+        <Description>Export framework paths to the context.</Description>
+        <Environment name="ANY"/>
+        <Parameters>
+            <Parameter name="SAVE_PATHS_AS" type="CONTEXT" isOptional="false">
+                <Description>
+                    <Key name="EXECUTION_CONFIG" type="STRING">path to the _ExecutionConfig folder</Key>
+                    <Key name="EXTRA_LIB_FOLDER" type="STRING">path to the ExtraLibs folder</Key>
+                    <Key name="REPORTS" type="STRING">path to the _Reports folder</Key>
+                    <Key name="FLASH_FILES" type="STRING">path to the flash file given by the -f argument</Key>
+                    <Key name="CONFIGS" type="STRING">path to the _Configs folder</Key>
+                </Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+        </Parameters>
+     </TestStep>
+    <TestStep Id="CREATE_RANDOM_BINARY_FILE_HOST" Domain="UTILITIES" SubDomain="FILES" Feature="" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Utilities.Files.CreateRandomBinaryFileHost.CreateRandomBinaryFileHost</ClassName>
+        <Description>Creates a random binary file size of RAND_FILE_SIZE on PC (host).
+            rand_file.bin will be created under DESTINATION_PATH</Description>
+        <Environment name="ANY"/>
+        <Parameters>
+            <Parameter name="DESTINATION_PATH" type="STRING" isOptional="false">
+               <Description>Directory in which a random file will be created. If value is '[TEMP]', will use tempfile.mkdtemp() to make a directory.</Description>
+               <PossibleValues/>
+               <DefaultValue/>
+            </Parameter>
+            <Parameter name="RAND_FILE_NAME" type="STRING" isOptional="false">
+                <Description>Filename to create on host</Description>
+                <PossibleValues/>
+                <DefaultValue>rand_file.bin</DefaultValue>
+            </Parameter>
+            <Parameter name="CTX_DESTINATION_PATH" type="STRING" isOptional="true">
+               <Description>Context variable that holds DESTINATION_PATH joined with RAND_FILE_NAME </Description>
+               <PossibleValues/>
+               <DefaultValue/>
+            </Parameter>
+            <Parameter name="RAND_FILE_SIZE" type="INTEGER" isOptional="false">
+               <Description>File size in MB</Description>
+                <PossibleValues/>
+                <DefaultValue>1</DefaultValue>
+            </Parameter>
+            <Parameter name="RAND_FILE_SIZE_MIN" type="INTEGER" isOptional="true">
+               <Description>Set this value to a positive integer value if you want the file to be randomly chosen from an inclusive range from RAND_FILE_SIZE_MIN to RAND_FILE_SIZE.</Description>
+                <PossibleValues/>
+                <DefaultValue>0</DefaultValue>
+            </Parameter>
+            <Parameter name="RAND_FILE_SEED" type="INTEGER" isOptional="true">
+               <Description>Random seed</Description>
+                <PossibleValues/>
+                <DefaultValue>1</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+        <TestStep Id="DELETE_FILE_HOST" Domain="SYSTEM" SubDomain="FILES" Feature="" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Utilities.Files.DeleteFileHost.DeleteFileHost</ClassName>
+        <Description>Delete a file or folder on host</Description>
+        <Environment name="ANY"/>
+        <Parameters>
+            <Parameter name="FILE_PATH" type="STRING" isOptional="false">
+                <Description>Path to the file or folder to remove on host</Description>
+                <PossibleValues/>
+                <DefaultValue />
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="INSTALL_FILE_HOST" Domain="UTILITIES" SubDomain="FILES" Feature="" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Utilities.Files.InstallFileHost.InstallFileHost</ClassName>
+        <Description>Install an artifact from ACS file cache to one of the following directory
+            1. If "DEST_DIR" is start with "[REPORT]/", [campaign_report_dir]/[test_case_name]/[dest_dir] will be used as a destination
+            2. If "DEST_DIR" is set as full path, absolute path will be used as a destination
+            3. If "TYPE" is zipped_tarball, tarball, or zipped and "DEST_DIR" is same as "SRC_FILE_PATH", it will install in same directory that source file currently resides in.</Description>
+        <Environment name="ANY"/>
+        <Parameters>
+            <Parameter name="TYPE" type="STRING" isOptional="false">
+               <Description>Type of the source file</Description>
+               <PossibleValues>bin;media;zipped_tarball;tarball;zipped</PossibleValues>
+               <DefaultValue>bin</DefaultValue>
+            </Parameter>
+            <Parameter name="SRC_FILE_PATH" type="STRING" isOptional="false">
+               <Description>Path to a source file</Description>
+               <PossibleValues/>
+               <DefaultValue/>
+            </Parameter>
+            <Parameter name="DEST_DIR" type="STRING" isOptional="false">
+               <Description>Destination directory name.
+                   If this path starts with "[REPORT]/", the directory will be created in the campaign/testcase report directory
+                   If this path is given as an absolute path, only the last sub directory will be create if it does not exist</Description>
+               <PossibleValues/>
+               <DefaultValue/>
+            </Parameter>
+            <Parameter name="DESTINATION_STORED_PATH" type="CONTEXT" isOptional="false">
+               <Description>
+                    <Key name="INSTALLED_FILE_PATH_IN_HOST" type="STRING">Path to the installed file</Key>
+               </Description>
+               <PossibleValues/>
+               <DefaultValue/>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="MOUNT_PARTITION_HOST" Domain="UTILITIES" SubDomain="FILES" Feature="" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Utilities.Files.MountHostPartition.MountHostPartition</ClassName>
+        <Description>On the host, mount a partition of an USB plugged external device</Description>
+        <Environment name="ANY">
+        </Environment>
+        <Parameters>
+            <Parameter name="PARTITION" type="STRING" isOptional="false">
+                <Description>Partition of the external device to mount on host</Description>
+                <PossibleValues/>
+                <DefaultValue>Unknown_point</DefaultValue>
+            </Parameter>
+            <Parameter name="MOUNT_POINT" type="STRING" isOptional="false">
+                <Description> On host, path of the mount point where to mount the partition</Description>
+                <PossibleValues/>
+                <DefaultValue>Unknown_point</DefaultValue>
+                <Blank>True</Blank>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="UNMOUNT_PARTITION_HOST" Domain="UTILITIES" SubDomain="FILES" Feature="" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Utilities.Files.UnmountHostPartition.UnmountHostPartition</ClassName>
+        <Description>On the host, mount a partition of an USB plugged external device</Description>
+        <Environment name="ANY">
+        </Environment>
+        <Parameters>
+            <Parameter name="MOUNT_POINT" type="STRING" isOptional="false">
+                <Description> On host, path of the point to unmount</Description>
+                <PossibleValues/>
+                <DefaultValue>Unknown_point</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="COMPARE_MD5_VALUES" Domain="UTILITIES" SubDomain="FILES" Feature="" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Utilities.Files.CompareMD5Values.CompareMD5Values</ClassName>
+        <Description>Calculates the MD5 checksum of all files in the specified directory with a given extension.
+            For each file, it looks for a corresponding file of the same base name but with an .md5 extension,
+            which should contain a pre-calculated MD5 checksum for the file being checked. If the pre-calculated
+            checksum does not match the newly calculated checksum then it stops executing and raises an exception.</Description>
+        <Environment name="ANY" />
+        <Parameters>
+            <Parameter name="TARGET_PATH" type="STRING" isOptional="false">
+                <Description>Directory where target files and MD5 files are stored</Description>
+                <PossibleValues />
+                <DefaultValue>tether_DL</DefaultValue>
+            </Parameter>
+            <Parameter name="EXTENSION" type="STRING" isOptional="false">
+                <Description>Extension of the target files</Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="EXTRACT_DIR_AND_BASENAME" Domain="UTILITIES" SubDomain="FILES" Feature="" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Utilities.Files.ExtractPathBasename.ExtractPathBasename</ClassName>
+        <Description>
+            Return the basename and the path of a file defined in the FILE attribute.
+            Alias for home directory (~) and system variables (ex: $USER) are interpreted
+        </Description>
+        <Environment name="ANY"/>
+        <Parameters>
+            <Parameter name="FILE" type="STRING" isOptional="false">
+                <Description>The file to work with.</Description>
+                <PossibleValues/>
+                <DefaultValue>none</DefaultValue>
+            </Parameter>
+            <Parameter name="SAVE_AS" type="CONTEXT" isOptional="false">
+                <Description>
+                    <Key name="DIR_PATH" type="STRING">The file path</Key>
+                    <Key name="FILE_BASENAME" type="STRING">The file basename</Key>
+                </Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="CHECK_PREVIEW_SIZE" Domain="UTILITIES" SubDomain="FILES" Feature="" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Utilities.Files.CheckPreviewSize.CheckPreviewSize</ClassName>
+        <Description>Parse the camera config file and return in the context the width and height of the preview size</Description>
+        <Environment name="ANY">
+        </Environment>
+        <Parameters>
+            <Parameter name="HOST_CONFIG_FILE" type="STRING" isOptional="false">
+                <Description>xml config file path</Description>
+                <PossibleValues/>
+                <DefaultValue>Unknown_point</DefaultValue>
+            </Parameter>
+            <Parameter name="ATTRIBUTE" type="STRING" isOptional="false">
+                <Description>name of the attribute to search in the xml config file</Description>
+                <PossibleValues/>
+                <DefaultValue>Unknown_point</DefaultValue>
+            </Parameter>
+            <Parameter name="PREVIEW_WIDTH" type="STRING" isOptional="false">
+                <Description>Camera width configuration expected</Description>
+                <PossibleValues/>
+                <DefaultValue>Unknown_point</DefaultValue>
+            </Parameter>
+            <Parameter name="PREVIEW_HEIGTH" type="STRING" isOptional="false">
+                <Description>Camera heigth configuration expected</Description>
+                <PossibleValues/>
+                <DefaultValue>Unknown_point</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="UPLOAD_TEST_CASE_FILE" Domain="UTILITIES" SubDomain="FILES" Feature="" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Utilities.Files.UploadTestCaseFile.UploadTestCaseFile</ClassName>
+        <Description>Upload a file (or folder) on TCR</Description>
+        <Environment name="ANY">
+        </Environment>
+        <Parameters>
+            <Parameter name="FILE" type="STRING" isOptional="false">
+                <Description>path to the file</Description>
+                <PossibleValues/>
+                <DefaultValue></DefaultValue>
+            </Parameter>
+            <Parameter name="RETENTION" type="STRING" isOptional="true">
+                <Description>path to the file</Description>
+                <PossibleValues>SHORT;LONG</PossibleValues>
+                <DefaultValue>SHORT</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+</TestSteps>

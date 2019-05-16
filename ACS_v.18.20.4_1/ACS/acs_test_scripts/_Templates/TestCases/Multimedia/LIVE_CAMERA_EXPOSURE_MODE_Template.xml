@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase>
+    <UseCase>LIVE_CAMERA_EXPOSURE_MODE</UseCase>
+    <Description>Use Camera to take pictures after updating exposure value</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>False</b2bContinuousMode>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters>
+         <Parameter>
+             <!-- Camera to open, possible values :
+                - BACK
+                - FRONT
+                 -->
+             <Name>CAMERA</Name>
+             <Value>FRONT</Value>
+         </Parameter>
+         <Parameter>
+             <!-- The higher value of exposure mode used for exposure test, this parameter is an integer that should
+             not be higher than the maximum exposure value supported by the DUT's camera -->
+             <Name>HIGHER_EXPOSURE_VALUE</Name>
+             <Value>2</Value>
+         </Parameter>
+        <Parameter>
+            <!-- The lower value of exposure mode used for exposure test, this parameter is an integer that should
+            not be lower than the minimum exposure value supported by the DUT's camera -->
+            <Name>LOWER_EXPOSURE_VALUE</Name>
+            <Value>-2</Value>
+        </Parameter>
+         <Parameter>
+             <!-- Directory where to save pictures taken, should be an existing directory-->
+             <Name>SAVE_DIRECTORY</Name>
+             <Value>sdcard/</Value>
+         </Parameter>
+    </Parameters>
+</TestCase>

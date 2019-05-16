@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase>
+    <UseCase>LAB_SYSTEM_FLASH</UseCase>
+    <Description>Flash sequence checking</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>False</b2bContinuousMode>
+    <DeviceConnection>False</DeviceConnection>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <TcMaxAttempt>1</TcMaxAttempt>
+    <TcAcceptanceCriteria>1</TcAcceptanceCriteria>
+    <IsCritical>False</IsCritical>
+    </Parameters>
+    <TestSteps>
+        <TearDown>
+            <TestStep Id="CONNECT_DEVICE" DEVICE="PHONE1"/>
+            <TestStep Id="REBOOT_DEVICE" WAY="soft" DEVICE="PHONE1"/>
+        </TearDown>
+    </TestSteps>
+</TestCase>

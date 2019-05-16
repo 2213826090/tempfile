@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestSteps xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../acs/src/_Catalogs/TestStep/teststep.xsd">
+    <TestStep Id="CONNECT_USB_TETHERING" Domain="WIRELESS" SubDomain="USB_TETHERING" Feature="" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Wireless.UsbTethering.ConnectUsbTethering.ConnectUsbTethering</ClassName>
+        <Description>Start USB tethering on device</Description>
+        <Environment name="ANY" />
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="TIME_OUT_SEC" type="INTEGER" isOptional="false">
+                <Description>Timeout seconds to wait for tethering establishment</Description>
+                <PossibleValues />
+                <DefaultValue>5</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="DISCONNECT_USB_TETHERING" Domain="WIRELESS" SubDomain="USB_TETHERING" Feature="" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Wireless.UsbTethering.DisconnectUsbTethering.DisconnectUsbTethering</ClassName>
+        <Description>Disable USB tethering on device</Description>
+        <Environment name="ANY" />
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="RUN_TETHERED_HTTP_DOWNLOAD" Domain="WIRELESS" SubDomain="USB_TETHERING" Feature="" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Wireless.UsbTethering.RunTetheredHttpDownload.RunTetheredHttpDownload</ClassName>
+        <Description>This test step uses the host to download files from a remote server via a USB tethered connection to the device,
+            using HTTP. The device acts as an access point. The host server is expected to have at HTTP_SOURCE_URL a specific hierarchical
+            set of directories and files of varying sizes, along with .md5 files that contain pre-calculated checksums. You can get these
+            from Artifactory, at acs_test_artifacts/TEST_FILES/multi_size_text_files_with_checksums/test_files.tgz. There you will also
+            find a document with instructions on how to set up a simple HTTP server. It is recommended that one such server be set up on
+            the lab network, independent of the ACS hosts. It will download as many files as possible in the time specified by DURATION.
+            It uses AVG_XFER_RATE_SEC to estimate how many bytes it can download, and then downloads the largest files that will fit within
+            the remaining time. For each iteration, it creates a new subdirectory under the campaign report directory, to store
+            the downloaded files for later verification. You can use a test step such as COMPARE_MD5_VALUES to check the integrity of
+            the downloaded files.</Description>
+        <Environment name="ANY" />
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="HTTP_SOURCE_URL" type="STRING" isOptional="false">
+                <Description>Remote HTTP server from which host will download files</Description>
+                <PossibleValues />
+                <DefaultValue>http://anllabave66.an.intel.com/media</DefaultValue>
+            </Parameter>
+            <Parameter name="DURATION" type="INTEGER" isOptional="false">
+               <Description>How long the test will run, in minutes.</Description>
+               <PossibleValues/>
+               <DefaultValue>5</DefaultValue>
+            </Parameter>
+           <Parameter name="AVG_XFER_RATE_SEC" type="INTEGER" isOptional="false">
+                <Description>This will be used when determining the sizes of files to download in each iteration,
+                    based on the amount of time remaining.</Description>
+                <PossibleValues/>
+                <DefaultValue />
+            </Parameter>
+            <Parameter name="TARGET_PATH" type="CONTEXT" isOptional="false">
+               <Description>
+                    <Key name="KEY_CTX_TARGET_PATH" type="STRING">Target directory to store downloaded files</Key>
+                </Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+        </Parameters>
+    </TestStep>
+</TestSteps>

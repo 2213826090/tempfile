@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase>
+    <UseCase>TEST_STEP_ENGINE</UseCase>
+    <Description>Power consumption measurement (in mA) during a Device Power OFF test</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <SavePatRawData>True</SavePatRawData>
+    <PowerCalculation>True</PowerCalculation>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <TcMaxAttempt>1</TcMaxAttempt>
+    <TcAcceptanceCriteria>1</TcAcceptanceCriteria>
+    <Parameters>
+        <Parameter>
+            <Name>SAVE_POWER_DATA</Name>
+            <Value>True</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Sleep duration before making the measure in seconds -->
+            <Name>SLEEP_DURATION</Name>
+            <Value>30</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Measurement duration in seconds -->
+            <Name>TEST_DURATION</Name>
+            <Value>180</Value>
+        </Parameter>
+        <Parameter>
+             <Name>SYSDEBUG_MODULES</Name>
+             <Value>Thermals;</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TEST_STEP_ENGINE_ENTRY</Name>
+            <Value>ST/pnp/UC/DevicePowerOff.xml</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

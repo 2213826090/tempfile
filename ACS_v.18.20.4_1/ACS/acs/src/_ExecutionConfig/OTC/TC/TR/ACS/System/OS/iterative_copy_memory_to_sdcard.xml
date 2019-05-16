@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="13.45">
+    <UseCase>EXEC_SCRIPT</UseCase>
+    <Description>Test case for iterative copy from internal memory to sdcard</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters>
+        <Parameter>
+            <Name>SCRIPT_PATH</Name>
+            <Value>scripts/iterative_copy_memory_to_sdcard.py</Value>
+        </Parameter>
+        <Parameter>
+            <Name>DEVICE_MEMORY_PATH</Name>
+            <Value>/data</Value>
+        </Parameter>
+        <Parameter>
+            <Name>SDCARD_MEMORY_PATH</Name>
+            <Value>/storage/sdcard1</Value>
+        </Parameter>
+        <Parameter>
+            <Name>ITERATIONS</Name>
+            <Value>1000</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

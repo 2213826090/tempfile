@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='ASCII'?>
+<TestCase>
+    <UseCase>Testlib</UseCase>
+    <Description>wifi</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <TcMaxAttempt>3</TcMaxAttempt>
+    <Parameters>
+        <Parameter>
+            <Name>test</Name>
+            <Value>scripts/wireless/wifi_generic/tests/connect_disconnect_from_UI.py</Value>
+        </Parameter>
+        <Parameter>
+            <Name>script-args</Name>
+            <Value> ap2_mode=mixed ap1_ip=192.168.1.1  roaming=1 mode=mixed  ap1_band=1 ap2_band=1  ap_name=iwifi123 ap1_security=wpa2 password=1122334455 ap2_ip=192.168.2.1 ap1_channel_bw=40 ap2_channel_bw=20 ap1_band=0  ap2_ip=192.168.1.1 ap2_band=1 roaming_ping=1 </Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

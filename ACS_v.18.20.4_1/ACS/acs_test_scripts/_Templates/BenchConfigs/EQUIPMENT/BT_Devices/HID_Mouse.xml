@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<Equipment name="BT_MOUSE" description="Bluetooth Mouse.">
+    <Parameter name="Model" value="MICROSOFT_SculptComfortMouse" />
+    <Parameter name="Name" value="Microsoft Sculpt Comfort Mouse" />
+    <Parameter name="BD_Address" value="28:18:78:00:00:00" />
+    <Parameter name="IOCard" value="IO_CARD2" description="name of the IO_CARD used to manage the mouse's buttons" />
+    <!-- BLUETOOTH Mouse [Button ; relay of IOCard] table -->
+    <Parameter name="powerButton" value="1" description="Number of the Slave IOCard's relay used to power on or off the mouse" />
+    <Parameter name="pairButton" value="2" description="Number of the Slave IOCard's relay used to put the mouse in pairable mode" />
+    <Parameter name="leftButton" value="5" description="Number of the Slave IOCard's relay used to press left button" />
+    <Parameter name="rightButton" value="7" description="Number of the Slave IOCard's relay used to press the right button" />
+    <Parameter name="middleButton" value="6" description="Number of the Slave IOCard's relay used to press the middle button" />
+    <Parameter name="keyPressTimer" value="0.2" description="Timer for click (press - release), in second" />
+    <Parameter name="pairTimer" value="4" description="Period to hold the pairing button for" />
+</Equipment>

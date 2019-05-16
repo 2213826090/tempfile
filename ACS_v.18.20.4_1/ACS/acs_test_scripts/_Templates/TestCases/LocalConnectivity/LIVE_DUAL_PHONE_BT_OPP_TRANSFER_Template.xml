@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="13.45">
+    <UseCase>LIVE_DUAL_PHONE_BT_OPP_TRANSFER</UseCase>
+    <Description>Send file using Bluetooth OPP transfer between DUT and reference phone</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>False</b2bContinuousMode>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters>
+        <Parameter>
+            <!-- Direction of BT OPP transfer UL/DL -->
+            <Name>DIRECTION</Name>
+            <Value>UL</Value>
+        </Parameter>
+        <Parameter>
+            <!-- When set to "True", the test will request for starting a second transfer in the
+                opposite direction of the one specified in DIRECTION parameter. This request should occur
+                during the 1st file transfer. Note that this is not possible to transfer in both directions
+                in the same time. The request for the other direction should be stored by the receiver and
+                the second transfer should start at the end of the first one
+                Possible values : True/False -->
+            <Name>BOTH_DIRECTIONS</Name>
+            <Value>False</Value>
+        </Parameter>
+        <Parameter>
+            <!-- File names (comma separated) to use for the transfer
+                (If BIDIRECTIONAL is activated, the same file names will be used on both devices).
+                These files should be located in the embedded ACS multimedia path -->
+            <Name>FILENAME</Name>
+            <Value>1MB.jpg</Value>
+        </Parameter>
+        <Parameter>
+            <Name>THROUGHPUT_ENABLE</Name>
+            <!-- [Optional] If set to True, throughput measurement is done. Otherwise False or empty.
+                Average throughput value will be compared with THROUGHPUT_THRESHOLD_UL/DL.
+                If measure is below threshold then TC is FAILED. -->
+            <Value>False</Value>
+        </Parameter>
+        <Parameter>
+            <Name>ERROR_MARGIN</Name>
+            <!-- [Optional] used if THROUGHPUT_ENABLE set to True.
+                It is the acceptable margin of throughput versus the target defined in /_Configs/BT_Throughput_Targets.xml.
+                margin unit is percentage (%). for instance: 20 -->
+            <Value></Value>
+        </Parameter>
+        <Parameter>
+            <!-- [Optional] Is set to True, the flight mode will be enables before setting bt on
+                and disabled at tear down. -->
+            <Name>FLIGHT_MODE</Name>
+            <Value>False</Value>
+        </Parameter>
+    </Parameters>
+    <TestSteps>
+        <Initialize>
+            <!-- Get the artifact on local host -->
+            <TestStep Id="GET_ARTIFACT" ARTIFACT="MISCELLANEOUS/JPG/[+]FROM_TC:FILENAME"
+                      ARTIFACT_SOURCE="FROM_BENCH:ARTIFACT_MANAGER:URI" TRANSFER_TIMEOUT="DEFAULT"
+                      STORED_FILE_PATH="FILE_PATH_IN_CACHE1" EQT="DEFAULT"/>
+            <!-- Then, Push it on the device. Device destination folder will be the default device media folder (/sdcard/acs_media) -->
+            <!-- FILE_PATH is retrieved from test step context -->
+            <TestStep Id="INSTALL_FILE" DEVICE="PHONE1" FILE_PATH="FROM_CTX:FILE_PATH_IN_CACHE1" TYPE="media"
+                      DESTINATION="FROM_DEVICE:PHONE1:userdataPath" TIMEOUT="DEFAULT" DESTINATION_STORED_PATH="FILE_PATH_IN_CACHE1"/>
+        </Initialize>
+        <Finalize>
+            <!-- When test has been run, we can remove the mp3 files if necessary -->
+            <TestStep Id="UNINSTALL_FILE" DEVICE="PHONE1" DEVICE_FOLDER="FROM_DEVICE:PHONE1:userdataPath"
+                      FILENAME="FROM_TC:FILENAME"/>
+        </Finalize>
+    </TestSteps>
+</TestCase>

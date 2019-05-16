@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestSteps xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../acs/src/_Catalogs/TestStep/teststep.xsd">
+    <TestStep Id="RUN_VIDEO_CALL_SKYPE" Domain="COMMS" SubDomain="VIDEOCALL" Feature="" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Comms.VideoCall.RunVideoCallSkype.RunVideoCallSkype</ClassName>
+        <Description>Runs a Skype video call test</Description>
+        <Environment name="ANY" />
+        <Parameters>
+            <Parameter name="DURATION" type="INTEGER" isOptional="false">
+                <Description>How long the application will run, in minutes.</Description>
+                <PossibleValues />
+                <DefaultValue>1</DefaultValue>
+            </Parameter>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device to receive videocall.</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE2</DefaultValue>
+            </Parameter>
+            <Parameter name="CALLER_DEVICE" type="STRING" isOptional="false">
+                <Description>Device to make videocall.</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="CHAT_DURATION" type="INTEGER" isOptional="false">
+                <Description>Duration of videoCall in minutes</Description>
+                <PossibleValues />
+                <DefaultValue>5</DefaultValue>
+            </Parameter>
+            <Parameter name="TIME_BETWEEN_CHATS" type="INTEGER" isOptional="false">
+                <Description>Time to wait between video calls in minutes</Description>
+                <PossibleValues />
+                <DefaultValue>2</DefaultValue>
+            </Parameter>
+            <Parameter name="DISCONNECT_THRESHOLD" type="INTEGER" isOptional="false">
+                <Description>Number of allowed disconnections in a given test. Disconnections above threshold will a make test to fail</Description>
+                <PossibleValues />
+                <DefaultValue>15</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="STOP_SKYPE_APP" Domain="COMMS" SubDomain="VIDEOCALL" Feature="" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Comms.VideoCall.StopSkypeApp.StopSkypeApp</ClassName>
+        <Description>Stop the Skype app on the device.</Description>
+        <Environment name="ANY" />
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description> Device on which to stop Skype </Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+</TestSteps>

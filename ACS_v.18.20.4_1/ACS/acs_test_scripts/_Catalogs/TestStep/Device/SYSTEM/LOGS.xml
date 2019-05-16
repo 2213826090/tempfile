@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestSteps xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../acs/src/_Catalogs/TestStep/teststep.xsd">
+    <TestStep Id="SYSDEBUG_INIT" Domain="SYSTEM" SubDomain="LOGS" Feature="COMMON" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.System.Logs.SysDebugInit.SysDebugInit</ClassName>
+        <Description>Initialization of sysdebug modules.</Description>
+        <Environment name="ANY" />
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed.</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="SYSDEBUG_CONFIG" type="STRING" isOptional="false">
+                <Description>Configuration of the modules you want to use with sysdebug. For instance:
+                Residency: s3,s0i3,s0i1,lpmp3;
+                Pmu: interval=30;
+                S3Failure;
+                WakeLocks;
+                ModemPanic;
+                CrashInfo;
+                Thermals;
+                SafeRangeBT: channels/frequencies;
+                SafeRangeBLE: channels;
+                SafeRangeWifi: channels/frequencies;
+                </Description>
+                <PossibleValues />
+                <DefaultValue>FROM_TC:SYSDEBUG_MODULES</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="SYSDEBUG_START_ACQUISITION" Domain="SYSTEM" SubDomain="LOGS" Feature="COMMON" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.System.Logs.SysDebugStartAcquisition.SysDebugStartAcquisition</ClassName>
+        <Description>Starts sysdebug acquisition.</Description>
+        <Environment name="ANY" />
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed.</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="SYSDEBUG_STOP_ACQUISITION" Domain="SYSTEM" SubDomain="LOGS" Feature="COMMON" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.System.Logs.SysDebugStopAcquisition.SysDebugStopAcquisition</ClassName>
+        <Description>Stops sysdebug acquisition.</Description>
+        <Environment name="ANY" />
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed.</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="SYSDEBUG_RESET" Domain="SYSTEM" SubDomain="LOGS" Feature="COMMON" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.System.Logs.SysDebugReset.SysDebugReset</ClassName>
+        <Description>Resets sysdebug.</Description>
+        <Environment name="ANY" />
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed.</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="SYSDEBUG_SYNCHRONIZE" Domain="SYSTEM" SubDomain="LOGS" Feature="COMMON" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.System.Logs.SysDebugSynchronize.SysDebugSynchronize</ClassName>
+        <Description>Sync sysdebug and board event (waits for a given state).</Description>
+        <Environment name="ANY" />
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed.</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="SYSDEBUG_FETCH" Domain="SYSTEM" SubDomain="LOGS" Feature="COMMON" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.System.Logs.SysDebugFetch.SysDebugFetch</ClassName>
+        <Description>
+            Fetch sysdebug event. This is mandatory for fetching residencies (for example)
+            the sooner after USB is replugged (before reconnection to ACS) to have the more
+            reliable values.
+        </Description>
+        <Environment name="ANY" />
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed.</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="SYSDEBUG_REPORT_TO_CONTEXT" Domain="SYSTEM" SubDomain="LOGS" Feature="COMMON" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.System.Logs.SysDebugReportToContext.SysDebugReportToContext</ClassName>
+        <Description>Writes sysdebug reports into the context.</Description>
+        <Environment name="ANY" />
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed.</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="SYSDEBUG_REPORT_DEST" type="CONTEXT" isOptional="false">
+                <Description>
+                    <Key name="KEY_NAME_DEFINED_BY_USER" type="STRING">Name of the context variable where the sysdebug report will be saved.</Key>
+                </Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="GET_MODEM_PANIC_NUMBER" Domain="SYSTEM" SubDomain="LOGS" Feature="MODEM" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.System.Logs.GetModemPanicNumber.GetModemPanicNumber</ClassName>
+        <Description>Check if a modem panic occurred by looking at the AP Logs and return the number of panics found in the log.</Description>
+        <Environment name="ANY" />
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed.</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="MODEM_PANIC_COUNT" type="CONTEXT" isOptional="false">
+                <Description>
+                    <Key name="KEY_NAME_DEFINED_BY_USER" type="STRING">Name of the context variable where the number of modem panic found will be saved.</Key>
+                </Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+        </Parameters>
+    </TestStep>
+        <TestStep Id="WAIT_MODEM_PANIC" Domain="SYSTEM" SubDomain="LOGS" Feature="MODEM" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.System.Logs.WaitModemPanic.WaitModemPanic</ClassName>
+        <Description>Check if a modem panic occurred by looking at the AP Logs and return the number of panics found in the log.</Description>
+        <Environment name="ANY" />
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed.</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="MODEM_PANIC_TIMEOUT" type="STRING" isOptional="false">
+                <Description>Timeout in seconds to wait for the modem panic.</Description>
+                <PossibleValues />
+                <DefaultValue>60</DefaultValue>
+            </Parameter>
+            <Parameter name="MODEM_PANIC_OCCURRED" type="CONTEXT" isOptional="false">
+                <Description>
+                    <Key name="KEY_NAME_DEFINED_BY_USER" type="STRING">Name of the context variable to save if a modem panic occurred (true) or not (false).</Key>
+                </Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="ENABLE_MODEM_TRACES" Domain="SYSTEM" SubDomain="LOGS" Feature="MODEM" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.System.Logs.EnableModemTraces.EnableModemTraces</ClassName>
+        <Description>Enables Modem Traces.</Description>
+        <Environment name="ANY" />
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed.</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="MODEM_TRACES_DEST" type="STRING" isOptional="false">
+                <Description>The destination of the logs on the device.</Description>
+                <PossibleValues>EMMC;SDCARD</PossibleValues>
+                <DefaultValue>EMMC</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="CONFIGURE_MODEM_TRACES" Domain="SYSTEM" SubDomain="LOGS" Feature="MODEM" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.System.Logs.ConfigureModemTraces.ConfigureModemTraces</ClassName>
+        <Description>Configures Modem Traces. Warning, you need to reboot the modem to take this into account!</Description>
+        <Environment name="ANY" />
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed.</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="MODEM_HSI_SPEED" type="STRING" isOptional="false">
+                <Description>HSI speed, can be:
+                    - NO: disable HSI
+                    - DEF: default speed HSI, 78MHz
+                    - HIGH: high speed HSI, 156MH [default]
+                </Description>
+                <PossibleValues>NO;DEF;HIGH</PossibleValues>
+                <DefaultValue>HIGH</DefaultValue>
+            </Parameter>
+            <Parameter name="MODEM_TRACES_LEVEL" type="STRING" isOptional="false">
+                <Description>Level of trace, can be:
+                    - 0: disable trace
+                    - 1: first level trace (bb_sw)
+                    - 2: second level trace (bb_sw + 3g_sw) [default]
+                    - 3: third level trace (bb_sw + 3g_sw + digrf)
+                    - 4: fourth level trace (bb_sw + 3g_sw + digrfx + lte_l1_sw)
+                    - 5: fifth level trace (bb_sw + 3g_sw + digrfx + lte_l1_sw + 3g_dsp)</Description>
+                <PossibleValues>0;1;2;3;4;5</PossibleValues>
+                <DefaultValue>2</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="DISABLE_MODEM_TRACES" Domain="SYSTEM" SubDomain="LOGS" Feature="MODEM" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.System.Logs.DisableModemTraces.DisableModemTraces</ClassName>
+        <Description>Enables Modem Traces.</Description>
+        <Environment name="ANY" />
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed.</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="CLEAR_LOGCAT" Domain="SYSTEM" SubDomain="LOGS" Feature="COMMON" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.System.Logs.ClearLogcat.ClearLogcat</ClassName>
+        <Description>Clear all the logcats on the DUT.</Description>
+        <Environment name="ANY" />
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed.</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="ENABLE_KPI_SAD_LOGS" Domain="SYSTEM" SubDomain="LOGS" Feature="COMMON" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.System.Logs.EnableSadKpiLogs.EnableSadKpiLogs</ClassName>
+        <Description>Enable KPI-SAD logs on the board to run Performance Ux test cases</Description>
+        <Environment name="ANY" />
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed.</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+</TestSteps>

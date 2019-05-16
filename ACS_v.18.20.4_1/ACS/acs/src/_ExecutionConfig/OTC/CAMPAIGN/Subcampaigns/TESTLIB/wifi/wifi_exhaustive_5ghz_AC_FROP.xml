@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<Campaign>
+    <Parameters>
+        <Parameter isControlledPSUsed="False"/>
+        <Parameter isIoCardUsed="False"/>
+        <Parameter skipBootOnPowerCycle="False"/>
+        <Parameter bootRetryNumber="0"/>
+        <Parameter runHookScripts="False"/>
+        <Parameter powerCycleBetweenTC="False"/>
+        <Parameter powerCycleOnFailure="False"/>
+        <Parameter finalDutState="NoChange"/>
+        <Parameter stopCampaignOnCriticalFailure="False"/>
+        <Parameter stopCampaignOnFirstFailure="False"/>
+        <Parameter loggingLevel="debug"/>
+        <Parameter CampaignType="Other"/>
+    </Parameters>
+    <TestCases>
+        <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/exhaustive/Comms_WIFI_IEE80211abgn_FeatureRelated_Connect_5Ghz_ac_channel-20Mhz-showSSID"/>
+        <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/exhaustive/Comms_WIFI_IEE80211abgn_FeatureRelated_Connect_5Ghz_ac_channel-20Mhz-hideSSID"/>
+        <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/exhaustive/Comms_WIFI_IEE80211abgn_FeatureRelated_Connect_5Ghz_ac_channel-20Mhz-40Mhz-showSSID"/>
+        <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/exhaustive/Comms_WIFI_IEE80211abgn_FeatureRelated_Connect_5Ghz_ac_channel-20Mhz-40Mhz-hideSSID"/>
+        <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/exhaustive/Comms_WIFI_IEE80211abgn_FeatureRelated_Connect_5Ghz_ac_channel-40Mhz-hideSSID"/>
+        <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/exhaustive/Comms_WIFI_IEE80211abgn_FeatureRequired_Connect_5Ghz_ac_channel-80Mhz-showSSID"/>
+        <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/exhaustive/Comms_WIFI_IEE80211abgn_FeatureRelated_Connect_5Ghz_ac_channel-80Mhz-hideSSID"/>
+        <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/exhaustive/Comms_WIFI_IEE80211abgn_FeatureRelated_Connect_5Ghz_acn_channel-80Mhz-hideSSID"/>
+        <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/exhaustive/Comms_WIFI_IEE80211abgn_FeatureRelated_Connect_5Ghz_mixed_channel-80Mhz-showSSID"/>
+        <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/exhaustive/Comms_WIFI_IEE80211abgn_FeatureRelated_Connect_5Ghz_mixed_channel-80Mhz-hideSSID"/>
+    </TestCases>
+</Campaign>

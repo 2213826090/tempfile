@@ -1,0 +1,65 @@
+<?xml version='1.0' encoding='ASCII'?>
+<Campaign version="13.49">
+    <Parameters>
+        <Parameter isControlledPSUsed="False"/>
+        <Parameter isIoCardUsed="True"/>
+        <!-- Set skipBootOnPowerCycle to True to disable the accs boot procedure -->
+        <!-- Important, it means that boot will be handle inside the campaign/tc -->
+        <Parameter skipBootOnPowerCycle="False"/>
+        <!-- Set bootRetryNumber to maximum number of boot retries during the acs boot procedure -->
+        <!-- Important, it means that bootRetryNumber is set by default to 0 if not specified -->
+        <Parameter bootRetryNumber="0"/>
+        <Parameter runHookScripts="False"/>
+        <Parameter powerCycleBetweenTC="False"/>
+        <Parameter powerCycleOnFailure="False"/>
+        <!-- finalDutState allows user to leave the DUT in a specific state at the end of the campaign
+            Possible values: PowerOn | PowerOff | Charging | NoChange
+            By default DUT is leaved in NoChange state.
+            In case the user selects Charging as final state of the DUT and that DUT fails to enter Charging,
+            ACS shall try to switch the DUT off -->
+        <Parameter finalDutState="NoChange"/>
+        <Parameter stopCampaignOnCriticalFailure="False"/>
+        <Parameter stopCampaignOnFirstFailure="False"/>
+        <!-- LoggingLevel possible values: info | warning | debug | error -->
+        <Parameter loggingLevel="debug"/>
+        <!-- CampaignType format -> <TEAM>_<CAMPAIGNTYPE>
+            Possible values:
+            FT(Feature Team)-> SANITY | REGRESSION | STRESS, RELIABILTY | MTBF
+            ST(System Test)-> SANITY | REGRESSION | STRESS, RELIABILTY | MTBF | EM
+            SI(System Integration)-> EAT | STAB | PACT | CAT0 | RELIABILITY | MTBF | CTS | ACS_CI
+            Otherwise "Others" should be used -->
+        <Parameter CampaignType="Others"/>
+        <Parameter TCRReportViaRESTAPI="True"/>
+    </Parameters>
+    <Targets>
+        <!-- Target Values -->
+        <Target targetB2bPassRate="100"/>
+    </Targets>
+    <TestCases>
+        <!--Setup, installing ACS Agents-->
+        <TestCase Id="../../../../../TC/TR/ACS/Communication/Bluetooth/setup/prereq_Bluetooth_SYSTEM_SETUP_EMBEDDED"/>
+        <TestCase Id="../../../../../TC/TR/ACS/Communication/Bluetooth/Bluetooth_A2DP_Connect_An_Audio_Streaming_From_DUT_To_headphone" TcMaxAttempt="2"/>
+        <TestCase Id="../../../../../TC/TR/ACS/Communication/Bluetooth/Bluetooth_A2DP_Reconnect_with_BT_headset_after_disconnected_more_than_10_mins"/>
+        <TestCase Id="../../../../../TC/TR/ACS/Communication/Bluetooth/Bluetooth_OPP_File_transfer_while_a2dp_playback" TcMaxAttempt="2"/>
+
+        <TestCase Id="../../../../../TC/TR/ACS/Communication/Bluetooth/Bluetooth_OPP_Server_Picture_And_Bluetooth_Pair_Request_Headset" TcMaxAttempt="5" />
+        <TestCase Id="../../../../../TC/TR/ACS/Communication/Bluetooth/Bluetooth_OPP_Client_Video_And_Bluetooth_Pair_Request_Headset" TcMaxAttempt="5" />
+
+        <TestCase Id="../../../../../TC/TR/ACS/Communication/Bluetooth/Bluetooth_AVRCP_Connect_DUT_to_headphone" />
+        <TestCase Id="../../../../../TC/TR/ACS/Communication/Bluetooth/Bluetooth_AVRCP_Disconnect_DUT_from_headphone" TcMaxAttempt="5" />
+        <TestCase Id="../../../../../TC/TR/ACS/Communication/Bluetooth/Bluetooth_AVRCP_Make_Unavailable_headphone_To_DUT" />
+        <TestCase Id="../../../../../TC/TR/ACS/Communication/Bluetooth/Bluetooth_AVRCP_Make_Available_DUT_to_headphone" />
+        <TestCase Id="../../../../../TC/TR/ACS/Communication/Bluetooth/M/Bluetooth_AVRCP_Make_Unavailable_DUT_to_headphone" />
+        <TestCase Id="../../../../../TC/TR/ACS/Communication/Bluetooth/Bluetooth_A2DP_Active_Power_save_mode_while_A2DP_ongoing" />
+        <TestCase Id="../../../../../TC/TR/ACS/Communication/Bluetooth/Bluetooth_AVRCP_Switch_to_next_previous_song_from_Headset_While_playing_audio_with_A2DP_BT_HS"/>
+        <TestCase Id="../../../../../TC/TR/ACS/Communication/Bluetooth/Bluetooth_HSP_Connect_HSP_Headset" />
+        <TestCase Id="../../../../../TC/TR/ACS/Communication/Bluetooth/Bluetooth_HSP_Disconnect_HSP_profile_from_connected_HSP_device_via_DUT"/>
+        <TestCase Id="../../../../../TC/TR/ACS/Communication/Bluetooth/Bluetooth_HSP_Reconnect_HSP_profile_to_HSP_device_from_DUT" />
+
+        <TestCase Id="../../../../../TC/TR/ACS/Communication/Bluetooth/Bluetooth_AVRCP_Pause_the_audio_and_resume_from_DUT_while_playing_audio_with_BT_headset" />
+
+        <!--Tests restarting the DUT-->
+        <TestCase Id="../../../../../TC/TR/ACS/Communication/Bluetooth/Bluetooth_GeneralTest_Verify_Bluetooth_remains_paired_after_device_restart" TcMaxAttempt="2"/>
+        <TestCase Id="../../../../../TC/TR/ACS/Communication/Bluetooth/Bluetooth_HSP_Verify_Bluetooth_reconnects_to_HSP_restarted_device" TcMaxAttempt="2"/>
+    </TestCases>
+</Campaign>

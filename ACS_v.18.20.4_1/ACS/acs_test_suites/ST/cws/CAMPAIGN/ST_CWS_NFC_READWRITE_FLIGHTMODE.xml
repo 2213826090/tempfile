@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Campaign>
+    <Parameters>
+        <Parameter isControlledPSUsed="False"/>
+        <Parameter isIoCardUsed="False"/>
+        <!-- Set skipBootOnPowerCycle to True to disable the acs boot procedure -->
+        <!-- Important, it means that boot will be handle inside the campaign/tc -->
+        <Parameter skipBootOnPowerCycle="False"/>
+        <Parameter runHookScripts="False"/>
+        <Parameter powerCycleBetweenTC="False"/>
+        <Parameter powerCycleOnFailure="False"/>
+        <Parameter finalPowerOff="False"/>
+        <Parameter finalDutState="NoChange"/>
+        <Parameter stopCampaignOnCriticalFailure="False"/>
+        <Parameter stopCampaignOnFirstFailure="False"/>
+        <!-- LoggingLevel possible values: info | warning | debug | error -->
+        <Parameter loggingLevel="info"/>
+        <!-- CampaignType format -> <TEAM>_<CAMPAIGNTYPE>
+            Possible values:
+            FT(Feature Team)-> SANITY | REGRESSION | STRESS, RELIABILTY | MTBF
+            ST(System Test)-> SANITY | REGRESSION | STRESS, RELIABILTY | MTBF
+            SI(System Integration)-> EAT | STAB | PACT | CAT0 | RELIABILITY | MTBF
+            Otherwise "Others" should be used -->
+        <Parameter CampaignType="ST_REGRESSION"/>
+        <Parameter TCRReportViaRESTAPI="true"/>
+    </Parameters>
+    <Targets>
+        <!-- Target Values -->
+        <Target targetB2bPassRate="100"/>
+    </Targets>
+    <TestCases>
+        <!-- Basic Tests -->
+        <TestCase Id="../TC/NFC/FLIGHT_MODE/ST_CWS_NFC_RW_T4B_TXT_001-LAB_NFC_HOST_READER_MODE_APM_NFC_ON"/>
+        <TestCase Id="../TC/NFC/FLIGHT_MODE/ST_CWS_NFC_RW_T4B_TXT_001-LAB_NFC_HOST_READER_MODE_APM_ONOFF_NFC_OFF"/>
+        <TestCase Id="../TC/NFC/FLIGHT_MODE/ST_CWS_NFC_RW_T4B_TXT_001-LAB_NFC_HOST_READER_MODE_APM_ONOFF_NFC_ON"/>
+    </TestCases>
+</Campaign>

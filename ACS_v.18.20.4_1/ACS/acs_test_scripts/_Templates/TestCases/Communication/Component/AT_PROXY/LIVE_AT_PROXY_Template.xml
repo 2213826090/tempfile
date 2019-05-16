@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="13.37">
+  <UseCase>LIVE_AT_PROXY</UseCase>
+  <Description>Used on an Android Main OS, this usecase will check that the AT proxy is
+ functionnal (it must be able to transmit commands and returns an answer)
+  </Description>
+  <b2bIteration>1</b2bIteration>
+  <b2bContinuousMode>True</b2bContinuousMode>
+  <!--
+  This parameter should NOT be used.
+  Setting it to fails means you want to check that AT proxy can't send a command and receive a result.
+  If you want to check result, please use the EXPECTED_RESULT parameter.
+  -->
+  <TcExpectedResult>PASS</TcExpectedResult>
+  <Parameters>
+    <!--
+        AT proxy launch mode.
+        Possible values:
+        - NORMAL
+        - TUNNELING
+    -->
+    <Parameter>
+        <Name>LAUNCH_MODE</Name>
+        <Value>NORMAL</Value>
+    </Parameter>
+    <!--
+        AT command to be tested.
+    -->
+    <Parameter>
+        <Name>COMMAND</Name>
+        <Value>AT+XGENDATA</Value>
+    </Parameter>
+    <!--
+        Expected AT command result.
+        Possible values:
+        - OK
+        - ERROR
+        
+        This parameter should be usefull when testing TUNNELING mode,
+        in order to check defined result for specifics at commands.
+    -->
+    <Parameter>
+        <Name>EXPECTED_RESULT</Name>
+        <Value>OK</Value>
+    </Parameter>
+    <!--
+        AT command timeout, in seconds.
+    -->
+    <Parameter>
+        <Name>COMMAND_TIMEOUT</Name>
+        <Value>5</Value>
+    </Parameter>
+  </Parameters>
+</TestCase>

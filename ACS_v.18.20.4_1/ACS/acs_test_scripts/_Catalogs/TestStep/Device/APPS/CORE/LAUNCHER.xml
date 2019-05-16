@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestSteps xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../../acs/src/_Catalogs/TestStep/teststep.xsd">
+       <TestStep Id="OPEN_HOME_PAGE" Domain="APPS" SubDomain="CORE" Feature="LAUNCHER" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Apps.Core.OpenHomePage.OpenHomePage</ClassName>
+        <Description>Open the home page on the device</Description>
+        <Environment name="ANY">
+        </Environment>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="SET_LIVE_WALLPAPER_NAME" Domain="APPS" SubDomain="CORE" Feature="LAUNCHER" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Apps.Core.Launcher.SetLiveWallpaperName.SetLiveWallpaperName</ClassName>
+        <Description>TestStep for changing the Live Wallpaper when the user also
+        provides the name of the said Live Wallpaper</Description>
+        <Environment name="ANY"/>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                   <Description>TDevice name on which the action will be executed</Description>
+                   <PossibleValues/>
+                   <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="WP_NAME" type="STRING" isOptional="false">
+                <Description>Name of the Live Wallpaper to set</Description>
+                <PossibleValues/>
+                <DefaultValue>None</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="SET_LIVE_WALLPAPER_AUTO" Domain="APPS" SubDomain="CORE" Feature="LAUNCHER" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Apps.Core.Launcher.SetLiveWallpaperAuto.SetLiveWallpaperAuto</ClassName>
+        <Description>TestStep for changing the Live Wallpaper automatically without the user providing a specific name
+        </Description>
+        <Environment name="ANY"/>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                   <Description>Device name on which the action will be executed</Description>
+                   <PossibleValues/>
+                   <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="DISMISS_ANR_DIALOG" Domain="APPS" SubDomain="CORE" Feature="LAUNCHER" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Apps.Core.Launcher.DismissAnrDialog.DismissAnrDialog</ClassName>
+        <Description>PyUiautomator TestStep for dismissing any ANR dialog from the screen if exists(with max_attempts option).
+        Note that this TestStep is not recommended to be used in combination with Java uiautomator</Description>
+        <Environment name="ANY"/>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                   <Description>Device name on which the action will be executed</Description>
+                   <PossibleValues/>
+                   <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="PRESS_HOME_FIRST" type="BOOLEAN" isOptional="false">
+                <Description>true, if you want first to send a press home command, as a setup, false otherwise</Description>
+                <PossibleValues>True;true;False;false</PossibleValues>
+                <DefaultValue/>
+            </Parameter>
+            <Parameter name="MAX_ATTEMPTS" type="INTEGER" isOptional="false">
+                <Description>Maximum numbers of tries to dismiss</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="REOPEN_LAST_APP_FROM_RECENTS" Domain="APPS" SubDomain="CORE" Feature="LAUNCHER" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Apps.Core.Launcher.ReopenLastAppFromRecents.ReopenLastAppFromRecents</ClassName>
+        <Description>PyUiautomator TestStep for for opening the most recently closed app from the Recent Apps stack.
+        This test step assumes that the Recent Apps is already open</Description>
+        <Environment name="ANY"/>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                   <Description>Device name on which the action will be executed</Description>
+                   <PossibleValues/>
+                   <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="APP_NAME" type="STRING" isOptional="false">
+                <Description>The name of the recent app we want to open</Description>
+                <PossibleValues></PossibleValues>
+                <DefaultValue/>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="OPEN_RECENT_APPS" Domain="APPS" SubDomain="CORE" Feature="LAUNCHER" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Apps.Core.OpenRecentApps.OpenRecentApps</ClassName>
+        <Description>Open the Recent Apps on the device</Description>
+        <Environment name="ANY">
+        </Environment>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+</TestSteps>

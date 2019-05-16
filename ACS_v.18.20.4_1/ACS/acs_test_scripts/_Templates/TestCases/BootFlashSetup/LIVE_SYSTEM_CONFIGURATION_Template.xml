@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="13.49">
+    <UseCase>LIVE_SYSTEM_CONFIGURATION</UseCase>
+    <Description>System configuration</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>False</b2bContinuousMode>
+    <TcMaxAttempt>3</TcMaxAttempt>
+    <TcAcceptanceCriteria>1</TcAcceptanceCriteria>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <IsCritical>True</IsCritical>
+    <Parameters>
+        <Parameter>
+            <!-- Skip wizard. True/False-->
+            <Name>SKIP_WIZARD</Name>
+            <Value></Value>
+        </Parameter>
+        <Parameter>
+            <!-- Disable the lockscreen when the device screen turns off. True/False -->
+            <Name>DISABLE_LOCKSCREEN</Name>
+            <Value></Value>
+        </Parameter>
+        <Parameter>
+            <!-- Set default launcher. True/False -->
+            <Name>CONFIGURE_LAUNCHER</Name>
+            <Value></Value>
+        </Parameter>
+        <Parameter>
+            <!-- Set display brightness as defined with displayBrightness parameter from Device_Catalog. True/False
+                 The ACS Agent is required to enable this parameter.
+              -->
+            <Name>SET_DISPLAY_BRIGHTNESS</Name>
+            <Value></Value>
+        </Parameter>
+        <Parameter>
+            <!-- Prevent android to verify application provenance on apk installation. True/False
+                 The ACS Agent is required to enable this parameter.
+              -->
+            <Name>DISABLE_VERIFY_APPLICATION</Name>
+            <Value></Value>
+        </Parameter>
+        <Parameter>
+            <!-- Disable com.android.vending application. True/False -->
+            <Name>DISABLE_VENDING_APPLICATION</Name>
+            <Value></Value>
+        </Parameter>
+        <Parameter>
+            <!-- Set the timeout of the display. Value in seconds
+                 The ACS Agent is required to enable this parameter.
+              -->
+            <Name>DISPLAY_TIMEOUT</Name>
+            <Value></Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

@@ -1,0 +1,38 @@
+<?xml version="1.0" ?>
+<Campaign>
+      <Parameters>
+            <Parameter isControlledPSUsed="False"/>
+            <Parameter isIoCardUsed="False"/>
+            <Parameter skipBootOnPowerCycle="False"/>
+            <Parameter bootRetryNumber="0"/>
+            <Parameter runHookScripts="False"/>
+            <Parameter powerCycleBetweenTC="False"/>
+            <Parameter powerCycleOnFailure="False"/>
+            <Parameter finalDutState="NoChange"/>
+            <Parameter stopCampaignOnCriticalFailure="False"/>
+            <Parameter stopCampaignOnFirstFailure="False"/>
+            <Parameter loggingLevel="debug"/>
+            <Parameter CampaignType="Other"/>
+      </Parameters>
+      <TestCases>
+            <TestCase Id="TC/TESTLIB/Settings/about_phone"/>
+            <TestCase Id="TC/TESTLIB/Settings/app"/>
+            <TestCase Id="TC/TESTLIB/Settings/battery"/>
+            <TestCase Id="TC/TESTLIB/Settings/display_brightness"/>
+            <TestCase Id="TC/TESTLIB/Settings/bt_button"/>
+            <TestCase Id="TC/TESTLIB/Settings/create_account"/>
+            <TestCase Id="TC/TESTLIB/Settings/date_time"/>
+            <TestCase Id="TC/TESTLIB/Settings/display_daydream"/>
+            <TestCase Id="TC/TESTLIB/Settings/display_cast_screen"/>
+            <TestCase Id="TC/TESTLIB/Settings/display_font_size"/>
+            <TestCase Id="TC/TESTLIB/Settings/language_and_input"/>
+            <TestCase Id="TC/TESTLIB/Settings/location"/>
+            <TestCase Id="TC/TESTLIB/Settings/security"/>
+            <TestCase Id="TC/TESTLIB/Settings/display_sleep"/>
+            <TestCase Id="TC/TESTLIB/Settings/start_bt"/>
+            <TestCase Id="TC/TESTLIB/Settings/stop_bt"/>
+            <TestCase Id="TC/TESTLIB/Settings/storage"/>
+            <TestCase Id="TC/TESTLIB/Settings/volume"/>
+            <TestCase Id="TC/TESTLIB/Settings/wireless_more"/>
+      </TestCases>
+</Campaign>

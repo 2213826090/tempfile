@@ -1,0 +1,26 @@
+<TestCase>
+  <UseCase>LAB_WIFI_SCAN</UseCase>
+  <Description>test open and scan and close wifi</Description>
+  <b2bIteration>20</b2bIteration>
+  <b2bContinuousMode>True</b2bContinuousMode>
+  <Parameters>
+    <Parameter>
+      
+      <Name>WIFI_STANDARD</Name>
+      <Value>n2.4G</Value>
+    </Parameter>
+    <Parameter>
+      
+      <Name>WIFI_SECURITY</Name>
+      <Value>WPA2-PSK-AES</Value>
+    </Parameter>
+    <Parameter>
+      <Name>EAP_METHOD</Name>
+      <Value>PEAP</Value>
+    </Parameter>
+    <Parameter>
+      <Name>PHASE2_AUTH</Name>
+      <Value>None</Value>
+    </Parameter>
+  </Parameters>
+</TestCase>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCase version="13.37">
+    <UseCase>LIVE_EM_BATT_SDP_CHARGE</UseCase>
+    <Description>Check the battery charging mode</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>False</b2bContinuousMode>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters>
+        <Parameter>
+            <!-- Time between UNPLUG and PLUG in seconds, should be at minimum 120 seconds -->
+            <Name>UNPLUG_PLUG_TIMEOUT</Name>
+            <Value>500</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Minimum value of charge variation, on percent -->
+            <Name>CAPACITY_VARIATION</Name>
+            <Value>0</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Maximum value of battery's capacity to execute the test, on percent -->
+            <Name>MAXIMUM_CAPACITY</Name>
+            <Value>99</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Charge duration in seconds -->
+            <Name>CHARGING_TIMEOUT</Name>
+             <Value>500</Value>
+         </Parameter>
+    </Parameters>
+</TestCase>

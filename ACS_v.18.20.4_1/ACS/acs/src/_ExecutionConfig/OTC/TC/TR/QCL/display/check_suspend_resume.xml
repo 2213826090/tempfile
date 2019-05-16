@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='ASCII'?>
+<TestCase>
+    <UseCase>EXEC_SCRIPT</UseCase>
+    <Description>Check that display driver supports a suspend/resume power cycle
+    </Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <TcMaxAttempt>1</TcMaxAttempt>
+    <TcAcceptanceCriteria>1</TcAcceptanceCriteria>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Tags>
+        <Tag>display</Tag>
+        <Tag>semi_auto</Tag>
+    </Tags>
+    <Priority>
+        <Value>8</Value>
+    </Priority>
+    <Parameters>
+        <Parameter>
+            <Name>SCRIPT_PATH</Name>
+            <Value>scripts/check_suspend_resume.py</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

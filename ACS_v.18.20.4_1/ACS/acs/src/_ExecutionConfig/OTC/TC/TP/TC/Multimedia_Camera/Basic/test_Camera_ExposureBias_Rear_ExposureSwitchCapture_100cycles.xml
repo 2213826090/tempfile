@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<TestCase>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Discription>
+Verify change exposure then take photos iteratively for 100 times in rear camera (change exposure then take a photo every time)
+</Discription>
+    <Domain>Multimedia_Camera</Domain>
+    <Phase>CORE</Phase>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <Type>FUNCTIONAL</Type>
+    <UseCase>PY_UNIT</UseCase>
+    <b2bIteration>1</b2bIteration>
+    <Parameters>
+        <Parameter>
+            <Name>HpalmName</Name>
+            <Value>camera_reliability.CameraReliabilityTest.test_Camera_ExposureBias_Rear_ExposureSwitchCapture_100cycles</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TEST_DATA_ROOT</Name>
+            <Value>testplan/Multimedia_Camera</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TEST_CASE</Name>
+            <Value>tests.Multimedia_Camera.Basic.camera_reliability.CameraReliabilityTest.test_Camera_ExposureBias_Rear_ExposureSwitchCapture_100cycles</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

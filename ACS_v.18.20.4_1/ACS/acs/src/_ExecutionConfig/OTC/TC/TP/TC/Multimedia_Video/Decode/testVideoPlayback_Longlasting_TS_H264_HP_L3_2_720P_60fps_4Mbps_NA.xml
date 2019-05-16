@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<TestCase>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Discription>
+Verify Long-time Video playback: H264_HP_L3.2_720P_60fps_4Mbps_na.ts (2 hours)
+</Discription>
+    <Domain>Multimedia_Video</Domain>
+    <Phase>CORE</Phase>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <Type>FUNCTIONAL</Type>
+    <UseCase>PY_UNIT</UseCase>
+    <b2bIteration>1</b2bIteration>
+    <Parameters>
+        <Parameter>
+            <Name>HpalmName</Name>
+            <Value>video_playback_long_lasting.VideoPlayBackLonglasting.testVideoPlayback_Longlasting_TS_H264_HP_L3_2_720P_60fps_4Mbps_NA</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TEST_DATA_ROOT</Name>
+            <Value>testplan/Multimedia_Video</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TEST_CASE</Name>
+            <Value>tests.Multimedia_Video.Decode.video_playback_long_lasting.VideoPlayBackLonglasting.testVideoPlayback_Longlasting_TS_H264_HP_L3_2_720P_60fps_4Mbps_NA</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='ASCII'?>
+<TestCase>
+    <UseCase>Testlib</UseCase>
+    <Description>Platform shall enter not crash mode after kernel panic happened WATCHDOG_COUNTER_MAX times in WATCHDOG_DELAY and combo buttons are pressed</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <TcMaxAttempt>3</TcMaxAttempt>
+    <Parameters/>
+    <Domain>System_FastBoot</Domain>
+    <Parameters/>
+    <Phase>CORE</Phase>
+    <Parameters/>
+    <Type>FUNCTIONAL</Type>
+    <Parameters>
+        <Parameter>
+            <Name>timeout</Name>
+            <Value>1200</Value>
+        </Parameter>
+        <Parameter>
+            <Name>test</Name>
+            <Value>scripts/android/fastboot/tests/panic_to_crashmode.py</Value>
+        </Parameter>
+        <Parameter>
+            <Name>script-args</Name>
+            <Value>watchdog_counter_max=0 create_crash_mode=panic use_delay=False use_combo_button=True</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

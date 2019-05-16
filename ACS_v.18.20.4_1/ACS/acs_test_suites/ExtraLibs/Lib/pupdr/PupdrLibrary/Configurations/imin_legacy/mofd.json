@@ -1,0 +1,41 @@
+{
+    "Configuration": {
+        "Boot": {
+            "GRACEFUL_BEFORE_HARD_SHUTDOWN": true
+        },
+        "BootVars": {
+            "BOOT_DATA_CHECK": true,
+            "COS_CHECK_AFTER_GRACEFUL_SHUTDOWN": "watchdog=00;wakesrc=03;pattern=COLD_OFF",
+            "COS_CHECK_AFTER_HARD_SHUTDOWN": "watchdog=00;wakesrc=03;pattern=^FORCE_SHTN|COLD_OFF|!WD_RESET",
+            "COS_CHECK_AFTER_REBOOT": "watchdog=00;wakesrc=05;pattern=COLD_RESET",
+            "MOS_CHECK_AFTER_BOOT": "watchdog=00;wakesrc=01;pattern=FORCE_SHTN|COLD_OFF",
+            "MOS_CHECK_AFTER_KERNEL_WATCHDOG": "watchdog=10;wakesrc=08;pattern=COLD_RESET",
+            "MOS_CHECK_AFTER_REBOOT": "watchdog=00;wakesrc=05;pattern=COLD_RESET",
+            "MOS_CHECK_AFTER_REBOOT_FROM_POS": "watchdog=00;wakesrc=06;pattern=COLD_BOOT",
+            "MOS_CHECK_AFTER_SECURITY_WATCHDOG": "watchdog=10;wakesrc=14;pattern=COLD_RESET",
+            "MOS_CHECK_AFTER_WATCHDOG_FALLBACK": "watchdog=00;wakesrc=05;pattern=COLD_RESET",
+            "POS_CHECK_AFTER_REBOOT": null,
+            "ROS_CHECK_AFTER_REBOOT": "watchdog=00;wakesrc=05;pattern=COLD_RESET",
+            "ROS_CHECK_AFTER_WATCHDOG": "watchdog=00;wakesrc=0a;pattern=COLD_RESET"
+        },
+        "Custom": null,
+        "Flash": {
+            "CHECK_OSLOADER": false,
+            "DEDIPROG": false,
+            "MOOREFIELD": true,
+            "PARTITION_TYPE": "gpt;osip",
+            "UEFI": false
+        },
+        "Logs": {
+            "RAMDUMP": "/cache/dump.bin.gz"
+        },
+        "Timeout": {
+            "ADB_ROOT_TIMEOUT": 240,
+            "BOOT_TIMEOUT": 300,
+            "COS_BOOT": 120,
+            "MOS_BOOT": 60,
+            "WATCHDOG_EXPIRATION": 100
+        },
+        "WorkAround": null
+    }
+}

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCase version="13.37">
+    <UseCase>LAB_EM_BATT_OTG_INSERTION</UseCase>
+    <Description>EM - Insert a new device with OTG and check if the board stays in low power mode.</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>False</b2bContinuousMode>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters>
+        <Parameter>
+            <!-- USB EXECUTION TIME VALUE (second)-->
+            <Name>EXECUTION_TIME</Name>
+            <Value>300</Value>
+        </Parameter>
+        <Parameter>
+            <!-- PASSRATE OF THE SLEEP RESIDENCY (%)-->
+            <Name>SLEEP_RESIDENCY_PASSRATE</Name>
+            <Value>60</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

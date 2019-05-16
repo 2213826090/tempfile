@@ -1,0 +1,11 @@
+{
+    "windows": {
+        "check_exists": ["which", ["git.exe"]],
+        "install": "{bin} /VERYSILENT /COMPONENTS=\"icons,ext\\reg\\shellhere,assoc,assoc_sh\"",
+        "32": "acs/dependencies/third_parties/tools/Git/Git-1.7.10-preview20120409.exe"
+    },
+    "linux": {
+        "check_exists": ["which", ["git"]],
+        "install": "apt-get install git-core -y --allow-unauthenticated"
+    }
+}

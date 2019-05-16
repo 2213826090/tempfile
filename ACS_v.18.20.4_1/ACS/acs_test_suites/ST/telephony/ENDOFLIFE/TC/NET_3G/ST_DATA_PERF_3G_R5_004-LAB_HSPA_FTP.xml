@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase>
+  <UseCase>LAB_HSPA_FTP</UseCase>
+  <Description>FTP Download over HSDPA on simulated network</Description>
+  <b2bIteration>200</b2bIteration>
+  <b2bContinuousMode>True</b2bContinuousMode>  
+  <Parameters>
+    <Parameter>
+      <!-- Cell Band (from Band 1 to Band 8)-->
+      <Name>CELL_BAND</Name>
+      <Value>1</Value>
+    </Parameter>
+    <Parameter>
+      <!-- Downlink UARFCN Frequency -->
+      <Name>DL_UARFCN</Name>
+      <Value>10700</Value>
+    </Parameter>
+    <Parameter>
+      <!--Cell Service (CIRCUIT | PACKET | CIRCUIT_PACKET | RBTEST) -->
+      <Name>CELL_SERVICE</Name>
+      <Value>PACKET</Value>
+    </Parameter>
+    <Parameter>
+      <!-- Cell power in dBm -->
+      <Name>CELL_POWER</Name>
+      <Value>-60</Value>
+    </Parameter>
+    <Parameter>
+      <!-- Protocol IPV4 | IPV6 | IPV4V6 -->
+      <Name>PROTOCOL</Name>
+      <Value>IPV4</Value>
+    </Parameter>
+    <Parameter>
+      <!-- Uplink Radio Access Bearer (384k | HSUPA_CAT6 | MAX [If MAX is selected, value will be taken from DeviceCatalog.xml]) -->
+      <Name>UL_RAB</Name>
+      <Value>384k</Value>
+    </Parameter>
+    <Parameter>
+      <!-- Downlink Radio Access Bearer (HSDPA_CAT10 | HSDPA_CAT14 | HSDPA_CAT24 | MAX [If MAX is selected, value will be taken from DeviceCatalog.xml]) -->
+      <Name>DL_RAB</Name>
+      <Value>HSDPA_CAT10</Value>
+    </Parameter>
+    <Parameter>
+      <!-- CPC [Continuous Packet Connectivity] feature use (2 [TTI =2ms] | 10 [TTI =10ms]) -->
+      <Name>CPC</Name>
+      <Value></Value>
+    </Parameter>
+    <Parameter>
+      <!--  CQI scheme : Fixed value or UE reported  - FIXED|REPORTED -->
+      <Name>CQI_SCHEME</Name>
+      <Value>FIXED</Value>
+    </Parameter>
+    <Parameter>
+      <!--  PS Data HS-DSCH MAC-d PDU Size - BITS336|BITS656  -->
+      <Name>MAC_D_PDU_SIZE</Name>
+      <Value>BITS656</Value>
+    </Parameter>
+    <Parameter>
+      <!-- FTP transfer direction: DL or UL -->
+      <Name>DIRECTION</Name>
+      <Value>DL</Value>
+    </Parameter>
+    <Parameter>
+      <!-- File to download from the server. This file shall be available on the server. If the file to transfer is located in a specific directory, you can specify its path. i.e. : acs/download_file/get5M -->
+      <Name>DL_FILENAME</Name>
+      <Value>get100M</Value>
+    </Parameter>
+    <Parameter>
+      <!-- File to upload on the server. This file shall be available on the device. If the file to transfer is located in a specific directory, you can specify its path. i.e. : acs/upload_file/put5M -->
+      <Name>UL_FILENAME</Name>
+      <Value>50MB.txt</Value>
+    </Parameter>
+    <Parameter>
+      <!-- Transfer timeout in s -->
+      <Name>XFER_TIMEOUT</Name>
+      <Value>400</Value>
+    </Parameter>
+  </Parameters>
+</TestCase>

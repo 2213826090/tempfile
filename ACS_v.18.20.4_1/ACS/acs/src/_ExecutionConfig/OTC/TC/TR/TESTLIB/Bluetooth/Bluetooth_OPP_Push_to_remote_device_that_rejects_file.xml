@@ -1,0 +1,82 @@
+<?xml version='1.0' encoding='ASCII'?>
+<TestCase>
+    <UseCase>Testlib</UseCase>
+    <Description>serial sends file and reference device rejects the request</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <TcMaxAttempt>1</TcMaxAttempt>
+    <TestSteps>
+        <Setup>
+
+            <TestStep Id="CONNECT_DEVICE" DEVICE="PHONE2"/>
+
+            <!--remove bluetooth_send_pic folder on DUT, in order to have only 1 photo in it-->
+            <TestStep Id="RUN_CMD"
+                      DEVICE="PHONE1" TIMEOUT="20" FORCE_EXECUTION="False" WAIT_FOR_RESPONSE="True" SILENT_MODE="False"
+                      SAVE_AS="out1"
+                      COMMAND="adb shell rm -rf /sdcard/bluetooth_send_pic/"/>
+
+            <!--get photo from artifactory and push on bluetooth_send_pic folder on DUT-->
+            <TestStep Id="GET_ARTIFACT" EQT="ARTIFACT_MANAGER" ARTIFACT="MISCELLANEOUS/JPG/1MB.jpg"
+                      ARTIFACT_SOURCE="FROM_BENCH:ARTIFACT_MANAGER:URI"
+                      TRANSFER_TIMEOUT="DEFAULT" STORED_FILE_PATH="FILE_PATH_IN_CACHE"/>
+            <TestStep Id="INSTALL_FILE" DEVICE="PHONE1" FILE_PATH="FROM_CTX:FILE_PATH_IN_CACHE" TYPE="media"
+                      DESTINATION="/sdcard/bluetooth_send_pic/"
+                      DESTINATION_STORED_PATH="INSTALLED_FILE_PATH" TIMEOUT="DEFAULT"/>
+
+            <!--remount media on DUT-->
+            <TestStep Id="RUN_CMD"
+                      DEVICE="PHONE1" TIMEOUT="20" FORCE_EXECUTION="False" WAIT_FOR_RESPONSE="True" SILENT_MODE="False"
+                      SAVE_AS="out1"
+                      COMMAND="adb shell am broadcast -a android.intent.action.MEDIA_MOUNTED -d file:///sdcard/bluetooth_send_pic/"/>
+
+            <!--unlock screen on both devices-->
+            <Fork Id="Unlock">
+                <TestStep Id="RUN_CMD"
+                          DEVICE="PHONE1" TIMEOUT="20" FORCE_EXECUTION="False" WAIT_FOR_RESPONSE="True"
+                          SILENT_MODE="False"
+                          SAVE_AS="out1"
+                          COMMAND="adb shell input keyevent 82"/>
+                <TestStep Id="RUN_CMD"
+                          DEVICE="PHONE2" TIMEOUT="20" FORCE_EXECUTION="False" WAIT_FOR_RESPONSE="True"
+                          SILENT_MODE="False"
+                          SAVE_AS="out1"
+                          COMMAND="adb shell input keyevent 82"/>
+            </Fork>
+
+            <!--dismiss eventual crash dialog on both devices-->
+            <Fork Id="Anr">
+                <TestStep Id="DISMISS_ANR_DIALOG" DEVICE="PHONE1" PRESS_HOME_FIRST="True" MAX_ATTEMPTS="5"/>
+                <TestStep Id="DISMISS_ANR_DIALOG" DEVICE="PHONE2" PRESS_HOME_FIRST="True" MAX_ATTEMPTS="5"/>
+            </Fork>
+
+        </Setup>
+        <TearDown>
+
+            <!--remove bluetooth_send_pic folder on DUT and remount media-->
+            <TestStep Id="RUN_CMD"
+                      DEVICE="PHONE1" TIMEOUT="20" FORCE_EXECUTION="False" WAIT_FOR_RESPONSE="True" SILENT_MODE="False"
+                      SAVE_AS="out1"
+                      COMMAND="adb shell rm -rf /sdcard/bluetooth_send_pic/"/>
+            <TestStep Id="RUN_CMD"
+                      DEVICE="PHONE1" TIMEOUT="20" FORCE_EXECUTION="False" WAIT_FOR_RESPONSE="True" SILENT_MODE="False"
+                      SAVE_AS="out1"
+                      COMMAND="adb shell am broadcast -a android.intent.action.MEDIA_MOUNTED -d file:///sdcard/bluetooth_send_pic/"/>
+
+        </TearDown>
+    </TestSteps>
+    <Parameters>
+        <Parameter>
+            <Name>test</Name>
+            <Value>scripts/wireless/bluetooth/tests/Bluetooth_OPP_Push_to_remote_device_that_rejects_file.py</Value>
+        </Parameter>
+        <Parameter>
+            <Name>script-args</Name>
+            <Value>photo_folder_name=/sdcard/bluetooth_send_pic/ photo_name=1MB.jpg</Value>
+        </Parameter>
+        <Parameter>
+            <Name>timeout</Name>
+            <Value>10000</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

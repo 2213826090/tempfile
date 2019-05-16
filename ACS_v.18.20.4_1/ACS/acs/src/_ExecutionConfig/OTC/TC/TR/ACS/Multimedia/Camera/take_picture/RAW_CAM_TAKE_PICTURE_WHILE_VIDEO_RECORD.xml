@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase>
+   <UseCase>LIVE_CAMERA_TAKE_PICTURE_WHILE_VIDEO_RECORD</UseCase>
+   <Description>Use Camera to capture image where video recording</Description>
+   <b2bIteration>1</b2bIteration>
+   <b2bContinuousMode>True</b2bContinuousMode>
+   <TcMaxAttempt>1</TcMaxAttempt>
+   <TcAcceptanceCriteria>1</TcAcceptanceCriteria>
+   <Parameters>
+       <Parameter>
+           <Name>CAMERA</Name>
+            <Value>BACK</Value>
+       </Parameter>
+       <Parameter>
+            <!-- Duration of the video to record in ms -->
+            <Name>RECORD_DURATION</Name>
+            <Value>10000</Value>
+       </Parameter>
+       <Parameter>
+           <Name>SAVE_DIRECTORY</Name>
+           <Value>sdcard/</Value>
+       </Parameter>
+   </Parameters>
+</TestCase>

@@ -1,0 +1,8 @@
+In order for the TESTLIB tests to work (temporary solution) the following steps
+should be followed:
+- git clone testlib in '_ExecutionConfig/TC/TR/TESTLIB':
+    - cd to acs execution path: cd <acs>/_ExecutionConfig/TC/TR/TESTLIB
+    - git clone ssh://otcro-srv.rb.intel.com/qa/testlib
+- run the setut script:
+    - cd testlib
+    - sudo python setup.py;bash

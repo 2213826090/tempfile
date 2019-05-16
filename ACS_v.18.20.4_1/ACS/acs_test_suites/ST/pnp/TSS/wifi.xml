@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<Include>
+    <TestStepSet Id="ConfigureWifi">
+        <TestStep Id="SET_SCREEN_PROPERTY" DEVICE="PHONE1" PROPERTY="state" VALUE="on"/>
+        <TestStep Id="WIFI_SET_POWER" DEVICE="PHONE1" POWER="on" />
+        <TestStep Id="WIFI_REMOVE_NETWORK" DEVICE="PHONE1" SSID="all"/>
+        <TestStep Id="WIFI_SET_POWER" DEVICE="PHONE1" POWER="off" />
+        <TestStep Id="SUSPEND" DURATION_IN_SEC="5" />
+        <TestStep Id="WIFI_SET_POWER" DEVICE="PHONE1" POWER="on" />
+        <TestStep Id="SUSPEND" DURATION_IN_SEC="5" />
+        <TestStep Id="WIFI_ADD_NETWORK" DEVICE="PHONE1" SSID="FROM_BENCH:WPA_WIFI_ROUTER:SSID" SECURITY="FROM_BENCH:WPA_WIFI_ROUTER:WIFI_SECURITY" PASS_PHRASE="FROM_BENCH:WPA_WIFI_ROUTER:passphrase"/>
+        <TestStep Id="WIFI_CONNECT" DEVICE="PHONE1" SSID="FROM_BENCH:WPA_WIFI_ROUTER:SSID" TIMEOUT="120"/>
+        <TestStep Id="SET_SCREEN_PROPERTY" DEVICE="PHONE1" PROPERTY="state" VALUE="off"/>
+    </TestStepSet>
+
+</Include>
+

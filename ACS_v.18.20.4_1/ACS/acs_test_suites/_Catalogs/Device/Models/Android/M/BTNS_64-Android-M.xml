@@ -1,0 +1,152 @@
+<?xml version="1.0"?>
+<DeviceModel xsi:noNamespaceSchemaLocation="../../../../../../acs/src/_Catalogs/Device/Models/AndroidDeviceModel.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <DeviceModule>
+        <FlashModule className="Device.Module.MCG.Flash.PupdrFlashModule.PupdrFlashModule" config="Config/Merrifield_KK.xml"/>
+        <CrashModule className="Device.Module.Common.Crash.CrashToolUploaderModule.CrashToolUploaderModule" config="Config/CrashToolUploader/Default.xml"/>
+        <SystemModule className="Device.Module.Common.System.SystemModule.SystemModule" config="Config/Merrifield.yaml"/>
+        <PnpModule className = "Device.Module.MCG.Pnp.PnpModule.PnpModule" config = "Config/SALTBAY_64.yaml"/>
+        <EnergyManagementModule className="Device.Module.MCG.EnergyManagement.MerrifieldEmModule.MerrifieldEmModule" config="Config/Default.yaml"/>
+        <DeviceChecksModule className="Device.Module.MCG.DeviceChecks.MerrifieldDeviceChecksModule.MerrifieldDeviceChecksModule" config="Config/Merrifield.yaml"/>        
+    </DeviceModule>
+    <BootShutdown>
+        <Parameter bootTimeout="100"/>
+        <Parameter settleDownDuration="40"/>
+        <Parameter softShutdownDuration="20"/>
+        <Parameter hardShutdownDuration="15"/>
+        <Parameter softShutdownSettleDownDuration="30"/>
+        <Parameter pressPowerBtnTimeSwitchOn="3"/>
+        <Parameter rebootOnRetryOnSetup="false"/>
+    </BootShutdown>
+    <Connection>
+        <Parameter handleAdbRestart="true"/>
+        <Parameter adbOverEthernet="false"/>
+        <Parameter ipAddress="192.168.42.129"/>
+        <Parameter adbPort="5555"/>
+        <Parameter serialNumber=""/>
+        <Parameter usbSleep="10"/>
+        <Parameter adbRootTimeout="60"/>
+        <Parameter adbRootCmdTimeout="10"/>
+        <Parameter adbConnectTimeout="10"/>
+        <Parameter usbReplugRetries="1"/>
+    </Connection>
+    <Debug>
+        <Parameter logcatCmdLine="adb shell logcat -b main -b radio -b system -b events -b kernel -v threadtime"/>
+        <Parameter retrievePTITrace="false"/>
+        <Parameter PTIProbe="FIDO"/>
+        <Parameter enableAplogptiCmdLine="adb shell setprop persist.service.aplogpti.enable 1"/>
+        <Parameter retrieveSerialTrace="false"/>
+        <Parameter serialPort=""/>
+        <Parameter serialBaudRate="115200"/>
+        <Parameter serialHdwFlowControl="false"/>
+        <Parameter retrieveModemTrace="false"/>
+        <Parameter cleanModemTrace="false"/>
+        <Parameter modemTraceOptions="hsi_speed:h,trace_level:2,trace_location:emmc,file_size_option:1,pull_timeout:60"/>
+        <Parameter takeScreenshot="false"/>
+        <Parameter enableSocwatch="false"/>
+    </Debug>
+    <UITesting>
+        <Parameter monkeyPort="8080"/>
+        <Parameter monkeyrunnerTimeout="2"/>
+        <Parameter uiDictionnaryName="CtpAndroidJB"/>
+        <Parameter uiTypeTimeout="2"/>
+    </UITesting>
+    <Telephony>
+        <Parameter callSetupTimeout="15"/>
+        <Parameter registrationTimeout="120"/>
+        <Parameter phoneNumber=""/>
+        <Parameter maxDlMultislotConfig="D5U1"/>
+        <Parameter maxUlMultislotConfig="D2U4"/>
+        <Parameter maxDlWcdmaRab="384k"/>
+        <Parameter maxUlWcdmaRab="384k"/>
+        <Parameter maxDlHspaRab="HSDPA_CAT24"/>
+        <Parameter maxUlHspaRab="HSUPA_CAT6"/>
+        <Parameter ATComPort="/dev/gsmtty19"/>
+        <!-- defaultPINCode parameter should be overwritten in bench config instead of here for security purpose (avoid to SIM lock the device). -->
+        <Parameter defaultPINCode=""/>
+        <!-- simPUKCode parameter should be overwritten in bench config instead of here in order to prevent using a bad value -->
+        <Parameter simPUKCode=""/>
+        <!-- defaultPreferredNetwork
+                "3G_PREF",    # 0: "WCDMA_PREF",
+                "2G_ONLY",    # 1: "GSM_ONLY",
+                "3G_ONLY",    # 2: "WCDMA_ONLY",
+                "2G_3G",      # 3: "GSM_UMTS",
+                "CDMA_PREF",  # 4: "CDMA",
+                "CDMA_ONLY",  # 5: "CDMA_NO_EVDO"
+                "EVDO_ONLY",  # 6: "EVDO_NO_CDMA"
+                "GLOBAL",     # 7: "GLOBAL",
+                "4G_PREF_US", # 8: "LTE_CDMA_EVDO",
+                "4G_PREF",    # 9: "LTE_GSM_WCDMA",
+                "WORLD_MODE", # 10: "LTE_CMDA_EVDO_GSM_WCDMA"
+                "4G_ONLY",    # 11: "LTE_ONLY"-->
+        <Parameter defaultPreferredNetwork="4G_PREF"/>
+        <Parameter isSpeechCallSupported="true"/>
+        <Parameter isSmsSupported="true"/>
+    </Telephony>
+    <EM>
+        <!-- default wall charger: DCP -->
+        <Parameter defaultWallCharger="DCP"/>
+        <!-- tell if you can communicate with board and charge with the same cable, like with the pc to board cable (SDP) -->
+        <Parameter dataWhileCharging="true"/>
+        <!-- mode where adb is available, usecase behavior will be affected by this -->
+        <Parameter adbAvailableMode="COS;MOS"/>
+        <!-- Where autolog and generated task is stored -->
+        <Parameter generatedFilePath="/sdcard*/"/>
+        <!-- This is the minimal vbatt needed to boot in MOS -->
+        <Parameter minVbattMosBoot="3.6"/>
+        <Parameter minVbattMosShutdown="3.3"/>
+        <Parameter battThermalChargingHighLim="45"/>
+        <Parameter battThermalChargingLowLim="0"/>
+        <!-- button combo to perform in order to go in POS from OFF status -->
+        <Parameter fastbootKeyCombo="POWER_BUTTON;VOLUME_UP;VOLUME_DOWN"/>
+        <Parameter BattIdType="DIGITAL"/>
+        <Parameter BattIdValue="100000"/>
+        <Parameter BpThermValue="10000"/>
+    </EM>
+    <LocalConnectivity>
+        <Parameter TagsAppPackageName="com.android.apps.tag"/>
+        <Parameter ChromeAppPackageName="com.android.chrome"/>
+        <Parameter BrowserAppPackageName="com.android.browser"/>
+        <Parameter DefaultBDAddress=""/>
+        <Parameter TetheringResetAfterBtOffOn="true"/>
+        <Parameter SupportedServiceList="OPP;A2DP-SRC;AVRCP;HSP-AG;PANU;PAN-NAP;HFP-AG;PBAP-PSE"/>
+        <Parameter NfcAntennaPosition="0,-50000"/>
+    </LocalConnectivity>
+    <Devices>
+        <Parameter wlanDevice="wlan0:0"/>
+        <Parameter wlanPhyDevice="phy0"/>
+        <Parameter gpsPropertyKey="gps.serial.interface"/>
+        <Parameter sdcard_ext="/sdcard"/>
+        <Parameter userdataPath="/sdcard/acs_files/"/>
+        <Parameter binPath="/data/"/>
+        <Parameter timeBeforeWifiSleep="1200"/>
+        <Parameter wlanInterface="wlan0"/>
+        <Parameter hotspotExtInterface="wlan0"/>
+        <Parameter p2pInterface="p2p-wlan0-0"/>
+        <Parameter hotspotIntInterface="mon.wlan0"/>
+        <Parameter touchsreenEventFile="/dev/input/event0"/>
+        <!-- adb shell getevent -->
+        <Parameter autoWifiRegulatoryDomain="false"/>
+        <Parameter provisioningMethod="CC6_UMIP_ACCESS_APP"/>
+        <Parameter provisioningPath="/data/misc/"/>
+        <Parameter backlightName="psb-bl"/>
+        <Parameter cellularNetworkInterface="usb0"/>
+    </Devices>
+    <Power>
+        <Parameter CameraName="camera2"/>
+        <Parameter displayBrightness="26"/>
+        <Parameter PMUStates="/sys/module/intel_soc_pmu/parameters/s0ix"/>
+        <Parameter PMediaPath="/sdcard/acs_files/music_DG09_PWM_128kbps.mp3"/>
+        <Parameter s0ixLssAcceptedBlocker="06"/>
+        <Parameter WakeLocksAcceptedBlocker="0000:00:02.3, msicbattery_wakelock, ctp_charger_wakelock"/>
+        <Parameter FailureFile="BENCHCFG/bench_target_fail.csv"/>
+        <Parameter TargetFile="BENCHCFG/bench_target.csv"/>
+    </Power>
+    <Implementation>
+        <Parameter deviceCapabilities="Capabilities/phone_no_nfc_nor_modem.xml"
+                   ClassName="Device.Model.AndroidDevice.BrightonshoresDevice.BrightonshoresDevice"
+                   UECmd="acs_test_scripts.Device.UECmd.Imp.Android.M"
+                   OS="ANDROID" OSVersion="M"
+                   defaultTimeout="50"
+                   waitBetweenCmd="5"/>
+    </Implementation>
+</DeviceModel>

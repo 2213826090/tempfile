@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="13.37">
+    <UseCase>LIVE_NFC_READ_TAG</UseCase>
+    <Description>Read an NFC tag</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>False</b2bContinuousMode>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters>
+        <Parameter>
+            <!-- The message stored in the NFC tag, should be a website uri: a String as follow : http://www.intel.com.-->
+            <Name>URI</Name>
+            <Value></Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase>
+    <UseCase>LAB_LTE_IPERF</UseCase>
+    <Description>Perform a IPERF transfer on simulated LTE network.</Description>
+    <b2bIteration>100</b2bIteration>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters>
+        <Parameter>
+            <!-- Multiple-Input Multiple-Output to set : true or false -->
+            <Name>MIMO</Name>
+            <Value>FALSE</Value>
+        </Parameter>
+        <Parameter>
+            <!-- number of antennas to set : 1 or 2 -->
+            <Name>ANTENNAS_NUMBER</Name>
+            <Value>1</Value>
+        </Parameter>
+        <Parameter>
+            <!-- TRANSMISSION_MODE to set: TM1, TM2, TM3,TM4 ... -->
+            <Name>TRANSMISSION_MODE</Name>
+            <Value>TM1</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Physical Cell ID : 0 to 503 -->
+            <Name>PHYSICAL_CELL_ID</Name>
+            <Value>0</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Cell channel bandwidth to set: 1.4MHz; 3 MHz; 5MHz; 10 MHz; 15MHz; 20 MHz-->
+            <Name>CELL_CHANNEL_BANDWIDTH</Name>
+            <Value>10</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Cell Setup : "A" for A-cell or "B" for B-cell -->
+            <Name>CELL_ID</Name>
+            <Value>A</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Cell power for RFO1 -->
+            <Name>CELL_POWER_RFO1</Name>
+            <Value>-40</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Cell power for RFO2 -->
+            <Name>CELL_POWER_RFO2</Name>
+            <Value>-40</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Mobile Country Code 0 to 999 -->
+            <Name>MCC</Name>
+            <Value>1</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Mobile Network Code 0 to 999 -->
+            <Name>MNC</Name>
+            <Value>1</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Cell Band (from Band 1 to Band 32) -->
+            <Name>CELL_BAND</Name>
+            <Value>1</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Downlink channel -->
+            <Name>DL_EARFCN</Name>
+            <Value>300</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Ip version -->
+            <Name>IP_VERSION</Name>
+            <Value>IPV6</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Ip version to use to set the APN.
+                IPV4 | IPV6 | V4V6 -->
+            <Name>APN_IP_VERSION</Name>
+            <Value>IPV4V6</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Port Number used by IPERF -->
+            <Name>PORT</Name>
+            <Value>5009</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Duration in seconds allowed to IPERF to perform measurements -->
+            <Name>DURATION</Name>
+            <Value>60</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Type of data transfer (UL/DL). Only used with the COMPUTER parameter. -->
+            <Name>DIRECTION</Name>
+            <Value>DL</Value>
+        </Parameter>
+        <Parameter>
+            <!-- RRC STATE Before FTP start (RRC_CONNECTED | RRC_IDLE ) -->
+            <Name>RRC_STATE</Name>
+            <Value>RRC_IDLE</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Protocol used by IPERF to perform measurements - (TCP | UDP) -->
+            <Name>IPERF_PROTOCOL</Name>
+            <Value>TCP</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Failure Targets -->
+            <Name>FAILURE_TARGETS</Name>
+            <Value>FUTE</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

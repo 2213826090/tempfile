@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase>
+    <UseCase>LIVE_CHECK_ICON_CAMERA</UseCase>
+    <Description>Check if icon is display in camera application with rotation</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>False</b2bContinuousMode>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters>
+        <Parameter>
+            <!-- Path to the image library -->
+            <Name>LIBRARY_IMAGE_PATH</Name>
+            <Value>C:/Users/</Value>
+        </Parameter>
+        <!--Orientation parameters -->
+        <Parameter>
+            <!-- First orientation, portrait for phone and landscape for tablet -->
+            <Name>FIRST_ORIENTATION</Name>
+            <Value>portrait</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Second orientation, landscape for phone and portrait for tablet -->
+            <Name>SECOND_ORIENTATION</Name>
+            <Value>landscape</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Third orientation, reverse landscape for phone and reverse portrait for tablet -->
+            <Name>THIRD_ORIENTATION</Name>
+            <Value>reverse_landscape</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Final orientation, auto for phone and landscape for tablet -->
+            <Name>FINAL_ORIENTATION</Name>
+            <Value>auto</Value>
+        </Parameter>
+        <!--First orientation images -->
+        <Parameter>
+            <!-- Name of camera_mode image less extension (.png) -->
+            <Name>CAMERA_MODE_FIRST_ORIENTATION</Name>
+            <Value>camera_mode</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Name of take photo image less extension (.png) -->
+            <Name>TAKE_PHOTO_FIRST_ORIENTATION</Name>
+            <Value>take_photo</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Name of option_camera image less extension (.png) -->
+            <Name>OPTION_CAMERA_FIRST_ORIENTATION</Name>
+            <Value>option_camera</Value>
+        </Parameter>
+        <!--Second orientation image -->
+        <Parameter>
+            <!-- Name of camera_mode image less extension (.png) -->
+            <Name>CAMERA_MODE_SECOND_ORIENTATION</Name>
+            <Value>camera_mode_second</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Name of take photo image less extension (.png) -->
+            <Name>TAKE_PHOTO_SECOND_ORIENTATION</Name>
+            <Value>take_photo_second</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Name of option_camera image less extension (.png) -->
+            <Name>OPTION_CAMERA_SECOND_ORIENTATION</Name>
+            <Value>option_camera_second</Value>
+        </Parameter>
+        <!--Third orientation image -->
+        <Parameter>
+            <!-- Name of camera mode image less extension (.png) -->
+            <Name>CAMERA_MODE_THIRD_ORIENTATION</Name>
+            <Value>camera_mode_third</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Name of take photo image less extension (.png) -->
+            <Name>TAKE_PHOTO_THIRD_ORIENTATION</Name>
+            <Value>take_photo_third</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Name of option camera image less extension (.png) -->
+            <Name>OPTION_CAMERA_THIRD_ORIENTATION</Name>
+            <Value>option_camera_third</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

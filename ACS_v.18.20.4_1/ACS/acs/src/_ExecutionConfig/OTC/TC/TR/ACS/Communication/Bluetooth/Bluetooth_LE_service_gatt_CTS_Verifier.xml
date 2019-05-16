@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="13.41">
+    <UseCase>TEST_STEP_ENGINE</UseCase>
+    <Description>Test if you can list the services on the DUT
+    using hcitool and sdptool, specifically for
+    Linux-based systems</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>False</b2bContinuousMode>
+    <TcMaxAttempt>1</TcMaxAttempt>
+    <TcAcceptanceCriteria>1</TcAcceptanceCriteria>
+    <TcExpectedResult>PASS</TcExpectedResult>
+     <TestSteps>
+        <Include Src="OTC/TC/TR/ACS/Communication/Bluetooth/setup/BT/OTC_Comms_BT_Common.xml" />
+        <Setup>
+            <!-- AUTOMATION - Set default configuration -->
+            <TestStep SetId="BTFullSetupPhone1" />
+        </Setup>
+        <RunTest>
+            <TestStep Id="BT_SET_DISCOVERABLE" DEVICE="PHONE1" MODE="both" TIMEOUT="120" />
+            <TestStep Id="SUSPEND" DURATION_IN_SEC="20" />
+            <TestStep Id="BT_LIST_SERVICES_SDPTOOL" DEVICE="PHONE1" NAME="FROM_CTX:BT_MAC_ADDRESS_PHONE1" TIMEOUT="20"
+                    CHECK_STRING="'Generic Attribute' (0x1801)"/>
+        </RunTest>
+        <TearDown>
+            <Fork Id="ForkTeardownBT">
+                <TestStep SetId="BTCommonTeardown" DEVICE="PHONE1" />
+            </Fork>
+        </TearDown>
+    </TestSteps>
+</TestCase>

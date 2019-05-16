@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<Campaign>
+      <Parameters>
+            <Parameter isControlledPSUsed="False"/>
+            <Parameter isIoCardUsed="False"/>
+            <Parameter skipBootOnPowerCycle="False"/>
+            <Parameter bootRetryNumber="0"/>
+            <Parameter runHookScripts="False"/>
+            <Parameter powerCycleBetweenTC="False"/>
+            <Parameter powerCycleOnFailure="False"/>
+            <Parameter finalDutState="NoChange"/>
+            <Parameter stopCampaignOnCriticalFailure="False"/>
+            <Parameter stopCampaignOnFirstFailure="False"/>
+            <Parameter loggingLevel="debug"/>
+            <Parameter CampaignType="Other"/>
+      </Parameters>
+      <TestCases>
+            <TestCase Id="../../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/media_codecs/encoder/Create_encoder_audio_mp4a-latm"/>
+            <TestCase Id="../../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/media_codecs/encoder/Create_encoder_video_avc"/>
+            <TestCase Id="../../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/media_codecs/encoder/Create_encoder_video_mp4v-es"/>
+            <TestCase Id="../../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/media_codecs/encoder/Create_encoder_video_3gpp"/>
+            <TestCase Id="../../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/media_codecs/encoder/Create_encoder_audio_amr-wb"/>
+            <TestCase Id="../../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/media_codecs/encoder/Create_encoder_audio_flac"/>
+            <TestCase Id="../../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/media_codecs/encoder/Create_encoder_audio_3gpp"/>
+            <TestCase Id="../../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/media_codecs/encoder/Create_encoder_video_x-vnd.on2.vp8"/>
+      </TestCases>
+</Campaign>

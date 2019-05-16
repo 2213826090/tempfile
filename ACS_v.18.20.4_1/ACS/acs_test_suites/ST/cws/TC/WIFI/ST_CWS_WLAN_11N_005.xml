@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="13.41">
+    <UseCase>TEST_STEP_ENGINE</UseCase>
+    <Description></Description>
+    <b2bIteration>4</b2bIteration>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <TcMaxAttempt>2</TcMaxAttempt>
+    <TcAcceptanceCriteria>1</TcAcceptanceCriteria>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters>
+        <Parameter>
+            <Name>RSSI_MARGIN</Name>
+            <Value>10</Value>
+        </Parameter>
+    </Parameters>
+    <TestSteps>
+        <Include Src="ST/cws/TSS/Common/ST_CWS_COMMON.xml"/>
+        <Include Src="ST/cws/TSS/WiFi/ST_CWS_WIFI_AP.xml"/>
+        <Include Src="ST/cws/TSS/WiFi/ST_CWS_WIFI_COMMON.xml"/>
+
+        <TestStepSet Id="CommonWiFiConfig">
+            <TestStep SetId="InitPhoneCWS"/>
+            <TestStep SetId="WiFiCommonSetup" REGULATORY_DOMAIN="FR"/>
+            <TestStep Id="WIFI_SET_POWER" POWER="off"/>
+        </TestStepSet>
+
+        <TestStepSet Id="StepOneSetPhone1">
+            <TestStep Id="WIFI_SET_POWER" POWER="on"/>
+            <TestStep Id="WIFI_WAIT_FOR_SSID_STATE" SSID="FROM_BENCH:CONFIGURABLE_AP1:SSID" STATE="VISIBLE" TIMEOUT="90"/>
+            <TestStep Id="WIFI_GET_RSSI" SSID="FROM_BENCH:CONFIGURABLE_AP1:SSID" SAVE_WIFI_RSSI="AP1_RSSI_PHONE1"/>
+            <TestStep Id="WIFI_WAIT_FOR_SSID_STATE" SSID="FROM_BENCH:CONFIGURABLE_AP2:SSID" STATE="VISIBLE" TIMEOUT="90"/>
+            <TestStep Id="WIFI_GET_RSSI" SSID="FROM_BENCH:CONFIGURABLE_AP2:SSID" SAVE_WIFI_RSSI="AP2_RSSI_PHONE1"/>
+        </TestStepSet>
+
+        <TestStepSet Id="StepOneSetPhone2">
+            <TestStep Id="WIFI_SET_POWER" POWER="on"/>
+            <TestStep Id="WIFI_WAIT_FOR_SSID_STATE" SSID="FROM_BENCH:CONFIGURABLE_AP1:SSID" STATE="VISIBLE" TIMEOUT="90"/>
+            <TestStep Id="WIFI_GET_RSSI" SSID="FROM_BENCH:CONFIGURABLE_AP1:SSID" SAVE_WIFI_RSSI="AP1_RSSI_PHONE2"/>
+            <TestStep Id="WIFI_WAIT_FOR_SSID_STATE" SSID="FROM_BENCH:CONFIGURABLE_AP2:SSID" STATE="VISIBLE" TIMEOUT="90"/>
+            <TestStep Id="WIFI_GET_RSSI" SSID="FROM_BENCH:CONFIGURABLE_AP2:SSID" SAVE_WIFI_RSSI="AP2_RSSI_PHONE2"/>
+        </TestStepSet>
+
+        <Setup>
+            <!-- AUTOMATION - Set default configuration -->
+            <Fork Id="ForkDUTReferencePhoneAndWiFiAP">
+                <TestStep SetId="CommonWiFiConfig" DEVICE="PHONE1"/>
+                <TestStep SetId="CommonWiFiConfig" DEVICE="PHONE2"/>
+                <TestStep SetId="WiFiAPConfigStandardAP1" STANDARD="n2.4G" AUTHENTICATION_TYPE="OPEN" PASSPHRASE="NOT_USED" CHANNEL="1" BANDWIDTH="20"/>
+                <TestStep SetId="WiFiAPConfigStandardAP2" STANDARD="n2.4G" AUTHENTICATION_TYPE="OPEN" PASSPHRASE="NOT_USED" CHANNEL="1" BANDWIDTH="20"/>
+            </Fork>
+        </Setup>
+        <RunTest>
+            <!-- SPEC - Step 1 : Turn On WiFi and check RSSI on both devices-->
+            <Fork Id="ForkStep1">
+                <TestStep SetId="StepOneSetPhone1" DEVICE="PHONE1"/>
+                <TestStep SetId="StepOneSetPhone2" DEVICE="PHONE2"/>
+            </Fork>
+            <TestStep Id="MATH_OPERATION" FIRST="FROM_CTX:AP1_RSSI_PHONE1" SECOND="FROM_CTX:AP1_RSSI_PHONE2" OPERATOR="SUBTRACT" SAVE_RESULT_AS="DIFF_RSSI_AP1"/>
+            <TestStep Id="COMPARE" FIRST="FROM_CTX:DIFF_RSSI_AP1" SECOND="FROM_TC:RSSI_MARGIN" OPERATOR="LESS_OR_EQUAL" PASS_IF="true"/>
+            <TestStep Id="MATH_OPERATION" FIRST="FROM_CTX:AP2_RSSI_PHONE1" SECOND="FROM_CTX:AP2_RSSI_PHONE2" OPERATOR="SUBTRACT" SAVE_RESULT_AS="DIFF_RSSI_AP2"/>
+            <TestStep Id="COMPARE" FIRST="FROM_CTX:DIFF_RSSI_AP2" SECOND="FROM_TC:RSSI_MARGIN" OPERATOR="LESS_OR_EQUAL" PASS_IF="true"/>
+
+            <!-- SPEC - Step 2 : Turn Off WiFi -->
+            <TestStep Id="WIFI_SET_POWER" DEVICE="PHONE1" POWER="off"/>
+            <TestStep Id="WIFI_SET_POWER" DEVICE="PHONE2" POWER="off"/>
+        </RunTest>
+        <TearDown>
+            <Fork Id="ForkTeardown">
+                <TestStep SetId="WiFiCommonTeardown" DEVICE="PHONE1"/>
+                <TestStep SetId="WiFiCommonTeardown" DEVICE="PHONE2"/>
+                <TestStep SetId="WiFiAPShutdown" EQT="CONFIGURABLE_AP1"/>
+                <TestStep SetId="WiFiAPShutdown" EQT="CONFIGURABLE_AP2"/>
+            </Fork>
+        </TearDown>
+    </TestSteps>
+</TestCase>

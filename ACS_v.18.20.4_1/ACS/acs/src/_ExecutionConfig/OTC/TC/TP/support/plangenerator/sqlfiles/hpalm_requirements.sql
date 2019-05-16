@@ -1,0 +1,1 @@
+select * from [syncenter_new].[db_owner].[hpalm_requirements]

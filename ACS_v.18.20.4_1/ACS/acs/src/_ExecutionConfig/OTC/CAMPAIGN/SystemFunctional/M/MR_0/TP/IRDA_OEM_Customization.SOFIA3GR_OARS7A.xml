@@ -1,0 +1,36 @@
+<?xml version="1.0" ?>
+<Campaign version="13.49">
+    <Parameters>
+        <Parameter isControlledPSUsed="False"/>
+        <Parameter isIoCardUsed="False"/>
+        <Parameter skipBootOnPowerCycle="False"/>
+        <Parameter bootRetryNumber="0"/>
+        <Parameter runHookScripts="False"/>
+        <Parameter powerCycleBetweenTC="False"/>
+        <Parameter powerCycleOnFailure="False"/>
+        <Parameter finalDutState="NoChange"/>
+        <Parameter stopCampaignOnCriticalFailure="False"/>
+        <Parameter stopCampaignOnFirstFailure="False"/>
+        <Parameter loggingLevel="debug"/>
+        <Parameter CampaignType="Other"/>
+        <Parameter TCRReportViaRESTAPI="True"/>
+    </Parameters>
+    <TestCases>
+        <TestCase Id="../../../../../TC/TP/TC/IRDA_OEM_Customization/OEM/testApp_after_factory_reset"/>
+        <TestCase Id="../../../../../TC/TP/TC/IRDA_OEM_Customization/OEM/testremove_apps"/>
+        <TestCase Id="../../../../../TC/TP/TC/IRDA_OEM_Customization/OEM/testEXTRA_APPS"/>
+        <TestCase Id="../../../../../TC/TP/TC/IRDA_OEM_Customization/OEM/testSet_oem_apps"/>
+        <TestCase Id="../../../../../TC/TP/TC/IRDA_OEM_Customization/OEM/Testsetwallpaperproperty"/>
+        <TestCase Id="../../../../../TC/TP/TC/IRDA_OEM_Customization/OEM/Testsetringtoneproperty"/>
+        <TestCase Id="../../../../../TC/TP/TC/IRDA_OEM_Customization/OEM/testOEM_partition"/>
+        <TestCase Id="../../../../../TC/TP/TC/IRDA_OEM_Customization/OEM/testCHECK_APPS"/>
+        <TestCase Id="../../../../../TC/TP/TC/IRDA_OEM_Customization/OEM/testOEM_device_model"/>
+        <TestCase Id="../../../../../TC/TP/TC/IRDA_OEM_Customization/OEM/testChangeAnother"/>
+        <TestCase Id="../../../../../TC/TP/TC/IRDA_OEM_Customization/OEM/testChangeReboot"/>
+        <TestCase Id="../../../../../TC/TP/TC/IRDA_OEM_Customization/OEM/testResetAfterChange"/>
+        <TestCase Id="../../../../../TC/TP/TC/IRDA_OEM_Customization/OEM/testDefault_static_wallpaper"/>
+        <TestCase Id="../../../../../TC/TP/TC/IRDA_OEM_Customization/OEM/TestOEMDefalt_Locale_M"/>
+        <TestCase Id="../../../../../TC/TP/TC/IRDA_OEM_Customization/OEM/TestOEMDefaltLocalProperty"/>
+        <TestCase Id="../../../../../TC/TP/TC/IRDA_OEM_Customization/OEM/TestSetwallpaperCOMproperty"/>
+    </TestCases>
+</Campaign>

@@ -1,0 +1,13 @@
+{
+    "windows": {
+        "check_exists": ["which", ["dot.exe"]],
+        "install": "msiexec /i {bin} /qn",
+        "uninstall": "msiexec /x {bin} /qn",
+        "32": "acs/dependencies/third_parties/tools/Graphviz/graphviz-2.28.0.msi"
+    },
+    "linux": {
+        "check_exists": ["which", ["dot"]],
+        "install": "apt-get install graphviz -y",
+        "uninstall": "apt-get remove graphviz -y"
+    }
+}

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="13.37">
+    <UseCase>LIVE_DUAL_PHONE_SMS</UseCase>
+    <Description>Live SMS from DUT to another Phone</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters>
+        <Parameter>
+            <!-- Service center address -->
+            <Name>SERVICE_CENTER_ADDRESS</Name>
+            <Value>+33660003000</Value>
+        </Parameter>
+        <Parameter>
+            <!-- SMS destination phone number. If the value [PHONE_NUMBER] is given, the phoneNumber defined in Phone_Catalog.xml will be used -->
+            <Name>DESTINATION_NUMBER</Name>
+            <Value>[PHONE_NUMBER]</Value>
+        </Parameter>
+        <Parameter>
+            <!-- SMS text message -->
+            <Name>MESSAGE_CONTENT</Name>
+            <Value>This is my SMS text !</Value>
+        </Parameter>
+        <Parameter>
+            <!-- SMS Data coding scheme in hexadecimal -->
+            <Name>DATA_CODING_SCHEME</Name>
+            <Value>00</Value>
+        </Parameter>
+        <Parameter>
+            <!-- SMS transfer timeout in seconds -->
+            <Name>SMS_TRANSFER_TIMEOUT</Name>
+            <Value>10</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase>
+    <UseCase>LIVE_PERFMEAS_APPLICATION</UseCase>
+    <Description>T-Rex benchmark OffScreen with ETC1 compression</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters>
+        <Parameter>
+            <Name>APPLICATION_NAME</Name>
+            <Value>GlBenchmark</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TIMEOUT</Name>
+            <Value>300</Value>
+        </Parameter>
+        <Parameter>
+            <Name>MEASURE_NB</Name>
+            <Value>1</Value>
+        </Parameter>
+        <Parameter>
+            <Name>APPURI</Name>
+            <Value>DEFAULT: artifact://BENCHMARKS/GLBENCHMARK/GLBenchmark_2_7_0_Release_a68901_Android_Corporate_Package.apk</Value>
+        </Parameter>
+        <Parameter>
+            <!-- [OPTIONNAL] Arguments to run the application -->
+            <!-- Available tests for GLBenchmark 2.7:
+              -->
+            <Name>ARGUMENTS</Name>
+            <Value>TRexHDOffScreen</Value>
+            <!-- Valid value for GLBenchmark27 : -->
+            <!-- <Value>TRex_ETC1</Value>                                    -->
+            <!-- <Value>TRex_ETC1_Offscreen</Value>                          -->
+            <!-- <Value>EgyptHD_inherited_C24Z16</Value>                     -->
+            <!-- <Value>EgyptHD_inherited_C24Z16_Offscreen</Value>           -->
+        </Parameter>
+        <Parameter>
+            <Name>SYSDEBUG_MODULES</Name>
+            <Value>Thermals: skin0=33, skin1=33, soc=33, Core 1=33, Core 2=33;</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

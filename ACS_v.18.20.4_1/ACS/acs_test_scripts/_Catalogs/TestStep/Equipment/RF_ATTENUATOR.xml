@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestSteps xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../acs/src/_Catalogs/TestStep/teststep.xsd">
+    <TestStep Id="RF_ATTENUATOR_INIT" Domain="EQUIPMENT" SubDomain="RF_ATTENUATOR" Feature="" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Equipment.RFAttenuator.RFAttenuatorInit.RFAttenuatorInit</ClassName>
+        <Description>             Initialize the RF attenuator.         </Description>
+        <Environment name="ANY">
+        </Environment>
+        <Parameters>
+            <Parameter name="EQT" type="STRING" isOptional="false">
+                <Description>The equipment name shall refer to an existing equipment the Bench config.</Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="GET_RF_ATTENUATOR_CUR_ATTENUATION" Domain="EQUIPMENT" SubDomain="RF_ATTENUATOR" Feature="" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Equipment.RFAttenuator.GetRFAttenuatorCurAttenuation.GetRFAttenuatorCurAttenuation</ClassName>
+        <Description> get current attenuation value in dB </Description>
+        <Environment name="ANY">
+        </Environment>
+        <Parameters>
+            <Parameter name="EQT" type="STRING" isOptional="false">
+                <Description>The equipment name shall refer to an existing equipment the Bench config.</Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+            <Parameter name="SAVE_CUR_ATTENUATION_AS" type="CONTEXT" isOptional="false">
+                <Description>
+                    <Key name="KEY_NAME_DEFINED_BY_USER" type="STRING">Name of the context variable where the current attenuation value will be saved.</Key>
+                </Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+        </Parameters>
+    </TestStep>
+</TestSteps>

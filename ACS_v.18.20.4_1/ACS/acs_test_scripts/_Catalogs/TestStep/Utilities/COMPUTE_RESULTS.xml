@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestSteps xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../acs/src/_Catalogs/TestStep/teststep.xsd">
+    <TestStep Id="INIT_PNP_RESULT" Domain="UTILITIES" SubDomain="RESULT" Feature="" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Utilities.ComputeResults.ComputePnpResult.PnPInitContext</ClassName>
+        <Description>Init a pnp result object</Description>
+        <Environment name="ANY"/>
+        <Parameters>
+            <Parameter name="SAVE_AS" type="CONTEXT" isOptional="false">
+                <Description>
+                    <Key name="SAVED_PNP_RESULT" type="STRING">Context key where PnpResult will be stored</Key>
+                </Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="COMPUTE_PERF_RESULT_DROIDBOT" Domain="UTILITIES" SubDomain="CHECKS" Feature="" Status="DONE">
+            <ClassName>acs_test_scripts.TestStep.Utilities.ComputeResults.ComputeScore.ComputeScore</ClassName>
+            <Description>Apply an operation to a list of score values</Description>
+            <Environment name="ANY"/>
+            <Parameters>
+                <Parameter name="JSON_DROIDBOT_RESULT" type="STRING" isOptional="false">
+                    <Description>The score provided by Droidbot, as a json string</Description>
+                    <PossibleValues/>
+                    <DefaultValue/>
+                </Parameter>
+                <Parameter name="OPERATION" type="STRING" isOptional="false">
+                    <Description>
+                    Type of operation to do
+                    </Description>
+                    <PossibleValues>ARITHMETIC_MEAN;GEOMETRIC_MEAN;MEDIAN;RAW</PossibleValues>
+                    <DefaultValue/>
+                </Parameter>
+                <Parameter name="SCORE_NAME" type="STRING" isOptional="false">
+                        <Description> The score key name where the score is stored </Description>
+                        <PossibleValues/>
+                        <DefaultValue/>
+                </Parameter>
+                <Parameter name="RESULT_NAME" type="STRING" isOptional="false">
+                        <Description> Result name to add to report </Description>
+                        <PossibleValues/>
+                        <DefaultValue/>
+                </Parameter>
+                <Parameter name="RESULT" type="CONTEXT" isOptional="false">
+                    <Description>
+                         <Key name="OPERATION_RESULT" type="STRING"> Computed result</Key>
+                    </Description>
+                    <PossibleValues/>
+                    <DefaultValue/>
+                </Parameter>
+            </Parameters>
+    </TestStep>
+    <TestStep Id="REPORT_RESIDENCY_RESULT" Domain="UTILITIES" SubDomain="RESULT" Feature="" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Utilities.ComputeResults.ComputePnpResult.PnPReportResidencyVerdict</ClassName>
+        <Description>Compute residency result according to targets</Description>
+        <Environment name="ANY"/>
+        <Parameters>
+            <Parameter name="STORED_PNP_RESULT" type="STRING" isOptional="false">
+                <Description>Key name where PnpResult has been initialized</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+            <Parameter name="RESIDENCY_TO_REPORT" type="LIST" isOptional="true">
+               <Description>List of devices residency to add to report, separated by '[|]'.  Example: "'s3'[|]'s0i3'".</Description>
+               <PossibleValues/>
+               <DefaultValue/>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="ADD_RESULT_TO_PNP_REPORT" Domain="UTILITIES" SubDomain="RESULT" Feature="" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Utilities.ComputeResults.ComputePnpResult.PnPAddToReport</ClassName>
+        <Description>Add report to dedicated PnP result</Description>
+        <Environment name="ANY"/>
+        <Parameters>
+            <Parameter name="STORED_REPORT" type="STRING" isOptional="false">
+                <Description>SubReport to add to Pnp report</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+            <Parameter name="STORED_PNP_RESULT" type="STRING" isOptional="false">
+                <Description>Key name where PnpResult has been initialized</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="COMPUTE_RESIDENCY_RESULT" Domain="UTILITIES" SubDomain="RESULT" Feature="" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Utilities.ComputeResults.ComputePnpResult.PnPComputeResidencyVerdict</ClassName>
+        <Description>Compute residency result according to targets</Description>
+        <Environment name="ANY"/>
+        <Parameters>
+            <Parameter name="STORED_PNP_RESULT" type="STRING" isOptional="false">
+                <Description>Key name where PnpResult has been initialized</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+            <Parameter name="OPERATION" type="STRING" isOptional="false">
+                <Description>
+                Type of operation to do
+                </Description>
+                <PossibleValues>ARITHMETIC_MEAN;GEOMETRIC_MEAN;MEDIAN;RAW</PossibleValues>
+                <DefaultValue/>
+            </Parameter>
+            <Parameter name="VERDICT_CRITERIA" type="STRING" isOptional="true">
+                <Description>
+                Compute verdict from power, residency or both
+                </Description>
+                <PossibleValues>POWER;RESIDENCY;BOTH</PossibleValues>
+                <DefaultValue>BOTH</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="ADD_RESULT_TO_PNP_REPORT" Domain="UTILITIES" SubDomain="RESULT" Feature="" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Utilities.ComputeResults.ComputePnpResult.PnPAddToReport</ClassName>
+        <Description>Add report to dedicated PnP result</Description>
+        <Environment name="ANY"/>
+        <Parameters>
+            <Parameter name="STORED_REPORT" type="STRING" isOptional="false">
+                <Description>SubReport to add to Pnp report</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+            <Parameter name="STORED_PNP_RESULT" type="STRING" isOptional="false">
+                <Description>Key name where PnpResult has been initialized</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="WRITE_PNP_REPORT" Domain="UTILITIES" SubDomain="RESULT" Feature="" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Utilities.ComputeResults.ComputePnpResult.PnPWriteReport</ClassName>
+        <Description>Write the dedicated pnp test result</Description>
+        <Environment name="ANY"/>
+        <Parameters>
+            <Parameter name="STORED_PNP_RESULT" type="STRING" isOptional="false">
+                <Description>Key name where PnpResult has been initialized</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+            <Parameter name="CALCUL_METHOD" type="STRING" isOptional="false">
+                <Description>Calculation method to return global value when several iterations are done</Description>
+                <PossibleValues>MEDIAN;ARITHMETIC_MEAN</PossibleValues>
+                <DefaultValue/>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="COMPUTE" Domain="UTILITIES" SubDomain="RESULT" Feature="" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Utilities.ComputeResults.Compute.Compute</ClassName>
+        <Description>Step to compute array of results according to the method chosen</Description>
+        <Environment name="ANY"/>
+        <Parameters>
+            <Parameter name="INPUT" type="STRING" isOptional="false">
+                <Description>results to be computed</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+            <Parameter name="METHOD" type="STRING" isOptional="false">
+                <Description>Compute method</Description>
+                <PossibleValues>median;average;max;min</PossibleValues>
+                <DefaultValue/>
+            </Parameter>
+            <Parameter name="RESULT" type="STRING" isOptional="false">
+                <Description>Result of the computing</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+</TestSteps>

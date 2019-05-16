@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="13.37">
+    <UseCase>LAB_DUAL_PHONE_BT_TETHERING_PING</UseCase>
+    <Description>Use Bluetooth tethering between 2 phones and ping remote server through the LAB WiFi tethered connection</Description>
+    <b2bIteration>200</b2bIteration>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters>
+        <Parameter>
+            <!-- Wifi standard of wifi env to be used. Can be "a", "b", "g", "an", "bg", "gn", "bgn", "n2.4G", "n5G", "off" -->
+            <!-- Depending on AP capabilities -->
+            <Name>WIFI_STANDARD</Name>
+            <Value>gb</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Wifi Security of wifi env to be used. Can be "OPEN", "WEP64","WEP64-OPEN","WEP128","WEP128-OPEN","WPA-PSK-TKIP", "WPA2-PSK-AES", "EAP-WPA" or "EAP-WPA2" -->
+            <Name>WIFI_SECURITY</Name>
+            <Value>WPA2-PSK-AES</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Wifi SSID broadcast disabled: 0 (visible) or 1 (hidden) -->
+            <Name>WIFI_HIDDEN</Name>
+            <Value>0</Value>
+        </Parameter>
+        <Parameter>
+            <!-- EAP method used when WIFI_SECURTY is "EAP-WAP" or "EAP-WPA2", can be "PEAP", "TLS", "TTLS", "SIM" or "AKA" -->
+            <Name>EAP_METHOD</Name>
+            <Value>PEAP</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Phase2 authentication used when WIFI_SECURTY is "EAP-WAP" or "EAP-WPA2", can be "None", "PAP", "MSCHAP", "MSCHAPV2", "GTC" -->
+            <Name>PHASE2_AUTH</Name>
+            <Value>None</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Set to 'True' if you need to use certificates at the same time as TTLS or PEAP. If ommited, the default value for this parameter is false. -->
+            <Name>MANDATORY_CERT</Name>
+            <Value>False</Value>
+        </Parameter>
+        <Parameter>
+            <!-- DUT static ip setting enable:True; disable: False. Parameters below are available only if this parameter is set to True. -->
+            <Name>IP_SETTING_ENABLE</Name>
+            <Value>False</Value>
+        </Parameter>
+        <Parameter>
+            <!-- DUT static ip setting for ip address -->
+            <Name>IP_ADDRESS</Name>
+            <Value>192.168.0.149</Value>
+        </Parameter>
+        <Parameter>
+            <!-- DUT static ip setting for netmask -->
+            <Name>NETMASK</Name>
+            <Value>255.255.255.0</Value>
+        </Parameter>
+        <Parameter>
+            <!-- DUT static ip setting for gateway -->
+            <Name>GATEWAY</Name>
+            <Value>192.168.0.1</Value>
+        </Parameter>
+        <Parameter>
+            <!-- DUT static ip setting for dns1 -->
+            <Name>DNS1</Name>
+            <Value>192.168.0.5</Value>
+        </Parameter>
+        <Parameter>
+            <!-- DUT static ip setting for dns2 -->
+            <Name>DNS2</Name>
+            <Value>0.0.0.0</Value>
+        </Parameter>
+        <Parameter>
+            <!-- [Optional] Wifi channel: 1-14 for 2.4GHz, 36-165 for 5GHz, 0:auto (default is AP current setup if not specified) -->
+            <!-- 2.4GHz real channel values (MHz): 2412,2417,2422,2427,2432,2437,2442,2447,2452,2457,2462,2467,2472,2484 -->
+            <!-- 5GHz real channel values (MHz): 5180,5200,5220,5240,5260,5280,5300,5320,5745,5765,5785,5805,5825 -->
+            <Name>WIFI_CHANNEL</Name>
+            <Value></Value>
+        </Parameter>
+        <Parameter>
+            <!-- [Optional] Wifi DTIM: 1,3,5 (default is AP current setup if not specified) -->
+            <Name>WIFI_DTIM</Name>
+            <Value></Value>
+        </Parameter>
+        <Parameter>
+            <!-- [Optional] Wifi beacon interval in ms: 50..500 (default is AP current setup if not specified) -->
+            <Name>WIFI_BEACON</Name>
+            <Value></Value>
+        </Parameter>
+        <Parameter>
+            <!-- [Optional] Wifi WMM: 0 or 1 (default is AP current setup if not specified) -->
+            <Name>WIFI_WMM</Name>
+            <Value></Value>
+        </Parameter>
+        <Parameter>
+            <!-- [Optional] Wifi Band: 20 or 40 (MHz) (default is AP current setup if not specified) -->
+            <Name>WIFI_BAND</Name>
+            <Value></Value>
+        </Parameter>
+        <Parameter>
+            <!-- [Optional] Sniffer capture: 0 or 1 (WIFI_CHANNEL must be specified) -->
+            <Name>WIFI_SNIFF</Name>
+            <Value>0</Value>
+        </Parameter>
+        <Parameter>
+            <Name>PACKAGES_TO_DISABLE</Name>
+            <!-- [Optional] comma separated list containing packages you want to disable before testing. -->
+            <Value></Value>
+        </Parameter>
+        <Parameter>
+            <!-- [Optional] Regulatory Domain to use for both AP and DUT (US, GB, FR, ...) -->
+            <Name>REGULATORY_DOMAIN</Name>
+            <Value>FR</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Ways to exchange the ciphering key ("WPS-PBC", "WPS-PIN-DUT" or "WPS-PIN-AP") -->
+            <Name>KEY_EXCHANGE_MODE</Name>
+            <Value></Value>
+        </Parameter>
+        <Parameter>
+            <!-- PIN to exchange key (in "WPS-PIN-xx") -->
+            <Name>KEY_EXCHANGE_PIN</Name>
+            <Value></Value>
+        </Parameter>
+        <Parameter>
+            <!-- [OPTIONAL] To force an access point for this test -->
+            <Name>CONFIGURABLE_AP_TO_USE</Name>
+            <Value></Value>
+        </Parameter>
+        <Parameter>
+            <!-- Indicates the role of the DUT (PHONE1). NAP device is the phone that tethered the connection. PAN-User is the client phone. Allowed value: NAP, PAN-U -->
+            <Name>NAP_OR_PAN_TEST</Name>
+            <Value>NAP</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Defines who initiates the pairing request. Allowed values are PHONE1 or PHONE2 -->
+            <Name>PAIRING_INITIATOR</Name>
+            <Value>PHONE1</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Defines who disconnects the tethering link (NAP or PAN-U. Default is PAN-U) -->
+            <Name>WHO_DISCONNECT</Name>
+            <Value>NAP</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Who restarts its BT interface after pairing, but before connect (None, NAP or PAN-U) -->
+            <Name>WHO_RESTARTS_BT_BEFORE_TEST</Name>
+            <Value>None</Value>
+        </Parameter>
+        <Parameter>
+            <!--Enable / Disable PAN-User disconnection initiated by the NAP device (True/False) -->
+            <Name>ENABLE_BT_TETHERING_DEACTIVATION_TEST</Name>
+            <Value>False</Value>
+        </Parameter>
+        <Parameter>
+            <!--Enable / Disable Long Lasting test: b2b continuous mode will loop on ping only (without reconnection). 1 ping (or 1 iteration) every minute (True/False) -->
+            <Name>ENABLE_LOLA_TEST</Name>
+            <Value>False</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Number of Packets to be sent -->
+            <Name>PACKET_COUNT</Name>
+            <Value>2</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Size of a data packet (in bytes) sent when trying to ping the network -->
+            <Name>PACKET_SIZE</Name>
+            <Value>128</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Target of Ping Packet Loss Rate (in %) -->
+            <Name>TARGET_PACKET_LOSS_RATE</Name>
+            <Value>0</Value>
+        </Parameter>
+        <Parameter>
+            <!-- [Optional] Is set to True, the flight mode will be enables before setting bt on and disabled at tear down. This parameter will be ignored if using CELLULAR option -->
+            <Name>FLIGHT_MODE</Name>
+            <Value>False</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

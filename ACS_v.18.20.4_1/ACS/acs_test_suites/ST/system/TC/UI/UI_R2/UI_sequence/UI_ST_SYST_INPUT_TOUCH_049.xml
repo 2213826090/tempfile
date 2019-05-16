@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<UI_SEQ xsi:noNamespaceSchemaLocation="ACS_ANDROID_UI_CHECK.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<ACTION>
+		<CMD>keypress</CMD>
+		<PARAMETERS>KEYCODE_POWER</PARAMETERS>
+		<TIMEOUT>1</TIMEOUT>
+	</ACTION>
+	<ACTION>
+		<CMD>wake</CMD>
+		<PARAMETERS>2</PARAMETERS>
+	</ACTION>
+	<ACTION>
+		<CMD>drag</CMD>
+		<PARAMETERS>450;805;145;805</PARAMETERS>
+		<ITERATION>100</ITERATION>
+	</ACTION>
+</UI_SEQ>

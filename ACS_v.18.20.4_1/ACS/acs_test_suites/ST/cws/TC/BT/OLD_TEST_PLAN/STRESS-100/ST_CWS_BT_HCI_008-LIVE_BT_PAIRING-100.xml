@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="13.37">
+  <UseCase>LIVE_BT_PAIRING</UseCase>
+  <Description>Pairing to BlueTooth device</Description>
+  <b2bIteration>100</b2bIteration>
+  <b2bContinuousMode>False</b2bContinuousMode>
+  <TcExpectedResult>PASS</TcExpectedResult>
+  <Parameters>
+    <Parameter>
+      <!-- BlueTooth device MAC address (BDADDR). If empty, uses the BT device MAC address in BenchConfig -->
+      <Name>DEVICE_BT_ADDRESS</Name>
+      <Value></Value>
+      <!--TLS-158: 44:C1:5C:3F:C6:03 7C:8E:E4:04:E7:A0 Phone ICS or 00:1F:82:1F:A1:87 H390 headset-->
+    </Parameter>
+   <Parameter>
+      <!-- String representing bluetooth code pin -->
+      <Name>CODE_PIN</Name>
+      <Value>0000</Value>
+    </Parameter>
+   <Parameter>
+      <!-- String representing bluetooth passphrase (setted by default to '0000') -->
+      <Name>PASSPHRASE</Name>
+      <Value>0000</Value>
+    </Parameter>
+    <Parameter>
+      <!-- [Optional] Is set to True, the flight mode will be enables before setting bt on
+          and disabled at tear down. -->
+      <Name>FLIGHT_MODE</Name>
+      <Value>False</Value>
+    </Parameter>
+  </Parameters>
+</TestCase>

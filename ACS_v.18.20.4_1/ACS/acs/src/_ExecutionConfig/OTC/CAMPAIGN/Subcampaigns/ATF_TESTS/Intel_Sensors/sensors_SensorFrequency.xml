@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<Campaign>
+      <Parameters>
+            <Parameter isControlledPSUsed="False"/>
+            <Parameter isIoCardUsed="False"/>
+            <Parameter skipBootOnPowerCycle="False"/>
+            <Parameter bootRetryNumber="0"/>
+            <Parameter runHookScripts="False"/>
+            <Parameter powerCycleBetweenTC="False"/>
+            <Parameter powerCycleOnFailure="False"/>
+            <Parameter finalDutState="NoChange"/>
+            <Parameter stopCampaignOnCriticalFailure="False"/>
+            <Parameter stopCampaignOnFirstFailure="False"/>
+            <Parameter loggingLevel="debug"/>
+            <Parameter CampaignType="Other"/>
+      </Parameters>
+      <TestCases>
+            <TestCase Id="../../../../TC/TR/ATF_TESTS/Intel_Sensors/SensorFrequency/testAccelerometerFrequency"/>
+            <TestCase Id="../../../../TC/TR/ATF_TESTS/Intel_Sensors/SensorFrequency/testMagneticFieldFrequency"/>
+            <TestCase Id="../../../../TC/TR/ATF_TESTS/Intel_Sensors/SensorFrequency/testOrientationFrequency"/>
+            <TestCase Id="../../../../TC/TR/ATF_TESTS/Intel_Sensors/SensorFrequency/testGyroscopeFrequency"/>
+            <TestCase Id="../../../../TC/TR/ATF_TESTS/Intel_Sensors/SensorFrequency/testLinearAccelerationFrequency"/>
+            <TestCase Id="../../../../TC/TR/ATF_TESTS/Intel_Sensors/SensorFrequency/testGravityFrequency"/>
+            <TestCase Id="../../../../TC/TR/ATF_TESTS/Intel_Sensors/SensorFrequency/testRotationVectorFrequency"/>
+            <TestCase Id="../../../../TC/TR/ATF_TESTS/Intel_Sensors/SensorFrequency/testAccelerometerFrequencyDelayDiff"/>
+            <TestCase Id="../../../../TC/TR/ATF_TESTS/Intel_Sensors/SensorFrequency/testMagneticFieldFrequencyDelayDiff"/>
+            <TestCase Id="../../../../TC/TR/ATF_TESTS/Intel_Sensors/SensorFrequency/testOrientationFrequencyDelayDiff"/>
+            <TestCase Id="../../../../TC/TR/ATF_TESTS/Intel_Sensors/SensorFrequency/testGyroscopeFrequencyDelayDiff"/>
+            <TestCase Id="../../../../TC/TR/ATF_TESTS/Intel_Sensors/SensorFrequency/testLinearAccelerationFrequencyDelayDiff"/>
+            <TestCase Id="../../../../TC/TR/ATF_TESTS/Intel_Sensors/SensorFrequency/testGravityFrequencyDelayDiff"/>
+            <TestCase Id="../../../../TC/TR/ATF_TESTS/Intel_Sensors/SensorFrequency/testRotationVectorFrequencyDelayDiff"/>
+      </TestCases>
+</Campaign>

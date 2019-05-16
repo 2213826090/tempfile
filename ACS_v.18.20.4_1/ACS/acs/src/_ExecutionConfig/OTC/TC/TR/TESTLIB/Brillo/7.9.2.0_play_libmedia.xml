@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='ASCII'?>
+<TestCase>
+    <UseCase>Testlib</UseCase>
+    <Description>Test audio play_libmedia</Description>
+    <Description>Command:brillo_audio_test --libmedia --playback --sine</Description>
+    <Description>Result: A tone should be heard when using headsets</Description>
+    <Description>Result: Currently we don't use headsets</Description>
+    <Description>Result: We check for "brillo_audio_test ran successfully." in logcat</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <TcMaxAttempt>1</TcMaxAttempt>
+    <Parameters>
+        <Parameter>
+            <Name>test</Name>
+            <Value>scripts/brillo/tests/7.9.2.0_play_libmedia.py</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

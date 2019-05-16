@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<TestCase>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Discription>
+Verify Video Playback H.264 Level 1.0, 2.0 Baseline Profile play continuously 20 times
+</Discription>
+    <Domain>Multimedia_Video</Domain>
+    <Phase>CORE</Phase>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <Type>FUNCTIONAL</Type>
+    <UseCase>PY_UNIT</UseCase>
+    <b2bIteration>1</b2bIteration>
+    <Parameters>
+        <Parameter>
+            <Name>HpalmName</Name>
+            <Value>video_playback_iteration.VideoPlayBackIteration.testVideoPlayback_Iteration_H264_L1_0_L2_0_BP_20cycles</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TEST_DATA_ROOT</Name>
+            <Value>testplan/Multimedia_Video</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TEST_CASE</Name>
+            <Value>tests.Multimedia_Video.Decode.video_playback_iteration.VideoPlayBackIteration.testVideoPlayback_Iteration_H264_L1_0_L2_0_BP_20cycles</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

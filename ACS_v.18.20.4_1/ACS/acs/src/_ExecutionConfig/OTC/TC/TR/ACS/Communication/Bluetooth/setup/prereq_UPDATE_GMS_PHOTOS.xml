@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="13.45">
+    <UseCase>TEST_STEP_ENGINE</UseCase>
+    <Description>Prerequisite test for installing latest GMS CPhotos updates from PlayStore on two devices</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>False</b2bContinuousMode>
+    <TcMaxAttempt>1</TcMaxAttempt>
+    <TcAcceptanceCriteria>1</TcAcceptanceCriteria>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <TestSteps>
+        <Setup>
+
+            <TestStep Id="CONNECT_DEVICE" DEVICE="PHONE2"/>
+
+            <!-- Connect to wifi on both devices-->
+            <Fork Id="ConnectAP">
+                <Fork Id="Phone1" Serialize="True">
+                    <TestStep Id="WIFI_REMOVE_NETWORK" DEVICE="PHONE1" SSID="all"/>
+                    <TestStep Id="WIFI_SET_POWER" DEVICE="PHONE1" POWER="on"/>
+                    <TestStep Id="WIFI_ADD_NETWORK" DEVICE="PHONE1" SSID="FROM_BENCH:WEP_WIFI_ROUTER:SSID"
+                              SECURITY="FROM_BENCH:WEP_WIFI_ROUTER:WIFI_SECURITY"
+                              PASS_PHRASE="FROM_BENCH:WEP_WIFI_ROUTER:passphrase"/>
+                    <TestStep Id="WIFI_CONNECT" DEVICE="PHONE1" SSID="FROM_BENCH:WEP_WIFI_ROUTER:SSID" TIMEOUT="30"/>
+                </Fork>
+                <Fork Id="Phone2" Serialize="True">
+                    <TestStep Id="WIFI_REMOVE_NETWORK" DEVICE="PHONE2" SSID="all"/>
+                    <TestStep Id="WIFI_SET_POWER" DEVICE="PHONE2" POWER="on"/>
+                    <TestStep Id="WIFI_ADD_NETWORK" DEVICE="PHONE2" SSID="FROM_BENCH:WEP_WIFI_ROUTER:SSID"
+                              SECURITY="FROM_BENCH:WEP_WIFI_ROUTER:WIFI_SECURITY"
+                              PASS_PHRASE="FROM_BENCH:WEP_WIFI_ROUTER:passphrase"/>
+                    <TestStep Id="WIFI_CONNECT" DEVICE="PHONE2" SSID="FROM_BENCH:WEP_WIFI_ROUTER:SSID" TIMEOUT="30"/>
+                </Fork>
+            </Fork>
+
+            <!--Install UiTests apks-->
+            <TestStep Id="GET_ARTIFACT"
+                      ARTIFACT="UIAUTOMATOR/UiTests_M-debug.apk"
+                      ARTIFACT_SOURCE="FROM_BENCH:ARTIFACT_MANAGER:URI"
+                      TRANSFER_TIMEOUT="DEFAULT"
+                      STORED_FILE_PATH="FILE_PATH_CTX1"
+                      EQT="ARTIFACT_MANAGER"/>
+            <TestStep Id="GET_ARTIFACT"
+                      ARTIFACT="UIAUTOMATOR/UiTests_M-debug-androidTest-unaligned.apk"
+                      ARTIFACT_SOURCE="FROM_BENCH:ARTIFACT_MANAGER:URI"
+                      TRANSFER_TIMEOUT="DEFAULT"
+                      STORED_FILE_PATH="FILE_PATH_CTX2"
+                      EQT="ARTIFACT_MANAGER"/>
+            <Fork Id="Install">
+                <TestStep Id="INSTALL_APP" DEVICE="PHONE1" FILE_PATH="FROM_CTX:FILE_PATH_CTX1"
+                          BACKUP="false" SIGN="false" TIMEOUT="DEFAULT" BACKUP_FILE_PATH="None"
+                          SIGN_KEY_PATH="None"/>
+                <TestStep Id="INSTALL_APP" DEVICE="PHONE2" FILE_PATH="FROM_CTX:FILE_PATH_CTX1"
+                          BACKUP="false" SIGN="false" TIMEOUT="DEFAULT" BACKUP_FILE_PATH="None"
+                          SIGN_KEY_PATH="None"/>
+                <TestStep Id="INSTALL_APP" DEVICE="PHONE1" FILE_PATH="FROM_CTX:FILE_PATH_CTX2"
+                          BACKUP="false" SIGN="false" TIMEOUT="DEFAULT" BACKUP_FILE_PATH="None"
+                          SIGN_KEY_PATH="None"/>
+                <TestStep Id="INSTALL_APP" DEVICE="PHONE2" FILE_PATH="FROM_CTX:FILE_PATH_CTX2"
+                          BACKUP="false" SIGN="false" TIMEOUT="DEFAULT" BACKUP_FILE_PATH="None"
+                          SIGN_KEY_PATH="None"/>
+            </Fork>
+            <!--Push input file-->
+            <TestStep Id="GET_ARTIFACT"
+                      ARTIFACT="UIAUTOMATOR/INPUT/update_list_PHOTOS.txt"
+                      ARTIFACT_SOURCE="FROM_BENCH:ARTIFACT_MANAGER:URI"
+                      TRANSFER_TIMEOUT="DEFAULT"
+                      STORED_FILE_PATH="FILE_PATH_CTX3"
+                      EQT="ARTIFACT_MANAGER"/>
+            <Fork Id="PushInput">
+                <TestStep Id="INSTALL_FILE" DEVICE="PHONE1" FILE_PATH="FROM_CTX:FILE_PATH_CTX3"
+                          DESTINATION="/sdcard/" TYPE="media"
+                          TIMEOUT="DEFAULT"
+                          DESTINATION_STORED_PATH="Out"/>
+                <TestStep Id="INSTALL_FILE" DEVICE="PHONE2" FILE_PATH="FROM_CTX:FILE_PATH_CTX3"
+                          DESTINATION="/sdcard/" TYPE="media"
+                          TIMEOUT="DEFAULT"
+                          DESTINATION_STORED_PATH="Out"/>
+            </Fork>
+
+        </Setup>
+        <RunTest>
+
+            <!--Unlock screen on both devices-->
+            <Fork Id="Unlock">
+                <TestStep Id="RUN_CMD"
+                          DEVICE="PHONE1" TIMEOUT="20" FORCE_EXECUTION="False" WAIT_FOR_RESPONSE="True"
+                          SILENT_MODE="False"
+                          SAVE_AS="out1"
+                          COMMAND="adb shell input keyevent 82"/>
+                <TestStep Id="RUN_CMD"
+                          DEVICE="PHONE2" TIMEOUT="20" FORCE_EXECUTION="False" WAIT_FOR_RESPONSE="True"
+                          SILENT_MODE="False"
+                          SAVE_AS="out1"
+                          COMMAND="adb shell input keyevent 82"/>
+            </Fork>
+            <!--Kill python uiautomator-->
+            <Fork Id="KillPyUi">
+                <TestStep Id="RUN_CMD" DEVICE="PHONE1" TIMEOUT="10" COMMAND="adb shell pkill -SIGKILL uiautomator"
+                          FORCE_EXECUTION="False" WAIT_FOR_RESPONSE="True" SILENT_MODE="False" SAVE_AS="False"/>
+                <TestStep Id="RUN_CMD" DEVICE="PHONE2" TIMEOUT="10" COMMAND="adb shell pkill -SIGKILL uiautomator"
+                          FORCE_EXECUTION="False" WAIT_FOR_RESPONSE="True" SILENT_MODE="False" SAVE_AS="False"/>
+            </Fork>
+            <!--Update Photos-->
+            <Fork Id="Run">
+                <TestStep Id="RUN_ANDROID_INST" DEVICE="PHONE1"
+                          RUN_INSTR_CMD="am instrument -e class com.intel.uitests.tests.prerequisites.InstallUpdates#testUpdateApps -e account
+                auto3test@gmail.com -e password testing12345 -e timeoutForUpdate 420000 -e maxRetries 4 -e fileTag
+                PHOTOS -w com.intel.uitests.test/com.intel.uitests.runner.UiTestRunner"
+                          TIMEOUT="3600" RETRIEVE_ARTIFACT="/sdcard/UITESTS/testFail.png"/>
+                <TestStep Id="RUN_ANDROID_INST" DEVICE="PHONE2"
+                          RUN_INSTR_CMD="am instrument -e class com.intel.uitests.tests.prerequisites.InstallUpdates#testUpdateApps -e account
+                auto3test@gmail.com -e password testing12345 -e timeoutForUpdate 420000 -e maxRetries 4 -e fileTag
+                PHOTOS -w com.intel.uitests.test/com.intel.uitests.runner.UiTestRunner"
+                          TIMEOUT="3600" RETRIEVE_ARTIFACT="/sdcard/UITESTS/testFail.png"/>
+            </Fork>
+
+        </RunTest>
+        <TearDown>
+
+            <!--remove input files-->
+            <Fork Id="RemoveInput">
+                <TestStep Id="RUN_CMD" DEVICE="PHONE1" TIMEOUT="100"
+                          COMMAND="adb shell rm /sdcard/update_list_PHOTOS.txt"
+                          FORCE_EXECUTION="False" WAIT_FOR_RESPONSE="True" SILENT_MODE="False" SAVE_AS="False"/>
+                <TestStep Id="RUN_CMD" DEVICE="PHONE2" TIMEOUT="100"
+                          COMMAND="adb shell rm /sdcard/update_list_PHOTOS.txt"
+                          FORCE_EXECUTION="False" WAIT_FOR_RESPONSE="True" SILENT_MODE="False" SAVE_AS="False"/>
+            </Fork>
+
+            <!--disconnect and turn off wifi on both devices-->
+            <Fork Id="RemoveNetwork">
+                <Fork Id="RemovePhone1" Serialize="True">
+                    <TestStep Id="WIFI_REMOVE_NETWORK" DEVICE="PHONE1" SSID="all"/>
+                    <TestStep Id="WIFI_SET_POWER" DEVICE="PHONE1" POWER="off"/>
+                </Fork>
+                <Fork Id="RemovePhone2" Serialize="True">
+                    <TestStep Id="WIFI_REMOVE_NETWORK" DEVICE="PHONE2" SSID="all"/>
+                    <TestStep Id="WIFI_SET_POWER" DEVICE="PHONE2" POWER="off"/>
+                </Fork>
+            </Fork>
+
+        </TearDown>
+    </TestSteps>
+</TestCase>

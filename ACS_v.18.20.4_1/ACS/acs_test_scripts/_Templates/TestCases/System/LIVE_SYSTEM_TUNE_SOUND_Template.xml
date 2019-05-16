@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="13.37">
+    <UseCase>LIVE_SYSTEM_TUNE_SOUND</UseCase>
+    <Description>Check tune sound of different types on device</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>False</b2bContinuousMode>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters>
+        <Parameter>
+            <!--The sound type to be tested
+                The possible value could be:
+                /Ringtone/Alarm/Media
+            -->
+            <Name>TYPE</Name>
+            <Value>Ringtone</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

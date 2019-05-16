@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="13.37">
+    <UseCase>LAB_EGPRS_IPERF</UseCase>
+    <Description>EGPRS throughput measurement using IPERF on simulated network</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters>
+        <Parameter>
+            <!-- Cell Band (PGSM|RGSM|EGSM|GSM450|GSM480|GSM750|GSM850|TGSM810|PCS|DCS) -->
+            <Name>CELL_BAND</Name>
+            <Value>DCS</Value>
+        </Parameter>
+        <Parameter>
+            <!-- BCH ARFCN -->
+            <Name>BCH_ARFCN</Name>
+            <Value>512</Value>
+        </Parameter>
+        <Parameter>
+            <!-- PDTCH ARFCN -->
+            <Name>PDTCH_ARFCN</Name>
+            <Value>512</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Cell power in dBm -->
+            <Name>CELL_POWER</Name>
+            <Value>-60</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Multislot configuration
+                D1U1, D1U2, D1U3, D1U4, D1U5, D1U6, D2U1, D2U2, D2U3, D2U4, D2U5,
+                D3U1, D3U2, D3U3, D3U4, D4U1, D4U2, D4U3, D5U1, D5U2, D6U1, MAX
+            If MAX is selected, value will be taken from DeviceCatalog.xml -->
+            <Name>MULTISLOT_CONFIG</Name>
+            <Value>D2U1</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Uplink Modulation Coding scheme (MCS1|MCS2|MCS3|MCS4|MCS5|MCS6|MCS7|MCS8|MCS9) -->
+            <Name>UL_MCS</Name>
+            <Value>MCS4</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Downlink Modulation Coding scheme (MCS1|MCS2|MCS3|MCS4|MCS5|MCS6|MCS7|MCS8|MCS9) -->
+            <Name>DL_MCS</Name>
+            <Value>MCS2</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Puncturing Modulation Coding scheme
+                PS1 | PS2 | PS3 for DL_MCS 3,4,7,8,and 9
+                PS1 | PS2 for DL_MCS 1, 2, 5, and 6 -->
+            <Name>PS_MCS</Name>
+            <Value>PS1</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Iperf port number -->
+            <Name>PORT</Name>
+            <Value>9000</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Throughput measurement duration in seconds -->
+            <Name>DURATION</Name>
+            <Value>60</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Iperf Protocol used by IPERF to perform measurements - (TCP | UDP) -->
+            <Name>IPERF_PROTOCOL</Name>
+            <Value>TCP</Value>
+        </Parameter>
+        <Parameter>
+            <!-- [Optional] Iperf options tuning: '0' or 'off': do not modify threads/buffer size. '1' or 'on': update threads count/buffer size, default is '1' -->
+            <Name>IPERF_TUNE_OPTIONS</Name>
+            <Value>0</Value>
+        </Parameter>
+        <Parameter>
+            <!-- if IPERF_TUNE_OPTIONS is 1, it's not necessary, otherwise it's mandatory
+                Iperf options that will be concatened into iperf command line.
+                -p [port]: Specify the port to be used. 5001 for TCP 5009 for UDP (Mandatory)
+                -t [duration]: The time in seconds to transmit for (Mandatory)
+                -u : UDP mode instead of TCP default mode
+                -P [threads_number]: Number of iperf thread to use. If not use the value is compute depending on expected throughput
+                -w [window size]: Sets the socket buffer sizes to the specified value. If not use the value is compute depending on expected throughput. ex: "-w 512K" or "-w 1M"
+                -l [buffer_length]: Sets the length of the buffer to read or write. If not use the value is compute depending on expected throughput
+                -b [bandwidth]: UDP bandwidth to send at, in bits/sec. This implies the -u option. ex: "-b 1M" or "-b 512K".
+                -N: Set the TCP no delay option, disabling Nagle's algorithm
+                See http://iperf.fr/ for more information -->
+            <Name>IPERF_OPTIONS</Name>
+            <Value>-N -P 4 -r</Value>
+        </Parameter>
+        <Parameter>
+            <!-- [Optional] Failure data average throughput value in Mbps (UL, DL)
+                if the value is empty, test case will use default values
+            -->
+            <Name>FAILURE_TARGETS</Name>
+            <Value>DL:5,UL:5</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Type of data transfer (UL/DL/BOTH) -->
+            <Name>DIRECTION</Name>
+            <Value>UL</Value>
+        </Parameter>
+        <Parameter>
+            <!-- IPERF TCP window size -->
+            <name>WINDOW_SIZE</name>
+            <Value>1024K</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Number of parrallel iperf thread to start -->
+            <name>PARALLEL_THREAD</name>
+            <Value>1</Value>
+        </Parameter>
+    </Parameters>
+    <TestSteps>
+        <Initialize>
+            <!-- Download the artifact from artifactory to local host -->
+            <TestStep Id="GET_ARTIFACT"
+                      EQT="ARTIFACT_MANAGER"
+                      ARTIFACT="MISCELLANEOUS/BINARIES/[+]FROM_DEVICE:PHONE1:OS[+]/COMMON/iperf"
+                      ARTIFACT_SOURCE="FROM_BENCH:ARTIFACT_MANAGER:URI"
+                      TRANSFER_TIMEOUT="DEFAULT"
+                      STORED_FILE_PATH="FILE_PATH_IN_CACHE1" />
+            <!-- Then, Push it on the device. -->
+            <!-- FILE_PATH is retrieved from test step context -->
+            <TestStep Id="INSTALL_FILE"
+                      DEVICE="PHONE1"
+                      FILE_PATH="FROM_CTX:FILE_PATH_IN_CACHE1"
+                      TYPE="bin"
+                      DESTINATION="FROM_DEVICE:PHONE1:binPath"
+                      TIMEOUT="DEFAULT"
+                      DESTINATION_STORED_PATH="FILE_PATH_IN_CACHE1" />
+        </Initialize>
+
+        <Finalize>
+            <!-- When test has been run, we can remove the binary files if necessary -->
+            <TestStep Id="UNINSTALL_FILE"
+                      DEVICE="PHONE1"
+                      DEVICE_FOLDER="FROM_DEVICE:PHONE1:binPath"
+                      FILENAME="iperf"/>
+        </Finalize>
+    </TestSteps>
+</TestCase>

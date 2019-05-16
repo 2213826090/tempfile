@@ -1,0 +1,59 @@
+<?xml version='1.0' encoding='ASCII'?>
+<TestCase>
+    <UseCase>ANDROID_INST</UseCase>
+
+    <Description/>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <TcMaxAttempt>1</TcMaxAttempt>
+    <TcAcceptanceCriteria>1</TcAcceptanceCriteria>
+    <TestSteps>
+        <Initialize/>
+        <Setup/>
+        <RunTest>
+            <TestStep Id="RUN_CMD" DEVICE="PHONE1" SILENT_MODE="false" TIMEOUT="5" FORCE_EXECUTION="false" WAIT_FOR_RESPONSE="true"
+                COMMAND="bash ./_ExecutionConfig/TC/RO/ACS/System/Storage/scripts/createFileSDcard.sh   aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaanaaremeresiperesiprunesibananeareomicalivadadincareaducetoatebunatatileasteaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                SAVE_AS="COMMAND_RESULT"/>
+        </RunTest>
+        <TearDown>
+            <TestStep Id="RUN_CMD" DEVICE="PHONE1" SILENT_MODE="true" TIMEOUT="5" FORCE_EXECUTION="false" WAIT_FOR_RESPONSE="false"
+                COMMAND="adb shell rm /storage/sdcard1/aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaanaaremeresiperesiprunesibananeareomicalivadadincareaducetoatebunatatileasteaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                SAVE_AS="COMMAND_RESULT"/>
+        </TearDown>
+        <Finalize/>
+    </TestSteps>
+    <Parameters>
+        <Parameter>
+            <Name>TIMEOUT</Name>
+            <Value>300</Value>
+        </Parameter>
+        <Parameter>
+            <Name>PROCESS_NAME</Name>
+            <Value>com.intel.test.systemapitests/com.intel.test.systemapitests.runners.GenericArgumentPassingTestRunner</Value>
+        </Parameter>
+        <Parameter>
+            <Name>AM_EXTRA</Name>
+            <Value>-e class com.intel.test.systemapitests.tests.FileSystemTestsDriver#testCheckFile -e args 'fileName:/storage/sdcard1/aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaanaaremeresiperesiprunesibananeareomicalivadadincareaducetoatebunatatileasteaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa'</Value>
+        </Parameter>
+        <Parameter>
+            <Name>APKS</Name>
+            <Value>INSTRUMENTATION/ANDROID/ApiTestsSystemUID.apk</Value>
+        </Parameter>
+        <Parameter>
+            <Name>PRE_REBOOT</Name>
+            <Value/>
+        </Parameter>
+        <Parameter>
+            <Name>POST_REBOOT</Name>
+            <Value>False</Value>
+        </Parameter>
+        <Parameter>
+            <Name>POST_REBOOT_NOK</Name>
+            <Value>False</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TAGS</Name>
+            <Value>ABT,UNIT_TESTS,API_TESTS,SYSTEM_STORAGE_USB</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

@@ -1,0 +1,1 @@
+SELECT *  FROM [syncenter_new].[db_owner].[hpalm_requirement_coverages]

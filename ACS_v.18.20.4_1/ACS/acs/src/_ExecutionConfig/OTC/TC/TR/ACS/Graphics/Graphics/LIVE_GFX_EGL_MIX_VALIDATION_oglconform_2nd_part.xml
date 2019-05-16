@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="13.37">
+    <UseCase>LIVE_ANDROID_EGL_MIX_APK_VALIDATION</UseCase>
+    <Description>Test the conformance of GFX features that require more than 1 step for validation using the OGLConform and Khronos tools</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <TestSteps>
+        <Initialize>
+            <TestStep Id="GET_ARTIFACT" EQT="ARTIFACT_MANAGER" ARTIFACT="GFX_CONFORMANCE/OGLCONFORM.zip" ARTIFACT_SOURCE="FROM_BENCH:ARTIFACT_MANAGER:URI" TRANSFER_TIMEOUT="DEFAULT" STORED_FILE_PATH="FILE_PATH_IN_CACHE1"/>
+            <TestStep Id="UNZIP_ARTIFACT" EQT="ARTIFACT_MANAGER" ARTIFACT_NAME="GFX_CONFORMANCE/OGLCONFORM.zip" STORED_FILE_PATH="FROM_CTX:FILE_PATH_IN_CACHE1" EXTRACT_LOCATION="ZIP_EXTRACT_LOCATION"/>
+            <TestStep Id="INSTALL_FILE" DEVICE="PHONE1" FILE_PATH="FROM_CTX:ZIP_EXTRACT_LOCATION" TYPE="media" DESTINATION="/data/app/" DESTINATION_STORED_PATH="/data/app/" TIMEOUT="DEFAULT"/>
+        </Initialize>
+    </TestSteps>
+    <Parameters>
+         <Parameter>
+            <Description>This parameter makes the difference between running all of the conformance tests for EGL 1.4 API level
+                or single test(s) run. If "True", all of the tests will be generated and ran. If "False", certain parameters only
+                will be taken into consideration.
+                </Description>
+                <Name>CERT_MODE</Name>
+                <Value>False</Value>
+            </Parameter>
+        <Parameter>
+            <!-- OGLConform option for diag parameter -diag -es1 or -es2  -->
+            <Name>DIAG_PARAMETER</Name>
+            <Value></Value>
+        </Parameter>
+        <Parameter>
+            <!-- Name of test after -test option. Can be empty-->
+            <Name>TEST_PARAMETER</Name>
+            <Value>-es1 -test fbo_es1 -libGL /system/lib/egl/libGLES_intel7.so;
+                -es2 -test egl-basic basic.drawables.queryPbufferSurface;
+                -es2 -test egl-basic negative.drawables.pbindTexImageBadMatch;
+                -es2 -test egl-basic negative.surface.invalidSurfaceAttrib;
+                -es2 -test egl-config advanced.selectionCriteria.bufferType -libGL /system/lib/egl/libGLES_intel7.so;
+                -es2 -test egl-context negative.NBadContextConfig;-es2 -test egl-image basic.texture3D.create3DSimple;
+                -es2 -test egl-image basic.texture3D.create3DPreserved;-es2 -test egl-surface advanced.rndr2tex.simple;
+                -es2 -test egl-surface advanced.rndr2tex.simple2;-es2 -test egl-initialization advanced.multiInitialization.UninitializeDisplayContext -libGL /system/lib/egl/libGLES_intel7.so;
+                -es2 -test egl-initialization advanced.multiInitialization.UninitializeDisplaySurface -libGL /system/lib/egl/libGLES_intel7.so;
+                -es2 -test egl-android-sync basic.CreateDestroyNativeSync;-es2 -test egl-android-sync basic.GetNativeSyncAttribs;
+                -es2 -test egl-android-sync basic.NativeSyncWithSwap;-es2 -test egl-android-sync basic.NativeSyncDuplicateDestroy;
+                -es2 -test egl-android-sync basic.NativeSyncDuplicateWait;-es2 -test egl-android-sync basic.NativeSyncWaitSync.simple;
+                -es2 -test egl-android-sync basic.NativeSyncWaitSync.syncWait;-es2 -test egl-android-sync basic.NativeSyncWaitSync.syncWaitSwap;
+                -es2 -test egl-android-sync advanced.ThreadsBasic;-es2 -test egl-android-sync misc.ProcBasic;
+                -es2 -test egl-android-sync negative.NativeSyncWaitSync.noContext;-es2 -test egl-android-sync negative.NativeSyncWaitSync.badFlag;
+                -es1 -test egl-gpa_es1 basic.SmokeTest.Soft;-es1 -test egl-gpa_es1 basic.FixedClearColor.Soft;
+                -es1 -test egl-gpa_es1 basic.FixedLoadMatrix.Soft;-es2 -test egl-gpa_es2 basic.SmokeTest;
+                -es2 -test egl-android-fb basic.token.getConfigAttrib;
+                -es2 -test egl-android-fb basic.token.chooseConfig;
+                -es2 -test egl-android-fb basic.integrity;</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Khronos condition; tests or suites that must pass for validating this conformance. Can be empty -->
+            <Name>KHRONOS_PARAMETER</Name>
+            <Value></Value>
+        </Parameter>
+        <Parameter>
+            <Name>REMOVE_PARAMS</Name>
+            <Value>oglconform</Value>
+         </Parameter>
+        <Parameter>
+            <Name>DEVICE_LOGDIR</Name>
+            <Value>gfx-mockup</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

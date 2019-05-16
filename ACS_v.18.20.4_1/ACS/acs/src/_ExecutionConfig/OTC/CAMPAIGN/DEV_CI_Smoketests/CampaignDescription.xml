@@ -1,0 +1,1733 @@
+<TestCases>
+    <TC name="SI/BBot_EAT_PACT/TC/PACT_pupdr/SETUP/PUPDR_FLASHFILES_DOWNLOAD">
+        <Targets>
+            <Target board="asus_t100" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_asus_t100" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="bdw_wsb" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="byt_mrd7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="irda_byt_mrd7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="ecs_e7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="coho_ecs_e7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="cohol_ecs28a" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="cohol_ecs210a" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="cohol_ecs27b" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="cohol_chiphd8" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="cohol_malata8" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="cohol_malata10" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="ecs_e7" campaign="OTC_Smoke_tests_security" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="ecs_e7" campaign="OTC_Smoke_tests_sensors" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="ecs_e7" campaign="OTC_Smoke_tests_usb" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="ecs_e7" campaign="OTC_Smoke_tests_wifi" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="ecs_e7" campaign="OTC_Smoke_tests_01org" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="ecs_e7" campaign="OTC_Smoke_tests_bluetooth" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="ecs_e7" campaign="OTC_Smoke_tests_gps" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="ecs_e7" campaign="OTC_Smoke_tests_nfc" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="ecs_e7" campaign="OTC_Smoke_tests_storage" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_ecs_e7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="irda_ecs_e7" campaign="OTC_Smoke_tests_security" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="irda_ecs_e7" campaign="OTC_Smoke_tests_sensors" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="irda_ecs_e7" campaign="OTC_Smoke_tests_usb" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="irda_ecs_e7" campaign="OTC_Smoke_tests_wifi" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="irda_ecs_e7" campaign="OTC_Smoke_tests_bluetooth" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="irda_ecs_e7" campaign="OTC_Smoke_tests_gps" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="irda_ecs_e7" campaign="OTC_Smoke_tests_nfc" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="irda_ecs_e7" campaign="OTC_Smoke_tests_media" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="irda_ecs_e7" campaign="OTC_Smoke_tests_graphics" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="irda_fxn_anchor8" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="fxn_anchor8" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="irda_ecs28a_0_coho" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="irda_malata8_0_coho" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+        </Targets>
+    </TC>
+    <TC name="../../TC/TR/ATF_TESTS/SETUP/ABT_FLASH">
+        <Targets>
+            <Target board="asus_t100" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_asus_t100" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="bdw_wsb" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="byt_mrd7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="irda_byt_mrd7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="ecs_e7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="TREKSTOR" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="ONE8_0" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="cohol_ecs210a" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="ONE695" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="cohol_chiphd8" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="A82I" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="A105I" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="ecs_e7" campaign="OTC_Smoke_tests_security" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="ecs_e7" campaign="OTC_Smoke_tests_sensors" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="ecs_e7" campaign="OTC_Smoke_tests_usb" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="ecs_e7" campaign="OTC_Smoke_tests_wifi" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="ecs_e7" campaign="OTC_Smoke_tests_01org" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="ecs_e7" campaign="OTC_Smoke_tests_bluetooth" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="ecs_e7" campaign="OTC_Smoke_tests_gps" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="ecs_e7" campaign="OTC_Smoke_tests_nfc" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="ecs_e7" campaign="OTC_Smoke_tests_storage" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_ecs_e7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="irda_ecs_e7" campaign="OTC_Smoke_tests_security" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="irda_ecs_e7" campaign="OTC_Smoke_tests_sensors" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="irda_ecs_e7" campaign="OTC_Smoke_tests_usb" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="irda_ecs_e7" campaign="OTC_Smoke_tests_wifi" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="irda_ecs_e7" campaign="OTC_Smoke_tests_bluetooth" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="irda_ecs_e7" campaign="OTC_Smoke_tests_gps" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="irda_ecs_e7" campaign="OTC_Smoke_tests_nfc" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="irda_ecs_e7" campaign="OTC_Smoke_tests_media" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="irda_ecs_e7" campaign="OTC_Smoke_tests_graphics" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="irda_fxn_anchor8" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="fxn_anchor8" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="irda_ecs28a_0_coho" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="irda_malata8_0_coho" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+        </Targets>
+    </TC>
+    <TC name="../../TC/TR/ACS/System/OS/LOGCAT_Parser/LIVE_LOGCAT_PARSER">
+        <Targets>
+            <Target board="asus_t100" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="1"/>
+            <Target board="irda_asus_t100" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="bdw_wsb" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="1"/>
+            <Target board="byt_mrd7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="1"/>
+            <Target board="irda_byt_mrd7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="ecs_e7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="TREKSTOR" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="ONE8_0" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="cohol_ecs210a" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="ONE695" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="cohol_chiphd8" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="A82I" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="A105I" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="ecs_e7" campaign="OTC_Smoke_tests_security" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_ecs_e7" campaign="OTC_Smoke_tests_security" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="ecs_e7" campaign="OTC_Smoke_tests_sensors" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="ecs_e7" campaign="OTC_Smoke_tests_usb" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="ecs_e7" campaign="OTC_Smoke_tests_wifi" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="ecs_e7" campaign="OTC_Smoke_tests_01org" domain="" iteration="1" acceptance="1" max_attempt="5" />
+            <Target board="ecs_e7" campaign="OTC_Smoke_tests_bluetooth" domain="" iteration="1" acceptance="1" max_attempt="5" />
+            <Target board="ecs_e7" campaign="OTC_Smoke_tests_gps" domain="" iteration="1" acceptance="1" max_attempt="5" />
+            <Target board="ecs_e7" campaign="OTC_Smoke_tests_nfc" domain="" iteration="1" acceptance="1" max_attempt="5" />
+            <Target board="ecs_e7" campaign="OTC_Smoke_tests_storage" domain="" iteration="1" acceptance="1" max_attempt="5" />
+            <!--Target board="irda_ecs_e7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/-->
+            <Target board="irda_fxn_anchor8" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+        </Targets>
+    </TC>
+    <TC name="../../TC/TR/ATF_TESTS/ABT_Api_Tests/gps/testLocationProviderGPS">
+        <Targets>
+            <Target board="byt_mrd7" campaign="OTC_Smoke_tests_gps" domain="" iteration="1" acceptance="1" max_attempt="1"/>
+            <Target board="ecs_e7" campaign="OTC_Smoke_tests_gps" domain="" iteration="1" acceptance="1" max_attempt="5" />
+            <Target board="irda_ecs_e7" campaign="OTC_Smoke_tests_gps" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_fxn_anchor8" campaign="OTC_Smoke_tests_gps" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+        </Targets>
+    </TC>
+    <TC name="../../TC/TR/ACS/System/OS/LIVE_TEXT_RELOCATION_CHECK">
+        <Targets>
+            <Target board="asus_t100" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <!--Target board="byt_mrd7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/-->
+            <!--Target board="ecs_e7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/-->
+        </Targets>
+    </TC>
+    <TC name="../../TC/TR/ATF_TESTS/ABT_Api_Tests/sensors/testAccelerometerPresent">
+        <Targets>
+            <Target board="asus_t100" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_asus_t100" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="byt_mrd7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="irda_byt_mrd7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="bdw_wsb" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="ecs_e7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="TREKSTOR" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="ONE8_0" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="cohol_ecs210a" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="ONE695" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="cohol_chiphd8" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="A82I" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="A105I" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="irda_ecs_e7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_fxn_anchor8" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_ecs28a_0_coho" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_malata8_0_coho" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+        </Targets>
+    </TC>
+    <TC name="../../TC/TR/ATF_TESTS/ABT_Api_Tests/sensors/testGyroscopePresent">
+        <Targets>
+            <Target board="asus_t100" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_asus_t100" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="byt_mrd7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="irda_byt_mrd7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="bdw_wsb" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="ecs_e7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="TREKSTOR" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="irda_ecs_e7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_fxn_anchor8" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+        </Targets>
+    </TC>
+    <TC name="../../TC/TR/ATF_TESTS/ABT_Api_Tests/am/testMonkeyUser">
+        <Targets>
+            <Target board="asus_t100" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_asus_t100" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="byt_mrd7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="irda_byt_mrd7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="bdw_wsb" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="ecs_e7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="TREKSTOR" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="ONE8_0" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="cohol_ecs210a" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="ONE695" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="cohol_chiphd8" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="A82I" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="A105I" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="irda_ecs_e7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_fxn_anchor8" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_ecs28a_0_coho" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_malata8_0_coho" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+        </Targets>
+    </TC>
+    <TC name="../../TC/TR/ATF_TESTS/ABT_Api_Tests/generic/System_OS_AndroidFramework_AndroidSdkApi_testAcquireLock">
+        <Targets>
+            <Target board="asus_t100" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_asus_t100" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="byt_mrd7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="irda_byt_mrd7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="bdw_wsb" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="ecs_e7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="TREKSTOR" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="ONE8_0" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="cohol_ecs210a" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="ONE695" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="cohol_chiphd8" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="A82I" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="A105I" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="irda_ecs_e7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_fxn_anchor8" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_ecs28a_0_coho" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_malata8_0_coho" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+        </Targets>
+    </TC>
+    <TC name="../../TC/TR/ATF_TESTS/ABT_Api_Tests/generic/System_OS_AndroidFramework_AndroidSdkApi_testScreenOn">
+        <Targets>
+            <Target board="asus_t100" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_asus_t100" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="byt_mrd7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="irda_byt_mrd7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="bdw_wsb" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="ecs_e7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="TREKSTOR" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="ONE8_0" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="cohol_ecs210a" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="ONE695" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="cohol_chiphd8" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="A82I" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="A105I" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="irda_ecs_e7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_fxn_anchor8" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_ecs28a_0_coho" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_malata8_0_coho" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+        </Targets>
+    </TC>
+    <TC name="../../TC/TR/ATF_TESTS/ABT_Api_Tests/am/testRunningAppProcesses">
+        <Targets>
+            <Target board="asus_t100" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_asus_t100" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="byt_mrd7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="irda_byt_mrd7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="bdw_wsb" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="ecs_e7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="TREKSTOR" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="ONE8_0" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="cohol_ecs210a" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="ONE695" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="cohol_chiphd8" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="A82I" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="A105I" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="irda_ecs_e7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_fxn_anchor8" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_ecs28a_0_coho" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_malata8_0_coho" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+        </Targets>
+    </TC>
+    <TC name="../../TC/TR/ATF_TESTS/ABT_Api_Tests/am/testRunningInTestHarness">
+        <Targets>
+            <Target board="asus_t100" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_asus_t100" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="byt_mrd7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="irda_byt_mrd7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="bdw_wsb" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="ecs_e7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="TREKSTOR" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="ONE8_0" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="cohol_ecs210a" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="ONE695" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="cohol_chiphd8" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="A82I" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="A105I" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="irda_ecs_e7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_fxn_anchor8" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_ecs28a_0_coho" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_malata8_0_coho" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+        </Targets>
+    </TC>
+    <TC name="../../TC/TR/ATF_TESTS/ABT_Api_Tests/am/testRunningTasks">
+        <Targets>
+            <Target board="asus_t100" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_asus_t100" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="byt_mrd7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="irda_byt_mrd7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="bdw_wsb" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="ecs_e7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="TREKSTOR" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="ONE8_0" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="cohol_ecs210a" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="ONE695" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="cohol_chiphd8" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="A82I" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="A105I" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="irda_ecs_e7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_fxn_anchor8" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_ecs28a_0_coho" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_malata8_0_coho" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+        </Targets>
+    </TC>
+    <TC name="../../TC/TR/ATF_TESTS/ABT_Api_Tests/generic/System_OS_AndroidFramework_AndroidSdkApi_testAllocateMemoryFile">
+        <Targets>
+            <Target board="asus_t100" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_asus_t100" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="byt_mrd7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="irda_byt_mrd7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="bdw_wsb" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="ecs_e7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="TREKSTOR" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="ONE8_0" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="cohol_ecs210a" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="ONE695" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="cohol_chiphd8" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="A82I" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="A105I" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="irda_ecs_e7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_fxn_anchor8" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_ecs28a_0_coho" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_malata8_0_coho" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+        </Targets>
+    </TC>
+    <TC name="../../TC/TR/ATF_TESTS/ABT_Api_Tests/generic/System_OS_AndroidFramework_AndroidSdkApi_testBoardString">
+        <Targets>
+            <Target board="asus_t100" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_asus_t100" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="byt_mrd7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="irda_byt_mrd7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="bdw_wsb" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="ecs_e7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="TREKSTOR" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="ONE8_0" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="cohol_ecs210a" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="ONE695" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="cohol_chiphd8" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="A82I" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="A105I" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="irda_ecs_e7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_fxn_anchor8" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_ecs28a_0_coho" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_malata8_0_coho" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+        </Targets>
+    </TC>
+    <TC name="../../TC/TR/ATF_TESTS/ABT_Api_Tests/generic/System_OS_AndroidFramework_AndroidSdkApi_testBootloaderString">
+        <Targets>
+            <Target board="asus_t100" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_asus_t100" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="byt_mrd7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="irda_byt_mrd7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="bdw_wsb" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="ecs_e7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="TREKSTOR" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="ONE8_0" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="cohol_ecs210a" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="ONE695" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="cohol_chiphd8" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="A82I" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="A105I" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="irda_ecs_e7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_fxn_anchor8" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_ecs28a_0_coho" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_malata8_0_coho" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+        </Targets>
+    </TC>
+    <TC name="../../TC/TR/ATF_TESTS/ABT_Api_Tests/generic/System_OS_AndroidFramework_AndroidSdkApi_testBrandString">
+        <Targets>
+            <Target board="asus_t100" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_asus_t100" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="byt_mrd7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="irda_byt_mrd7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="bdw_wsb" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="ecs_e7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="TREKSTOR" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="ONE8_0" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="cohol_ecs210a" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="ONE695" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="cohol_chiphd8" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="A82I" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="A105I" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="irda_ecs_e7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_fxn_anchor8" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_ecs28a_0_coho" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_malata8_0_coho" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+        </Targets>
+    </TC>
+    <TC name="../../TC/TR/ATF_TESTS/ABT_Api_Tests/generic/System_OS_AndroidFramework_AndroidSdkApi_testCpuAbi2String">
+        <Targets>
+            <Target board="asus_t100" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_asus_t100" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="byt_mrd7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="irda_byt_mrd7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="bdw_wsb" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="ecs_e7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="TREKSTOR" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="ONE8_0" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="cohol_ecs210a" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="ONE695" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="cohol_chiphd8" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="A82I" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="A105I" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="irda_ecs_e7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_fxn_anchor8" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_ecs28a_0_coho" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_malata8_0_coho" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+        </Targets>
+    </TC>
+    <TC name="../../TC/TR/ATF_TESTS/ABT_Api_Tests/generic/System_OS_AndroidFramework_AndroidSdkApi_testCpuAbiString">
+        <Targets>
+            <Target board="asus_t100" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_asus_t100" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="byt_mrd7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="irda_byt_mrd7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="bdw_wsb" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="ecs_e7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="TREKSTOR" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="ONE8_0" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="cohol_ecs210a" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="ONE695" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="cohol_chiphd8" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="A82I" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="A105I" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="irda_ecs_e7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_fxn_anchor8" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_ecs28a_0_coho" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_malata8_0_coho" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+        </Targets>
+    </TC>
+    <TC name="../../TC/TR/ATF_TESTS/ABT_Api_Tests/generic/System_OS_AndroidFramework_AndroidSdkApi_testCreateCanvas">
+        <Targets>
+            <Target board="asus_t100" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_asus_t100" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="byt_mrd7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="irda_byt_mrd7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="bdw_wsb" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="ecs_e7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="TREKSTOR" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="ONE8_0" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="cohol_ecs210a" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="ONE695" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="cohol_chiphd8" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="A82I" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="A105I" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="irda_ecs_e7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_fxn_anchor8" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_ecs28a_0_coho" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_malata8_0_coho" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+        </Targets>
+    </TC>
+    <TC name="../../TC/TR/ATF_TESTS/ABT_Api_Tests/generic/System_OS_AndroidFramework_AndroidSdkApi_testDataDirectory">
+        <Targets>
+            <Target board="asus_t100" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_asus_t100" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="byt_mrd7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="irda_byt_mrd7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="bdw_wsb" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="ecs_e7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="TREKSTOR" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="ONE8_0" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="cohol_ecs210a" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="ONE695" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="cohol_chiphd8" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="A82I" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="A105I" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="irda_ecs_e7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_fxn_anchor8" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_ecs28a_0_coho" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_malata8_0_coho" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+        </Targets>
+    </TC>
+    <TC name="../../TC/TR/ATF_TESTS/ABT_Api_Tests/generic/System_OS_AndroidFramework_AndroidSdkApi_testDeviceString">
+        <Targets>
+            <Target board="asus_t100" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_asus_t100" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="byt_mrd7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="irda_byt_mrd7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="bdw_wsb" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="ecs_e7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="TREKSTOR" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="ONE8_0" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="cohol_ecs210a" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="ONE695" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="cohol_chiphd8" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="A82I" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="A105I" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="irda_ecs_e7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_fxn_anchor8" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_ecs28a_0_coho" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_malata8_0_coho" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+        </Targets>
+    </TC>
+    <TC name="../../TC/TR/ATF_TESTS/ABT_Api_Tests/generic/System_OS_AndroidFramework_AndroidSdkApi_testDimensions">
+        <Targets>
+            <Target board="asus_t100" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_asus_t100" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="byt_mrd7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="irda_byt_mrd7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="bdw_wsb" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="ecs_e7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="TREKSTOR" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="ONE8_0" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="cohol_ecs210a" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="ONE695" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="cohol_chiphd8" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="A82I" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="A105I" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="irda_ecs_e7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_fxn_anchor8" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_ecs28a_0_coho" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_malata8_0_coho" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+        </Targets>
+    </TC>
+    <TC name="../../TC/TR/ATF_TESTS/ABT_Api_Tests/generic/System_OS_AndroidFramework_AndroidSdkApi_testDisplayString">
+        <Targets>
+            <Target board="asus_t100" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_asus_t100" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="byt_mrd7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="irda_byt_mrd7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="bdw_wsb" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="ecs_e7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="TREKSTOR" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="ONE8_0" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="cohol_ecs210a" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="ONE695" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="cohol_chiphd8" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="A82I" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="A105I" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="irda_ecs_e7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_fxn_anchor8" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_ecs28a_0_coho" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_malata8_0_coho" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+        </Targets>
+    </TC>
+    <TC name="../../TC/TR/ATF_TESTS/ABT_Api_Tests/generic/System_OS_AndroidFramework_AndroidSdkApi_testDownloadCacheDirectory">
+        <Targets>
+            <Target board="asus_t100" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_asus_t100" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="byt_mrd7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="irda_byt_mrd7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="bdw_wsb" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="ecs_e7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="TREKSTOR" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="ONE8_0" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="cohol_ecs210a" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="ONE695" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="cohol_chiphd8" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="A82I" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="A105I" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="irda_ecs_e7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_fxn_anchor8" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_ecs28a_0_coho" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_malata8_0_coho" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+        </Targets>
+    </TC>
+    <TC name="../../TC/TR/ATF_TESTS/ABT_Api_Tests/generic/System_OS_AndroidFramework_AndroidSdkApi_testExternalStorageDirectory">
+        <Targets>
+            <Target board="asus_t100" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_asus_t100" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="byt_mrd7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="irda_byt_mrd7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="bdw_wsb" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="ecs_e7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="TREKSTOR" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="ONE8_0" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="cohol_ecs210a" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="ONE695" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="cohol_chiphd8" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="A82I" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="A105I" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="irda_ecs_e7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_fxn_anchor8" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_ecs28a_0_coho" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_malata8_0_coho" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+        </Targets>
+    </TC>
+    <TC name="../../TC/TR/ATF_TESTS/ABT_Api_Tests/generic/System_OS_AndroidFramework_AndroidSdkApi_testExternalStorageState">
+        <Targets>
+            <Target board="asus_t100" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_asus_t100" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="byt_mrd7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="irda_byt_mrd7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="bdw_wsb" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="ecs_e7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="TREKSTOR" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="ONE8_0" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="cohol_ecs210a" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="ONE695" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="cohol_chiphd8" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="A82I" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="A105I" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="irda_ecs_e7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_fxn_anchor8" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_ecs28a_0_coho" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_malata8_0_coho" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+        </Targets>
+    </TC>
+    <TC name="../../TC/TR/ATF_TESTS/ABT_Api_Tests/generic/System_OS_AndroidFramework_AndroidSdkApi_testFileObserver">
+        <Targets>
+            <Target board="asus_t100" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_asus_t100" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="byt_mrd7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="irda_byt_mrd7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="bdw_wsb" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="ecs_e7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="TREKSTOR" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="ONE8_0" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="cohol_ecs210a" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="ONE695" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="cohol_chiphd8" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="A82I" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="A105I" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="irda_ecs_e7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_fxn_anchor8" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_ecs28a_0_coho" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_malata8_0_coho" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+        </Targets>
+    </TC>
+    <TC name="../../TC/TR/ATF_TESTS/ABT_Api_Tests/generic/System_OS_AndroidFramework_AndroidSdkApi_testFingerprintString">
+        <Targets>
+            <Target board="asus_t100" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_asus_t100" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="byt_mrd7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="irda_byt_mrd7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="bdw_wsb" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="ecs_e7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="TREKSTOR" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="ONE8_0" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="cohol_ecs210a" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="ONE695" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="cohol_chiphd8" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="A82I" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="A105I" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="irda_ecs_e7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_fxn_anchor8" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_ecs28a_0_coho" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_malata8_0_coho" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+        </Targets>
+    </TC>
+    <TC name="../../TC/TR/ATF_TESTS/ABT_Api_Tests/generic/System_OS_AndroidFramework_AndroidSdkApi_testHardwareString">
+        <Targets>
+            <Target board="asus_t100" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_asus_t100" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="byt_mrd7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="irda_byt_mrd7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="bdw_wsb" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="ecs_e7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="TREKSTOR" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="ONE8_0" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="cohol_ecs210a" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="ONE695" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="cohol_chiphd8" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="A82I" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="A105I" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="irda_ecs_e7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_fxn_anchor8" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_ecs28a_0_coho" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_malata8_0_coho" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+        </Targets>
+    </TC>
+    <TC name="../../TC/TR/ATF_TESTS/ABT_Api_Tests/generic/System_OS_AndroidFramework_AndroidSdkApi_testHostString">
+        <Targets>
+            <Target board="asus_t100" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_asus_t100" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="byt_mrd7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="irda_byt_mrd7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="bdw_wsb" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="ecs_e7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="TREKSTOR" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="ONE8_0" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="cohol_ecs210a" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="ONE695" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="cohol_chiphd8" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="A82I" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="A105I" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="irda_ecs_e7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_fxn_anchor8" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_ecs28a_0_coho" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_malata8_0_coho" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+        </Targets>
+    </TC>
+    <TC name="../../TC/TR/ATF_TESTS/ABT_Api_Tests/generic/System_OS_AndroidFramework_AndroidSdkApi_testIdString">
+        <Targets>
+            <Target board="asus_t100" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_asus_t100" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="byt_mrd7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="irda_byt_mrd7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="bdw_wsb" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="ecs_e7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="TREKSTOR" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="ONE8_0" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="cohol_ecs210a" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="ONE695" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="cohol_chiphd8" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="A82I" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="A105I" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="irda_ecs_e7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_fxn_anchor8" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_ecs28a_0_coho" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_malata8_0_coho" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+        </Targets>
+    </TC>
+    <TC name="../../TC/TR/ATF_TESTS/ABT_Api_Tests/generic/System_OS_AndroidFramework_AndroidSdkApi_testManufacturerString">
+        <Targets>
+            <Target board="asus_t100" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_asus_t100" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="byt_mrd7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="irda_byt_mrd7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="bdw_wsb" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="ecs_e7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="TREKSTOR" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="ONE8_0" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="cohol_ecs210a" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="ONE695" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="cohol_chiphd8" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="A82I" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="A105I" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="irda_ecs_e7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_fxn_anchor8" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_ecs28a_0_coho" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_malata8_0_coho" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+        </Targets>
+    </TC>
+    <TC name="../../TC/TR/ATF_TESTS/ABT_Api_Tests/generic/System_OS_AndroidFramework_AndroidSdkApi_testModelString">
+        <Targets>
+            <Target board="asus_t100" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_asus_t100" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="byt_mrd7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="irda_byt_mrd7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="ecs_e7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="TREKSTOR" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="ONE8_0" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="cohol_ecs210a" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="ONE695" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="cohol_chiphd8" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="irda_ecs_e7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="bdw_wsb" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="A82I" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="A105I" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="irda_fxn_anchor8" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_ecs28a_0_coho" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_malata8_0_coho" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+        </Targets>
+    </TC>
+    <TC name="../../TC/TR/ATF_TESTS/ABT_Api_Tests/generic/System_OS_AndroidFramework_AndroidSdkApi_testProductString">
+        <Targets>
+            <Target board="asus_t100" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_asus_t100" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="byt_mrd7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="irda_byt_mrd7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="bdw_wsb" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="ecs_e7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="TREKSTOR" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="ONE8_0" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="cohol_ecs210a" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="ONE695" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="cohol_chiphd8" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="A82I" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="A105I" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="irda_ecs_e7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_fxn_anchor8" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_ecs28a_0_coho" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_malata8_0_coho" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+        </Targets>
+    </TC>
+    <TC name="../../TC/TR/ATF_TESTS/ABT_Api_Tests/generic/System_OS_AndroidFramework_AndroidSdkApi_testRadioVersionString">
+        <Targets>
+            <Target board="asus_t100" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_asus_t100" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="byt_mrd7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="irda_byt_mrd7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="bdw_wsb" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="ecs_e7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="TREKSTOR" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="ONE8_0" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="cohol_ecs210a" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="ONE695" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="cohol_chiphd8" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="A82I" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="A105I" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="irda_ecs_e7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_fxn_anchor8" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_ecs28a_0_coho" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_malata8_0_coho" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+        </Targets>
+    </TC>
+    <TC name="../../TC/TR/ATF_TESTS/ABT_Api_Tests/generic/System_OS_AndroidFramework_AndroidSdkApi_testReadMemoryFile">
+        <Targets>
+            <Target board="asus_t100" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_asus_t100" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="byt_mrd7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="irda_byt_mrd7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="bdw_wsb" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="ecs_e7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="TREKSTOR" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="ONE8_0" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="cohol_ecs210a" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="ONE695" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="cohol_chiphd8" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="A82I" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="A105I" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="irda_ecs_e7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_fxn_anchor8" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_ecs28a_0_coho" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_malata8_0_coho" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+        </Targets>
+    </TC>
+    <TC name="../../TC/TR/ATF_TESTS/ABT_Api_Tests/generic/System_OS_AndroidFramework_AndroidSdkApi_testRootDirectory">
+        <Targets>
+            <Target board="asus_t100" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_asus_t100" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="byt_mrd7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="irda_byt_mrd7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="bdw_wsb" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="ecs_e7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="TREKSTOR" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="ONE8_0" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="cohol_ecs210a" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="ONE695" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="cohol_chiphd8" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="A82I" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="A105I" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="irda_ecs_e7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_fxn_anchor8" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_ecs28a_0_coho" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_malata8_0_coho" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+        </Targets>
+    </TC>
+    <TC name="../../TC/TR/ATF_TESTS/ABT_Api_Tests/generic/System_OS_AndroidFramework_AndroidSdkApi_testSerialString">
+        <Targets>
+            <Target board="asus_t100" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_asus_t100" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="byt_mrd7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="irda_byt_mrd7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="bdw_wsb" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="ecs_e7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="TREKSTOR" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="ONE8_0" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="cohol_ecs210a" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="ONE695" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="cohol_chiphd8" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="A82I" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="A105I" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="irda_ecs_e7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_fxn_anchor8" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_ecs28a_0_coho" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_malata8_0_coho" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+        </Targets>
+    </TC>
+    <TC name="../../TC/TR/ATF_TESTS/ABT_Api_Tests/generic/testSimpleNotification">
+        <Targets>
+            <Target board="asus_t100" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_asus_t100" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="byt_mrd7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="irda_byt_mrd7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="bdw_wsb" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="ecs_e7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="TREKSTOR" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="ONE8_0" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="cohol_ecs210a" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="ONE695" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="cohol_chiphd8" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="A82I" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="A105I" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="irda_ecs_e7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_fxn_anchor8" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_ecs28a_0_coho" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_malata8_0_coho" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+        </Targets>
+    </TC>
+    <TC name="../../TC/TR/ATF_TESTS/ABT_Api_Tests/generic/System_OS_AndroidFramework_AndroidSdkApi_testTagsString">
+        <Targets>
+            <Target board="asus_t100" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_asus_t100" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="byt_mrd7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="irda_byt_mrd7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="bdw_wsb" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="ecs_e7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="TREKSTOR" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="ONE8_0" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="cohol_ecs210a" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="ONE695" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="cohol_chiphd8" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="A82I" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="A105I" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="irda_ecs_e7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_fxn_anchor8" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_ecs28a_0_coho" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_malata8_0_coho" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+        </Targets>
+    </TC>
+    <TC name="../../TC/TR/ATF_TESTS/ABT_Api_Tests/generic/System_OS_AndroidFramework_AndroidSdkApi_testTimeString">
+        <Targets>
+            <Target board="asus_t100" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_asus_t100" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="byt_mrd7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="irda_byt_mrd7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="bdw_wsb" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="ecs_e7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="TREKSTOR" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="ONE8_0" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="cohol_ecs210a" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="ONE695" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="cohol_chiphd8" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="A82I" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="A105I" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="irda_ecs_e7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_fxn_anchor8" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_ecs28a_0_coho" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_malata8_0_coho" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+        </Targets>
+    </TC>
+    <TC name="../../TC/TR/ATF_TESTS/ABT_Api_Tests/generic/System_OS_AndroidFramework_AndroidSdkApi_testTypeString">
+        <Targets>
+            <Target board="asus_t100" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_asus_t100" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="byt_mrd7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="irda_byt_mrd7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="bdw_wsb" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="ecs_e7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="TREKSTOR" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="ONE8_0" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="cohol_ecs210a" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="ONE695" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="cohol_chiphd8" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="A82I" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="A105I" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="irda_ecs_e7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_fxn_anchor8" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_ecs28a_0_coho" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_malata8_0_coho" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+        </Targets>
+    </TC>
+    <TC name="../../TC/TR/ATF_TESTS/ABT_Api_Tests/generic/System_OS_AndroidFramework_AndroidSdkApi_testUserString">
+        <Targets>
+            <Target board="asus_t100" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_asus_t100" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="byt_mrd7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="irda_byt_mrd7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="bdw_wsb" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="ecs_e7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="TREKSTOR" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="ONE8_0" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="cohol_ecs210a" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="ONE695" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="cohol_chiphd8" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="A82I" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="A105I" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="irda_ecs_e7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_fxn_anchor8" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_ecs28a_0_coho" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_malata8_0_coho" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+        </Targets>
+    </TC>
+    <TC name="../../TC/TR/ATF_TESTS/ABT_Api_Tests/generic/System_OS_AndroidFramework_AndroidSdkApi_testVibratePattern">
+        <Targets>
+            <Target board="asus_t100" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_asus_t100" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="byt_mrd7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="irda_byt_mrd7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="bdw_wsb" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="ecs_e7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="TREKSTOR" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="ONE8_0" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="cohol_ecs210a" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="ONE695" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="cohol_chiphd8" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="A82I" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="A105I" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="irda_ecs_e7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_fxn_anchor8" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_ecs28a_0_coho" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_malata8_0_coho" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+        </Targets>
+    </TC>
+    <TC name="../../TC/TR/ATF_TESTS/ABT_Api_Tests/generic/context/testCacheDir">
+        <Targets>
+            <Target board="asus_t100" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_asus_t100" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="byt_mrd7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="irda_byt_mrd7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="bdw_wsb" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="ecs_e7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="TREKSTOR" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="ONE8_0" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="cohol_ecs210a" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="ONE695" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="cohol_chiphd8" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="A82I" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="A105I" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="irda_ecs_e7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_fxn_anchor8" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_ecs28a_0_coho" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_malata8_0_coho" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+        </Targets>
+    </TC>
+    <TC name="../../TC/TR/ATF_TESTS/ABT_Api_Tests/generic/context/testDatabasePath">
+        <Targets>
+            <Target board="asus_t100" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_asus_t100" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="byt_mrd7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="irda_byt_mrd7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="bdw_wsb" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="ecs_e7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="TREKSTOR" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="ONE8_0" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="cohol_ecs210a" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="ONE695" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="cohol_chiphd8" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="A82I" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="A105I" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="irda_ecs_e7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_fxn_anchor8" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_ecs28a_0_coho" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_malata8_0_coho" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+        </Targets>
+    </TC>
+    <TC name="../../TC/TR/ATF_TESTS/ABT_Api_Tests/generic/context/testDataDir">
+        <Targets>
+            <Target board="asus_t100" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_asus_t100" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="byt_mrd7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="irda_byt_mrd7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="bdw_wsb" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="ecs_e7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="TREKSTOR" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="ONE8_0" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="cohol_ecs210a" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="ONE695" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="cohol_chiphd8" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="A82I" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="A105I" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="irda_ecs_e7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_fxn_anchor8" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_ecs28a_0_coho" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_malata8_0_coho" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+        </Targets>
+    </TC>
+    <TC name="../../TC/TR/ATF_TESTS/ABT_Api_Tests/generic/context/testExternalCacheDir">
+        <Targets>
+            <Target board="asus_t100" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_asus_t100" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="byt_mrd7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="irda_byt_mrd7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="bdw_wsb" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="ecs_e7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="TREKSTOR" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="ONE8_0" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="cohol_ecs210a" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="ONE695" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="cohol_chiphd8" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="A82I" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="A105I" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="irda_ecs_e7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_fxn_anchor8" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_ecs28a_0_coho" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_malata8_0_coho" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+        </Targets>
+    </TC>
+    <TC name="../../TC/TR/ATF_TESTS/ABT_Api_Tests/generic/context/testGetDir">
+        <Targets>
+            <Target board="asus_t100" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_asus_t100" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="byt_mrd7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="irda_byt_mrd7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="bdw_wsb" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="ecs_e7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="TREKSTOR" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="ONE8_0" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="cohol_ecs210a" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="ONE695" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="cohol_chiphd8" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="A82I" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="A105I" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="irda_ecs_e7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_fxn_anchor8" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_ecs28a_0_coho" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_malata8_0_coho" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+        </Targets>
+    </TC>
+    <TC name="../../TC/TR/ATF_TESTS/ABT_Api_Tests/generic/context/testProcessName">
+        <Targets>
+            <Target board="asus_t100" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_asus_t100" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="byt_mrd7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="irda_byt_mrd7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="bdw_wsb" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="ecs_e7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="TREKSTOR" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="ONE8_0" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="cohol_ecs210a" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="ONE695" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="cohol_chiphd8" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="A82I" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="A105I" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="irda_ecs_e7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_fxn_anchor8" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_ecs28a_0_coho" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_malata8_0_coho" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+        </Targets>
+    </TC>
+    <TC name="../../TC/TR/ATF_TESTS/ABT_Api_Tests/generic/context/testScreenSizeLimits">
+        <Targets>
+            <Target board="asus_t100" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_asus_t100" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="byt_mrd7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="irda_byt_mrd7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="bdw_wsb" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="ecs_e7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="TREKSTOR" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="ONE8_0" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="cohol_ecs210a" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="ONE695" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="cohol_chiphd8" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="A82I" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="A105I" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="irda_ecs_e7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_fxn_anchor8" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_ecs28a_0_coho" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_malata8_0_coho" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+        </Targets>
+    </TC>
+    <TC name="../../TC/TR/ATF_TESTS/ABT_Api_Tests/generic/context/testSharedLibraryFiles">
+        <Targets>
+            <Target board="asus_t100" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_asus_t100" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="byt_mrd7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="irda_byt_mrd7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="bdw_wsb" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="ecs_e7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="TREKSTOR" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="ONE8_0" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="cohol_ecs210a" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="ONE695" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="cohol_chiphd8" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="A82I" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="A105I" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="irda_ecs_e7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_fxn_anchor8" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_ecs28a_0_coho" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_malata8_0_coho" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+        </Targets>
+    </TC>
+    <TC name="../../TC/TR/ATF_TESTS/ABT_Api_Tests/generic/context/testSourceDir">
+        <Targets>
+            <Target board="asus_t100" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_asus_t100" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="byt_mrd7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="irda_byt_mrd7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="bdw_wsb" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="ecs_e7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="TREKSTOR" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="ONE8_0" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="cohol_ecs210a" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="ONE695" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="cohol_chiphd8" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="A82I" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="A105I" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="irda_ecs_e7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_fxn_anchor8" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_ecs28a_0_coho" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_malata8_0_coho" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+        </Targets>
+    </TC>
+    <TC name="../../TC/TR/ATF_TESTS/ABT_Api_Tests/generic/context/testUid">
+        <Targets>
+            <Target board="asus_t100" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_asus_t100" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="byt_mrd7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="irda_byt_mrd7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="bdw_wsb" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="ecs_e7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="TREKSTOR" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="ONE8_0" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="cohol_ecs210a" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="ONE695" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="cohol_chiphd8" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="A82I" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="A105I" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="irda_ecs_e7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_fxn_anchor8" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_ecs28a_0_coho" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_malata8_0_coho" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+        </Targets>
+    </TC>
+    <TC name="../../TC/TR/ATF_TESTS/ABT_Api_Tests/generic/dropbox_manager/testAddPhonyTag">
+        <Targets>
+            <Target board="asus_t100" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_asus_t100" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="byt_mrd7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="irda_byt_mrd7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="bdw_wsb" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="ecs_e7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="TREKSTOR" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="ONE8_0" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="cohol_ecs210a" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="ONE695" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="cohol_chiphd8" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="A82I" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="A105I" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="irda_ecs_e7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_fxn_anchor8" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_ecs28a_0_coho" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_malata8_0_coho" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+        </Targets>
+    </TC>
+    <TC name="../../TC/TR/ATF_TESTS/ABT_Api_Tests/generic/dropbox_manager/testFlags">
+        <Targets>
+            <Target board="asus_t100" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_asus_t100" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="byt_mrd7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="irda_byt_mrd7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="bdw_wsb" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="ecs_e7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="TREKSTOR" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="ONE8_0" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="cohol_ecs210a" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="ONE695" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="cohol_chiphd8" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="A82I" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="A105I" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="irda_ecs_e7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_fxn_anchor8" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_ecs28a_0_coho" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_malata8_0_coho" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+        </Targets>
+    </TC>
+    <TC name="../../TC/TR/ATF_TESTS/ABT_Api_Tests/generic/dropbox_manager/testGetTag">
+        <Targets>
+            <Target board="asus_t100" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_asus_t100" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="byt_mrd7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="irda_byt_mrd7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="bdw_wsb" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="ecs_e7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="TREKSTOR" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="ONE8_0" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="cohol_ecs210a" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="ONE695" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="cohol_chiphd8" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="A82I" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="A105I" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="irda_ecs_e7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_fxn_anchor8" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_ecs28a_0_coho" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_malata8_0_coho" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+        </Targets>
+    </TC>
+    <TC name="../../TC/TR/ATF_TESTS/ABT_Api_Tests/generic/dropbox_manager/testIsTagEnabled">
+        <Targets>
+            <Target board="asus_t100" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_asus_t100" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="byt_mrd7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="irda_byt_mrd7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="bdw_wsb" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="ecs_e7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="TREKSTOR" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="ONE8_0" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="cohol_ecs210a" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="ONE695" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="cohol_chiphd8" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="A82I" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="A105I" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="irda_ecs_e7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_fxn_anchor8" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_ecs28a_0_coho" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_malata8_0_coho" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+        </Targets>
+    </TC>
+    <TC name="../../TC/TR/ATF_TESTS/ABT_Api_Tests/jni/testJniGetString">
+        <Targets>
+            <Target board="asus_t100" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_asus_t100" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="byt_mrd7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="irda_byt_mrd7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="bdw_wsb" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="ecs_e7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="TREKSTOR" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="ONE8_0" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="cohol_ecs210a" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="ONE695" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="cohol_chiphd8" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="A82I" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="A105I" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="irda_ecs_e7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_fxn_anchor8" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_ecs28a_0_coho" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_malata8_0_coho" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+        </Targets>
+    </TC>
+    <TC name="../../TC/TR/ATF_TESTS/ABT_Api_Tests/jni/testStaticFieldAccess">
+        <Targets>
+            <Target board="asus_t100" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_asus_t100" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="byt_mrd7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="irda_byt_mrd7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="bdw_wsb" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="ecs_e7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="TREKSTOR" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="ONE8_0" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="cohol_ecs210a" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="ONE695" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="cohol_chiphd8" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="A82I" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="A105I" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="irda_ecs_e7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_fxn_anchor8" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_ecs28a_0_coho" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_malata8_0_coho" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+        </Targets>
+    </TC>
+    <TC name="../../TC/TR/ATF_TESTS/ABT_Api_Tests/kernel/testKernelVersion">
+        <Targets>
+            <Target board="asus_t100" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_asus_t100" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="byt_mrd7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="irda_byt_mrd7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="bdw_wsb" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="ecs_e7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="TREKSTOR" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="ONE8_0" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="cohol_ecs210a" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="ONE695" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="cohol_chiphd8" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="A82I" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="A105I" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="irda_ecs_e7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_fxn_anchor8" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_ecs28a_0_coho" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_malata8_0_coho" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+        </Targets>
+    </TC>
+    <TC name="../../TC/TR/ATF_TESTS/ABT_Api_Tests/wifi/General/Comms_WIFI_ComponentRelated_GeneralBehaviour_Enable-WiFi">
+        <Targets>
+            <Target board="asus_t100" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <!--Target board="irda_asus_t100" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/-->
+            <Target board="byt_mrd7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="irda_byt_mrd7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="ecs_e7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="TREKSTOR" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="ONE8_0" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="cohol_ecs210a" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="ONE695" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="cohol_chiphd8" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="A82I" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="A105I" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="irda_ecs_e7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_fxn_anchor8" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_ecs28a_0_coho" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_malata8_0_coho" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+        </Targets>
+    </TC>
+    <TC name="../../TC/TR/ATF_TESTS/ABT_Api_Tests/wifi/General/Comms_WIFI_ComponentRelated_GeneralBehaviour_Disable-WiFi">
+        <Targets>
+            <Target board="asus_t100" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="byt_mrd7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="ecs_e7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="TREKSTOR" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="ONE8_0" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="cohol_ecs210a" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="ONE695" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="cohol_chiphd8" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="A82I" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="A105I" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+        </Targets>
+    </TC>
+    <TC name="../../TC/TR/ATF_TESTS/ABT_Image_Codecs/DecodeBMP_TC">
+        <Targets>
+            <Target board="asus_t100" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_asus_t100" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="byt_mrd7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="irda_byt_mrd7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="bdw_wsb" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="ecs_e7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="TREKSTOR" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="ONE8_0" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="cohol_ecs210a" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="ONE695" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="cohol_chiphd8" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="A82I" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="A105I" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="irda_ecs_e7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_fxn_anchor8" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_ecs28a_0_coho" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_malata8_0_coho" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+        </Targets>
+    </TC>
+    <TC name="../../TC/TR/ATF_TESTS/ABT_Image_Codecs/DecodeGIF_TC">
+        <Targets>
+            <Target board="asus_t100" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_asus_t100" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="byt_mrd7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="irda_byt_mrd7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="bdw_wsb" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="ecs_e7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="TREKSTOR" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="ONE8_0" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="cohol_ecs210a" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="ONE695" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="cohol_chiphd8" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="A82I" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="A105I" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="irda_ecs_e7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_fxn_anchor8" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_ecs28a_0_coho" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_malata8_0_coho" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+        </Targets>
+    </TC>
+    <TC name="../../TC/TR/ATF_TESTS/ABT_Image_Codecs/DecodeJPG_TC">
+        <Targets>
+            <Target board="asus_t100" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_asus_t100" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="byt_mrd7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="irda_byt_mrd7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="bdw_wsb" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="ecs_e7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="TREKSTOR" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="ONE8_0" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="cohol_ecs210a" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="ONE695" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="cohol_chiphd8" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="A82I" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="A105I" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="irda_ecs_e7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_fxn_anchor8" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_ecs28a_0_coho" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_malata8_0_coho" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+        </Targets>
+    </TC>
+    <TC name="../../TC/TR/ATF_TESTS/ABT_Image_Codecs/DecodePNG_TC">
+        <Targets>
+            <Target board="asus_t100" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_asus_t100" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="byt_mrd7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="irda_byt_mrd7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="bdw_wsb" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="ecs_e7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="TREKSTOR" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="ONE8_0" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="cohol_ecs210a" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="ONE695" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="cohol_chiphd8" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="A82I" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="A105I" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="irda_ecs_e7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_fxn_anchor8" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_ecs28a_0_coho" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_malata8_0_coho" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+        </Targets>
+    </TC>
+    <TC name="../../TC/TR/ATF_TESTS/ABT_Image_Codecs/DecodeWEBP_TC">
+        <Targets>
+            <Target board="asus_t100" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_asus_t100" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="byt_mrd7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="irda_byt_mrd7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="bdw_wsb" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="ecs_e7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="TREKSTOR" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="ONE8_0" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="cohol_ecs210a" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="ONE695" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="cohol_chiphd8" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="A82I" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="A105I" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="irda_ecs_e7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_fxn_anchor8" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_ecs28a_0_coho" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_malata8_0_coho" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+        </Targets>
+    </TC>
+    <TC name="../../TC/TR/ATF_TESTS/ABT_Image_Codecs/EncodeJPG_TC">
+        <Targets>
+            <Target board="asus_t100" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_asus_t100" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="byt_mrd7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="irda_byt_mrd7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="bdw_wsb" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="ecs_e7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="TREKSTOR" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="ONE8_0" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="cohol_ecs210a" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="ONE695" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="cohol_chiphd8" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="A82I" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="A105I" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="irda_ecs_e7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_fxn_anchor8" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_ecs28a_0_coho" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_malata8_0_coho" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+        </Targets>
+    </TC>
+    <TC name="../../TC/TR/ATF_TESTS/ABT_Image_Codecs/EncodePNG_TC">
+        <Targets>
+            <Target board="asus_t100" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_asus_t100" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="byt_mrd7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="irda_byt_mrd7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="bdw_wsb" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="ecs_e7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="TREKSTOR" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="ONE8_0" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="cohol_ecs210a" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="ONE695" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="cohol_chiphd8" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="A82I" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="A105I" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="irda_ecs_e7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_fxn_anchor8" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_ecs28a_0_coho" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_malata8_0_coho" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+        </Targets>
+    </TC>
+    <TC name="../../TC/TR/ATF_TESTS/ABT_Image_Codecs/EncodeWEBP_TC">
+        <Targets>
+            <Target board="asus_t100" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_asus_t100" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="byt_mrd7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="irda_byt_mrd7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="bdw_wsb" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="ecs_e7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="TREKSTOR" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="ONE8_0" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="cohol_ecs210a" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="ONE695" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="cohol_chiphd8" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="A82I" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="A105I" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="irda_ecs_e7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_fxn_anchor8" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_ecs28a_0_coho" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_malata8_0_coho" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+        </Targets>
+    </TC>
+    <TC name="../../TC/TR/ATF_TESTS/ABT_Api_Tests/audio_encoding/AAC/Stereo-MPEG_4-OutputFormat/m4a-Container/MPEG_4_AAC_8000_8000_m4a_2">
+        <Targets>
+            <Target board="asus_t100" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_asus_t100" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="byt_mrd7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="irda_byt_mrd7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="ecs_e7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="TREKSTOR" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="ONE8_0" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="cohol_ecs210a" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="ONE695" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="cohol_chiphd8" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="A82I" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="A105I" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="irda_ecs_e7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_fxn_anchor8" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_ecs28a_0_coho" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_malata8_0_coho" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+        </Targets>
+    </TC>
+    <TC name="../../TC/TR/ATF_TESTS/ABT_Api_Tests/audio_encoding/AAC/Stereo-MPEG_4-OutputFormat/mp4-Container/MPEG_4_AAC_8000_8000_mp4_2">
+        <Targets>
+            <Target board="asus_t100" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_asus_t100" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_byt_mrd7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="byt_mrd7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="ecs_e7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="TREKSTOR" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="ONE8_0" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="cohol_ecs210a" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="ONE695" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="cohol_chiphd8" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="A82I" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="A105I" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="irda_ecs_e7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_fxn_anchor8" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_ecs28a_0_coho" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_malata8_0_coho" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+        </Targets>
+    </TC>
+    <TC name="../../TC/TR/ATF_TESTS/ABT_Audio_Decoding/AAC/AAC HE (AAC+)/AAC_HEv2_48kHz_36kbps_Stereo_CBR.m4a_TC">
+        <Targets>
+            <Target board="asus_t100" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_asus_t100" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="byt_mrd7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="irda_byt_mrd7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="ecs_e7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="TREKSTOR" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="ONE8_0" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="cohol_ecs210a" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="ONE695" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="cohol_chiphd8" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="A82I" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="A105I" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="irda_ecs_e7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_fxn_anchor8" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_ecs28a_0_coho" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_malata8_0_coho" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+        </Targets>
+    </TC>
+    <TC name="../../TC/TR/ATF_TESTS/ABT_Audio_Decoding/MP3/24kHz/MP3_24kHz_24kbps_Stereo.mp3">
+        <Targets>
+            <Target board="asus_t100" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_asus_t100" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="byt_mrd7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="irda_byt_mrd7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+        </Targets>
+    </TC>
+    <TC name="../../TC/TR/ATF_TESTS/ABT_Api_Tests/audio/volume/testAdjustSystemStreamVolume">
+        <Targets>
+            <Target board="asus_t100" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_asus_t100" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="byt_mrd7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="irda_byt_mrd7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="bdw_wsb" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="ecs_e7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="TREKSTOR" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="ONE8_0" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="cohol_ecs210a" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="ONE695" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="cohol_chiphd8" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="A82I" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="A105I" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="irda_ecs_e7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_fxn_anchor8" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_ecs28a_0_coho" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_malata8_0_coho" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+        </Targets>
+    </TC>
+    <TC name="../../TC/TR/ATF_TESTS/ABT_Video_Decoding/H.264/480x320/H264_480x320_25fps_5737kbps_AMR_NB_8kHz_12.2kbps_Mono.3GP">
+        <Targets>
+            <Target board="asus_t100" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_asus_t100" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="byt_mrd7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="irda_byt_mrd7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="ecs_e7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="TREKSTOR" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="ONE8_0" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="cohol_ecs210a" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="ONE695" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="cohol_chiphd8" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="A82I" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="A105I" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="irda_ecs_e7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_fxn_anchor8" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_ecs28a_0_coho" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_malata8_0_coho" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+        </Targets>
+    </TC>
+    <TC name="../../TC/TR/ATF_TESTS/ABT_Video_Decoding/MPEG4/CIF/MPEG4_352x288_24fps_144kbps_AAC_LC_22.05kHz_38kbps_Mono.3GP">
+        <Targets>
+            <Target board="asus_t100" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_asus_t100" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="byt_mrd7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="irda_byt_mrd7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="ecs_e7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="TREKSTOR" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="ONE8_0" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="cohol_ecs210a" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="ONE695" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="cohol_chiphd8" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="A82I" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="A105I" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="3"/>
+            <Target board="irda_ecs_e7" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_ecs_e7" campaign="OTC_Smoke_tests_media" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_fxn_anchor8" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_ecs28a_0_coho" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+            <Target board="irda_malata8_0_coho" campaign="OTC_Smoke_tests" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+        </Targets>
+    </TC>
+    <TC name="../../TC/TR/ACS/System/SDCARD/COPY_FILE">
+        <Targets>
+            <Target board="ecs_e7" campaign="OTC_Smoke_tests_storage" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+        </Targets>
+    </TC>
+    <TC name="../../TC/TR/ACS/System/SDCARD/CREATE_FILE">
+        <Targets>
+            <Target board="ecs_e7" campaign="OTC_Smoke_tests_storage" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+        </Targets>
+    </TC>
+    <TC name="../../TC/TR/ACS/System/SDCARD/REMOVE_FILE">
+        <Targets>
+            <Target board="ecs_e7" campaign="OTC_Smoke_tests_storage" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+        </Targets>
+    </TC>
+    <TC name="../../TC/TR/ATF_TESTS/ABT_Api_Tests/system_uid/bluetooth/Bluetooth_GeneralTest_Turn_ON_OFF_Bluetooth_test_INST">
+    <Targets>
+            <Target board="ecs_e7" campaign="OTC_Smoke_tests_bluetooth" domain="" iteration="5" acceptance="1" max_attempt="5"/>
+    </Targets>
+    </TC>
+    <TC name="../../TC/TR/ATF_TESTS/ABT_Api_Tests/system_uid/bluetooth/Bluetooth_GeneralTest_Scan_for_devices_INST">
+        <Targets>
+            <Target board="ecs_e7" campaign="OTC_Smoke_tests_bluetooth" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+        </Targets>
+    </TC>
+    <TC name="../../TC/TR/ACS/System/OS/ADBDebugCommand/ADB_LOGCAT_BUGREPORT">
+        <Targets>
+            <Target board="ecs_e7" campaign="OTC_Smoke_tests_usb" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+        </Targets>
+    </TC>
+    <TC name="../../TC/TR/ACS/System/OS/ADBDebugCommand/ADB_LOGCAT_B">
+        <Targets>
+            <Target board="ecs_e7" campaign="OTC_Smoke_tests_usb" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+        </Targets>
+    </TC>
+    <TC name="../../TC/TR/ACS/System/OS/ADBDebugCommand/ADB_REMOUNT">
+        <Targets>
+            <Target board="ecs_e7" campaign="OTC_Smoke_tests_usb" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+        </Targets>
+    </TC>
+    <TC name="../../TC/TR/ACS/System/OS/ADBUserCommands/ADB_GET_SERIALNO">
+        <Targets>
+            <Target board="ecs_e7" campaign="OTC_Smoke_tests_usb" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+        </Targets>
+    </TC>
+    <TC name="../../TC/TR/ACS/System/OS/ADBUserCommands/ADB_ROOT">
+        <Targets>
+            <Target board="ecs_e7" campaign="OTC_Smoke_tests_usb" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+        </Targets>
+    </TC>
+    <TC name="../../TC/TR/ACS/System/OS/ADBUserCommands/ADB_PUSH_FAKE_DUT">
+        <Targets>
+            <Target board="ecs_e7" campaign="OTC_Smoke_tests_usb" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+        </Targets>
+    </TC>
+    <TC name="../../TC/TR/ACS/System/OS/ADBUserCommands/ADB_PUSH_FAKE_HOST">
+        <Targets>
+            <Target board="ecs_e7" campaign="OTC_Smoke_tests_usb" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+        </Targets>
+    </TC>
+    <TC name="../../TC/TR/ACS/System/OS/ADBUserCommands/ADB_INSTALL_R">
+        <Targets>
+            <Target board="ecs_e7" campaign="OTC_Smoke_tests_usb" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+        </Targets>
+    </TC>
+    <TC name="../../TC/TR/ACS/System/OS/ADBUserCommands/ADB_INSTALL">
+        <Targets>
+            <Target board="ecs_e7" campaign="OTC_Smoke_tests_usb" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+        </Targets>
+    </TC>
+    <TC name="../../TC/TR/ACS/System/OS/ADBUserCommands/ADB_GET_STATE">
+        <Targets>
+            <Target board="ecs_e7" campaign="OTC_Smoke_tests_usb" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+        </Targets>
+    </TC>
+    <TC name="../../TC/TR/ACS/System/OS/ADBUserCommands/ADB_UNINSTALL">
+        <Targets>
+            <Target board="ecs_e7" campaign="OTC_Smoke_tests_usb" domain="" iteration="1" acceptance="1" max_attempt="5"/>
+        </Targets>
+    </TC>
+    <TC name="../../TC/TR/CTS/packages/CTS_android.security.xml">
+        <Targets>
+            <Target board="ecs_e7" campaign="OTC_Smoke_tests_security" domain="" iteration="1" acceptance="1" max_attempt="1"/>
+            <Target board="irda_ecs_e7" campaign="OTC_Smoke_tests_security" domain="" iteration="1" acceptance="1" max_attempt="1"/>
+        </Targets>
+    </TC>
+</TestCases>

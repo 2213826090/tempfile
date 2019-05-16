@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="13.37">
+  <UseCase>LIVE_BT_TURN_ON_OFF</UseCase>
+  <Description></Description>
+  <b2bIteration>2</b2bIteration>
+  <b2bContinuousMode>False</b2bContinuousMode>
+  <TcExpectedResult>PASS</TcExpectedResult>
+  <Parameters>
+    <Parameter>
+      <!-- turn on off sequence -->
+      <Name>TURN_BLUETOOTH_SEQUENCE</Name>
+      <Value>ON OFF ON</Value>
+    </Parameter>
+    <Parameter>
+      <!-- [Optional] Is set to True, the flight mode will be enables before setting bt on
+          and disabled at tear down. -->
+      <Name>FLIGHT_MODE</Name>
+      <Value>False</Value>
+    </Parameter>
+  </Parameters>
+</TestCase>

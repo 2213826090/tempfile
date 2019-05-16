@@ -1,0 +1,28 @@
+<?xml version="1.0" ?>
+<Campaign version="13.49">
+    <Parameters>
+        <Parameter isControlledPSUsed="False"/>
+        <Parameter isIoCardUsed="False"/>
+        <Parameter skipBootOnPowerCycle="False"/>
+        <Parameter bootRetryNumber="0"/>
+        <Parameter runHookScripts="False"/>
+        <Parameter powerCycleBetweenTC="False"/>
+        <Parameter powerCycleOnFailure="False"/>
+        <Parameter finalDutState="NoChange"/>
+        <Parameter stopCampaignOnCriticalFailure="False"/>
+        <Parameter stopCampaignOnFirstFailure="False"/>
+        <Parameter loggingLevel="debug"/>
+        <Parameter CampaignType="Other"/>
+        <Parameter TCRReportViaRESTAPI="True"/>
+    </Parameters>
+    <TestCases>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_Audio/Decode/testAudioDecode_gaplessAaalc"/> 
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_Audio/Decode/testAudioDecode_gaplessMp3"/>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_Audio/Decode/testAudioDecode_gaplessHeaac"/>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_Audio/Decode/testAudioDecode_gaplessHeaacPlus"/>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_Audio/Encode/testAudioEncode_Longlasting_1hr"/>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_Audio/Encode/testAudioRecord_Longlasting_EmbdMicCapture"/>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_Audio/Encode/testAudioRecord_Iteration_EmbdMicCapture"/> 
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_Audio/Encode/testAudioRecord_Longlasting_AMIC"/>
+    </TestCases>
+</Campaign>

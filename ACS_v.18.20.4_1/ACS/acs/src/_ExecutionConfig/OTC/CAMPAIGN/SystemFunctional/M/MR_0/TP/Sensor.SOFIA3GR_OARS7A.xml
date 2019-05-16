@@ -1,0 +1,47 @@
+<?xml version="1.0" ?>
+<Campaign version="13.49">
+    <Parameters>
+        <Parameter isControlledPSUsed="False"/>
+        <Parameter isIoCardUsed="True"/>
+        <Parameter skipBootOnPowerCycle="False"/>
+        <Parameter bootRetryNumber="0"/>
+        <Parameter runHookScripts="False"/>
+        <Parameter powerCycleBetweenTC="False"/>
+        <Parameter powerCycleOnFailure="False"/>
+        <Parameter finalDutState="NoChange"/>
+        <Parameter stopCampaignOnCriticalFailure="False"/>
+        <Parameter stopCampaignOnFirstFailure="False"/>
+        <Parameter loggingLevel="debug"/>
+        <Parameter CampaignType="Other"/>
+        <Parameter TCRReportViaRESTAPI="True"/>
+    </Parameters>
+    <TestCases>
+        <TestCase Id="../../../../../TC/TP/TC/Sensor/Accelerometer/test_frequency_accelerometer_ui"/>
+        <TestCase Id="../../../../../TC/TP/TC/Sensor/Accelerometer/test_frequency_accelerometer_fastest"/>
+        <TestCase Id="../../../../../TC/TP/TC/Sensor/Accelerometer/test_frequency_accelerometer_game"/>
+        <TestCase Id="../../../../../TC/TP/TC/Sensor/Accelerometer/test_frequency_accelerometer_normal"/>
+        <TestCase Id="../../../../../TC/TP/TC/Sensor/Accelerometer/test_list_accelerometer"/>
+        <TestCase Id="../../../../../TC/TP/TC/Sensor/Accelerometer/test_range_accelerometer"/>
+        <TestCase Id="../../../../../TC/TP/TC/Sensor/Accelerometer/test_jitter_accelerometer_fastest"/>
+        <TestCase Id="../../../../../TC/TP/TC/Sensor/Accelerometer/test_jitter_accelerometer_game"/>
+        <TestCase Id="../../../../../TC/TP/TC/Sensor/Accelerometer/test_jitter_accelerometer_normal"/>
+        <TestCase Id="../../../../../TC/TP/TC/Sensor/Accelerometer/test_jitter_accelerometer_ui"/>
+        <TestCase Id="../../../../../TC/TP/TC/Sensor/Accelerometer/test_accelerometer_streaming"/>
+        <TestCase Id="../../../../../TC/TP/TC/Sensor/Accelerometer/test_concurrent_accelerometer_fastest"/>
+        <TestCase Id="../../../../../TC/TP/TC/Sensor/Accelerometer/test_concurrent_accelerometer_game"/>
+        <TestCase Id="../../../../../TC/TP/TC/Sensor/Accelerometer/test_concurrent_accelerometer_normal"/>
+        <TestCase Id="../../../../../TC/TP/TC/Sensor/Accelerometer/test_concurrent_accelerometer_ui"/>
+        <TestCase Id="../../../../../TC/TP/TC/Sensor/Accelerometer/test_delay_accelerometer_fastest"/>
+        <TestCase Id="../../../../../TC/TP/TC/Sensor/Accelerometer/test_delay_accelerometer_game"/>
+        <TestCase Id="../../../../../TC/TP/TC/Sensor/Accelerometer/test_delay_accelerometer_normal"/>
+        <TestCase Id="../../../../../TC/TP/TC/Sensor/Accelerometer/test_delay_accelerometer_ui"/>
+        <TestCase Id="../../../../../TC/TP/TC/Sensor/Accelerometer/test_jitter_accelerometer_sync"/>
+        <TestCase Id="../../../../../TC/TP/TC/Sensor/Fusion_Sensor/test_jitter_linear_accelerometer_sync"/>
+        <TestCase Id="../../../../../TC/TP/TC/Sensor/Fusion_Sensor/test_jitter_gravity_sync"/>
+        <TestCase Id="../../../../../TC/TP/TC/Sensor/Fusion_Sensor/test_jitter_orientation_sync"/>
+        <TestCase Id="../../../../../TC/TP/TC/Sensor/Fusion_Sensor/test_jitter_rotation_vector_sync"/>
+        <TestCase Id="../../../../../TC/TP/TC/Sensor/Compass/test_jitter_compass_sync"/>
+        <TestCase Id="../../../../../TC/TP/TC/Sensor/Gyroscope/test_gyroscope_streaming"/>
+        <TestCase Id="../../../../../TC/TP/TC/Sensor/Gyroscope/test_jitter_gyroscope_sync"/>
+    </TestCases>
+</Campaign>

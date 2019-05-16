@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="13.37">
+    <UseCase>LAB_EM_INIT_BOARD</UseCase>
+    <Description>EM - This UseCase setup the board before doing execution.</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>False</b2bContinuousMode>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters>
+        <Parameter>
+            <!-- LOAD to turn OFF : WIFI;BLUETOOTH;GPS_ON -->
+            <Name>LOAD_OFF</Name>
+            <Value>WIFI;BLUETOOTH;GPS_ON</Value>
+        </Parameter>
+    </Parameters>
+    <TestSteps>
+        <Initialize>
+            <!-- Get the artifact on local host -->
+            <TestStep Id="GET_ARTIFACT" ARTIFACT="VIDEO/1080p/01_the_dark_knight-tlr3_H264_CBR_20M_1080p_AAC-LC_48k_320kbps_.mp4" ARTIFACT_SOURCE="FROM_BENCH:ARTIFACT_MANAGER:URI" TRANSFER_TIMEOUT="DEFAULT" STORED_FILE_PATH="FILE_PATH_IN_CACHE1" EQT="DEFAULT" />
+            <!-- Then, Push it on the device. Device destination folder will be the default device media folder (/sdcard/acs_media) -->
+            <!-- FILE_PATH is retrieved from test step context -->
+            <TestStep Id="INSTALL_FILE" DEVICE="PHONE1" FILE_PATH="FROM_CTX:FILE_PATH_IN_CACHE1" TYPE="media" DESTINATION="FROM_DEVICE:PHONE1:userdataPath" TIMEOUT="DEFAULT" DESTINATION_STORED_PATH="FILE_PATH_IN_CACHE1" />
+        </Initialize>
+    </TestSteps>
+</TestCase>

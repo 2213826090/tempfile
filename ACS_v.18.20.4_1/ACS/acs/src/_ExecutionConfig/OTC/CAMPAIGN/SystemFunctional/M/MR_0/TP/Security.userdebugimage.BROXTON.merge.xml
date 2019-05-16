@@ -1,0 +1,44 @@
+<?xml version="1.0" ?>
+<Campaign version="13.49">
+    <Parameters>
+        <Parameter isControlledPSUsed="False"/>
+        <Parameter isIoCardUsed="False"/>
+        <Parameter skipBootOnPowerCycle="False"/>
+        <Parameter bootRetryNumber="0"/>
+        <Parameter runHookScripts="False"/>
+        <Parameter powerCycleBetweenTC="False"/>
+        <Parameter powerCycleOnFailure="False"/>
+        <Parameter finalDutState="NoChange"/>
+        <Parameter stopCampaignOnCriticalFailure="False"/>
+        <Parameter stopCampaignOnFirstFailure="False"/>
+        <Parameter loggingLevel="debug"/>
+        <Parameter CampaignType="Other"/>
+        <Parameter TCRReportViaRESTAPI="True"/>
+    </Parameters>
+    <TestCases>
+        <TestCase Id="../../../../../TC/TP/TC/Security/init.set_adb_root.AdbRoot.testAdbRoot"/>
+        <TestCase Id="../../../../../TC/TP/TC/Security/init.start_rpc_server.StartRPCServer.testStartRPCServer"/>
+        <TestCase Id="../../../../../TC/TP/TC/Security/init.wake_up_and_unlock.WakeUnlock.testWakeUnlock"/>
+        <TestCase Id="../../../../../TC/TP/TC/Security/init.set_orientation_vertical.SetOrientationVertical.testSetOrientationVertical"/>
+        <TestCase Id="../../../../../TC/TP/TC/Security/init.config_first_boot_wizard.ConfigFirstBootWizard.testConfigFirstBootWizard"/>
+        <TestCase Id="../../../../../TC/TP/TC/Security/init.enable_developer_option.EnableDeveloperOption.testEnableDeveloperOption"/>
+        <TestCase Id="../../../../../TC/TP/TC/Security/init.keep_awake.KeepAwake.testKeepAwake"/>
+        <TestCase Id="../../../../../TC/TP/TC/Security/init.disable_verify_apps.DisableVerifyApp.testDisableVerifyApp"/>
+        <TestCase Id="../../../../../TC/TP/TC/Security/init.set_system_time.SetTimeDate.testSetTimeDate"/>
+        <TestCase Id="../../../../../TC/TP/TC/Security/init.set_language_to_United_States.SetLanguageUS.testSetLanguageUS"/>
+        <TestCase Id="../../../../../TC/TP/TC/Security/New/test_check_adb_connection_and_key_userdebug_image"/>
+        <TestCase Id="../../../../../TC/TP/TC/Security/New/test_disk_encryption_flag_check"/>
+        <TestCase Id="../../../../../TC/TP/TC/Security/New/test_disk_update_password_key_on_without_lock_key"/>
+        <TestCase Id="../../../../../TC/TP/TC/Security/New/test_disk_update_pin_key_on_without_lock_key"/>
+        <TestCase Id="../../../../../TC/TP/TC/Security/New/test_disk_update_pattern_key_on_without_lock_key"/>
+        <TestCase Id="../../../../../TC/TP/TC/Security/New/test_disk_update_lock_type_key_on_passwd_pin_pattern_switch_lock"/>
+        <TestCase Id="../../../../../TC/TP/TC/Security/New/test_disk_encryption_lock_type_check_vold_decrypt_status"/>
+        <TestCase Id="../../../../../TC/TP/TC/Security/New/test_gatekeeperd_running_in_background"/>
+        <TestCase Id="../../../../../TC/TP/TC/Security/New/test_gatekeeperd_killed_with_screen_lock_update"/>
+        <TestCase Id="../../../../../TC/TP/TC/Security/New/test_keymaster_version_check"/>
+        <TestCase Id="../../../../../TC/TP/TC/Security/New/test_hardware_backed_keystore_libary_check"/>
+        <TestCase Id="../../../../../TC/TP/TC/Security/New/test_selinux_mode_switch"/>
+        <TestCase Id="../../../../../TC/TP/TC/Post_Test/postTestRemoveGoogleAccount"/>
+        <TestCase Id="../../../../../TC/TP/TC/Post_Test/postTestWifiOff"/>
+    </TestCases>
+</Campaign>

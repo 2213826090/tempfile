@@ -1,0 +1,34 @@
+<?xml version="1.0" ?>
+<Campaign>
+    <Parameters>
+        <Parameter isControlledPSUsed="False"/>
+        <Parameter isIoCardUsed="False"/>
+        <Parameter skipBootOnPowerCycle="False"/>
+        <Parameter bootRetryNumber="0"/>
+        <Parameter runHookScripts="False"/>
+        <Parameter powerCycleBetweenTC="False"/>
+        <Parameter powerCycleOnFailure="False"/>
+        <Parameter finalDutState="NoChange"/>
+        <Parameter stopCampaignOnCriticalFailure="False"/>
+        <Parameter stopCampaignOnFirstFailure="False"/>
+        <Parameter loggingLevel="debug"/>
+        <Parameter CampaignType="Other"/>
+        <Parameter TCRReportViaRESTAPI="True"/>
+    </Parameters>
+    <Targets>
+        <!-- Target Values -->
+        <Target targetB2bPassRate="100"/>
+    </Targets>
+    <TestCases>
+        <TestCase Id="../../TC/Brillo/smoke/check_build_num"/>
+        <TestCase Id="../../TC/Brillo/smoke/boot_to_bootloader"/>
+        <TestCase Id="../../TC/Brillo/smoke/boot_to_brillo"/>
+        <TestCase Id="../../TC/Brillo/smoke/iotlauncher_displayed"/>
+        <TestCase Id="../../TC/Brillo/smoke/gpiotest_joule"/>
+        <TestCase Id="../../TC/Brillo/smoke/pio_i2c_accl_joule"/>
+        <TestCase Id="../../TC/Brillo/smoke/pio_spi_oled1351"/>
+        <TestCase Id="../../TC/Brillo/smoke/wifi_2.4GHz"/>
+        <TestCase Id="../../TC/Brillo/smoke/wifi_5GHz"/>
+        <TestCase Id="../../TC/Brillo/smoke/no_panic"/>
+    </TestCases>
+</Campaign>

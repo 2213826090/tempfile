@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='ASCII'?>
+<TestCase>
+    <UseCase>Testlib</UseCase>
+    <Description>Play Music -- add song to playlist</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <TcMaxAttempt>1</TcMaxAttempt>
+    <TestSteps>
+        <Initialize>
+            <TestStep Id="GET_ARTIFACT" EQT="ARTIFACT_MANAGER" ARTIFACT="AUDIO/AAC/AAC_ELD_3GPP.3gp" ARTIFACT_SOURCE="FROM_BENCH:ARTIFACT_MANAGER:URI" TRANSFER_TIMEOUT="DEFAULT" STORED_FILE_PATH="FILE_PATH_IN_CACHE1"/>
+            <TestStep Id="INSTALL_FILE" DEVICE="PHONE1" FILE_PATH="FROM_CTX:FILE_PATH_IN_CACHE1" TYPE="media" DESTINATION="/storage/sdcard0/Music/" DESTINATION_STORED_PATH="/storage/sdcard0/Music/" TIMEOUT="DEFAULT"/>
+            <TestStep Id="GET_ARTIFACT" EQT="ARTIFACT_MANAGER" ARTIFACT="AUDIO/AAC/AAC_LC_24kHz_32kbps_Mono.aac" ARTIFACT_SOURCE="FROM_BENCH:ARTIFACT_MANAGER:URI" TRANSFER_TIMEOUT="DEFAULT" STORED_FILE_PATH="FILE_PATH_IN_CACHE1"/>
+            <TestStep Id="INSTALL_FILE" DEVICE="PHONE1" FILE_PATH="FROM_CTX:FILE_PATH_IN_CACHE1" TYPE="media" DESTINATION="/storage/sdcard0/Music/" DESTINATION_STORED_PATH="/storage/sdcard0/Music/" TIMEOUT="DEFAULT"/>
+            <TestStep Id="GET_ARTIFACT" EQT="ARTIFACT_MANAGER" ARTIFACT="AUDIO/AAC/AAC_LC_44.1kHz_75kbps_Mono.3gp" ARTIFACT_SOURCE="FROM_BENCH:ARTIFACT_MANAGER:URI" TRANSFER_TIMEOUT="DEFAULT" STORED_FILE_PATH="FILE_PATH_IN_CACHE1"/>
+            <TestStep Id="INSTALL_FILE" DEVICE="PHONE1" FILE_PATH="FROM_CTX:FILE_PATH_IN_CACHE1" TYPE="media" DESTINATION="/storage/sdcard0/Music/" DESTINATION_STORED_PATH="/storage/sdcard0/Music/" TIMEOUT="DEFAULT"/>
+            <TestStep Id="GET_ARTIFACT" EQT="ARTIFACT_MANAGER" ARTIFACT="AUDIO/AAC/AAC_LTP_48kHz_118kbps_Stereo.mp4" ARTIFACT_SOURCE="FROM_BENCH:ARTIFACT_MANAGER:URI" TRANSFER_TIMEOUT="DEFAULT" STORED_FILE_PATH="FILE_PATH_IN_CACHE1"/>
+            <TestStep Id="INSTALL_FILE" DEVICE="PHONE1" FILE_PATH="FROM_CTX:FILE_PATH_IN_CACHE1" TYPE="media" DESTINATION="/storage/sdcard0/Music/" DESTINATION_STORED_PATH="/storage/sdcard0/Music/" TIMEOUT="DEFAULT"/>
+            <TestStep Id="GET_ARTIFACT" EQT="ARTIFACT_MANAGER" ARTIFACT="AUDIO/AAC/AAC_LC_64kHz_64kbps_Mono.mp3" ARTIFACT_SOURCE="FROM_BENCH:ARTIFACT_MANAGER:URI" TRANSFER_TIMEOUT="DEFAULT" STORED_FILE_PATH="FILE_PATH_IN_CACHE1"/>
+            <TestStep Id="INSTALL_FILE" DEVICE="PHONE1" FILE_PATH="FROM_CTX:FILE_PATH_IN_CACHE1" TYPE="media" DESTINATION="/storage/sdcard0/Music/" DESTINATION_STORED_PATH="/storage/sdcard0/Music/" TIMEOUT="DEFAULT"/>
+        </Initialize>
+        <Finalize>
+            <TestStep Id="UNINSTALL_FILE" DEVICE="PHONE1" DEVICE_FOLDER="/storage/sdcard0/Music/" FILENAME="AAC_ELD_3GPP.3gp"/>
+            <TestStep Id="UNINSTALL_FILE" DEVICE="PHONE1" DEVICE_FOLDER="/storage/sdcard0/Music/" FILENAME="AAC_LC_24kHz_32kbps_Mono.aac"/>
+            <TestStep Id="UNINSTALL_FILE" DEVICE="PHONE1" DEVICE_FOLDER="/storage/sdcard0/Music/" FILENAME="AAC_LC_44.1kHz_75kbps_Mono.3gp"/>
+            <TestStep Id="UNINSTALL_FILE" DEVICE="PHONE1" DEVICE_FOLDER="/storage/sdcard0/Music/" FILENAME="AAC_LTP_48kHz_118kbps_Stereo.mp4"/>
+            <TestStep Id="UNINSTALL_FILE" DEVICE="PHONE1" DEVICE_FOLDER="/storage/sdcard0/Music/" FILENAME="AAC_LC_64kHz_64kbps_Mono.mp3"/>
+        </Finalize>
+    </TestSteps>
+    <Parameters>
+        <Parameter>
+            <Name>timeout</Name>
+            <Value>300</Value>
+        </Parameter>
+        <Parameter>
+            <Name>script-args</Name>
+            <Value>{"song_title":"AAC_ELD_3GPP","playlist_name":"test"}</Value>
+        </Parameter>
+        <Parameter>
+            <Name>test</Name>
+            <Value>scripts/gms/play_music/tests/add_to_playlist.py</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

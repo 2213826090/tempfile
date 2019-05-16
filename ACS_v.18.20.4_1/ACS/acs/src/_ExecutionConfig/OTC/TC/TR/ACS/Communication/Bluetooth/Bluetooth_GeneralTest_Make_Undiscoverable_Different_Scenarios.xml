@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="13.41">
+    <UseCase>TEST_STEP_ENGINE</UseCase>
+    <Description></Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>False</b2bContinuousMode>
+    <TcMaxAttempt>1</TcMaxAttempt>
+    <TcAcceptanceCriteria>1</TcAcceptanceCriteria>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters />
+    <TestSteps>
+        <Include Src="OTC/TC/TR/ACS/Communication/Bluetooth/setup/BT/OTC_Comms_BT_Common.xml" />
+        <Setup>
+            <!-- AUTOMATION - Set default configuration -->
+            <TestStep SetId="BTFullSetupPhones1and2AllowScreenLock" />
+            <TestStep Id="RUN_CMD" DEVICE="PHONE1" TIMEOUT="10" COMMAND="adb shell input keyevent 82" FORCE_EXECUTION="False" WAIT_FOR_RESPONSE="True" SILENT_MODE="False" SAVE_AS="False"/>
+            <TestStep Id="OPEN_SECURITY_SETTINGS" DEVICE="PHONE1" />
+            <TestStep Id="ENABLE_LOCK_SCREEN" DEVICE="PHONE1" LOCKSCREEN_TYPE="Swipe" />
+            <TestStep Id="SUSPEND" DURATION_IN_SEC="3"/>
+        </Setup>
+        <RunTest>
+            <TestStep Id="BT_SET_DISCOVERABLE" DEVICE="PHONE1" MODE="both" TIMEOUT="120" />
+            <TestStep Id="SUSPEND" DURATION_IN_SEC="20"/>
+            <TestStep Id="RUN_CMD" DEVICE="PHONE1" TIMEOUT="10" COMMAND="adb shell input keyevent 26" FORCE_EXECUTION="False" WAIT_FOR_RESPONSE="True" SILENT_MODE="False" SAVE_AS="False"/>
+            <TestStep Id="BT_FIND_DEVICE" DEVICE="PHONE2" DEVICE_TO_FIND="FROM_CTX:BT_MAC_ADDRESS_PHONE1" MUST_FIND="false" />
+            <TestStep Id="RUN_CMD" DEVICE="PHONE1" TIMEOUT="10" COMMAND="adb shell input keyevent 26" FORCE_EXECUTION="False" WAIT_FOR_RESPONSE="True" SILENT_MODE="False" SAVE_AS="False"/>
+            <TestStep Id="RUN_CMD" DEVICE="PHONE1" TIMEOUT="10" COMMAND="adb shell input keyevent 82" FORCE_EXECUTION="False" WAIT_FOR_RESPONSE="True" SILENT_MODE="False" SAVE_AS="False"/>
+            <TestStep Id="OPEN_HOME_PAGE" DEVICE="PHONE1" />
+            <TestStep Id="BT_FIND_DEVICE" DEVICE="PHONE2" DEVICE_TO_FIND="FROM_CTX:BT_MAC_ADDRESS_PHONE1" MUST_FIND="false" />
+        </RunTest>
+        <TearDown>
+            <Fork Id="ForkTeardownBT">
+                <TestStep SetId="BTCommonTeardown" DEVICE="PHONE1" />
+                <TestStep SetId="BTCommonTeardown" DEVICE="PHONE2" />
+            </Fork>
+            <TestStep Id="OPEN_SECURITY_SETTINGS" DEVICE="PHONE1" />
+            <TestStep Id="ENABLE_LOCK_SCREEN" DEVICE="PHONE1" LOCKSCREEN_TYPE="None" />
+            <TestStep Id="OPEN_HOME_PAGE" DEVICE="PHONE1" />
+        </TearDown>
+    </TestSteps>
+</TestCase>

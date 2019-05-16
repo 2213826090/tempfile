@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='ASCII'?>
+<TestCase>
+    <UseCase>Testlib</UseCase>
+    <Description>wifi</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <TcMaxAttempt>3</TcMaxAttempt>
+    <Parameters>
+        <Parameter>
+            <Name>test</Name>
+            <Value>scripts/wireless/wifi_generic/tests/add_network_discovery.py</Value>
+        </Parameter>
+        <Parameter>
+            <Name>script-args</Name>
+            <Value>net_ap_ssid=Guest aps=EmployeeHotspot mode=mixed security=wpa_psk encryption=aes ap_name=ddwrt passphrase=test1234 ap_module=ddwrt_atheros dut_security=WPA</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

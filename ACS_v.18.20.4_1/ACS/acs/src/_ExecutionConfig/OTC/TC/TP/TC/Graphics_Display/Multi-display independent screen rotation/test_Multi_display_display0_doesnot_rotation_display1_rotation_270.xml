@@ -1,0 +1,50 @@
+<?xml version="1.0" ?>
+<TestCase>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Discription> 
+&lt;div align=&quot;left&quot; style=&quot;min-height:9pt&quot;&gt;
+&lt;font face=&quot;Arial&quot; color=&quot;#ff0000&quot;&gt;&lt;span style=&quot;font-size:8pt&quot;&gt;&lt;b&gt;&lt;u&gt;Description:&lt;/u&gt;&lt;/b&gt;&lt;/span&gt;&lt;/font&gt;
+&lt;font face=&quot;Arial&quot;&gt;&lt;span style=&quot;font-size:8pt&quot;&gt;&lt;i&gt; The Intel Android target device shall support up to 2 simultaneous connected displays operating in a mode where the normal Android UX display content is spanned across both displays as if they were a single display.&lt;/i&gt;&lt;/span&gt;&lt;/font&gt;
+&lt;/div&gt; 
+&lt;div align=&quot;left&quot; style=&quot;min-height:9pt&quot;&gt;
+&lt;font face=&quot;Arial&quot;&gt;&lt;span style=&quot;font-size:8pt&quot;&gt;&lt;br /&gt;&lt;br /&gt;&lt;/span&gt;&lt;/font&gt;
+&lt;p&gt;&lt;/p&gt; 
+&lt;/div&gt; 
+&lt;div align=&quot;left&quot; style=&quot;min-height:9pt&quot;&gt;
+&lt;font face=&quot;Arial&quot; color=&quot;#ff0000&quot;&gt;&lt;span style=&quot;font-size:8pt&quot;&gt;&lt;b&gt;&lt;u&gt;Preconditions:&lt;/u&gt;&lt;/b&gt;&lt;/span&gt;&lt;/font&gt;
+&lt;font face=&quot;Arial&quot;&gt;&lt;span style=&quot;font-size:8pt&quot;&gt;&lt;i&gt; (What conditions must be met or data must exist in the system for this test to be executed?) &lt;/i&gt;&lt;/span&gt;&lt;/font&gt;
+&lt;/div&gt; 
+&lt;div align=&quot;left&quot; style=&quot;min-height:9pt&quot;&gt;
+&lt;font face=&quot;Arial&quot;&gt;&lt;span style=&quot;font-size:8pt&quot;&gt;&lt;br /&gt;&lt;br /&gt;&lt;/span&gt;&lt;/font&gt;
+&lt;p&gt;&lt;/p&gt; 
+&lt;/div&gt; 
+&lt;div align=&quot;left&quot; style=&quot;min-height:9pt&quot;&gt;
+&lt;font face=&quot;Arial&quot; color=&quot;#ff0000&quot;&gt;&lt;span style=&quot;font-size:8pt&quot;&gt;&lt;b&gt;&lt;u&gt;Postconditions:&lt;/u&gt;&lt;/b&gt;&lt;/span&gt;&lt;/font&gt;
+&lt;font face=&quot;Arial&quot;&gt;&lt;span style=&quot;font-size:8pt&quot;&gt;&lt;i&gt; (triggers/states created by test) &lt;/i&gt;&lt;/span&gt;&lt;/font&gt;
+&lt;/div&gt; 
+&lt;div align=&quot;left&quot; style=&quot;min-height:9pt&quot;&gt;
+&lt;font face=&quot;Arial&quot;&gt;&lt;span style=&quot;font-size:8pt&quot;&gt;&lt;br /&gt;&lt;/span&gt;&lt;/font&gt;
+&lt;p&gt;&lt;/p&gt; 
+&lt;/div&gt;  
+</Discription>
+    <Domain>Graphics_Display</Domain>
+    <Phase>CORE</Phase>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <Type>FUNCTIONAL</Type>
+    <UseCase>PY_UNIT</UseCase>
+    <b2bIteration>1</b2bIteration>
+    <Parameters>
+        <Parameter>
+            <Name>HpalmName</Name>
+            <Value>multi_display.MultiDisplay.test_Multi_display_display0_doesnot_rotation_display1_rotation_270</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TEST_DATA_ROOT</Name>
+            <Value>testplan/Graphics_Display</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TEST_CASE</Name>
+            <Value>tests.Graphics_Display.Multi-display independent screen rotation.multi_display.MultiDisplay.test_Multi_display_display0_doesnot_rotation_display1_rotation_270</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

@@ -1,0 +1,20 @@
+{
+    "artifacts_location": "https://mcg-depot.intel.com/artifactory/psi-tools/phone-flash-tool/releases/",
+    "windows": {
+        "check_exists": ["which", ["PhoneFlashtool.exe"]],
+        "install": "{bin} /VERYSILENT /SUPPRESSMSGBOXES /NORESTART /SP-",
+        "32": "5.2.0.0/PhoneFlashTool_5.2.0.0_win32.exe",
+        "64": "5.2.0.0/PhoneFlashTool_5.2.0.0_win32.exe"
+    },
+    "linux": {
+        "check_exists": ["which", ["phoneflashtool"]],
+        "pre_install": [
+            {"cmd": "apt-get install gdebi -y"},
+            {"cmd": "echo debconf shared/accepted-IPL select true | sudo debconf-set-selections"},
+            {"cmd": "echo debconf shared/accepted-IPL seen true | sudo debconf-set-selections"}
+        ],
+        "install": "gdebi --n {bin}",
+        "32": "5.2.0.0/PhoneFlashTool_5.2.0.0_linux_x86_64.deb",
+        "64": "5.2.0.0/PhoneFlashTool_5.2.0.0_linux_x86_64.deb"
+    }
+}

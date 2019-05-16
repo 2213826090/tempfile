@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<Campaign>
+  <Parameters>
+    <Parameter isControlledPSUsed ="False"/>
+    <Parameter isIoCardUsed ="False"/>
+    <!-- Set skipBootOnPowerCycle to True to disable the accs boot procedure-->
+    <!-- Important, it means that boot will be handle inside the campaign/tc -->
+    <Parameter skipBootOnPowerCycle ="False"/>
+    <Parameter runHookScripts = "False"/>
+    <Parameter powerCycleBetweenTC ="False"/>
+    <Parameter powerCycleOnFailure ="False"/>
+    <Parameter stopCampaignOnCriticalFailure = "False"/>
+    <!-- LoggingLevel possible values: info | warning | debug | error -->
+    <Parameter loggingLevel = "info"/>
+    <!-- CampaignType format -> <TEAM>_<CAMPAIGNTYPE>
+        Possible values:
+        FT(Feature Team)-> SANITY | REGRESSION | STRESS, RELIABILTY | MTBF
+        ST(System Test)-> SANITY | REGRESSION | STRESS, RELIABILTY | MTBF
+        SI(System Integration)-> EAT | STAB | PACT | CAT0 | RELIABILITY | MTBF | CTS
+        Otherwise "Others" should be used -->
+    <Parameter CampaignType = "ST_REGRESSION"/>
+  </Parameters>
+  <Targets>
+    <!-- Target Values -->
+    <Target targetB2bPassRate ="80"/>
+  </Targets>
+  <TestCases>
+
+        <!-- voice call record 2 -->
+
+          <!-- ringtone common 18 -->
+    <TestCase Id="../TC/Lab/2g/ST_AUD_MM_Tone_006-LAB_GSM_VC_RINGTONE_MTMR"/>
+    <TestCase Id="../TC/Lab/2g/ST_AUD_MM_Tone_012-LAB_GSM_VC_RINGTONE_MTMR"/>
+    <TestCase Id="../TC/Lab/2g/ST_AUD_MM_Tone_014-LAB_GSM_VC_RINGTONE_MTMR"/>
+    <TestCase Id="../TC/Lab/2g/ST_AUD_MM_Tone_016-LAB_GSM_VC_RINGTONE_MTMR"/>
+    <TestCase Id="../TC/Lab/2g/ST_AUD_MM_Tone_027-LAB_GSM_VC_RINGTONE_MTMR"/>
+    <TestCase Id="../TC/Lab/2g/ST_AUD_MM_Tone_035-LAB_GSM_VC_RINGTONE_MTMR"/>
+    <TestCase Id="../TC/Lab/2g/ST_AUD_MM_Tone_062-LAB_GSM_VC_RINGTONE_MTMR"/>
+    <TestCase Id="../TC/Lab/2g/ST_AUD_MM_Tone_064-LAB_GSM_VC_RINGTONE_MTMR"/>
+    <TestCase Id="../TC/Lab/2g/ST_AUD_MM_Tone_065-LAB_GSM_VC_RINGTONE_MTMR"/>
+    <TestCase Id="../TC/Lab/2g/ST_AUD_MM_Tone_066-LAB_GSM_VC_RINGTONE_MTMR"/>
+    <TestCase Id="../TC/Lab/2g/ST_AUD_MM_Tone_067-LAB_GSM_VC_RINGTONE_MTMR"/>
+    <TestCase Id="../TC/Lab/2g/ST_AUD_MM_Tone_068-LAB_GSM_VC_RINGTONE_MTMR"/>
+    <TestCase Id="../TC/Lab/2g/ST_AUD_MM_Tone_069-LAB_GSM_VC_RINGTONE_MTMR"/>
+    <TestCase Id="../TC/Lab/2g/ST_AUD_MM_Tone_070-LAB_GSM_VC_RINGTONE_MTMR"/>
+    <TestCase Id="../TC/Lab/2g/ST_AUD_MM_Tone_071-LAB_GSM_VC_RINGTONE_MTMR"/>
+    <TestCase Id="../TC/Lab/2g/ST_AUD_MM_Tone_072-LAB_GSM_VC_RINGTONE_MTMR"/>
+    <TestCase Id="../TC/Lab/2g/ST_AUD_MM_Tone_073-LAB_GSM_VC_RINGTONE_MTMR"/>
+            <!-- ringtone wcdma -->
+    <TestCase Id="../TC/Lab/3g/ST_AUD_MM_Tone_055-LAB_WCDMA_VC_RINGTONE_MTMR"/>
+  </TestCases>
+</Campaign>

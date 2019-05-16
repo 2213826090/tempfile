@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="13.37">
+    <UseCase>LAB_GSM_FLIGHTMODE_EM_VC</UseCase>
+    <Description>Use Case GSM Voice Call Mobile Originated / Mobile release when Flight Mode is ON.</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters>
+        <Parameter>
+            <!-- Cell Band (PGSM|RGSM|EGSM|GSM450|GSM480|GSM750|GSM850|TGSM810|PCS|DCS) -->
+            <Name>CELL_BAND</Name>
+            <Value>DCS</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Broadcast Channel Arfcn frequency -->
+            <Name>BCH_ARFCN</Name>
+            <Value>698</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Traffic Channel Arfcn frequency -->
+            <Name>TCH_ARFCN</Name>
+            <Value>650</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Cell Service (GSM|GPRS|EGPRS) -->
+            <Name>CELL_SERVICE</Name>
+            <Value>GSM</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Cell Power (in dBm) -->
+            <Name>CELL_POWER</Name>
+            <Value>-60</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Voice coder rate
+                Possible values:
+                FR
+                EFR
+                HR
+                FR_AMR_NB_[1220|1020|795|740|670|590|515|475]
+                HR_AMR_NB_[795|740|670|590|515|475]
+                AMR_WB_[1265|885|660]
+            -->
+            <Name>VOICE_CODER_RATE</Name>
+            <Value>FR_AMR_NB_1220</Value>
+        </Parameter>
+        <Parameter>
+
+            <!-- Dialed Phone number (MSISDN).
+                 If value is [PHONE_NUMBER] the value used will be the phoneNumber
+                 defined in the Phone_Catalog.xml.
+
+                 If you want to test the nominal case of EM Voice Call in Flight Mode
+                 you should any value (arbitrary) different from a real Emergency
+                 Number and set the IS_EMERGENCY_NUMBER parameter to 'True'.
+
+                 If you want to test that the Voice Call cannot be established from
+                 Flight Mode with a non-Emergency number you should any value
+                 (arbitrary) different from a real Emergency Number and set the
+                 IS_EMERGENCY_NUMBER parameter to 'False' (and update the
+                 <TcExpectedResult> value accordingly).
+             -->
+            <Name>PHONE_NUMBER</Name>
+            <Value>12345</Value>
+        </Parameter>
+        <Parameter>
+            <!-- This parameter indicates whether the phone number provided above
+                 shall be considered to be an emergency number or not.
+                 True: the phone number is an emergency number so we expect it:
+                  - to be different from any real emergency number
+                  - to make the DUT exit from the Flight Mode when dialed
+                 False: the phone number is not an emergency number so we expect it:
+                  - to be different from any real emergency number
+                  - to make the Voice Call attempt fail when dialed. -->
+            <Name>IS_EMERGENCY_NUMBER</Name>
+            <Value>True</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Call Duration (in seconds) -->
+            <Name>CALL_DURATION</Name>
+            <Value>10</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Mobile Country Code 0 to 999 -->
+            <Name>MCC</Name>
+            <Value>1</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Mobile Network Code 0 to 999 -->
+            <Name>MNC</Name>
+            <Value>1</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

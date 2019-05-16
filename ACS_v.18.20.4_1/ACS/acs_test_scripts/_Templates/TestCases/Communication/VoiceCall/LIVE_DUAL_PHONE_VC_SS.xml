@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="16.06">
+    <UseCase>LIVE_DUAL_PHONE_VC_SS</UseCase>
+    <Description>Supplementary services</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <!--<Environment name="TEL">
+    </Environment> -->
+    <Parameters>
+        <Parameter>
+            <Name>PHONE_NUMBER</Name>
+            <Value>+919742267544</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Call Duration (in seconds) -->
+            <Name>CALL_DURATION</Name>
+            <Value>15</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Supplementary Service -->
+            <Name>SS_FEATURE</Name>
+            <Value>CALL_FORWARDING</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Mode for Supplementary Service -->
+            <Name>SS_MODE</Name>
+            <Value>UNCONDITIONAL</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Phone number used for Supplementary Service -->
+            <Name>SS_PHONE_NUMBER</Name>
+            <Value>9986503941</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase>
+    <UseCase>LAB_AUDIO_GSM_VC_RECORDTONES</UseCase>
+    <Description>Check the presence of recording tones during recorded GSM Mobile Originated Call on simulated network</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <Parameters>
+        <Parameter>
+            <!-- Keep the recorded audio file whether the test result is good or not (TRUE|FALSE) -->
+            <Name>KEEP_RECORD</Name>
+            <Value>TRUE</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Cell Band (PGSM|RGSM|EGSM|GSM450|GSM480|GSM750|GSM850|TGSM810|PCS|DCS) -->
+            <Name>CELL_BAND</Name>
+            <Value>EGSM</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Cell Service (GSM|GPRS|EGPRS) -->
+            <Name>CELL_SERVICE</Name>
+            <Value>GSM</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Voice coder rate
+            Possible values:
+                FR
+                EFR
+                HR
+                FR_AMR_NB_[1220|1020|795|740|670|590|515|475]
+                HR_AMR_NB_[795|740|670|590|515|475]
+                AMR_WB_[1265|885|660]
+            -->
+            <Name>CODEC</Name>
+            <Value>EFR</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Voice call type (MO [Mobile Originated]|MT [Mobile Terminated]) -->
+            <Name>VC_TYPE</Name>
+            <Value>MT</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Phone number to dial -->
+            <Name>PHONE_NUMBER</Name>
+            <Value>1234</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Audio file to play containing silence -->
+            <Name>AUDIO_FILE</Name>
+            <Value>em01_s001_NBn_no_speech.wav</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Audio file to play containing speech-->
+            <Name>AUDIO_FILE_SPEECH</Name>
+            <Value>em01_s001_NBn_less_speech.wav</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Type of container -->
+            <Name>CONTAINER</Name>
+            <Value>.3gp</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Source input for the audio recorder (1 = MIC / 2 = VOICE_DL / 3 = VOICE_UL / 4 = VOICE_CALL)-->
+            <Name>SOURCE_INPUT</Name>
+            <Value>4</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Audio Codec bitrate for the audio recorder in kbps-->
+            <Name>REC_CODEC</Name>
+            <Value>AMR_NB</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Audio Codec bitrate for the audio recorder in kbps-->
+            <Name>REC_BITRATE</Name>
+            <Value>12200</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Sample rate of the audio file to play -->
+            <Name>SAMPLERATE</Name>
+            <Value>8000</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Number of channel in the audio file (Mono = 1 / Stereo = 2) -->
+            <Name>CHANNELNUM</Name>
+            <Value>1</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Time in second between 2 recording tones -->
+            <Name>TONE_PERIODICITY</Name>
+            <Value>10</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Fundamental frequency of recording tones in Hz-->
+            <Name>TONE_FREQUENCY</Name>
+            <Value>1000</Value>
+        </Parameter>
+        <Parameter>
+            <!-- DTX enabling status -->
+            <Name>DTX</Name>
+            <Value>OFF</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

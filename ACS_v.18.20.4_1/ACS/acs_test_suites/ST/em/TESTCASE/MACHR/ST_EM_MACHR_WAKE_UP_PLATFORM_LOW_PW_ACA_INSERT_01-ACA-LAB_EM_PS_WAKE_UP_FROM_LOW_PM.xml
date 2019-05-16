@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="13.37">
+    <UseCase>LAB_EM_PS_WAKE_UP_FROM_LOW_PM</UseCase>
+    <Description>EM - Platform shall wake up from low power mode upon USB ACA insertion</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>False</b2bContinuousMode>
+    <TcMaxAttempt>1</TcMaxAttempt>
+    <TcAcceptanceCriteria>1</TcAcceptanceCriteria>
+    <Parameters>
+        <Parameter>
+            <!-- charger to test -->
+            <Name>CHARGER</Name>
+            <Value>ACA</Value>
+        </Parameter>
+        <Parameter>
+            <!-- time to go in sleep mode in second-->
+            <Name>TIME_TO_SLEEP</Name>
+            <Value>180</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

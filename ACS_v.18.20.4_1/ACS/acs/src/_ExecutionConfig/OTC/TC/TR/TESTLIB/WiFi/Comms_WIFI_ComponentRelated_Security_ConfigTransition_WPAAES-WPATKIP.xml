@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='ASCII'?>
+<TestCase>
+    <UseCase>Testlib</UseCase>
+    <Description>wifi</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <TcMaxAttempt>3</TcMaxAttempt>
+    <Parameters>
+        <Parameter>
+            <Name>test</Name>
+            <Value>scripts/wireless/wifi_generic/tests/reconnect_after_ap_reconfig.py</Value>
+        </Parameter>
+        <Parameter>
+            <Name>script-args</Name>
+            <Value>mode1=mixed mode2=mixed security1=wpa_psk security2=wpa_psk dut_security1=WPA dut_security2=WPA ap_name=ddwrt reconfigure_network=False encryption2=tkip  encryption1=aes passphrase2=test1234 passphrase1=test1234 conf_security2=WPA-PSK conf_security1=WPA-PSK pairwise_cipher1=CCMP pairwise_cipher2=TKIP</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

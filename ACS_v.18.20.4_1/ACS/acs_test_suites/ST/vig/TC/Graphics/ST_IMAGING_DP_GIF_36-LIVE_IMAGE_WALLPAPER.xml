@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase>
+	<UseCase>LIVE_IMAGE_WALLPAPER</UseCase>
+	<Description>set a static or live wallpaper</Description>
+	<b2bIteration>1</b2bIteration>
+	<b2bContinuousMode>False</b2bContinuousMode>
+	<Parameters>
+		<Parameter>
+			<!-- wallpaper type: live|static -->
+			<Name>WP_TYPE</Name>
+			<Value>static</Value>
+		</Parameter>
+			<Parameter>
+			<!-- wallpaper name: the name of the static picture if wallpaper type is static; the index of the live wallpaper if wallpaper type is live -->
+			<Name>WP_NAME</Name>
+			<Value>Graphics/Picture_Per_Format/GIF/ST_IMAGING_DP_GIF_01.gif</Value>
+		</Parameter>
+	</Parameters>
+</TestCase>

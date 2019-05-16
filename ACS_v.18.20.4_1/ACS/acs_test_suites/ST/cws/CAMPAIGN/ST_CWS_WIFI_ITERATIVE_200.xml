@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Campaign>
+    <Parameters>
+        <Parameter isControlledPSUsed="False"/>
+        <Parameter isIoCardUsed="True"/>
+        <!-- Set skipBootOnPowerCycle to True to disable the acs boot procedure -->
+        <!-- Important, it means that boot will be handle inside the campaign/tc -->
+        <Parameter skipBootOnPowerCycle="False"/>
+        <Parameter runHookScripts="False"/>
+        <Parameter powerCycleBetweenTC="False"/>
+        <Parameter powerCycleOnFailure="True"/>
+        <Parameter finalDutState="NoChange"/>
+        <Parameter stopCampaignOnCriticalFailure="False"/>
+        <Parameter stopCampaignOnFirstFailure="False"/>
+        <!-- LoggingLevel possible values: info | warning | debug | error -->
+        <Parameter loggingLevel="info"/>
+        <!-- CampaignType format -> <TEAM>_<CAMPAIGNTYPE>
+            Possible values:
+            FT(Feature Team)-> SANITY | REGRESSION | STRESS, RELIABILTY | MTBF
+            ST(System Test)-> SANITY | REGRESSION | STRESS, RELIABILTY | MTBF
+            SI(System Integration)-> EAT | STAB | PACT | CAT0 | RELIABILITY | MTBF
+            Otherwise "Others" should be used -->
+        <Parameter CampaignType="ST_SANITY"/>
+        <Parameter TCRReportViaRESTAPI="true"/>
+    </Parameters>
+    <Targets>
+        <!-- Target Values -->
+        <Target targetB2bPassRate="90"/>
+    </Targets>
+    <TestCases>
+
+        <TestCase Id="../TC/WIFI/STRESS-200/ST_CWS_WLAN_11N_010-LAB_WIFI_CONNECT_AFTER_LOSS_OF_COVERAGE-200"/>
+        <TestCase Id="../TC/WIFI/STRESS-200/ST_CWS_WLAN_11N_013-LAB_WIFI_CONNECT-200"/>
+        <TestCase Id="../TC/WIFI/STRESS-200/ST_CWS_WLAN_AIRPLANE_005-LIVE_CWS_APM_CYCLE_EFFECT-200"/>
+        <TestCase Id="../TC/WIFI/STRESS-200/ST_CWS_WLAN_AIRPLANE_010-LIVE_CWS_APM_CYCLE_EFFECT-200"/>
+        <TestCase Id="../TC/WIFI/STRESS-200/ST_CWS_WLAN_AIRPLANE_013-LIVE_CWS_APM_CYCLE_EFFECT-200"/>
+        <TestCase Id="../TC/WIFI/STRESS-200/ST_CWS_WLAN_BROWSE_006-LIVE_WIFI_WEB_BROWSING-200"/>
+        <TestCase Id="../TC/WIFI/STRESS-200/ST_CWS_WLAN_BROWSE_013-LAB_WIFI_LIVE_CELLULAR_SWAP-200"/>
+        <TestCase Id="../TC/WIFI/STRESS-200/ST_CWS_WLAN_CHANNEL_40M_011-200"/>
+        <TestCase Id="../TC/WIFI/STRESS-200/ST_CWS_WLAN_CHANNEL_40M_012-200"/>
+        <TestCase Id="../TC/WIFI/STRESS-200/ST_CWS_WLAN_FREQ_BAND_007-LAB_WIFI_DUAL_AP_BAND_SEL_SCAN-200"/>
+        <TestCase Id="../TC/WIFI/STRESS-200/ST_CWS_WLAN_FTP_015-200"/>
+        <TestCase Id="../TC/WIFI/STRESS-200/ST_CWS_WLAN_FTP_020-LAB_WIFI_FTP-200"/>
+        <TestCase Id="../TC/WIFI/STRESS-200/ST_CWS_WLAN_FTP_021-LAB_WIFI_FTP-200"/>
+        <TestCase Id="../TC/WIFI/STRESS-200/ST_CWS_WLAN_ROAMING_007-200"/>
+        <TestCase Id="../TC/WIFI/STRESS-200/ST_CWS_WLAN_STATICIP_003-LAB_WIFI_CONNECT_FORGET-200"/>
+        <TestCase Id="../TC/WIFI/STRESS-200/ST_CWS_WLAN_UI_003-200"/>
+        <TestCase Id="../TC/WIFI/STRESS-200/ST_CWS_WLAN_UI_013-200"/>
+        <TestCase Id="../TC/WIFI/STRESS-200/ST_CWS_WLAN_PROXY_008-200"/>
+        <TestCase Id="../TC/WIFI/STRESS-200/ST_CWS_WLAN_STA_11AC_010-200"/>
+
+    </TestCases>
+</Campaign>

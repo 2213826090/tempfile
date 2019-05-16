@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="13.37">
+    <UseCase>LAB_EM_BATT_RESUME_DURING_MAINT_CHRG</UseCase>
+    <Description>EM -  charge the board to full, then the test run load to discharge the board in order to see the charge resume</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>False</b2bContinuousMode>
+    <TcMaxAttempt>1</TcMaxAttempt>
+    <TcAcceptanceCriteria>1</TcAcceptanceCriteria>
+    <Parameters>
+        <Parameter>
+            <!-- Charger to use (SDP or CDP) -->
+            <Name>CHARGER</Name>
+            <Value>SDP</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Features to enable for the test to discharge board-->
+            <!-- Features avaible are :     -->
+            <!-- VIDEO, AUDIO, WIFI, BLUETOOTH, TORCHLIGHT, VIBRA, SCREEN ON  -->
+            <Name>LOAD</Name>
+            <Value>SCREEN_ON;WIFI;BLUETOOTH;TORCHLIGHT;VIBRA</Value>
+        </Parameter>
+        <Parameter>
+            <!-- path of the file to play if VIDEO or AUDIO is on LOAD -->
+            <Name>MULTIMEDIA_FILE</Name>
+            <Value>01_the_dark_knight-tlr3_H264_CBR_20M_1080p_AAC-LC_48k_320kbps_.mp4</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Volume of the media file in (%) -->
+            <Name>VOLUME</Name>
+            <Value>100</Value>
+        </Parameter>
+        <Parameter>
+            <!--Time max to charge to FULL (in seconds) -->
+            <Name>TIME_TO_FULL</Name>
+            <Value>60</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Maintenance charging treshold, charge restart below this treshold (depend of the device) -->
+            <Name>EXIT_MAINTENANCE_CHARGING_THRESHOLD</Name>
+            <Value>4.17</Value>
+        </Parameter>
+        <Parameter>
+            <!-- What we are testing here STAY_IN_FULL or EXIT_MAINTENANCE_TRESHOLD -->
+            <Name>TEST_TYPE</Name>
+            <Value>STAY_IN_FULL</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Time to wait for changing status after the treshold is reached (in seconds) -->
+            <Name>TIME_TO_STABILIZE_BOARD</Name>
+            <Value>120</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Timeout to ending test if device doesn't charge -->
+            <Name>TEST_TIMEOUT</Name>
+            <Value>7200</Value>
+        </Parameter>
+    </Parameters>
+    <TestSteps>
+        <Initialize>
+            <!-- Get the artifact on local host -->
+            <TestStep Id="GET_ARTIFACT" ARTIFACT="VIDEO/1080p/01_the_dark_knight-tlr3_H264_CBR_20M_1080p_AAC-LC_48k_320kbps_.mp4"
+                      ARTIFACT_SOURCE="FROM_BENCH:ARTIFACT_MANAGER:URI" TRANSFER_TIMEOUT="DEFAULT"
+                      STORED_FILE_PATH="FILE_PATH_IN_CACHE1" EQT="DEFAULT"/>
+            <!-- Then, Push it on the device. Device destination folder will be the default device media folder (/sdcard/acs_media) -->
+            <!-- FILE_PATH is retrieved from test step context -->
+            <TestStep Id="INSTALL_FILE" DEVICE="PHONE1" FILE_PATH="FROM_CTX:FILE_PATH_IN_CACHE1" TYPE="media"
+                      DESTINATION="FROM_DEVICE:PHONE1:userdataPath" TIMEOUT="DEFAULT" DESTINATION_STORED_PATH="FILE_PATH_IN_CACHE1"/>
+        </Initialize>
+    </TestSteps>
+</TestCase>

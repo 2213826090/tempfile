@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="13.45">
+    <UseCase>LAB_EM_PS_DIGITAL_BATTERY_IDENTIFICATION</UseCase>
+    <Description>this Usecase ensure that the digital battery profile is loaded on the board memory at the boot</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>False</b2bContinuousMode>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters>
+        <Parameter>
+            <!-- Battery Type : BATTERY_EMULATOR or ANALOG or DIGITAL or leave empty to use the one from device catalog-->
+            <Name>BATTERY_TYPE</Name>
+            <Value>DIGITAL</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

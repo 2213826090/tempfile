@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<UseCases xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:noNamespaceSchemaLocation="../../../../acs/src/_Catalogs/UseCase/usecase.xsd">
+    <UseCase Id="LAB_WIFI_LIVE_CELLULAR_SWAP" Domain="CWS" SubDomain="FIT" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Networking.LAB_WIFI_LIVE_CELLULAR_SWAP.LabWifiLiveCellularSwap</ClassName>
+        <Description>Test data connection swap between Wifi and live cellular technologies</Description>
+        <Environment name="CWS_WIFI">
+            <Dependency>EQT_LAB_AP</Dependency>
+            <Dependency>SW_RADIUS_SERVER</Dependency>
+            <Dependency>EQT_LIVE_USIM</Dependency>
+        </Environment>
+    </UseCase>
+    <UseCase Id="LAB_BT_A2DP_WITH_WIFI_ACTIVITY" Domain="CWS" SubDomain="FIT" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Fit.CWS.LAB_BT_A2DP_WITH_WIFI_ACTIVITY.LabBTA2DPWithWiFiActivity</ClassName>
+        <Description>Play music with Headset connected with A2DP BT Profile and WiFi activity</Description>
+        <Environment name="CWS_BT">
+            <Dependency>EQT_LAB_BT_HEADSET</Dependency>
+            <Dependency>EQT_LIVE_AP</Dependency>
+            <Dependency>SW_FTP_SERVER</Dependency>
+            <Dependency>SW_WEB_SERVER</Dependency>
+        </Environment>
+    </UseCase>
+    <UseCase Id="LIVE_DUAL_PHONE_BT_TRANSFER_SWITCH_WIFI" Domain="CWS" SubDomain="FIT" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Fit.CWS.LIVE_DUAL_PHONE_BT_TRANSFER_SWITCH_WIFI.LiveDualPhoneBTTransferSwitchWifi</ClassName>
+        <Description>Send file using BT OPP Profile and switch on/off WiFi in the same time</Description>
+        <Environment name="CWS_BT">
+            <Capabilities>CAP_DUAL_DEVICE</Capabilities>
+        </Environment>
+    </UseCase>
+    <UseCase Id="LIVE_DUAL_PHONE_BT_TRANSFER_SWITCH_BT" Domain="CWS" SubDomain="FIT" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Fit.CWS.LIVE_DUAL_PHONE_BT_TRANSFER_SWITCH_BT.LiveDualPhoneBTTransferSwitchBT</ClassName>
+        <Description>Send file using BT OPP Profile and switch on/off BT in the same time and restart a new BT OPP
+            transfer
+        </Description>
+        <Environment name="CWS_BT">
+            <Capabilities>CAP_DUAL_DEVICE</Capabilities>
+        </Environment>
+    </UseCase>
+    <UseCase Id="LIVE_BT_AND_WIFI_SCAN" Domain="CWS" SubDomain="FIT" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Fit.CWS.LIVE_BT_AND_WIFI_SCAN.LiveBTAndWiFiScan</ClassName>
+        <Description>Scan with BT and WiFi simultaneously</Description>
+        <Environment name="CWS_BT">
+            <Dependency>EQT_LIVE_AP</Dependency>
+            <Dependency>EQT_BT_DEVICE</Dependency>
+        </Environment>
+    </UseCase>
+    <UseCase Id="LAB_BT_AND_WIFI_RECONNECTION_AFTER_FLIGHT_MODE" Domain="CWS" SubDomain="FIT" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Fit.CWS.LAB_BT_AND_WIFI_RECONNECTION_AFTER_FLIGHT_MODE.LabBTAndWiFiReconnectionAfterFlightMode</ClassName>
+        <Description>Connect WiFi and BT, then switch on/off Flight mode and check if BT and WiFi reconnect
+            automatically
+        </Description>
+        <Environment name="CWS_BT">
+            <Dependency>EQT_LAB_BT_HEADSET</Dependency>
+            <Dependency>EQT_LIVE_AP</Dependency>
+        </Environment>
+    </UseCase>
+    <UseCase Id="LIVE_BT_AND_WIFI_SWITCH_POWER" Domain="CWS" SubDomain="FIT" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Fit.CWS.LIVE_BT_AND_WIFI_SWITCH_POWER.LiveBTAndWiFiSwitchPower</ClassName>
+        <Description>Switch BT and WiFi iteratively</Description>
+        <Environment name="CWS_BT">
+        </Environment>
+    </UseCase>
+    <UseCase Id="LAB_DUAL_PHONE_BT_OPP_A2DP_WITH_WIFI_ACTIVITIES" Domain="CWS" SubDomain="FIT" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Fit.CWS.LAB_DUAL_PHONE_BT_OPP_A2DP_WITH_WIFI_ACTIVITIES.LabDualPhoneBTOppA2DPWithWiFiActivities</ClassName>
+        <Description>BT OPP transfer with A2DP playing music and WiFi activities</Description>
+        <Environment name="CWS_BT">
+            <Capabilities>CAP_DUAL_DEVICE</Capabilities>
+            <Dependency>EQT_LAB_BT_HEADSET</Dependency>
+            <Dependency>EQT_LIVE_AP</Dependency>
+            <Dependency>SW_FTP_SERVER</Dependency>
+        </Environment>
+    </UseCase>
+    <UseCase Id="LAB_DUAL_PHONE_BT_OPP_WITH_A2DP_CONNECT" Domain="CWS" SubDomain="FIT" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Fit.CWS.LAB_DUAL_PHONE_BT_OPP_WITH_A2DP_CONNECT.LabDualPhoneBTOppWithA2DPConnect</ClassName>
+        <Description>Transfer a file with BT and connect/disconnect BT headset</Description>
+        <Environment name="CWS_BT">
+            <Capabilities>CAP_DUAL_DEVICE</Capabilities>
+            <Dependency>EQT_LAB_BT_HEADSET</Dependency>
+        </Environment>
+    </UseCase>
+    <UseCase Id="LAB_BT_SCAN_WITH_A2DP_PLAYING" Domain="CWS" SubDomain="FIT" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Fit.CWS.LAB_BT_SCAN_WITH_A2DP_PLAYING.LabBTScanWithA2DPPlaying</ClassName>
+        <Description>Play music over A2DP Headset and scan multiple times</Description>
+        <Environment name="CWS_BT">
+            <Dependency>EQT_LAB_BT_HEADSET</Dependency>
+            <Dependency>EQT_BT_DEVICE</Dependency>
+        </Environment>
+    </UseCase>
+</UseCases>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestSteps xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../acs/src/_Catalogs/TestStep/teststep.xsd">
+    <TestStep Id="SNIFFER_START_CAPTURE" Domain="EQUIPMENT" SubDomain="WIFI_SNIFFER" Feature="" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Equipment.Sniffer.SnifferStartCapture.SnifferStartCapture</ClassName>
+        <Description>
+            Connect to the sniffer and start the capture.
+        </Description>
+        <Environment name="ANY">
+        </Environment>
+        <Parameters>
+            <Parameter name="EQT" type="STRING" isOptional="false">
+                <Description>The equipment name shall refer to an existing equipment the Bench config.</Description>
+                <PossibleValues />
+                <DefaultValue/>
+            </Parameter>
+            <Parameter name="CHANNEL" type="INTEGER" isOptional="false">
+                <Description>The WiFi Channel to sniff.</Description>
+                <PossibleValues>1;2;3;4;5;6;7;8;9;10;11;12;13;14;36;40;44;48</PossibleValues>
+                <DefaultValue/>
+            </Parameter>
+            <Parameter name="SAVE_SNIFF_ASCII" type="BOOLEAN" isOptional="true">
+                <Description>Enable ASCII format for sniff logs.</Description>
+                <PossibleValues>true;false</PossibleValues>
+                <DefaultValue>false</DefaultValue>
+            </Parameter>
+            <Parameter name="DEVICE_MAC_ADDR" type="STRING" isOptional="true">
+                <Description>MAC address to filter. Set to 'NOT_USED' to not use this parameter.</Description>
+                <PossibleValues/>
+                <DefaultValue>NOT_USED</DefaultValue>
+            </Parameter>
+            <Parameter name="SSID" type="STRING" isOptional="true">
+                <Description>SSID to filter. Set to 'NOT_USED' to not use this parameter.</Description>
+                <PossibleValues/>
+                <DefaultValue>NOT_USED</DefaultValue>
+            </Parameter>
+            <Parameter name="OUTPUT_FILE_SAVE_AS" type="CONTEXT" isOptional="false">
+                <Description>
+                    <Key name="KEY_NAME_DEFINED_BY_USER" type="STRING">Name of the context variable where the value will be saved.</Key>
+                </Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="SNIFFER_STOP_AND_GET_CAPTURE" Domain="EQUIPMENT" SubDomain="WIFI_SNIFFER" Feature="" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Equipment.Sniffer.SnifferStopAndGetCapture.SnifferStopAndGetCapture</ClassName>
+        <Description>
+            Stop the sniffer, get the captured sniff logs and release the connection.
+        </Description>
+        <Environment name="ANY">
+        </Environment>
+        <Parameters>
+            <Parameter name="EQT" type="STRING" isOptional="false">
+                <Description>The equipment name shall refer to an existing equipment the Bench config.</Description>
+                <PossibleValues />
+                <DefaultValue/>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+</TestSteps>

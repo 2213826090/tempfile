@@ -1,0 +1,30 @@
+<?xml version="1.0" ?>
+<TestCase>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters/>
+    <Discription>
+The Intel Android ULT device must support scaling and rotation of video surfaces using GPU.
+</Discription>
+    <Parameters/>
+    <Domain>Graphics_System</Domain>
+    <Parameters/>
+    <Phase>CORE</Phase>
+    <Parameters/>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <Parameters/>
+    <Type>FUNCTIONAL</Type>
+    <Parameters/>
+    <UseCase>PY_UNIT</UseCase>
+    <Parameters/>
+    <b2bIteration>1</b2bIteration>
+    <Parameters>
+        <Parameter>
+            <Name>TEST_DATA_ROOT</Name>
+            <Value>testplan/Graphics_System</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TEST_CASE</Name>
+            <Value>tests.Graphics_System.UFO_Mesa.test_GPU_Composition.GPUCompositionTest.test_GPU_Composition</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

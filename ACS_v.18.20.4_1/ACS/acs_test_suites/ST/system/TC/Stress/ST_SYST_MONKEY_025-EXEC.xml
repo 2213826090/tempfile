@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase>
+  <UseCase>EXEC</UseCase>
+  <Description>General execution use case</Description>
+  <b2bIteration>1</b2bIteration>
+  <b2bContinuousMode>True</b2bContinuousMode>  
+  <Parameters>  
+    <Parameter>
+      <Name>RUN_CMD</Name>
+      <Value>python _ExecutionConfig/ST/system/TC/Stress/monkey_run.py -p com.android.cellbroadcastreceiver --pct-touch 20 --pct-nav 20 --pct-majornav 20 --pct-syskeys 20 --pct-anyevent 20 -v -s 41 500000</Value>
+    </Parameter>
+    <Parameter>
+      <Name>RUN_TIMEOUT</Name>
+      <Value>10000</Value>
+    </Parameter>
+	<Parameter>
+	  <Name>RUN_EXPECT_RESULT</Name>
+	  <Value>Monkey test cases passed</Value>
+	</Parameter>
+
+    <Parameter>
+      <Name>TEAR_DOWN_CMD</Name>
+      <Value>python _ExecutionConfig/ST/system/TC/Stress/monkey_teardown.py</Value>
+    </Parameter>
+    <Parameter>
+      <Name>TEAR_DOWN_TIMEOUT</Name>
+      <Value>10</Value>
+    </Parameter>
+	<Parameter>
+	  <Name>TEAR_DOWN_EXPECT_RESULT</Name>
+	  <Value>0</Value>
+	</Parameter>
+  </Parameters>  
+</TestCase>

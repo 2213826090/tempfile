@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase>
+    <UseCase>LAB_EM_PLUG_NO_BATT</UseCase>
+    <Description>Plug USB with critical battery level.</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>False</b2bContinuousMode>
+    <TcMaxAttempt>2</TcMaxAttempt>
+    <TcAcceptanceCriteria>1</TcAcceptanceCriteria>
+    <Parameters>
+        <Parameter>
+            <!-- Vbatt Voltage -->
+            <Name>VBATT_LIST</Name>
+            <Value>2.5;2.85;3.15;3.65;3.8</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Vusb Voltage -->
+            <Name>VUSB</Name>
+            <Value>5.7</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

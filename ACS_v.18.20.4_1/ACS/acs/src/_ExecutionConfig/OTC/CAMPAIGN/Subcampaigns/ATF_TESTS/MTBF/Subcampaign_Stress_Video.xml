@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='ASCII'?>
+<Campaign version="13.49">
+    <Parameters>
+            <Parameter isControlledPSUsed="False"/>
+            <Parameter isIoCardUsed="False"/>
+            <Parameter skipBootOnPowerCycle="False"/>
+            <Parameter bootRetryNumber="0"/>
+            <Parameter runHookScripts="False"/>
+            <Parameter powerCycleBetweenTC="False"/>
+            <Parameter powerCycleOnFailure="False"/>
+            <Parameter finalDutState="NoChange"/>
+            <Parameter stopCampaignOnCriticalFailure="False"/>
+            <Parameter stopCampaignOnFirstFailure="False"/>
+            <Parameter loggingLevel="debug"/>
+            <Parameter CampaignType="Other"/>
+      </Parameters>
+    <TestCases>
+        <TestCase Id="../../../../TC/TR/Stress/H263_352x288_25fps_853kbps_AAC_LC_44.1kHz_64kbps_Mono.mp4"/>
+        <TestCase Id="../../../../TC/TR/Stress/MPEG4_128x96_30fps_242kbps_AAC_LC_32kHz_110kbps_Stereo.3GP"/>
+        <TestCase Id="../../../../TC/TR/Stress/Video_Playback_H264_480x320_25fps_5737kbps_AMR_NB_8kHz_12.2kbps_Mono.3GP_MTBF"/>
+        <TestCase Id="../../../../TC/TR/Stress/Video_Playback_MPEG4_352x288_24fps_144kbps_AAC_LC_22.05kHz_38kbps_Mono.3GP_MTBF"/>
+        <TestCase Id="../../../../TC/TR/Stress/VP8_30fps_352x288_1933kbps_Vorbis_44.1kHz_80kbps_Stereo.MKV"/>
+    </TestCases>
+</Campaign>

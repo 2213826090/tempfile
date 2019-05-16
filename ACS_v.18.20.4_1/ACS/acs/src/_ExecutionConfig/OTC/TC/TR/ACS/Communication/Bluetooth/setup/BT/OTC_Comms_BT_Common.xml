@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<Include>
+    <!-- Description : Full initialization of PHONE1 for Bluetooth TCs. -->
+    <!-- Result : Bluetooth is On, not visible, with default name (MAC Address of DUT) and  BT MAC address is save in context : BT_MAC_ADDRESS_PHONE1 -->
+    <TestStepSet Id="InitPhoneCWS">
+        <TestStep Id="CONNECT_DEVICE"/>
+        <TestStep Id="WAKE_SCREEN"/>
+        <TestStep Id="SET_PHONE_LOCK" VALUE="unlock"/>
+        <Fork Id="InitFork">
+            <TestStep Id="BT_SET_POWER" POWER="OFF"/>
+        </Fork>
+    </TestStepSet>
+    <TestStepSet Id="BTFullSetupPhone1">
+        <!-- AUTOMATION - Set default configuration -->
+        <TestStep SetId="InitPhoneCWS" DEVICE="PHONE1" />
+        <!-- SPEC - Init : BT is On, Friendly name -->
+        <TestStep SetId="BTCommonSetup" DEVICE="PHONE1" SAVE_AS="BT_MAC_ADDRESS_PHONE1" MODE="none" TIMEOUT="120" />
+        <TestStep Id="BT_SET_NAME" DEVICE="PHONE1" NAME="FROM_CTX:BT_MAC_ADDRESS_PHONE1" />
+    </TestStepSet>
+
+    <!-- Description : Full initialization of PHONE2 for Bluetooth TCs. -->
+    <!-- Result : Bluetooth is On, not visible, with default name (MAC Address of DUT) and  BT MAC address is save in context : BT_MAC_ADDRESS_PHONE2 -->
+    <TestStepSet Id="BTFullSetupPhone2">
+        <!-- AUTOMATION - Set default configuration -->
+        <TestStep SetId="InitPhoneCWS" DEVICE="PHONE2" />
+        <!-- SPEC - Init : BT is On, Friendly name -->
+        <TestStep SetId="BTCommonSetup" DEVICE="PHONE2" SAVE_AS="BT_MAC_ADDRESS_PHONE2" MODE="none" TIMEOUT="120" />
+        <TestStep Id="BT_SET_NAME" DEVICE="PHONE2" NAME="FROM_CTX:BT_MAC_ADDRESS_PHONE2" />
+    </TestStepSet>
+
+    <!-- Description : Full initialization of PHONE1 AND PHONE2 for Bluetooth TCs. -->
+    <!-- Result : Bluetooth is On, not visible, with default name (MAC Address of DUT) and BT MAC addresses are save in context : BT_MAC_ADDRESS_PHONE1 and BT_MAC_ADDRESS_PHONE2 -->
+    <TestStepSet Id="BTFullSetupPhones1and2">
+        <Fork Id="FullSetupPhones1and2">
+            <TestStep SetId="BTFullSetupPhone1" />
+            <TestStep SetId="BTFullSetupPhone2" />
+        </Fork>
+    </TestStepSet>
+
+    <TestStepSet Id="InitPhoneCWSAllowScreenLock">
+        <TestStep Id="CONNECT_DEVICE"/>
+        <TestStep Id="WAKE_SCREEN"/>
+        <TestStep Id="SET_PHONE_LOCK" VALUE="lock"/>
+        <Fork Id="InitFork">
+            <TestStep Id="BT_SET_POWER" POWER="OFF"/>
+        </Fork>
+    </TestStepSet>
+    <TestStepSet Id="BTFullSetupPhone1AllowScreenLock">
+        <!-- AUTOMATION - Set default configuration -->
+        <TestStep SetId="InitPhoneCWSAllowScreenLock" DEVICE="PHONE1" />
+        <!-- SPEC - Init : BT is On, Friendly name -->
+        <TestStep SetId="BTCommonSetup" DEVICE="PHONE1" SAVE_AS="BT_MAC_ADDRESS_PHONE1" MODE="none" TIMEOUT="120" />
+        <TestStep Id="BT_SET_NAME" DEVICE="PHONE1" NAME="FROM_CTX:BT_MAC_ADDRESS_PHONE1" />
+    </TestStepSet>
+
+    <!-- Description : Full initialization of PHONE2 for Bluetooth TCs. -->
+    <!-- Result : Bluetooth is On, not visible, with default name (MAC Address of DUT) and  BT MAC address is save in context : BT_MAC_ADDRESS_PHONE2 -->
+    <TestStepSet Id="BTFullSetupPhone2AllowScreenLock">
+        <!-- AUTOMATION - Set default configuration -->
+        <TestStep SetId="InitPhoneCWSAllowScreenLock" DEVICE="PHONE2" />
+        <!-- SPEC - Init : BT is On, Friendly name -->
+        <TestStep SetId="BTCommonSetup" DEVICE="PHONE2" SAVE_AS="BT_MAC_ADDRESS_PHONE2" MODE="none" TIMEOUT="120" />
+        <TestStep Id="BT_SET_NAME" DEVICE="PHONE2" NAME="FROM_CTX:BT_MAC_ADDRESS_PHONE2" />
+    </TestStepSet>
+
+    <!-- Description : Full initialization of PHONE1 AND PHONE2 for Bluetooth TCs. -->
+    <!-- Result : Bluetooth is On, not visible, with default name (MAC Address of DUT) and BT MAC addresses are save in context : BT_MAC_ADDRESS_PHONE1 and BT_MAC_ADDRESS_PHONE2 -->
+    <TestStepSet Id="BTFullSetupPhones1and2">
+        <Fork Id="FullSetupPhones1and2">
+            <TestStep SetId="BTFullSetupPhone1" />
+            <TestStep SetId="BTFullSetupPhone2" />
+        </Fork>
+    </TestStepSet>
+
+    <TestStepSet Id="BTFullSetupPhones1and2AllowScreenLock">
+        <Fork Id="FullSetupPhones1and2AllowScreenLock">
+            <TestStep SetId="BTFullSetupPhone1AllowScreenLock" />
+            <TestStep SetId="BTFullSetupPhone2AllowScreenLock" />
+        </Fork>
+    </TestStepSet>
+    <!-- ########################################################################################################### -->
+
+    <!-- Description : Standard initialization for Bluetooth TCs. Call it for each phone used in the TC. -->
+    <!-- Parameters : DEVICE (Phone), MODE(discoverability mode), TIMEOUT (BT visibility timeout), SAVE_AS (BT Mac Address) -->
+    <TestStepSet Id="BTCommonSetup">
+        <TestStep Id="BT_SET_POWER" POWER="OFF,ON" />
+        <TestStep Id="BT_GET_ADDRESS" />
+    </TestStepSet>
+    <!-- Description : Standard teardown for Bluetooth TCs. Call it for each phone used in the TC. -->
+    <!-- Parameters : DEVICE (Phone) -->
+    <TestStepSet Id="BTCommonTeardown">
+        <TestStep Id="BT_SET_POWER" POWER="OFF" />
+        <TestStep Id="OPEN_HOME_PAGE" />
+    </TestStepSet>
+    <!-- Description : Standard configuration for OPP transfer. Call it before to perform an OPP transfer. -->
+    <!-- Requirement : OPP_FILES_TO_TRANSFER variable must be in TC parameters. It contains list of files to transfer with OPP. -->
+    <!-- Parameters : DEVICE (Phone) -->
+    <TestStepSet Id="BTOppSetup">
+        <TestStep Id="BT_SET_DISCOVERABLE" MODE="both" TIMEOUT="0" />
+        <TestStep Id="SUSPEND" DURATION_IN_SEC="20"/>
+        <TestStep Id="BT_OPP_CLEANUP" REMOVE_FILES="true" FILES="FROM_TC:OPP_FILES_TO_TRANSFER" />
+    </TestStepSet>
+
+
+    <!-- ########################################################################################################### -->
+
+    <!-- Parameter DEVICE, BUTTONS, FILENAME, TIMEOUT, DURATION_IN_SEC, WAIT_FOR -->
+    <TestStepSet Id="ExecuteAVRCPSequence">
+        <Fork Id="AVRCPSequence">
+            <TestStep Id="BT_EXPECT_AVRCP_BUTTONS" />
+            <TestStep SetId="PressHeadsetButtons" />
+        </Fork>
+    </TestStepSet>
+    <!-- Parameter BUTTONS, DURATION_IN_SEC, WAIT_FOR -->
+    <TestStepSet Id="PressHeadsetButtons">
+        <TestStep Id="SUSPEND" />
+        <TestStep Id="BT_HEADSET_PRESS_BUTTONS" EQT="BT_HEADSET" />
+    </TestStepSet>
+
+    <!-- Parameter DEVICE, BUTTONS, FILENAME, TIMEOUT, DURATION_IN_SEC, WAIT_FOR. These commands are sent as keycodes from the DUT -->
+    <TestStepSet Id="ExecuteAVRCPSequenceDUT">
+        <Fork Id="AVRCPSequence">
+            <TestStep Id="BT_EXPECT_AVRCP_BUTTONS" />
+            <TestStep SetId="DutSendKeyCode" />
+        </Fork>
+    </TestStepSet>
+    <!-- Parameter BUTTONS, DURATION_IN_SEC, WAIT_FOR -->
+    <TestStepSet Id="DutSendKeyCode">
+        <TestStep Id="SUSPEND" />
+        <TestStep Id="RUN_CMD" FORCE_EXECUTION="False" WAIT_FOR_RESPONSE="True" SILENT_MODE="True" SAVE_AS="CommandOutput"/>
+    </TestStepSet>
+</Include>

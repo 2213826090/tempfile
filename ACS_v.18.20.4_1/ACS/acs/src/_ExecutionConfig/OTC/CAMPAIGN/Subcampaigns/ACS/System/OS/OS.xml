@@ -1,0 +1,46 @@
+<?xml version="1.0" ?>
+<Campaign>
+      <Parameters>
+            <Parameter isControlledPSUsed="False"/>
+            <Parameter isIoCardUsed="False"/>
+            <Parameter skipBootOnPowerCycle="False"/>
+            <Parameter bootRetryNumber="0"/>
+            <Parameter runHookScripts="False"/>
+            <Parameter powerCycleBetweenTC="False"/>
+            <Parameter powerCycleOnFailure="False"/>
+            <Parameter finalDutState="NoChange"/>
+            <Parameter stopCampaignOnCriticalFailure="False"/>
+            <Parameter stopCampaignOnFirstFailure="False"/>
+            <Parameter loggingLevel="debug"/>
+            <Parameter CampaignType="Other"/>
+      </Parameters>
+      <TestCases>
+            <TestCase Id="../../../../../TC/TR/ACS/System/OS/LIVE_TEXT_RELOCATION_CHECK"/>
+            <TestCase Id="../../../../../TC/TR/ACS/System/OS/RAW_056-LIVE_SYSTEM_CONTACT_OPERATION"/>
+            <TestCase Id="../../../../../TC/TR/ACS/System/OS/TC_SYSTEM_BOOT"/>
+            <TestCase Id="../../../../../TC/TR/ACS/System/OS/RAW_101-LIVE_SYSTEM_FILE_OPERATION"/>
+            <TestCase Id="../../../../../TC/TR/ACS/System/OS/LTP_kerne"/>
+            <TestCase Id="../../../../../TC/TR/ACS/System/OS/RAW_OPERATION_LOCAL_TO_LOCAL"/>
+            <TestCase Id="../../../../../TC/TR/ACS/System/OS/FILE_OPERATION_MD5_CHECK_TC"/>
+            <TestCase Id="../../../../../TC/TR/ACS/System/OS/Reboot_Device_1000_times"/>
+            <TestCase Id="../../../../../TC/TR/ACS/System/OS/RAW_FILE_OPERATION_BIG_FILE"/>
+            <TestCase Id="../../../../../TC/TR/ACS/System/OS/RAW_108-LIVE_SYSTEM_FILE_OPERATION"/>
+            <TestCase Id="../../../../../TC/TR/ACS/System/OS/RAW_106-LIVE_SYSTEM_FILE_OPERATION"/>
+            <TestCase Id="../../../../../TC/TR/ACS/System/OS/RAW_OPERATION_LOCAL_TO_SD"/>
+            <TestCase Id="../../../../../TC/TR/ACS/System/OS/RAW_110-LIVE_SYSTEM_FILE_OPERATION"/>
+            <TestCase Id="../../../../../TC/TR/ACS/System/OS/RAW_100-LIVE_SYSTEM_FILE_OPERATION"/>
+            <TestCase Id="../../../../../TC/TR/ACS/System/OS/ADB_PUSH_PULL500MB"/>
+            <TestCase Id="../../../../../TC/TR/ACS/System/OS/RAW_112-LIVE_SYSTEM_FILE_OPERATION"/>
+            <TestCase Id="../../../../../TC/TR/ACS/System/OS/iterative_copy_memory_to_sdcard"/>
+            <TestCase Id="../../../../../TC/TR/ACS/System/OS/CHECK_INSTALL_UNINSTALL"/>
+            <TestCase Id="../../../../../TC/TR/ACS/System/OS/RAW_105-LIVE_SYSTEM_FILE_OPERATION"/>
+            <TestCase Id="../../../../../TC/TR/ACS/System/OS/iterative_copy_sdcard_to_memory"/>
+            <TestCase Id="../../../../../TC/TR/ACS/System/OS/RAW_102-LIVE_SYSTEM_FILE_OPERATION"/>
+            <TestCase Id="../../../../../TC/TR/ACS/System/OS/RAW_103-LIVE_SYSTEM_FILE_OPERATION"/>
+            <TestCase Id="../../../../../TC/TR/ACS/System/OS/ITERATIVE_INSTALLING_APPLICATION"/>
+            <TestCase Id="../../../../../TC/TR/ACS/System/OS/ADB_PUSH_PULL10MB"/>
+            <TestCase Id="../../../../../TC/TR/ACS/System/OS/ADB_SIMPLE_ECHO_TC"/>
+            <TestCase Id="../../../../../TC/TR/ACS/System/OS/RAW_090-LIVE_SYSTEM_FILE_OPERATION"/>
+            <TestCase Id="../../../../../TC/TR/ACS/System/OS/RAW_109-LIVE_SYSTEM_FILE_OPERATION"/>
+      </TestCases>
+</Campaign>

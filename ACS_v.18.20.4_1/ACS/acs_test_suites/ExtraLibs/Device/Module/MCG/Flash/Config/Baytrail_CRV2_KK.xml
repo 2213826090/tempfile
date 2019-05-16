@@ -1,0 +1,18 @@
+<ModuleConfiguration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                     xsi:noNamespaceSchemaLocation="FlashModule.xsd">
+
+    <!-- FLASH MODULE PARAMETERS -->
+
+    <!-- MODEM_FLASH: remove modem flash command in fastboot flash.xml -->
+    <MODEM_FLASH>true</MODEM_FLASH>
+    <!-- DEDIPROG: set to true if board possesses dediprog ability -->
+    <DEDIPROG>true</DEDIPROG>
+    <!-- RECOVERY: set to true to force use of dediprog to flash bios -->
+    <RECOVERY>false</RECOVERY>
+
+    <!-- PUPDR_COMMON PARAMETERS -->
+
+    <!-- MODEM: set to true if board does not possess any modem-->
+    <MODEM>false</MODEM>
+
+</ModuleConfiguration>

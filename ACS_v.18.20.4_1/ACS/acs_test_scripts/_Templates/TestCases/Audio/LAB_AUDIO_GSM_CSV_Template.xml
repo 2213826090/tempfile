@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase>
+  <UseCase>LAB_AUDIO_GSM_CSV</UseCase>
+  <Description>Check Audio is routed successfully to the DUT audio output in 2G</Description>
+  <b2bIteration>1</b2bIteration>
+  <b2bContinuousMode>True</b2bContinuousMode>
+  <Parameters>
+    <Parameter>
+      <!-- Cell Band (PGSM|RGSM|EGSM|GSM450|GSM480|GSM750|GSM850|TGSM810|PCS|DCS) -->
+      <Name>CELL_BAND</Name>
+      <Value>EGSM</Value>
+    </Parameter>
+    <Parameter>
+        <!-- Cell Service (GSM|GPRS|EGPRS) -->
+        <Name>CELL_SERVICE</Name>
+        <Value>GSM</Value>
+    </Parameter>
+    <Parameter>
+        <!-- Voice coder rate
+          Possible values:
+             FR
+             EFR
+             HR
+             FR_AMR_NB_[1220|1020|795|740|670|590|515|475]
+             HR_AMR_NB_[795|740|670|590|515|475]
+             AMR_WB_[1265|885|660]
+        -->
+        <Name>CODEC</Name>
+        <Value>EFR</Value>
+    </Parameter>
+    <Parameter>
+        <!-- Voice call type (MO [Mobile Originated]|MT [Mobile Terminated]) -->
+        <Name>VC_TYPE</Name>
+        <Value>MO</Value>
+    </Parameter>
+    <Parameter>
+        <!-- Phone number to dial for a MO CSV Call  -->
+        <Name>PHONE_NUMBER</Name>
+        <Value>1234</Value>
+    </Parameter>
+    <Parameter>
+        <!-- THD max value in dB
+            This parameter sets the verdict of the test, and may have to be modified
+            depending on the DUT model
+        -->
+        <Name>THD_THRESHOLD</Name>
+        <Value>-30</Value>
+    </Parameter>
+    <Parameter>
+        <!-- Call duration in seconds -->
+        <Name>CALL_DURATION</Name>
+        <Value>30</Value>
+    </Parameter>
+  </Parameters>
+</TestCase>

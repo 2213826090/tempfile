@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="13.41">
+    <TestSteps>
+        <Include Src="ST/pnp/TSS/common.xml" />
+        <Include Src="ST/pnp/TSS/active.xml" />
+        <Include Src="ST/pnp/TSS/amarisoft.xml" />
+        <Initialize>
+            <TestStep SetId="InitializePnPResources" />
+        </Initialize>
+        <Setup>
+            <TestStep Id="RELEASE_VOICE_CALL" DEVICE="PHONE1" CALL_TO_RELEASE="ALL"/>
+            <TestStep SetId="ConfigureRat" />
+            <TestStep Id="CONFIGURE_SYSTEM_SLEEP_MODE" DEVICE="PHONE1" MODE="default"/>
+        </Setup>
+        <RunTest>
+            <TestStep Id="INITIATE_VOICE_CALL" DEVICE="PHONE1" NUMBER_TO_CALL="FROM_TC:PHONE_NUMBER" VC_TYPE="DEFAULT"/>
+            <TestStep Id="WAIT_FOR_VOICE_CALL_STATE" DEVICE="PHONE1" VC_STATE="ACTIVE" TIMEOUT="60"/>
+            <TestStep SetId="StartPowerMeasurement" />
+            <TestStep Id="SUSPEND" DURATION_IN_SEC="FROM_TC:TEST_DURATION" REFRESH_STDOUT_IN_SEC="60" />
+            <TestStep SetId="StopPowerMeasurement" />
+            <!-- ensure call is still active -->
+            <TestStep Id="WAIT_FOR_VOICE_CALL_STATE" DEVICE="PHONE1" VC_STATE="ACTIVE" TIMEOUT="60"/>
+            <TestStep Id="RELEASE_VOICE_CALL" DEVICE="PHONE1" CALL_TO_RELEASE="ALL"/>
+        </RunTest>
+        <TearDown>
+            <TestStep Id="RELEASE_VOICE_CALL" DEVICE="PHONE1" CALL_TO_RELEASE="ALL"/>
+            <TestStep SetId="TearDown" />
+        </TearDown>
+    </TestSteps>
+</TestCase>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<Include>
+    <TestStepSet Id ="StartAudioPlaybackMeasurement">
+        <TestStep Id="SYSDEBUG_SYNCHRONIZE" DEVICE="PHONE1" />
+        <TestStep Id="CONNECT_HEADSET" EQT="FROM_DEVICE:PHONE1:IoCard"/>
+        <TestStep Id="SET_MEDIA_VOLUME" DEVICE="PHONE1" VOLUME="FROM_TC:VOLUME"/>
+        <TestStep Id="DISCONNECT_DEVICE_FROM_FWK" DEVICE="PHONE1" />
+        <TestStep Id="EXEC_PNP_DROIDBOT" DEVICE="PHONE1" TIMEOUT="1"
+          TEST_NAME="FROM_TC:TEST_NAME"
+          EXTRA_OPTS="-e scenario start -e numRun 1" />
+        <TestStep Id="SYSDEBUG_RESET" DEVICE="PHONE1" />
+        <TestStep Id="REMOVE_USB" EQT="FROM_DEVICE:PHONE1:IoCard" />
+        <TestStep Id="SUSPEND" DURATION_IN_SEC="FROM_TC:SLEEP_DURATION" REFRESH_STDOUT_IN_SEC="60"/>
+
+        <TestStep Id="SYSDEBUG_START_ACQUISITION" DEVICE="PHONE1" />
+        <TestStep Id="PATLIB_ACQUISITION" EQT="DEFAULT" ACTION="start"/>
+    </TestStepSet>
+
+    <TestStepSet Id="InstallAudioFile">
+        <TestStep Id="GET_ARTIFACT"
+                  ARTIFACT="MISCELLANEOUS/MP3/[+]FROM_TC:AUDIO_FILE"
+                  ARTIFACT_SOURCE="FROM_BENCH:ARTIFACT_MANAGER:URI"
+                  TRANSFER_TIMEOUT="DEFAULT"
+                  STORED_FILE_PATH="FILE_PATH_IN_CACHE1" EQT="DEFAULT" />
+
+        <TestStep Id="INSTALL_FILE"
+                  DEVICE="PHONE1"
+                  FILE_PATH="FROM_CTX:FILE_PATH_IN_CACHE1"
+                  TYPE="media"
+                  DESTINATION="FROM_DEVICE:PHONE1:userdataPath"
+                  TIMEOUT="DEFAULT"
+                  DESTINATION_STORED_PATH="FILE_PATH_ON_DEVICE" />
+        <TestStep Id="REBOOT_DEVICE" DEVICE="PHONE1" WAY="soft" MODE="MOS" />
+    </TestStepSet>
+    <TestStepSet Id="UninstallAudioFile">
+        <TestStep Id="UNINSTALL_FILE"
+                  DEVICE="PHONE1"
+                  DEVICE_FOLDER="FROM_DEVICE:PHONE1:userdataPath"
+                  FILENAME="FROM_TC:AUDIO_FILE"/>
+    </TestStepSet>
+</Include>

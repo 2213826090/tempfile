@@ -1,0 +1,28 @@
+<?xml version="1.0" ?>
+<Campaign version="13.49">
+    <Parameters>
+        <Parameter isControlledPSUsed="False"/>
+        <Parameter isIoCardUsed="False"/>
+        <Parameter skipBootOnPowerCycle="False"/>
+        <Parameter bootRetryNumber="0"/>
+        <Parameter runHookScripts="False"/>
+        <Parameter powerCycleBetweenTC="False"/>
+        <Parameter powerCycleOnFailure="False"/>
+        <Parameter finalDutState="NoChange"/>
+        <Parameter stopCampaignOnCriticalFailure="False"/>
+        <Parameter stopCampaignOnFirstFailure="False"/>
+        <Parameter loggingLevel="debug"/>
+        <Parameter CampaignType="Other"/>
+    </Parameters>
+    <TestCases>
+        <TestCase Id="../../../../../TC/TP/TC/Chromecast/Power/test_chromecast_autosleep_1minute"/>
+        <TestCase Id="../../../../../TC/TP/TC/Chromecast/Power/test_screencasting_suspendresume"/>
+        <TestCase Id="../../../../../TC/TP/TC/Chromecast/CastScreen/test_screencasting_sleepdutduringvideoplayback"/>
+        <TestCase Id="../../../../../TC/TP/TC/Chromecast/CastScreen/test_screencasting_imagesviewing"/>
+        <TestCase Id="../../../../../TC/TP/TC/Chromecast/CastScreen/test_rotation_livewallpaper"/>
+        <TestCase Id="../../../../../TC/TP/TC/Chromecast/CastScreen/test_screencasting_openrecordedvideo"/>
+        <TestCase Id="../../../../../TC/TP/TC/Chromecast/CastScreen/test_camera_sdvideorecording"/>
+        <TestCase Id="../../../../../TC/TP/TC/Chromecast/CastScreen/test_screencasting_pdf_file_presentation"/>
+        <TestCase Id="../../../../../TC/TP/TC/Chromecast/CastScreen/test_screencasting_presentationmode_dutscreenoff"/>
+    </TestCases>
+</Campaign>

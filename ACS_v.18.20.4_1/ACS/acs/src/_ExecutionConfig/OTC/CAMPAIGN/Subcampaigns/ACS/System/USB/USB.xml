@@ -1,0 +1,32 @@
+<?xml version="1.0" ?>
+<Campaign>
+      <Parameters>
+            <Parameter isControlledPSUsed="False"/>
+            <Parameter isIoCardUsed="False"/>
+            <Parameter skipBootOnPowerCycle="False"/>
+            <Parameter bootRetryNumber="0"/>
+            <Parameter runHookScripts="False"/>
+            <Parameter powerCycleBetweenTC="False"/>
+            <Parameter powerCycleOnFailure="False"/>
+            <Parameter finalDutState="NoChange"/>
+            <Parameter stopCampaignOnCriticalFailure="False"/>
+            <Parameter stopCampaignOnFirstFailure="False"/>
+            <Parameter loggingLevel="debug"/>
+            <Parameter CampaignType="Other"/>
+      </Parameters>
+      <TestCases>
+            <TestCase Id="../../../../../TC/TR/ACS/System/USB/test_USB_checkReadUsb"/>
+            <TestCase Id="../../../../../TC/TR/ACS/System/USB/COPY_MP3_TO_eMMC_AND_CHECK"/>
+            <TestCase Id="../../../../../TC/TR/ACS/System/USB/COPY_FILE_WITH_255_CHAR_NAME_AND_CHECK"/>
+            <TestCase Id="../../../../../TC/TR/ACS/System/USB/DELETE_FOLDER_WITH_FILE_eMMC"/>
+            <TestCase Id="../../../../../TC/TR/ACS/System/USB/test_USB_checkFstab"/>
+            <TestCase Id="../../../../../TC/TR/ACS/System/USB/ADB_SHELL_COMMANDS_ARE_FUNCTIONAL"/>
+            <TestCase Id="../../../../../TC/TR/ACS/System/USB/USB_Storage-ADB"/>
+            <TestCase Id="../../../../../TC/TR/ACS/System/USB/RAW_USB_PLUG_UNPLUG"/>
+            <TestCase Id="../../../../../TC/TR/ACS/System/USB/test_USB_unmountUsbStorageDevice"/>
+            <TestCase Id="../../../../../TC/TR/ACS/System/USB/test_USB_checkEraseUsb"/>
+            <TestCase Id="../../../../../TC/TR/ACS/System/USB/GET_LOG_BY_ADB"/>
+            <TestCase Id="../../../../../TC/TR/ACS/System/USB/test_USB_checkWriteUsb"/>
+            <TestCase Id="../../../../../TC/TR/ACS/System/USB/test_USB_mountUsbStorageDevice"/>
+      </TestCases>
+</Campaign>

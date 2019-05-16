@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase>
+    <UseCase>LIVE_AUDIO_LATENCY</UseCase>
+    <Description>Launch an embedded audio test permit to calculate the audio latency.</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters>
+        <Parameter>
+            <!--The maximum delay tolerated by the test.
+                It fix the maximum threshold.
+                Set this threshold between 0 and 500 ms.
+                By default, use 300 ms.-->
+            <Name>MAX_DELAY</Name>
+            <Value>300</Value>
+        </Parameter>
+        <Parameter>
+            <!--The maximum gain of the recorded sound tolerated by the test.
+            It fix the minimum threshold.
+            Set this threshold at a maximum of 10000.
+            If the value is upper, the accuracy of the test is not guaranteed.
+            By default,use 5000.-->
+            <Name>MIN_AVGREC</Name>
+            <Value>5000</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

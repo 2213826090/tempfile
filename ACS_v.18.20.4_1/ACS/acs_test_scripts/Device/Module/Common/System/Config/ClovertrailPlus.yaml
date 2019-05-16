@@ -1,0 +1,45 @@
+ModuleConfiguration:
+    dpst_file: ""
+    vibrator_path: "/sys/devices/pci0000:00/0000:00:06.6/vibrator"
+    backlight_path: "/sys/class/backlight/psb-bl/brightness"
+    poweroff_menu:
+        # KEYCODE_DPAD_UP, KEYCODE_ENTER
+        "reference_position": [19, 66]
+        # KEYCODE_DPAD_RIGHT, KEYCODE_DPAD_RIGHT, KEYCODE_ENTER
+        "ok": [22, 22, 66]
+        # KEYCODE_DPAD_LEFT, KEYCODE_DPAD_LEFT, KEYCODE_ENTER
+        "cancel": [21, 21, 66]
+    # APLOG RELATED VALUE
+    aplog_folder: "/logs/"
+    message_dict:
+        "WINDOW": "Turn ON vibrator for 21 ms"
+        "BOOT_REASON_IRQ": "WAKESRC="
+        "MODEM_OFF": "ShutdownThread: Turning off radio"
+        "SHUTDOWN_REASON": "RESETIRQ1="
+        "SHUTDOWN_REASON2": "RESETIRQ2="
+        "BCU_WARNING_A": "VWARNA_EVENT"
+        "BCU_WARNING_B": "VWARNB_EVENT"
+        "BCU_VCRIT": "VCRIT_EVENT"
+        "MAINTENANCE_STARTED": "battery mode is  2"
+        "BATTERY_LEVEL_0": 'battery_level: [0'
+
+    PUPDR_SHUTDOWN_REASON:
+        "COLD_OFF": "0x01"
+        "COLD_RESET": "0x02"
+        "WARM_RESET": "0x04"
+        "FORCE_SHTN": "0x08"
+        "WD_RESET": "0x10"
+        "COLD_BOOT": "0x20"
+
+    PUPDR_MISC_TAG:
+        # special syntax for text that have several patterns to match
+        "SHUTDOWN_REASON": {"MAIN": "RESETSRC1=", "NOT_SORTED": ["(osnib)"]}
+        "KERNEL_BOOT": {"MAIN": "beginning of /dev/log/kernel"}
+        "MAIN_BOOT": {"MAIN": "beginning of /dev/log/main"}
+
+    EM_TAG:
+        "BATTERY_EMPTY": {"MAIN": "battery_level: [0"}
+        "BATTERY_INFO": {"MAIN": "battery_level:"}
+
+    THERMAL_TAG:
+      "COOLING_INTENT": {"MAIN": "ThermalCooling: Received THERMAL INTENT:"}

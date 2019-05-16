@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestSteps xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../acs/src/_Catalogs/TestStep/teststep.xsd">
+    <TestStep Id="RUN_YOUTUBE_LOOP" Domain="MULTIMEDIA" SubDomain="STREAMING" Feature="VIDEO" Status="PLANNED">
+        <ClassName>acs_test_scripts.TestStep.Device.Multimedia.Streaming.RunYoutubeLoop.RunYoutubeLoop</ClassName>
+        <Description>Continuously plays a YouTube video and executes basic verification. This test step makes use of a shell script that must already exist on the device at /data/youtube_playback/loopYoutubePlayback.sh. Typically, the shell script is pushed to the device using the GET_ARTIFACT and INSTALL_FILE test steps prior to running this test step. After this test step completes, the /data/youtube_playback/ folder will contain a pass.log file if no errors were found, a fail.log file if errors were found, or neither if something unexpected happened and the test ended prematurely.</Description>
+        <Environment name="ANY" />
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device to target</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+            <Parameter name="DURATION" type="INTEGER" isOptional="false">
+                <Description>The number of minutes to loop over the video. Note that the test will continue until it finishes the last video, resulting in an overage up to MAX_PLAY_TIME_SECONDS.</Description>
+                <PossibleValues />
+                <DefaultValue>10</DefaultValue>
+            </Parameter>
+            <Parameter name="VIDEO_URL" type="STRING" isOptional="false">
+                <Description>The URL of the video to play. The URL should be something along the lines of http://www.youtube.com/watch?...</Description>
+                <PossibleValues />
+                <DefaultValue>http://www.youtube.com/watch?v=r6sgrlaUOWM&amp;hd=0</DefaultValue>
+            </Parameter>
+            <Parameter name="MIN_PLAY_TIME_SECONDS" type="INTEGER" isOptional="false">
+                <Description>The minimum amount of time it takes to play the video. This is typically the length of the video.</Description>
+                <PossibleValues />
+                <DefaultValue>0</DefaultValue>
+            </Parameter>
+            <Parameter name="MAX_PLAY_TIME_SECONDS" type="INTEGER" isOptional="false">
+                <Description>The maximum amount of time it takes to play the video. This value should account for an acceptable amount of buffering.</Description>
+                <PossibleValues />
+                <DefaultValue>600</DefaultValue>
+            </Parameter>
+            <Parameter name="CAPTURE_SCREEN_RECORD" type="BOOLEAN" isOptional="false">
+                <Description>If this value is true, a 2 minute screen recording will be captured at the beginning of every loop. If there are no issues during the playback of the loop, the recording is deleted.</Description>
+                <PossibleValues />
+                <DefaultValue>False</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="RUN_AUDIO_STREAMING" Domain="MULTIMEDIA" SubDomain="STREAMING" Feature="AUDIO" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Multimedia.Streaming.RunAudioStreaming.RunAudioStreaming</ClassName>
+        <Description>Continuously plays music via an audio streaming app, like Pandora. While streaming audio, this test step also verifies that the audio is playing reliably by recording segments of the audio playback (via feedback from line-out to line-in on the host) and ensures that the amount of silence found in the segment falls below a threshold. This test step expects the audio streaming app to be installed before it runs. Typically, the app package is pushed to the device using the GET_ARTIFACT and installed using INSTALL_APP test steps prior to running this test step. After this test step completes, there will be a pass.log file on the device if no errors were found, a fail.log file if errors were found, or neither if something unexpected happened and the test ended prematurely.</Description>
+        <Environment name="ANY" />
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device to target</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+            <Parameter name="DURATION" type="INTEGER" isOptional="false">
+                <Description>The amount of time (in minutes) to stream audio.</Description>
+                <PossibleValues />
+                <DefaultValue>10</DefaultValue>
+            </Parameter>
+            <Parameter name="AUDIO_APP" type="STRING" isOptional="false">
+                <Description>The application you wish to use for streaming audio.</Description>
+                <PossibleValues>Pandora;RadioFM</PossibleValues>
+                <DefaultValue>Pandora</DefaultValue>
+            </Parameter>
+            <Parameter name="MONITORING_CHUNK_SIZE" type="INTEGER" isOptional="false">
+                <Description>The size of chunks (in minutes) into which the audio monitoring should be split.
+                    Larger chunks require more ACS slave memory and may cause problems.  Undesired silence around chunk boundaries
+                    may be missed, so smaller chunks increase the risk of missing failures.  Pick a size that balances between these.</Description>
+                <PossibleValues />
+                <DefaultValue>10</DefaultValue>
+            </Parameter>
+            <Parameter name="CONTINUOUS_STREAM" type="BOOLEAN" isOptional="false">
+                <Description>Run the streaming app continuously for DURATION minutes (True),
+                    or stop and restart the app after each MONITORING_CHUNK_SIZE minutes (False).</Description>
+                <PossibleValues />
+                <DefaultValue>True</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+</TestSteps>

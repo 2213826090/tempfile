@@ -1,0 +1,41 @@
+<?xml version="1.0" ?>
+<Campaign>
+      <Parameters>
+            <Parameter isControlledPSUsed="False"/>
+            <Parameter isIoCardUsed="False"/>
+            <Parameter skipBootOnPowerCycle="False"/>
+            <Parameter bootRetryNumber="0"/>
+            <Parameter runHookScripts="False"/>
+            <Parameter powerCycleBetweenTC="False"/>
+            <Parameter powerCycleOnFailure="False"/>
+            <Parameter finalDutState="NoChange"/>
+            <Parameter stopCampaignOnCriticalFailure="False"/>
+            <Parameter stopCampaignOnFirstFailure="False"/>
+            <Parameter loggingLevel="debug"/>
+            <Parameter CampaignType="Other"/>
+      </Parameters>
+      <TestCases>
+            <TestCase Id="../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/audio/testDecodeHeaacMpeg4"/>
+            <!--TestCase Id="../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/audio/testDecodeAacEldAacAdts"/-->
+            <TestCase Id="../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/audio/testEncodeAacMpeg4"/>
+            <TestCase Id="../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/audio/testDecodeHeaacAdts"/>
+            <TestCase Id="../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/audio/testDecodeAac3Gpp"/>
+            <TestCase Id="../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/audio/testEncodeHeaacAdts"/>
+            <!--TestCase Id="../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/audio/testEncodeAacEldMpeg4"/-->
+            <TestCase Id="../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/audio/test_EncodePcm"/>
+            <TestCase Id="../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/audio/test_DecodePcm"/>
+            <TestCase Id="../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/audio/testDecodeAmrnb3Gpp"/>
+            <TestCase Id="../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/audio/testEncodeHeaac3Gpp"/>
+            <!--TestCase Id="../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/audio/testEncodeAacEldAacAdts"/-->
+            <TestCase Id="../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/audio/testDecodeHeaac3Gpp"/>
+            <TestCase Id="../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/audio/testEncodeAacAdts"/>
+            <TestCase Id="../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/audio/testEncodeAmrnb3Gpp"/>
+            <!--TestCase Id="../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/audio/testDecodeAacEldMpeg4"/-->
+            <TestCase Id="../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/audio/testDecodeAacMpeg4"/>
+            <!--TestCase Id="../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/audio/testEncodeAacEld3Gpp"/>
+            <TestCase Id="../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/audio/testDecodeAacEld3Gpp"/-->
+            <TestCase Id="../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/audio/testEncodeHeaacMpeg4"/>
+            <TestCase Id="../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/audio/testDecodeAacAdts"/>
+            <TestCase Id="../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/audio/testEncodeAac3Gpp"/>
+      </TestCases>
+</Campaign>

@@ -1,0 +1,107 @@
+<?xml version='1.0' encoding='ASCII'?>
+<Campaign version="13.49">
+    <Parameters>
+        <Parameter isControlledPSUsed="False"/>
+        <Parameter isIoCardUsed="False"/>
+        <!-- Set skipBootOnPowerCycle to True to disable the accs boot procedure -->
+        <!-- Important, it means that boot will be handle inside the campaign/tc -->
+        <Parameter skipBootOnPowerCycle="False"/>
+        <!-- Set bootRetryNumber to maximum number of boot retries during the acs boot procedure -->
+        <!-- Important, it means that bootRetryNumber is set by default to 0 if not specified -->
+        <Parameter bootRetryNumber="0"/>
+        <Parameter runHookScripts="False"/>
+        <Parameter powerCycleBetweenTC="False"/>
+        <Parameter powerCycleOnFailure="False"/>
+        <!-- finalDutState allows user to leave the DUT in a specific state at the end of the campaign
+            Possible values: PowerOn | PowerOff | Charging | NoChange
+            By default DUT is leaved in NoChange state.
+            In case the user selects Charging as final state of the DUT and that DUT fails to enter Charging,
+            ACS shall try to switch the DUT off -->
+        <Parameter finalDutState="NoChange"/>
+        <Parameter stopCampaignOnCriticalFailure="False"/>
+        <Parameter stopCampaignOnFirstFailure="False"/>
+        <!-- LoggingLevel possible values: info | warning | debug | error -->
+        <Parameter loggingLevel="debug"/>
+        <!-- CampaignType format -> <TEAM>_<CAMPAIGNTYPE>
+            Possible values:
+            FT(Feature Team)-> SANITY | REGRESSION | STRESS, RELIABILTY | MTBF
+            ST(System Test)-> SANITY | REGRESSION | STRESS, RELIABILTY | MTBF | EM
+            SI(System Integration)-> EAT | STAB | PACT | CAT0 | RELIABILITY | MTBF | CTS | ACS_CI
+            Otherwise "Others" should be used -->
+        <Parameter CampaignType="MTBF"/>
+        <Parameter TCRReportViaRESTAPI="True"/>
+    </Parameters>
+    <Targets>
+        <!-- Target Values -->
+        <Target targetB2bPassRate="100"/>
+    </Targets>
+    <TestCases>
+        <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Storage/prereq/prereq_Setting_Device"/>
+        <!-- Adopted/Portable SD card tests-->
+        <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Storage/sdcard/Storage.USB_SDCard_format_portable_to_adopted_without_migrate"/>
+        <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Storage/sdcard/Storage.USB_SDCard_format_portable_to_adopted_migrate"/>
+        <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Storage/sdcard/Storage.USB_SDCard_Context_adopted"/>
+        <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Storage/adopted/Storage.USB_Adopted_Benchmark"/>
+        <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Storage/sdcard/Storage.USB_SDCard_format_portable_to_portable"/>
+        <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Storage/sdcard/Storage.USB_SDCard_Context_portable"/>
+        <!--<TestCase Id="../../../../../TC/TR/ACS/System/Storage/Storage.USB_SDCard_Format"/> -->
+        <TestCase Id="../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/system_uid/system_storage_usb/Storage.USB_ExternalStorageAccess_NoPermission"/>
+        <TestCase Id="../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/system_uid/system_storage_usb/Storage.USB_ExternalStorageAccess_READPermission"/>
+        <TestCase Id="../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/system_uid/system_storage_usb/Storage.USB_ExternalStorageAccess_READWRITEPermission"/>
+        <TestCase Id="../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/system_uid/system_storage_usb/Storage.USB_ExternalStorageAccess_WRITEPermission"/>
+        <TestCase Id="../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/system_uid/system_storage_usb/Storage.USB_ADB_Pull.and.push.a.file"/>
+        <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Storage/Storage.USB_ADB_Get.log.through.ADB"/>
+        <TestCase Id="../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/system_uid/system_storage_usb/Storage.USB_ADB_Install.uninstall.app.over.ADB"/>
+        <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Storage/Storage.USB_ADB_Shell.commands.are.functional"/>
+        <TestCase Id="../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/system_uid/system_storage_usb/Storage.USB_EmulatedStorage_5minVideoMaxResAndFramerate_checkPhotos"/>
+        <!--<TestCase Id="../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/system_uid/system_storage_usb/Storage.USB_EmulatedStorage_Copy.a.file.from.InternalMemory"/>
+        <TestCase Id="../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/system_uid/system_storage_usb/Storage.USB_EmulatedStorage_Copy.a.folder.with.file.inside"/>
+        <TestCase Id="../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/system_uid/system_storage_usb/Storage.USB_EmulatedStorage_Copy.a.folder.with.file.inside.from.InternalMemory"/>
+        <TestCase Id="../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/system_uid/system_storage_usb/Storage.USB_EmulatedStorage_Create.a.file.in.a.folder"/>
+        <TestCase Id="../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/system_uid/system_storage_usb/Storage.USB_EmulatedStorage_Create.a.folder.with.255.chars.name"/> -->
+        <TestCase Id="../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/system_uid/system_storage_usb/Storage.USB_EmulatedStorage_Multi-thread.ReadWriteCreateDelete.files"/>
+        <TestCase Id="../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/system_uid/system_storage_usb/Storage.USB_EmulatedStorage_pictureMaxRes_checkPhotos"/>
+        <!--<TestCase Id="../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/system_uid/system_storage_usb/Storage.USB_EmulatedStorage_Create.file.using.file.manager"/>
+        <TestCase Id="../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/system_uid/system_storage_usb/Storage.USB_ExternalStorageAccess_Create.a.file"/>
+        <TestCase Id="../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/system_uid/system_storage_usb/Storage.USB_ExternalStorageAccess_Create.a.folder"/>
+        <TestCase Id="../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/system_uid/system_storage_usb/Storage.USB_ExternalStorageAccess_Delete.a.folder.with.file.inside"/>-->
+        <TestCase Id="../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/filesystem/Storage.USB_ExternalStorageAccess_Listen.to.music.and.take.10.pictures"/>
+        <!--<TestCase Id="../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/system_uid/system_storage_usb/Storage.USB_ExternalStorageAccess_Rename.a.file"/>
+        <TestCase Id="../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/system_uid/system_storage_usb/Storage.USB_ExternalStorageAccess_SwitchLandScapeToPortraitWhenCopyFile"/>
+        <TestCase Id="../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/system_uid/system_storage_usb/Storage.USB_InternalStorage_Copy.a.file.from.external.storage"/>
+        <TestCase Id="../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/system_uid/system_storage_usb/Storage.USB_InternalStorage_CopyFolderWithFileInsideExternalStorage"/>
+        <TestCase Id="../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/system_uid/system_storage_usb/Storage.USB_ExternalStorageAccess_Rename.a.folder"/>
+        <TestCase Id="../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/system_uid/system_storage_usb/Storage.USB_EmulatedStorage_Create.a.file.with.multi-extension"/>
+        <TestCase Id="../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/system_uid/system_storage_usb/Storage.USB_ExternalStorageAccess_CopyMP3File.and.check.in.music.app"/>-->
+        <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Storage/Storage.USB_InternalStorage_HS200"/>
+        <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Storage/Storage.USB_InternalStorage_Capacity"/>
+        <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Storage/Storage.USB_ADB_Print.bugreport.data.to.screen.through.ADB"/>
+        <!--<TestCase Id="../../../../../TC/TR/ACS/System/SDCARD/Storage.USB_SDCard_Create.file.on.sdcard.with.adb.command"/>
+        <TestCase Id="../../../../../TC/TR/ACS/System/Storage/Storage.USB_SDCard_Read.file.on.sdcard.with.adb.command"/>
+        <TestCase Id="../../../../../TC/TR/ACS/System/Storage/Storage.USB_InternalStorage_Check.mountpoint"/>-->
+        <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Storage/Storage.USB_InternalStorage_Memory"/>
+        <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Storage/Storage.USB_InternalStorage_Check.mountpoint"/>
+        <!-- These test cases use pyuiautomator. They might interfere with Java Uiautomator and they should be run at the end of campaign.-->
+        <!--<TestCase Id="../../../../../TC/TR/ACS/System/Storage/Storage.USB_SDCard_Check.Mountpoint"/>
+        <TestCase Id="../../../../../TC/TR/ACS/System/Storage/Storage.USB_EmulatedStorage_Check.mountpoint"/>-->
+        <!-- Test cases from QCTV -->
+        <TestCase Id="../../../../../TC/TR/ACS/System/Storage/M/Storage.USB_EmulatedStorage_CopyFileWithADBFromPhysical"/>
+        <TestCase Id="../../../../../TC/TR/ACS/System/Storage/M/Storage.USB_SDCard_CopyFileWithADBFromEmulated"/>
+
+        <!-- Testcases not yet auto in ET, but commited
+        <TestCase Id="../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/system_uid/system_storage_usb/Storage.USB_ExternalStorageAccess_Switch.screen.and.copy.primary"/>
+        -->
+        <!-- Running subCampaigns-->
+        <SubCampaign Id="../../../../Subcampaigns/PyUiApiTests/Storage/storage_usb_emulated_read_write_with_api"/>
+        <SubCampaign Id="../../../../Subcampaigns/PyUiApiTests/Storage/storage_usb_adopted_read_write_with_api"/>
+        <SubCampaign Id="../../../../Subcampaigns/PyUiApiTests/Storage/storage_usb_sdcard_read_write_with_api"/>
+        <SubCampaign Id="../../../../Subcampaigns/PyUiApiTests/Storage/storage_usb_ptp"/>
+        <!-- Testcases that require a google account -->
+        <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/DutSetup/prereq_stop_uiautomator_on_dut"/>
+        <TestCase Id="../../../../../TC/TR/DeviceSetup/prereq_ConnectToAP"/>
+        <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Storage/prereq/prereq_Add_google_account_N_dessert" TcMaxAttempt="3"/>
+        <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Storage/Storage.USB_InternalStorage_Open.all.app.at.the.same.time"/>
+        <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/DutSetup/prereq_stop_uiautomator_on_dut"/>
+        <TestCase Id="../../../../../TC/TR/ACS/Applications/Applications_N/prerequisites/prereq_REMOVE_GOOGLE_ACCOUNTS"/>
+    </TestCases>
+</Campaign>

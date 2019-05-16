@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='ASCII'?>
+<TestCase>
+    <UseCase>Testlib</UseCase>
+    <Description>wifi</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <TcMaxAttempt>3</TcMaxAttempt>
+    <Parameters>
+        <Parameter>
+            <Name>test</Name>
+            <Value>scripts/wireless/wifi_generic/tests/connect_disconnect_from_UI.py</Value>
+        </Parameter>
+        <Parameter>
+            <Name>script-args</Name>
+            <Value> scenario=wifioff_scanning_check mode=n ap_name=offcheck  security="wpa2" ap_band=1 password=1234512345</Value>
+    </Parameters>
+</TestCase>

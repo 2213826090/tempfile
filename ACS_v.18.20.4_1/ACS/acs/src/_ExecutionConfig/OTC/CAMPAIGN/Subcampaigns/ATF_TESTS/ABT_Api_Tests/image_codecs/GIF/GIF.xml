@@ -1,0 +1,24 @@
+<?xml version="1.0" ?>
+<Campaign>
+      <Parameters>
+            <Parameter isControlledPSUsed="False"/>
+            <Parameter isIoCardUsed="False"/>
+            <Parameter skipBootOnPowerCycle="False"/>
+            <Parameter bootRetryNumber="0"/>
+            <Parameter runHookScripts="False"/>
+            <Parameter powerCycleBetweenTC="False"/>
+            <Parameter powerCycleOnFailure="False"/>
+            <Parameter finalDutState="NoChange"/>
+            <Parameter stopCampaignOnCriticalFailure="False"/>
+            <Parameter stopCampaignOnFirstFailure="False"/>
+            <Parameter loggingLevel="debug"/>
+            <Parameter CampaignType="Other"/>
+      </Parameters>
+      <TestCases>
+            <TestCase Id="../../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/image_codecs/GIF/GIF_Decoding_3984x2656"/>
+            <TestCase Id="../../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/image_codecs/GIF/Gif_decoding_Browser"/>
+            <TestCase Id="../../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/image_codecs/GIF/GIF_DEcoding_352x416"/>
+            <TestCase Id="../../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/image_codecs/GIF/GIF_Decoding_VGA_183Kb"/>
+            <TestCase Id="../../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/image_codecs/GIF/GIF_Decoding_87"/>
+      </TestCases>
+</Campaign>

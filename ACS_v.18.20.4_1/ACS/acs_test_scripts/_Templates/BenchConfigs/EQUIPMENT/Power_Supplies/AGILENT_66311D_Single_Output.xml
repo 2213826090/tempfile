@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<Equipment version="13.44" name="POWER_SUPPLY1" description="Power supply used for device Power cycle.">
+    <!-- Model possible values: AGILENT_66311D only (single output) -->
+    <Parameter name="Model" value="AGILENT_66311D" />
+    <Parameter name="Transport" value="GPIB" />
+    <Parameter name="GPIBBoardId" value="0" />
+    <Parameter name="GPIBAddress" value="5" />
+    <Parameter name="CouplingMode" value="" description="Enable/disable the couple mode of outputs. Possible value : ALL|NONE" />
+    <Parameter name="CompensationMode" value="" description="Set the compensation mode. Possible value : (Agilent66319) LREMOTE|LLOCAL|HLOCAL|HREMOTE - (Agilent66311) LOW|HIGH|H2" />
+    <Parameter name="SenseProtect" value="" description="Enable/disable the sense protection. Possible value : ON|OFF" />
+    <Parameter name="OverProtectState" value="" description="Enable/disable the over protection state. Possible value : ON|OFF" />
+    <Parameter name="CurrentSource" value="" description="Configure the current source. Possible value : DC|ACDC" />
+    <Parameter name="Resistance" value="" description="Set the value of the resistance. Set value to 'none' if the resistance is not supported by the Power Supply" />
+    <Parameter name="VoltageProtectLevel" value="" description="Set the value of the voltage protection level." />
+    <Output name="OUTPUT1">
+        <Parameter name="Type" value="ACCHG" description="Output Type used : NONE | ACCHG (AC Charger) | BATT (Battery) | USB" />
+        <Parameter name="PortNumber" value="1" />
+        <Parameter name="MaxCurrent" value="2" />
+        <Parameter name="Voltage" value="5.0" />
+    </Output>
+</Equipment>

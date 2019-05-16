@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase>
+  <UseCase>LAB_MOBILITY_LTE_CSFB</UseCase>
+  <Description>TEL - This UseCase valid Circuit Switched Fallback from LTE to UTRAN</Description>
+  <b2bIteration>100</b2bIteration>
+  <b2bContinuousMode>True</b2bContinuousMode>
+  <Parameters>
+    <!-- LTE CELL PARAMETERS -->
+    <Parameter>
+        <!-- Multiple-Input Multiple-Output to set : true or false -->
+        <Name>LTE_MIMO</Name>
+        <Value>FALSE</Value>
+    </Parameter>
+    <Parameter>
+        <!-- Operation Signal mode to set : BSE or SA -->
+        <Name>LTE_SIGNAL_MODE</Name>
+        <Value>BSE</Value>
+    </Parameter>
+    <Parameter>
+        <!-- Physical Cell ID : 0 to 503 -->
+        <Name>LTE_PHYSICAL_CELL_ID</Name>
+        <Value>1</Value>
+    </Parameter>
+    <Parameter>
+        <!-- Cell Setup : "A" for A-cell or "B" for B-cell -->
+        <Name>LTE_CELL_ID</Name>
+        <Value>A</Value>
+    </Parameter>
+    <Parameter>
+        <!-- Cell power for RFO1 -->
+        <Name>LTE_CELL_POWER_RFO1</Name>
+        <Value>-60</Value>
+    </Parameter>
+    <Parameter>
+        <!-- Cell power for RFO2 -->
+        <Name>LTE_CELL_POWER_RFO2</Name>
+        <Value>-60</Value>
+    </Parameter>
+    <Parameter>
+        <!-- Mobile Country Code 0 to 999 -->
+        <Name>LTE_MCC</Name>
+        <Value>1</Value>
+    </Parameter>
+    <Parameter>
+        <!-- Mobile Network Code 0 to 999 -->
+        <Name>LTE_MNC</Name>
+        <Value>1</Value>
+    </Parameter>
+    <Parameter>
+        <!-- Cell Band (from Band 1 to Band 32) -->
+        <Name>LTE_CELL_BAND</Name>
+        <Value>1</Value>
+    </Parameter>
+    <Parameter>
+        <!-- Downlink channel -->
+        <Name>LTE_DL_EARFCN</Name>
+        <Value>300</Value>
+    </Parameter>
+    <Parameter>
+        <!-- Scenario filename and path to load on PXT -->
+        <Name>LTE_SCENARIO_PATH</Name>
+        <Value>UC_default_bearer_IratRedirectionGSMSuppServices_NewQoS_Target20_LAC.LBMF</Value>
+    </Parameter>
+    <!-- 3GSM CELL PARAMETERS -->
+    <Parameter>
+        <!-- 3GSM Cell Technology (2G|3G) -->
+        <Name>3GSM_CELL_TECH</Name>
+        <Value>2G</Value>
+    </Parameter>
+    <Parameter>
+        <!-- 3GSM Cell Band
+            For 2G : EGSM|GSM850|PCS|DCS
+            For 3G : 1,2,5,8
+        -->
+        <Name>3GSM_CELL_BAND</Name>
+        <Value>EGSM</Value>
+    </Parameter>
+    <Parameter>
+        <!-- 3GSM Downlink channel -->
+        <Name>3GSM_DL_ARFCN</Name>
+        <Value>20</Value>
+    </Parameter>
+    <Parameter>
+        <!-- 3GSM Cell Service ( (GSM|GPRS|EGPRS) for 2G CELL, (CIRCUIT|PACKET|CIRCUIT_PACKET) for 3G CELL) -->
+        <Name>3GSM_CELL_SERVICE</Name>
+        <Value>EGPRS</Value>
+    </Parameter>
+    <Parameter>
+        <!-- 3GSM cell power -->
+        <Name>3GSM_CELL_POWER</Name>
+        <Value>-70</Value>
+    </Parameter>
+    <Parameter>
+        <!-- 3GSM Cell LAC, For 2G and 3G: 0 to 65535-->
+        <Name>3GSM_LAC</Name>
+        <Value>1</Value>
+    </Parameter>
+    <Parameter>
+        <!-- 3GSM Cell Routing Area, For 2G and 3G: 1 to 255-->
+        <Name>3GSM_RAC</Name>
+        <Value>25</Value>
+    </Parameter>
+    <!-- TESTCASE PARAMETERS : LOSS OF COVERAGE, VOICE CALL, PING -->
+    <Parameter>
+        <!-- Loss of coverage side : LTE | 3GSM | NONE -->
+        <Name>LOSS_COVERAGE_SIDE</Name>
+        <Value>NONE</Value>
+    </Parameter>
+    <Parameter>
+        <!-- Loss of coverage by a CELL OFF or by decreasing cell power : CELL_OFF | DECREASE | NONE -->
+        <Name>LOSS_COVERAGE_TYPE</Name>
+        <Value>NONE</Value>
+    </Parameter>
+    <!-- Voice call PARAMETERS -->
+    <Parameter>
+        <!-- Voice call type (MO [Mobile Originated] by default |MT [Mobile Terminated]) -->
+        <Name>VC_TYPE</Name>
+        <Value>MT</Value>
+    </Parameter>
+    <Parameter>
+        <!--Release Voice Call type (MR [Mobile Release] by default | NR [Network Release]) -->
+        <Name>RELEASE_VC_TYPE</Name>
+        <Value>NR</Value>
+    </Parameter>
+    <Parameter>
+        <!-- Dialled Phone number (MSISDN). If value is [PHONE_NUMBER] the value used will be the phoneNumber defined in the Phone_Catalog.xml -->
+        <Name>PHONE_NUMBER</Name>
+        <Value>0622219252</Value>
+    </Parameter>
+    <Parameter>
+        <!-- Call Duration in seconds -->
+        <Name>CALL_DURATION</Name>
+        <Value>30</Value>
+    </Parameter>
+    <!-- PING PARAMETERS -->
+    <Parameter>
+        <!-- Number of Packet to be sent -->
+        <Name>PACKET_COUNT</Name>
+        <Value>10</Value>
+    </Parameter>
+    <Parameter>
+        <!-- Size of a data packet (in bytes) sent when trying to ping the network -->
+        <Name>PACKET_SIZE</Name>
+        <Value>32</Value>
+    </Parameter>
+    <Parameter>
+        <!-- Target of Ping Packet Loss Rate (in %) -->
+        <Name>TARGET_PACKET_LOSS_RATE</Name>
+        <Value>0</Value>
+    </Parameter>
+  </Parameters>
+</TestCase>

@@ -1,0 +1,35 @@
+{
+    "Configuration": {
+        "Boot": {
+            "MODEM": false,
+            "PKP_5S": false,
+            "SHELL_IN_ROS": false
+        },
+        "BootVars": {
+            "BOOT_DATA_CHECK": true,
+            "COS_CHECK_AFTER_GRACEFUL_SHUTDOWN": "watchdog=00;reset_source=00;reset_type=01;wake_source=02;shutdown_source=00;mode=charging",
+            "COS_CHECK_AFTER_HARD_SHUTDOWN": "watchdog=00;reset_source=00;reset_type=01;wake_source=02;shutdown_source=01;mode=charging",
+            "COS_CHECK_AFTER_REBOOT": "watchdog=00;reset_source=01;reset_type=01;wake_source=00;shutdown_source=00;mode=charging",
+            "MOS_CHECK_AFTER_BOOT": "watchdog=00;reset_source=00;reset_type=01;wake_source=04;shutdown_source=01;mode=main",
+            "MOS_CHECK_AFTER_KERNEL_WATCHDOG": "watchdog=00;reset_source=0a;reset_type=01;wake_source=00;shutdown_source=00;mode=main",
+            "MOS_CHECK_AFTER_REBOOT": "watchdog=00;reset_source=01;reset_type=01;wake_source=00;shutdown_source=00;mode=main",
+            "MOS_CHECK_AFTER_REBOOT_FROM_POS": null,
+            "MOS_CHECK_AFTER_SECURITY_WATCHDOG": null,
+            "MOS_CHECK_AFTER_WATCHDOG_FALLBACK": null,
+            "POS_CHECK_AFTER_REBOOT": "watchdog=00;reset_source=01;reset_type=01;wake_source=00;shutdown_source=00;mode=fastboot",
+            "ROS_CHECK_AFTER_REBOOT": "watchdog=00;reset_source=01;reset_type=01;wake_source=00;shutdown_source=00;mode=recovery",
+            "ROS_CHECK_AFTER_WATCHDOG": "watchdog=00;reset_source=04;reset_type=02;wake_source=00;shutdown_source=00;mode=recovery"
+        },
+        "Custom": null,
+        "Flash": null,
+        "Logs": null,
+        "Timeout": {
+            "BOOT_TIMEOUT": 600,
+            "MOS_BOOT": 50,
+            "PKPOFF": 12,
+            "PKPON": 6,
+            "SHUTDOWN_TIMEOUT": 60
+        },
+        "WorkAround": null
+    }
+}

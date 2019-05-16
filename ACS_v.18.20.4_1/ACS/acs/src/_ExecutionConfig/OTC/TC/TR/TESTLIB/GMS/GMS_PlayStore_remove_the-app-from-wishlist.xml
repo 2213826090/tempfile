@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='ASCII'?>
+<TestCase>
+    <UseCase>Testlib</UseCase>
+    <Description>Play Store -- Remove app from whishlist</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <TcMaxAttempt>1</TcMaxAttempt>
+    <Parameters>
+        <Parameter>
+            <Name>timeout</Name>
+            <Value>300</Value>
+        </Parameter>
+        <Parameter>
+            <Name>script-args</Name>
+            <Value>{"account":"auto3test@gmail.com","password":"testing12345"}</Value>
+        </Parameter>
+        <Parameter>
+            <Name>test</Name>
+            <Value>scripts/gms/PlayStore/tests/GMS_PlayStore_remove_the-app-from-wishlist.py</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

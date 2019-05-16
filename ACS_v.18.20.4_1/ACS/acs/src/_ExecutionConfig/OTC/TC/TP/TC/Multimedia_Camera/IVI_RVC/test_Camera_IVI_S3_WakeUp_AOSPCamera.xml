@@ -1,0 +1,36 @@
+<?xml version="1.0" ?>
+<TestCase>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Discription> 
+&lt;div align=&quot;left&quot; style=&quot;min-height:10pt&quot;&gt;
+&lt;font face=&quot;Arial&quot;&gt;&lt;span style=&quot;font-size:8pt&quot;&gt;Verify &lt;/span&gt;&lt;/font&gt;
+&lt;font face=&quot;Arial Unicode MS&quot;&gt;&lt;span style=&quot;font-size:8pt&quot;&gt;AOSP&lt;/span&gt;&lt;/font&gt;
+&lt;font face=&quot;Arial&quot;&gt;&lt;span style=&quot;font-size:8pt&quot;&gt; camera should be works well &lt;/span&gt;&lt;/font&gt;
+&lt;font face=&quot;Arial Unicode MS&quot;&gt;&lt;span style=&quot;font-size:8pt&quot;&gt;after&lt;/span&gt;&lt;/font&gt;
+&lt;font face=&quot;Arial&quot;&gt;&lt;span style=&quot;font-size:8pt&quot;&gt; wake up from S3 status then launch AOSP camera.&lt;/span&gt;&lt;/font&gt;
+&lt;/div&gt; 
+&lt;div align=&quot;left&quot; style=&quot;min-height:9pt&quot;&gt;&lt;/div&gt; 
+&lt;p style=&quot;margin-left:0mm;margin-right:0mm;text-indent:0mm;margin-top:2.36mm;margin-bottom:4.74mm;min-height:9pt&quot;&gt;&lt;font face=&quot;Arial&quot;&gt;&lt;span style=&quot;font-size:8pt&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/font&gt;&lt;/p&gt; 
+&lt;div align=&quot;left&quot; style=&quot;min-height:9pt&quot;&gt;&lt;/div&gt;  
+</Discription>
+    <Domain>Multimedia_Camera</Domain>
+    <Phase>CORE</Phase>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <Type>FUNCTIONAL</Type>
+    <UseCase>PY_UNIT</UseCase>
+    <b2bIteration>1</b2bIteration>
+    <Parameters>
+        <Parameter>
+            <Name>HpalmName</Name>
+            <Value>camera_bxtp_ivi.CameraTest.test_Camera_IVI_S3_WakeUp_AOSPCamera</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TEST_DATA_ROOT</Name>
+            <Value>testplan/Multimedia_Camera</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TEST_CASE</Name>
+            <Value>tests.Multimedia_Camera.IVI_RVC.camera_bxtp_ivi.CameraTest.test_Camera_IVI_S3_WakeUp_AOSPCamera</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

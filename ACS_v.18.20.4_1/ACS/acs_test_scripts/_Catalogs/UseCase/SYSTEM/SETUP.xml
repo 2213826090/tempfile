@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!-- Usecases dedicated to System -->
+<UseCases xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:noNamespaceSchemaLocation="../../../../acs/src/_Catalogs/UseCase/usecase.xsd">
+    <UseCase Id="LAB_SYSTEM_SETUP_EMBEDDED" Domain="SYSTEM" SubDomain="SETUP" OS="ANDROID" Status="DONE">
+        <ClassName>UseCase.BootFlashSetup.LAB_SYSTEM_SETUP_EMBEDDED.LabSystemSetupEmbedded</ClassName>
+        <Description>Use case to install Agent(s) on the DUT</Description>
+        <Environment name="ANY">
+        </Environment>
+    </UseCase>
+    <UseCase Id="LIVE_SYSTEM_CONFIGURATION" Domain="SYSTEM" SubDomain="SETUP" OS="ANDROID" Status="DONE">
+        <ClassName>UseCase.BootFlashSetup.LIVE_SYSTEM_CONFIGURATION.LiveSystemConfiguration</ClassName>
+        <Description>Configuration of the device before running test cases</Description>
+        <Environment name="ANY">
+        </Environment>
+    </UseCase>
+</UseCases>

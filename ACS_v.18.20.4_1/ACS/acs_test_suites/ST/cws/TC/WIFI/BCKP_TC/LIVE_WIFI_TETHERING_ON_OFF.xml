@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase>
+    <UseCase>LIVE_WIFI_TETHERING_ON_OFF</UseCase>
+    <Description>test connect to the hostspot tethered by phone and run iperf</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>False</b2bContinuousMode>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <TcMaxAttempt>1</TcMaxAttempt>
+    <TcAcceptanceCriteria>1</TcAcceptanceCriteria>
+    <Parameters>
+        <Parameter>
+            <!-- The ssid of configure wifi hostspot -->
+            <Name>HOTSPOT_SSID</Name>
+            <Value>hotspot1_acs</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Wifi Security of the hotspot. Can be "OPEN", "WPA2-PSK" -->
+            <Name>HOTSPOT_SECURITY</Name>
+            <Value>WPA2-PSK</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Wifi password of the hotspot. useful only when HOTSPOT_SECURITY is "WPA2-PSK-AES" -->
+            <Name>HOTSPOT_PASSWORD</Name>
+            <Value>1234567890123</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Wifi standard of the hotspot. Can be "a", "b", "g", "an", "bg", "gn", "bgn", "n2.4G", "n5G" -->
+            <Name>HOTSPOT_STANDARD</Name>
+            <Value>bgn</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Enable/Disable 2g/3g data for hotspot. 0: data enabled, 1: data disabled -->
+            <Name>FLIGHT_MODE</Name>
+            <Value>1</Value>
+        </Parameter>
+        <Parameter>
+            <!-- [OPTIONAL] If 'ON', Bluetooth is activated prior to the test to perform FIT tests, and is restaured to initial value at the end of the test. If 'OFF', BT is de-activated. -->
+            <Name>WHILE_BLUETOOTH_ON</Name>
+            <Value></Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

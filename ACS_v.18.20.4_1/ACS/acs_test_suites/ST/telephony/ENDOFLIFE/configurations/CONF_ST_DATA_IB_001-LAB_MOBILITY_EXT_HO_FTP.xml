@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<Sequence>
+	<GPIBCommand equipment="NETWORK_SIMULATOR1" command="SYST:APPL:FORM 'WCDMA'" description="Set the application format to WCDMA" />
+	<GPIBCommand equipment="NETWORK_SIMULATOR1" command="SYST:PRES2" description="Perform a full preset" />
+	<GPIBCommand equipment="NETWORK_SIMULATOR1" command="CALL:OPER:MODE OFF" description="Set the cell to off" />
+	<GPIBCommand equipment="NETWORK_SIMULATOR1" command="CALL:CHAN 10700" description="Set the cell downlink UArfcn" />
+	<GPIBCommand equipment="NETWORK_SIMULATOR1" command="CALL:SET:PCR:CHAN:FDD:DOWN 3000" description="Set the PCR cell downlink UArfcn" />
+</Sequence> 

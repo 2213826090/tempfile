@@ -1,0 +1,110 @@
+<Campaign version="13.49">
+  <Parameters>
+    <Parameter isControlledPSUsed="False"/>
+    <Parameter isIoCardUsed="False"/>
+    <!-- Set skipBootOnPowerCycle to True to disable the accs boot procedure -->
+    <!-- Important, it means that boot will be handle inside the campaign/tc -->
+    <Parameter skipBootOnPowerCycle="False"/>
+    <!-- Set bootRetryNumber to maximum number of boot retries during the acs boot procedure -->
+    <!-- Important, it means that bootRetryNumber is set by default to 0 if not specified -->
+    <Parameter bootRetryNumber="0"/>
+    <Parameter runHookScripts="False"/>
+    <Parameter powerCycleBetweenTC="False"/>
+    <Parameter powerCycleOnFailure="False"/>
+    <!-- finalDutState allows user to leave the DUT in a specific state at the end of the campaign
+            Possible values: PowerOn | PowerOff | Charging | NoChange
+            By default DUT is leaved in NoChange state.
+            In case the user selects Charging as final state of the DUT and that DUT fails to enter Charging,
+            ACS shall try to switch the DUT off -->
+    <Parameter finalDutState="NoChange"/>
+    <Parameter stopCampaignOnCriticalFailure="False"/>
+    <Parameter stopCampaignOnFirstFailure="False"/>
+    <!-- LoggingLevel possible values: info | warning | debug | error -->
+    <Parameter loggingLevel="debug"/>
+    <!-- CampaignType format -> <TEAM>_<CAMPAIGNTYPE>
+            Possible values:
+            FT(Feature Team)-> SANITY | REGRESSION | STRESS, RELIABILTY | MTBF
+            ST(System Test)-> SANITY | REGRESSION | STRESS, RELIABILTY | MTBF | EM
+            SI(System Integration)-> EAT | STAB | PACT | CAT0 | RELIABILITY | MTBF | CTS | ACS_CI
+            Otherwise "Others" should be used -->
+    <Parameter CampaignType="MTBF"/>
+    <Parameter TCRReportViaRESTAPI="True"/>
+  </Parameters>
+  <Targets>
+    <!-- Target Values -->
+    <Target targetB2bPassRate="100"/>
+  </Targets>
+  <TestCases>
+    <TestCase Id="../../../../../TC/TR/ACS/Applications/Chrome/prereq_ConnectToAP"/>
+    <TestCase Id="../../../../../TC/TR/ACS/Applications/Applications_L_MR1/prerequisites/prereq_UPDATE_ALL_APPS"/>
+    <TestCase Id="../../../../../TC/TR/ACS/Applications/Applications_L_MR1/prerequisites/prereq_REMOVE_GOOGLE_ACCOUNTS"/>
+    <TestCase Id="../../../../../TC/TR/ACS/Applications/Applications_L_MR1/prerequisites/prereq_GMS_Reboot_Device"/>
+    <TestCase Id="../../../../../TC/TR/ACS/Applications/Applications_L_MR1/GMS_Launcher_Set-wallpaper-as-live-wallpaper-Spectrum"/>
+    <TestCase Id="../../../../../TC/TR/ACS/Applications/Applications_L_MR1/GMS_Launcher_Set-wallpaper-as-live-wallpaper-Holo-Spiral"/>
+    <TestCase Id="../../../../../TC/TR/ACS/Applications/Applications_L_MR1/GMS_Launcher_Set-wallpaper-as-live-wallpaper-Bubbles"/>
+    <TestCase Id="../../../../../TC/TR/ACS/Applications/Applications_L_MR1/GMS_Launcher_Set-wallpaper-as-live-wallpaper-Black-Hole"/>
+    <TestCase Id="../../../../../TC/TR/ACS/Applications/Applications_L_MR1/GMS_Launcher_Set-wallpaper-as-live-wallpaper-Phase-Beam"/>
+    <TestCase Id="../../../../../TC/TR/ACS/Applications/Applications_L_MR1/GMS_Launcher_Wallpaper-option"/>
+    <TestCase Id="../../../../../TC/TR/ACS/Applications/Applications_L_MR1/GMS_Launcher_Set-different-live-wallpaper-for-20-times"/>
+    <TestCase Id="../../../../../TC/TR/ACS/Applications/Applications_L_MR1/GMS_Launcher_Change-system-default-live-wallpaper-many-times"/>
+    <TestCase Id="../../../../../TC/TR/ACS/Applications/Applications_L_MR1/prerequisites/prereq_GMS_Reboot_Device"/>
+    <TestCase Id="../../../../../TC/TR/TESTLIB/GMS/GMS_PlayMusic_Search-song"/>
+    <TestCase Id="../../../../../TC/TR/TESTLIB/GMS/GMS_PlayMusic_Add-to-playlist"/>
+    <TestCase Id="../../../../../TC/TR/TESTLIB/GMS/GMS_PlayMusic_Go-to-artist"/>
+    <TestCase Id="../../../../../TC/TR/TESTLIB/GMS/GMS_Gmail_Sign-in-with-a-gmail-account"/>
+    <TestCase Id="../../../../../TC/TR/TESTLIB/GMS/GMS_Gmail_Send-email-using-gmail-apk"/>
+    <TestCase Id="../../../../../TC/TR/TESTLIB/GMS/GMS_Gmail_Save-the-new-gmail-to-draft"/>
+    <TestCase Id="../../../../../TC/TR/TESTLIB/GMS/GMS_Gmail_Setup-email-Account-with-wrong-name"/>
+    <TestCase Id="../../../../../TC/TR/TESTLIB/GMS/GMS_Gmail_Setup-gmail-wrong-password"/>
+    <TestCase Id="../../../../../TC/TR/TESTLIB/GMS/GMS_Gmail_Input-character-number-blank-special-characters-in-the-compose"/>
+    <TestCase Id="../../../../../TC/TR/ACS/Applications/Applications_L_MR1/prerequisites/prereq_GMS_Reboot_Device"/>
+    <TestCase Id="../../../../../TC/TR/TESTLIB/GMS/GMS_Clock_Activate-Alarm"/>
+    <TestCase Id="../../../../../TC/TR/TESTLIB/GMS/GMS_Clock_Add-an-alarm"/>
+    <TestCase Id="../../../../../TC/TR/TESTLIB/GMS/GMS_Clock_Add-City-Clock-from-World-Clock"/>
+    <TestCase Id="../../../../../TC/TR/TESTLIB/GMS/GMS_Clock_Change-Clock-Style"/>
+    <TestCase Id="../../../../../TC/TR/TESTLIB/GMS/GMS_Clock_Deactivate-Alarm"/>
+    <TestCase Id="../../../../../TC/TR/TESTLIB/GMS/GMS_Clock_Delete-existing-alarm"/>
+    <TestCase Id="../../../../../TC/TR/TESTLIB/GMS/GMS_Clock_Edit-existing-alarm"/>
+    <TestCase Id="../../../../../TC/TR/TESTLIB/GMS/GMS_Clock_Remove-City-Clock-from-World-Clock"/>
+    <TestCase Id="../../../../../TC/TR/TESTLIB/GMS/GMS_Clock_Restart-the-stopped-timer"/>
+    <TestCase Id="../../../../../TC/TR/TESTLIB/GMS/GMS_Clock_set-count-down-timer"/>
+    <TestCase Id="../../../../../TC/TR/TESTLIB/GMS/GMS_Clock_continue-stopwatch-count"/>
+    <TestCase Id="../../../../../TC/TR/TESTLIB/GMS/GMS_Clock_Set-home-clock"/>
+    <TestCase Id="../../../../../TC/TR/TESTLIB/GMS/GMS_GoogleSearch_Search-for-Contact"/>
+    <TestCase Id="../../../../../TC/TR/TESTLIB/GMS/GMS_GoogleSearch_Launch-google-Search-via-tap-search-bar"/>
+    <TestCase Id="../../../../../TC/TR/TESTLIB/GMS/GMS_GoogleSearch_Search-for-a-contact-using-the-middle-name"/>
+    <TestCase Id="../../../../../TC/TR/TESTLIB/GMS/GMS_GoogleSearch_Search-in-Tablet-tab-with-internet-connection"/>
+    <TestCase Id="../../../../../TC/TR/TESTLIB/GMS/GMS_GoogleSearch_Search-in-Tablet-tab-with-no-internet-connection"/>
+    <TestCase Id="../../../../../TC/TR/ACS/Applications/Applications_L_MR1/prerequisites/prereq_GMS_Reboot_Device"/>
+    <!--<TestCase Id="../../../../../TC/TR/TESTLIB/GMS/GMS_Docs_Add-new-document"/>-->
+    <!--<TestCase Id="../../../../../TC/TR/TESTLIB/GMS/GMS_Docs_Delete-document"/>-->
+    <!--<TestCase Id="../../../../../TC/TR/TESTLIB/GMS/GMS_Docs_Find-and-replace"/>-->
+    <!--<TestCase Id="../../../../../TC/TR/TESTLIB/GMS/GMS_Docs_Insert-comment"/>-->
+    <!--<TestCase Id="../../../../../TC/TR/TESTLIB/GMS/GMS_Docs_Keep-on-device-for-a-document"/>-->
+    <!--<TestCase Id="../../../../../TC/TR/TESTLIB/GMS/GMS_Docs_Rename-a-file"/>-->
+    <!--<TestCase Id="../../../../../TC/TR/TESTLIB/GMS/GMS_Docs_Revoke-undo-revoke-in-document"/>-->
+    <TestCase Id="../../../../../TC/TR/TESTLIB/GMS/GMS_Youtube_Check-Search-button"/>
+    <TestCase Id="../../../../../TC/TR/TESTLIB/GMS/GMS_Youtube_Upload-Video"/>
+    <TestCase Id="../../../../../TC/TR/TESTLIB/GMS/GMS_Youtube_Sign-out"/>
+    <TestCase Id="../../../../../TC/TR/TESTLIB/GMS/GMS_Youtube_sign-in"/>
+    <TestCase Id="../../../../../TC/TR/TESTLIB/GMS/GMS_Youtube_Remove-video-from-playlist"/>
+    <TestCase Id="../../../../../TC/TR/ACS/Applications/Applications_L_MR1/prerequisites/prereq_GMS_Reboot_Device"/>
+    <TestCase Id="../../../../../TC/TR/TESTLIB/GMS/GMS_Drive_Drive-upload-a-file"/>
+    <TestCase Id="../../../../../TC/TR/TESTLIB/GMS/GMS_Drive_Remove-file"/>
+    <TestCase Id="../../../../../TC/TR/TESTLIB/GMS/GMS_Drive_Drive-filter-by"/>
+    <!--<TestCase Id="../../../../../TC/TR/TESTLIB/GMS/GMS_Drive_Drive-make-available-offline"/>-->
+    <TestCase Id="../../../../../TC/TR/TESTLIB/GMS/GMS_Drive_Add-file-to-favorite"/>
+    <TestCase Id="../../../../../TC/TR/TESTLIB/GMS/GMS_Drive_Drive-search-option"/>
+    <TestCase Id="../../../../../TC/TR/TESTLIB/GMS/GMS_Drive_View-as-list"/>
+    <TestCase Id="../../../../../TC/TR/TESTLIB/GMS/GMS_Drive_View-as-Grid"/>
+    <!--<TestCase Id="../../../../../TC/TR/TESTLIB/GMS/GMS_PlayGames_Play-Games-Settings"/>-->
+    <!--<TestCase Id="../../../../../TC/TR/TESTLIB/GMS/GMS_PlayGames_Help"/>-->
+    <!--<TestCase Id="../../../../../TC/TR/TESTLIB/GMS/GMS_PlayGames_Inbox-page"/>-->
+    <!--<TestCase Id="../../../../../TC/TR/TESTLIB/GMS/GMS_PlayGames_Install-button"/>-->
+    <!--<TestCase Id="../../../../../TC/TR/TESTLIB/GMS/GMS_PlayGames_Explore-page"/>-->
+    <!--<TestCase Id="../../../../../TC/TR/TESTLIB/GMS/GMS_PlayGames_My-Games-page"/>-->
+    <!--<TestCase Id="../../../../../TC/TR/TESTLIB/GMS/GMS_PlayGames_Players"/>-->
+    <TestCase Id="../../../../../TC/TR/ACS/Applications/Applications_L_MR1/prerequisites/prereq_GMS_Reboot_Device"/>
+    <TestCase Id="../../../../../TC/TR/ACS/Applications/Applications_L_MR1/prerequisites/prereq_REMOVE_GOOGLE_ACCOUNTS"/>
+  </TestCases>
+</Campaign>

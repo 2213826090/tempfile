@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='ASCII'?>
+<TestCase>
+    <UseCase>Testlib</UseCase>
+    <Description>Bluetooth PAN - Remote PAN disable from NAP DUT</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <TcMaxAttempt>1</TcMaxAttempt>
+    <TestSteps>
+        <Setup>
+            <TestStep Id="CONNECT_DEVICE" DEVICE="PHONE2"/>
+
+            <!--turn off wifi on DUT-->
+            <TestStep Id="WIFI_SET_POWER" DEVICE="PHONE2" POWER="off"/>
+
+            <!--connect to wifi on DEV-->
+            <TestStep Id="WIFI_REMOVE_NETWORK" DEVICE="PHONE1" SSID="all"/>
+            <TestStep Id="WIFI_SET_POWER" DEVICE="PHONE1" POWER="on"/>
+            <TestStep Id="WIFI_ADD_NETWORK" DEVICE="PHONE1" SSID="FROM_BENCH:WEP_WIFI_ROUTER:SSID"
+                      SECURITY="FROM_BENCH:WEP_WIFI_ROUTER:WIFI_SECURITY" PASS_PHRASE="FROM_BENCH:WEP_WIFI_ROUTER:passphrase"/>
+            <TestStep Id="WIFI_REQUEST_SCAN" DEVICE="PHONE1"  />
+            <TestStep Id="WIFI_CONNECT" DEVICE="PHONE1" SSID="FROM_BENCH:WEP_WIFI_ROUTER:SSID" TIMEOUT="60"/>
+
+            <!--unlock screen on both devices and dismiss eventual crash dialog-->
+            <TestStep Id="RUN_CMD"
+                      DEVICE="PHONE1" TIMEOUT="20" FORCE_EXECUTION="False" WAIT_FOR_RESPONSE="True" SILENT_MODE="False" SAVE_AS="out1"
+                      COMMAND="adb shell input keyevent 82"/>
+            <TestStep Id="DISMISS_ANR_DIALOG" DEVICE="PHONE1" PRESS_HOME_FIRST="True" MAX_ATTEMPTS="5"/>
+            <TestStep Id="RUN_CMD"
+                      DEVICE="PHONE2" TIMEOUT="20" FORCE_EXECUTION="False" WAIT_FOR_RESPONSE="True" SILENT_MODE="False" SAVE_AS="out1"
+                      COMMAND="adb shell input keyevent 82"/>
+            <TestStep Id="DISMISS_ANR_DIALOG" DEVICE="PHONE2" PRESS_HOME_FIRST="True" MAX_ATTEMPTS="5"/>
+        </Setup>
+        <TearDown>
+            <!--disconnect and turn off wifi on DEV-->
+            <TestStep Id="WIFI_REMOVE_NETWORK" DEVICE="PHONE1" SSID="all"/>
+            <TestStep Id="WIFI_SET_POWER" DEVICE="PHONE1" POWER="off"/>
+        </TearDown>
+    </TestSteps>
+    <Parameters>
+        <Parameter>
+            <Name>test</Name>
+            <Value>scripts/wireless/bluetooth/tests/Bluetooth_PAN_Disconnect_Disable_tests.py</Value>
+        </Parameter>
+        <Parameter>
+            <Name>script-args</Name>
+            <Value>dut_function=nap action=disable action_from=nap</Value>
+        </Parameter>
+        <Parameter>
+            <Name>timeout</Name>
+            <Value>20000</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

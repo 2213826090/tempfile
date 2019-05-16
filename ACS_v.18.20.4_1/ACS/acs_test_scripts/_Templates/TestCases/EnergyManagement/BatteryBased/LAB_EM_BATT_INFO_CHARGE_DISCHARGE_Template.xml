@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="13.37">
+    <UseCase>LAB_EM_BATT_INFO_CHARGE_DISCHARGE</UseCase>
+    <Description>This test made a charge discharge cycle, and could test the capacity jump presence, or the Voltage OCV consistency</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>False</b2bContinuousMode>
+    <TcMaxAttempt>1</TcMaxAttempt>
+    <TcAcceptanceCriteria>1</TcAcceptanceCriteria>
+    <Parameters>
+        <Parameter>
+            <Name>MIN_RANGE</Name>
+            <!-- min value of battery capacity for charging/discharging cycle -->
+            <Value>3</Value>
+        </Parameter>
+        <Parameter>
+            <Name>MAX_RANGE</Name>
+            <!-- max value of battery capacity for charging/discharging cycle -->
+            <Value>97</Value>
+        </Parameter>
+        <Parameter>
+            <Name>CHARGING_TIMEOUT</Name>
+            <!-- Timeout for battery charging -->
+            <Value>36000</Value>
+        </Parameter>
+         <Parameter>
+            <Name>DISCHARGING_TIMEOUT</Name>
+             <!-- Timeout for battery discharging -->
+            <Value>36000</Value>
+        </Parameter>
+        <Parameter>
+            <Name>DATA_POLLING_DELAY</Name>
+            <!--Delay between measurment -->
+            <Value>300</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Features to enable for the test -->
+            <!-- Features avaible are : -->
+            <!-- VIDEO, AUDIO, WIFI, BLUETOOTH, TORCHLIGHT, VIBRA, SCREEN ON -->
+            <Name>LOAD</Name>
+            <Value>SCREEN_ON;WIFI;BLUETOOTH;TORCHLIGHT;VIBRA;VIDEO</Value>
+        </Parameter>
+        <Parameter>
+            <!-- path of the file to play if VIDEO or AUDIO is on LOAD -->
+            <Name>MULTIMEDIA_FILE</Name>
+            <Value>01_the_dark_knight-tlr3_H264_CBR_20M_1080p_AAC-LC_48k_320kbps_.mp4</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TARGET</Name>
+            <Value>voltage_ocv</Value>
+        </Parameter>
+        <!-- below param are needed if you test voltage ocv -->
+        <Parameter>
+            <Name>CRIT_VBATT_VOLTAGE</Name>
+            <Value>3.2</Value>
+        </Parameter>
+        <Parameter>
+            <Name>FULL_VOLTAGE_THRESHOLD</Name>
+            <Value>4</Value>
+        </Parameter>
+                <Parameter>
+            <Name>FULL_VOLTAGE_OFFSET</Name>
+            <Value>0.3</Value>
+        </Parameter>
+        <Parameter>
+            <Name>CRIT_VBATT_OFFSET</Name>
+            <Value>0.2 </Value>
+        </Parameter>
+    </Parameters>
+    <TestSteps>
+        <Initialize>
+            <!-- Get the artifact on local host -->
+            <TestStep Id="GET_ARTIFACT" ARTIFACT="VIDEO/1080p/01_the_dark_knight-tlr3_H264_CBR_20M_1080p_AAC-LC_48k_320kbps_.mp4"
+                      ARTIFACT_SOURCE="FROM_BENCH:ARTIFACT_MANAGER:URI" TRANSFER_TIMEOUT="DEFAULT"
+                      STORED_FILE_PATH="FILE_PATH_IN_CACHE1" EQT="DEFAULT"/>
+            <!-- Then, Push it on the device. Device destination folder will be the default device media folder (/sdcard/acs_media) -->
+            <!-- FILE_PATH is retrieved from test step context -->
+            <TestStep Id="INSTALL_FILE" DEVICE="PHONE1" FILE_PATH="FROM_CTX:FILE_PATH_IN_CACHE1" TYPE="media"
+                      DESTINATION="FROM_DEVICE:PHONE1:userdataPath" TIMEOUT="DEFAULT" DESTINATION_STORED_PATH="FILE_PATH_IN_CACHE1"/>
+        </Initialize>
+    </TestSteps>
+</TestCase>

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="13.45">
+    <UseCase>LAB_EM_COOLING_ACTION_BENCHMARK</UseCase>
+    <Description>This usecase look for thermal cooling action during benchmark execution</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>False</b2bContinuousMode>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters>
+        <Parameter>
+            <!-- specific thermal zone that we are monitoring for cooling action, set to ANY to consider all zones -->
+            <Name>THERMAL_ZONE_TO_MONITOR</Name>
+            <Value>ANY</Value>
+        </Parameter>
+        <Parameter>
+            <!-- minimal battery capacity to start the test. If you are below it, a charge will occur -->
+            <Name>BATT_MIN_CAPACITY</Name>
+            <Value>50</Value>
+        </Parameter>
+        <Parameter>
+            <!-- If a thermal camera is present ,this option allow to use it to cooldown the board which may help to reduce the test duration -->
+            <Name>SETUP_COOLDOWN_WITH_CAMERA</Name>
+            <Value>TRUE</Value>
+        </Parameter>
+        <Parameter>
+            <!-- before starting the test we need to wait this second to let the board cool down ( board is off during this time) -->
+            <Name>SETUP_TIME_COOLDOWN_BOARD</Name>
+            <Value>3600</Value>
+        </Parameter>
+        <Parameter>
+            <!-- the max temperature in degree that the board should be below before starting the test if thermal camera is used -->
+            <Name>SETUP_START_TEMPERATURE</Name>
+            <Value>30</Value>
+        </Parameter>
+        <Parameter>
+            <!-- technology to apply before starting the test -->
+            <Name>SETUP_TECHNO</Name>
+            <Value>GPS_ON;WIFI_STANDBY;BLUETOOTH</Value>
+        </Parameter>
+        <Parameter>
+            <!--Wifi access point on which board will connect to.
+                Must refers to a wifi router's name (equipment name of the bench configuration file). this entry is used when WIFI_STANDBY load is set -->
+            <Name>WIFI_ACCESS_POINT</Name>
+            <Value>EM_ACCESS_POINT</Value>
+        </Parameter>
+        <Parameter>
+            <!-- name of the benchmark to execute -->
+            <Name>BENCHMARK_TEST_NAME</Name>
+            <Value>com.intel.droidbot.perf.GLBenchmark#testTRexOnscreen</Value>
+        </Parameter>
+        <Parameter>
+            <!-- duration of the whole benchmark execution in second, the benchmark will be repeat until it reacha duration equal or above it -->
+            <Name>BENCHMARK_DURATION</Name>
+            <Value>900</Value>
+        </Parameter>
+        <Parameter>
+            <!-- The min duration in second before embedded agent start to monitor the end of the benchmark, this avoid charging the cpu with monitoring action -->
+            <Name>BENCHMARK_MIN_WAIT_TIME</Name>
+            <Value>70</Value>
+        </Parameter>
+        <Parameter>
+            <!-- The max duration in second allowed to embedded agent to monitor the benchmark end, if your above it an exception will be raised by the agent -->
+            <Name>BENCHMARK_MAX_WAIT_TIME</Name>
+            <Value>120</Value>
+        </Parameter>
+    </Parameters>
+    <TestSteps>
+        <Initialize>
+            <TestStep Id="STORE_STRING_IN_CTX" INPUT="/data/local/tmp/com.intel.droidbot" OUTPUT="DROIDBOT_FOLDER" />
+            core library
+            <TestStep Id="GET_ARTIFACT" ARTIFACT="EM/droidbot-emcorelib.jar" ARTIFACT_SOURCE="FROM_BENCH:ARTIFACT_MANAGER:URI" TRANSFER_TIMEOUT="DEFAULT" STORED_FILE_PATH="FILE_PATH_IN_CACHE" EQT="DEFAULT" />
+            <TestStep Id="INSTALL_FILE" DEVICE="PHONE1" FILE_PATH="FROM_CTX:FILE_PATH_IN_CACHE" TYPE="media" DESTINATION="FROM_CTX:DROIDBOT_FOLDER" TIMEOUT="DEFAULT" DESTINATION_STORED_PATH="UNUSED_BUT_MANDATORY1" />
+            <TestStep Id="GET_ARTIFACT" ARTIFACT="EM/droidbot-emtests.jar" ARTIFACT_SOURCE="FROM_BENCH:ARTIFACT_MANAGER:URI" TRANSFER_TIMEOUT="DEFAULT" STORED_FILE_PATH="FILE_PATH_IN_CACHE" EQT="DEFAULT" />
+            <TestStep Id="INSTALL_FILE" DEVICE="PHONE1" FILE_PATH="FROM_CTX:FILE_PATH_IN_CACHE" TYPE="media" DESTINATION="FROM_CTX:DROIDBOT_FOLDER" TIMEOUT="DEFAULT" DESTINATION_STORED_PATH="UNUSED_BUT_MANDATORY2" />
+            <TestStep Id="GET_MODULE_CONFIG" DEVICE="PHONE1" MODULE="PnpModule" KEY="sipnpperf_gl_benchmark_270" MODULE_VALUE="gl_benchmark" />
+            <TestStep Id="GET_ARTIFACT" ARTIFACT="BENCHMARKS/GLBENCHMARK/[+]FROM_CTX:gl_benchmark" ARTIFACT_SOURCE="FROM_BENCH:ARTIFACT_MANAGER:URI" TRANSFER_TIMEOUT="DEFAULT" STORED_FILE_PATH="FILE_PATH_IN_CACHE" EQT="DEFAULT" />
+            <TestStep Id="INSTALL_APP" DEVICE="PHONE1" FILE_PATH="FROM_CTX:FILE_PATH_IN_CACHE" BACKUP="false" BACKUP_FILE_PATH="not used but mandatory" TIMEOUT="90" SIGN_KEY_PATH="DEFAULT" SIGN="false" />
+        </Initialize>
+    </TestSteps>
+</TestCase>

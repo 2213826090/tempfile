@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="13.45">
+    <UseCase>ANDROID_UI_TEST</UseCase>
+    <Description>Use case that will interpret UI sequence described in another xml file</Description>
+    <b2bIteration>5</b2bIteration>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters>
+        <Parameter>
+            <Name>SCRIPT_PATH</Name>
+            <!-- Path to the script containing the UI sequence
+                It must be the full path
+                c:\my_file.xml
+                or
+                relative path VS ACS "_ExecutionConfig" folder
+                my_file.xml
+                sub_folder\my_file.xml
+            -->
+            <Value>ui_sequences\browsing_att.xml</Value>
+        </Parameter>
+        <Parameter>
+            <Name>ERROR_MANAGEMENT_POLICY</Name>
+            <!--
+                The error management policy. Possible values:
+                - RAISE_EXCEPTION: usual exception management, raises an exception.
+                - LOG_WARNING: simply log a warning, but do not raise an exception.
+
+                Default value (if parameter is not indicated here): LOG_WARNING
+            -->
+            <Value>LOG_WARNING</Value>
+        </Parameter>
+        <Parameter>
+            <Name>ENABLE_UI_AUTOMATOR_EVENT</Name>
+            <!--
+                Enable ui automator log in logcat to allow better trig log
+                Default value (if parameter is not indicated here): False
+            -->
+            <Value>False</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

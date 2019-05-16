@@ -1,0 +1,10 @@
+{
+    "windows": {
+        "check_exists": ["winreg", ["SOFTWARE/National Instruments/NI-488.2"]],
+        "install": "{bin} /q /acceptlicenses yes /r",
+        "zip": {
+            "bin": "NI-488.2/setup.exe"
+        },
+        "32": "acs/dependencies/equipment/NI-488.2/NI-488.2.zip"
+    }
+}

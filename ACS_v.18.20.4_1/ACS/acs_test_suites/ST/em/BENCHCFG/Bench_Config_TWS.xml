@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='ISO-8859-1'?>
+<BenchConfig>
+  <Phones>
+      <Phone name="PHONE1" description="Phone to use during test campaign. Please refer to Device_Catalog.xml to add device parameters">
+          <!-- You can override value of a specific parameter from Device_Catalog
+            e.g:
+
+            <Parameter name="PowerSupply" value="ACCHG" description="Give the Power Supply Output type (e.g: ACCHG1)" />
+            <Parameter name="IoCard" value="IO_CARD" description="Give the IO card name (e.g: IO_CARD1)" />
+            <Parameter name="serialNumber" value="" description="Give the Serial Number of the phone (Used for Android phone only)" />
+            <Parameter name="phoneNumber" value="" description="Give the phone number of the phone" />
+            <Parameter name="adbOverEthernet" value="" description="Use ADB over Ethernet (Used for Android phone only)" />
+            <Parameter name="ipAddress" value="" description="Give the IP address of the phone (Used for Android phone only)" />
+            <Parameter name="adbPort" value="" description="Give ADB ethernet port of the phone (Used for Android phone only)" />
+            <Parameter name="waitBetweenCmd" value="" description="Give the time to wait between ue command execution"/>
+            -->
+            <Parameter uploadCrashToServer="false"/>
+            <Parameter adbRootTimeout="40"/>
+        </Phone>
+    </Phones>
+    <Equipments>
+      <Equipment name="ARTIFACT_MANAGER" description="ArtifactManager configuration to get all test case necessary artifacts">
+          <Parameter name="URI" value="https://mcg-depot.intel.com/artifactory/acs_test_artifacts/" description="Local path/URL to the artifact source"/>
+            <!-- Optional options
+            <Parameter name="proxy" value="system" description="Proxy to use if URI is an URL - system: use HTTP_PROXY system value - no_proxy: use empty proxy - a proxy adress" />
+            <Parameter name="http_timeout" value="10" description="Response timeout if URI is an URL" />
+            <Parameter name="creds" value="anonymous" description="Credentials to use if URL is access protected - anonymous: no creds will be used - creds format user:password" />
+            <Parameter name="cache_folder" value="/tmp/artifact_cache" description="Local path to a directory to store artifacts - if not specified, your_home_folder/.acs/Artifacts will be used" />
+            <Parameter name="max_cache_size" value="1000" description="Maximum cache directory size on the disk in Mb" />
+            -->
+        </Equipment>
+    </Equipments>
+</BenchConfig>
+

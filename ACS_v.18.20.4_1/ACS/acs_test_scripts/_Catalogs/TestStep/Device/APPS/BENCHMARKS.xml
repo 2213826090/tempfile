@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestSteps xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../acs/src/_Catalogs/TestStep/teststep.xsd">
+    <TestStep Id="RUN_BONNIE_PLUS_PLUS" Domain="APPS" SubDomain="BENCHMARKS" Feature="" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Apps.Benchmarks.RunBonniePlusPlus.RunBonniePlusPlus</ClassName>
+        <Description>(Android only) Runs a shell script that invokes Bonnie++ and keeps it running for the specified duration.
+            I don't know of any version of Bonnie++ for Windows or other OSes, so this is intended only for Android at this time.
+            Prerequisites: the following scripts and binaries must be located in the path specified by SCRIPTS_PATH:
+                bonnie++
+                killer.sh
+                process
+                loopBonnie++.sh
+            These files can be found in this tarball in Artifactory: acs_test_artifacts/CONCURRENCY/TESTS/bonnie_plus_plus/bonnie_plus_plus.tgz.
+            </Description>
+        <Environment name="ANY"/>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device that will run the application</Description>
+                <PossibleValues/>
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="DURATION" type="INTEGER" isOptional="false">
+               <Description>How long the test will run, in minutes.</Description>
+               <PossibleValues/>
+               <DefaultValue>5</DefaultValue>
+            </Parameter>
+            <Parameter name="SCRIPTS_PATH" type="STRING" isOptional="false">
+                <Description>Directory on the DUT where the scripts and binary are located.</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+            <Parameter name="TARGET_DEVICES" type="LIST" isOptional="false">
+               <Description>List of devices for Bonnie++ to target, separated by '[|]'.  Example: "'/dev/block/mmcblk0p9'[|]'/dev/block/mmcblk1p1'".
+                   Be careful to individually quote each list element if it contains characters that might be misinterpreted when evaluating the data type.</Description>
+               <PossibleValues/>
+               <DefaultValue/>
+            </Parameter>
+            <Parameter name="SIZE" type="INTEGER" isOptional="false">
+                <Description>Size of data to transfer (MiB)</Description>
+               <PossibleValues/>
+               <DefaultValue/>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="RUN_GL_BENCHMARK" Domain="APPS" SubDomain="BENCHMARKS" Feature="" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Apps.Benchmarks.RunGLBenchmark.RunGLBenchmark</ClassName>
+        <Description>For Version2.7 :Runs a shell script that invokes GLBenchmark and keeps it running for the specified duration.
+            For Version 3.0 : Opens the application and runs the test without using the shell script.
+            PREREQUISITES:
+            Android: the following script must be located in the path specified by SCRIPTS_PATH:
+                    run_glbenchmark_27.sh
+                This can be found in Artifactory at acs_test_artifacts/CONCURRENCY/TESTS/GLBenchmark.
+                In addition, the following APK should be installed on the DUT:
+                    GLBenchmark_2_7_0_Release_a68901_Android_Corporate_Package.apk
+                This can be found in Artifactory at acs_test_artifacts/BENCHMARKS/GLBENCHMARK.
+            Windows: binary and device-side scripts not yet created.
+        </Description>
+        <Environment name="ANY"/>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device that will run the application</Description>
+                <PossibleValues/>
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="DURATION" type="INTEGER" isOptional="false">
+               <Description>How long the test will run, in minutes.</Description>
+               <PossibleValues/>
+               <DefaultValue>5</DefaultValue>
+            </Parameter>
+            <Parameter name="SCRIPTS_PATH" type="STRING" isOptional="false">
+                <Description>Directory on the DUT where the script is located.</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+            <Parameter name="VERSION" type="FLOAT" isOptional="false">
+                <Description>The version of the benchmark 3.0 or 2.7</Description>
+                <PossibleValues>3.0;2.7</PossibleValues>
+                <DefaultValue/>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="RUN_BASEMARK" Domain="APPS" SubDomain="BENCHMARKS" Feature="" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Apps.Benchmarks.RunBasemark.RunBasemark</ClassName>
+        <Description>Runs a shell script that invokes Basemark and keeps it running for the specified duration.
+            PREREQUISITES:
+            Android: the contents of this tarball must be unpacked into the directory specified in SCRIPTS_PATH.
+                    basemarkes2v1_files.tgz
+                This can be found in Artifactory at acs_test_artifacts/CONCURRENCY/TESTS/basemark.
+            Windows: binary and device-side scripts not yet created.
+        </Description>
+        <Environment name="ANY"/>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device that will run the application</Description>
+                <PossibleValues/>
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="DURATION" type="INTEGER" isOptional="false">
+               <Description>How long the test will run, in minutes.</Description>
+               <PossibleValues/>
+               <DefaultValue>5</DefaultValue>
+            </Parameter>
+            <Parameter name="SCRIPTS_PATH" type="STRING" isOptional="false">
+                <Description>Directory on the DUT where the tarball was unpacked.</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="RUN_3DMARK" Domain="APPS" SubDomain="BENCHMARKS" Feature="" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Apps.Benchmarks.Run3dmark.Run3dmark</ClassName>
+        <Description>It runs the 3Dmark test for a specified duration.
+            PREREQUISITES:
+            3D mark application needs to be installed on the device before running test.
+            The application can be found at CONCURRENCY/TESTS/3d_mark/com.futuremark.dmandroid.application-1.apk
+        </Description>
+        <Environment name="ANY"/>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device that will run the application</Description>
+                <PossibleValues/>
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="DURATION" type="INTEGER" isOptional="false">
+               <Description>How long the test will run, in minutes.</Description>
+               <PossibleValues/>
+               <DefaultValue>5</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="RUN_LINPACK" Domain="APPS" SubDomain="BENCHMARKS" Feature="" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Apps.Benchmarks.RunLinpack.RunLinpack</ClassName>
+        <Description>Runs a shell script that invokes a CPU benchmark called Linpack.
+            The Linpack benchmark is a measure of a computer’s floating-point rate of execution.
+            This benchmark computes the solution of a system of N linear equations with N unknowns.
+            There are several versions of the Linpack benchmark, differing in size, numerical precision, and rules.
+            This version is an Intel-customized version. The original Linpack was intended for systems with
+            a distributed memory.
+            PREREQUISITES:
+            Android: scripts and binaries from linpack_files.tgz must be located in the path specified by SCRIPTS_PATH.
+                This tarball can be found in Artifactory at acs_test_artifacts/CONCURRENCY/TESTS/linpack/linpack_files.tgz.
+            Windows: binary and device-side scripts not yet created.
+        </Description>
+        <Environment name="ANY"/>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device that will run the application</Description>
+                <PossibleValues/>
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="DURATION" type="INTEGER" isOptional="false">
+               <Description>How long the test will run, in minutes.</Description>
+               <PossibleValues/>
+               <DefaultValue>5</DefaultValue>
+            </Parameter>
+            <Parameter name="SCRIPTS_PATH" type="STRING" isOptional="false">
+                <Description>Directory on the device where the required scripts and binaries have been installed.</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="CHECK_CMD_OUTPUT" Domain="APPS" SubDomain="BENCHMARKS" Feature="" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Apps.Benchmarks.CheckCmdOutput.CheckCmdOutput</ClassName>
+        <Description>Runs a command, checks if the output is the expected one and sends the verdict
+          (PASSED/FAILED) to TCR as a testcase iteration if required.
+          It should be used only in a "check config" testcase which purpose is to check
+          if the device configuration is correct (for example : getprop, cat sysfs values...).
+        </Description>
+        <Environment name="ANY"/>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device that will run the application</Description>
+                <PossibleValues/>
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="CHECK_NAME" type="STRING" isOptional="false">
+                <Description>Name of the check</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+            <Parameter name="CMD" type="STRING" isOptional="false">
+                <Description>Command to execute</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+            <Parameter name="EXPECTED_OUTPUT" type="STRING" isOptional="false">
+                <Description>Command output expected</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+            <Parameter name="PUSH_ITERATION" type="BOOLEAN" isOptional="true">
+                <Description>To push or not an iteration to TCR</Description>
+                <PossibleValues/>
+                <DefaultValue>False</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="EXEC_PNP_DROIDBOT" Domain="APPS" SubDomain="BENCHMARKS" Feature="" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Apps.Benchmarks.RunPnpDroidbot.RunPnpDroidbot</ClassName>
+            <Description>Runs a pnp performance based on pnp java fwk test
+                PREREQUISITES:
+                Android: benchmark app must be installed on the device
+                pnp fwk jar files must be pushed on the device
+        </Description>
+        <Environment name="ANY"/>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device that will run the application</Description>
+                <PossibleValues/>
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="TEST_NAME" type="STRING" isOptional="false">
+                <Description>Test class to execute</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+            <Parameter name="TIMEOUT" type="INTEGER" isOptional="true">
+                <Description>How long the test will run, in minutes.</Description>
+                <PossibleValues/>
+                <DefaultValue>30</DefaultValue>
+            </Parameter>
+            <Parameter name="EXTRA_OPTS" type="STRING" isOptional="true">
+                <Description>Extra options for uiautomator</Description>
+                <PossibleValues/>
+                <DefaultValue>""</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="EXEC_PNP_DROIDBOT_V2" Domain="APPS" SubDomain="BENCHMARKS" Feature="" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Apps.Benchmarks.RunPnpDroidbotv2.RunPnpDroidbotv2</ClassName>
+            <Description>Runs a pnp performance based on pnp java fwk test
+                PREREQUISITES:
+                Android: benchmark app must be installed on the device
+                pnp fwk jar files must be pushed on the device
+        </Description>
+        <Environment name="ANY"/>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device that will run the application</Description>
+                <PossibleValues/>
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="SCENARIO" type="STRING" isOptional="false">
+                <Description>Test class to execute</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+            <Parameter name="TEST_TYPE" type="STRING" isOptional="false">
+                <Description>Type of the test, can be ux or benchmarks</Description>
+                <PossibleValues>ux;benchmarks</PossibleValues>
+                <DefaultValue/>
+            </Parameter>
+            <Parameter name="PARAMETERS" type="STRING" isOptional="true">
+                <Description>Parameters to add to the scenario</Description>
+                <PossibleValues/>
+                <DefaultValue></DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+</TestSteps>

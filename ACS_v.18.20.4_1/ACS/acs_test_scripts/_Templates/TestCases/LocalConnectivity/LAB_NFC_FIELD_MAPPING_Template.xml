@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="13.45">
+    <UseCase>LAB_NFC_FIELD_MAPPING</UseCase>
+    <Description>Make a map of nfc field</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>False</b2bContinuousMode>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters>
+        <Parameter>
+            <!-- Height where the test is starting 0 by default  -->
+            <Name>STARTING_Z</Name>
+            <Value>0</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Height where the test is ending 0 by default -90000  -->
+            <!-- this the Z point where plan test is made -->
+            <Name>MAX_Z</Name>
+            <Value>-100000</Value>
+        </Parameter>
+        <Parameter>
+            <!-- position to start the test in robot step (10000 = 1 cm)-->
+            <Name>RIGHT_UP_CORNER</Name>
+            <Value>60000x100000</Value>
+        </Parameter>
+        <Parameter>
+            <!--  file name for the results -->
+            <Name>RESULT_FILE_NAME</Name>
+            <Value></Value>
+        </Parameter>
+        <Parameter>
+            <!--  resolution in robot step of measurement -->
+            <Name>RESOLUTION</Name>
+            <Value></Value>
+        </Parameter>
+        <Parameter>
+            <!--  is test is perform higher z find -->
+            <Name>FOUND_MAX_Z</Name>
+            <Value>TRUE</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

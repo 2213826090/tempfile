@@ -1,0 +1,58 @@
+<?xml version='1.0' encoding='ASCII'?>
+<Campaign version="13.49">
+    <Parameters>
+        <Parameter isControlledPSUsed="False"/>
+        <Parameter isIoCardUsed="False"/>
+        <!-- Set skipBootOnPowerCycle to True to disable the accs boot procedure -->
+        <!-- Important, it means that boot will be handle inside the campaign/tc -->
+        <Parameter skipBootOnPowerCycle="False"/>
+        <!-- Set bootRetryNumber to maximum number of boot retries during the acs boot procedure -->
+        <!-- Important, it means that bootRetryNumber is set by default to 0 if not specified -->
+        <Parameter bootRetryNumber="0"/>
+        <Parameter runHookScripts="False"/>
+        <Parameter powerCycleBetweenTC="False"/>
+        <Parameter powerCycleOnFailure="False"/>
+        <!-- finalDutState allows user to leave the DUT in a specific state at the end of the campaign
+            Possible values: PowerOn | PowerOff | Charging | NoChange
+            By default DUT is leaved in NoChange state.
+            In case the user selects Charging as final state of the DUT and that DUT fails to enter Charging,
+            ACS shall try to switch the DUT off -->
+        <Parameter finalDutState="NoChange"/>
+        <Parameter stopCampaignOnCriticalFailure="False"/>
+        <Parameter stopCampaignOnFirstFailure="False"/>
+        <!-- LoggingLevel possible values: info | warning | debug | error -->
+        <Parameter loggingLevel="debug"/>
+        <!-- CampaignType format -> <TEAM>_<CAMPAIGNTYPE>
+            Possible values:
+            FT(Feature Team)-> SANITY | REGRESSION | STRESS, RELIABILTY | MTBF
+            ST(System Test)-> SANITY | REGRESSION | STRESS, RELIABILTY | MTBF | EM
+            SI(System Integration)-> EAT | STAB | PACT | CAT0 | RELIABILITY | MTBF | CTS | ACS_CI
+            Otherwise "Others" should be used -->
+        <Parameter CampaignType="MTBF"/>
+    </Parameters>
+    <Targets>
+        <!-- Target Values -->
+        <Target targetB2bPassRate="100"/>
+    </Targets>
+    <TestCases>
+        <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Photos/prerequisites/prereq_Delete_Media_Files"/>
+        <TestCase Id="../../../../../TC/TR/DeviceSetup/prereq_ConnectToAP"/>
+        <!-- ensure connection to internet -->
+        <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Photos/prerequisites/prereq_Push_photos"/>
+        <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Photos/GMS_Photos_Auto-Awesome"/>
+        <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Photos/GMS_Photos_Cancel-changes"/>
+        <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Photos/GMS_Photos_Crop-image"/>
+        <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Photos/GMS_Photos_Discard-changes"/>
+        <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Photos/GMS_Photos_Timeline-photos"/>
+        <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Photos/GMS_Photos_Delete-photo-video"/>
+        <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Photos/GMS_Photos_Add-looks-to-a-photo"/>
+        <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Photos/GMS_Photos_Add-filter-to-a-photo"/>
+        <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Photos/GMS_Photos_Rotate-image"/>
+        <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Photos/GMS_Photos_Add-frame-to-a-photo"/>
+        <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Photos/prerequisites/prereq_Delete_Media_Files"/>
+        <TestCase Id="../../../../../TC/TR/TESTLIB/GMS/prereq_photos_add_account"/>
+        <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Photos/prerequisites/prereq_Photos_sign_in"/>
+        <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Photos/GMS_Photos_Create-new-album"/>
+        <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Photos/GMS_Photos_Copy-photo-to-album"/>
+    </TestCases>
+</Campaign>

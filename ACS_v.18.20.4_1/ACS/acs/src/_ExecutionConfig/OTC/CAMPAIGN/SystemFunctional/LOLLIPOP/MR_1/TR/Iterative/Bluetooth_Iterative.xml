@@ -1,0 +1,63 @@
+<?xml version='1.0' encoding='ASCII'?>
+<Campaign version="13.49">
+    <Parameters>
+        <Parameter isControlledPSUsed="False"/>
+        <Parameter isIoCardUsed="True"/>
+        <!-- Set skipBootOnPowerCycle to True to disable the accs boot procedure -->
+        <!-- Important, it means that boot will be handle inside the campaign/tc -->
+        <Parameter skipBootOnPowerCycle="False"/>
+        <!-- Set bootRetryNumber to maximum number of boot retries during the acs boot procedure -->
+        <!-- Important, it means that bootRetryNumber is set by default to 0 if not specified -->
+        <Parameter bootRetryNumber="0"/>
+        <Parameter runHookScripts="False"/>
+        <Parameter powerCycleBetweenTC="False"/>
+        <Parameter powerCycleOnFailure="False"/>
+        <!-- finalDutState allows user to leave the DUT in a specific state at the end of the campaign
+            Possible values: PowerOn | PowerOff | Charging | NoChange
+            By default DUT is leaved in NoChange state.
+            In case the user selects Charging as final state of the DUT and that DUT fails to enter Charging,
+            ACS shall try to switch the DUT off -->
+        <Parameter finalDutState="NoChange"/>
+        <Parameter stopCampaignOnCriticalFailure="False"/>
+        <Parameter stopCampaignOnFirstFailure="False"/>
+        <!-- LoggingLevel possible values: info | warning | debug | error -->
+        <Parameter loggingLevel="debug"/>
+        <!-- CampaignType format -> <TEAM>_<CAMPAIGNTYPE>
+            Possible values:
+            FT(Feature Team)-> SANITY | REGRESSION | STRESS, RELIABILTY | MTBF
+            ST(System Test)-> SANITY | REGRESSION | STRESS, RELIABILTY | MTBF | EM
+            SI(System Integration)-> EAT | STAB | PACT | CAT0 | RELIABILITY | MTBF | CTS | ACS_CI
+            Otherwise "Others" should be used -->
+        <Parameter CampaignType="Others"/>
+        <Parameter TCRReportViaRESTAPI="True"/>
+    </Parameters>
+    <Targets>
+        <!-- Target Values -->
+        <Target targetB2bPassRate="100"/>
+    </Targets>
+    <TestCases>
+        <!--Setup, installing ACS Agents-->
+        <TestCase Id="../../../../../../TC/TR/ACS/Communication/Bluetooth/setup/prereq_Bluetooth_SYSTEM_SETUP_EMBEDDED"/>
+
+        <!--<TestCase Id="../../../../../TC/TR/ACS/Communication/Bluetooth/setup/prereq_SKIP_CHROME_TUTORIAL" TcMaxAttempt="2"/>-->
+
+        <TestCase Id="../../../../../../TC/TR/ACS/Communication/Bluetooth/Iterative/ST_CWS_BT_AVRCP_V1p0_PLAYPAUSE_ITERATIVE_001" />
+        <TestCase Id="../../../../../../TC/TR/ACS/Communication/Bluetooth/Iterative/ST_CWS_BT_AVRCP_V1p0_TRACKCHANGE_ITERATIVE_001" />
+        <TestCase Id="../../../../../../TC/TR/ACS/Communication/Bluetooth/Iterative/ST_CWS_BT_CONNECT_ITERATIVE_001" />
+        <TestCase Id="../../../../../../TC/TR/ACS/Communication/Bluetooth/Iterative/ST_CWS_BT_CONNECT_ITERATIVE_003" />
+        <TestCase Id="../../../../../../TC/TR/ACS/Communication/Bluetooth/Iterative/ST_CWS_BT_OPP_CLIENT_ITERATIVE_001" />
+        <TestCase Id="../../../../../../TC/TR/ACS/Communication/Bluetooth/Iterative/ST_CWS_BT_OPP_CLIENT_ITERATIVE_002" />
+        <TestCase Id="../../../../../../TC/TR/ACS/Communication/Bluetooth/Iterative/ST_CWS_BT_OPP_CLIENT_ITERATIVE_003" />
+        <TestCase Id="../../../../../../TC/TR/ACS/Communication/Bluetooth/Iterative/ST_CWS_BT_OPP_SERVER_ITERATIVE_001" />
+        <TestCase Id="../../../../../../TC/TR/ACS/Communication/Bluetooth/Iterative/ST_CWS_BT_OPP_SERVER_ITERATIVE_002" />
+        <TestCase Id="../../../../../../TC/TR/ACS/Communication/Bluetooth/Iterative/ST_CWS_BT_OPP_SERVER_ITERATIVE_003" />
+        <TestCase Id="../../../../../../TC/TR/ACS/Communication/Bluetooth/Iterative/ST_CWS_BT_PAIR_SSPAIR_ITERATIVE_001" />
+        <TestCase Id="../../../../../../TC/TR/ACS/Communication/Bluetooth/Iterative/ST_CWS_BT_PAN_NAP_CONNECT_ITERATIVE_001" />
+        <TestCase Id="../../../../../../TC/TR/ACS/Communication/Bluetooth/Iterative/ST_CWS_BT_PAN_NAP_CONNECT_ITERATIVE_002" />
+        <TestCase Id="../../../../../../TC/TR/ACS/Communication/Bluetooth/Iterative/ST_CWS_BT_PAN_NAP_CONNECT_ITERATIVE_003" />
+        <TestCase Id="../../../../../../TC/TR/ACS/Communication/Bluetooth/Iterative/ST_CWS_BT_PAN_NAP_CONNECT_ITERATIVE_004" />
+        <TestCase Id="../../../../../../TC/TR/ACS/Communication/Bluetooth/Iterative/ST_CWS_BT_PANU_CONNECT_ITERATIVE_002" />
+        <TestCase Id="../../../../../../TC/TR/ACS/Communication/Bluetooth/Iterative/ST_CWS_BT_PANU_CONNECT_ITERATIVE_004" />
+        <TestCase Id="../../../../../../TC/TR/ACS/Communication/Bluetooth/Iterative/ST_CWS_BT_RTCOEX_003" />
+    </TestCases>
+</Campaign>

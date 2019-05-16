@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="13.44">
+    <UseCase>ANY_USB_TETHER</UseCase>
+    <Description>Enable USB tethering interface and perform ping on FTP server, then disable it and do the ping again.</Description>
+    <Requirements>
+        <Contour>
+            <Global_ID>12208094</Global_ID>
+            <Test_Case_ID>ST_TELEPHONY_DATA_LTE-TETH_001</Test_Case_ID>
+            <Name>Tethering USB - Toggle USB Tethering On/Off</Name>
+        </Contour>
+    </Requirements>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters>
+        <!-- Parameters for the USB tethering test case itself -->
+        <Parameter>
+            <!--Optional: Number of ping to perform. If the value is empty or 0, test case will not perform ping on FTP server address-->
+            <Name>PING_NUMBER</Name>
+            <Value>10</Value>
+        </Parameter>
+        <Parameter>
+            <!--overall timeout for ftp connection, ftp transfer, usb tethering connection-->
+            <Name>TIMEOUT</Name>
+            <Value>120</Value>
+        </Parameter>
+        <Parameter>
+            <!-- 2G | 3G | 4G | LIVE-->
+            <Name>RAT</Name>
+            <Value>4G</Value>
+        </Parameter>
+
+        <!-- Parameters for network configurations -->
+        <Parameter>
+            <!-- Multiple-Input Multiple-Output to set : true or false -->
+            <Name>MIMO</Name>
+            <Value>FALSE</Value>
+        </Parameter>
+        <Parameter>
+            <!-- number of antennas to set : 1 or 2 -->
+            <Name>ANTENNAS_NUMBER</Name>
+            <Value>1</Value>
+        </Parameter>
+        <Parameter>
+            <!-- TRANSMISSION_MODE to set: TM1, TM2, TM3,TM4 ... -->
+            <Name>TRANSMISSION_MODE</Name>
+            <Value>TM1</Value>
+        </Parameter>
+        <Parameter>
+            <!-- DL RB_SIZE to set:
+            1.4 MHz = 1 to 6
+            3 MHz = 1 to 15
+            5 MHz = 1 to 25
+            10 MHz = 1 to 50
+            15 MHz = 1 to 75
+            20 MHz = 1 to 100 -->
+            <Name>DL_RB_SIZE</Name>
+            <Value>23</Value>
+        </Parameter>
+        <Parameter>
+            <!-- UL RB_SIZE to set:
+            1.4 MHz = 1 to 6
+            3 MHz = 1 to 15
+            5 MHz = 1 to 25
+            10 MHz = 1 to 50
+            15 MHz = 1 to 75
+            20 MHz = 1 to 100 -->
+            <Name>UL_RB_SIZE</Name>
+            <Value>10</Value>
+        </Parameter>
+        <Parameter>
+            <!-- TYPE0_BITMAP to set: requires to set TM3 or TM4 profile, MIMO to be set in scenario file
+            1.4 MHz = 1 to 63 (0x3F)
+            3 MHz = 1 to 255 (0xFF)
+            5 MHz = 1 to 8191 (0x1FFF)
+            10 MHz = 1 to 131071 (0x1FFFF)
+            15 MHz = 1 to 524287 (0x7FFFF)
+            20 MHz = 1 to 33554431 (0x1FFFFFF) -->
+            <Name>TYPE0_BITMAP</Name>
+            <Value>63</Value>
+        </Parameter>
+        <Parameter>
+            <!-- UL GRANT MODE to set: AUTO or FIXEDMAC -->
+            <Name>UL_GRANT_MODE</Name>
+            <Value>FIXEDMAC</Value>
+        </Parameter>
+        <Parameter>
+            <!-- DL_I_MCS to set: 0 to 28 -->
+            <Name>DL_I_MCS</Name>
+            <Value>25</Value>
+        </Parameter>
+        <Parameter>
+            <!-- UL_I_MCS to set: 0 to 31 -->
+            <Name>UL_I_MCS</Name>
+            <Value>3</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Operation mode to set : BSE or SA -->
+            <Name>SIGNAL_MODE</Name>
+            <Value>BSE</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Physical Cell ID : 0 to 503 -->
+            <Name>PHYSICAL_CELL_ID</Name>
+            <Value>0</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Cell Setup : "A" for A-cell or "B" for B-cell -->
+            <Name>CELL_ID</Name>
+            <Value>A</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Cell power for RFO1 -->
+            <Name>CELL_POWER_RFO1</Name>
+            <Value>-40</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Cell power for RFO2 -->
+            <Name>CELL_POWER_RFO2</Name>
+            <Value>-40</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Mobile Country Code 0 to 999 -->
+            <Name>MCC</Name>
+            <Value>1</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Mobile Network Code 0 to 999 -->
+            <Name>MNC</Name>
+            <Value>1</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Cell Band (from Band 1 to Band 32) -->
+            <Name>CELL_BAND</Name>
+            <Value>1</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Downlink channel -->
+            <Name>DL_EARFCN</Name>
+            <Value>300</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Cell channel bandwidth to set: 1.4MHz; 3 MHz; 5MHz; 10 MHz; 15MHz; 20 MHz-->
+            <Name>CELL_CHANNEL_BANDWIDTH</Name>
+            <Value>10</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Scenario filename and path to load on PXT -->
+            <Name>SCENARIO_PATH</Name>
+            <Value>UC_default_bearer_IratRedirectionWCDMASuppServices_NewQoS_Target10700.LBMF</Value>
+        </Parameter>
+        <Parameter>
+            <!-- RRC STATE Before FTP start (RRC_CONNECTED | RRC_IDLE )-->
+            <Name>RRC_STATE</Name>
+            <Value>RRC_IDLE</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

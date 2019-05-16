@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<UseCases xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:noNamespaceSchemaLocation="../../../../acs/src/_Catalogs/UseCase/usecase.xsd">
+    <UseCase Id="LIVE_SYSTEM_SENSOR_INFO" Domain="SYSTEM" SubDomain="SENSOR" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.System.LIVE_SYSTEM_SENSOR_INFO.LiveSystemSensorInfo</ClassName>
+        <Description>The System Sensor information Test</Description>
+        <Environment name="ANY">
+        </Environment>
+    </UseCase>
+    <UseCase Id="LIVE_SYSTEM_SENSOR_ACCELEROMETER" Domain="SYSTEM" SubDomain="SENSOR" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.System.LIVE_SYSTEM_SENSOR_ACCELEROMETER.LiveSystemSensorAccelerometer</ClassName>
+        <Description>Check accelerometer value after setting vibrator on</Description>
+        <Environment name="ANY">
+        </Environment>
+    </UseCase>
+    <UseCase Id="LIVE_SYSTEM_SENSOR_BAROMETER" Domain="SYSTEM" SubDomain="SENSOR" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.System.LIVE_SYSTEM_SENSOR_BAROMETER.LiveSystemSensorBarometer</ClassName>
+        <Description>Check barometer value</Description>
+        <Environment name="ANY">
+        </Environment>
+    </UseCase>
+</UseCases>

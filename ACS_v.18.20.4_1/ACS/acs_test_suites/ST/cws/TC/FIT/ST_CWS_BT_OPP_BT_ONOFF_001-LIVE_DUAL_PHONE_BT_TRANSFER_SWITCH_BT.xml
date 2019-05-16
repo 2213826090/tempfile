@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase>
+    <UseCase>LIVE_DUAL_PHONE_BT_TRANSFER_SWITCH_BT</UseCase>
+    <Description>Send file using BT OPP Profile and switch on/off BT in the same time and restart a new BT OPP transfer</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>False</b2bContinuousMode>
+    <TcAcceptanceCriteria>PASS</TcAcceptanceCriteria>
+    <TcMaxAttempt>2</TcMaxAttempt>
+    <Parameters>
+        <Parameter>
+            <!-- Configure the state of DUT : DUT_CLIENT, DUT_SERVER -->
+            <Name>DUT_STATE</Name>
+            <Value>DUT_CLIENT</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Name of the file to send -->
+            <Name>OPP_LOCAL_FILE</Name>
+            <Value>5MB.txt</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

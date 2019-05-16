@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="13.37">
+    <UseCase>LAB_WIFI_ADDRESS_PROVISIONING</UseCase>
+    <Description>Check Wifi Connection with MAC Address Provisioning
+    </Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <TcMaxAttempt>1</TcMaxAttempt>
+    <TcAcceptanceCriteria>1</TcAcceptanceCriteria>
+    <Parameters>
+        <Parameter>
+            <!-- Wifi Security of wifi env to be used. Can be only "OPEN". Only needed if WIFI_CNX_NEEDED is True. -->
+            <Name>WIFI_SECURITY</Name>
+            <Value>OPEN</Value>
+        </Parameter>
+        <Parameter>
+            <!-- WIFI_CNX_NEEDED: False if no connection to an AP is needed, True
+                else: -->
+            <Name>WIFI_CNX_NEEDED</Name>
+            <Value></Value>
+        </Parameter>
+        <Parameter>
+            <!-- DUT_MAC_ADDRESS: String containing the MAC (08:00:28:xx:xx:xx).
+                If random part is need, put x in the MAC and the use case will put
+                random chars in place of them. -->
+            <Name>DUT_MAC_ADDRESS</Name>
+            <Value>08:00:28:xx:xx:xx</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

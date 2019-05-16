@@ -1,0 +1,3020 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestSteps xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../acs/src/_Catalogs/TestStep/teststep.xsd">
+    <TestStep Id="BT_SET_POWER" Domain="WIRELESS" SubDomain="BT" Feature="COMMON" Status="DONE" >
+        <ClassName>acs_test_scripts.TestStep.Device.Wireless.BT.BtSetPower.BtSetPower</ClassName>
+        <Description>
+            Enable or disable Bluetooth adapter depending on the sequence expressed by POWER arg.
+            For example, POWER=ON,OFF,ON will turn Bluetooth ON, then OFF, then ON. It will always verify that
+            turning Bluetooth ON / OFF succeeds and raise an error if it doesn't.
+        </Description>
+        <Environment name="ANY">
+        </Environment>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="POWER" type="STRING" isOptional="false">
+                <Description>Defines whether to Enable or Disable bluetooth</Description>
+                <PossibleValues>ON;OFF;on;off</PossibleValues>
+                <DefaultValue />
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="BT_GET_POWER" Domain="WIRELESS" SubDomain="BT" Feature="COMMON" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Wireless.BT.BtGetPower.BtGetPower</ClassName>
+        <Description>
+            Get the current power state of Bluetooth
+        </Description>
+        <Environment name="ANY">
+        </Environment>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="SAVE_AS" type="CONTEXT" isOptional="false">
+                <Description>
+                    <Key name="KEY_NAME_DEFINED_BY_USER" type="STRING">Name of the context variable where the value will be saved.</Key>
+                </Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="BT_SET_ADAPTER_POWER" Domain="WIRELESS" SubDomain="BT" Feature="COMMON" Status="DONE" >
+        <ClassName>acs_test_scripts.TestStep.Device.Wireless.BT.SetAdapterPower.BtSetAdapterPower</ClassName>
+        <Description>
+            Set Bluetooth adapter power mode. This is not a BT controller power off as in BT_SET_POWER.
+            It can be used to simulate an out of range event.
+        </Description>
+        <Environment name="ANY">
+        </Environment>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="POWER" type="STRING" isOptional="false">
+                <Description>Defines whether to Enable or Disable bluetooth adapter</Description>
+                <PossibleValues>ON;OFF</PossibleValues>
+                <DefaultValue />
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="BT_PAIR" Domain="WIRELESS" SubDomain="BT" Feature="PAIR" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Wireless.BT.BtPair.BtPair</ClassName>
+        <Description>
+            Pair the device identified by DEVICE arg to the device identified by BDADDR.
+            If pairing doesn't succeed, an error will be raised.
+            If UNPAIR_FIRST is True BDADDR device gets unpaired if already paired. By default is False.
+            If ACCEPT_PAIRING is False DEVICE will eventually reject tha pairing. By default is True.
+            PASS_KEY can be used where pairing required an integer value as pin.
+            PIN_CODE can be used when pairing required an halfanumeric value as pin.
+        </Description>
+        <Environment name="ANY">
+        </Environment>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="BDADDR" type="STRING" isOptional="false">
+                <Description>The bluetooth address of the device to pair with</Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+            <Parameter name="UNPAIR_FIRST" type="BOOLEAN" isOptional="false">
+                <Description>If true and the device identified by BDADDR is already paired, it gets unpaired</Description>
+                <PossibleValues />
+                <DefaultValue>false</DefaultValue>
+            </Parameter>
+            <Parameter name="ACCEPT_PAIRING" type="BOOLEAN" isOptional="false">
+                <Description>If true the pairing will be accepted, otherwise it will be rejected</Description>
+                <PossibleValues />
+                <DefaultValue>true</DefaultValue>
+            </Parameter>
+            <Parameter name="PASS_KEY" type="INTEGER" isOptional="false">
+                <Description>Defines the passkey (used for some kind of pairing)</Description>
+                <PossibleValues />
+                <DefaultValue>0</DefaultValue>
+            </Parameter>
+            <Parameter name="PIN_CODE" type="STRING" isOptional="false">
+                <Description>Defines the pincode (used for some kind of pairing)</Description>
+                <PossibleValues />
+                <DefaultValue>0000</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="BT_PAIR_AND_CHECK" Domain="WIRELESS" SubDomain="BT" Feature="PAIR" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Wireless.BT.PairAndCheck.BtPairAndCheck</ClassName>
+        <Description>
+            Pair the device identified by DEVICE arg to the device identified by BDADDR.
+            If UNPAIR_FIRST is True BDADDR device gets unpaired if already paired. By default is False.
+            If ACCEPT_PAIRING is False DEVICE will eventually reject the pairing. By default is True.
+            PASS_KEY can be used where pairing required an integer value as pin.
+            PIN_CODE can be used when pairing required an alphanumeric value as pin.
+        </Description>
+        <Environment name="ANY">
+        </Environment>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="BDADDR" type="STRING" isOptional="false">
+                <Description>The bluetooth address of the device to pair with</Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+            <Parameter name="UNPAIR_FIRST" type="BOOLEAN" isOptional="false">
+                <Description>If true and the device identified by BDADDR is already paired, it gets unpaired</Description>
+                <PossibleValues />
+                <DefaultValue>false</DefaultValue>
+            </Parameter>
+            <Parameter name="PAIRING_REPLY" type="STRING" isOptional="false">
+                <Description>
+                    Device reply to pairing request:
+                        "reject" => reject pairing request
+                        "cancel" => cancel pairing request (same as reject)
+                        "accept" => accept pairing request
+                        "timeout" => don't answer to request to trigger a timeout
+                </Description>
+                <PossibleValues>reject;cancel;accept;timeout</PossibleValues>
+                <DefaultValue>accept</DefaultValue>
+            </Parameter>
+            <Parameter name="PASS_KEY" type="INTEGER" isOptional="false">
+                <Description>Defines the passkey (used for some kind of pairing)</Description>
+                <PossibleValues />
+                <DefaultValue>0</DefaultValue>
+            </Parameter>
+            <Parameter name="PIN_CODE" type="STRING" isOptional="false">
+                <Description>Defines the pincode (used for some kind of pairing)</Description>
+                <PossibleValues />
+                <DefaultValue>0000</DefaultValue>
+            </Parameter>
+            <Parameter name="PAIRED" type="BOOLEAN" isOptional="false">
+                <Description>This is the expected pairing result</Description>
+                <PossibleValues />
+                <DefaultValue>true</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="BT_UNPAIR" Domain="WIRELESS" SubDomain="BT" Feature="PAIR" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Wireless.BT.BtUnpair.BtUnpair</ClassName>
+        <Description>
+            Unpair the device identified by DEVICE arg from the device identified by BDADDR.
+        </Description>
+        <Environment name="ANY">
+        </Environment>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="BDADDR" type="STRING" isOptional="false">
+                <Description>Identifies the bluetooth address of the device to unpair from</Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="BT_WAIT_PAIRING" Domain="WIRELESS" SubDomain="BT" Feature="PAIR" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Wireless.BT.BtWaitPairing.BtWaitPairing</ClassName>
+        <Description>
+            Put the device identified by DEVICE arg in pairing mode, waiting to be paired.
+            If DEVICE and BDADDR are already paired, they get unpaired before wait for pairing happens.
+            If UNPAIR_FIRST is True BDADDR device gets unpaired if already paired. By default is False.
+            If ACCEPT_PAIRING is False DEVICE will eventually reject tha pairing. By default is True.
+            PASS_KEY can be used where pairing required an integer value as pin.
+            PIN_CODE can be used when pairing required an halfanumeric value as pin.
+            TIME_OUT (in secs) can be passed if the agent needs to wait for a wanted time, before giving up.
+            If not passed, default is taken.
+        </Description>
+        <Environment name="ANY">
+        </Environment>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="BDADDR" type="STRING" isOptional="false">
+                <Description>The bluetooth address of the device to pair with</Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+            <Parameter name="UNPAIR_FIRST" type="BOOLEAN" isOptional="false">
+                <Description>If true and the device identified by BDADDR is already paired, it gets unpaired</Description>
+                <PossibleValues />
+                <DefaultValue>false</DefaultValue>
+            </Parameter>
+            <Parameter name="ACCEPT_PAIRING" type="BOOLEAN" isOptional="false">
+                <Description>If true the pairing will be accepted, otherwise it will be rejected</Description>
+                <PossibleValues />
+                <DefaultValue>true</DefaultValue>
+            </Parameter>
+            <Parameter name="PASS_KEY" type="INTEGER" isOptional="false">
+                <Description>Defines the passkey (used for some kind of pairing)</Description>
+                <PossibleValues />
+                <DefaultValue>0</DefaultValue>
+            </Parameter>
+            <Parameter name="PIN_CODE" type="STRING" isOptional="false">
+                <Description>Defines the pincode (used for some kind of pairing)</Description>
+                <PossibleValues />
+                <DefaultValue>0000</DefaultValue>
+            </Parameter>
+            <Parameter name="TIMEOUT" type="INTEGER" isOptional="false">
+                <Description>Defines a timeout after which, if not pairing happened, the test step fails</Description>
+                <PossibleValues />
+                <DefaultValue>20</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="BT_WAIT_PAIRING_REQUEST" Domain="WIRELESS" SubDomain="BT" Feature="PAIR" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Wireless.BT.WaitPairingRequest.BtWaitPairingRequest</ClassName>
+        <Description>
+            Put the device identified by DEVICE arg in pairing mode, and wait enough time before giving up
+            to trigger a timeout in device to pair with.
+        </Description>
+        <Environment name="ANY">
+        </Environment>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="BDADDR" type="STRING" isOptional="false">
+                <Description>The bluetooth address of the device to pair with</Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+            <Parameter name="UNPAIR_FIRST" type="BOOLEAN" isOptional="false">
+                <Description>If true and the device identified by BDADDR is already paired, it gets unpaired</Description>
+                <PossibleValues />
+                <DefaultValue>false</DefaultValue>
+            </Parameter>
+            <Parameter name="PAIRING_REPLY" type="STRING" isOptional="false">
+                <Description>
+                    Device reply to pairing request:
+                        "reject" => reject pairing request
+                        "cancel" => cancel pairing request (same as reject)
+                        "accept" => accept pairing request
+                        "timeout" => don't answer to request to trigger a timeout
+                </Description>
+                <PossibleValues>reject;cancel;accept;timeout</PossibleValues>
+                <DefaultValue>accept</DefaultValue>
+            </Parameter>
+            <Parameter name="PASS_KEY" type="INTEGER" isOptional="false">
+                <Description>Defines the passkey (used for some kind of pairing)</Description>
+                <PossibleValues />
+                <DefaultValue>0</DefaultValue>
+            </Parameter>
+            <Parameter name="PIN_CODE" type="STRING" isOptional="false">
+                <Description>Defines the pincode (used for some kind of pairing)</Description>
+                <PossibleValues />
+                <DefaultValue>0000</DefaultValue>
+            </Parameter>
+            <Parameter name="TIMEOUT" type="INTEGER" isOptional="false">
+                <Description>Defines a timeout after which, if not pairing happened, the test step fails</Description>
+                <PossibleValues />
+                <DefaultValue>20</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="BT_WAIT_FOR_CONNECTION" Domain="WIRELESS" SubDomain="BT" Feature="COMMON" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Wireless.BT.WaitForConnection.BtWaitForConnection</ClassName>
+        <Description>
+            Put the device identified by DEVICE arg waiting for connection on the registered profile.
+        </Description>
+        <Environment name="ANY">
+        </Environment>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="BDADDR" type="STRING" isOptional="false">
+                <Description>The bluetooth address of the device to connect with</Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+            <Parameter name="PROFILE" type="STRING" isOptional="true">
+                <Description>The bluetooth profile to handle for connection</Description>
+                <PossibleValues>PANU</PossibleValues>
+                <DefaultValue />
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="BT_WAIT_FOR_DISCONNECTION" Domain="WIRELESS" SubDomain="BT" Feature="COMMON" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Wireless.BT.WaitForDisconnection.BtWaitForDisconnection</ClassName>
+        <Description>
+            Put the device identified by DEVICE arg waiting for device disconnection.
+        </Description>
+        <Environment name="ANY">
+        </Environment>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="BDADDR" type="STRING" isOptional="true">
+                <Description>The bluetooth address of the device to wait for disconnection</Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="BT_GET_ADDRESS" Domain="WIRELESS" SubDomain="BT" Feature="COMMON" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Wireless.BT.BtGetAddress.BtGetAddress</ClassName>
+        <Description>
+            Retrieves the Bluetooth address of the device identified by DEVICE arg.
+        </Description>
+        <Environment name="ANY">
+        </Environment>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="SAVE_AS" type="CONTEXT" isOptional="false">
+                <Description>
+                    <Key name="KEY_NAME_DEFINED_BY_USER" type="STRING">Name of the context variable where the value will be saved.</Key>
+                </Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="BT_GET_NAME" Domain="WIRELESS" SubDomain="BT" Feature="COMMON" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Wireless.BT.BtGetName.BtGetName</ClassName>
+        <Description>
+            Retrieves the Bluetooth name of the device given in parameter.
+        </Description>
+        <Environment name="ANY">
+        </Environment>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="SAVE_AS" type="CONTEXT" isOptional="false">
+                <Description>
+                    <Key name="KEY_NAME_DEFINED_BY_USER" type="STRING">Name of the context variable where the name will be saved.</Key>
+                </Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="BT_SET_SSP_MODE" Domain="WIRELESS" SubDomain="BT" Feature="PAIR" Status="DONE" >
+        <ClassName>acs_test_scripts.TestStep.Device.Wireless.BT.SetSspMode.BtSetSspMode</ClassName>
+        <Description>
+            Enable or disable Simple Secure Pairing.
+        </Description>
+        <Environment name="ANY">
+        </Environment>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="MODE" type="STRING" isOptional="false">
+                <Description>Defines whether to enable or disable SSP</Description>
+                <PossibleValues>ON;OFF</PossibleValues>
+                <DefaultValue />
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="BT_SET_DISCOVERABLE" Domain="WIRELESS" SubDomain="BT" Feature="COMMON" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Wireless.BT.BtSetDiscoverable.BtSetDiscoverable</ClassName>
+        <Description>
+            Set the device identified by DEVICE arg in the discoverable mode identified by MODE.
+            MODE arg:
+                none|noscan: the phone is not discoverable and not connectable (pairing is not possible)
+                inquiry: the phone is discoverable but not connectable. Not supported by android
+                page: the phone is not discoverable but connectable (if it's address is known)
+                both: the phone is both discoverable and connectable
+                on: device is discoverable (not supported for Android test steps)
+                off: device is not discoverable (not supported for Android test steps)
+            TIMEOUT arg:
+                Time out makes sense only when the phone is discoverable and specifies how long the phone will remain
+                discoverable for. Setting TIMEOUT=0 means it will always be discoverable. The other possible values
+                are expressed in seconds.
+        </Description>
+        <Environment name="ANY">
+        </Environment>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="MODE" type="STRING" isOptional="false">
+                <Description>Defines the discoverable mode</Description>
+                <PossibleValues>none;noscan;inquiry;page;both;on;off</PossibleValues>
+                <DefaultValue />
+            </Parameter>
+            <Parameter name="TIMEOUT" type="FLOAT" isOptional="false">
+                <Description>Defines the timeout after which the devices will become undiscoverable. Only valid when mode is discoverable</Description>
+                <PossibleValues>0;120;300;3600</PossibleValues>
+                <DefaultValue>0</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="BT_CHECK_DISCOVERABLE_TIMEOUT" Domain="WIRELESS" SubDomain="BT" Feature="COMMON" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Wireless.BT.CheckDiscoverableTimeout.BtCheckDiscoverableTimeout</ClassName>
+        <Description>
+            Check that discoverable timeout is set as expected.
+        </Description>
+        <Environment name="ANY">
+        </Environment>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="TIMEOUT" type="INTEGER" isOptional="false">
+                <Description>Expected discoverable timeout</Description>
+                <PossibleValues />
+                <DefaultValue>120</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="BT_CHECK_PAIRED" Domain="WIRELESS" SubDomain="BT" Feature="PAIR" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Wireless.BT.BtCheckPaired.BtCheckPaired</ClassName>
+        <Description>
+            Checks if the device identified by BDADDR appears in the paired devices list for the device identified
+            by DEVICE arg. If it doesn't an error is raised.
+        </Description>
+        <Environment name="ANY">
+        </Environment>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="BDADDR" type="STRING" isOptional="false">
+                <Description>The bluetooth address of the device to check</Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="BT_OPP_SEND" Domain="WIRELESS" SubDomain="BT" Feature="OPP" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Wireless.BT.Opp.BtOppSend.BtOppSend</ClassName>
+        <Description>
+            The device identified by DEVICE arg sends files via OPP to the device identified by BDADDR.
+            FILES arg is a file name or a list of file names comma separated. Those files must exist in the folder
+            identified by "userdataPath" argument for the corresponding device in the Device_Catalog.xml file.
+            With SAVE_INFO_AS information is saved in the context as a complex structure.
+            for example: with SAVE_INFO_AS="my_info"
+            data will be saved in the context and retrievable in the following way:
+                FROM_CTX:my_info:FileSize
+                FROM_CTX:my_info:FileChecksum
+        </Description>
+        <Environment name="ANY">
+        </Environment>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="FILES" type="STRING" isOptional="false">
+                <Description>List of file names comma separated</Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+            <Parameter name="BDADDR" type="STRING" isOptional="false">
+                <Description>The bluetooth address of the device to send the files to</Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+            <Parameter name="SAVE_INFO_AS" type="CONTEXT" isOptional="false">
+                <Description>Context variable's name to save the information about the transfer. It contains the following fields: FileSize: the total size of the files to be transferred; FileChecksum: the list of Md5 checksums of the files
+                </Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="BT_OPP_SERVER" Domain="WIRELESS" SubDomain="BT" Feature="COMMON" Status="DONE" >
+        <ClassName>acs_test_scripts.TestStep.Device.Wireless.BT.Opp.BtOppServer.BtOppServer</ClassName>
+        <Description>
+            Start Opp server. This step is specific for windows devices.
+        </Description>
+        <Environment name="ANY">
+        </Environment>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="TIMEOUT" type="INTEGER" isOptional="true">
+                <Description>The timeout after which, if test step hasn't succeded, it fails</Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+            <Parameter name="STATUS" type="STRING" isOptional="false">
+                <Description>Enable or disable the OPP server</Description>
+                <PossibleValues>enable;disable</PossibleValues>
+                <DefaultValue>disable</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="BT_OPP_CHECK" Domain="WIRELESS" SubDomain="BT" Feature="OPP" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Wireless.BT.Opp.BtOppCheckTransfer.BtOppCheckTransfer</ClassName>
+        <Description>
+            Retrieve information about OPP transfer for the device identified by DEVICE arg.
+            It also automatically "accepts" OPP incoming files when they are in "waiting for accept" status.
+            If no information is returned before timeout, transfer doesn't reach the wanted status before timeout or
+            transfer fails, an error is raised.
+            FILES arg is a file name or a list of file names comma separated. They are the files expected to be
+            received via OPP.
+            EXPECTED_FILES_SIZE is the sum of the files size expected to be received. This value is merely used to
+            calculate a time out for the files transfer. It is optional, usually used in place of TIMEOUT or viceversa.
+            TIMEOUT is the timeout to use to reach the wanted state. Usually used in place of EXPECTED_FILE_SIZE or
+            viceversa.
+            EXPECTED_STATE is the state to be reached for the test step to succeed. It can be one of the following:
+                all_completed: all files transfer are completed successfully.
+                any_started: any of the files transfer is started.
+                any_cancelled: any of files transfer is cancelled.
+            With SAVE_INFO_AS information is saved in the context as a complex structure.
+            for example: with SAVE_INFO_AS="my_info"
+            data will be saved in the context and retrieavable in the following way:
+                FROM_CTX:my_info:FileSize
+                FROM_CTX:my_info:FileChecksum
+            If THROUGHPUT_MARGIN is specified, throughput checks are done and test step will fail if throughput is not
+            above the threshold specified in the device configuration.
+        </Description>
+        <Environment name="ANY">
+        </Environment>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="FILES" type="STRING" isOptional="false">
+                <Description>The list file names expected to be transferred</Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+            <Parameter name="EXPECTED_FILES_SIZE" type="INTEGER" isOptional="false">
+                <Description>The total size of files to be transferred</Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+            <Parameter name="TIMEOUT" type="INTEGER" isOptional="false">
+                <Description>The timeout after which, if test step hasn't succeded, it fails</Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+            <Parameter name="BDADDR" type="STRING" isOptional="false">
+                <Description>The bluetooth address of the device sending the files</Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+            <Parameter name="EXPECTED_STATE" type="STRING" isOptional="false">
+                <Description>The expected state to be reached for the test step to succeed</Description>
+                <PossibleValues>all_completed;any_started;any_cancelled</PossibleValues>
+                <DefaultValue>all_completed</DefaultValue>
+            </Parameter>
+            <Parameter name="SAVE_INFO_AS" type="CONTEXT" isOptional="false">
+                <Description>Context variable's name to save the information about the transfer. It contains the following fields: FileSize: the total size of the files to be transferred; FileChecksum: the list of Md5 checksums of the files</Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+            <Parameter name="THROUGHPUT_MARGIN" type="INTEGER" isOptional="false">
+                <Description>The throughput margin for the throughput calculation</Description>
+                <PossibleValues>[0:100]</PossibleValues>
+                <DefaultValue />
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="BT_OPP_CLEANUP" Domain="WIRELESS" SubDomain="BT" Feature="OPP" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Wireless.BT.Opp.BtOppCleanup.BtOppCleanup</ClassName>
+        <Description>
+            For the device identified by DEVICE arg, clean up OPP information, optionally removing files from the disk.
+            If REMOVE_FILES is True, FILES arg must contain the file names list of the files to remove.
+            FILES arg is a file name or a list of file names comma separated.
+        </Description>
+        <Environment name="ANY">
+        </Environment>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="REMOVE_FILES" type="BOOLEAN" isOptional="false">
+                <Description>Defines whether files must be removed or not</Description>
+                <PossibleValues />
+                <DefaultValue>false</DefaultValue>
+            </Parameter>
+            <Parameter name="FILES" type="STRING" isOptional="false">
+                <Description>the list of the file names of the files to be removed</Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="BT_CONNECT_PROFILE" Domain="WIRELESS" SubDomain="BT" Feature="COMMON" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Wireless.BT.BtConnectProfile.BtConnectProfile</ClassName>
+        <Description>
+            [DEVICE] connects to / disconnect from the device identified by [BDADDR] using the given [PROFILE]
+            Possible PROFILE values are: A2DP;PAN;HFP;HID
+        </Description>
+        <Environment name="ANY">
+        </Environment>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="BDADDR" type="STRING" isOptional="false">
+                <Description>The bluetooth address of the device to connect to</Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+            <Parameter name="PROFILE" type="STRING" isOptional="false">
+                <Description>The profile to connect</Description>
+                <PossibleValues>A2DP;PAN;HFP;HID;GATT;HSP</PossibleValues>
+                <DefaultValue />
+            </Parameter>
+            <Parameter name="CONNECT" type="BOOLEAN" isOptional="false">
+                <Description>Defines whether connect or disconnect the profile</Description>
+                <PossibleValues />
+                <DefaultValue>true</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="BT_CHECK_PROFILE_STATUS" Domain="WIRELESS" SubDomain="BT" Feature="COMMON" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Wireless.BT.BtCheckProfileStatus.BtCheckProfileStatus</ClassName>
+        <Description>
+            [DEVICE] checks if a [PROFILE] connection exists with the device identified by [BDADDR]
+            Possible PROFILE values are: A2DP;PAN;HFP;HID.
+            If FAIL_IF is provided, the test step fails if the profile status is equal to the value of FAIL_IF.
+            FAIL_IF can be "connected" or "disconnected"
+            If SAVE_AS is provided the status of the profile connection is saved in the context.
+        </Description>
+        <Environment name="ANY">
+        </Environment>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="BDADDR" type="STRING" isOptional="false">
+                <Description>The bluetooth address of the device to check the profile status for</Description>
+                <PossibleValues />
+                <DefaultValue>false</DefaultValue>
+            </Parameter>
+            <Parameter name="PROFILE" type="STRING" isOptional="false">
+                <Description>The profile to check</Description>
+                <PossibleValues>A2DP;PAN;HFP;HID;HSP</PossibleValues>
+                <DefaultValue />
+            </Parameter>
+            <Parameter name="FAIL_IF" type="STRING" isOptional="false">
+                <Description>Fail condition. Should the profile be connected or not?</Description>
+                <PossibleValues>connected;disconnected</PossibleValues>
+                <DefaultValue>disconnected</DefaultValue>
+            </Parameter>
+            <Parameter name="SAVE_AS" type="CONTEXT" isOptional="false">
+                <Description>
+                    <Key name="KEY_NAME_DEFINED_BY_USER" type="STRING">Name of the context variable where the value will be saved.</Key>
+                </Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="READ_HID_EVENTS" Domain="WIRELESS" SubDomain="BT" Feature="HID" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.System.ReadHidEvents.ReadHidEvents</ClassName>
+        <Description>Read HID events from the given device, expecting them to match the passed ones.</Description>
+        <Environment name="ANY" />
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="HID_DEVICE" type="STRING" isOptional="false">
+                <Description> The name of the HID device. For Android that name appears executing the command: adb shell getevent -i For Windows a way to retrieve the HID device's name should be provided (See Windows documentation)
+                </Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+            <Parameter name="EVENTS" type="STRING" isOptional="false">
+                <Description>The sequence of events expected to be received (comma separated)</Description>
+                <PossibleValues>BTN_LEFT;BTN_RIGHT;BTN_MIDDLE;REL_X;REL_Y;REL_WHEEL</PossibleValues>
+                <DefaultValue />
+            </Parameter>
+            <Parameter name="TIMEOUT" type="INTEGER" isOptional="false">
+                <Description>Period for waiting to read the events, in seconds.</Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="BT_EXPECT_AVRCP_BUTTONS" Domain="WIRELESS" SubDomain="BT" Feature="AVRCP" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Wireless.BT.BtExpectAVRCPButtons.BtExpectAVRCPButtons</ClassName>
+        <Description>
+            [DEVICE] expects that the given AVRCP buttons events are received.
+        </Description>
+        <Environment name="ANY">
+        </Environment>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="FILENAME" type="STRING" isOptional="false">
+                <Description> The file name of the audio file to play on the device. Because the AVRCP commands arrive from a Bluetooth headset, the headset needs to have music streamed in order to send the right commands. Usually an headset has a single button that acts as "play" / "pause" button.
+                    The headset decides whether to issue a "play" or a "pause" AVRCP command based on the streaming status. So, for example, if there is no music playing, pressing that button will issue a "play" command. If the music is playing, pressing that button will issue a "pause" command. For
+                    this reason, ACS agent needs to actually play a file when a play AVRCP command is received.
+                </Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+            <Parameter name="BUTTONS" type="STRING" isOptional="false">
+                <Description>Sequence of buttons (comma separated) to be pressed for the test step to pass</Description>
+                <PossibleValues>PLAY;PAUSE;STOP;FORWARD;BACKWARD</PossibleValues>
+                <DefaultValue/>
+            </Parameter>
+            <Parameter name="TIMEOUT" type="INTEGER" isOptional="false">
+                <Description>Each button event must be received before the given timeout expires</Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="BT_FIND_DEVICE" Domain="WIRELESS" SubDomain="BT" Feature="COMMON" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Wireless.BT.BtFindDevice.BtFindDevice</ClassName>
+        <Description>
+            [DEVICE] scans and tries to find the device identified by [DEVICE_TO_FIND]
+        </Description>
+        <Environment name="ANY">
+        </Environment>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="DEVICE_TO_FIND" type="STRING" isOptional="false">
+                <Description>The bluetooth name or address to find</Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+            <Parameter name="MUST_FIND" type="BOOLEAN" isOptional="false">
+                <Description>The bluetooth device should be find or not</Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="BT_FIND_DEVICE_INTERLEAVE_SEARCH" Domain="WIRELESS" SubDomain="BT" Feature="COMMON" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Wireless.BT.BtFindDeviceInterleaveSearch.BtFindDeviceInterleaveSearch</ClassName>
+        <Description>
+            [DEVICE] scans and tries to find the device identified by [DEVICE_TO_FIND]
+        </Description>
+        <Environment name="ANY">
+        </Environment>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="DEVICE_TO_FIND" type="STRING" isOptional="false">
+                <Description>The bluetooth name or address to find</Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+            <Parameter name="MUST_FIND" type="BOOLEAN" isOptional="false">
+                <Description>The bluetooth device should be find or not</Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="BT_FIND_MULTI_DEVICE" Domain="WIRELESS" SubDomain="BT" Feature="COMMON" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Wireless.BT.BtFindMultiDevice.BtFindMultiDevice</ClassName>
+        <Description>
+            [DEVICE] scans and tries to find the devices identified by the list [DEVICES_TO_FIND]
+        </Description>
+        <Environment name="ANY">
+        </Environment>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed.</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="TRIES" type="INTEGER" isOptional="false">
+                <Description>The maximum number of tries (including a new scan) you want to give to find the devices.</Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+            <Parameter name="DEVICES_TO_FIND" type="STRING" isOptional="false">
+                <Description>The comma-separated List of bluetooth names or addresses to find.</Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+            <Parameter name="MUST_FIND" type="BOOLEAN" isOptional="false">
+                <Description>All the bluetooth devices should be find or not.</Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="BT_REQUEST_SCAN" Domain="WIRELESS" SubDomain="BT" Feature="COMMON" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Wireless.BT.BtRequestScan.BtRequestScan</ClassName>
+        <Description>Launch a Bluetooth scan</Description>
+        <Environment name="ANY" />
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="RAISE_ERROR" type="BOOLEAN" isOptional="false">
+                <Description>Set false if scan result is not important and exceptions/errors should be ignored.</Description>
+                <PossibleValues>true;false</PossibleValues>
+                <DefaultValue>true</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="BT_SET_SCAN_MODE" Domain="WIRELESS" SubDomain="BT" Feature="COMMON" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Wireless.BT.SetScanMode.BtSetScanMode</ClassName>
+        <Description>Launch a Bluetooth scan</Description>
+        <Environment name="ANY" />
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="MODE" type="STRING" isOptional="false">
+                <Description>Set ON to start scanning, or OFF to stop scanning</Description>
+                <PossibleValues>ON;OFF</PossibleValues>
+                <DefaultValue>true</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="BT_SET_NAME" Domain="WIRELESS" SubDomain="BT" Feature="COMMON" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Wireless.BT.BtSetName.BtSetName</ClassName>
+        <Description>
+            Set [DEVICE] Bluetooth name to [NAME]
+        </Description>
+        <Environment name="ANY">
+        </Environment>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="NAME" type="STRING" isOptional="false">
+                <Description>The bluetooth name to set</Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="BT_CONTROL_A2DP_MEDIA_PLAYER" Domain="WIRELESS" SubDomain="BT" Feature="A2DP" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Wireless.BT.BtControlA2DPMediaPlayer.BtControlA2DPMediaPlayer</ClassName>
+        <Description>
+            Send command [ACTION_CONTROL] to [DEVICE] to control the A2DP Media Player.
+            Before any command, you must use command START_PLAYER to initialize the player on the device.
+        </Description>
+        <Environment name="ANY">
+        </Environment>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="ACTION_CONTROL" type="STRING" isOptional="false">
+                <Description>Action to perform with the player</Description>
+                <PossibleValues>START_PLAYER;STOP_PLAYER;PLAY;PAUSE;STOP;PREVIOUS_TRACK;NEXT_TRACK;VOLUMEUP;VOLUMEDOWN</PossibleValues>
+                <DefaultValue />
+            </Parameter>
+            <Parameter name="FILENAME" type="STRING" isOptional="true">
+                <Description>The file to launch with the player</Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+            <Parameter name="TIMEOUT" type="INTEGER" isOptional="true">
+                <Description>Timeout before player launch a timeout exception</Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="BT_GET_TETHER_ADDRESS" Domain="WIRELESS" SubDomain="BT" Feature="COMMON" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Wireless.BT.BtGetTetherAddress.BtGetTetherAddress</ClassName>
+        <Description>
+            Retrieves the Bluetooth tether PAN address of the device identified by DEVICE arg.
+        </Description>
+        <Environment name="ANY">
+        </Environment>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="SAVE_AS" type="CONTEXT" isOptional="false">
+                <Description>
+                    <Key name="KEY_NAME_DEFINED_BY_USER" type="STRING">Name of the context variable where the value will be saved.</Key>
+                </Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="BT_SET_TETHERING_POWER" Domain="WIRELESS" SubDomain="BT" Feature="COMMON" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Wireless.BT.BtSetTetheringPower.BtSetTetheringPower</ClassName>
+        <Description>
+            Enable or disable Bluetooth tethering adapter depending on the sequence expressed by POWER arg.
+            For example, POWER="ON,OFF,ON" will turn Bluetooth ON, then OFF, then ON. It will always verify that
+            turning Bluetooth ON / OFF succeeds and raise an error if it doesn't.
+        </Description>
+        <Environment name="ANY">
+        </Environment>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="POWER" type="STRING" isOptional="false">
+                <Description>Defines whether to Enable or Disable bluetooth</Description>
+                <PossibleValues>ON;OFF</PossibleValues>
+                <DefaultValue />
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="BT_GATT_READ_CHARACTERISTIC" Domain="WIRELESS" SubDomain="BT" Feature="GATT" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Wireless.BT.Gatt.BtGattReadCharacteristic.BtGattReadCharacteristic</ClassName>
+        <Description>
+            Read a GATT characteristic on device.
+            For more details, see https://developer.bluetooth.org/gatt/characteristics/Pages/CharacteristicsHome.aspx
+        </Description>
+        <Environment name="ANY">
+        </Environment>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="SERVICE_NAME" type="STRING" isOptional="false">
+                <Description>
+                    Service to read characteristic on.
+                    Can use service name, check after GATT or Intel specification. (eg. device_information)
+                    Also possible to use direct UUID format (eg. 0000180a-0000-1000-8000-00805f9b34fb)
+                </Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+            <Parameter name="CHARACTERISTIC_NAME" type="STRING" isOptional="false">
+                <Description>
+                    Characteristic to read.
+                    Can use characteristic name, check after GATT or Intel specification. (eg. model_number_string)
+                    Also possible to use direct UUID format (eg. 00002a24-0000-1000-8000-00805f9b34fb)
+                </Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+            <Parameter name="CHARACTERISTIC_FORMAT" type="STRING" isOptional="true">
+                <Description>
+                    Format of Bytes in the result variable.
+
+                    If set to hexa then the output variable will contain bytes values in hexadecimal.
+                    For example, if the result buffer contains the two bytes of value 95 (5F in hexa) and
+                                 100 (64 in hexa) then the output variable will be a 4 characters string of
+                                 value "5F64"
+
+                    If set to hexa_endian then the output variable will contain bytes values in hexadecimal
+                    but as little endian format
+                    Before returning value, the value will be converted to big endian format
+                    For example, if the result buffer contains the two bytes of value 95 (5F in hexa) and
+                                 100 (64 in hexa) then the output variable will be a 4 characters string of
+                                 value "645F"
+
+                    If set to string, then each byte will be considered as an ASCII value and stored "as is"
+                    in the output variable.
+                    For example, if the result buffer contains the two bytes of value 95 and 100 (corresponding
+                                 respectively to '_' and 'd' characters in ASCII table) then the output variable
+                                 will be a 2 characters string of value "_d"
+
+                    if set to int then the whole result output is considered as an integer and its value will be
+                    stored in the output variable, in human readable format.
+                    For example, if the result buffer contains the two bytes of value 95 (5F in hexa) and
+                                 100 (64 in hexa) we consider it as the number 0x5F64 which correspond to 24420
+                                 in 10 base. Therefore, the the output variable will be a 5 characters string of
+                                 value "24420"
+
+                    string is used by default
+                </Description>
+                <PossibleValues>hexa;string;int;hexa_endian</PossibleValues>
+                <DefaultValue />
+            </Parameter>
+            <Parameter name="CHARACTERISTIC_VALUE" type="CONTEXT" isOptional="false">
+                <Description>
+                    <Key name="KEY_NAME_DEFINED_BY_USER" type="STRING">Name of the context variable where the value will be saved.</Key>
+                </Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="BT_ENABLE_SERVICE" Domain="WIRELESS" SubDomain="BT" Feature="COMMON" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Wireless.BT.EnableService.BtEnableService</ClassName>
+        <Description>
+            Start/Stop bluetooth service.
+        </Description>
+        <Environment name="ANY">
+        </Environment>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="ENABLE" type="BOOLEAN" isOptional="false">
+                <Description>Enables service if true, disable it if false</Description>
+                <PossibleValues />
+                <DefaultValue>true</DefaultValue>
+            </Parameter>
+            <Parameter name="SERVICE" type="STRING" isOptional="false">
+                <Description>Defines the service to start</Description>
+                <PossibleValues>NAP;GN;PANU</PossibleValues>
+                <DefaultValue />
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="BT_GATT_WRITE_CHARACTERISTIC" Domain="WIRELESS" SubDomain="BT" Feature="GATT" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Wireless.BT.Gatt.BtGattWriteCharacteristic.BtGattWriteCharacteristic</ClassName>
+        <Description>
+            Write a GATT characteristic on device.
+            Can write with or without acknowledgment from device, also can choose data type.
+            For more details, see https://developer.bluetooth.org/gatt/characteristics/Pages/CharacteristicsHome.aspx
+        </Description>
+        <Environment name="ANY">
+        </Environment>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="SERVICE_NAME" type="STRING" isOptional="false">
+                <Description>
+                    Service to write characteristic on.
+                    Can use service name, check after GATT or Intel specification. (eg. INTEL-UNS)
+                    Also possible to use direct UUID format (eg. bb2b4a1e-474d-4c99-9314-b34c13571727)
+                </Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+            <Parameter name="CHARACTERISTIC_NAME" type="STRING" isOptional="false">
+                <Description>
+                    Characteristic to write on.
+                    Can use characteristic name, check after GATT or Intel specification. (eg. USERNOTIFICATION_PATTERN)
+                    Also possible to use direct UUID format (eg. bb2b0001-474d-4c99-9314-b34c13571727)
+                </Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+            <Parameter name="DATA" type="STRING" isOptional="false">
+                <Description>
+                    Data to send, if hexa should be a suite of hexa string, e.i 74657374 for "test".
+                </Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+            <Parameter name="DATA_TYPE" type="STRING" isOptional="true">
+                <Description>
+                    Data type to send, can send data as string (as-is) or hexa decimal value (default).
+                    If set to hexa_endian will convert data as little endian format.
+                </Description>
+                <PossibleValues>hexa;string;hexa_endian</PossibleValues>
+                <DefaultValue>hexa</DefaultValue>
+            </Parameter>
+            <Parameter name="ACKNOWLEDGEMENT" type="BOOLEAN" isOptional="true">
+                <Description>
+                    Whether request acknowledgement from device or not.
+                </Description>
+                <PossibleValues />
+                <DefaultValue>true</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="BT_TRUST_DEVICE" Domain="WIRELESS" SubDomain="BT" Feature="COMMON" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Wireless.BT.TrustDevice.BtTrustDevice</ClassName>
+        <Description>
+            Trust/Untrust a bluetooth paired device.
+        </Description>
+        <Environment name="ANY">
+        </Environment>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="BDADDR" type="STRING" isOptional="false">
+                <Description>The bluetooth address of the device to trust/untrust</Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+            <Parameter name="TRUST" type="BOOLEAN" isOptional="false">
+                <Description>Trust device if true, untrust it if false</Description>
+                <PossibleValues />
+                <DefaultValue>true</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="BT_GATT_SUBSCRIBE_NOTIFICATION" Domain="WIRELESS" SubDomain="BT" Feature="GATT" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Wireless.BT.Gatt.BtGattSubscribeNotification.BtGattSubscribeNotification</ClassName>
+        <Description>
+            Subscribe to GATT notification(s) related to a service and characteristic on device.
+            Note: On most devices, this is permanent until explicit unsubscribing.
+        </Description>
+        <Environment name="ANY">
+        </Environment>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="SERVICE_NAME" type="STRING" isOptional="false">
+                <Description>
+                    Service to subscribe to characteristic notification(s).
+                    Can use service name, check after GATT or Intel specification. (eg. INTEL-GES)
+                    Also possible to use direct UUID format (eg. dd97c0bc-fed9-4766-b18f-ba690d24a06a)
+                </Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+            <Parameter name="CHARACTERISTIC_NAME" type="STRING" isOptional="false">
+                <Description>
+                    Characteristic to subscribe to notification.
+                    Can use characteristic name, check after GATT or Intel specification. (eg. GATT_GESTURE_VALUE)
+                    Also possible to use direct UUID format (eg. dd970001-fed9-4766-b18f-ba690d24a06a)
+                </Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+            <Parameter name="SUBSCRIBE" type="BOOLEAN" isOptional="false">
+                <Description>
+                    Subscribe if True, unscubsribe otherwise
+                </Description>
+                <PossibleValues />
+                <DefaultValue>true</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="BT_GATT_GET_NOTIFICATION" Domain="WIRELESS" SubDomain="BT" Feature="GATT" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Wireless.BT.Gatt.BtGattGetNotification.BtGattGetNotification</ClassName>
+        <Description>
+            Retrieve GATT notification(s) related to a service and characteristic on device.
+        </Description>
+        <Environment name="ANY">
+        </Environment>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="SERVICE_NAME" type="STRING" isOptional="false">
+                <Description>
+                    Service to where to get characteristic notification.
+                    Can use service name, check after GATT or Intel specification. (eg. INTEL-GES)
+                    Also possible to use direct UUID format (eg. dd97c0bc-fed9-4766-b18f-ba690d24a06a)
+                </Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+            <Parameter name="CHARACTERISTIC_NAME" type="STRING" isOptional="false">
+                <Description>
+                    Characteristic to where to get notification.
+                    Can use characteristic name, check after GATT or Intel specification. (eg. GATT_GESTURE_VALUE)
+                    Also possible to use direct UUID format (eg. dd970001-fed9-4766-b18f-ba690d24a06a)
+                </Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+            <Parameter name="NOTIFICATION_TYPE" type="STRING" isOptional="true">
+                <Description>
+                    Allow to select only one type of notification.
+                    Except for battery notifications, all other notifications are received with
+                    the same BLE service/characteristic.
+                    This parameter allows to select one type of them.
+                </Description>
+                <PossibleValues>settings;activity;gesture;ignore;interrupted;advertise;pairing_reset;charge;low_battery;crash;switch_off;battery_shutdown;thermal_shutdown;boot;battery</PossibleValues>
+                <DefaultValue />
+            </Parameter>
+            <Parameter name="TIME_LAP" type="INTEGER" isOptional="false">
+                <Description>
+                    Time lap where to get notification, in minutes.
+                </Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+            <Parameter name="SAVE_AS" type="CONTEXT" isOptional="false">
+                <Description>
+                    <Key name="KEY_NAME_DEFINED_BY_USER" type="STRING">
+                        Name of the context variable where the value will be saved. Output format is:
+                        KEY_NAME_DEFINED_BY_USER:NOTIFICATION_X:DATE
+                        KEY_NAME_DEFINED_BY_USER:NOTIFICATION_X:SERVICE
+                        KEY_NAME_DEFINED_BY_USER:NOTIFICATION_X:CHARACTERISTIC
+                        KEY_NAME_DEFINED_BY_USER:NOTIFICATION_X:TYPE
+                        KEY_NAME_DEFINED_BY_USER:NOTIFICATION_X:NOTIF_DATA_1
+                        KEY_NAME_DEFINED_BY_USER:NOTIFICATION_X:...
+                        KEY_NAME_DEFINED_BY_USER:NOTIFICATION_X:NOTIF_DATA_N
+
+                        where:
+                        - X is the notification number (starting at 1)
+                        - DATE:           time when the android device has received the notification (format: "HH:MM:SS")
+                        - SERVICE:        the service responsible of the notification
+                        - CHARACTERISTIC: the characteristic which notification refers to
+                        - TYPE:           type of the notification (cf. NOTIFICATION_TYPE parameter for all possible values)
+                        - NOTIF_DATA_N:   specific data of the notification
+
+                        List of specific data for all notification type (Beware: data are case sensitive):
+                        - all notifications EXCEPT activity and battery have the following data:
+                          . EventTime: time when the android device has received the notification (format: "HH:MM:SS")
+                        - activity
+                          . StartTime: time when activity began
+                          . EndTime: time when activity ended
+                          . Activity: type of activity. Possible values: "Walking", "Running", "biking", "Unknown"
+                          . StepCount: number of step during the activity
+                        - gesture
+                          . Gesture: type of gesture. Possible values: "SINGLE_TAP", "DOUBLE_TAP", "TRIPLE_TAP", "Unknown gesture ID"
+                        - ignore
+                          . Count: number of ignored notifications
+                        - interrupted
+                          . Count: number of interrupted notifications
+                        - advertise
+                          . Duration: duration of the advertising (format: "X s" where X is an integer)
+                        - pairing_reset: only EventTime
+                        - charge
+                          . BatteryLevel: integer representing battery level (in percent)
+                          . ChargeStatus: possible values: "stop", "start", "unknown(X)" with X=unknown status value
+                        - low_battery: only EventTime
+                        - crash
+                          . PanicType: integer value in hexadecimal format
+                        - switch_off: only EventTime
+                        - battery_shutdown: only EventTime
+                        - thermal_shutdown
+                          . Temperature: device temperature (format: "XoC" where X is an integer)
+                        - boot
+                          . BootType: possible values: "MAIN", "WIRELESS_CHARGING", "RECOVERY", "INVALID"
+                        - battery
+                          . value: integer representing battery level (in percent) in hexadecimal format (ex: for 100% => "64")
+
+                        If no notification have been found (or all notifications have been filtered) then the result will consist in
+                        one line with the following format:
+                            KEY_NAME_DEFINED_BY_USER:NOTIFICATION_1:TYPE
+                        with a value equal to "not_found"
+                    </Key>
+                </Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="BT_SERVICE_BROWSING" Domain="WIRELESS" SubDomain="BT" Feature="COMMON" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Wireless.BT.BtServiceBrowsing.BtServiceBrowsing</ClassName>
+        <Description>
+            Remote device service browsing.
+            Will return a bundle containing many information about device and available service
+        </Description>
+        <Environment name="ANY">
+        </Environment>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="BDADDR" type="BT_DEVICE_ADDRESS" isOptional="false">
+                <Description>
+                    Bluetooth device address
+                </Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+            <Parameter name="CLASS_TO_BROWSE" type="STRING" isOptional="true">
+                <Description>
+                    Class of service to browse. (eg. A2DP, HDP, GATT ...)
+                </Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank>true</Blank>
+            </Parameter>
+            <Parameter name="SAVE_AS" type="CONTEXT" isOptional="false">
+                <Description>
+                    <Key name="ADDRESS" type="STRING">The device address</Key>
+                    <Key name="NAME" type="STRING">The device bt name</Key>
+                    <Key name="BONDED" type="STRING">The device bond status</Key>
+                    <Key name="INTERFACE" type="STRING">The device bt interface</Key>
+                    <Key name="UUIDS" type="STRING">The available services list (as test step format)</Key>
+                </Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="BT_FOTA" Domain="WIRELESS" SubDomain="BT" Feature="COMMON" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Wireless.BT.BtFota.BtFota</ClassName>
+        <Description>
+            Do a FOTA (Flash Over The Air) using bluetooth.
+        </Description>
+        <Environment name="ANY">
+        </Environment>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="MAC_ADDRESS" type="STRING" isOptional="false">
+                <Description>MAC address of the device on which the FOTA shall be executed</Description>
+                <PossibleValues />
+                <DefaultValue/>
+            </Parameter>
+            <Parameter name="FILES_TO_FLASH" type="STRING" isOptional="true">
+                <Description>List of files to flash separated by semi colon</Description>
+                <PossibleValues />
+                <DefaultValue/>
+            </Parameter>
+            <Parameter name="TIMEOUT" type="INTEGER" isOptional="true">
+                <Description>Timeout value</Description>
+                <PossibleValues />
+                <DefaultValue/>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="BT_FIND_DEVICE_BYPASS" Domain="WIRELESS" SubDomain="BT" Feature="COMMON" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Wireless.BT.BtFindDeviceBypass.BtFindDeviceBypass</ClassName>
+        <Description>
+            [DEVICE] scans and tries to find the device identified by [DEVICE_TO_FIND].
+            This TestStep searches for the given device until it finds it, not only once and then it fails
+            the test if it has not found it.
+            This is in place in order to bypass the known issue with BT right now, that the Scan is not working properly.
+            This TestStep is to only be used when the entire following test depends on it, as a pre-req, and not
+            for tests that target specifically the scanning capability.
+        </Description>
+        <Environment name="ANY">
+        </Environment>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="DEVICE_TO_FIND" type="STRING" isOptional="false">
+                <Description>The bluetooth name or address to find</Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+            <Parameter name="MUST_FIND" type="BOOLEAN" isOptional="false">
+                <Description>The bluetooth device should be find or not</Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="BT_LIST_SERVICES_SDPTOOL" Domain="WIRELESS" SubDomain="BT" Feature="PAIR" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Wireless.BT.BtListServicesSDPTool.BtListServicesSDPTool</ClassName>
+        <Description>
+            This TestStep uses the sdptool from Linux operating systems to get a list of services.
+            It takes as a paramterer the MAC address of the device at hand
+        </Description>
+        <Environment name="ANY">
+        </Environment>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="NAME" type="STRING" isOptional="false">
+                <Description>device to look for</Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="BT_GET_ADVERTISING_NAME" Domain="WIRELESS" SubDomain="BT" Feature="COMMON" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Wireless.BT.BtGetAdvertisingName.BtGetAdvertisingName</ClassName>
+        <Description>Retrieve device name as it appears when device is advertising</Description>
+        <Environment name="ANY">
+        </Environment>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="DEVICE_TO_CHECK" type="STRING" isOptional="false">
+                <Description>MAC address of the device to check</Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+            <Parameter name="SAVE_AS" type="CONTEXT" isOptional="false">
+                <Description>
+                    <Key name="KEY_NAME_DEFINED_BY_USER" type="STRING">
+                        Name of the context variable which will stores the device name if the device is found.
+                        It will contains the device name if it advertises, or will be empty otherwise
+                    </Key>
+                </Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="BT_OPP_REJECT" Domain="WIRELESS" SubDomain="BT" Feature="OPP" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Wireless.BT.Opp.BtOppReject.BtOppReject</ClassName>
+        <Description>
+            Reject Opp incoming file on the device DEVICE.
+            FILES arg is a file name or a list of file names comma separated. Those files must exist in the folder
+            identified by "userdataPath" argument for the corresponding device in the Device_Catalog.xml file.
+        </Description>
+        <Environment name="ANY">
+        </Environment>
+        <Parameters>
+            <Parameter name="FILES" type="STRING" isOptional="false">
+                <Description>List of file names comma separated</Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+            <Parameter name="TIMEOUT" type="INTEGER" isOptional="true">
+                <Description>Timeout to check if file was rejected. Optional, default is set to 30s.</Description>
+                <PossibleValues/>
+                <DefaultValue>30</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="BT_OPP_CANCEL" Domain="WIRELESS" SubDomain="BT" Feature="OPP" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Wireless.BT.Opp.BtOppCancel.BtOppCancel</ClassName>
+        <Description>
+            Cancels Opp incoming or outgoing file on the device DEVICE.
+            FILES arg is a file name or a list of file names comma separated. Those files must exist in the folder
+            identified by "userdataPath" argument for the corresponding device in the Device_Catalog.xml file.
+        </Description>
+        <Environment name="ANY">
+        </Environment>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="FILES" type="STRING" isOptional="false">
+                <Description>List of file names comma separated</Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+            <Parameter name="TIMEOUT" type="INTEGER" isOptional="true">
+                <Description>Timeout to check if file was rejected. Optional, default is set to 30s.</Description>
+                <PossibleValues/>
+                <DefaultValue>30</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="BT_OPP_CHECK_STATUS" Domain="WIRELESS" SubDomain="BT" Feature="OPP" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Wireless.BT.Opp.BtOppCheckStatus.BtOppCheckStatus</ClassName>
+        <Description>
+            Checks Opp transfer status on the device DEVICE.
+            FILES arg is a file name or a list of file names comma separated. Those files must exist in the folder
+            identified by "userdataPath" argument for the corresponding device in the Device_Catalog.xml file.
+        </Description>
+        <Environment name="ANY">
+        </Environment>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="FILES" type="STRING" isOptional="false">
+                <Description>List of file names comma separated</Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+            <Parameter name="TIMEOUT" type="INTEGER" isOptional="true">
+                <Description>Timeout to check if file was rejected. Optional, default is set to 30s.</Description>
+                <PossibleValues/>
+                <DefaultValue>30</DefaultValue>
+            </Parameter>
+             <Parameter name="EXPECTED_STATE" type="STRING" isOptional="false">
+                <Description>The state expected which this test step checks for</Description>
+                <PossibleValues>accepted;canceled;waiting_accept;none</PossibleValues>
+                <DefaultValue>accepted</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+     <TestStep Id="BT_OPP_ACCEPT" Domain="WIRELESS" SubDomain="BT" Feature="OPP" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Wireless.BT.Opp.BtOppAccept.BtOppAccept</ClassName>
+        <Description>
+            Accepts Opp incoming file(s) on the device DEVICE.
+            FILES arg is a file name or a list of file names comma separated. Those files must exist in the folder
+            identified by "userdataPath" argument for the corresponding device in the Device_Catalog.xml file.
+        </Description>
+        <Environment name="ANY">
+        </Environment>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="FILES" type="STRING" isOptional="false">
+                <Description>List of file names comma separated</Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+            <Parameter name="TIMEOUT" type="INTEGER" isOptional="true">
+                <Description>Timeout to check if file was rejected. Optional, default is set to 30s.</Description>
+                <PossibleValues/>
+                <DefaultValue>30</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="BT_OPP_PI_GET_LOGS_THROUGHPUT" Domain="WIRELESS" SubDomain="BT" Feature="OPP" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Wireless.BT.Opp.BtOppPiGetLogsThroughput.BtOppPiGetLogsThroughput</ClassName>
+        <Description>Check the logcat and get throughput of Opp transfer.</Description>
+        <Environment name="ANY" />
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="OPP_REGEX" type="STRING" isOptional="true">
+                <Description>Regex to check in the log. Should be BtOppObexClient or BtOppObexServer.</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+            <Parameter name="OPP_DIRECTION" type="STRING" isOptional="false">
+                <Description>Direction of transfer.</Description>
+                <PossibleValues>UPLOAD;DOWNLOAD</PossibleValues>
+                <DefaultValue/>
+            </Parameter>
+            <Parameter name="OPP_FILE_SIZE" type="STRING" isOptional="false">
+                <Description>Size of transferred file.</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+            <Parameter name="TIMEOUT" type="STRING" isOptional="true">
+                <Description>Set a timeout to check the log. If no timeout is set, it is computed with the OPP_FILE_SIZE parameter : timeout = OPP_FILE_SIZE * 0.1</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+            <Parameter name="SAVE_OPP_THROUGHPUT" type="CONTEXT" isOptional="false">
+                <Description>
+                    <Key name="OPP_THROUGHPUT" type="FLOAT">Opp transfer throughput in Kbps</Key>
+                </Description>
+               <PossibleValues/>
+               <DefaultValue />
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="BT_ENABLE_PROFILE" Domain="WIRELESS" SubDomain="BT" Feature="COMMON" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Wireless.BT.BtEnableProfile.BtEnableProfile</ClassName>
+        <Description>
+            Enables or disables a given profile from the interface by ticking or unticking it.
+        </Description>
+        <Environment name="ANY">
+        </Environment>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="ENABLE" type="BOOLEAN" isOptional="false">
+                <Description>Boolean variable specifying whether to enable or disable a profile</Description>
+                <PossibleValues />
+                <DefaultValue>true</DefaultValue>
+            </Parameter>
+            <Parameter name="PROFILE" type="STRING" isOptional="false">
+                <Description>The profile to enable or disable</Description>
+                <PossibleValues>A2DP;PAN;HID;HSP</PossibleValues>
+                <DefaultValue />
+            </Parameter>
+            <Parameter name="DEVICE_NAME" type="STRING" isOptional="false">
+                <Description>The name of the given device</Description>
+                <PossibleValues/>
+                <DefaultValue />
+            </Parameter>
+            <Parameter name="FAIL_IF_ALREADY" type="BOOLEAN" isOptional="false">
+                <Description>Boolean variable specifying whether to enable or disable a profile</Description>
+                <PossibleValues />
+                <DefaultValue>true</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="BT_CHECK_CONNECTED" Domain="WIRELESS" SubDomain="BT" Feature="PAIR" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Wireless.BT.BtCheckConnected.BtCheckConnected</ClassName>
+        <Description>
+            Checks if the device identified by BDADDR appears in the connected devices list for the device identified
+            by DEVICE arg. If it doesn't an error is raised.
+            Note that the "connected" state is managed at application level, especially for BLE.
+        </Description>
+        <Environment name="ANY">
+        </Environment>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="BDADDR" type="STRING" isOptional="false">
+                <Description>The bluetooth address of the device to check</Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="BLE_START_BEACON_BROADCAST" Domain="WIRELESS" SubDomain="BT" Feature="PAIR" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Wireless.BT.BLE.BleStartBroadcasting.BleStartBroadcasting</ClassName>
+        <Description>
+            This Test Step starts a beacon-like broadcast from the Android device in a GAP Broadcast mode.
+        </Description>
+        <Environment name="ANY">
+        </Environment>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="ADVERTISE_MODE" type="STRING" isOptional="false">
+                <Description>The advertise mode for the BLE Beacon. Possible values:
+                    ADVERTISE_MODE_LOW_POWER=0
+                    ADVERTISE_MODE_BALANCED=1
+                    ADVERTISE_MODE_LOW_LATENCY=2
+                </Description>
+                <PossibleValues>ADVERTISE_MODE_LOW_POWER;ADVERTISE_MODE_BALANCED;
+                ADVERTISE_MODE_LOW_LATENCY;0;1;2</PossibleValues>
+                <DefaultValue />
+            </Parameter>
+            <Parameter name="TX_POWER_LEVEL" type="STRING" isOptional="false">
+                <Description>The TX Power Level for the Beacon to transmit. Possible values:
+                    ADVERTISE_TX_POWER_ULTRA_LOW=0
+                    ADVERTISE_TX_POWER_LOW=1
+                    ADVERTISE_TX_POWER_MEDIUM=2
+                    ADVERTISE_TX_POWER_HIGH=3
+                </Description>
+                <PossibleValues>ADVERTISE_TX_POWER_ULTRA_LOW;ADVERTISE_TX_POWER_LOW;
+                ADVERTISE_TX_POWER_MEDIUM;ADVERTISE_TX_POWER_HIGH;0;1;2;3</PossibleValues>
+                <DefaultValue />
+            </Parameter>
+            <Parameter name="IS_CONNECTABLE" type="BOOLEAN" isOptional="false">
+                <Description>Boolean variable specifying whether the broadcasted device is connectable or not.
+                This here is more set for negative testing, as the GAP Broadcast role specifically says the device is
+                    NOT connectable</Description>
+                <PossibleValues />
+                <DefaultValue>FALSE</DefaultValue>
+            </Parameter>
+            <Parameter name="ADVERTISE_TIMEOUT" type="STRING" isOptional="false">
+                <Description>Set a timeout in milliseconds for the command to execute in. A value of zero will mean
+                    indefinitely until a stop command is received.</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="BLE_STOP_BEACON_BROADCAST" Domain="WIRELESS" SubDomain="BT" Feature="PAIR" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Wireless.BT.BLE.BleStopBroadcasting.BleStopBroadcasting</ClassName>
+        <Description>
+            This Test Step stops an already active Android Beacon Broadcast.
+        </Description>
+        <Environment name="ANY">
+        </Environment>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="BLE_START_ADVERTISING" Domain="WIRELESS" SubDomain="BT" Feature="PAIR" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Wireless.BT.BLE.BleStartAdvertising.BleStartAdvertising</ClassName>
+        <Description>
+            This Test Step starts an advertising from the Android device in a GAP Peripheral mode.
+        </Description>
+        <Environment name="ANY">
+        </Environment>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="ADVERTISE_MODE" type="STRING" isOptional="false">
+                <Description>The advertise mode for the BLE Advertisement. Possible values:
+                    ADVERTISE_MODE_LOW_POWER=0
+                    ADVERTISE_MODE_BALANCED=1
+                    ADVERTISE_MODE_LOW_LATENCY=2
+                </Description>
+                <PossibleValues>ADVERTISE_MODE_LOW_POWER;ADVERTISE_MODE_BALANCED;
+                ADVERTISE_MODE_LOW_LATENCY;0;1;2</PossibleValues>
+                <DefaultValue />
+            </Parameter>
+            <Parameter name="TX_POWER_LEVEL" type="STRING" isOptional="false">
+                <Description>The TX Power Level at which the Device to transmit. Possible values:
+                    ADVERTISE_TX_POWER_ULTRA_LOW=0
+                    ADVERTISE_TX_POWER_LOW=1
+                    ADVERTISE_TX_POWER_MEDIUM=2
+                    ADVERTISE_TX_POWER_HIGH=3
+                </Description>
+                <PossibleValues>ADVERTISE_TX_POWER_ULTRA_LOW;ADVERTISE_TX_POWER_LOW;
+                ADVERTISE_TX_POWER_MEDIUM;ADVERTISE_TX_POWER_HIGH;0;1;2;3</PossibleValues>
+                <DefaultValue />
+            </Parameter>
+            <Parameter name="ADVERTISE_CODE" type="STRING" isOptional="false">
+                <Description>The type of advertising the BLE device will transmit. Possible values:
+                    ADVERTISE_POWER_LEVEL=10
+                    ADVERTISE_SCANNABLE=11
+                    ADVERTISE_UNSCANNABLE=12
+                    BROADCAST_BEACON=13
+                    ADVERTISE_BASIC_NAME=14
+                </Description>
+                <PossibleValues>ADVERTISE_POWER_LEVEL;10;ADVERTISE_SCANNABLE;11;ADVERTISE_UNSCANNABLE;
+                    12;BROADCAST_BEACON;13;ADVERTISE_BASIC_NAME;14</PossibleValues>
+                <DefaultValue />
+            </Parameter>
+            <Parameter name="IS_CONNECTABLE" type="BOOLEAN" isOptional="false">
+                <Description>Boolean variable specifying whether the advertising device is connectable or not.
+                This here is more set for negative testing, as the GAP Peripheral role specifically says the device is
+                    connectable</Description>
+                <PossibleValues />
+                <DefaultValue>TRUE</DefaultValue>
+            </Parameter>
+            <Parameter name="ADVERTISE_TIMEOUT" type="STRING" isOptional="false">
+                <Description>Set a timeout in milliseconds for the command to execute in. A value of zero will mean
+                    indefinitely until a stop command is received.</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="BLE_STOP_ADVERTISING" Domain="WIRELESS" SubDomain="BT" Feature="PAIR" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Wireless.BT.BLE.BleStopAdvertising.BleStopAdvertising</ClassName>
+        <Description>
+            This script implements the TestStep for stopping a BLE advertising by callback code on enabled Android
+            device.</Description>
+        <Environment name="ANY">
+        </Environment>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="ADVERTISE_CODE" type="STRING" isOptional="false">
+                <Description>The type of advertising the BLE device will transmit. Possible values:
+                    ADVERTISE_POWER_LEVEL=10
+                    ADVERTISE_SCANNABLE=11
+                    ADVERTISE_UNSCANNABLE=12
+                    BROADCAST_BEACON=13
+                    ADVERTISE_BASIC_NAME=14
+                </Description>
+                <PossibleValues>ADVERTISE_POWER_LEVEL;10;ADVERTISE_SCANNABLE;11;ADVERTISE_UNSCANNABLE;
+                    12;BROADCAST_BEACON;13;ADVERTISE_BASIC_NAME;14</PossibleValues>
+                <DefaultValue />
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="BLE_START_BEACON_OBSERVER" Domain="WIRELESS" SubDomain="BT" Feature="PAIR" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Wireless.BT.BLE.BleStartBeaconObserver.BleStartBeaconObserver</ClassName>
+        <Description>
+            This script implements the TestStep for starting a beacon observer on an enabled Android device. It is, in
+            essence, a filtering with a complex filter specifically designed for our hand-written beacon.
+        </Description>
+        <Environment name="ANY">
+        </Environment>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="SCAN_MODE" type="STRING" isOptional="false">
+                <Description>The scan mode for the GAP Observer device. Possible values:
+                    SCAN_MODE_LOW_POWER: 0
+                    SCAN_MODE_BALANCED: 1
+                    SCAN_MODE_LOW_LATENCY: 2
+                </Description>
+                <PossibleValues>SCAN_MODE_LOW_POWER;SCAN_MODE_BALANCED;SCAN_MODE_LOW_LATENCY;
+                    0;1;2</PossibleValues>
+                <DefaultValue />
+            </Parameter>
+            <Parameter name="TIMEOUT" type="STRING" isOptional="false">
+                <Description>Set a timeout in milliseconds for the command to execute in. A value of zero will mean
+                    indefinitely until a stop command is received.</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="BLE_STOP_BEACON_OBSERVER" Domain="WIRELESS" SubDomain="BT" Feature="PAIR" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Wireless.BT.BLE.BleStopObserver.BleStopObserver</ClassName>
+        <Description>
+            This script implements the TestStep for stopping a beacon observer scan activity on enabled Android device.
+            This test step will fail if at any point an error occurred and the observing could not be stopped
+        </Description>
+        <Environment name="ANY">
+        </Environment>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="BLE_FILTER_ADVERTISED_POWER_LEVELS" Domain="WIRELESS" SubDomain="BT" Feature="PAIR" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Wireless.BT.BLE.BleFilterAdvertisedPowerLevels.BleFilterAdvertisedPowerLevels</ClassName>
+        <Description>
+            TestStep that filters a BLE advertisement of multiple power levels. If the result contains 4 different found
+            advertisements, then the result is PASS. Any different and it means that the advertisement is not being sent
+            or read correctly.</Description>
+        <Environment name="ANY">
+        </Environment>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="SCAN_MODE" type="STRING" isOptional="false">
+                <Description>The scan mode for the GAP Central device. Possible values:
+                    SCAN_MODE_LOW_POWER: 0
+                    SCAN_MODE_BALANCED: 1
+                    SCAN_MODE_LOW_LATENCY: 2
+                </Description>
+                <PossibleValues>SCAN_MODE_LOW_POWER;SCAN_MODE_BALANCED;SCAN_MODE_LOW_LATENCY;
+                    0;1;2</PossibleValues>
+                <DefaultValue />
+            </Parameter>
+            <Parameter name="TIMEOUT" type="STRING" isOptional="false">
+                <Description>Set a timeout in milliseconds for the command to execute in. A value of zero will mean
+                    indefinitely until a stop command is received.</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="BLE_SCAN_NO_FILTER" Domain="WIRELESS" SubDomain="BT" Feature="PAIR" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Wireless.BT.BLE.BleScanNoFilter.BleScanNoFilter</ClassName>
+        <Description>
+            This script implements the TestStep for performing a BLE scan with no settings or filtering parameters.
+        </Description>
+        <Environment name="ANY">
+        </Environment>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="TIMEOUT" type="STRING" isOptional="false">
+                <Description>Set a timeout in milliseconds for the command to execute in. A value of zero will mean
+                    indefinitely until a stop command is received.</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="BLE_SCAN_FILTER_SERVICE_UUID" Domain="WIRELESS" SubDomain="BT" Feature="PAIR" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Wireless.BT.BLE.BleFilterServiceUuid.BleFilterServiceUuid</ClassName>
+        <Description>
+            This script implements the TestStep filtering a BLE Advertisement by the field Service Uuid(s).
+            If no device is returned by the Agent filtered search, the the operation has failed.
+        </Description>
+        <Environment name="ANY">
+        </Environment>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="SERVICE_UUID" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+            <Parameter name="SCAN_MODE" type="STRING" isOptional="false">
+                <Description>The scan mode for the GAP Central device. Possible values:
+                    SCAN_MODE_LOW_POWER: 0
+                    SCAN_MODE_BALANCED: 1
+                    SCAN_MODE_LOW_LATENCY: 2
+                </Description>
+                <PossibleValues>SCAN_MODE_LOW_POWER;SCAN_MODE_BALANCED;SCAN_MODE_LOW_LATENCY;
+                    0;1;2</PossibleValues>
+                <DefaultValue />
+            </Parameter>
+            <Parameter name="TIMEOUT" type="STRING" isOptional="false">
+                <Description>Set a timeout in milliseconds for the command to execute in. A value of zero will mean
+                    indefinitely until a stop command is received.</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="BLE_SCAN_FILTER_SERVICE_DATA" Domain="WIRELESS" SubDomain="BT" Feature="PAIR" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Wireless.BT.BLE.BleFilterServiceData.BleFilterServiceData</ClassName>
+        <Description>
+            This script implements the TestStep filtering a BLE Advertisement by the field Service Data.
+            If no device is returned by the Agent filtered search, the the operation has failed
+        </Description>
+        <Environment name="ANY">
+        </Environment>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="SERVICE_UUID" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+            <Parameter name="SCAN_MODE" type="STRING" isOptional="false">
+                <Description>The scan mode for the GAP Central device. Possible values:
+                    SCAN_MODE_LOW_POWER: 0
+                    SCAN_MODE_BALANCED: 1
+                    SCAN_MODE_LOW_LATENCY: 2
+                </Description>
+                <PossibleValues>SCAN_MODE_LOW_POWER;SCAN_MODE_BALANCED;SCAN_MODE_LOW_LATENCY;
+                    0;1;2</PossibleValues>
+                <DefaultValue />
+            </Parameter>
+            <Parameter name="TIMEOUT" type="STRING" isOptional="false">
+                <Description>Set a timeout in milliseconds for the command to execute in. A value of zero will mean
+                    indefinitely until a stop command is received.</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="BLE_FILTER_ADDRESS" Domain="WIRELESS" SubDomain="BT" Feature="PAIR" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Wireless.BT.BLE.BleFilterDeviceAddress.BleFilterDeviceAddress</ClassName>
+        <Description>
+            This script implements the TestStep filtering a BLE Advertisement by the emitting device's MAC Address.
+            If no device is returned by the Agent filtered search, the the operation has failed
+        </Description>
+        <Environment name="ANY">
+        </Environment>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="SCAN_MODE" type="STRING" isOptional="false">
+                <Description>The scan mode for the GAP Central device. Possible values:
+                    SCAN_MODE_LOW_POWER: 0
+                    SCAN_MODE_BALANCED: 1
+                    SCAN_MODE_LOW_LATENCY: 2
+                </Description>
+                <PossibleValues>SCAN_MODE_LOW_POWER;SCAN_MODE_BALANCED;SCAN_MODE_LOW_LATENCY;
+                    0;1;2</PossibleValues>
+                <DefaultValue />
+            </Parameter>
+            <Parameter name="REMOTE_ADDRESS" type="STRING" isOptional="false">
+                <Description>The bluetooth address of the device to check</Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+            <Parameter name="TIMEOUT" type="STRING" isOptional="false">
+                <Description>Set a timeout in milliseconds for the command to execute in. A value of zero will mean
+                    indefinitely until a stop command is received.</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="BLE_FILTER_NAME" Domain="WIRELESS" SubDomain="BT" Feature="PAIR" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Wireless.BT.BLE.BleFilterDeviceName.BleFilterDeviceName</ClassName>
+        <Description>
+            This script implements the TestStep filtering a BLE Advertisement by the emitting device's Bluetooth name.
+            If no device is returned by the Agent filtered search, the the operation has failed
+        </Description>
+        <Environment name="ANY">
+        </Environment>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="SCAN_MODE" type="STRING" isOptional="false">
+                <Description>The scan mode for the GAP Central device. Possible values:
+                    SCAN_MODE_LOW_POWER: 0
+                    SCAN_MODE_BALANCED: 1
+                    SCAN_MODE_LOW_LATENCY: 2
+                </Description>
+                <PossibleValues>SCAN_MODE_LOW_POWER;SCAN_MODE_BALANCED;SCAN_MODE_LOW_LATENCY;
+                    0;1;2</PossibleValues>
+                <DefaultValue />
+            </Parameter>
+            <Parameter name="REMOTE_NAME" type="STRING" isOptional="false">
+                <Description>The bluetooth address of the device to check</Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+            <Parameter name="TIMEOUT" type="STRING" isOptional="false">
+                <Description>Set a timeout in milliseconds for the command to execute in. A value of zero will mean
+                    indefinitely until a stop command is received.</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="BLE_FILTER_MANUFACTURER_DATA" Domain="WIRELESS" SubDomain="BT" Feature="PAIR" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Wireless.BT.BLE.BleFilterDeviceManufacturerData.BleFilterDeviceManufacturerData</ClassName>
+        <Description>
+            This script implements the TestStep filtering a BLE Advertisement by the field Manufacturer Data.
+            If no device is returned by the Agent filtered search, the the operation has failed
+        </Description>
+        <Environment name="ANY">
+        </Environment>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="SCAN_MODE" type="STRING" isOptional="false">
+                <Description>The scan mode for the GAP Central device. Possible values:
+                    SCAN_MODE_LOW_POWER: 0
+                    SCAN_MODE_BALANCED: 1
+                    SCAN_MODE_LOW_LATENCY: 2
+                </Description>
+                <PossibleValues>SCAN_MODE_LOW_POWER;SCAN_MODE_BALANCED;SCAN_MODE_LOW_LATENCY;
+                    0;1;2</PossibleValues>
+                <DefaultValue />
+            </Parameter>
+            <Parameter name="REMOTE_MAN_ID" type="STRING" isOptional="false">
+                <Description>The bluetooth address of the device to check</Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+            <Parameter name="TIMEOUT" type="STRING" isOptional="false">
+                <Description>Set a timeout in milliseconds for the command to execute in. A value of zero will mean
+                    indefinitely until a stop command is received.</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="BLE_CHECK_ADVERTISING_SUPPORTED" Domain="WIRELESS" SubDomain="BT" Feature="PAIR" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Wireless.BT.BLE.BlePeripheralCheckAdvertisingSupported.BlePeripheralCheckAdvertisingSupported</ClassName>
+        <Description>
+            This script implements the TestStep for checking if advertising is supported on the Android device.
+            If advertising is not supported, then the TestStep will return FAIL.
+        </Description>
+        <Environment name="ANY">
+        </Environment>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="BLE_GATT_ADVERTISE_SERVER" Domain="WIRELESS" SubDomain="BT" Feature="PAIR" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Wireless.BT.BLE.BleGattServerStartAdvertising.BleGattServerStartAdvertising</ClassName>
+        <Description>
+            This script implements the TestStep for starting to advertise a GATT Server
+        </Description>
+        <Environment name="ANY">
+        </Environment>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="ADVERTISE_MODE" type="STRING" isOptional="false">
+                <Description>The advertise mode for the BLE Advertisement. Possible values:
+                    ADVERTISE_MODE_LOW_POWER=0
+                    ADVERTISE_MODE_BALANCED=1
+                    ADVERTISE_MODE_LOW_LATENCY=2
+                </Description>
+                <PossibleValues>ADVERTISE_MODE_LOW_POWER;ADVERTISE_MODE_BALANCED;
+                ADVERTISE_MODE_LOW_LATENCY;0;1;2</PossibleValues>
+                <DefaultValue />
+            </Parameter>
+            <Parameter name="TX_POWER_LEVEL" type="STRING" isOptional="false">
+                <Description>The TX Power Level at which the Device to transmit. Possible values:
+                    ADVERTISE_TX_POWER_ULTRA_LOW=0
+                    ADVERTISE_TX_POWER_LOW=1
+                    ADVERTISE_TX_POWER_MEDIUM=2
+                    ADVERTISE_TX_POWER_HIGH=3
+                </Description>
+                <PossibleValues>ADVERTISE_TX_POWER_ULTRA_LOW;ADVERTISE_TX_POWER_LOW;
+                ADVERTISE_TX_POWER_MEDIUM;ADVERTISE_TX_POWER_HIGH;0;1;2;3</PossibleValues>
+                <DefaultValue />
+            </Parameter>
+            <Parameter name="GATT_SERVER_TYPE" type="STRING" isOptional="false">
+                <Description>Which type of GATT Server to create. You can either create a full, custom, GATT server or
+                    a bare one with no services. You will usually create the custom one for when you want to test out
+                    the GATT Client features while the bare one is more suitable for the testing of the GATT Server
+                    features. Possible values:
+                    CREATE_BARE_GATT_SERVER=BARE_GATT_SERVER,
+                    CREATE_FULL_CUSTOM_GATT_SERVER=FULL_CUSTOM_GATT_SERVER,
+                    CREATE_NOTIFICATION_GATT_SERVER=NOTIFICATION_GATT_SERVER
+                </Description>
+                <PossibleValues>CREATE_BARE_GATT_SERVER;BARE_GATT_SERVER;CREATE_FULL_CUSTOM_GATT_SERVER;
+                    FULL_CUSTOM_GATT_SERVER;CREATE_NOTIFICATION_GATT_SERVER;NOTIFICATION_GATT_SERVER</PossibleValues>
+                <DefaultValue />
+            </Parameter>
+            <Parameter name="ADVERTISE_TIMEOUT" type="STRING" isOptional="false">
+                <Description>Set a timeout in milliseconds for the command to execute in. A value of zero will mean
+                    indefinitely until a stop command is received.</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="BLE_GATT_SERVER_ADD_SERVICE" Domain="WIRELESS" SubDomain="BT" Feature="PAIR" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Wireless.BT.BLE.BleGattServerAddService.BleGattServerAddService</ClassName>
+        <Description>
+            This script implements the TestStep for adding a service to our GATT Server
+        </Description>
+        <Environment name="ANY">
+        </Environment>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="ADVERTISE_MODE" type="STRING" isOptional="false">
+                <Description>The advertise mode for the BLE Advertisement. Possible values:
+                    ADVERTISE_MODE_LOW_POWER=0
+                    ADVERTISE_MODE_BALANCED=1
+                    ADVERTISE_MODE_LOW_LATENCY=2
+                </Description>
+                <PossibleValues>ADVERTISE_MODE_LOW_POWER;ADVERTISE_MODE_BALANCED;
+                ADVERTISE_MODE_LOW_LATENCY;0;1;2</PossibleValues>
+                <DefaultValue />
+            </Parameter>
+            <Parameter name="TX_POWER_LEVEL" type="STRING" isOptional="false">
+                <Description>The TX Power Level at which the Device to transmit. Possible values:
+                    ADVERTISE_TX_POWER_ULTRA_LOW=0
+                    ADVERTISE_TX_POWER_LOW=1
+                    ADVERTISE_TX_POWER_MEDIUM=2
+                    ADVERTISE_TX_POWER_HIGH=3
+                </Description>
+                <PossibleValues>ADVERTISE_TX_POWER_ULTRA_LOW;ADVERTISE_TX_POWER_LOW;
+                ADVERTISE_TX_POWER_MEDIUM;ADVERTISE_TX_POWER_HIGH;0;1;2;3</PossibleValues>
+                <DefaultValue />
+            </Parameter>
+            <Parameter name="ADVERTISE_TIMEOUT" type="STRING" isOptional="false">
+                <Description>Set a timeout in milliseconds for the command to execute in. A value of zero will mean
+                    indefinitely until a stop command is received.</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="BLE_GATT_SERVER_ADD_CHARACTERISTIC" Domain="WIRELESS" SubDomain="BT" Feature="PAIR" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Wireless.BT.BLE.BleGattServerAddCharacteristic.BleGattServerAddCharacteristic</ClassName>
+        <Description>
+            This script implements the TestStep for adding a characteristic to our GATT Server
+        </Description>
+        <Environment name="ANY">
+        </Environment>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="ADVERTISE_MODE" type="STRING" isOptional="false">
+                <Description>The advertise mode for the BLE Advertisement. Possible values:
+                    ADVERTISE_MODE_LOW_POWER=0
+                    ADVERTISE_MODE_BALANCED=1
+                    ADVERTISE_MODE_LOW_LATENCY=2
+                </Description>
+                <PossibleValues>ADVERTISE_MODE_LOW_POWER;ADVERTISE_MODE_BALANCED;
+                ADVERTISE_MODE_LOW_LATENCY;0;1;2</PossibleValues>
+                <DefaultValue />
+            </Parameter>
+            <Parameter name="TX_POWER_LEVEL" type="STRING" isOptional="false">
+                <Description>The TX Power Level at which the Device to transmit. Possible values:
+                    ADVERTISE_TX_POWER_ULTRA_LOW=0
+                    ADVERTISE_TX_POWER_LOW=1
+                    ADVERTISE_TX_POWER_MEDIUM=2
+                    ADVERTISE_TX_POWER_HIGH=3
+                </Description>
+                <PossibleValues>ADVERTISE_TX_POWER_ULTRA_LOW;ADVERTISE_TX_POWER_LOW;
+                ADVERTISE_TX_POWER_MEDIUM;ADVERTISE_TX_POWER_HIGH;0;1;2;3</PossibleValues>
+                <DefaultValue />
+            </Parameter>
+            <Parameter name="ADVERTISE_TIMEOUT" type="STRING" isOptional="false">
+                <Description>Set a timeout in milliseconds for the command to execute in. A value of zero will mean
+                    indefinitely until a stop command is received.</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="BLE_GATT_SERVER_ADD_DESCRIPTOR" Domain="WIRELESS" SubDomain="BT" Feature="PAIR" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Wireless.BT.BLE.BleGattServerAddDescriptor.BleGattServerAddDescriptor</ClassName>
+        <Description>
+            This script implements the TestStep for adding a descriptor to our GATT Server
+        </Description>
+        <Environment name="ANY">
+        </Environment>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="ADVERTISE_MODE" type="STRING" isOptional="false">
+                <Description>The advertise mode for the BLE Advertisement. Possible values:
+                    ADVERTISE_MODE_LOW_POWER=0
+                    ADVERTISE_MODE_BALANCED=1
+                    ADVERTISE_MODE_LOW_LATENCY=2
+                </Description>
+                <PossibleValues>ADVERTISE_MODE_LOW_POWER;ADVERTISE_MODE_BALANCED;
+                ADVERTISE_MODE_LOW_LATENCY;0;1;2</PossibleValues>
+                <DefaultValue />
+            </Parameter>
+            <Parameter name="TX_POWER_LEVEL" type="STRING" isOptional="false">
+                <Description>The TX Power Level at which the Device to transmit. Possible values:
+                    ADVERTISE_TX_POWER_ULTRA_LOW=0
+                    ADVERTISE_TX_POWER_LOW=1
+                    ADVERTISE_TX_POWER_MEDIUM=2
+                    ADVERTISE_TX_POWER_HIGH=3
+                </Description>
+                <PossibleValues>ADVERTISE_TX_POWER_ULTRA_LOW;ADVERTISE_TX_POWER_LOW;
+                ADVERTISE_TX_POWER_MEDIUM;ADVERTISE_TX_POWER_HIGH;0;1;2;3</PossibleValues>
+                <DefaultValue />
+            </Parameter>
+            <Parameter name="ADVERTISE_TIMEOUT" type="STRING" isOptional="false">
+                <Description>Set a timeout in milliseconds for the command to execute in. A value of zero will mean
+                    indefinitely until a stop command is received.</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="BLE_GATT_SERVER_READ_CHARACTERISTIC_CALLBACK" Domain="WIRELESS" SubDomain="BT" Feature="PAIR" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Wireless.BT.BLE.BleGattServerReadGattCharacteristicCallback.BleGattServerReadGattCharacteristicCallback</ClassName>
+        <Description>
+            This script implements the TestStep in which we check that when a GATT Characteristic is being read, the
+            proper callback is accessed in our server
+        </Description>
+        <Environment name="ANY">
+        </Environment>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="ADVERTISE_MODE" type="STRING" isOptional="false">
+                <Description>The advertise mode for the BLE Advertisement. Possible values:
+                    ADVERTISE_MODE_LOW_POWER=0
+                    ADVERTISE_MODE_BALANCED=1
+                    ADVERTISE_MODE_LOW_LATENCY=2
+                </Description>
+                <PossibleValues>ADVERTISE_MODE_LOW_POWER;ADVERTISE_MODE_BALANCED;
+                ADVERTISE_MODE_LOW_LATENCY;0;1;2</PossibleValues>
+                <DefaultValue />
+            </Parameter>
+            <Parameter name="TX_POWER_LEVEL" type="STRING" isOptional="false">
+                <Description>The TX Power Level at which the Device to transmit. Possible values:
+                    ADVERTISE_TX_POWER_ULTRA_LOW=0
+                    ADVERTISE_TX_POWER_LOW=1
+                    ADVERTISE_TX_POWER_MEDIUM=2
+                    ADVERTISE_TX_POWER_HIGH=3
+                </Description>
+                <PossibleValues>ADVERTISE_TX_POWER_ULTRA_LOW;ADVERTISE_TX_POWER_LOW;
+                ADVERTISE_TX_POWER_MEDIUM;ADVERTISE_TX_POWER_HIGH;0;1;2;3</PossibleValues>
+                <DefaultValue />
+            </Parameter>
+            <Parameter name="ADVERTISE_TIMEOUT" type="STRING" isOptional="false">
+                <Description>Set a timeout in milliseconds for the command to execute in. A value of zero will mean
+                    indefinitely until a stop command is received.</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="BLE_GATT_SERVER_WRITE_CHARACTERISTIC_CALLBACK" Domain="WIRELESS" SubDomain="BT" Feature="PAIR" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Wireless.BT.BLE.BleGattServerWriteGattCharacteristicCallback.BleGattServerWriteGattCharacteristicCallback</ClassName>
+        <Description>
+            This script implements the TestStep in which we check that when a GATT Characteristic is being written, the
+            proper callback is accessed in our server
+        </Description>
+        <Environment name="ANY">
+        </Environment>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="ADVERTISE_MODE" type="STRING" isOptional="false">
+                <Description>The advertise mode for the BLE Advertisement. Possible values:
+                    ADVERTISE_MODE_LOW_POWER=0
+                    ADVERTISE_MODE_BALANCED=1
+                    ADVERTISE_MODE_LOW_LATENCY=2
+                </Description>
+                <PossibleValues>ADVERTISE_MODE_LOW_POWER;ADVERTISE_MODE_BALANCED;
+                ADVERTISE_MODE_LOW_LATENCY;0;1;2</PossibleValues>
+                <DefaultValue />
+            </Parameter>
+            <Parameter name="TX_POWER_LEVEL" type="STRING" isOptional="false">
+                <Description>The TX Power Level at which the Device to transmit. Possible values:
+                    ADVERTISE_TX_POWER_ULTRA_LOW=0
+                    ADVERTISE_TX_POWER_LOW=1
+                    ADVERTISE_TX_POWER_MEDIUM=2
+                    ADVERTISE_TX_POWER_HIGH=3
+                </Description>
+                <PossibleValues>ADVERTISE_TX_POWER_ULTRA_LOW;ADVERTISE_TX_POWER_LOW;
+                ADVERTISE_TX_POWER_MEDIUM;ADVERTISE_TX_POWER_HIGH;0;1;2;3</PossibleValues>
+                <DefaultValue />
+            </Parameter>
+            <Parameter name="ADVERTISE_TIMEOUT" type="STRING" isOptional="false">
+                <Description>Set a timeout in milliseconds for the command to execute in. A value of zero will mean
+                    indefinitely until a stop command is received.</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="BLE_GATT_SERVER_READ_DESCRIPTOR_CALLBACK" Domain="WIRELESS" SubDomain="BT" Feature="PAIR" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Wireless.BT.BLE.BleGattServerReadGattDescriptorCallback.BleGattServerReadGattDescriptorCallback</ClassName>
+        <Description>
+            This script implements the TestStep in which we check that when a GATT Descriptor is being read, the
+            proper callback is accessed in our server
+        </Description>
+        <Environment name="ANY">
+        </Environment>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="ADVERTISE_MODE" type="STRING" isOptional="false">
+                <Description>The advertise mode for the BLE Advertisement. Possible values:
+                    ADVERTISE_MODE_LOW_POWER=0
+                    ADVERTISE_MODE_BALANCED=1
+                    ADVERTISE_MODE_LOW_LATENCY=2
+                </Description>
+                <PossibleValues>ADVERTISE_MODE_LOW_POWER;ADVERTISE_MODE_BALANCED;
+                ADVERTISE_MODE_LOW_LATENCY;0;1;2</PossibleValues>
+                <DefaultValue />
+            </Parameter>
+            <Parameter name="TX_POWER_LEVEL" type="STRING" isOptional="false">
+                <Description>The TX Power Level at which the Device to transmit. Possible values:
+                    ADVERTISE_TX_POWER_ULTRA_LOW=0
+                    ADVERTISE_TX_POWER_LOW=1
+                    ADVERTISE_TX_POWER_MEDIUM=2
+                    ADVERTISE_TX_POWER_HIGH=3
+                </Description>
+                <PossibleValues>ADVERTISE_TX_POWER_ULTRA_LOW;ADVERTISE_TX_POWER_LOW;
+                ADVERTISE_TX_POWER_MEDIUM;ADVERTISE_TX_POWER_HIGH;0;1;2;3</PossibleValues>
+                <DefaultValue />
+            </Parameter>
+            <Parameter name="ADVERTISE_TIMEOUT" type="STRING" isOptional="false">
+                <Description>Set a timeout in milliseconds for the command to execute in. A value of zero will mean
+                    indefinitely until a stop command is received.</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="BLE_GATT_SERVER_WRITE_DESCRIPTOR_CALLBACK" Domain="WIRELESS" SubDomain="BT" Feature="PAIR" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Wireless.BT.BLE.BleGattServerWriteGattDescriptorCallback.BleGattServerWriteGattDescriptorCallback</ClassName>
+        <Description>
+            This script implements the TestStep in which we check that when a GATT Descriptor is being written, the
+            proper callback is accessed in our server
+        </Description>
+        <Environment name="ANY">
+        </Environment>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="ADVERTISE_MODE" type="STRING" isOptional="false">
+                <Description>The advertise mode for the BLE Advertisement. Possible values:
+                    ADVERTISE_MODE_LOW_POWER=0
+                    ADVERTISE_MODE_BALANCED=1
+                    ADVERTISE_MODE_LOW_LATENCY=2
+                </Description>
+                <PossibleValues>ADVERTISE_MODE_LOW_POWER;ADVERTISE_MODE_BALANCED;
+                ADVERTISE_MODE_LOW_LATENCY;0;1;2</PossibleValues>
+                <DefaultValue />
+            </Parameter>
+            <Parameter name="TX_POWER_LEVEL" type="STRING" isOptional="false">
+                <Description>The TX Power Level at which the Device to transmit. Possible values:
+                    ADVERTISE_TX_POWER_ULTRA_LOW=0
+                    ADVERTISE_TX_POWER_LOW=1
+                    ADVERTISE_TX_POWER_MEDIUM=2
+                    ADVERTISE_TX_POWER_HIGH=3
+                </Description>
+                <PossibleValues>ADVERTISE_TX_POWER_ULTRA_LOW;ADVERTISE_TX_POWER_LOW;
+                ADVERTISE_TX_POWER_MEDIUM;ADVERTISE_TX_POWER_HIGH;0;1;2;3</PossibleValues>
+                <DefaultValue />
+            </Parameter>
+            <Parameter name="ADVERTISE_TIMEOUT" type="STRING" isOptional="false">
+                <Description>Set a timeout in milliseconds for the command to execute in. A value of zero will mean
+                    indefinitely until a stop command is received.</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="BLE_GATT_SERVER_RELIABLE_WRITE_CALLBACK" Domain="WIRELESS" SubDomain="BT" Feature="PAIR" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Wireless.BT.BLE.BleGattServerReliableWriteGattCallback.BleGattServerReliableWriteGattCallback</ClassName>
+        <Description>
+            This script implements the TestStep in which we check that when a GATT Characteristic is being reliably
+            written, the proper callback is accessed in our server
+        </Description>
+        <Environment name="ANY">
+        </Environment>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="ADVERTISE_MODE" type="STRING" isOptional="false">
+                <Description>The advertise mode for the BLE Advertisement. Possible values:
+                    ADVERTISE_MODE_LOW_POWER=0
+                    ADVERTISE_MODE_BALANCED=1
+                    ADVERTISE_MODE_LOW_LATENCY=2
+                </Description>
+                <PossibleValues>ADVERTISE_MODE_LOW_POWER;ADVERTISE_MODE_BALANCED;
+                ADVERTISE_MODE_LOW_LATENCY;0;1;2</PossibleValues>
+                <DefaultValue />
+            </Parameter>
+            <Parameter name="TX_POWER_LEVEL" type="STRING" isOptional="false">
+                <Description>The TX Power Level at which the Device to transmit. Possible values:
+                    ADVERTISE_TX_POWER_ULTRA_LOW=0
+                    ADVERTISE_TX_POWER_LOW=1
+                    ADVERTISE_TX_POWER_MEDIUM=2
+                    ADVERTISE_TX_POWER_HIGH=3
+                </Description>
+                <PossibleValues>ADVERTISE_TX_POWER_ULTRA_LOW;ADVERTISE_TX_POWER_LOW;
+                ADVERTISE_TX_POWER_MEDIUM;ADVERTISE_TX_POWER_HIGH;0;1;2;3</PossibleValues>
+                <DefaultValue />
+            </Parameter>
+            <Parameter name="ADVERTISE_TIMEOUT" type="STRING" isOptional="false">
+                <Description>Set a timeout in milliseconds for the command to execute in. A value of zero will mean
+                    indefinitely until a stop command is received.</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="BLE_GATT_STOP_SERVER_AND_ADVERTISING" Domain="WIRELESS" SubDomain="BT" Feature="PAIR" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Wireless.BT.BLE.BleGattServerStopAdvertising.BleGattServerStopAdvertising</ClassName>
+        <Description>
+            This script implements the TestStep for stopping the advertising of a GATT Server and to close and destroy
+            the server
+        </Description>
+        <Environment name="ANY">
+        </Environment>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="BLE_GATT_CLIENT_CONNECT_TO_GATT_SERVER" Domain="WIRELESS" SubDomain="BT" Feature="PAIR" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Wireless.BT.BLE.BleGattClientConnectToServer.BleGattClientConnectToServer</ClassName>
+        <Description>
+            This script implements the TestStep for connecting a GATT Client device to a GATT Server
+        </Description>
+        <Environment name="ANY">
+        </Environment>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="ADDRESS" type="STRING" isOptional="false">
+                <Description>The bluetooth address of the device to check</Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="BLE_GATT_CLIENT_DISCONNECT_FROM_GATT_SERVER" Domain="WIRELESS" SubDomain="BT" Feature="PAIR" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Wireless.BT.BLE.BleGattClientDisconnectFromServer.BleGattClientDisconnectFromServer</ClassName>
+        <Description>
+            This script implements the TestStep for disconnecting a GATT Client device to a GATT Server
+        </Description>
+        <Environment name="ANY">
+        </Environment>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="ADDRESS" type="STRING" isOptional="false">
+                <Description>The bluetooth address of the device to check</Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="BLE_GATT_CLIENT_DISCOVER_SERVICES" Domain="WIRELESS" SubDomain="BT" Feature="PAIR" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Wireless.BT.BLE.BleGattClientDiscoverServices.BleGattClientDiscoverServices</ClassName>
+        <Description>
+            This script implements the TestStep for discovering the GATT Services of a server we are connected to
+        </Description>
+        <Environment name="ANY">
+        </Environment>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="ADDRESS" type="STRING" isOptional="false">
+                <Description>The bluetooth address of the device to check</Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="BLE_GATT_CLIENT_READ_GATT_CHARACTERISTIC" Domain="WIRELESS" SubDomain="BT" Feature="PAIR" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Wireless.BT.BLE.BleGattClientReadGattCharacteristic.BleGattClientReadGattCharacteristic</ClassName>
+        <Description>
+            This script implements the TestStep that tries to read a GATT Characteristic from a server it is connected to
+        </Description>
+        <Environment name="ANY">
+        </Environment>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="ADDRESS" type="STRING" isOptional="false">
+                <Description>The bluetooth address of the device to check</Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="BLE_GATT_CLIENT_READ_GATT_DESCRIPTOR" Domain="WIRELESS" SubDomain="BT" Feature="PAIR" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Wireless.BT.BLE.BleGattClientReadGattDescriptor.BleGattClientReadGattDescriptor</ClassName>
+        <Description>
+            This script implements the TestStep that tries to read a GATT Descriptor from a server it is connected to
+        </Description>
+        <Environment name="ANY">
+        </Environment>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="ADDRESS" type="STRING" isOptional="false">
+                <Description>The bluetooth address of the device to check</Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="BLE_GATT_CLIENT_READ_RSSI" Domain="WIRELESS" SubDomain="BT" Feature="PAIR" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Wireless.BT.BLE.BleGattClientReadRssi.BleGattClientReadRssi</ClassName>
+        <Description>
+            This script implements the TestStep that tries to read a GATT Rssi from a server it is connected to
+
+        </Description>
+        <Environment name="ANY">
+        </Environment>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="ADDRESS" type="STRING" isOptional="false">
+                <Description>The bluetooth address of the device to check</Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="BLE_GATT_CLIENT_WRITE_GATT_CHARACTERISTIC" Domain="WIRELESS" SubDomain="BT" Feature="PAIR" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Wireless.BT.BLE.BleGattClientWriteGattCharacteristic.BleGattClientWriteGattCharacteristic</ClassName>
+        <Description>
+            This script implements the TestStep that tries to write a GATT Characteristic from a server it is connected to
+
+        </Description>
+        <Environment name="ANY">
+        </Environment>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="ADDRESS" type="STRING" isOptional="false">
+                <Description>The bluetooth address of the device to check</Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+             <Parameter name="WRITE_CHARACTERISTIC_VALUE" type="STRING" isOptional="false">
+                <Description>The string value to write in the characteristic</Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="BLE_GATT_CLIENT_WRITE_GATT_DESCRIPTOR" Domain="WIRELESS" SubDomain="BT" Feature="PAIR" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Wireless.BT.BLE.BleGattClientWriteGattDescriptor.BleGattClientWriteGattDescriptor</ClassName>
+        <Description>
+            This script implements the TestStep that tries to write a GATT Descriptor from a server it is connected to
+
+        </Description>
+        <Environment name="ANY">
+        </Environment>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="ADDRESS" type="STRING" isOptional="false">
+                <Description>The bluetooth address of the device to check</Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+            <Parameter name="WRITE_DESCRIPTOR_VALUE" type="STRING" isOptional="false">
+                <Description>The string value to write in the descriptor</Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="BLE_GATT_CLIENT_RELIABLE_WRITE" Domain="WIRELESS" SubDomain="BT" Feature="PAIR" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Wireless.BT.BLE.BleGattClientReliableWrite.BleGattClientReliableWrite</ClassName>
+        <Description>
+            This script implements the TestStep that tries to perform a reliable characteristic write a server it is
+            connected to
+        </Description>
+        <Environment name="ANY">
+        </Environment>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="ADDRESS" type="STRING" isOptional="false">
+                <Description>The bluetooth address of the device to check</Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+            <Parameter name="RELIABLE_WRITE_VALUE" type="STRING" isOptional="false">
+                <Description>The string value to reliably write</Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="BLE_GATT_CLIENT_READ_GATT_NOTIFICATION" Domain="WIRELESS" SubDomain="BT" Feature="PAIR" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Wireless.BT.BLE.BleGattClientReadGattNotification.BleGattClientReadGattNotification</ClassName>
+        <Description>
+            This script implements the TestStep that tries to read a GATT Characteristic from a server it is connected to
+        </Description>
+        <Environment name="ANY">
+        </Environment>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="ADDRESS" type="STRING" isOptional="false">
+                <Description>The bluetooth address of the device to check</Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+            <Parameter name="WHICH_CHARACTERISTIC" type="STRING" isOptional="false">
+                <Description>The Characteristic which we want to readn otifications from. Possible values:
+                    PRIVATE_NOTIFICATION=1
+                    HR_NOTIFICATION=2
+                </Description>
+                <PossibleValues>PRIVATE_NOTIFICATION;HR_NOTIFICATION;1;2</PossibleValues>
+                <DefaultValue />
+            </Parameter>
+            <Parameter name="READ_TIMEOUT" type="STRING" isOptional="false">
+                <Description>Set a timeout in milliseconds for the command to execute in. A value of zero will mean
+                    indefinitely until a stop command is received.</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="READ_KEYCODE_EVENTS" Domain="WIRELESS" SubDomain="BT" Feature="HID" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.System.ReadKeyCodeEvents.ReadKeyCodeEvents</ClassName>
+        <Description>Read Input events from the given device, expecting them to match the passed ones.</Description>
+        <Environment name="ANY" />
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="INPUT_DEVICE" type="STRING" isOptional="false">
+                <Description> The name of the Input device. For Android that name appears executing the command:
+                    adb shell getevent -i For Windows a way to retrieve the Input device's name should be provided
+                    (See Windows documentation)
+                </Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+            <Parameter name="EVENTS" type="STRING" isOptional="false">
+                <Description>The sequence of events expected to be received (comma separated)</Description>
+                <PossibleValues>ACTION_DOWN;ACTION_MULTIPLE;ACTION_UP;FLAG_CANCELED;FLAG_CANCELED_LONG_PRESS;
+                    FLAG_EDITOR_ACTION;FLAG_FALLBACK;FLAG_FROM_SYSTEM;FLAG_KEEP_TOUCH_MODE;FLAG_LONG_PRESS;
+                    FLAG_SOFT_KEYBOARD;FLAG_TRACKING;FLAG_VIRTUAL_HARD_KEY;FLAG_WOKE_HERE;KEYCODE_0;KEYCODE_1;
+                    KEYCODE_11;KEYCODE_12;KEYCODE_2;KEYCODE_3;KEYCODE_3D_MODE;KEYCODE_4;KEYCODE_5;KEYCODE_6;KEYCODE_7;
+                    KEYCODE_8;KEYCODE_9;KEYCODE_A;KEYCODE_ALT_LEFT;KEYCODE_ALT_RIGHT;KEYCODE_APOSTROPHE;
+                    KEYCODE_APP_SWITCH;KEYCODE_ASSIST;KEYCODE_AT;KEYCODE_AVR_INPUT;KEYCODE_AVR_POWER;KEYCODE_B;
+                    KEYCODE_BACK;KEYCODE_BACKSLASH;KEYCODE_BOOKMARK;KEYCODE_BREAK;KEYCODE_BRIGHTNESS_DOWN;
+                    KEYCODE_BRIGHTNESS_UP;KEYCODE_BUTTON_1;KEYCODE_BUTTON_10;KEYCODE_BUTTON_11;KEYCODE_BUTTON_12;
+                    KEYCODE_BUTTON_13;KEYCODE_BUTTON_14;KEYCODE_BUTTON_15;KEYCODE_BUTTON_16;KEYCODE_BUTTON_2;
+                    KEYCODE_BUTTON_3;KEYCODE_BUTTON_4;KEYCODE_BUTTON_5;KEYCODE_BUTTON_6;KEYCODE_BUTTON_7;KEYCODE_BUTTON_8;
+                    KEYCODE_BUTTON_9;KEYCODE_BUTTON_A;KEYCODE_BUTTON_B;KEYCODE_BUTTON_C;KEYCODE_BUTTON_L1;KEYCODE_BUTTON_L2;
+                    KEYCODE_BUTTON_MODE;KEYCODE_BUTTON_R1;KEYCODE_BUTTON_R2;KEYCODE_BUTTON_SELECT;KEYCODE_BUTTON_START;
+                    KEYCODE_BUTTON_THUMBL;KEYCODE_BUTTON_THUMBR;KEYCODE_BUTTON_X;KEYCODE_BUTTON_Y;KEYCODE_BUTTON_Z;KEYCODE_C;
+                    KEYCODE_CALCULATOR;KEYCODE_CALENDAR;KEYCODE_CALL;KEYCODE_CAMERA;KEYCODE_CAPS_LOCK;KEYCODE_CAPTIONS;
+                    KEYCODE_CHANNEL_DOWN;KEYCODE_CHANNEL_UP;KEYCODE_CLEAR;KEYCODE_COMMA;KEYCODE_CONTACTS;KEYCODE_CTRL_LEFT;
+                    KEYCODE_CTRL_RIGHT;KEYCODE_D;KEYCODE_DEL;KEYCODE_DPAD_CENTER;KEYCODE_DPAD_DOWN;KEYCODE_DPAD_LEFT;
+                    KEYCODE_DPAD_RIGHT;KEYCODE_DPAD_UP;KEYCODE_DVR;KEYCODE_E;KEYCODE_EISU;KEYCODE_ENDCALL;KEYCODE_ENTER;
+                    KEYCODE_ENVELOPE;KEYCODE_EQUALS;KEYCODE_ESCAPE;KEYCODE_EXPLORER;KEYCODE_F;KEYCODE_F1;KEYCODE_F10;
+                    KEYCODE_F11;KEYCODE_F12;KEYCODE_F2;KEYCODE_F3;KEYCODE_F4;KEYCODE_F5;KEYCODE_F6;KEYCODE_F7;KEYCODE_F8;
+                    KEYCODE_F9;KEYCODE_FOCUS;KEYCODE_FORWARD;KEYCODE_FORWARD_DEL;KEYCODE_FUNCTION;KEYCODE_G;KEYCODE_GRAVE;
+                    KEYCODE_GUIDE;KEYCODE_H;KEYCODE_HEADSETHOOK;KEYCODE_HELP;KEYCODE_HENKAN;KEYCODE_HOME;KEYCODE_I;KEYCODE_INFO;
+                    KEYCODE_INSERT;KEYCODE_J;KEYCODE_K;KEYCODE_KANA;KEYCODE_KATAKANA_HIRAGANA;KEYCODE_L;KEYCODE_LANGUAGE_SWITCH;
+                    KEYCODE_LAST_CHANNEL;KEYCODE_LEFT_BRACKET;KEYCODE_M;KEYCODE_MANNER_MODE;KEYCODE_MEDIA_AUDIO_TRACK;
+                    KEYCODE_MEDIA_CLOSE;KEYCODE_MEDIA_EJECT;KEYCODE_MEDIA_FAST_FORWARD;KEYCODE_MEDIA_NEXT;KEYCODE_MEDIA_PAUSE;
+                    KEYCODE_MEDIA_PLAY;KEYCODE_MEDIA_PLAY_PAUSE;KEYCODE_MEDIA_PREVIOUS;KEYCODE_MEDIA_RECORD;KEYCODE_MEDIA_REWIND;
+                    KEYCODE_MEDIA_SKIP_BACKWARD;KEYCODE_MEDIA_SKIP_FORWARD;KEYCODE_MEDIA_STEP_BACKWARD;KEYCODE_MEDIA_STEP_FORWARD;
+                    KEYCODE_MEDIA_STOP;KEYCODE_MEDIA_TOP_MENU;KEYCODE_MENU;KEYCODE_META_LEFT;KEYCODE_META_RIGHT;KEYCODE_MINUS;
+                    KEYCODE_MOVE_END;KEYCODE_MOVE_HOME;KEYCODE_MUHENKAN;KEYCODE_MUSIC;KEYCODE_MUTE;KEYCODE_N;KEYCODE_NAVIGATE_IN;
+                    KEYCODE_NAVIGATE_NEXT;KEYCODE_NAVIGATE_OUT;KEYCODE_NAVIGATE_PREVIOUS;KEYCODE_NOTIFICATION;KEYCODE_NUM;
+                    KEYCODE_NUMPAD_0;KEYCODE_NUMPAD_1;KEYCODE_NUMPAD_2;KEYCODE_NUMPAD_3;KEYCODE_NUMPAD_4;KEYCODE_NUMPAD_5;
+                    KEYCODE_NUMPAD_6;KEYCODE_NUMPAD_7;KEYCODE_NUMPAD_8;KEYCODE_NUMPAD_9;KEYCODE_NUMPAD_ADD;KEYCODE_NUMPAD_COMMA;
+                    KEYCODE_NUMPAD_DIVIDE;KEYCODE_NUMPAD_DOT;KEYCODE_NUMPAD_ENTER;KEYCODE_NUMPAD_EQUALS;KEYCODE_NUMPAD_LEFT_PAREN;
+                    KEYCODE_NUMPAD_MULTIPLY;KEYCODE_NUMPAD_RIGHT_PAREN;KEYCODE_NUMPAD_SUBTRACT;KEYCODE_NUM_LOCK;KEYCODE_O;KEYCODE_P;
+                    KEYCODE_PAGE_DOWN;KEYCODE_PAGE_UP;KEYCODE_PAIRING;KEYCODE_PERIOD;KEYCODE_PICTSYMBOLS;KEYCODE_PLUS;
+                    KEYCODE_POUND;KEYCODE_POWER;KEYCODE_PROG_BLUE;KEYCODE_PROG_GREEN;KEYCODE_PROG_RED;KEYCODE_PROG_YELLOW;
+                    KEYCODE_Q;KEYCODE_R;KEYCODE_RIGHT_BRACKET;KEYCODE_RO;KEYCODE_S;KEYCODE_SCROLL_LOCK;KEYCODE_SEARCH;
+                    KEYCODE_SEMICOLON;KEYCODE_SETTINGS;KEYCODE_SHIFT_LEFT;KEYCODE_SHIFT_RIGHT;KEYCODE_SLASH;KEYCODE_SLEEP;
+                    KEYCODE_SOFT_LEFT;KEYCODE_SOFT_RIGHT;KEYCODE_SPACE;KEYCODE_STAR;KEYCODE_STB_INPUT;KEYCODE_STB_POWER;
+                    KEYCODE_SWITCH_CHARSET;KEYCODE_SYM;KEYCODE_SYSRQ;KEYCODE_T;KEYCODE_TAB;KEYCODE_TV;KEYCODE_TV_ANTENNA_CABLE;
+                    KEYCODE_TV_AUDIO_DESCRIPTION;KEYCODE_TV_AUDIO_DESCRIPTION_MIX_DOWN;KEYCODE_TV_AUDIO_DESCRIPTION_MIX_UP;
+                    KEYCODE_TV_CONTENTS_MENU;KEYCODE_TV_DATA_SERVICE;KEYCODE_TV_INPUT;KEYCODE_TV_INPUT_COMPONENT_1;
+                    KEYCODE_TV_INPUT_COMPONENT_2;KEYCODE_TV_INPUT_COMPOSITE_1;KEYCODE_TV_INPUT_COMPOSITE_2;
+                    KEYCODE_TV_INPUT_HDMI_1;KEYCODE_TV_INPUT_HDMI_2;KEYCODE_TV_INPUT_HDMI_3;KEYCODE_TV_INPUT_HDMI_4;
+                    KEYCODE_TV_INPUT_VGA_1;KEYCODE_TV_MEDIA_CONTEXT_MENU;KEYCODE_TV_NETWORK;KEYCODE_TV_NUMBER_ENTRY;
+                    KEYCODE_TV_POWER;KEYCODE_TV_RADIO_SERVICE;KEYCODE_TV_SATELLITE;KEYCODE_TV_SATELLITE_BS;
+                    KEYCODE_TV_SATELLITE_CS;KEYCODE_TV_SATELLITE_SERVICE;KEYCODE_TV_TELETEXT;KEYCODE_TV_TERRESTRIAL_ANALOG;
+                    KEYCODE_TV_TERRESTRIAL_DIGITAL;KEYCODE_TV_TIMER_PROGRAMMING;KEYCODE_TV_ZOOM_MODE;KEYCODE_U;KEYCODE_UNKNOWN;
+                    KEYCODE_V;KEYCODE_VOICE_ASSIST;KEYCODE_VOLUME_DOWN;KEYCODE_VOLUME_MUTE;KEYCODE_VOLUME_UP;KEYCODE_W;
+                    KEYCODE_WAKEUP;KEYCODE_WINDOW;KEYCODE_X;KEYCODE_Y;KEYCODE_YEN;KEYCODE_Z;KEYCODE_ZENKAKU_HANKAKU;
+                    KEYCODE_ZOOM_IN;KEYCODE_ZOOM_OUT;META_ALT_LEFT_ON;META_ALT_MASK;META_ALT_ON;META_ALT_RIGHT_ON;
+                    META_CAPS_LOCK_ON;META_CTRL_LEFT_ON;META_CTRL_MASK;META_CTRL_ON;META_CTRL_RIGHT_ON;META_FUNCTION_ON;
+                    META_META_LEFT_ON;META_META_MASK;META_META_ON;META_META_RIGHT_ON;META_NUM_LOCK_ON;META_SCROLL_LOCK_ON;
+                    META_SHIFT_LEFT_ON;META_SHIFT_MASK;META_SHIFT_ON;META_SHIFT_RIGHT_ON;META_SYM_ON;BTN_LEFT;BTN_RIGHT;
+                    BTN_MIDDLE;REL_X;REL_Y;REL_WHEEL;KEY_LEFTSHIFT;KEY_A;REP_DELAY;BTN_MOUSE</PossibleValues>
+                <DefaultValue />
+            </Parameter>
+            <Parameter name="TIMEOUT" type="INTEGER" isOptional="false">
+                <Description>Period for waiting to read the events, in seconds.</Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="BLE_GATT_START_SERVER" Domain="WIRELESS" SubDomain="BT" Feature="PAIR" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Wireless.BT.BLE.BleGattStartServer.BleGattStartServer</ClassName>
+        <Description>
+            This script implements the TestStep for starting a GATT Server
+        </Description>
+        <Environment name="ANY">
+        </Environment>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="GATT_SERVER_TYPE" type="STRING" isOptional="false">
+                <Description>Which type of GATT Server to create. You can either create a full, custom, GATT server or
+                    a bare one with no services. You will usually create the custom one for when you want to test out
+                    the GATT Client features while the bare one is more suitable for the testing of the GATT Server
+                    features. Possible values:
+                    CREATE_BARE_GATT_SERVER=BARE_GATT_SERVER,
+                    CREATE_FULL_CUSTOM_GATT_SERVER=FULL_CUSTOM_GATT_SERVER,
+                    CREATE_NOTIFICATION_GATT_SERVER=NOTIFICATION_GATT_SERVER
+                </Description>
+                <PossibleValues>CREATE_BARE_GATT_SERVER;BARE_GATT_SERVER;CREATE_FULL_CUSTOM_GATT_SERVER;
+                    FULL_CUSTOM_GATT_SERVER;CREATE_NOTIFICATION_GATT_SERVER;NOTIFICATION_GATT_SERVER</PossibleValues>
+                <DefaultValue />
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="BLE_GATT_STOP_SERVER_NO_ADVERTISING" Domain="WIRELESS" SubDomain="BT" Feature="PAIR" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Wireless.BT.BLE.BleGattStopServer.BleGattStopServer</ClassName>
+        <Description>
+            This script implements the TestStep for stopping the advertising of a GATT Server and to close and destroy
+            the server
+        </Description>
+        <Environment name="ANY">
+        </Environment>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="BLE_GATT_SERVER_INTERACT_NO_ADVERTISING" Domain="WIRELESS" SubDomain="BT" Feature="PAIR" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Wireless.BT.BLE.BleGattServerInteractNoAdvertising.BleGattServerInteractNoAdvertising</ClassName>
+        <Description>
+            This script implements the TestStep in which we check that when a GATT Characteristic is being reliably
+            written, the proper callback is accessed in our server
+        </Description>
+        <Environment name="ANY">
+        </Environment>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="OPERATION" type="STRING" isOptional="false">
+                <Description>The operation that is to be sent to our non-advertising GATT-Server. Possible values:
+                    ADD_DESCRIPTOR; ADD_CHARACTERISTIC; ADD_SERVICE;WRITE_CHARACT_CALLBACK;WRITE_DESCRIPTOR_CALLBACK;
+                    RELIABLE_WRITE_CALLBACK;READ_CHARACT_CALLBACK;READ_DESCRIPTOR_CALLBACK
+                </Description>
+                <PossibleValues>ADD_DESCRIPTOR; ADD_CHARACTERISTIC; ADD_SERVICE;WRITE_CHARACT_CALLBACK;
+                    WRITE_DESCRIPTOR_CALLBACK;RELIABLE_WRITE_CALLBACK;READ_CHARACT_CALLBACK;
+                    READ_DESCRIPTOR_CALLBACK;0;1;2;3;4;5;6;7</PossibleValues>
+                <DefaultValue />
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="BT_REFRESH_SCAN" Domain="WIRELESS" SubDomain="BT" Feature="COMMON" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Wireless.BT.BtRefreshScan.BtRefreshScan</ClassName>
+        <Description>
+            Python UIAutomator test step that refreshes the scan from the Settings UI. This teststep assumes that you
+            are already in the Bluetooth Settings menu.
+        </Description>
+        <Environment name="ANY">
+        </Environment>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="DEVICE_NAME_TO_FIND" type="STRING" isOptional="false">
+                <Description>The name of the Reference Device that we are looking for</Description>
+                <PossibleValues />
+                <DefaultValue>true</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="BT_INITIATE_PAIR" Domain="WIRELESS" SubDomain="BT" Feature="PAIR" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Wireless.BT.BtInitiatePair.BtInitiatePair</ClassName>
+        <Description>
+            This method, unlike BT_PAIR, expects the final state to be BONDING.
+            We use this test step when we have to input commands on a peripheral device as well before the operations
+            are complete.
+            Pair the device identified by DEVICE arg to the device identified by BDADDR.
+            If pairing doesn't succeed, an error will be raised.
+            If UNPAIR_FIRST is True BDADDR device gets unpaired if already paired. By default is False.
+            If ACCEPT_PAIRING is False DEVICE will eventually reject tha pairing. By default is True.
+            PASS_KEY can be used where pairing required an integer value as pin.
+            PIN_CODE can be used when pairing required an halfanumeric value as pin.
+        </Description>
+        <Environment name="ANY">
+        </Environment>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="BDADDR" type="STRING" isOptional="false">
+                <Description>The bluetooth address of the device to pair with</Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+            <Parameter name="UNPAIR_FIRST" type="BOOLEAN" isOptional="false">
+                <Description>If true and the device identified by BDADDR is already paired, it gets unpaired</Description>
+                <PossibleValues />
+                <DefaultValue>false</DefaultValue>
+            </Parameter>
+            <Parameter name="ACCEPT_PAIRING" type="BOOLEAN" isOptional="false">
+                <Description>If true the pairing will be accepted, otherwise it will be rejected</Description>
+                <PossibleValues />
+                <DefaultValue>true</DefaultValue>
+            </Parameter>
+            <Parameter name="PASS_KEY" type="INTEGER" isOptional="false">
+                <Description>Defines the passkey (used for some kind of pairing)</Description>
+                <PossibleValues />
+                <DefaultValue>0</DefaultValue>
+            </Parameter>
+            <Parameter name="PIN_CODE" type="STRING" isOptional="false">
+                <Description>Defines the pincode (used for some kind of pairing)</Description>
+                <PossibleValues />
+                <DefaultValue>0000</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="BT_ALLOW_PROFILE" Domain="WIRELESS" SubDomain="BT" Feature="COMMON" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Wireless.BT.BtAllowProfile.BtAllowProfile</ClassName>
+        <Description>
+            This teststep checks a checkbox profile into pair request window from UI
+        </Description>
+        <Environment name="ANY">
+        </Environment>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="PROFILE" type="STRING" isOptional="false">
+                <Description>The profile to check into pair request window</Description>
+                <PossibleValues>PBAP</PossibleValues>
+                <DefaultValue />
+            </Parameter>
+            <Parameter name="FAIL_IF_ALREADY" type="BOOLEAN" isOptional="false">
+                <Description>Boolean variable to specify if teststep should fail if profile is already checked</Description>
+                <PossibleValues />
+                <DefaultValue>true</DefaultValue>
+            </Parameter>
+            <Parameter name="MUST_EXIST" type="BOOLEAN" isOptional="false">
+                <Description>Boolean variable to specify if teststep should fail if checkbox must appear into pair request window</Description>
+                <PossibleValues />
+                <DefaultValue>false</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+</TestSteps>

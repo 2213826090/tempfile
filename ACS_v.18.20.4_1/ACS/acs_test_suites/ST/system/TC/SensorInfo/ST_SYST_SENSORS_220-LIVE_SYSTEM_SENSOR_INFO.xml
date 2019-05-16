@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase>
+	<UseCase>LIVE_SYSTEM_SENSOR_INFO</UseCase>
+	<Description>Test different sensor's list information</Description>
+	<b2bIteration>1</b2bIteration>
+	<b2bContinuousMode>False</b2bContinuousMode>
+	<Parameters>
+		<Parameter>
+			<!--The name of sensor to be test
+				The possible value could be:
+				accelerometer/compass/gyroscope/orientation/
+				barometer/proximity/light/temperature/gravity/
+				rotation_vector/linear_accelerometer
+			-->
+			<Name>SENSOR</Name>
+			<Value>rotation_vector</Value>
+		</Parameter>
+		<Parameter>
+			<!--The information to be check	 
+				The possible value could be:
+				number/list
+			-->
+			<Name>INFORMATION</Name>
+			<Value>list</Value>
+		</Parameter>
+		<Parameter>
+			<!--The value should get from device.
+				you can specify the number of sensor in this parameter.
+				For example 1, there is only one sensor on the device.
+			-->
+			<Name>VALUE</Name>
+			<Value>reserve</Value>
+		</Parameter>
+	</Parameters>
+</TestCase>

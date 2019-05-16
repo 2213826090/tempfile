@@ -1,0 +1,73 @@
+ModuleConfiguration:
+
+    # this entry is the default camera for this board when several exist
+    default_camera_package: "camera_google"
+
+    # the available camera application installed on the board
+    camera_package:
+        camera: "com.android.camera"
+        camera2: "com.android.camera2"
+        camera_google: "com.google.android.GoogleCamera"
+
+    # the intent that start recording
+    open_camera_view_intent: 
+        camera: "-a android.media.action.VIDEO_CAMERA -n com.android.camera/com.android.camera.CameraLauncher"
+        camera2: "-a android.media.action.VIDEO_CAMERA -n com.android.camera2/com.android.camera.CameraLauncher"
+        camera_google: "-a android.media.action.VIDEO_CAMERA -n com.google.android.GoogleCamera/com.android.camera.CameraLauncher"
+
+    # if there is a specific action for a camera
+    # add it to each impacted dictionaries, otherwise the default will be used
+
+    # use to edit the setting of the camera trough sysfs
+    prefs_setting_path: 
+        camera: "/data/data/com.android.camera/shared_prefs/com.android.camera__preferences.xml"
+        camera2: "/data/data/com.android.camera2/shared_prefs/com.android.camera2_preferences.xml"
+        camera_google: "/data/data/com.google.android.GoogleCamera/shared_prefs/com.google.android.GoogleCamera_preferences.xml"
+        
+    # keycode to start the recording
+    keycode_start_recording:
+        default: [80, 27]
+        camera_google: [80, 27]
+
+    # keycode to stop the recording
+    keycode_stop_recording:
+        default: [4, 3]
+
+    # path where the raw file is generated
+    video_storage_path: 
+      default: "/sdcard/DCIM/*/"
+
+    # these entry are related to camera settings, it help to edit the camera option
+    prefs_setting_option_names: 
+        camera_google: {
+              QUALITY_BACK_CAMERA: {option_name: "pref_video_quality_back_key", 
+                                    option_type: "string",
+                                    option_value: {"1080P": "large",  "720P": "medium", "480P": "small"}},
+              QUALITY_FRONT_CAMERA: {option_name: "pref_video_quality_front_key", 
+                                    option_type: "string",
+                                    option_value: {"720P": "large", "480P": "medium"}},
+              SKIP_WIZARD: {option_name: "pref_camera_recordlocation_key", 
+                                    option_type: "string",
+                                    option_value: {"ON": "0", "OFF": "1"}}}
+        camera: {
+              QUALITY_BACK_CAMERA: {option_name: "pref_video_quality_back_key", 
+                                    option_type: "string",
+                                    option_value: {"1080P": "large",  "720P": "medium", "480P": "small"}},
+              SKIP_WIZARD: {option_name: "pref_camera_recordlocation_key", 
+                                    option_type: "string",
+                                    option_value: {"ON": "0", "OFF": "1"}}}
+        camera2: {
+              QUALITY_BACK_CAMERA: {option_name: "pref_video_quality_back_key", 
+                                    option_type: "string",
+                                    option_value: {"1080P": "large",  "720P": "medium", "480P": "small"}},
+              SKIP_WIZARD_EXTRA_SETTING: {"camera.startup_module": ["string", 1],
+                                          "pref_should_show_settings_button_cling": ["string", 0],
+                                          "pref_has_seen_permissions_dialogs": ["string", 1]},
+              SKIP_WIZARD: {option_name: "pref_camera_recordlocation_key", 
+                                    option_type: "string",
+                                    option_value: {"ON": "0", "OFF": "1"}}}
+
+    # this entry is used byg Aplog uecmd class to parse camera info from aplog
+    CAMERA_TAG:
+        # special syntax for text that have several patterns to match
+        "RECORD_START": {"MAIN": "New video filename:", "NOT_SORTED": ["CAM_VideoModule"]}

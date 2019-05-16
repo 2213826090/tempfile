@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="13.37">
+    <UseCase>LAB_EM_PS_REBOOT</UseCase>
+    <Description>Perform shutdown with cable plug or unplug then boot.</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>False</b2bContinuousMode>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters>
+        <Parameter>
+            <!-- Vbatt Voltage -->
+            <Name>VBATT</Name>
+            <Value>3.8</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Cable to insert before shutdown : NONE, AC_CHGR or SDP -->
+            <Name>CABLE_TYPE</Name>
+            <Value>SDP</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Type of shutdown to perform : SOFT or HARD -->
+            <Name>SHUTDOWN_TYPE</Name>
+            <Value>SOFT</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

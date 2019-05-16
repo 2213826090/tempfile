@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase>
+    <UseCase>LAB_BT_A2DP_WITH_WIFI_ACTIVITY</UseCase>
+    <Description>Play music with Headset connected with A2DP BT Profile and WiFi activity</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>False</b2bContinuousMode>
+    <TcAcceptanceCriteria>PASS</TcAcceptanceCriteria>
+    <TcMaxAttempt>2</TcMaxAttempt>
+    <Parameters>
+        <Parameter>
+            <!-- Name of the access point -->
+            <Name>WIFI_ACCESS_POINT</Name>
+            <Value>B_ONLY_WIFI_ROUTER</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Audio file to play -->
+            <Name>AUDIO_FILE</Name>
+            <Value>A2DP_template3.mp3</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Duration of the test -->
+            <Name>DURATION</Name>
+            <Value>60</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Type of A2DP activity : A2DP_CHECK_AUDIO, A2DP_SWITCH_VOLUME, A2DP_SWITCH_SONG, A2DP_SWITCH_PLAYING -->
+            <Name>A2DP_ACTIVITY</Name>
+            <Value>A2DP_SWITCH_SONG</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Type of WiFi activity : WIFI_WEB_BROWSING, WIFI_FTP_DOWNLOAD -->
+            <Name>WIFI_ACTIVITY</Name>
+            <Value>WIFI_WEB_BROWSING</Value>
+        </Parameter>
+        <Parameter>
+            <!-- [Optional] Address used to browse in case of WIFI_ACTIVITY = WIFI_WEB_BROWSING -->
+            <Name>URL_TO_BROWSE</Name>
+            <Value>192.168.0.150</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

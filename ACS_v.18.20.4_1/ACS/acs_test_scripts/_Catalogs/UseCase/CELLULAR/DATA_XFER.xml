@@ -1,0 +1,2905 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<UseCases xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:noNamespaceSchemaLocation="../../../../acs/src/_Catalogs/UseCase/usecase.xsd">
+    <UseCase Id="LIVE_CELLULAR_FTP" Domain="CELLULAR" SubDomain="DATA_XFER" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Networking.LIVE_CELLULAR_FTP.LiveCellularFtp</ClassName>
+        <Description>FTP Upload / Download over Cellular Network</Description>
+        <Environment name="TEL">
+            <Capabilities>EQT_LIVE_USIM</Capabilities>
+            <Capabilities>SW_FTP_SERVER</Capabilities>
+        </Environment>
+        <Parameters>
+            <Parameter name="SERVER_NAME" type="TEST_SERVER" isOptional="true">
+                <Description>
+                    Server Configuration to use from Bench_Config.
+                    (i.e. LAB_SERVER or LIVE_SERVER)
+                </Description>
+                <PossibleValues/>
+                <DefaultValue>LIVE_SERVER</DefaultValue>
+                <Blank/>
+            </Parameter>
+            <Parameter name="DIRECTION" type="XFER_DIRECTION" isOptional="false">
+                <Description>Direction of FTP transfer.</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="DL_FILENAME" type="STRING" isOptional="false">
+                <Description>
+                    File to download from the server. This file shall be available on the server.
+                    ACS gets its path value from BenchConfig using ftp_path key of SERVER equipments (WIFI_SERVER,
+                    LAB_SERVER...)
+                    If the file to transfer is located in an other specific directory,
+                    you can specify its path. i.e. : acs/download_file/get5M
+                </Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="UL_FILENAME" type="STRING" isOptional="false">
+                <Description>
+                    File to upload on the server. This file shall be available on the device.
+                    ACS gets its path value from DeviceCatalog, BenchConfig or CLI using key ftpPath
+                    If the file to transfer is located in an other specific directory,
+                    you can specify its path. i.e. : acs/upload_file/put5M
+                </Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="XFER_TIMEOUT" type="TIMEOUT_IN_SEC" isOptional="false">
+                <Description>Transfer timeout in second.</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="PREFERRED_NETWORK_TYPE" type="NETWORK_PREFERENCES" isOptional="true">
+                <Description>Preferred network to use for the test.</Description>
+                <PossibleValues/>
+                <DefaultValue>GLOBAL</DefaultValue>
+                <Blank/>
+            </Parameter>
+        </Parameters>
+    </UseCase>
+    <UseCase Id="LIVE_CELLULAR_IPERF" Domain="CELLULAR" SubDomain="DATA_XFER" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Networking.LIVE_CELLULAR_IPERF.LiveCellularIperf</ClassName>
+        <Description>Throughput Measurement using IPERF over Cellular Network</Description>
+        <Environment name="TEL">
+            <Dependency>EQT_LIVE_USIM</Dependency>
+            <Dependency>SW_IPERF_SERVER</Dependency>
+        </Environment>
+    </UseCase>
+    <UseCase Id="LAB_GPRS_FTP" Domain="CELLULAR" SubDomain="DATA_XFER" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Networking.LAB_GPRS_FTP.LabGprsFtp</ClassName>
+        <Description>FTP Upload_Download over GPRS on simulated network</Description>
+        <Environment name="TEL">
+            <Capabilities>EQT_AG_8960</Capabilities>
+            <Capabilities>SW_FTP_SERVER</Capabilities>
+        </Environment>
+        <Parameters>
+            <Parameter name="CELL_BAND" type="CELL_BAND_2G" isOptional="false">
+                <!-- Field optional (PossibleValues, DefaultValue, Blank) if possible value not override available -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue>RGSM</DefaultValue>
+                <Blank/>
+                <Dependencies>
+                    <Dependency isOptional="false">BCH_ARFCN</Dependency>
+                </Dependencies>
+            </Parameter>
+            <Parameter name="CELL_POWER" type="CELL_POWER_IN_DBM" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="MULTISLOT_CONFIG" type="MULTISLOT_CONFIG" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="UL_CS" type="CHANNEL_CODING_SCHEME" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="DL_CS" type="CHANNEL_CODING_SCHEME" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="DIRECTION" type="XFER_DIRECTION" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="DL_FILENAME" type="DL_FILENAME" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="UL_FILENAME" type="UL_FILENAME" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="XFER_TIMEOUT" type="TIMEOUT_IN_SEC" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+        </Parameters>
+    </UseCase>
+    <UseCase Id="LAB_GPRS_IPERF" Domain="CELLULAR" SubDomain="DATA_XFER" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Networking.LAB_GPRS_IPERF.LabGprsIperf</ClassName>
+        <Description>GPRS throughput measurement using IPERF on simulated network</Description>
+        <Environment name="TEL">
+            <Capabilities>EQT_AG_8960</Capabilities>
+            <Capabilities>SW_IPERF_SERVER</Capabilities>
+        </Environment>
+        <Parameters>
+            <Parameter name="CELL_BAND" type="CELL_BAND_2G" isOptional="false">
+                <!-- Field optional (PossibleValues, DefaultValue, Blank) if possible value not override available -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue>RGSM</DefaultValue>
+                <Blank/>
+                <Dependencies>
+                    <Dependency isOptional="false">BCH_ARFCN</Dependency>
+                </Dependencies>
+            </Parameter>
+            <Parameter name="CELL_POWER" type="CELL_POWER_IN_DBM" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="MULTISLOT_CONFIG" type="MULTISLOT_CONFIG" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="UL_CS" type="CHANNEL_CODING_SCHEME" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="DL_CS" type="CHANNEL_CODING_SCHEME" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="PORT" type="IPERF_PORT" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="DURATION" type="DURATION_IN_SEC" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="IPERF_PROTOCOL" type="TRANSPORT_PROTOCOL" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="DIRECTION" type="XFER_DIRECTION" isOptional="false">
+                <!-- Type of data transfer (UL/DL/BOTH) -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="IPERF_TUNE_OPTIONS" type="BOOLEAN" isOptional="true">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="WINDOW_SIZE" type="WINDOW_SIZE" isOptional="true">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="SERVER_WINDOW_SIZE" type="WINDOW_SIZE" isOptional="true">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="PARALLEL_THREAD" type="INTEGER" isOptional="true">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+        </Parameters>
+    </UseCase>
+    <UseCase Id="LAB_EGPRS_PING_MO" Domain="CELLULAR" SubDomain="DATA_XFER" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Networking.LAB_EGPRS_PING_MO.LabEgprsPingMo</ClassName>
+        <Description>Ping over EGPRS simulated network</Description>
+        <Environment name="TEL">
+            <Capabilities>EQT_AG_8960</Capabilities>
+        </Environment>
+        <Parameters>
+            <Parameter name="CELL_BAND" type="CELL_BAND_2G" isOptional="false">
+                <!-- Field optional (PossibleValues, DefaultValue, Blank) if possible value not override available -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue>RGSM</DefaultValue>
+                <Blank/>
+                <Dependencies>
+                    <Dependency isOptional="false">BCH_ARFCN</Dependency>
+                </Dependencies>
+            </Parameter>
+            <Parameter name="CELL_POWER" type="CELL_POWER_IN_DBM" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="MULTISLOT_CONFIG" type="MULTISLOT_CONFIG" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="UL_MCS" type="UL_MCS" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="DL_MCS" type="DL_MCS" isOptional="false">
+                <!-- Field optional (PossibleValues, DefaultValue, Blank) if possible value not override available -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue>DL_MCS1</DefaultValue>
+                <Blank/>
+                <Dependencies>
+                    <Dependency isOptional="false">PS_MCS</Dependency>
+                </Dependencies>
+            </Parameter>
+            <Parameter name="PACKET_COUNT" type="DATA_PACKET_COUNT" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="PACKET_SIZE" type="DATA_PACKET_SIZE_IN_BYTES" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+        </Parameters>
+    </UseCase>
+    <UseCase Id="LAB_EGPRS_PDP_DEACTIVATE_REACTIVATE" Domain="CELLULAR" SubDomain="DATA_XFER" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Networking.LAB_EGPRS_PDP_DEACTIVATE_REACTIVATE.LabEgprsPdpDeactivateReactivate</ClassName>
+        <Description>Deactivate then reactivate PDP context on EGPRS simulated network</Description>
+        <Environment name="TEL">
+            <Capabilities>EQT_AG_8960</Capabilities>
+        </Environment>
+        <Parameters>
+            <Parameter name="CELL_BAND" type="CELL_BAND_2G" isOptional="false">
+                <!-- Field optional (PossibleValues, DefaultValue, Blank) if possible value not override available -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue>RGSM</DefaultValue>
+                <Blank/>
+                <Dependencies>
+                    <Dependency isOptional="false">BCH_ARFCN</Dependency>
+                </Dependencies>
+            </Parameter>
+            <Parameter name="CELL_POWER" type="CELL_POWER_IN_DBM" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="MULTISLOT_CONFIG" type="MULTISLOT_CONFIG" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="UL_MCS" type="UL_MCS" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="DL_MCS" type="DL_MCS" isOptional="false">
+                <!-- Field optional (PossibleValues, DefaultValue, Blank) if possible value not override available -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue>DL_MCS1</DefaultValue>
+                <Blank/>
+                <Dependencies>
+                    <Dependency isOptional="false">PS_MCS</Dependency>
+                </Dependencies>
+            </Parameter>
+            <Parameter name="TARGET_PACKET_LOSS_RATE" type="DATA_PACKET_LOSS_RATE_IN_PERCENT" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+        </Parameters>
+    </UseCase>
+    <UseCase Id="LAB_EGPRS_FTP" Domain="CELLULAR" SubDomain="DATA_XFER" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Networking.LAB_EGPRS_FTP.LabEgprsFtp</ClassName>
+        <Description>FTP Upload_Download over EGPRS on simulated network</Description>
+        <Environment name="TEL">
+            <Capabilities>EQT_AG_8960</Capabilities>
+            <Capabilities>SW_FTP_SERVER</Capabilities>
+        </Environment>
+        <Parameters>
+            <Parameter name="CELL_BAND" type="CELL_BAND_2G" isOptional="false">
+                <!-- Field optional (PossibleValues, DefaultValue, Blank) if possible value not override available -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue>RGSM</DefaultValue>
+                <Blank/>
+                <Dependencies>
+                    <Dependency isOptional="false">BCH_ARFCN</Dependency>
+                </Dependencies>
+            </Parameter>
+            <Parameter name="CELL_POWER" type="CELL_POWER_IN_DBM" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="MULTISLOT_CONFIG" type="MULTISLOT_CONFIG" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="UL_MCS" type="UL_MCS" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="DL_MCS" type="DL_MCS" isOptional="false">
+                <!-- Field optional (PossibleValues, DefaultValue, Blank) if possible value not override available -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue>DL_MCS1</DefaultValue>
+                <Blank/>
+                <Dependencies>
+                    <Dependency isOptional="false">PS_MCS</Dependency>
+                </Dependencies>
+            </Parameter>
+            <Parameter name="DIRECTION" type="XFER_DIRECTION" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="DL_FILENAME" type="DL_FILENAME" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="UL_FILENAME" type="UL_FILENAME" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="XFER_TIMEOUT" type="TIMEOUT_IN_SEC" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+        </Parameters>
+    </UseCase>
+    <UseCase Id="LAB_EGPRS_IPERF" Domain="CELLULAR" SubDomain="DATA_XFER" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Networking.LAB_EGPRS_IPERF.LabEgprsIperf</ClassName>
+        <Description>EGPRS throughput measurement using IPERF on simulated network</Description>
+        <Environment name="TEL">
+            <Dependency>EQT_AG_8960</Dependency>
+            <Dependency>SW_IPERF_SERVER</Dependency>
+        </Environment>
+    </UseCase>
+    <UseCase Id="LAB_WCDMA_PING_MO" Domain="CELLULAR" SubDomain="DATA_XFER" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Networking.LAB_WCDMA_PING_MO.LabWcdmaPingMo</ClassName>
+        <Description>Ping over WCDMA simulated network</Description>
+        <Environment name="TEL">
+            <Capabilities>EQT_AG_8960</Capabilities>
+        </Environment>
+        <Parameters>
+            <Parameter name="HPLMN_COVERAGE" type="IS_HPLMN_COVERAGE_AVAILABLE" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="MCC" type="MCC" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="MNC" type="MNC" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="CELL_BAND" type="CELL_BAND_3G" isOptional="false">
+                <!-- Field optional (PossibleValues, DefaultValue, Blank) if possible value not override available -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue>1</DefaultValue>
+                <Blank/>
+                <Dependencies>
+                    <Dependency isOptional="false">DL_UARFCN</Dependency>
+                </Dependencies>
+            </Parameter>
+            <Parameter name="CELL_SERVICE" type="CELL_SERVICE_3G" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="CELL_POWER" type="CELL_POWER_IN_DBM" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="UL_RAB" type="RADIO_ACCESS_BEARER" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="DL_RAB" type="RADIO_ACCESS_BEARER" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="PACKET_COUNT" type="DATA_PACKET_COUNT" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="PACKET_SIZE" type="DATA_PACKET_SIZE_IN_BYTES" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+        </Parameters>
+    </UseCase>
+    <UseCase Id="LAB_WCDMA_PDP_DEACTIVATE_REACTIVATE" Domain="CELLULAR" SubDomain="DATA_XFER" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Networking.LAB_WCDMA_PDP_DEACTIVATE_REACTIVATE.LabWcdmaPdpDeactivateReactivate</ClassName>
+        <Description>Deactivate then reactivate PDP context over WCDMA simulated network</Description>
+        <Environment name="TEL">
+            <Capabilities>EQT_AG_8960</Capabilities>
+        </Environment>
+        <Parameters>
+            <Parameter name="HPLMN_COVERAGE" type="IS_HPLMN_COVERAGE_AVAILABLE" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="MCC" type="MCC" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="MNC" type="MNC" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="CELL_BAND" type="CELL_BAND_3G" isOptional="false">
+                <!-- Field optional (PossibleValues, DefaultValue, Blank) if possible value not override available -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue>1</DefaultValue>
+                <Blank/>
+                <Dependencies>
+                    <Dependency isOptional="false">DL_UARFCN</Dependency>
+                </Dependencies>
+            </Parameter>
+            <Parameter name="CELL_SERVICE" type="CELL_SERVICE_3G" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="CELL_POWER" type="CELL_POWER_IN_DBM" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="UL_RAB" type="RADIO_ACCESS_BEARER" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="DL_RAB" type="RADIO_ACCESS_BEARER" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="TARGET_PACKET_LOSS_RATE" type="DATA_PACKET_LOSS_RATE_IN_PERCENT" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+        </Parameters>
+    </UseCase>
+    <UseCase Id="LAB_WCDMA_FTP" Domain="CELLULAR" SubDomain="DATA_XFER" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Networking.LAB_WCDMA_FTP.LabWcdmaFtp</ClassName>
+        <Description>FTP Upload_Download over WCDMA on simulated network</Description>
+        <Environment name="TEL">
+            <Capabilities>EQT_AG_8960</Capabilities>
+            <Capabilities>SW_FTP_SERVER</Capabilities>
+        </Environment>
+        <Parameters>
+            <Parameter name="HPLMN_COVERAGE" type="IS_HPLMN_COVERAGE_AVAILABLE" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="MCC" type="MCC" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="MNC" type="MNC" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="CELL_BAND" type="CELL_BAND_3G" isOptional="false">
+                <!-- Field optional (PossibleValues, DefaultValue, Blank) if possible value not override available -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue>1</DefaultValue>
+                <Blank/>
+                <Dependencies>
+                    <Dependency isOptional="false">DL_UARFCN</Dependency>
+                </Dependencies>
+            </Parameter>
+            <Parameter name="CELL_SERVICE" type="CELL_SERVICE_3G" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="CELL_POWER" type="CELL_POWER_IN_DBM" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="UL_RAB" type="RADIO_ACCESS_BEARER" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="DL_RAB" type="RADIO_ACCESS_BEARER" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="IP_VERSION" type="IP_VERSION" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="DIRECTION" type="XFER_DIRECTION" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="DL_FILENAME" type="DL_FILENAME" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="UL_FILENAME" type="UL_FILENAME" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="XFER_TIMEOUT" type="TIMEOUT_IN_SEC" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+        </Parameters>
+    </UseCase>
+    <UseCase Id="LAB_WCDMA_HHO_FTP" Domain="CELLULAR" SubDomain="DATA_XFER" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Networking.LAB_WCDMA_HHO_FTP.LabWcdmaHhoFtp</ClassName>
+        <Description>FTP Upload_Download over WCDMA with Hard HandOver between two cell on simulated network</Description>
+        <Environment name="TEL">
+            <Capabilities>EQT_AG_8960</Capabilities>
+            <Capabilities>SW_FTP_SERVER</Capabilities>
+        </Environment>
+        <Parameters>
+            <Parameter name="HPLMN_COVERAGE" type="IS_HPLMN_COVERAGE_AVAILABLE" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="MCC" type="MCC" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="MNC" type="MNC" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="CELL_BAND" type="CELL_BAND_3G" isOptional="false">
+                <!-- Field optional (PossibleValues, DefaultValue, Blank) if possible value not override available -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue>1</DefaultValue>
+                <Blank/>
+                <Dependencies>
+                    <Dependency isOptional="false">DL_UARFCN</Dependency>
+                </Dependencies>
+            </Parameter>
+            <Parameter name="CELL_SERVICE" type="CELL_SERVICE_3G" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="CELL_POWER" type="CELL_POWER_IN_DBM" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="UL_RAB" type="RADIO_ACCESS_BEARER" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="DL_RAB" type="RADIO_ACCESS_BEARER" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="IP_VERSION" type="IP_VERSION" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="DIRECTION" type="XFER_DIRECTION" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="DL_FILENAME" type="DL_FILENAME" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="UL_FILENAME" type="UL_FILENAME" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="XFER_TIMEOUT" type="TIMEOUT_IN_SEC" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+        </Parameters>
+    </UseCase>
+    <UseCase Id="LAB_WCDMA_IPERF" Domain="CELLULAR" SubDomain="DATA_XFER" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Networking.LAB_WCDMA_IPERF.LabWcdmaIperf</ClassName>
+        <Description>WCDMA Throughput Measurement using IPERF</Description>
+        <Environment name="TEL">
+            <Capabilities>EQT_AG_8960</Capabilities>
+            <Capabilities>SW_IPERF_SERVER</Capabilities>
+        </Environment>
+        <Parameters>
+            <Parameter name="HPLMN_COVERAGE" type="IS_HPLMN_COVERAGE_AVAILABLE" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="MCC" type="MCC" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="MNC" type="MNC" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="CELL_BAND" type="CELL_BAND_3G" isOptional="false">
+                <!-- Field optional (PossibleValues, DefaultValue, Blank) if possible value not override available -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue>1</DefaultValue>
+                <Blank/>
+                <Dependencies>
+                    <Dependency isOptional="false">DL_UARFCN</Dependency>
+                </Dependencies>
+            </Parameter>
+            <Parameter name="CELL_SERVICE" type="CELL_SERVICE_3G" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="CELL_POWER" type="CELL_POWER_IN_DBM" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="UL_RAB" type="RADIO_ACCESS_BEARER" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="DL_RAB" type="RADIO_ACCESS_BEARER" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="PORT" type="IPERF_PORT" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="DURATION" type="DURATION_IN_SEC" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="IPERF_PROTOCOL" type="TRANSPORT_PROTOCOL" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="DIRECTION" type="XFER_DIRECTION" isOptional="false">
+                <!-- Type of data transfer (UL/DL/BOTH) -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="IPERF_TUNE_OPTIONS" type="BOOLEAN" isOptional="true">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="WINDOW_SIZE" type="WINDOW_SIZE" isOptional="true">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="SERVER_WINDOW_SIZE" type="WINDOW_SIZE" isOptional="true">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="PARALLEL_THREAD" type="INTEGER" isOptional="true">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+        </Parameters>
+    </UseCase>
+    <UseCase Id="LAB_HSPA_PING_MO" Domain="CELLULAR" SubDomain="DATA_XFER" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Networking.LAB_HSPA_PING_MO.LabHspaPingMo</ClassName>
+        <Description>Ping over HSPA simulated network</Description>
+        <Environment name="TEL">
+            <Capabilities>EQT_AG_8960</Capabilities>
+        </Environment>
+        <Parameters>
+            <Parameter name="CELL_BAND" type="CELL_BAND_3G" isOptional="false">
+                <!-- Field optional (PossibleValues, DefaultValue, Blank) if possible value not override available -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue>1</DefaultValue>
+                <Blank/>
+                <Dependencies>
+                    <Dependency isOptional="false">DL_UARFCN</Dependency>
+                </Dependencies>
+            </Parameter>
+            <Parameter name="CELL_SERVICE" type="CELL_SERVICE_3G" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="CELL_POWER" type="CELL_POWER_IN_DBM" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="IP_VERSION" type="IP_VERSION" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="UL_RAB" type="RADIO_ACCESS_BEARER" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="DL_RAB" type="RADIO_ACCESS_BEARER" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="CPC" type="CPC_TTI" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="CQI_SCHEME" type="CQI_REPORTING_SCHEME" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="MAC_D_PDU_SIZE" type="MAC_D_PDU_SIZE" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="PACKET_COUNT" type="DATA_PACKET_COUNT" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="PACKET_SIZE" type="DATA_PACKET_SIZE_IN_BYTES" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+        </Parameters>
+    </UseCase>
+    <UseCase Id="LAB_HSPA_FTP" Domain="CELLULAR" SubDomain="DATA_XFER" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Networking.LAB_HSPA_FTP.LabHspaFtp</ClassName>
+        <Description>FTP Upload_Download over HSUPA_HSDPA on simulated network</Description>
+        <Environment name="TEL">
+            <Capabilities>EQT_AG_8960</Capabilities>
+            <Capabilities>SW_FTP_SERVER</Capabilities>
+        </Environment>
+        <Parameters>
+            <Parameter name="CELL_BAND" type="CELL_BAND_3G" isOptional="false">
+                <!-- Field optional (PossibleValues, DefaultValue, Blank) if possible value not override available -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue>1</DefaultValue>
+                <Blank/>
+                <Dependencies>
+                    <Dependency isOptional="false">DL_UARFCN</Dependency>
+                </Dependencies>
+            </Parameter>
+            <Parameter name="CELL_SERVICE" type="CELL_SERVICE_3G" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="CELL_POWER" type="CELL_POWER_IN_DBM" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="IP_VERSION" type="IP_VERSION" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="UL_RAB" type="RADIO_ACCESS_BEARER" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="DL_RAB" type="RADIO_ACCESS_BEARER" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="CPC" type="CPC_TTI" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="CQI_SCHEME" type="CQI_REPORTING_SCHEME" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="MAC_D_PDU_SIZE" type="MAC_D_PDU_SIZE" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="DIRECTION" type="XFER_DIRECTION" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="DL_FILENAME" type="DL_FILENAME" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="UL_FILENAME" type="UL_FILENAME" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="XFER_TIMEOUT" type="TIMEOUT_IN_SEC" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="FAILURE_TARGETS" type="THROUGHPUT_IN_KBPS" isOptional="true">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+        </Parameters>
+    </UseCase>
+    <UseCase Id="LAB_HSPA_MULTI_FTP" Domain="CELLULAR" SubDomain="DATA_XFER" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Networking.LAB_HSPA_MULTI_FTP.LabHspaMultiFtp</ClassName>
+        <Description>multiple FTP Upload_Download over HSUPA_HSDPA on simulated network</Description>
+        <Environment name="TEL">
+            <Capabilities>EQT_AG_8960</Capabilities>
+            <Capabilities>SW_FTP_SERVER</Capabilities>
+        </Environment>
+        <Parameters>
+            <Parameter name="CELL_BAND" type="CELL_BAND_3G" isOptional="false">
+                <!-- Field optional (PossibleValues, DefaultValue, Blank) if possible value not override available -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue>1</DefaultValue>
+                <Blank/>
+                <Dependencies>
+                    <Dependency isOptional="false">DL_UARFCN</Dependency>
+                </Dependencies>
+            </Parameter>
+            <Parameter name="CELL_SERVICE" type="CELL_SERVICE_3G" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="CELL_POWER" type="CELL_POWER_IN_DBM" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="IP_VERSION" type="IP_VERSION" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="UL_RAB" type="RADIO_ACCESS_BEARER" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="DL_RAB" type="RADIO_ACCESS_BEARER" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="CPC" type="CPC_TTI" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="CQI_SCHEME" type="CQI_REPORTING_SCHEME" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="MAC_D_PDU_SIZE" type="MAC_D_PDU_SIZE" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="DIRECTION" type="XFER_DIRECTION" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="DL_FILENAME" type="DL_FILENAME" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="UL_FILENAME" type="UL_FILENAME" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="XFER_TIMEOUT" type="TIMEOUT_IN_SEC" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="FAILURE_TARGETS" type="THROUGHPUT_IN_KBPS" isOptional="true">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="NB_TRANSFER" type="INTEGER" isOptional="true">
+                <Description>Number of UL or DL parralell transfer to start</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+        </Parameters>
+    </UseCase>
+    <UseCase Id="LAB_HSPA_IPERF" Domain="CELLULAR" SubDomain="DATA_XFER" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Networking.LAB_HSPA_IPERF.LabHspaIperf</ClassName>
+        <Description>HSPA Throughput Measurement using IPERF</Description>
+        <Environment name="TEL">
+            <Capabilities>EQT_AG_8960</Capabilities>
+            <Capabilities>SW_IPERF_SERVER</Capabilities>
+        </Environment>
+        <Parameters>
+            <Parameter name="CELL_BAND" type="CELL_BAND_3G" isOptional="false">
+                <!-- Field optional (PossibleValues, DefaultValue, Blank) if possible value not override available -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue>1</DefaultValue>
+                <Blank/>
+                <Dependencies>
+                    <Dependency isOptional="false">DL_UARFCN</Dependency>
+                </Dependencies>
+            </Parameter>
+            <Parameter name="CELL_SERVICE" type="CELL_SERVICE_3G" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="IP_VERSION" type="IP_VERSION" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="CELL_POWER" type="CELL_POWER_IN_DBM" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="UL_RAB" type="RADIO_ACCESS_BEARER" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="DL_RAB" type="RADIO_ACCESS_BEARER" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="CPC" type="CPC_TTI" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="CQI_SCHEME" type="CQI_REPORTING_SCHEME" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="MAC_D_PDU_SIZE" type="MAC_D_PDU_SIZE" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="PORT" type="IPERF_PORT" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="DURATION" type="DURATION_IN_SEC" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="IPERF_PROTOCOL" type="TRANSPORT_PROTOCOL" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="COMPUTER" type="REMOTE_COMPUTER" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue>COMPUTER2</DefaultValue>
+                <Blank/>
+            </Parameter>
+            <Parameter name="DIRECTION" type="XFER_DIRECTION" isOptional="false">
+                <!-- Type of data transfer (UL/DL/BOTH) -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="IPERF_TUNE_OPTIONS" type="BOOLEAN" isOptional="true">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="WINDOW_SIZE" type="WINDOW_SIZE" isOptional="true">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="SERVER_WINDOW_SIZE" type="WINDOW_SIZE" isOptional="true">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="PARALLEL_THREAD" type="INTEGER" isOptional="true">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="KPI_TEST" type="BOOLEAN" isOptional="true">
+                <!-- Optional: Specify if test is a PI/KPI test -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+        </Parameters>
+    </UseCase>
+    <UseCase Id="LAB_TDSCDMA_FTP" Domain="CELLULAR" SubDomain="DATA_XFER" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Networking.LAB_TDSCDMA_FTP.LabTdscdmaFtp</ClassName>
+        <Description>FTP Upload_Download over TDSCDMA on simulated network</Description>
+        <Environment name="TEL">
+            <Capabilities>EQT_AG_8960</Capabilities>
+            <Capabilities>SW_FTP_SERVER</Capabilities>
+        </Environment>
+        <Parameters>
+            <Parameter name="CELL_POWER" type="CELL_POWER_IN_DBM" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="CELL_BAND" type="CELL_BAND_TDSCDMA" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="IP_VERSION" type="IP_VERSION" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="DIRECTION" type="XFER_DIRECTION" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="DL_FILENAME" type="DL_FILENAME" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="UL_FILENAME" type="UL_FILENAME" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="XFER_TIMEOUT" type="TIMEOUT_IN_SEC" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="FAILURE_TARGETS" type="THROUGHPUT_IN_KBPS" isOptional="true">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+        </Parameters>
+    </UseCase>
+    <UseCase Id="LAB_TDSCDMA_IPERF" Domain="CELLULAR" SubDomain="DATA_XFER" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Networking.LAB_TDSCDMA_IPERF.LabTdscdmaIperf</ClassName>
+        <Description>TD-SCDMA Throughput Measurement using IPERF</Description>
+        <Environment name="TEL">
+            <Capabilities>EQT_AG_8960</Capabilities>
+            <Capabilities>SW_IPERF_SERVER</Capabilities>
+        </Environment>
+        <Parameters>
+            <Parameter name="CELL_POWER" type="CELL_POWER_IN_DBM" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="CELL_BAND" type="CELL_BAND_TDSCDMA" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="IP_VERSION" type="IP_VERSION" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="PORT" type="IPERF_PORT" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="DURATION" type="DURATION_IN_SEC" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="IPERF_PROTOCOL" type="TRANSPORT_PROTOCOL" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="IPERF_BANDWIDTH" type="IPERF_BANDWIDTH" isOptional="true">
+                <!-- Bandwidth only applicable in UDP, in Kbits/sec or Mbits/sec (use K or M. Ex: 10M) -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="COMPUTER" type="REMOTE_COMPUTER" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue>COMPUTER2</DefaultValue>
+                <Blank/>
+            </Parameter>
+            <Parameter name="DIRECTION" type="XFER_DIRECTION" isOptional="false">
+                <!-- Type of data transfer (UL/DL/BOTH) -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="IPERF_TUNE_OPTIONS" type="BOOLEAN" isOptional="true">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="WINDOW_SIZE" type="WINDOW_SIZE" isOptional="true">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="SERVER_WINDOW_SIZE" type="WINDOW_SIZE" isOptional="true">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="PARALLEL_THREAD" type="INTEGER" isOptional="true">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="KPI_TEST" type="BOOLEAN" isOptional="true">
+                <!-- Optional: Specify if test is a PI/KPI test -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+        </Parameters>
+    </UseCase>
+    <UseCase Id="LAB_LTE_PING_MO" Domain="CELLULAR" SubDomain="DATA_XFER" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Networking.LAB_LTE_PING_MO.LabLtePingMo</ClassName>
+        <Description>Ping over LTE simulated network</Description>
+        <Environment name="TEL">
+            <Capabilities>EQT_AG_E6621A</Capabilities>
+            <Capabilities>EQT_RS_CMW500</Capabilities>
+            <Capabilities>CAP_CALLBOX</Capabilities>
+        </Environment>
+    </UseCase>
+    <UseCase Id="LAB_LTE_PING_MO_WITH_TYPE_MOD" Domain="CELLULAR" SubDomain="DATA_XFER" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Networking.LAB_LTE_PING_MO_WITH_TYPE_MOD.LabLtePingMoWithTypeMod</ClassName>
+        <Description>Ping over LTE simulated network with IP version modification</Description>
+        <Environment name="TEL">
+            <Capabilities>EQT_AG_E6621A</Capabilities>
+            <Capabilities>CAP_CALLBOX</Capabilities>
+        </Environment>
+    </UseCase>
+    <UseCase Id="LAB_EGPRS_FTP_THROUGHPUT_MEASURE" Domain="CELLULAR" SubDomain="DATA_XFER" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Networking.LAB_EGPRS_FTP_THROUGHPUT_MEASURE.LabEgprsFtpThroughputMeasure</ClassName>
+        <Description>FTP Upload_Download over EGPRS on simulated network and measure throughput</Description>
+        <Environment name="TEL">
+            <Capabilities>EQT_AG_8960</Capabilities>
+            <Capabilities>SW_FTP_SERVER</Capabilities>
+        </Environment>
+        <Parameters>
+            <Parameter name="CELL_BAND" type="CELL_BAND_2G" isOptional="false">
+                <!-- Field optional (PossibleValues, DefaultValue, Blank) if possible value not override available -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue>RGSM</DefaultValue>
+                <Blank/>
+                <Dependencies>
+                    <Dependency isOptional="false">BCH_ARFCN</Dependency>
+                </Dependencies>
+            </Parameter>
+            <Parameter name="CELL_POWER" type="CELL_POWER_IN_DBM" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="MULTISLOT_CONFIG" type="MULTISLOT_CONFIG" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="DL_MCS" type="DL_MCS" isOptional="false">
+                <!-- Field optional (PossibleValues, DefaultValue, Blank) if possible value not override available -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue>DL_MCS1</DefaultValue>
+                <Blank/>
+                <Dependencies>
+                    <Dependency isOptional="false">PS_MCS</Dependency>
+                </Dependencies>
+            </Parameter>
+            <Parameter name="UL_MCS" type="UL_MCS" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="DIRECTION" type="XFER_DIRECTION" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="DL_FILENAME" type="DL_FILENAME" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="UL_FILENAME" type="UL_FILENAME" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="XFER_TIMEOUT" type="TIMEOUT_IN_SEC" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="MEASUREMENT_DURATION" type="DURATION_IN_SEC" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="FAILURE_TARGETS" type="THROUGHPUT_IN_KBPS" isOptional="true">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+        </Parameters>
+    </UseCase>
+    <UseCase Id="LAB_WCDMA_FTP_THROUGHPUT_MEASURE" Domain="CELLULAR" SubDomain="DATA_XFER" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Networking.LAB_WCDMA_FTP_THROUGHPUT_MEASURE.LabWcdmaFtpThroughputMeasure</ClassName>
+        <Description>FTP Upload_Download over WCDMA on simulated network and measure throughput</Description>
+        <Environment name="TEL">
+            <Capabilities>EQT_AG_8960</Capabilities>
+            <Capabilities>SW_FTP_SERVER</Capabilities>
+        </Environment>
+        <Parameters>
+            <Parameter name="CELL_BAND" type="CELL_BAND_3G" isOptional="false">
+                <!-- Field optional (PossibleValues, DefaultValue, Blank) if possible value not override available -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue>1</DefaultValue>
+                <Blank/>
+                <Dependencies>
+                    <Dependency isOptional="false">DL_UARFCN</Dependency>
+                </Dependencies>
+            </Parameter>
+            <Parameter name="CELL_SERVICE" type="CELL_SERVICE_3G" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="CELL_POWER" type="CELL_POWER_IN_DBM" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="UL_RAB" type="RADIO_ACCESS_BEARER" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="DL_RAB" type="RADIO_ACCESS_BEARER" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="DIRECTION" type="XFER_DIRECTION" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="DL_FILENAME" type="DL_FILENAME" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="UL_FILENAME" type="UL_FILENAME" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="XFER_TIMEOUT" type="TIMEOUT_IN_SEC" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="MEASUREMENT_DURATION" type="DURATION_IN_SEC" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="FAILURE_TARGETS" type="THROUGHPUT_IN_KBPS" isOptional="true">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+        </Parameters>
+    </UseCase>
+    <UseCase Id="LAB_HSPA_FTP_THROUGHPUT_MEASURE" Domain="CELLULAR" SubDomain="DATA_XFER" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Networking.LAB_HSPA_FTP_THROUGHPUT_MEASURE.LabHspaFtpThroughputMeasure</ClassName>
+        <Description>FTP Upload_Download over HSPA on simulated network and measure throughput</Description>
+        <Environment name="TEL">
+            <Capabilities>EQT_AG_8960</Capabilities>
+            <Capabilities>SW_FTP_SERVER</Capabilities>
+        </Environment>
+        <Parameters>
+            <Parameter name="CELL_BAND" type="CELL_BAND_3G" isOptional="false">
+                <!-- Field optional (PossibleValues, DefaultValue, Blank) if possible value not override available -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue>1</DefaultValue>
+                <Blank/>
+                <Dependencies>
+                    <Dependency isOptional="false">DL_UARFCN</Dependency>
+                </Dependencies>
+            </Parameter>
+            <Parameter name="CELL_SERVICE" type="CELL_SERVICE_3G" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="CELL_POWER" type="CELL_POWER_IN_DBM" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="IP_VERSION" type="IP_VERSION" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="UL_RAB" type="RADIO_ACCESS_BEARER" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="DL_RAB" type="RADIO_ACCESS_BEARER" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="CPC" type="CPC_TTI" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="CQI_SCHEME" type="CQI_REPORTING_SCHEME" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="MAC_D_PDU_SIZE" type="MAC_D_PDU_SIZE" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="DIRECTION" type="XFER_DIRECTION" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="DL_FILENAME" type="DL_FILENAME" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="UL_FILENAME" type="UL_FILENAME" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="XFER_TIMEOUT" type="TIMEOUT_IN_SEC" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="MEASUREMENT_DURATION" type="DURATION_IN_SEC" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="FAILURE_TARGETS" type="THROUGHPUT_IN_KBPS" isOptional="true">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+        </Parameters>
+    </UseCase>
+    <UseCase Id="LAB_HSPA_FTP_CPC_DEACT" Domain="CELLULAR" SubDomain="DATA_XFER" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Networking.LAB_HSPA_FTP_CPC_DEACT.LabHspaFtpCpcDeact</ClassName>
+        <Description>FTP Upload / Download over HSUPA_HSDPA on simulated network with CPC ON and deactivate CPC during
+            data transfer
+        </Description>
+        <Environment name="TEL">
+            <Capabilities>EQT_AG_8960</Capabilities>
+            <Capabilities>SW_FTP_SERVER</Capabilities>
+        </Environment>
+        <Parameters>
+            <Parameter name="CELL_BAND" type="CELL_BAND_3G" isOptional="false">
+                <!-- Field optional (PossibleValues, DefaultValue, Blank) if possible value not override available -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue>1</DefaultValue>
+                <Blank/>
+                <Dependencies>
+                    <Dependency isOptional="false">DL_UARFCN</Dependency>
+                </Dependencies>
+            </Parameter>
+            <Parameter name="CELL_SERVICE" type="CELL_SERVICE_3G" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="CELL_POWER" type="CELL_POWER_IN_DBM" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="IP_VERSION" type="IP_VERSION" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="UL_RAB" type="RADIO_ACCESS_BEARER" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="DL_RAB" type="RADIO_ACCESS_BEARER" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="CPC" type="CPC_TTI" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="CPC_DEACT_TYPE" type="CPC_DEACT_TYPE" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="CQI_SCHEME" type="CQI_REPORTING_SCHEME" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="MAC_D_PDU_SIZE" type="MAC_D_PDU_SIZE" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="DIRECTION" type="XFER_DIRECTION" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="DL_FILENAME" type="DL_FILENAME" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="UL_FILENAME" type="UL_FILENAME" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="XFER_TIMEOUT" type="TIMEOUT_IN_SEC" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+        </Parameters>
+    </UseCase>
+    <UseCase Id="LAB_HSPA_FTP_CPC_ACT" Domain="CELLULAR" SubDomain="DATA_XFER" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Networking.LAB_HSPA_FTP_CPC_ACT.LabHspaFtpCpcAct</ClassName>
+        <Description>FTP Upload_Download over HSUPA_HSDPA on simulated network with CPC Activation during FTP transfer
+        </Description>
+        <Environment name="TEL">
+            <Capabilities>EQT_AG_8960</Capabilities>
+            <Capabilities>SW_FTP_SERVER</Capabilities>
+        </Environment>
+        <Parameters>
+            <Parameter name="CELL_BAND" type="CELL_BAND_3G" isOptional="false">
+                <!-- Field optional (PossibleValues, DefaultValue, Blank) if possible value not override available -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue>1</DefaultValue>
+                <Blank/>
+                <Dependencies>
+                    <Dependency isOptional="false">DL_UARFCN</Dependency>
+                </Dependencies>
+            </Parameter>
+            <Parameter name="CELL_SERVICE" type="CELL_SERVICE_3G" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="CELL_POWER" type="CELL_POWER_IN_DBM" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="IP_VERSION" type="IP_VERSION" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="UL_RAB" type="RADIO_ACCESS_BEARER" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="DL_RAB" type="RADIO_ACCESS_BEARER" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="CPC" type="CPC_TTI" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="CQI_SCHEME" type="CQI_REPORTING_SCHEME" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="MAC_D_PDU_SIZE" type="MAC_D_PDU_SIZE" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="DIRECTION" type="XFER_DIRECTION" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="DL_FILENAME" type="DL_FILENAME" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="UL_FILENAME" type="UL_FILENAME" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="XFER_TIMEOUT" type="TIMEOUT_IN_SEC" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+        </Parameters>
+    </UseCase>
+    <UseCase Id="LAB_HSPA_PDP_CONTEXT_CHECK" Domain="CELLULAR" SubDomain="DATA_XFER" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Networking.LAB_HSPA_PDP_CONTEXT_CHECK.LabHspaPdpContextCheck</ClassName>
+        <Description>HSPA PDP activation and PDP deactivation</Description>
+        <Environment name="TEL">
+            <Capabilities>EQT_AG_8960</Capabilities>
+        </Environment>
+        <Parameters>
+            <Parameter name="CELL_BAND" type="CELL_BAND_3G" isOptional="false">
+                <!-- Field optional (PossibleValues, DefaultValue, Blank) if possible value not override available -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue>1</DefaultValue>
+                <Blank/>
+                <Dependencies>
+                    <Dependency isOptional="false">DL_UARFCN</Dependency>
+                </Dependencies>
+            </Parameter>
+            <Parameter name="CELL_SERVICE" type="CELL_SERVICE_3G" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="CELL_POWER" type="CELL_POWER_IN_DBM" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="IP_VERSION" type="IP_VERSION" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="UL_RAB" type="RADIO_ACCESS_BEARER" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="DL_RAB" type="RADIO_ACCESS_BEARER" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="CPC" type="CPC_TTI" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="CQI_SCHEME" type="CQI_REPORTING_SCHEME" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="MAC_D_PDU_SIZE" type="MAC_D_PDU_SIZE" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+        </Parameters>
+    </UseCase>
+    <UseCase Id="LAB_HSPA_FAST_DORMANCY_SCRI_CHECK" Domain="CELLULAR" SubDomain="DATA_XFER" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Networking.LAB_HSPA_FAST_DORMANCY_SCRI_CHECK.LabHspaFastDormancyScriCheck</ClassName>
+        <Description>Check HSPA FAST DORMANCY SCRI feature</Description>
+        <Environment name="TEL">
+            <Capabilities>EQT_AG_8960</Capabilities>
+            <Capabilities>SW_FTP_SERVER</Capabilities>
+        </Environment>
+        <Parameters>
+            <Parameter name="CELL_BAND" type="CELL_BAND_3G" isOptional="false">
+                <!-- Field optional (PossibleValues, DefaultValue, Blank) if possible value not override available -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue>1</DefaultValue>
+                <Blank/>
+                <Dependencies>
+                    <Dependency isOptional="false">DL_UARFCN</Dependency>
+                </Dependencies>
+            </Parameter>
+            <Parameter name="CELL_SERVICE" type="CELL_SERVICE_3G" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="CELL_POWER" type="CELL_POWER_IN_DBM" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="UL_RAB" type="RADIO_ACCESS_BEARER" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="DL_RAB" type="RADIO_ACCESS_BEARER" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="CPC" type="CPC_TTI" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="CQI_SCHEME" type="CQI_REPORTING_SCHEME" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="MAC_D_PDU_SIZE" type="MAC_D_PDU_SIZE" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="RRC_INACTIVITY_TIMER" type="TIMEOUT_IN_SEC" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="IP_VERSION" type="IP_VERSION" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="DIRECTION" type="XFER_DIRECTION" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="DL_FILENAME" type="DL_FILENAME" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="UL_FILENAME" type="UL_FILENAME" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="XFER_TIMEOUT" type="TIMEOUT_IN_SEC" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="RRC_IDLE_TIMEOUT" type="TIMEOUT_IN_SEC" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+        </Parameters>
+    </UseCase>
+    <UseCase Id="LAB_LTE_FTP" Domain="CELLULAR" SubDomain="DATA_XFER" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Networking.LAB_LTE_FTP.LabLteFtp</ClassName>
+        <Description>Perform a FTP transfer on LTE lab network.</Description>
+        <Environment name="TEL">
+            <Capabilities>EQT_RS_CMW500</Capabilities>
+            <Capabilities>CAP_CALLBOX</Capabilities>
+        </Environment>
+    </UseCase>
+    <UseCase Id="LAB_LTE_MULTI_FTP" Domain="CELLULAR" SubDomain="DATA_XFER" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Networking.LAB_LTE_MULTI_FTP.LabLteMultiFtp</ClassName>
+        <Description>Perform Multiple FTP transfer on LTE lab network.</Description>
+        <Environment name="TEL">
+            <Capabilities>EQT_RS_CMW500</Capabilities>
+            <Capabilities>CAP_CALLBOX</Capabilities>
+        </Environment>
+    </UseCase>
+    <UseCase Id="LAB_LTE_IPERF" Domain="CELLULAR" SubDomain="DATA_XFER" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Networking.LAB_LTE_IPERF.LabLteIperf</ClassName>
+        <Description>Perform a IPERF tranfer on simulated LTE network.</Description>
+        <Environment name="TEL">
+            <Capabilities>EQT_RS_CMW500</Capabilities>
+        </Environment>
+        <Parameters>
+            <Parameter name="DUPLEX_TYPE" type="DUPLEX_TYPE" isOptional="false">
+                <!-- Duplex type TDD or FDD -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="MIMO" type="MIMO" isOptional="false">
+                <!-- Multiple-Input Multiple-Output to set : TRUE or FALSE -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="ANTENNAS_NUMBER" type="ANTENNAS_NUMBER" isOptional="false">
+                <!-- number of antennas to set : 1 or 2 -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="TRANSMISSION_MODE" type="TRANSMISSION_MODE" isOptional="false">
+                <!-- TRANSMISSION_MODE to set: TM1, TM2, TM3,TM4 ... -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="DL_RB_SIZE" type="DL_RB_SIZE" isOptional="false">
+                <!-- DL RB_SIZE to set: 1.4 MHz = 1 to 6 3 MHz = 1 to 15 5 MHz = 1 to 25 10 MHz = 1 to 50 15 MHz = 1 to 75 20 MHz = 1 to 100
+                 -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="UL_RB_SIZE" type="UL_RB_SIZE" isOptional="false">
+                <!-- UL RB_SIZE to set: 1.4 MHz = 1 to 6 3 MHz = 1 to 15 5 MHz = 1 to 25 10 MHz = 1 to 50 15 MHz = 1 to 75 20 MHz = 1 to 100
+                 -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="TYPE0_BITMAP" type="TYPE0_BITMAP" isOptional="false">
+                <!-- TYPE0_BITMAP to set: requires to set TM3 or TM4 profile, MIMO to be set in scenario file 1.4 MHz = 1 to 63 (0x3F) 3 MHz = 1 to 255 (0xFF) 5 MHz = 1 to 8191 (0x1FFF) 10 MHz = 1 to 131071 (0x1FFFF) 15 MHz = 1 to 524287 (0x7FFFF) 20 MHz = 1 to 33554431 (0x1FFFFFF)
+                 -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="UL_GRANT_MODE" type="UL_GRANT_MODE" isOptional="false">
+                <!-- UL GRANT MODE to set: AUTO or FIXEDMAC -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="DL_I_MCS" type="DL_I_MCS" isOptional="false">
+                <!-- DL_I_MCS to set: 0 to 28 -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="UL_I_MCS" type="UL_I_MCS" isOptional="false">
+                <!-- UL_I_MCS to set: 0 to 31 -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="SIGNAL_MODE" type="SIGNAL_MODE" isOptional="false">
+                <!-- Operation mode to set : BSE or SA -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="PHYSICAL_CELL_ID" type="PHYSICAL_CELL_ID" isOptional="false">
+                <!-- Physical Cell ID : 0 to 503 -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="CELL_ID" type="CELL_ID" isOptional="false">
+                <!-- Cell Setup : "A" for A-cell or "B" for B-cell -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="CELL_POWER_RFO1" type="CELL_POWER_IN_DBM" isOptional="false">
+                <!-- Cell power for RFO1 -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="CELL_POWER_RFO2" type="CELL_POWER_IN_DBM" isOptional="false">
+                <!-- Cell power for RFO2 -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="MCC" type="MCC" isOptional="false">
+                <!-- Mobile Country Code 0 to 999 -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="MNC" type="MNC" isOptional="false">
+                <!-- Mobile Network Code 0 to 99 -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="CELL_BAND" type="CELL_BAND" isOptional="false">
+                <!-- Cell Band (from Band 1 to Band 32) -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="DL_EARFCN" type="DL_EARFCN" isOptional="false">
+                <!-- Downlink channel -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="SCENARIO_PATH" type="SCENARIO_PATH" isOptional="false">
+                <!-- Scenario filename to load on PXT -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="LTE_CATEGORY" type="LTE_CATEGORY" isOptional="false">
+                <!-- LTE category to use for the test, should be an int. -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="PORT" type="PORT" isOptional="false">
+                <!-- Port Number used by IPERF -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="DURATION" type="DURATION" isOptional="false">
+                <!-- Duration in seconds allowed to IPERF to perform measurements -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="DIRECTION" type="XFER_DIRECTION" isOptional="false">
+                <!-- Type of data transfer (UL/DL/BOTH) -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="IPERF_BANDWIDTH" type="IPERF_BANDWIDTH" isOptional="true">
+                <!-- Bandwidth only applicable in UDP, in Kbits/sec or Mbits/sec (use K or M. Ex: 10M) -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="WINDOW_SIZE" type="WINDOW_SIZE" isOptional="false">
+                <!-- TCP window size (socket buffer size in Kbits or Mbits. ex: 64K) -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="SERVER_WINDOW_SIZE" type="WINDOW_SIZE" isOptional="true">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="PARALLEL_THREAD" type="PARALLEL_THREAD" isOptional="false">
+                <!-- Number of parallel client threads to run -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="BUFFER_LENGTH" type="BUFFER_LENGTH" isOptional="false">
+                <!-- Set length read/write buffer to n -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="CELL_CHANNEL_BANDWIDTH" type="CELL_CHANNEL_BANDWIDTH" isOptional="false">
+                <!-- Cell Channel Bandwidth in MHz -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="CARRIER_AGGREGATION" type="BOOLEAN" isOptional="true">
+                <!-- Carrier Aggregation to set: True or False -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="SCC_BAND" type="CELL_BAND" isOptional="true">
+                <!-- Secondary Component Carrier (from Band 1 to Band 32) -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="SCC_EARFCN" type="DL_EARFCN" isOptional="true">
+                <!-- Secondary Component Carrier Downlink channel -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="SCC_BANDWIDTH" type="CELL_CHANNEL_BANDWIDTH" isOptional="true">
+                <!-- Secondary Component Carrier channel bandwidth to set: 1.4MHz; 3 MHz; 5MHz; 10 MHz; 15MHz; 20 MHz-->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="IPERF_PROTOCOL" type="TRANSPORT_PROTOCOL" isOptional="false">
+                <!-- Protocol used by IPERF to perform measurements - (TCP | UDP) -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="FAILURE_TARGETS" type="FAILURE_TARGETS" isOptional="true">
+                <!-- Optional: Failure data average throughput value in Mbps (UL, DL). If the value is empty, test case will use default value defined in _Configs/Throughput_Targets.xml -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="KPI_TEST" type="BOOLEAN" isOptional="true">
+                <!-- Optional: Specify if test is a PI/KPI test -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="BLER" type="BOOLEAN" isOptional="true">
+                <!-- Optional: Perform BLER measurement during IPERF-->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+        </Parameters>
+    </UseCase>
+    <UseCase Id="LAB_LTE_IPERF_CA_SWITCH" Domain="CELLULAR" SubDomain="DATA_XFER" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Networking.LAB_LTE_IPERF_CA_SWITCH.LabLteIperfCaSwitch</ClassName>
+        <Description>Perform a IPERF tranfer with Carrier Aggregation switch on simulated LTE network.</Description>
+        <Environment name="TEL">
+            <Capabilities>EQT_RS_CMW500</Capabilities>
+        </Environment>
+        <Parameters>
+            <Parameter name="DUPLEX_TYPE" type="DUPLEX_TYPE" isOptional="false">
+                <!-- Duplex type TDD or FDD -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="MIMO" type="MIMO" isOptional="false">
+                <!-- Multiple-Input Multiple-Output to set : TRUE or FALSE -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="ANTENNAS_NUMBER" type="ANTENNAS_NUMBER" isOptional="false">
+                <!-- number of antennas to set : 1 or 2 -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="TRANSMISSION_MODE" type="TRANSMISSION_MODE" isOptional="false">
+                <!-- TRANSMISSION_MODE to set: TM1, TM2, TM3,TM4 ... -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="DL_RB_SIZE" type="DL_RB_SIZE" isOptional="false">
+                <!-- DL RB_SIZE to set: 1.4 MHz = 1 to 6 3 MHz = 1 to 15 5 MHz = 1 to 25 10 MHz = 1 to 50 15 MHz = 1 to 75 20 MHz = 1 to 100
+                 -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="UL_RB_SIZE" type="UL_RB_SIZE" isOptional="false">
+                <!-- UL RB_SIZE to set: 1.4 MHz = 1 to 6 3 MHz = 1 to 15 5 MHz = 1 to 25 10 MHz = 1 to 50 15 MHz = 1 to 75 20 MHz = 1 to 100
+                 -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="DL_I_MCS" type="DL_I_MCS" isOptional="false">
+                <!-- DL_I_MCS to set: 0 to 28 -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="UL_I_MCS" type="UL_I_MCS" isOptional="false">
+                <!-- UL_I_MCS to set: 0 to 31 -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="PHYSICAL_CELL_ID" type="PHYSICAL_CELL_ID" isOptional="false">
+                <!-- Physical Cell ID : 0 to 503 -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="CELL_ID" type="CELL_ID" isOptional="false">
+                <!-- Cell Setup : "A" for A-cell or "B" for B-cell -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="CELL_POWER_RFO1" type="CELL_POWER_IN_DBM" isOptional="false">
+                <!-- Cell power for RFO1 -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="CELL_POWER_RFO2" type="CELL_POWER_IN_DBM" isOptional="false">
+                <!-- Cell power for RFO2 -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="MCC" type="MCC" isOptional="false">
+                <!-- Mobile Country Code 0 to 999 -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="MNC" type="MNC" isOptional="false">
+                <!-- Mobile Network Code 0 to 99 -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="CELL_BAND" type="CELL_BAND" isOptional="false">
+                <!-- Cell Band (from Band 1 to Band 32) -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="DL_EARFCN" type="DL_EARFCN" isOptional="false">
+                <!-- Downlink channel -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="LTE_CATEGORY" type="LTE_CATEGORY" isOptional="false">
+                <!-- LTE category to use for the test, should be an int. -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="PORT" type="PORT" isOptional="false">
+                <!-- Port Number used by IPERF -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="DURATION" type="DURATION" isOptional="false">
+                <!-- Duration in seconds allowed to IPERF to perform measurements -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="DIRECTION" type="XFER_DIRECTION" isOptional="false">
+                <!-- Type of data transfer (UL/DL/BOTH) -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="IPERF_BANDWIDTH" type="IPERF_BANDWIDTH" isOptional="true">
+                <!-- Bandwidth only applicable in UDP, in Kbits/sec or Mbits/sec (use K or M. Ex: 10M) -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="WINDOW_SIZE" type="WINDOW_SIZE" isOptional="false">
+                <!-- TCP window size (socket buffer size in Kbits or Mbits. ex: 64K) -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="SERVER_WINDOW_SIZE" type="WINDOW_SIZE" isOptional="true">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="PARALLEL_THREAD" type="PARALLEL_THREAD" isOptional="false">
+                <!-- Number of parallel client threads to run -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="BUFFER_LENGTH" type="BUFFER_LENGTH" isOptional="false">
+                <!-- Set length read/write buffer to n -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="CELL_CHANNEL_BANDWIDTH" type="CELL_CHANNEL_BANDWIDTH" isOptional="false">
+                <!-- Cell Channel Bandwidth in MHz -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="CARRIER_AGGREGATION" type="BOOLEAN" isOptional="true">
+                <!-- Carrier Aggregation to set: True or False -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="SCC_BAND" type="CELL_BAND" isOptional="true">
+                <!-- Secondary Component Carrier (from Band 1 to Band 32) -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="SCC_EARFCN" type="DL_EARFCN" isOptional="true">
+                <!-- Secondary Component Carrier Downlink channel -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="SCC_BANDWIDTH" type="CELL_CHANNEL_BANDWIDTH" isOptional="true">
+                <!-- Secondary Component Carrier channel bandwidth to set: 1.4MHz; 3 MHz; 5MHz; 10 MHz; 15MHz; 20 MHz-->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="IPERF_PROTOCOL" type="TRANSPORT_PROTOCOL" isOptional="false">
+                <!-- Protocol used by IPERF to perform measurements - (TCP | UDP) -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="FAILURE_TARGETS" type="FAILURE_TARGETS" isOptional="true">
+                <!-- Optional: Failure data average throughput value in Mbps (UL, DL). If the value is empty, test case will use default value defined in _Configs/Throughput_Targets.xml -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="KPI_TEST" type="BOOLEAN" isOptional="true">
+                <!-- Optional: Specify if test is a PI/KPI test -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="BLER" type="BOOLEAN" isOptional="true">
+                <!-- Optional: Perform BLER measurement during IPERF-->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+        </Parameters>
+    </UseCase>
+    <UseCase Id="LAB_HSPA_CQI_THROUGHPUT_MEASURE" Domain="CELLULAR" SubDomain="DATA_XFER" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Networking.LAB_HSPA_CQI_THROUGHPUT_MEASURE.LabHspaPdpCqiThroughputMeasure</ClassName>
+        <Description>CQI MEASURE over HSPA simulated network</Description>
+        <Environment name="TEL">
+            <Dependency>EQT_AG_8960</Dependency>
+        </Environment>
+        <Parameters>
+            <Parameter name="CELL_BAND" type="CELL_BAND" isOptional="false">
+                <!-- Cell Band (from Band 1 to Band 8) -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="DL_UARFCN" type="DL_UARFCN" isOptional="false">
+                <!-- Downlink UARFCN Frequency -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="CELL_SERVICE" type="CELL_SERVICE" isOptional="false">
+                <!-- Cell Service (CIRCUIT | PACKET | CIRCUIT_PACKET | RBTEST) -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="CELL_POWER" type="CELL_POWER" isOptional="false">
+                <!-- Cell power in dBm -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="IP_VERSION" type="IP_VERSION" isOptional="false">
+                <!-- Protocol IPV4 | IPV6 | IPV4V6 -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="UL_RAB" type="UL_RAB" isOptional="false">
+                <!-- Uplink Radio Access Bearer (384k | HSUPA | MAX [If MAX is selected, value will be taken from DeviceCatalog.xml]) -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="DL_RAB" type="DL_RAB" isOptional="false">
+                <!-- Downlink Radio Access Bearer (HSDPA_CAT10 | HSDPA_CAT14 | HSDPA_CAT24 | MAX [If MAX is selected, value will be taken from DeviceCatalog.xml]) -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="CPC" type="CPC" isOptional="false">
+                <!-- CPC [Continuous Packet Connectivity] feature use (2 [TTI =2ms] | 10 [TTI =10ms]) -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="CQI_SCHEME" type="CQI_SCHEME" isOptional="false">
+                <!-- CQI scheme : Fixed value or UE reported - FIXED|REPORTED -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="MAC_D_PDU_SIZE" type="MAC_D_PDU_SIZE" isOptional="false">
+                <!-- PS Data HS-DSCH MAC-d PDU Size - BITS336|BITS656 -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="MEASURE_CELL_POWER_LIST" type="MEASURE_CELL_POWER_LIST" isOptional="false">
+                <!-- MEASURE CELL POWER LIST -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="DIRECTION" type="XFER_DIRECTION" isOptional="false">
+                <!-- FTP transfer direction: DL or UL -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="DL_FILENAME" type="DL_FILENAME" isOptional="false">
+                <!-- File to download from the server. This file shall be available on the server. If the file to transfer is located in a specific directory, you can specify its path. i.e. : acs/download_file/get5M -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="UL_FILENAME" type="UL_FILENAME" isOptional="false">
+                <!-- File to upload on the server. This file shall be available on the device. If the file to transfer is located in a specific directory, you can specify its path. i.e. : acs/upload_file/put5M -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+        </Parameters>
+    </UseCase>
+    <UseCase Id="LAB_PDP_DEACTIVATE_REACTIVATE" Domain="CELLULAR" SubDomain="DATA_XFER" OS="ANDROID"
+             Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Networking.LAB_PDP_DEACTIVATE_REACTIVATE.LabPdpDeactivateReactivate</ClassName>
+        <Description>Deactivate then reactivate PDP context on simulated network with ping check</Description>
+        <Environment name="TEL">
+            <Capabilities>EQT_AG_8960</Capabilities>
+        </Environment>
+        <Parameters>
+            <Parameter name="CELL_TECH" type="CELL_TECH" isOptional="false">
+                <!-- Cell Technology (2G|3G|HSPA) -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="CELL_BAND" type="CELL_BAND" isOptional="false">
+                <!-- Cell Band. For 2G : EGSM|GSM850|PCS|DCS. For 3G : 1,2,5,8 -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="CELL_SERVICE" type="CELL_SERVICE" isOptional="false">
+                <!-- Cell Service ( (GSM|GPRS|EGPRS) for 2G CELL, (CIRCUIT|PACKET|CIRCUIT_PACKET) for 3G CELL) -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="CELL_POWER" type="CELL_POWER" isOptional="false">
+                <!-- cell power -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <!--  ARFCN Frequency  -->
+            <Parameter name="ARFCN" type="ARFCN" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <!--  CPC [Continuous Packet Connectivity] feature use (2 [TTI =2ms] | 10 [TTI =10ms])  -->
+            <Parameter name="CPC" type="CPC" isOptional="true">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+        </Parameters>
+    </UseCase>
+    <UseCase Id="ANY_USB_TETHER" Domain="CELLULAR" SubDomain="DATA_XFER" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Communication.Misc.ANY_USB_TETHER.AnyUsbTether</ClassName>
+        <Description>USB Tethering</Description>
+        <Environment name="TEL">
+            <Capabilities>EQT_AG_8960</Capabilities>
+            <Capabilities>EQT_RS_CMW500</Capabilities>
+            <Capabilities>CAP_CALLBOX</Capabilities>
+        </Environment>
+        <Parameters>
+            <!-- Optional: Number of ping to perform. If the value is empty or 0, test case will not perform ping on FTP server address -->
+            <Parameter name="PING_NUMBER" type="PING_NUMBER" isOptional="true">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <!-- Optional: Failure data average throughput value in Mbps (UL, DL). If the value is empty, test case will use default value defined in _Configs/Throughput_Targets.xml -->
+            <Parameter name="FAILURE_TARGETS" type="FAILURE_TARGETS" isOptional="true">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <!-- Optional: full path to the FTP file (UL: name used to store local file on FTP server - DL: name of the file to download). FTP server address is given in the Bench_Config ("LAB_SERVER" or "LAB_LTE_SERVER"). If the value is empty, test case will use not perform FTP transfer -->
+            <Parameter name="FTP_FILE" type="FTP_FILE" isOptional="true">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <!-- overall timeout for ftp connection, ftp transfer, usb tethering connection -->
+            <Parameter name="TIMEOUT" type="TIMEOUT" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <!--  2G | 3G | 4G | LIVE  -->
+            <Parameter name="RAT" type="RAT" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <!-- Optional: the FTP transfer direction. Should be 'UL' or 'DL'. If the value is empty, test case will use not perform FTP transfer -->
+            <Parameter name="DIRECTION" type="XFER_DIRECTION" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="CELL_BAND" type="CELL_BAND" isOptional="false">
+                <!-- Cell Band. For 2G : EGSM|GSM850|PCS|DCS. For 3G : 1,2,5,8 -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <!--  Downlink UARFCN Frequency  -->
+            <Parameter name="DL_UARFCN" type="DL_UARFCN" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="CELL_POWER" type="CELL_POWER" isOptional="false">
+                <!-- cell power -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="CELL_SERVICE" type="CELL_SERVICE" isOptional="false">
+                <!-- Cell Service ( (GSM|GPRS|EGPRS) for 2G CELL, (CIRCUIT|PACKET|CIRCUIT_PACKET) for 3G CELL) -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <!--  CQI value : 5-30  -->
+            <Parameter name="CQI" type="CQI" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <!--  PS Data HS-DSCH MAC-d PDU Size - BITS336|BITS656  -->
+            <Parameter name="MAC_D_PDU_SIZE" type="MAC_D_PDU_SIZE" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="IP_VERSION" type="IP_VERSION" isOptional="false">
+                <!-- Protocol IPV4 | IPV6 | IPV4V6 -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <!--  Uplink Radio Access Bearer ( HSUPA_CAT5)  -->
+            <Parameter name="UL_RAB" type="UL_RAB" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <!--  Downlink Radio Access Bearer (HSDPA_CAT7)  -->
+            <Parameter name="DL_RAB" type="DL_RAB" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <!--  CPC [Continuous Packet Connectivity] feature use (2 [TTI =2ms] | 10 [TTI =10ms])  -->
+            <Parameter name="CPC" type="CPC" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="KPI_TEST" type="BOOLEAN" isOptional="true">
+                <!-- Optional: Specify if test is a PI/KPI test -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+        </Parameters>
+    </UseCase>
+</UseCases>

@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<Configs>
+    <!--     COMMON_2G Parameters for 2G  -->
+    <Config name="PWR_2G_COMMON">
+        <!-- <GPIB command="SYS:PRES2" /> -->
+        <GPIB command="CALL:OPER:MODE OFF" />
+        <GPIB command="CALL:BCH:SCEL GPRS" />
+        <GPIB command="CALL:POW:STAT ON;*CLS;:CALL:POW:AMPL -60" />
+        <GPIB command="CALL:PAGING:MFRAMES 5" />
+        <GPIB command="CALL:CELL:PBCChannel:BA:TABLe:NCELL1 OFF" />
+        <GPIB command="CALL:SETup:TCH:CMODe:LSPeech:CHANnel EFS" />
+        <GPIB command="CALL:SETup:TCH:BAnd EGSM" />
+        <GPIB command="CALL:PPR:LAU:T3212 0" />
+        <GPIB command="CALL:SMService:CBRoadcast:STOP" />
+        <GPIB command="CALL:CELL:OPERating:MODE CALL" />
+        <GPIB command="CALL:TCHannel:FHOPping:STATe ON" />
+        <GPIB command="CALL:TCH:MA:TABLe:CONFig:AUTO OFF" />
+        <!-- <GPIB command="CALL:PSDomain ABSENT" /> -->
+    </Config>
+    <Config name="PWR_DCS" apply_to="PWR_2G_COMMON">
+        <GPIB command="CALL:BAND DCS" />
+        <GPIB command="CALL:BCH 698" />
+        <GPIB command="CALL:BA:TABL:DCS 512,536,560,585,610,635,660,685,710,735,760,785,810,835,860,885" />
+    </Config>
+    <Config name="PWR_PCS" apply_to="PWR_2G_COMMON">
+        <GPIB command="CALL:BAND PCS" />
+        <GPIB command="CALL:BCH 660" />
+        <GPIB command="CALL:BA:TABL:PCS 512,530,550,570,590,610,630,650,670,690,710,730,750,770,790,810" />
+    </Config>
+    <Config name="PWR_RGSM" apply_to="PWR_2G_COMMON">
+        <GPIB command="CALL:BAND RGSM" />
+        <GPIB command="CALL:BCH 62" />
+        <GPIB command="CALL:BA:TABL:RGSM 1,9,17,26,34,40,58,67,75,83,91,99,108,116,124" />
+    </Config>
+    <Config name="PWR_PGSM" apply_to="PWR_2G_COMMON">
+        <GPIB command="CALL:BAND PGSM" />
+        <GPIB command="CALL:BCH 62" />
+        <GPIB command="CALL:BA:TABL:PGSM 1,9,17,26,34,40,58,67,75,83,91,99,108,116,124" />
+    </Config>
+    <Config name="PWR_EGSM_TX6" apply_to="PWR_2G_COMMON">
+        <GPIB command="CALL:BAND EGSM" />
+        <GPIB command="CALL:BCHannel:ARFCN:EGSM 62" />
+        <GPIB command="CALL:CA:TABLe 1,30,62,93,124" />
+        <GPIB command="CALL:TCHannel:MA:TABLe:MANual:EGSM 1, 30, 62, 93, 124" />
+        <GPIB command="CALL:MS:TXLevel 6" />
+    </Config>
+    <Config name="PWR_EGSM_TX7" apply_to="PWR_2G_COMMON">
+        <GPIB command="CALL:BAND EGSM" />
+        <GPIB command="CALL:BCHannel:ARFCN:EGSM 62" />
+        <GPIB command="CALL:CA:TABLe 1,30,62,93,124" />
+        <GPIB command="CALL:TCHannel:MA:TABLe:MANual:EGSM 1, 30, 62, 93, 124" />
+        <GPIB command="CALL:MS:TXLevel 7" />
+    </Config>
+    <Config name="PWR_EGSM_TX8" apply_to="PWR_2G_COMMON">
+        <GPIB command="CALL:BAND EGSM" />
+        <GPIB command="CALL:BCHannel:ARFCN:EGSM 62" />
+        <GPIB command="CALL:CA:TABLe 1,30,62,93,124" />
+        <GPIB command="CALL:TCHannel:MA:TABLe:MANual:EGSM 1, 30, 62, 93, 124" />
+        <GPIB command="CALL:MS:TXLevel 8" />
+    </Config>
+    <Config name="PWR_GSM450" apply_to="PWR_2G_COMMON">
+        <GPIB command="CALL:BAND GSM450" />
+        <GPIB command="CALL:BCH 276" />
+        <GPIB command="CALL:BA:TABL:GSM450 259,262,265,267,269,271,273,275,277,279,281,283,285,287,290,293" />
+    </Config>
+    <Config name="PWR_GSM480" apply_to="PWR_2G_COMMON">
+        <GPIB command="CALL:BAND GSM480" />
+        <GPIB command="CALL:BCH 323" />
+        <GPIB command="CALL:BA:TABL:GSM480 306,309,312,314,316,318,320,322,324,326,328,330,332,334,337,340" />
+    </Config>
+    <Config name="PWR_GSM850" apply_to="PWR_2G_COMMON">
+        <GPIB command="CALL:BAND GSM850" />
+        <GPIB command="CALL:BCH 189" />
+        <GPIB command="CALL:BA:TABL:GSM850 128,137,145,153,161,169,177,185,193,201,209,217,225,233,241,251" />
+    </Config>
+
+    <Config name="PWR_3G_COMMON">
+        <!-- <GPIB command="SYST:PRES2" /> -->
+        <GPIB command="CALL:OPER:MODE OFF" />
+        <GPIB command="CALL:CELL:DRX:CLENgth FRAM128" />
+        <GPIB command="CALL:CELL:POWer:AMPLitude -6.00000000E+001" />
+        <GPIB command="CALL:CELL:POWer:SAMPlitude -6.00000000E+001" />
+        <GPIB command="CALL:CHANnel +10712" />
+        <GPIB command="CALL:UPLink:CHANnel +9762" />
+        <GPIB command="CALL:MS:POWer:TARGet:AMPLitude +10" />
+        <GPIB command="CALL:PAGing:SERVice:TYPe AMR" />
+        <GPIB command="CALL:VIDEO:TYPE loopback" />
+        <GPIB command="CALL:CELL:BCCHannel:GSMSystem:STATe 0,0,0,0,0,0,0,0" />
+        <GPIB command="CALL:CELL:BCCHannel:ITAFrequency:SCODe +255,+127,+191,+0,+319,+383,+447,+511" />
+        <GPIB command="CALL:CELL:BCCHannel:ITAFrequency:STATe 1,1,1,1,1,1,1,1" />
+        <GPIB command="CALL:CELL:BCCHannel:ITRFrequency:STATe 0,0,0,0,0,0,0,0" />
+        <GPIB command="CALL:RESelection:HYSTeresis2 2" />
+        <GPIB command="CALL:RESelection:GSM:STATe OFF" />
+        <GPIB command="CALL:CONN:DPCH:STAT ON" />
+        <GPIB command="CALL:CELL:DPCHannel:LEVel -5.000000" />
+        <GPIB command="CALL:BCCH:T3212 0" />
+        <GPIB command="CALL:SMS:CBR:STOP" />
+        <GPIB command="CALL:SERVice:GPRS:RAB PSDH384" />
+        <GPIB command="CALL:HSDPa:SERVice:PSData:CQI:VALue +22" />
+        <GPIB command="CALL:CELL:MNCode:WCDMA 12" />
+        <GPIB command="CALL:MNCode:LENGth DIGits3" />
+        <GPIB command="CALL:OPERating:MODE CALL" />
+    </Config>
+    <Config name="PWR_AMP11" apply_to="PWR_3G_COMMON">
+        <GPIB command="CALL:MS:POWer:TARGet:AMPLitude +11" />
+        <GPIB command="CALL:UPL:CHAN:CONT:AUTO ON" />
+    </Config>
+    <Config name="PWR_AMP10" apply_to="PWR_3G_COMMON">
+        <GPIB command="CALL:MS:POWer:TARGet:AMPLitude +10" />
+        <GPIB command="CALL:UPL:CHAN:CONT:AUTO ON" />
+    </Config>
+    <Config name="PWR_AMP9" apply_to="PWR_3G_COMMON">
+        <GPIB command="CALL:MS:POWer:TARGet:AMPLitude +9" />
+        <GPIB command="CALL:UPL:CHAN:CONT:AUTO ON" />
+    </Config>
+    <Config name="PWR_3G_DATA_BROWSING">
+        <!-- <GPIB command="SYSTem:APPLication:FORMat 'WCDMA'" />
+        <GPIB command="SYST:PRES2" /> -->
+        <GPIB command="CALL:OPERating:MODE OFF" />
+        <GPIB command="CALL:BCCHannel:GSMSystem:STATe 0,0,0,0,0,0,0,0" />
+        <GPIB command="CALL:RESelection:GSM:STATe OFF" />
+        <GPIB command="CALL:CELL:BCCHannel:ITRFrequency:STATe 0,0,0,0,0,0,0,0" />
+        <GPIB command="CALL:HSDPa:SERVice:RBTest:HSPDschannel:CCODe:CODE 5" />
+        <GPIB command="CALL:SERVice:RBTest:RAB HSDParmc12" />
+        <GPIB command="CALL:CELL:SRBEARER:CCHANNEL:DEDICATED:DRATE BPS13600" />
+        <GPIB command="CALL:HSDPa:SERVice:RBTest:HSDSchannel:CONFig UDEFined" />
+        <GPIB command="CALL:HSDPa:SERVice:RBTest:UDEFined:HSPDschannel:COUNt 10" />
+        <GPIB command="CALL:HSDPa:SERVice:RBTest:UDEFined:TBSize:INDex 48" />
+        <GPIB command="CALL:HSDPa:SERVice:RBTest:UDEFined:MODulation QAM16" />
+        <GPIB command="CALL:HSDPa:SERVice:RBTest:UDEFined:ITTI 1" />
+        <GPIB command="CALL:HSDPa:SERVice:RBTest:UDEFined:HARQ:PROCess:COUNt 6" />
+        <GPIB command="CALL:HSDPa:SERVice:RBTest:DTCHannel64:HLOopback:STATe 1" />
+        <GPIB command="CALL:CONNECTED:CPIChannel:HSDPa -13" />
+        <GPIB command="CALL:CONNECTED:CCPChannel:PRIMary:HSDPa -13" />
+        <GPIB command="CALL:CONNected:PICHannel:HSDPa -15" />
+        <GPIB command="CALL:CONNected:DPCHannel:HSDPa -15" />
+        <GPIB command="CALL:CONNected:HSPDschannel -1" />
+        <GPIB command="CALL:CONNected:HSSCchannel -13" />
+        <GPIB command="CALL:SERVice:GPRS:RAB PSDHsdpa384" />
+        <GPIB command="CALL:HSDPa:SERVice:PSData:CQI 25" />
+        <GPIB command="CALL:HSDPa:SERVice:PSData:MACD:PDUSize BITS336" />
+        <GPIB command="CALL:CCPChannel:SECondary:CONFigure STRaffic" />
+        <GPIB command="CALL:CCPChannel:SECondary:CONNected:CONFig:STATe 1" />
+        <GPIB command="CALL:SERVice:PSData:RRC:TRANsition:AUTO ON" />
+        <GPIB command="CALL:SERVice:PSData:RRC:INITial:STATe DCH" />
+        <GPIB command="CALL:SERVice:PSData:RRC:TRANsition:ITIMer:DCH:STATe ON" />
+        <GPIB command="CALL:SERVice:PSData:RRC:TRANsition:ITIMer:DCH 5s" />
+        <GPIB command="CALL:SERVice:PSData:RRC:TRANsition:ITIMer:DCH:VALue 5s" />
+        <GPIB command="CALL:SERVice:PSData:RRC:TRANsition:ITIMer:DCH:DESTination FACH" />
+        <GPIB command="CALL:SERVice:PSData:RRC:TRANsition:ITIMer:FACH:STATe ON" />
+        <GPIB command="CALL:SERVice:PSData:RRC:TRANsition:ITIMer:FACH 10s" />
+        <GPIB command="CALL:SERVice:PSData:RRC:TRANsition:ITIMer:FACH:VALue 10s" />
+        <GPIB command="CALL:SERVice:PSData:RRC:TRANsition:ITIMer:FACH:DESTination PCH" />
+        <GPIB command="CALL:SERVice:PSData:RRC:TRANsition:TVOLume:RTHReshold:EVent4A BYTes128" />
+        <GPIB command="CALL:SERVice:PSData:RRC:TRANsition:SCRI:RRCIdle ON" />
+        <GPIB command="CALL:HSDPa:SERVice:PSData:RLC:DOWNlink:MAXimum:PDU:PSIZe 320" />
+        <GPIB command="CALL:HSUPa:EDCHannel:TTI MS10" />
+        <GPIB command="CALL:CELL:DRX:CLENgth FRAMes128" />
+        <GPIB command="CALL:CELL:DRX:CLENgth:UTRan FRAMes64" />
+        <GPIB command="CALL:UPLink:DPCHannel:BETA:AUTO 0" />
+        <GPIB command="CALL:UPLink:DPCHannel:MANual:CBETa 8" />
+        <GPIB command="CALL:UPLink:DPCHannel:MANual:DBETa 15" />
+        <GPIB command="CALL:MS:POWer:TARGet:AMPLitude +10" />
+        <GPIB command="CALL:OPERating:MODE CALL" />
+    </Config>
+    <Config name="PWR_3G_DATA_STREAMING" apply_to="PWR_3G_DATA_BROWSING"/>
+    <!--     COMMON_4G Parameters for 4G lte_idle.iseq  -->
+    <Config name="PWR_4G_IDLE">
+        <GPIB command="SYSTem:RESet 'LTE Sig1'" />
+        <GPIB command="CONFigure:LTE:SIGN:UL:PUSCh:OLNPower -20" />
+        <GPIB command="CONFigure:LTE:SIGN:UL:PUSCh:TPC:CLTPower -30" />
+        <GPIB command="CONFigure:LTE:SIGN:BAND OB1" />
+        <GPIB command="CONFigure:LTE:SIGN:RFSettings:CHANnel:DL 300" />
+        <GPIB command="CONFigure:GSM:SIGN:ETOE OFF" />
+        <GPIB command="CONFigure:LTE:SIGN:ETOE OFF" />
+        <GPIB command="CONFigure:DATA:CONTrol:IPVFour:ADDRess:TYPE AUTomatic" />
+        <GPIB command="CONFigure:LTE:SIGN:CELL:SECurity:AUTHenticat ON" />
+        <GPIB command="CONFigure:LTE:SIGN:CELL:SECurity:NAS ON" />
+        <GPIB command="CONFigure:LTE:SIGN:CELL:SECurity:AS ON" />
+        <GPIB command="CONFigure:LTE:SIGN:CELL:SECurity:IALGorithm S3G" />
+        <GPIB command="CONFigure:LTE:SIGN:CELL:TIME:TSOurce CMWTime" />
+        <GPIB command="CONFigure:LTE:SIGN:CELL:TIME:SATTach ON" />
+        <GPIB command="CONFigure:LTE:SIGN:CONNection:SCHModel:ENABle OFF" />
+        <GPIB command="CONFigure:LTE:SIGN:CONNection:CTYPe TESTmode" />
+        <GPIB command="CONFigure:LTE:SIGN:CONNection:KRRC OFF" />
+        <GPIB command="CONFigure:LTE:SIGN:NCELl:LTE:CELL1 OFF,OB1,301,503,ZERO" />
+        <GPIB command="CONFigure:LTE:SIGN:NCELl:LTE:CELL2 OFF,OB1,302,502,ZERO" />
+        <GPIB command="CONFigure:LTE:SIGN:NCELl:LTE:CELL3 OFF,OB1,303,501,ZERO" />
+        <GPIB command="CONFigure:LTE:SIGN:NCELl:LTE:CELL4 OFF,OB1,304,500,ZERO" />
+        <GPIB command="CONFigure:LTE:SIGN:NCELl:LTE:CELL5 OFF,OB1,305,499,ZERO" />
+        <GPIB command="CONFigure:LTE:SIGN:NCELl:LTE:CELL6 OFF,OB1,306,498,ZERO" />
+        <GPIB command="CONFigure:LTE:SIGN:NCELl:LTE:CELL7 OFF,OB1,307,497,ZERO" />
+        <GPIB command="CONFigure:LTE:SIGN:NCELl:LTE:CELL8 OFF,OB1,308,496,ZERO" />
+        <GPIB command="CONFigure:LTE:SIGN:NCELl:LTE:CELL9 OFF,OB1,309,495,ZERO" />
+        <GPIB command="CONFigure:LTE:SIGN:NCELl:LTE:CELL10 OFF,OB1,310,494,ZERO" />
+        <GPIB command="CONFigure:LTE:SIGN:NCELl:LTE:CELL11 OFF,OB1,311,493,ZERO" />
+        <GPIB command="CONFigure:LTE:SIGN:NCELl:LTE:CELL12 OFF,OB1,312,492,ZERO" />
+        <GPIB command="CONFigure:LTE:SIGN:NCELl:LTE:CELL13 OFF,OB1,313,491,ZERO" />
+        <GPIB command="CONFigure:LTE:SIGN:NCELl:LTE:CELL14 OFF,OB1,314,490,ZERO" />
+        <GPIB command="CONFigure:LTE:SIGN:NCELl:LTE:CELL15 OFF,OB1,315,489,ZERO" />
+        <GPIB command="CONFigure:LTE:SIGN:NCELl:LTE:CELL16 OFF,OB1,316,488,ZERO" />
+        <GPIB command="CONFigure:LTE:SIGN:CONNection:DPCYcle P128" />
+        <GPIB command="CONFigure:LTE:SIGN:DL:RSEPre:LEVel -85" />
+        <GPIB command="CONFigure:LTE:SIGN:DL:AWGN -98" />
+        <GPIB command="CONFigure:LTE:SIGN:DL:PBCH:POFFset 0" />
+        <GPIB command="CONFigure:LTE:SIGN:DL:PSS:POFFset 0" />
+        <GPIB command="CONFigure:LTE:SIGN:DL:SSS:POFFset 0" />
+        <GPIB command="CONFigure:LTE:SIGN:DL:PCFich:POFFset 0" />
+        <GPIB command="CONFigure:LTE:SIGN:DL:PDCCh:POFFset 0" />
+        <GPIB command="CONFigure:LTE:SIGN:DL:PDSCh:PA ZERO" />
+        <GPIB command="CONFigure:LTE:SIGN:DL:PDSCh:RINDex 0" />
+        <GPIB command="CONFigure:LTE:SIGN:CELL:BANDwidth:DL B100" />
+        <GPIB command="ROUTe:LTE:SIGN:SCENario:TRO RF1C,RX1,RF1C,TX1,RF3C,TX2" />
+        <GPIB command="CONFigure:LTE:SIGN:CELL:RESelection:QUALity:RXLevmin -120" />
+        <GPIB command="CONFigure:LTE:SIGN:CELL:TOUT:T3412 OFF" />
+        <GPIB command="CONFigure:LTE:SIGN:CELL:RESelection:SEARch:INTRasearch 32" />
+        <GPIB command="CONFigure:LTE:SIGN:DL:OCNG ON" />
+        <GPIB command="SOURce:LTE:SIGN:CELL:STATe ON" />
+    </Config>
+    <!--     COMMON_4G_DATA Parameters for 4G data lte_data_cat4.iseq -->
+    <Config name="PWR_4G_DATA">
+        <GPIB command="SYSTem:RESet 'LTE Sig1'" />
+        <GPIB command="CONFigure:LTE:SIGN:NCELl:LTE:CELL1 OFF,OB1,301,503,ZERO" />
+        <GPIB command="CONFigure:LTE:SIGN:NCELl:LTE:CELL2 OFF,OB1,302,502,ZERO" />
+        <GPIB command="CONFigure:LTE:SIGN:NCELl:LTE:CELL3 OFF,OB1,303,501,ZERO" />
+        <GPIB command="CONFigure:LTE:SIGN:NCELl:LTE:CELL4 OFF,OB1,304,500,ZERO" />
+        <GPIB command="CONFigure:LTE:SIGN:NCELl:LTE:CELL5 OFF,OB1,305,499,ZERO" />
+        <GPIB command="CONFigure:LTE:SIGN:NCELl:LTE:CELL6 OFF,OB1,306,498,ZERO" />
+        <GPIB command="CONFigure:LTE:SIGN:NCELl:LTE:CELL7 OFF,OB1,307,497,ZERO" />
+        <GPIB command="CONFigure:LTE:SIGN:NCELl:LTE:CELL8 OFF,OB1,308,496,ZERO" />
+        <GPIB command="CONFigure:LTE:SIGN:NCELl:LTE:CELL9 OFF,OB1,309,495,ZERO" />
+        <GPIB command="CONFigure:LTE:SIGN:NCELl:LTE:CELL10 OFF,OB1,310,494,ZERO" />
+        <GPIB command="CONFigure:LTE:SIGN:NCELl:LTE:CELL11 OFF,OB1,311,493,ZERO" />
+        <GPIB command="CONFigure:LTE:SIGN:NCELl:LTE:CELL12 OFF,OB1,312,492,ZERO" />
+        <GPIB command="CONFigure:LTE:SIGN:NCELl:LTE:CELL13 OFF,OB1,313,491,ZERO" />
+        <GPIB command="CONFigure:LTE:SIGN:NCELl:LTE:CELL14 OFF,OB1,314,490,ZERO" />
+        <GPIB command="CONFigure:LTE:SIGN:NCELl:LTE:CELL15 OFF,OB1,315,489,ZERO" />
+        <GPIB command="CONFigure:LTE:SIGN:NCELl:LTE:CELL16 OFF,OB1,316,488,ZERO" />
+        <GPIB command="CONFigure:LTE:SIGN:CONNection:DPCYcle P128" />
+        <GPIB command="CONFigure:GSM:SIGN:ETOE ON" />
+        <GPIB command="ROUTe:LTE:SIGN:SCENario:TRO RF1C,RX1,RF1C,TX1,RF3C,TX2" />
+        <GPIB command="CONFigure:LTE:SIGN:ETOE ON" />
+        <GPIB command="CONFigure:LTE:SIGN:ETOE ON" />
+        <GPIB command="CONFigure:LTE:SIGN:CELL:BANDwidth:DL B200" />
+        <GPIB command="CONFigure:LTE:SIGN:BAND OB1" />
+        <GPIB command="CONFigure:LTE:SIGN:RFSettings:CHANnel:DL 300" />
+        <GPIB command="CONFigure:LTE:SIGN:DL:RSEPre:LEVel -85" />
+        <GPIB command="CONFigure:LTE:SIGN:UL:PUSCh:OLNPower -20" />
+        <GPIB command="CONFigure:LTE:SIGN:UL:PUSCh:TPC:CLTPower 10" />
+        <GPIB command="CONFigure:LTE:SIGN:CELL:SECurity:AUTHenticat ON" />
+        <GPIB command="CONFigure:LTE:SIGN:CELL:SECurity:NAS ON" />
+        <GPIB command="CONFigure:LTE:SIGN:CELL:SECurity:AS ON" />
+        <GPIB command="CONFigure:LTE:SIGN:CELL:SECurity:IALGorithm S3G" />
+        <GPIB command="CONFigure:LTE:SIGN:CELL:TIME:TSOurce CMWTime" />
+        <GPIB command="CONFigure:LTE:SIGN:CELL:TIME:SATTach ON" />
+        <GPIB command="CONFigure:LTE:SIGN:CONNection:SCHModel:ENABle OFF" />
+        <GPIB command="CONFigure:LTE:SIGN:CONNection:CTYPe DAPPlication" />
+        <GPIB command="CONFigure:LTE:SIGN:CONNection:STYPe UDCHannels" />
+        <GPIB command="CONFigure:LTE:SIGN:CONNection:UDCHannels:DL 100,0,Q64,26" />
+        <GPIB command="CONFigure:LTE:SIGN:CONNection:PDCCh:RPDCch ON" />
+        <GPIB command="CONFigure:LTE:SIGN:CONNection:UDCHannels:UL 100,0,Q16,21" />
+        <GPIB command="SOURce:LTE:SIGN:CELL:STATe ON" />
+    </Config>
+</Configs>

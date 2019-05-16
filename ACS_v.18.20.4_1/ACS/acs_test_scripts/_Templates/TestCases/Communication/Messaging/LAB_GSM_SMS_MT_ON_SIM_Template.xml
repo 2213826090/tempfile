@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase>
+    <UseCase>LAB_GSM_SMS_MT_ON_SIM</UseCase>
+    <Description>GSM Mobile Terminated SMS over CS on simulated network</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>False</b2bContinuousMode>
+    <TcMaxAttempt>3</TcMaxAttempt>
+    <TcAcceptanceCriteria>1</TcAcceptanceCriteria>
+    <Parameters>
+        <Parameter>
+            <!-- Cell Band (PGSM|RGSM|EGSM|GSM450|GSM480|GSM750|GSM850|TGSM810|PCS|DCS) -->
+            <Name>CELL_BAND</Name>
+            <Value>PGSM</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Cell power in dB -->
+            <Name>CELL_POWER</Name>
+            <Value>-70</Value>
+        </Parameter>
+        <Parameter>
+            <!-- BCH ARFCN -->
+            <Name>BCH_ARFCN</Name>
+            <Value>20</Value>
+        </Parameter>
+        <Parameter>
+            <!-- SMS text to send -->
+            <Name>SMS_TEXT</Name>
+            <Value>This is a short LAB GSM SMS CS MT SMS text</Value>
+        </Parameter>
+        <Parameter>
+            <!-- SMS Data coding scheme in hexadecimal -->
+            <Name>DATA_CODING_SCHEME</Name>
+            <Value>0</Value>
+        </Parameter>
+        <Parameter>
+            <!-- SMS transfer timeout in seconds -->
+            <Name>SMS_TRANSFER_TIMEOUT</Name>
+            <Value>60</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Max sms chould be stored on SIM -->
+            <Name>SMS_AMOUNT_TO_SEND</Name>
+            <Value>10</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

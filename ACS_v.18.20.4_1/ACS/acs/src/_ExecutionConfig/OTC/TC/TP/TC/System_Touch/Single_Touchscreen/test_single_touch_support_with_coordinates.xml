@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<TestCase>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Discription>
+The touch driver has the ability to properly detect tap coordinates on the touch panel.
+</Discription>
+    <Domain>System_Touch</Domain>
+    <Phase>CORE</Phase>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <Type>FUNCTIONAL</Type>
+    <UseCase>PY_UNIT</UseCase>
+    <b2bIteration>1</b2bIteration>
+    <Parameters>
+        <Parameter>
+            <Name>HpalmName</Name>
+            <Value>single_touch_support_with_coordinates.SingleTouchSupport.test_single_touch_support_with_coordinates</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TEST_DATA_ROOT</Name>
+            <Value>testplan/System_Touch</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TEST_CASE</Name>
+            <Value>tests.System_Touch.Single_Touchscreen.single_touch_support_with_coordinates.SingleTouchSupport.test_single_touch_support_with_coordinates</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

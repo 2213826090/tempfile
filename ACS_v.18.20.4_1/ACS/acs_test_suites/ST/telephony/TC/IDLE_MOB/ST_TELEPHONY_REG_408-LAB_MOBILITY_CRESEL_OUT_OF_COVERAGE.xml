@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="13.37">
+  <UseCase>LAB_MOBILITY_CRESEL_OUT_OF_COVERAGE</UseCase>
+  <Description> Perform several cell reselections IDLE 2G/3G but going back from out of coverage</Description>
+  <Requirements>
+    <Contour>
+        <Global_ID>16482304</Global_ID>
+        <Test_Case_ID>ST_TELEPHONY_REG_408</Test_Case_ID>
+        <Name>B2B NetworkRegistration - 2GCamp - back from out of coverage - different band (x500)</Name>
+    </Contour>
+  </Requirements>
+  <b2bIteration>500</b2bIteration>
+  <b2bContinuousMode>True</b2bContinuousMode>
+  <TcExpectedResult>PASS</TcExpectedResult>
+  <Parameters>
+    <Parameter>
+      <!-- Number of cell reselections to perform (switch between 2 equipments) -->
+      <Name>CELL_JUMP_NUMBER</Name>
+      <Value>2</Value>
+    </Parameter>
+    <Parameter>
+        <!-- NS1 Cell Technology (2G|3G) -->
+        <Name>NS1_CELL_TECH</Name>
+        <Value>2G</Value>
+    </Parameter>
+    <Parameter>
+        <!-- NS1 Cell Band
+                For 2G : EGSM|GSM850|PCS|DCS
+                For 3G : 1,2,5,8
+        -->
+        <Name>NS1_CELL_BAND</Name>
+        <Value>PCS</Value>
+    </Parameter>
+    <Parameter>
+        <!-- NS1 Cell Service ( (GSM|GPRS|EGPRS) for 2G CELL, (CIRCUIT|PACKET|CIRCUIT_PACKET) for 3G CELL) -->
+        <Name>NS1_CELL_SERVICE</Name>
+        <Value>EGPRS</Value>
+    </Parameter>
+    <Parameter>
+        <!-- NS1 cell power -->
+        <Name>NS1_CELL_POWER</Name>
+        <Value>-80</Value>
+    </Parameter>
+    <Parameter>
+        <!-- NS1 Cell LAC, For 2G and 3G: 0 to 65535-->
+        <Name>NS1_LAC</Name>
+        <Value>30</Value>
+    </Parameter>
+    <Parameter>
+        <!-- NS2 Cell Routing Area, For 2G and 3G: 1 to 255-->
+        <Name>NS1_RAC</Name>
+        <Value>45</Value>
+    </Parameter>
+    <Parameter>
+        <!-- NS2 Cell Technology (2G|3G) -->
+        <Name>NS2_CELL_TECH</Name>
+        <Value>2G</Value>
+    </Parameter>
+    <Parameter>
+        <!-- NS2 Cell Band
+                For 2G : EGSM|GSM850|PCS|DCS
+                For 3G : 1,2,5,8
+        -->
+        <Name>NS2_CELL_BAND</Name>
+        <Value>GSM850</Value>
+    </Parameter>
+    <Parameter>
+        <!-- NS2 Cell Service ( (GSM|GPRS|EGPRS) for 2G CELL, (CIRCUIT|PACKET|CIRCUIT_PACKET) for 3G CELL) -->
+        <Name>NS2_CELL_SERVICE</Name>
+        <Value>EGPRS</Value>
+    </Parameter>
+    <Parameter>
+        <!-- NS2 cell power -->
+        <Name>NS2_CELL_POWER</Name>
+        <Value>-120</Value>
+    </Parameter>
+    <Parameter>
+        <!-- Cell Reselection power set on NS2 before decrementation of NS1 cell power -->
+        <Name>CRESEL_POWER</Name>
+        <Value>-80</Value>
+    </Parameter>
+    <Parameter>
+        <!-- NS2 Cell LAC, For 2G and 3G: 0 to 65535-->
+        <Name>NS2_LAC</Name>
+        <Value>10</Value>
+    </Parameter>
+    <Parameter>
+        <!-- NS2 Cell Routing Area, For 2G and 3G: 1 to 255-->
+        <Name>NS2_RAC</Name>
+        <Value>25</Value>
+    </Parameter>
+    <Parameter>
+        <!-- Maximum time autorised to resel from no coverage zone -->
+        <Name>CRESEL_TIME_OUT</Name>
+        <Value>240</Value>
+    </Parameter>
+    <Parameter>
+        <!-- Time to stay in no coverage -->
+        <Name>CRESEL_NO_COVERAGE_TIME</Name>
+        <Value>60</Value>
+    </Parameter>
+  </Parameters>
+</TestCase>

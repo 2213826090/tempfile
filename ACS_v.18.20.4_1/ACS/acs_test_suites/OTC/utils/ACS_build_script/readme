@@ -1,0 +1,13 @@
+This acs_build.sh script fetch acs_core.zip and campaigns.zip from the build out packages, such as https://mcg-depot.intel.com/artifactory/cactus-absp-tl/acs-release/137/
+and zip files and folders from acs_core.zip and campaigns.zip to make release package, such as ACS_v.15.28.4_1.zip
+
+How to use:
+./acs_build.sh 'IDSID' 'PASSWORD' 'NUMBER'
+
+for example:
+my IDSID is jinchenx and my password is 123456, and the build nubmer is 137, the build number come from the URL https://mcg-depot.intel.com/artifactory/cactus-absp-tl/acs-release/137/
+
+I should execute it like this:
+./acs_build.sh 'jinchenx' '123456' '137'
+
+After this, a package like ACS_v.15.28.4_1.zip will be in your current working directory

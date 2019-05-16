@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="13.37">
+    <UseCase>EXEC</UseCase>
+    <Description>General execution use case</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters>
+        <Parameter>
+            <!-- Browser heavy page -->
+            <Name>RUN_CMD</Name>
+            <Value>adb shell am instrument -w -e class android.webkit.cts.WebViewClientTest#testDoUpdateVisitedHistory com.android.cts.webkit/android.test.InstrumentationCtsTestRunner</Value>
+        </Parameter>
+        <Parameter>
+            <Name>RUN_TIMEOUT</Name>
+            <Value>60</Value>
+        </Parameter>
+        <Parameter>
+            <Name>RUN_EXPECT_RESULT</Name>
+            <Value>OK (1 test)</Value>
+        </Parameter>
+
+      </Parameters>
+</TestCase>

@@ -1,0 +1,2328 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<UseCases xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../acs/src/_Catalogs/UseCase/usecase.xsd">
+    <UseCase Id="LAB_EM_BATT_TEMP_MEAS_CYCLE" Domain="ENERGY_MGMT" SubDomain="BATTERY" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.EnergyManagement.Obsolete.LAB_EM_BATT_TEMP_MEAS_CYCLE.LabEmBattTempMeasCycle</ClassName>
+        <Description>Make measurement when setting Battery temperature.</Description>
+        <Environment name="EMT_BATT">
+            <Dependency>EQT_EMT311</Dependency>
+            <Dependency>EQT_TEMP_CHAMBER</Dependency>
+        </Environment>
+        <Parameters>
+            <Parameter name="CHARGER_TYPE" type="CABLE_TYPE" isOptional="false">
+                <!-- USB Charger Type : DCP | SDP | CDP | AC_CHGR | NONE -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="READ_INFO_TIMEOUT" type="DURATION_IN_SEC" isOptional="false">
+                <!-- Timeout in second before reading info -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue>300</DefaultValue>
+                <Blank />
+            </Parameter>
+            <Parameter name="TEMPERATURE_CYCLE" type="STRING" isOptional="false">
+                <!-- Temperature CYCLE in degree Celsius eg: 25,50,-15,25. The cycle must match with declared EM capabilities : there must be as many capabilities as temperatures in the cycle -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+        </Parameters>
+    </UseCase>
+    <UseCase Id="LAB_EM_BATT_BENCH_CYCLE_2G" Domain="ENERGY_MGMT" SubDomain="BATTERY" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.EnergyManagement.Obsolete.LAB_EM_BATT_BENCH_CYCLE_2G.LabEmBattBenchCycle2g</ClassName>
+        <Description>battery monitoring - Bench cycle in 2G.</Description>
+        <Environment name="EMT_BATT">
+            <Dependency>EQT_EMT311</Dependency>
+            <Dependency>EQT_RS_CMU200</Dependency>
+        </Environment>
+        <Parameters>
+            <Parameter name="CELL_BAND" type="CELL_BAND_2G" isOptional="false">
+                <!-- Cell Band (PGSM|RGSM|EGSM|GSM450|GSM480|GSM750|GSM850|TGSM810|PCS|DCS) -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="CELL_SERVICE" type="CELL_SERVICE_2G" isOptional="false">
+                <!-- Cell Service GSM|GPRS|EGPRS -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="TCH_ARFCN" type="STRING" isOptional="false">
+                <!-- TCH ARFCN -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="CELL_POWER" type="CELL_POWER_IN_DBM" isOptional="false">
+                <!-- Cell power in dBm -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="UPLINK_CHANNEL" type="STRING" isOptional="false">
+                <!-- Uplink data channel in dBm -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="DATA_CALL" type="BOOLEAN" isOptional="false">
+                <!-- Use data call(CS call by default): TRUE|FALSE -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="DATA_CALL_MODE" type="STRING" isOptional="false">
+                <!-- Data call test mode : TEST_MODE_A|TEST_MODE_B -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="USE_SLOT_3" type="BOOLEAN" isOptional="false">
+                <!-- Activate burst slot 3 (True/False) -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="USE_SLOT_4" type="BOOLEAN" isOptional="false">
+                <!-- Activate burst slot 4 (True/False) -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="USE_SLOT_5" type="BOOLEAN" isOptional="false">
+                <!-- Activate burst slot 5 (True/False) -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="USE_SLOT_6" type="BOOLEAN" isOptional="false">
+                <!-- Activate burst slot 6 (True/False) -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="SLOT_3_PCL" type="STRING" isOptional="false">
+                <!-- configure slot 3 uplink/Gamma PCL level :a value of 3 is equal to 33dBm -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="SLOT_4_PCL" type="STRING" isOptional="false">
+                <!-- configure slot 4 uplink/Gamma PCL level :a value of 3 is equal to 33dBm -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="SLOT_5_PCL" type="STRING" isOptional="false">
+                <!-- configure slot 5 uplink/Gamma PCL level :a value of 3 is equal to 33dBm -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="SLOT_6_PCL" type="STRING" isOptional="false">
+                <!-- configure slot 6 uplink/Gamma PCL level :a value of 3 is equal to 33dBm -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="BATT_MIN_CAPACITY" type="BATTERY_CAPACITY_IN_PERCENT" isOptional="false">
+                <!-- minimal capacity limit for battery discharging from 0% to 100% -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="BATT_MAX_CAPACITY" type="BATTERY_CAPACITY_IN_PERCENT" isOptional="false">
+                <!-- maximal capacity limit for battery charging from 0% to 100% or 'full' -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="BATT_START_CAPACITY" type="BATTERY_CAPACITY_IN_PERCENT" isOptional="false">
+                <!-- Start capacity for this test from 0% to 100% or 'full', if you are above board will discharge to adjust its capacity -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="CHARGE_TIME" type="DURATION_IN_SEC" isOptional="false">
+                <!-- link to BATT_MAX_CAPACITY, Time in seconds to let the board charge before evaluating battery capacity -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="DISCHARGE_TIME" type="DURATION_IN_SEC" isOptional="false">
+                <!-- link to BATT_MIN_CAPACITY, Time in seconds to let the board discharge in case of hardware discharging(charger disconnected) before evaluating battery capacity -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="TCT" type="OUTSIDE_TEMPERATURE_IN_CELSIUS" isOptional="true">
+                <!-- OPTIONAL PARAMETER Temperature Chamber Temperature in Celsius, its use require that a temperature chamber is present. -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+        </Parameters>
+    </UseCase>
+    <UseCase Id="LAB_EM_BATT_BENCH_CYCLE_3G" Domain="ENERGY_MGMT" SubDomain="BATTERY" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.EnergyManagement.Obsolete.LAB_EM_BATT_BENCH_CYCLE_3G.LabEmBattBenchCycle3g</ClassName>
+        <Description>battery monitoring - Bench cycle in 3G.</Description>
+        <Environment name="EMT_BATT">
+            <Dependency>EQT_EMT311</Dependency>
+            <Dependency>EQT_RS_CMU200</Dependency>
+        </Environment>
+        <Parameters>
+            <Parameter name="CELL_BAND" type="CELL_BAND_3G" isOptional="false">
+                <!-- Cell Band (from Band 1 to Band 10) -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="UL_UARFCN" type="STRING" isOptional="false">
+                <!-- UL UARFCN channel -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="MOBILE_POWER" type="STRING" isOptional="false">
+                <!-- Mobile Power in dBm -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="CELL_POWER" type="CELL_POWER_IN_DBM" isOptional="false">
+                <!-- Cell power in dBm -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="BATT_MIN_CAPACITY" type="BATTERY_CAPACITY_IN_PERCENT" isOptional="false">
+                <!-- minimal capacity limit for battery discharging from 0% to 100% -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="BATT_MAX_CAPACITY" type="BATTERY_CAPACITY_IN_PERCENT" isOptional="false">
+                <!-- maximal capacity limit for battery charging from 0% to 100% or 'full' -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="CHARGE_TIME" type="DURATION_IN_SEC" isOptional="false">
+                <!-- link to BATT_MAX_CAPACITY, Time in seconds to let the board charge before evaluating battery capacity -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="DISCHARGE_TIME" type="DURATION_IN_SEC" isOptional="false">
+                <!-- link to BATT_MIN_CAPACITY, Time in seconds to let the board discharge in case of hardware discharging(charger disconnected) before evaluating battery capacity -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="TCT" type="OUTSIDE_TEMPERATURE_IN_CELSIUS" isOptional="true">
+                <!-- OPTIONAL PARAMETER Temperature Chamber Temperature in Celsius, its use require that a temperature chamber is present. -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+        </Parameters>
+    </UseCase>
+    <UseCase Id="LAB_EM_BATT_OFF_ON_NO_VC" Domain="ENERGY_MGMT" SubDomain="BATTERY" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.EnergyManagement.Obsolete.LAB_EM_BATT_OFF_ON_NO_VC.LabEmBattOffOnNoVc</ClassName>
+        <Description>battery monitoring - OFF ON cycle</Description>
+        <Environment name="EMT_BATT">
+            <Dependency>EQT_EMT311</Dependency>
+        </Environment>
+        <Parameters>
+            <Parameter name="BATT_MIN_CAPACITY" type="BATTERY_CAPACITY_IN_PERCENT" isOptional="false">
+                <!-- minimal capacity limit for battery discharging from 0% to 100% -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="BATT_MAX_CAPACITY" type="BATTERY_CAPACITY_IN_PERCENT" isOptional="false">
+                <!-- maximal capacity limit for battery charging from 0% to 100% or 'full' -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="CHARGE_TIME" type="DURATION_IN_SEC" isOptional="false">
+                <!-- link to BATT_MAX_CAPACITY, Time in seconds to let the board charge before evaluating battery capacity -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="DISCHARGE_TIME" type="DURATION_IN_SEC" isOptional="false">
+                <!-- link to BATT_MIN_CAPACITY, Time in seconds to let the board discharge in case of hardware discharging(charger disconnected) before evaluating battery capacity -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="REBOOT_MODE" type="WAY_TO_BOOT_DUT" isOptional="false">
+                <!-- Phone way to reboot : SOFT for programming shutdown |HARD for button press -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="TCT" type="OUTSIDE_TEMPERATURE_IN_CELSIUS" isOptional="true">
+                <!-- OPTIONAL PARAMETER Temperature Chamber Temperature in Celsius, its use require that a temperature chamber is present. -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+        </Parameters>
+    </UseCase>
+    <UseCase Id="LAB_EM_BATT_OFF_ON_VC_3G" Domain="ENERGY_MGMT" SubDomain="BATTERY" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.EnergyManagement.Obsolete.LAB_EM_BATT_OFF_ON_VC_3G.LabEmBattOffOnVc3g</ClassName>
+        <Description>battery monitoring - OFF ON cycle in 3G</Description>
+        <Environment name="EMT_BATT">
+            <Dependency>EQT_EMT311</Dependency>
+            <Dependency>EQT_RS_CMU200</Dependency>
+        </Environment>
+        <Parameters>
+            <Parameter name="CELL_BAND" type="CELL_BAND_3G" isOptional="false">
+                <!-- Cell Band (from Band 1 to Band 10) -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="UL_UARFCN" type="STRING" isOptional="false">
+                <!-- UPLINK ARFCN -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="MOBILE_POWER" type="STRING" isOptional="false">
+                <!-- Mobile power in dBm -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="CELL_POWER" type="CELL_POWER_IN_DBM" isOptional="false">
+                <!-- Cell power in dBm -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="BATT_MIN_CAPACITY" type="BATTERY_CAPACITY_IN_PERCENT" isOptional="false">
+                <!-- minimal capacity limit for battery discharging from 0% to 100% -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="BATT_MAX_CAPACITY" type="BATTERY_CAPACITY_IN_PERCENT" isOptional="false">
+                <!-- maximal capacity limit for battery charging from 0% to 100% or 'full' -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="CHARGE_TIME" type="DURATION_IN_SEC" isOptional="false">
+                <!-- link to BATT_MAX_CAPACITY, Time in seconds to let the board charge before evaluating battery capacity -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="DISCHARGE_TIME" type="DURATION_IN_SEC" isOptional="false">
+                <!-- link to BATT_MIN_CAPACITY, Time in seconds to let the board discharge in case of hardware discharging(charger disconnected) before evaluating battery capacity -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="REBOOT_MODE" type="WAY_TO_BOOT_DUT" isOptional="false">
+                <!-- Phone way to reboot : SOFT for programming shutdown |HARD for button press -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="TCT" type="OUTSIDE_TEMPERATURE_IN_CELSIUS" isOptional="true">
+                <!-- OPTIONAL PARAMETER Temperature Chamber Temperature in Celsius, its use require that a temperature chamber is present. -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+        </Parameters>
+    </UseCase>
+    <UseCase Id="LAB_EM_BATT_OFF_ON_VC_2G" Domain="ENERGY_MGMT" SubDomain="BATTERY" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.EnergyManagement.Obsolete.LAB_EM_BATT_OFF_ON_VC_2G.LabEmBattOffOnVc2g</ClassName>
+        <Description>battery monitoring - OFF ON cycle in 2G</Description>
+        <Environment name="EMT_BATT">
+            <Dependency>EQT_EMT311</Dependency>
+            <Dependency>EQT_RS_CMU200</Dependency>
+        </Environment>
+        <Parameters>
+            <Parameter name="CELL_BAND" type="CELL_BAND_2G" isOptional="false">
+                <!-- Cell Band (PGSM|RGSM|EGSM|GSM450|GSM480|GSM750|GSM850|TGSM810|PCS|DCS) -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="CELL_SERVICE" type="CELL_SERVICE_2G" isOptional="false">
+                <!-- Cell Service GSM|GPRS|EGPRS -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="TCH_ARFCN" type="STRING" isOptional="false">
+                <!-- TCH ARFCN -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="CELL_POWER" type="CELL_POWER_IN_DBM" isOptional="false">
+                <!-- Cell power in dBm -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="UPLINK_CHANNEL" type="STRING" isOptional="false">
+                <!-- Uplink data channel in dBm -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="DATA_CALL" type="BOOLEAN" isOptional="false">
+                <!-- Use data call(CS call by default): TRUE|FALSE -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="DATA_CALL_MODE" type="STRING" isOptional="false">
+                <!-- Data call test mode : TEST_MODE_A|TEST_MODE_B -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="USE_SLOT_3" type="BOOLEAN" isOptional="false">
+                <!-- Activate burst slot 3 (True/False) -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="USE_SLOT_4" type="BOOLEAN" isOptional="false">
+                <!-- Activate burst slot 4 (True/False) -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="USE_SLOT_5" type="BOOLEAN" isOptional="false">
+                <!-- Activate burst slot 5 (True/False) -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="USE_SLOT_6" type="BOOLEAN" isOptional="false">
+                <!-- Activate burst slot 6 (True/False) -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="SLOT_3_PCL" type="SLOT_3_PCL" isOptional="false">
+                <!-- configure slot 3 uplink/Gamma PCL level :a value of 3 is equal to 33dBm -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="SLOT_4_PCL" type="SLOT_4_PCL" isOptional="false">
+                <!-- configure slot 4 uplink/Gamma PCL level :a value of 3 is equal to 33dBm -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="SLOT_5_PCL" type="SLOT_5_PCL" isOptional="false">
+                <!-- configure slot 5 uplink/Gamma PCL level :a value of 3 is equal to 33dBm -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="SLOT_6_PCL" type="SLOT_6_PCL" isOptional="false">
+                <!-- configure slot 6 uplink/Gamma PCL level :a value of 3 is equal to 33dBm -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="BATT_MIN_CAPACITY" type="BATTERY_CAPACITY_IN_PERCENT" isOptional="false">
+                <!-- minimal capacity limit for battery discharging from 0% to 100% -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="BATT_MAX_CAPACITY" type="BATTERY_CAPACITY_IN_PERCENT" isOptional="false">
+                <!-- maximal capacity limit for battery charging from 0% to 100% or 'full' -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="CHARGE_TIME" type="DURATION_IN_SEC" isOptional="false">
+                <!-- link to BATT_MAX_CAPACITY, Time in seconds to let the board charge before evaluating battery capacity -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="DISCHARGE_TIME" type="DURATION_IN_SEC" isOptional="false">
+                <!-- link to BATT_MIN_CAPACITY, Time in seconds to let the board discharge in case of hardware discharging(charger disconnected) before evaluating battery capacity -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="REBOOT_MODE" type="WAY_TO_BOOT_DUT" isOptional="false">
+                <!-- Phone way to reboot : SOFT for programming shutdown |HARD for button press -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="TCT" type="OUTSIDE_TEMPERATURE_IN_CELSIUS" isOptional="true">
+                <!-- OPTIONAL PARAMETER Temperature Chamber Temperature in Celsius, its use require that a temperature chamber is present. -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+        </Parameters>
+    </UseCase>
+    <UseCase Id="LAB_EM_BATT_MONITOR_BURST_CTRL" Domain="ENERGY_MGMT" SubDomain="BATTERY" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.EnergyManagement.Obsolete.LAB_EM_BATT_MONITOR_BURST_CTRL.LabEmBattMonitorBurstCtrl</ClassName>
+        <Description>Control current while battery temperature is charging.</Description>
+        <Environment name="EMT_BATT">
+            <Dependency>EQT_EMT311</Dependency>
+            <Dependency>EQT_RS_CMU200</Dependency>
+        </Environment>
+        <Parameters>
+            <Parameter name="CELL_BAND" type="CELL_BAND_2G" isOptional="false">
+                <!-- Cell Band (PGSM|RGSM|EGSM|GSM450|GSM480|GSM750|GSM850|TGSM810|PCS|DCS) -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="CELL_SERVICE" type="CELL_SERVICE_2G" isOptional="false">
+                <!-- Cell Service GSM|GPRS|EGPRS -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="TCH_ARFCN" type="STRING" isOptional="false">
+                <!-- TCH ARFCN -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="CELL_POWER" type="CELL_POWER_IN_DBM" isOptional="false">
+                <!-- Cell power in dBm -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="USE_SLOT_3" type="BOOLEAN" isOptional="false">
+                <!-- Activate burst slot 3 (True/False) -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="USE_SLOT_4" type="BOOLEAN" isOptional="false">
+                <!-- Activate burst slot 4 (True/False) -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="USE_SLOT_5" type="BOOLEAN" isOptional="false">
+                <!-- Activate burst slot 5 (True/False) -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="USE_SLOT_6" type="BOOLEAN" isOptional="false">
+                <!-- Activate burst slot 6 (True/False) -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="SLOT_3_PCL" type="STRING" isOptional="false">
+                <!-- configure slot 3 uplink/Gamma PCL level :a value of 3 is equal to 33dBm -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="SLOT_4_PCL" type="STRING" isOptional="false">
+                <!-- configure slot 4 uplink/Gamma PCL level :a value of 3 is equal to 33dBm -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="SLOT_5_PCL" type="STRING" isOptional="false">
+                <!-- configure slot 5 uplink/Gamma PCL level :a value of 3 is equal to 33dBm -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="SLOT_6_PCL" type="STRING" isOptional="false">
+                <!-- configure slot 6 uplink/Gamma PCL level :a value of 3 is equal to 33dBm -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="BATT_MIN_CAPACITY" type="BATTERY_CAPACITY_IN_PERCENT" isOptional="false">
+                <!-- minimal capacity limit for battery discharging from 0% to 100% -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="BATT_MAX_CAPACITY" type="BATTERY_CAPACITY_IN_PERCENT" isOptional="false">
+                <!-- maximal capacity limit for battery charging from 0% to 100% or 'full' -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="CHARGE_TIME" type="DURATION_IN_SEC" isOptional="false">
+                <!-- link to BATT_MAX_CAPACITY, Time in seconds to let the board charge before evaluating battery capacity -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+        </Parameters>
+    </UseCase>
+    <UseCase Id="LAB_EM_BATT_BOOT_COS_MOS" Domain="ENERGY_MGMT" SubDomain="BATTERY" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.EnergyManagement.Obsolete.LAB_EM_BATT_BOOT_COS_MOS.LabEmBattBootCosMos</ClassName>
+        <Description>boot in COS then MOS</Description>
+        <Environment name="EMT_BATT">
+            <Dependency>EQT_EMT311</Dependency>
+        </Environment>
+        <Parameters>
+            <Parameter name="OFF_TIMEOUT" type="DURATION_IN_SEC" isOptional="false">
+                <!-- Time to spend when battery is off -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+        </Parameters>
+    </UseCase>
+    <UseCase Id="LAB_EM_BATT_VBATT_LOAD" Domain="ENERGY_MGMT" SubDomain="BATTERY" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.EnergyManagement.Obsolete.LAB_EM_BATT_VBATT_LOAD.LabEmBattVbattLoad</ClassName>
+        <Description>battery monitoring - cycle 2G with wifi, flash, vibration, audio playing, emmc stress, cpu stress, display on, brightness 100%</Description>
+        <Environment name="EMT_BATT">
+            <Dependency>EQT_EMT311</Dependency>
+            <Dependency>EQT_RS_CMU200</Dependency>
+        </Environment>
+        <Parameters>
+            <Parameter name="LOAD" type="LOAD_TECHNOLOGY_LIST" isOptional="false">
+                <!-- LOAD to apply during stress (some testcase parameters are not required following the load) : LIGHT, MEDIUM, HEAVY -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="BATT_MIN_CAPACITY" type="BATTERY_CAPACITY_IN_PERCENT" isOptional="false">
+                <!-- minimal capacity limit for battery discharging from 0% to 100%, a value below 0% will cause the test stop when battery is totally discharged after several connection lost -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="BATT_MAX_CAPACITY" type="BATTERY_CAPACITY_IN_PERCENT" isOptional="false">
+                <!-- maximal capacity limit for battery charging from 0% to 100% or 'full' -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="CHARGE_TIME" type="DURATION_IN_SEC" isOptional="false">
+                <!-- link to BATT_MAX_CAPACITY, Time in seconds to let the board charge before evaluating battery capacity -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="STRESS_PERIOD" type="DURATION_IN_SEC" isOptional="false">
+                <!-- time to spend in stress cycle in seconds(at least 60 seconds) -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="NO_STRESS_PERIOD" type="DURATION_IN_SEC" isOptional="false">
+                <!-- time to spend in no stress cycle in seconds(at least 60 seconds) -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="TCT" type="OUTSIDE_TEMPERATURE_IN_CELSIUS" isOptional="true">
+                <!-- OPTIONAL PARAMETER Temperature Chamber Temperature in Celsius, its use require that a temperature chamber is present.(can be replaced by execution room temperature if no TCT used) -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="CELL_BAND" type="CELL_BAND_2G" isOptional="false">
+                <!-- Only for LOAD [HEAVY, MEDIUM]:Cell Band (PGSM|RGSM|EGSM|GSM450|GSM480|GSM750|GSM850|TGSM810|PCS|DCS) -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="CELL_SERVICE" type="CELL_SERVICE_2G" isOptional="false">
+                <!-- Only for LOAD [HEAVY, MEDIUM]:Cell Service GSM|GPRS|EGPRS -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="TCH_ARFCN" type="TCH_ARFCN" isOptional="false">
+                <!-- Only for LOAD [HEAVY, MEDIUM]:TCH ARFCN -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="CELL_POWER" type="CELL_POWER_IN_DBM" isOptional="false">
+                <!-- Only for LOAD [HEAVY, MEDIUM]:Cell power in dBm -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="UPLINK_CHANNEL" type="UPLINK_CHANNEL" isOptional="false">
+                <!-- Only for LOAD [HEAVY, MEDIUM]:Uplink data channel in dBm -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="USE_SLOT_3" type="BOOLEAN" isOptional="false">
+                <!-- Only for LOAD [HEAVY, MEDIUM]:Activate burst slot 3 (True/False) -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="USE_SLOT_4" type="BOOLEAN" isOptional="false">
+                <!-- Only for LOAD [HEAVY, MEDIUM]:Activate burst slot 4 (True/False) -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="USE_SLOT_5" type="BOOLEAN" isOptional="false">
+                <!-- Only for LOAD [HEAVY, MEDIUM]:Activate burst slot 5 (True/False) -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="USE_SLOT_6" type="BOOLEAN" isOptional="false">
+                <!-- Only for LOAD [HEAVY, MEDIUM]:Activate burst slot 6 (True/False) -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="SLOT_3_PCL" type="STRING" isOptional="false">
+                <!-- Only for LOAD [HEAVY, MEDIUM]:configure slot 3 uplink/Gamma PCL level :a value of 3 is equal to 33dBm -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="SLOT_4_PCL" type="STRING" isOptional="false">
+                <!-- Only for LOAD [HEAVY, MEDIUM]:configure slot 4 uplink/Gamma PCL level :a value of 3 is equal to 33dBm -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="SLOT_5_PCL" type="STRING" isOptional="false">
+                <!-- Only for LOAD [HEAVY, MEDIUM]:configure slot 5 uplink/Gamma PCL level :a value of 3 is equal to 33dBm -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="SLOT_6_PCL" type="STRING" isOptional="false">
+                <!-- Only for LOAD [HEAVY, MEDIUM]:configure slot 6 uplink/Gamma PCL level :a value of 3 is equal to 33dBm -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="AUDIO_FILE" type="STRING" isOptional="false">
+                <!-- Only for LOAD [HEAVY, MEDIUM]:Path to audio file to play -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="VOLUME" type="VOLUME_IN_PERCENT" isOptional="false">
+                <!-- Only for LOAD [HEAVY, MEDIUM]:Volume value in percent from 0 to 100 -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="WIFI_SECURITY" type="WIFI_SECURITY" isOptional="false">
+                <!-- Only for LOAD [HEAVY]:Wifi Security of wifi env to be used. Can be "OPEN", "WEP", "WPA" or "WPA2". If a WIFI_ACCESS_POINT has been choosen, this parameter refers to the access point's security. -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="WIFI_ACCESS_POINT" type="WIFI_ACCESS_POINT" isOptional="false">
+                <!-- Only for LOAD [HEAVY]:Wifi access point on which board will connect to. Must refers to a wifi router's name (equipment name of the bench configuration file). If no value has been set, a default router will be choosen in the bench configuration, depending on WIFI_SECURITY. -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="DL_FILE" type="STRING" isOptional="false">
+                <!-- Only for LOAD [HEAVY]:File to download from the server. This file shall be available on the server. If the file to transfer is located in a specific directory, you can specify its path. i.e. : acs/download_file/get5M -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+        </Parameters>
+    </UseCase>
+    <UseCase Id="LAB_EM_BATT_MULTIMEDIA_PLAYBACK" Domain="ENERGY_MGMT" SubDomain="BATTERY" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.EnergyManagement.Obsolete.LAB_EM_BATT_MULTIMEDIA_PLAYBACK.LabEmBattVideoPlayback</ClassName>
+        <Description>Control the discharging while multimedia playback</Description>
+        <Environment name="EMT_BATT">
+            <Dependency>EQT_EMT311</Dependency>
+        </Environment>
+        <Parameters>
+            <Parameter name="BATT_MIN_CAPACITY" type="BATTERY_CAPACITY_IN_PERCENT" isOptional="false">
+                <!-- minimal capacity that test can reach from 0% to 100%, or 'dead' to let the board turn off by itself, will also be used as test setup if CYCLE_BEHAVIOR is equal to CHARGE_DISCHARGE or CHARGE_ONLY -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="BATT_MAX_CAPACITY" type="BATTERY_CAPACITY_IN_PERCENT" isOptional="false">
+                <!-- maximal capacity that test can reach from 0% to 100% or 'full' for the full state, will also be used as test setup if CYCLE_BEHAVIOR is equal to DISCHARGE_CHARGE or DISCHARGE_ONLY -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="CHARGING_MILESTONE" type="STRING" isOptional="false">
+                <!-- this parameter contains capacities on which we want to check the time spent to reach them during charge, eg: a,b,c will return the time spent to reach a,b,c from BATT_MIN_CAPACITY -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="DISCHARGING_MILESTONE" type="STRING" isOptional="false">
+                <!-- this parameter contains capacities on which we want to check the time spent to reach them during discharge, eg: a,b,c will return the time spent to reach a,b,c from BATT_MAX_CAPACITY -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="CYCLE_BEHAVIOR" type="FUEL_GAUGING_CYCLE_BEHAVIOR" isOptional="false">
+                <!-- Test cycle behavior, allow you to chose how to treat de fuel guaging step : DISCHARGE_CHARGE, CHARGE_DISCHARGE, CHARGE_ONLY, DISCHARGE_ONLY -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="CHARGE_TIME" type="DURATION_IN_SEC" isOptional="false">
+                <!-- link to BATT_MAX_CAPACITY, Time in seconds to let the board charge before evaluating battery capacity -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="MULTIMEDIA_TYPE" type="MULTIMEDIA_TYPE" isOptional="false">
+                <!-- type of media to play : AUDIO, VIDEO -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="MULTIMEDIA_FILE" type="STRING" isOptional="false">
+                <!-- Path to audio/video file to play -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="VOLUME" type="VOLUME_IN_PERCENT" isOptional="false">
+                <!-- Volume value in percent from 0 to 100 -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="TCT" type="OUTSIDE_TEMPERATURE_IN_CELSIUS" isOptional="true">
+                <!-- OPTIONAL PARAMETER Temperature Chamber Temperature in Celsius, its use require that a temperature chamber is present.(can be replaced by execution room temperature if no TCT used) -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+        </Parameters>
+    </UseCase>
+    <UseCase Id="LAB_EM_BATT_MAINTENANCE_CHARGING" Domain="ENERGY_MGMT" SubDomain="BATTERY" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.EnergyManagement.Obsolete.LAB_EM_BATT_MAINTENANCE_CHARGING.LabEmBattMaintenanceCharging</ClassName>
+        <Description>battery monitoring - Maintenance charging</Description>
+        <Environment name="EMT_BATT">
+            <Dependency>EQT_EMT311</Dependency>
+        </Environment>
+        <Parameters>
+            <Parameter name="EXPECTED_BATT_STATE" type="BATTERY_STATUS" isOptional="false">
+                <!-- Battery charging state where to start measurement: FULL, CHARGING, DISCHARGING, NOT CHARGING -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="BATT_MAX_CAPACITY" type="BATTERY_CAPACITY_IN_PERCENT" isOptional="false">
+                <!-- maximal capacity limit for battery charging from 0% to 100% or 'full' -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="CHARGE_TIME" type="DURATION_IN_SEC" isOptional="false">
+                <!-- link to BATT_MAX_CAPACITY, Time in seconds to let the board charge before evaluating battery capacity -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="MAINTENANCE_CHARGING_TIMEOUT" type="TIMEOUT_IN_SEC" isOptional="false">
+                <!-- Time to spend in maintenance charging in seconds -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="DATA_POLLING" type="DURATION_IN_SEC" isOptional="false">
+                <!-- Delay before retrieving info during maintenance charging -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="MULTIMEDIA_TYPE" type="LOAD_TECHNOLOGY_LIST" isOptional="false">
+                <!-- type of media to play : NONE, AUDIO, VIDEO -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="MULTIMEDIA_FILE" type="STRING" isOptional="false">
+                <!-- Path to audio/video file to play (ignored if MULTIMEDIA_TYPE is NONE) -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="VOLUME" type="VOLUME_IN_PERCENT" isOptional="false">
+                <!-- Volume value in percent from 0 to 100 (ignored if MULTIMEDIA_TYPE is NONE) -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="TCT" type="OUTSIDE_TEMPERATURE_IN_CELSIUS" isOptional="true">
+                <!-- OPTIONAL PARAMETER Temperature Chamber Temperature in Celsius, its use require that a temperature chamber is present. -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+        </Parameters>
+    </UseCase>
+    <UseCase Id="LAB_EM_BATT_THERMAL_MAINTENANCE_CHARGING" Domain="ENERGY_MGMT" SubDomain="BATTERY" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.EnergyManagement.Obsolete.LAB_EM_BATT_THERMAL_MAINTENANCE_CHARGING.LabEmBattThermalMaintenanceCharging</ClassName>
+        <Description>battery monitoring - Maintenance charging at specific temperature</Description>
+        <Environment name="EMT_BATT">
+            <Dependency>EQT_EMT311</Dependency>
+            <Dependency>EQT_TEMP_CHAMBER</Dependency>
+        </Environment>
+        <Parameters>
+            <Parameter name="BATT_MAX_CAPACITY" type="BATTERY_CAPACITY_IN_PERCENT" isOptional="false">
+                <!-- maximal capacity limit for battery charging from 0% to 100% or 'full' -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="EXPECTED_BATT_STATE" type="BATTERY_STATUS" isOptional="false">
+                <!-- Battery charging state where to start measurement: FULL, CHARGING, DISCHARGING, NOT CHARGING -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="CHARGE_TIME" type="DURATION_IN_SEC" isOptional="false">
+                <!-- link to BATT_MAX_CAPACITY, Time in seconds to let the board charge before evaluating battery capacity -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="MAINTENANCE_CHARGING_TIMEOUT" type="TIMEOUT_IN_SEC" isOptional="false">
+                <!-- Time to spend in maintenance charging in seconds -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="LOAD" type="LOAD_TECHNOLOGY_LIST" isOptional="false">
+                <!-- LOAD to apply to the board when charging separate by ;. To be choosen between following load : WIFI;BLUETOOTH;TORCH;VIBRA -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="DATA_POLLING" type="DURATION_IN_SEC" isOptional="false">
+                <!-- Delay before retrieving info during maintenance charging -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="TEMPERATURE" type="OUTSIDE_TEMPERATURE_IN_CELSIUS" isOptional="false">
+                <!-- Temperature Chamber Temperature in Celsius. -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+        </Parameters>
+    </UseCase>
+    <UseCase Id="LAB_EM_BATT_IBATT_STANDBY_MODE" Domain="ENERGY_MGMT" SubDomain="BATTERY" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.EnergyManagement.Obsolete.LAB_EM_BATT_IBATT_STANDBY_MODE.LabEmBattIbattStandbyMode</ClassName>
+        <Description>Energy Management - Measure Ibatt leak when phone is in special mode.</Description>
+        <Environment name="EMT_BATT">
+            <Dependency>EQT_EMT311</Dependency>
+        </Environment>
+        <Parameters>
+            <Parameter name="BATT_MAX_CAPACITY" type="BATTERY_CAPACITY_IN_PERCENT" isOptional="false">
+                <!-- maximal capacity limit for battery charging from 0% to 100% or 'full' -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="CHARGE_TIME" type="DURATION_IN_SEC" isOptional="false">
+                <!-- link to BATT_MAX_CAPACITY, Time in seconds to let the board charge before evaluating battery capacity -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="STAND_MODE" type="STRING" isOptional="false">
+                <!-- The stand mode : FLIGHT_MODE | STANDBY | OFF -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="STAND_DURATION" type="DURATION_IN_SEC" isOptional="false">
+                <!-- Time to spend in seconds in stand mode -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+        </Parameters>
+    </UseCase>
+    <UseCase Id="LAB_EM_BATT_IDLE_3G_VC_NO_CHGR" Domain="ENERGY_MGMT" SubDomain="BATTERY" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.EnergyManagement.Obsolete.LAB_EM_BATT_IDLE_3G_VC_NO_CHGR.LabEmBattIdleVc3gNoChgr</ClassName>
+        <Description>Energy Management - idle 3G voicecall with no charger.</Description>
+        <Environment name="EMT_BATT">
+            <Dependency>EQT_EMT311</Dependency>
+            <Dependency>EQT_RS_CMU200</Dependency>
+        </Environment>
+        <Parameters>
+            <Parameter name="CELL_BAND" type="CELL_BAND_3G" isOptional="false">
+                <!-- Cell Band (from Band 1 to Band 10) -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="UL_UARFCN" type="STRING" isOptional="false">
+                <!-- UL UARFCN channel -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="MOBILE_POWER" type="STRING" isOptional="false">
+                <!-- Mobile Power in dBm -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="CELL_POWER" type="CELL_POWER_IN_DBM" isOptional="false">
+                <!-- Cell power in dBm -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="BATT_MAX_CAPACITY" type="BATTERY_CAPACITY_IN_PERCENT" isOptional="false">
+                <!-- maximal capacity limit for battery charging from 0% to 100% or 'full' -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="CHARGE_TIME" type="DURATION_IN_SEC" isOptional="false">
+                <!-- link to BATT_MAX_CAPACITY, Time in seconds to let the board charge before evaluating battery capacity -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="TEST_DURATION" type="DURATION_IN_SEC" isOptional="false">
+                <!-- Time to spend in idle 3G voicecall and doing measurement in seconds -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+        </Parameters>
+    </UseCase>
+    <UseCase Id="LAB_EM_BATT_NFT_THERMAL_MEASUREMENT" Domain="ENERGY_MGMT" SubDomain="BATTERY" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.EnergyManagement.Obsolete.LAB_EM_BATT_NFT_THERMAL_MEASUREMENT.LabEmBattNftThermalMeasurement</ClassName>
+        <Description>Permits to check the phone temperature with a thermal camera</Description>
+        <Environment name="EMT_BATT">
+            <Dependency>EQT_EMT311</Dependency>
+        </Environment>
+        <Parameters>
+            <Parameter name="TEST_PROCESS" type="STRING" isOptional="false">
+                <!-- Choose the test combo (Available for the moment : SDP, CDP, DCP, VIDEO, CALL3G, WIFI) -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="VIDEO_PATH" type="VIDEO_PATH" isOptional="false">
+                <!-- PATH OF THE VIDEO -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="VOLUME" type="VOLUME_IN_PERCENT" isOptional="false">
+                <!-- Volume of the video (%) -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="TEST_LENGTH" type="TEST_LENGTH" isOptional="false">
+                <!-- Value of the test duration (seconds) -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="BATT_MAX_CAPACITY" type="BATTERY_CAPACITY_IN_PERCENT" isOptional="false">
+                <!-- Value of capacity in order to charge the board (%) -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="CHARGE_TIME" type="DURATION_IN_SEC" isOptional="false">
+                <!-- Duration of the charge (seconds) -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="CELL_BAND" type="CELL_BAND" isOptional="false">
+                <!-- Cell Band (from BAND1 to BAND10) for 3G or Cell Band (PGSM|RGSM|EGSM|GSM450|GSM480|GSM750|GSM850|TGSM810|PCS|DCS) for 2G -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="CELL_POWER" type="CELL_POWER" isOptional="false">
+                <!-- Cell power in dBm -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="CALL_ORIGIN" type="CALL_ORIGIN" isOptional="false">
+                <!-- Choose which device do the call: SIMULATOR|PHONE -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="UL_UARFCN" type="UL_UARFCN" isOptional="false">
+                <!-- 3G ONLY:UPLINK ARFCN -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="CELL_SERVICE" type="CELL_SERVICE" isOptional="false">
+                <!-- 2G ONLY:Cell Service GSM|GPRS|EGPRS -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="TCH_ARFCN" type="STRING" isOptional="false">
+                <!-- 2G ONLY:TCH ARFCN -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="UPLINK_CHANNEL" type="STRING" isOptional="false">
+                <!-- 2G ONLY:Uplink data channel in dBm -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+        </Parameters>
+    </UseCase>
+    <UseCase Id="LAB_EM_BATT_INSERTION" Domain="ENERGY_MGMT" SubDomain="POWER_SUPPLY" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.EnergyManagement.PowerSupplyBased.Obsolete.LAB_EM_BATT_INSERTION.LabEmBattInsertion</ClassName>
+        <Description>Insert a valid battery as single power source</Description>
+        <Environment name="EMT_PS">
+            <Dependency>EQT_AG_66319</Dependency>
+            <Dependency>EQT_AG_E364XA</Dependency>
+            <Dependency>EQT_EMT340</Dependency>
+        </Environment>
+        <Parameters>
+            <Parameter name="BATTERY_TYPE" type="BATTERY_TYPE" isOptional="false">
+                <Description>Battery Type (ANALOG|BATTERY_EMULATOR|DIGITAL|TEST2|INVALID|REMOVED) or leave empty to use the one from device catalog</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="CHARGER_TYPE" type="CABLE_TYPE" isOptional="false">
+                <Description>Charger Type : None | ALL | DCP (current=1.5A) | SDP (Current=0.5A) | CDP(Current=1.5A)| AC_CHGR (Current=2.5A)</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="BATTERY_TEMP" type="EMULATED_BATTERY_TEMPERATURE_IN_CELSIUS" isOptional="false">
+                <Description>Battery Temperature (in degree Celsius) : 95, 70, 50, 25, 10, 5, 0, -15</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+        </Parameters>
+    </UseCase>
+    <UseCase Id="LAB_EM_BATT_OVER_TEMP" Domain="ENERGY_MGMT" SubDomain="POWER_SUPPLY" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.EnergyManagement.PowerSupplyBased.Obsolete.LAB_EM_BATT_OVER_TEMP.LabEmBattOverTemp</ClassName>
+        <Description>Monitor battery Charge when setting Battery temperature.</Description>
+        <Environment name="EMT_PS">
+            <Dependency>EQT_AG_66319</Dependency>
+            <Dependency>EQT_EMT340</Dependency>
+        </Environment>
+        <Parameters>
+            <Parameter name="VBATT" type="VOLTAGE" isOptional="false">
+                <Description>Vbatt Voltage</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="VUSB" type="VOLTAGE" isOptional="false">
+                <Description>Vusb Voltage</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="BATT_TEMP_NORMAL" type="EMULATED_BATTERY_TEMPERATURE_IN_CELSIUS" isOptional="false">
+                <Description>Battery Temperature (in degree Celsius) : 95, 70, 50, 25, 10, 5, 0, -15</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="BATT_TEMP_UNDER" type="EMULATED_BATTERY_TEMPERATURE_IN_CELSIUS" isOptional="false">
+                <Description>Temperature (in degree Celsius) to put battery under normal temperature state</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="BATT_TEMP_OVER" type="EMULATED_BATTERY_TEMPERATURE_IN_CELSIUS" isOptional="false">
+                <Description>Temperature (in degree Celsius) to put battery over normal temperature state</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+        </Parameters>
+    </UseCase>
+    <UseCase Id="LAB_EM_BOOT_PRESS_ON" Domain="ENERGY_MGMT" SubDomain="POWER_SUPPLY" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.EnergyManagement.PowerSupplyBased.Obsolete.LAB_EM_BOOT_PRESS_ON.LabEmBootPressOn</ClassName>
+        <Description>Long keypress on power button while platform is off</Description>
+        <Environment name="EMT_PS">
+            <Dependency>EQT_AG_66319</Dependency>
+            <Dependency>EQT_AG_E364XA</Dependency>
+            <Dependency>EQT_EMT340</Dependency>
+        </Environment>
+        <Parameters>
+            <Parameter name="VBATT" type="VOLTAGE" isOptional="false">
+                <!-- Initial value for VBATT -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="VBATT_CRITICAL" type="VOLTAGE" isOptional="false">
+                <!-- Critical threshold value for VBATT -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+        </Parameters>
+    </UseCase>
+    <UseCase Id="LAB_EM_COS_CHARGING" Domain="ENERGY_MGMT" SubDomain="POWER_SUPPLY" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.EnergyManagement.PowerSupplyBased.Obsolete.LAB_EM_COS_CHARGING.LabEmCosCharging</ClassName>
+        <Description>Platform shall charge the battery to CRITICAL level before entering NORMAL mode. Platform shall be able to boot in CHARGING ONLY mode when battery DEAD threshold is reached and charger connected.</Description>
+        <Environment name="EMT_PS">
+            <Dependency>EQT_AG_66319</Dependency>
+            <Dependency>EQT_EMT340</Dependency>
+        </Environment>
+        <Parameters>
+            <Parameter name="CHARGER_TYPE" type="CABLE_TYPE" isOptional="false">
+                <Description>Charger to use for the test</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="SCU_CHARGING_HI_VOLTAGE" type="VOLTAGE" isOptional="false">
+                <Description>Voltage to use for the test at the high bound of the SCU charging field</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="COS_CHARGING_HI_VOLTAGE" type="VOLTAGE" isOptional="false">
+                <Description>Voltage to use for the test at the high bound of the COS field</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="MOS_CHARGING_LO_VOLTAGE" type="VOLTAGE" isOptional="false">
+                <Description>Voltage to use for the test at the low bound of the MOS field</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="EXT_PS" type="BOOLEAN" isOptional="false">
+                <Description>active or not the external power supply, can be TRUE or FALSE</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+        </Parameters>
+    </UseCase>
+    <UseCase Id="LAB_EM_EXPORT_BAT_INFO_ROB" Domain="ENERGY_MGMT" SubDomain="POWER_SUPPLY" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.EnergyManagement.PowerSupplyBased.Obsolete.LAB_EM_EXPORT_BAT_INFO_ROB.LabEmExportBatInfoRob</ClassName>
+        <Description>EM - test device capability to export information about battery to userapp robustness</Description>
+        <Environment name="EMT_PS">
+            <Dependency>EQT_AG_66321</Dependency>
+            <Dependency>EQT_EMT320</Dependency>
+        </Environment>
+        <Parameters>
+            <Parameter name="SYSFS_MANDATORY_INFO" type="STRING" isOptional="false">
+                <!-- All info which are mandatory in sysfs to export to userapp -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="NUMBER_PASS" type="STRING" isOptional="false">
+                <!-- number of pass -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+        </Parameters>
+    </UseCase>
+    <UseCase Id="LAB_EM_GRACEFUL_SHUTDOWN" Domain="ENERGY_MGMT" SubDomain="POWER_SUPPLY" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.EnergyManagement.PowerSupplyBased.Obsolete.LAB_EM_GRACEFUL_SHUTDOWN.LabGracefulShutdown</ClassName>
+        <Description>Make a graceful shutdown while platform is ON.</Description>
+        <Environment name="EMT_PS">
+            <Dependency>EQT_AG_66319</Dependency>
+            <Dependency>EQT_AG_E364XA</Dependency>
+            <Dependency>EQT_EMT340</Dependency>
+        </Environment>
+        <Parameters>
+            <Parameter name="VBATT" type="VOLTAGE" isOptional="false">
+                <!-- Vbatt Voltage -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="BATTERY_TEMPERATURE" type="EMULATED_BATTERY_TEMPERATURE_IN_CELSIUS" isOptional="false">
+                <!-- Battery Temperature (in degree Celsius) : 95, 70, 50, 25, 10, 5, 0, -15 -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="UNPLUG_CHARGER_WHILE_SHUTDOWN" type="BOOLEAN" isOptional="false">
+                <!-- unplug the charge just after a graceful shutdown: can be 'True' or 'False' -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="PRESS_PWR_BUTTON_TIME" type="FLOAT" isOptional="false">
+                <!-- press power button duration (in second): shall be between 0.1 and 12 -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="BATTERY_TYPE" type="BATTERY_TYPE" isOptional="false">
+                <!-- Battery Type : BATTERY_EMULATOR or ANALOG or leave empty to use the one from device catalog -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+        </Parameters>
+    </UseCase>
+    <UseCase Id="LAB_EM_HW_CHARGING" Domain="ENERGY_MGMT" SubDomain="POWER_SUPPLY" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.EnergyManagement.PowerSupplyBased.Obsolete.LAB_EM_HW_CHARGING.LabEmHwCharging</ClassName>
+        <Description>Platform is OFF and Wall charger is plugged in</Description>
+        <Environment name="EMT_PS">
+            <Dependency>EQT_AG_66319</Dependency>
+            <Dependency>EQT_AG_E364XA</Dependency>
+            <Dependency>EQT_EMT340</Dependency>
+        </Environment>
+        <Parameters>
+            <Parameter name="VBATT" type="VOLTAGE" isOptional="false">
+                <Description>Vbatt Voltage</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="CHARGER_TYPE" type="CABLE_TYPE" isOptional="false">
+                <Description>Charger type : DCP or AC_CHGR</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+        </Parameters>
+    </UseCase>
+    <UseCase Id="LAB_EM_LOW_BATT_POLICY_MANAGEMENT" Domain="ENERGY_MGMT" SubDomain="POWER_SUPPLY" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.EnergyManagement.PowerSupplyBased.Obsolete.LAB_EM_LOW_BATT_POLICY_MANAGEMENT.LabEmLowBattPolicyManagement</ClassName>
+        <Description>Monitor Battery - Low Batt Policy Management - P_IUC_3003</Description>
+        <Environment name="EMT_PS">
+            <Dependency>EQT_AG_66319</Dependency>
+            <Dependency>EQT_AG_E364XA</Dependency>
+            <Dependency>EQT_EMT340</Dependency>
+        </Environment>
+        <Parameters>
+            <Parameter name="CAPABILITY_TEST" type="STRING" isOptional="false">
+                <!-- Capability to test: P_CAP_40059 or P_CAP_40071 or BOTH -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="MOS_WO_CHARGER_THRESHOLD" type="VOLTAGE" isOptional="false">
+                <!-- Threshold from which Main OS can start without charger connected -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="MOS_THRESHOLD_SHUTDOWN" type="VOLTAGE" isOptional="false">
+                <!-- Threshold from which Main OS shutdown without charger -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="VUSB" type="VOLTAGE" isOptional="false">
+                <!-- Controled USB charger voltage -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+        </Parameters>
+    </UseCase>
+    <UseCase Id="LAB_EM_MONITOR_BATT_CHARGE_RATE" Domain="ENERGY_MGMT" SubDomain="POWER_SUPPLY" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.EnergyManagement.PowerSupplyBased.Obsolete.LAB_EM_MONITOR_BATT_CHARGE_RATE.LabEmMonitorBattChargeRate</ClassName>
+        <Description>Monitor Battery charge rate while charger present (P_IUC_3002).</Description>
+        <Environment name="EMT_PS">
+            <Dependency>EQT_AG_66319</Dependency>
+            <Dependency>EQT_AG_E364XA</Dependency>
+            <Dependency>EQT_EMT340</Dependency>
+        </Environment>
+        <Parameters>
+            <Parameter name="VBATT_INIT" type="VOLTAGE" isOptional="false">
+                <!-- Initial Battery voltage -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="VBATT_LIST" type="STRING" isOptional="false">
+                <!-- Battery voltage list for the different test cycle (example: 4;4.1;4.2) -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="VBATT_START_MOS" type="VOLTAGE" isOptional="false">
+                <!-- Voltage from which phone can start Main OS -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="VUSB" type="VOLTAGE" isOptional="false">
+                <!-- USB Voltage to set on the power supply -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+        </Parameters>
+    </UseCase>
+    <UseCase Id="LAB_EM_MONITOR_FUEL_GAUGING" Domain="ENERGY_MGMT" SubDomain="POWER_SUPPLY" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.EnergyManagement.PowerSupplyBased.Obsolete.LAB_EM_MONITOR_FUEL_GAUGING.LabEmMonitorFuelGauging</ClassName>
+        <Description>Control fuel gauging while the board is charging and not charging.</Description>
+        <Environment name="EMT_PS">
+            <Dependency>EQT_AG_66319</Dependency>
+            <Dependency>EQT_EMT340</Dependency>
+        </Environment>
+        <Parameters>
+            <Parameter name="VBATT" type="VOLTAGE" isOptional="false">
+                <!-- Initial value for VBATT -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+        </Parameters>
+    </UseCase>
+    <UseCase Id="LAB_EM_PLUG_UNPLUG" Domain="ENERGY_MGMT" SubDomain="POWER_SUPPLY" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.EnergyManagement.PowerSupplyBased.Obsolete.LAB_EM_PLUG_UNPLUG.LabEmPlugUnplug</ClassName>
+        <Description>Control DCP or SDP plug and unplug. (Sample testcase)</Description>
+        <Environment name="EMT_PS">
+            <Dependency>EQT_AG_66319</Dependency>
+            <Dependency>EQT_AG_E364XA</Dependency>
+            <Dependency>EQT_EMT340</Dependency>
+        </Environment>
+        <Parameters>
+            <Parameter name="CHARGER_TYPE" type="CABLE_TYPE" isOptional="false">
+                <!-- Charger Type : DCP | SDP (Current=0.5A)| CDP(Current=1.5A) | AC_CHGR(Current=2.5A) ALL -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="VBATT" type="VOLTAGE" isOptional="false">
+                <!-- Vbatt Voltage -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="VUSB" type="VOLTAGE" isOptional="false">
+                <!-- Vusb Voltage -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="BATTERY_TEMPERATURE" type="EMULATED_BATTERY_TEMPERATURE_IN_CELSIUS" isOptional="false">
+                <!-- Battery Temperature (in degree Celsius) : 95, 70, 50, 25, 10, 5, 0, -15 -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+        </Parameters>
+    </UseCase>
+    <UseCase Id="LAB_EM_POWER_ON_CHARGER_INSERTION" Domain="ENERGY_MGMT" SubDomain="POWER_SUPPLY" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.EnergyManagement.PowerSupplyBased.Obsolete.LAB_EM_POWER_ON_CHARGER_INSERTION.LabEmPowerOnChargerInsertion</ClassName>
+        <Description>Turn on by charger insertion</Description>
+        <Environment name="EMT_PS">
+            <Dependency>EQT_AG_66319</Dependency>
+            <Dependency>EQT_AG_E364XA</Dependency>
+            <Dependency>EQT_EMT340</Dependency>
+        </Environment>
+        <Parameters>
+            <Parameter name="CHARGER_TYPE" type="CABLE_TYPE" isOptional="false">
+                <!-- Charger Type : DCP (current=1.5A) | SDP (Current=0.5A) | CDP(Current=1.5A)| AC_CHGR (Current=2.5A) | ALL -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="VBATT" type="VOLTAGE" isOptional="false">
+                <!-- Vbatt Voltage -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="VUSB" type="VOLTAGE" isOptional="false">
+                <!-- Vusb Voltage -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+        </Parameters>
+    </UseCase>
+    <UseCase Id="LAB_EM_PRESS_SHUTDOWN" Domain="ENERGY_MGMT" SubDomain="POWER_SUPPLY" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.EnergyManagement.PowerSupplyBased.Obsolete.LAB_EM_PRESS_SHUTDOWN.LabEmPressShutdown</ClassName>
+        <Description>Press shutdown buton while platform is ON.</Description>
+        <Environment name="EMT_PS">
+            <Dependency>EQT_AG_66319</Dependency>
+            <Dependency>EQT_EMT340</Dependency>
+        </Environment>
+        <Parameters>
+            <Parameter name="VBATT" type="VOLTAGE" isOptional="false">
+                <!-- Vbatt Voltage -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="BATTERY_TEMPERATURE" type="EMULATED_BATTERY_TEMPERATURE_IN_CELSIUS" isOptional="false">
+                <!-- Battery Temperature (in degree Celsius) : 95, 70, 50, 25, 10, 5, 0, -15 -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+        </Parameters>
+    </UseCase>
+    <UseCase Id="LAB_EM_PS_BCU" Domain="ENERGY_MGMT" SubDomain="POWER_SUPPLY" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.EnergyManagement.PowerSupplyBased.Obsolete.LAB_EM_PS_BCU.LabEmPsBcu</ClassName>
+        <Description>Energy Management BCU vbatt drop test.</Description>
+        <Environment name="EMT_PS">
+            <Dependency>EQT_AG_66319</Dependency>
+            <Dependency>EQT_EMT340</Dependency>
+            <Dependency>EQT_NI_DAQ</Dependency>
+        </Environment>
+        <Parameters>
+            <Parameter name="VBATT" type="VOLTAGE" isOptional="false">
+                <!-- Battery voltage at the beginning of the test -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="VBATT_DROP" type="VOLTAGE" isOptional="false">
+                <!-- Battery voltage drop to trigger the BCU -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="DROP_DURATION" type="DURATION_IN_SEC" isOptional="false">
+                <!-- Duration of the drop in seconds it should be upper than 0.35s -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="REBOOT_AFTER_TEST" type="BOOLEAN" isOptional="false">
+                <!-- If "True", the board is rebooted at the end of the test -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+        </Parameters>
+    </UseCase>
+    <UseCase Id="LAB_EM_PS_BOOT" Domain="ENERGY_MGMT" SubDomain="POWER_SUPPLY" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.EnergyManagement.PowerSupplyBased.Obsolete.LAB_EM_PS_BOOT.LabEmPsBoot</ClassName>
+        <Description>PUPDR - boot a board with given vbatt.</Description>
+        <Environment name="EMT_PS">
+            <Dependency>EQT_AG_66319</Dependency>
+            <Dependency>EQT_AG_E364XA</Dependency>
+            <Dependency>EQT_EMT340</Dependency>
+        </Environment>
+        <Parameters>
+            <Parameter name="VBATT" type="VOLTAGE" isOptional="false">
+                <!-- Vbatt Voltage -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="CHARGER_TYPE" type="CABLE_TYPE" isOptional="false">
+                <!-- The charger type to plug (NONE, AC_CHGR, WALL_CHGR, CDP, DCP or SDP) -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="INITIAL_OS_STATE" type="OS_STATE" isOptional="false">
+                <!-- initial os : MOS (for Main Os) or COS (for Charging Os) or OFF (the board is off) or OFF_NO_BATT (off without battery) -->
+                <Description>To be filled</Description>
+                <PossibleValues>COS;MOS;OFF;OFF_NO_BATT</PossibleValues>
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+        </Parameters>
+    </UseCase>
+    <UseCase Id="LAB_EM_PS_EMERGENCY_SHUTDOWN" Domain="ENERGY_MGMT" SubDomain="POWER_SUPPLY" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.EnergyManagement.PowerSupplyBased.Obsolete.LAB_EM_PS_EMERGENCY_SHUTDOWN.LabEmPsEmergencyShutdown</ClassName>
+        <Description>Energy Management Emergency shutdown test.</Description>
+        <!--The test boot the board at a normal battery voltage.
+            Then it change the battery voltage to a voltage below the Emergency voltage threshold.
+            After this, we reboot the board at a normal voltage in order to control the result. -->
+        <Environment name="EMT_PS">
+            <Dependency>EQT_AG_66319</Dependency>
+            <Dependency>EQT_EMT340</Dependency>
+        </Environment>
+        <Parameters>
+            <Parameter name="EMERGENCY_BATTERY_VOLTAGE" type="VOTLAGE" isOptional="false">
+                <!-- The emergency battery voltage for the shutdown in Volt(float) -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="NORMAL_BATTERY_VOLTAGE" type="VOLTAGE" isOptional="false">
+                <!-- The normal battery voltage in Volt(float) -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+        </Parameters>
+    </UseCase>
+    <UseCase Id="LAB_EM_PS_FLASH_LOW_BATT" Domain="ENERGY_MGMT" SubDomain="POWER_SUPPLY" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.EnergyManagement.PowerSupplyBased.Obsolete.LAB_EM_PS_FLASH_LOW_BATT.LabEmPsFlashLowBatt</ClassName>
+        <Description>Energy Management Flash with a low batt test.</Description>
+        <!--First the test tries to flash the board under the battery voltage threshold.
+            Then it tries to flash the board with a normal battery voltage.
+            WARNING: if you got a non-default configuration of your LAB_SYSTEM_STUP_EMBEDDED UC,
+            you have to execute the LAB_SYSTEM_SETUP_EMBEDDED UC
+            after this one in order to restore a normal embedded configuration!!! -->
+        <Environment name="EMT_PS">
+            <Dependency>EQT_AG_66319</Dependency>
+            <Dependency>EQT_EMT340</Dependency>
+        </Environment>
+        <Parameters>
+            <Parameter name="FLASH_TIMEOUT" type="FLASH_TIMEOUT_IN_SEC" isOptional="false">
+                <!-- The flash timeout in second (int) -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="FLASH_FILE_PATH" type="FLASH_FILE_PATH" isOptional="false">
+                <!-- The full path where the flash files are located. If the parameter is not defined ACS will read from optional parameter from CampaignEngine -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="LOW_BATTERY_VOLTAGE" type="VOLTAGE" isOptional="false">
+                <!-- The low battery voltage for the first flash in Volt (float) -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="NORMAL_BATTERY_VOLTAGE" type="VOLTAGE" isOptional="false">
+                <!-- The normal battery voltage for the second flash in Volt (float) -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+        </Parameters>
+    </UseCase>
+    <UseCase Id="LAB_EM_PS_FORCED_SHUTDOWN" Domain="ENERGY_MGMT" SubDomain="POWER_SUPPLY" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.EnergyManagement.PowerSupplyBased.Obsolete.LAB_EM_PS_FORCED_SHUTDOWN.LabEmPsForcedShutdown</ClassName>
+        <Description>Press shutdown buton to make a Forced shutdown.</Description>
+        <Environment name="EMT_PS">
+            <Dependency>EQT_AG_66319</Dependency>
+            <Dependency>EQT_EMT340</Dependency>
+        </Environment>
+        <Parameters>
+            <Parameter name="VBATT" type="VOLTAGE" isOptional="false">
+                <!-- Vbatt Voltage -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="BATTERY_TEMPERATURE" type="EMULATED_BATTERY_TEMPERATURE_IN_CELSIUS" isOptional="false">
+                <!-- Battery Temperature (in degree Celsius) : 95, 70, 50, 25, 10, 5, 0, -15 -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="HW_SHUTDOWN_PRESS_TIME" type="DURATION_IN_SEC" isOptional="false">
+                <!-- power button press time to do a Hardware shutdown -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+        </Parameters>
+    </UseCase>
+    <UseCase Id="LAB_EM_PS_HARDWARE_SHUTDOWN" Domain="ENERGY_MGMT" SubDomain="POWER_SUPPLY" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.EnergyManagement.PowerSupplyBased.Obsolete.LAB_EM_PS_HARDWARE_SHUTDOWN.LabEmPsHardwareShutdown</ClassName>
+        <Description>Press shutdown buton to make a hardware shutdown.</Description>
+        <Environment name="EMT_PS">
+            <Dependency>EQT_AG_66319</Dependency>
+            <Dependency>EQT_EMT340</Dependency>
+        </Environment>
+        <Parameters>
+            <Parameter name="VBATT" type="VOLTAGE" isOptional="false">
+                <!-- Vbatt Voltage -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="BATTERY_TEMPERATURE" type="EMULATED_BATTERY_TEMPERATURE_IN_CELSIUS" isOptional="false">
+                <!-- Battery Temperature (in degree Celsius) : 95, 70, 50, 25, 10, 5, 0, -15 -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="HW_SHUTDOWN_PRESS_TIME" type="DURATION_IN_SEC" isOptional="false">
+                <!-- power button press time to do a Hardware shutdown -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="TEST_OS" type="OS_STATE" isOptional="false">
+                <!-- the os test to be executed : MOS, POS , ROS -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+        </Parameters>
+    </UseCase>
+    <UseCase Id="LAB_EM_PS_LOW_BATT_SHUTDOWN" Domain="ENERGY_MGMT" SubDomain="POWER_SUPPLY" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.EnergyManagement.PowerSupplyBased.Obsolete.LAB_EM_PS_LOW_BATT_SHUTDOWN.LabEmPsLowBattShutdown</ClassName>
+        <Description>EM - when the battery is very low, the phone shall initiate a graceful shutdown.</Description>
+        <Environment name="EMT_PS">
+            <Dependency>EQT_AG_66319</Dependency>
+            <Dependency>EQT_EMT340</Dependency>
+        </Environment>
+        <Parameters>
+            <Parameter name="START_VBATT" type="VOLTAGE" isOptional="false">
+                <!-- the Vbatt Voltage to start the test -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="LOW_VBATT" type="VOLTAGE" isOptional="false">
+                <!-- the low Vbatt Voltage for the run test -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="VBATT_EXTINCTION" type="VOLTAGE" isOptional="false">
+                <!-- the Vbatt Voltage threshold for the board extinction -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="TIMEOUT" type="TIMEOUT_IN_SEC" isOptional="false">
+                <!-- the timeout of the test in second -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+        </Parameters>
+    </UseCase>
+    <UseCase Id="LAB_EM_PS_REBOOT" Domain="ENERGY_MGMT" SubDomain="POWER_SUPPLY" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.EnergyManagement.PowerSupplyBased.Obsolete.LAB_EM_PS_REBOOT.LabEmPsReboot</ClassName>
+        <Description>PUPDR - Perform shutdown with cable plug or unplug then boot.</Description>
+        <Environment name="EMT_PS">
+            <Dependency>EQT_AG_66319</Dependency>
+            <Dependency>EQT_AG_E364XA</Dependency>
+            <Dependency>EQT_EMT340</Dependency>
+        </Environment>
+        <Parameters>
+            <Parameter name="VBATT" type="VOLTAGE" isOptional="false">
+                <!-- Vbatt Voltage -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="CABLE_TYPE" type="CABLE_TYPE" isOptional="false">
+                <!-- Cable to insert before shutdown : NONE, AC_CHGR or SDP -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="SHUTDOWN_TYPE" type="WAY_TO_SHUTDOWN_DUT" isOptional="false">
+                <!-- Type of shutdown to perform : SOFT or HARD -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+        </Parameters>
+    </UseCase>
+    <UseCase Id="LAB_EM_PS_TURN_OFF_DURING_BOOT" Domain="ENERGY_MGMT" SubDomain="POWER_SUPPLY" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.EnergyManagement.PowerSupplyBased.Obsolete.LAB_EM_PS_TURN_OFF_DURING_BOOT.LabEmPsTurnOffDuringBoot</ClassName>
+        <Description>Energy Management Emergency shutdown test.</Description>
+        <!--The test boot the board at a normal battery voltage.
+            Then it change the battery voltage to a voltage below the Emergency voltage threshold.
+            After this, we reboot the board at a normal voltage in order to control the result. -->
+        <Environment name="EMT_PS">
+            <Dependency>EQT_AG_66319</Dependency>
+            <Dependency>EQT_EMT340</Dependency>
+        </Environment>
+        <Parameters>
+            <Parameter name="BATT_VOLTAGE" type="VOLTAGE" isOptional="false">
+                <!-- The normal battery voltage for the test : in Volt (float) -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="EMERGENCY_BATT_VOLTAGE" type="VOLTAGE" isOptional="false">
+                <!-- The normal emergency battery voltage for the test : in Volt (float) -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="LOOP_NUMBER" type="ITERATION" isOptional="false">
+                <!-- The number of loop to do : (float) -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="FIRST_TURN_OFF_TIMING" type="DURATION_IN_SEC" isOptional="false">
+                <!-- The first time to try to turn off the board from the time the board start to boot : in second (int) -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="TURN_OFF_TIMING_STEP" type="DURATION_IN_SEC" isOptional="false">
+                <!-- The turn off timing step to try to turn off the boardin the loop : in second (int) -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="TURN_OFF_WAY" type="STRING" isOptional="false">
+                <!-- The way to turn off the board to use: battery_removal, hardware_shutdown, emergency_shutdown -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+        </Parameters>
+    </UseCase>
+    <UseCase Id="LAB_EM_PS_WATCHDOG_MECHANISM" Domain="ENERGY_MGMT" SubDomain="POWER_SUPPLY" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.EnergyManagement.PowerSupplyBased.Obsolete.LAB_EM_PS_WATCHDOG_MECHANISM.LabEmPsWatchdogMechanism</ClassName>
+        <Description>PUPDR Energy Management test watchdog mechanism.</Description>
+        <Environment name="EMT_PS">
+            <Dependency>EQT_AG_66319</Dependency>
+            <Dependency>EQT_EMT340</Dependency>
+        </Environment>
+        <Parameters>
+            <Parameter name="FREEZE_TYPE" type="WAY_TO_FREEZE_DUT" isOptional="false">
+                <!-- type of board freeze to do : SOFT (software) or HARD (hardware) -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="REBOOT_TIMEOUT" type="TIMEOUT_IN_SEC" isOptional="false">
+                <!-- Maximum time in second to wait before reboot is done since freeze happen -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+        </Parameters>
+    </UseCase>
+    <UseCase Id="LAB_EM_PS_COS_REMOVE_USB" Domain="ENERGY_MGMT" SubDomain="POWER_SUPPLY" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.EnergyManagement.PowerSupplyBased.Obsolete.LAB_EM_PS_COS_REMOVE_USB.LabEmPsCosRemoveUsb</ClassName>
+        <Description>Remove USB Cable when Board is in COS mode</Description>
+        <Environment name="EMT_PS">
+            <Dependency>EQT_AG_66319</Dependency>
+            <Dependency>EQT_AG_E364XA</Dependency>
+            <Dependency>EQT_EMT340</Dependency>
+        </Environment>
+        <Parameters>
+            <Parameter name="CHARGER_TYPE" type="CABLE_TYPE" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="BATTERY_TYPE" type="BATTERY_TYPE" isOptional="false">
+                <!-- Battery Type : BATTERY_EMULATOR or ANALOG or DIGITAL or leave empty to use the one from device catalog -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="COS_SHUTDOWN_TIMEOUT_VALUE" type="DURATION_IN_SEC" isOptional="false">
+                <!-- Timeout value for the board shutdown after cable removal (int value) -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="MOS_BOOT_TIMEOUT" type="DURATION_IN_SEC" isOptional="false">
+                <!-- Timeout value for the board boot at the end of the test (int value) -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="COS_BOOT_TIMEOUT" type="DURATION_IN_SEC" isOptional="false">
+                <!-- Timeout value for the boot in COS mode (int value) -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="COS_BATTERY_VOLTAGE" type="VOLTAGE" isOptional="false">
+                <!-- COS Voltage for the test (int value) -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="CURRENT_RANGE_VALUE" type="CURRENT" isOptional="false">
+                <!-- Target for the current (float value) -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="SCREEN_OFF_WAIT" type="DURATION_IN_SEC" isOptional="false">
+                <!-- Wait the screen off (int value) -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+        </Parameters>
+    </UseCase>
+    <UseCase Id="LAB_EM_SAFE_PARAMETER" Domain="ENERGY_MGMT" SubDomain="POWER_SUPPLY" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.EnergyManagement.PowerSupplyBased.Obsolete.LAB_EM_SAFE_PARAMETER.LabEmSafeParameter</ClassName>
+        <Description>Flash board with a fake IFWI and test that SAFE parameter are enable.</Description>
+        <Environment name="EMT_PS">
+            <Dependency>EQT_AG_66319</Dependency>
+            <Dependency>EQT_EMT340</Dependency>
+        </Environment>
+        <Parameters>
+            <Parameter name="VBATT" type="VOLTAGE" isOptional="false">
+                <!-- Battery Voltage -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="VBATT_FULL" type="VOLTAGE" isOptional="false">
+                <!-- Battery Full Voltage -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="VUSB" type="VOLTAGE" isOptional="false">
+                <!-- Charger Voltage -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="FAKE_BUILD_PATH" type="STRING" isOptional="false">
+                <!-- Fake Build Path -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+        </Parameters>
+    </UseCase>
+    <UseCase Id="LAB_EM_SYSTEM_BOOT" Domain="ENERGY_MGMT" SubDomain="POWER_SUPPLY" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.EnergyManagement.PowerSupplyBased.Obsolete.LAB_EM_SYSTEM_BOOT.LabEmSystemBoot</ClassName>
+        <Description>Control Watchdog, soft reset, COS reboot.</Description>
+        <Environment name="EMT_PS">
+            <Dependency>EQT_AG_66319</Dependency>
+            <Dependency>EQT_AG_E364XA</Dependency>
+            <Dependency>EQT_EMT340</Dependency>
+        </Environment>
+        <Parameters>
+            <Parameter name="VBATT" type="VOLTAGE" isOptional="false">
+                <!-- Initial value for VBATT -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="WATCHDOG_TIMEOUT" type="TIMEOUT_IN_SEC" isOptional="false">
+                <!-- Time to wait for the watchdog to reboot the phone -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+        </Parameters>
+    </UseCase>
+    <UseCase Id="LAB_EM_THERMAL_SEQUENCE_TEST" Domain="ENERGY_MGMT" SubDomain="POWER_SUPPLY" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.EnergyManagement.PowerSupplyBased.Obsolete.LAB_EM_THERMAL_SEQUENCE_TEST.LabEmThermalSequenceTest</ClassName>
+        <Description>The Energy Management Thermal Sequence Test acs_test_scripts.UseCase.</Description>
+        <!--The user can define a sequence of critical shutdown test on differents zones
+            And a sequence of threshold/zones to test -->
+        <Environment name="EMT_PS">
+            <Dependency>EQT_AG_66319</Dependency>
+            <Dependency>EQT_EMT340</Dependency>
+        </Environment>
+        <Parameters>
+            <Parameter name="POLL_DELAY" type="DURATION_IN_SEC" isOptional="false">
+                <!-- Initial value for the thermal poll_delay in second -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="OS" type="OS_STATE" isOptional="false">
+                <!-- The supported OS for this test: 'MOS' or 'COS' or 'ROS' -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="ZONE_ON_CRITICAL" type="STRING" isOptional="false">
+                <!-- The test sequence for thermal critical shutdown on this ZONE : 'BACKSKIN' or 'FRONTSKIN' or 'BATTERY' or 'DTS' or 'GPUSKIN' -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="ZONE_ON_THRESHOLD" type="STRING" isOptional="false">
+                <!-- The sequence for thermal general test (except critical shutdown). -->
+                <!-- You have to define a list of couple with on zone and one threshold type: -ZONE :
+                    'BACKSKIN' or 'FRONTSKIN' or 'BATTERY' or 'DTS' or 'GPUSKIN' -THRESHOLD : 'TM_OFF' or 'NORMAL' or 'WARNING' or 'ALERT' or 'CRITICAL' -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+        </Parameters>
+    </UseCase>
+    <UseCase Id="LAB_PUPDR_PS_ACTION_SCHEDULER" Domain="ENERGY_MGMT" SubDomain="POWER_SUPPLY" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.EnergyManagement.PowerSupplyBased.Obsolete.LAB_PUPDR_PS_ACTION_SCHEDULER.LabPupdrPsActionScheduler</ClassName>
+        <Description>execute actions on button/battery/charger define by user.</Description>
+        <!-- this test start with a board off with a valid battery
+            then will execute the sequences of action defined by ACTION_ORDER
+            by associating function to the key words used. -->
+        <Environment name="EMT_PS">
+            <Dependency>EQT_AG_66319</Dependency>
+            <Dependency>EQT_EMT320</Dependency>
+        </Environment>
+        <Parameters>
+            <Parameter name="RUN_TEST_ACTION" type="RUN_TEST_ACTION" isOptional="false">
+                <!-- this describe the order of actions done in the run test, actions can be : BATTERY_plug/unplug_type;CHARGER_plug/unplug_type;BUTTON_PRESS_type_time;WAIT_time;LOOP_START;LOOP_STOP_nb -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="SETUP_ACTION" type="SETUP_ACTION" isOptional="false">
+                <!-- this describe the order of actions done in the setup before launching main test, actions can be : BATTERY_plug/unplug_type;CHARGER_plug/unplug_type;BUTTON_PRESS_type_time;WAIT_time -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="TEST_ID" type="TEST_ID" isOptional="false">
+                <!-- test id that allow you to associate target from energy management targets file to thsi test -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="KEY_COMBO" type="KEY_COMBO" isOptional="false">
+                <!-- Key combo to perform can be a combination (use ; as separator ) of unitary button like VOLUME_UP;VOLUME_DOWN;CAMERA;POWER_BUTTON or or a known combo like FASTBOOT_COMBO -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+        </Parameters>
+    </UseCase>
+    <UseCase Id="LAB_EM_THERMAL_TEMP_PROTECTION" Domain="ENERGY_MGMT" SubDomain="POWER_SUPPLY" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.EnergyManagement.PowerSupplyBased.Obsolete.LAB_EM_THERMAL_TEMP_PROTECTION.LabEmThermalTempProtection</ClassName>
+        <Description>Test the behavior when the temperature changed (P_UC_41799).</Description>
+        <Environment name="EMT_PS">
+            <Dependency>EQT_AG_66319</Dependency>
+            <Dependency>EQT_EMT340</Dependency>
+        </Environment>
+        <Parameters>
+            <Parameter name="POLL_DELAY" type="INTEGER" isOptional="false">
+                <!-- Initial value for the thermal poll_delay in second -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+        </Parameters>
+    </UseCase>
+    <UseCase Id="LAB_EM_THERMAL_TEMP_CONTROL" Domain="ENERGY_MGMT" SubDomain="POWER_SUPPLY" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.EnergyManagement.PowerSupplyBased.Obsolete.LAB_EM_THERMAL_TEMP_CONTROL.LabEmThermalTempControl</ClassName>
+        <Description>Test the behavior when the temperature changed (P_UC_41800).</Description>
+        <Environment name="EMT_PS">
+            <Dependency>EQT_AG_66319</Dependency>
+            <Dependency>EQT_EMT340</Dependency>
+        </Environment>
+        <Parameters>
+            <Parameter name="POLL_DELAY" type="INTEGER" isOptional="false">
+                <!-- Initial value for the thermal poll_delay in second -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+        </Parameters>
+    </UseCase>
+    <UseCase Id="LAB_EM_USB_HIGH_VOLTAGE" Domain="ENERGY_MGMT" SubDomain="POWER_SUPPLY" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.EnergyManagement.PowerSupplyBased.Obsolete.LAB_EM_USB_HIGH_VOLTAGE.LabEmUsbHighVoltage</ClassName>
+        <Description>Monitor battery Charge when setting USB in high voltage.</Description>
+        <Environment name="EMT_PS">
+            <Dependency>EQT_AG_66319</Dependency>
+            <Dependency>EQT_AG_E364XA</Dependency>
+            <Dependency>EQT_EMT340</Dependency>
+        </Environment>
+        <Parameters>
+            <!-- Battery Temperature (in degree Celsius) : 95, 70, 50, 25, 10, 5, 0, -15 -->
+            <Parameter name="BATTERY_TEMPERATURE" type="EMULATED_BATTERY_TEMPERATURE_IN_CELSIUS" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <!-- VUSB normal voltage -->
+            <Parameter name="VUSB_NORMAL" type="VOLTAGE" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <!-- VUSB voltage (as 12V) -->
+            <Parameter name="VUSB_HIGH" type="VOLTAGE" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+        </Parameters>
+    </UseCase>
+</UseCases>

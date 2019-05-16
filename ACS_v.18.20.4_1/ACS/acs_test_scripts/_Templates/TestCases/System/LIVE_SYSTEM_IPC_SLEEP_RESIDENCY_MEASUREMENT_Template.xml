@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="13.37">
+    <UseCase>LIVE_SYSTEM_IPC_SLEEP_RESIDENCY_MEASUREMENT</UseCase>
+    <Description>Check that IPC goes into sleep mode</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>False</b2bContinuousMode>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters>
+        <Parameter>
+            <!-- Sleep target duration in seconds -->
+            <Name>DURATION</Name>
+            <Value>30</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Time period to check IPC sleep residency (in seconds) -->
+            <Name>TIME_PERIOD</Name>
+            <Value>10</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Target rate of time period where to check the IPC residency (from 0 to 100) -->
+            <Name>TARGET_RATE</Name>
+            <Value>40</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

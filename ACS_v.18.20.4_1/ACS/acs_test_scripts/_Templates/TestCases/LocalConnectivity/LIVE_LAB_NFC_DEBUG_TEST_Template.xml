@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="13.37">
+    <UseCase>LIVE_LAB_NFC_DEBUG_TEST</UseCase>
+    <Description>Run whole available NFC UECmd functions</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <TcMaxAttempt>1</TcMaxAttempt>
+    <TcAcceptanceCriteria>1</TcAcceptanceCriteria>
+    <Parameters>
+        <Parameter>
+            <!-- Run the tests that use a Robot -->
+            <Name>USE_ROBOT</Name>
+            <Value>False</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Run the tests that use a Secure element (sim card needed) -->
+            <Name>USE_SECURE_ELEMENT</Name>
+            <Value>False</Value>
+        </Parameter>
+         <Parameter>
+            <!-- Secure element to test -->
+            <Name>SECURE_ELEMENT</Name>
+            <Value></Value>
+        </Parameter>
+        <Parameter>
+            <!-- [OPTIONAL] If True, enable the NFC Beam prior to the test. If False, disable the NFC Beam prior to the test -->
+            <Name>NFC_BEAM_INITIAL_STATE</Name>
+            <Value></Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

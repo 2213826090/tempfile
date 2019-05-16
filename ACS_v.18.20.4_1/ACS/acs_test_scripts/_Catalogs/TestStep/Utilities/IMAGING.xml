@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestSteps xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../acs/src/_Catalogs/TestStep/teststep.xsd">
+    <TestStep Id="DISPLAY_IMAGE_ON_HOST_SCREEN" Domain="UTILITIES" SubDomain="IMAGING" Feature="STILL" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Utilities.Imaging.DisplayImageOnHost.DisplayImageOnHost</ClassName>
+        <Description>Display image in fullscreen mode on host using Tkinter and PIL</Description>
+        <Environment name="ANY"/>
+        <Parameters>
+            <Parameter name="IMAGE_PATHNAME" type="STRING" isOptional="false">
+                <Description>Full path to the file (including filename) to be printed on the screen</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="CLOSE_IMAGE_ON_HOST_SCREEN" Domain="UTILITIES" SubDomain="IMAGING" Feature="STILL" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Utilities.Imaging.DisplayImageOnHost.CloseImageOnHost</ClassName>
+        <Description>Close image previously opened with DisplayImageOnHost</Description>
+        <Environment name="ANY"/>
+        <Parameters>
+        </Parameters>
+    </TestStep>
+</TestSteps>

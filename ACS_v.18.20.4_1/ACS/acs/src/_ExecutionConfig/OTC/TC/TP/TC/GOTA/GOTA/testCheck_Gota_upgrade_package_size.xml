@@ -1,0 +1,30 @@
+<?xml version="1.0" ?>
+<TestCase>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Discription>
+Check GOTA Upgrade package size must smaller than 2GB
+&lt;br /&gt;Phipps, Brian(20150422):
+&lt;br /&gt;The information I received was that Google raised the limit to 2GB currently and have plans to raise it to 4GB in the future.
+&lt;br /&gt;We are currently uploading 733mb full OTS’s for the wave2 devices. That will continue to grow over time.
+</Discription>
+    <Domain>GOTA</Domain>
+    <Phase>CORE</Phase>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <Type>FUNCTIONAL</Type>
+    <UseCase>PY_UNIT</UseCase>
+    <b2bIteration>1</b2bIteration>
+    <Parameters>
+        <Parameter>
+            <Name>HpalmName</Name>
+            <Value>check_gota_upgrade_package_size.Check_Gota_upgrade_package_size.testCheck_Gota_upgrade_package_size</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TEST_DATA_ROOT</Name>
+            <Value>testplan/GOTA</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TEST_CASE</Name>
+            <Value>tests.GOTA.GOTA.check_gota_upgrade_package_size.Check_Gota_upgrade_package_size.testCheck_Gota_upgrade_package_size</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

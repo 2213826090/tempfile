@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<UseCases xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:noNamespaceSchemaLocation="../../../../acs/src/_Catalogs/UseCase/usecase.xsd">
+    <UseCase Id="LIVE_MODEM_DSDS_SELECT_DATA_SIM" Domain="SYSTEM" SubDomain="MODEM" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.System.LIVE_MODEM_DSDS_SELECT_DATA_SIM.LiveModemDsdsSelectDataSim</ClassName>
+        <Description>Select the SIM to be used for DATA on DSDS device.</Description>
+        <Environment name="ANY">
+        </Environment>
+    </UseCase>
+    <UseCase Id="LIVE_MODEM_DSDS_DATA_SIM_OPERATION" Domain="SYSTEM" SubDomain="MODEM" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.System.LIVE_MODEM_DSDS_DATA_SIM_OPERATION.LiveModemDsdsDataSimOperation</ClassName>
+        <Description>Perform operations on DATA sim on DSDS device.</Description>
+        <Environment name="ANY">
+        </Environment>
+    </UseCase>
+    <UseCase Id="MODEM_ACTIVATE_TRACE" Domain="SYSTEM" SubDomain="MODEM" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.System.MODEM_ACTIVATE_TRACE.ModemActivateTrace</ClassName>
+        <Description>Test modem trace activation on device.</Description>
+        <Environment name="ANY">
+        </Environment>
+    </UseCase>
+    <UseCase Id="LAB_MODEM_NVM_FLASHING_POS" Domain="SYSTEM" SubDomain="MODEM" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.System.LAB_MODEM_NVM_FLASHING_POS.LabModemNvmFlashingPos</ClassName>
+        <Description>Flash the modem's NVM when DUT is booted in Provisioning OS mode (POS).</Description>
+        <Environment name="ANY">
+        </Environment>
+    </UseCase>
+    <UseCase Id="LAB_MODEM_FLASHING_BASE" Domain="SYSTEM" SubDomain="MODEM" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.System.LAB_MODEM_FLASHING_BASE.LabModemFlashingBase</ClassName>
+        <Description>Flash the modem's firmware when DUT is booted in Main OS mode (MOS).</Description>
+        <Environment name="ANY">
+        </Environment>
+    </UseCase>
+    <UseCase Id="LAB_MODEM_FW_FLASHING" Domain="SYSTEM" SubDomain="MODEM" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.System.LAB_MODEM_FW_FLASHING.LabModemFwFlashing</ClassName>
+        <Description>Flash the modem's firmware when DUT is booted in Main OS mode (MOS).</Description>
+        <Environment name="ANY">
+        </Environment>
+    </UseCase>
+    <UseCase Id="LAB_MODEM_NVM_READBACK_POS" Domain="SYSTEM" SubDomain="MODEM" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.System.LAB_MODEM_NVM_READBACK_POS.LabModemNvmReadbackPos</ClassName>
+        <Description>Lab Modem NVM READBACK with DUT in I{POS} (Provisioning OS) Use Case Class.</Description>
+        <Environment name="ANY">
+        </Environment>
+    </UseCase>
+    <UseCase Id="LAB_MODEM_NVM_READBACK_MOS" Domain="SYSTEM" SubDomain="MODEM" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.System.LAB_MODEM_NVM_READBACK_MOS.LabModemNvmReadbackMos</ClassName>
+        <Description>Lab Modem NVM READBACK with DUT in I{MOS} (Main OS) Use Case Class.</Description>
+        <Environment name="ANY">
+        </Environment>
+    </UseCase>
+    <UseCase Id="LAB_MODEM_NVM_FLASHING_MOS" Domain="SYSTEM" SubDomain="MODEM" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.System.LAB_MODEM_NVM_FLASHING_MOS.LabModemNvmFlashingMos</ClassName>
+        <Description>Flash the modem's NVM when DUT is booted in Main OS mode (MOS).</Description>
+        <Environment name="ANY">
+        </Environment>
+    </UseCase>
+    <UseCase Id="MODEM_ACTIVATE_TRACE_AMTL" Domain="SYSTEM" SubDomain="MODEM" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.System.MODEM_ACTIVATE_TRACE_AMTL.ModemActivateTraceAmtl</ClassName>
+        <Description>Test modem trace activation on device using AMTL application</Description>
+        <Environment name="ANY">
+        </Environment>
+    </UseCase>
+</UseCases>

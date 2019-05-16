@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase>
+    <UseCase>TEST_STEP_ENGINE</UseCase>
+    <Description>Flight Mode ON ? Send SMS</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <TcMaxAttempt>1</TcMaxAttempt>
+    <SavePatRawData>False</SavePatRawData>
+    <PowerCalculation>False</PowerCalculation>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters>
+        <Parameter>
+            <Name>CELL_BAND</Name>
+            <Value>BAND1</Value>
+        </Parameter>
+        <Parameter>
+            <Name>RAT</Name>
+            <Value>3G</Value>
+        </Parameter>
+        <Parameter>
+            <Name>SMS_TRANSFER_TIMEOUT</Name>
+            <Value>10</Value>
+        </Parameter>
+        <Parameter>
+            <Name>PHONE_NUMBER</Name>
+            <Value>0679568120</Value>
+        </Parameter>
+        <Parameter>
+            <Name>SMS_TEXT</Name>
+            <Value>In three words I can sum up everything I have learned about life: it goes on</Value>
+        </Parameter>
+        <Parameter>
+            <Name>NB_FLIGHTMODE_ITER</Name>
+            <Value>5</Value>
+        </Parameter>
+    </Parameters>
+    <TestSteps>
+        <Include Src="ST/telephony/TSS/Common.xml" />
+        <Include Src="ST/telephony/TSS/8960.xml" />
+
+        <TestStepSet Id="MO_VOICE_CALL">
+            <TestStep Id="INITIATE_VOICE_CALL" DEVICE="PHONE1" NUMBER_TO_CALL="FROM_TC:PHONE_NUMBER" VC_TYPE="CIRCUIT" EXPECTED_RESULT="FAILED"/>
+        </TestStepSet>
+        <Setup>
+            <TestStep SetId="AllCommsOff" DEVICE="PHONE1"/>
+            <TestStep SetId="Configure8960"/>
+            <TestStep SetId="ConfigureWCDMA" EQT="FROM_CTX:AGILENT8960_SIMULATOR_VISA"/>
+            <TestStep SetId="Registration" EQT="FROM_CTX:AGILENT8960_SIMULATOR_VISA"
+                      DEVICE="PHONE1" TIMEOUT="FROM_DEVICE:PHONE1:registrationTimeout"/>
+            <TestStep SetId="DataConnection" EQT="FROM_CTX:AGILENT8960_SIMULATOR_VISA" DEVICE="PHONE1"
+                      TIMEOUT="FROM_DEVICE:PHONE1:registrationTimeout"/>
+            <TestStep Id="CREATE_SMS" DEVICE="PHONE1" EQT="FROM_CTX:AGILENT8960_SIMULATOR_VISA" SMS_TEXT="FROM_TC:SMS_TEXT" PHONE_NUMBER="FROM_TC:PHONE_NUMBER" TRANSPORTATION="CSD" SMS_TRANSFER_TIMEOUT="FROM_TC:SMS_TRANSFER_TIMEOUT" SMS_DIRECTION="MO" SMS="SMS" CODING_SCHEME="00" CONTENT_TYPE="CTEX" NB_BITS_PER_CHAR="7" />
+        </Setup>
+
+        <RunTest>
+            <Loop Id="FlightModeLoop" Nb="FROM_TC:NB_FLIGHTMODE_ITER">
+                <!-- Set flight mode to ON -->
+                <TestStep Id="SET_FLIGHT_MODE" DEVICE="PHONE1" FLIGHT_MODE="enable" />
+                <!-- Wait 5s -->
+                <TestStep Id="SUSPEND" DURATION_IN_SEC="5"/>
+                <!-- Set flight mode to OFF -->
+                <TestStep Id="SET_FLIGHT_MODE" DEVICE="PHONE1" FLIGHT_MODE="disable" />
+                <!-- Wait 5s -->
+                <TestStep Id="SUSPEND" DURATION_IN_SEC="5"/>
+            </Loop>
+
+            <TestStep Id="PERFORM_SUPPORTED_MO_ACTION" DEVICE="PHONE1" EQT="FROM_CTX:AGILENT8960_SIMULATOR_VISA"
+                      DESTINATION_NUMBER="FROM_TC:PHONE_NUMBER" SMS="SMS"
+                      DESTINATION_IP="FROM_BENCH:LAB_SERVER:IP"/>
+        </RunTest>
+        <TearDown>
+            <TestStep SetId="CommonTearDown" EQT="FROM_CTX:AGILENT8960_SIMULATOR_VISA" DEVICE="PHONE1"/>
+        </TearDown>
+    </TestSteps>
+</TestCase>

@@ -1,0 +1,88 @@
+<Campaign version="13.49">
+  <Parameters>
+    <Parameter isControlledPSUsed="False"/>
+    <Parameter isIoCardUsed="False"/>
+    <Parameter skipBootOnPowerCycle="False"/>
+    <Parameter bootRetryNumber="0"/>
+    <Parameter runHookScripts="False"/>
+    <Parameter powerCycleBetweenTC="False"/>
+    <Parameter powerCycleOnFailure="False"/>
+    <Parameter finalDutState="NoChange"/>
+    <Parameter stopCampaignOnCriticalFailure="False"/>
+    <Parameter stopCampaignOnFirstFailure="False"/>
+    <Parameter loggingLevel="debug"/>
+    <Parameter TCRReportViaRESTAPI="True"/>
+  </Parameters>
+  <Targets>
+    <Target targetB2bPassRate="100"/>
+  </Targets>
+  <TestCases>
+    <!--SMS-->
+    <!--TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Telephony/send_sms"/-->
+    <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Telephony/sms/check_sms_reply"/>
+    <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Telephony/sms/7bit_gms_alphabet_sms"/>
+    <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Telephony/sms/320_char_sms"/>
+    <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Telephony/sms/UCS2_alphabet"/>
+    <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Telephony/sms/check_sms_characters_left"/>
+    <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Telephony/sms/send_sms_to_contact"/>
+    <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Telephony/sms/receive_sms_from_contact"/>
+    <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Telephony/sms/UCS2_sms_size"/>
+    <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Telephony/sms/multiple_page_sms"/>
+    <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Telephony/sms/sms_over_3G"/>
+    <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Telephony/sms/forward_sms"/>
+    <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Telephony/sms/national_characters"/>
+    <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Telephony/sms/multiple_recipients"/>
+    <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Telephony/sms/time_to_send"/>
+    <!--USSD-->
+    <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Telephony/ussd/ussd_request_2g"/>
+    <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Telephony/ussd/ussd_request_3g"/>
+    <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Telephony/ussd/ussd_sequential"/>
+    <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Telephony/ussd/clir"/>
+    <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Telephony/ussd/temporary_clir"/>
+    <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Telephony/ussd/set_clir_from_settings"/>
+    <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Telephony/ussd/clip"/>
+    <!--PDP-->
+    <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Telephony/apn/internal_pdp_with_apn_in_acl"/>
+    <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Telephony/apn/internal_pdp_with_apn_not_in_acl"/>
+    <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Telephony/pdp/call_after_reboot_pdp_deactivated_2G"/>
+    <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Telephony/pdp/call_after_reboot_pdp_activated_2G"/>
+    <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Telephony/pdp/call_after_reboot_pdp_deactivated_3G"/>
+    <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Telephony/pdp/call_after_reboot_pdp_activated_3G"/>
+    <!--Voice call-->
+    <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Telephony/call/call_not_answered"/>
+    <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Telephony/call/call_rejected"/>
+    <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Telephony/call/voice_call_dialing_method"/>
+    <!--Call forwarding-->
+    <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Telephony/callforwarding/code21"/>
+    <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Telephony/callforwarding/call_forwarding_menu"/>
+    <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Telephony/callforwarding/code62"/>
+    <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Telephony/callforwarding/call_forwarding_menu_not_reachable"/>
+    <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Telephony/callforwarding/code61"/>
+    <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Telephony/callforwarding/call_forwarding_menu_no_reply"/>
+    <!--Mailbox-->
+    <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Telephony/mailbox/read_mailbox_number"/>
+    <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Telephony/mailbox/change_mailbox_number"/>
+    <!--Phonebook-->
+    <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Telephony/phonebook/import_one_contact_from_sim"/>
+    <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Telephony/phonebook/import_all_contacts_from_sim"/>
+    <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Telephony/phonebook/import_contacts_from_sim_flight_mode_on"/>
+    <!--Call Hold-->
+    <TestCase Id="TC/TR/PyUiApiTests/acs_xml_test_files/Telephony/call_hold/call_hold_unhold"/>
+    <TestCase Id="TC/TR/PyUiApiTests/acs_xml_test_files/Telephony/call_hold/back_to_back_voice_call_hold_unhold"/>
+    <TestCase Id="TC/TR/PyUiApiTests/acs_xml_test_files/Telephony/call_hold/resume_call_in_hold_after_releasing_active_call"/>
+    <!--Call Wait -->
+    <TestCase Id="TC/TR/PyUiApiTests/acs_xml_test_files/Telephony/call_wait/call_wait_using_code_43"/>
+    <TestCase Id="TC/TR/PyUiApiTests/acs_xml_test_files/Telephony/call_wait/call_wait_using_menu"/>
+    <TestCase Id="TC/TR/PyUiApiTests/acs_xml_test_files/Telephony/call_wait/call_wait_incoming_call_ignored"/>
+    <TestCase Id="TC/TR/PyUiApiTests/acs_xml_test_files/Telephony/call_wait/call_wait_incoming_call_accepted"/>
+    <TestCase Id="TC/TR/PyUiApiTests/acs_xml_test_files/Telephony/call_wait/call_wait_back_to_back_incoming_call_accepted"/>
+    <TestCase Id="TC/TR/PyUiApiTests/acs_xml_test_files/Telephony/call_wait/call_wait_third_call_management"/>
+    <!-- PIN2-PUK2-->
+    <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Telephony/pin_puk/unlock_pin_2_using_puk_2"/>
+    <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Telephony/pin_puk/unlock_pin_2_using_puk_2_mmi"/>
+    <!-- TESTLIB -->
+    <TestCase Id="TC/TR/TESTLIB/Telephony/ST_TELEPHONY_SYSTEM_MGT_001"/>
+    <TestCase Id="TC/TR/TESTLIB/Telephony/ST_TELEPHONY_SYSTEM_MGT_003"/>
+    <TestCase Id="TC/TR/TESTLIB/Telephony/ST_TELEPHONY_SYSTEM_MGT_004"/>
+  </TestCases>
+</Campaign>

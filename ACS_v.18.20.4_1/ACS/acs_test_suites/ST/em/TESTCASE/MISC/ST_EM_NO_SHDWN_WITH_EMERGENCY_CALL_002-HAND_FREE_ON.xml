@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCase version="13.49">
+    <UseCase>LAB_EM_BATT_EMERGENCY_CALL_CRITICAL_THRESHOLD</UseCase>
+    <Description>Test emergency call when the battery critical threshold is reached</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>False</b2bContinuousMode>
+    <TcMaxAttempt>1</TcMaxAttempt>
+    <TcAcceptanceCriteria>1</TcAcceptanceCriteria>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters>
+        <!-- VAR related to the setup to bring the board at the start capacity *************************************************** -->
+        <Parameter>
+            <!-- Critical threshold of the battery (%) at which the test start , if you are above a discharge cycle will be done -->
+            <Name>BATTERY_CRITICAL_THRESHOLD</Name>
+            <Value>10</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Discharge time to reached the critical threshold (seconds),each X second we will check the battery capacity level -->
+            <Name>DISCHARGE_TIME</Name>
+            <Value>300</Value>
+        </Parameter>
+        <Parameter>
+            <!-- LOAD to apply to the board when discharging separate by ;
+                To be choosen between following loads (can be combinated) : WIFI;BLUETOOTH;TORCHLIGHT;VIBRA;VIDEO;AUDIO;SCREEN_ON
+                some load cant be activated at the same time , like AUDIO and VIDEO -->
+            <Name>LOAD_DURING_DISCHARGE</Name>
+            <Value>FROM_BENCHCONFIG</Value>
+        </Parameter>
+        <!-- VAR related to the call general setup *************************************************** -->
+        <Parameter>
+            <!-- Fake emergency phone number to call -->
+            <Name>PHONE_NUMBER</Name>
+            <Value>666</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Minimum time that the call must hold in second -->
+            <Name>CALL_HOLD_TIME</Name>
+            <Value>180</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Activation of Hands free (TRUE or FALSE) -->
+            <Name>HANDS_FREE_ACTIVATION</Name>
+            <Value>TRUE</Value>
+        </Parameter>
+        <!-- VAR related to the call registration setup *************************************************** -->
+        <Parameter>
+            <!-- Type of the call (2G, 3G) -->
+            <Name>CALL_TYPE</Name>
+            <Value>2G</Value>
+        </Parameter>
+        <Parameter>
+            <!-- 2G ONLY:TCH ARFCN -->
+            <Name>TCH_ARFCN</Name>
+            <Value>62</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Cell Band (from BAND1 to BAND10) for 3G or Cell Band (PGSM|RGSM|EGSM|GSM450|GSM480|GSM750|GSM850|TGSM810|PCS|DCS) for 2G -->
+            <Name>CELL_BAND</Name>
+            <Value>DCS</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Broadcast Channel Arfcn frequency -->
+            <Name>BCH_ARFCN</Name>
+            <Value>698</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Traffic Channel Arfcn frequency -->
+            <Name>TCH_ARFCN</Name>
+            <Value>650</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Cell Service (GSM|GPRS|EGPRS) -->
+            <Name>CELL_SERVICE</Name>
+            <Value>EGPRS</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Cell Power (in dBm) -->
+            <Name>CELL_POWER</Name>
+            <Value>-80</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Voice coder rate
+                Possible values:
+                FR
+                EFR
+                HR
+                FR_AMR_NB_[1220|1020|795|740|670|590|515|475]
+                HR_AMR_NB_[795|740|670|590|515|475]
+                AMR_WB_[1265|885|660]
+            -->
+            <Name>VOICE_CODER_RATE</Name>
+            <Value>FR</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

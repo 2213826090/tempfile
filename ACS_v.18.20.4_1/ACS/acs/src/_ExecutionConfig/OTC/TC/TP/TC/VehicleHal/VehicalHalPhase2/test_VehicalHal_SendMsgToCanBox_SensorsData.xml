@@ -1,0 +1,48 @@
+<?xml version="1.0" ?>
+<TestCase>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Discription> 
+&lt;div align=&quot;left&quot; style=&quot;min-height:9pt&quot;&gt;
+&lt;font face=&quot;Arial&quot; color=&quot;#ff0000&quot;&gt;&lt;span style=&quot;font-size:8pt&quot;&gt;&lt;b&gt;&lt;u&gt;Description:&lt;/u&gt;&lt;/b&gt;&lt;/span&gt;&lt;/font&gt;
+&lt;font face=&quot;Arial&quot;&gt;&lt;span style=&quot;font-size:8pt&quot;&gt;&lt;i&gt; (Objective of what you are trying to test.)&lt;/i&gt;&lt;/span&gt;&lt;/font&gt;
+&lt;/div&gt; 
+&lt;div align=&quot;left&quot; style=&quot;min-height:9pt&quot;&gt;
+&lt;font face=&quot;Arial&quot;&gt;&lt;span style=&quot;font-size:8pt&quot;&gt;&lt;br /&gt;Make sensor settings using cansend command in DUT. Send the message from DUT to Can-Box.&lt;/span&gt;&lt;/font&gt;
+&lt;/div&gt; 
+&lt;div align=&quot;left&quot; style=&quot;min-height:9pt&quot;&gt;&lt;/div&gt; 
+&lt;div align=&quot;left&quot; style=&quot;min-height:9pt&quot;&gt;
+&lt;font face=&quot;Arial&quot; color=&quot;#ff0000&quot;&gt;&lt;span style=&quot;font-size:8pt&quot;&gt;&lt;b&gt;&lt;u&gt;Preconditions:&lt;/u&gt;&lt;/b&gt;&lt;/span&gt;&lt;/font&gt;
+&lt;font face=&quot;Arial&quot;&gt;&lt;span style=&quot;font-size:8pt&quot;&gt;&lt;i&gt; (What conditions must be met or data must exist in the system for this test to be executed?) &lt;/i&gt;&lt;/span&gt;&lt;/font&gt;
+&lt;/div&gt; 
+&lt;div align=&quot;left&quot; style=&quot;min-height:9pt&quot;&gt;
+&lt;font face=&quot;Arial&quot;&gt;&lt;span style=&quot;font-size:8pt&quot;&gt;&lt;br /&gt;&amp;nbsp; &lt;/span&gt;&lt;/font&gt;
+&lt;/div&gt; 
+&lt;div align=&quot;left&quot; style=&quot;min-height:9pt&quot;&gt;&lt;/div&gt; 
+&lt;div align=&quot;left&quot; style=&quot;min-height:9pt&quot;&gt;
+&lt;font face=&quot;Arial&quot; color=&quot;#ff0000&quot;&gt;&lt;span style=&quot;font-size:8pt&quot;&gt;&lt;b&gt;&lt;u&gt;Postconditions:&lt;/u&gt;&lt;/b&gt;&lt;/span&gt;&lt;/font&gt;
+&lt;font face=&quot;Arial&quot;&gt;&lt;span style=&quot;font-size:8pt&quot;&gt;&lt;i&gt; (triggers/states created by test) &lt;/i&gt;&lt;/span&gt;&lt;/font&gt;
+&lt;/div&gt; 
+&lt;p style=&quot;margin-left:0mm;margin-right:0mm;text-indent:0mm;margin-top:2.35mm;margin-bottom:4.73mm;min-height:9pt&quot;&gt;&lt;font face=&quot;Arial&quot;&gt;&lt;span style=&quot;font-size:8pt&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/font&gt;&lt;/p&gt; 
+&lt;div align=&quot;left&quot; style=&quot;min-height:9pt&quot;&gt;&lt;/div&gt;  
+</Discription>
+    <Domain>VehicleHal</Domain>
+    <Phase>CORE</Phase>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <Type>FUNCTIONAL</Type>
+    <UseCase>PY_UNIT</UseCase>
+    <b2bIteration>1</b2bIteration>
+    <Parameters>
+        <Parameter>
+            <Name>HpalmName</Name>
+            <Value>vehiclehal_send_msg_test.VehicleHalSendMsgSensorTest.test_VehicalHal_SendMsgToCanBox_SensorsData</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TEST_DATA_ROOT</Name>
+            <Value>testplan/VehicleHal</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TEST_CASE</Name>
+            <Value>tests.VehicleHal.VehicalHalPhase2.vehiclehal_send_msg_test.VehicleHalSendMsgSensorTest.test_VehicalHal_SendMsgToCanBox_SensorsData</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

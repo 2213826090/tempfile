@@ -1,0 +1,20 @@
+a.	This script is used to generate a subset of the tests already available in the Actual/Original AFT Test Campaigns based on a list of tests filters.
+	i.	The test filters are applied in ET and the result is extracted as a csv file with only 1 column (the test case name). 
+		•	See db_example.csv for how the csv format should look: /acs_test_suites/OTC/utils/ACS_Light_generator/db_example.csv
+b.	This ET CSV file will be provided as an input parameter to the acs_light_generator together with the location of the ACS AFT original Test Campaigns on which we want to apply this script on:
+	i.	#python acs_light_generator.py -cf "/home/razvan/workspace/acs/acs_test_suites/OTC/CAMPAIGN/SystemFunctional/M/MR_0/TR" -csv "db_example.csv"
+c.	The generated test campaigns(the ACS AFT light campaigns) will be a duplicate of the original AFT Test Campaigns containing:
+	i.	 the tests that are not in the ET csv file commented
+	ii.	the tests that are in the ET csv together with the tests names that start with “prereq” or “init”
+d.	At the end of a successful execution we print on the command line :
+	i.	all the prereq/init files found– just for information purposes
+	ii.	a list with all the tests from the ET CSV file that couldn’t be matched against the targeted input Test Campaign folder
+	iii.	the location where the ACS AFT light test campaigns were generated
+	iv.	the number of tests in the ET CSV
+	v.	the number of tests that were not found in the Targeted Test campaign folder
+
+Notes:
+e.	Campaign generated folder is overwritten on every execution.
+f.	Campaigns from the input Targeted Test Campaign folder that don't contain any tests from the ET CSV input file, will still be created empty – just to allow human manual checkup
+g.	For this script to work its mandatory to have unique test campaigns(any 2 campaigns shouldn’t contain same test cases) under the Input Targeted Test Campaign folder
+h.  If CSV is extracted on a Windows machine first, use dos2unix on the file to eliminate Windows endline character

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="13.45">
+    <UseCase>LAB_TDSCDMA_FTP</UseCase>
+    <Description>FTP Upload / Download over TDSCDMA on simulated network</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters>
+        <Parameter>
+            <!-- Cell power in dBm -->
+            <Name>CELL_POWER</Name>
+            <Value>-60</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Cell Band -->
+            <Name>CELL_BAND</Name>
+            <Value>34</Value>
+        </Parameter>
+        <Parameter>
+            <!-- IP version IPV4 | IPV6 | IPV4V6 -->
+            <Name>IP_VERSION</Name>
+            <Value>IPV4</Value>
+        </Parameter>
+        <Parameter>
+            <!-- FTP transfer direction: DL or UL -->
+            <Name>DIRECTION</Name>
+            <Value>DL</Value>
+        </Parameter>
+        <Parameter>
+            <!-- File to download from the server. This file shall be available on the server. If the file to transfer is located in a specific directory, you can specify its path. i.e. : acs/download_file/get5M -->
+            <Name>DL_FILENAME</Name>
+            <Value>get50M</Value>
+        </Parameter>
+        <Parameter>
+            <!-- File to upload on the server. This file shall be available on the device. If the file to transfer is located in a specific directory, you can specify its path. i.e. : acs/upload_file/put5M -->
+            <Name>UL_FILENAME</Name>
+            <Value>put10M</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Transfer timeout in s -->
+            <Name>XFER_TIMEOUT</Name>
+            <Value>120</Value>
+        </Parameter>
+        <Parameter>
+            <!-- [Optional] Failure data average throughput value in Mbps (UL, DL)
+                if the value is empty, test case will use default values
+            -->
+            <Name>FAILURE_TARGETS</Name>
+            <Value>DL:5,UL:5</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

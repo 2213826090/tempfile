@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="13.37">
+    <UseCase>LAB_EM_BATT_INFO_CHARGE_DISCHARGE</UseCase>
+    <Description>This test made a charge discharge cycle, and could test the capacity jump presence, or the Voltage OCV consistency</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>False</b2bContinuousMode>
+    <TcMaxAttempt>1</TcMaxAttempt>
+    <TcAcceptanceCriteria>1</TcAcceptanceCriteria>
+    <Parameters>
+        <Parameter>
+            <Name>MIN_RANGE</Name>
+            <Value>3</Value>
+        </Parameter>
+        <Parameter>
+            <Name>MAX_RANGE</Name>
+            <Value>97</Value>
+        </Parameter>
+        <Parameter>
+            <Name>CHARGING_TIMEOUT</Name>
+            <Value>36000</Value>
+        </Parameter>
+        <Parameter>
+            <Name>DISCHARGING_TIMEOUT</Name>
+            <Value>36000</Value>
+        </Parameter>
+        <Parameter>
+            <Name>DATA_POLLING_DELAY</Name>
+            <Value>10</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Features to enable for the test -->
+            <!-- Features avaible are : -->
+            <!-- VIDEO, AUDIO, WIFI, BLUETOOTH, TORCHLIGHT, VIBRA, SCREEN ON -->
+            <Name>LOAD</Name>
+            <Value>FROM_BENCHCONFIG</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TARGET</Name>
+            <Value>capacity_jump</Value>
+        </Parameter>
+        <!-- below param are needed if you test voltage ocv -->
+        <Parameter>
+            <Name>CRIT_VBATT_VOLTAGE</Name>
+            <Value></Value>
+        </Parameter>
+        <Parameter>
+            <Name>FULL_VOLTAGE_THRESHOLD</Name>
+            <Value></Value>
+        </Parameter>
+        <Parameter>
+            <Name>FULL_VOLTAGE_OFFSET</Name>
+            <Value></Value>
+        </Parameter>
+        <Parameter>
+            <Name>CRIT_VBATT_OFFSET</Name>
+            <Value></Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

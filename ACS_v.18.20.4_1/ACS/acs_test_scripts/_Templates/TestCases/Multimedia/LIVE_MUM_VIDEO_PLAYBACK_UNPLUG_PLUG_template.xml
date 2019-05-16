@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="13.37">
+    <UseCase>LIVE_MUM_VIDEO_PLAYBACK_UNPLUG_PLUG</UseCase>
+    <Description>Test video playback with unplug plug during video playback</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>False</b2bContinuousMode>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <TcMaxAttempt>1</TcMaxAttempt>
+    <TcAcceptanceCriteria>1</TcAcceptanceCriteria>
+    <Parameters>
+        <Parameter>
+            <!-- Path to video file. Possible values:
+                - string containing a local file. By default, ACS considers that the file is stored in its multimedia path (e.g: /sdcard/acs_media)
+                  But you can provide a file from another path. In this case provide the full path of your file (e.g: /my_path/my_video_file).
+                - string containing an http URL, for a file on a distant server.
+                - string containing an rtsp URL, for a stream.
+            -->
+            <Name>FILENAME</Name>
+            <Value>BBB_1080p_12Mbps_audio_44100_30fps_HP_240s.mp4</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Multimedia volume to set in percent. Possible values: integer between 0 and 100 -->
+            <Name>VOLUME</Name>
+            <Value>20</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Orientation of the screen. Possible values:
+             - portrait
+             - landscape
+             - reverse_portrait
+             - reverse_landscape
+             - empty value will play with current device screen orientation-->
+            <Name>SCREEN_ORIENTATION</Name>
+            <Value>portrait</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Duration of the video playback in second.
+            Possible values:
+                - If empty, whole file will be played,
+                - If lower or equal to 0, the video file will not be played,
+                - If greater than 0 and lower than video file length, it will play file during DURATION value,
+                - It greater than 0 and greater than video file length, it will loop over file (except in rtsp case) -->
+            <Name>DURATION</Name>
+            <Value>240</Value>
+        </Parameter>
+        <Parameter>
+            <Name>PLAYBACK_DURATION</Name>
+            <Value>180</Value>
+        </Parameter>
+    </Parameters>
+    <TestSteps>
+        <Initialize>
+            <!-- Get the artifact on local host -->
+            <TestStep Id="GET_ARTIFACT" ARTIFACT="VIDEO/1080p/[+]FROM_TC:FILENAME"
+                      ARTIFACT_SOURCE="FROM_BENCH:ARTIFACT_MANAGER:URI" TRANSFER_TIMEOUT="DEFAULT"
+                      STORED_FILE_PATH="FILE_PATH_IN_CACHE1" EQT="DEFAULT"/>
+            <!-- Then, Push it on the device. Device destination folder will be the default device media folder (/sdcard/acs_media) -->
+            <!-- FILE_PATH is retrieved from test step context -->
+            <TestStep Id="INSTALL_FILE" DEVICE="PHONE1" FILE_PATH="FROM_CTX:FILE_PATH_IN_CACHE1" TYPE="media"
+                      DESTINATION="FROM_DEVICE:PHONE1:userdataPath" TIMEOUT="DEFAULT" DESTINATION_STORED_PATH="FILE_PATH_IN_CACHE1"/>
+        </Initialize>
+        <Finalize>
+            <!-- When test has been run, we can remove the mp3 files if necessary -->
+            <TestStep Id="UNINSTALL_FILE" DEVICE="PHONE1" DEVICE_FOLDER="FROM_DEVICE:PHONE1:userdataPath"
+                      FILENAME="FROM_TC:FILENAME"/>
+        </Finalize>
+    </TestSteps>
+</TestCase>

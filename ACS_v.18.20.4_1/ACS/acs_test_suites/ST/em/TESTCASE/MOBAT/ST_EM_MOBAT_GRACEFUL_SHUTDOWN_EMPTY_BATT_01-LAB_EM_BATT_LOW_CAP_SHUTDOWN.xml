@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="13.45">
+    <UseCase>LAB_EM_BATT_LOW_CAP_SHUTDOWN</UseCase>
+    <Description>Test the ability of the board to do an automatic shutdown when the battery capacity reach 0 percent after a discharge.</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>False</b2bContinuousMode>
+    <TcMaxAttempt>1</TcMaxAttempt>
+    <TcAcceptanceCriteria>1</TcAcceptanceCriteria>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters>
+        <Parameter>
+            <!-- this is the capacity max capacity to begin the test with test (integer between 1 and 100) -->
+            <Name>BATT_MAX_CAPACITY</Name>
+            <Value>8</Value>
+        </Parameter>
+        <Parameter>
+            <!-- timeout to let the board shutdown while discharging, if no data cable is used the full timeout will be waited -->
+            <Name>DISCHARGE_TIMEOUT</Name>
+            <Value>1800</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Cable to keep plugged during discharge until shutdown can be one of the following: SDP, CDP, DCP, AC_CHGR or NONE -->
+            <Name>CABLE_TYPE_DURING_DISCHARGE</Name>
+            <Value>NONE</Value>
+        </Parameter>
+        <Parameter>
+            <!-- LOAD to apply to the board when discharging separate by ;. To be choosen between following loads (can be combinated) : WIFI;BLUETOOTH;TORCHLIGHT;VIBRA;VIDEO -->
+            <Name>LOAD_TO_HELP_DISCHARGE</Name>
+            <Value>FROM_BENCHCONFIG</Value>
+        </Parameter>
+        <Parameter>
+            <!-- this testcase can cover different test when your board perform a shutdown due to battery level.
+                The verdict of your usecase will be based only on the target results you have choosen.
+                use ; as separator
+                check energy_management.xml on _config folder for details on what can be tested
+
+                this test can currently check info about SHUTDOWN_REASON and LAST_BATT_CAPACITY_SEEN
+            -->
+            <Name>EM_TARGET</Name>
+            <Value>LAST_BATT_CAPACITY_SEEN</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

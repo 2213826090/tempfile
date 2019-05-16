@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase>
+  <UseCase>EXEC</UseCase>
+  <Description>General execution use case</Description>
+  <b2bIteration>1</b2bIteration>
+  <b2bContinuousMode>True</b2bContinuousMode>  
+  <Parameters>
+    <Parameter>
+      <Name>RUN_CMD</Name>
+      <Value>python _ExecutionConfig/ST/system/TC/Stress/multiple_thread_operations_emmc_sdcard_2.py</Value>
+    </Parameter>
+    <Parameter>
+      <Name>RUN_TIMEOUT</Name>
+      <Value>10000</Value>
+    </Parameter>
+	<Parameter>
+	  <Name>RUN_EXPECT_RESULT</Name>
+	  <Value>multiple thread operations emmc sdcard passed</Value>
+	</Parameter>
+	
+	<Parameter>
+      <Name>TEAR_DOWN_CMD</Name>
+      <Value>adb shell echo "tear down"</Value>
+    </Parameter>
+    <Parameter>
+      <Name>TEAR_DOWN_TIMEOUT</Name>
+      <Value>5</Value>
+    </Parameter>
+	<Parameter>
+	  <Name>TEAR_DOWN_EXPECT_RESULT</Name>
+	  <Value>tear down</Value>
+	</Parameter>
+  </Parameters>  
+</TestCase>

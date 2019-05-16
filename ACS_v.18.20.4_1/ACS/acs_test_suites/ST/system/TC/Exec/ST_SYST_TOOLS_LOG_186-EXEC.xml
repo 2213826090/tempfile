@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase>
+  <UseCase>EXEC</UseCase>
+  <Description>General execution use case</Description>
+  <b2bIteration>1</b2bIteration>
+  <b2bContinuousMode>True</b2bContinuousMode>  
+  <Parameters>
+    <Parameter>
+      <Name>SETUP_CMD</Name>
+      <Value>adb shell echo "setup"</Value>
+    </Parameter>
+    <Parameter>
+      <Name>SETUP_TIMEOUT</Name>
+      <Value>1</Value>
+    </Parameter>
+	<Parameter>
+	  <Name>SETUP_EXPECT_RESULT</Name>
+	  <Value>0</Value>
+	</Parameter>        
+  
+    <Parameter>
+      <Name>RUN_CMD</Name>
+      <Value>python ./_ExecutionConfig/ST/system/TC/Exec/script/ST_SYST_TOOLS_LOG_186.py</Value>
+    </Parameter>
+    <Parameter>
+      <Name>RUN_TIMEOUT</Name>
+      <Value>300</Value>
+    </Parameter>
+	<Parameter>
+	  <Name>RUN_EXPECT_RESULT</Name>
+	  <Value>pass</Value>
+	</Parameter>
+	
+    <Parameter>
+      <Name>TEAR_DOWN_CMD</Name>
+      <Value>adb shell echo "tear down"</Value>
+    </Parameter>
+    <Parameter>
+      <Name>TEAR_DOWN_TIMEOUT</Name>
+      <Value>1</Value>
+    </Parameter>
+	<Parameter>
+	  <Name>TEAR_DOWN_EXPECT_RESULT</Name>
+	  <Value>0</Value>
+	</Parameter>
+  </Parameters>  
+</TestCase>

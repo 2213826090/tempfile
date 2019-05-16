@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<TestCase>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Discription>
+Use apk to get?Rotation delay: Fastest/Game/UI/Normal, all?types delay time should be within 5-10ms.
+</Discription>
+    <Domain>Sensor</Domain>
+    <Phase>CORE</Phase>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <Type>FUNCTIONAL</Type>
+    <UseCase>PY_UNIT</UseCase>
+    <b2bIteration>1</b2bIteration>
+    <Parameters>
+        <Parameter>
+            <Name>HpalmName</Name>
+            <Value>frequency_rotation_vector_ui.frequency_rotation_vector_ui.test_frequency_rotation_vector_ui</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TEST_DATA_ROOT</Name>
+            <Value>testplan/Sensor</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TEST_CASE</Name>
+            <Value>tests.Sensor.Fusion_Sensor.frequency_rotation_vector_ui.frequency_rotation_vector_ui.test_frequency_rotation_vector_ui</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

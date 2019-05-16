@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<TestCase>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Discription>
+Verify video playback with these meta info: H263 For .3GPv5 Container Decode v5_L1.0_BP_QCIF_15fps_AMR-WB_Multimedia_256kb_16KHz
+</Discription>
+    <Domain>Multimedia_Video</Domain>
+    <Phase>CORE</Phase>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <Type>FUNCTIONAL</Type>
+    <UseCase>PY_UNIT</UseCase>
+    <b2bIteration>1</b2bIteration>
+    <Parameters>
+        <Parameter>
+            <Name>HpalmName</Name>
+            <Value>video_api_test.VideoAPITest.testPlayback_H263_3GPv5_L1_0_BP_QCIF_15fps_AMR_WB_256kb_16KHz</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TEST_DATA_ROOT</Name>
+            <Value>testplan/Multimedia_Video</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TEST_CASE</Name>
+            <Value>tests.Multimedia_Video.Decode.video_api_test.VideoAPITest.testPlayback_H263_3GPv5_L1_0_BP_QCIF_15fps_AMR_WB_256kb_16KHz</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

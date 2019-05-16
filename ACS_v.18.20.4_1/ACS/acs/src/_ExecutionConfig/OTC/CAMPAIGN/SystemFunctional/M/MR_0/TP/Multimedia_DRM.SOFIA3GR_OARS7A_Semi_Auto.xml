@@ -1,0 +1,62 @@
+<?xml version="1.0" ?>
+<Campaign version="13.49">
+    <Parameters>
+        <Parameter isControlledPSUsed="False"/>
+        <Parameter isIoCardUsed="False"/>
+        <Parameter skipBootOnPowerCycle="False"/>
+        <Parameter bootRetryNumber="0"/>
+        <Parameter runHookScripts="False"/>
+        <Parameter powerCycleBetweenTC="False"/>
+        <Parameter powerCycleOnFailure="False"/>
+        <Parameter finalDutState="NoChange"/>
+        <Parameter stopCampaignOnCriticalFailure="False"/>
+        <Parameter stopCampaignOnFirstFailure="False"/>
+        <Parameter loggingLevel="debug"/>
+        <Parameter CampaignType="Other"/>
+        <Parameter TCRReportViaRESTAPI="True"/>
+    </Parameters>
+    <TestCases>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_DRM/Classic_WV/testWVClassic_WVDemo_WiFi_720p"/>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_DRM/Classic_WV/testWVClassic_WVDemo_WiFi_360p"/>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_DRM/Classic_WV/testWVClassic_WVDemo_WiFi_480P"/>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_DRM/Classic_WV/testWVClassic_WVDemo_Local_480p"/>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_DRM/Classic_WV/testWVClassicPlayback_WVDemo_Local_720p"/>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_DRM/Classic_WV/testWVClassic_WVDemo_Menu_Interaction"/>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_DRM/Classic_WV/testWVClassic_WVDemo_Local_360"/>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_DRM/Classic_WV/testWVClassic_Provision"/>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_DRM/Classic_WV/testWVClassic_WVDemo_SD"/>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_DRM/Classic_WV/testWVClassic_WVDemo_Volume_Adjustment_Paused"/>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_DRM/Modular_WV/testWVModular_NetFlix_AV_Synced"/>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_DRM/Modular_WV/testWVModular_NetFlix_Volume_Change"/>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_DRM/Modular_WV/testWVModular_NetFlix_Apps_Change"/>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_DRM/Modular_WV/testWVModular_NetFlix_SD"/>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_DRM/Modular_WV/testWVModular_Netflix_Volume_Pause"/>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_DRM/Modular_WV/testWVModular_NetFlix_Resume_Sleep"/>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_DRM/Modular_WV/testWVModular_Netflix_Scrub"/>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_DRM/Modular_WV/testRewind_WVModular_Exoplayer"/>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_DRM/Modular_WV/testWVModular_Exoplayer_Pause_One_Minute"/>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_DRM/Modular_WV/testWVModular_Exoplayer_Power_Button"/>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_DRM/Modular_WV/testWVModular_NetFlix_Power_Button"/>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_DRM/Modular_WV/testWVModular_Exoplayer_Sleep_Paused"/>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_DRM/Modular_WV/testWVModular_Netflix_Pause"/>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_DRM/Modular_WV/testWVModular_Netflix_Back"/>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_DRM/Modular_WV/testWVModular_Netflix_Menu"/>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_DRM/Modular_WV/testWVModualr_Netflix_HD_Control"/>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_DRM/Modular_WV/testWVModular_Netflix_Rewind_10"/>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_DRM/Modular_WV/testWVModular_Netflix_HD_WVinfo"/>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_DRM/Modular_WV/testWVModular_Exoplayer_Changeorientation"/>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_DRM/Modular_WV/testWVModular_Netflix_HD"/>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_DRM/Modular_WV/testWVModular_ExoPlayer_Control"/>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_DRM/Modular_WV/testWVModular_Exoplayer_Resume_Background"/>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_DRM/Modular_WV/testWVModular_Exoplayer_Forward_Rewind"/>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_DRM/Modular_WV/testWVModular_Exoplayer_Forward_Rewind_Paused"/>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_DRM/Modular_WV/testWVModular_Exoplayer_Display"/>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_DRM/Modular_WV/testWVModular_Exoplayer_Forward_Till_End"/>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_DRM/Modular_WV/testWVModualr_Exoplayer_Audio_Video_Synchronization"/>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_DRM/Modular_WV/testWVModular_Exoplayer_End"/>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_DRM/Modular_WV/testWVModular_Exoplayer_Play"/>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_DRM/Modular_WV/testWVModular_Verify_WV10_Copy_Buffer"/>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_DRM/Modular_WV/testWVModular_Exoplayer_Video_Playback"/>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_DRM/Modular_WV/testWVModular_Exoplayer_Rewind_Less_10s"/>
+    </TestCases>
+</Campaign>

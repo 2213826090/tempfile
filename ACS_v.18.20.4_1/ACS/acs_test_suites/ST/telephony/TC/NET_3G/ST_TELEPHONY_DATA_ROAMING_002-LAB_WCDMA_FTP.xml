@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase>
+  <UseCase>LAB_WCDMA_FTP</UseCase>
+  <Description>FTP download over WCDMA on simulated network</Description>
+  <b2bIteration>1</b2bIteration>
+  <b2bContinuousMode>True</b2bContinuousMode> 
+  <Parameters>
+    <Parameter>
+        <!-- Home Public Land Mobile Network Coverage (True | False) -->
+        <Name>HPLMN_COVERAGE</Name>
+        <Value>False</Value>
+    </Parameter>
+    <Parameter>
+        <!-- Mobile Country Code 0 to 999 as string. If MCC is empty, no operator check is done -->
+        <Name>MCC</Name>
+        <Value>310</Value>
+    </Parameter>
+    <Parameter>
+        <!-- Mobile Network Code 0 to 99 as string. If MNC is empty, no operator check is done -->
+        <Name>MNC</Name>
+        <Value>90</Value>
+    </Parameter>
+    <Parameter>
+      <!-- Cell Band (from Band 1 to Band 8)-->
+      <Name>CELL_BAND</Name>
+      <Value>1</Value>
+    </Parameter>
+    <Parameter>
+      <!-- Downlink UARFCN Frequency -->
+      <Name>DL_UARFCN</Name>
+      <Value>10700</Value>
+    </Parameter>
+    <Parameter>
+      <!--Cell Service (CIRCUIT | PACKET | CIRCUIT_PACKET | RBTEST) -->
+      <Name>CELL_SERVICE</Name>
+      <Value>PACKET</Value>
+    </Parameter>
+    <Parameter>
+      <!-- Cell power in dBm -->
+      <Name>CELL_POWER</Name>
+      <Value>-60</Value>
+    </Parameter>
+    <Parameter>
+      <!-- Uplink Radio Access Bearer (64k | 128k | 384k) -->
+      <Name>UL_RAB</Name>
+      <Value>384k</Value>
+    </Parameter>
+    <Parameter>
+      <!-- Downlink Radio Access Bearer (64k | 128k | 384k) -->
+      <Name>DL_RAB</Name>
+      <Value>384k</Value>
+    </Parameter>
+    <Parameter>
+      <!-- FTP transfer direction: DL or UL -->
+      <Name>DIRECTION</Name>
+      <Value>DL</Value>
+    </Parameter>
+    <Parameter>
+      <!-- File to upload from the FTP server -->
+      <Name>UL_FILENAME</Name>
+      <Value>5MB.txt</Value>
+    </Parameter>
+    <Parameter>
+      <!-- File to download from the FTP server -->
+      <Name>DL_FILENAME</Name>
+      <Value>get5M</Value>
+    </Parameter>
+	<Parameter>
+      <!-- Transfer timeout in s -->
+      <Name>XFER_TIMEOUT</Name>
+      <Value>400</Value>
+    </Parameter>
+  </Parameters>
+</TestCase>

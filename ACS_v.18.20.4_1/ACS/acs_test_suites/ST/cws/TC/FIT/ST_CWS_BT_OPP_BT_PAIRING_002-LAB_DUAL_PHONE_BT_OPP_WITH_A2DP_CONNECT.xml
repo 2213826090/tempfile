@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase>
+    <UseCase>LAB_DUAL_PHONE_BT_OPP_WITH_A2DP_CONNECT</UseCase>
+    <Description>Transfer a file with BT and connect/disconnect BT headset</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>False</b2bContinuousMode>
+    <TcAcceptanceCriteria>PASS</TcAcceptanceCriteria>
+    <TcMaxAttempt>2</TcMaxAttempt>
+    <Parameters>
+        <Parameter>
+            <!-- Configure the state of DUT : DUT_CLIENT, DUT_SERVER -->
+            <Name>DUT_STATE</Name>
+            <Value>DUT_SERVER</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Name of the file to send -->
+            <Name>OPP_LOCAL_FILE</Name>
+            <Value>20MB.txt</Value>
+        </Parameter>
+        <Parameter>
+            <!-- [Optional] Time of loops of this activity -->
+            <Name>DURATION</Name>
+            <Value>1</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

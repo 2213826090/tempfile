@@ -1,0 +1,61 @@
+<?xml version='1.0' encoding='ASCII'?>
+<Campaign version="13.49">
+    <Parameters>
+        <Parameter isControlledPSUsed="False"/>
+        <Parameter isIoCardUsed="False"/>
+        <!-- Set skipBootOnPowerCycle to True to disable the accs boot procedure -->
+        <!-- Important, it means that boot will be handle inside the campaign/tc -->
+        <Parameter skipBootOnPowerCycle="False"/>
+        <!-- Set bootRetryNumber to maximum number of boot retries during the acs boot procedure -->
+        <!-- Important, it means that bootRetryNumber is set by default to 0 if not specified -->
+        <Parameter bootRetryNumber="0"/>
+        <Parameter runHookScripts="False"/>
+        <Parameter powerCycleBetweenTC="False"/>
+        <Parameter powerCycleOnFailure="False"/>
+        <!-- finalDutState allows user to leave the DUT in a specific state at the end of the campaign
+            Possible values: PowerOn | PowerOff | Charging | NoChange
+            By default DUT is leaved in NoChange state.
+            In case the user selects Charging as final state of the DUT and that DUT fails to enter Charging,
+            ACS shall try to switch the DUT off -->
+        <Parameter finalDutState="NoChange"/>
+        <Parameter stopCampaignOnCriticalFailure="False"/>
+        <Parameter stopCampaignOnFirstFailure="False"/>
+        <!-- LoggingLevel possible values: info | warning | debug | error -->
+        <Parameter loggingLevel="debug"/>
+        <!-- CampaignType format -> <TEAM>_<CAMPAIGNTYPE>
+            Possible values:
+            FT(Feature Team)-> SANITY | REGRESSION | STRESS, RELIABILTY | MTBF
+            ST(System Test)-> SANITY | REGRESSION | STRESS, RELIABILTY | MTBF | EM
+            SI(System Integration)-> EAT | STAB | PACT | CAT0 | RELIABILITY | MTBF | CTS | ACS_CI
+            Otherwise "Others" should be used -->
+        <Parameter CampaignType="MTBF"/>
+    </Parameters>
+    <Targets>
+        <!-- Target Values -->
+        <Target targetB2bPassRate="100"/>
+    </Targets>
+    <TestCases>
+        <!--Prerequisites-->
+        <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Photos/prerequisites/prereq_Delete_Media_Files"/>
+        <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Photos/prerequisites/prereq_Add_google_account_M_dessert"/>
+        <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Photos/prerequisites/prereq_Push_photos"/>
+        <!--Sometimes Media Scanner hangs and stops scanning files, a reboot will usually solve the problem -->
+        <!--TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Chrome/prerequisites/prereq_Reboot_Device" TcMaxAttempt="2"/-->
+        <!--Tests-->
+        <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Photos/Marshmallow/GMS_Photos_Add-filter-to-a-photo"/>
+        <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Photos/Marshmallow/GMS_Photos_Cancel-changes"/>
+        <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Photos/Marshmallow/GMS_Photos_Compare-images"/>
+        <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Photos/Marshmallow/GMS_Photos_Crop-image"/>
+        <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Photos/Marshmallow/GMS_Photos_Discard-changes"/>
+        <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Photos/Marshmallow/GMS_Photos_Enhance_Photo"/>
+        <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Photos/Marshmallow/GMS_Photos_new_Shared_Links"/>
+        <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Photos/Marshmallow/GMS_Photos_New_View-folders-on-device"/>
+        <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Photos/Marshmallow/GMS_Photos_Search-for-photos"/>
+        <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Photos/Marshmallow/GMS_Photos_Use-as-photo"/>
+        <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Photos/Marshmallow/GMS_Photos_New_open_in_browser_photo_link"/>
+        <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Photos/Marshmallow/GMS_Photos_New_Delete_Photo_Movie"/>
+        <!-- Clean-up: Remove Google account to not affect next tests-->
+        <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/DutSetup/prereq_stop_uiautomator_on_dut"/>
+        <TestCase Id="../../../../../TC/TR/ACS/Applications/Applications_M/prerequisites/prereq_REMOVE_GOOGLE_ACCOUNTS"/>
+    </TestCases>
+</Campaign>

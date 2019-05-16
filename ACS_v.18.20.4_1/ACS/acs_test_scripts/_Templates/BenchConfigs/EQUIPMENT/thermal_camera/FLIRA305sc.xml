@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<Equipment name="THERMAL_CAMERA" description="thermal camera">
+    <!-- possible Model values: FLIRA305sc -->
+    <Parameter name="Model" value="FLIRA305sc" description="Model of equipment to use. Refer to Equipment_Catalog.xml" />
+    <Parameter name="IP" value="169.254.128.1" description="Camera IP address" />
+    <Parameter name="TelnetPort" value="" description="Camera telnet port, can be left empty to use the default port" />
+    <Parameter name="FtpLoggin" value="ACS" description="FTP user name, can be left empty" />
+    <Parameter name="FtpPwd" value="your_password" description="FTP password, must be filled if logging is not empty" />
+    <!-- camera option for auto setup -->
+    <Parameter name="SetupPerformAutoFocus" value="true" description="Perform an auto focus during setup to try to have a clear image, this may not be reliable as we cant automatically check the quality of image" />
+    <Parameter name="SetupPerformNonUniformityCorrection" value="true" description="perform a NUC during setup" />
+    <Parameter name="SetupSetImagePalette" value="rainbow" description="change the image color palette during setup" />
+    <!-- camera internal configuration
+        configuration link to the target -->
+    <Parameter name="Emissivity" value="0.950" description="Object emissivity (0.001 to 1.0)" />
+    <Parameter name="ReflectedTemperature" value="28" description=" Temperature of the surroundings reflected in the object, in degree celsius" />
+    <Parameter name="DistanceOfTheTarget" value="0.6" description="Distance from the camera to the target in meter" />
+    <!-- configuration link to the environement -->
+    <Parameter name="AtmosphericTemperature" value="25" description="Atmospheric temperature in degree celsius" />
+    <Parameter name="AtmosphericHumidity" value="0.5" description="Relative humidity of the air. (0.0 to 1.0,30% = 0.30)" />
+    <Parameter name="AtmosphericTransmission" value="1" description="Estimated atmospheric transmission. If it is 0, the camera will calculate a transmission" />
+    <!-- configuration link to the optic -->
+    <Parameter name="ExternalOpticTemperature" value="20" description="External Optics temperature in degree celsius Used for heat shields, close-up lenses etc" />
+    <Parameter name="ExternalOpticTransmission" value="1" description="External Optics transmission. (0.001 to 1.0) Set to 1.0 if no external optics is present" />
+</Equipment>

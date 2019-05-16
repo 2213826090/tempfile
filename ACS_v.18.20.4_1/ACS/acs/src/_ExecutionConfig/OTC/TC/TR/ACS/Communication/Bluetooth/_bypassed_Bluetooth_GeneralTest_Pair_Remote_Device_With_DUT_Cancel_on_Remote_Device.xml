@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="13.41">
+    <UseCase>TEST_STEP_ENGINE</UseCase>
+    <Description>This testcase launches a pair request from another device which will be rejected.
+    If it is successfully rejected, the method will send a failure message. For this reason, the expected result
+    for the test is FAIL. If the pairing somehow succeeds, the overall result will be FAIL.
+    If the pairing fails, as it is supposed to, the final result will pe SUCCESS.</Description>
+    <b2bIteration>3</b2bIteration>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <TcMaxAttempt>1</TcMaxAttempt>
+    <TcAcceptanceCriteria>1</TcAcceptanceCriteria>
+    <TcExpectedResult>FAIL</TcExpectedResult>
+    <Parameters />
+    <TestSteps>
+        <Include Src="OTC/TC/RO/ACS/Communication/Bluetooth/setup/Common/OTC_Comms_Common.xml" />
+        <Include Src="TC/TR/ACS/Communication/Bluetooth/setup/BT/OTC_Comms_BT_Common.xml" />
+
+        <Setup>
+            <!-- AUTOMATION - Set default configuration -->
+            <TestStep SetId="BTFullSetupPhones1and2" />
+
+            <!-- SPEC - Init : Turn Off Bluetooth -->
+            <TestStep Id="BT_SET_POWER" DEVICE="PHONE2" POWER="OFF"/>
+            <!-- SPEC - Step 1 : Turn On Bluetooth -->
+            <TestStep Id="BT_SET_POWER" DEVICE="PHONE2" POWER="ON"/>
+            <!-- SPEC - Step 2 : Scan and find the reference device with Reference device -->
+            <TestStep Id="BT_SET_DISCOVERABLE" DEVICE="PHONE1" MODE="both" TIMEOUT="120" />
+            <TestStep Id="BT_FIND_DEVICE" DEVICE="PHONE2" DEVICE_TO_FIND="FROM_CTX:BT_MAC_ADDRESS_PHONE1" MUST_FIND="true" />
+        </Setup>
+        <RunTest>
+            <!-- SPEC - Step 3&4 : Pair and cancel pairing -->
+            <TestStep Id="BT_WAIT_PAIRING" DEVICE="PHONE1" BDADDR="FROM_CTX:BT_MAC_ADDRESS_PHONE2" UNPAIR_FIRST="True" ACCEPT_PAIRING="False" PASS_KEY="0" PIN_CODE="0000" TIMEOUT="120"/>
+            <TestStep Id="BT_PAIR" DEVICE="PHONE2" BDADDR="FROM_CTX:BT_MAC_ADDRESS_PHONE1" UNPAIR_FIRST="True" ACCEPT_PAIRING="True" PASS_KEY="0" PIN_CODE="0000" />
+            <TestStep Id="SUSPEND" DURATION_IN_SEC="5.0" />
+        </RunTest>
+        <TearDown>
+            <Fork Id="ForkTeardown">
+                <TestStep SetId="BTCommonTeardown" DEVICE="PHONE1" />
+                <TestStep SetId="BTCommonTeardown" DEVICE="PHONE2" />
+            </Fork>
+        </TearDown>
+    </TestSteps>
+</TestCase>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestSteps xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../acs/src/_Catalogs/TestStep/teststep.xsd">
+    <TestStep Id="CHECK_EMMC_DMA_MODE" Domain="STORAGE" SubDomain="SETTINGS" Feature="CHECKS" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Storage.Settings.CheckeMMCDMAMode.CheckeMMCDMAMode</ClassName>
+        <Description>Checks DMA Mode for eMMC Controller.</Description>
+        <Environment name="ANY"/>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which eMMC DMA mode will be checked</Description>
+                <PossibleValues/>
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+         </Parameters>
+    </TestStep>
+</TestSteps>

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase>
+  <UseCase>LAB_HSPA_IPERF</UseCase>
+  <Description>HSPA Throughput Measurement using IPERF</Description>
+  <b2bIteration>200</b2bIteration>
+  <b2bContinuousMode>True</b2bContinuousMode>  
+  <Parameters>
+    <Parameter>
+      <!-- Cell Band (from Band 1 to Band 8)-->
+      <Name>CELL_BAND</Name>
+      <Value>1</Value>
+    </Parameter>
+    <Parameter>
+      <!-- Downlink UARFCN Frequency-->
+      <Name>DL_UARFCN</Name>
+      <Value>10700</Value>
+    </Parameter>
+    <Parameter>
+      <!--Cell Service (CIRCUIT | PACKET | CIRCUIT_PACKET | RBTEST) -->
+      <Name>CELL_SERVICE</Name>
+      <Value>PACKET</Value>
+    </Parameter>
+    <Parameter>
+      <!-- Cell power in dBm -->
+      <Name>CELL_POWER</Name>
+      <Value>-60</Value>
+    </Parameter>
+    <Parameter>
+      <!-- Protocol IPV4 | IPV6 | IPV4V6 -->
+      <Name>PROTOCOL</Name>
+      <Value>IPV4</Value>
+    </Parameter>
+    <Parameter>
+      <!-- Uplink Radio Access Bearer (384k | HSUPA_CAT6 | MAX [If MAX is selected, value will be taken from DeviceCatalog.xml]) -->
+      <Name>UL_RAB</Name>
+      <Value>HSUPA_CAT6</Value>
+    </Parameter>
+    <Parameter>
+      <!-- Downlink Radio Access Bearer (HSDPA_CAT10 | HSDPA_CAT14 | HSDPA_CAT24 | MAX [If MAX is selected, value will be taken from DeviceCatalog.xml]) -->
+      <Name>DL_RAB</Name>
+      <Value>HSDPA_CAT10</Value>
+    </Parameter>
+    <Parameter>
+      <!-- CPC [Continuous Packet Connectivity] feature use (2 [TTI =2ms] | 10 [TTI =10ms]) -->
+      <Name>CPC</Name>
+      <Value></Value>
+    </Parameter>
+    <Parameter>
+      <!--  CQI scheme : Fixed value or UE reported  - FIXED|REPORTED -->
+      <Name>CQI_SCHEME</Name>
+      <Value>FIXED</Value>
+    </Parameter>
+    <Parameter>
+      <!--  PS Data HS-DSCH MAC-d PDU Size - BITS336|BITS656  -->
+      <Name>MAC_D_PDU_SIZE</Name>
+      <Value>BITS656</Value>
+    </Parameter>
+    <Parameter>
+      <!-- Port Number used by IPERF -->
+      <Name>PORT</Name>
+      <Value>5009</Value>
+    </Parameter>
+    <Parameter>
+      <!-- Duration in seconds allowed to IPERF to perform measurements -->
+      <Name>DURATION</Name>
+      <Value>300</Value>
+    </Parameter>
+    <Parameter>
+      <!-- Protocol used by IPERF to perform measurements - (TCP | UDP) -->
+      <Name>IPERF_PROTOCOL</Name>
+      <Value>TCP</Value>
+    </Parameter>
+    <Parameter>
+      <!-- Computer to use as iperf server -->
+      <Name>COMPUTER</Name>
+      <Value>IPERF_SERVER</Value>
+    </Parameter>
+    <Parameter>
+      <!-- [Optional] Iperf mode: single (iperf server must be launched manually), or dual. default is single if unspecified -->
+      <Name>IPERF_MODE</Name>
+      <Value>dual</Value>
+    </Parameter>
+  </Parameters>
+</TestCase>

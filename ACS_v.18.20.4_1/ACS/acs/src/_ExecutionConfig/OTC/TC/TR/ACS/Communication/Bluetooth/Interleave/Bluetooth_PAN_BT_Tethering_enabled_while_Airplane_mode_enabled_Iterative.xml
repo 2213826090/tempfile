@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase>
+    <UseCase>Bluetooth_PAN_AIRPLANE</UseCase>
+    <Description>The device initiates a PAN profile connection to another device that provides
+    NAP services(Wifi). After the connection is established, it pings the AP.</Description>
+    <b2bIteration>3</b2bIteration>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <TcAcceptanceCriteria>PASS</TcAcceptanceCriteria>
+    <TcMaxAttempt>1</TcMaxAttempt>
+    <Parameters>
+        <Parameter>
+            <!-- Name of the access point -->
+            <Name>WIFI_ACCESS_POINT</Name>
+            <Value>WEP_WIFI_ROUTER</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

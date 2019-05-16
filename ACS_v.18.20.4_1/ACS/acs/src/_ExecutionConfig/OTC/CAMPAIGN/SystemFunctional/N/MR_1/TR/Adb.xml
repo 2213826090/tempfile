@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<Campaign>
+      <Parameters>
+            <Parameter isControlledPSUsed="False"/>
+            <Parameter isIoCardUsed="False"/>
+            <Parameter skipBootOnPowerCycle="False"/>
+            <Parameter bootRetryNumber="0"/>
+            <Parameter runHookScripts="False"/>
+            <Parameter powerCycleBetweenTC="False"/>
+            <Parameter powerCycleOnFailure="False"/>
+            <Parameter finalDutState="NoChange"/>
+            <Parameter stopCampaignOnCriticalFailure="False"/>
+            <Parameter stopCampaignOnFirstFailure="False"/>
+            <Parameter loggingLevel="debug"/>
+            <Parameter CampaignType="Other"/>
+            <Parameter TCRReportViaRESTAPI="True"/>
+      </Parameters>
+      <TestCases>
+            <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Adb/ADB_INSTALL"/>
+            <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Adb/ADB_INSTALL_R"/>
+            <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Adb/ADB_UNINSTALL"/>
+            <SubCampaign Id="../../../../Subcampaigns/ACS/System/OS/ADBDebugCommand/ADBDebugCommand"/>
+            <SubCampaign Id="../../../../Subcampaigns/ACS/System/OS/ADBUserCommands/ADBUserCommands"/>
+            <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Adb/ADB_LOGCAT_B"/>
+            <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Adb/ADB_Shell_coexist_one_quit"/>
+            <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Adb/ADB_USB_Connection_unable_to_enter_sleep"/>
+            <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Adb/ADB_USB_debugging_not_selected"/>
+            <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Storage/PTP/prereq_capture_image_and_video"/>
+            <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Storage/PTP/prereq_select_PTP"/>
+            <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Adb/ADB_Shell_PTP_transfer"/>
+            <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Adb/ADB_Logcat_PTP_transfer"/>
+      </TestCases>
+</Campaign>

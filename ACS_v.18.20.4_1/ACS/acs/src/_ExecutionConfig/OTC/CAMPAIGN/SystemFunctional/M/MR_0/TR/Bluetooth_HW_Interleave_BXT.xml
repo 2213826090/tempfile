@@ -1,0 +1,92 @@
+<?xml version='1.0' encoding='ASCII'?>
+<Campaign version="13.49">
+    <Parameters>
+        <Parameter isControlledPSUsed="False"/>
+        <Parameter isIoCardUsed="True"/>
+        <!-- Set skipBootOnPowerCycle to True to disable the accs boot procedure -->
+        <!-- Important, it means that boot will be handle inside the campaign/tc -->
+        <Parameter skipBootOnPowerCycle="False"/>
+        <!-- Set bootRetryNumber to maximum number of boot retries during the acs boot procedure -->
+        <!-- Important, it means that bootRetryNumber is set by default to 0 if not specified -->
+        <Parameter bootRetryNumber="0"/>
+        <Parameter runHookScripts="False"/>
+        <Parameter powerCycleBetweenTC="False"/>
+        <Parameter powerCycleOnFailure="False"/>
+        <!-- finalDutState allows user to leave the DUT in a specific state at the end of the campaign
+            Possible values: PowerOn | PowerOff | Charging | NoChange
+            By default DUT is leaved in NoChange state.
+            In case the user selects Charging as final state of the DUT and that DUT fails to enter Charging,
+            ACS shall try to switch the DUT off -->
+        <Parameter finalDutState="NoChange"/>
+        <Parameter stopCampaignOnCriticalFailure="False"/>
+        <Parameter stopCampaignOnFirstFailure="False"/>
+        <!-- LoggingLevel possible values: info | warning | debug | error -->
+        <Parameter loggingLevel="debug"/>
+        <!-- CampaignType format -> <TEAM>_<CAMPAIGNTYPE>
+            Possible values:
+            FT(Feature Team)-> SANITY | REGRESSION | STRESS, RELIABILTY | MTBF
+            ST(System Test)-> SANITY | REGRESSION | STRESS, RELIABILTY | MTBF | EM
+            SI(System Integration)-> EAT | STAB | PACT | CAT0 | RELIABILITY | MTBF | CTS | ACS_CI
+            Otherwise "Others" should be used -->
+        <Parameter CampaignType="Others"/>
+        <Parameter TCRReportViaRESTAPI="True"/>
+    </Parameters>
+    <Targets>
+        <!-- Target Values -->
+        <Target targetB2bPassRate="100"/>
+    </Targets>
+    <TestCases>
+        <!--Setup, installing ACS Agents-->
+        <TestCase Id="../../../../../TC/TR/ACS/Communication/Bluetooth/setup/prereq_Bluetooth_SYSTEM_SETUP_EMBEDDED"/>
+        <!--port PREQ-21275/PREQ-21274 feature start-->
+        <TestCase Id="../../../../../TC/TR/ACS/Communication/Bluetooth/Interleave/Bluetooth_GAP_pair_master"/>
+        <TestCase Id="../../../../../TC/TR/ACS/Communication/Bluetooth/Interleave/Bluetooth_GeneralTest_Pair_DUT_With_Remote_Device_Cancel_on_DUT" TcMaxAttempt="2"/>
+        <TestCase Id="../../../../../TC/TR/ACS/Communication/Bluetooth/Interleave/Bluetooth_GeneralTest_Pair_DUT_With_Remote_Device_Cancel_on_Remote_Device" TcMaxAttempt="2"/>
+        <TestCase Id="../../../../../TC/TR/ACS/Communication/Bluetooth/Interleave/Bluetooth_GeneralTest_Pair_Remote_Device_With_DUT_Cancel_on_DUT" TcMaxAttempt="2"/>
+        <TestCase Id="../../../../../TC/TR/ACS/Communication/Bluetooth/Interleave/Bluetooth_GeneralTest_Pair_Remote_Device_With_DUT_Cancel_on_Remote_Device" TcMaxAttempt="2"/>
+
+        <TestCase Id="../../../../../TC/TR/TESTLIB/Bluetooth/Bluetooth_GeneralTest_Pair_DUT_With_Remote_Device_DUT_Pair_Remote_Timeout"/>
+        <TestCase Id="../../../../../TC/TR/TESTLIB/Bluetooth/Bluetooth_GeneralTest_Pair_Remote_Device_With_DUT_DUT_Pair_Remote_Timeout"/>
+        <TestCase Id="../../../../../TC/TR/ACS/Communication/Bluetooth/Interleave/Bluetooth_GeneralTest_Scan_for_a_specific_device_Iteratively"/>
+        <TestCase Id="../../../../../TC/TR/TESTLIB/Bluetooth/Bluetooth_GeneralTest_Unpair_with_a_device"/>
+        <TestCase Id="../../../../../TC/TR/ACS/Communication/Bluetooth/Bluetooth_GeneralTest_provide_service_list" TcMaxAttempt="2"/>
+        <TestCase Id="../../../../../TC/TR/ACS/Communication/Bluetooth/Bluetooth_GeneralTest_Make_Undiscoverable_Different_Scenarios" />
+        <TestCase Id="../../../../../TC/TR/ACS/Communication/Bluetooth/Bluetooth_GeneralTest_Refresh_Scan_Process" />
+        <TestCase Id="../../../../../TC/TR/ACS/Communication/Bluetooth/Bluetooth_GeneralTest_Make_Discoverable_Different_Scenarios" />
+        <TestCase Id="../../../../../TC/TR/TESTLIB/Bluetooth/Bluetooth_GeneralTest_Pair_DUT_With_Remote_Device_Remote_Pair_DUT_Timeout"/>
+        <TestCase Id="../../../../../TC/TR/ACS/Communication/Bluetooth/Interleave/Bluetooth_GeneralTest_Verify_Bluetooth_keeps_its_state_after_device_restart" TcMaxAttempt="2"/>
+        <TestCase Id="../../../../../TC/TR/ACS/Communication/Bluetooth/Interleave/Bluetooth_GeneralTest_Verify_Bluetooth_remains_paired_after_device_restart" TcMaxAttempt="2"/>
+        <!--port PREQ-21275/PREQ-21274 feature end-->
+        <!--port PREQ-21277 feature start-->
+        <TestCase Id="../../../../../TC/TR/ACS/Communication/Bluetooth/Bluetooth_LE_service_gatt_CTS_Verifier" TcMaxAttempt="2"/>
+        <!--port PREQ-21277 feature end-->
+        <!--port PREQ-21412 feature start-->
+        <TestCase Id="../../../../../TC/TR/ACS/Communication/Bluetooth/Bluetooth_OPP_Active_Power_save_mode_while_OPP_transfer"/>
+        <TestCase Id="../../../../../TC/TR/TESTLIB/Bluetooth/Bluetooth_OPP_bt_notification_receive_status"/>
+        <TestCase Id="../../../../../TC/TR/TESTLIB/Bluetooth/Bluetooth_OPP_bt_notification_send_status"/>
+        <TestCase Id="../../../../../TC/TR/ACS/Communication/Bluetooth/Bluetooth_OPP_Client_Picture_And_Alarm_Clock" />
+        <TestCase Id="../../../../../TC/TR/ACS/Communication/Bluetooth/Bluetooth_OPP_Client_Transfer_Multiple_file_types_simultaneously"/>
+        <TestCase Id="../../../../../TC/TR/ACS/Communication/Bluetooth/Interleave/Bluetooth_OPP_Client_Video_And_Bluetooth_Pair_Request_Headset" TcMaxAttempt="2" />
+        <TestCase Id="../../../../../TC/TR/ACS/Communication/Bluetooth/Bluetooth_OPP_DUT_Receive_File_And_Interrupt" />
+        <TestCase Id="../../../../../TC/TR/ACS/Communication/Bluetooth/Bluetooth_OPP_DUT_Receive_File_Interrupt_By_Remote_Device" />
+        <TestCase Id="../../../../../TC/TR/ACS/Communication/Bluetooth/Bluetooth_OPP_DUT_Send_File_Reject" />
+        <TestCase Id="../../../../../TC/TR/ACS/Communication/Bluetooth/Bluetooth_OPP_DUT_Send_File_And_Interrupt" />
+        <TestCase Id="../../../../../TC/TR/ACS/Communication/Bluetooth/Bluetooth_OPP_DUT_Send_File_Interrupt_By_Remote_Device" />
+        <TestCase Id="../../../../../TC/TR/ACS/Communication/Bluetooth/Bluetooth_OPP_DUT_Send_File_Reject" />
+        <!--TestCase Id="../../../../../TC/TR/TESTLIB/Bluetooth/Bluetooth_OPP_DUT_support_OBEX_Object_Push_1_1_BT_Profile"/-->
+        <!--TestCase Id="../../../../../TC/TR/ACS/Communication/Bluetooth/Interleave/Bluetooth_OPP_File_transfer_while_a2dp_playback" TcMaxAttempt="2"/-->
+        <TestCase Id="../../../../../TC/TR/ACS/Communication/Bluetooth/M/Bluetooth_OPP_Object_push_unknown_format_file" />
+        <TestCase Id="../../../../../TC/TR/ACS/Communication/Bluetooth/Bluetooth_OPP_pull_a_business_card_from_a_Push_Server"/>
+        <TestCase Id="../../../../../TC/TR/TESTLIB/Bluetooth/Bluetooth_OPP_Push_to_remote_device_after_rejecting_push_request_from_remote_device"/>
+        <TestCase Id="../../../../../TC/TR/ACS/Communication/Bluetooth/Bluetooth_OPP_push_object_to_server"/>
+        <TestCase Id="../../../../../TC/TR/TESTLIB/Bluetooth/Bluetooth_OPP_Push_to_remote_device_that_rejects_file"/>
+        <TestCase Id="../../../../../TC/TR/ACS/Communication/Bluetooth/Bluetooth_OPP_Receive_file_when_there_is_not_enough_memory"/>
+        <TestCase Id="../../../../../TC/TR/ACS/Communication/Bluetooth/Bluetooth_OPP_Receive_multiple_Business_Cards_reject_object_exchange_multiple_times"/>
+        <TestCase Id="../../../../../TC/TR/TESTLIB/Bluetooth/Bluetooth_OPP_Reject_push_request_from_remote_device"/>
+        <TestCase Id="../../../../../TC/TR/TESTLIB/Bluetooth/Bluetooth_OPP_Send_recorded_video_via_Bluetooth_when_BT_OFF"/>
+        <TestCase Id="../../../../../TC/TR/ACS/Communication/Bluetooth/Interleave/Bluetooth_OPP_Server_Picture_And_Bluetooth_Pair_Request_Headset" TcMaxAttempt="2" />
+        <TestCase Id="../../../../../TC/TR/ACS/Communication/Bluetooth/Bluetooth_OPP_Server_Transfer_Multiple_file_types_simultaneously" TcMaxAttempt="2"/>
+        <TestCase Id="../../../../../TC/TR/ACS/Communication/Bluetooth/Bluetooth_OPP_Support_vCalendar_vNote_vMessage_Send"/>
+        <!--port PREQ-21412 feature end-->
+    </TestCases>
+</Campaign>

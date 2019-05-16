@@ -1,0 +1,484 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestSteps xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../acs/src/_Catalogs/TestStep/teststep.xsd">
+    <TestStep Id="LAUNCH_MEDIA_SCANNER" Domain="MULTIMEDIA" SubDomain="VIDEO" Feature="STORE" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Multimedia.Video.LaunchMediaScanner.LaunchMediaScanner</ClassName>
+        <Description>Launch the media scanner to update mediastore</Description>
+        <Environment name="ANY"/>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues/>
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="SCAN_DIRECTORY" type="STRING" isOptional="false">
+                <Description>Directory scan for update the mediastore.</Description>
+                <PossibleValues/>
+                <DefaultValue>sdcard</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="CHECK_FPS" Domain="MULTIMEDIA" SubDomain="VIDEO" Feature="PLAYBACK" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Multimedia.Video.CheckFps.CheckFps</ClassName>
+        <Description>Check the number of frame per second during a video playback</Description>
+        <Environment name="ANY"/>
+        <Parameters>
+            <Parameter name="FILE_TO_CHECK" type="STRING" isOptional="false">
+                <Description>The name of the file to parse</Description>
+                <PossibleValues/>
+                <DefaultValue></DefaultValue>
+            </Parameter>
+            <Parameter name="FPS_VALUE" type="INTEGER" isOptional="false">
+                <Description>The expected FPS.</Description>
+                <PossibleValues/>
+                <DefaultValue>30</DefaultValue>
+            </Parameter>
+            <Parameter name="MARGIN" type="INTEGER" isOptional="false">
+                <Description>Value of margin in percentage. By default CHECK_FPS has a margin of 5% on the value given in parameter.</Description>
+                <PossibleValues>[0:100]</PossibleValues>
+                <DefaultValue>5</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="MONITOR_VIDEO_ENCODER_ERRORS" Domain="MULTIMEDIA" SubDomain="VIDEO" Feature="PLAYBACK" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Multimedia.Video.MonitorVideoEncoderErrors.MonitorVideoEncoderErrors</ClassName>
+        <Description>Set up log trigger messages to watch for errors resulting from video encoding.  Invoke this before running the application, and invoke CHECK_VIDEO_ENCODER_ERRORS afterwards.</Description>
+        <Environment name="ANY"/>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues/>
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="CHECK_VIDEO_ENCODER_ERRORS" Domain="MULTIMEDIA" SubDomain="VIDEO" Feature="PLAYBACK" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Multimedia.Video.CheckVideoEncoderErrors.CheckVideoEncoderErrors</ClassName>
+        <Description>Check the status of log trigger messages that were set up by MONITOR_VIDEO_ENCODER_ERRORS, which you should have invoked before running the application.</Description>
+        <Environment name="ANY"/>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues/>
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+            <TestStep Id="MONITOR_GFX_ERRORS" Domain="MULTIMEDIA" SubDomain="VIDEO" Feature="PLAYBACK" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Multimedia.Video.MonitorGfxErrors.MonitorGfxErrors</ClassName>
+        <Description>Set up log trigger messages to watch for errors resulting from GFX.  Invoke this before running the application, and invoke CHECK_GFX_ERRORS afterwards.</Description>
+        <Environment name="ANY"/>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues/>
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="CHECK_GFX_ERRORS" Domain="MULTIMEDIA" SubDomain="VIDEO" Feature="PLAYBACK" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Multimedia.Video.CheckGfxErrors.CheckGfxErrors</ClassName>
+        <Description>Check the status of log trigger messages that were set up by MONITOR_GFX_ERRORS, which you should have invoked before running the application.</Description>
+        <Environment name="ANY"/>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues/>
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="MONITOR_VIDEO_DECODER_ERRORS" Domain="MULTIMEDIA" SubDomain="VIDEO" Feature="PLAYBACK" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Multimedia.Video.MonitorVideoDecoderErrors.MonitorVideoDecoderErrors</ClassName>
+        <Description>Set up log trigger messages to watch for errors resulting from video recording.  Invoke this before running the application, and invoke CHECK_VIDEO_DECODER_ERRORS afterwards.</Description>
+        <Environment name="ANY"/>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues/>
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="CHECK_VIDEO_DECODER_ERRORS" Domain="MULTIMEDIA" SubDomain="VIDEO" Feature="PLAYBACK" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Multimedia.Video.CheckVideoDecoderErrors.CheckVideoDecoderErrors</ClassName>
+        <Description>Check the status of log trigger messages that were set up by MONITOR_VIDEO_DECODER_ERRORS, which you should have invoked before running the application.</Description>
+        <Environment name="ANY"/>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues/>
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="MONITOR_VIDEO_ENCHANCER_ERRORS" Domain="MULTIMEDIA" SubDomain="VIDEO" Feature="CONVERSION" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Multimedia.Video.MonitorVideoEnhancerErrors.MonitorVideoEnhancerErrors</ClassName>
+        <Description>Set up log trigger messages to watch for errors resulting from video processing by Video Signal Processor.  Invoke this before running the application, and invoke CHECK_VIDEO_ENCHANCER_ERRORS afterwards.</Description>
+        <Environment name="ANY"/>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues/>
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="CHECK_VIDEO_ENCHANCER_ERRORS" Domain="MULTIMEDIA" SubDomain="VIDEO" Feature="CONVERSION" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Multimedia.Video.CheckVideoEnhancerErrors.CheckVideoEnhancerErrors</ClassName>
+        <Description>Check the status of log trigger messages that were set up by MONITOR_VIDEO_ENCHANCER_ERRORS, which you should have invoked before running the application.</Description>
+        <Environment name="ANY"/>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues/>
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="RUN_VP8_ENCODING" Domain="MULTIMEDIA" SubDomain="VIDEO" Feature="CONVERSION" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Multimedia.Video.RunVP8Encoding.RunVP8Encoding</ClassName>
+        <Description>Repeatedly do video conversion from YUV to VP8.  This uses a device-side
+            script to maintain the encoding for an extended amount of time without intervention from the host.  This
+            is done to avoid adding traffic to the host-device connection (e.g. ADB for Android) throughout the test.
+            PREREQUISITES:
+            Android: The following files must be in the directory specified in SCRIPTS_PATH:
+                    new_va_encode
+                    vp8_loop.sh
+                These can be found in Artifactory at acs_test_artifacts/CONCURRENCY/TESTS/vp8_encoding.
+                Optionally, you may also provide a YUV video file specified in INPUT_YUV_FILE.  If this is "None" then
+                new_va_encode will create its own YUV file to use.
+            Windows: executable and device-side script not yet created.
+        </Description>
+        <Environment name="ANY"/>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues/>
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="DURATION" type="INTEGER" isOptional="false">
+               <Description>How long the test will run, in minutes.</Description>
+               <PossibleValues/>
+               <DefaultValue>5</DefaultValue>
+            </Parameter>
+            <Parameter name="SCRIPTS_PATH" type="STRING" isOptional="false">
+                <Description>Path on the device where test script from the unpacked tarball along with any other contents has been unpacked.</Description>
+                <PossibleValues/>
+                <DefaultValue>/data/StressApps/vp8Encoding</DefaultValue>
+            </Parameter>
+            <Parameter name="INPUT_YUV_FILE" type="STRING" isOptional="false">
+                <Description>Path and filename of a YUV video file to use as input, if you wish to provide one.
+                    Specify "None" if you want the test to create its own input file.</Description>
+                <PossibleValues/>
+                <DefaultValue>None</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="PLAY_VIDEO_LOOP" Domain="MULTIMEDIA" SubDomain="VIDEO" Feature="PLAYBACK" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Multimedia.Video.PlayVideoLoop.PlayVideoLoop</ClassName>
+        <Description>Repeatedly play an video file for the specified amount of time.
+            PREREQUISITES:
+            Android: At least one video file should be installed in the /sdcard/Movies directory.
+            Windows: Not yet implemented.</Description>
+        <Environment name="ANY"/>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues/>
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="DURATION" type="INTEGER" isOptional="false">
+                <Description>How long the application will run, in minutes.</Description>
+                <PossibleValues/>
+                <DefaultValue>10</DefaultValue>
+            </Parameter>
+             <Parameter name="VIDEO_FILE" type="STRING" isOptional="false">
+                <Description>File path of the video to be played. It also accepts list of video file paths seperated by comma(,)</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+            <Parameter name="INTEL_SMART_VIDEO_ENABLED" type="BOOLEAN" isOptional="true">
+                <Description>Enable/Disble Intel Smart Video (VSP)</Description>
+                <PossibleValues/>
+                <DefaultValue>False</DefaultValue>
+            </Parameter>
+            <Parameter name="HWC_ENABLED" type="BOOLEAN" isOptional="true">
+                <Description>Enable/Disable hardware composer</Description>
+                <PossibleValues/>
+                <DefaultValue>True</DefaultValue>
+            </Parameter>
+            <Parameter name="MONITOR_DROPPED_FRAMES" type="BOOLEAN" isOptional="true">
+                <Description>If True, this will periodically check for dropped frames while the video is playing.
+                    Set this to False if not needed, or if other activities in the test case would make unreliable the DUT connection to the host.</Description>
+                <PossibleValues/>
+                <DefaultValue>False</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="PLAY_NATIVE_VIDEO" Domain="MULTIMEDIA" SubDomain="VIDEO" Feature="PLAYBACK" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Multimedia.Video.NativeVideoPlayer.PlayNativeVideo</ClassName>
+        <Description>Play a video file with the native player
+        </Description>
+        <Environment name="ANY"/>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues/>
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="VIDEO_FILE" type="STRING" isOptional="false">
+                <Description>File path of the video to be played. It also accepts list of video file paths seperated by comma(,)</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+            <Parameter name="VOLUME" type="INTEGER" isOptional="false">
+                <Description>Set volume as specified</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+            <Parameter name="DELAY_S" type="INTEGER" isOptional="false">
+                <Description>Delay before the video is launched</Description>
+                <PossibleValues/>
+                <DefaultValue>0</DefaultValue>
+            </Parameter>
+            <Parameter name="SAVE_AS" type="STRING" isOptional="false">
+                <Description>Variable for saving timestamp in context</Description>
+                <PossibleValues/>
+                <DefaultValue></DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="CLOSE_NATIVE_PLAYER" Domain="MULTIMEDIA" SubDomain="VIDEO" Feature="PLAYBACK" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Multimedia.Video.NativeVideoPlayer.CloseNativePlayer</ClassName>
+        <Description>Close the native player</Description>
+        <Environment name="ANY"/>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues/>
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="ENABLE_YOUTUBE_CMDLINE_LAUNCH" Domain="MULTIMEDIA" SubDomain="VIDEO" Feature="PLAYBACK" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Multimedia.Video.EnableYoutubeCmdlineLaunch.EnableYoutubeCmdlineLaunch</ClassName>
+        <Description>Change /data/system/users/0/package-restrictions.xml to start Youtube app with playback</Description>
+        <Environment name="ANY"/>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues/>
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="PLAY_YOUTUBE_LOOP" Domain="MULTIMEDIA" SubDomain="VIDEO" Feature="PLAYBACK" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Multimedia.Video.PlayYoutubeLoop.PlayYoutubeLoop</ClassName>
+        <Description>Repeatedly play a Youtube video clip for the specified amount of time. </Description>
+        <Environment name="ANY"/>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues/>
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="SCRIPTS_PATH" type="STRING" isOptional="false">
+                <Description>Path on the device where loopYoutubePlayback test script is located.</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+            <Parameter name="DURATION" type="INTEGER" isOptional="false">
+                <Description>How long the test will run, in minutes</Description>
+                <PossibleValues/>
+                <DefaultValue>10</DefaultValue>
+            </Parameter>
+            <Parameter name="VIDEO_URL" type="STRING" isOptional="true">
+                <Description>URL to Youtube video clip</Description>
+                <PossibleValues/>
+                <DefaultValue><![CDATA[ http://www.youtube.com/watch?v=r6sgrlaUOWM&hd=0 ]]></DefaultValue>
+            </Parameter>
+            <Parameter name="MIN_PLAY_TIME_SECONDS" type="INTEGER" isOptional="true">
+                <Description>Minimum play time in seconds (no buffering)</Description>
+                <PossibleValues/>
+                <DefaultValue>163</DefaultValue>
+            </Parameter>
+            <Parameter name="MAX_PLAY_TIME_SECONDS" type="INTEGER" isOptional="true">
+                <Description>Maximum play time in seconds (including buffer time)</Description>
+                <PossibleValues/>
+                <DefaultValue>600</DefaultValue>
+            </Parameter>
+            <Parameter name="CAPTURE_SCREEN_RECORD" type="INTEGER" isOptional="true">
+                <Description>Capture a screen recording of the first 180 seconds</Description>
+                <PossibleValues/>
+                <DefaultValue>0</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="RUN_HTML5_VIDEO_LOOP" Domain="MULTIMEDIA" SubDomain="VIDEO" Feature="PLAYBACK" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Multimedia.Video.RunHTML5VideoLoop.RunHTML5VideoLoop</ClassName>
+        <Description>Plays three videos of different formats in a html window for a specified duration.
+            PREREQUISITES: Device needs to have internet connection.</Description>
+        <Environment name="ANY"/>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues/>
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="DURATION" type="INTEGER" isOptional="false">
+                <Description>How long the test will run, in minutes</Description>
+                <PossibleValues/>
+                <DefaultValue>10</DefaultValue>
+            </Parameter>
+            <Parameter name="VIDEO_URL" type="STRING" isOptional="true">
+                <Description>URL to Html window.</Description>
+                <PossibleValues/>
+                <DefaultValue>http://ie.microsoft.com/testdrive/graphics/videoformatsupport/default.html</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="ANALYZE_YOUTUBE_LOOP" Domain="MULTIMEDIA" SubDomain="VIDEO" Feature="PLAYBACK" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Multimedia.Video.AnalyzeYoutubeLoop.AnalyzeYoutubeLoop</ClassName>
+        <Description>Analyze Youtube playback result. This optional test step can be used after running a shell script
+            that controls and monitors YouTube video playback, and that logs the state transitions for later analysis.
+            This step consumes that log</Description>
+        <Environment name="ANY"/>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues/>
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="FILE_PATH" type="STRING" isOptional="false">
+                <Description>Path on the device where Youtube player status file is located.</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+            <Parameter name="STATUS_FILE" type="STRING" isOptional="false">
+                <Description>Path to a file which contains Youtube player status (AWSOMEPLAYER flags in case of Android).
+                    This is a file produced by a script that was previously run to control and monitor YouTube video playback.
+                    Find out from that script or its developer what file is produced.</Description>
+                <PossibleValues/>
+                <DefaultValue />
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="PLAY_VIDEO_FILE_WITH_PHOTOS_APP" Domain="MULTIMEDIA" SubDomain="VIDEO" Feature="PLAYBACK" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Multimedia.Video.PlayVideoFileWithPhotosApp.PlayVideoFileWithPhotosApp</ClassName>
+        <Description>Play video file with Photos App</Description>
+        <Environment name="ANY"/>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues/>
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="FILE_PATH" type="STRING" isOptional="false">
+                <Description>The name of the file to play</Description>
+                <PossibleValues/>
+                <DefaultValue></DefaultValue>
+            </Parameter>
+            <Parameter name="FILE_TYPE" type="STRING" isOptional="false">
+                <Description>The name of the file to play</Description>
+                <PossibleValues>MP4;3GP;ALL</PossibleValues>
+                <DefaultValue>MP4</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="SET_PHOTOS_APP_DEFAULT_VIDEO_PLAYER" Domain="MULTIMEDIA" SubDomain="VIDEO" Feature="PLAYBACK" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Multimedia.Video.SetPhotosAppDefaultVideoPlayer.SetPhotosAppDefaultVideoPlayer</ClassName>
+        <Description>Make Photos App the default video player for the specified type</Description>
+        <Environment name="ANY"/>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues/>
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="FILE_TYPE" type="STRING" isOptional="false">
+                <Description>The name of the file to play</Description>
+                <PossibleValues>MP4,3GP,ALL</PossibleValues>
+                <DefaultValue>MP4</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="START_NATIVE_VIDEO_RECORDER" Domain="MULTIMEDIA" SubDomain="VIDEO" Feature="RECORD" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Multimedia.Video.NativeVideoRecorder.StartNativeVideoRecorder</ClassName>
+        <Description>Start the native video recorder</Description>
+        <Environment name="ANY"/>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues/>
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="VIDEO_SAVE_PATH" type="STRING" isOptional="false">
+                <Description>File path of the video to be played. It also accepts list of video file paths seperated by comma(,)</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+            <Parameter name="CAMERA" type="STRING" isOptional="false">
+                <Description>Choose front/back camera</Description>
+                <PossibleValues>front;back</PossibleValues>
+                <DefaultValue>back</DefaultValue>
+            </Parameter>
+            <Parameter name="QUALITY" type="STRING" isOptional="false">
+                <Description>Set the quality of the video</Description>
+                <PossibleValues>large</PossibleValues>
+                <DefaultValue>large</DefaultValue>
+            </Parameter>
+            <Parameter name="FLASH_MODE" type="BOOLEAN" isOptional="false">
+                <Description>Turn flash on/off</Description>
+                <PossibleValues />
+                <DefaultValue>0</DefaultValue>
+            </Parameter>
+            <Parameter name="WHITE_BALANCE" type="STRING" isOptional="false">
+                <Description>Set white balance effect</Description>
+                <PossibleValues>auto;cloudy-daylight;daylight;fluorescent;incandescent;manual</PossibleValues>
+                <DefaultValue>auto</DefaultValue>
+            </Parameter>
+            <Parameter name="COLOR_EFFECT" type="STRING" isOptional="false">
+                <Description>Set color effect</Description>
+                <PossibleValues>none;mono;sepia;negative</PossibleValues>
+                <DefaultValue>none</DefaultValue>
+            </Parameter>
+            <Parameter name="DVS" type="BOOLEAN" isOptional="false">
+                <Description>Turn DVS true or false</Description>
+                <PossibleValues />
+                <DefaultValue/>
+            </Parameter>
+            <Parameter name="NOISE_REDUCTION" type="BOOLEAN" isOptional="false">
+                <Description>Turn noise reduction effect to 0/1</Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+            <Parameter name="SAVE_AS" type="STRING" isOptional="false">
+                <Description>Variable to save filename in the context</Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="STOP_NATIVE_VIDEO_RECORDER" Domain="MULTIMEDIA" SubDomain="VIDEO" Feature="RECORD" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Multimedia.Video.NativeVideoRecorder.StopNativeVideoRecorder</ClassName>
+        <Description>Stop the native video recorder</Description>
+        <Environment name="ANY"/>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues/>
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="VIDEO_SAVE_PATH" type="STRING" isOptional="false">
+                <Description>File path of the video to be played. It also accepts list of video file paths seperated by comma(,)</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+            <Parameter name="FILENAME" type="STRING" isOptional="false">
+                <Description>Filename of the video file that has been recorded</Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+        </Parameters>
+    </TestStep>
+</TestSteps>

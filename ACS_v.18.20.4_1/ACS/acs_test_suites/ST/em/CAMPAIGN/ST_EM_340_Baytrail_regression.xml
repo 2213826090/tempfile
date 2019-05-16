@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<Campaign>
+    <Parameters>
+        <Parameter isControlledPSUsed="True" />
+        <Parameter isIoCardUsed="True" />
+        <Parameter skipBootOnPowerCycle="True" />
+        <Parameter runHookScripts="False" />
+        <Parameter powerCycleBetweenTC="False" />
+        <Parameter powerCycleOnFailure="False" />
+        <Parameter finalPowerOff="True" />
+        <Parameter finalDutState="PowerOff" />
+        <Parameter stopCampaignOnCriticalFailure="False" />
+        <Parameter stopCampaignOnFirstFailure="False" />
+        <!-- LoggingLevel possible values: info | warning | debug | error -->
+        <Parameter loggingLevel="debug" />
+        <!-- CampaignType format -> <TEAM>_<CAMPAIGNTYPE>
+            Possible values:
+            FT(Feature Team)-> SANITY | REGRESSION | STRESS, RELIABILTY | MTBF
+            ST(System Test)-> SANITY | REGRESSION | STRESS, RELIABILTY | MTBF
+            SI(System Integration)-> EAT | STAB | PACT | CAT0 | RELIABILITY | MTBF | CTS
+            Otherwise "Others" should be used -->
+        <Parameter CampaignType="ST_REGRESSION" />
+        <Parameter TCRReportViaRESTAPI="true"/>
+    </Parameters>
+    <Targets>
+        <!-- Target Values -->
+        <Target targetB2bPassRate="49" />
+    </Targets>
+    <TestCases>
+        <!-- Testcase campaigns -->
+        <TestCase Id="..\TC\SETUP\LAB_SYSTEM_FLASH" />
+        <TestCase Id="..\TC\SETUP\LAB_SYSTEM_SETUP_EMBEDDED" />
+        <TestCase Id="..\TC\PUPDR\ST_EM_PUPDR_METATCD-FASTBOOT_KEY_COMBO_ACDC_CHR_BATT_ABOVE_BOOT_CHARGING" />
+        <TestCase Id="..\TC\PUPDR\ST_EM_PUPDR_METATCD-FASTBOOT_KEY_COMBO_ACDC_CHR_INV_BATT_ABOVE_BOOT_CHARGING" />
+        <TestCase Id="..\TC\PUPDR\ST_EM_PUPDR_METATCD-FASTBOOT_KEY_COMBO_NO_CHR_BATT_ABOVE_BOOT_CHARGING" />
+        <TestCase Id="..\TC\PUPDR\ST_EM_PUPDR_METATCD-FASTBOOT_KEY_COMBO_NO_CHR_INV_BATT_ABOVE_BOOT_CHARGING" />
+        <TestCase Id="..\TC\PUPDR\ST_EM_PUPDR_METATCD-FASTBOOT_KEY_COMBO_USB_CHR_BATT_ABOVE_BOOT_CHARGING" />
+        <TestCase Id="..\TC\PUPDR\ST_EM_PUPDR_METATCD-FASTBOOT_KEY_COMBO_USB_CHR_INV_BATT_ABOVE_BOOT_CHARGING" />
+        <TestCase Id="..\TC\PUPDR\ST_EM_PUPDR_METATCD-OFF_FASTBOOT_KEY_COMBO_ACDC_CHR_BATT_BELOW_BOOT_CHARGING" />
+        <TestCase Id="..\TC\PUPDR\ST_EM_PUPDR_METATCD-OFF_FASTBOOT_KEY_COMBO_ACDC_CHR_INV_BATT_BELOW_BOOT_CHARGING" />
+        <TestCase Id="..\TC\PUPDR\ST_EM_PUPDR_METATCD-OFF_FASTBOOT_KEY_COMBO_NO_CHR_BATT_BELOW_BOOT_CHARGING" />
+        <TestCase Id="..\TC\PUPDR\ST_EM_PUPDR_METATCD-OFF_FASTBOOT_KEY_COMBO_NO_CHR_INV_BATT_BELOW_BOOT_CHARGING" />
+        <TestCase Id="..\TC\PUPDR\ST_EM_PUPDR_METATCD-OFF_FASTBOOT_KEY_COMBO_USB_CHR_BATT_BELOW_BOOT_CHARGING" />
+        <TestCase Id="..\TC\PUPDR\ST_EM_PUPDR_METATCD-OFF_FASTBOOT_KEY_COMBO_USB_CHR_INV_BATT_BELOW_BOOT_CHARGING" />
+    </TestCases>
+</Campaign>

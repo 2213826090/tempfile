@@ -1,0 +1,34 @@
+<?xml version="1.0" ?>
+<Campaign>
+      <Parameters>
+            <Parameter isControlledPSUsed="False"/>
+            <Parameter isIoCardUsed="False"/>
+            <Parameter skipBootOnPowerCycle="False"/>
+            <Parameter bootRetryNumber="0"/>
+            <Parameter runHookScripts="False"/>
+            <Parameter powerCycleBetweenTC="False"/>
+            <Parameter powerCycleOnFailure="False"/>
+            <Parameter finalDutState="NoChange"/>
+            <Parameter stopCampaignOnCriticalFailure="False"/>
+            <Parameter stopCampaignOnFirstFailure="False"/>
+            <Parameter loggingLevel="debug"/>
+            <Parameter CampaignType="Other"/>
+      </Parameters>
+      <TestCases>
+            <TestCase Id="../../../TC/TR/ATF_TESTS/ABT_Api_Tests/video/encoding/GMINL/file_encode/H263/file_encode_testEncodeH263_176x144_30fps"/>
+            <TestCase Id="../../../TC/TR/ATF_TESTS/ABT_Api_Tests/video/encoding/GMINL/file_encode/H263/file_encode_testEncodeH263_352x288_30fps"/>
+            <TestCase Id="../../../TC/TR/ATF_TESTS/ABT_Api_Tests/video/encoding/GMINL/camera_back/H264/camera_back_Video_Encode_3gp_H264_1280x720_fps-30"/>
+            <TestCase Id="../../../TC/TR/ATF_TESTS/ABT_Api_Tests/video/encoding/GMINL/camera_back/H264/camera_back_Video_Encode_3gp_H264_1920x1080_fps-30"/>
+            <TestCase Id="../../../TC/TR/ATF_TESTS/ABT_Api_Tests/video/encoding/GMINL/camera_back/H264/camera_back_Video_Encode_3gp_H264_640x480_fps-30"/>
+            <TestCase Id="../../../TC/TR/ATF_TESTS/ABT_Api_Tests/video/encoding/GMINL/camera_back/H264/camera_back_Video_Encode_mp4_H264_1280x720_fps-30"/>
+            <TestCase Id="../../../TC/TR/ATF_TESTS/ABT_Api_Tests/video/encoding/GMINL/camera_back/H264/camera_back_Video_Encode_mp4_H264_1920x1080_fps-30"/>
+            <TestCase Id="../../../TC/TR/ATF_TESTS/ABT_Api_Tests/video/encoding/GMINL/camera_back/H264/camera_back_Video_Encode_mp4_H264_640x480_fps-30"/>
+            <TestCase Id="../../../TC/TR/ATF_TESTS/ABT_Api_Tests/video/encoding/GMINL/camera_front/H264/camera_front_Video_Encode_3gp_H264_1280x720_fps-30"/>
+            <TestCase Id="../../../TC/TR/ATF_TESTS/ABT_Api_Tests/video/encoding/GMINL/camera_front/H264/camera_front_Video_Encode_3gp_H264_640x480_fps-30"/>
+            <TestCase Id="../../../TC/TR/ATF_TESTS/ABT_Api_Tests/video/encoding/GMINL/camera_front/H264/camera_front_Video_Encode_mp4_H264_1280x720_fps-30"/>
+            <TestCase Id="../../../TC/TR/ATF_TESTS/ABT_Api_Tests/video/encoding/GMINL/camera_front/H264/camera_front_Video_Encode_mp4_H264_640x480_fps-30"/>
+            <TestCase Id="../../../TC/TR/ATF_TESTS/ABT_Api_Tests/video/encoding/GMINL/file_encode/H264/file_encode_testEncode3GPPH264"/>
+            <TestCase Id="../../../TC/TR/ATF_TESTS/ABT_Api_Tests/video/encoding/GMINL/file_encode/H264/file_encode_testEncodeMPEG4H264"/>
+            <TestCase Id="../../../TC/TR/ATF_TESTS/ABT_Api_Tests/video/encoding/GMINL/camera_back/H264/camera_back_simultaneousH264EncodeDecode"/>
+      </TestCases>
+</Campaign>

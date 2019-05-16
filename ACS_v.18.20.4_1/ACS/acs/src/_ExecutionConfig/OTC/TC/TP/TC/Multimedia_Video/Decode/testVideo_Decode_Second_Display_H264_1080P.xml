@@ -1,0 +1,41 @@
+<?xml version="1.0" ?>
+<TestCase>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Discription> 
+&lt;div align=&quot;left&quot; style=&quot;min-height:9pt&quot;&gt;
+&lt;font face=&quot;Arial&quot; color=&quot;#ff0000&quot;&gt;&lt;span style=&quot;font-size:8pt&quot;&gt;&lt;b&gt;&lt;u&gt;Description:&lt;/u&gt;&lt;/b&gt;&lt;/span&gt;&lt;/font&gt;
+&lt;font face=&quot;Arial&quot;&gt;&lt;span style=&quot;font-size:8pt&quot;&gt;&lt;i&gt; (Objective of what you are trying to test.)&lt;/i&gt;&lt;/span&gt;&lt;/font&gt;
+&lt;/div&gt; 
+&lt;div align=&quot;left&quot; style=&quot;min-height:9pt&quot;&gt;&lt;/div&gt; 
+&lt;p style=&quot;margin-left:0mm;margin-right:0mm;text-indent:0mm;margin-top:2.38mm;margin-bottom:4.76mm&quot;&gt;&lt;font face=&quot;Arial&quot;&gt;&lt;span style=&quot;font-size:8pt&quot;&gt;&lt;i&gt;The Intel Android target device shall allow for Rear Seat Entertainment (RSE) Audio/Video playback, initiated from the Media playback application, to render on a secondary display. &lt;/i&gt;&lt;/span&gt;&lt;span style=&quot;font-size:8pt&quot;&gt;&lt;br /&gt;&amp;nbsp;&lt;/span&gt;&lt;/font&gt;&lt;/p&gt; 
+&lt;div align=&quot;left&quot; style=&quot;min-height:9pt&quot;&gt;&lt;/div&gt; 
+&lt;div align=&quot;left&quot; style=&quot;min-height:9pt&quot;&gt;
+&lt;font face=&quot;Arial&quot; color=&quot;#ff0000&quot;&gt;&lt;span style=&quot;font-size:8pt&quot;&gt;&lt;b&gt;&lt;u&gt;Preconditions:&lt;/u&gt;&lt;/b&gt;&lt;/span&gt;&lt;/font&gt;
+&lt;font face=&quot;Arial&quot;&gt;&lt;span style=&quot;font-size:8pt&quot;&gt;&lt;i&gt; (What conditions must be met or data must exist in the system for this test to be executed?) &lt;/i&gt;&lt;/span&gt;&lt;/font&gt;
+&lt;/div&gt; 
+&lt;div align=&quot;left&quot; style=&quot;min-height:9pt&quot;&gt;&lt;/div&gt; 
+&lt;p style=&quot;margin-left:0mm;margin-right:0mm;text-indent:0mm;margin-top:2.38mm;margin-bottom:4.76mm&quot;&gt;&lt;font face=&quot;Arial&quot;&gt;&lt;span style=&quot;font-size:8pt&quot;&gt;Secondary display connected by HDMI&lt;br /&gt;&amp;nbsp;&lt;/span&gt;&lt;/font&gt;&lt;/p&gt; 
+&lt;p style=&quot;margin-left:0mm;margin-right:0mm;text-indent:0mm;margin-top:2.38mm;margin-bottom:4.76mm;min-height:2pt&quot;&gt;&lt;font face=&quot;Arial&quot;&gt;&lt;span style=&quot;font-size:8pt&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/font&gt;&lt;/p&gt; 
+&lt;div align=&quot;left&quot; style=&quot;min-height:9pt&quot;&gt;&lt;/div&gt;  
+</Discription>
+    <Domain>Multimedia_Video</Domain>
+    <Phase>CORE</Phase>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <Type>FUNCTIONAL</Type>
+    <UseCase>PY_UNIT</UseCase>
+    <b2bIteration>1</b2bIteration>
+    <Parameters>
+        <Parameter>
+            <Name>HpalmName</Name>
+            <Value>video_api_test.VideoAPITest.testVideo_Decode_Second_Display_H264_1080P</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TEST_DATA_ROOT</Name>
+            <Value>testplan/Multimedia_Video</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TEST_CASE</Name>
+            <Value>tests.Multimedia_Video.Decode.video_api_test.VideoAPITest.testVideo_Decode_Second_Display_H264_1080P</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

@@ -1,0 +1,81 @@
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
+
+#######################################
+#
+# CONFIGURATION
+#
+#######################################
+
+# Path Size limit for xml files
+MAX_TC_PATH_SIZE = 146
+
+#######################################
+#
+# CODE BELOW
+#
+#######################################
+
+import os
+import re
+import sys
+import subprocess
+import platform
+
+def get_list_of_committed_files():
+    """
+    Returns a list of files about to be commited.
+    """
+    files = []
+    # pylint: disable=E1103
+    proc = subprocess.Popen('git diff-index --name-only HEAD'.split(),
+                            stdout=subprocess.PIPE,
+                            stderr=subprocess.PIPE)
+    output, _ = proc.communicate()
+    for result in output.split('\n'):
+        if result and "__init__.py" not in result:
+            files.append(result)
+
+    return files
+
+
+def get_xml_files():
+    # Return only python files
+
+    xml_files = []
+
+    # Find Xml files
+    for filename in get_list_of_committed_files():
+
+        if "pre-commit" in filename:
+            # Skip pre-commit script
+            continue
+
+        # Check the file extension
+        if filename[-4:] == '.xml':
+            xml_files.append(filename)
+            continue
+
+    return xml_files
+
+
+def check_xml_path_size(xml_files):
+    # Check file path is under 146 characters
+    too_long_path_files = []
+    for xml_file in xml_files:
+        if len(xml_file) > MAX_TC_PATH_SIZE:
+            too_long_path_files.append(xml_file)
+
+    if too_long_path_files:
+        print "Warning: those files path are too long, it may create an issue on windows bench deployment."
+        print "\nReduce path size to 146 characters for those files: \n"
+        for wrong_file in too_long_path_files:
+            print wrong_file + "\n"
+        sys.exit(1)
+
+if __name__ == '__main__':
+    print("Start ACS pre-commit checks...")
+    xml_files = get_xml_files()
+    if xml_files:
+        check_xml_path_size(xml_files)
+    sys.exit(0)

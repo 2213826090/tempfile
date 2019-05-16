@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="13.37">
+    <UseCase>LIVE_DUAL_PHONE_BT_SERVICE_BROWSING</UseCase>
+    <Description>Initiator Phone Browses BlueTooth Services of responder Phone</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>False</b2bContinuousMode>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters>
+        <Parameter>
+            <Name>CLASS_LIST</Name>
+            <!--List of Class to search by initiator on second phone
+                1. List separator is semi-colon ';'
+                2. List can be empty. In that case, UC checks phone1 is able to browse service off phone2
+                3. Value = __USE_DEVICE_SERVICE_LIST__ in order to use 'SupportedServiceList' parameter from device catalog
+                4. Class: A2DP, A2DP-SNK, A2DP-SRC, AVRCP, AVRCP-CT, AVRCP-TG, BIP, BIP-ARCH, BIP-REFOBJ,
+                BIP-RESP, BPP, BPP-DP, BPP-DPRO, BPP-PS, BPP-RP, BPP-RUI, CIP, CTP, DID, DUN,
+                FAX, FTP, GNSS, GNSS-SE, HCRP, HCRP-PRINT, HCRP-SCAN, HDP, HDP-SNK, HDP-SRC,
+                HFP, HFP-AG, HID, HSP, HSP-AG, HSP-HS, ICP, LANAP, MAP, MAP-NO, MAP-SE, OPP,
+                PAN-GN, PAN-NAP, PANU, PBAP, PBAP-PCE, PBAP-PSE, SAP, SPP, SYNC, SYNC-CMD,
+                VDP-DIS, VDP-SNK, VDP-SRC -->
+            <Value>OPP ; A2DP-SRC ; AVRCP-TG ; AVRCP-CT ; HFP-AG ; HSP-AG; PBAP-PSE ; HID ; PANU ; PAN-NAP</Value>
+        </Parameter>
+        <Parameter>
+            <Name>INITIATOR</Name>
+            <!-- initiator of browsing action could be "phone1" or "phone2" -->
+            <Value>phone1</Value>
+        </Parameter>
+        <Parameter>
+            <!-- [Optional] Is set to True, the flight mode will be enables before setting bt on
+                and disabled at tear down. -->
+            <Name>FLIGHT_MODE</Name>
+            <Value>False</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

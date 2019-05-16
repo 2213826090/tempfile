@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase>
+    <UseCase>TEST_STEP_ENGINE</UseCase>
+    <Description>Perform a Flight Mode test with SMS and voice call</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <TcMaxAttempt>1</TcMaxAttempt>
+    <SavePatRawData>False</SavePatRawData>
+    <PowerCalculation>False</PowerCalculation>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters>
+        <Parameter>
+            <!-- Reboot type (soft|hard) -->
+            <Name>REBOOT_MODE</Name>
+            <Value>soft</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Reboot type (soft|hard) -->
+            <Name>IMS_APN_NAME</Name>
+            <Value>baba</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Reboot type (soft|hard) -->
+            <Name>PHONE_NUMBER</Name>
+            <Value>1234</Value>
+        </Parameter>
+    </Parameters>
+    <TestSteps>
+        <Include Src="ST/telephony/TSS/Common.xml" />
+        <Setup>
+            <TestStep SetId="AllCommsOff" DEVICE="PHONE1"/>
+            <!-- Load INI -->
+            <TestStep Id="PUSH_CONFIG_FILE" DEVICE="PHONE1" SOURCE="FROM_BENCH:IMS_NETWORK:IMS_DUT_CONFIGURATION" DESTINATION="/sdcard/intel/IMS_Config.ini" />
+            <!-- Configure LTE cell -->
+            <TestStep Id="FIND_NETWORK_SIMULATOR" EQT_NAME="ANRITSU_MD8475A_VISA" FEATURE="LTE" />
+            <TestStep Id="INIT_NETWORK_SIMULATOR" EQT="FROM_CTX:ANRITSU_MD8475A_VISA" FEATURE="LTE;3G" CONFIG="LTE"/>
+            <TestStep Id="NS_CONFIGURE_CELL" EQT="FROM_CTX:ANRITSU_MD8475A_VISA" CONFIG_FILE_NAME="AnritsuMD8475A.xml" CONFIG="LTE" CELL_NUMBER="1"/>
+            <TestStep Id="NS_CONFIGURE_CELL" EQT="FROM_CTX:ANRITSU_MD8475A_VISA" CONFIG_FILE_NAME="AnritsuMD8475A.xml" CONFIG="HSPA;FAST_DORMANCY" CELL_NUMBER="2"/>
+            <TestStep Id="NS_SET_PARAM" EQT="FROM_CTX:ANRITSU_MD8475A_VISA" NAME="AnritsuCellPower" OPTION="DEFAULT" VALUE="-50,BTS2"/>
+            <TestStep Id="NS_CONFIGURE_IMS" EQT="FROM_CTX:ANRITSU_MD8475A_VISA" />
+            <!-- Set Anritsu virtual phone id -->
+            <TestStep Id="NS_SET_PARAM" EQT="FROM_CTX:ANRITSU_MD8475A_VISA" NAME="PhoneNumber" OPTION="DEFAULT" VALUE="FROM_TC:PHONE_NUMBER"/>
+            <!-- Force Anritsu to answer automatically to incoming voice call with a delay of 1 second -->
+            <TestStep Id="NS_SET_PARAM" EQT="FROM_CTX:ANRITSU_MD8475A_VISA" NAME="CallAutoAnswer" OPTION="DEFAULT" VALUE="ON,1"/>
+            <!-- Start SIMULATION and set the cells to ON -->
+            <TestStep Id="NS_SET_PARAM" EQT="FROM_CTX:ANRITSU_MD8475A_VISA" NAME="StartSimulation" OPTION="DEFAULT"/>
+            <TestStep Id="NS_SET_PARAM" EQT="FROM_CTX:ANRITSU_MD8475A_VISA" NAME="OutputLevelONOFF" OPTION="DEFAULT" VALUE="ON"/>
+            <TestStep Id="NS_START_IMS" EQT="FROM_CTX:ANRITSU_MD8475A_VISA" />
+        </Setup>
+        <RunTest>
+            <TestStep Id="REBOOT_DEVICE" DEVICE="PHONE1" WAY="FROM_TC:REBOOT_MODE"/>
+            <TestStep Id="SET_FLIGHT_MODE" DEVICE="PHONE1" FLIGHT_MODE="disable" />
+            <!-- LTE cell Registration -->
+            <TestStep Id="NS_CHECK_DUT_REGISTRATION" EQT="FROM_CTX:ANRITSU_MD8475A_VISA"
+                      IMSI="0123" TIMEOUT="FROM_DEVICE:PHONE1:registrationTimeout" FEATURE="LTE"/>
+            <!-- Set APN -->
+            <TestStep Id="SET_DEVICE_APN" DEVICE="PHONE1" INTERFACE="FROM_BENCH:CELLULAR_NETWORK:SSID"
+                     APN="FROM_BENCH:CELLULAR_NETWORK:APN" USER="DEFAULT" PASSWORD="DEFAULT" PROTOCOL="IPV4V6"
+                     MMSC="DEFAULT" APN_TYPE="default" SET_DEFAULT="True" CLEAR_APN="True" />
+            <!-- Set IMS APN -->
+            <TestStep Id="SET_DEVICE_APN" DEVICE="PHONE1" INTERFACE="FROM_TC:IMS_APN_NAME" APN="FROM_TC:IMS_APN_NAME" USER="DEFAULT" PASSWORD="DEFAULT" PROTOCOL="IPV4V6"
+                     MMSC="DEFAULT" APN_TYPE="ims" SET_DEFAULT="False" CLEAR_APN="False" />
+            <TestStep Id="ACTIVATE_DEVICE_PDP" DEVICE="PHONE1"/>
+            <!-- Check No IMS Registration-->
+            <TestStep Id="SUSPEND" DURATION_IN_SEC="10"/>
+            <TestStep Id="NS_CHECK_IMS_CSCF_STATE" EQT="FROM_CTX:ANRITSU_MD8475A_VISA" STATE="OFF" TIMEOUT="FROM_DEVICE:PHONE1:registrationTimeout" />
+
+            <!-- PING -->
+            <TestStep Id="PING" DEVICE="PHONE1" DESTINATION_IP="FROM_BENCH:LAB_SERVER:IP" PACKET_SIZE="32" PACKET_COUNT="10"
+                    INTERVAL="DEFAULT" FLOOD_MODE="DEFAULT" BLOCKING="DEFAULT" />
+
+            <!-- Launch CSFB call on 3G cell -->
+            <TestStep Id="INITIATE_VOICE_CALL" VC_TYPE="CIRCUIT" NUMBER_TO_CALL="FROM_TC:PHONE_NUMBER" DEVICE="PHONE1"/>
+            <TestStep Id="WAIT_FOR_VOICE_CALL_STATE" VC_STATE="ACTIVE" DEVICE="PHONE1" TIMEOUT="FROM_DEVICE:PHONE1:callSetupTimeout"/>
+            <TestStep Id="NS_WAIT_STATE" NAME="VCStatus" STATE="3" EQT="FROM_CTX:ANRITSU_MD8475A_VISA" OPTION="DEFAULT" TIMEOUT="FROM_DEVICE:PHONE1:callSetupTimeout"/>
+            <!-- Check that phone is calling on 3G RAT (CSFB) -->
+            <TestStep Id="CHECK_NETWORK_TYPE" DEVICE="PHONE1" NETWORK_TYPE="HSPA" TIMEOUT="FROM_DEVICE:PHONE1:registrationTimeout" />
+            <!-- Release Voice call -->
+            <TestStep Id="RELEASE_VOICE_CALL" DEVICE="PHONE1" CALL_TO_RELEASE="ALL"/>
+            <!-- Check that phone returned to 4G after CSFB call -->
+            <TestStep Id="NS_CHECK_DUT_REGISTRATION" EQT="FROM_CTX:ANRITSU_MD8475A_VISA"
+                      IMSI="0123" TIMEOUT="FROM_DEVICE:PHONE1:registrationTimeout" FEATURE="LTE"/>
+            <TestStep Id="CHECK_NETWORK_TYPE" DEVICE="PHONE1" NETWORK_TYPE="LTE" TIMEOUT="FROM_DEVICE:PHONE1:registrationTimeout" />
+
+            <!-- PING -->
+            <TestStep Id="PING" DEVICE="PHONE1" DESTINATION_IP="FROM_BENCH:LAB_SERVER:IP" PACKET_SIZE="32" PACKET_COUNT="10"
+                    INTERVAL="DEFAULT" FLOOD_MODE="DEFAULT" BLOCKING="DEFAULT" />
+        </RunTest>
+        <TearDown>
+            <TestStep SetId="AllCommsOff" DEVICE="PHONE1"/>
+            <TestStep Id="NS_SET_PARAM" EQT="FROM_CTX:ANRITSU_MD8475A_VISA" NAME="OutputLevelONOFF" OPTION="DEFAULT" VALUE="OFF"/>
+            <TestStep Id="NS_SET_PARAM" EQT="FROM_CTX:ANRITSU_MD8475A_VISA" NAME="StopSimulation" OPTION="DEFAULT"/>
+        </TearDown>
+    </TestSteps>
+</TestCase>

@@ -1,0 +1,42 @@
+{
+    "Configuration": {
+        "Boot": {
+            "ADB_WITH_USER_BUILD": "activate_with_fastboot_commands_after_blankphone",
+            "GVB_ACTIVATION": "verified",
+            "MODEM": false,
+            "PKP_5S": false,
+            "SHELL_IN_ROS": false
+        },
+        "BootVars": null,
+        "Custom": null,
+        "Download": {
+            "EXTERNAL_DOWNLOAD": [
+                {
+                    "local_key": "blankphone",
+                    "buildbot_artifactory_path": {"path": "external/device_name_id/flash_files/blankphone", "detection": "cactus-absp"},
+                    "regexp_key": "blankphone",
+                    "flash_file": null,
+                    "configuration": null,
+                    "start_state": "dnx"
+                },
+                {
+                    "local_key": "fastboot",
+                    "buildbot_artifactory_path": {"path": "external/device_name_id/flash_files/build-variant_id", "detection": "cactus-absp"},
+                    "regexp_key": "fastboot",
+                    "flash_file": null,
+                    "configuration": null,
+                    "start_state": "pos"
+                }
+            ]
+        },
+        "Flash": {
+            "DEDIPROG": true
+        },
+        "Inherit": {
+            "BRANCH": null
+        },
+        "Logs": null,
+        "Timeout": null,
+        "WorkAround": null
+    }
+}

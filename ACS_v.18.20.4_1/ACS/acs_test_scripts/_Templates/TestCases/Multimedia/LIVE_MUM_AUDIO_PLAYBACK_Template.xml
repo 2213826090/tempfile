@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="13.37">
+    <UseCase>LIVE_MUM_AUDIO_PLAYBACK</UseCase>
+    <Description>Test audio playback</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>False</b2bContinuousMode>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <TcMaxAttempt>1</TcMaxAttempt>
+    <TcAcceptanceCriteria>1</TcAcceptanceCriteria>
+    <Parameters>
+        <Parameter>
+            <!-- Path to audio file. Possible values:
+                - string containing an url, e.g : http://www.soundjay.com/ambient/kids-playing-1.mp3, http://www.freesfx.co.uk/rx2/mp3s/2/1604_1262210159.mp3
+                - string containing a local file. By defaut, acs considers that the file is stored in its multimedia path (e.g: /sdcard/acs_media)
+                But you can provide a file from another path. In this case provide the full path of your file (e.g: /my_path/my_audio_file).
+            -->
+            <Name>FILENAME</Name>
+            <Value>MP3_16bit_Mono_11KHz_48Kbps_10s_59Kb.MP3</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Multimedia volume to set in percent. Possible values: integer between 0 and 100 -->
+            <Name>VOLUME</Name>
+            <Value>20</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Duration of the audio playback in second.
+            Possible values:
+                - If empty, whole file will be played,
+                - If lower or equal to 0, the audio file will not be played,
+                - If upper than 0 and lower than audio file length, it will play file during DURATION value,
+                - It upper than 0 and upper than audio file length, il will play whole file, with a warning. -->
+            <Name>DURATION</Name>
+            <Value></Value>
+        </Parameter>
+    </Parameters>
+    <TestSteps>
+        <Initialize>
+            <!-- Get the artifact on local host -->
+            <TestStep Id="GET_ARTIFACT" ARTIFACT="MISCELLANEOUS/MP3/[+]FROM_TC:FILENAME"
+                      ARTIFACT_SOURCE="FROM_BENCH:ARTIFACT_MANAGER:URI" TRANSFER_TIMEOUT="DEFAULT"
+                      STORED_FILE_PATH="FILE_PATH_IN_CACHE1" EQT="DEFAULT"/>
+            <!-- Then, Push it on the device. Device destination folder will be the default device media folder (/sdcard/acs_media) -->
+            <!-- FILE_PATH is retrieved from test step context -->
+            <TestStep Id="INSTALL_FILE" DEVICE="PHONE1" FILE_PATH="FROM_CTX:FILE_PATH_IN_CACHE1" TYPE="media"
+                      DESTINATION="FROM_DEVICE:PHONE1:userdataPath" TIMEOUT="DEFAULT" DESTINATION_STORED_PATH="FILE_PATH_IN_CACHE1"/>
+        </Initialize>
+        <Finalize>
+            <!-- When test has been run, we can remove the mp3 files if necessary -->
+            <TestStep Id="UNINSTALL_FILE" DEVICE="PHONE1" DEVICE_FOLDER="FROM_DEVICE:PHONE1:userdataPath"
+                      FILENAME="FROM_TC:FILENAME"/>
+        </Finalize>
+    </TestSteps>
+</TestCase>

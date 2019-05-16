@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="ModuleConfiguration">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="MODEM_FLASH" type="xs:boolean" minOccurs="1" maxOccurs="1"/>
+                <xs:element name="DEDIPROG" type="xs:boolean" minOccurs="1" maxOccurs="1"/>
+                <xs:element name="RECOVERY" type="xs:boolean" minOccurs="1" maxOccurs="1"/>
+                <xs:element name="UEFI" type="xs:boolean" minOccurs="0" maxOccurs="1"/>
+                <xs:element name="MERRIFIELD" type="xs:boolean" minOccurs="0" maxOccurs="1"/>
+                <xs:element name="MOOREFIELD" type="xs:boolean" minOccurs="0" maxOccurs="1"/>
+                <xs:element name="NODNX" type="xs:boolean" minOccurs="0" maxOccurs="1"/>
+                <xs:element name="WAKESRC_ONLY" type="xs:boolean" minOccurs="0" maxOccurs="1"/>
+                <xs:element name="BOOT_ON_FORCED_SHUTDOWN" type="xs:boolean" minOccurs="0" maxOccurs="1"/>
+                <xs:element name="NOCOS" type="xs:boolean" minOccurs="0" maxOccurs="1"/>
+                <xs:element name="PARTITIONS" type="xs:string" minOccurs="0" maxOccurs="1"/>
+                <xs:element name="PARTITION_TYPE" type="xs:string" minOccurs="0" maxOccurs="1"/>
+                <xs:element name="MODEM" type="xs:boolean" minOccurs="0" maxOccurs="1"/>
+                <xs:element name="SHELL_IN_ROS" type="xs:boolean" minOccurs="0" maxOccurs="1"/>
+                <xs:element name="DNX_BOOT_ON_POWER_SUPPLY_INSERT" type="xs:boolean" minOccurs="0" maxOccurs="1"/>
+                <xs:element name="CHECK_FASTBOOT" type="xs:boolean" minOccurs="0" maxOccurs="1"/>
+                <xs:element name="CHECK_RECOVERY" type="xs:boolean" minOccurs="0" maxOccurs="1"/>
+                <xs:element name="CHECK_OSLOADER" type="xs:boolean" minOccurs="0" maxOccurs="1"/>
+                <xs:element name="CRASHLOGS" type="xs:boolean" minOccurs="0" maxOccurs="1"/>
+                <xs:element name="PKP_5S" type="xs:boolean" minOccurs="0" maxOccurs="1"/>
+                <xs:element name="GRACEFUL_BEFORE_HARD_SHUTDOWN" type="xs:boolean" minOccurs="0" maxOccurs="1"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

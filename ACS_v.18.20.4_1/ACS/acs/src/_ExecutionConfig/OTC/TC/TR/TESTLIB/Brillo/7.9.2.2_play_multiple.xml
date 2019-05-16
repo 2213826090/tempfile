@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='ASCII'?>
+<TestCase>
+    <UseCase>Testlib</UseCase>
+    <Description>Test audio play_multiple</Description>
+    <Description>Command:brillo_audio_test play_multiple /data/test.mp3</Description>
+    <Description>Result: mp3 audio and tone should be heard when using headsets</Description>
+    <Description>Result: Currently we don't use headsets</Description>
+    <Description>Result: We check the command's output code</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <TcMaxAttempt>1</TcMaxAttempt>
+    <Parameters>
+        <Parameter>
+            <Name>test</Name>
+            <Value>scripts/brillo/tests/7.9.2.2_play_multiple.py</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

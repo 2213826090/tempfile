@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<Include>
+    <TestStepSet Id="InstallBenchmark">
+        <TestStep SetId="DroibotJarInstall"/>
+        <TestStep Id="GET_MODULE_CONFIG" DEVICE="PHONE1" MODULE="PnpModule" KEY="FROM_TC:APPLICATION"
+                  MODULE_VALUE="application"/>
+        <TestStep Id="GET_ARTIFACT" ARTIFACT="FROM_TC:ARTIFACT_PREFIX[+]/[+]FROM_CTX:application"
+                  ARTIFACT_SOURCE="FROM_BENCH:ARTIFACT_MANAGER:URI" TRANSFER_TIMEOUT="DEFAULT"
+                  STORED_FILE_PATH="FILE_PATH_IN_CACHE" EQT="DEFAULT" />
+        <TestStep Id="INSTALL_APP" DEVICE="PHONE1" FILE_PATH="FROM_CTX:FILE_PATH_IN_CACHE"
+                  BACKUP="false" BACKUP_FILE_PATH="FT/backup" TIMEOUT="90"
+                  SIGN_KEY_PATH="DEFAULT" SIGN="false"/>
+    </TestStepSet>
+    <TestStepSet Id="InstallAdditionnals">
+        <TestStep Id="GET_MODULE_CONFIG" DEVICE="PHONE1" MODULE="PnpModule" KEY="FROM_TC:ADDITIONNALS"
+                  MODULE_VALUE="benchmark_additionnal"/>
+        <TestStep Id="GET_ARTIFACT" ARTIFACT="FROM_TC:ARTIFACT_PREFIX[+]/[+]FROM_CTX:benchmark_additionnal"
+                  ARTIFACT_SOURCE="FROM_BENCH:ARTIFACT_MANAGER:URI" TRANSFER_TIMEOUT="DEFAULT"
+                  STORED_FILE_PATH="OBB_PATH" EQT="DEFAULT" />
+        <TestStep Id="INSTALL_FILE" DEVICE="PHONE1" FILE_PATH="FROM_CTX:OBB_PATH" TYPE="media"
+                  DESTINATION="FROM_TC:ADDITIONNALS_DEST" TIMEOUT="30"
+                  DESTINATION_STORED_PATH="ADDITIONNALS_FILE"/>
+    </TestStepSet>
+    <TestStepSet Id="SetupBenchmark">
+        <TestStep SetId="InstallBenchmark" />
+        <TestStep Id="EXEC_PNP_DROIDBOT" DEVICE="PHONE1" TIMEOUT="5"
+                  TEST_NAME="FROM_TC:TEST_NAME"
+                  EXTRA_OPTS="-e scenario setup -e numRun 1" />
+    </TestStepSet>
+    <TestStepSet Id="SetupBenchmarkWithAdditionnals">
+        <TestStep SetId="InstallBenchmark" />
+        <TestStep SetId="InstallAdditionnals" />
+        <TestStep Id="EXEC_PNP_DROIDBOT" DEVICE="PHONE1" TIMEOUT="5"
+                  TEST_NAME="FROM_TC:TEST_NAME"
+                  EXTRA_OPTS="-e scenario setup -e numRun 1" />
+    </TestStepSet>
+    <TestStepSet Id="LaunchBenchmarkPowerMeasure">
+        <TestStep Id="DISCONNECT_DEVICE_FROM_FWK" DEVICE="PHONE1" />
+        <TestStep Id="SYSDEBUG_RESET" DEVICE="PHONE1" />
+        <TestStep Id="SYSDEBUG_SYNCHRONIZE" DEVICE="PHONE1" />
+        <TestStep Id="EXEC_PNP_DROIDBOT" DEVICE="PHONE1" TIMEOUT="1"
+                  TEST_NAME="FROM_TC:TEST_NAME"
+                  EXTRA_OPTS="-e scenario start -e numRun 1" />
+        <TestStep Id="REMOVE_USB" EQT="FROM_DEVICE:PHONE1:IoCard" />
+        <TestStep Id="SUSPEND" DURATION_IN_SEC="FROM_TC:SLEEP_DURATION" REFRESH_STDOUT_IN_SEC="60"/>
+
+        <TestStep Id="SYSDEBUG_START_ACQUISITION" DEVICE="PHONE1" />
+        <TestStep Id="PATLIB_ACQUISITION" EQT="DEFAULT" ACTION="start"/>
+    </TestStepSet>
+    <TestStepSet Id="StopBenchmark">
+        <TestStep Id="EXEC_PNP_DROIDBOT" DEVICE="PHONE1" TIMEOUT="2"
+                  TEST_NAME="FROM_TC:TEST_NAME"
+                  EXTRA_OPTS="-e scenario wait -e numRun 1" />
+
+        <TestStep Id="EXEC_PNP_DROIDBOT" DEVICE="PHONE1" TIMEOUT="1"
+                  TEST_NAME="FROM_TC:TEST_NAME"
+                  EXTRA_OPTS="-e scenario stop -e numRun 1" />
+    </TestStepSet>
+    <TestStepSet Id="TearDownBenchmark">
+        <TestStep Id="EXEC_PNP_DROIDBOT" DEVICE="PHONE1" TIMEOUT="30"
+                  TEST_NAME="FROM_TC:TEST_NAME"
+                  EXTRA_OPTS="-e scenario teardown -e numRun 1" />
+        <TestStep SetId="AppStopFromApk"/>
+    </TestStepSet>
+</Include>

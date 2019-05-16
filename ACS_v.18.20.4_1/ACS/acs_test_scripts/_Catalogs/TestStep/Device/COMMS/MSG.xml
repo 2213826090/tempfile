@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestSteps xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../acs/src/_Catalogs/TestStep/teststep.xsd">
+    <TestStep Id="DELETE_ALL_SMS" Domain="COMMS" SubDomain="MSG" Feature="SMS" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Comms.Messaging.DeleteAllSMS.DeleteAllSMS</ClassName>
+        <Description>Delete all SMS on DUT</Description>
+        <Environment name="ANY" />
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device where to clear SMS.</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+</TestSteps>

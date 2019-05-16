@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<TestCase>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Discription>
+Set the DUT to enter in sleep mode after 1 minute and the the remote display should display normally.
+</Discription>
+    <Domain>Chromecast</Domain>
+    <Phase>CORE</Phase>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <Type>FUNCTIONAL</Type>
+    <UseCase>PY_UNIT</UseCase>
+    <b2bIteration>1</b2bIteration>
+    <Parameters>
+        <Parameter>
+            <Name>HpalmName</Name>
+            <Value>test_Chromecast_AutoSleep_1minute.ChromeCast.test_chromecast_autosleep_1minute</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TEST_DATA_ROOT</Name>
+            <Value>testplan/Chromecast</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TEST_CASE</Name>
+            <Value>tests.Chromecast.Power.test_Chromecast_AutoSleep_1minute.ChromeCast.test_chromecast_autosleep_1minute</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<Campaign>
+   <Parameters>
+    <Parameter isControlledPSUsed ="False"/>
+    <Parameter isIoCardUsed ="False"/>
+    <!-- Set skipBootOnPowerCycle to True to disable the accs boot procedure-->
+    <!-- Important, it means that boot will be handle inside the campaign/tc -->
+    <Parameter skipBootOnPowerCycle ="False"/>
+    <Parameter runHookScripts = "False"/>
+    <Parameter powerCycleBetweenTC ="False"/>
+    <Parameter powerCycleOnFailure ="False"/>
+    <Parameter finalPowerOff ="False"/>
+    <Parameter stopCampaignOnCriticalFailure = "False"/>
+    <Parameter stopCampaignOnFirstFailure = "False"/>
+    <!-- LoggingLevel possible values: info | warning | debug | error -->
+    <Parameter loggingLevel = "info"/>
+    <!-- CampaignType format -> <TEAM>_<CAMPAIGNTYPE> 
+        Possible values:
+        FT(Feature Team)-> SANITY | REGRESSION | STRESS, RELIABILTY | MTBF
+        ST(System Test)-> SANITY | REGRESSION | STRESS, RELIABILTY | MTBF
+        SI(System Integration)-> EAT | STAB | PACT | CAT0 | RELIABILITY | MTBF | CTS
+        Otherwise "Others" should be used -->
+    <Parameter CampaignType = "ST_STRESS"/>
+  </Parameters>
+  <Targets>
+    <!-- Target Values -->  
+    <Target targetB2bPassRate ="80"/>
+  </Targets>
+  <TestCases>
+
+
+    <!-- SETUP -->
+    <TestCase Id="..\TC\SETUP\LAB_SYSTEM_SETUP_EMBEDDED"/>
+    
+    <!-- Test SCRIPTS -->
+
+        <!-- CAMP -->
+    <TestCase Id="..\TC\CAMP\ST_COM_VC_NW_029-LAB_WCDMA_CAMP"/>
+    <TestCase Id="..\TC\CAMP\ST_COM_VC_NW_034-LAB_WCDMA_CAMP"/>
+    <TestCase Id="..\TC\CAMP\ST_COM_VC_NW_035-LAB_WCDMA_CAMP"/>
+    <TestCase Id="..\TC\CAMP\ST_COM_VC_NW_036-LAB_WCDMA_CAMP"/>
+    <TestCase Id="..\TC\CAMP\ST_COM_VC_NW_037-LAB_GSM_CAMP"/>
+    <TestCase Id="..\TC\CAMP\ST_COM_VC_NW_038-LAB_GSM_CAMP"/>
+    <TestCase Id="..\TC\CAMP\ST_COM_VC_NW_039-LAB_GSM_CAMP"/>
+    <TestCase Id="..\TC\CAMP\ST_COM_VC_NW_033-LAB_GSM_CAMP"/>
+    <TestCase Id="..\TC\CAMP\ST_COM_VC_NW_030_001-LAB_WCDMA_CAMP"/>
+    <TestCase Id="..\TC\CAMP\ST_COM_VC_NW_030_002-LAB_GSM_CAMP"/>
+
+        <!-- FIT --> 
+    <TestCase Id="..\TC\FIT\ST_COM_FIT_VC_SMS_013-LAB_FIT_TEL_GSM_VC_SMS_CS_MO"/>
+    <TestCase Id="..\TC\FIT\ST_COM_FIT_VC_SMS_014-LAB_FIT_TEL_GSM_VC_SMS_CS_MT"/>
+
+        <!-- SMS -->  
+    <TestCase Id="..\TC\SMS\ST_TELEPHONY_MSG_SMS_016-LAB_GSM_SMS_CS_MO"/>
+    <TestCase Id="..\TC\SMS\ST_TELEPHONY_MSG_SMS_017-LAB_WCDMA_SMS_CS_MO"/>
+    <TestCase Id="..\TC\SMS\ST_TELEPHONY_MSG_SMS_108-LAB_GSM_SMS_CS_MT"/>
+    <TestCase Id="..\TC\SMS\ST_TELEPHONY_MSG_SMS_109-LAB_WCDMA_SMS_CS_MT"/>
+    <TestCase Id="..\TC\SMS\ST_TELEPHONY_MSG_SMS_023-LAB_GSM_SMS_CS_MO"/>
+    <TestCase Id="..\TC\SMS\ST_TELEPHONY_MSG_SMS_024-LAB_GSM_SMS_CS_MO"/>
+    <TestCase Id="..\TC\SMS\ST_TELEPHONY_MSG_SMS_025-LAB_GSM_SMS_CS_MO"/>
+    <TestCase Id="..\TC\SMS\ST_TELEPHONY_MSG_SMS_026-LAB_WCDMA_SMS_CS_MO"/>
+    <TestCase Id="..\TC\SMS\ST_TELEPHONY_MSG_SMS_027-LAB_WCDMA_SMS_CS_MO"/>
+    <TestCase Id="..\TC\SMS\ST_TELEPHONY_MSG_SMS_028-LAB_WCDMA_SMS_CS_MO"/>
+    <TestCase Id="..\TC\SMS\ST_TELEPHONY_MSG_SMS_114-LAB_GSM_SMS_CS_MT"/>
+    <TestCase Id="..\TC\SMS\ST_TELEPHONY_MSG_SMS_115-LAB_GSM_SMS_CS_MT"/>
+    <TestCase Id="..\TC\SMS\ST_TELEPHONY_MSG_SMS_116-LAB_GSM_SMS_CS_MT"/>
+    <TestCase Id="..\TC\SMS\ST_TELEPHONY_MSG_SMS_117-LAB_WCDMA_SMS_CS_MT"/>
+    <TestCase Id="..\TC\SMS\ST_TELEPHONY_MSG_SMS_118-LAB_WCDMA_SMS_CS_MT"/>
+    <TestCase Id="..\TC\SMS\ST_TELEPHONY_MSG_SMS_119-LAB_WCDMA_SMS_CS_MT"/>
+
+    <!-- SMS-CB -->
+    <TestCase Id="..\TC\SMS\ST_TELEPHONY_MSG_CB_021-LAB_WCDMA_CB_SMS_VC"/>
+    <TestCase Id="..\TC\SMS\ST_TELEPHONY_MSG_CB_024-LAB_WCDMA_CB_SMS_VC"/>
+    <TestCase Id="..\TC\SMS\ST_TELEPHONY_MSG_CB_027-LAB_GSM_CB_SMS_VC"/>
+    <TestCase Id="..\TC\SMS\ST_TELEPHONY_MSG_CB_030-LAB_GSM_CB_SMS_VC"/>
+    <TestCase Id="..\TC\SMS\ST_TELEPHONY_MSG_CB_033-LAB_WCDMA_CB_SMS_VC"/>
+    <TestCase Id="..\TC\SMS\ST_TELEPHONY_MSG_CB_039-LAB_GSM_CB_SMS_VC"/>
+
+     <!-- MMS -->
+    <TestCase Id="..\TC\MMS\ST_TELEPHONY_MSG_MMS_012-LAB_MMS"/>
+    <TestCase Id="..\TC\MMS\ST_TELEPHONY_MSG_MMS_023-LAB_MMS"/>
+    <TestCase Id="..\TC\MMS\ST_TELEPHONY_MSG_MMS_024-LAB_MMS"/>
+    <TestCase Id="..\TC\MMS\ST_TELEPHONY_MSG_MMS_025-LAB_MMS"/>
+
+        <!-- VC -->
+    <TestCase Id="..\TC\VC\ST_COM_VC_CS_013-LAB_GSM_VC_MOMR"/>
+    <TestCase Id="..\TC\VC\ST_COM_VC_CS_021-LAB_WCDMA_VC_MOMR"/>
+    <TestCase Id="..\TC\VC\ST_COM_VC_CS_023-LAB_GSM_VC_MOMR"/>
+    <TestCase Id="..\TC\VC\ST_COM_VC_CS_024-LAB_WCDMA_VC_MOMR"/>
+    <TestCase Id="..\TC\VC\ST_COM_VC_CS_110-LAB_GSM_VC_MTNR"/>
+    <TestCase Id="..\TC\VC\ST_COM_VC_CS_111-LAB_WCDMA_VC_MTNR"/>
+    <TestCase Id="..\TC\VC\ST_COM_VC_911_020-LAB_WCDMA_VC_MOMR"/>
+    <TestCase Id="..\TC\VC\ST_COM_VC_911_026-LAB_WCDMA_VC_MOMR"/>
+    <TestCase Id="..\TC\VC\ST_COM_VC_911_027-LAB_WCDMA_VC_MOMR"/>
+    <TestCase Id="..\TC\VC\ST_COM_VC_911_028-LAB_WCDMA_VC_MOMR"/>
+    <TestCase Id="..\TC\VC\ST_COM_VC_CS_026-LAB_GSM_VC_MOMR"/>
+    <TestCase Id="..\TC\VC\ST_COM_VC_CS_027-LAB_GSM_VC_MOMR"/>
+    <TestCase Id="..\TC\VC\ST_COM_VC_CS_028-LAB_GSM_VC_MOMR"/>
+    <TestCase Id="..\TC\VC\ST_COM_VC_CS_029-LAB_WCDMA_VC_MOMR"/>
+    <TestCase Id="..\TC\VC\ST_COM_VC_CS_030-LAB_WCDMA_VC_MOMR"/>
+    <TestCase Id="..\TC\VC\ST_COM_VC_CS_031-LAB_WCDMA_VC_MOMR"/>
+    <TestCase Id="..\TC\VC\ST_COM_VC_CS_119-LAB_GSM_VC_MTNR"/>
+    <TestCase Id="..\TC\VC\ST_COM_VC_CS_120-LAB_GSM_VC_MTNR"/>
+    <TestCase Id="..\TC\VC\ST_COM_VC_CS_121-LAB_GSM_VC_MTNR"/>
+    <TestCase Id="..\TC\VC\ST_COM_VC_CS_122-LAB_WCDMA_VC_MTNR"/>
+    <TestCase Id="..\TC\VC\ST_COM_VC_CS_123-LAB_WCDMA_VC_MTNR"/>
+    <TestCase Id="..\TC\VC\ST_COM_VC_CS_124-LAB_WCDMA_VC_MTNR"/>
+
+        <!-- NETWORKING 2G  -->  
+    <TestCase Id="..\TC\NET_2G\ST_DATA_PERF_2G_GPRS_004-LAB_GPRS_FTP"/>
+    <TestCase Id="..\TC\NET_2G\ST_DATA_PERF_2G_GPRS_005-LAB_GPRS_FTP"/>
+    <TestCase Id="..\TC\NET_2G\ST_DATA_EDGE_008-LAB_EGPRS_FTP"/>
+    <TestCase Id="..\TC\NET_2G\ST_DATA_PERF_2G_EDGE_006-LAB_EGPRS_FTP"/>
+    <TestCase Id="..\TC\NET_2G\ST_DATA_PERF_2G_EDGE_007-LAB_EGPRS_FTP"/>
+    <TestCase Id="..\TC\NET_2G\ST_DATA_PERF_2G_GPRS_001-LAB_GPRS_IPERF"/>
+    <TestCase Id="..\TC\NET_2G\ST_DATA_PERF_2G_GPRS_002-LAB_GPRS_IPERF"/>
+    <TestCase Id="..\TC\NET_2G\ST_DATA_PERF_2G_GPRS_003-LAB_GPRS_IPERF"/>
+    <TestCase Id="..\TC\NET_2G\ST_DATA_PERF_2G_GPRS_006-LAB_GPRS_IPERF"/>
+    <TestCase Id="..\TC\NET_2G\ST_DATA_PERF_2G_GPRS_007-LAB_GPRS_IPERF"/>
+    <TestCase Id="..\TC\NET_2G\ST_DATA_PERF_2G_GPRS_008-LAB_GPRS_IPERF"/>
+    <TestCase Id="..\TC\NET_2G\ST_DATA_PERF_2G_EDGE_001-LAB_EGPRS_IPERF"/>
+    <TestCase Id="..\TC\NET_2G\ST_DATA_PERF_2G_EDGE_002-LAB_EGPRS_IPERF"/>
+    <TestCase Id="..\TC\NET_2G\ST_DATA_PERF_2G_EDGE_003-LAB_EGPRS_IPERF"/>
+    <TestCase Id="..\TC\NET_2G\ST_DATA_PERF_2G_EDGE_005-LAB_EGPRS_IPERF"/>
+    <TestCase Id="..\TC\NET_2G\ST_DATA_PERF_2G_EDGE_009-LAB_EGPRS_IPERF"/>
+    <TestCase Id="..\TC\NET_2G\ST_DATA_PERF_2G_EDGE_010-LAB_EGPRS_IPERF"/>
+    <TestCase Id="..\TC\NET_2G\ST_DATA_PERF_2G_EDGE_012-LAB_EGPRS_FTP"/>
+    <TestCase Id="..\TC\NET_2G\ST_DATA_PERF_2G_EDGE_013-LAB_EGPRS_FTP"/>
+    <TestCase Id="..\TC\NET_2G\ST_DATA_PERF_2G_EDGE_014-LAB_EGPRS_FTP"/>
+    <TestCase Id="..\TC\NET_2G\ST_DATA_PERF_2G_EDGE_015-LAB_EGPRS_FTP"/>
+    <TestCase Id="..\TC\NET_2G\ST_DATA_PERF_2G_EDGE_016-LAB_EGPRS_FTP"/>
+    <TestCase Id="..\TC\NET_2G\ST_DATA_PERF_2G_EDGE_017-LAB_EGPRS_FTP"/>
+    <TestCase Id="..\TC\NET_2G\ST_DATA_PERF_2G_GPRS_009-LAB_GPRS_FTP"/>
+    <TestCase Id="..\TC\NET_2G\ST_DATA_PERF_2G_GPRS_010-LAB_GPRS_FTP"/>
+    <TestCase Id="..\TC\NET_2G\ST_DATA_PERF_2G_GPRS_011-LAB_GPRS_FTP"/>
+    <TestCase Id="..\TC\NET_2G\ST_DATA_PERF_2G_GPRS_012-LAB_GPRS_FTP"/>
+    <TestCase Id="..\TC\NET_2G\ST_DATA_PERF_2G_GPRS_013-LAB_GPRS_FTP"/>
+    <TestCase Id="..\TC\NET_2G\ST_DATA_PERF_2G_GPRS_014-LAB_GPRS_FTP"/>
+
+        <!-- NETWORKING 3G  -->
+
+    <TestCase Id="..\TC\NET_3G\ST_DATA_PERF_3G_R5_001-LAB_HSPA_IPERF"/>
+    <TestCase Id="..\TC\NET_3G\ST_DATA_PERF_3G_R5_004-LAB_HSPA_FTP"/>
+    <TestCase Id="..\TC\NET_3G\ST_DATA_PERF_3G_R5_005-LAB_HSPA_IPERF"/>
+    <TestCase Id="..\TC\NET_3G\ST_DATA_PERF_3G_R5_007-LAB_HSPA_FTP"/>
+    <TestCase Id="..\TC\NET_3G\ST_DATA_PERF_3G_R5_008-LAB_HSPA_FTP"/>
+    <TestCase Id="..\TC\NET_3G\ST_DATA_PERF_3G_R5_009-LAB_HSPA_FTP"/>
+    <TestCase Id="..\TC\NET_3G\ST_DATA_PERF_3G_R6_001-LAB_HSPA_IPERF"/>
+    <TestCase Id="..\TC\NET_3G\ST_DATA_PERF_3G_R6_004-LAB_HSPA_FTP"/>
+    <TestCase Id="..\TC\NET_3G\ST_DATA_PERF_3G_R6_005-LAB_HSPA_IPERF"/>
+    <TestCase Id="..\TC\NET_3G\ST_DATA_PERF_3G_R6_007-LAB_HSPA_FTP"/>
+    <TestCase Id="..\TC\NET_3G\ST_DATA_PERF_3G_R6_008-LAB_HSPA_FTP"/>
+    <TestCase Id="..\TC\NET_3G\ST_DATA_PERF_3G_R6_009-LAB_HSPA_FTP"/>
+    <TestCase Id="..\TC\NET_3G\ST_DATA_PERF_3G_R7_001-LAB_HSPA_FTP"/>
+    <TestCase Id="..\TC\NET_3G\ST_DATA_PERF_3G_R7_002-LAB_HSPA_IPERF"/>
+    <TestCase Id="..\TC\NET_3G\ST_DATA_PERF_3G_R7_003-LAB_HSPA_FTP"/>
+    <TestCase Id="..\TC\NET_3G\ST_DATA_PERF_3G_R7_004-LAB_HSPA_FTP"/>
+    <TestCase Id="..\TC\NET_3G\ST_DATA_PERF_3G_R7_005-LAB_HSPA_FTP"/>
+    <TestCase Id="..\TC\NET_3G\ST_DATA_PERF_3G_R99_001-LAB_WCDMA_IPERF"/>
+    <TestCase Id="..\TC\NET_3G\ST_DATA_PERF_3G_R99_003-LAB_WCDMA_IPERF"/>
+    <TestCase Id="..\TC\NET_3G\ST_DATA_PERF_3G_R99_004-LAB_WCDMA_IPERF"/>
+    <TestCase Id="..\TC\NET_3G\ST_DATA_PERF_3G_R99_006-LAB_WCDMA_IPERF"/>
+    <TestCase Id="..\TC\NET_3G\ST_DATA_PERF_3G_R99_009-LAB_WCDMA_FTP"/>
+    <TestCase Id="..\TC\NET_3G\ST_DATA_PERF_3G_R99_010-LAB_WCDMA_FTP"/>
+    <TestCase Id="..\TC\NET_3G\ST_DATA_PERF_3G_R99_015-LAB_WCDMA_FTP"/>
+    <TestCase Id="..\TC\NET_3G\ST_DATA_PERF_3G_R99_016-LAB_WCDMA_FTP"/>
+    <TestCase Id="..\TC\NET_3G\ST_DATA_PERF_3G_R99_017-LAB_WCDMA_FTP"/>
+    <TestCase Id="..\TC\NET_3G\ST_DATA_PERF_3G_R99_018-LAB_WCDMA_FTP"/>
+    <TestCase Id="..\TC\NET_3G\ST_DATA_PERF_3G_R99_019-LAB_WCDMA_FTP"/>
+    <TestCase Id="..\TC\NET_3G\ST_DATA_PERF_3G_R99_020-LAB_WCDMA_FTP"/>
+    <TestCase Id="..\TC\NET_3G\ST_DATA_PERF_HSPA_001-LAB_HSPA_IPERF"/>
+    <TestCase Id="..\TC\NET_3G\ST_DATA_PERF_HSPA_004-LAB_HSPA_IPERF"/>
+    <TestCase Id="..\TC\NET_3G\ST_DATA_PERF_HSPA_008-LAB_HSPA_IPERF"/>
+    <TestCase Id="..\TC\NET_3G\ST_DATA_PERF_HSPA_009-LAB_HSPA_IPERF"/>
+    <TestCase Id="..\TC\NET_3G\ST_DATA_PERF_HSPA_010-LAB_HSPA_IPERF"/>
+    <TestCase Id="..\TC\NET_3G\ST_DATA_WCDMA_R5_PS_009-LAB_HSPA_FTP"/>
+    <TestCase Id="..\TC\NET_3G\ST_DATA_WCDMA_R6_PS_009-LAB_HSPA_FTP"/>
+    <TestCase Id="..\TC\NET_3G\ST_DATA_WCDMA_R7_PS_007-LAB_HSPA_FTP"/>
+    <TestCase Id="..\TC\NET_3G\ST_DATA_WCDMA_R99_PS_009-LAB_WCDMA_FTP"/>
+    <TestCase Id="..\TC\NET_3G\ST_DATA_WCDMA_R99_PS_016-LAB_WCDMA_FTP"/>
+    <TestCase Id="..\TC\NET_3G\ST_TELEPHONY_DATA_HSPA-PERF_006-LAB_HSPA_FTP"/>
+    <TestCase Id="..\TC\NET_3G\ST_TELEPHONY_DATA_HSPA-PERF_007-LAB_HSPA_FTP"/>
+    <TestCase Id="..\TC\NET_3G\ST_TELEPHONY_DATA_HSPA-PERF_002-LAB_HSPA_IPERF"/>
+    <TestCase Id="..\TC\NET_3G\ST_TELEPHONY_DATA_HSPA-PERF_004-LAB_HSPA_IPERF"/>
+    <TestCase Id="..\TC\NET_3G\ST_DATA_WCDMA_R7_CPC_008-LAB_HSPA_FTP"/>
+
+  </TestCases>
+</Campaign>

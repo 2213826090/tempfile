@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='ASCII'?>
+<TestCase>
+    <UseCase>Testlib</UseCase>
+    <Description>Test node is available on the device</Description>
+    <Description>Command: adb shell which node</Description>
+    <Description>Result:  /system/xbin/node</Description>
+    <Description>Command: adb shell node --version </Description>
+    <Description>Result:  v5.7.1</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <TcMaxAttempt>1</TcMaxAttempt>
+    <Parameters>
+        <Parameter>
+            <Name>test</Name>
+            <Value>scripts/brillo/tests/12.0.0_check_node_binary.py</Value>
+        </Parameter>
+        <Parameter>
+            <Name>script-args</Name>
+            <Value>node_version=v5.7.1</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

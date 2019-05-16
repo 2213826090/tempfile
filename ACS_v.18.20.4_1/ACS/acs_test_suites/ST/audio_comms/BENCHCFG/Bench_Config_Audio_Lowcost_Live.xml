@@ -1,0 +1,86 @@
+<?xml version='1.0' encoding='ISO-8859-1'?>
+<BenchConfig>
+  <Phones>
+      <Phone name="PHONE1" description="Phone to use during test campaign. Please refer to Device_Catalog.xml to fill DeviceModel parameter" deviceModel="MOFD_V0_64-Android-KK">
+          <!--
+            <Parameter name="EnableReflash" value="True" description="Possible value is True or False (Not available for the moment)" />
+            <Parameter name="PowerSupply" value="ACCHG2" description="Give the Power Supply Output type (e.g: ACCHG1)" />
+            -->
+            <Parameter serialNumber="INV140200195" description="Give the Serial Number of the phone (Used for Android phone only)"/>
+            <Parameter IoCard="IO_CARD2" description="Give the IO card name (e.g: IO_CARD1)"/>
+            <!--
+            <Parameter name="adbOverEthernet" value="" description="Use ADB over Ethernet (Used for Android phone only)" />
+            <Parameter name="ipAddress" value="" description="Give the IP address of the phone (Used for Android phone only)" />
+            <Parameter name="adbPort" value="8081" description="Give ADB ethernet port of the phone (Used for Android phone only)" />-->
+            <!--
+                You can override value of a specific parameter from Device_Catalog
+                e.g : <Parameter name="waitBetweenCmd" value=""/>
+            -->
+        </Phone>
+        <Phone name="PHONE2" description="Phone to use during test campaign. Please refer to Device_Catalog.xml to fill DeviceModel parameter" deviceModel="SALTBAY-Android-KK">
+          <!--
+            <Parameter name="EnableReflash" value="True" description="Possible value is True or False (Not available for the moment)" />
+            <Parameter name="PowerSupply" value="ACCHG1" description="Give the Power Supply Output type (e.g: ACCHG1)" />
+            -->
+            <Parameter serialNumber="INV133601534" description="Give the Serial Number of the phone (Used for Android phone only)"/>
+            <Parameter IoCard="IO_CARD1" description="Give the IO card name (e.g: IO_CARD1)"/>
+            <!--
+            <Parameter name="adbOverEthernet" value="" description="Use ADB over Ethernet (Used for Android phone only)" />
+            <Parameter name="ipAddress" value="" description="Give the IP address of the phone (Used for Android phone only)" />
+            <Parameter name="adbPort" value="8080" description="Give ADB ethernet port of the phone (Used for Android phone only)" />
+                You can override value of a specific parameter from Device_Catalog
+                e.g : <Parameter name="waitBetweenCmd" value=""/>
+            -->
+        </Phone>
+    </Phones>
+    <Equipments>
+        <Equipment name="IO_CARD2" description="Input output card used for power management, energy management on I/O ports of the DUT.">
+          <!-- Model possible values:  ACBN (Normal) | ACBP (Prototype) | ACBE (Enhanced) | USB_RLY08 -->
+            <Parameter name="Model" value="USB_RLY08" description="USB relay card"/>
+            <Parameter name="ComPort" value="COM2" description="COM port used for communication"/>
+        <!--             <Parameter name="SwitchOnOff" value="5" description="Number of the line to use for power purposes"/> -->
+            <Parameter name="UsbHostPcConnect" value="2" description="Number of the relay used to plug or unplug USB on host PC"/>
+        </Equipment>
+        <Equipment name="IO_CARD1" description="Input output card used for power management, energy management on I/O ports of the DUT.">
+          <!-- Model possible values:  ACBN (Normal) | ACBP (Prototype) | ACBE (Enhanced) | USB_RLY08 -->
+            <Parameter name="Model" value="USB_RLY08" description="USB relay card"/>
+            <Parameter name="ComPort" value="COM7" description="COM port used for communication"/>
+        <!--             <Parameter name="SwitchOnOff" value="5" description="Number of the line to use for power purposes"/> -->
+            <Parameter name="UsbHostPcConnect" value="2" description="Number of the relay used to plug or unplug USB on host PC"/>
+        </Equipment>
+        <Equipment name="ARTIFACT_MANAGER" description="ArtifactManager configuration to get all test case necessary artifacts">
+          <Parameter name="URI" value="https://mcg-depot.intel.com/artifactory/acs_test_artifacts/" description="Local path/URL to the artifact source"/>
+            <!-- Optional options
+            <Parameter name="proxy" value="system" description="Proxy to use if URI is an URL - system: use HTTP_PROXY system value - no_proxy: use empty proxy - a proxy adress" />
+            <Parameter name="http_timeout" value="10" description="Response timeout if URI is an URL" />
+            <Parameter name="creds" value="anonymous" description="Credentials to use if URL is access protected - anonymous: no creds will be used - creds format user:password" />
+            <Parameter name="cache_folder" value="/tmp/artifact_cache" description="Local path to a directory to store artifacts - if not specified, your_home_folder/.acs/Artifacts will be used" />
+            <Parameter name="max_cache_size" value="1000" description="Maximum cache directory size on the disk in Mb" />
+            -->
+        </Equipment>
+        <Equipment name="AudioAnalyzer" description="Audio analyzer used to check audio quality Use cases.">
+          <Parameter name="Model" value="RS_UPV"/>
+            <Parameter name="Transport" value="GPIB"/>
+            <Parameter name="GPIBBoardId" value="0"/>
+            <Parameter name="GPIBAddress" value="20"/>
+            <Parameter name="ConfPath" value="C:\\Audio_Tests\\"/>
+            <Parameter name="DestPath" value="D:\\UPV\\Audio_Tests\\"/>
+        </Equipment>
+        <Equipment name="WIFI_ACCESS_POINT" description="WPA secured Router">
+          <Parameter name="SSID" value="INTEL_AUDIO_INTERNET"/>
+            <Parameter name="IP" value=""/>
+            <Parameter name="passphrase" value="Intel_AUDIO_BAS1"/>
+            <!--
+                Wifi Security of wifi env to be used. Can be "OPEN", "WEP","WPA" or "WPA2"
+            -->
+            <Parameter name="WIFI_SECURITY" value="WPA"/>
+            <!-- Standard possible values: "a", "b", "g", "an", "bg", "gn", "bgn", "n2.4G", "n5G", "off" -->
+            <Parameter name="standard" value=""/>
+        </Equipment>
+        <Equipment name="AUDIO_FRAMEWORK">
+          <Parameter name="server_address" value="tldlab325"/>
+            <Parameter name="server_port" value="2007"/>
+        </Equipment>
+    </Equipments>
+</BenchConfig>
+

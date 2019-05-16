@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase>
+    <UseCase>TEST_STEP_ENGINE</UseCase>
+    <Description>Flight Mode ON ? Send SMS</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <TcMaxAttempt>1</TcMaxAttempt>
+    <SavePatRawData>False</SavePatRawData>
+    <PowerCalculation>False</PowerCalculation>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters>
+        <Parameter>
+            <Name>CELL_BAND</Name>
+            <Value>BAND1</Value>
+        </Parameter>
+        <Parameter>
+            <Name>RAT</Name>
+            <Value>3G</Value>
+        </Parameter>
+        <Parameter>
+            <Name>SMS_TRANSFER_TIMEOUT</Name>
+            <Value>10</Value>
+        </Parameter>
+        <Parameter>
+            <Name>PHONE_NUMBER</Name>
+            <Value>0679568120</Value>
+        </Parameter>
+        <Parameter>
+            <Name>SMS_TEXT</Name>
+            <Value>In three words I can sum up everything I?ve learned about life: it goes on</Value>
+        </Parameter>
+    </Parameters>
+    <TestSteps>
+        <Include Src="ST/telephony/TSS/Common.xml" />
+        <Include Src="ST/telephony/TSS/8960.xml" />
+        <Setup>
+            <TestStep SetId="AllCommsOff" DEVICE="PHONE1"/>
+            <TestStep SetId="Configure8960"/>
+            <TestStep SetId="ConfigureWCDMA" EQT="FROM_CTX:AGILENT8960_SIMULATOR_VISA"/>
+            <TestStep SetId="Registration" EQT="FROM_CTX:AGILENT8960_SIMULATOR_VISA"
+                      DEVICE="PHONE1" TIMEOUT="FROM_DEVICE:PHONE1:registrationTimeout"/>
+            <TestStep Id="CREATE_SMS" DEVICE="PHONE1" EQT="FROM_CTX:AGILENT8960_SIMULATOR_VISA" SMS_TEXT="FROM_TC:SMS_TEXT" PHONE_NUMBER="FROM_TC:PHONE_NUMBER" TRANSPORTATION="CSD" SMS_TRANSFER_TIMEOUT="FROM_TC:SMS_TRANSFER_TIMEOUT" SMS_DIRECTION="MO" SMS="SMS" CODING_SCHEME="00" CONTENT_TYPE="CTEX" NB_BITS_PER_CHAR="7" />
+        </Setup>
+        <RunTest>
+            <TestStep SetId="ClearSms" EQT="FROM_CTX:AGILENT8960_SIMULATOR_VISA" DEVICE="PHONE1" />
+            <!-- Set flight mode to ON -->
+            <TestStep Id="SET_FLIGHT_MODE" DEVICE="PHONE1" FLIGHT_MODE="enable" />
+            <!-- Mobile detachs from NW and enters Airplane Mode  -->
+            <TestStep Id="CHECK_CDK_NO_REGISTRATION" DEVICE="PHONE1" TIMEOUT="FROM_DEVICE:PHONE1:registrationTimeout"/>
+
+            <!-- Initiate a SMS from the DUT -->
+            <!-- SMS cannot be send -->
+            <TestStep Id="SEND_SMS" SMS="SMS" EXPECTED_RESULT="FAILED"/>
+
+            <!-- Set flight mode to OFF -->
+            <TestStep Id="SET_FLIGHT_MODE" DEVICE="PHONE1" FLIGHT_MODE="disable" />
+
+            <!-- Mobile camped and attached to NW -->
+            <TestStep SetId="CheckRegistration" EQT="FROM_CTX:AGILENT8960_SIMULATOR_VISA"
+                      DEVICE="PHONE1" TIMEOUT="FROM_DEVICE:PHONE1:registrationTimeout"/>
+
+            <!-- Send a MO SMS and check it has been received -->
+            <TestStep SetId="SendSMS" SMS="SMS" EQT="FROM_CTX:AGILENT8960_SIMULATOR_VISA"/>
+        </RunTest>
+        <TearDown>
+            <TestStep SetId="CommonTearDown" EQT="FROM_CTX:AGILENT8960_SIMULATOR_VISA" DEVICE="PHONE1"/>
+        </TearDown>
+    </TestSteps>
+</TestCase>

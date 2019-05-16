@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="13.37">
+    <UseCase>LAB_GSM_VC_RINGTONE_MTMR</UseCase>
+    <Description>Network generates GSM call, test terminal ringtone</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>False</b2bContinuousMode>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters>
+        <Parameter>
+            <!-- Cell Band (PGSM|RGSM|EGSM|GSM450|GSM480|GSM750|GSM850|TGSM810|PCS|DCS) -->
+            <Name>CELL_BAND</Name>
+            <Value>DCS</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Broadcast Channel Arfcn frequency -->
+            <Name>BCH_ARFCN</Name>
+            <Value>698</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Traffic Channel Arfcn frequency -->
+            <Name>TCH_ARFCN</Name>
+            <Value>650</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Cell Service (GSM|GPRS|EGPRS) -->
+            <Name>CELL_SERVICE</Name>
+            <Value>GSM</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Cell Power (in dBm) -->
+            <Name>CELL_POWER</Name>
+            <Value>-80</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Voice coder rate
+                Possible values:
+                FR
+                EFR
+                HR
+                FR_AMR_NB_[1220|1020|795|740|670|590|515|475]
+                HR_AMR_NB_[795|740|670|590|515|475]
+                AMR_WB_[1265|885|660]
+            -->
+            <Name>VOICE_CODER_RATE</Name>
+            <Value>FR</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Ringtone Time (in seconds) -->
+            <Name>RT_TIME</Name>
+            <Value>15</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Path of the setting Ringtone -->
+            <Name>RT_NAME</Name>
+            <Value>Cairo</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Audio output source: speaker|headset|none -->
+            <!-- if set as "none", will keep default setting, nothing will be done -->
+            <Name>AUDIO_OUTPUT</Name>
+            <Value>none</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Vibra mode: always|never|silent|notsilent|none -->
+            <!-- if set as "none", will keep default setting, nothing will be done -->
+            <Name>VIBRA_MODE</Name>
+            <Value>always</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Silentmode on or off: True|False|none -->
+            <!-- if set as "none", will keep default setting, nothing will be done -->
+            <Name>SILENT_MODE</Name>
+            <Value>False</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Mobile Country Code 0 to 999 -->
+            <Name>MCC</Name>
+            <Value>1</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Mobile Network Code 0 to 999 -->
+            <Name>MNC</Name>
+            <Value>1</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

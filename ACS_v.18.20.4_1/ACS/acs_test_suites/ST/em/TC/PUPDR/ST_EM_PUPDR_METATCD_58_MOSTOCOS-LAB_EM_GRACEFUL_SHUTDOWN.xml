@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase>
+    <UseCase>LAB_EM_GRACEFUL_SHUTDOWN</UseCase>
+    <Description>Make a graceful shutdown while platform is ON.</Description>
+    <b2bIteration>1</b2bIteration>
+    <TcMaxAttempt>2</TcMaxAttempt>
+    <TcAcceptanceCriteria>1</TcAcceptanceCriteria>
+    <b2bContinuousMode>False</b2bContinuousMode>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters>
+        <Parameter>
+            <!-- Vbatt Voltage -->
+            <Name>VBATT</Name>
+            <Value>3.8</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Battery Temperature (in degree Celsius) : 95, 70, 50, 25, 10, 5, 0, -15 -->
+            <Name>BATTERY_TEMPERATURE</Name>
+            <Value>25</Value>
+        </Parameter>
+        <Parameter>
+            <!-- unplug the charge just after a graceful shutdown: can be 'True' or 'False' -->
+            <Name>UNPLUG_CHARGER_WHILE_SHUTDOWN</Name>
+            <Value>False</Value>
+        </Parameter>
+        <Parameter>
+            <!-- press power button duration (in second): shall be between 0.1 and 12  -->
+            <Name>PRESS_PWR_BUTTON_TIME</Name>
+            <Value>3</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Battery Type : BATTERY_EMULATOR or ANALOG -->
+            <Name>BATTERY_TYPE</Name>
+            <Value>ANALOG</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Shutdown Type : UI or HOLD_BUTTON -->
+            <Name>SHUTDOWN_TYPE</Name>
+            <Value>UI</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase>
+    <UseCase>TEST_STEP_ENGINE</UseCase>
+    <Description>Perform a Flight Mode test with SMS and voice call</Description>
+    <b2bIteration>100</b2bIteration>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <TcMaxAttempt>1</TcMaxAttempt>
+    <SavePatRawData>False</SavePatRawData>
+    <PowerCalculation>False</PowerCalculation>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters>
+        <Parameter>
+            <Name>2G_CELL_BAND</Name>
+            <Value>EGSM</Value>
+        </Parameter>
+        <Parameter>
+          <!-- Uplink Radio Access Bearer (384k | HSUPA_CAT6 | MAX [If MAX is selected, value will be taken from DeviceCatalog.xml]) -->
+          <Name>UL_RAB</Name>
+          <Value>CAT6</Value>
+        </Parameter>
+        <Parameter>
+          <!-- Downlink Radio Access Bearer (HSDPA_CAT10 | HSDPA_CAT14 | HSDPA_CAT24 | MAX [If MAX is selected, value will be taken from DeviceCatalog.xml]) -->
+          <Name>DL_RAB</Name>
+          <Value>CAT24</Value>
+        </Parameter>
+        <Parameter>
+            <Name>3G_CELL_BAND</Name>
+            <Value>BAND1</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Web site works the following way, every 50sec a web page is loaded. So add 10 seconds to 50 in order to wait for page loaded -->
+            <Name>TEST_DURATION</Name>
+            <Value>60</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Reboot type (soft|hard) -->
+            <Name>REBOOT_MODE</Name>
+            <Value>soft</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Reboot type (soft|hard) -->
+            <Name>PHONE_NUMBER</Name>
+            <Value>0679568120</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Reboot type (soft|hard) -->
+            <Name>SMS_TEXT</Name>
+            <Value>Stupid text for stupid test</Value>
+        </Parameter>
+    </Parameters>
+    <TestSteps>
+        <Include Src="ST/telephony/TSS/Common.xml" />
+        <Include Src="ST/telephony/TSS/8960.xml" />
+        <Setup>
+            <TestStep SetId="AllCommsOff" DEVICE="PHONE1"/>
+            <!-- Configure 2G cell -->
+            <TestStep Id="FIND_NETWORK_SIMULATOR" EQT_NAME="AGILENT8960_SIMULATOR_VISA_2G" FEATURE="2G" />
+            <TestStep SetId="Init8960"  EQT="FROM_CTX:AGILENT8960_SIMULATOR_VISA_2G" FEATURE="2G" CONFIG="FROM_TC:2G_CELL_BAND"/>
+            <TestStep SetId="ConfigureEGPRS" EQT="FROM_CTX:AGILENT8960_SIMULATOR_VISA_2G"/>
+            <TestStep Id="NS_SET_PARAM" EQT="FROM_CTX:AGILENT8960_SIMULATOR_VISA_2G" NAME="SetCellOnOff" OPTION="DEFAULT" VALUE="CALL"/>
+            <!-- Configure 3G cell -->
+            <TestStep Id="FIND_NETWORK_SIMULATOR" EQT_NAME="AGILENT8960_SIMULATOR_VISA_3G" FEATURE="2G" />
+            <TestStep SetId="Init8960" EQT="FROM_CTX:AGILENT8960_SIMULATOR_VISA_3G" FEATURE="3G" CONFIG="FROM_TC:3G_CELL_BAND"/>
+            <TestStep SetId="ConfigureHSPA" EQT="FROM_CTX:AGILENT8960_SIMULATOR_VISA_3G"/>
+            <!-- Disable flight mode -->
+            <TestStep Id="SET_FLIGHT_MODE" FLIGHT_MODE="disable" DEVICE="PHONE1"/>
+            <!-- Enable Data on phone -->
+            <TestStep SetId="SetDataConnection" DEVICE="PHONE1" />
+            <!-- Reboot phone -->
+            <TestStep Id="REBOOT_DEVICE" DEVICE="PHONE1" WAY="FROM_TC:REBOOT_MODE"/>
+            <!-- Create SMS to send -->
+            <TestStep Id="CREATE_SMS" DEVICE="PHONE1" EQT="FROM_CTX:AGILENT8960_SIMULATOR_VISA_3G" SMS_TEXT="FROM_TC:SMS_TEXT" PHONE_NUMBER="FROM_TC:PHONE_NUMBER" TRANSPORTATION="CSD" SMS_TRANSFER_TIMEOUT="FROM_TC:TEST_DURATION" SMS_DIRECTION="MO" SMS="SMS_3G" CODING_SCHEME="00" CONTENT_TYPE="CTEX" NB_BITS_PER_CHAR="7" />
+            <TestStep Id="CREATE_SMS" DEVICE="PHONE1" EQT="FROM_CTX:AGILENT8960_SIMULATOR_VISA_2G" SMS_TEXT="FROM_TC:SMS_TEXT" PHONE_NUMBER="FROM_TC:PHONE_NUMBER" TRANSPORTATION="GSM" SMS_TRANSFER_TIMEOUT="FROM_TC:TEST_DURATION" SMS_DIRECTION="MO" SMS="SMS_2G" CODING_SCHEME="00" CONTENT_TYPE="CTEX" NB_BITS_PER_CHAR="7" />
+        </Setup>
+        <RunTest>
+            <TestStep SetId="ClearSms" EQT="FROM_CTX:AGILENT8960_SIMULATOR_VISA_2G" DEVICE="PHONE1" />
+            <!-- Check phone registration on 2G cell -->
+            <TestStep SetId="CheckRegistration2" EQT="FROM_CTX:AGILENT8960_SIMULATOR_VISA_2G" FEATURE="2G" DEVICE="PHONE1" TIMEOUT="FROM_DEVICE:PHONE1:registrationTimeout"/>
+            <!-- Check Data connection -->
+            <TestStep Id="NS_WAIT_STATE" NAME="ConnectionStatus" EQT="FROM_CTX:AGILENT8960_SIMULATOR_VISA_2G" STATE="PDP" OPTION="DEFAULT" TIMEOUT="FROM_DEVICE:PHONE1:registrationTimeout" />
+            <!-- Enable Flight Mode -->
+            <TestStep Id="SET_FLIGHT_MODE" DEVICE="PHONE1" FLIGHT_MODE="enable" />
+            <TestStep Id="SUSPEND" DURATION_IN_SEC="30"/>
+            <!-- Launch voice call (it shall be failed) -->
+            <TestStep Id="INITIATE_VOICE_CALL" DEVICE="PHONE1" NUMBER_TO_CALL="FROM_TC:PHONE_NUMBER" VC_TYPE="CIRCUIT" EXPECTED_RESULT="FAILED"/>
+            <!-- Set 3G Cell on -->
+            <TestStep Id="NS_SET_PARAM" EQT="FROM_CTX:AGILENT8960_SIMULATOR_VISA_3G" NAME="SetCellOnOff" OPTION="DEFAULT" VALUE="CALL"/>
+            <!-- Disable Flight Mode -->
+            <TestStep Id="SET_FLIGHT_MODE" DEVICE="PHONE1" FLIGHT_MODE="disable" />
+            <!-- Check phone registration on 3G cell -->
+            <TestStep SetId="CheckRegistration2" EQT="FROM_CTX:AGILENT8960_SIMULATOR_VISA_3G" FEATURE="3G" DEVICE="PHONE1" TIMEOUT="FROM_DEVICE:PHONE1:registrationTimeout"/>
+            <!-- Check Data connection -->
+            <TestStep Id="NS_WAIT_STATE" NAME="ConnectionStatus" EQT="FROM_CTX:AGILENT8960_SIMULATOR_VISA_3G" STATE="PDP" OPTION="DEFAULT" TIMEOUT="FROM_DEVICE:PHONE1:registrationTimeout" />
+            <!-- Launch Voice call (it shall be successful) -->
+            <TestStep Id="INITIATE_VOICE_CALL" DEVICE="PHONE1" NUMBER_TO_CALL="FROM_TC:PHONE_NUMBER" VC_TYPE="CIRCUIT"/>
+            <!-- Release voice call -->
+            <TestStep Id="RELEASE_VOICE_CALL" DEVICE="PHONE1" CALL_TO_RELEASE="ALL"/>
+            <!-- Enable flight mode -->
+            <TestStep Id="SET_FLIGHT_MODE" DEVICE="PHONE1" FLIGHT_MODE="enable" />
+            <TestStep Id="SUSPEND" DURATION_IN_SEC="30"/>
+            <!-- Send MO SMS (shall be failed) -->
+            <TestStep Id="SEND_SMS" SMS="SMS_3G" EXPECTED_RESULT="FAILED"/>
+            <!-- Set 3G Cell Off -->
+            <TestStep Id="NS_SET_PARAM" EQT="FROM_CTX:AGILENT8960_SIMULATOR_VISA_3G" NAME="SetCellOnOff" OPTION="DEFAULT" VALUE="OFF"/>
+            <!-- Disable Flight Mode -->
+            <TestStep Id="SET_FLIGHT_MODE" DEVICE="PHONE1" FLIGHT_MODE="disable" />
+            <!-- Check phone registration on 2G cell -->
+            <TestStep SetId="CheckRegistration2" EQT="FROM_CTX:AGILENT8960_SIMULATOR_VISA_2G" FEATURE="2G" DEVICE="PHONE1" TIMEOUT="FROM_DEVICE:PHONE1:registrationTimeout"/>
+            <!-- Check Data connection -->
+            <TestStep Id="NS_WAIT_STATE" NAME="ConnectionStatus" EQT="FROM_CTX:AGILENT8960_SIMULATOR_VISA_2G" STATE="PDP" OPTION="DEFAULT" TIMEOUT="FROM_DEVICE:PHONE1:registrationTimeout" />
+            <!-- Send a MO SMS and check it it has been received -->
+            <TestStep SetId="SendSMS" SMS="SMS_2G" EQT="FROM_CTX:AGILENT8960_SIMULATOR_VISA_2G"/>
+        </RunTest>
+        <TearDown>
+            <TestStep SetId="AllCommsOff" DEVICE="PHONE1"/>
+            <TestStep Id="NS_SET_PARAM" EQT="FROM_CTX:AGILENT8960_SIMULATOR_VISA_2G" NAME="SetCellOnOff" OPTION="DEFAULT" VALUE="OFF"/>
+            <TestStep Id="NS_SET_PARAM" EQT="FROM_CTX:AGILENT8960_SIMULATOR_VISA_3G" NAME="SetCellOnOff" OPTION="DEFAULT" VALUE="OFF"/>
+        </TearDown>
+    </TestSteps>
+</TestCase>

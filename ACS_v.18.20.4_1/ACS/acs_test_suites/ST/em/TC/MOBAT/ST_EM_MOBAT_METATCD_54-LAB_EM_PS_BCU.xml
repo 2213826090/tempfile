@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase>
+    <UseCase>LAB_EM_PS_BCU</UseCase>
+    <Description>Energy Management BCU vbatt drop test.</Description>
+    <b2bIteration>1</b2bIteration>
+    <TcMaxAttempt>2</TcMaxAttempt>
+    <TcAcceptanceCriteria>1</TcAcceptanceCriteria>
+    <b2bContinuousMode>False</b2bContinuousMode>
+    <Parameters>
+        <Parameter>
+            <!-- Battery voltage at the beginning of the test -->
+            <Name>VBATT</Name>
+            <Value>3.8</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Battery voltage drop to trigger the BCU -->
+            <Name>VBATT_DROP</Name>
+            <Value>3.1</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Duration of the drop in seconds it should be upper than 0.35s-->
+            <Name>DROP_DURATION</Name>
+            <Value>0.5</Value>
+        </Parameter>
+        <Parameter>
+            <!-- If "True", the board is rebooted at the end of the test-->
+            <Name>REBOOT_AFTER_TEST</Name>
+            <Value>True</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

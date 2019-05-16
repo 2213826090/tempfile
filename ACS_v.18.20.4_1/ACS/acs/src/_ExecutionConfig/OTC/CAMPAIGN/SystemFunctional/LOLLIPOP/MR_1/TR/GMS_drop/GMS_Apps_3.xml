@@ -1,0 +1,171 @@
+<?xml version='1.0' encoding='ASCII'?>
+<Campaign version="13.49">
+    <Parameters>
+        <Parameter isControlledPSUsed="False"/>
+        <Parameter isIoCardUsed="False"/>
+        <!-- Set skipBootOnPowerCycle to True to disable the accs boot procedure -->
+        <!-- Important, it means that boot will be handle inside the campaign/tc -->
+        <Parameter skipBootOnPowerCycle="False"/>
+        <!-- Set bootRetryNumber to maximum number of boot retries during the acs boot procedure -->
+        <!-- Important, it means that bootRetryNumber is set by default to 0 if not specified -->
+        <Parameter bootRetryNumber="0"/>
+        <Parameter runHookScripts="False"/>
+        <Parameter powerCycleBetweenTC="False"/>
+        <Parameter powerCycleOnFailure="False"/>
+        <!-- finalDutState allows user to leave the DUT in a specific state at the end of the campaign
+            Possible values: PowerOn | PowerOff | Charging | NoChange
+            By default DUT is leaved in NoChange state.
+            In case the user selects Charging as final state of the DUT and that DUT fails to enter Charging,
+            ACS shall try to switch the DUT off -->
+        <Parameter finalDutState="NoChange"/>
+        <Parameter stopCampaignOnCriticalFailure="False"/>
+        <Parameter stopCampaignOnFirstFailure="False"/>
+        <!-- LoggingLevel possible values: info | warning | debug | error -->
+        <Parameter loggingLevel="debug"/>
+        <!-- CampaignType format -> <TEAM>_<CAMPAIGNTYPE>
+            Possible values:
+            FT(Feature Team)-> SANITY | REGRESSION | STRESS, RELIABILTY | MTBF
+            ST(System Test)-> SANITY | REGRESSION | STRESS, RELIABILTY | MTBF | EM
+            SI(System Integration)-> EAT | STAB | PACT | CAT0 | RELIABILITY | MTBF | CTS | ACS_CI
+            Otherwise "Others" should be used -->
+        <Parameter CampaignType="MTBF"/>
+    </Parameters>
+    <Targets>
+        <!-- Target Values -->
+        <Target targetB2bPassRate="100"/>
+    </Targets>
+    <TestCases>
+        <!-- Before running these tests, connect DUT to a stable Wi-Fi network.
+            Also, ARTIFACT_MANAGER equipment with URI value="https://mcg-depot.intel.com/artifactory/acs_test_artifacts/"
+            must exist in bench config -->
+
+        <TestCase Id="../../../../../../TC/TR/ACS/Applications/Chrome/prereq_ConnectToAP"/>
+
+        <!-- Uninstall/stop all updates for GMS apps and reboot device (auto3test) -->
+        <TestCase Id="../../../../../../TC/TR/ACS/Applications/Applications_L_MR1/prerequisites/prereq_UNINSTALL_ALL_UPDATES"/>
+        <TestCase Id="../../../../../../TC/TR/ACS/Applications/Applications_L_MR1/prerequisites/prereq_GMS_Reboot_Device" TcMaxAttempt="2"/>
+            <!-- if launcher is uninstalled, tutorial appears on the screen, so skip it if found -->
+            <TestCase Id="../../../../../../TC/TR/ACS/Applications/Applications_L_MR1/prerequisites/prereq_SKIP_LAUNCHER_TUTORIAL"/>
+
+        <!-- The test cases for GMS Play Newsstand (auto3test) -->
+        <TestCase Id="../../../../../../TC/TR/ACS/Applications/Applications_L_MR1/GMS_PlayNewsstand_Downloaded-only" TcMaxAttempt="2"/>
+        <TestCase Id="../../../../../../TC/TR/ACS/Applications/Applications_L_MR1/GMS_PlayNewsstand_Lock-screen-when-read-News" TcMaxAttempt="2"/>
+        <TestCase Id="../../../../../../TC/TR/ACS/Applications/Applications_L_MR1/GMS_PlayNewsstand_Search-newsstand" TcMaxAttempt="2"/>
+        <TestCase Id="../../../../../../TC/TR/ACS/Applications/Applications_L_MR1/GMS_PlayNewsstand_Explore" TcMaxAttempt="2"/>
+        <TestCase Id="../../../../../../TC/TR/ACS/Applications/Applications_L_MR1/GMS_PlayNewsstand_Open-a-newsstand-for-reading" TcMaxAttempt="2"/>
+        <TestCase Id="../../../../../../TC/TR/ACS/Applications/Applications_L_MR1/GMS_PlayNewsstand_Read-Now-page" TcMaxAttempt="2"/>
+        <TestCase Id="../../../../../../TC/TR/ACS/Applications/Applications_L_MR1/GMS_PlayNewsstand_Add-newsstand-in-My-Library" TcMaxAttempt="2"/>
+        <TestCase Id="../../../../../../TC/TR/ACS/Applications/Applications_L_MR1/GMS_PlayNewsstand_Remove-News-from-My-Library" TcMaxAttempt="2"/>
+        <TestCase Id="../../../../../../TC/TR/ACS/Applications/Applications_L_MR1/GMS_PlayNewsstand_Move-a-News-to-top" TcMaxAttempt="2"/>
+        <TestCase Id="../../../../../../TC/TR/ACS/Applications/Applications_L_MR1/GMS_PlayNewsstand_Mini-cards" TcMaxAttempt="2"/>
+        <TestCase Id="../../../../../../TC/TR/ACS/Applications/Applications_L_MR1/GMS_PlayNewsstand_Bookmarks-an-article-to-read-later" TcMaxAttempt="2"/>
+        <TestCase Id="../../../../../../TC/TR/ACS/Applications/Applications_L_MR1/GMS_PlayNewsstand_Turn-on-airplane-mode-when-read-a-news" TcMaxAttempt="2"/>
+        <!-- the previous airplane mode test may break the ap connection -->
+        <TestCase Id="../../../../../../TC/TR/ACS/Applications/Chrome/prereq_ConnectToAP"/>
+
+        <!-- The test cases for Google Plus (auto3test) -->
+        <TestCase Id="../../../../../../TC/TR/ACS/Applications/Applications_L_MR1/GMS_GooglePlus_Create-an-event" TcMaxAttempt="2"/>
+        <TestCase Id="../../../../../../TC/TR/ACS/Applications/Applications_L_MR1/GMS_GooglePlus_Add-a-link" TcMaxAttempt="2"/>
+        <TestCase Id="../../../../../../TC/TR/ACS/Applications/Applications_L_MR1/GMS_GooglePlus_Add-location" TcMaxAttempt="2"/>
+        <TestCase Id="../../../../../../TC/TR/ACS/Applications/Applications_L_MR1/GMS_GooglePlus_Post-a-message" TcMaxAttempt="2"/>
+
+        <!-- The test cases for Sheets (auto3test) -->
+        <TestCase Id="../../../../../../TC/TR/ACS/Applications/Applications_L_MR1/GMS_Sheets_Search-sheet-file" TcMaxAttempt="2"/>
+        <TestCase Id="../../../../../../TC/TR/ACS/Applications/Applications_L_MR1/GMS_Sheets_Sort-sheet-files" TcMaxAttempt="2"/>
+        <TestCase Id="../../../../../../TC/TR/ACS/Applications/Applications_L_MR1/GMS_Sheets_Keep-on-device-for-a-sheet-file" TcMaxAttempt="2"/>
+        <TestCase Id="../../../../../../TC/TR/ACS/Applications/Applications_L_MR1/GMS_Sheets_Rename-a-sheet-file" TcMaxAttempt="2"/>
+        <TestCase Id="../../../../../../TC/TR/ACS/Applications/Applications_L_MR1/GMS_Sheets_add-multiple-sheets-in-a-spreadsheet-file" TcMaxAttempt="2"/>
+
+        <!-- The test cases for GMS Play Books (go4intel/auto2test) -->
+        <TestCase Id="../../../../../../TC/TR/ACS/Applications/Applications_L_MR1/GMS_PlayBooks_My-Library-books" TcMaxAttempt="2"/>
+        <TestCase Id="../../../../../../TC/TR/ACS/Applications/Applications_L_MR1/GMS_PlayBooks_Switch-between-diferent-view-mode" TcMaxAttempt="2"/>
+        <TestCase Id="../../../../../../TC/TR/ACS/Applications/Applications_L_MR1/GMS_PlayBooks_Cancel--note" TcMaxAttempt="2"/>
+        <TestCase Id="../../../../../../TC/TR/ACS/Applications/Applications_L_MR1/GMS_PlayBooks_Search-web" TcMaxAttempt="2"/>
+        <TestCase Id="../../../../../../TC/TR/ACS/Applications/Applications_L_MR1/GMS_PlayBooks_Open-a-book-for-reading" TcMaxAttempt="2"/>
+        <TestCase Id="../../../../../../TC/TR/ACS/Applications/Applications_L_MR1/GMS_PlayBooks_Settings-page-from-app" TcMaxAttempt="2"/>
+        <TestCase Id="../../../../../../TC/TR/ACS/Applications/Applications_L_MR1/GMS_PlayBooks_Settings-page-from-book" TcMaxAttempt="2"/>
+        <TestCase Id="../../../../../../TC/TR/ACS/Applications/Applications_L_MR1/GMS_PlayBooks_Remove-bookmark" TcMaxAttempt="2"/>
+        <TestCase Id="../../../../../../TC/TR/ACS/Applications/Applications_L_MR1/GMS_PlayBooks_Add-bookmark" TcMaxAttempt="2"/>
+        <TestCase Id="../../../../../../TC/TR/ACS/Applications/Applications_L_MR1/GMS_PlayBooks_Share-book" TcMaxAttempt="2"/>
+        <TestCase Id="../../../../../../TC/TR/ACS/Applications/Applications_L_MR1/GMS_PlayBooks_Check-Book-search" TcMaxAttempt="2"/>
+        <TestCase Id="../../../../../../TC/TR/ACS/Applications/Applications_L_MR1/GMS_PlayBooks_Adjust--brightness-for-reading" TcMaxAttempt="2"/>
+
+         <!-- The test cases for GMS HANGOUTS (auto2test)-->
+        <TestCase Id="../../../../../../TC/TR/ACS/Applications/Applications_L_MR1/GMS_Hangouts_Leave-Hangout-from-a-group" TcMaxAttempt="2"/>
+
+        <TestCase Id="../../../../../../TC/TR/ACS/Applications/Applications_L_MR1/prerequisites/prereq_GMS_Reboot_Device" TcMaxAttempt="2"/>
+
+        <!-- The test cases for GMS Play Movies and TV (auto2test)-->
+        <TestCase Id="../../../../../../TC/TR/ACS/Applications/Applications_L_MR1/GMS_PlayMoviesAndTV_Download-a-video" TcMaxAttempt="2"/>
+        <TestCase Id="../../../../../../TC/TR/ACS/Applications/Applications_L_MR1/GMS_PlayMoviesAndTV_Remove-download-movie" TcMaxAttempt="2"/>
+        <TestCase Id="../../../../../../TC/TR/ACS/Applications/Applications_L_MR1/GMS_PlayMoviesAndTV_On-Device-page" TcMaxAttempt="2"/>
+        <TestCase Id="../../../../../../TC/TR/ACS/Applications/Applications_L_MR1/GMS_PlayMoviesAndTV_My-Movies-page" TcMaxAttempt="2"/>
+        <TestCase Id="../../../../../../TC/TR/ACS/Applications/Applications_L_MR1/GMS_PlayMoviesAndTV_Search-video" TcMaxAttempt="2"/>
+        <TestCase Id="../../../../../../TC/TR/ACS/Applications/Applications_L_MR1/GMS_PlayMoviesAndTV_Shop-Option" TcMaxAttempt="2"/>
+        <TestCase Id="../../../../../../TC/TR/ACS/Applications/Applications_L_MR1/GMS_PlayMoviesAndTV_play-movie-while-airplane-mode-is-on" TcMaxAttempt="2"/>
+        <!-- the previous airplane mode test may break the ap connection -->
+        <TestCase Id="../../../../../../TC/TR/ACS/Applications/Chrome/prereq_ConnectToAP"/>
+
+        <!-- The test cases for GMS Calendar (auto2test) -->
+        <TestCase Id="../../../../../../TC/TR/ACS/Applications/Applications_L_MR1/GMS_Calendar_Add-event-title" TcMaxAttempt="2"/>
+        <TestCase Id="../../../../../../TC/TR/ACS/Applications/Applications_L_MR1/GMS_Calendar_Add-event-without-title" TcMaxAttempt="2"/>
+        <TestCase Id="../../../../../../TC/TR/ACS/Applications/Applications_L_MR1/GMS_Calendar_Delete-event" TcMaxAttempt="2"/>
+        <TestCase Id="../../../../../../TC/TR/ACS/Applications/Applications_L_MR1/GMS_Calendar_Cancel-delete-event" TcMaxAttempt="2"/>
+        <TestCase Id="../../../../../../TC/TR/ACS/Applications/Applications_L_MR1/GMS_Calendar_Create-event-by-press-and-hold" TcMaxAttempt="2"/>
+        <TestCase Id="../../../../../../TC/TR/ACS/Applications/Applications_L_MR1/GMS_Calendar_Edit-event-date-time" TcMaxAttempt="2"/>
+
+        <!-- The test cases for GMS Gmail (auto2test) -->
+        <TestCase Id="../../../../../../TC/TR/ACS/Applications/Applications_L_MR1/GMS_Gmail_Reply-all" TcMaxAttempt="2"/>
+        <TestCase Id="../../../../../../TC/TR/ACS/Applications/Applications_L_MR1/GMS_Gmail_Send-gmail-from-draft" TcMaxAttempt="2"/>
+        <TestCase Id="../../../../../../TC/TR/ACS/Applications/Applications_L_MR1/GMS_Gmail_Forward-mail" TcMaxAttempt="2"/>
+        <TestCase Id="../../../../../../TC/TR/ACS/Applications/Applications_L_MR1/GMS_Gmail_Attach-different-file-formats-and-send" TcMaxAttempt="2"/>
+        <TestCase Id="../../../../../../TC/TR/ACS/Applications/Applications_L_MR1/GMS_Gmail_Remove-attachements" TcMaxAttempt="2"/>
+
+        <!-- The test cases for GMS Google Now (auto2test) -->
+        <TestCase Id="../../../../../../TC/TR/ACS/Applications/Applications_L_MR1/GMS_GoogleNow_Launch-Google-Now" TcMaxAttempt="2"/>
+        <TestCase Id="../../../../../../TC/TR/ACS/Applications/Applications_L_MR1/GMS_GoogleNow_Customize-Google-Now" TcMaxAttempt="2"/>
+        <!-- the previous tests may let the launcher tutorial on the screen, so skip it -->
+        <TestCase Id="../../../../../../TC/TR/ACS/Applications/Applications_L_MR1/prerequisites/prereq_SKIP_LAUNCHER_TUTORIAL"/>
+
+        <!-- The test cases for GMS Google PlayStore (auto2test) -->
+        <TestCase Id="../../../../../../TC/TR/ACS/Applications/Applications_L_MR1/GMS_PlayStore_install-app" TcMaxAttempt="2"/>
+        <TestCase Id="../../../../../../TC/TR/ACS/Applications/Applications_L_MR1/GMS_PlayStore_uninstall-apks" TcMaxAttempt="2"/>
+        <TestCase Id="../../../../../../TC/TR/ACS/Applications/Applications_L_MR1/GMS_PlayStore_update-app" TcMaxAttempt="2"/>
+        <TestCase Id="../../../../../../TC/TR/ACS/Applications/Applications_L_MR1/GMS_PlayStore_Apps-page" TcMaxAttempt="2"/>
+        <TestCase Id="../../../../../../TC/TR/ACS/Applications/Applications_L_MR1/GMS_PlayStore_Cancel-download" TcMaxAttempt="2"/>
+        <TestCase Id="../../../../../../TC/TR/ACS/Applications/Applications_L_MR1/GMS_PlayStore_Add-an-app-to-wishlist" TcMaxAttempt="2"/>
+        <TestCase Id="../../../../../../TC/TR/ACS/Applications/Applications_L_MR1/GMS_PlayStore_Add-a-game-in-wishlist" TcMaxAttempt="2"/>
+        <TestCase Id="../../../../../../TC/TR/ACS/Applications/Applications_L_MR1/GMS_PlayStore_Add-a-book-in-wishlist" TcMaxAttempt="2"/>
+        <TestCase Id="../../../../../../TC/TR/ACS/Applications/Applications_L_MR1/GMS_PlayStore_remove_the-app-from-wishlist" TcMaxAttempt="2"/>
+        <TestCase Id="../../../../../../TC/TR/ACS/Applications/Applications_L_MR1/GMS_PlayStore_Store-Home-page" TcMaxAttempt="2"/>
+        <TestCase Id="../../../../../../TC/TR/ACS/Applications/Applications_L_MR1/GMS_PlayStore_Search-app" TcMaxAttempt="2"/>
+        <TestCase Id="../../../../../../TC/TR/ACS/Applications/Applications_L_MR1/GMS_PlayStore_clear-the-search-history" TcMaxAttempt="2"/>
+        <TestCase Id="../../../../../../TC/TR/ACS/Applications/Applications_L_MR1/GMS_PlayStore_Settings-page" TcMaxAttempt="2"/>
+
+        <!-- The test cases for GMS Google Drive that require 2 accounts (auto3test+auto2test)-->
+        <TestCase Id="../../../../../../TC/TR/ACS/Applications/Applications_L_MR1/GMS_Drive_Switch-different-account-in-Drive" TcMaxAttempt="2"/>
+        <TestCase Id="../../../../../../TC/TR/ACS/Applications/Applications_L_MR1/GMS_Drive_Set-edit-permission-for-a-file-in-Drive" TcMaxAttempt="2"/>
+        <TestCase Id="../../../../../../TC/TR/ACS/Applications/Applications_L_MR1/GMS_Drive_Set-No-access-permission-for-a-file-in-Drive" TcMaxAttempt="2"/>
+        <TestCase Id="../../../../../../TC/TR/ACS/Applications/Applications_L_MR1/GMS_Drive_Share-file" TcMaxAttempt="2"/>
+        <TestCase Id="../../../../../../TC/TR/ACS/Applications/Applications_L_MR1/GMS_Drive_Send-link-for-file" TcMaxAttempt="2"/>
+
+        <!-- Remove Google account to not affect next tests-->
+        <!-- Java tests requiring google account should be placed before this prereq-->
+        <TestCase Id="../../../../../../TC/TR/ACS/Applications/Applications_L_MR1/prerequisites/prereq_REMOVE_GOOGLE_ACCOUNTS"/>
+
+        <TestCase Id="../../../../../../TC/TR/ACS/Applications/Applications_L_MR1/prerequisites/prereq_GMS_Reboot_Device" TcMaxAttempt="2"/>
+
+        <!-- The test cases for GMS Camera -->
+        <!-- following campaign contains tests with python UiAutomator-->
+        <SubCampaign Id="../../../../../Subcampaigns/ACS/Applications/Camera/GMS_Camera"/>
+
+        <!-- The test cases for GMS Photos -->
+        <!-- following campaign contains tests with python UiAutomator-->
+        <SubCampaign Id="../../../../../Subcampaigns/ACS/Applications/Photos/Photos"/>
+
+        <!-- The test cases for GMS LatinIME and PinyinIME -->
+        <!-- following campaign contains tests with python UiAutomator-->
+        <SubCampaign Id="../../../../../Subcampaigns/ACS/Applications/Keyboard/Google_Keyboard"/>
+
+    </TestCases>
+</Campaign>

@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='ASCII'?>
+<TestCase>
+    <UseCase>Testlib</UseCase>
+    <Description>Test Brillo watchdog functionality</Description>
+    <Description>Command: stop watchdogd</Description>
+    <Description>Result: device reboots after 90s</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <TcMaxAttempt>1</TcMaxAttempt>
+    <Parameters>
+        <Parameter>
+            <Name>test</Name>
+            <Value>scripts/brillo/tests/8.0_stop_watchdogd.py</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

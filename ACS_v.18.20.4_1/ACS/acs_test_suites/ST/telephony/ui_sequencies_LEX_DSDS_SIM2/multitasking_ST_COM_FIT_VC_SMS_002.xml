@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<UI_SEQ xsi:noNamespaceSchemaLocation="ACS_ANDROID_UI_CHECK.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <ACTION>
+    <!--Go back to home page-->
+    <CMD>go_home</CMD>
+    <TIMEOUT>1</TIMEOUT>
+  </ACTION>  
+   <ACTION>
+    <CMD>exec</CMD>
+    <PARAMETERS>start -a android.intent.action.Main -n com.android.phone/.Settings</PARAMETERS>
+    <TIMEOUT>1</TIMEOUT>
+  </ACTION>
+  <ACTION>
+    <CMD>wait</CMD>
+    <PARAMETERS>3</PARAMETERS>
+    <TIMEOUT />
+    <TRIG_LOG />
+  </ACTION> 
+   <ACTION>
+    <CMD>settings_toggle_preferred_radio_2G</CMD>
+    <TIMEOUT>5</TIMEOUT>
+    <TRIG_LOG>set preferred network type done</TRIG_LOG>
+  </ACTION>
+  <ACTION>
+    <CMD>keypress</CMD>
+    <PARAMETERS>KEYCODE_BACK</PARAMETERS>
+  </ACTION>
+    <ACTION>
+    <CMD>wait</CMD>
+    <PARAMETERS>30</PARAMETERS>
+    <TIMEOUT />
+    <TRIG_LOG />
+  </ACTION>    
+  <ACTION>
+    <!--Go back to home page-->
+    <CMD>go_home</CMD>
+    <TIMEOUT>1</TIMEOUT>
+  </ACTION>  
+   <ACTION>
+    <CMD>exec</CMD>
+    <PARAMETERS>start -a android.intent.action.CALL tel://0033493001498</PARAMETERS>
+    <TIMEOUT>10</TIMEOUT>
+	<TRIG_LOG>GET_CURRENT_CALLS_-_[id=1,ACTIVE</TRIG_LOG>
+  </ACTION>
+  <ACTION>
+    <CMD>open_sms_menu</CMD>
+    <TIMEOUT>1</TIMEOUT>
+  </ACTION>
+  <!-- sending a SMS of 160 characters-->
+  <ACTION>
+    <CMD>sms_send</CMD>
+    <PARAMETERS>0033629059145;aaaaaaaaaabbbbbbbbbbccccccccccaaaaaaaaaabbbbbbbbbbccccccccccaaaaaaaaaabbbbbbbbbbccccccccccaaaaaaaaaabbbbbbbbbbccccccccccaaaaaaaaaabbbbbbbbbbccccccccccdddddddddd</PARAMETERS>
+    <TIMEOUT>5</TIMEOUT>
+    <!--<TRIG_LOG>SMS send complete</TRIG_LOG>-->
+	<TRIG_LOG>SEND_SMS</TRIG_LOG>	
+  </ACTION>
+  <ACTION>
+    <CMD>wait</CMD>
+    <PARAMETERS>15</PARAMETERS>
+    <TIMEOUT></TIMEOUT>
+    <TRIG_LOG></TRIG_LOG>
+  </ACTION>  
+  <ACTION>
+		<CMD>keypress</CMD>
+		<PARAMETERS>KEYCODE_HOME</PARAMETERS>
+		<TIMEOUT>2</TIMEOUT>
+  </ACTION>
+  <ACTION>
+    <CMD>call_release</CMD>
+	<TIMEOUT>15</TIMEOUT>
+	<TRIG_LOG>onDisconnect: cause = LOCAL</TRIG_LOG> 
+  </ACTION>
+  <ACTION>
+    <CMD>wait</CMD>
+    <PARAMETERS>15</PARAMETERS>
+  </ACTION>   
+  <ACTION>
+    <!--Go back to home page-->
+    <CMD>go_home</CMD>
+    <TIMEOUT>1</TIMEOUT>
+  </ACTION>  
+  <ACTION>
+    <CMD>exec</CMD>
+    <PARAMETERS>start -a android.intent.action.Main -n com.android.phone/.Settings</PARAMETERS>
+    <TIMEOUT>1</TIMEOUT>
+  </ACTION>
+  <ACTION>
+    <CMD>settings_toggle_preferred_radio_2G</CMD>
+    <TIMEOUT>5</TIMEOUT>
+    <TRIG_LOG>set preferred network type done</TRIG_LOG>
+  </ACTION>
+  <ACTION>
+    <CMD>keypress</CMD>
+    <PARAMETERS>KEYCODE_BACK</PARAMETERS>
+  </ACTION>
+  <ACTION>
+    <CMD>wait</CMD>
+    <PARAMETERS>15</PARAMETERS>
+    <TIMEOUT />
+    <TRIG_LOG />
+  </ACTION>  
+  <ACTION>
+    <!--Go back to home page-->
+    <CMD>go_home</CMD>
+    <TIMEOUT>1</TIMEOUT>
+  </ACTION>    
+</UI_SEQ>

@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestSteps xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../acs/src/_Catalogs/TestStep/teststep.xsd">
+    <TestStep Id="RECEIVE_VOICE_CALL_LOOP" Domain="COMMS" SubDomain="VOICECALL" Feature="" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Comms.VoiceCall.ReceiveVoiceCallLoop.ReceiveVoiceCallLoop</ClassName>
+        <Description>Count and report via a context variable the number of times that incoming call notifications are received.  Test step answers the calls if ANSWER_CALL=True.</Description>
+        <Environment name="ANY"/>
+        <Parameters>
+            <Parameter name="TEST_DURATION" type="INTEGER" isOptional="false">
+                <Description>How long the step will run, in minutes, looking for incoming voice calls.</Description>
+                <PossibleValues/>
+                <DefaultValue>5</DefaultValue>
+            </Parameter>
+            <Parameter name="ANSWER_CALL" type="BOOLEAN" isOptional="false">
+                <Description>
+                To answer or not to answer?  When set to False, this test step merely counts the number of times it gets incoming call notifications.
+                When set to True, this test step counts the number of times it gets incoming call notification and is able to answer.
+                </Description>
+                <PossibleValues/>
+                <DefaultValue>False</DefaultValue>
+            </Parameter>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed.</Description>
+                <PossibleValues/>
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="DISCONNECTION_ALLOWANCE" type="INTEGER" isOptional="false">
+                <Description>Number of consecutive tolerable failing attempts at receiving an incoming call before failing the test step.</Description>
+                <PossibleValues/>
+                <DefaultValue>5</DefaultValue>
+            </Parameter>
+            <Parameter name="CALLS_RECEIVED" type="CONTEXT" isOptional="false">
+            <!-- Parameter to have isOptional="true" when the functionality becomes available. -->
+                <Description>
+                    <Key name="VOICE_CALLS_RECEIVED" type="STRING">
+                    Number of incoming calls received/answered.  Used for verification when, for example, forked with VOICE_CALL_INITIATE.
+                    A comparison of received versus initiated calls of the two test steps can be done using COMPARE test step with the WITHIN_BOUNDS operator.
+                    </Key>
+                </Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="INITIATE_VOICE_CALL_LOOP" Domain="COMMS" SubDomain="VOICECALL" Feature="" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Comms.VoiceCall.InitiateVoiceCallLoop.InitiateVoiceCallLoop</ClassName>
+        <Description>Initiate phone calls to another phone during test duration.  Call ends after call duration. How often the call is made is determined by call frequency.</Description>
+        <Environment name="ANY"/>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues/>
+                <DefaultValue>PHONE2</DefaultValue>
+            </Parameter>
+            <Parameter name="PHONE_NUMBER_TO_CALL" type="STRING" isOptional="false">
+                <Description>Phone number of the device to initiate voice call with.</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+            <Parameter name="TEST_DURATION" type="INTEGER" isOptional="false">
+                <Description>How long the step will run, in minutes, looking for incoming voice calls.</Description>
+                <PossibleValues/>
+                <DefaultValue>5</DefaultValue>
+            </Parameter>
+            <Parameter name="CALL_DURATION" type="INTEGER" isOptional="false">
+            <!-- Parameter to have isOptional="true" when the functionality becomes available. -->
+                <Description>
+                Number of seconds hold the phone call after it is initiated.  This parameter becomes especially important when, for example, forked with VOICE_CALL_RECEIVE because it is necessary to
+                wait a sufficient CALL_DURATION before VOICE_CALL_INITIATE hangs up in order to allow enough time for receiving device to start ringing, notice call as incoming and possibly answered.
+                </Description>
+                <PossibleValues/>
+                <DefaultValue>30</DefaultValue>
+            </Parameter>
+            <Parameter name="CALL_INTERVAL" type="INTEGER" isOptional="false">
+                <Description>Interval in seconds at which to wait after a call before initiating a new phone call.</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+            <Parameter name="DISCONNECTION_ALLOWANCE" type="INTEGER" isOptional="false">
+                <Description>Number of consecutive tolerable failing attempts at initiating a call before failing the test step.</Description>
+                <PossibleValues/>
+                <DefaultValue>5</DefaultValue>
+            </Parameter>
+            <Parameter name="CALLS_MADE" type="CONTEXT" isOptional="false">
+            <!-- Parameter to have isOptional="true" when the functionality becomes available. -->
+                <Description>
+                    <Key name="VOICE_CALLS_MADE" type="STRING">Number of calls made during test duration.  Used for verification when forked wtih VOICE_CALL_ANSWER.</Key>
+                </Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+            <Parameter name="GUI_LOCK_WAIT_TIME" type="INTEGER" isOptional="false">
+               <Description>How long in seconds the step will wait for gui focus lock file to be freed.  Focus lock file created to prevent other apps from taking focus.</Description>
+               <PossibleValues/>
+               <DefaultValue>120</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="GET_DEVICE_PHONE_NUMBER" Domain="COMMS" SubDomain="VOICECALL" Feature="" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Comms.VoiceCall.GetDevicePhoneNumber.GetDevicePhoneNumber</ClassName>
+        <Description>Try to get phone number of device from SIM card but use bench config number if not correctly read from SIM card.</Description>
+        <Environment name="ANY"/>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues/>
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="RETRIEVED_PHONE_NUMBER" type="CONTEXT" isOptional="false">
+                <Description>
+                    <Key name="PHONE_NUMBER" type="STRING">The phone number of the device, retrieved from this test step.</Key>
+                </Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+            <Parameter name="CHECK_SIM_CARD" type="BOOLEAN" isOptional="false">
+                <Description>If this is not a standard device, maybe we just want to get phone number from bench config.</Description>
+                <PossibleValues/>
+                <DefaultValue>True</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="INITIATE_VOICE_CALL" Domain="COMMS" SubDomain="VOICECALL" Feature="" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Comms.VoiceCall.InitiateVoiceCall.InitiateVoiceCall</ClassName>
+        <Description>Initiates a voice call</Description>
+        <Environment name="ANY" />
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+            <Parameter name="NUMBER_TO_CALL" type="STRING" isOptional="false">
+                <Description>Number to call</Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+            <Parameter name="VC_TYPE" type="STRING" isOptional="true">
+                <Description>Type of call</Description>
+                <PossibleValues>CIRCUIT;VOIP</PossibleValues>
+                <DefaultValue>CIRCUIT</DefaultValue>
+            </Parameter>
+            <Parameter name="EXPECTED_RESULT" type="STRING" isOptional="true">
+                <Description>Expected result</Description>
+                <PossibleValues>SUCCESS;FAILED</PossibleValues>
+                <DefaultValue>SUCCESS</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="RELEASE_VOICE_CALL" Domain="COMMS" SubDomain="VOICECALL" Feature="" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Comms.VoiceCall.ReleaseVoiceCall.ReleaseVoiceCall</ClassName>
+        <Description>Releases all voice calls</Description>
+        <Environment name="ANY" />
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+            <Parameter name="CALL_TO_RELEASE" type="STRING" isOptional="true">
+                <Description>Phone number of the call to release. Put "ALL" to release all calls.</Description>
+                <PossibleValues/>
+                <DefaultValue>ALL</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="RECEIVE_VOICE_CALL" Domain="COMMS" SubDomain="VOICECALL" Feature="" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Comms.VoiceCall.ReceiveVoiceCall.ReceiveVoiceCall</ClassName>
+        <Description>Answer a voice call.</Description>
+        <Environment name="ANY" />
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="WAIT_FOR_VOICE_CALL_STATE" Domain="COMMS" SubDomain="VOICECALL" Feature="" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Comms.VoiceCall.WaitForVoiceCallState.WaitForVoiceCallState</ClassName>
+        <Description>Wait up to [TIMEOUT] seconds for the device's voice call state to be [VC_STATE].</Description>
+        <Environment name="ANY" />
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+            <Parameter name="VC_STATE" type="STRING" isOptional="false">
+                <Description>The expected state of voice call</Description>
+                <PossibleValues>ACTIVE;ON_HOLD;DIALING;ALERTING;INCOMING;WAITING;DISCONNECTED;UNKNOWN;NOCALL</PossibleValues>
+                <DefaultValue />
+            </Parameter>
+            <Parameter name="TIMEOUT" type="INTEGER" isOptional="false">
+                <Description>Time in seconds to wait before raising an exception</Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="GET_VOICE_CALL_STATE" Domain="COMMS" SubDomain="VOICECALL" Feature="" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Comms.VoiceCall.GetVoiceCallState.GetVoiceCallState</ClassName>
+        <Description>Get current state of the voice call.</Description>
+        <Environment name="ANY" />
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+            <Parameter name="SAVE_AS" type="CONTEXT" isOptional="false">
+                <Description>
+                    <Key name="KEY_NAME_DEFINED_BY_USER" type="STRING">Name of the context variable where the value will be saved. Possible values: ACTIVE;ON_HOLD;DIALING;ALERTING;INCOMING;WAITING;DISCONNECTED;UNKNOWN;NOCALL</Key>
+                </Description>
+                <PossibleValues/>
+                <DefaultValue />
+            </Parameter>
+        </Parameters>
+    </TestStep>
+</TestSteps>

@@ -1,0 +1,24 @@
+<?xml version="1.0" ?>
+<TestCase>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters/>
+    <Discription>
+Provide streaming data for any streaming sensor which does not inhibit suspend/wake (jitter should be &amp;lt; 3% and latency &amp;lt; 10ms)
+</Discription>
+    <Parameters/>
+    <UseCase>PY_UNIT</UseCase>
+    <Parameters/>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <Parameters/>
+    <b2bIteration>1</b2bIteration>
+    <Parameters>
+        <Parameter>
+            <Name>TEST_DATA_ROOT</Name>
+            <Value>testplan/Sensor</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TEST_CASE</Name>
+            <Value>tests.Sensor.Fusion_Sensor.gravity_streaming. gravity_streaming.test_ gravity_streaming</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

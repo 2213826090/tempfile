@@ -1,0 +1,129 @@
+{
+    "Configuration": {
+        "Boot": {
+            "ADB_ENUMERATION_FALLBACK": {"unknown": "main"},
+            "ADB_WITH_USER_BUILD": false,
+            "COS_CHECK_INIT_SVC_CHARGER_APP": false,
+            "MODEM": false,
+            "MOS_CHECK_INIT_SVC_BOOTANIM": true,
+            "MOS_CHECK_INIT_SVC_ENCRYPT": true,
+            "PKP_5S": false,
+            "SHELL_IN_ROS": false,
+            "UEFI_VARS": "rsci_table"
+        },
+        "BootVars": {
+            "BOOT_DATA_CHECK": true,
+            "COS_CHECK_AFTER_GRACEFUL_SHUTDOWN": "reset_source=00;reset_type=02;wake_source=02;shutdown_source=00",
+            "COS_CHECK_AFTER_HARD_SHUTDOWN": "reset_source=00;reset_type=02;wake_source=02;shutdown_source=00",
+            "COS_CHECK_AFTER_REBOOT": "reset_source=01;reset_type=02;wake_source=00;shutdown_source=00",
+            "MOS_CHECK_AFTER_BOOT": "reset_source=00;reset_type=02;wake_source=04;shutdown_source=00",
+            "MOS_CHECK_AFTER_KERNEL_WATCHDOG": "reset_source=04;reset_type=01;wake_source=00;shutdown_source=00",
+            "MOS_CHECK_AFTER_REBOOT": "reset_source=01;reset_type=02;wake_source=00;shutdown_source=00",
+            "MOS_CHECK_AFTER_REBOOT_FROM_POS": null,
+            "MOS_CHECK_AFTER_SECURITY_WATCHDOG": null,
+            "MOS_CHECK_AFTER_WATCHDOG_FALLBACK": null,
+            "POS_CHECK_AFTER_REBOOT": null,
+            "ROS_CHECK_AFTER_REBOOT": "reset_source=01;reset_type=01;wake_source=00;shutdown_source=00",
+            "ROS_CHECK_AFTER_WATCHDOG": "reset_source=04;reset_type=02;wake_source=00;shutdown_source=00"
+        },
+        "Custom": null,
+        "Download": {
+            "INTERNAL_DOWNLOAD": [
+                {
+                    "pft_key": "fastboot",
+                    "buildbot_artifactory_path": {"path": "device_name_id/variant_id", "detection": "cactus-absp"},
+                    "regexp_key": ".*flashfiles.*.zip",
+                    "flash_file": null,
+                    "configuration": "recover",
+                    "start_state": "dnx"
+                },
+                {
+                    "pft_key": "ota",
+                    "buildbot_artifactory_path": {"path": "device_name_id/variant_id", "detection": "cactus-absp"},
+                    "regexp_key": ".*ota.*.zip",
+                    "flash_file": null,
+                    "configuration": null,
+                    "start_state": "mos"
+                }
+            ]
+        },
+        "Flash": {
+            "CHECK_FASTBOOT": false,
+            "CHECK_GET_HASHES": {
+                "algorithm": null,
+                "list": [
+                    "/bootloader/loader.efi",
+                    "/boot",
+                    "/recovery",
+                    "/bootloader/EFI/BOOT/bootx64.efi"
+                ]
+            },
+            "CHECK_OSLOADER": false,
+            "CHECK_RECOVERY": false,
+            "DEDIPROG": {
+                "ifwi_size": 8,
+                "start_os": "dnx"
+            },
+            "FULL_OTA_LOCAL_FLASH_FILE": "Extras/flashOtaPreRecovery.json",
+            "INCREMENTAL_OTA_LOCAL_FLASH_FILE": "Extras/flashOtaPreRecovery.json",
+            "PARTITIONS": "/factory;/(oem_)*config;/cache;/system"
+        },
+        "Inherit": {
+            "BRANCH": null
+        },
+        "Logs": {
+            "CRASHLOGS": true,
+            "LOG_PATH": "/data/logs"
+        },
+        "Timeout": {
+            "BOOT_TIMEOUT": 200,
+            "COS_BOOT": 30,
+            "MOS_BOOT": 80,
+            "PKPOFF": 12,
+            "POS_BOOT": 30,
+            "ROS_BOOT": 30,
+            "TIMEOUT_TOLERANCE": 35
+        },
+        "WorkAround": {
+            "Function": [
+                {
+                    "Issue": "No BIOS in flashfiles",
+                    "Name": "__ifwi_check",
+                    "Pattern": ".*"
+                },
+                {
+                    "Issue": "no adb in fastboot",
+                    "Name": "fastboot2adb",
+                    "Pattern": ".*"
+                },
+                {
+                    "Issue": "no adb in fastboot",
+                    "Name": "adb2fastboot",
+                    "Pattern": ".*"
+                }
+            ],
+            "Step": {
+                "Issue": "Warning interupt issue",
+                "Name": "MosCheckAfterKernelWatchdogStep",
+                "Pattern": "reset_source=\\(actual: 01, expected: 04\\) reset_type=\\(actual: 02, expected: 01\\) shutdown_source=00 wake_source=00"
+            },
+            "TC": {
+                "Issue": "Not applicable on IMIN",
+                "Name": "PUPDR_SPID_CHECK",
+                "Skip": true
+            },
+            "TestCase": [
+                {
+                    "Issue": "Not applicable on IMIN",
+                    "Name": "KernelWatchdogTestCase",
+                    "Skip": true
+                },
+                {
+                    "Issue": "Not applicable on IMIN",
+                    "Name": "WatchdogFallBackPolicyTestCase",
+                    "Skip": true
+                }
+            ]
+        }
+    }
+}

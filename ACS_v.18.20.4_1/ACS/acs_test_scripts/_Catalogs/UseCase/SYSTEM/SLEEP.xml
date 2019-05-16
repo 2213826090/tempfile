@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<UseCases xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:noNamespaceSchemaLocation="../../../../acs/src/_Catalogs/UseCase/usecase.xsd">
+    <UseCase Id="LIVE_SYSTEM_SLEEP_USB_WAKE" Domain="SYSTEM" SubDomain="SLEEP" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.System.LIVE_SYSTEM_SLEEP_USB_WAKE.LiveSystemSleepUsbWake</ClassName>
+        <Description>Sleep with USB plug wake-up in s3 mode only</Description>
+        <Environment name="SYS_SLEEP">
+            <Dependency>EQT_USB_RLY08</Dependency>
+            <Dependency>CAP_SWITCH_ON_OFF</Dependency>
+            <Dependency>CAP_USB_HOST_PC_ON_OFF</Dependency>
+            <Dependency>CAP_WALL_CHARGER_ON_OFF</Dependency>
+        </Environment>
+    </UseCase>
+    <UseCase Id="LIVE_SYSTEM_SLEEP_ALARM_WAKE" Domain="SYSTEM" SubDomain="SLEEP" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.System.LIVE_SYSTEM_SLEEP_ALARM_WAKE.LiveSystemSleepAlarmWake</ClassName>
+        <Description>Sleep with alarm wake-up in s3 mode only</Description>
+        <Environment name="SYS_SLEEP">
+            <Dependency>EQT_USB_RLY08</Dependency>
+            <Dependency>CAP_SWITCH_ON_OFF</Dependency>
+            <Dependency>CAP_USB_HOST_PC_ON_OFF</Dependency>
+            <Dependency>CAP_WALL_CHARGER_ON_OFF</Dependency>
+        </Environment>
+    </UseCase>
+    <UseCase Id="LIVE_SYSTEM_SLEEP_PWR_BUTTON_WAKE" Domain="SYSTEM" SubDomain="SLEEP" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.System.LIVE_SYSTEM_SLEEP_PWR_BUTTON_WAKE.LiveSystemSleepPowerButtonWake</ClassName>
+        <Description>Sleep with power button wake-up in s3 mode only</Description>
+        <Environment name="SYS_SLEEP">
+            <Dependency>EQT_USB_RLY08</Dependency>
+            <Dependency>CAP_SWITCH_ON_OFF</Dependency>
+            <Dependency>CAP_USB_HOST_PC_ON_OFF</Dependency>
+            <Dependency>CAP_WALL_CHARGER_ON_OFF</Dependency>
+        </Environment>
+    </UseCase>
+    <UseCase Id="LAB_SYSTEM_SLEEP_MT_VC_WAKE" Domain="SYSTEM" SubDomain="SLEEP" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.System.LAB_SYSTEM_SLEEP_MT_VC_WAKE.LabSystemSleepMtVcWake</ClassName>
+        <Description>Sleep with MT voice call wake-up in s3 mode only</Description>
+        <Environment name="SYS_SLEEP">
+            <Dependency>EQT_AG_8960</Dependency>
+            <Dependency>EQT_USB_RLY08</Dependency>
+            <Dependency>CAP_SWITCH_ON_OFF</Dependency>
+            <Dependency>CAP_USB_HOST_PC_ON_OFF</Dependency>
+            <Dependency>CAP_WALL_CHARGER_ON_OFF</Dependency>
+        </Environment>
+    </UseCase>
+    <UseCase Id="LIVE_SYSTEM_SLEEP_RESIDENCY_MEASUREMENT" Domain="SYSTEM" SubDomain="SLEEP" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.System.LIVE_SYSTEM_SLEEP_RESIDENCY_MEASUREMENT.LiveSystemSleepResidencyMeasurement</ClassName>
+        <Description>Measure sleep mode residency</Description>
+        <Environment name="SYS_SLEEP">
+            <Dependency>EQT_USB_RLY08</Dependency>
+            <Dependency>CAP_SWITCH_ON_OFF</Dependency>
+            <Dependency>CAP_USB_HOST_PC_ON_OFF</Dependency>
+            <Dependency>CAP_WALL_CHARGER_ON_OFF</Dependency>
+        </Environment>
+    </UseCase>
+    <UseCase Id="LAB_SYSTEM_SLEEP_MT_VC_RESIDENCY_MEASUREMENT" Domain="SYSTEM" SubDomain="SLEEP" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.System.LAB_SYSTEM_SLEEP_MT_VC_RESIDENCY_MEASUREMENT.LabSystemSleepMtVcResidencyMeasurement</ClassName>
+        <Description>Measure sleep mode residency during MT voice call</Description>
+        <Environment name="SYS_SLEEP">
+            <Dependency>EQT_AG_8960</Dependency>
+            <Dependency>EQT_USB_RLY08</Dependency>
+            <Dependency>CAP_SWITCH_ON_OFF</Dependency>
+            <Dependency>CAP_USB_HOST_PC_ON_OFF</Dependency>
+            <Dependency>CAP_WALL_CHARGER_ON_OFF</Dependency>
+        </Environment>
+    </UseCase>
+    <UseCase Id="LAB_SYSTEM_SLEEP_WIFI_ON" Domain="SYSTEM" SubDomain="SLEEP" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.System.LAB_SYSTEM_SLEEP_WIFI_ON.LabSystemSleepWifiOn</ClassName>
+        <Description>Sleep with wifi on in s0i3/s3 mode</Description>
+        <Environment name="SYS_SLEEP">
+            <Dependency>EQT_USB_RLY08</Dependency>
+            <Dependency>CAP_SWITCH_ON_OFF</Dependency>
+            <Dependency>CAP_USB_HOST_PC_ON_OFF</Dependency>
+            <Dependency>EQT_LAB_AP</Dependency>
+        </Environment>
+    </UseCase>
+    <UseCase Id="LAB_SYSTEM_SLEEP_WIFI_WAKE" Domain="SYSTEM" SubDomain="SLEEP" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.System.LAB_SYSTEM_SLEEP_WIFI_WAKE.LabSystemSleepWifiWake</ClassName>
+        <Description>Sleep with wifi wake-up in s0i3/s3 mode</Description>
+        <Environment name="SYS_SLEEP">
+            <Dependency>EQT_USB_RLY08</Dependency>
+            <Dependency>CAP_SWITCH_ON_OFF</Dependency>
+            <Dependency>CAP_USB_HOST_PC_ON_OFF</Dependency>
+            <Dependency>EQT_LAB_AP</Dependency>
+        </Environment>
+    </UseCase>
+    <UseCase Id="LIVE_SYSTEM_STRESS_BTN" Domain="SYSTEM" SubDomain="SLEEP" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.System.LIVE_SYSTEM_STRESS_BTN.LiveSystemStressButton</ClassName>
+        <Description>Measure sleep mode residency</Description>
+        <Environment name="SYS_SLEEP">
+            <Dependency>EQT_USB_RLY08</Dependency>
+            <Dependency>CAP_SWITCH_ON_OFF</Dependency>
+            <Dependency>CAP_USB_HOST_PC_ON_OFF</Dependency>
+            <Dependency>CAP_WALL_CHARGER_ON_OFF</Dependency>
+        </Environment>
+    </UseCase>
+    <UseCase Id="LIVE_SYSTEM_IPC_SLEEP_RESIDENCY_MEASUREMENT" Domain="SYSTEM" SubDomain="MISC" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.System.LIVE_SYSTEM_IPC_SLEEP_RESIDENCY_MEASUREMENT.LiveSystemIpcSleepResidencyMeasurement</ClassName>
+        <Description>Check the IPC sleep residency.</Description>
+        <Environment name="ANY">
+        </Environment>
+    </UseCase>
+</UseCases>

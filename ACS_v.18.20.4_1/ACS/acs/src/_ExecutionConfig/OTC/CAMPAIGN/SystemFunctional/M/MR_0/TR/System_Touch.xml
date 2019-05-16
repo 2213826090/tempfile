@@ -1,0 +1,56 @@
+<?xml version='1.0' encoding='ASCII'?>
+<Campaign version="13.49">
+    <Parameters>
+        <Parameter isControlledPSUsed="False"/>
+        <Parameter isIoCardUsed="False"/>
+        <!-- Set skipBootOnPowerCycle to True to disable the accs boot procedure -->
+        <!-- Important, it means that boot will be handle inside the campaign/tc -->
+        <Parameter skipBootOnPowerCycle="False"/>
+        <!-- Set bootRetryNumber to maximum number of boot retries during the acs boot procedure -->
+        <!-- Important, it means that bootRetryNumber is set by default to 0 if not specified -->
+        <Parameter bootRetryNumber="0"/>
+        <Parameter runHookScripts="False"/>
+        <Parameter powerCycleBetweenTC="False"/>
+        <Parameter powerCycleOnFailure="False"/>
+        <!-- finalDutState allows user to leave the DUT in a specific state at the end of the campaign
+            Possible values: PowerOn | PowerOff | Charging | NoChange
+            By default DUT is leaved in NoChange state.
+            In case the user selects Charging as final state of the DUT and that DUT fails to enter Charging,
+            ACS shall try to switch the DUT off -->
+        <Parameter finalDutState="NoChange"/>
+        <Parameter stopCampaignOnCriticalFailure="False"/>
+        <Parameter stopCampaignOnFirstFailure="False"/>
+        <!-- LoggingLevel possible values: info | warning | debug | error -->
+        <Parameter loggingLevel="debug"/>
+        <!-- CampaignType format -> <TEAM>_<CAMPAIGNTYPE>
+            Possible values:
+            FT(Feature Team)-> SANITY | REGRESSION | STRESS, RELIABILTY | MTBF
+            ST(System Test)-> SANITY | REGRESSION | STRESS, RELIABILTY | MTBF | EM
+            SI(System Integration)-> EAT | STAB | PACT | CAT0 | RELIABILITY | MTBF | CTS | ACS_CI
+            Otherwise "Others" should be used -->
+        <Parameter CampaignType="MTBF"/>
+        <Parameter TCRReportViaRESTAPI="True"/>
+    </Parameters>
+    <Targets>
+        <!-- Target Values -->
+        <Target targetB2bPassRate="100"/>
+    </Targets>
+    <TestCases>
+        <TestCase Id="../../../../../TC/TR/DeviceSetup/prereq_ConnectToAP"/>
+        <!-- ensure connection to internet -->
+        <TestCase Id="../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/touch_screen/System_Touch_getFaketouchStatus"/>
+        <TestCase Id="../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/touch_screen/System_Touch_getTouchscreenPresence"/>
+        <TestCase Id="../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/touch_screen/System_Touch_getTouchscreenType"/>
+        <TestCase Id="../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/touch_screen/System_Touch_testTouchScreenApiFeatures"/>
+        <TestCase Id="../../../../../TC/TR/ACS/System/Touch/System_Touch_checkAdbShellGetEventOutputWhenScreenOnButNoTouchOperations"/>
+        <TestCase Id="../../../../../TC/TR/ACS/System/Touch/M-dessert/System_Touch_openNotificationArea"/>
+        <TestCase Id="../../../../../TC/TR/ACS/System/Touch/M-dessert/System_Touch_touchscreenGesturesLongPress"/>
+        <!-- the previous tests may let the launcher tutorial on the screen, so skip it -->
+        <TestCase Id="../../../../../TC/TR/ACS/Applications/Applications_M/prerequisites/prereq_SKIP_LAUNCHER_TUTORIAL"/>
+        <!-- these tests should be at the end of campaign because they use python uiautomator and block the next tests-->
+        <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/SystemTouch/System_Touch_touchscreenGesturesSwipe"/>
+        <!-- use chrome to test zoom, so fetch the chromedriver binary from artifactory -->
+        <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Chrome/prerequisites/prereq_Get_chromedriver_from_ACS_download_dir"/>
+        <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/SystemTouch/System_Touch_touchscreenGesturesZoom"/>
+    </TestCases>
+</Campaign>

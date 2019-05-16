@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase>
+    <UseCase>LAB_AUDIO_WCDMA_VC_RECORDTONES</UseCase>
+    <Description>Check the presence of recording tones during recorded WCDMA Mobile Originated Call on simulated network</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <Parameters>
+        <Parameter>
+            <!-- Keep the recorded audio file whether the test result is good or not (TRUE|FALSE) -->
+            <Name>KEEP_RECORD</Name>
+            <Value>TRUE</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Cell Band (from Band 1 to Band 8) -->
+            <Name>CELL_BAND</Name>
+            <Value>1</Value>
+        </Parameter>
+        <Parameter>
+            <!--Cell Service (CIRCUIT | PACKET | CIRCUIT_PACKET | RBTEST) -->
+            <Name>CELL_SERVICE</Name>
+            <Value>CIRCUIT</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Downlink UARFCN Frequency -->
+            <Name>DL_UARFCN</Name>
+            <Value>10700</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Voice NARROWBAND coder rate, possible values:
+
+                - FR_AMR_NB_1220
+                - FR_AMR_NB_1020
+                - FR_AMR_NB_795
+                - FR_AMR_NB_740
+                - FR_AMR_NB_670
+                - FR_AMR_NB_590
+                - FR_AMR_NB_515
+                - FR_AMR_NB_475
+
+                Voice WIDEBAND coder rate, possible values::
+
+                AMR_WB_2385 | AMR_WB_2305 | AMR_WB_1985 | AMR_WB_1825
+                AMR_WB_1585 | AMR_WB_1425 | AMR_WB_1265 | AMR_WB_885
+                AMR_WB_660
+            -->
+            <Name>CODEC</Name>
+            <Value>FR_AMR_NB_1220</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Voice call type (MO [Mobile Originated]|MT [Mobile Terminated]) -->
+            <Name>VC_TYPE</Name>
+            <Value>MT</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Phone number to dial -->
+            <Name>PHONE_NUMBER</Name>
+            <Value>1234</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Audio file to play containing silence -->
+            <Name>AUDIO_FILE</Name>
+            <Value>em01_s001_NBn_no_speech.wav</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Audio file to play containing speech-->
+            <Name>AUDIO_FILE_SPEECH</Name>
+            <Value>em01_s001_NBn_less_speech.wav</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Type of container -->
+            <Name>CONTAINER</Name>
+            <Value>.3gp</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Source input for the audio recorder (1 = MIC / 2 = VOICE_DL / 3 = VOICE_UL / 4 = VOICE_CALL)-->
+            <Name>SOURCE_INPUT</Name>
+            <Value>4</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Audio Codec bitrate for the audio recorder in kbps-->
+            <Name>REC_CODEC</Name>
+            <Value>AMR_NB</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Audio Codec bitrate for the audio recorder in kbps-->
+            <Name>REC_BITRATE</Name>
+            <Value>12200</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Sample rate of the audio file to play -->
+            <Name>SAMPLERATE</Name>
+            <Value>8000</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Number of channel in the audio file (Mono = 1 / Stereo = 2) -->
+            <Name>CHANNELNUM</Name>
+            <Value>1</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Time in second between 2 recording tones -->
+            <Name>TONE_PERIODICITY</Name>
+            <Value>10</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Fundamental frequency of recording tones in Hz-->
+            <Name>TONE_FREQUENCY</Name>
+            <Value>1000</Value>
+        </Parameter>
+        <Parameter>
+            <!-- DTX enabling status -->
+            <Name>DTX</Name>
+            <Value>OFF</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

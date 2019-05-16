@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase>
+    <UseCase>TEST_STEP_ENGINE</UseCase>
+    <Description>Reference Test Case for Wlan Standby comsumption</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <SavePatRawData>True</SavePatRawData>
+    <TcMaxAttempt>1</TcMaxAttempt>
+    <PowerCalculation>False</PowerCalculation>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters>
+        <Parameter>
+            <Name>SAVE_POWER_DATA</Name>
+            <Value>True</Value>
+        </Parameter>
+        <Parameter>
+            <Name>MODE</Name>
+            <Value>s3</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Sleep duration before making the measure in seconds -->
+            <Name>SLEEP_DURATION</Name>
+            <Value>60</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Sleep time before 1st iteration, or all for b2bContinuousMode = False -->
+            <Name>TEST_DURATION</Name>
+            <Value>300</Value>
+        </Parameter>
+        <Parameter>
+             <Name>SYSDEBUG_MODULES</Name>
+             <Value>
+                Residency: s3,s0i3,s0i1,lpmp3;
+                S3Failure;
+                ActiveWakeupSource;
+                WakeLocks;
+                Alarms;
+                IrqWakeups;
+                ModemPanic;
+                CrashInfo;
+                Thermals;
+                Dstates;
+                Interrupts;
+            </Value>
+        </Parameter>
+        <Parameter>
+            <Name>TEST_STEP_ENGINE_ENTRY</Name>
+            <Value>ST/pnp/UC/StandbyWlan.xml</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

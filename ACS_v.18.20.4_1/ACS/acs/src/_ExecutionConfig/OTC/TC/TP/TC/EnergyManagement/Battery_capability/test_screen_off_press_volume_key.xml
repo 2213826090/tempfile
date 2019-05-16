@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<TestCase>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Discription>
+Power on - Screen is off - Long press volume + key or volume - key - check screen
+</Discription>
+    <Domain>EnergyManagement</Domain>
+    <Phase>CORE</Phase>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <Type>FUNCTIONAL</Type>
+    <UseCase>PY_UNIT</UseCase>
+    <b2bIteration>1</b2bIteration>
+    <Parameters>
+        <Parameter>
+            <Name>HpalmName</Name>
+            <Value>screen_off_press_volume_key.ScreenOffPressVolumeKey.test_screen_off_press_volume_key</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TEST_DATA_ROOT</Name>
+            <Value>testplan/EnergyManagement</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TEST_CASE</Name>
+            <Value>tests.EnergyManagement.Battery_capability.screen_off_press_volume_key.ScreenOffPressVolumeKey.test_screen_off_press_volume_key</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

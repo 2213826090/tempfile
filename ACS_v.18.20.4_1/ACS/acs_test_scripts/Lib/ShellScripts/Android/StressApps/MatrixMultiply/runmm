@@ -1,0 +1,53 @@
+#!/system/bin/sh
+# $Id: runmm,v 1.3 2005/10/20 21:20:58 tfcreela Exp $
+
+dir=`dirname $0`
+
+echo "================================================================"	| tee -a $dir/mm$1.tmp
+echo "Matrix Multiply Test 1.0, instance # $1"				| tee -a $dir/mm$1.tmp
+echo "Intel DEG Compatibility Validation"				| tee -a $dir/mm$1.tmp
+echo "======================== start the test  ======================="	| tee -a $dir/mm$1.tmp
+
+echo -n "Start test at: "| tee -a $dir/mm$1.tmp
+date| tee -a $dir/mm$1.tmp
+echo "-------------------------------------------"| tee -a $dir/mm$1.tmp
+cp $dir/mm$1.tmp $dir/mm$1.log
+echo "true" > $dir/mm_logic
+
+while [ `cat $dir/mm_logic` == "true" ] ; do
+	echo "mm -n" | tee -a $dir/mm$1.log
+	./$dir/mm_static -n | tee -a $dir/mm$1.log
+	wait
+	echo "mm -u 8" | tee -a $dir/mm$1.log
+	./$dir/mm_static -u 8 | tee -a $dir/mm$1.log
+	wait
+	echo "mm -t" | tee -a $dir/mm$1.log
+	./$dir/mm_static -t 
+	wait
+	echo "mm -b 32"| tee -a $dir/mm$1.log
+	./$dir/mm_static -b 32 | tee -a $dir/mm$1.log
+	wait
+	echo "mm -m 20"| tee -a $dir/mm$1.log
+	./$dir/mm_static -m 20| tee -a $dir/mm$1.log
+	wait
+	echo "mm -p " | tee -a $dir/mm$1.log
+	./$dir/mm_static -p | tee -a $dir/mm$1.log
+	wait
+	echo "mm -v" | tee -a $dir/mm$1.log
+	./$dir/mm_static -v | tee -a $dir/mm$1.log
+	wait
+	echo "mm -i" | tee -a $dir/mm$1.log
+	./$dir/mm_static -i | tee -a $dir/mm$1.log
+	wait
+	echo "mm -w 50"| tee -a $dir/mm$1.log
+	./$dir/mm_static -w 50 | tee -a $dir/mm$1.log
+	wait
+	echo "mm -w 20 " | tee -a $dir/mm$1.log
+	./$dir/mm_static -w 20 | tee -a $dir/mm$1.log
+	wait
+	echo "-------------------------------------------"
+	cp $dir/mm$1.tmp $dir/mm$1.log
+	echo -n "Time is: " 				  | tee -a $dir/mm$1.log
+	date 						  | tee -a $dir/mm$1.log
+	echo "-------------------------------------------"| tee -a $dir/mm$1.log
+done

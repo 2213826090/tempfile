@@ -1,0 +1,30 @@
+<?xml version="1.0" ?>
+<Campaign>
+      <Parameters>
+            <Parameter isControlledPSUsed="False"/>
+            <Parameter isIoCardUsed="False"/>
+            <Parameter skipBootOnPowerCycle="False"/>
+            <Parameter bootRetryNumber="0"/>
+            <Parameter runHookScripts="False"/>
+            <Parameter powerCycleBetweenTC="False"/>
+            <Parameter powerCycleOnFailure="False"/>
+            <Parameter finalDutState="NoChange"/>
+            <Parameter stopCampaignOnCriticalFailure="False"/>
+            <Parameter stopCampaignOnFirstFailure="False"/>
+            <Parameter loggingLevel="debug"/>
+            <Parameter CampaignType="Other"/>
+      </Parameters>
+      <TestCases>
+            <TestCase Id="../../../../../TC/TR/ATF_TESTS/SETUP/ConnectToAP_Prereq"/>
+            <!--<TestCase Id="../../../../../TC/TR/ACS/Communication/GPS/Configure_System_GPS_On_Off"/>-->
+            <TestCase Id="../../../../../TC/TR/ACS/Communication/GPS/GPS_HIGH_ACCURACY"/>
+            <TestCase Id="../../../../../TC/TR/ACS/Communication/GPS/Comms_GPS_receiverSensitivityAndNumberOfVisibleSatellitesIndoor" TcMaxAttempt="2"/>
+            <TestCase Id="../../../../../TC/TR/ACS/Communication/GPS/Comms_GPS_locationStatusInQuickSettingsVsMainSettings" TcMaxAttempt="2"/>
+            <TestCase Id="../../../../../TC/TR/ACS/Communication/GPS/Comms_GPS_GPSPositioningWhenWifiIsConnectedAndStayIndoors" TcMaxAttempt="2"/>
+            <TestCase Id="../../../../../TC/TR/ACS/Communication/GPS/Comms_GPS_networkPositioningWhenWifiIsConnectedAndStayIndoors" TcMaxAttempt="2"/>
+            <TestCase Id="../../../../../TC/TR/ACS/Communication/GPS/Comms_GPS_turnOnOffLocationServiceAndCheckIfSettingIsObeyed" TcMaxAttempt="2"/>
+            <TestCase Id="../../../../../TC/TR/ACS/Communication/GPS/Comms_GPS_theDownloadingFileWouldNotPreventShowingYourLocationBatterySavingAndWifiConnected" TcMaxAttempt="2"/>
+            <TestCase Id="../../../../../TC/TR/ACS/Communication/GPS/Comms_GPS_networkPositioningWhenWifiIsDisconnectedAndStayIndoors" TcMaxAttempt="2"/>
+            <TestCase Id="../../../../../TC/TR/ACS/Communication/GPS/Comms_GPS_GPSPositioningWhenWifiIsDisconnectedAndStayIndoors" TcMaxAttempt="2"/>
+      </TestCases>
+</Campaign>

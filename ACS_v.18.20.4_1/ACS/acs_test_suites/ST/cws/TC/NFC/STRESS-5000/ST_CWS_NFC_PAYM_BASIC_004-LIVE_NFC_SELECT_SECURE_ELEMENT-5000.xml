@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase>
+  <UseCase>LIVE_NFC_SELECT_SECURE_ELEMENT</UseCase>
+  <Description>Check Smartcard can use embedded/UICC secure element or be disabled</Description>
+  <b2bIteration>5000</b2bIteration>
+  <b2bContinuousMode>False</b2bContinuousMode>
+  <Parameters>
+    <Parameter>
+      <!-- Define the sequence of secure element that will be used enabling Smartcard feature -->
+      <Name>SE_SELECTION_SEQUENCE</Name>
+      <Value>DISABLED;UICC</Value>
+    </Parameter>
+  </Parameters>
+</TestCase>

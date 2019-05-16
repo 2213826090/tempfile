@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Campaign>
+    <Parameters>
+        <Parameter isControlledPSUsed="False"/>
+        <Parameter isIoCardUsed="False"/>
+        <!-- Set skipBootOnPowerCycle to True to disable the acs boot procedure -->
+        <!-- Important, it means that boot will be handle inside the campaign/tc -->
+        <Parameter skipBootOnPowerCycle="False"/>
+        <Parameter runHookScripts="False"/>
+        <Parameter powerCycleBetweenTC="False"/>
+        <Parameter powerCycleOnFailure="False"/>
+        <Parameter finalPowerOff="False"/>
+        <Parameter finalDutState="NoChange"/>
+        <Parameter stopCampaignOnCriticalFailure="False"/>
+        <Parameter stopCampaignOnFirstFailure="False"/>
+        <!-- LoggingLevel possible values: info | warning | debug | error -->
+        <Parameter loggingLevel="info"/>
+        <!-- CampaignType format -> <TEAM>_<CAMPAIGNTYPE>
+            Possible values:
+            FT(Feature Team)-> SANITY | REGRESSION | STRESS, RELIABILTY | MTBF
+            ST(System Test)-> SANITY | REGRESSION | STRESS, RELIABILTY | MTBF
+            SI(System Integration)-> EAT | STAB | PACT | CAT0 | RELIABILITY | MTBF
+            Otherwise "Others" should be used -->
+        <Parameter CampaignType="ST_REGRESSION"/>
+        <Parameter TCRReportViaRESTAPI="true"/>
+    </Parameters>
+    <Targets>
+        <!-- Target Values -->
+        <Target targetB2bPassRate="100"/>
+    </Targets>
+    <TestCases>
+
+        <!-- Basic Tests -->
+        <TestCase Id="../TC/NFC/STRESS-200/ST_CWS_NFC_P2P_032-LIVE_NFC_TURN_ON_OFF-200"/>
+        <TestCase Id="../TC/NFC/ST_CWS_NFC_RW_LIBTAG_SPOSTER_001-LAB_NFC_HOST_READER_MODE"/>
+
+        <TestCase Id="../TC/NFC/STRESS-200/ST_CWS_NFC_P2P_032-LIVE_NFC_TURN_ON_OFF-200"/>
+        <TestCase Id="../TC/NFC/ST_CWS_NFC_RW_LIBTAG_TXT_001-LAB_NFC_HOST_READER_MODE"/>
+
+        <TestCase Id="../TC/NFC/STRESS-200/ST_CWS_NFC_P2P_032-LIVE_NFC_TURN_ON_OFF-200"/>
+        <TestCase Id="../TC/NFC/ST_CWS_NFC_RW_LIBTAG_URI_001-LAB_NFC_HOST_READER_MODE"/>
+
+        <TestCase Id="../TC/NFC/STRESS-200/ST_CWS_NFC_P2P_032-LIVE_NFC_TURN_ON_OFF-200"/>
+        <TestCase Id="../TC/NFC/ST_CWS_NFC_RW_M1K_BEAM_ENABLED_001-LAB_NFC_HOST_READER_MODE"/>
+
+        <TestCase Id="../TC/NFC/STRESS-200/ST_CWS_NFC_P2P_032-LIVE_NFC_TURN_ON_OFF-200"/>
+        <TestCase Id="../TC/NFC/ST_CWS_NFC_RW_M1K_LOCKED_001-LAB_NFC_HOST_READER_MODE"/>
+
+        <TestCase Id="../TC/NFC/STRESS-200/ST_CWS_NFC_P2P_032-LIVE_NFC_TURN_ON_OFF-200"/>
+        <TestCase Id="../TC/NFC/ST_CWS_NFC_RW_M1K_OVERFLOW_001-LAB_NFC_HOST_READER_MODE"/>
+
+        <TestCase Id="../TC/NFC/STRESS-200/ST_CWS_NFC_P2P_032-LIVE_NFC_TURN_ON_OFF-200"/>
+        <TestCase Id="../TC/NFC/ST_CWS_NFC_RW_M1K_RANDOM_CONTENT_001-LAB_NFC_HOST_READER_MODE"/>
+
+        <TestCase Id="../TC/NFC/STRESS-200/ST_CWS_NFC_P2P_032-LIVE_NFC_TURN_ON_OFF-200"/>
+        <TestCase Id="../TC/NFC/ST_CWS_NFC_RW_M1K_SPOSTER_001-LAB_NFC_HOST_READER_MODE"/>
+
+        <TestCase Id="../TC/NFC/STRESS-200/ST_CWS_NFC_P2P_032-LIVE_NFC_TURN_ON_OFF-200"/>
+        <TestCase Id="../TC/NFC/ST_CWS_NFC_RW_M1K_TXT_001_001-LAB_NFC_HOST_READER_MODE"/>
+
+        <TestCase Id="../TC/NFC/STRESS-200/ST_CWS_NFC_P2P_032-LIVE_NFC_TURN_ON_OFF-200"/>
+        <TestCase Id="../TC/NFC/ST_CWS_NFC_RW_M1K_URI_001-LAB_NFC_HOST_READER_MODE"/>
+
+        <TestCase Id="../TC/NFC/STRESS-200/ST_CWS_NFC_P2P_032-LIVE_NFC_TURN_ON_OFF-200"/>
+        <TestCase Id="../TC/NFC/ST_CWS_NFC_RW_M4K_SPOSTER_001-LAB_NFC_HOST_READER_MODE"/>
+
+        <TestCase Id="../TC/NFC/STRESS-200/ST_CWS_NFC_P2P_032-LIVE_NFC_TURN_ON_OFF-200"/>
+        <TestCase Id="../TC/NFC/ST_CWS_NFC_RW_M4K_TXT_001-LAB_NFC_HOST_READER_MODE"/>
+
+        <TestCase Id="../TC/NFC/STRESS-200/ST_CWS_NFC_P2P_032-LIVE_NFC_TURN_ON_OFF-200"/>
+        <TestCase Id="../TC/NFC/ST_CWS_NFC_RW_M4K_URI_001-LAB_NFC_HOST_READER_MODE"/>
+
+        <TestCase Id="../TC/NFC/STRESS-200/ST_CWS_NFC_P2P_032-LIVE_NFC_TURN_ON_OFF-200"/>
+        <TestCase Id="../TC/NFC/ST_CWS_NFC_RW_MUL_SPOSTER_001-LAB_NFC_HOST_READER_MODE"/>
+
+        <TestCase Id="../TC/NFC/STRESS-200/ST_CWS_NFC_P2P_032-LIVE_NFC_TURN_ON_OFF-200"/>
+        <TestCase Id="../TC/NFC/ST_CWS_NFC_RW_MUL_TXT_001-LAB_NFC_HOST_READER_MODE"/>
+
+        <TestCase Id="../TC/NFC/STRESS-200/ST_CWS_NFC_P2P_032-LIVE_NFC_TURN_ON_OFF-200"/>
+        <TestCase Id="../TC/NFC/ST_CWS_NFC_RW_MUL_URI_001-LAB_NFC_HOST_READER_MODE"/>
+
+        <TestCase Id="../TC/NFC/STRESS-200/ST_CWS_NFC_P2P_032-LIVE_NFC_TURN_ON_OFF-200"/>
+        <TestCase Id="../TC/NFC/ST_CWS_NFC_RW_T1_SPOSTER_001-LAB_NFC_HOST_READER_MODE"/>
+
+        <TestCase Id="../TC/NFC/STRESS-200/ST_CWS_NFC_P2P_032-LIVE_NFC_TURN_ON_OFF-200"/>
+        <TestCase Id="../TC/NFC/ST_CWS_NFC_RW_T1_TXT_001-LAB_NFC_HOST_READER_MODE"/>
+
+        <TestCase Id="../TC/NFC/STRESS-200/ST_CWS_NFC_P2P_032-LIVE_NFC_TURN_ON_OFF-200"/>
+        <TestCase Id="../TC/NFC/ST_CWS_NFC_RW_T1_URI_001-LAB_NFC_HOST_READER_MODE"/>
+
+        <TestCase Id="../TC/NFC/STRESS-200/ST_CWS_NFC_P2P_032-LIVE_NFC_TURN_ON_OFF-200"/>
+        <TestCase Id="../TC/NFC/ST_CWS_NFC_RW_T3_SPOSTER_001-LAB_NFC_HOST_READER_MODE"/>
+
+        <TestCase Id="../TC/NFC/STRESS-200/ST_CWS_NFC_P2P_032-LIVE_NFC_TURN_ON_OFF-200"/>
+        <TestCase Id="../TC/NFC/ST_CWS_NFC_RW_T3_TXT_001-LAB_NFC_HOST_READER_MODE"/>
+
+        <TestCase Id="../TC/NFC/STRESS-200/ST_CWS_NFC_P2P_032-LIVE_NFC_TURN_ON_OFF-200"/>
+        <TestCase Id="../TC/NFC/ST_CWS_NFC_RW_T3_URI_001-LAB_NFC_HOST_READER_MODE"/>
+
+        <TestCase Id="../TC/NFC/STRESS-200/ST_CWS_NFC_P2P_032-LIVE_NFC_TURN_ON_OFF-200"/>
+        <TestCase Id="../TC/NFC/ST_CWS_NFC_RW_T4A_SPOSTER_001-LAB_NFC_HOST_READER_MODE"/>
+
+        <TestCase Id="../TC/NFC/STRESS-200/ST_CWS_NFC_P2P_032-LIVE_NFC_TURN_ON_OFF-200"/>
+        <TestCase Id="../TC/NFC/ST_CWS_NFC_RW_T4A_TXT_001-LAB_NFC_HOST_READER_MODE"/>
+
+        <TestCase Id="../TC/NFC/STRESS-200/ST_CWS_NFC_P2P_032-LIVE_NFC_TURN_ON_OFF-200"/>
+        <TestCase Id="../TC/NFC/ST_CWS_NFC_RW_T4A_URI_001-LAB_NFC_HOST_READER_MODE"/>
+
+        <TestCase Id="../TC/NFC/STRESS-200/ST_CWS_NFC_P2P_032-LIVE_NFC_TURN_ON_OFF-200"/>
+        <TestCase Id="../TC/NFC/ST_CWS_NFC_RW_T4B_SPOSTER_001-LAB_NFC_HOST_READER_MODE"/>
+
+        <TestCase Id="../TC/NFC/STRESS-200/ST_CWS_NFC_P2P_032-LIVE_NFC_TURN_ON_OFF-200"/>
+        <TestCase Id="../TC/NFC/ST_CWS_NFC_RW_T4B_TXT_001-LAB_NFC_HOST_READER_MODE"/>
+
+        <TestCase Id="../TC/NFC/STRESS-200/ST_CWS_NFC_P2P_032-LIVE_NFC_TURN_ON_OFF-200"/>
+        <TestCase Id="../TC/NFC/ST_CWS_NFC_RW_T4B_URI_001-LAB_NFC_HOST_READER_MODE"/>
+
+    </TestCases>
+</Campaign>

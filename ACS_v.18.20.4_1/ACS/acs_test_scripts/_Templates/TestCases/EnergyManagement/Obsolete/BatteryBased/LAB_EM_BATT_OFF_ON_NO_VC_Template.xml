@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="13.45">
+    <UseCase>LAB_EM_BATT_OFF_ON_NO_VC</UseCase>
+    <Description>battery monitoring - OFF ON cycle</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>False</b2bContinuousMode>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters>
+        <Parameter>
+            <!-- minimal capacity limit for battery discharging from 0% to 100% -->
+            <Name>BATT_MIN_CAPACITY</Name>
+            <Value>0</Value>
+        </Parameter>
+        <Parameter>
+            <!-- maximal capacity limit for battery charging from 0% to 100% or 'full' -->
+            <Name>BATT_MAX_CAPACITY</Name>
+            <Value>100</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Charging time before reading information from board in seconds -->
+            <Name>CHARGE_TIME</Name>
+            <Value>300</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Discharging time before reading information from board in seconds -->
+            <Name>DISCHARGE_TIME</Name>
+            <Value>150</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Phone way to reboot : SOFT for programming shutdown |HARD for button press -->
+            <Name>REBOOT_MODE</Name>
+            <Value>SOFT</Value>
+        </Parameter>
+        <Parameter>
+            <!-- OPTIONAL PARAMETER Temperature Chamber Temperature in °C, its use require that a temperature chamber is present. -->
+            <Name>TCT</Name>
+            <Value></Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

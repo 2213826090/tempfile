@@ -1,0 +1,128 @@
+{
+    "Configuration": {
+        "Boot": {
+            "ADB_ENUMERATION_FALLBACK": {"normal": "main"},
+            "COS_CHECK_INIT_SVC_CHARGER_APP": false,
+            "GVB_ACTIVATION": false,
+            "FASTBOOT_TARGET": "fastboot",
+            "MODEM": false,
+            "ARCH": "sofia",
+            "PKP_5S": false,
+            "WATCHDOGD_ENABLED": true,
+            "ROS_CHECK_INIT_SVC_RECOVERY": false,
+            "BOOT_COS_ON_FORCED_SHUTDOWN_PLUG": true
+        },
+        "BootVars": {
+            "BOOT_DATA_CHECK": false,
+            "COS_CHECK_AFTER_GRACEFUL_SHUTDOWN": null,
+            "COS_CHECK_AFTER_HARD_SHUTDOWN": null,
+            "COS_CHECK_AFTER_REBOOT": null,
+            "MOS_CHECK_AFTER_BOOT": null,
+            "MOS_CHECK_AFTER_KERNEL_WATCHDOG": null,
+            "MOS_CHECK_AFTER_REBOOT": null,
+            "MOS_CHECK_AFTER_REBOOT_FROM_POS": null,
+            "MOS_CHECK_AFTER_SECURITY_WATCHDOG": null,
+            "MOS_CHECK_AFTER_WATCHDOG_FALLBACK": null,
+            "POS_CHECK_AFTER_REBOOT": null,
+            "ROS_CHECK_AFTER_REBOOT": null,
+            "ROS_CHECK_AFTER_WATCHDOG": null
+        },
+        "Custom": null,
+        "Download": {
+            "INTERNAL_DOWNLOAD": [
+                {
+                    "pft_key": "fastboot",
+                    "buildbot_artifactory_path": {"path": "device_name_id/variant_id", "detection": "cactus-absp"},
+                    "regexp_key": ".*flashfiles.*.zip",
+                    "flash_file": null,
+                    "configuration": null,
+                    "start_state": "dnx"
+                },
+                {
+                    "local_key": "ota",
+                    "buildbot_artifactory_path": {"path": "device_name_id/variant_id", "detection": "cactus-absp"},
+                    "regexp_key": ".*ota-.*.zip",
+                    "flash_file": null,
+                    "configuration": null,
+                    "start_state": "mos"
+                }
+            ],
+            "USER_DOWNLOAD": []
+        },
+        "Flash": {
+            "CHECK_FASTBOOT": false,
+            "CHECK_OSLOADER": false,
+            "CHECK_RECOVERY": false,
+            "CHECK_GET_HASHES": null,
+            "DEDIPROG": false,
+            "FORCE_FLASH_ALGO" : ["force_shutdown_during_PFT_execution", "sofia_imei_flashing"],
+            "PARTITIONS": "/cache;/system;/data",
+            "UEFI": false,
+            "UPDATE_CONFIGURATION": "fastboot_config"
+        },
+        "Inherit": {
+            "BRANCH": null
+        },
+        "Logs": {
+            "CRASHLOGS": false
+        },
+        "Timeout": {
+            "ADB_ROOT_TIMEOUT": 120,
+            "BOOT_TIMEOUT": 800,
+            "MOS_BOOT": 120,
+            "WATCHDOG_EXPIRATION": 100,
+            "PKPON": 5
+        },
+        "WorkAround": {
+            "Function": {
+                "Issue": "Not applicable on Sofia",
+                "Name": "__ifwi_check",
+                "Pattern": ".*"
+            },
+            "TC": {
+                "Issue": "Not applicable on Sofia",
+                "Name": "PUPDR_SPID_CHECK",
+                "Skip": true
+            },
+            "TestCase": [
+                {
+                    "Issue": "Not applicable on Sofia",
+                    "Name": "KernelWatchdogTestCase",
+                    "Skip": true
+                },
+                {
+                    "Issue": "Not applicable on Sofia",
+                    "Name": "SecurityWatchdogTestCase",
+                    "Skip": true
+                },
+                {
+                    "Issue": "Not applicable on Sofia",
+                    "Name": "WatchdogFallBackPolicyTestCase",
+                    "Skip": true
+                }
+            ]
+        },
+        "TestDescription": {
+            "warnings": {
+                "PUPDR_FASTBOOT_REBOOTBOOTLOADER_POS|BOOTOTA - POS - FASTBOOT REBOOT BOOTLOADER": "OAM-4408: sometimes adb rebot did not respond",
+                "LAB_PUPDR_REBOOT_RECOVERY|BOOTOTA - ROS - ADB REBOOT IN ROS": "OAM-4408: sometimes adb rebot did not respond",
+                "LAB_PUPDR_ADB_REBOOT|BOOTOTA - MOS - ADB REBOOT IN MOS": "OAM-4408: sometimes adb rebot did not respond",
+                "LAB_PUPDR_OTA_FORWARD_FLASHING|BOOTOTA - FLASH -OTA FORWARD FLASHING": "OAM-4899: flashing OTA fail",
+                "LAB_PUPDR_SW_WD_DAEMON|BOOTOTA - WATCHDOG - SW WATCHDOG DAEMON": "OAM-5762: watchdogd process does not exist",
+                "PUPDR_PKP_2S_WITHOUT_SDP_MOS_BOOT|BOOTOTA - BOOT - PKP 2S WITHOUT USB": "OAM-3172: battery level is always zero"
+            },
+            "engineering": [
+                {
+                    "name": "default",
+                    "build_tag": "bootota_",
+                    "testing": [
+                        {
+                            "build_target": "r2_s3gr10m6s-userdebug",
+                            "campaign": "BOOTOTA_EAT"
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}

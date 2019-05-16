@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<Campaign>
+    <Parameters>
+        <Parameter isControlledPSUsed = "False"/>
+        <Parameter isIoCardUsed = "False"/>
+        <!-- Set skipBootOnPowerCycle to True to disable the accs boot procedure-->
+        <!-- Important, it means that boot will be handle inside the campaign/tc -->
+        <Parameter skipBootOnPowerCycle = "False"/>
+        <!-- Set bootRetryNumber to maximum number of boot retries during the acs boot procedure -->
+        <!-- Important, it means that bootRetryNumber is set by default to 0 if not specified -->
+        <Parameter bootRetryNumber = "0"/>
+        <Parameter runHookScripts = "False"/>
+        <Parameter powerCycleBetweenTC = "False"/>
+        <Parameter powerCycleOnFailure = "True"/>
+        <!-- finalDutState allows user to leave the DUT in a specific state at the end of the campaign
+        Possible values: PowerOn | PowerOff | Charging
+        By default DUT is leaved in PowerOff state.
+        In case the user selects Charging as final state of the DUT and that DUT fails to enter Charging,
+        ACS shall try to switch the DUT off -->
+        <Parameter finalDutState = "PowerOn"/>
+        <Parameter stopCampaignOnCriticalFailure = "False"/>
+        <Parameter stopCampaignOnFirstFailure = "False"/>
+        <!-- LoggingLevel possible values: info | warning | debug | error -->
+        <Parameter loggingLevel = "info"/>
+        <!-- CampaignType format -> <TEAM>_<CAMPAIGNTYPE>
+        Possible values:
+        FT(Feature Team)-> SANITY | REGRESSION | STRESS, RELIABILTY | MTBF
+        ST(System Test)-> SANITY | REGRESSION | STRESS, RELIABILTY | MTBF | EM
+        SI(System Integration)-> EAT | STAB | PACT | CAT0 | RELIABILITY | MTBF | CTS
+        Otherwise "Others" should be used -->
+        <Parameter CampaignType = "ST_MOBILITY"/>
+        <Parameter TCRReportViaRESTAPI="true"/>
+    </Parameters>
+
+    <Targets>
+        <!-- Target Values -->
+        <Target targetB2bPassRate ="100"/>
+    </Targets>
+
+    <TestCases>
+        <!-- SETUP -->
+        <TestCase Id="..\..\..\SI\BBot_EAT_PACT\TC\COMMON\SYSTEM\SI_SYSTEM_SETUP_EMBEDDED" TcMaxAttempt="2" TcAcceptanceCriteria="1"/>
+        <TestCase Id="..\TC\SETUP\ST_TELEPHONY_INSTALL" TcMaxAttempt="2" TcAcceptanceCriteria="1"/>
+
+        <!-- Cell reselection while IDLE -->
+        <TestCase Id="..\TC\IDLE_MOB\ST_TELEPHONY_REG_101-LAB_MOBILITY_CRESEL_IDLE" TcMaxAttempt="2" TcAcceptanceCriteria="1"/>
+        <TestCase Id="..\TC\IDLE_MOB\ST_TELEPHONY_REG_102-LAB_MOBILITY_CRESEL_IDLE" TcMaxAttempt="2" TcAcceptanceCriteria="1"/>
+        <TestCase Id="..\TC\IDLE_MOB\ST_TELEPHONY_REG_103-LAB_MOBILITY_CRESEL_IDLE" TcMaxAttempt="2" TcAcceptanceCriteria="1"/>
+        <TestCase Id="..\TC\IDLE_MOB\ST_TELEPHONY_REG_104-LAB_MOBILITY_CRESEL_IDLE" TcMaxAttempt="2" TcAcceptanceCriteria="1"/>
+        <TestCase Id="..\TC\IDLE_MOB\ST_TELEPHONY_REG_105-LAB_MOBILITY_CRESEL_IDLE" TcMaxAttempt="2" TcAcceptanceCriteria="1"/>
+        <TestCase Id="..\TC\IDLE_MOB\ST_TELEPHONY_REG_106-LAB_MOBILITY_CRESEL_IDLE" TcMaxAttempt="2" TcAcceptanceCriteria="1"/>
+        <TestCase Id="..\TC\IDLE_MOB\ST_TELEPHONY_REG_108-LAB_MOBILITY_CRESEL_IDLE" TcMaxAttempt="2" TcAcceptanceCriteria="1"/>
+        <TestCase Id="..\TC\IDLE_MOB\ST_TELEPHONY_REG_109-LAB_MOBILITY_CRESEL_IDLE" TcMaxAttempt="2" TcAcceptanceCriteria="1"/>
+        <TestCase Id="..\TC\IDLE_MOB\ST_TELEPHONY_REG_110-LAB_MOBILITY_CRESEL_IDLE" TcMaxAttempt="2" TcAcceptanceCriteria="1"/>
+        <TestCase Id="..\TC\IDLE_MOB\ST_TELEPHONY_REG_111-LAB_MOBILITY_CRESEL_IDLE" TcMaxAttempt="2" TcAcceptanceCriteria="1"/>
+
+        <!-- Cell reselection from out of coverage -->
+        <TestCase Id="..\TC\IDLE_MOB\ST_TELEPHONY_REG_407-LAB_MOBILITY_CRESEL_OUT_OF_COVERAGE" TcMaxAttempt="2" TcAcceptanceCriteria="1"/>
+        <TestCase Id="..\TC\IDLE_MOB\ST_TELEPHONY_REG_408-LAB_MOBILITY_CRESEL_OUT_OF_COVERAGE" TcMaxAttempt="2" TcAcceptanceCriteria="1"/>
+        <TestCase Id="..\TC\IDLE_MOB\ST_TELEPHONY_REG_409-LAB_MOBILITY_CRESEL_OUT_OF_COVERAGE" TcMaxAttempt="2" TcAcceptanceCriteria="1"/>
+        <TestCase Id="..\TC\IDLE_MOB\ST_TELEPHONY_REG_410-LAB_MOBILITY_CRESEL_OUT_OF_COVERAGE" TcMaxAttempt="2" TcAcceptanceCriteria="1"/>
+        <TestCase Id="..\TC\IDLE_MOB\ST_TELEPHONY_REG_411-LAB_MOBILITY_CRESEL_OUT_OF_COVERAGE" TcMaxAttempt="2" TcAcceptanceCriteria="1"/>
+        <TestCase Id="..\TC\IDLE_MOB\ST_TELEPHONY_REG_412-LAB_MOBILITY_CRESEL_OUT_OF_COVERAGE" TcMaxAttempt="2" TcAcceptanceCriteria="1"/>
+
+        <!-- RAT SELECTION -->
+        <TestCase Id="..\TC\IDLE_MOB\ST_TELEPHONY_RATSEL_002-LAB_RAT_SELECTION" TcMaxAttempt="2" TcAcceptanceCriteria="1"/>
+        <TestCase Id="..\TC\IDLE_MOB\ST_TELEPHONY_RATSEL_003-LAB_RAT_SELECTION" TcMaxAttempt="2" TcAcceptanceCriteria="1"/>
+        <TestCase Id="..\TC\IDLE_MOB\ST_TELEPHONY_RATSEL_004-LAB_RAT_SELECTION_DUAL_MODE" TcMaxAttempt="2" TcAcceptanceCriteria="1"/>
+        <TestCase Id="..\TC\IDLE_MOB\ST_TELEPHONY_RATSEL_008-LAB_RAT_SELECTION_DUAL_MODE" TcMaxAttempt="2" TcAcceptanceCriteria="1"/>
+
+        <!-- TUNNEL -->
+        <TestCase Id="..\TC\TUNNEL\ST_TELEPHONY_REG_021-LAB_CAMP_TUNNEL" TcMaxAttempt="2" TcAcceptanceCriteria="1"/>
+        <TestCase Id="..\TC\TUNNEL\ST_TELEPHONY_REG_022-LAB_CAMP_TUNNEL" TcMaxAttempt="2" TcAcceptanceCriteria="1"/>
+        <TestCase Id="..\TC\TUNNEL\ST_TELEPHONY_REG_023-LAB_CAMP_TUNNEL" TcMaxAttempt="2" TcAcceptanceCriteria="1"/>
+        <TestCase Id="..\TC\TUNNEL\ST_TELEPHONY_REG_024-LAB_CAMP_TUNNEL" TcMaxAttempt="2" TcAcceptanceCriteria="1"/>
+        <TestCase Id="..\TC\TUNNEL\ST_TELEPHONY_REG_025-LAB_CAMP_TUNNEL" TcMaxAttempt="2" TcAcceptanceCriteria="1"/>
+        <TestCase Id="..\TC\TUNNEL\ST_TELEPHONY_REG_026-LAB_CAMP_TUNNEL" TcMaxAttempt="2" TcAcceptanceCriteria="1"/>
+
+        <!-- Cell reselection during FTP -->
+        <TestCase Id="..\TC\NET_MOB\ST_TELEPHONY_DATA_EDGE_MOB_001-LAB_MOBILITY_CRESEL_FTP" TcMaxAttempt="2" TcAcceptanceCriteria="1"/>
+        <TestCase Id="..\TC\NET_MOB\ST_TELEPHONY_DATA_EDGE_MOB_002-LAB_MOBILITY_CRESEL_FTP" TcMaxAttempt="2" TcAcceptanceCriteria="1"/>
+        <TestCase Id="..\TC\NET_MOB\ST_TELEPHONY_DATA_EDGE_MOB_003-LAB_MOBILITY_CRESEL_FTP" TcMaxAttempt="2" TcAcceptanceCriteria="1"/>
+        <TestCase Id="..\TC\NET_MOB\ST_TELEPHONY_DATA_EDGE_MOB_004-LAB_MOBILITY_CRESEL_FTP" TcMaxAttempt="2" TcAcceptanceCriteria="1"/>
+        <TestCase Id="..\TC\NET_MOB\ST_TELEPHONY_DATA_EDGE_MOB_005-LAB_MOBILITY_CRESEL_FTP" TcMaxAttempt="2" TcAcceptanceCriteria="1"/>
+        <TestCase Id="..\TC\NET_MOB\ST_TELEPHONY_DATA_EDGE_MOB_006-LAB_MOBILITY_CRESEL_FTP" TcMaxAttempt="2" TcAcceptanceCriteria="1"/>
+        <TestCase Id="..\TC\NET_MOB\ST_TELEPHONY_DATA_EDGE_MOB_007-LAB_MOBILITY_CRESEL_FTP" TcMaxAttempt="2" TcAcceptanceCriteria="1"/>
+        <TestCase Id="..\TC\NET_MOB\ST_TELEPHONY_DATA_EDGE_MOB_008-LAB_MOBILITY_CRESEL_FTP" TcMaxAttempt="2" TcAcceptanceCriteria="1"/>
+        <TestCase Id="..\TC\NET_MOB\ST_TELEPHONY_DATA_IRAT_RESEL_002-LAB_MOBILITY_CRESEL_FTP" TcMaxAttempt="2" TcAcceptanceCriteria="1"/>
+        <TestCase Id="..\TC\NET_MOB\ST_TELEPHONY_DATA_IRAT_RESEL_004-LAB_MOBILITY_CRESEL_FTP" TcMaxAttempt="2" TcAcceptanceCriteria="1"/>
+        <TestCase Id="..\TC\NET_MOB\ST_TELEPHONY_DATA_IRAT_RESEL_010-LAB_MOBILITY_CRESEL_FTP" TcMaxAttempt="2" TcAcceptanceCriteria="1"/>
+        <TestCase Id="..\TC\NET_MOB\ST_TELEPHONY_DATA_IRAT_RESEL_012-LAB_MOBILITY_CRESEL_FTP" TcMaxAttempt="2" TcAcceptanceCriteria="1"/>
+        <TestCase Id="..\TC\NET_MOB\ST_TELEPHONY_DATA_IRAT_RESEL_018-LAB_MOBILITY_CRESEL_FTP" TcMaxAttempt="2" TcAcceptanceCriteria="1"/>
+        <TestCase Id="..\TC\NET_MOB\ST_TELEPHONY_DATA_IRAT_RESEL_020-LAB_MOBILITY_CRESEL_FTP" TcMaxAttempt="2" TcAcceptanceCriteria="1"/>
+        <TestCase Id="..\TC\NET_MOB\ST_TELEPHONY_DATA_IRAT_CCO_001-LAB_MOBILITY_CRESEL_FTP" TcMaxAttempt="2" TcAcceptanceCriteria="1"/>
+        <TestCase Id="..\TC\NET_MOB\ST_TELEPHONY_DATA_IRAT_CCO_002-LAB_MOBILITY_CRESEL_FTP" TcMaxAttempt="2" TcAcceptanceCriteria="1"/>
+        <TestCase Id="..\TC\NET_MOB\ST_TELEPHONY_DATA_IRAT_CCO_003-LAB_MOBILITY_CRESEL_FTP" TcMaxAttempt="2" TcAcceptanceCriteria="1"/>
+        <TestCase Id="..\TC\NET_MOB\ST_TELEPHONY_DATA_IRAT_CCO_004-LAB_MOBILITY_CRESEL_FTP" TcMaxAttempt="2" TcAcceptanceCriteria="1"/>
+
+        <!-- VC EXT HO -->
+        <TestCase Id="..\TC\VC_MOB\ST_TELEPHONY_VC_CS_304-LAB_MOBILITY_EXT_HO_VC" TcMaxAttempt="2" TcAcceptanceCriteria="1"/>
+        <TestCase Id="..\TC\VC_MOB\ST_TELEPHONY_VC_CS_305-LAB_MOBILITY_EXT_HO_VC" TcMaxAttempt="2" TcAcceptanceCriteria="1"/>
+        <TestCase Id="..\TC\VC_MOB\ST_TELEPHONY_VC_CS_306-LAB_MOBILITY_EXT_HO_VC" TcMaxAttempt="2" TcAcceptanceCriteria="1"/>
+        <TestCase Id="..\TC\VC_MOB\ST_TELEPHONY_VC_CS_307-LAB_MOBILITY_EXT_HO_VC" TcMaxAttempt="2" TcAcceptanceCriteria="1"/>
+        <TestCase Id="..\TC\VC_MOB\ST_TELEPHONY_VC_CS_308-LAB_MOBILITY_EXT_HO_VC" TcMaxAttempt="2" TcAcceptanceCriteria="1"/>
+        <TestCase Id="..\TC\VC_MOB\ST_TELEPHONY_VC_CS_309-LAB_MOBILITY_EXT_HO_VC" TcMaxAttempt="2" TcAcceptanceCriteria="1"/>
+        <TestCase Id="..\TC\VC_MOB\ST_TELEPHONY_VC_CS_310-LAB_MOBILITY_EXT_HO_VC_AND_CRESEL" TcMaxAttempt="2" TcAcceptanceCriteria="1"/>
+        <TestCase Id="..\TC\VC_MOB\ST_TELEPHONY_VC_CS_311-LAB_MOBILITY_EXT_HO_VC_AND_CRESEL" TcMaxAttempt="2" TcAcceptanceCriteria="1"/>
+
+        <!-- FIT VC SMS EXT HO -->
+        <TestCase Id="..\TC\FIT\ST_TELEPHONY_FIT_VC_SMS_026" TcMaxAttempt="2" TcAcceptanceCriteria="1"/>
+        <TestCase Id="..\TC\FIT\ST_TELEPHONY_FIT_VC_SMS_028" TcMaxAttempt="2" TcAcceptanceCriteria="1"/>
+
+    </TestCases>
+</Campaign>

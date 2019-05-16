@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase>
+  <UseCase>LAB_MOBILITY_CRESEL_FTP</UseCase>
+  <Description> Perform several cell reselection 2G/3G during data transfer</Description>
+  <b2bIteration>1</b2bIteration>
+  <b2bContinuousMode>False</b2bContinuousMode>  
+  <Parameters>
+    <Parameter>
+      <!-- Number of cell reselection to perform (switch between 2 equipments) -->
+      <Name>CELL_JUMP_NUMBER</Name>
+      <Value>1</Value>
+    </Parameter>
+    <Parameter>
+      <!-- CONFIGURATION_FILE parameter representing a xml file name 
+      (without extension) in which equipments configuration is described.
+      Configuration files must be stored in _Configs/EquipmentConfiguration directory. -->
+      <Name>CONFIGURATION_FILE</Name>
+      <Value>ST\telephony\Configurations\CONF_ST_DATA_GPRS_MOB_008-LAB_MOBILITY_CRESEL_FTP</Value>
+    </Parameter>
+    <Parameter>
+        <!-- Active cell power -->
+        <Name>ACTIVE_CELL_POWER</Name>
+        <Value>-60</Value>
+    </Parameter>
+    <Parameter>
+        <!-- Idle cell power -->
+        <Name>IDLE_CELL_POWER</Name>
+        <Value>-80</Value>
+    </Parameter>
+    <Parameter>
+        <!-- Limit power to stop the cell reselection power if reached (after a timeout) -->
+        <Name>CRESEL_LIMIT_POWER</Name>
+        <Value>-110</Value>
+    </Parameter>
+    <Parameter>
+        <!-- Decrementation step for active cell power  in dBm (must be positive. Can be a decimal value like 0.20 or 2.6) -->
+        <Name>DECREMENTATION_STEP_POWER</Name>
+        <Value>1</Value>
+    </Parameter>
+    <Parameter>
+        <!-- Decrementation step timer in seconds between 2 steps (must be positive. Can be a decimal value like 0.3 or 3.5) -->
+        <Name>DECREMENTATION_STEP_TIMER</Name>
+        <Value>1</Value>
+    </Parameter>
+    <Parameter>
+      <!-- FTP transfer direction: DL or UL -->
+      <Name>DIRECTION</Name>
+      <Value>DL</Value>
+    </Parameter> 
+  </Parameters>
+</TestCase>

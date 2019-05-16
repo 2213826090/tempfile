@@ -1,0 +1,28 @@
+<?xml version="1.0" ?>
+<Campaign version="13.49">
+    <Parameters>
+        <Parameter isControlledPSUsed="False"/>
+        <Parameter isIoCardUsed="False"/>
+        <Parameter skipBootOnPowerCycle="False"/>
+        <Parameter bootRetryNumber="0"/>
+        <Parameter runHookScripts="False"/>
+        <Parameter powerCycleBetweenTC="False"/>
+        <Parameter powerCycleOnFailure="False"/>
+        <Parameter finalDutState="NoChange"/>
+        <Parameter stopCampaignOnCriticalFailure="False"/>
+        <Parameter stopCampaignOnFirstFailure="False"/>
+        <Parameter loggingLevel="debug"/>
+        <Parameter CampaignType="Other"/>
+        <Parameter TCRReportViaRESTAPI="True"/>
+    </Parameters>
+    <TestCases>
+        <TestCase Id="../../../../../TC/TP/TC/Sensor/Accelerometer/test_all_sensor_support"/>
+        <TestCase Id="../../../../../TC/TP/TC/Sensor/Temperature/test_temperature_data_accuracy"/>
+        <TestCase Id="../../../../../TC/TP/TC/Sensor/Temperature/test_temperature_data_responding"/>
+        <TestCase Id="../../../../../TC/TP/TC/Sensor/Temperature/test_temperature_data_after_power_on_off"/>
+        <TestCase Id="../../../../../TC/TP/TC/Sensor/Temperature/test_temperature_data_after_reboot"/>
+        <TestCase Id="../../../../../TC/TP/TC/Sensor/Temperature/test_temperature_data_after_suspend_and_resume"/>
+        <TestCase Id="../../../../../TC/TP/TC/Sensor/Temperature/test_temperature_data_after_turn_screen_on_off_10_times"/>
+        <TestCase Id="../../../../../TC/TP/TC/Sensor/Temperature/test_info_temperature"/>
+    </TestCases>
+</Campaign>

@@ -1,0 +1,84 @@
+{
+    "Configuration": {
+        "Boot": {
+            "BOOT_ON_FORCED_SHUTDOWN": true,
+            "NOCOS": true
+        },
+        "BootVars": {
+            "COS_CHECK_AFTER_GRACEFUL_SHUTDOWN": "reset_source=00;reset_type=01;wake_source=02;shutdown_source=00;bootreason=usb_charger_inserted",
+            "COS_CHECK_AFTER_HARD_SHUTDOWN": "reset_source=00;reset_type=01;wake_source=02;shutdown_source=01;bootreason=usb_charger_inserted",
+            "COS_CHECK_AFTER_REBOOT": "reset_source=00;reset_type=01;wake_source=00;shutdown_source=00;bootreason=reboot",
+            "MOS_CHECK_AFTER_BOOT": "reset_source=00;reset_type=01;wake_source=04;shutdown_source=01;bootreason=power_button_pressed",
+            "MOS_CHECK_AFTER_KERNEL_WATCHDOG": "reset_source=04;reset_type=01;wake_source=00;shutdown_source=00;bootreason=watchdog",
+            "MOS_CHECK_AFTER_REBOOT": "reset_source=00;reset_type=01;wake_source=00;shutdown_source=00;bootreason=reboot"
+        },
+        "Custom": null,
+        "Download": {
+            "INTERNAL_DOWNLOAD": [
+                {
+                    "pft_key": "fastboot",
+                    "jenkins_artifactory_path": {
+                        "path": "device_name_id-variant_id/out/dist",
+                        "detection": "/irda-"
+                    },
+                    "regexp_key": "device_name_id-flashfiles",
+                    "flash_file": "flash.json",
+                    "configuration": "blank_board_id",
+                    "pft_fallback": {
+                        "configuration": "recover"
+                    },
+                    "start_state": "dnx"
+                },
+                {
+                    "local_key": "ota",
+                    "jenkins_artifactory_path": {
+                        "path": "device_name_id-variant_id/out/dist",
+                        "detection": "/irda-"
+                    },
+                    "regexp_key": "device_name_id-ota",
+                    "flash_file": null,
+                    "configuration": null,
+                    "start_state": "mos"
+                }
+            ]
+        },
+        "Flash": {
+            "DEDIPROG": true,
+            "FASTBOOT_FILE": "fastboot.img",
+            "PARTITIONS": "/cache;/system",
+            "UPDATE_CONFIGURATION": "update_board_id"
+        },
+        "Logs": null,
+        "Timeout": null,
+        "WorkAround": null,
+        "TestDescription": {
+            "warnings": {
+                "LAB_PUPDR_OTA_FORWARD_FLASHING|BOOTOTA - FLASH - OTA FORWARD FLASHING": "no weekly build on this variant"
+            },
+            "engineering": [
+                {
+                    "name": "default",
+                    "build_tag": "bootota_",
+                    "testing": [
+                        {
+                            "build_target": "coho-userdebug",
+                            "campaign": "BOOTOTA_PREINTEGRATION"
+                        }
+                    ]
+                }
+            ],
+            "release_candidate": [
+                {
+                    "name": "release",
+                    "build_tag": "",
+                    "testing": [
+                        {
+                            "build_target": "coho-userdebug",
+                            "campaign": "BOOTOTA_RELEASE"
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}

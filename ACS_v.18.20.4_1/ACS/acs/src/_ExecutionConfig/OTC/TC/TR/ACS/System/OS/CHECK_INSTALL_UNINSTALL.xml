@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase>
+    <UseCase>EXEC</UseCase>
+    <Description>Check adb install and adb uninstall commands</Description>
+    <TcExpectedResult>PASS</TcExpectedResult>
+
+    <TestSteps>
+        <Initialize>
+            <TestStep Id="GET_ARTIFACT" EQT="ARTIFACT_MANAGER" ARTIFACT="BENCHMARKS/SMARTBENCH/smartbench.2012-1.apk" ARTIFACT_SOURCE="FROM_BENCH:ARTIFACT_MANAGER:URI" TRANSFER_TIMEOUT="DEFAULT" STORED_FILE_PATH="FILE_PATH_IN_CACHE1"/>
+        </Initialize>
+    </TestSteps>
+
+    <Parameters>
+        <Parameter>
+            <Name>RUN_CMD</Name>
+            <Value>./scripts/check_install_uninstall.sh ../../../../../../EMBD/BENCHMARKS/SMARTBENCH/smartbench.2012-1.apk com.smartbench.twelve</Value>
+        </Parameter>
+        <Parameter>
+            <Name>RUN_TIMEOUT</Name>
+            <Value>300</Value>
+        </Parameter>
+        <Parameter>
+            <Name>RUN_EXPECT_RESULT</Name>
+            <Value>Pass</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

@@ -1,0 +1,462 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestSteps xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../acs/src/_Catalogs/TestStep/teststep.xsd">
+    <TestStep Id="RUN_CACHEMEM" Domain="APPS" SubDomain="STRESS" Feature="" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Apps.Stress.RunCachemem.RunCachemem</ClassName>
+        <Description>Runs a shell script that invokes a memory stress test called cachebench,
+            and some file operations to interfere with memory paging.
+            PREREQUISITES:
+            Android: the following scripts and binaries must be located in the path specified by SCRIPTS_PATH.
+                    cachebench
+                    cacheMem.sh
+                    memorytest.sh
+                    run_em.sh
+                    killer.sh
+                    killcacheMem.sh
+                    process
+                    memorytest.tar.gz
+                These files can be found in this tarball in Artifactory: acs_test_artifacts/CONCURRENCY/TESTS/CacheMem/cacheMem_v2.3.tar.gz
+            Windows: the binary and device-side scripts not yet created.
+        </Description>
+        <Environment name="ANY"/>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device that will run the stress applications</Description>
+                <PossibleValues/>
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="DURATION" type="INTEGER" isOptional="false">
+               <Description>How long the test will run, in minutes.</Description>
+               <PossibleValues/>
+               <DefaultValue>5</DefaultValue>
+            </Parameter>
+            <Parameter name="SCRIPTS_PATH" type="STRING" isOptional="false">
+                <Description>Directory on the device where the tarball contents (e.g. cacheMem_v2.3.tar.gz) have been unpacked.</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+            <Parameter name="INSTANCES_FILE_OPS" type="INTEGER" isOptional="false">
+               <Description>How many simultaneous instances of the file operations to run.  If 0, then it calculates a number based on amount of system memory and size of the test file.</Description>
+               <PossibleValues/>
+               <DefaultValue>0</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="RUN_CRASHME" Domain="APPS" SubDomain="STRESS" Feature="" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Apps.Stress.RunCrashme.RunCrashme</ClassName>
+        <Description>Runs a shell script that invokes an OS stress test called "Crashme".
+            PREREQUISITES:
+            Android: the following scripts and binaries must be located in the path specified by SCRIPTS_PATH.
+                    Crashme
+                    Crashme.bash
+                These files can be found in this tarball in Artifactory: acs_test_artifacts/CONCURRENCY/TESTS/crashme/CrashMe_files.tgz
+            Windows: the binary and device-side scripts not yet created.
+        </Description>
+        <Environment name="ANY"/>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device that will run the stress applications</Description>
+                <PossibleValues/>
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="DURATION" type="INTEGER" isOptional="false">
+               <Description>How long the test will run, in minutes.</Description>
+               <PossibleValues/>
+               <DefaultValue>5</DefaultValue>
+            </Parameter>
+            <Parameter name="SCRIPTS_PATH" type="STRING" isOptional="false">
+                <Description>Directory on the device where the required script and binary have been unpacked.</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="RUN_CVMEMTESTER" Domain="APPS" SubDomain="STRESS" Feature="" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Apps.Stress.RunCvmemtester.RunCvmemtester</ClassName>
+        <Description>Runs a shell script that invokes a memory stress test from the CV team that's called "memtester".
+            PREREQUISITES:
+            Android: this executable must be located in the path specified by SCRIPTS_PATH
+                    memtester
+                This can be found in Artifactory at acs_test_artifacts/CONCURRENCY/TESTS/CVmemtester/memtester
+            Windows: the executable has not yet been created.
+        </Description>
+        <Environment name="ANY"/>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device that will run the stress applications</Description>
+                <PossibleValues/>
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="DURATION" type="INTEGER" isOptional="false">
+               <Description>How long the test will run, in minutes.</Description>
+               <PossibleValues/>
+               <DefaultValue>5</DefaultValue>
+            </Parameter>
+            <Parameter name="SCRIPTS_PATH" type="STRING" isOptional="false">
+                <Description>Directory on the device where memtester is located.</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+            <Parameter name="MEM_SIZE" type="INTEGER" isOptional="false">
+                <Description>Amount of memory (MB) to use.</Description>
+                <PossibleValues/>
+                <DefaultValue>50</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="RUN_GFX_STRESS_GEARS" Domain="APPS" SubDomain="STRESS" Feature="" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Apps.Stress.RunGFXStressGears.RunGFXStressGears</ClassName>
+        <Description>(Android only) Runs a shell script that invokes a lightweight graphics stress app called Gears.
+            This renders some spinning gears on the screen.  I don't know of a similar executable for Windows.
+            PREREQUISITES:
+            The following scripts and binaries must be located in the path specified by SCRIPTS_PATH.
+                GearsES2_20110906.apk
+                GearsES2_v1.sh
+                killer.sh
+                process
+            These files can be found in this tarball in Artifactory: acs_test_artifacts/CONCURRENCY/TESTS/gears/GearsES2_v1.tgz</Description>
+        <Environment name="ANY"/>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device that will run the stress applications</Description>
+                <PossibleValues/>
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="DURATION" type="INTEGER" isOptional="false">
+               <Description>How long the test will run, in minutes.</Description>
+               <PossibleValues/>
+               <DefaultValue>5</DefaultValue>
+            </Parameter>
+            <Parameter name="SCRIPTS_PATH" type="STRING" isOptional="false">
+                <Description>Directory on the device where the required script and binary have been unpacked.</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="RUN_IO_ZONE" Domain="APPS" SubDomain="STRESS" Feature="" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Apps.Stress.RunIOZone.RunIOZone</ClassName>
+        <Description>Runs a shell script that invokes a file system benchmark tool called IOZone.
+            This generates and measures a variety of file operations.  A side effect of this is that
+            it also adds significant stress on the CPU and memory.
+            PREREQUISITES:
+            Android: the following scripts and binaries must be located in the path specified by SCRIPTS_PATH.
+                    iozone
+                    process
+                    killer.sh
+                    loopIOZone.sh
+                These files can be found in Artifactory: acs_test_artifacts/CONCURRENCY/TESTS/IOZone/iozone.tgz
+            Windows: the device-side scripts have not yet been created.
+        </Description>
+        <Environment name="ANY"/>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device that will run the stress applications</Description>
+                <PossibleValues/>
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="DURATION" type="INTEGER" isOptional="false">
+               <Description>How long the test will run, in minutes.</Description>
+               <PossibleValues/>
+               <DefaultValue>5</DefaultValue>
+            </Parameter>
+            <Parameter name="SCRIPTS_PATH" type="STRING" isOptional="false">
+                <Description>Directory on the device where the required scripts and binary have been installed.</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+            <Parameter name="TARGET_DEVICES" type="LIST" isOptional="false">
+               <Description>List of devices for IOZone to target, separated by '[|]'.  Example: "'/dev/block/mmcblk0p9'[|]'/dev/block/mmcblk1p1'".
+                   Be careful to individually quote each list element if it contains characters that might be misinterpreted when evaluating the data type.</Description>
+               <PossibleValues/>
+               <DefaultValue/>
+            </Parameter>
+            <Parameter name="FILE_SIZE" type="INTEGER" isOptional="false">
+                <Description>Size of files (MB) to use.</Description>
+                <PossibleValues/>
+                <DefaultValue>1024</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="RUN_PI_FFT" Domain="APPS" SubDomain="STRESS" Feature="" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Apps.Stress.RunPiFft.RunPiFft</ClassName>
+        <Description>Runs a shell script that invokes a CPU stress test called PI_FFT.
+            PREREQUISITES:
+            Android: the following scripts and binaries must be located in the path specified by SCRIPTS_PATH.
+                    run_all_cpu.sh
+                    run_pi.sh
+                    pi_ca
+                    pi_golden.dat
+                    process
+                    killer.sh
+                These files can be found in Artifactory: acs_test_artifacts/CONCURRENCY/TESTS/pi_fft/pi_fft.tgz
+            Windows: The executable and device-side scripts are not yet created.
+        </Description>
+        <Environment name="ANY"/>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device that will run the stress applications</Description>
+                <PossibleValues/>
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="DURATION" type="INTEGER" isOptional="false">
+               <Description>How long the test will run, in minutes.</Description>
+               <PossibleValues/>
+               <DefaultValue>5</DefaultValue>
+            </Parameter>
+            <Parameter name="SCRIPTS_PATH" type="STRING" isOptional="false">
+                <Description>Directory on the device where the required scripts and binary have been installed.</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="RUN_MPRIME" Domain="APPS" SubDomain="STRESS" Feature="" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Apps.Stress.RunMprime.RunMprime</ClassName>
+        <Description>Runs a shell script that invokes a CPU stress test called mprime.
+            PREREQUISITES:
+            Android: the following scripts and binaries must be located in the path specified by SCRIPTS_PATH.
+                    mprime_277_atom_static
+                    mprime.sh
+                These files can be found in Artifactory: acs_test_artifacts/CONCURRENCY/TESTS/mprime/mprime.tgz
+            Windows: the executable and device-side scripts are not yet created.
+        </Description>
+        <Environment name="ANY"/>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device that will run the stress applications</Description>
+                <PossibleValues/>
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="DURATION" type="INTEGER" isOptional="false">
+               <Description>How long the test will run, in minutes.</Description>
+               <PossibleValues/>
+               <DefaultValue>5</DefaultValue>
+            </Parameter>
+            <Parameter name="SCRIPTS_PATH" type="STRING" isOptional="false">
+                <Description>Directory on the device where the required scripts and binary have been installed.</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+            <Parameter name="TEST_MEM_SIZE" type="INTEGER" isOptional="false">
+               <Description>Amount of memory (MB) that the test should exercise.</Description>
+               <PossibleValues/>
+               <DefaultValue>64</DefaultValue>
+            </Parameter>
+            <Parameter name="CPU_SPEED" type="INTEGER" isOptional="false">
+               <Description>Speed of CPU (MHz).</Description>
+               <PossibleValues/>
+               <DefaultValue>1600</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="RUN_JACKHAMMER" Domain="APPS" SubDomain="STRESS" Feature="" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Apps.Stress.RunJackhammer.RunJackhammer</ClassName>
+        <Description>(Android only) Runs a shell script that invokes a memory stress test called Jackhammer.
+            This app is written to detect memory ECC failures by using focused algorithms.
+            The algorithms are borrowed from post-silicon test methodologies that have set standards.
+            In addition to ECC errors, Jackhammer attempts to detect read-after-write disturb and addressing faults.
+            I do not know of a Windows version.
+            PREREQUISITES:
+            The following scripts and binaries must be located in the path specified by SCRIPTS_PATH.
+                Jackhammer
+                loopJack.sh
+                killer.sh
+                process
+            These files can be found in Artifactory: acs_test_artifacts/CONCURRENCY/TESTS/jackhammer/jackhammer.tgz.
+        </Description>
+        <Environment name="ANY"/>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device that will run the stress applications</Description>
+                <PossibleValues/>
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="DURATION" type="INTEGER" isOptional="false">
+               <Description>How long the test will run, in minutes.</Description>
+               <PossibleValues/>
+               <DefaultValue>5</DefaultValue>
+            </Parameter>
+            <Parameter name="SCRIPTS_PATH" type="STRING" isOptional="false">
+                <Description>Directory on the device where the required scripts and binary have been installed.</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="RUN_MTX_MULTIPLY" Domain="APPS" SubDomain="STRESS" Feature="" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Apps.Stress.RunMtxMultiply.RunMtxMultiply</ClassName>
+        <Description>Runs a shell script that invokes a CPU stress test called MatrixMultiply.
+            PREREQUISITES:
+            Android: the following scripts and binaries must be located in the path specified by SCRIPTS_PATH.
+                    startmm
+                    cleanmm
+                    stopmm
+                    runmm
+                    mm_static
+                These files can be found in Artifactory: acs_test_artifacts/CONCURRENCY/TESTS/MatrixMultiply/MtxMultiply_files.tgz
+            Windows: the binaries and device-side scripts are not yet created.
+        </Description>
+        <Environment name="ANY"/>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device that will run the stress applications</Description>
+                <PossibleValues/>
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="DURATION" type="INTEGER" isOptional="false">
+               <Description>How long the test will run, in minutes.</Description>
+               <PossibleValues/>
+               <DefaultValue>5</DefaultValue>
+            </Parameter>
+            <Parameter name="SCRIPTS_PATH" type="STRING" isOptional="false">
+                <Description>Directory on the device where the required scripts and binaries have been installed.</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+            <Parameter name="NUM_CORES" type="INTEGER" isOptional="false">
+               <Description>Number of cores that the test should use.</Description>
+               <PossibleValues/>
+               <DefaultValue>2</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="RUN_MMIO_REQUEST_LOOP" Domain="APPS" SubDomain="STRESS" Feature="" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Apps.Stress.RunMMIORequestLoop.RunMMIORequestLoop</ClassName>
+        <Description>Runs a shell script stress test which does both aligned/unaligned mmio reads and writes repeatedly for test duration.
+            PREREQUISITES:
+            Android: the following scripts and binaries must be located in the path specified by SCRIPTS_PATH.
+                    loopTA.sh
+                    mmio_read_write_aligned
+                    mmio_read_write_unaligned
+                These files can be found in Artifactory: acs_test_artifacts/CONCURRENCY/TESTS/ta_request
+            Windows: the binary and device-side scripts not yet created.
+        </Description>
+        <Environment name="ANY"/>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device that will run the stress applications</Description>
+                <PossibleValues/>
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="DURATION" type="INTEGER" isOptional="false">
+               <Description>How long the test will run, in minutes.</Description>
+               <PossibleValues/>
+               <DefaultValue>5</DefaultValue>
+            </Parameter>
+            <Parameter name="SCRIPTS_PATH" type="STRING" isOptional="false">
+                <Description>Directory on the device where the required scripts and binaries were put in.  (e.g. loopTA.sh)</Description>
+                <PossibleValues/>
+                <DefaultValue>/data/StressApps/mmio_request</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="RUN_STRESS_APP_TEST" Domain="APPS" SubDomain="STRESS" Feature="" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Apps.Stress.RunStressAppTest.RunStressAppTest</ClassName>
+        <Description>Runs a shell script that invokes stress app test.
+            PREREQUISITES:
+            Android: the following scripts and binaries must be located in the path specified by SCRIPTS_PATH.
+                    stressapptest.tgz
+                These files can be found inArtifactory: acs_test_artifacts/CONCURRENCY/TESTS/stressapptest/stressapptest.tgz
+            Windows: the binary and device-side scripts not yet created.
+        </Description>
+        <Environment name="ANY"/>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device that will run the stress applications</Description>
+                <PossibleValues/>
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="DURATION" type="INTEGER" isOptional="false">
+               <Description>How long the test will run, in minutes.</Description>
+               <PossibleValues/>
+               <DefaultValue>5</DefaultValue>
+            </Parameter>
+            <Parameter name="SCRIPTS_PATH" type="STRING" isOptional="false">
+                <Description>Directory on the device where the tarball contents (e.g. stressapptest.tgz) have been unpacked.</Description>
+                <PossibleValues/>
+                <DefaultValue>/data/StressApps/stress_app_test</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="SETUP_MEMICALS" Domain="APPS" SubDomain="STRESS" Feature="" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Apps.Stress.SetupMemicals.SetupMemicals</ClassName>
+        <Description>Setup before OS stress test called "Memicals"</Description>
+        <Environment name="ANY"/>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device that will run memicals</Description>
+                <PossibleValues/>
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="START_ADDRESS" type="STRING" isOptional="false">
+                <Description>Start address of a memory block to be used for memicals</Description>
+                <PossibleValues/>
+                <DefaultValue />
+            </Parameter>
+            <Parameter name="END_ADDRESS" type="STRING" isOptional="false">
+                <Description>Ending address of a memory block to be used for memicals</Description>
+                <PossibleValues/>
+                <DefaultValue />
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="RUN_MEMICALS" Domain="APPS" SubDomain="STRESS" Feature="" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Apps.Stress.RunMemicals.RunMemicals</ClassName>
+        <Description>Runs a shell script that invokes an OS stress test called "Memicals".
+            PREREQUISITES:
+            Android:
+                The following scripts and binaries must be located in the path specified by SCRIPTS_PATH.
+                    run_test.sh
+                    runMemicals.sh
+                These files can be found in Lib\ShellScripts\Android\StressApps\memicals.
+                Use INSTALL_SCRIPTS_FROM_LIB TestStep to install the scripts to the device
+                    memicals
+                This file can be found in tarball in Artifactory: acs_test_artifacts/CONCURRENCY/TESTS/memicals/memicals_files.tgz
+                Use GET_ARTIFACT and INSTALL_FILE TestSteps to install the binary to the device
+            Windows: the binary and device-side scripts not yet created.
+        </Description>
+        <Environment name="ANY"/>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device that will run the stress applications</Description>
+                <PossibleValues/>
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="DURATION" type="INTEGER" isOptional="false">
+               <Description>How long the test will run, in minutes.</Description>
+               <PossibleValues/>
+               <DefaultValue>5</DefaultValue>
+            </Parameter>
+            <Parameter name="SCRIPTS_PATH" type="STRING" isOptional="false">
+                <Description>Directory on the device where the required script and binary have been unpacked.</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+            <Parameter name="FASTRANDOM" type="INTEGER" isOptional="false">
+               <Description>If 1, test FastRandom algorithm</Description>
+               <PossibleValues>0;1</PossibleValues>
+               <DefaultValue/>
+            </Parameter>
+            <Parameter name="LFSR" type="INTEGER" isOptional="false">
+               <Description>If 1, test  LFSR algorithm</Description>
+               <PossibleValues>0;1</PossibleValues>
+               <DefaultValue/>
+            </Parameter>
+            <Parameter name="RANDOMADDR" type="INTEGER" isOptional="false">
+               <Description>If 1, test  randomAddress algorithm</Description>
+               <PossibleValues>0;1</PossibleValues>
+               <DefaultValue/>
+            </Parameter>
+            <Parameter name="SWITCHADDR" type="INTEGER" isOptional="false">
+               <Description>If 1, test  swiotchAddress algorithm</Description>
+               <PossibleValues>0;1</PossibleValues>
+               <DefaultValue/>
+            </Parameter>
+            <Parameter name="WALKINGBITS" type="INTEGER" isOptional="false">
+               <Description>If 1, test walkingBits algorithm</Description>
+               <PossibleValues>0;1</PossibleValues>
+               <DefaultValue/>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+</TestSteps>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<Equipment version="13.44" name="IO_CARD" description="Input output card used for power management, energy management on I/O ports of the DUT.">
+    <!-- Model possible values: ACBN (Normal) | ACBP (Prototype) | ACBE (Enhanced) |
+    ACBT (Enhanced for Tablet) | EMT311 (support AC CHARGER and DCP) | USB_RLY08 | JSB291 -->
+    <Parameter name="Model" value="JSB291" />
+    <!-- JSB291 parameters -->
+    <Parameter name="SwitchOnOff" value="1" description="Number of the relay used to boot or stop the board"/>
+    <Parameter name="UsbHostPcConnect" value="2" description="Number of the relay used to plug or unplug USB on host PC"/>
+
+    <!-- Optional WiringTable parameter (default: all relays are considered normally opened)
+    This parameter indicates for each relay of the card if the relay
+    is wired to NO (normally opened) or NC (normally closed) terminal.
+    This parameter is a string of 2 bits value "b2|b1"
+    where bi is the bit representing the relay number i.
+    If the bit is set to 1, the relay is normally closed.
+    If the bit is set to 0, the relay is normally opened.
+    For example, if relays 2 is normally closed,
+    set wiring table "10". -->
+    <Parameter name="WiringTable" value="10" description="Wiring Table"/>
+</Equipment>

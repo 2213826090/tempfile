@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestSteps xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../acs/src/_Catalogs/TestStep/teststep.xsd">
+     <TestStep Id="LOCK_RESOURCE" Domain="UTILITIES" SubDomain="RESOURCE_MGMT" Feature="WAKELOCKS" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Utilities.ResourceManagement.LockResource.LockResource</ClassName>
+        <Description>Locks the access to given shared resource. Other test will have to wait for the resource
+        to be unlocked. Ex: 2 devices are running wifi test and only one router is available. This test step will
+        lock the wifi router so only one device can use it.</Description>
+        <Environment name="ANY"/>
+        <Parameters>
+            <Parameter name="RESOURCE" type="STRING" isOptional="false">
+                <Description>Resource that will be locked</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+            <Parameter name="TIMEOUT" type="INTEGER" isOptional="false">
+                <Description>Timeout value</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+            <Parameter name="LOCK_MANAGER_ADDRESS" type="STRING" isOptional="true">
+                <Description>Lock manager address</Description>
+                <PossibleValues/>
+                <DefaultValue>localhost</DefaultValue>
+            </Parameter>
+            <Parameter name="LOCK_MANAGER_PORT" type="INTEGER" isOptional="true">
+                <Description>Lock manager port address</Description>
+                <PossibleValues/>
+                <DefaultValue>8008</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="UNLOCK_RESOURCE" Domain="UTILITIES" SubDomain="RESOURCE_MGMT" Feature="WAKELOCKS" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Utilities.ResourceManagement.UnlockResource.UnlockResource</ClassName>
+        <Description>Unlocks a previously locked shared resource. Ex: Wifi router is locked for the duration of a test.
+        This step will unlock the wifi router so that it can be used by other tests.</Description>
+        <Environment name="ANY"/>
+        <Parameters>
+            <Parameter name="RESOURCE" type="STRING" isOptional="false">
+                <Description>Resource that will be locked</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+            <Parameter name="TIMEOUT" type="INTEGER" isOptional="false">
+                <Description>Timeout value</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+            <Parameter name="LOCK_MANAGER_ADDRESS" type="STRING" isOptional="true">
+                <Description>Lock manager address</Description>
+                <PossibleValues/>
+                <DefaultValue>localhost</DefaultValue>
+            </Parameter>
+            <Parameter name="LOCK_MANAGER_PORT" type="INTEGER" isOptional="true">
+                <Description>Lock manager port address</Description>
+                <PossibleValues/>
+                <DefaultValue>8008</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+</TestSteps>

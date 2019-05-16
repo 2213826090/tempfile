@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="13.44">
+    <UseCase>ANY_USB_TETHER</UseCase>
+    <Description>Enable USB tethering interface, ping FTP server, then disable thethering and ping again FTP server.</Description>
+    <Requirements>
+        <Contour>
+            <Global_ID>190390</Global_ID>
+            <Test_Case_ID>ST_TELEPHONY_DATA_3G_TETH_005</Test_Case_ID>
+            <Name>3G - Tethering USB - Basic Ping</Name>
+        </Contour>
+    </Requirements>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters>
+        <!-- Parameters for the USB tethering test case itself -->
+        <Parameter>
+            <!--Optional: Number of ping to perform. If the value is empty or 0, test case will not perform ping on FTP server address-->
+            <Name>PING_NUMBER</Name>
+            <Value>10</Value>
+        </Parameter>
+        <Parameter>
+            <!--overall timeout for ftp connection, ftp transfer, usb tethering connection-->
+            <Name>TIMEOUT</Name>
+            <Value>120</Value>
+        </Parameter>
+        <Parameter>
+            <!-- 2G | 3G | 4G | LIVE-->
+            <Name>RAT</Name>
+            <Value>3G</Value>
+        </Parameter>
+
+        <!-- Parameters for network configurations -->
+        <Parameter>
+          <!-- Cell Band (from Band 1 to Band 8)-->
+          <Name>CELL_BAND</Name>
+          <Value>1</Value>
+        </Parameter>
+        <Parameter>
+          <!-- Downlink UARFCN Frequency-->
+          <Name>DL_UARFCN</Name>
+          <Value>10700</Value>
+        </Parameter>
+        <Parameter>
+          <!-- Cell power in dBm -->
+          <Name>CELL_POWER</Name>
+          <Value>-60</Value>
+        </Parameter>
+        <Parameter>
+          <!--Cell Service (CIRCUIT | PACKET | CIRCUIT_PACKET | RBTEST) -->
+          <Name>CELL_SERVICE</Name>
+          <Value>CIRCUIT_PACKET</Value>
+        </Parameter>
+        <Parameter>
+          <!--  CQI scheme : Fixed value or UE reported  - FIXED|REPORTED -->
+          <Name>CQI_SCHEME</Name>
+          <Value>FIXED</Value>
+        </Parameter>
+        <Parameter>
+          <!--  PS Data HS-DSCH MAC-d PDU Size - BITS336|BITS656  -->
+          <Name>MAC_D_PDU_SIZE</Name>
+          <Value>BITS656</Value>
+        </Parameter>
+        <Parameter>
+            <!-- IP version IPV4 | IPV6 | IPV4V6 -->
+            <Name>IP_VERSION</Name>
+          <Value>IPV4</Value>
+        </Parameter>
+        <Parameter>
+          <!-- Uplink Radio Access Bearer (384k | HSUPA_CAT6 | MAX [If MAX is selected, value will be taken from DeviceCatalog.xml]) -->
+          <Name>UL_RAB</Name>
+          <Value>HSUPA_CAT6</Value>
+        </Parameter>
+        <Parameter>
+          <!-- Downlink Radio Access Bearer (HSDPA_CAT10 | HSDPA_CAT14 | HSDPA_CAT24 | MAX [If MAX is selected, value will be taken from DeviceCatalog.xml]) -->
+          <Name>DL_RAB</Name>
+          <Value>HSDPA_CAT10</Value>
+        </Parameter>
+        <Parameter>
+          <!-- CPC [Continuous Packet Connectivity] feature use (2 [TTI =2ms] | 10 [TTI =10ms]) -->
+          <Name>CPC</Name>
+          <Value></Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

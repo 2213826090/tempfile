@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="13.37">
+    <UseCase>LAB_FIT_TEL_GSM_VC_SMS_CS_MT</UseCase>
+    <Description>Test reception of SMS Cs during a GSM voice call</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters>
+        <Parameter>
+            <!-- Cell Band (PGSM|RGSM|EGSM|GSM450|GSM480|GSM750|GSM850|TGSM810|PCS|DCS) -->
+            <Name>CELL_BAND</Name>
+            <Value>DCS</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Broadcast Channel Arfcn frequency -->
+            <Name>BCH_ARFCN</Name>
+            <Value>698</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Traffic Channel Arfcn frequency -->
+            <Name>TCH_ARFCN</Name>
+            <Value>650</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Dialled Phone number and SMS recipient (MSISDN). If value is [PHONE_NUMBER] the value used will be the phoneNumber defined in the Phone_Catalog.xml -->
+            <Name>PHONE_NUMBER</Name>
+            <Value>[PHONE_NUMBER]</Value>
+        </Parameter>
+        <Parameter>
+            <!-- SMS text to send -->
+            <Name>SMS_TEXT</Name>
+            <Value>This is my SMS text !</Value>
+        </Parameter>
+        <Parameter>
+            <!-- SMS transfer timeout in seconds -->
+            <Name>SMS_TRANSFER_TIMEOUT</Name>
+            <Value>10</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

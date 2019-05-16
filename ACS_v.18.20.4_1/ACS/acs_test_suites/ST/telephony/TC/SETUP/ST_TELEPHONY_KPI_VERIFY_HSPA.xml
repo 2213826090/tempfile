@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase>
+    <UseCase>TEST_STEP_ENGINE</UseCase>
+    <Description>Perform a camp test on HSPA</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <TcMaxAttempt>1</TcMaxAttempt>
+    <SavePatRawData>False</SavePatRawData>
+    <PowerCalculation>False</PowerCalculation>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters>
+        <Parameter>
+            <Name>CELL_BAND</Name>
+            <Value>BAND1</Value>
+        </Parameter>
+        <Parameter>
+            <Name>RAT</Name>
+            <Value>3G</Value>
+        </Parameter>
+        <Parameter>
+          <!-- Uplink Radio Access Bearer (384k | HSUPA_CAT6 | MAX [If MAX is selected, value will be taken from DeviceCatalog.xml]) -->
+          <Name>UL_RAB</Name>
+          <Value>CAT6</Value>
+        </Parameter>
+        <Parameter>
+          <!-- Downlink Radio Access Bearer (HSDPA_CAT10 | HSDPA_CAT14 | HSDPA_CAT24 | MAX [If MAX is selected, value will be taken from DeviceCatalog.xml]) -->
+          <Name>DL_RAB</Name>
+          <Value>CAT24</Value>
+        </Parameter>
+    </Parameters>
+    <TestSteps>
+        <Include Src="ST/telephony/TSS/Common.xml" />
+        <Include Src="ST/telephony/TSS/8960.xml" />
+        <Initialize>
+        </Initialize>
+        <Setup>
+            <TestStep SetId="AllCommsOff" DEVICE="PHONE1"/>
+            <TestStep SetId="Configure8960"/>
+            <TestStep SetId="ConfigureHSPA" EQT="FROM_CTX:AGILENT8960_SIMULATOR_VISA"/>
+        </Setup>
+        <RunTest>
+            <TestStep SetId="Registration" EQT="FROM_CTX:AGILENT8960_SIMULATOR_VISA" DEVICE="PHONE1" TIMEOUT="FROM_DEVICE:PHONE1:registrationTimeout"/>
+            <TestStep SetId="DataConnection" EQT="FROM_CTX:AGILENT8960_SIMULATOR_VISA" DEVICE="PHONE1" TIMEOUT="FROM_DEVICE:PHONE1:registrationTimeout"/>
+        </RunTest>
+        <TearDown>
+            <TestStep SetId="CommonTearDown" EQT="FROM_CTX:AGILENT8960_SIMULATOR_VISA" DEVICE="PHONE1"/>
+        </TearDown>
+    </TestSteps>
+</TestCase>

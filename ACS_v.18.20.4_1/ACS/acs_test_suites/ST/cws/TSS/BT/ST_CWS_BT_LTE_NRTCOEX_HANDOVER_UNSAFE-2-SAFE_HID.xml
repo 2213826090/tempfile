@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<Include>
+    <TestStepSet Id="ST_CWS_BT_LTE_NRTCOEX_HANDOVER_UNSAFE-2-SAFE_HID-SETUP">
+        <TestStep SetId="FT_CWS_BT_LTE_NRTCOEX_HANDOVER_UNSAFE-2-SAFE-SETUP" />
+    </TestStepSet>
+    <TestStepSet Id="ST_CWS_BT_LTE_NRTCOEX_HANDOVER_UNSAFE-2-SAFE_HID-RUNTEST">
+        <TestStep Id="SYSDEBUG_START_ACQUISITION" DEVICE="PHONE1" />
+        <!-- Enable BT -->
+        <TestStep Id="BT_SET_POWER" POWER="ON" />
+        <!-- check if frequency range is reduced -->
+        <TestStep SetId="BT_NRT_CHECK_REDUCED_FREQUENCY_RANGE" LTE_CHANNEL="FROM_TC:LTE_INITIAL_CHANNEL" />
+        <!-- set mouse as pairable -->
+        <TestStep Id="SET_HID_MOUSE_STATE" STATE="PAIRABLE" />
+        <!-- scan for the mouse -->
+        <TestStep Id="BT_FIND_DEVICE" DEVICE="PHONE1" DEVICE_TO_FIND="FROM_BENCH:BT_MOUSE:BD_Address" MUST_FIND="true" />
+        <!-- pair and connect to the mouse -->
+        <TestStep Id="BT_PAIR" DEVICE="PHONE1" BDADDR="FROM_BENCH:BT_MOUSE:BD_Address" UNPAIR_FIRST="true" ACCEPT_PAIRING="true" PASS_KEY="0" PIN_CODE="0000" />
+        <!-- connect the HID profile -->
+        <TestStep Id="BT_CONNECT_PROFILE" DEVICE="PHONE1" BDADDR="FROM_BENCH:BT_MOUSE:BD_Address" PROFILE="HID" CONNECT="true" />
+        <!-- check if HID profile is use -->
+        <TestStep Id="BT_CHECK_PROFILE_STATUS" DEVICE="PHONE1" BDADDR="FROM_BENCH:BT_MOUSE:BD_Address" PROFILE="HID" FAIL_IF="disconnected" SAVE_AS="PROFILE_STATUS" />
+        <!-- LTE cell handover from safe to unsafe band -->
+        <TestStep SetId="INITIATE_HANDOVER" />
+        <!-- check if LTE handover is successful -->
+        <TestStep SetId="CHECK_LTE_2ND_CHANNEL_HANDOVER" />
+        <!-- Check LTE attachment -->
+        <TestStep Id="CHECK_RAT_WITH_PREFERRED_NETWORK" PREFERRED_NETWORK="4G_ONLY" TIMEOUT="FROM_DEVICE:PHONE1:registrationTimeout" />
+        <TestStep SetId="CHECK_RRC_CONNECTION_OK" />
+        <!-- check if frequency range is default -->
+        <TestStep SetId="BT_NRT_CHECK_FULL_FREQUENCY_RANGE" />
+        <!-- check if HID profile is use -->
+        <TestStep Id="BT_CHECK_PROFILE_STATUS" DEVICE="PHONE1" BDADDR="FROM_BENCH:BT_MOUSE:BD_Address" PROFILE="HID" FAIL_IF="disconnected" SAVE_AS="PROFILE_STATUS" />
+        <!-- send and check mouse events -->
+        <Fork Id="mouse-emulation" Delay="0.5">
+            <TestStep Id="READ_HID_EVENTS" DEVICE="PHONE1" HID_DEVICE="FROM_BENCH:BT_MOUSE:Name" EVENTS="BTN_RIGHT,BTN_LEFT,BTN_MIDDLE" TIMEOUT="5" />
+            <TestStep Id="HID_MOUSE_CLICK" BUTTONS="RIGHT,LEFT,MIDDLE" INTERVAL_SECS="2" />
+        </Fork>
+    </TestStepSet>
+    <TestStepSet Id="ST_CWS_BT_LTE_NRTCOEX_HANDOVER_UNSAFE-2-SAFE_HID-TEARDOWN">
+        <!-- disconnect the HID profile -->
+        <TestStep Id="BT_CONNECT_PROFILE" DEVICE="PHONE1" BDADDR="FROM_BENCH:BT_MOUSE:BD_Address" PROFILE="HID" CONNECT="false" />
+        <!-- unpair the mouse -->
+        <TestStep Id="BT_UNPAIR" DEVICE="PHONE1" BDADDR="FROM_BENCH:BT_MOUSE:BD_Address" />
+        <!-- swith the mouse OFF -->
+        <TestStep Id="SET_HID_MOUSE_STATE" STATE="OFF" />
+        <!-- common teardown -->
+        <TestStep SetId="FT_CWS_BT_LTE_NRTCOEX_HANDOVER_UNSAFE-2-SAFE-TEARDOWN" />
+    </TestStepSet>
+</Include>

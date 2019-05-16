@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='ASCII'?>
+<TestCase>
+    <UseCase>Testlib</UseCase>
+    <Description>Test sensors hal</Description>
+    <Description>Command: sensors-hal-example-app</Description>
+    <Description>Result: The app will display stable values for all axes</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <TcMaxAttempt>1</TcMaxAttempt>
+    <Parameters>
+        <Parameter>
+            <Name>test</Name>
+            <Value>scripts/brillo/tests/7.9.3.0_sensors_hal.py</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

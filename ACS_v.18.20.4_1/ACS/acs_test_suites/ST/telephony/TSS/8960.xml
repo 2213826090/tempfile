@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<Include>
+    <!-- File with 8960 configuration test step set for QCTV telephony team -->
+    <!-- Basic 8960 configuration (Initialisation,Preset, IP configuration, Band configuration, Stop RF emission -->
+    <TestStepSet Id="Configure8960">
+        <TestStep Id="FIND_NETWORK_SIMULATOR" EQT_NAME="AGILENT8960_SIMULATOR_VISA" FEATURE="FROM_TC:RAT" />
+        <TestStep SetId="Init8960" EQT="FROM_CTX:AGILENT8960_SIMULATOR_VISA" FEATURE="FROM_TC:RAT" CONFIG="FROM_TC:CELL_BAND" />
+    </TestStepSet>
+    <!-- File with 8960 configuration test step set for QCTV telephony team -->
+    <!-- Basic 8960 configuration (Initialisation,Preset, IP configuration, Band configuration, Stop RF emission -->
+    <!-- Parameters : EQT (equipment) FEATURE(RAT) CONFIG (cell config to apply)-->
+    <TestStepSet Id="Init8960">
+        <TestStep Id="INIT_NETWORK_SIMULATOR" />
+        <TestStep Id="NS_SET_PARAM" NAME="SetCellOnOff" OPTION="DEFAULT" VALUE="OFF"/>
+        <TestStep Id="NS_CONFIGURE_CELL" CONFIG_FILE_NAME="A8960Configurations.xml"/>
+    </TestStepSet>
+    
+    <!-- 8960 HSPA configuration (Fast dormancy (FDOR), IMS PDP reject, HSDPA configuration, HSUPA configuration) -->
+    <!-- Parameters : EQT (equipment) -->
+    <TestStepSet Id="ConfigureHSPA">
+        <TestStep Id="NS_CONFIGURE_CELL" CONFIG="IMS_REJECT;3G_PACKET" CONFIG_FILE_NAME="A8960Configurations.xml"/>
+        <TestStep Id="NS_SET_PARAM" NAME="SetCategoryControlMode" OPTION="DEFAULT" VALUE="ON"/>
+        <TestStep Id="NS_CONFIGURE_CELL" CONFIG="FROM_TC:DL_RAB" CONFIG_FILE_NAME="A8960Configurations.xml"/>
+        <TestStep Id="NS_SET_PARAM" NAME="SetUplinkChannelMode" OPTION="DEFAULT" VALUE="ON"/>
+        <TestStep Id="NS_SET_PARAM" NAME="SetMacDPduSize" OPTION="DEFAULT" VALUE="BITS656"/>
+        <TestStep Id="NS_CONFIGURE_CELL" CONFIG="FROM_TC:UL_RAB" CONFIG_FILE_NAME="A8960Configurations.xml"/>
+    </TestStepSet>
+    <!-- 8960 WCDMA configuration (Fast dormancy, IMS PDP reject) -->
+    <!-- Parameters : EQT (equipment) -->
+    <TestStepSet Id="ConfigureWCDMA">
+        <TestStep Id="NS_CONFIGURE_CELL" CONFIG="3G_PACKET" CONFIG_FILE_NAME="A8960Configurations.xml"/>
+    </TestStepSet>
+    <!-- 8960 EGPRS configuration (multislot configuration, MCS) -->
+    <!-- Parameters : EQT (equipment) -->
+    <TestStepSet Id="ConfigureEGPRS">
+        <TestStep Id="NS_CONFIGURE_CELL" CONFIG="EGPRS" CONFIG_FILE_NAME="A8960Configurations.xml"/>
+    </TestStepSet>
+</Include>

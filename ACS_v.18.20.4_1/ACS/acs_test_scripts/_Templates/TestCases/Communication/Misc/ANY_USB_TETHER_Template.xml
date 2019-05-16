@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="13.44">
+    <UseCase>ANY_USB_TETHER</UseCase>
+    <!---->
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <Parameters>
+        <!-- Parameters for the USB tethering test case itself -->
+        <Parameter>
+            <!--Optional: Failure data average throughput value in Mbps (UL, DL). If the value is empty, test case will use default value defined in _Configs/Throughput_Targets.xml-->
+            <Name>FAILURE_TARGETS</Name>
+            <Value>DL:20,UL:10</Value>
+        </Parameter>
+        <Parameter>
+            <!--Optional: full path to the FTP file (UL: name used to store local file on FTP server - DL: name of the file to download). FTP server address is given in the Bench_Config ("LAB_SERVER" or "LAB_LTE_SERVER"). If the value is empty, test case will use not perform FTP transfer-->
+            <Name>FTP_FILE</Name>
+            <Value>10MB.txt</Value>
+        </Parameter>
+        <Parameter>
+            <!--Optional: name of the LOCAL file (UL: acs file installed on computer after deployBin in "acs/src/_Embedded/USERDATA/" - DL: name to used to store downloaded FTP file on local computer). If the value is empty, test case will use not perform FTP transfer-->
+            <Name>LOCAL_FILE</Name>
+            <Value>50MB.txt</Value>
+        </Parameter>
+        <Parameter>
+            <!--overall timeout for ftp connection, ftp transfer, usb tethering connection-->
+            <Name>TIMEOUT</Name>
+            <Value>60</Value>
+        </Parameter>
+        <Parameter>
+            <!-- 2G | 3G | 4G | LIVE-->
+            <Name>RAT</Name>
+            <Value>3G</Value>
+        </Parameter>
+        <Parameter>
+            <!--Optional: the FTP transfer direction. Should be 'UL' or 'DL'. If the value is empty, test case will use not perform FTP transfer-->
+            <Name>DIRECTION</Name>
+            <Value>UL</Value>
+        </Parameter>
+        <Parameter>
+            <!--Optional: Number of ping to perform. If the value is empty or 0, test case will not perform ping on FTP server address-->
+            <Name>PING_NUMBER</Name>
+            <Value>10</Value>
+        </Parameter>
+        <!-- Parameters for network configurations -->
+        <Parameter>
+          <!-- Cell Band (from Band 1 to Band 8)-->
+          <Name>CELL_BAND</Name>
+          <Value>1</Value>
+        </Parameter>
+        <Parameter>
+          <!-- Downlink UARFCN Frequency-->
+          <Name>DL_UARFCN</Name>
+          <Value>10700</Value>
+        </Parameter>
+        <Parameter>
+          <!-- Cell power in dBm -->
+          <Name>CELL_POWER</Name>
+          <Value>-60</Value>
+        </Parameter>
+        <Parameter>
+          <!--Cell Service (CIRCUIT | PACKET | CIRCUIT_PACKET | RBTEST) -->
+          <Name>CELL_SERVICE</Name>
+          <Value>CIRCUIT_PACKET</Value>
+        </Parameter>
+        <Parameter>
+          <!--  CQI scheme : Fixed value or UE reported  - FIXED|REPORTED -->
+          <Name>CQI_SCHEME</Name>
+          <Value>FIXED</Value>
+        </Parameter>
+        <Parameter>
+          <!--  PS Data HS-DSCH MAC-d PDU Size - BITS336|BITS656  -->
+          <Name>MAC_D_PDU_SIZE</Name>
+          <Value>BITS656</Value>
+        </Parameter>
+        <Parameter>
+          <!-- Protocol IPV4 | IPV6 | IPV4V6 -->
+          <Name>PROTOCOL</Name>
+          <Value>IPV4</Value>
+        </Parameter>
+        <Parameter>
+          <!-- Uplink Radio Access Bearer (384k | HSUPA_CAT6 | MAX [If MAX is selected, value will be taken from DeviceCatalog.xml]) -->
+          <Name>UL_RAB</Name>
+          <Value>HSUPA_CAT6</Value>
+        </Parameter>
+        <Parameter>
+          <!-- Downlink Radio Access Bearer (HSDPA_CAT10 | HSDPA_CAT14 | HSDPA_CAT24 | MAX [If MAX is selected, value will be taken from DeviceCatalog.xml]) -->
+          <Name>DL_RAB</Name>
+          <Value>HSDPA_CAT10</Value>
+        </Parameter>
+        <Parameter>
+          <!-- CPC [Continuous Packet Connectivity] feature use (2 [TTI =2ms] | 10 [TTI =10ms]) -->
+          <Name>CPC</Name>
+          <Value></Value>
+        </Parameter>
+        <Parameter>
+            <!-- Optional: Specify if test is a PI/KPI test -->
+            <Name>KPI_TEST</Name>
+            <Value>False</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Carrier Aggregation to set: True or False -->
+            <Name>CARRIER_AGGREGATION</Name>
+            <Value>True</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Secondary Component Carrier (from Band 1 to Band 32) -->
+            <Name>SCC_BAND</Name>
+            <Value>20</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Secondary Component Carrier Downlink channel -->
+            <Name>SCC_EARFCN</Name>
+            <Value>6300</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Secondary Component Carrier channel bandwidth to set: 1.4MHz; 3 MHz; 5MHz; 10 MHz; 15MHz; 20 MHz-->
+            <Name>SCC_BANDWIDTH</Name>
+            <Value>5</Value>
+        </Parameter>
+    </Parameters>
+    <TestSteps>
+        <Initialize>
+            <!-- Get the artifact on local host -->
+            <TestStep Id="GET_ARTIFACT" ARTIFACT="MISCELLANEOUS/TXT/[+]FROM_TC:LOCAL_FILE"
+                      ARTIFACT_SOURCE="FROM_BENCH:ARTIFACT_MANAGER:URI" TRANSFER_TIMEOUT="DEFAULT"
+                      STORED_FILE_PATH="FILE_PATH_IN_CACHE1" EQT="DEFAULT"/>
+            <!-- Then, Push it on the device. Device destination folder will be the default device media folder (/sdcard/acs_media) -->
+            <!-- FILE_PATH is retrieved from test step context -->
+            <TestStep Id="INSTALL_FILE" DEVICE="PHONE1" FILE_PATH="FROM_CTX:FILE_PATH_IN_CACHE1" TYPE="media"
+                      DESTINATION="FROM_DEVICE:PHONE1:userdataPath" TIMEOUT="DEFAULT" DESTINATION_STORED_PATH="FILE_PATH_IN_CACHE1"/>
+        </Initialize>
+        <Finalize>
+            <!-- When test has been run, we can remove the mp3 files if necessary -->
+            <TestStep Id="UNINSTALL_FILE" DEVICE="PHONE1" DEVICE_FOLDER="FROM_DEVICE:PHONE1:userdataPath"
+                      FILENAME="FROM_TC:LOCAL_FILE"/>
+        </Finalize>
+    </TestSteps>
+</TestCase>

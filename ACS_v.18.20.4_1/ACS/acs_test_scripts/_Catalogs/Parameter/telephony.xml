@@ -1,0 +1,2225 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!-- Telephony Parameters Catalog Template : new template to automatically populate i-TAP database with exhaustive Telephony tC params -->
+<Parameters xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../acs/src/_Catalogs/Parameter/parameter.xsd">
+    <Parameter name="PHONE_NUMBER">
+        <Description>MSISDN - If the value [PHONE_NUMBER] is given, its value comes from DeviceCatalog, BenchConfig files</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>str</Type>
+        <PossibleValues override="false"></PossibleValues>
+        <DefaultValue override="false"></DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="MOBILE_DIRECTION">
+        <Description>MO [Mobile Originated] | MT [Mobile Terminated]</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>str</Type>
+        <PossibleValues override="false">MO;MT</PossibleValues>
+        <DefaultValue override="false">MO</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="TIMEOUT">
+        <Description>Timeout in seconds</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>int</Type>
+        <PossibleValues override="false">[1:9999]</PossibleValues>
+        <DefaultValue override="false">60</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+        <Parameter name="COUNTER">
+        <Description>Counter (int)</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>int</Type>
+        <PossibleValues override="false">[0:9999]</PossibleValues>
+        <DefaultValue override="false">1</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="USER_NAME">
+        <Description> User name use for login.</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>str</Type>
+        <PossibleValues override="false"></PossibleValues>
+        <DefaultValue override="false">lab</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="USER_PASSWORD">
+        <Description>User password use for login.</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>str</Type>
+        <PossibleValues override="false"></PossibleValues>
+        <DefaultValue override="false">intellab</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="CELL_SERVICE">
+        <Description>Cell Service ( (GSM|GPRS|EGPRS) for 2G CELL, (CIRCUIT|PACKET|CIRCUIT_PACKET) for 3G CELL)</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>str</Type>
+        <PossibleValues override="false">GSM;GPRS;EGPRS;CIRCUIT;PACKET;CIRCUIT_PACKET</PossibleValues>
+        <DefaultValue override="true">GSM</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="CELL_SERVICE_2G">
+        <Description>Cell Service to set on network simulators defined in BenchConfig. GSM|GPRS|EGPRS for 2G CELL</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>str</Type>
+        <PossibleValues override="false">GSM;GPRS;EGPRS</PossibleValues>
+        <DefaultValue override="true">GSM</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="CELL_SERVICE_3G">
+        <Description>Cell Service to set on network simulators defined in BenchConfig. CIRCUIT | PACKET | CIRCUIT_PACKET | RBTEST for 3G CELL</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>str</Type>
+        <PossibleValues override="false">CIRCUIT;PACKET;CIRCUIT_PACKET;RBTEST</PossibleValues>
+        <DefaultValue override="true">CIRCUIT</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="CELL_BROADCAST_MESSAGE_IDENTIFIER">
+        <Description>Cell Boadcast Message Identifier. It will differentiate between older and newer versions of the same CBS msg - 4 bits - 0 to 15</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>int</Type>
+        <PossibleValues override="false">[0:15]</PossibleValues>
+        <DefaultValue override="true">0</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="CELL_BROADCAST_UPDATE_NUMBER">
+        <Description>Cell Boadcast Update Number - 2 bytes - 0 to 65535</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>int</Type>
+        <PossibleValues override="false">[0:65535]</PossibleValues>
+        <DefaultValue override="true">4532</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="CELL_TECHNOLOGY">
+        <Description>Cell Technology (2G|3G)</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>str</Type>
+        <PossibleValues override="false">2G;3G</PossibleValues>
+        <DefaultValue override="true">2G</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="CELL_POWER_IN_DBM">
+        <Description>Cell Power (in dBm) to set on network simulators defined in BenchConfig</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>float</Type>
+        <PossibleValues override="true">[-160.0:40.0]</PossibleValues>
+        <DefaultValue override="true">-80.0</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="DELTA_CELL_POWER_IN_DBM">
+        <Description>Delta step for active cell power in dBm (must be positive, can be decimal value like 0.20 or 2.6)</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>float</Type>
+        <PossibleValues override="true">[0.0:40.0]</PossibleValues>
+        <DefaultValue override="true">10</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="VOICE_CODER_RATE_2G">
+        <Description>2G NB and WB voice coders</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>str</Type>
+        <PossibleValues override="false">FR;EFR;HR;FR_AMR_1220;FR_AMR_1020;FR_AMR_795;FR_AMR_740;FR_AMR_670;FR_AMR_590;FR_AMR_515;FR_AMR_475;HR_AMR_795;HR_AMR_740;HR_AMR_670;HR_AMR_590;HR_AMR_515;HR_AMR_475;AMR_WB_1265;AMR_WB_885;AMR_WB_660</PossibleValues>
+        <DefaultValue override="true">FR</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="VOICE_CODER_RATE_3G">
+        <Description>3G NB and WB voice coders</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>str</Type>
+        <PossibleValues override="false">FR_AMR_NB_1220;FR_AMR_NB_1020;FR_AMR_NB_795;FR_AMR_NB_740;FR_AMR_NB_670;FR_AMR_NB_590;FR_AMR_NB_515;FR_AMR_NB_475;AMR_WB_2385;AMR_WB_2305;AMR_WB_1985;AMR_WB_1825;AMR_WB_1585;AMR_WB_1425;AMR_WB_1265;AMR_WB_885;AMR_WB_660</PossibleValues>
+        <DefaultValue override="true">FR_AMR_NB_1220</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="RAC">
+        <Description>Routing Area Code - 1 byte - 1 to 255</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>int</Type>
+        <PossibleValues override="false">[1:255]</PossibleValues>
+        <DefaultValue override="true">1</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="LAC">
+        <Description>Local Area Code - 2 bytes - 0 to 65535</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>int</Type>
+        <PossibleValues override="false">[0:65535]</PossibleValues>
+        <DefaultValue override="true">0</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="MCC">
+        <Description>Mobile Country Code - 0 to 999</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>digit</Type>
+        <PossibleValues override="false">[0:9];[0:9];[0:9]</PossibleValues>
+        <DefaultValue override="true">0;0;0</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="MNC">
+        <Description>Mobile Network Code - 0 to 999</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>digit</Type>
+        <PossibleValues override="false">[0:9];[0:9];[0:9]</PossibleValues>
+        <DefaultValue override="true">0;0;0</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="CELL_ARFCN">
+        <Description>Broadcast Channel Arfcn frequency - all band</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>int</Type>
+        <PossibleValues override="false">[0:65535]</PossibleValues>
+        <DefaultValue override="true"></DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="BCH_ARFCN_PGSM">
+        <Description>Broadcast Channel Arfcn frequency - PGSM BAND</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>int</Type>
+        <PossibleValues override="false">[1:124]</PossibleValues>
+        <DefaultValue override="true">100</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="BCH_ARFCN_RGSM">
+        <Description>Broadcast Channel Arfcn frequency - RGSM BAND</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>int</Type>
+        <PossibleValues override="false">[0:124];[955:1023]</PossibleValues>
+        <DefaultValue override="true">110</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="BCH_ARFCN_EGSM">
+        <Description>Broadcast Channel Arfcn frequency - EGSM BAND</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>int</Type>
+        <PossibleValues override="false">[0:124];[975:1023]</PossibleValues>
+        <DefaultValue override="true">120</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="BCH_ARFCN_GSM450">
+        <Description>Broadcast Channel Arfcn frequency - GSM450 BAND</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>int</Type>
+        <PossibleValues override="false">[259:293]</PossibleValues>
+        <DefaultValue override="true">230</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="BCH_ARFCN_GSM480">
+        <Description>Broadcast Channel Arfcn frequency - GSM480 BAND</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>int</Type>
+        <PossibleValues override="false">[306:340]</PossibleValues>
+        <DefaultValue override="true">320</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="BCH_ARFCN_GSM750">
+        <Description>Broadcast Channel Arfcn frequency - GSM750 BAND</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>int</Type>
+        <PossibleValues override="false">[438:511]</PossibleValues>
+        <DefaultValue override="true">450</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="BCH_ARFCN_GSM850">
+        <Description>Broadcast Channel Arfcn frequency - GSM850 BAND</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>int</Type>
+        <PossibleValues override="false">[128:251]</PossibleValues>
+        <DefaultValue override="true">200</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="BCH_ARFCN_TGSM810">
+        <Description>Broadcast Channel Arfcn frequency - TGSM810 BAND</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>int</Type>
+        <PossibleValues override="false">[1:124]</PossibleValues>
+        <DefaultValue override="true">120</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="BCH_ARFCN_PCS">
+        <Description>Broadcast Channel Arfcn frequency - PCS BAND</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>int</Type>
+        <PossibleValues override="false">[512:810]</PossibleValues>
+        <DefaultValue override="true">600</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="BCH_ARFCN_DCS">
+        <Description>Broadcast Channel Arfcn frequency - DCS BAND</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>int</Type>
+        <PossibleValues override="false">[512:885]</PossibleValues>
+        <DefaultValue override="true">700</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="TCH_ARFCN_PGSM">
+        <Description>Traffic Channel Arfcn frequency - PGSM BAND</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>int</Type>
+        <PossibleValues override="false">[1:124]</PossibleValues>
+        <DefaultValue override="true">100</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="TCH_ARFCN_RGSM">
+        <Description>Traffic Channel Arfcn frequency - RGSM BAND</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>int</Type>
+        <PossibleValues override="false">[0:124];[955:1023]</PossibleValues>
+        <DefaultValue override="true">110</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="TCH_ARFCN_EGSM">
+        <Description>Traffic Channel Arfcn frequency - EGSM BAND</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>int</Type>
+        <PossibleValues override="false">[0:124];[975:1023]</PossibleValues>
+        <DefaultValue override="true">120</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="TCH_ARFCN_GSM450">
+        <Description>Traffic Channel Arfcn frequency - GSM450 BAND</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>int</Type>
+        <PossibleValues override="false">[259:293]</PossibleValues>
+        <DefaultValue override="true">230</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="TCH_ARFCN_GSM480">
+        <Description>Traffic Channel Arfcn frequency - GSM480 BAND</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>int</Type>
+        <PossibleValues override="false">[306:340]</PossibleValues>
+        <DefaultValue override="true">320</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="TCH_ARFCN_GSM750">
+        <Description>Traffic Channel Arfcn frequency - GSM750 BAND</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>int</Type>
+        <PossibleValues override="false">[438:511]</PossibleValues>
+        <DefaultValue override="true">450</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="TCH_ARFCN_GSM850">
+        <Description>Traffic Channel Arfcn frequency - GSM850 BAND</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>int</Type>
+        <PossibleValues override="false">[128:251]</PossibleValues>
+        <DefaultValue override="true">200</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="TCH_ARFCN_TGSM810">
+        <Description>Traffic Channel Arfcn frequency - TGSM810 BAND</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>int</Type>
+        <PossibleValues override="false">[1:124]</PossibleValues>
+        <DefaultValue override="true">120</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="TCH_ARFCN_PCS">
+        <Description>Traffic Channel Arfcn frequency - PCS BAND</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>int</Type>
+        <PossibleValues override="false">[512:810]</PossibleValues>
+        <DefaultValue override="true">600</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="TCH_ARFCN_DCS">
+        <Description>Traffic Channel Arfcn frequency - DCS BAND</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>int</Type>
+        <PossibleValues override="false">[512:885]</PossibleValues>
+        <DefaultValue override="true">700</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="PDTCH_ARFCN_PGSM">
+        <Description>Packet Data Traffic Channel Arfcn frequency - PGSM BAND</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>int</Type>
+        <PossibleValues override="false">[1:124]</PossibleValues>
+        <DefaultValue override="true">100</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="PDTCH_ARFCN_RGSM">
+        <Description>Packet Data Traffic Channel Arfcn frequency - RGSM BAND</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>int</Type>
+        <PossibleValues override="false">[0:124];[955:1023]</PossibleValues>
+        <DefaultValue override="true">110</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="PDTCH_ARFCN_EGSM">
+        <Description>Packet Data Traffic Channel Arfcn frequency - EGSM BAND</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>int</Type>
+        <PossibleValues override="false">[0:124];[975:1023]</PossibleValues>
+        <DefaultValue override="true">120</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="PDTCH_ARFCN_GSM450">
+        <Description>Packet Data Traffic Channel Arfcn frequency - GSM450 BAND</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>int</Type>
+        <PossibleValues override="false">[259:293]</PossibleValues>
+        <DefaultValue override="true">230</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="PDTCH_ARFCN_GSM480">
+        <Description>Packet Data Traffic Channel Arfcn frequency - GSM480 BAND</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>int</Type>
+        <PossibleValues override="false">[306:340]</PossibleValues>
+        <DefaultValue override="true">320</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="PDTCH_ARFCN_GSM750">
+        <Description>Packet Data Traffic Channel Arfcn frequency - GSM750 BAND</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>int</Type>
+        <PossibleValues override="false">[438:511]</PossibleValues>
+        <DefaultValue override="true">450</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="PDTCH_ARFCN_GSM850">
+        <Description>Packet Data Traffic Channel Arfcn frequency - GSM850 BAND</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>int</Type>
+        <PossibleValues override="false">[128:251]</PossibleValues>
+        <DefaultValue override="true">200</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="PDTCH_ARFCN_TGSM810">
+        <Description>Packet Data Traffic Channel Arfcn frequency - TGSM810 BAND</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>int</Type>
+        <PossibleValues override="false">[1:124]</PossibleValues>
+        <DefaultValue override="true">120</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="PDTCH_ARFCN_PCS">
+        <Description>Packet Data Traffic Channel Arfcn frequency - PCS BAND</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>int</Type>
+        <PossibleValues override="false">[512:810]</PossibleValues>
+        <DefaultValue override="true">600</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="PDTCH_ARFCN_DCS">
+        <Description>Packet Data Traffic Channel Arfcn frequency - DCS BAND</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>int</Type>
+        <PossibleValues override="false">[512:885]</PossibleValues>
+        <DefaultValue override="true">700</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+        <Parameter name="CELL_BAND">
+        <Description>Cell Band. For 2G : EGSM|GSM850|PCS|DCS. For 3G : 1,2,5,8</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>str</Type>
+        <PossibleValues override="false">EGSM;GSM850;PCS;DCS;1;2;5;8</PossibleValues>
+        <DefaultValue override="false">EGSM</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="CELL_BAND_2G">
+        <Description>Name of the GSM frequency band used</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>str</Type>
+        <PossibleValues override="false">PGSM;RGSM;EGSM;GSM450;GSM480;GSM750;GSM850;TGSM810;PCS;DCS</PossibleValues>
+        <DefaultValue override="true">PGSM</DefaultValue>
+        <Blank override="false">false</Blank>
+        <Dependencies>
+            <Dependency mandatory="true" name="BCH_ARFCN" description="Broadcast Channel Arfcn frequency">
+                <DependencyParameter possibleValue="PGSM">BCH_ARFCN_PGSM</DependencyParameter>
+                <DependencyParameter possibleValue="RGSM">BCH_ARFCN_RGSM</DependencyParameter>
+                <DependencyParameter possibleValue="EGSM">BCH_ARFCN_EGSM</DependencyParameter>
+                <DependencyParameter possibleValue="GSM450">BCH_ARFCN_GSM450</DependencyParameter>
+                <DependencyParameter possibleValue="GSM480">BCH_ARFCN_GSM480</DependencyParameter>
+                <DependencyParameter possibleValue="GSM750">BCH_ARFCN_GSM750</DependencyParameter>
+                <DependencyParameter possibleValue="GSM850">BCH_ARFCN_GSM850</DependencyParameter>
+                <DependencyParameter possibleValue="TGSM810">BCH_ARFCN_TGSM810</DependencyParameter>
+                <DependencyParameter possibleValue="PCS">BCH_ARFCN_PCS</DependencyParameter>
+                <DependencyParameter possibleValue="DCS">BCH_ARFCN_DCS</DependencyParameter>
+            </Dependency>
+            <Dependency mandatory="false" name="TCH_ARFCN" description="Traffic Channel Arfcn frequency">
+                <DependencyParameter possibleValue="PGSM">TCH_ARFCN_PGSM</DependencyParameter>
+                <DependencyParameter possibleValue="RGSM">TCH_ARFCN_RGSM</DependencyParameter>
+                <DependencyParameter possibleValue="EGSM">TCH_ARFCN_EGSM</DependencyParameter>
+                <DependencyParameter possibleValue="GSM450">TCH_ARFCN_GSM450</DependencyParameter>
+                <DependencyParameter possibleValue="GSM480">TCH_ARFCN_GSM480</DependencyParameter>
+                <DependencyParameter possibleValue="GSM750">TCH_ARFCN_GSM750</DependencyParameter>
+                <DependencyParameter possibleValue="GSM850">TCH_ARFCN_GSM850</DependencyParameter>
+                <DependencyParameter possibleValue="TGSM810">TCH_ARFCN_TGSM810</DependencyParameter>
+                <DependencyParameter possibleValue="PCS">TCH_ARFCN_PCS</DependencyParameter>
+                <DependencyParameter possibleValue="DCS">TCH_ARFCN_DCS</DependencyParameter>
+            </Dependency>
+            <Dependency mandatory="false" name="PDTCH_ARFCN" description="Packet Data Traffic Channel Arfcn frequency">
+                <DependencyParameter possibleValue="PGSM">PDTCH_ARFCN_PGSM</DependencyParameter>
+                <DependencyParameter possibleValue="RGSM">PDTCH_ARFCN_RGSM</DependencyParameter>
+                <DependencyParameter possibleValue="EGSM">PDTCH_ARFCN_EGSM</DependencyParameter>
+                <DependencyParameter possibleValue="GSM450">PDTCH_ARFCN_GSM450</DependencyParameter>
+                <DependencyParameter possibleValue="GSM480">PDTCH_ARFCN_GSM480</DependencyParameter>
+                <DependencyParameter possibleValue="GSM750">PDTCH_ARFCN_GSM750</DependencyParameter>
+                <DependencyParameter possibleValue="GSM850">PDTCH_ARFCN_GSM850</DependencyParameter>
+                <DependencyParameter possibleValue="TGSM810">PDTCH_ARFCN_TGSM810</DependencyParameter>
+                <DependencyParameter possibleValue="PCS">PDTCH_ARFCN_PCS</DependencyParameter>
+                <DependencyParameter possibleValue="DCS">PDTCH_ARFCN_DCS</DependencyParameter>
+            </Dependency>
+        </Dependencies>
+    </Parameter>
+    <Parameter name="UL_UARFCN_BAND1">
+        <Description>Uplink UTRA Arfcn frequency - BAND I</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>int</Type>
+        <PossibleValues override="false">[9612:9888]</PossibleValues>
+        <DefaultValue override="true">9700</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="UL_UARFCN_BAND2">
+        <Description>Uplink UTRA Arfcn frequency - BAND II</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>int</Type>
+        <PossibleValues override="false">[9262:9538]</PossibleValues>
+        <DefaultValue override="true">9300</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="UL_UARFCN_BAND3">
+        <Description>Uplink UTRA Arfcn frequency - BAND III</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>int</Type>
+        <PossibleValues override="false">[937:1288]</PossibleValues>
+        <DefaultValue override="true">940</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="UL_UARFCN_BAND4">
+        <Description>Uplink UTRA Arfcn frequency - BAND IV</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>int</Type>
+        <PossibleValues override="false">[1312:1513]</PossibleValues>
+        <DefaultValue override="true">1400</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="UL_UARFCN_BAND5">
+        <Description>Uplink UTRA Arfcn frequency - BAND V</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>int</Type>
+        <PossibleValues override="false">[4132:4233]</PossibleValues>
+        <DefaultValue override="true">4200</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="UL_UARFCN_BAND6">
+        <Description>Uplink UTRA Arfcn frequency - BAND VI</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>int</Type>
+        <PossibleValues override="false">[4162:4188]</PossibleValues>
+        <DefaultValue override="true">4200</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="UL_UARFCN_BAND7">
+        <Description>Uplink UTRA Arfcn frequency - BAND VII</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>int</Type>
+        <PossibleValues override="false">[2012:2338]</PossibleValues>
+        <DefaultValue override="true">2100</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="UL_UARFCN_BAND8">
+        <Description>Uplink UTRA Arfcn frequency - BAND VIII</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>int</Type>
+        <PossibleValues override="false">[2712:2863]</PossibleValues>
+        <DefaultValue override="true">2800</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="UL_UARFCN_BAND9">
+        <Description>Uplink UTRA Arfcn frequency - BAND IX</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>int</Type>
+        <PossibleValues override="false">[8762:8912]</PossibleValues>
+        <DefaultValue override="true">8800</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="DL_UARFCN_BAND1">
+        <Description>Downlink UTRA Arfcn frequency - BAND I</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>int</Type>
+        <PossibleValues override="false">[10562:10838]</PossibleValues>
+        <DefaultValue override="true">10600</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="DL_UARFCN_BAND2">
+        <Description>Downlink UTRA Arfcn frequency - BAND II</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>int</Type>
+        <PossibleValues override="false">[9662:9938]</PossibleValues>
+        <DefaultValue override="true">9700</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="DL_UARFCN_BAND3">
+        <Description>Downlink UTRA Arfcn frequency - BAND III</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>int</Type>
+        <PossibleValues override="false">[1162:1513]</PossibleValues>
+        <DefaultValue override="true">1200</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="DL_UARFCN_BAND4">
+        <Description>Downlink UTRA Arfcn frequency - BAND IV</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>int</Type>
+        <PossibleValues override="false">[1537:1738]</PossibleValues>
+        <DefaultValue override="true">1600</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="DL_UARFCN_BAND5">
+        <Description>Downlink UTRA Arfcn frequency - BAND V</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>int</Type>
+        <PossibleValues override="false">[4357:4458]</PossibleValues>
+        <DefaultValue override="true">4400</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="DL_UARFCN_BAND6">
+        <Description>Downlink UTRA Arfcn frequency - BAND VI</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>int</Type>
+        <PossibleValues override="false">[4387:4413]</PossibleValues>
+        <DefaultValue override="true">4410</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="DL_UARFCN_BAND7">
+        <Description>Downlink UTRA Arfcn frequency - BAND VII</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>int</Type>
+        <PossibleValues override="false">[2237:2563]</PossibleValues>
+        <DefaultValue override="true">2300</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="DL_UARFCN_BAND8">
+        <Description>Downlink UTRA Arfcn frequency - BAND VIII</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>int</Type>
+        <PossibleValues override="false">[2937:3088]</PossibleValues>
+        <DefaultValue override="true">3000</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="DL_UARFCN_BAND9">
+        <Description>Downlink UTRA Arfcn frequency - BAND IX</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>int</Type>
+        <PossibleValues override="false">[9237:9387]</PossibleValues>
+        <DefaultValue override="true">9300</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="CELL_BAND_3G">
+        <Description>Name of the WCDMA frequency band used</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>int</Type>
+        <PossibleValues override="false">1;2;3;4;5;6;7;8;9</PossibleValues>
+        <DefaultValue override="true">1</DefaultValue>
+        <Blank override="false">false</Blank>
+        <Dependencies>
+            <Dependency mandatory="true" name="DL_UARFCN" description="Downlink UTRA Arfcn">
+                <DependencyParameter possibleValue="1">DL_UARFCN_BAND1</DependencyParameter>
+                <DependencyParameter possibleValue="2">DL_UARFCN_BAND2</DependencyParameter>
+                <DependencyParameter possibleValue="3">DL_UARFCN_BAND3</DependencyParameter>
+                <DependencyParameter possibleValue="4">DL_UARFCN_BAND4</DependencyParameter>
+                <DependencyParameter possibleValue="5">DL_UARFCN_BAND5</DependencyParameter>
+                <DependencyParameter possibleValue="6">DL_UARFCN_BAND6</DependencyParameter>
+                <DependencyParameter possibleValue="7">DL_UARFCN_BAND7</DependencyParameter>
+                <DependencyParameter possibleValue="8">DL_UARFCN_BAND8</DependencyParameter>
+                <DependencyParameter possibleValue="9">DL_UARFCN_BAND9</DependencyParameter>
+            </Dependency>
+            <Dependency mandatory="false" name="UL_UARFCN" description="Uplink UTRA Arfcn">
+                <DependencyParameter possibleValue="1">UL_UARFCN_BAND1</DependencyParameter>
+                <DependencyParameter possibleValue="2">UL_UARFCN_BAND2</DependencyParameter>
+                <DependencyParameter possibleValue="3">UL_UARFCN_BAND3</DependencyParameter>
+                <DependencyParameter possibleValue="4">UL_UARFCN_BAND4</DependencyParameter>
+                <DependencyParameter possibleValue="5">UL_UARFCN_BAND5</DependencyParameter>
+                <DependencyParameter possibleValue="6">UL_UARFCN_BAND6</DependencyParameter>
+                <DependencyParameter possibleValue="7">UL_UARFCN_BAND7</DependencyParameter>
+                <DependencyParameter possibleValue="8">UL_UARFCN_BAND8</DependencyParameter>
+                <DependencyParameter possibleValue="9">UL_UARFCN_BAND9</DependencyParameter>
+            </Dependency>
+        </Dependencies>
+    </Parameter>
+    <Parameter name="CELL_BAND_TDSCDMA">
+        <Description>Name of the TDSCDMA frequency band used</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>int</Type>
+        <PossibleValues override="false">[33:40]</PossibleValues>
+        <DefaultValue override="true">34</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="UL_EARFCN_BAND1">
+        <Description>Uplink EUTRA Arfcn frequency - BAND 1</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>int</Type>
+        <PossibleValues override="false">[18025:18575]</PossibleValues>
+        <DefaultValue override="true">18300</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="UL_EARFCN_BAND2">
+        <Description>Uplink EUTRA Arfcn frequency - BAND 2</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>int</Type>
+        <PossibleValues override="false">[18607:19193]</PossibleValues>
+        <DefaultValue override="true">18900</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="UL_EARFCN_BAND3">
+        <Description>Uplink EUTRA Arfcn frequency - BAND 3</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>int</Type>
+        <PossibleValues override="false">[19207:19943]</PossibleValues>
+        <DefaultValue override="true">19575</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="UL_EARFCN_BAND4">
+        <Description>Uplink EUTRA Arfcn frequency - BAND 4</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>int</Type>
+        <PossibleValues override="false">[19957:20393]</PossibleValues>
+        <DefaultValue override="true">20175</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="UL_EARFCN_BAND5">
+        <Description>Uplink EUTRA Arfcn frequency - BAND 5</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>int</Type>
+        <PossibleValues override="false">[20407:20643]</PossibleValues>
+        <DefaultValue override="true">20525</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="UL_EARFCN_BAND6">
+        <Description>Uplink EUTRA Arfcn frequency - BAND 6</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>int</Type>
+        <PossibleValues override="false">[2675:2725]</PossibleValues>
+        <DefaultValue override="true">835</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="UL_EARFCN_BAND7">
+        <Description>Uplink EUTRA Arfcn frequency - BAND 7</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>int</Type>
+        <PossibleValues override="false">[20775:21425]</PossibleValues>
+        <DefaultValue override="true">21100</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="UL_EARFCN_BAND8">
+        <Description>Uplink EUTRA Arfcn frequency - BAND 8</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>int</Type>
+        <PossibleValues override="false">[21457:21793]</PossibleValues>
+        <DefaultValue override="true">21625</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="UL_EARFCN_BAND9">
+        <Description>Uplink EUTRA Arfcn frequency - BAND 9</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>int</Type>
+        <PossibleValues override="false">[21825:22125]</PossibleValues>
+        <DefaultValue override="true">21975</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="UL_EARFCN_BAND10">
+        <Description>Uplink EUTRA Arfcn frequency - BAND 10</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>int</Type>
+        <PossibleValues override="false">[22175:22725]</PossibleValues>
+        <DefaultValue override="true">22450</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="UL_EARFCN_BAND11">
+        <Description>Uplink EUTRA Arfcn frequency - BAND 11</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>int</Type>
+        <PossibleValues override="false">[22775:22925]</PossibleValues>
+        <DefaultValue override="true">22850</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="UL_EARFCN_BAND12">
+        <Description>Uplink EUTRA Arfcn frequency - BAND 12</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>int</Type>
+        <PossibleValues override="false">[23017:23173]</PossibleValues>
+        <DefaultValue override="true">23095</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="UL_EARFCN_BAND13">
+        <Description>Uplink EUTRA Arfcn frequency - BAND 13</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>int</Type>
+        <PossibleValues override="false">[23205:23255]</PossibleValues>
+        <DefaultValue override="true">23230</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="UL_EARFCN_BAND14">
+        <Description>Uplink EUTRA Arfcn frequency - BAND 14</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>int</Type>
+        <PossibleValues override="false">[23305:23355]</PossibleValues>
+        <DefaultValue override="true">23330</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="UL_EARFCN_BAND15">
+        <Description>Uplink EUTRA Arfcn frequency - BAND 15</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>int</Type>
+        <PossibleValues override="false">[18025:18575]</PossibleValues>
+        <DefaultValue override="true">18300</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="UL_EARFCN_BAND16">
+        <Description>Uplink EUTRA Arfcn frequency - BAND 16</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>int</Type>
+        <PossibleValues override="false">[18025:18575]</PossibleValues>
+        <DefaultValue override="true">18300</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="UL_EARFCN_BAND17">
+        <Description>Uplink EUTRA Arfcn frequency - BAND 17</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>int</Type>
+        <PossibleValues override="false">[23755:23825]</PossibleValues>
+        <DefaultValue override="true">23790</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="UL_EARFCN_BAND18">
+        <Description>Uplink EUTRA Arfcn frequency - BAND 18</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>int</Type>
+        <PossibleValues override="false">[23875:23975]</PossibleValues>
+        <DefaultValue override="true">23925</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="UL_EARFCN_BAND19">
+        <Description>Uplink EUTRA Arfcn frequency - BAND 19</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>int</Type>
+        <PossibleValues override="false">[24025:24125]</PossibleValues>
+        <DefaultValue override="true">24075</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="UL_EARFCN_BAND20">
+        <Description>Uplink EUTRA Arfcn frequency - BAND 20</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>int</Type>
+        <PossibleValues override="false">[24175:24425]</PossibleValues>
+        <DefaultValue override="true">24300</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="UL_EARFCN_BAND21">
+        <Description>Uplink EUTRA Arfcn frequency - BAND 21</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>int</Type>
+        <PossibleValues override="false">[24475:24575]</PossibleValues>
+        <DefaultValue override="true">24525</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="UL_EARFCN_BAND22">
+        <Description>Uplink EUTRA Arfcn frequency - BAND 22</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>int</Type>
+        <PossibleValues override="false">[18025:18575]</PossibleValues>
+        <DefaultValue override="true">18300</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="UL_EARFCN_BAND23">
+        <Description>Uplink EUTRA Arfcn frequency - BAND 23</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>int</Type>
+        <PossibleValues override="false">[25525:25675]</PossibleValues>
+        <DefaultValue override="true">25600</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="UL_EARFCN_BAND24">
+        <Description>Uplink EUTRA Arfcn frequency - BAND 24</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>int</Type>
+        <PossibleValues override="false">[25750:25989]</PossibleValues>
+        <DefaultValue override="true">25870</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="UL_EARFCN_BAND25">
+        <Description>Uplink EUTRA Arfcn frequency - BAND 25</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>int</Type>
+        <PossibleValues override="false">[26065:26665]</PossibleValues>
+        <DefaultValue override="true">26365</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="UL_EARFCN_BAND26">
+        <Description>Uplink EUTRA Arfcn frequency - BAND 26</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>int</Type>
+        <PossibleValues override="false">[26690:27039]</PossibleValues>
+        <DefaultValue override="true">26865</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="UL_EARFCN_BAND27">
+        <Description>Uplink EUTRA Arfcn frequency - BAND 27</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>int</Type>
+        <PossibleValues override="false">[27040:27209]</PossibleValues>
+        <DefaultValue override="true">27125</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="UL_EARFCN_BAND28">
+        <Description>Uplink EUTRA Arfcn frequency - BAND 28</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>int</Type>
+        <PossibleValues override="false">[27210:27659]</PossibleValues>
+        <DefaultValue override="true">27360</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="UL_EARFCN_BAND29">
+        <Description>Uplink EUTRA Arfcn frequency - BAND 29</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>int</Type>
+        <PossibleValues override="false">[18025:18575]</PossibleValues>
+        <DefaultValue override="true">18300</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="UL_EARFCN_BAND30">
+        <Description>Uplink EUTRA Arfcn frequency - BAND 30</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>int</Type>
+        <PossibleValues override="false">[18025:18575]</PossibleValues>
+        <DefaultValue override="true">18300</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="UL_EARFCN_BAND31">
+        <Description>Uplink EUTRA Arfcn frequency - BAND31</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>int</Type>
+        <PossibleValues override="false">[18025:18575]</PossibleValues>
+        <DefaultValue override="true">18300</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="UL_EARFCN_BAND32">
+        <Description>Uplink EUTRA Arfcn frequency - BAND 32</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>int</Type>
+        <PossibleValues override="false">[18025:18575]</PossibleValues>
+        <DefaultValue override="true">18300</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="UL_EARFCN_BAND33">
+        <Description>Uplink EUTRA Arfcn frequency - BAND 33</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>int</Type>
+        <PossibleValues override="false">[36025:36175]</PossibleValues>
+        <DefaultValue override="true">36100</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="UL_EARFCN_BAND34">
+        <Description>Uplink EUTRA Arfcn frequency - BAND 34</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>int</Type>
+        <PossibleValues override="false">[36225:36325]</PossibleValues>
+        <DefaultValue override="true">36275</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="UL_EARFCN_BAND35">
+        <Description>Uplink EUTRA Arfcn frequency - BAND 35</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>int</Type>
+        <PossibleValues override="false">[36357:36943]</PossibleValues>
+        <DefaultValue override="true">36650</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="UL_EARFCN_BAND36">
+        <Description>Uplink EUTRA Arfcn frequency - BAND 36</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>int</Type>
+        <PossibleValues override="false">[36957:37543]</PossibleValues>
+        <DefaultValue override="true">37250</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="UL_EARFCN_BAND37">
+        <Description>Uplink UTRA Arfcn frequency - BAND 37</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>int</Type>
+        <PossibleValues override="false">[37575:37725]</PossibleValues>
+        <DefaultValue override="true">37650</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="UL_EARFCN_BAND38">
+        <Description>Uplink EUTRA Arfcn frequency - BAND 38</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>int</Type>
+        <PossibleValues override="false">[37775:38225]</PossibleValues>
+        <DefaultValue override="true">38000</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="UL_EARFCN_BAND39">
+        <Description>Uplink EUTRA Arfcn frequency - BAND 39</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>int</Type>
+        <PossibleValues override="false">[38275:38625]</PossibleValues>
+        <DefaultValue override="true">38450</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="UL_EARFCN_BAND40">
+        <Description>Uplink EUTRA Arfcn frequency - BAND 40</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>int</Type>
+        <PossibleValues override="false">[38675:39625]</PossibleValues>
+        <DefaultValue override="true">39150</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="UL_EARFCN_BAND41">
+        <Description>Uplink EUTRA Arfcn frequency - BAND 41</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>int</Type>
+        <PossibleValues override="false">[39675:41565]</PossibleValues>
+        <DefaultValue override="true">40620</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="UL_EARFCN_BAND42">
+        <Description>Uplink EUTRA Arfcn frequency - BAND 42</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>int</Type>
+        <PossibleValues override="false">[41615:43565]</PossibleValues>
+        <DefaultValue override="true">42590</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="UL_EARFCN_BAND43">
+        <Description>Uplink EUTRA Arfcn frequency - BAND 43</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>int</Type>
+        <PossibleValues override="false">[43615:45565]</PossibleValues>
+        <DefaultValue override="true">44590</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="UL_EARFCN_BAND44">
+        <Description>Uplink EUTRA Arfcn frequency - BAND 44</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>int</Type>
+        <PossibleValues override="false">[45590:46589]</PossibleValues>
+        <DefaultValue override="true">46090</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="UL_EARFCN_BAND45">
+        <Description>Uplink EUTRA Arfcn frequency - BAND 45</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>int</Type>
+        <PossibleValues override="false">[36025:36175]</PossibleValues>
+        <DefaultValue override="true">36100</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="UL_EARFCN_BAND46">
+        <Description>Uplink EUTRA Arfcn frequency - BAND 46</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>int</Type>
+        <PossibleValues override="false">[36025:36175]</PossibleValues>
+        <DefaultValue override="true">36100</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="UL_EARFCN_BAND47">
+        <Description>Uplink EUTRA Arfcn frequency - BAND 47</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>int</Type>
+        <PossibleValues override="false">[36025:36175]</PossibleValues>
+        <DefaultValue override="true">36100</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="UL_EARFCN_BAND48">
+        <Description>Uplink EUTRA Arfcn frequency - BAND 48</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>int</Type>
+        <PossibleValues override="false">[36025:36175]</PossibleValues>
+        <DefaultValue override="true">36100</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="UL_EARFCN_BAND49">
+        <Description>Uplink EUTRA Arfcn frequency - BAND 49</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>int</Type>
+        <PossibleValues override="false">[36025:36175]</PossibleValues>
+        <DefaultValue override="true">36100</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="UL_EARFCN_BAND50">
+        <Description>Uplink EUTRA Arfcn frequency - BAND 50</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>int</Type>
+        <PossibleValues override="false">[36025:36175]</PossibleValues>
+        <DefaultValue override="true">36100</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="UL_EARFCN_BAND51">
+        <Description>Uplink EUTRA Arfcn frequency - BAND 51</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>int</Type>
+        <PossibleValues override="false">[36025:36175]</PossibleValues>
+        <DefaultValue override="true">36100</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="UL_EARFCN_BAND52">
+        <Description>Uplink EUTRA Arfcn frequency - BAND 52</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>int</Type>
+        <PossibleValues override="false">[36025:36175]</PossibleValues>
+        <DefaultValue override="true">36100</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="UL_EARFCN_BAND53">
+        <Description>Uplink EUTRA Arfcn frequency - BAND 53</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>int</Type>
+        <PossibleValues override="false">[36025:36175]</PossibleValues>
+        <DefaultValue override="true">36100</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="UL_EARFCN_BAND54">
+        <Description>Uplink EUTRA Arfcn frequency - BAND 54</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>int</Type>
+        <PossibleValues override="false">[36025:36175]</PossibleValues>
+        <DefaultValue override="true">36100</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="UL_EARFCN_BAND55">
+        <Description>Uplink EUTRA Arfcn frequency - BAND 55</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>int</Type>
+        <PossibleValues override="false">[36025:36175]</PossibleValues>
+        <DefaultValue override="true">36100</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="UL_EARFCN_BAND56">
+        <Description>Uplink EUTRA Arfcn frequency - BAND 56</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>int</Type>
+        <PossibleValues override="false">[36025:36175]</PossibleValues>
+        <DefaultValue override="true">36100</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="UL_EARFCN_BAND57">
+        <Description>Uplink EUTRA Arfcn frequency - BAND 57</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>int</Type>
+        <PossibleValues override="false">[36025:36175]</PossibleValues>
+        <DefaultValue override="true">36100</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="UL_EARFCN_BAND58">
+        <Description>Uplink EUTRA Arfcn frequency - BAND 58</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>int</Type>
+        <PossibleValues override="false">[36025:36175]</PossibleValues>
+        <DefaultValue override="true">36100</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="UL_EARFCN_BAND59">
+        <Description>Uplink EUTRA Arfcn frequency - BAND 59</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>int</Type>
+        <PossibleValues override="false">[36025:36175]</PossibleValues>
+        <DefaultValue override="true">36100</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="UL_EARFCN_BAND60">
+        <Description>Uplink EUTRA Arfcn frequency - BAND 60</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>int</Type>
+        <PossibleValues override="false">[36025:36175]</PossibleValues>
+        <DefaultValue override="true">36100</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="UL_EARFCN_BAND61">
+        <Description>Uplink EUTRA Arfcn frequency - BAND 61</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>int</Type>
+        <PossibleValues override="false">[36025:36175]</PossibleValues>
+        <DefaultValue override="true">36100</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="UL_EARFCN_BAND62">
+        <Description>Uplink EUTRA Arfcn frequency - BAND 62</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>int</Type>
+        <PossibleValues override="false">[36025:36175]</PossibleValues>
+        <DefaultValue override="true">36100</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="UL_EARFCN_BAND63">
+        <Description>Uplink EUTRA Arfcn frequency - BAND 63</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>int</Type>
+        <PossibleValues override="false">[36025:36175]</PossibleValues>
+        <DefaultValue override="true">36100</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="DL_EARFCN_BAND1">
+        <Description>Downlink EUTRA Arfcn frequency - BAND 1</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>int</Type>
+        <PossibleValues override="false">[025:575]</PossibleValues>
+        <DefaultValue override="true">300</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="DL_EARFCN_BAND2">
+        <Description>Downlink EUTRA Arfcn frequency - BAND 2</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>int</Type>
+        <PossibleValues override="false">[607:1193]</PossibleValues>
+        <DefaultValue override="true">900</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="DL_EARFCN_BAND3">
+        <Description>Downlink EUTRA Arfcn frequency - BAND 3</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>int</Type>
+        <PossibleValues override="false">[1207:1943]</PossibleValues>
+        <DefaultValue override="true">1575</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="DL_EARFCN_BAND4">
+        <Description>Downlink EUTRA Arfcn frequency - BAND 4</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>int</Type>
+        <PossibleValues override="false">[1957:2393]</PossibleValues>
+        <DefaultValue override="true">2175</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="DL_EARFCN_BAND5">
+        <Description>Downlink EUTRA Arfcn frequency - BAND 5</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>int</Type>
+        <PossibleValues override="false">[2407:2643]</PossibleValues>
+        <DefaultValue override="true">2525</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="DL_EARFCN_BAND6">
+        <Description>Downlink EUTRA Arfcn frequency - BAND 6</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>int</Type>
+        <PossibleValues override="false">[2675:2725]</PossibleValues>
+        <DefaultValue override="true">880</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="DL_EARFCN_BAND7">
+        <Description>Downlink EUTRA Arfcn frequency - BAND 7</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>int</Type>
+        <PossibleValues override="false">[2775:3425]</PossibleValues>
+        <DefaultValue override="true">3100</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="DL_EARFCN_BAND8">
+        <Description>Downlink EUTRA Arfcn frequency - BAND 8</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>int</Type>
+        <PossibleValues override="false">[3457:3793]</PossibleValues>
+        <DefaultValue override="true">3625</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="DL_EARFCN_BAND9">
+        <Description>Downlink EUTRA Arfcn frequency - BAND 9</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>int</Type>
+        <PossibleValues override="false">[3825:4125]</PossibleValues>
+        <DefaultValue override="true">3975</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="DL_EARFCN_BAND10">
+        <Description>Downlink EUTRA Arfcn frequency - BAND 10</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>int</Type>
+        <PossibleValues override="false">[4175:4725]</PossibleValues>
+        <DefaultValue override="true">4450</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="DL_EARFCN_BAND11">
+        <Description>Downlink EUTRA Arfcn frequency - BAND 11</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>int</Type>
+        <PossibleValues override="false">[4775:4925]</PossibleValues>
+        <DefaultValue override="true">4850</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="DL_EARFCN_BAND12">
+        <Description>Downlink EUTRA Arfcn frequency - BAND 12</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>int</Type>
+        <PossibleValues override="false">[5017:5173]</PossibleValues>
+        <DefaultValue override="true">5095</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="DL_EARFCN_BAND13">
+        <Description>Downlink EUTRA Arfcn frequency - BAND 13</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>int</Type>
+        <PossibleValues override="false">[5205:5255]</PossibleValues>
+        <DefaultValue override="true">5230</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="DL_EARFCN_BAND14">
+        <Description>Downlink EUTRA Arfcn frequency - BAND 14</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>int</Type>
+        <PossibleValues override="false">[5305:5355]</PossibleValues>
+        <DefaultValue override="true">5330</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="DL_EARFCN_BAND15">
+        <Description>Downlink EUTRA Arfcn frequency - BAND 15</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>int</Type>
+        <PossibleValues override="false">[25:575]</PossibleValues>
+        <DefaultValue override="true">300</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="DL_EARFCN_BAND16">
+        <Description>Downlink EUTRA Arfcn frequency - BAND 16</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>int</Type>
+        <PossibleValues override="false">[25:575]</PossibleValues>
+        <DefaultValue override="true">300</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="DL_EARFCN_BAND17">
+        <Description>Downlink EUTRA Arfcn frequency - BAND 17</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>int</Type>
+        <PossibleValues override="false">[5755:5825]</PossibleValues>
+        <DefaultValue override="true">5790</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="DL_EARFCN_BAND18">
+        <Description>Downlink EUTRA Arfcn frequency - BAND 18</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>int</Type>
+        <PossibleValues override="false">[5875:5975]</PossibleValues>
+        <DefaultValue override="true">5925</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="DL_EARFCN_BAND19">
+        <Description>Downlink EUTRA Arfcn frequency - BAND 19</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>int</Type>
+        <PossibleValues override="false">[6025:6125]</PossibleValues>
+        <DefaultValue override="true">6075</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="DL_EARFCN_BAND20">
+        <Description>Downlink EUTRA Arfcn frequency - BAND 20</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>int</Type>
+        <PossibleValues override="false">[6175:6425]</PossibleValues>
+        <DefaultValue override="true">6300</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="DL_EARFCN_BAND21">
+        <Description>Downlink EUTRA Arfcn frequency - BAND 21</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>int</Type>
+        <PossibleValues override="false">[6475:6575]</PossibleValues>
+        <DefaultValue override="true">6525</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="DL_EARFCN_BAND22">
+        <Description>Downlink EUTRA Arfcn frequency - BAND 22</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>int</Type>
+        <PossibleValues override="false">[25:575]</PossibleValues>
+        <DefaultValue override="true">300</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="DL_EARFCN_BAND23">
+        <Description>Downlink EUTRA Arfcn frequency - BAND 23</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>int</Type>
+        <PossibleValues override="false">[7525:7675]</PossibleValues>
+        <DefaultValue override="true">7600</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="DL_EARFCN_BAND24">
+        <Description>Downlink EUTRA Arfcn frequency - BAND 24</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>int</Type>
+        <PossibleValues override="false">[7750:7989]</PossibleValues>
+        <DefaultValue override="true">7870</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="DL_EARFCN_BAND25">
+        <Description>Downlink EUTRA Arfcn frequency - BAND 25</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>int</Type>
+        <PossibleValues override="false">[8065:8665]</PossibleValues>
+        <DefaultValue override="true">8365</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="DL_EARFCN_BAND26">
+        <Description>Downlink EUTRA Arfcn frequency - BAND 26</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>int</Type>
+        <PossibleValues override="false">[8690:9039]</PossibleValues>
+        <DefaultValue override="true">8865</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="DL_EARFCN_BAND27">
+        <Description>Downlink EUTRA Arfcn frequency - BAND 27</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>int</Type>
+        <PossibleValues override="false">[9040:9209]</PossibleValues>
+        <DefaultValue override="true">9125</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="DL_EARFCN_BAND28">
+        <Description>Downlink EUTRA Arfcn frequency - BAND 28</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>int</Type>
+        <PossibleValues override="false">[9210:9659]</PossibleValues>
+        <DefaultValue override="true">9360</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="DL_EARFCN_BAND29">
+        <Description>Downlink EUTRA Arfcn frequency - BAND 29</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>int</Type>
+        <PossibleValues override="false">[25:575]</PossibleValues>
+        <DefaultValue override="true">300</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="DL_EARFCN_BAND30">
+        <Description>Downlink EUTRA Arfcn frequency - BAND 30</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>int</Type>
+        <PossibleValues override="false">[25:575]</PossibleValues>
+        <DefaultValue override="true">300</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="DL_EARFCN_BAND31">
+        <Description>downlink EUTRA Arfcn frequency - BAND31</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>int</Type>
+        <PossibleValues override="false">[25:575]</PossibleValues>
+        <DefaultValue override="true">300</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="DL_EARFCN_BAND32">
+        <Description>Downlink EUTRA Arfcn frequency - BAND 32</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>int</Type>
+        <PossibleValues override="false">[25:575]</PossibleValues>
+        <DefaultValue override="true">300</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="DL_EARFCN_BAND33">
+        <Description>Downlink EUTRA Arfcn frequency - BAND 33</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>int</Type>
+        <PossibleValues override="false">[36025:36175]</PossibleValues>
+        <DefaultValue override="true">36100</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="DL_EARFCN_BAND34">
+        <Description>Downlink EUTRA Arfcn frequency - BAND 34</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>int</Type>
+        <PossibleValues override="false">[36225:36325]</PossibleValues>
+        <DefaultValue override="true">36275</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="DL_EARFCN_BAND35">
+        <Description>Downlink EUTRA Arfcn frequency - BAND 35</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>int</Type>
+        <PossibleValues override="false">[36357:36943]</PossibleValues>
+        <DefaultValue override="true">36650</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="DL_EARFCN_BAND36">
+        <Description>Downlink EUTRA Arfcn frequency - BAND 36</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>int</Type>
+        <PossibleValues override="false">[36957:37543]</PossibleValues>
+        <DefaultValue override="true">37250</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="DL_EARFCN_BAND37">
+        <Description>Downlink UTRA Arfcn frequency - BAND 37</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>int</Type>
+        <PossibleValues override="false">[37575:37725]</PossibleValues>
+        <DefaultValue override="true">37650</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="DL_EARFCN_BAND38">
+        <Description>Downlink EUTRA Arfcn frequency - BAND 38</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>int</Type>
+        <PossibleValues override="false">[37775:38225]</PossibleValues>
+        <DefaultValue override="true">38000</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="DL_EARFCN_BAND39">
+        <Description>Downlink EUTRA Arfcn frequency - BAND 39</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>int</Type>
+        <PossibleValues override="false">[38275:38625]</PossibleValues>
+        <DefaultValue override="true">38450</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="DL_EARFCN_BAND40">
+        <Description>Downlink EUTRA Arfcn frequency - BAND 40</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>int</Type>
+        <PossibleValues override="false">[38675:39625]</PossibleValues>
+        <DefaultValue override="true">39150</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="DL_EARFCN_BAND41">
+        <Description>Downlink EUTRA Arfcn frequency - BAND 41</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>int</Type>
+        <PossibleValues override="false">[39675:41565]</PossibleValues>
+        <DefaultValue override="true">40620</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="DL_EARFCN_BAND42">
+        <Description>Downlink EUTRA Arfcn frequency - BAND 42</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>int</Type>
+        <PossibleValues override="false">[41615:43565]</PossibleValues>
+        <DefaultValue override="true">42590</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="DL_EARFCN_BAND43">
+        <Description>Downlink EUTRA Arfcn frequency - BAND 43</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>int</Type>
+        <PossibleValues override="false">[43615:45565]</PossibleValues>
+        <DefaultValue override="true">44590</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="DL_EARFCN_BAND44">
+        <Description>Downlink EUTRA Arfcn frequency - BAND 44</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>int</Type>
+        <PossibleValues override="false">[45590:46589]</PossibleValues>
+        <DefaultValue override="true">46090</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="DL_EARFCN_BAND45">
+        <Description>Downlink EUTRA Arfcn frequency - BAND 45</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>int</Type>
+        <PossibleValues override="false">[36025:36175]</PossibleValues>
+        <DefaultValue override="true">36100</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="DL_EARFCN_BAND46">
+        <Description>Downlink EUTRA Arfcn frequency - BAND 46</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>int</Type>
+        <PossibleValues override="false">[36025:36175]</PossibleValues>
+        <DefaultValue override="true">36100</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="DL_EARFCN_BAND47">
+        <Description>Downlink EUTRA Arfcn frequency - BAND 47</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>int</Type>
+        <PossibleValues override="false">[36025:36175]</PossibleValues>
+        <DefaultValue override="true">36100</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="DL_EARFCN_BAND48">
+        <Description>Downlink EUTRA Arfcn frequency - BAND 48</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>int</Type>
+        <PossibleValues override="false">[36025:36175]</PossibleValues>
+        <DefaultValue override="true">36100</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="DL_EARFCN_BAND49">
+        <Description>Downlink EUTRA Arfcn frequency - BAND 49</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>int</Type>
+        <PossibleValues override="false">[36025:36175]</PossibleValues>
+        <DefaultValue override="true">36100</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="DL_EARFCN_BAND50">
+        <Description>Downlink EUTRA Arfcn frequency - BAND 50</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>int</Type>
+        <PossibleValues override="false">[36025:36175]</PossibleValues>
+        <DefaultValue override="true">36100</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="DL_EARFCN_BAND51">
+        <Description>Downlink EUTRA Arfcn frequency - BAND 51</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>int</Type>
+        <PossibleValues override="false">[36025:36175]</PossibleValues>
+        <DefaultValue override="true">36100</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="DL_EARFCN_BAND52">
+        <Description>Downlink EUTRA Arfcn frequency - BAND 52</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>int</Type>
+        <PossibleValues override="false">[36025:36175]</PossibleValues>
+        <DefaultValue override="true">36100</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="DL_EARFCN_BAND53">
+        <Description>Downlink EUTRA Arfcn frequency - BAND 53</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>int</Type>
+        <PossibleValues override="false">[36025:36175]</PossibleValues>
+        <DefaultValue override="true">36100</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="DL_EARFCN_BAND54">
+        <Description>Downlink EUTRA Arfcn frequency - BAND 54</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>int</Type>
+        <PossibleValues override="false">[36025:36175]</PossibleValues>
+        <DefaultValue override="true">36100</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="DL_EARFCN_BAND55">
+        <Description>Downlink EUTRA Arfcn frequency - BAND 55</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>int</Type>
+        <PossibleValues override="false">[36025:36175]</PossibleValues>
+        <DefaultValue override="true">36100</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="DL_EARFCN_BAND56">
+        <Description>Downlink EUTRA Arfcn frequency - BAND 56</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>int</Type>
+        <PossibleValues override="false">[36025:36175]</PossibleValues>
+        <DefaultValue override="true">36100</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="DL_EARFCN_BAND57">
+        <Description>Downlink EUTRA Arfcn frequency - BAND 57</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>int</Type>
+        <PossibleValues override="false">[36025:36175]</PossibleValues>
+        <DefaultValue override="true">36100</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="DL_EARFCN_BAND58">
+        <Description>Downlink EUTRA Arfcn frequency - BAND 58</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>int</Type>
+        <PossibleValues override="false">[36025:36175]</PossibleValues>
+        <DefaultValue override="true">36100</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="DL_EARFCN_BAND59">
+        <Description>Downlink EUTRA Arfcn frequency - BAND 59</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>int</Type>
+        <PossibleValues override="false">[36025:36175]</PossibleValues>
+        <DefaultValue override="true">36100</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="DL_EARFCN_BAND60">
+        <Description>Downlink EUTRA Arfcn frequency - BAND 60</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>int</Type>
+        <PossibleValues override="false">[36025:36175]</PossibleValues>
+        <DefaultValue override="true">36100</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="DL_EARFCN_BAND61">
+        <Description>Downlink EUTRA Arfcn frequency - BAND 61</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>int</Type>
+        <PossibleValues override="false">[36025:36175]</PossibleValues>
+        <DefaultValue override="true">36100</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="DL_EARFCN_BAND62">
+        <Description>Downlink EUTRA Arfcn frequency - BAND 62</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>int</Type>
+        <PossibleValues override="false">[36025:36175]</PossibleValues>
+        <DefaultValue override="true">36100</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="DL_EARFCN_BAND63">
+        <Description>Downlink EUTRA Arfcn frequency - BAND 63</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>int</Type>
+        <PossibleValues override="false">[36025:36175]</PossibleValues>
+        <DefaultValue override="true">36100</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="CELL_BAND_4G">
+        <Description>Name of the LTE frequency band used</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>int</Type>
+        <PossibleValues override="false">[1:63]</PossibleValues>
+        <DefaultValue override="true">1</DefaultValue>
+        <Blank override="false">false</Blank>
+        <Dependencies>
+            <Dependency mandatory="false" name="DL_EARFCN" description="Downlink EUTRA Arfcn">
+                <DependencyParameter possibleValue="1">DL_EARFCN_BAND1</DependencyParameter>
+                <DependencyParameter possibleValue="2">DL_EARFCN_BAND2</DependencyParameter>
+                <DependencyParameter possibleValue="3">DL_EARFCN_BAND3</DependencyParameter>
+                <DependencyParameter possibleValue="4">DL_EARFCN_BAND4</DependencyParameter>
+                <DependencyParameter possibleValue="5">DL_EARFCN_BAND5</DependencyParameter>
+                <DependencyParameter possibleValue="6">DL_EARFCN_BAND6</DependencyParameter>
+                <DependencyParameter possibleValue="7">DL_EARFCN_BAND7</DependencyParameter>
+                <DependencyParameter possibleValue="8">DL_EARFCN_BAND8</DependencyParameter>
+                <DependencyParameter possibleValue="9">DL_EARFCN_BAND9</DependencyParameter>
+                <DependencyParameter possibleValue="10">DL_EARFCN_BAND10</DependencyParameter>
+                <DependencyParameter possibleValue="11">DL_EARFCN_BAND11</DependencyParameter>
+                <DependencyParameter possibleValue="12">DL_EARFCN_BAND12</DependencyParameter>
+                <DependencyParameter possibleValue="13">DL_EARFCN_BAND13</DependencyParameter>
+                <DependencyParameter possibleValue="14">DL_EARFCN_BAND14</DependencyParameter>
+                <DependencyParameter possibleValue="15">DL_EARFCN_BAND15</DependencyParameter>
+                <DependencyParameter possibleValue="16">DL_EARFCN_BAND16</DependencyParameter>
+                <DependencyParameter possibleValue="17">DL_EARFCN_BAND17</DependencyParameter>
+                <DependencyParameter possibleValue="18">DL_EARFCN_BAND18</DependencyParameter>
+                <DependencyParameter possibleValue="19">DL_EARFCN_BAND19</DependencyParameter>
+                <DependencyParameter possibleValue="20">DL_EARFCN_BAND20</DependencyParameter>
+                <DependencyParameter possibleValue="21">DL_EARFCN_BAND21</DependencyParameter>
+                <DependencyParameter possibleValue="22">DL_EARFCN_BAND22</DependencyParameter>
+                <DependencyParameter possibleValue="23">DL_EARFCN_BAND23</DependencyParameter>
+                <DependencyParameter possibleValue="24">DL_EARFCN_BAND24</DependencyParameter>
+                <DependencyParameter possibleValue="25">DL_EARFCN_BAND25</DependencyParameter>
+                <DependencyParameter possibleValue="26">DL_EARFCN_BAND26</DependencyParameter>
+                <DependencyParameter possibleValue="27">DL_EARFCN_BAND27</DependencyParameter>
+                <DependencyParameter possibleValue="28">DL_EARFCN_BAND28</DependencyParameter>
+                <DependencyParameter possibleValue="29">DL_EARFCN_BAND29</DependencyParameter>
+                <DependencyParameter possibleValue="30">DL_EARFCN_BAND30</DependencyParameter>
+                <DependencyParameter possibleValue="31">DL_EARFCN_BAND31</DependencyParameter>
+                <DependencyParameter possibleValue="32">DL_EARFCN_BAND32</DependencyParameter>
+                <DependencyParameter possibleValue="33">DL_EARFCN_BAND33</DependencyParameter>
+                <DependencyParameter possibleValue="34">DL_EARFCN_BAND34</DependencyParameter>
+                <DependencyParameter possibleValue="35">DL_EARFCN_BAND35</DependencyParameter>
+                <DependencyParameter possibleValue="36">DL_EARFCN_BAND36</DependencyParameter>
+                <DependencyParameter possibleValue="37">DL_EARFCN_BAND37</DependencyParameter>
+                <DependencyParameter possibleValue="38">DL_EARFCN_BAND38</DependencyParameter>
+                <DependencyParameter possibleValue="39">DL_EARFCN_BAND39</DependencyParameter>
+                <DependencyParameter possibleValue="40">DL_EARFCN_BAND40</DependencyParameter>
+                <DependencyParameter possibleValue="41">DL_EARFCN_BAND41</DependencyParameter>
+                <DependencyParameter possibleValue="42">DL_EARFCN_BAND42</DependencyParameter>
+                <DependencyParameter possibleValue="43">DL_EARFCN_BAND43</DependencyParameter>
+                <DependencyParameter possibleValue="44">DL_EARFCN_BAND44</DependencyParameter>
+                <DependencyParameter possibleValue="45">DL_EARFCN_BAND45</DependencyParameter>
+                <DependencyParameter possibleValue="46">DL_EARFCN_BAND46</DependencyParameter>
+                <DependencyParameter possibleValue="47">DL_EARFCN_BAND47</DependencyParameter>
+                <DependencyParameter possibleValue="48">DL_EARFCN_BAND48</DependencyParameter>
+                <DependencyParameter possibleValue="49">DL_EARFCN_BAND49</DependencyParameter>
+                <DependencyParameter possibleValue="50">DL_EARFCN_BAND50</DependencyParameter>
+                <DependencyParameter possibleValue="51">DL_EARFCN_BAND51</DependencyParameter>
+                <DependencyParameter possibleValue="52">DL_EARFCN_BAND52</DependencyParameter>
+                <DependencyParameter possibleValue="53">DL_EARFCN_BAND53</DependencyParameter>
+                <DependencyParameter possibleValue="54">DL_EARFCN_BAND54</DependencyParameter>
+                <DependencyParameter possibleValue="55">DL_EARFCN_BAND55</DependencyParameter>
+                <DependencyParameter possibleValue="56">DL_EARFCN_BAND56</DependencyParameter>
+                <DependencyParameter possibleValue="57">DL_EARFCN_BAND57</DependencyParameter>
+                <DependencyParameter possibleValue="58">DL_EARFCN_BAND58</DependencyParameter>
+                <DependencyParameter possibleValue="59">DL_EARFCN_BAND59</DependencyParameter>
+                <DependencyParameter possibleValue="60">DL_EARFCN_BAND60</DependencyParameter>
+                <DependencyParameter possibleValue="61">DL_EARFCN_BAND61</DependencyParameter>
+                <DependencyParameter possibleValue="62">DL_EARFCN_BAND62</DependencyParameter>
+                <DependencyParameter possibleValue="63">DL_EARFCN_BAND63</DependencyParameter>
+            </Dependency>
+            <Dependency mandatory="false" name="UL_EARFCN" description="Uplink EUTRA Arfcn">
+                <DependencyParameter possibleValue="1">UL_EARFCN_BAND1</DependencyParameter>
+                <DependencyParameter possibleValue="2">UL_EARFCN_BAND2</DependencyParameter>
+                <DependencyParameter possibleValue="3">UL_EARFCN_BAND3</DependencyParameter>
+                <DependencyParameter possibleValue="4">UL_EARFCN_BAND4</DependencyParameter>
+                <DependencyParameter possibleValue="5">UL_EARFCN_BAND5</DependencyParameter>
+                <DependencyParameter possibleValue="6">UL_EARFCN_BAND6</DependencyParameter>
+                <DependencyParameter possibleValue="7">UL_EARFCN_BAND7</DependencyParameter>
+                <DependencyParameter possibleValue="8">UL_EARFCN_BAND8</DependencyParameter>
+                <DependencyParameter possibleValue="9">UL_EARFCN_BAND9</DependencyParameter>
+                <DependencyParameter possibleValue="10">UL_EARFCN_BAND10</DependencyParameter>
+                <DependencyParameter possibleValue="11">UL_EARFCN_BAND11</DependencyParameter>
+                <DependencyParameter possibleValue="12">UL_EARFCN_BAND12</DependencyParameter>
+                <DependencyParameter possibleValue="13">UL_EARFCN_BAND13</DependencyParameter>
+                <DependencyParameter possibleValue="14">UL_EARFCN_BAND14</DependencyParameter>
+                <DependencyParameter possibleValue="15">UL_EARFCN_BAND15</DependencyParameter>
+                <DependencyParameter possibleValue="16">UL_EARFCN_BAND16</DependencyParameter>
+                <DependencyParameter possibleValue="17">UL_EARFCN_BAND17</DependencyParameter>
+                <DependencyParameter possibleValue="18">UL_EARFCN_BAND18</DependencyParameter>
+                <DependencyParameter possibleValue="19">UL_EARFCN_BAND19</DependencyParameter>
+                <DependencyParameter possibleValue="20">UL_EARFCN_BAND20</DependencyParameter>
+                <DependencyParameter possibleValue="21">UL_EARFCN_BAND21</DependencyParameter>
+                <DependencyParameter possibleValue="22">UL_EARFCN_BAND22</DependencyParameter>
+                <DependencyParameter possibleValue="23">UL_EARFCN_BAND23</DependencyParameter>
+                <DependencyParameter possibleValue="24">UL_EARFCN_BAND24</DependencyParameter>
+                <DependencyParameter possibleValue="25">UL_EARFCN_BAND25</DependencyParameter>
+                <DependencyParameter possibleValue="26">UL_EARFCN_BAND26</DependencyParameter>
+                <DependencyParameter possibleValue="27">UL_EARFCN_BAND27</DependencyParameter>
+                <DependencyParameter possibleValue="28">UL_EARFCN_BAND28</DependencyParameter>
+                <DependencyParameter possibleValue="29">UL_EARFCN_BAND29</DependencyParameter>
+                <DependencyParameter possibleValue="30">UL_EARFCN_BAND30</DependencyParameter>
+                <DependencyParameter possibleValue="31">UL_EARFCN_BAND31</DependencyParameter>
+                <DependencyParameter possibleValue="32">UL_EARFCN_BAND32</DependencyParameter>
+                <DependencyParameter possibleValue="33">UL_EARFCN_BAND33</DependencyParameter>
+                <DependencyParameter possibleValue="34">UL_EARFCN_BAND34</DependencyParameter>
+                <DependencyParameter possibleValue="35">UL_EARFCN_BAND35</DependencyParameter>
+                <DependencyParameter possibleValue="36">UL_EARFCN_BAND36</DependencyParameter>
+                <DependencyParameter possibleValue="37">UL_EARFCN_BAND37</DependencyParameter>
+                <DependencyParameter possibleValue="38">UL_EARFCN_BAND38</DependencyParameter>
+                <DependencyParameter possibleValue="39">UL_EARFCN_BAND39</DependencyParameter>
+                <DependencyParameter possibleValue="40">UL_EARFCN_BAND40</DependencyParameter>
+                <DependencyParameter possibleValue="41">UL_EARFCN_BAND41</DependencyParameter>
+                <DependencyParameter possibleValue="42">UL_EARFCN_BAND42</DependencyParameter>
+                <DependencyParameter possibleValue="43">UL_EARFCN_BAND43</DependencyParameter>
+                <DependencyParameter possibleValue="44">UL_EARFCN_BAND44</DependencyParameter>
+                <DependencyParameter possibleValue="45">UL_EARFCN_BAND45</DependencyParameter>
+                <DependencyParameter possibleValue="46">UL_EARFCN_BAND46</DependencyParameter>
+                <DependencyParameter possibleValue="47">UL_EARFCN_BAND47</DependencyParameter>
+                <DependencyParameter possibleValue="48">UL_EARFCN_BAND48</DependencyParameter>
+                <DependencyParameter possibleValue="49">UL_EARFCN_BAND49</DependencyParameter>
+                <DependencyParameter possibleValue="50">UL_EARFCN_BAND50</DependencyParameter>
+                <DependencyParameter possibleValue="51">UL_EARFCN_BAND51</DependencyParameter>
+                <DependencyParameter possibleValue="52">UL_EARFCN_BAND52</DependencyParameter>
+                <DependencyParameter possibleValue="53">UL_EARFCN_BAND53</DependencyParameter>
+                <DependencyParameter possibleValue="54">UL_EARFCN_BAND54</DependencyParameter>
+                <DependencyParameter possibleValue="55">UL_EARFCN_BAND55</DependencyParameter>
+                <DependencyParameter possibleValue="56">UL_EARFCN_BAND56</DependencyParameter>
+                <DependencyParameter possibleValue="57">UL_EARFCN_BAND57</DependencyParameter>
+                <DependencyParameter possibleValue="58">UL_EARFCN_BAND58</DependencyParameter>
+                <DependencyParameter possibleValue="59">UL_EARFCN_BAND59</DependencyParameter>
+                <DependencyParameter possibleValue="60">UL_EARFCN_BAND60</DependencyParameter>
+                <DependencyParameter possibleValue="61">UL_EARFCN_BAND61</DependencyParameter>
+                <DependencyParameter possibleValue="62">UL_EARFCN_BAND62</DependencyParameter>
+                <DependencyParameter possibleValue="63">UL_EARFCN_BAND63</DependencyParameter>
+            </Dependency>
+        </Dependencies>
+    </Parameter>
+    <Parameter name="DATA_CODING_SCHEME">
+        <Description>Data coding scheme in hexadecimal - 8 bits - 00 to FF</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>str</Type>
+        <PossibleValues override="false"></PossibleValues>
+        <DefaultValue override="true">00</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="CHANNEL_CODING_SCHEME">
+        <Description>Channel coding scheme - GPRS</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>str</Type>
+        <PossibleValues override="false">CS1;CS2;CS3;CS4</PossibleValues>
+        <DefaultValue override="true">CS1</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="PS_MCS_12">
+        <Description>Puncturing modulation coding schemes 1 and 2: could be set for all DL MCS</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>str</Type>
+        <PossibleValues override="false">PS1;PS2</PossibleValues>
+        <DefaultValue override="true">PS1</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="PS_MCS_123">
+        <Description>Puncturing modulation coding schemes 1,2 and 3: could be set for DL MCS 3,4,7,8,9</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>str</Type>
+        <PossibleValues override="false">PS1;PS2;PS3</PossibleValues>
+        <DefaultValue override="true">PS3</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="DL_MCS">
+        <Description>Downlink Modulation and coding scheme</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>str</Type>
+        <PossibleValues override="false">DL_MCS1;DL_MCS2;DL_MCS3;DL_MCS4;DL_MCS5;DL_MCS6;DL_MCS7;DL_MCS8;DL_MCS9</PossibleValues>
+        <DefaultValue override="true">DL_MCS1</DefaultValue>
+        <Blank override="false">false</Blank>
+        <Dependencies>
+            <Dependency mandatory="true" name="PS_MCS" description="Puncturing Modulation Coding Scheme">
+                <DependencyParameter possibleValue="DL_MCS1">PS_MCS_12</DependencyParameter>
+                <DependencyParameter possibleValue="DL_MCS2">PS_MCS_12</DependencyParameter>
+                <DependencyParameter possibleValue="DL_MCS3">PS_MCS_123</DependencyParameter>
+                <DependencyParameter possibleValue="DL_MCS4">PS_MCS_123</DependencyParameter>
+                <DependencyParameter possibleValue="DL_MCS5">PS_MCS_12</DependencyParameter>
+                <DependencyParameter possibleValue="DL_MCS6">PS_MCS_12</DependencyParameter>
+                <DependencyParameter possibleValue="DL_MCS7">PS_MCS_123</DependencyParameter>
+                <DependencyParameter possibleValue="DL_MCS8">PS_MCS_123</DependencyParameter>
+                <DependencyParameter possibleValue="DL_MCS9">PS_MCS_123</DependencyParameter>
+            </Dependency>
+        </Dependencies>
+    </Parameter>
+    <Parameter name="UL_MCS">
+        <Description>Uplink Modulation and coding scheme</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>str</Type>
+        <PossibleValues override="false">UL_MCS1;UL_MCS2;UL_MCS3;UL_MCS4;UL_MCS5;UL_MCS6;UL_MCS7;UL_MCS8;UL_MCS9</PossibleValues>
+        <DefaultValue override="true">UL_MCS1</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="MULTISLOT_CONFIG">
+        <Description>Multislot configuration - If MAX is selected, value will be retrieved from DeviceCatalog.xml</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>str</Type>
+        <PossibleValues override="false">D1U1;D1U2;D1U3;D1U4;D1U5;D1U6;D2U1;D2U2;D2U3;D2U4;D2U5;D3U1;D3U2;D3U3;D3U4;D4U1;D4U2;D4U3;D5U1;D5U2;D6U1;MAX</PossibleValues>
+        <DefaultValue override="true">D1U1</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="MMS_SUBJECT">
+        <Description>Subject of the MMS in text format</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>str</Type>
+        <PossibleValues override="false"></PossibleValues>
+        <DefaultValue override="true">This is my subject.</DefaultValue>
+        <Blank override="false">true</Blank>
+    </Parameter>
+    <Parameter name="SMS_TYPE">
+        <Description> SMS Type for IMS, either TGPP (3GPP) or TGP2 (3GPP2) </Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>str</Type>
+        <PossibleValues override="false">TGPP;TGP2</PossibleValues>
+        <DefaultValue override="true">TGPP</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="SMS_TEXT">
+        <Description>Text content of the MMS / SMS.</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>str</Type>
+        <PossibleValues override="false"></PossibleValues>
+        <DefaultValue override="false">This my text.</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="ATTACHMENT_FILE">
+        <Description>Name of a file, present in the multimedia path of the device or local computer, that will be attached.</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>file</Type>
+        <PossibleValues override="false"></PossibleValues>
+        <DefaultValue override="false"></DefaultValue>
+        <Blank override="true">false</Blank>
+    </Parameter>
+    <Parameter name="MMS_TYPE">
+        <Description>Describes the type of MMS that will be built. Should be "picture" or "text". "picture" for a MMS with subject, text and an attached picture. "text" for a MMS with subject and text only.</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>str</Type>
+        <PossibleValues override="false">picture;text</PossibleValues>
+        <DefaultValue override="true">picture</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="NETWORK_TYPE">
+        <Description>The string value corresponding to the current Network Type on which the DUT is camped | UNKNOWN | GPRS | EGPRS | UMTS | CDMA | EVDO_0 | EVDO_A | 1xRTT | HSDPA | HSUPA | HSPA | IDEN | EVDO_B | LTE | EHRPD | HSPAP | 3xRTT | EVDV | UMB
+        </Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>str</Type>
+        <PossibleValues override="false">UNKNOWN;GPRS;EGPRS;UMTS;CDMA;EVDO_0;EVDO_A;1xRTT;HSDPA;HSUPA;HSPA;IDEN;EVDO_B;LTE;EHRPD;HSPAP;3xRTT;EVDV;UMB</PossibleValues>
+        <DefaultValue override="true">UNKNOWN</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="NETWORK_PREFERENCES">
+        <Description>The string value corresponding to the preferred Network Type on which the DUT should be | 3G_PREF = WCDMA_preferred 2G_ONLY = GSM_only 3G_ONLY = WCDMA_only 2G_3G = GSM_auto_PRL CDMA_PREF = CDMA_auto_PRL CDMA_ONLY = CDMA_only
+                    EVDO_ONLY = EvDo_only GLOBAL = GSM_CDMA_auto_PRL 4G_PREF_US = LTE_CDMA_auto_PRL 4G_PREF = LTE_GSM_auto_PRL
+                    WORLD_MODE = LTE_GSM_CDMA_auto_PRL 4G_ONLY = LTE_only.</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>str</Type>
+        <PossibleValues override="false">2G_ONLY;3G_PREF;4G_PREF;3G_ONLY;2G_3G;CDMA_PREF;CDMA_ONLY;EVDO_ONLY;GLOBAL;4G_PREF_US;WORLD_MODE;4G_ONLY</PossibleValues>
+        <DefaultValue override="true">GLOBAL</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="SIM_PIN_CODE">
+        <Description>SIM card PIN Code - 8 digits</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>digit</Type>
+        <PossibleValues override="false">[0:9];[0:9];[0:9];[0:9];[0:9];[0:9];[0:9];[0:9]</PossibleValues>
+        <DefaultValue override="true">0;0;0;0;0;0;0;0</DefaultValue>
+        <Blank override="false">true</Blank>
+    </Parameter>
+    <Parameter name="VC_TYPE">
+        <Description>Voice Call Type - MO [Mobile Originated]|MT [Mobile Terminated]</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>str</Type>
+        <PossibleValues override="false">MO;MT</PossibleValues>
+        <DefaultValue override="true">MO</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="RELEASE_VC_TYPE">
+        <Description>Release Voice Call Type - MR [Mobile Released]|NR [Network Released]</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>str</Type>
+        <PossibleValues override="false">MR;NR</PossibleValues>
+        <DefaultValue override="true">MR</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="IS_EMERGENCY_NUMBER">
+        <Description>This parameter indicates whether the phone number is an emergency number or not</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>bool</Type>
+        <PossibleValues override="false">true;false</PossibleValues>
+        <DefaultValue override="true">false</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="RADIO_ACCESS_BEARER">
+        <Description>Radio Access Bearer - 64k | 128k | 384k | MAX - If MAX is selected, value will be retrieved from DeviceCatalog.xml</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>str</Type>
+        <PossibleValues override="false">64k;128k;384k;MAX</PossibleValues>
+        <DefaultValue override="true">64k</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="CPC_TTI">
+        <Description>CPC [Continuous Packet Connectivity] feature uses 2 Transmission Time Interval : 2 [TTI =2ms] and 10 [TTI =10ms]</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>int</Type>
+        <PossibleValues override="false">2;10</PossibleValues>
+        <DefaultValue override="true">2</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="CQI_REPORTING_SCHEME">
+        <Description>Channel Quality Indicator reporting scheme - Fixed value or UE reported - FIXED|REPORTED</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>str</Type>
+        <PossibleValues override="false">FIXED;REPORTED</PossibleValues>
+        <DefaultValue override="true">FIXED</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="MAC_D_PDU_SIZE">
+        <Description>PS Data HS-DSCH MAC-d PDU Size - BITS336|BITS656</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>str</Type>
+        <PossibleValues override="false">BITS336;BITS656</PossibleValues>
+        <DefaultValue override="true">BITS336</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="CPC_DEACT_TYPE">
+        <Description>CPC Deactivation type during data transfer - CPC_OFF | HS_SCCH_ORDER | PDP_DEACT</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>str</Type>
+        <PossibleValues override="false">CPC_OFF;HS_SCCH_ORDER;PDP_DEACT</PossibleValues>
+        <DefaultValue override="true">CPC_OFF</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="IS_PDP_CONTEXT_ACTIVATED">
+        <Description>Activated/Deactivated PDP Context</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>bool</Type>
+        <PossibleValues override="false">true;false</PossibleValues>
+        <DefaultValue override="true">false</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="IS_MIMO_ENABLED">
+        <Description>Enabled/disabled MIMO (Multiple-Input Multiple-Output)</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>bool</Type>
+        <PossibleValues override="false">true;false</PossibleValues>
+        <DefaultValue override="true">false</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="IS_IMS_ENABLED">
+        <Description>Enabled/disabled IMS service</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>bool</Type>
+        <PossibleValues override="false">true;false</PossibleValues>
+        <DefaultValue override="true">false</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="ANTENNA">
+        <Description>Number of antennas - could be 1 or 2</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>int</Type>
+        <PossibleValues override="true">1;2</PossibleValues>
+        <DefaultValue override="true">1</DefaultValue>
+        <Blank override="true">false</Blank>
+    </Parameter>
+    <Parameter name="LTE_TRANSMISSION_MODE">
+        <Description>LTE transmission mode</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>str</Type>
+        <PossibleValues override="false">TM1;TM2;TM3;TM4;TM5;TM6;TM7;TM8</PossibleValues>
+        <DefaultValue override="true">TM1</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="LTE_SIGNAL_MODE">
+        <Description>Operation mode to set : BSE or SA</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>str</Type>
+        <PossibleValues override="false">BSE;SA</PossibleValues>
+        <DefaultValue override="true">BSE</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="LTE_PHYSICAL_CELL_ID">
+        <Description>Physical Cell Id used to scramble and differentiate data from different transmitters - 0 to 503</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>int</Type>
+        <PossibleValues override="false">[0:503]</PossibleValues>
+        <DefaultValue override="true">0</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="CELL_ID">
+        <Description>Cell Setup : "A" for A-cell or "B" for B-cell</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>str</Type>
+        <PossibleValues override="false">A;B</PossibleValues>
+        <DefaultValue override="true">A</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="LTE_CELL_CHANNEL_BANDWIDTH">
+        <Description> Cell Channel Bandwidth in MHz </Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>int</Type>
+        <PossibleValues override="false">1.4;3;5;10;15;20</PossibleValues>
+        <DefaultValue override="false"></DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="LTE_RB_SIZE">
+        <Description>Resource block size</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>int</Type>
+        <PossibleValues override="false">0;1;2;3;4;5;6;8;9;10;12;15;16;17;18;20;24;25;27;30;36;40;48;50;54;75;80;83;100</PossibleValues>
+        <DefaultValue override="false"></DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="UL_I_MCS">
+        <Description>4G UL Modulation and coding scheme</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>int</Type>
+        <PossibleValues override="false">0;1;2;3;4;5;6;7;8;9;10;11;12;13;14;15;16;17;18;20;21;22;23;29</PossibleValues>
+        <DefaultValue override="false"></DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="DL_I_MCS">
+        <Description>4G DL Modulation and coding scheme</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>int</Type>
+        <PossibleValues override="false">[0:28]</PossibleValues>
+        <DefaultValue override="false"></DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="TYPE0_BITMAP">
+        <Description>DL Resource alloc Type#0 Bitmap in decimal (hex: 0x0000001 to 0x1FFFFFF)</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>int</Type>
+        <PossibleValues override="false">[1:33554431]</PossibleValues>
+        <DefaultValue override="false"></DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="UL_GRANT_MODE">
+        <Description>UL GRANT MODE to set: AUTO or FIXEDMAC</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>str</Type>
+        <PossibleValues override="false">AUTO;FIXEDMAC</PossibleValues>
+        <DefaultValue override="true">AUTO</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="ST_EQUIPMENT_CONFIG_FILE">
+        <Description>System Test Equipment Configuration file - ST\telephony\Configurations\filename (without xml extension)</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>file</Type>
+        <PossibleValues override="false"></PossibleValues>
+        <DefaultValue override="false"></DefaultValue>
+        <Blank override="true">false</Blank>
+    </Parameter>
+    <Parameter name="GTESTER_COMMAND">
+        <Description>GTESTER command line</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>str</Type>
+        <PossibleValues override="false"></PossibleValues>
+        <DefaultValue override="false"></DefaultValue>
+        <Blank override="true">false</Blank>
+    </Parameter>
+    <Parameter name="MMGR_TEST_VERDICT">
+        <Description>Mmgr Test verdict</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>str</Type>
+        <PossibleValues override="false">SUCCEED;FAILED</PossibleValues>
+        <DefaultValue override="true">SUCCEED</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="MMGR_CONFIG_FILE">
+        <Description>Absolute path of the mmgr's configuration file - /system/etc/telephony/mmgr.conf</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>file</Type>
+        <PossibleValues override="false"></PossibleValues>
+        <DefaultValue override="false"></DefaultValue>
+        <Blank override="true">false</Blank>
+    </Parameter>
+    <Parameter name="SCENARIO_PATH">
+        <Description>Path to the scenario filename to load on PXT</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>str</Type>
+        <PossibleValues override="false"/>
+        <DefaultValue override="false"/>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="AT_PROXY_LAUNCH_MODE">
+        <Description>AT proxy launch mode. Possible values: NORMAL | TUNNELING</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>str</Type>
+        <PossibleValues override="false">NORMAL;TUNNELING</PossibleValues>
+        <DefaultValue override="true">NORMAL</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="AT_COMMAND">
+        <Description>AT command to be tested</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>str</Type>
+        <PossibleValues override="false"></PossibleValues>
+        <DefaultValue override="true"></DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="AT_COMMAND_RETURN_CODE">
+        <Description>AT command return code. Possible values: OK | ERROR</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>str</Type>
+        <PossibleValues override="false">OK;ERROR</PossibleValues>
+        <DefaultValue override="true">OK</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="IS_RESELECTION_ACTIVATED">
+        <Description>Activated/Deactivated Reselection</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>bool</Type>
+        <PossibleValues override="false">true;false</PossibleValues>
+        <DefaultValue override="true">false</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="MOVE_OUT_OF_COVERAGE_SELECTOR">
+        <Description>Indicates when DUT should move out of coverage, when send or receive MMS. Possible values are: 0 (don't perform loss of coverage), 1 (before sending MMS), 2 (while receiving MMS).
+        </Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>int</Type>
+        <PossibleValues override="false">[0:2]</PossibleValues>
+        <DefaultValue override="true">0</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="IMS_PARAMETER_FILE">
+        <Description>The path to the IMS parameter file to use to create the IMS_Config.ini file on the device.</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>str</Type>
+        <PossibleValues override="false"></PossibleValues>
+        <DefaultValue override="true"></DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="IMS_PARAMETER">
+        <Description>A generic IMS parameters.</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>str</Type>
+        <PossibleValues override="false"></PossibleValues>
+        <DefaultValue override="true"></DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="MMS_TEXT_REPEAT">
+        <Description>Indicates the number of times we want to repeat a text in an MMS body.</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>int</Type>
+        <PossibleValues override="false"></PossibleValues>
+        <DefaultValue override="true"></DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="IMS_REGISTRATION_OPERATION">
+        <Description>Indicates the action to perform for IMS registration.
+            REGISTER (perform IMS registration normally) or
+            CHECK_ONLY (only check that the IMS status is REGISTERED).</Description>
+        <Domain>TELEPHONY</Domain>
+        <Type>str</Type>
+        <PossibleValues override="false">REGISTER;CHECK_ONLY</PossibleValues>
+        <DefaultValue override="false">REGISTER</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+</Parameters>

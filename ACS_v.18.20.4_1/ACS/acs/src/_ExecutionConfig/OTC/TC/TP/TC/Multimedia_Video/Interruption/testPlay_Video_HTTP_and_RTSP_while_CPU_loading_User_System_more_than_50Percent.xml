@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<TestCase>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Discription>
+Verify Play a Video file HTTP Protocol and RTSP Protocol while CPU loading(User+System) is more than 50% (HTTP Protocol)
+</Discription>
+    <Domain>Multimedia_Video</Domain>
+    <Phase>CORE</Phase>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <Type>FUNCTIONAL</Type>
+    <UseCase>PY_UNIT</UseCase>
+    <b2bIteration>1</b2bIteration>
+    <Parameters>
+        <Parameter>
+            <Name>HpalmName</Name>
+            <Value>video_playback.VideoPlayBack.testPlay_Video_HTTP_and_RTSP_while_CPU_loading_User_System_more_than_50Percent</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TEST_DATA_ROOT</Name>
+            <Value>testplan/Multimedia_Video</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TEST_CASE</Name>
+            <Value>tests.Multimedia_Video.Interruption.video_playback.VideoPlayBack.testPlay_Video_HTTP_and_RTSP_while_CPU_loading_User_System_more_than_50Percent</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

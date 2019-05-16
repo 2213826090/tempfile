@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase>
+    <UseCase>EXEC</UseCase>
+    <Description>Photos test</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <TcMaxAttempt>2</TcMaxAttempt>
+    <TestSteps>
+        <Initialize>
+            <TestStep Id="GET_ARTIFACT"
+                      EQT="ARTIFACT_MANAGER"
+                      ARTIFACT="INSTRUMENTATION/ANDROID/ApiTests.apk"
+                      ARTIFACT_SOURCE="FROM_BENCH:ARTIFACT_MANAGER:URI"
+                      TRANSFER_TIMEOUT="DEFAULT"
+                      STORED_FILE_PATH="FILE_PATH_IN_CACHE1"/>
+            <TestStep Id="INSTALL_APP"
+                      DEVICE="PHONE1"
+                      SIGN="False"
+                      SIGN_KEY_PATH="DEFAULT"
+                      FILE_PATH="FROM_CTX:FILE_PATH_IN_CACHE1"
+                      BACKUP="False"
+                      TIMEOUT="30"
+                      BACKUP_FILE_PATH="/backup"/>
+            <TestStep Id="GET_ARTIFACT"
+                      EQT="ARTIFACT_MANAGER"
+                      ARTIFACT="IMAGE/PHOTOS/blue_wallpaper_for_test.jpg"
+                      ARTIFACT_SOURCE="FROM_BENCH:ARTIFACT_MANAGER:URI"
+                      TRANSFER_TIMEOUT="DEFAULT"
+                      STORED_FILE_PATH="FILE_PATH_IN_CACHE1"/>
+            <TestStep Id="GET_ARTIFACT"
+                      EQT="ARTIFACT_MANAGER"
+                      ARTIFACT="VIDEO/H264/H264_720x480_25fps.MP4"
+                      ARTIFACT_SOURCE="FROM_BENCH:ARTIFACT_MANAGER:URI"
+                      TRANSFER_TIMEOUT="DEFAULT"
+                      STORED_FILE_PATH="FILE_PATH_IN_CACHE1"/>
+        </Initialize>
+        <Finalize>
+        </Finalize>
+    </TestSteps>
+    <Parameters>
+        <Parameter>
+            <Name>RUN_CMD</Name>
+            <Value>python ../../../entry_point_scripts/Photos/Marshmallow/GMS_Photos_New_Delete_Photo_Movie.py</Value>
+        </Parameter>
+        <Parameter>
+            <Name>RUN_FROM_TCDIRECTORY</Name>
+            <Value>True</Value>
+        </Parameter>
+        <Parameter>
+            <Name>RUN_TIMEOUT</Name>
+            <Value>500</Value>
+        </Parameter>
+        <Parameter>
+            <Name>RUN_EXPECT_RESULT</Name>
+            <Value>PASS</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

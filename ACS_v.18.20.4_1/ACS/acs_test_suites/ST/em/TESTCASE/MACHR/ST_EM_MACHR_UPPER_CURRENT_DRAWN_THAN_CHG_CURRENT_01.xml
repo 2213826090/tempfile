@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="13.37">
+    <UseCase>LAB_EM_UPPER_CURRENT_DRAWN_THAN_CHG_CURRENT</UseCase>
+    <Description>EM - check the battery current when the charger output power is not sufficient to power the system load.</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>False</b2bContinuousMode>
+    <TcMaxAttempt>1</TcMaxAttempt>
+    <TcAcceptanceCriteria>1</TcAcceptanceCriteria>
+    <Parameters>
+        <Parameter>
+            <!-- This the Target to test. The target name and values are listed in the EnergyManagement.xml target file -->
+            <Name>EM_TARGET</Name>
+            <Value>IBATT</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Charger type for the test (DCP SDP CDP) -->
+            <Name>CHARGER_TYPE</Name>
+            <Value>SDP</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Features to enable for the test -->
+            <!-- Features avaible are :     -->
+            <!-- VIDEO, AUDIO, WIFI, BLUETOOTH, TORCHLIGHT, VIBRA, SCREEN ON  -->
+            <Name>LOAD</Name>
+            <Value>SCREEN_ON;WIFI;BLUETOOTH;TORCHLIGHT;VIBRA</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

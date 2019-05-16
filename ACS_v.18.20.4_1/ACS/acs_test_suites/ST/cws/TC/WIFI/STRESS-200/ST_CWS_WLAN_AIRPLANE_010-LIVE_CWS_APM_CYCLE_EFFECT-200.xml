@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase>
+    <UseCase>LIVE_CWS_APM_CYLCE_EFFECT</UseCase>
+    <Description>Test effect on CWS components after an Air Plane Mode cycle</Description>
+    <b2bIteration>200</b2bIteration>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters>
+        <Parameter>
+            <!-- Initial Wifi mode: on or off -->
+            <Name>WIFI_INIT_MODE</Name>
+            <Value></Value>
+        </Parameter>
+        <Parameter>
+            <!-- Initial Bluetooth mode: on or off -->
+            <Name>BT_INIT_MODE</Name>
+            <Value></Value>
+        </Parameter>
+        <Parameter>
+            <!-- Initial NFC mode: on or off -->
+            <Name>NFC_INIT_MODE</Name>
+            <Value></Value>
+        </Parameter>
+        <Parameter>
+            <!-- Initial NFC BEAM mode: on or off -->
+            <Name>NFC_BEAM_INIT_MODE</Name>
+            <Value></Value>
+        </Parameter>
+        <Parameter>
+            <!-- Initial Hotspot Wifi mode: on or off -->
+            <Name>HOTSPOT_WIFI_INIT_MODE</Name>
+            <Value>ON</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Initial Hotspot Bluetooth mode: on or off -->
+            <Name>HOTSPOT_BT_INIT_MODE</Name>
+            <Value></Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

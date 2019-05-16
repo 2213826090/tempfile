@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase>
+    <UseCase>LIVE_PERFMEAS_APPLICATION</UseCase>
+    <Description>Egypt HD OffScreen</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters>
+        <Parameter>
+            <Name>APPLICATION_NAME</Name>
+            <Value>GlBenchmark</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TIMEOUT</Name>
+            <Value>300</Value>
+        </Parameter>
+        <Parameter>
+            <Name>MEASURE_NB</Name>
+            <Value>1</Value>
+        </Parameter>
+        <Parameter>
+            <Name>APPURI</Name>
+            <Value>
+                DEFAULT: artifact://BENCHMARKS/GLBENCHMARK/GLBenchmark_2_5_1_b306a5_Android_Corporate_Package.apk;
+                BYT_T_FFRD8: artifact://BENCHMARKS/GLBENCHMARK/GLBenchmark_2_7_0_Release_a68901_Android_Corporate_Package.apk;
+                BYT_T_FFRD8_EDK2: artifact://BENCHMARKS/GLBENCHMARK/GLBenchmark_2_7_0_Release_a68901_Android_Corporate_Package.apk;
+                REDHOOKBAY: artifact://BENCHMARKS/GLBENCHMARK/GLBenchmark_2_5_1_b306a5_Android_Corporate_Package.apk
+            </Value>
+        </Parameter>
+        <Parameter>
+            <Name>ARGUMENTS</Name>
+            <Value>EgyptHDOffScreen</Value>
+        </Parameter>
+        <Parameter>
+            <Name>SYSDEBUG_MODULES</Name>
+            <Value>Thermals: skin0=33, skin1=33, soc=33, Core 1=33, Core 2=33;</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

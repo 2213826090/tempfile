@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<TestCase>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters/>
+    <Discription>
+Check that hald process is automatically restarted
+&lt;br /&gt;Auto_detect hald - recovery process
+</Discription>
+    <Parameters/>
+    <UseCase>PY_UNIT</UseCase>
+    <Parameters/>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <Parameters/>
+    <b2bIteration>1</b2bIteration>
+    <Parameters>
+        <Parameter>
+            <Name>TEST_DATA_ROOT</Name>
+            <Value>testplan/IRDA_Auto_Detect</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TEST_CASE</Name>
+            <Value>tests.IRDA_Auto_Detect.AutoDetect.check_halctl_hald_recovery.Check_Halctl_Hald_Recovery.testCheck_Halctl_Hald_Recovery</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

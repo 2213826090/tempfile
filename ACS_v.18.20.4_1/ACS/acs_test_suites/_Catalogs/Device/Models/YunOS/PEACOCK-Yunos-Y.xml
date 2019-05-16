@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<DeviceModel xsi:noNamespaceSchemaLocation="../../../../../acs/src/_Catalogs/Device/Models/DummyDeviceModel.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <DeviceModule>
+        <FlashModule className="Device.Module.Common.Flash.DummyFlashModule.DummyFlashModule" config="Config/Default.xml"/>
+        <CrashModule className="Device.Module.Common.Crash.DummyCrashModule.DummyCrashModule" config="Config/CrashInfo/Default.xml"/>
+        <SystemModule className="Device.Module.Common.System.SystemModule.SystemModule" config="Config/Dummy.yaml"/>
+        <EnergyManagementModule className="Device.Module.MCG.EnergyManagement.EmModule.EmModule" config="Config/Dummy.yaml"/>
+    </DeviceModule>
+    <Implementation>
+        <Parameter deviceCapabilities="Capabilities/dummy.xml"
+                   ClassName="Device.Model.Dummy.Dummy.Dummy"
+                   waitBetweenCmd="2" />
+    </Implementation>
+
+</DeviceModel>

@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<UseCases xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:noNamespaceSchemaLocation="../../../../acs/src/_Catalogs/UseCase/usecase.xsd">
+    <UseCase Id="LIVE_NFC_READ_TAG" Domain="CWS" SubDomain="NFC" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.LocalConnectivity.LIVE_NFC_READ_TAG.LiveNfcReadTag</ClassName>
+        <Description>Read an NFC tag</Description>
+        <Environment name="ANY">
+        </Environment>
+        <Parameters>
+            <Parameter name="URI" type="WEBSITE_URL" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+        </Parameters>
+    </UseCase>
+    <UseCase Id="LAB_NFC_CARD_EMUL_FELICA" Domain="CWS" SubDomain="NFC" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.LocalConnectivity.LAB_NFC_CARD_EMUL_FELICA.LabNfcCardEmulFelica</ClassName>
+        <Description>Check embedded/UICC secure element supports felica</Description>
+        <Environment name="CWS_NFC">
+            <Dependency>EQT_NFC_MICROBOT</Dependency>
+            <Dependency>EQT_NFC_EMULATOR</Dependency>
+        </Environment>
+    </UseCase>
+    <UseCase Id="LAB_NFC_EMUL_EXCHANGE_CONTACT" Domain="CWS" SubDomain="NFC" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.LocalConnectivity.LAB_NFC_EMUL_EXCHANGE_CONTACT.LabNfcEmulExchangeContact</ClassName>
+        <Description>Exchange a contact between emulator and DUT</Description>
+        <Environment name="CWS_NFC">
+            <Dependency>EQT_NFC_MICROBOT</Dependency>
+            <Dependency>EQT_NFC_EMULATOR</Dependency>
+        </Environment>
+    </UseCase>
+    <UseCase Id="LAB_NFC_OTA_APDU_EXCHANGE" Domain="CWS" SubDomain="NFC" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.LocalConnectivity.LAB_NFC_OTA_APDU_EXCHANGE.LabNfcOtaApduExchange</ClassName>
+        <Description>Check data can be exchanged with embedded/UICC secure element</Description>
+        <Environment name="CWS_NFC">
+            <Dependency>EQT_NFC_MICROBOT</Dependency>
+            <Dependency>EQT_NFC_READER</Dependency>
+            <Dependency>EQT_NFC_EMULATOR</Dependency>
+        </Environment>
+    </UseCase>
+    <UseCase Id="LAB_NFC_ADAPTER_ON_OFF_FIELDON" Domain="CWS" SubDomain="NFC" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.LocalConnectivity.LAB_NFC_ADAPTER_ON_OFF_FIELDON.LabNfcAdapterOnOffFieldOn</ClassName>
+        <Description>Enable/Disable NFC adapter using Android Setting application while DUT is exposed to RF field of a
+            NFC reader
+        </Description>
+        <Environment name="CWS_NFC">
+            <Dependency>EQT_NFC_MICROBOT</Dependency>
+            <Dependency>EQT_NFC_READER</Dependency>
+            <Dependency>EQT_NFC_EMULATOR</Dependency>
+        </Environment>
+    </UseCase>
+    <UseCase Id="LIVE_NFC_SCAPI_APDU_EXCHANGE" Domain="CWS" SubDomain="NFC" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.LocalConnectivity.LIVE_NFC_SCAPI_APDU_EXCHANGE.LiveNfcScapiApduExchange</ClassName>
+        <Description>Check data can be exchanged with embedded/UICC secure element</Description>
+        <Environment name="ANY">
+        </Environment>
+    </UseCase>
+    <UseCase Id="LAB_NFC_HOST_READER_MODE" Domain="CWS" SubDomain="NFC" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.LocalConnectivity.LAB_NFC_HOST_READER_MODE.LabNfcHostReaderMode</ClassName>
+        <Description>Write data in tag, read it and compare to check if each action succeeds</Description>
+        <Environment name="CWS_NFC">
+            <Dependency>EQT_NFC_MICROBOT</Dependency>
+        </Environment>
+    </UseCase>
+    <UseCase Id="LAB_NFC_SELECT_SECURE_ELEMENT" Domain="CWS" SubDomain="NFC" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.LocalConnectivity.LAB_NFC_SELECT_SECURE_ELEMENT.LabNfcSelectSecureElement</ClassName>
+        <Description>Switch between available secure element</Description>
+        <Environment name="ANY">
+        </Environment>
+    </UseCase>
+    <UseCase Id="LIVE_NFC_TURN_ON_OFF" Domain="CWS" SubDomain="NFC" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.LocalConnectivity.LIVE_NFC_TURN_ON_OFF.LiveNfcTurnOnOff</ClassName>
+        <Description>Turn on/off NFC interface</Description>
+        <Environment name="ANY">
+        </Environment>
+    </UseCase>
+    <UseCase Id="LIVE_NFC_BEAM_TURN_ON_OFF" Domain="CWS" SubDomain="NFC" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.LocalConnectivity.LIVE_NFC_BEAM_TURN_ON_OFF.LiveNfcBeamTurnOnOff</ClassName>
+        <Description>Turn on/off Beam NFC interface</Description>
+        <Environment name="ANY">
+        </Environment>
+    </UseCase>
+    <UseCase Id="LIVE_NFC_TOGGLE_SCREEN_NFC_ON_OFF" Domain="CWS" SubDomain="NFC" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.LocalConnectivity.LIVE_NFC_TOGGLE_SCREEN_ON_OFF.LiveNfcToggleScreenONOff</ClassName>
+        <Description>Toggle screen On/Off when NFC is enabled and check Crash Log</Description>
+        <Environment name="ANY">
+        </Environment>
+    </UseCase>
+    <UseCase Id="LIVE_LAB_NFC_DEBUG_TEST" Domain="CWS" SubDomain="NFC" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.LocalConnectivity.LIVE_LAB_NFC_DEBUG_TEST.LiveLabNfcDebugTest</ClassName>
+        <Description>Run whole available NFC UECmd functions</Description>
+        <Environment name="CWS_WIFI">
+            <Dependency>EQT_NFC_MICROBOT</Dependency>
+            <Dependency>EQT_NFC_READER</Dependency>
+            <Dependency>EQT_NFC_EMULATOR</Dependency>
+        </Environment>
+        <Parameters>
+             <Parameter name="USE_ROBOT" type="BOOLEAN" isOptional="false">
+                <!-- Run the tests that use a Robot -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue>TRUE</DefaultValue>
+                <Blank/>
+             </Parameter>
+             <Parameter name="USE_SECURE_ELEMENT" type="BOOLEAN" isOptional="false">
+                <!-- Run the tests that use a Secure element (sim card needed) -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue>TRUE</DefaultValue>
+                <Blank/>
+            </Parameter>
+            <Parameter name="SECURE_ELEMENT" type="STRING" isOptional="true">
+                <!-- Secure element to test -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue>TRUE</DefaultValue>
+                <Blank/>
+            </Parameter>
+            <Parameter name="NFC_BEAM_INITIAL_STATE" type="BOOLEAN" isOptional="false">
+                <!-- If beam activated -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue>TRUE</DefaultValue>
+                <Blank/>
+            </Parameter>
+        </Parameters>
+    </UseCase>
+    <UseCase Id="LAB_NFC_CARD_EMUL_DETECTION" Domain="CWS" SubDomain="NFC" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.LocalConnectivity.LAB_NFC_CARD_EMUL_DETECTION.LabNfcCardEmulDetection</ClassName>
+        <Description>Card emulation detection</Description>
+        <Environment name="CWS_NFC">
+            <Dependency>EQT_NFC_MICROBOT</Dependency>
+            <Dependency>EQT_NFC_READER</Dependency>
+        </Environment>
+    </UseCase>
+        <UseCase Id="LAB_NFC_DUAL_PHONE_BEAM_TRANSFERT" Domain="CWS" SubDomain="NFC" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.LocalConnectivity.LAB_NFC_DUAL_PHONE_BEAM_TRANSFERT.LabNfcDualPhoneBeamTransfert</ClassName>
+        <Description>Beam reliability test</Description>
+        <Environment name="CWS_NFC">
+            <Dependency>EQT_NFC_MICROBOT</Dependency>
+        </Environment>
+        <Parameters>
+             <Parameter name="NFC_BEAM_INITIAL_STATE" type="BOOLEAN" isOptional="false">
+                <!-- If beam activated -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue>TRUE</DefaultValue>
+                <Blank/>
+            </Parameter>
+            <Parameter name="FILE_TO_SHARE" type="STRING" isOptional="false">
+                <!-- Name of the file to be shared -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue></DefaultValue>
+                <Blank/>
+            </Parameter>
+            <Parameter name="BEAM_DURATION" type="DURATION_IN_SEC" isOptional="false">
+                <!-- Time to wait for beam -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue></DefaultValue>
+                <Blank/>
+            </Parameter>
+            <Parameter name="BEAM_PATH" type="STRING" isOptional="false">
+                <!-- Path beamed files are stored -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue></DefaultValue>
+                <Blank/>
+            </Parameter>
+            <Parameter name="DIRECTION" type="STRING" isOptional="false">
+                <!-- SEND  or RECEIVE or FULL -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue></DefaultValue>
+                <Blank/>
+            </Parameter>
+            <Parameter name="REF_PHONE_POSITION" type="STRING" isOptional="false">
+                <!-- position of ref phone Center or SecondPhone-->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue></DefaultValue>
+                <Blank/>
+            </Parameter>
+        </Parameters>
+    </UseCase>
+    <UseCase Id="LAB_NFC_FIELD_MAPPING" Domain="CWS" SubDomain="NFC" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.LocalConnectivity.LAB_NFC_FIELD_MAPPING.LabNfcFieldMapping</ClassName>
+        <Description>Build the nfc field mapping</Description>
+        <Environment name="CWS_NFC">
+            <Dependency>EQT_NFC_MICROBOT</Dependency>
+        </Environment>
+        <Parameters>
+            <Parameter name="STARTING_Z" type="STRING" isOptional="false">
+                <Description>Height where the test is starting 0 by default </Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="MAX_Z" type="STRING" isOptional="false">
+                <Description>Height where the test is ending 0 by default -90000 </Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="RIGHT_UP_CORNER" type="STRING" isOptional="false">
+                <Description>position to start the test in robot step (10000 = 1 cm)</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="RESULT_FILE_NAME" type="STRING" isOptional="false">
+                <Description>file name for the results</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="RESOLUTION" type="STRING" isOptional="false">
+                <Description>resolution in robot step of measurement</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="FOUND_MAX_Z" type="STRING" isOptional="false">
+                <Description>is test is perform higher z find</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+        </Parameters>
+    </UseCase>
+</UseCases>

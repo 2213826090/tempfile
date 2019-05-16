@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="13.37">
+    <UseCase>LAB_NFC_DUAL_PHONE_BEAM_TRANSFERT</UseCase>
+    <Description>BEAM transfert testing</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>False</b2bContinuousMode>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters>
+        <Parameter>
+            <!-- Activate NFC BEAM for the test -->
+            <Name>NFC_BEAM_INITIAL_STATE</Name>
+            <Value></Value>
+        </Parameter>
+        <Parameter>
+            <!--File name to share-->
+            <Name>FILE_TO_SHARE</Name>
+            <Value></Value>
+        </Parameter>
+        <Parameter>
+            <!-- duration to beam -->
+            <Name>BEAM_DURATION</Name>
+            <Value></Value>
+        </Parameter>
+        <Parameter>
+            <!-- path to retrieve beamed files-->
+            <Name>BEAM_PATH</Name>
+            <Value></Value>
+        </Parameter>
+        <Parameter>
+            <!-- in a DUT to ref view-->
+            <!-- SEND  or RECEIVE or FULL -->
+            <Name>DIRECTION</Name>
+            <Value></Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

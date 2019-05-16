@@ -1,0 +1,28 @@
+<?xml version="1.0" ?>
+<Campaign>
+      <Parameters>
+            <Parameter isControlledPSUsed="False"/>
+            <Parameter isIoCardUsed="False"/>
+            <Parameter skipBootOnPowerCycle="False"/>
+            <Parameter bootRetryNumber="0"/>
+            <Parameter runHookScripts="False"/>
+            <Parameter powerCycleBetweenTC="False"/>
+            <Parameter powerCycleOnFailure="False"/>
+            <Parameter finalDutState="NoChange"/>
+            <Parameter stopCampaignOnCriticalFailure="False"/>
+            <Parameter stopCampaignOnFirstFailure="False"/>
+            <Parameter loggingLevel="debug"/>
+            <Parameter CampaignType="Other"/>
+      </Parameters>
+      <TestCases>
+            <TestCase Id="../../../../../../TC/TR/ACS/Multimedia/Camera/camera_exif/RAW_READ_EXIF_IMAGE_HEIGHT"/>
+            <TestCase Id="../../../../../../TC/TR/ACS/Multimedia/Camera/camera_exif/RAW_READ_EXIF_EXPOSURE_BIAS"/>
+            <TestCase Id="../../../../../../TC/TR/ACS/Multimedia/Camera/camera_exif/RAW_READ_EXIF_VERSION"/>
+            <TestCase Id="../../../../../../TC/TR/ACS/Multimedia/Camera/camera_exif/RAW_READ_EXIF_EXPOSURE_TIME"/>
+            <TestCase Id="../../../../../../TC/TR/ACS/Multimedia/Camera/camera_exif/RAW_READ_EXIF_IMAGE_WIDTH"/>
+            <TestCase Id="../../../../../../TC/TR/ACS/Multimedia/Camera/camera_exif/RAW_READ_EXIF_F_NUMBER"/>
+            <TestCase Id="../../../../../../TC/TR/ACS/Multimedia/Camera/camera_exif/RAW_READ_EXIF_COLOR_SPACE"/>
+            <TestCase Id="../../../../../../TC/TR/ACS/Multimedia/Camera/camera_exif/RAW_READ_EXIF_DATA"/>
+            <TestCase Id="../../../../../../TC/TR/ACS/Multimedia/Camera/camera_exif/RAW_READ_EXIF_EXPOSURE_PROGRAM"/>
+      </TestCases>
+</Campaign>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase>
+	<UseCase>LIVE_AUDIO_PLAYBACK</UseCase>
+	<Description>DECODE Audio Playback WMA Voice V9 Codec For Wma and Asf Decode</Description>
+	<b2bIteration>1</b2bIteration>
+	<b2bContinuousMode>False</b2bContinuousMode>
+	<Parameters>
+		<Parameter>
+			<!-- Path to audio file to play, path can't contain '(', ')', or other illegal characters -->
+			<Name>AUDIO_FILE</Name>
+			<Value>WMA9.2_16bit_Stereo_44.1KHz_VBR_60s_2.3Mb.asf</Value>
+		</Parameter>
+		<Parameter>
+			<!-- Volume value in percent from 0 to 100 -->
+			<Name>VOLUME</Name>
+			<Value>80</Value>
+		</Parameter>
+		<Parameter>
+			<!-- Duration of the playback in millisecond -->
+			<Name>LENGTH</Name>
+			<Value>60000</Value>
+		</Parameter>
+		<Parameter>
+			<!-- Deviation rate for total playtime check in percent from 1 to 100 -->
+			<Name>DEVIATION_RATE</Name>
+			<Value>5</Value>
+		</Parameter>
+		<Parameter>
+			<!-- Whether to record the sound played by target on PC, True|False -->
+			<Name>RECORD</Name>
+			<Value>False</Value>
+		</Parameter>		
+		<Parameter>
+			<!-- Whether to play the music in silent mode, True|False|none -->
+			<!-- if set as "none", will keep default setting, nothing will be done -->
+			<Name>SILENT_MODE</Name>
+			<Value>False</Value>
+		</Parameter>			
+        <Parameter>
+        	<!-- The device used for output, speaker|headset|none -->
+        	<!-- if set as "none", will keep default setting, nothing will be done -->
+            <Name>AUDIO_OUTPUT</Name>
+            <Value>none</Value>
+        </Parameter>
+        <!-- ++++++++++++++++++++ optional parameters for host pc audio record ++++++++++++++++++++++++++++++++++++ -->
+		<Parameter>
+			<!-- if RECORD set as True, user can specify the record device HOST_RECORD_DEVICE, int -->
+			<!-- leave it blank or remove this parameter will use the default device -->
+			<Name>HOST_RECORD_DEVICE</Name>
+			<Value></Value>
+		</Parameter>   					
+	</Parameters>
+</TestCase>

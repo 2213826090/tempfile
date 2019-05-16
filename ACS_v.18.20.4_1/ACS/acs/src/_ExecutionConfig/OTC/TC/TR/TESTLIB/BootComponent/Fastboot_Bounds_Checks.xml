@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='ASCII'?>
+<TestCase>
+    <UseCase>Testlib</UseCase>
+    <Description>This should fail as the partition is not large enough to hold the image.</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <TcMaxAttempt>1</TcMaxAttempt>
+    <Parameters/>
+    <Domain>System_FastBoot</Domain>
+    <Parameters/>
+    <Phase>CORE</Phase>
+    <Parameters/>
+    <Type>FUNCTIONAL</Type>
+    <Parameters>
+        <Parameter>
+            <Name>timeout</Name>
+            <Value>750</Value>
+        </Parameter>
+        <Parameter>
+            <Name>test</Name>
+            <Value>scripts/android/fastboot/tests/fastboot_bounds_check.py</Value>
+        </Parameter>
+        <Parameter>
+            <Name>script-args</Name>
+            <Value>size=20000</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<Campaign>
+    <Parameters>
+        <Parameter isControlledPSUsed = "False"/>
+        <Parameter isIoCardUsed = "False"/>
+        <!-- Set skipBootOnPowerCycle to True to disable the accs boot procedure-->
+        <!-- Important, it means that boot will be handle inside the campaign/tc -->
+        <Parameter skipBootOnPowerCycle = "False"/>
+        <!-- Set bootRetryNumber to maximum number of boot retries during the acs boot procedure -->
+        <!-- Important, it means that bootRetryNumber is set by default to 0 if not specified -->
+        <Parameter bootRetryNumber = "0"/>
+        <Parameter runHookScripts = "False"/>
+        <Parameter powerCycleBetweenTC = "False"/>
+        <Parameter powerCycleOnFailure = "False"/>
+        <!-- finalDutState allows user to leave the DUT in a specific state at the end of the campaign
+        Possible values: PowerOn | PowerOff | Charging
+        By default DUT is leaved in PowerOff state.
+        In case the user selects Charging as final state of the DUT and that DUT fails to enter Charging,
+        ACS shall try to switch the DUT off -->
+        <Parameter finalDutState = "PowerOn"/>
+        <Parameter stopCampaignOnCriticalFailure = "False"/>
+        <Parameter stopCampaignOnFirstFailure = "False"/>
+        <!-- LoggingLevel possible values: info | warning | debug | error -->
+        <Parameter loggingLevel = "info"/>
+        <!-- CampaignType format -> <TEAM>_<CAMPAIGNTYPE>
+        Possible values:
+        FT(Feature Team)-> SANITY | REGRESSION | STRESS, RELIABILTY | MTBF
+        ST(System Test)-> SANITY | REGRESSION | STRESS, RELIABILTY | MTBF | EM
+        SI(System Integration)-> EAT | STAB | PACT | CAT0 | RELIABILITY | MTBF | CTS
+        Otherwise "Others" should be used -->
+        <Parameter CampaignType = "ST_STRESS"/>
+        <Parameter TCRReportViaRESTAPI="true"/>
+    </Parameters>
+
+    <Targets>
+        <!-- Target Values -->
+        <Target targetB2bPassRate ="100"/>
+    </Targets>
+
+    <TestCases>
+        <!-- SETUP -->
+        <TestCase Id="..\..\..\SI\BBot_EAT_PACT\TC\COMMON\SYSTEM\SI_SYSTEM_SETUP_EMBEDDED" TcMaxAttempt="2" TcAcceptanceCriteria="1"/>
+        <TestCase Id="..\TC\SETUP\ST_TELEPHONY_INSTALL" TcMaxAttempt="2" TcAcceptanceCriteria="1"/>
+        <TestCase Id="..\TC\SETUP\ST_TEL_SWITCH_RF-LAB_RF_MATRIX" TcMaxAttempt="2" TcAcceptanceCriteria="1"/>
+
+        <!-- NETWORKING LTE FDD KPI -->
+        <TestCase Id="..\TC\NET_4G\ST_TELEPHONY_DATA_LTE-PI_004-LAB_LTE_IPERF" TcMaxAttempt="2" TcAcceptanceCriteria="1" b2bIteration="1"/>
+        <TestCase Id="..\TC\NET_4G\ST_TELEPHONY_DATA_LTE-PI_013-LAB_LTE_IPERF" TcMaxAttempt="2" TcAcceptanceCriteria="1" b2bIteration="1"/>
+        <TestCase Id="..\TC\NET_4G\ST_TELEPHONY_DATA_LTE-PI_024-LAB_LTE_IPERF" TcMaxAttempt="2" TcAcceptanceCriteria="1" b2bIteration="1"/>
+        <TestCase Id="..\TC\NET_4G\ST_TELEPHONY_DATA_LTE-PI_031-ANY_USB_TETHER" TcMaxAttempt="2" TcAcceptanceCriteria="1" b2bIteration="1"/>
+
+        <!-- NETWORKING LTE TDD KPI -->
+        <TestCase Id="..\TC\NET_4G\ST_TELEPHONY_DATA_LTE-PI_104-LAB_LTE_IPERF" TcMaxAttempt="2" TcAcceptanceCriteria="1" b2bIteration="1"/>
+        <TestCase Id="..\TC\NET_4G\ST_TELEPHONY_DATA_LTE-PI_124-LAB_LTE_IPERF" TcMaxAttempt="2" TcAcceptanceCriteria="1" b2bIteration="1"/>
+
+        <!-- NETWORKING LTE CAT6 KPI -->
+        <TestCase Id="..\TC\NET_4G\ST_TELEPHONY_DATA_LTE-PI_005-LAB_LTE_IPERF" TcMaxAttempt="2" TcAcceptanceCriteria="1" b2bIteration="1"/>
+        <TestCase Id="..\TC\NET_4G\ST_TELEPHONY_DATA_LTE-PI_016-LAB_LTE_IPERF" TcMaxAttempt="2" TcAcceptanceCriteria="1" b2bIteration="1"/>
+        <TestCase Id="..\TC\NET_4G\ST_TELEPHONY_DATA_LTE-PI_025-LAB_LTE_IPERF" TcMaxAttempt="2" TcAcceptanceCriteria="1" b2bIteration="1"/>
+    </TestCases>
+</Campaign>

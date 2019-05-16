@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="13.37">
+    <UseCase>LAB_PERFMEAS_APPLICATION</UseCase>
+    <Description>Performance measurement for application</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters>
+        <Parameter>
+            <!-- Name of the application to test  -->
+            <Name>APPLICATION_NAME</Name>
+            <Value></Value>
+        </Parameter>
+        <Parameter>
+            <!-- Timeout for the application -->
+            <Name>TIMEOUT</Name>
+            <Value></Value>
+        </Parameter>
+        <Parameter>
+            <!-- [OPTIONAL] Number of run the application should play.
+                 The final score depends on STAT_TYPE parameter (default is median)
+              -->
+            <Name>MEASURE_NB</Name>
+            <Value></Value>
+        </Parameter>
+        <Parameter>
+            <!-- [OPTIONAL]
+                Type of statistic for computation of score.
+                Possible value are:
+                    - ARITHMETIC_MEAN
+                    - GEOMEATRIC_MEAN
+                    - MEDIAN
+
+                Default is MEDIAN
+            -->
+            <Name>STAT_TYPE</Name>
+            <Value></Value>
+        </Parameter>
+        <Parameter>
+            <!--
+                [OPTIONAL] Filename of the application file.
+
+                The syntax is:
+
+                DEVICE[-Android-OS]: uri;
+
+                Where DEVICE can be "DEFAULT" for all non-specified devices.
+                To specify specific URI for a specific OS on a specific device,
+                write the full device model name:
+
+                ex: REDHOOKBAY-Android-JB-MR2: uri-rhb-jb-mr2;
+
+                Four types of URI are possible:
+
+                1) no protocol
+
+                ex:
+                   DEFAULT: FT/pnp/TC/EMBD/default-file;
+
+                The file will be get in _Execution_Config path
+
+                2) Artifactory protocol - artifact://
+
+                ex:
+                    DEFAULT: artifact://antutu_3.3.1.apk
+
+                The application file will be downloaded from artifactory and put in
+                _Execution_Config/EMBD/ folder. If file already exists in this place,
+                it will not be downloaded again.
+
+                3) Absolute path protocol - file://
+
+                ex:
+                    DEFAULT: file:///tmp/antutu_3.3.1.apk
+
+                The application file will be get in absolute path.
+
+                4) hypertext protocol - http://
+
+                ex:
+                    DEFAULT: http://192.168.1.3/hosted/sunspider-0.9.1/driver.html
+
+                URL for browsing application
+            -->
+            <Name>APPURI</Name>
+            <Value>
+                DEFAULT: FT/pnp/TC/EMBD/default-file;
+                BYT_T_FFRD8: file:///path/to/byt_t_ffrd8-file;
+                REDHOOKBAY-Android-JB-MR2: artifact://redhookbay-jb-mr2-file;
+                SALTBAY: http://url.to.browsing.application/index.html
+            </Value>
+        </Parameter>
+        <Parameter>
+            <!--
+                 Same configuration parameter as APPURI
+                 (see previous parameter comment)
+            -->
+            <Name>ADDITIONNALS</Name>
+            <Value></Value>
+        </Parameter>
+        <Parameter>
+            <!-- [OPTIONAL] Arguments needed to run application -->
+            <Name>ARGUMENTS</Name>
+            <Value></Value>
+        </Parameter>
+        <Parameter>
+            <!-- [OPTIONAL] Configuration of SysDebug module
+                 - Module is activated with its name
+                 - Modules are separated by semi-colon
+                 - Each parameter may be configured with '='
+                 - Parameters are separated by comma
+              -->
+             <Name>SYSDEBUG_MODULES</Name>
+             <Value>
+                Residency: s3,s0i3,s0i1,lpmp3;
+                Pmu: interval=30;
+                S3Failure;
+                WakeLocks;
+                ModemPanic;
+                CrashInfo;
+                Thermals;
+            </Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

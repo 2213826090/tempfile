@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase>
+    <ClassName>UseCase.OTC.Top500.TOP500MONKEY.Top500Applications</ClassName>
+    <Description>Use case to setup embedded on the DUT. It installs the agent from AGENT_PATH parameter
+        and signs it using the key from BENCHCFG or device catalog.</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>False</b2bContinuousMode>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <TcMaxAttempt>1</TcMaxAttempt>
+    <TcAcceptanceCriteria>1</TcAcceptanceCriteria>
+    <IsCritical>True</IsCritical>
+    <Parameters>
+        <Parameter>
+            <!-- Path for the application to install. -->
+            <Name>APPLICATIONS_ZIP</Name>
+            <Value>/home/acs/BULKAPK_Qwdhrx.zip</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Path for the application to install. -->
+            <Name>TIME_BETWEEN_EVENTS</Name>
+            <Value>300000</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Path for the application to install. -->
+            <Name>NUMBER_OF_EVENTS</Name>
+            <Value>2</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

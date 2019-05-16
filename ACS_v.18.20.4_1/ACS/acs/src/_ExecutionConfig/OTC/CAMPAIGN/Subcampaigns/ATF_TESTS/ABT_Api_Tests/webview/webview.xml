@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<Campaign>
+      <Parameters>
+            <Parameter isControlledPSUsed="False"/>
+            <Parameter isIoCardUsed="False"/>
+            <Parameter skipBootOnPowerCycle="False"/>
+            <Parameter bootRetryNumber="0"/>
+            <Parameter runHookScripts="False"/>
+            <Parameter powerCycleBetweenTC="False"/>
+            <Parameter powerCycleOnFailure="False"/>
+            <Parameter finalDutState="NoChange"/>
+            <Parameter stopCampaignOnCriticalFailure="False"/>
+            <Parameter stopCampaignOnFirstFailure="False"/>
+            <Parameter loggingLevel="debug"/>
+            <Parameter CampaignType="Other"/>
+      </Parameters>
+      <TestCases>
+            <TestCase Id="../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/webview/testGetUrl"/>
+            <TestCase Id="../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/webview/testGetTitle"/>
+            <TestCase Id="../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/webview/testGetFavicon"/>
+            <TestCase Id="../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/webview/testGetContentHeight"/>
+            <TestCase Id="../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/webview/testIsPrivateBrowsing"/>
+            <TestCase Id="../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/webview/testGetProgress"/>
+            <TestCase Id="../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/webview/testLoadUrl"/>
+            <TestCase Id="../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/webview/testGetOriginalUrl"/>
+      </TestCases>
+</Campaign>

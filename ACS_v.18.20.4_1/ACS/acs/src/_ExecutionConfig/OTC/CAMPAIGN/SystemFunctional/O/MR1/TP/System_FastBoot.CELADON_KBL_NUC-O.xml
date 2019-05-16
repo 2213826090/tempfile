@@ -1,0 +1,57 @@
+<?xml version="1.0" ?>
+<Campaign version="13.49">
+    <Parameters>
+        <Parameter isControlledPSUsed="False"/>
+        <Parameter isIoCardUsed="False"/>
+        <Parameter skipBootOnPowerCycle="False"/>
+        <Parameter bootRetryNumber="0"/>
+        <Parameter runHookScripts="False"/>
+        <Parameter powerCycleBetweenTC="False"/>
+        <Parameter powerCycleOnFailure="False"/>
+        <Parameter finalDutState="NoChange"/>
+        <Parameter stopCampaignOnCriticalFailure="False"/>
+        <Parameter stopCampaignOnFirstFailure="False"/>
+        <Parameter loggingLevel="debug"/>
+        <Parameter CampaignType="Other"/>
+        <Parameter TCRReportViaRESTAPI="True"/>
+    </Parameters>
+    <TestCases>
+        <TestCase Id="../../../../../TC/TP/TC/System_FastBoot/P1-SystemFailure-Watchdog/MOS-TO-MOS-kill-watchdog"/>
+        <TestCase Id="../../../../../TC/TP/TC/System_FastBoot/P1-SystemFailure-Watchdog/Reboot_by_trigger_kernel_panic"/>
+        <TestCase Id="../../../../../TC/TP/TC/System_FastBoot/P1-UpdateDeviceFlashImages/Fastboot_update_userdata_recreation"/>
+        <TestCase Id="../../../../../TC/TP/TC/System_FastBoot/P1-UpdateDeviceFlashImages/Fastboot_image_integrity"/>
+        <TestCase Id="../../../../../TC/TP/TC/System_FastBoot/P1-UpdateDeviceFlashImages/Flash_Image_Parts/PartitionDataPreservation/Data_isnot_erased_when_update_boot"/>
+        <TestCase Id="../../../../../TC/TP/TC/System_FastBoot/P1-UpdateDeviceFlashImages/Flash_Image_Parts/PartitionDataPreservation/Data_isnot_erased_when_update_system"/>
+        <TestCase Id="../../../../../TC/TP/TC/System_FastBoot/P1-UpdateDeviceFlashImages/Flash_Image_Parts/PartitionDataPreservation/Data_isnot_erased_when_update_bootloader"/>
+        <TestCase Id="../../../../../TC/TP/TC/System_FastBoot/P1-UpdateDeviceFlashImages/Flash_Image_Parts/PartitionDataPreservation/Data_isnot_erased_when_update_vbmeta"/>
+        <TestCase Id="../../../../../TC/TP/TC/System_FastBoot/P1-UpdateDeviceFlashImages/Flash_Image_Parts/PartitionDataPreservation/Data_isnot_erased_when_update_multiboot"/>
+        <TestCase Id="../../../../../TC/TP/TC/System_FastBoot/P1-UpdateDeviceFlashImages/Flash_Image_Parts/PartitionDataPreservation/Data_isnot_erased_when_update_vendor"/>
+        <TestCase Id="../../../../../TC/TP/TC/System_FastBoot/P1-UpdateDeviceFlashImages/Flash_Image_Parts/System/Flash_system_image_in_Fastboot"/>
+        <TestCase Id="../../../../../TC/TP/TC/System_FastBoot/P1-UpdateDeviceFlashImages/Flash_Image_Parts/System/Update_system_image_in_Fastboot"/>
+        <TestCase Id="../../../../../TC/TP/TC/System_FastBoot/P1-UpdateDeviceFlashImages/Flash_Image_Parts/System/Negative/DUT_can_enter_MOS_after_reflash_right_image"/>
+        <TestCase Id="../../../../../TC/TP/TC/System_FastBoot/P1-UpdateDeviceFlashImages/Flash_Image_Parts/System/Negative/DUT_cannot_enter_MOS_after_flash_wrong_image"/>
+        <TestCase Id="../../../../../TC/TP/TC/System_FastBoot/P1-UpdateDeviceFlashImages/Flash_Image_Parts/Boot/Flash_boot_image_in_Fastboot"/>
+        <TestCase Id="../../../../../TC/TP/TC/System_FastBoot/P1-UpdateDeviceFlashImages/Flash_Image_Parts/Boot/Update_boot_image_in_Fastboot"/>
+        <TestCase Id="../../../../../TC/TP/TC/System_FastBoot/P1-UpdateDeviceFlashImages/Flash_Image_Parts/Boot/Negative/Remove_USB_cable_during_the_boot_flash"/>
+        <TestCase Id="../../../../../TC/TP/TC/System_FastBoot/P1-UpdateDeviceFlashImages/Flash_Image_Parts/Bootloader/Negative/Remove_USB_cable_during_the_bootloader_flash"/>
+        <TestCase Id="../../../../../TC/TP/TC/System_FastBoot/P1-TurnOFFRequest/GRACEFUL_SHUTDOWN-USBConnection"/>
+        <TestCase Id="../../../../../TC/TP/TC/System_FastBoot/P1-UpdateDeviceViaFastboot/Fastboot_flashing_lock"/>
+        <TestCase Id="../../../../../TC/TP/TC/System_FastBoot/P1-UpdateDeviceViaFastboot/Fastboot_lock_state_commands_rejected"/>
+        <TestCase Id="../../../../../TC/TP/TC/System_FastBoot/P1-UpdateDeviceViaFastboot/Fused_DUT_defaultstate_lock"/>
+        <TestCase Id="../../../../../TC/TP/TC/System_FastBoot/P1-UpdateDeviceFactoryResetMainMode/Factory_Reset_Data_Reset"/>
+        <TestCase Id="../../../../../TC/TP/TC/System_FastBoot/P1-UpdateDeviceFactoryResetMainMode/Factory_reset_applications_removed"/>
+        <TestCase Id="../../../../../TC/TP/TC/System_FastBoot/P1-UpdateDeviceFactoryResetMainMode/System/Contact_record_are_empty_after_factory_reset"/>
+        <TestCase Id="../../../../../TC/TP/TC/System_FastBoot/P1-UpdateDeviceFactoryResetMainMode/System/All_passwd_set_cleared_after_factory_reset"/>
+        <TestCase Id="../../../../../TC/TP/TC/System_FastBoot/P1-UpdateDeviceFactoryResetMainMode/System/Iterative/Restore_factory_settings_with_reboot_10times"/>
+        <TestCase Id="../../../../../TC/TP/TC/System_FastBoot/P1-FastbootBoot/Fastboot_boot_common"/>
+        <TestCase Id="../../../../../TC/TP/TC/System_FastBoot/P1-FastbootTransitions/Fastboot/Fastboot_reboot"/>
+        <TestCase Id="../../../../../TC/TP/TC/System_FastBoot/P1-FastbootTransitions/Fastboot/Fastboot_Bounds_Checks"/>
+        <TestCase Id="../../../../../TC/TP/TC/System_FastBoot/P1-FastbootTransitions/Fastboot/Fastboot_reboot_bootloader"/>
+        <TestCase Id="../../../../../TC/TP/TC/System_FastBoot/P1-FastbootTransitions/Fastboot/Fastboot_getvar_all"/>
+        <TestCase Id="../../../../../TC/TP/TC/System_FastBoot/P1-FastbootTransitions/Fastboot/Fastboot_continue"/>
+        <TestCase Id="../../../../../TC/TP/TC/System_FastBoot/P1-FastbootTransitions/Fastboot/Fastboot_erase_boot"/>
+        <TestCase Id="../../../../../TC/TP/TC/System_FastBoot/P1-FastbootTransitions/Fastboot/Fastboot_getvar_serialno"/>
+        <TestCase Id="../../../../../TC/TP/TC/System_FastBoot/P1-TurnONRequest/Boot_to_android"/>
+        <TestCase Id="../../../../../TC/TP/TC/System_FastBoot/P1-GoogleVerifiedBoot/DM-Verity/dm-verify_platform"/>
+    </TestCases>
+</Campaign>

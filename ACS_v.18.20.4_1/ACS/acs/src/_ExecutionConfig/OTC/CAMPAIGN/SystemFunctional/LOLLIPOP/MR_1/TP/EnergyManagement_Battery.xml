@@ -1,0 +1,55 @@
+<?xml version="1.0" ?>
+<Campaign>
+    <Parameters>
+        <Parameter isControlledPSUsed="False"/>
+        <!-- ioCard -->
+        <Parameter isIoCardUsed="False"/>
+        <Parameter skipBootOnPowerCycle="True"/>
+        <Parameter bootRetryNumber="0"/>
+        <Parameter runHookScripts="False"/>
+        <Parameter powerCycleBetweenTC="False"/>
+        <Parameter powerCycleOnFailure="False"/>
+        <Parameter finalDutState="NoChange"/>
+        <Parameter stopCampaignOnCriticalFailure="True"/>
+        <Parameter stopCampaignOnFirstFailure="False"/>
+        <Parameter loggingLevel="debug"/>
+        <Parameter CampaignType="Other"/>
+    </Parameters>
+    <TestCases>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/charging_battery/power_refresh_battery_status/test_power_refresh_battery_status"/>
+
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/charging_battery/DCP_play_3D_game_temperature/test_DCP_play_3D_game_temperature"/>
+
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/charging_battery/COS_remove_CDP_charger/test_COS_remove_CDP_charger"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/charging_battery/COS_remove_HUB_charger/test_COS_remove_HUB_charger"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/charging_battery/COS_remove_SDP_charger/test_COS_remove_SDP_charger"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/charging_battery/DCP_charging_MOS_Power_off_COS/test_DCP_charging_MOS_Power_off_COS"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/charging_battery/SDP_charging_MOS_Power_off_COS/test_SDP_charging_MOS_Power_off_COS"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/charging_battery/CDP_charging_power_off_enter_COS/test_CDP_charging_power_off_enter_COS"/>
+
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/charging_battery/CDP_charging_1_hour/test_CDP_charging_1_hour"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/charging_battery/DCP_charging_1_hour/test_DCP_charging_1_hour"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/charging_battery/SDP_charging_1_hour/test_SDP_charging_1_hour"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/charging_battery/charging_percentage_98_to_full/test_charging_percentage_98_to_full"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/charging_battery/power_show_battery_full/test_power_show_battery_full"/>
+        
+        <!-- <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/charging_battery/charging_CDP_COS_12_hours/test_charging_CDP_COS_12_hours"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/charging_battery/charging_CDP_MOS_12_hours/test_charging_CDP_MOS_12_hours"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/charging_battery/charging_DCP_COS_12_hours/test_charging_DCP_COS_12_hours"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/charging_battery/charging_DCP_MOS_12_hours/test_charging_DCP_MOS_12_hours"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/charging_battery/charging_SDP_COS_12_hours/test_charging_SDP_COS_12_hours"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/charging_battery/charging_SDP_MOS_12_hours/test_charging_SDP_MOS_12_hours"/> -->
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/charging_battery/DCP_check_battery_temperature/test_DCP_check_battery_temperature"/>
+
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/charging_battery/battery_long_time_play_3D_game_percentage/test_battery_long_time_play_3D_game_percentage"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/charging_battery/battery_long_time_play_music_percentage/test_battery_long_time_play_music_percentage"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/charging_battery/battery_long_time_play_video_percentage/test_battery_long_time_play_video_percentage"/>
+        <!-- <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/charging_battery/battery_20_discharge_util_shutdown/test_battery_20_disc?harge_util_shutdown"/> -->
+
+        <!-- idle -->
+        <!-- <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/charging_battery/long_time_idle_overnight/test_long_time_idle_overnight"/> -->
+
+
+
+        </TestCases>
+</Campaign>

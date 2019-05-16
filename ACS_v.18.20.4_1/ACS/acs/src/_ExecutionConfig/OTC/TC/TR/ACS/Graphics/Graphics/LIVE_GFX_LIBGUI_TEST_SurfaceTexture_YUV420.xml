@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase>
+    <UseCase>LIVE_ANDROID_LIBGUI_TEST</UseCase>
+    <Description>Run a GFX test sequence</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <TestSteps>
+        <Initialize>
+            <TestStep Id="GET_ARTIFACT" EQT="ARTIFACT_MANAGER" ARTIFACT="GFX_CONFORMANCE/LIBGUI_TEST.zip" ARTIFACT_SOURCE="FROM_BENCH:ARTIFACT_MANAGER:URI" TRANSFER_TIMEOUT="DEFAULT" STORED_FILE_PATH="FILE_PATH_IN_CACHE1"/>
+            <TestStep Id="UNZIP_ARTIFACT" EQT="ARTIFACT_MANAGER" ARTIFACT_NAME="GFX_CONFORMANCE/LIBGUI_TEST.zip" STORED_FILE_PATH="FROM_CTX:FILE_PATH_IN_CACHE1" EXTRACT_LOCATION="ZIP_EXTRACT_LOCATION"/>
+            <TestStep Id="INSTALL_FILE" DEVICE="PHONE1" FILE_PATH="FROM_CTX:ZIP_EXTRACT_LOCATION" TYPE="media" DESTINATION="/data/app/" DESTINATION_STORED_PATH="INSTALLED_FILE_PATH" TIMEOUT="DEFAULT"/>
+        </Initialize>
+        <Finalize>
+            <TestStep Id="UNINSTALL_FILE" DEVICE="PHONE1" DEVICE_FOLDER="/data/app" FILENAME="libgui_test"/>
+        </Finalize>
+    </TestSteps>
+    <Parameters>
+        <Parameter>
+            <Name>LIBGUI_TEST</Name>
+            <Value>SurfaceTextureGLTest.TexturingFromCpuFilledBufferPow2_HAL_PIXEL_FORMAT_YUV420PackedSemiPlanar_INTEL;
+            SurfaceTextureGLTest.TexturingFromCpuFilledBufferPow2_HAL_PIXEL_FORMAT_YUV420PackedSemiPlanar_Tiled_INTEL</Value>
+        </Parameter>
+        <Parameter>
+            <Name>REMOVE_PARAMS</Name>
+            <Value>mm</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

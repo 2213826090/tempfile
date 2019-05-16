@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="13.41">
+    <UseCase>TEST_STEP_ENGINE</UseCase>
+    <Description></Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <TcMaxAttempt>1</TcMaxAttempt>
+    <TcAcceptanceCriteria>1</TcAcceptanceCriteria>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters>
+        <Parameter>
+            <Name>OPP_FILES_TO_TRANSFER</Name>
+            <Value>1MB.jpg</Value>
+        </Parameter>
+    </Parameters>
+    <TestSteps>
+        <Include Src="OTC/TC/TR/ACS/Communication/Bluetooth/setup/BT/OTC_Comms_BT_Common.xml" />
+        <Setup>
+            <!-- AUTOMATION - Set default configuration -->
+            <TestStep SetId="BTFullSetupPhones1and2" />
+            <!--Extra test steps -->
+            <TestStep Id="GET_ARTIFACT" EQT="ARTIFACT_MANAGER" ARTIFACT="MISCELLANEOUS/JPG/1MB.jpg" ARTIFACT_SOURCE="FROM_BENCH:ARTIFACT_MANAGER:URI" TRANSFER_TIMEOUT="DEFAULT" STORED_FILE_PATH="FILE_PATH_IN_CACHE"/>
+            <TestStep Id="INSTALL_FILE" DEVICE="PHONE2" FILE_PATH="FROM_CTX:FILE_PATH_IN_CACHE" TYPE="media" DESTINATION="/sdcard/acs_files/" DESTINATION_STORED_PATH="INSTALLED_FILE_PATH" TIMEOUT="DEFAULT"/>
+        </Setup>
+        <RunTest>
+            <!-- SPEC - Step 2 : Configure and receive the file with OPP -->
+            <Fork Id="TimeoutToNever">
+                <TestStep SetId="BTOppSetup" DEVICE="PHONE1" />
+                <TestStep SetId="BTOppSetup" DEVICE="PHONE2" />
+            </Fork>
+            <TestStep Id="BT_OPP_SERVER" DEVICE="PHONE1" STATUS="enable"/>
+            <TestStep Id="BT_OPP_SEND" DEVICE="PHONE2" BDADDR="FROM_CTX:BT_MAC_ADDRESS_PHONE1" FILES="FROM_TC:OPP_FILES_TO_TRANSFER" SAVE_INFO_AS="OppSend" />
+            <TestStep Id="BT_OPP_CHECK" DEVICE="PHONE1" BDADDR="FROM_CTX:BT_MAC_ADDRESS_PHONE2" FILES="FROM_TC:OPP_FILES_TO_TRANSFER" EXPECTED_FILES_SIZE="FROM_CTX:OppSend:FileSize" EXPECTED_STATE="all_completed" SAVE_INFO_AS="OppCheck" TIMEOUT="0" THROUGHPUT_MARGIN="0" />
+            <TestStep Id="COMPARE" FIRST="FROM_CTX:OppSend:FileChecksum" SECOND="FROM_CTX:OppCheck:FileChecksum" OPERATOR="EQUAL" PASS_IF="true" />
+            <!-- SPEC - Step 3 : Turn Off Bluetooth -->
+            <TestStep Id="BT_SET_POWER" DEVICE="PHONE1" POWER="OFF"/>
+        </RunTest>
+        <TearDown>
+            <TestStep Id="BT_OPP_SERVER" DEVICE="PHONE1" STATUS="disable"/>
+            <TestStep Id="BT_SET_POWER" DEVICE="PHONE1" POWER="ON"/>
+            <TestStep Id="BT_OPP_CLEANUP" DEVICE="PHONE1" REMOVE_FILES="true" FILES="FROM_TC:OPP_FILES_TO_TRANSFER" />
+            <TestStep Id="BT_OPP_CLEANUP" DEVICE="PHONE2" REMOVE_FILES="true" FILES="FROM_TC:OPP_FILES_TO_TRANSFER" />
+            <Fork Id="ForkTeardown">
+                <TestStep SetId="BTCommonTeardown" DEVICE="PHONE1" />
+                <TestStep SetId="BTCommonTeardown" DEVICE="PHONE2" />
+            </Fork>
+        </TearDown>
+    </TestSteps>
+</TestCase>

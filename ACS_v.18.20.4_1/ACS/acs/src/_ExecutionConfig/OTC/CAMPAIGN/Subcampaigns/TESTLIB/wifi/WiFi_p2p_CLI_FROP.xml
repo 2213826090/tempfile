@@ -1,0 +1,95 @@
+<?xml version="1.0" ?>
+<Campaign>
+      <Parameters>
+            <Parameter isControlledPSUsed="False"/>
+            <Parameter isIoCardUsed="False"/>
+            <Parameter skipBootOnPowerCycle="False"/>
+            <Parameter bootRetryNumber="0"/>
+            <Parameter runHookScripts="False"/>
+            <Parameter powerCycleBetweenTC="False"/>
+            <Parameter powerCycleOnFailure="False"/>
+            <Parameter finalDutState="NoChange"/>
+            <Parameter stopCampaignOnCriticalFailure="True"/>
+            <Parameter stopCampaignOnFirstFailure="False"/>
+            <Parameter loggingLevel="debug"/>
+            <Parameter CampaignType="Other"/>
+            <Parameter TCRReportViaRESTAPI="True"/>
+      </Parameters>
+      <TestCases>
+            <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/prereq_disable_captive_portal_detection"/>
+            <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/prereq_SetupAP"/>
+
+            <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/p2p/Comms_WIFI_WiFiDirect_FeatureRelated_CLI-Turn-WiFi-OFF_WiFi-Connected-WiFi-Traffic-AM-OFF-No-P2P-Traffic"/>
+            <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/p2p/Comms_WIFI_WiFiDirect_FeatureRelated_CLI-Turn-WiFi-OFF_WiFi-Connected-No-Wifi-Traffic-AM-OFF-No-P2P-Traffic"/>
+            <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/p2p/Comms_WIFI_WiFiDirect_FeatureRelated_CLI-Turn-WiFi-OFF_WiFi-Connected-WiFi-Traffic-AM-ON-No-P2P-Traffic"/>
+            <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/p2p/Comms_WIFI_WiFiDirect_FeatureRequired_CLI-Turn-WiFi-OFF_WiFi-Connected-WiFi-Traffic-AM-OFF-P2P-Traffic"/>
+            <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/p2p/Comms_WIFI_WiFiDirect_FeatureRelated_CLI-Turn-WiFi-OFF_WiFi-Connected-No-Wifi-Traffic-AM-OFF-P2P-Traffic"/>
+            <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/p2p/Comms_WIFI_WiFiDirect_FeatureRelated_CLI-Turn-WiFi-OFF_WiFi-Connected-No-Wifi-Traffic-AM-ON-No-P2P-Traffic"/>
+            <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/p2p/Comms_WIFI_WiFiDirect_FeatureRelated_CLI-Turn-WiFi-OFF_WiFi-Connected-WiFi-Traffic-AM-ON-P2P-Traffic"/>
+            <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/p2p/Comms_WIFI_WiFiDirect_FeatureRelated_CLI-Turn-WiFi-OFF_WiFi-Connected-No-Wifi-Traffic-AM-ON-P2P-Traffic"/>
+
+            <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/p2p/Comms_WIFI_WiFiDirect_FeatureRelated_CLI-Disconnect-Wifi_No-Wifi-Traffic-AM-OFF-No-P2P-Traffic"/>
+            <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/p2p/Comms_WIFI_WiFiDirect_FeatureRelated_CLI-Disconnect-Wifi_No-Wifi-Traffic-AM-ON-No-P2P-Traffic"/>
+            <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/p2p/Comms_WIFI_WiFiDirect_FeatureRelated_CLI-Disconnect-Wifi_No-Wifi-Traffic-AM-ON-P2P-Traffic"/>
+            <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/p2p/Comms_WIFI_WiFiDirect_FeatureRelated_CLI-Disconnect-Wifi_WiFi-Traffic-AM-OFF-No-P2P-Traffic"/>
+            <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/p2p/Comms_WIFI_WiFiDirect_FeatureRelated_CLI-Disconnect-Wifi_WiFi-Traffic-AM-ON-No-P2P-Traffic"/>
+            <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/p2p/Comms_WIFI_WiFiDirect_FeatureRelated_CLI-Disconnect-Wifi_WiFi-Traffic-AM-ON-P2P-Traffic"/>
+            <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/p2p/Comms_WIFI_WiFiDirect_FeatureRequired_CLI-Disconnect-Wifi_No-Wifi-Traffic-AM-OFF-P2P-Traffic"/>
+            <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/p2p/Comms_WIFI_WiFiDirect_FeatureRequired_CLI-Disconnect-Wifi_WiFi-Traffic-AM-OFF-P2P-Traffic"/>
+
+            <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/p2p/Comms_WIFI_WiFiDirect_FeatureRelated_CLI-Deactivate-AM_WiFi-Connected-No-Wifi-Traffic-No-P2P-Traffic"/>
+            <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/p2p/Comms_WIFI_WiFiDirect_FeatureRelated_CLI-Deactivate-AM_WiFi-Connected-No-Wifi-Traffic-P2P-Traffic"/>
+            <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/p2p/Comms_WIFI_WiFiDirect_FeatureRelated_CLI-Deactivate-AM_WiFi-Connected-WiFi-Traffic-No-P2P-Traffic"/>
+
+            <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/p2p/Comms_WIFI_WiFiDirect_FeatureRelated_CLI-Activate-AM_WiFi-Connected-No-Wifi-Traffic-P2P-Traffic"/>
+            <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/p2p/Comms_WIFI_WiFiDirect_FeatureRelated_CLI-Activate-AM_WiFi-Connected-WiFi-Traffic-No-P2P-Traffic"/>
+            <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/p2p/Comms_WIFI_WiFiDirect_FeatureRequired_CLI-Activate-AM_WiFi-Connected-WiFi-Traffic-P2P-Traffic"/>
+
+            <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/p2p/Comms_WIFI_WiFiDirect_FeatureRelated_CLI-Leave-Group_WiFi-Connected-No-Wifi-Traffic-AM-OFF-No-P2P-Traffic"/>
+            <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/p2p/Comms_WIFI_WiFiDirect_FeatureRelated_CLI-Leave-Group_WiFi-Connected-No-Wifi-Traffic-AM-OFF-P2P-Traffic"/>
+            <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/p2p/Comms_WIFI_WiFiDirect_FeatureRelated_CLI-Leave-Group_WiFi-Connected-No-Wifi-Traffic-AM-ON-No-P2P-Traffic"/>
+            <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/p2p/Comms_WIFI_WiFiDirect_FeatureRelated_CLI-Leave-Group_WiFi-Connected-No-Wifi-Traffic-AM-ON-P2P-Traffic"/>
+            <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/p2p/Comms_WIFI_WiFiDirect_FeatureRelated_CLI-Leave-Group_WiFi-Connected-WiFi-Traffic-AM-OFF-No-P2P-Traffic"/>
+            <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/p2p/Comms_WIFI_WiFiDirect_FeatureRelated_CLI-Leave-Group_WiFi-Connected-WiFi-Traffic-AM-ON-No-P2P-Traffic"/>
+            <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/p2p/Comms_WIFI_WiFiDirect_FeatureRelated_CLI-Leave-Group_WiFi-Connected-WiFi-Traffic-AM-ON-P2P-Traffic"/>
+            <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/p2p/Comms_WIFI_WiFiDirect_FeatureRequired_CLI-Leave-Group_WiFi-Connected-WiFi-Traffic-AM-OFF-P2P-Traffic"/>
+
+            <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/p2p/Comms_WIFI_WiFiDirect_FeatureRelated_CLI-Generate-P2P-Traffic_WiFi-Connected-No-Wifi-Traffic-AM-OFF"/>
+            <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/p2p/Comms_WIFI_WiFiDirect_FeatureRelated_CLI-Generate-P2P-Traffic_WiFi-Connected-No-Wifi-Traffic-AM-ON"/>
+            <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/p2p/Comms_WIFI_WiFiDirect_FeatureRelated_CLI-Generate-P2P-Traffic_WiFi-Connected-WiFi-Traffic-AM-ON"/>
+            <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/p2p/Comms_WIFI_WiFiDirect_FeatureRequired_CLI-Generate-P2P-Traffic_WiFi-Connected-WiFi-Traffic-AM-OFF"/>
+
+            <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/p2p/Comms_WIFI_WiFiDirect_FeatureRequired_CLI-Connect-P2P_WiFi-Connected-No-Wifi-Traffic-AM-OFF"/>
+            <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/p2p/Comms_WIFI_WiFiDirect_FeatureRequired_CLI-Connect-P2P_WiFi-Connected-No-Wifi-Traffic-AM-ON"/>
+            <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/p2p/Comms_WIFI_WiFiDirect_FeatureRequired_CLI-Connect-P2P_WiFi-Connected-WiFi-Traffic-AM-OFF"/>
+            <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/p2p/Comms_WIFI_WiFiDirect_FeatureRequired_CLI-Connect-P2P_WiFi-Connected-WiFi-Traffic-AM-ON"/>
+            <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/p2p/Comms_WIFI_WiFiDirect_FeatureRequired_CLI-Connect-P2P_WiFi-Disconnected-AM-OFF"/>
+            <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/p2p/Comms_WIFI_WiFiDirect_FeatureRequired_CLI-Connect-WiFi_AM-OFF-No-P2P-Traffic"/>
+            <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/p2p/Comms_WIFI_WiFiDirect_FeatureRequired_CLI-Connect-WiFi_AM-OFF-P2P-Traffic"/>
+            <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/p2p/Comms_WIFI_WiFiDirect_FeatureRequired_CLI-Connect-WiFi_AM-ON-No-P2P-Traffic"/>
+            <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/p2p/Comms_WIFI_WiFiDirect_FeatureRequired_CLI-Connect-WiFi_AM-ON-P2P-Traffic"/>
+
+            <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/p2p/Comms_WIFI_WifiDirect_FeatureRelated_CLI-Scan-WiFi_AM-OFF-No-P2P-Traffic"/>
+            <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/p2p/Comms_WIFI_WifiDirect_FeatureRelated_CLI-Scan-WiFi_AM-OFF-P2P-Traffic"/>
+            <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/p2p/Comms_WIFI_WifiDirect_FeatureRelated_CLI-Scan-WiFi_AM-ON-No-P2P-Traffic"/>
+            <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/p2p/Comms_WIFI_WifiDirect_FeatureRequired_CLI-Scan-WiFi_AM-ON-P2P-Traffic"/>
+
+            <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/p2p/Comms_WIFI_WiFiDirect_FeatureRelated_CLI-Connect-timeout_WiFi-Connected-No-Wifi-Traffic-AM-OFF"/>
+            <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/p2p/Comms_WIFI_WiFiDirect_FeatureRelated_CLI-Connect-timeout_WiFi-Connected-No-Wifi-Traffic-AM-ON"/>
+            <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/p2p/Comms_WIFI_WiFiDirect_FeatureRelated_CLI-Connect-timeout_WiFi-Connected-WiFi-Traffic-AM-ON"/>
+
+            <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/p2p/Comms_WIFI_WiFiDirect_FeatureRequired_CLI-Reconnect-Persistent-P2P_WiFi-Connected-Wifi-Traffic-AM-ON"/>
+            <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/p2p/Comms_WIFI_WiFiDirect_FeatureRelated_CLI-Reconnect-Persistent-P2P_WiFi-Connected-No-Wifi-Traffic-AM-ON"/>
+
+            <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/prereq_Comms_WIFI_ComponentRelated_FTP_Download_CleanUp"/>
+            <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/prereq_Comms_WIFI_ComponentRelated_FTP_Download_start_server"/>
+            <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/p2p/Comms_WIFI_WiFiDirect_FeatureRelated_CLI-Generate-WiFi-Traffic_WiFi-Connected-AM-OFF-No-P2P-Traffic"/>
+            <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/p2p/Comms_WIFI_WiFiDirect_FeatureRelated_CLI-Generate-WiFi-Traffic_WiFi-Connected-AM-ON-No-P2P-Traffic"/>
+            <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/p2p/Comms_WIFI_WiFiDirect_FeatureRelated_CLI-Generate-WiFi-Traffic_WiFi-Connected-AM-ON-P2P-Traffic"/>
+            <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/p2p/Comms_WIFI_WiFiDirect_FeatureRequired_CLI-Generate-WiFi-Traffic_WiFi-Connected-AM-OFF-P2P-Traffic"/>
+            <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/prereq_Comms_WIFI_ComponentRelated_FTP_Download_CleanUp"/>
+
+            <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/prereq_enable_captive_portal_detection"/>
+
+      </TestCases>
+</Campaign>

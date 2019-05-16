@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="13.41">
+    <UseCase>TEST_STEP_ENGINE</UseCase>
+    <Description></Description>
+    <b2bIteration>30</b2bIteration>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <TcMaxAttempt>1</TcMaxAttempt>
+    <TcAcceptanceCriteria>1</TcAcceptanceCriteria>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters/>
+    <TestSteps>
+        <Include Src="OTC/TC/TR/ACS/Communication/Bluetooth/setup/BT/OTC_Comms_BT_Common.xml" />
+
+        <TestStepSet Id="Phone2Config">
+            <TestStep Id="BT_SET_TETHERING_POWER" DEVICE="PHONE2" POWER="ON"/>
+            <TestStep Id="BT_SET_DISCOVERABLE" DEVICE="PHONE2" MODE="both" TIMEOUT="0"/>
+        </TestStepSet>
+
+        <TestStepSet Id="Phone2Teardown">
+            <TestStep Id="BT_SET_TETHERING_POWER" DEVICE="PHONE2" POWER="OFF"/>
+            <TestStep SetId="BTCommonTeardown" DEVICE="PHONE2" />
+        </TestStepSet>
+        <TestStepSet Id="Phone1Teardown">
+            <TestStep SetId="BTCommonTeardown" DEVICE="PHONE1" />
+        </TestStepSet>
+
+
+        <Setup>
+            <TestStep SetId="BTFullSetupPhones1and2" />
+            <!--turn off wifi on DUT-->
+            <TestStep Id="WIFI_SET_POWER" DEVICE="PHONE1" POWER="off"/>
+
+            <!--connect to wifi on DEV-->
+            <TestStep Id="WIFI_REMOVE_NETWORK" DEVICE="PHONE2" SSID="all"/>
+            <TestStep Id="WIFI_SET_POWER" DEVICE="PHONE2" POWER="on"/>
+            <TestStep Id="WIFI_ADD_NETWORK" DEVICE="PHONE2" SSID="FROM_BENCH:WEP_WIFI_ROUTER:SSID"
+                      SECURITY="FROM_BENCH:WEP_WIFI_ROUTER:WIFI_SECURITY" PASS_PHRASE="FROM_BENCH:WEP_WIFI_ROUTER:passphrase"/>
+            <TestStep Id="WIFI_CONNECT" DEVICE="PHONE2" SSID="FROM_BENCH:WEP_WIFI_ROUTER:SSID" TIMEOUT="30"/>
+
+            <!-- AUTOMATION - Set default configuration -->
+            <Fork Id="ForkDUTReferencePhoneAndWiFiAP">
+                <TestStep SetId="BTFullSetupPhones1and2" />
+            </Fork>
+
+            <TestStep SetId="Phone2Config"/>
+            <TestStep Id="SUSPEND" DURATION_IN_SEC="20"/>
+            <!-- SPEC - Pair devices -->
+            <TestStep Id="BT_FIND_DEVICE" DEVICE="PHONE1" DEVICE_TO_FIND="FROM_CTX:BT_MAC_ADDRESS_PHONE2" MUST_FIND="true" />
+            <TestStep Id="BT_WAIT_PAIRING" DEVICE="PHONE2" BDADDR="FROM_CTX:BT_MAC_ADDRESS_PHONE1" UNPAIR_FIRST="True" ACCEPT_PAIRING="True" PASS_KEY="0" PIN_CODE="0000" TIMEOUT="120"/>
+            <TestStep Id="BT_PAIR" DEVICE="PHONE1" BDADDR="FROM_CTX:BT_MAC_ADDRESS_PHONE2" UNPAIR_FIRST="True" ACCEPT_PAIRING="True" PASS_KEY="0" PIN_CODE="0000" />
+            <TestStep Id="BT_CHECK_PAIRED" DEVICE="PHONE1" BDADDR="FROM_CTX:BT_MAC_ADDRESS_PHONE2" />
+
+        </Setup>
+        <RunTest>
+            <!-- SPEC - Step 1 : Connect PAN User from DUT -->
+            <TestStep Id="BT_CONNECT_PROFILE" DEVICE="PHONE1" BDADDR="FROM_CTX:BT_MAC_ADDRESS_PHONE2" PROFILE="PAN" CONNECT="True" />
+            <TestStep Id="BT_CHECK_PROFILE_STATUS" DEVICE="PHONE1" BDADDR="FROM_CTX:BT_MAC_ADDRESS_PHONE2" PROFILE="PAN" FAIL_IF="disconnected" SAVE_AS="PROFILE_STATUS" />
+
+            <!-- SPEC - Step 2 : Disconnect PAN User from DUT -->
+            <TestStep Id="BT_CONNECT_PROFILE" DEVICE="PHONE1" BDADDR="FROM_CTX:BT_MAC_ADDRESS_PHONE2" PROFILE="PAN" CONNECT="False" />
+            <TestStep Id="BT_CHECK_PROFILE_STATUS" DEVICE="PHONE1" BDADDR="FROM_CTX:BT_MAC_ADDRESS_PHONE2" PROFILE="PAN" FAIL_IF="connected" SAVE_AS="PROFILE_STATUS" />
+
+        </RunTest>
+        <TearDown>
+            <!--disconnect and turn off wifi on DUT-->
+            <TestStep Id="WIFI_REMOVE_NETWORK" DEVICE="PHONE2" SSID="all"/>
+            <TestStep Id="WIFI_SET_POWER" DEVICE="PHONE2" POWER="off"/>
+            <!-- AUTOMATION - Unpair devices -->
+            <TestStep Id="BT_UNPAIR" DEVICE="PHONE1" BDADDR="FROM_CTX:BT_MAC_ADDRESS_PHONE2"/>
+            <TestStep Id="BT_UNPAIR" DEVICE="PHONE2" BDADDR="FROM_CTX:BT_MAC_ADDRESS_PHONE1"/>
+            <Fork Id="ForkTeardown">
+                <TestStep SetId="Phone1Teardown"/>
+                <TestStep SetId="Phone2Teardown"/>
+            </Fork>
+        </TearDown>
+    </TestSteps>
+</TestCase>

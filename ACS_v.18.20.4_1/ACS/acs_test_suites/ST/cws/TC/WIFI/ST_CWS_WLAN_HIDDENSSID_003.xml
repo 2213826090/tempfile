@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase>
+    <UseCase>TEST_STEP_ENGINE</UseCase>
+    <Description />
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <b2bIteration>4</b2bIteration>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <TcMaxAttempt />
+    <TcAcceptanceCriteria>1</TcAcceptanceCriteria>
+    <TestSteps>
+        <Include Src="ST/cws/TSS/WiFi/ST_CWS_WIFI_AP.xml" />
+        <Setup>
+            <!-- Configure AP -->
+            <TestStep SetId="APConfig"
+                      EQT="CONFIGURABLE_AP1"
+                      SSID="FROM_BENCH:CONFIGURABLE_AP1:SSID"
+                      HIDDEN="false"
+                      STANDARD="n2.4G"
+                      AUTHENTICATION_TYPE="WPA2-PSK-AES"
+                      PASSPHRASE="FROM_BENCH:CONFIGURABLE_AP1:passphrase_WPA2"
+                      BANDWIDTH="20"
+                      CHANNEL="6"/>
+
+            <!-- Turn Wifi On on DUT-->
+            <TestStep Id="WIFI_SET_POWER" DEVICE="PHONE1" POWER="on" />
+        </Setup>
+        <RunTest>
+            <!-- SPEC - Step 1 :  Manually add a network -->
+            <TestStep Id="WIFI_ADD_NETWORK" DEVICE="PHONE1"
+                      SSID="FROM_BENCH:CONFIGURABLE_AP2:SSID"
+                      PASS_PHRASE="FROM_BENCH:CONFIGURABLE_AP2:passphrase_WPA2"
+                      SECURITY="WPA2-PSK-AES"
+                      EAP_METHOD="NONE"
+                      EAP_USER="NONE"
+                      EAP_PASSWORD="NONE"
+                      PHASE2_AUTH="NONE"
+                      CERTIFICAT_NAME="NONE"
+                      USE_CERTIFICATE="false"
+                      STATIC_IP="dhcp"
+                      IP_ADDRESS="192.168.0.142"
+                      IP_NETMASK="255.255.255.0"
+                      IP_GATEWAY="192.168.0.1"
+                      IP_DNS1="0.0.0.0"
+                      IP_DNS2="0.0.0.0"/>
+
+            <!-- SPEC - Step 2 : Turn Wi-Fi Off  -->
+            <TestStep Id="WIFI_SET_POWER" DEVICE="PHONE1" POWER="off" />
+            <TestStep Id="SUSPEND" DURATION_IN_SEC="5" />
+
+            <!-- SPEC - Step 3 : Turn Wi-Fi back On and scan  -->
+            <TestStep Id="WIFI_SET_POWER" DEVICE="PHONE1" POWER="on" />
+            <TestStep Id="SUSPEND" DURATION_IN_SEC="5" />
+            <TestStep Id="WIFI_REQUEST_SCAN" DEVICE="PHONE1"  />
+            <TestStep Id="SUSPEND" DURATION_IN_SEC="5" />
+            <TestStep Id="WIFI_LIST_SSIDS" DEVICE="PHONE1" SAVE_AS="ssid_list"  />
+        </RunTest>
+        <TearDown>
+            <!-- AUTOMATION - Teardown -->
+            <TestStep Id="WIFI_REMOVE_NETWORK" DEVICE="PHONE1" SSID="FROM_BENCH:CONFIGURABLE_AP1:SSID"/>
+            <TestStep Id="WIFI_SET_POWER" DEVICE="PHONE1" POWER="off" />
+            <TestStep SetId="APDown" EQT="CONFIGURABLE_AP1"/>
+        </TearDown>
+    </TestSteps>
+</TestCase>

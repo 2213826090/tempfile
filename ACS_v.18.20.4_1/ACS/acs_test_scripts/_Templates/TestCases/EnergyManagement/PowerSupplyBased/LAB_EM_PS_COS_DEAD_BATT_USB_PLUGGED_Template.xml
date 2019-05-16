@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="13.45">
+    <UseCase>LAB_EM_PS_COS_DEAD_BATT_USB_PLUGGED</UseCase>
+    <Description>Boot in Hardware Charging, Set the COS Voltage, CHeck if the board boot in COS</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>False</b2bContinuousMode>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters>
+        <Parameter>
+            <!-- Type of the charger : SDP/CDP -->
+            <Name>CHARGER_TYPE</Name>
+            <Value>SDP</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Battery Type : BATTERY_EMULATOR or ANALOG or DIGITAL or leave empty to use the one from device catalog-->
+            <Name>BATTERY_TYPE</Name>
+            <Value>DIGITAL</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Timeout value for the COS board boot (int value) -->
+            <Name>COS_BOOT_TIMEOUT_VALUE</Name>
+            <Value>120</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Timeout value for the board boot after cable plugged (int value) -->
+            <Name>HARDWARE_BOOT_TIMEOUT_VALUE</Name>
+            <Value>60</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Activation of the power button (bool value) -->
+            <Name>POWER_BUTTON_PRESS_ACTIVATION</Name>
+            <Value>False</Value>
+        </Parameter>
+        <Parameter>
+            <!-- COS Voltage for the test (float value) -->
+            <Name>CHARGING_OS_VOLTAGE</Name>
+            <Value>3.2</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Hardware CHarging Voltage for the test (float value) -->
+            <Name>HARDWARE_CHARGING_VOLTAGE</Name>
+            <Value>2.5</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Hardware charging charge current value (int value) in A !Choose only positive value! -->
+            <Name>HARDWARE_CHARGE_CURRENT</Name>
+            <Value>0.4</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

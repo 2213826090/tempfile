@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<TestCase>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters/>
+    <Discription>
+Platform shall enter crash mode after kernel watchdog reset happened WATCHDOG_COUNTER_MAX times in WATCHDOG_DELAY timeframe
+&lt;br /&gt;
+&lt;br /&gt;By default, WATCHDOG_COUNTER_MAX = 3 and WATCHDOG_DELAY= 10 minutes
+&lt;br /&gt;
+</Discription>
+    <Parameters/>
+    <Domain>System_FastBoot</Domain>
+    <Parameters/>
+    <Phase>CORE</Phase>
+    <Parameters/>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <Parameters/>
+    <Type>FUNCTIONAL</Type>
+    <Parameters/>
+    <UseCase>PY_UNIT</UseCase>
+    <Parameters/>
+    <b2bIteration>1</b2bIteration>
+    <Parameters>
+        <Parameter>
+            <Name>TEST_DATA_ROOT</Name>
+            <Value>testplan/System_FastBoot</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TEST_CASE</Name>
+            <Value>tests.System_FastBoot.P1-SystemFailure-Watchdog.KernelWatchdogToCrashMode-WATCHDOG_COUNTER_MAX</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

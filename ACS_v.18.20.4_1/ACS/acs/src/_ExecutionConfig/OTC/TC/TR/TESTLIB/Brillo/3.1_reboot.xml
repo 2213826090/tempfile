@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='ASCII'?>
+<TestCase>
+    <UseCase>Testlib</UseCase>
+    <Description>Test multiple reboot</Description>
+    <Description>Command:adb reboot;time wait-for-device </Description>
+    <Description>Result: Device should boot in less than 30s</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <TcMaxAttempt>1</TcMaxAttempt>
+    <Parameters>
+        <Parameter>
+            <Name>test</Name>
+            <Value>scripts/brillo/tests/3.1_reboot.py</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

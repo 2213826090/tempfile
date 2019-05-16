@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="13.37">
+  <UseCase>LIVE_SIM_CARD_PIN_LOCK_SYSTEM</UseCase>
+  <Description>Usecase asserting that we can enable, disable and change PIN on Device</Description>
+  <b2bIteration>1</b2bIteration>
+  <b2bContinuousMode>False</b2bContinuousMode>
+  <TcExpectedResult>PASS</TcExpectedResult>
+  <Parameters>
+    <Parameter>
+        <!-- The new PIN code to set when changing the PIN code.
+        Represents a number containing from 4 to 8 digits.
+        Warning : The default PIN code must be filled in bench config, 
+        by overwriting Device 'defaultPINCode' value -->
+        <Name>NEW_PIN</Name>
+        <Value>88888888</Value>
+    </Parameter>
+    <Parameter>
+        <!-- A value (TRUE or FALSE) indicating that we want the testcase to check again that 
+        we have enabled/disabled SIM lock system after having rebooted the device.
+        WARNING : Set this parameter to TRUE will increase testcase duration -->
+        <Name>DOUBLE_CHECK_AFTER_REBOOT</Name>
+        <Value>FALSE</Value>
+    </Parameter>
+  </Parameters>
+</TestCase>

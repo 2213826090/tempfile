@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase>
+  <ClassName>UseCase.OTC.Communications.Wifi.LAB_CONNECT_TO_AP.ConnectToAP</ClassName>
+  <Description>Wifi test case for unsecured networks</Description>
+  <b2bIteration>1</b2bIteration>
+  <b2bContinuousMode>False</b2bContinuousMode>
+  <Parameters>
+    <Parameter>
+      <Name>OPERATION_MODE</Name>
+      <Value>g</Value>
+    </Parameter>
+    <Parameter>
+      <Name>SECURITY_MODE</Name>
+      <Value>open</Value>
+    </Parameter>
+    <Parameter>
+      <Name>WIFI_PASSWORD</Name>
+      <Value></Value>
+    </Parameter>
+ <Parameter>
+      <Name>ALGORITHM</Name>
+      <Value>not_used</Value>
+    </Parameter>
+    <Parameter>
+      <Name>TIMEOUT</Name>
+      <Value>60</Value>
+    </Parameter>
+    <Parameter>
+      <Name>TEST_APK</Name>
+      <Value>INSTRUMENTATION/ANDROID/ApiTests.apk</Value>
+    </Parameter>
+    <Parameter>
+      <Name>PROCESS_NAME</Name>
+      <Value>com.intel.test.apitests/com.intel.test.apitests.runners.WifiEncryptionTestRunner</Value>
+    </Parameter>
+    <Parameter>
+      <Name>AM_EXTRA</Name>
+      <Value>-e apName "ddwrt" -e apPassword xxx -e apTestPage http://192.168.1.1/ -e class com.intel.test.apitests.tests.WiFiConnectionTest#testWifiAP_OpenNetwork</Value>
+    </Parameter>
+  </Parameters>
+</TestCase>

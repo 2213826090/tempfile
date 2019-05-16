@@ -1,0 +1,30 @@
+<?xml version="1.0" ?>
+<Campaign version="13.49">
+    <Parameters>
+        <Parameter isControlledPSUsed="False"/>
+        <Parameter isIoCardUsed="False"/>
+        <Parameter skipBootOnPowerCycle="False"/>
+        <Parameter bootRetryNumber="0"/>
+        <Parameter runHookScripts="False"/>
+        <Parameter powerCycleBetweenTC="False"/>
+        <Parameter powerCycleOnFailure="False"/>
+        <Parameter finalDutState="NoChange"/>
+        <Parameter stopCampaignOnCriticalFailure="False"/>
+        <Parameter stopCampaignOnFirstFailure="False"/>
+        <Parameter loggingLevel="debug"/>
+        <Parameter CampaignType="Other"/>
+    </Parameters>
+    <TestCases>
+        <TestCase Id="../../../../../TC/TP/TC/AfW/AfW.API_Test.NotProvision.ProvisionDevice.testPretest_for_reliability"/>
+        <TestCase Id="../../../../../TC/TP/TC/AfW/Profile_Process/DeviceOwner.IterationControl.testCreateNotification_Remove_20_times"/>
+        <TestCase Id="../../../../../TC/TP/TC/AfW/Profile_Process/DeviceOwner.IterationControl.testLaunchBT_FightMode_WorkProfile_50_times"/>
+        <TestCase Id="../../../../../TC/TP/TC/AfW/Profile_Process/DeviceOwner.IterationControl.testLaunchWiFi_FlightMode_WorkProfile_50_times"/>
+        <TestCase Id="../../../../../TC/TP/TC/AfW/Profile_Process/NotProvision.IterationControl.testCreateWorkProfile_Remove_50_times"/>
+        <TestCase Id="../../../../../TC/TP/TC/AfW/Profile_Process/ProfileOwner.IterationControl.testRemoveRecentTasks_WorkProfile_50_times"/>
+        <TestCase Id="../../../../../TC/TP/TC/AfW/Profile_Process/ProfileOwner.IterationControl.testCamera_WorkProfile_Launch_Close_50times"/>
+        <TestCase Id="../../../../../TC/TP/TC/AfW/Profile_Process/ProfileOwner.IterationControl.testChrome_WorkProfile_10MSNTabs_Close_50times"/>
+        <TestCase Id="../../../../../TC/TP/TC/AfW/Profile_Process/ProfileOwner.IterationControl.testCreateNotification_Remove_20_times"/>
+        <TestCase Id="../../../../../TC/TP/TC/AfW/Profile_Process/ProfileOwner.IterationControl.testAddCrossProfileWidget_Remove_50_times"/>
+        <TestCase Id="../../../../../TC/TP/TC/AfW/Profile_Process/ProfileOwner.IterationControl.testAddAllSystemApp_Hide_20_times"/>
+    </TestCases>
+</Campaign>

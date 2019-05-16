@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Campaign>
+    <Parameters>
+        <Parameter isControlledPSUsed="False"/>
+        <Parameter isIoCardUsed="False"/>
+        <!-- Set skipBootOnPowerCycle to True to disable the acs boot procedure -->
+        <!-- Important, it means that boot will be handle inside the campaign/tc -->
+        <Parameter skipBootOnPowerCycle="False"/>
+        <Parameter runHookScripts="False"/>
+        <Parameter powerCycleBetweenTC="False"/>
+        <Parameter powerCycleOnFailure="False"/>
+        <Parameter finalPowerOff="False"/>
+        <Parameter finalDutState="NoChange"/>
+        <Parameter stopCampaignOnCriticalFailure="False"/>
+        <Parameter stopCampaignOnFirstFailure="False"/>
+        <!-- LoggingLevel possible values: info | warning | debug | error -->
+        <Parameter loggingLevel="info"/>
+        <!-- CampaignType format -> <TEAM>_<CAMPAIGNTYPE>
+            Possible values:
+            FT(Feature Team)-> SANITY | REGRESSION | STRESS, RELIABILTY | MTBF
+            ST(System Test)-> SANITY | REGRESSION | STRESS, RELIABILTY | MTBF
+            SI(System Integration)-> EAT | STAB | PACT | CAT0 | RELIABILITY | MTBF
+            Otherwise "Others" should be used -->
+        <Parameter CampaignType="ST_REGRESSION"/>
+        <Parameter TCRReportViaRESTAPI="true"/>
+    </Parameters>
+    <Targets>
+        <!-- Target Values -->
+        <Target targetB2bPassRate="100"/>
+    </Targets>
+    <TestCases>
+        <!-- Testcase campaigns -->
+
+        <!-- Basic Tests -->
+        <TestCase Id="../TC/NFC/ST_CWS_NFC_RWM_095-LIVE_NFC_TURN_ON_OFF"/>
+        <TestCase Id="../TC/NFC/ST_CWS_NFC_RWM_120-LIVE_NFC_TURN_ON_OFF"/>
+
+        <!-- Tests read/write -->
+        <TestCase Id="../TC/NFC/ST_CWS_NFC_RW_LIBTAG_SPOSTER_001-LAB_NFC_HOST_READER_MODE"/>
+        <TestCase Id="../TC/NFC/ST_CWS_NFC_RW_LIBTAG_TXT_001-LAB_NFC_HOST_READER_MODE"/>
+        <TestCase Id="../TC/NFC/ST_CWS_NFC_RW_LIBTAG_URI_001-LAB_NFC_HOST_READER_MODE"/>
+        <TestCase Id="../TC/NFC/ST_CWS_NFC_RW_M1K_BEAM_ENABLED_001-LAB_NFC_HOST_READER_MODE"/>
+        <TestCase Id="../TC/NFC/ST_CWS_NFC_RW_M1K_LOCKED_001-LAB_NFC_HOST_READER_MODE"/>
+        <TestCase Id="../TC/NFC/ST_CWS_NFC_RW_M1K_OVERFLOW_001-LAB_NFC_HOST_READER_MODE"/>
+        <TestCase Id="../TC/NFC/ST_CWS_NFC_RW_M1K_RANDOM_CONTENT_001-LAB_NFC_HOST_READER_MODE"/>
+        <TestCase Id="../TC/NFC/ST_CWS_NFC_RW_M1K_SPOSTER_001-LAB_NFC_HOST_READER_MODE"/>
+        <TestCase Id="../TC/NFC/ST_CWS_NFC_RW_M1K_TXT_001_001-LAB_NFC_HOST_READER_MODE"/>
+        <TestCase Id="../TC/NFC/ST_CWS_NFC_RW_M1K_URI_001-LAB_NFC_HOST_READER_MODE"/>
+        <TestCase Id="../TC/NFC/ST_CWS_NFC_RW_M4K_SPOSTER_001-LAB_NFC_HOST_READER_MODE"/>
+        <TestCase Id="../TC/NFC/ST_CWS_NFC_RW_M4K_TXT_001-LAB_NFC_HOST_READER_MODE"/>
+        <TestCase Id="../TC/NFC/ST_CWS_NFC_RW_M4K_URI_001-LAB_NFC_HOST_READER_MODE"/>
+        <TestCase Id="../TC/NFC/ST_CWS_NFC_RW_MUL_SPOSTER_001-LAB_NFC_HOST_READER_MODE"/>
+        <TestCase Id="../TC/NFC/ST_CWS_NFC_RW_MUL_TXT_001-LAB_NFC_HOST_READER_MODE"/>
+        <TestCase Id="../TC/NFC/ST_CWS_NFC_RW_MUL_URI_001-LAB_NFC_HOST_READER_MODE"/>
+        <TestCase Id="../TC/NFC/ST_CWS_NFC_RW_T1_SPOSTER_001-LAB_NFC_HOST_READER_MODE"/>
+        <TestCase Id="../TC/NFC/ST_CWS_NFC_RW_T1_TXT_001-LAB_NFC_HOST_READER_MODE"/>
+        <TestCase Id="../TC/NFC/ST_CWS_NFC_RW_T1_URI_001-LAB_NFC_HOST_READER_MODE"/>
+        <TestCase Id="../TC/NFC/ST_CWS_NFC_RW_T3_SPOSTER_001-LAB_NFC_HOST_READER_MODE"/>
+        <TestCase Id="../TC/NFC/ST_CWS_NFC_RW_T3_TXT_001-LAB_NFC_HOST_READER_MODE"/>
+        <TestCase Id="../TC/NFC/ST_CWS_NFC_RW_T3_URI_001-LAB_NFC_HOST_READER_MODE"/>
+        <TestCase Id="../TC/NFC/ST_CWS_NFC_RW_T4A_SPOSTER_001-LAB_NFC_HOST_READER_MODE"/>
+        <TestCase Id="../TC/NFC/ST_CWS_NFC_RW_T4A_TXT_001-LAB_NFC_HOST_READER_MODE"/>
+        <TestCase Id="../TC/NFC/ST_CWS_NFC_RW_T4A_URI_001-LAB_NFC_HOST_READER_MODE"/>
+        <TestCase Id="../TC/NFC/ST_CWS_NFC_RW_T4B_SPOSTER_001-LAB_NFC_HOST_READER_MODE"/>
+        <TestCase Id="../TC/NFC/ST_CWS_NFC_RW_T4B_TXT_001-LAB_NFC_HOST_READER_MODE"/>
+        <TestCase Id="../TC/NFC/ST_CWS_NFC_RW_T4B_URI_001-LAB_NFC_HOST_READER_MODE"/>
+
+        <!-- Tests Erase read/write -->
+        <TestCase Id="../TC/NFC/ST_CWS_NFC_RW_LIBTAG_TXT_ERASE_001-LAB_NFC_HOST_READER_MODE"/>
+        <TestCase Id="../TC/NFC/ST_CWS_NFC_RW_M1K_TXT_ERASE_001-LAB_NFC_HOST_READER_MODE"/>
+        <TestCase Id="../TC/NFC/ST_CWS_NFC_RW_M4K_TXT_ERASE_001-LAB_NFC_HOST_READER_MODE"/>
+        <TestCase Id="../TC/NFC/ST_CWS_NFC_RW_MULC_TXT_ERASE_001-LAB_NFC_HOST_READER_MODE"/>
+        <TestCase Id="../TC/NFC/ST_CWS_NFC_RW_MUL_TXT_ERASE_001-LAB_NFC_HOST_READER_MODE"/>
+        <TestCase Id="../TC/NFC/ST_CWS_NFC_RW_T1_TXT_ERASE_001-LAB_NFC_HOST_READER_MODE"/>
+        <TestCase Id="../TC/NFC/ST_CWS_NFC_RW_T3_TXT_ERASE_001-LAB_NFC_HOST_READER_MODE"/>
+        <TestCase Id="../TC/NFC/ST_CWS_NFC_RW_T4A_TXT_ERASE_001-LAB_NFC_HOST_READER_MODE"/>
+        <TestCase Id="../TC/NFC/ST_CWS_NFC_RW_T4B_TXT_ERASE_001-LAB_NFC_HOST_READER_MODE"/>
+
+
+        <!-- Tests iterative read/write -->
+        <TestCase Id="../TC/NFC/ST_CWS_NFC_RW_LIBTAG_IT_TXT_001-LAB_NFC_HOST_READER_MODE"/>
+        <TestCase Id="../TC/NFC/ST_CWS_NFC_RW_LIBTAG_IT_TXT_001-LAB_NFC_HOST_READER_MODE"/>
+        <TestCase Id="../TC/NFC/ST_CWS_NFC_RW_M1K_IT_TXT_001-LAB_NFC_HOST_READER_MODE"/>
+        <TestCase Id="../TC/NFC/ST_CWS_NFC_RW_M4K_IT_TXT_001-LAB_NFC_HOST_READER_MODE"/>
+        <TestCase Id="../TC/NFC/ST_CWS_NFC_RW_MULC_IT_TXT_001-LAB_NFC_HOST_READER_MODE"/>
+        <TestCase Id="../TC/NFC/ST_CWS_NFC_RW_MUL_IT_TXT_001-LAB_NFC_HOST_READER_MODE"/>
+        <TestCase Id="../TC/NFC/ST_CWS_NFC_RW_T1_IT_001-LAB_NFC_HOST_READER_MODE"/>
+        <TestCase Id="../TC/NFC/ST_CWS_NFC_RW_T3_IT_001-LAB_NFC_HOST_READER_MODE"/>
+        <TestCase Id="../TC/NFC/ST_CWS_NFC_RW_T4A_IT_001-LAB_NFC_HOST_READER_MODE"/>
+        <TestCase Id="../TC/NFC/ST_CWS_NFC_RW_T4B_IT_001-LAB_NFC_HOST_READER_MODE"/>
+
+
+        <!-- Tests P2P -->
+        <TestCase Id="../TC/NFC/ST_CWS_NFC_P2P_033-LIVE_NFC_TURN_ON_OFF"/>
+        <TestCase Id="../TC/NFC/ST_CWS_NFC_P2PM_031-LAB_NFC_HOST_READER_MODE"/>
+
+        <!-- Tests CE -->
+        <TestCase Id="../TC/NFC/ST_CWS_NFC_PAYM_BASIC_001-LIVE_NFC_SELECT_SECURE_ELEMENT"/>
+        <TestCase Id="../TC/NFC/ST_CWS_NFC_PAYM_BASIC_002-LIVE_NFC_SELECT_SECURE_ELEMENT"/>
+        <TestCase Id="../TC/NFC/ST_CWS_NFC_PAYM_BASIC_003-LIVE_NFC_SELECT_SECURE_ELEMENT"/>
+        <TestCase Id="../TC/NFC/ST_CWS_NFC_PAYM_BASIC_004-LIVE_NFC_SELECT_SECURE_ELEMENT"/>
+        <TestCase Id="../TC/NFC/ST_CWS_NFC_PAYM_OTA_005-LAB_NFC_OTA_APDU_EXCHANGE"/>
+        <TestCase Id="../TC/NFC/ST_CWS_NFC_PAYM_OTA_006-LAB_NFC_OTA_APDU_EXCHANGE"/>
+        <TestCase Id="../TC/NFC/ST_CWS_NFC_PAYM_OTA_007-LAB_NFC_OTA_APDU_EXCHANGE"/>
+        <TestCase Id="../TC/NFC/ST_CWS_NFC_PAYM_OTA_012-LIVE_NFC_SCAPI_APDU_EXCHANGE"/>
+        <TestCase Id="../TC/NFC/ST_CWS_NFC_PAYM_OTA_013-LIVE_NFC_SCAPI_APDU_EXCHANGE"/>
+        <TestCase Id="../TC/NFC/ST_CWS_NFC_PAYM_OTA_014-LIVE_NFC_SCAPI_APDU_EXCHANGE"/>
+        <TestCase Id="../TC/NFC/ST_CWS_NFC_PAYM_OTA_015-LIVE_NFC_SCAPI_APDU_EXCHANGE"/>
+
+        <!-- Misc tests -->
+        <TestCase Id="../TC/NFC/ST_CWS_NFC_RWM_007-LAB_NFC_HOST_READER_MODE"/>
+        <TestCase Id="../TC/NFC/ST_CWS_NFC_RWM_012-LAB_NFC_HOST_READER_MODE"/>
+        <TestCase Id="../TC/NFC/ST_CWS_NFC_RWM_017-LAB_NFC_HOST_READER_MODE"/>
+        <TestCase Id="../TC/NFC/ST_CWS_NFC_RWM_022-LAB_NFC_HOST_READER_MODE"/>
+        <TestCase Id="../TC/NFC/ST_CWS_NFC_RWM_027-LAB_NFC_HOST_READER_MODE"/>
+        <TestCase Id="../TC/NFC/ST_CWS_NFC_RWM_038-LAB_NFC_HOST_READER_MODE"/>
+        <TestCase Id="../TC/NFC/ST_CWS_NFC_RWM_059-LAB_NFC_HOST_READER_MODE"/>
+        <TestCase Id="../TC/NFC/ST_CWS_NFC_APM_BASIC_001-LAB_NFC_HOST_READER_MODE"/>
+        <TestCase Id="../TC/NFC/ST_CWS_NFC_APM_NFC_ON_BCK_001-LAB_NFC_HOST_READER_MODE"/>
+        <TestCase Id="../TC/NFC/ST_CWS_NFC_APM_RW_001-LAB_NFC_HOST_READER_MODE"/>
+
+
+        <!-- BEAM TEST -->
+        <TestCase Id="../TC/NFC/LAB_NFC_DUAL_PHONE_BEAM_TRANSFERT"/>
+    </TestCases>
+</Campaign>

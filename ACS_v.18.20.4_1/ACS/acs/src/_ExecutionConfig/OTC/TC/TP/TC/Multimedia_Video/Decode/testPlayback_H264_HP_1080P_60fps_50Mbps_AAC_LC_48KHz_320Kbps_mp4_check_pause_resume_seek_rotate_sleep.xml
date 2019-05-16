@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<TestCase>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Discription>
+Verify Video playback: H264_HP_1080P_60fps_50Mbps_AAC_LC_48KHz_320Kbps.mp4, check pause/resume/seek/rotate/sleep
+</Discription>
+    <Domain>Multimedia_Video</Domain>
+    <Phase>CORE</Phase>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <Type>FUNCTIONAL</Type>
+    <UseCase>PY_UNIT</UseCase>
+    <b2bIteration>1</b2bIteration>
+    <Parameters>
+        <Parameter>
+            <Name>HpalmName</Name>
+            <Value>video_api_test.VideoAPITest.testPlayback_H264_HP_1080P_60fps_50Mbps_AAC_LC_48KHz_320Kbps_mp4_check_pause_resume_seek_rotate_sleep</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TEST_DATA_ROOT</Name>
+            <Value>testplan/Multimedia_Video</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TEST_CASE</Name>
+            <Value>tests.Multimedia_Video.Decode.video_api_test.VideoAPITest.testPlayback_H264_HP_1080P_60fps_50Mbps_AAC_LC_48KHz_320Kbps_mp4_check_pause_resume_seek_rotate_sleep</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

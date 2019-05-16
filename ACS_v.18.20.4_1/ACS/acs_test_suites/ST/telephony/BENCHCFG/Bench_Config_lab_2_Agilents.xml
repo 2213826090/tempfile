@@ -1,0 +1,229 @@
+<?xml version='1.0' encoding='ISO-8859-1'?>
+<BenchConfig>
+  <Phones>
+      <Phone name="PHONE1" description="Phone to use during test campaign. Please refer to Device_Catalog.xml to add device parameters">
+          <!-- You can override value of a specific parameter from Device_Catalog
+            e.g:
+
+            <Parameter name="PowerSupply" value="ACCHG" description="Give the Power Supply Output type (e.g: ACCHG1)" />
+            <Parameter name="IoCard" value="IO_CARD" description="Give the IO card name (e.g: IO_CARD1)" />
+            <Parameter name="serialNumber" value="" description="Give the Serial Number of the phone (Used for Android phone only)" />
+            <Parameter name="phoneNumber" value="" description="Give the phone number of the phone" />
+            <Parameter name="adbOverEthernet" value="" description="Use ADB over Ethernet (Used for Android phone only)" />
+            <Parameter name="ipAddress" value="" description="Give the IP address of the phone (Used for Android phone only)" />
+            <Parameter name="adbPort" value="" description="Give ADB ethernet port of the phone (Used for Android phone only)" />
+            <Parameter name="waitBetweenCmd" value="" description="Give the time to wait between ue command execution"/>
+            -->
+        </Phone>
+    </Phones>
+    <Equipments>
+      <Equipment name="ARTIFACT_MANAGER" description="ArtifactManager configuration to get all test case necessary artifacts">
+          <Parameter name="URI" value="https://mcg-depot.intel.com/artifactory/acs_test_artifacts/" description="Local path/URL to the artifact source"/>
+            <!-- Optional options
+            <Parameter name="proxy" value="system" description="Proxy to use if URI is an URL - system: use HTTP_PROXY system value - no_proxy: use empty proxy - a proxy adress" />
+            <Parameter name="http_timeout" value="10" description="Response timeout if URI is an URL" />
+            <Parameter name="creds" value="anonymous" description="Credentials to use if URL is access protected - anonymous: no creds will be used - creds format user:password" />
+            <Parameter name="cache_folder" value="/tmp/artifact_cache" description="Local path to a directory to store artifacts - if not specified, your_home_folder/.acs/Artifacts will be used" />
+            <Parameter name="max_cache_size" value="1000" description="Maximum cache directory size on the disk in Mb" />
+            -->
+        </Equipment>
+        <Equipment name="WPA2_WIFI_ROUTER" description="Wifi Protected Access II Router">
+          <Parameter name="SSID" value="INTELTEST_WPA2"/>
+            <Parameter name="IP" value="192.168.0.4"/>
+            <Parameter name="passphrase" value="acdc123456"/>
+        </Equipment>
+        <Equipment name="WPA_WIFI_ROUTER" description="Wifi Protected Access Router">
+          <Parameter name="SSID" value="INTELTEST_WPA"/>
+            <Parameter name="IP" value="192.168.0.3"/>
+            <Parameter name="passphrase" value="acdc123456"/>
+        </Equipment>
+        <Equipment name="NO_SECURITY_WIFI_ROUTER" description="Not secured Router">
+          <Parameter name="SSID" value="INTELTEST_NOSEC"/>
+            <Parameter name="IP" value="192.168.0.1"/>
+            <Parameter name="passphrase" value="None"/>
+        </Equipment>
+        <Equipment name="CELLULAR_NETWORK" description="Cellular access network">
+          <Parameter name="SSID" value="'Agilent TS34.108 (00101)'"/>
+            <Parameter name="APN" value="agilent_apn"/>
+        </Equipment>
+        <Equipment name="NOWSMS_SERVER" description="NowSMS Server APN (MMS testing)">
+          <Parameter name="SSID" value="'Now Sms Server for SMS/MMS tests'"/>
+            <Parameter name="APN" value="MMS"/>
+            <Parameter name="username" value="8960"/>
+            <Parameter name="password" value="8960"/>
+            <Parameter name="IP" value="http://10.102.161.47"/>
+            <Parameter name="IPV6" value=""/>
+            <Parameter name="APN_PORT" value="8080"/>
+            <Parameter name="PORT" value="8800"/>
+        </Equipment>
+        <Equipment name="CONFIGURABLE_AP" description="Configurable Access Point">
+          <Parameter name="Model" value="DLINK_DAP2553"/>
+            <Parameter name="IP" value="192.168.0.50"/>
+            <Parameter name="ConfigurationWaitingTime" value="45"/>
+            <Parameter name="username" value="admin"/>
+            <Parameter name="password" value=""/>
+            <Parameter name="SSID" value="CWS_CONTROLABLE"/>
+            <Parameter name="passphrase_WEP64" value="12345"/>
+            <Parameter name="passphrase_WEP128" value="1234567890123"/>
+            <Parameter name="passphrase_WPA" value="1234567890123"/>
+            <Parameter name="passphrase_WPA2" value="1234567890123"/>
+            <Parameter name="radiusip" value="192.168.0.150"/>
+            <Parameter name="radiusport" value="1812"/>
+            <Parameter name="radiussecret" value="RadiusPass"/>
+            <Parameter name="EAP_user" value="Inteluser"/>
+            <Parameter name="EAP_password" value="intelpassword"/>
+            <Parameter name="Credential_password" value="12345678"/>
+            <Parameter name="CA_guard_password" value="VPN"/>
+            <!-- Name of the Certificate -->
+            <Parameter name="certificate_file" value="client.p12"/>
+            <Parameter name="Acceptable_DUT_IP" value="192.168.0.150"/>
+        </Equipment>
+        <Equipment name="B_ONLY_WIFI_ROUTER" description="Wired Equivalent Privacy Router">
+          <Parameter name="SSID" value="CWS_B_ONLY"/>
+            <Parameter name="IP" value="192.168.0.40"/>
+            <Parameter name="passphrase" value="acdc123456"/>
+        </Equipment>
+        <Equipment name="LAB_SERVER" description="Server Configuration used for FTP, IPERF">
+          <Parameter name="IP" value="10.237.190.50"/>
+            <!-- <Parameter name="IP" value="10.237.190.50"/> -->
+            <Parameter name="username" value="lab"/>
+            <Parameter name="password" value="intellab"/>
+            <Parameter name="ftp_path" value=""/>
+        </Equipment>
+        <Equipment name="WIFI_SERVER" description="Server Configuration used for FTP, IPERF">
+          <Parameter name="IP" value="192.168.0.150"/>
+            <Parameter name="username" value="acs"/>
+            <Parameter name="password" value="intelacs"/>
+            <Parameter name="ftp_path" value="acs_test"/>
+        </Equipment>
+        <Equipment name="POWER_SUPPLY1" description="Power supply used for device Power cycle">
+          <!-- Model possible values: AGILENT_66311D | AGILENT_66319D | AGILENT_E364xA -->
+            <Parameter name="Model" value=""/>
+            <!-- GPIB -->
+            <Parameter name="Transport" value="GPIB"/>
+            <Parameter name="GPIBBoardId" value=""/>
+            <Parameter name="GPIBAddress" value=""/>
+            <Output name="OUTPUT1">
+              <!-- Type possible values: NONE | ACCHG (AC Charger) | BATT (Battery) | USB -->
+                <Parameter name="Type" value="ACCHG" description="Output Type"/>
+                <Parameter name="PortNumber" value="1"/>
+                <Parameter name="MaxCurrent" value=""/>
+                <Parameter name="Voltage" value=""/>
+            </Output>
+        </Equipment>
+        <Equipment name="NETWORK_SIMULATOR1" description="Network simulator used for non mobility test cases">
+          <!-- Model possible values:  AGILENT_8960 | RS_CMU200 | AGILENT_E6621A | RS_CMW500 -->
+            <Parameter name="Model" value="AGILENT_8960"/>
+            <Parameter name="Transport" value="GPIB"/>
+            <Parameter name="GPIBBoardId" value="0"/>
+            <Parameter name="GPIBAddress" value="14"/>
+            <Parameter name="AmplitudeOffsetTable" value="Amplitude_Offset_Table"/>
+            <Parameter name="IP_Lan1" value="10.237.190.34"/>
+            <Parameter name="IP_Lan2" value="10.237.190.35"/>
+            <Parameter name="DUT_IP_Address" value="10.237.190.36"/>
+            <Parameter name="DNS1" value="172.28.128.126"/>
+            <Parameter name="DNS2" value="172.28.128.146"/>
+            <Parameter name="Subnet_Mask" value="255.255.255.0"/>
+            <Parameter name="Default_Gateway" value="10.237.190.3"/>
+        </Equipment>
+        <Equipment name="NETWORK_SIMULATOR2" description="Network simulator used for non mobility test cases">
+          <!-- Model possible values:  AGILENT_8960 only -->
+            <Parameter name="Model" value="AGILENT_8960"/>
+            <Parameter name="Transport" value="GPIB"/>
+            <Parameter name="GPIBBoardId" value="0"/>
+            <Parameter name="GPIBAddress" value="13"/>
+            <Parameter name="AmplitudeOffsetTable" value="Amplitude_Offset_Table"/>
+            <Parameter name="IP_Lan1" value="10.237.190.31"/>
+            <Parameter name="IP_Lan2" value="10.237.190.32"/>
+            <Parameter name="DUT_IP_Address" value="10.237.190.33"/>
+            <Parameter name="DNS1" value="172.28.128.126"/>
+            <Parameter name="DNS2" value="172.28.128.146"/>
+            <Parameter name="Subnet_Mask" value="255.255.255.0"/>
+            <Parameter name="Default_Gateway" value="10.237.190.3"/>
+        </Equipment>
+        <Equipment name="POWER_ANALYZER_TOOL" description="PAT used for power consumption measurements test cases">
+          <!-- Model possible values:  STUB | NIDAQ -->
+            <Parameter name="Model" value=""/>
+            <Parameter name="ConfFile" value=""/>
+        </Equipment>
+        <Equipment name="IO_CARD" description="Input output card used for power management, energy management on I/O ports of the DUT.">
+          <!-- Model possible values:  ACBN (Normal) | ACBP (Prototype) | ACBE (Enhanced) | USB_RLY08 -->
+            <Parameter name="Model" value="USB_RLY08"/>
+            <!-- USB_RLY08 parameters -->
+            <Parameter name="ComPort" value="COM5" description="COM port used for communication"/>
+            <Parameter name="SwitchOnOff" value="5" description="Number of the relay used to boot or stop the board"/>
+            <Parameter name="UsbHostPcConnect" value="6" description="Number of the relay used to plug or unplug USB on host PC"/>
+            <!-- <Parameter name="WallCharger" value="" description="Number of the relay used to plug or unplug USB on host PC"/> -->
+            <!-- Optional PowerSupply parameter (default : unused)
+                    Using this PowerSupply with relay may damage system : If a device is "ON", the initialization of the IO_CARD will
+                    remove power of the device.
+                    Consider using FT/pnp/TC/SETUP/LAB_SYSTEM_ALL_SWITCH_OFF test case
+              -->
+            <!-- <Parameter name="PowerSupply" value="" description="Number of the relay used to link power supply to DUT"/> -->
+            <!-- Optional DefaultStates parameter (default: all relays are opened)
+                    This parameter indicates for each relay of the card if the relay
+                    is by initially opened or closed when connected to USB Relay card.
+                    This parameter is a string of 8 bits value "b8|b7|b6|b5|b4|b3|b2|b1"
+                    where bi is the bit representing the relay number i.
+                    If the bit is set to 1, the relay is closed.
+                    If the bit is set to 0, the relay is opened.
+                    For example, if relays 1, 2 and 6 are closed,
+                    set default state is "00100011".
+
+                    If DefaultStates is present and has empty value the IO_CARD relays state will remains unchanged
+              -->
+            <!-- <Parameter name="DefaultStates" value="00100000" description="Default relay states"/>  -->
+            <!-- Optional WiringTable parameter (default: all relays are considered normally opened)
+                    This parameter indicates for each relay of the card if the relay
+                    is wired to NO (normally opened) or NC (normally closed) terminal.
+                    This parameter is a string of 8 bits value "b8|b7|b6|b5|b4|b3|b2|b1"
+                    where bi is the bit representing the relay number i.
+                    If the bit is set to 1, the relay is normally closed.
+                    If the bit is set to 0, the relay is normally opened.
+                    For example, if relays 1, 2 and 6 are normally closed,
+                    set wiring table "00100011". -->
+            <Parameter name="WiringTable" value="00100000" description="Wiring Table"/>
+            <!-- Parameters for ACBN | ACBP | ACBE -->
+            <!-- <Parameter name="serialNumber" value=""/> -->
+        </Equipment>
+        <Equipment name="CONFIGURABLE_AP" description="Configurable Access Point">
+          <!-- Model possible values:  DLINK_DAP2553 | CISCO_1250 | CISCO_WAP4410N | CISCO_WRVS4400N -->
+            <Parameter name="Model" value="" description="Model of the equipment to use"/>
+            <Parameter name="IP" value="" description="ip address of the equipment"/>
+            <Parameter name="ConfigurationWaitingTime" value="" description="Time to wait after the configuration step (in second)"/>
+            <Parameter name="username" value="" description="login used for the connection"/>
+            <Parameter name="password" value="" description="password used for the connection"/>
+            <Parameter name="SSID" value="" description="SSID to create"/>
+            <Parameter name="passphrase_WEP64" value="" description="passphrase for WEP 64 bits"/>
+            <Parameter name="passphrase_WEP128" value="" description="passphrase for WEP 128 bits"/>
+            <Parameter name="passphrase_WPA" value="" description="passphrase for WPA"/>
+            <Parameter name="passphrase_WPA2" value="" description="passphrase for WPA2"/>
+            <Parameter name="radiusip" value="" description="IP of the Radius server"/>
+            <Parameter name="radiusport" value="1812" description="Listening port of the radius server"/>
+            <Parameter name="radiussecret" value="" description="Secret password to connect AP to the Radius server"/>
+            <Parameter name="EAP_user" value="" description="login used for EAP encryption"/>
+            <Parameter name="EAP_password" value="" description="password used for EAP encryption"/>
+            <Parameter name="Credential_password" value="" description="credential password for EAP encryption. For ICS, the credential password is also the digit PIN code to lock the phone and the phone should not be initialy locked with a PIN, password nor patern"/>
+            <Parameter name="CA_guard_password" value="" description="ca guard password for EAP encryption"/>
+            <Parameter name="certificate_file" value="" description="Filename of the certificate to be used for WPA-enterprise authentication with EAP method=TLS. This .p12 file should be placed into: [ACS_ROOT_FOLDER]/Executable/_Embedded/CERTIFICATE"/>
+            <Parameter name="Acceptable_DUT_IP" value="" description="IP address used for DUT"/>
+        </Equipment>
+        <Equipment name="GPS_NETWORK_SIMULATOR1" description="Gps Network simulator used for GPS test cases">
+          <!-- Model possible values:  SPIRENT_GSS6700 -->
+            <Parameter name="Model" value="SPIRENT_GSS6700" description="Model of equipment to use. Refer to Equipment_Catalog.xml"/>
+            <Parameter name="Transport" value="SERIAL" description="Transport used to connect the equipment"/>
+            <Parameter name="ComPort" value="" description="COM port used for communication"/>
+            <Parameter name="BaudRate" value="" description="Baud rate used for serial port communication"/>
+            <Parameter name="ConnectionRetry" value="" description="The number of retry in case of SERIAL connection"/>
+        </Equipment>
+        <Equipment name="IPERF_SERVER" description="Computer connected to the local ethernet network (bench)">
+          <Parameter name="Model" value="REMOTE_COMPUTER" description="LOCAL_COMPUTER or REMOTE_COMPUTER (only LOCAL is currently supported)"/>
+            <Parameter name="IP" value="10.102.161.76" description="IP address"/>
+            <Parameter name="Interface" value="" description="Wireless Interface to use"/>
+            <Parameter name="username" value="root" description="login used for the connection"/>
+            <Parameter name="SshPath" value="c:\cygwin\bin\ssh.exe" description="[Optional] full path to local SSH client binary (default 'ssh')"/>
+            <Parameter name="ScpPath" value="c:\cygwin\bin\scp.exe" description="[Optional] full path to local SCP client binary (default 'scp')"/>
+        </Equipment>
+    </Equipments>
+</BenchConfig>
+

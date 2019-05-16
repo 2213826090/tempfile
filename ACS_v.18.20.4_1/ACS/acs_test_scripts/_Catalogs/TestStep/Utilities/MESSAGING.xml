@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestSteps xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../acs/src/_Catalogs/TestStep/teststep.xsd">
+    <TestStep Id="CREATE_SMS" Domain="UTILITIES" SubDomain="MESSAGING" Feature="SMS" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Utilities.Messaging.CreateSMS.CreateSMS</ClassName>
+        <Description>
+            Create a SMS object for future use (need an equipment that support SMS (for instance 8960))
+        </Description>
+        <Environment name="ANY">
+        </Environment>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="EQT" type="STRING" isOptional="false">
+                <Description>The equipment name shall refer to an existing equipment in the Bench config</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+            <Parameter name="SMS_TEXT" type="STRING" isOptional="false">
+                <Description> SMS Body</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+            <Parameter name="PHONE_NUMBER" type="STRING" isOptional="false">
+                <Description> SMS destination number</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+            <Parameter name="TRANSPORTATION" type="STRING" isOptional="false">
+                <Description>Transportation type for SMS</Description>
+                <PossibleValues>GSM;GPRS;CSD;PSD;LCSD</PossibleValues>
+                <DefaultValue>GSM</DefaultValue>
+            </Parameter>
+            <Parameter name="CODING_SCHEME" type="STRING" isOptional="false">
+                <Description>SMS coding scheme</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+            <Parameter name="CONTENT_TYPE" type="STRING" isOptional="false">
+                <Description>SMS coding scheme</Description>
+                <PossibleValues>CTEX;CDAT</PossibleValues>
+                <DefaultValue>CTEX</DefaultValue>
+            </Parameter>
+            <Parameter name="NB_BITS_PER_CHAR" type="STRING" isOptional="false">
+                <Description>Nb bits per SMS character</Description>
+                <PossibleValues/>
+                <DefaultValue>7</DefaultValue>
+            </Parameter>
+            <Parameter name="SMS_TRANSFER_TIMEOUT" type="INTEGER" isOptional="false">
+                <Description>SMS timeout</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+            <Parameter name="SMS_DIRECTION" type="STRING" isOptional="false">
+                <Description>SMS direction</Description>
+                <PossibleValues>MT;MO</PossibleValues>
+                <DefaultValue>MO</DefaultValue>
+            </Parameter>
+            <Parameter name="SMS" type="STRING" isOptional="false">
+                <Description>The name of the SMS object in the context</Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="SEND_SMS" Domain="UTILITIES" SubDomain="MESSAGING" Feature="SMS" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Utilities.Messaging.SendSMS.SendSMS</ClassName>
+        <Description>
+            Send a previously created SMS to/from a 8960
+        </Description>
+        <Environment name="ANY">
+        </Environment>
+        <Parameters>
+            <Parameter name="SMS" type="STRING" isOptional="false">
+                <Description>SMS object to send</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+            <Parameter name="EXPECTED_RESULT" type="STRING" isOptional="true">
+                <Description>Expected result</Description>
+                <PossibleValues>SUCCESS;FAILED</PossibleValues>
+                <DefaultValue>SUCCESS</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="RECEIVE_SMS" Domain="UTILITIES" SubDomain="MESSAGING" Feature="SMS" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Utilities.Messaging.ReceiveSMS.ReceiveSMS</ClassName>
+        <Description>
+            Receive on 8960/phone a SMS previously sent and check if it it is similar to SMS sent
+        </Description>
+        <Environment name="ANY">
+        </Environment>
+        <Parameters>
+            <Parameter name="SMS" type="STRING" isOptional="false">
+                <Description>SMS object to receive</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+</TestSteps>

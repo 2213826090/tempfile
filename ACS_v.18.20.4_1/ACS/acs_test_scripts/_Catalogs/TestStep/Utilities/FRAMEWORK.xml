@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestSteps xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../acs/src/_Catalogs/TestStep/teststep.xsd">
+    <TestStep Id="STORE_STRING_IN_CTX" Domain="UTILITIES" SubDomain="FRAMEWORK" Feature="" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Utilities.Framework.StoreStringInContext.StoreStringInContext</ClassName>
+        <Description>Add input string into context</Description>
+        <Environment name="ANY"/>
+        <Parameters>
+            <Parameter name="INPUT" type="STRING" isOptional="false">
+                <Description>String to add into context</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+            <Parameter name="OUTPUT" type="CONTEXT" isOptional="false">
+                <Description>
+                    <Key name="STORED_STRING" type="STRING">String copied from INPUT</Key>
+                </Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="EXEC_SCRIPT" Domain="UTILITIES" SubDomain="FRAMEWORK" Feature="" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Utilities.Framework.ExecScript.ExecScript</ClassName>
+        <Description>Execute an external python script</Description>
+        <Environment name="ANY"/>
+        <Parameters>
+            <Parameter name="SCRIPT_PATH" type="STRING" isOptional="false">
+                <Description>Script's path, absolute, or relative to ExecutionConfig folder,
+                    or relative to test case's folder</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="SEND_ADDITIONALS_TO_TCR" Domain="UTILITIES" SubDomain="FRAMEWORK" Feature="" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Utilities.Framework.SendAdditionalDataToTcr.SendAdditionalDataToTcr</ClassName>
+        <Description>Send test case additional data to reporting tool TCR</Description>
+        <Environment name="ANY"/>
+        <Parameters>
+            <Parameter name="NODE_NAME" type="STRING" isOptional="false">
+                <Description>Name to give to the node pushed</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+            <Parameter name="DATA" type="STRING" isOptional="false">
+                <Description>Data to push to TCR</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+            <Parameter name="UNIT" type="STRING" isOptional="false">
+                <Description>unit of the pushed value</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="ADD_METRIC_VALUE_TO_TCR" Domain="UTILITIES" SubDomain="FRAMEWORK" Feature="" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Utilities.Framework.AddMetricValueToTcr.AddMetricValueToTcr</ClassName>
+        <Description>Add value to metric node pushed to TCR</Description>
+        <Environment name="ANY"/>
+        <Parameters>
+            <Parameter name="METRICS_NODE" type="STRING" isOptional="false">
+                <Description>Metric node to store or already stored in the context</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+            <Parameter name="DATA" type="STRING" isOptional="false">
+                <Description>Data to push to TCR</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+            <Parameter name="UNIT" type="STRING" isOptional="false">
+                <Description>unit of the pushed data</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="START_TCR_TC_ITERATION" Domain="UTILITIES" SubDomain="FRAMEWORK" Feature="" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Utilities.Framework.StartTcrTcIteration.StartTcrTcIteration</ClassName>
+        <Description>Start test case iteration on TCR reporting tool if several iterations are asked</Description>
+        <Environment name="ANY"/>
+        <Parameters>
+            <Parameter name="ITERATION_NAME" type="STRING" isOptional="false">
+                <Description>Name to give to the test case iteration</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="STOP_TCR_TC_ITERATION" Domain="UTILITIES" SubDomain="FRAMEWORK" Feature="" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Utilities.Framework.StopTcrTcIteration.StopTcrTcIteration</ClassName>
+        <Description>Stop test case iteration on TCR reporting tool if several iterations are asked</Description>
+        <Environment name="ANY"/>
+        <Parameters>
+            <Parameter name="VERDICT" type="STRING" isOptional="false">
+                <Description>Verdict of the test case iteration</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+</TestSteps>

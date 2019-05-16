@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="13.37">
+  <UseCase>LIVE_COMPONENT_GTESTER_MTS</UseCase>
+  <Description>GTester Use Case</Description>
+  <b2bIteration>1</b2bIteration>
+  <b2bContinuousMode>True</b2bContinuousMode>
+  <TcExpectedResult>PASS</TcExpectedResult>
+  <Parameters>
+    <!--
+        The timeout value to use when issuing
+        ADB shell commands
+    -->
+    <Parameter>
+        <Name>COMMAND_TIMEOUT</Name>
+        <Value>240</Value>
+    </Parameter>
+    <!-- Optional -->
+    <Parameter>
+        <Name>COMMAND</Name>
+        <Value>/system/bin/mts-test -p /test-mts/file/integrity</Value>
+    </Parameter>
+  </Parameters>
+</TestCase>

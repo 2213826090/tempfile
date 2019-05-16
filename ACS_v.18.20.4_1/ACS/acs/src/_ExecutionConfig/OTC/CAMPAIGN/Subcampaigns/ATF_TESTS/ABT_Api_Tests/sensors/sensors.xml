@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<Campaign>
+      <Parameters>
+            <Parameter isControlledPSUsed="False"/>
+            <Parameter isIoCardUsed="False"/>
+            <Parameter skipBootOnPowerCycle="False"/>
+            <Parameter bootRetryNumber="0"/>
+            <Parameter runHookScripts="False"/>
+            <Parameter powerCycleBetweenTC="False"/>
+            <Parameter powerCycleOnFailure="False"/>
+            <Parameter finalDutState="NoChange"/>
+            <Parameter stopCampaignOnCriticalFailure="False"/>
+            <Parameter stopCampaignOnFirstFailure="False"/>
+            <Parameter loggingLevel="debug"/>
+            <Parameter CampaignType="Other"/>
+      </Parameters>
+      <TestCases>
+            <TestCase Id="../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/sensors/testAccelerometerPresent"/>
+            <TestCase Id="../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/sensors/testLiniarAccelerationSensorPresent"/>
+            <TestCase Id="../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/sensors/testMagneticFieldSensorPresent"/>
+            <TestCase Id="../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/sensors/testRelativeHumiditySensorPresent"/>
+            <TestCase Id="../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/sensors/testRotationVectorSensorPresent"/>
+            <TestCase Id="../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/sensors/testPressureSensorPresent"/>
+            <TestCase Id="../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/sensors/testAmbientTemperatureSensorPresent"/>
+            <TestCase Id="../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/sensors/testGyroscopePresent"/>
+            <TestCase Id="../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/sensors/testGravitySensorPresent"/>
+            <TestCase Id="../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/sensors/testLightSensorPresent"/>
+      </TestCases>
+</Campaign>

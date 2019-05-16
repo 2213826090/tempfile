@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="13.41">
+    <UseCase>TEST_STEP_ENGINE</UseCase>
+    <Description></Description>
+    <b2bIteration>5</b2bIteration>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <TcMaxAttempt>1</TcMaxAttempt>
+    <TcAcceptanceCriteria>1</TcAcceptanceCriteria>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters>
+        <Parameter>
+            <Name>KPI_RSSI_MIN</Name>
+            <Value>-45</Value>
+        </Parameter>
+        <Parameter>
+            <Name>KPI_RSSI_MAX</Name>
+            <Value>-40</Value>
+        </Parameter>
+        <Parameter>
+            <Name>KPI_WIFI_CHANNEL</Name>
+            <Value>1</Value>
+        </Parameter>
+        <Parameter>
+            <Name>KPI_SECURITY</Name>
+            <Value>WPA2-PSK-AES</Value>
+        </Parameter>
+        <Parameter>
+            <Name>KPI_STANDARD</Name>
+            <Value>n2.4G</Value>
+        </Parameter>
+        <Parameter>
+            <Name>KPI_BANDWIDTH</Name>
+            <Value>20</Value>
+        </Parameter>
+        <Parameter>
+            <Name>KPI_AP_DTIM</Name>
+            <Value>3</Value>
+        </Parameter>
+        <Parameter>
+            <Name>KPI_REGULATORY_DOMAIN</Name>
+            <Value>FR</Value>
+        </Parameter>
+    </Parameters>
+    <TestSteps>
+        <Include Src="ST/cws/TSS/Common/ST_CWS_COMMON.xml"/>
+        <Include Src="ST/cws/TSS/WiFi/ST_CWS_WIFI_COMMON.xml"/>
+        <Include Src="ST/cws/TSS/WiFi/ST_CWS_WIFI_AP.xml"/>
+        <Include Src="ST/cws/TSS/WiFi/ST_CWS_WIFI_KPI.xml"/>
+
+        <TestStepSet Id="DelayedWiFiOn">
+            <TestStep Id="SUSPEND" DURATION_IN_SEC="5.0"/>
+            <TestStep Id="WIFI_SET_POWER" DEVICE="PHONE1" POWER="on"/>
+        </TestStepSet>
+
+        <Setup>
+            <!-- AUTOMATION - Set default configuration -->
+            <TestStep Id="AP_WIFI_LOAD_CONFIG_FILE" EQT="CONFIGURABLE_AP1" KPI_TEST="ST_PERF_CON_TIME_AP_WLAN_WPA2_CONNECTED"/>
+            <TestStep SetId="WiFiKPI802.11NSetup"/>
+            <TestStep Id="GET_WIFI_CONNECTION_TARGETS" DEVICE="PHONE1" TARGET_CONNECTION="CONNECTION_DATA"/>
+            <TestStep Id="WIFI_SET_POWER" DEVICE="PHONE1" POWER="off"/>
+        </Setup>
+        <RunTest>
+            <!-- AUTOMATION - Run KPI Time -->
+            <Fork Id="RadioOnAndCompute">
+                <TestStep Id="COMPUTE_WIFI_RECONNECTION_TIME_WITH_LOGS" DEVICE="PHONE1" TIMEOUT="60" SAVE_WIFI_RECONNECTION_TIME="DUT_WIFI_RECONNECTION_TIME"/>
+                <TestStep SetId="DelayedWiFiOn"/>
+            </Fork>
+            <TestStep Id="WIFI_GET_RSSI" DEVICE="PHONE1" SSID="FROM_BENCH:CONFIGURABLE_AP1:SSID" SAVE_WIFI_RSSI="DUT_RSSI_VALUE"/>
+            <TestStep Id="WIFI_SET_POWER" DEVICE="PHONE1" POWER="off"/>
+            <!-- AUTOMATION - Save results in a specific file -->
+            <TestStep Id="SAVE_KPI_MEASURE" TARGET_VALUE="FROM_CTX:CONNECTION_DATA:FAILURE_VALUE"
+                      TARGET_UNIT="FROM_CTX:CONNECTION_DATA:TARGET_UNIT"
+                      MEASURE_VALUE="FROM_CTX:DUT_WIFI_RECONNECTION_TIME"
+                      MEASURE_UNIT="s" WIFI_RSSI="FROM_CTX:DUT_RSSI_VALUE"/>
+            <TestStep Id="COMPARE" FIRST="s" SECOND="FROM_CTX:CONNECTION_DATA:TARGET_UNIT" OPERATOR="LESS_OR_EQUAL" PASS_IF="true"/>
+            <TestStep Id="COMPARE" FIRST="FROM_CTX:DUT_WIFI_RECONNECTION_TIME" SECOND="FROM_CTX:CONNECTION_DATA:FAILURE_VALUE" OPERATOR="LESS_OR_EQUAL" PASS_IF="true"/>
+        </RunTest>
+        <TearDown>
+            <!-- AUTOMATION - Reset configuration -->
+            <TestStep SetId="WiFiKPI802.11NTeardown"/>
+        </TearDown>
+    </TestSteps>
+</TestCase>

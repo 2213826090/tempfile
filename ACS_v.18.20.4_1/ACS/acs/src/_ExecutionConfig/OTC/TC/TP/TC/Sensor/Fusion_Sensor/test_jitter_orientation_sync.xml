@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<TestCase>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Discription> 
+&lt;div align=&quot;left&quot; style=&quot;min-height:9pt&quot;&gt;
+&lt;font face=&quot;Arial&quot; color=&quot;#ff0000&quot;&gt;&lt;span style=&quot;font-size:8pt&quot;&gt;&lt;b&gt;&lt;u&gt;Description:&lt;/u&gt;&lt;/b&gt;&lt;/span&gt;&lt;/font&gt;
+&lt;font face=&quot;Arial&quot;&gt;&lt;span style=&quot;font-size:8pt&quot;&gt;&lt;i&gt; (Objective of what you are trying to test.)&lt;/i&gt;&lt;/span&gt;&lt;/font&gt;
+&lt;/div&gt; 
+&lt;font face=&quot;Arial&quot;&gt;&lt;span style=&quot;font-size:8pt&quot;&gt;&lt;br /&gt;The Intel Android Platform shall report event times in nanoseconds and be synchronized with the system clock (error should be &amp;lt; 100ms).&amp;nbsp;&lt;/span&gt;&lt;/font&gt; 
+&lt;div align=&quot;left&quot; style=&quot;min-height:9pt&quot;&gt;&lt;/div&gt; 
+&lt;div align=&quot;left&quot; style=&quot;min-height:9pt&quot;&gt;&lt;/div&gt;  
+</Discription>
+    <Domain>Sensor</Domain>
+    <Phase>CORE</Phase>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <Type>FUNCTIONAL</Type>
+    <UseCase>PY_UNIT</UseCase>
+    <b2bIteration>1</b2bIteration>
+    <Parameters>
+        <Parameter>
+            <Name>HpalmName</Name>
+            <Value>jitter_orientation_sync.jitter_orientation_sync.test_jitter_orientation_sync</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TEST_DATA_ROOT</Name>
+            <Value>testplan/Sensor</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TEST_CASE</Name>
+            <Value>tests.Sensor.Fusion_Sensor.jitter_orientation_sync.jitter_orientation_sync.test_jitter_orientation_sync</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

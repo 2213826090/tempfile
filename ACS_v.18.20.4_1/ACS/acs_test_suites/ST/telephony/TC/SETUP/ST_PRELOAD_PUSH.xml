@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase>
+  <UseCase>EXEC</UseCase>
+  <Description>General execution use case</Description>
+  <b2bIteration>1</b2bIteration>
+  <b2bContinuousMode>True</b2bContinuousMode>  
+  <Parameters>
+        <!-- ACTION 1 -->
+		<Parameter>
+            <!-- Action to be run, should be in the executable path of the system -->
+            <!-- (mandatory) -->
+            <!-- For this template, we are running windows only command-->
+            <Name>RUN_CMD1</Name>
+            <Value>adb shell rm -r /sdcard/*</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Timeout action in second -->
+            <!-- (optional, default value = 5)-->
+            <Name>RUN_TIMEOUT1</Name>
+            <Value>300</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Expected result int (exec return code) or string (that will be search in the stdout) -->
+            <!-- (optional, default value = 0)-->
+            <Name>RUN_EXPECT_RESULT1</Name>
+            <Value>0</Value>
+        </Parameter>
+    
+		 <!-- ACTION 2 -->		
+        <Parameter>
+            <Name>RUN_CMD2</Name>
+            <Value>adb shell mkdir /sdcard/acs_media</Value>
+        </Parameter>
+        <Parameter>
+            <Name>RUN_TIMEOUT2</Name>
+            <Value>300</Value>
+        </Parameter>
+        <Parameter>
+            <Name>RUN_EXPECT_RESULT2</Name>
+            <Value>0</Value>
+        </Parameter>
+		
+		<!-- ACTION 3 -->		
+        <Parameter>
+            <Name>RUN_CMD3</Name>
+            <Value>adb shell mkdir /sdcard/acs_media/image</Value>
+        </Parameter>
+        <Parameter>
+            <Name>RUN_TIMEOUT3</Name>
+            <Value>300</Value>
+        </Parameter>
+        <Parameter>
+            <Name>RUN_EXPECT_RESULT3</Name>
+            <Value>0</Value>
+        </Parameter>
+		
+		<!-- ACTION 4 -->		
+        <Parameter>
+            <Name>RUN_CMD4</Name>
+            <Value>adb shell mkdir /sdcard/acs_media/video</Value>
+        </Parameter>
+        <Parameter>
+            <Name>RUN_TIMEOUT4</Name>
+            <Value>300</Value>
+        </Parameter>
+        <Parameter>
+            <Name>RUN_EXPECT_RESULT4</Name>
+            <Value>0</Value>
+        </Parameter>
+		
+		<!-- ACTION 5 -->		
+        <Parameter>
+            <Name>RUN_CMD5</Name>
+            <Value>adb shell mkdir /sdcard/acs_media/audio</Value>
+        </Parameter>
+        <Parameter>
+            <Name>RUN_TIMEOUT5</Name>
+            <Value>300</Value>
+        </Parameter>
+        <Parameter>
+            <Name>RUN_EXPECT_RESULT5</Name>
+            <Value>0</Value>
+        </Parameter>
+		
+		<!-- ACTION 6 -->		
+        <Parameter>
+            <Name>RUN_CMD6</Name>
+            <Value>adb push _ExecutionConfig/ST/telephony/preload/contacts/contact_x50.vcf /sdcard/</Value>
+        </Parameter>
+        <Parameter>
+            <Name>RUN_TIMEOUT6</Name>
+            <Value>300</Value>
+        </Parameter>
+        <Parameter>
+            <Name>RUN_EXPECT_RESULT6</Name>
+            <Value>0</Value>
+        </Parameter>
+		
+		<!-- ACTION 7 -->		
+        <Parameter>
+            <Name>RUN_CMD7</Name>
+            <Value>adb push _ExecutionConfig/ST/Telephony/preload/image /sdcard/acs_media/image/</Value>
+        </Parameter>
+        <Parameter>
+            <Name>RUN_TIMEOUT7</Name>
+            <Value>300</Value>
+        </Parameter>
+        <Parameter>
+            <Name>RUN_EXPECT_RESULT7</Name>
+            <Value>0</Value>
+        </Parameter>
+		
+		<!-- ACTION 8 -->		
+        <Parameter>
+            <Name>RUN_CMD8</Name>
+            <Value>adb push _ExecutionConfig/ST/Telephony/preload/video /sdcard/acs_media/video/</Value>
+        </Parameter>
+        <Parameter>
+            <Name>RUN_TIMEOUT8</Name>
+            <Value>300</Value>
+        </Parameter>
+        <Parameter>
+            <Name>RUN_EXPECT_RESULT8</Name>
+            <Value>0</Value>
+        </Parameter>
+		
+		<!-- ACTION 9 -->		
+        <Parameter>
+            <Name>RUN_CMD9</Name>
+            <Value>adb push _ExecutionConfig/ST/Telephony/preload/audio /sdcard/acs_media/audio/</Value>
+        </Parameter>
+        <Parameter>
+            <Name>RUN_TIMEOUT9</Name>
+            <Value>600</Value>
+        </Parameter>
+        <Parameter>
+            <Name>RUN_EXPECT_RESULT9</Name>
+            <Value>0</Value>
+        </Parameter>
+
+		<!-- ACTION 10 -->		
+        <Parameter>
+            <Name>RUN_CMD10</Name>
+            <Value>adb root</Value>
+        </Parameter>
+        <Parameter>
+            <Name>RUN_TIMEOUT10</Name>
+            <Value>30</Value>
+        </Parameter>
+             <!-- ACTION 11 -->
+        <Parameter>
+            <Name>RUN_CMD11</Name>
+            <Value>adb shell setprop persist.core.enabled 1</Value>
+        </Parameter>
+        <Parameter>
+            <Name>RUN_TIMEOUT11</Name>
+            <Value>300</Value>
+        </Parameter>
+	<Parameter>
+            <Name>RUN_CMD12</Name>
+            <Value>adb shell setprop persist.sys.language en</Value>
+        </Parameter>
+        <Parameter>
+            <Name>RUN_TIMEOUT12</Name>
+            <Value>300</Value>
+        </Parameter>
+	<Parameter>
+            <Name>RUN_CMD13</Name>
+            <Value>adb shell setprop camera.hal.debug 1</Value>
+        </Parameter>
+        <Parameter>
+            <Name>RUN_TIMEOUT13</Name>
+            <Value>300</Value>
+        </Parameter>
+  </Parameters>  
+</TestCase>

@@ -1,0 +1,392 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<Sequence>
+<!--     COMMON_2G Parameters for 2G  -->
+    <GPIBCommand type="COMMON_2G" equipment="NETWORK_SIMULATOR2" command="CALL:BCH:SCEL EGPRS" />
+    <GPIBCommand type="COMMON_2G" equipment="NETWORK_SIMULATOR2" command="CALL:PDTCH:MCSCheme:UPLink MCS9" />
+    <GPIBCommand type="COMMON_2G" equipment="NETWORK_SIMULATOR2" command="CALL:PDTCH:MSLot:CONFig D5U1" />
+    <GPIBCommand type="COMMON_2G" equipment="NETWORK_SIMULATOR2" command="CALL:CELL:DTMode OFF" />
+    <GPIBCommand type="COMMON_2G" equipment="NETWORK_SIMULATOR2" command="CALL:TBFLow:UPLink:EXTended ON" />
+    <GPIBCommand type="COMMON_2G" equipment="NETWORK_SIMULATOR2" command="CALL:CELL:NMOPERATION 2" />
+    <GPIBCommand type="COMMON_2G" equipment="NETWORK_SIMULATOR2" command="CALL:BCHannel:NCOrder 0" />
+    <GPIBCommand type="COMMON_2G" equipment="NETWORK_SIMULATOR2" command="CALL:MS:PATTach ON" />
+    <GPIBCommand type="COMMON_2G" equipment="NETWORK_SIMULATOR2" command="CALL:IATTach ON" />
+    <GPIBCommand type="COMMON_2G" equipment="NETWORK_SIMULATOR2" command="CALL:BCH:CID 2" />
+    <GPIBCommand type="COMMON_2G" equipment="NETWORK_SIMULATOR2" command="CALL:PPR:PDPC:NIN OFF" />
+    <GPIBCommand type="COMMON_2G" equipment="NETWORK_SIMULATOR2" command="CALL:TCHANNEL:CMODe:LSPeech:CHANnel EFS" />
+    <GPIBCommand type="COMMON_2G" equipment="NETWORK_SIMULATOR2" command="CALL:PDTCH:TBFLow:DOWNlink:DELayed 2.6" />
+    <GPIBCommand type="COMMON_2G" equipment="NETWORK_SIMULATOR2" command="CALL:PDTCH:TBFLow:UPLink:EXTended:DURation 1" />
+    <GPIBCommand type="COMMON_2G" equipment="NETWORK_SIMULATOR2" command="CALL:UTRan:MPDescr INCLude" />
+    <GPIBCommand type="COMMON_2G" equipment="NETWORK_SIMULATOR2" command="CALL:UTRan:MPDescr:TGSPriority ON" />
+    <GPIBCommand type="COMMON_2G" equipment="NETWORK_SIMULATOR2" command="CALL:UTRan:MPDescr:FDDinfo INCLude" />
+    <GPIBCommand type="COMMON_2G" equipment="NETWORK_SIMULATOR2" command="CALL:UTRan:MPDescr:FDDinfo:RQUantity 1" />
+    <GPIBCommand type="COMMON_2G" equipment="NETWORK_SIMULATOR2" command="CALL:UTRan:MPDescr:FDDinfo:RTHReshold 0" />
+    <GPIBCommand type="COMMON_2G" equipment="NETWORK_SIMULATOR2" command="CALL:UTRan:MPDescr:FDDinfo:MREPorting 0" />
+    <GPIBCommand type="COMMON_2G" equipment="NETWORK_SIMULATOR2" command="CALL:UTRan:MPDescr:FDDinfo:QMINimum 5" />
+    <GPIBCommand type="COMMON_2G" equipment="NETWORK_SIMULATOR2" command="CALL:UTRan:MPDescr:FDDinfo:QOFFset 0" />
+    <GPIBCommand type="COMMON_2G" equipment="NETWORK_SIMULATOR2" command="CALL:UTRan:MPDescr:QSI 7" />
+    <GPIBCommand type="COMMON_2G" equipment="NETWORK_SIMULATOR2" command="CALL:UTRan:MPDescr:QSC:INITial 0" />
+    <GPIBCommand type="COMMON_2G" equipment="NETWORK_SIMULATOR2" command="CALL:UTRan:MPDescr:QSP 7" />
+    <GPIBCommand type="COMMON_2G" equipment="NETWORK_SIMULATOR2" command="CALL:UTRan:MPDescr:QSC 7" />
+    <GPIBCommand type="COMMON_2G" equipment="NETWORK_SIMULATOR2" command="SYSTem:FATal:ERRor:RESTart ON" />
+
+<!--     -   Europe cell 1 for 2G -->
+    <GPIBCommand type="EGSM" equipment="NETWORK_SIMULATOR2" command="CALL:CELL:BAND EGSM" />
+    <GPIBCommand type="EGSM" equipment="NETWORK_SIMULATOR2" command="CALL:CELL:BINDicator DCS" />
+    <GPIBCommand type="EGSM" equipment="NETWORK_SIMULATOR2" command="CALL:CELL:BCHannel:ARFCn:EGSM 20" />
+    <GPIBCommand type="EGSM" equipment="NETWORK_SIMULATOR2" command="CALL:PDTCH:ARFCn 32" />
+    <GPIBCommand type="EGSM" equipment="NETWORK_SIMULATOR2" command="CALL:CELL:BA:TABLe:NCELl1 ON" />
+    <GPIBCommand type="EGSM" equipment="NETWORK_SIMULATOR2" command="CALL:CELL:BA:TABLe:NCELl1:ARFCn 20" />
+    <GPIBCommand type="EGSM" equipment="NETWORK_SIMULATOR2" command="CALL:CELL:BA:TABLE:NCELL1:NCCODE 1" />
+    <GPIBCommand type="EGSM" equipment="NETWORK_SIMULATOR2" command="CALL:CELL:BA:TABLE:NCELL1:BCCODE 5" />
+    <GPIBCommand type="EGSM" equipment="NETWORK_SIMULATOR2" command="CALL:CELL:BA:TABLe:NCELl2 ON" />
+    <GPIBCommand type="EGSM" equipment="NETWORK_SIMULATOR2" command="CALL:CELL:BA:TABLe:NCELl2:ARFCn 50" />
+    <GPIBCommand type="EGSM" equipment="NETWORK_SIMULATOR2" command="CALL:CELL:BA:TABLE:NCELL2:NCCODE 1" />
+    <GPIBCommand type="EGSM" equipment="NETWORK_SIMULATOR2" command="CALL:CELL:BA:TABLE:NCELL2:BCCODE 5" />
+    <GPIBCommand type="EGSM" equipment="NETWORK_SIMULATOR2" command="CALL:CELL:BA:TABLe:NCELl3 ON" />
+    <GPIBCommand type="EGSM" equipment="NETWORK_SIMULATOR2" command="CALL:CELL:BA:TABLe:NCELl3:ARFCn 512" />
+    <GPIBCommand type="EGSM" equipment="NETWORK_SIMULATOR2" command="CALL:CELL:BA:TABLE:NCELL3:NCCODE 1" />
+    <GPIBCommand type="EGSM" equipment="NETWORK_SIMULATOR2" command="CALL:CELL:BA:TABLE:NCELL3:BCCODE 5" />
+    <GPIBCommand type="EGSM" equipment="NETWORK_SIMULATOR2" command="CALL:CELL:BA:TABLe:NCELl4 ON" />
+    <GPIBCommand type="EGSM" equipment="NETWORK_SIMULATOR2" command="CALL:CELL:BA:TABLe:NCELl4:ARFCn 550" />
+    <GPIBCommand type="EGSM" equipment="NETWORK_SIMULATOR2" command="CALL:CELL:BA:TABLE:NCELL4:NCCODE 1" />
+    <GPIBCommand type="EGSM" equipment="NETWORK_SIMULATOR2" command="CALL:CELL:BA:TABLE:NCELL4:BCCODE 5" />
+    <GPIBCommand type="EGSM" equipment="NETWORK_SIMULATOR2" command="CALL:UTRan:FDDuplex:TABLe 10700,1,1,1,3000,1,1,1" />
+<!--     -   Europe cell 1 Release 8 capable for 2G -->
+    <GPIBCommand type="EGSM_R8" equipment="NETWORK_SIMULATOR2" command="CALL:SCELl:PPARameters:PRIority 4" />
+    <!--    LTE Neighbour Cells EU Band 1,3 & 7  -->
+    <GPIBCommand type="EGSM_R8" equipment="NETWORK_SIMULATOR2" command="CALL:EUTR:TABL 300,1,3,1,6,4,1,2,1,-100,1575,1,3,1,6,4,1,2,1,-100,3100,1,3,1,6,4,1,2,1,-100" />
+
+<!-- -   Europe cell 2 for 2G -->
+    <GPIBCommand type="DCS" equipment="NETWORK_SIMULATOR2" command="CALL:CELL:BAND DCS" />
+    <GPIBCommand type="DCS" equipment="NETWORK_SIMULATOR2" command="CALL:CELL:BINDicator DCS" />
+    <GPIBCommand type="DCS" equipment="NETWORK_SIMULATOR2" command="CALL:CELL:BCHannel:ARFCn:DCS 512" />
+    <GPIBCommand type="DCS" equipment="NETWORK_SIMULATOR2" command="CALL:PDTCH:ARFCn 698" />
+    <GPIBCommand type="DCS" equipment="NETWORK_SIMULATOR2" command="CALL:CELL:BA:TABLe:NCELl1 ON" />
+    <GPIBCommand type="DCS" equipment="NETWORK_SIMULATOR2" command="CALL:CELL:BA:TABLe:NCELl1:ARFCn 20" />
+    <GPIBCommand type="DCS" equipment="NETWORK_SIMULATOR2" command="CALL:CELL:BA:TABLE:NCELL1:NCCODE 1" />
+    <GPIBCommand type="DCS" equipment="NETWORK_SIMULATOR2" command="CALL:CELL:BA:TABLE:NCELL1:BCCODE 5" />
+    <GPIBCommand type="DCS" equipment="NETWORK_SIMULATOR2" command="CALL:CELL:BA:TABLe:NCELl2 ON" />
+    <GPIBCommand type="DCS" equipment="NETWORK_SIMULATOR2" command="CALL:CELL:BA:TABLe:NCELl2:ARFCn 50" />
+    <GPIBCommand type="DCS" equipment="NETWORK_SIMULATOR2" command="CALL:CELL:BA:TABLE:NCELL2:NCCODE 1" />
+    <GPIBCommand type="DCS" equipment="NETWORK_SIMULATOR2" command="CALL:CELL:BA:TABLE:NCELL2:BCCODE 5" />
+    <GPIBCommand type="DCS" equipment="NETWORK_SIMULATOR2" command="CALL:CELL:BA:TABLe:NCELl3 ON" />
+    <GPIBCommand type="DCS" equipment="NETWORK_SIMULATOR2" command="CALL:CELL:BA:TABLe:NCELl3:ARFCn 512" />
+    <GPIBCommand type="DCS" equipment="NETWORK_SIMULATOR2" command="CALL:CELL:BA:TABLE:NCELL3:NCCODE 1" />
+    <GPIBCommand type="DCS" equipment="NETWORK_SIMULATOR2" command="CALL:CELL:BA:TABLE:NCELL3:BCCODE 5" />
+    <GPIBCommand type="DCS" equipment="NETWORK_SIMULATOR2" command="CALL:CELL:BA:TABLe:NCELl4 ON" />
+    <GPIBCommand type="DCS" equipment="NETWORK_SIMULATOR2" command="CALL:CELL:BA:TABLe:NCELl4:ARFCn 550" />
+    <GPIBCommand type="DCS" equipment="NETWORK_SIMULATOR2" command="CALL:CELL:BA:TABLE:NCELL4:NCCODE 1" />
+    <GPIBCommand type="DCS" equipment="NETWORK_SIMULATOR2" command="CALL:CELL:BA:TABLE:NCELL4:BCCODE 5" />
+    <GPIBCommand type="DCS" equipment="NETWORK_SIMULATOR2" command="CALL:UTRan:FDDuplex:TABLe 10700,1,1,1,3000,1,1,1" />
+<!--     -   Europe cell 2 Release 8 capable for 2G -->
+    <GPIBCommand type="DCS_R8" equipment="NETWORK_SIMULATOR2" command="CALL:SCELl:PPARameters:PRIority 4" />
+    <!--    LTE Neighbour Cells EU Band 1,3 & 7  -->
+    <GPIBCommand type="DCS_R8" equipment="NETWORK_SIMULATOR2" command="CALL:EUTR:TABL 300,1,3,1,6,4,1,2,1,-100,1575,1,3,1,6,4,1,2,1,-100,3100,1,3,1,6,4,1,2,1,-100" />
+
+<!-- -   US cell 3 for 2G -->
+    <GPIBCommand type="PCS" equipment="NETWORK_SIMULATOR2" command="CALL:CELL:BAND PCS" />
+    <GPIBCommand type="PCS" equipment="NETWORK_SIMULATOR2" command="CALL:CELL:BINDicator PCS" />
+    <GPIBCommand type="PCS" equipment="NETWORK_SIMULATOR2" command="CALL:CELL:BCHannel:ARFCn:PCS 540" />
+    <GPIBCommand type="PCS" equipment="NETWORK_SIMULATOR2" command="CALL:PDTCH:ARFCn 698" />
+    <GPIBCommand type="PCS" equipment="NETWORK_SIMULATOR2" command="CALL:CELL:BA:TABLe:NCELl1 ON" />
+    <GPIBCommand type="PCS" equipment="NETWORK_SIMULATOR2" command="CALL:CELL:BA:TABLe:NCELl1:ARFCn 128" />
+    <GPIBCommand type="PCS" equipment="NETWORK_SIMULATOR2" command="CALL:CELL:BA:TABLE:NCELL1:NCCODE 1" />
+    <GPIBCommand type="PCS" equipment="NETWORK_SIMULATOR2" command="CALL:CELL:BA:TABLE:NCELL1:BCCODE 5" />
+    <GPIBCommand type="PCS" equipment="NETWORK_SIMULATOR2" command="CALL:CELL:BA:TABLe:NCELl2 ON" />
+    <GPIBCommand type="PCS" equipment="NETWORK_SIMULATOR2" command="CALL:CELL:BA:TABLe:NCELl2:ARFCn 140" />
+    <GPIBCommand type="PCS" equipment="NETWORK_SIMULATOR2" command="CALL:CELL:BA:TABLE:NCELL2:NCCODE 1" />
+    <GPIBCommand type="PCS" equipment="NETWORK_SIMULATOR2" command="CALL:CELL:BA:TABLE:NCELL2:BCCODE 5" />
+    <GPIBCommand type="PCS" equipment="NETWORK_SIMULATOR2" command="CALL:CELL:BA:TABLe:NCELl3 ON" />
+    <GPIBCommand type="PCS" equipment="NETWORK_SIMULATOR2" command="CALL:CELL:BA:TABLe:NCELl3:ARFCn 540" />
+    <GPIBCommand type="PCS" equipment="NETWORK_SIMULATOR2" command="CALL:CELL:BA:TABLE:NCELL3:NCCODE 1" />
+    <GPIBCommand type="PCS" equipment="NETWORK_SIMULATOR2" command="CALL:CELL:BA:TABLE:NCELL3:BCCODE 5" />
+    <GPIBCommand type="PCS" equipment="NETWORK_SIMULATOR2" command="CALL:CELL:BA:TABLe:NCELl4 ON" />
+    <GPIBCommand type="PCS" equipment="NETWORK_SIMULATOR2" command="CALL:CELL:BA:TABLe:NCELl4:ARFCn 550" />
+    <GPIBCommand type="PCS" equipment="NETWORK_SIMULATOR2" command="CALL:CELL:BA:TABLE:NCELL4:NCCODE 1" />
+    <GPIBCommand type="PCS" equipment="NETWORK_SIMULATOR2" command="CALL:CELL:BA:TABLE:NCELL4:BCCODE 5" />
+    <GPIBCommand type="PCS" equipment="NETWORK_SIMULATOR2" command="CALL:UTRan:FDDuplex:TABLe 1700,1,1,1,9700,1,1,1,4400,1,1,1" />
+<!--     -   US cell 3 Release 8 capable for 2G -->
+    <GPIBCommand type="PCS_R8" equipment="NETWORK_SIMULATOR2" command="CALL:SCELl:PPARameters:PRIority 4" />
+    <!--    LTE Neighbour Cells US Band 4 & 17  -->
+    <GPIBCommand type="PCS_R8" equipment="NETWORK_SIMULATOR2" command="CALL:EUTR:TABL 2175,1,3,1,6,4,1,2,1,-100,5790,1,3,1,6,4,1,2,1,-100" />
+
+<!-- -   US cell 4 for 2G -->
+    <GPIBCommand type="GSM850" equipment="NETWORK_SIMULATOR2" command="CALL:CELL:BAND GSM850" />
+    <GPIBCommand type="GSM850" equipment="NETWORK_SIMULATOR2" command="CALL:CELL:BINDicator PCS" />
+    <GPIBCommand type="GSM850" equipment="NETWORK_SIMULATOR2" command="CALL:CELL:BCHannel:ARFCn:GSM850 160" />
+    <GPIBCommand type="GSM850" equipment="NETWORK_SIMULATOR2" command="CALL:PDTCH:ARFCn 160" />
+    <GPIBCommand type="GSM850" equipment="NETWORK_SIMULATOR2" command="CALL:CELL:BA:TABLe:NCELl1 ON" />
+    <GPIBCommand type="GSM850" equipment="NETWORK_SIMULATOR2" command="CALL:CELL:BA:TABLe:NCELl1:ARFCn 128" />
+    <GPIBCommand type="GSM850" equipment="NETWORK_SIMULATOR2" command="CALL:CELL:BA:TABLE:NCELL1:NCCODE 1" />
+    <GPIBCommand type="GSM850" equipment="NETWORK_SIMULATOR2" command="CALL:CELL:BA:TABLE:NCELL1:BCCODE 5" />
+    <GPIBCommand type="GSM850" equipment="NETWORK_SIMULATOR2" command="CALL:CELL:BA:TABLe:NCELl2 ON" />
+    <GPIBCommand type="GSM850" equipment="NETWORK_SIMULATOR2" command="CALL:CELL:BA:TABLe:NCELl2:ARFCn 140" />
+    <GPIBCommand type="GSM850" equipment="NETWORK_SIMULATOR2" command="CALL:CELL:BA:TABLE:NCELL2:NCCODE 1" />
+    <GPIBCommand type="GSM850" equipment="NETWORK_SIMULATOR2" command="CALL:CELL:BA:TABLE:NCELL2:BCCODE 5" />
+    <GPIBCommand type="GSM850" equipment="NETWORK_SIMULATOR2" command="CALL:CELL:BA:TABLe:NCELl3 ON" />
+    <GPIBCommand type="GSM850" equipment="NETWORK_SIMULATOR2" command="CALL:CELL:BA:TABLe:NCELl3:ARFCn 540" />
+    <GPIBCommand type="GSM850" equipment="NETWORK_SIMULATOR2" command="CALL:CELL:BA:TABLE:NCELL3:NCCODE 1" />
+    <GPIBCommand type="GSM850" equipment="NETWORK_SIMULATOR2" command="CALL:CELL:BA:TABLE:NCELL3:BCCODE 5" />
+    <GPIBCommand type="GSM850" equipment="NETWORK_SIMULATOR2" command="CALL:CELL:BA:TABLe:NCELl4 ON" />
+    <GPIBCommand type="GSM850" equipment="NETWORK_SIMULATOR2" command="CALL:CELL:BA:TABLe:NCELl4:ARFCn 550" />
+    <GPIBCommand type="GSM850" equipment="NETWORK_SIMULATOR2" command="CALL:CELL:BA:TABLE:NCELL4:NCCODE 1" />
+    <GPIBCommand type="GSM850" equipment="NETWORK_SIMULATOR2" command="CALL:CELL:BA:TABLE:NCELL4:BCCODE 5" />
+    <GPIBCommand type="GSM850" equipment="NETWORK_SIMULATOR2" command="CALL:UTRan:FDDuplex:TABLe 1700,1,1,1,9700,1,1,1,4400,1,1,1" />
+<!--     -   US cell 4 Release 8 capable for 2G -->
+    <GPIBCommand type="GSM850_R8" equipment="NETWORK_SIMULATOR2" command="CALL:SCELl:PPARameters:PRIority 4" />
+    <!--    LTE Neighbour Cells US Band 4 & 17  -->
+    <GPIBCommand type="GSM850_R8" equipment="NETWORK_SIMULATOR2" command="CALL:EUTR:TABL 2175,1,3,1,6,4,1,2,1,-100,5790,1,3,1,6,4,1,2,1,-100" />
+
+<!--     COMMON_3G Parameters for 3G  -->
+    <GPIBCommand type="COMMON_3G" equipment="NETWORK_SIMULATOR2" command="CALL:SERVice:RBTest:RAB HSPA" />
+    <GPIBCommand type="COMMON_3G" equipment="NETWORK_SIMULATOR2" command="CALL:PAGing:SERVice GPRS" />
+    <GPIBCommand type="COMMON_3G" equipment="NETWORK_SIMULATOR2" command="CALL:CELL:SCODe 1" />
+    <GPIBCommand type="COMMON_3G" equipment="NETWORK_SIMULATOR2" command="CALL:CELL:NMOPERATION 2" />
+    <GPIBCommand type="COMMON_3G" equipment="NETWORK_SIMULATOR2" command="CALL:IDENTITY 2" />
+    <GPIBCommand type="COMMON_3G" equipment="NETWORK_SIMULATOR2" command="CALL:ATTFLAG:STATE ON" />
+    <GPIBCommand type="COMMON_3G" equipment="NETWORK_SIMULATOR2" command="CALL:EDCH:CIND CNIN" />
+    <GPIBCommand type="COMMON_3G" equipment="NETWORK_SIMULATOR2" command="CALL:HSDP:CIND CNIN" />
+    <GPIBCommand type="COMMON_3G" equipment="NETWORK_SIMULATOR2" command="CALL:CCPChannel:SECondary:CONFigure STRaffic" />
+<!--     Cell Reselection Parameters for 3G  -->
+    <GPIBCommand type="COMMON_3G" equipment="NETWORK_SIMULATOR2" command="CALL:BCCHannel:SERSearch 2" />
+    <GPIBCommand type="COMMON_3G" equipment="NETWORK_SIMULATOR2" command="CALL:BCCHannel:SRASearch 4" />
+    <GPIBCommand type="COMMON_3G" equipment="NETWORK_SIMULATOR2" command="CALL:RESelection:QUALity:MEASure RSCP" />
+    <GPIBCommand type="COMMON_3G" equipment="NETWORK_SIMULATOR2" command="CALL:RESelection:HYSTeresis 1" />
+    <GPIBCommand type="COMMON_3G" equipment="NETWORK_SIMULATOR2" command="CALL:RESelection:QUALity:LMINimum -16" />
+    <GPIBCommand type="COMMON_3G" equipment="NETWORK_SIMULATOR2" command="CALL:RESelection:RLMinimum -100" />
+    <GPIBCommand type="COMMON_3G" equipment="NETWORK_SIMULATOR2" command="CALL:RESelection:GSM:STATe ON" />
+    <GPIBCommand type="COMMON_3G" equipment="NETWORK_SIMULATOR2" command="CALL:RESelection:GSM:SSEarch 2" />
+    <GPIBCommand type="COMMON_3G" equipment="NETWORK_SIMULATOR2" command="CALL:RESelection:GSM:SHCS 1" />
+    <GPIBCommand type="COMMON_3G" equipment="NETWORK_SIMULATOR2" command="CALL:RESelection:GSM:SHCS:STATe OFF" />
+    <GPIBCommand type="COMMON_3G" equipment="NETWORK_SIMULATOR2" command="CALL:RESelection:GSM:SLIMit 0" />
+    <GPIBCommand type="COMMON_3G" equipment="NETWORK_SIMULATOR2" command="CALL:RESelection:TIMer 1" />
+    <!-- Fast dormancy handling settings, commented at the moment as it causes some instabilities on KPI testes
+        Uncomment it if you want to load by default fast dormancy settings. You can also use the FDOR configuration below -->
+<!--     <GPIBCommand type="COMMON_3G" equipment="NETWORK_SIMULATOR2" command="CALL:SERVice:PSData:RRC:TRANsition:SCRI:FDORmancy:DCH:DESTination IDLE" />
+    <GPIBCommand type="COMMON_3G" equipment="NETWORK_SIMULATOR2" command="CALL:SERVice:PSData:RRC:TRANsition:AUTO ON" />
+    <GPIBCommand type="COMMON_3G" equipment="NETWORK_SIMULATOR2" command="CALL:SERVice:PSData:RRC:TRANsition:SCRI:RRCIdle ON" />
+    <GPIBCommand type="COMMON_3G" equipment="NETWORK_SIMULATOR2" command="CALL:SERV:PSD:RRC:TRAN:ITIMer:DCH:DEST IDLE" />
+    <GPIBCommand type="COMMON_3G" equipment="NETWORK_SIMULATOR2" command="CALL:SERVice:PSData:RRC:TRANsition:ITIMer:DCH:VALue 5" />
+    <GPIBCommand type="COMMON_3G" equipment="NETWORK_SIMULATOR2" command="CALL:SERV:PSD:RRC:TRAN:SCRI:FDOR:FACH:DEST IDLE" />
+    <GPIBCommand type="COMMON_3G" equipment="NETWORK_SIMULATOR2" command="CALL:SERVice:PSData:RRC:TRANsition:ITIMer:FACH:VALue 5" />
+    <GPIBCommand type="COMMON_3G" equipment="NETWORK_SIMULATOR2" command="CALL:SERVice:PSData:RRC:TRANsition:SCRI:FDOR ON" />
+    <GPIBCommand type="COMMON_3G" equipment="NETWORK_SIMULATOR2" command="CALL:SERVice:PSData:RRC:TRANsition:TVOL:TRIG:STAT:EVent4B OFF" />
+    <GPIBCommand type="COMMON_3G" equipment="NETWORK_SIMULATOR2" command="CALL:BCCH:T323 10" />
+    <GPIBCommand type="COMMON_3G" equipment="NETWORK_SIMULATOR2" command="CALL:SERVice:PSData:RRC:INITial:STATe DCH" />
+    <GPIBCommand type="COMMON_3G" equipment="NETWORK_SIMULATOR2" command="CALL:SERVice:PSData:RRC:TRANsition:TVOLume:RTHReshold:EVent4A BYTes128" />
+    <GPIBCommand type="COMMON_3G" equipment="NETWORK_SIMULATOR2" command="CALL:SERVice:PSData:RRC:TRANsition:ITIMer:DCH:STATe ON" />
+    <GPIBCommand type="COMMON_3G" equipment="NETWORK_SIMULATOR2" command="CALL:SERVice:PSData:RRC:TRANsition:ITIMer:FACH:STATe ON" /> -->
+
+    <GPIBCommand type="COMMON_3G" equipment="NETWORK_SIMULATOR2" command="SYSTem:FATal:ERRor:RESTart ON" />
+
+    <!-- FAST DORMANCY commands from PNP team  -->
+    <GPIBCommand type="FDOR_PNP" equipment="NETWORK_SIMULATOR2" command="CALL:SERVice:PSData:RRC:TRANsition:AUTO ON" />
+    <GPIBCommand type="FDOR_PNP" equipment="NETWORK_SIMULATOR2" command="CALL:SERVice:PSData:RRC:INITial:STATe DCH" />
+    <GPIBCommand type="FDOR_PNP" equipment="NETWORK_SIMULATOR2" command="CALL:SERVice:PSData:RRC:TRANsition:ITIMer:DCH:STATe ON" />
+    <GPIBCommand type="FDOR_PNP" equipment="NETWORK_SIMULATOR2" command="CALL:SERVice:PSData:RRC:TRANsition:ITIMer:DCH 5s" />
+    <GPIBCommand type="FDOR_PNP" equipment="NETWORK_SIMULATOR2" command="CALL:SERVice:PSData:RRC:TRANsition:ITIMer:DCH:VALue 5s" />
+    <GPIBCommand type="FDOR_PNP" equipment="NETWORK_SIMULATOR2" command="CALL:SERVice:PSData:RRC:TRANsition:ITIMer:DCH:DESTination FACH" />
+    <GPIBCommand type="FDOR_PNP" equipment="NETWORK_SIMULATOR2" command="CALL:SERVice:PSData:RRC:TRANsition:ITIMer:FACH:STATe ON" />
+    <GPIBCommand type="FDOR_PNP" equipment="NETWORK_SIMULATOR2" command="CALL:SERVice:PSData:RRC:TRANsition:ITIMer:FACH 10s" />
+    <GPIBCommand type="FDOR_PNP" equipment="NETWORK_SIMULATOR2" command="CALL:SERVice:PSData:RRC:TRANsition:ITIMer:FACH:VALue 10s" />
+    <GPIBCommand type="FDOR_PNP" equipment="NETWORK_SIMULATOR2" command="CALL:SERVice:PSData:RRC:TRANsition:ITIMer:FACH:DESTination PCH" />
+    <GPIBCommand type="FDOR_PNP" equipment="NETWORK_SIMULATOR2" command="CALL:SERVice:PSData:RRC:TRANsition:TVOLume:RTHReshold:EVent4A BYTes128" />
+    <GPIBCommand type="FDOR_PNP" equipment="NETWORK_SIMULATOR2" command="CALL:SERVice:PSData:RRC:TRANsition:SCRI:RRCIdle ON" />
+
+    <!-- Fast dormancy handling settings, works for CSFB tests -->
+    <GPIBCommand type="FDOR" equipment="NETWORK_SIMULATOR2" command="CALL:CCPChannel:SECondary:CONFigure STRaffic" />
+    <GPIBCommand type="FDOR" equipment="NETWORK_SIMULATOR2" command="CALL:SERVice:PSData:RRC:TRANsition:SCRI:FDORmancy:DCH:DESTination IDLE" />
+    <GPIBCommand type="FDOR" equipment="NETWORK_SIMULATOR2" command="CALL:SERVice:PSData:RRC:TRANsition:AUTO ON" />
+    <GPIBCommand type="FDOR" equipment="NETWORK_SIMULATOR2" command="CALL:SERVice:PSData:RRC:TRANsition:SCRI:RRCIdle ON" />
+    <GPIBCommand type="FDOR" equipment="NETWORK_SIMULATOR2" command="CALL:SERV:PSD:RRC:TRAN:ITIMer:DCH:DEST IDLE" />
+    <GPIBCommand type="FDOR" equipment="NETWORK_SIMULATOR2" command="CALL:SERVice:PSData:RRC:TRANsition:ITIMer:DCH:VALue 5" />
+    <GPIBCommand type="FDOR" equipment="NETWORK_SIMULATOR2" command="CALL:SERV:PSD:RRC:TRAN:SCRI:FDOR:FACH:DEST IDLE" />
+    <GPIBCommand type="FDOR" equipment="NETWORK_SIMULATOR2" command="CALL:SERVice:PSData:RRC:TRANsition:ITIMer:FACH:VALue 5" />
+    <GPIBCommand type="FDOR" equipment="NETWORK_SIMULATOR2" command="CALL:SERVice:PSData:RRC:TRANsition:SCRI:FDOR ON" />
+    <GPIBCommand type="FDOR" equipment="NETWORK_SIMULATOR2" command="CALL:SERVice:PSData:RRC:TRANsition:TVOL:TRIG:STAT:EVent4B OFF" />
+    <GPIBCommand type="FDOR" equipment="NETWORK_SIMULATOR2" command="CALL:BCCH:T323 10" />
+    <GPIBCommand type="FDOR" equipment="NETWORK_SIMULATOR2" command="CALL:SERVice:PSData:RRC:INITial:STATe DCH" />
+    <GPIBCommand type="FDOR" equipment="NETWORK_SIMULATOR2" command="CALL:SERVice:PSData:RRC:TRANsition:TVOLume:RTHReshold:EVent4A BYTes128" />
+    <GPIBCommand type="FDOR" equipment="NETWORK_SIMULATOR2" command="CALL:SERVice:PSData:RRC:TRANsition:ITIMer:DCH:STATe ON" />
+    <GPIBCommand type="FDOR" equipment="NETWORK_SIMULATOR2" command="CALL:SERVice:PSData:RRC:TRANsition:ITIMer:FACH:STATe ON" />
+
+<!--     -   Europe cell 1 for 3G   -->
+    <GPIBCommand type="1" equipment="NETWORK_SIMULATOR2" command="CALL:CHANnel 10700" />
+    <GPIBCommand type="1" equipment="NETWORK_SIMULATOR2" command="CALL:BCCHannel:GSMSystem:STATe 1,1,1,1,0,0,0,0" />
+    <GPIBCommand type="1" equipment="NETWORK_SIMULATOR2" command="CALL:BCCHannel:GSMSystem:NCC 1,1,1,1,0,0,0,0" />
+    <GPIBCommand type="1" equipment="NETWORK_SIMULATOR2" command="CALL:BCCHannel:GSMSystem:BCC 5,5,5,5,0,0,0,0" />
+    <GPIBCommand type="1" equipment="NETWORK_SIMULATOR2" command="CALL:BCCHannel:GSMSystem:BAND DCS1800,DCS1800,DCS1800,DCS1800,DCS1800,DCS1800,DCS1800,DCS1800" />
+    <GPIBCommand type="1" equipment="NETWORK_SIMULATOR2" command="CALL:BCCHannel:GSMSystem:BCHannel 20,50,512,550,0,0,0,0" />
+    <GPIBCommand type="1" equipment="NETWORK_SIMULATOR2" command="CALL:BCCHannel:ITAFrequency:STATe 1,1,0,0,0,0,0,0" />
+    <GPIBCommand type="1" equipment="NETWORK_SIMULATOR2" command="CALL:BCCHannel:ITAFrequency:SCODe 1,2,0,0,0,0,0,0" />
+    <GPIBCommand type="1" equipment="NETWORK_SIMULATOR2" command="CALL:BCCHannel:ITAFrequency:CRESelection:OFFSet 0,0,0,0,0,0,0,0" />
+    <GPIBCommand type="1" equipment="NETWORK_SIMULATOR2" command="CALL:BCCHannel:ITAFrequency:CRESelection:OFFSet2 0,0,0,0,0,0,0,0" />
+    <GPIBCommand type="1" equipment="NETWORK_SIMULATOR2" command="CALL:BCCHannel:ITRFrequency:DOWNlink:CHANnel 3000,3000,3000,3000,3000,3000,3000,3000" />
+<!--     -   Europe cell 1 Release 8 capable for 3G   -->
+    <GPIBCommand type="1_R8" equipment="NETWORK_SIMULATOR2" command="CALL:BCCHannel:SIB19:UTRA:SCEL1:PRIority 5" />
+    <!--    LTE Neighbour Cell 1 EU Band 1  -->
+    <GPIBCommand type="1_R8" equipment="NETWORK_SIMULATOR2" command="CALL:BCCHannel:SIB19:INFormation PRESent" />
+    <GPIBCommand type="1_R8" equipment="NETWORK_SIMULATOR2" command="CALL:BCCHannel:SIB19:EUTRa1:STATe On" />
+    <GPIBCommand type="1_R8" equipment="NETWORK_SIMULATOR2" command="CALL:BCCHannel:SIB19:EUTRa1:DETection On" />
+    <GPIBCommand type="1_R8" equipment="NETWORK_SIMULATOR2" command="CALL:BCCHannel:SIB19:EUTRa1:EARFCN 300" />
+    <GPIBCommand type="1_R8" equipment="NETWORK_SIMULATOR2" command="CALL:BCCHannel:SIB19:EUTRa1:MBWidth MBW50" />
+    <GPIBCommand type="1_R8" equipment="NETWORK_SIMULATOR2" command="CALL:BCCHannel:SIB19:EUTRa1:PRIority 6" />
+    <GPIBCommand type="1_R8" equipment="NETWORK_SIMULATOR2" command="CALL:BCCHannel:SIB19:EUTRa1:RLMinimum -100" />
+    <GPIBCommand type="1_R8" equipment="NETWORK_SIMULATOR2" command="CALL:BCCHannel:SIB19:EUTRa1:THReshold:HIGH 4" />
+    <GPIBCommand type="1_R8" equipment="NETWORK_SIMULATOR2" command="CALL:BCCHannel:SIB19:EUTRa1:THReshold:LOW 2" />
+    <!--    LTE Neighbour Cell 2 EU Band 3  -->
+    <GPIBCommand type="1_R8" equipment="NETWORK_SIMULATOR2" command="CALL:BCCHannel:SIB19:INFormation PRESent" />
+    <GPIBCommand type="1_R8" equipment="NETWORK_SIMULATOR2" command="CALL:BCCHannel:SIB19:EUTRa2:STATe On" />
+    <GPIBCommand type="1_R8" equipment="NETWORK_SIMULATOR2" command="CALL:BCCHannel:SIB19:EUTRa2:DETection On" />
+    <GPIBCommand type="1_R8" equipment="NETWORK_SIMULATOR2" command="CALL:BCCHannel:SIB19:EUTRa2:EARFCN 1575" />
+    <GPIBCommand type="1_R8" equipment="NETWORK_SIMULATOR2" command="CALL:BCCHannel:SIB19:EUTRa2:MBWidth MBW50" />
+    <GPIBCommand type="1_R8" equipment="NETWORK_SIMULATOR2" command="CALL:BCCHannel:SIB19:EUTRa2:PRIority 6" />
+    <GPIBCommand type="1_R8" equipment="NETWORK_SIMULATOR2" command="CALL:BCCHannel:SIB19:EUTRa2:RLMinimum -100" />
+    <GPIBCommand type="1_R8" equipment="NETWORK_SIMULATOR2" command="CALL:BCCHannel:SIB19:EUTRa2:THReshold:HIGH 4" />
+    <GPIBCommand type="1_R8" equipment="NETWORK_SIMULATOR2" command="CALL:BCCHannel:SIB19:EUTRa2:THReshold:LOW 2" />
+    <!--    LTE Neighbour Cell 3 EU Band 7  -->
+    <GPIBCommand type="1_R8" equipment="NETWORK_SIMULATOR2" command="CALL:BCCHannel:SIB19:EUTRa3:STATe On" />
+    <GPIBCommand type="1_R8" equipment="NETWORK_SIMULATOR2" command="CALL:BCCHannel:SIB19:EUTRa3:DETection On" />
+    <GPIBCommand type="1_R8" equipment="NETWORK_SIMULATOR2" command="CALL:BCCHannel:SIB19:EUTRa3:EARFCN 3100" />
+    <GPIBCommand type="1_R8" equipment="NETWORK_SIMULATOR2" command="CALL:BCCHannel:SIB19:EUTRa3:MBWidth MBW50" />
+    <GPIBCommand type="1_R8" equipment="NETWORK_SIMULATOR2" command="CALL:BCCHannel:SIB19:EUTRa3:PRIority 6" />
+    <GPIBCommand type="1_R8" equipment="NETWORK_SIMULATOR2" command="CALL:BCCHannel:SIB19:EUTRa3:RLMinimum -100" />
+    <GPIBCommand type="1_R8" equipment="NETWORK_SIMULATOR2" command="CALL:BCCHannel:SIB19:EUTRa3:THReshold:HIGH 4" />
+    <GPIBCommand type="1_R8" equipment="NETWORK_SIMULATOR2" command="CALL:BCCHannel:SIB19:EUTRa3:THReshold:LOW 2" />
+
+<!--     -   Europe cell 2 for 3G   -->
+    <GPIBCommand type="8" equipment="NETWORK_SIMULATOR2" command="CALL:CHANnel 3000" />
+    <GPIBCommand type="8" equipment="NETWORK_SIMULATOR2" command="CALL:BCCHannel:GSMSystem:STATe 1,1,1,1,0,0,0,0" />
+    <GPIBCommand type="8" equipment="NETWORK_SIMULATOR2" command="CALL:BCCHannel:GSMSystem:NCC 1,1,1,1,0,0,0,0" />
+    <GPIBCommand type="8" equipment="NETWORK_SIMULATOR2" command="CALL:BCCHannel:GSMSystem:BCC 5,5,5,5,0,0,0,0" />
+    <GPIBCommand type="8" equipment="NETWORK_SIMULATOR2" command="CALL:BCCHannel:GSMSystem:BAND DCS1800,DCS1800,DCS1800,DCS1800,DCS1800,DCS1800,DCS1800,DCS1800" />
+    <GPIBCommand type="8" equipment="NETWORK_SIMULATOR2" command="CALL:BCCHannel:GSMSystem:BCHannel 20,50,512,550,0,0,0,0" />
+    <GPIBCommand type="8" equipment="NETWORK_SIMULATOR2" command="CALL:BCCHannel:ITAFrequency:STATe 1,1,0,0,0,0,0,0" />
+    <GPIBCommand type="8" equipment="NETWORK_SIMULATOR2" command="CALL:BCCHannel:ITAFrequency:SCODe 2,1,0,0,0,0,0,0" />
+    <GPIBCommand type="8" equipment="NETWORK_SIMULATOR2" command="CALL:BCCHannel:ITAFrequency:CRESelection:OFFSet 0,0,0,0,0,0,0,0" />
+    <GPIBCommand type="8" equipment="NETWORK_SIMULATOR2" command="CALL:BCCHannel:ITAFrequency:CRESelection:OFFSet2 0,0,0,0,0,0,0,0" />
+    <GPIBCommand type="8" equipment="NETWORK_SIMULATOR2" command="CALL:BCCHannel:ITRFrequency:DOWNlink:CHANnel 10700,10700,10700,10700,10700,10700,10700,10700" />
+<!--     -   Europe cell 2 Release 8 capable for 3G   -->
+    <GPIBCommand type="8_R8" equipment="NETWORK_SIMULATOR2" command="CALL:BCCHannel:SIB19:UTRA:SCEL1:PRIority 5" />
+    <!--    LTE Neighbour Cell 1 EU Band 1  -->
+    <GPIBCommand type="8_R8" equipment="NETWORK_SIMULATOR2" command="CALL:BCCHannel:SIB19:INFormation PRESent" />
+    <GPIBCommand type="8_R8" equipment="NETWORK_SIMULATOR2" command="CALL:BCCHannel:SIB19:EUTRa1:STATe On" />
+    <GPIBCommand type="8_R8" equipment="NETWORK_SIMULATOR2" command="CALL:BCCHannel:SIB19:EUTRa1:DETection On" />
+    <GPIBCommand type="8_R8" equipment="NETWORK_SIMULATOR2" command="CALL:BCCHannel:SIB19:EUTRa1:EARFCN 300" />
+    <GPIBCommand type="8_R8" equipment="NETWORK_SIMULATOR2" command="CALL:BCCHannel:SIB19:EUTRa1:MBWidth MBW50" />
+    <GPIBCommand type="8_R8" equipment="NETWORK_SIMULATOR2" command="CALL:BCCHannel:SIB19:EUTRa1:PRIority 6" />
+    <GPIBCommand type="8_R8" equipment="NETWORK_SIMULATOR2" command="CALL:BCCHannel:SIB19:EUTRa1:RLMinimum -100" />
+    <GPIBCommand type="8_R8" equipment="NETWORK_SIMULATOR2" command="CALL:BCCHannel:SIB19:EUTRa1:THReshold:HIGH 4" />
+    <GPIBCommand type="8_R8" equipment="NETWORK_SIMULATOR2" command="CALL:BCCHannel:SIB19:EUTRa1:THReshold:LOW 2" />
+    <!--    LTE Neighbour Cell 2 EU Band 3  -->
+    <GPIBCommand type="8_R8" equipment="NETWORK_SIMULATOR2" command="CALL:BCCHannel:SIB19:INFormation PRESent" />
+    <GPIBCommand type="8_R8" equipment="NETWORK_SIMULATOR2" command="CALL:BCCHannel:SIB19:EUTRa2:STATe On" />
+    <GPIBCommand type="8_R8" equipment="NETWORK_SIMULATOR2" command="CALL:BCCHannel:SIB19:EUTRa2:DETection On" />
+    <GPIBCommand type="8_R8" equipment="NETWORK_SIMULATOR2" command="CALL:BCCHannel:SIB19:EUTRa2:EARFCN 1575" />
+    <GPIBCommand type="8_R8" equipment="NETWORK_SIMULATOR2" command="CALL:BCCHannel:SIB19:EUTRa2:MBWidth MBW50" />
+    <GPIBCommand type="8_R8" equipment="NETWORK_SIMULATOR2" command="CALL:BCCHannel:SIB19:EUTRa2:PRIority 6" />
+    <GPIBCommand type="8_R8" equipment="NETWORK_SIMULATOR2" command="CALL:BCCHannel:SIB19:EUTRa2:RLMinimum -100" />
+    <GPIBCommand type="8_R8" equipment="NETWORK_SIMULATOR2" command="CALL:BCCHannel:SIB19:EUTRa2:THReshold:HIGH 4" />
+    <GPIBCommand type="8_R8" equipment="NETWORK_SIMULATOR2" command="CALL:BCCHannel:SIB19:EUTRa2:THReshold:LOW 2" />
+    <!--    LTE Neighbour Cell 3 EU Band 7  -->
+    <GPIBCommand type="8_R8" equipment="NETWORK_SIMULATOR2" command="CALL:BCCHannel:SIB19:EUTRa3:STATe On" />
+    <GPIBCommand type="8_R8" equipment="NETWORK_SIMULATOR2" command="CALL:BCCHannel:SIB19:EUTRa3:DETection On" />
+    <GPIBCommand type="8_R8" equipment="NETWORK_SIMULATOR2" command="CALL:BCCHannel:SIB19:EUTRa3:EARFCN 3100" />
+    <GPIBCommand type="8_R8" equipment="NETWORK_SIMULATOR2" command="CALL:BCCHannel:SIB19:EUTRa3:MBWidth MBW50" />
+    <GPIBCommand type="8_R8" equipment="NETWORK_SIMULATOR2" command="CALL:BCCHannel:SIB19:EUTRa3:PRIority 6" />
+    <GPIBCommand type="8_R8" equipment="NETWORK_SIMULATOR2" command="CALL:BCCHannel:SIB19:EUTRa3:RLMinimum -100" />
+    <GPIBCommand type="8_R8" equipment="NETWORK_SIMULATOR2" command="CALL:BCCHannel:SIB19:EUTRa3:THReshold:HIGH 4" />
+    <GPIBCommand type="8_R8" equipment="NETWORK_SIMULATOR2" command="CALL:BCCHannel:SIB19:EUTRa3:THReshold:LOW 2" />
+
+<!--     -   US cell 3  for 3G  -->
+    <GPIBCommand type="5" equipment="NETWORK_SIMULATOR2" command="CALL:CHANnel 4400" />
+    <GPIBCommand type="5" equipment="NETWORK_SIMULATOR2" command="CALL:BARBitrator BAND5" />
+    <GPIBCommand type="5" equipment="NETWORK_SIMULATOR2" command="CALL:BCCHannel:GSMSystem:STATe 1,1,1,1,0,0,0,0" />
+    <GPIBCommand type="5" equipment="NETWORK_SIMULATOR2" command="CALL:BCCHannel:GSMSystem:NCC 1,1,1,1,0,0,0,0" />
+    <GPIBCommand type="5" equipment="NETWORK_SIMULATOR2" command="CALL:BCCHannel:GSMSystem:BCC 5,5,5,5,0,0,0,0" />
+    <GPIBCommand type="5" equipment="NETWORK_SIMULATOR2" command="CALL:BCCHannel:GSMSystem:BAND PCS1900,PCS1900,PCS1900,PCS1900,PCS1900,PCS1900,PCS1900,PCS1900" />
+    <GPIBCommand type="5" equipment="NETWORK_SIMULATOR2" command="CALL:BCCHannel:GSMSystem:BCHannel 128,140,540,550,0,0,0,0" />
+    <GPIBCommand type="5" equipment="NETWORK_SIMULATOR2" command="CALL:BCCHannel:ITAFrequency:STATe 1,1,0,0,0,0,0,0" />
+    <GPIBCommand type="5" equipment="NETWORK_SIMULATOR2" command="CALL:BCCHannel:ITAFrequency:SCODe 1,2,0,0,0,0,0,0" />
+    <GPIBCommand type="5" equipment="NETWORK_SIMULATOR2" command="CALL:BCCHannel:ITAFrequency:CRESelection:OFFSet 0,0,0,0,0,0,0,0" />
+    <GPIBCommand type="5" equipment="NETWORK_SIMULATOR2" command="CALL:BCCHannel:ITAFrequency:CRESelection:OFFSet2 0,0,0,0,0,0,0,0" />
+    <GPIBCommand type="5" equipment="NETWORK_SIMULATOR2" command="CALL:BCCHannel:ITRFrequency:DOWNlink:CHANnel 9700,9700,9700,9700,9700,9700,9700,9700" />
+<!--     -   US cell 3 Release 8 capable for 3G  -->
+    <GPIBCommand type="5_R8" equipment="NETWORK_SIMULATOR2" command="CALL:BCCHannel:SIB19:UTRA:SCEL1:PRIority 5" />
+    <!--    LTE Neighbour Cell 1 US Band 4  -->
+    <GPIBCommand type="5_R8" equipment="NETWORK_SIMULATOR2" command="CALL:BCCHannel:SIB19:INFormation PRESent" />
+    <GPIBCommand type="5_R8" equipment="NETWORK_SIMULATOR2" command="CALL:BCCHannel:SIB19:EUTRa2:STATe On" />
+    <GPIBCommand type="5_R8" equipment="NETWORK_SIMULATOR2" command="CALL:BCCHannel:SIB19:EUTRa2:DETection On" />
+    <GPIBCommand type="5_R8" equipment="NETWORK_SIMULATOR2" command="CALL:BCCHannel:SIB19:EUTRa2:EARFCN 2175" />
+    <GPIBCommand type="5_R8" equipment="NETWORK_SIMULATOR2" command="CALL:BCCHannel:SIB19:EUTRa2:MBWidth MBW50" />
+    <GPIBCommand type="5_R8" equipment="NETWORK_SIMULATOR2" command="CALL:BCCHannel:SIB19:EUTRa2:PRIority 6" />
+    <GPIBCommand type="5_R8" equipment="NETWORK_SIMULATOR2" command="CALL:BCCHannel:SIB19:EUTRa2:RLMinimum -100" />
+    <GPIBCommand type="5_R8" equipment="NETWORK_SIMULATOR2" command="CALL:BCCHannel:SIB19:EUTRa2:THReshold:HIGH 4" />
+    <GPIBCommand type="5_R8" equipment="NETWORK_SIMULATOR2" command="CALL:BCCHannel:SIB19:EUTRa2:THReshold:LOW 2" />
+    <!--    LTE Neighbour Cell 3 US Band 17  -->
+    <GPIBCommand type="5_R8" equipment="NETWORK_SIMULATOR2" command="CALL:BCCHannel:SIB19:EUTRa3:STATe On" />
+    <GPIBCommand type="5_R8" equipment="NETWORK_SIMULATOR2" command="CALL:BCCHannel:SIB19:EUTRa3:DETection On" />
+    <GPIBCommand type="5_R8" equipment="NETWORK_SIMULATOR2" command="CALL:BCCHannel:SIB19:EUTRa3:EARFCN 5790" />
+    <GPIBCommand type="5_R8" equipment="NETWORK_SIMULATOR2" command="CALL:BCCHannel:SIB19:EUTRa3:MBWidth MBW50" />
+    <GPIBCommand type="5_R8" equipment="NETWORK_SIMULATOR2" command="CALL:BCCHannel:SIB19:EUTRa3:PRIority 6" />
+    <GPIBCommand type="5_R8" equipment="NETWORK_SIMULATOR2" command="CALL:BCCHannel:SIB19:EUTRa3:RLMinimum -100" />
+    <GPIBCommand type="5_R8" equipment="NETWORK_SIMULATOR2" command="CALL:BCCHannel:SIB19:EUTRa3:THReshold:HIGH 4" />
+    <GPIBCommand type="5_R8" equipment="NETWORK_SIMULATOR2" command="CALL:BCCHannel:SIB19:EUTRa3:THReshold:LOW 2" />
+
+<!--     -   US cell 4 for 3G   -->
+    <GPIBCommand type="2" equipment="NETWORK_SIMULATOR2" command="CALL:CHANnel 9700" />
+    <GPIBCommand type="2" equipment="NETWORK_SIMULATOR2" command="CALL:BCCHannel:GSMSystem:STATe 1,1,1,1,0,0,0,0" />
+    <GPIBCommand type="2" equipment="NETWORK_SIMULATOR2" command="CALL:BCCHannel:GSMSystem:NCC 1,1,1,1,0,0,0,0" />
+    <GPIBCommand type="2" equipment="NETWORK_SIMULATOR2" command="CALL:BCCHannel:GSMSystem:BCC 5,5,5,5,0,0,0,0" />
+    <GPIBCommand type="2" equipment="NETWORK_SIMULATOR2" command="CALL:BCCHannel:GSMSystem:BAND PCS1900,PCS1900,PCS1900,PCS1900,PCS1900,PCS1900,PCS1900,PCS1900" />
+    <GPIBCommand type="2" equipment="NETWORK_SIMULATOR2" command="CALL:BCCHannel:GSMSystem:BCHannel 128,140,540,550,0,0,0,0" />
+    <GPIBCommand type="2" equipment="NETWORK_SIMULATOR2" command="CALL:BCCHannel:ITAFrequency:STATe 1,1,0,0,0,0,0,0" />
+    <GPIBCommand type="2" equipment="NETWORK_SIMULATOR2" command="CALL:BCCHannel:ITAFrequency:SCODe 2,1,0,0,0,0,0,0" />
+    <GPIBCommand type="2" equipment="NETWORK_SIMULATOR2" command="CALL:BCCHannel:ITAFrequency:CRESelection:OFFSet 0,0,0,0,0,0,0,0" />
+    <GPIBCommand type="2" equipment="NETWORK_SIMULATOR2" command="CALL:BCCHannel:ITAFrequency:CRESelection:OFFSet2 0,0,0,0,0,0,0,0" />
+    <GPIBCommand type="2" equipment="NETWORK_SIMULATOR2" command="CALL:BCCHannel:ITRFrequency:DOWNlink:CHANnel 4400,4400,4400,4400,4400,4400,4400,4400" />
+<!--     -   US cell 4 Release 8 capable for 3G   -->
+    <GPIBCommand type="2_R8" equipment="NETWORK_SIMULATOR2" command="CALL:BCCHannel:SIB19:UTRA:SCEL1:PRIority 5" />
+    <!--    LTE Neighbour Cell 1 US Band 4  -->
+    <GPIBCommand type="2_R8" equipment="NETWORK_SIMULATOR2" command="CALL:BCCHannel:SIB19:INFormation PRESent" />
+    <GPIBCommand type="2_R8" equipment="NETWORK_SIMULATOR2" command="CALL:BCCHannel:SIB19:EUTRa2:STATe On" />
+    <GPIBCommand type="2_R8" equipment="NETWORK_SIMULATOR2" command="CALL:BCCHannel:SIB19:EUTRa2:DETection On" />
+    <GPIBCommand type="2_R8" equipment="NETWORK_SIMULATOR2" command="CALL:BCCHannel:SIB19:EUTRa2:EARFCN 2175" />
+    <GPIBCommand type="2_R8" equipment="NETWORK_SIMULATOR2" command="CALL:BCCHannel:SIB19:EUTRa2:MBWidth MBW50" />
+    <GPIBCommand type="2_R8" equipment="NETWORK_SIMULATOR2" command="CALL:BCCHannel:SIB19:EUTRa2:PRIority 6" />
+    <GPIBCommand type="2_R8" equipment="NETWORK_SIMULATOR2" command="CALL:BCCHannel:SIB19:EUTRa2:RLMinimum -100" />
+    <GPIBCommand type="2_R8" equipment="NETWORK_SIMULATOR2" command="CALL:BCCHannel:SIB19:EUTRa2:THReshold:HIGH 4" />
+    <GPIBCommand type="2_R8" equipment="NETWORK_SIMULATOR2" command="CALL:BCCHannel:SIB19:EUTRa2:THReshold:LOW 2" />
+    <!--    LTE Neighbour Cell 3 US Band 17  -->
+    <GPIBCommand type="2_R8" equipment="NETWORK_SIMULATOR2" command="CALL:BCCHannel:SIB19:EUTRa3:STATe On" />
+    <GPIBCommand type="2_R8" equipment="NETWORK_SIMULATOR2" command="CALL:BCCHannel:SIB19:EUTRa3:DETection On" />
+    <GPIBCommand type="2_R8" equipment="NETWORK_SIMULATOR2" command="CALL:BCCHannel:SIB19:EUTRa3:EARFCN 5790" />
+    <GPIBCommand type="2_R8" equipment="NETWORK_SIMULATOR2" command="CALL:BCCHannel:SIB19:EUTRa3:MBWidth MBW50" />
+    <GPIBCommand type="2_R8" equipment="NETWORK_SIMULATOR2" command="CALL:BCCHannel:SIB19:EUTRa3:PRIority 6" />
+    <GPIBCommand type="2_R8" equipment="NETWORK_SIMULATOR2" command="CALL:BCCHannel:SIB19:EUTRa3:RLMinimum -100" />
+    <GPIBCommand type="2_R8" equipment="NETWORK_SIMULATOR2" command="CALL:BCCHannel:SIB19:EUTRa3:THReshold:HIGH 4" />
+    <GPIBCommand type="2_R8" equipment="NETWORK_SIMULATOR2" command="CALL:BCCHannel:SIB19:EUTRa3:THReshold:LOW 2" />
+    <!-- Common parameters for TD-SCDMA -->
+    <GPIBCommand type="COMMON_TD-SCDMA" equipment="NETWORK_SIMULATOR2" command="CALL:CELL:PSDomain PRES" />
+    <GPIBCommand type="COMMON_TD-SCDMA" equipment="NETWORK_SIMULATOR2" command="CALL:CELL:BCCHannel:T300 MS4000" />
+    <GPIBCommand type="COMMON_TD-SCDMA" equipment="NETWORK_SIMULATOR2" command="CALL:POWer:AMPLitude -50" />
+    <GPIBCommand type="COMMON_TD-SCDMA" equipment="NETWORK_SIMULATOR2" command="CALL:MS:POWER:TARGET:AMPLITUDE -20" />
+    <GPIBCommand type="COMMON_TD-SCDMA" equipment="NETWORK_SIMULATOR2" command="CALL:HSDPa:SERVice:PSData:HSDSchannel:CONFig:TYPE UDEFined" />
+    <GPIBCommand type="COMMON_TD-SCDMA" equipment="NETWORK_SIMULATOR2" command="CALL:HSDPa:SERVice:PSData:UDEFined:TBSize:INDex 63" />
+    <GPIBCommand type="COMMON_TD-SCDMA" equipment="NETWORK_SIMULATOR2" command="CALL:CELL:EHIChannel:BEHavior AUTO" />
+    <GPIBCommand type="COMMON_TD-SCDMA" equipment="NETWORK_SIMULATOR2" command="CALL:CELL:MCCode:SELected 460" />
+    <GPIBCommand type="COMMON_TD-SCDMA" equipment="NETWORK_SIMULATOR2" command="CALL:CELL:MNCode:SELected 0" />
+
+    <GPIBCommand type="DL_TD-SCDMA" equipment="NETWORK_SIMULATOR2" command="CALL:SERVice:GPRS:RAB PSDHsdpa64" />
+    <GPIBCommand type="DL_TD-SCDMA" equipment="NETWORK_SIMULATOR2" command="CALL:SERVice:RBTest:RAB HSDParmc12" />
+    <GPIBCommand type="DL_TD-SCDMA" equipment="NETWORK_SIMULATOR2" command="CALL:HSUPa:SERVice:PSData:CHANnel:CONFig FIXed" />
+
+    <GPIBCommand type="UL_TD-SCDMA" equipment="NETWORK_SIMULATOR2" command="CALL:SERVice:GPRS:RAB PHSPa" />
+    <GPIBCommand type="UL_TD-SCDMA" equipment="NETWORK_SIMULATOR2" command="CALL:SERVice:RBTest:RAB HSParmc12" />
+    <GPIBCommand type="UL_TD-SCDMA" equipment="NETWORK_SIMULATOR2" command="CALL:HSUPa:SERVice:PSData:CHANnel:CONFig FIXed" />
+
+    <GPIBCommand type="FULL_DUPLEX_TD-SCDMA" equipment="NETWORK_SIMULATOR2" command="CALL:SERVice:GPRS:RAB PHSPa" />
+    <GPIBCommand type="FULL_DUPLEX_TD-SCDMA" equipment="NETWORK_SIMULATOR2" command="CALL:SERVice:RBTest:RAB HSParmc12" />
+    <GPIBCommand type="FULL_DUPLEX_TD-SCDMA" equipment="NETWORK_SIMULATOR2" command="CALL:HSUPa:SERVice:PSData:CHANnel:CONFig FLEXible" />
+    <GPIBCommand type="FULL_DUPLEX_TD-SCDMA" equipment="NETWORK_SIMULATOR2" command="CALL:HSUPa:SERVice:PSData:DATA:CHANnel:TSConfig 'UUDDD'" />
+</Sequence>

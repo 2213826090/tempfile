@@ -1,0 +1,402 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<UseCases xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:noNamespaceSchemaLocation="../../../../acs/src/_Catalogs/UseCase/usecase.xsd">
+    <UseCase Id="LAB_FIT_TEL_GSM_VC_SMS_CS_MT" Domain="CELLULAR" SubDomain="FIT" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Fit.Telephony.LAB_FIT_TEL_GSM_VC_SMS_CS_MT.LabFitTelGsmVcSmsCsMt</ClassName>
+        <Description>Test reception of SMS Cs during a GSM voice call</Description>
+        <Environment name="TEL">
+            <Dependency>EQT_AG_8960</Dependency>
+        </Environment>
+    </UseCase>
+    <UseCase Id="LAB_FIT_TEL_EGPRS_FTP_VC_DTM_ON" Domain="CELLULAR" SubDomain="FIT" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Fit.Telephony.LAB_FIT_TEL_EGPRS_FTP_VC_DTM_ON.LabFitTelEgprsftpVcDtmOn</ClassName>
+        <Description>Perform FTP transfer and voice call at the same time (DTM ON)</Description>
+        <Environment name="TEL">
+            <Dependency>EQT_AG_8960</Dependency>
+            <Dependency>SW_FTP_SERVER</Dependency>
+        </Environment>
+    </UseCase>
+    <UseCase Id="LAB_FIT_TEL_GSM_VC_SMS_CS_MO" Domain="CELLULAR" SubDomain="FIT" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Fit.Telephony.LAB_FIT_TEL_GSM_VC_SMS_CS_MO.LabFitTelGsmVcSmsCsMo</ClassName>
+        <Description>Test send of SMS Cs during a GSM voice call</Description>
+        <Environment name="TEL">
+            <Dependency>EQT_AG_8960</Dependency>
+        </Environment>
+    </UseCase>
+    <UseCase Id="LAB_FIT_TEL_WCDMA_VC_SMS_CS_MO" Domain="CELLULAR" SubDomain="FIT" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Fit.Telephony.LAB_FIT_TEL_WCDMA_VC_SMS_CS_MO.LabFitTelWcdmaVcSmsCsMo</ClassName>
+        <Description>Test reception of SMS Cs during a WCDMA voice call</Description>
+        <Environment name="TEL">
+            <Dependency>EQT_AG_8960</Dependency>
+        </Environment>
+    </UseCase>
+    <UseCase Id="LAB_FIT_TEL_WCDMA_VC_SMS_CS_MT" Domain="CELLULAR" SubDomain="FIT" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Fit.Telephony.LAB_FIT_TEL_WCDMA_VC_SMS_CS_MT.LabFitTelWcdmaVcSmsCsMt</ClassName>
+        <Description>Test reception of SMS Cs during a WCDMA voice call</Description>
+        <Environment name="TEL">
+            <Dependency>EQT_AG_8960</Dependency>
+        </Environment>
+    </UseCase>
+        <UseCase Id="LIVE_FIT_PDP_CONTEXTS" Domain="CELLULAR" SubDomain="FIT" OS="ANDROID" Status="DONE">
+            <ClassName>acs_test_scripts.UseCase.Fit.Telephony.LIVE_FIT_PDP_CONTEXTS.LiveFitPdpContexts</ClassName>
+        <Description>check how many PDP contexts can be activated simultaneously</Description>
+        <Environment name="TEL">
+            <Dependency>EQT_LIVE_USIM</Dependency>
+        </Environment>
+    </UseCase>
+    <UseCase Id="LAB_FIT_TEL_HSPA_FTP_VC_MO" Domain="CELLULAR" SubDomain="FIT" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Fit.Telephony.LAB_FIT_TEL_HSPA_FTP_VC_MO.LabFitTelHspaFtpVcMo</ClassName>
+        <Description>Perform FTP transfer and voice call at the same time on HSPA</Description>
+        <Environment name="TEL">
+            <Dependency>EQT_AG_8960</Dependency>
+            <Dependency>SW_FTP_SERVER</Dependency>
+        </Environment>
+    </UseCase>
+    <UseCase Id="LIVE_FIT_TEL_SMS_VC_MOMR" Domain="CELLULAR" SubDomain="FIT" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Fit.Telephony.LIVE_FIT_TEL_SMS_VC_MOMR.LiveFitTelSmsVcMoMr</ClassName>
+        <Description>test of SMS sending while voice call is active</Description>
+        <Environment name="ANY">
+        </Environment>
+    </UseCase>
+    <UseCase Id="LAB_FIT_EGPRS_VC_WEB_BROWSING" Domain="CELLULAR" SubDomain="FIT" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Fit.Telephony.LAB_FIT_EGPRS_VC_WEB_BROWSING.LabFitEgprsVcWebBrowsing</ClassName>
+        <Description>web browsing while voice is active</Description>
+        <Environment name="TEL">
+            <Dependency>EQT_AG_8960</Dependency>
+        </Environment>
+    </UseCase>
+    <UseCase Id="LAB_FIT_HSPA_VC_WEB_BROWSING" Domain="CELLULAR" SubDomain="FIT" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Fit.Telephony.LAB_FIT_HSPA_VC_WEB_BROWSING.LabFitHspaVcWebBrowsing</ClassName>
+        <Description>Perform voice call and web browsing at the same time on HSPA</Description>
+        <Environment name="TEL">
+            <Dependency>EQT_AG_8960</Dependency>
+        </Environment>
+    </UseCase>
+    <UseCase Id="LAB_FIT_LTE_CSFB_FTP_VC" Domain="CELLULAR" SubDomain="FIT" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Fit.Telephony.LAB_FIT_LTE_CSFB_FTP_VC.LabFitLteCsfbFtpVc</ClassName>
+        <Description>Perform voice call and web browsing at the same time on HSPA</Description>
+        <Environment name="TEL">
+            <Dependency>EQT_AG_8960</Dependency>
+            <Dependency>EQT_AG_E6621A</Dependency>
+        </Environment>
+    </UseCase>
+    <UseCase Id="LIVE_FIT_VC_WEB_BROWSING" Domain="CELLULAR" SubDomain="FIT" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Fit.Telephony.LIVE_FIT_VC_WEB_BROWSING.LiveFitVoiceCallWebBrowsing</ClassName>
+        <Description>Browsing web page during a voice call</Description>
+        <Environment name="ANY">
+        </Environment>
+    </UseCase>
+    <UseCase Id="LIVE_SMS_VC_FLIGHT_MODE" Domain="CELLULAR" SubDomain="FIT" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Communication.Misc.LIVE_SMS_VC_FLIGHT_MODE.LiveSmsVcFlightMode</ClassName>
+        <Description>Live Voice Call and SMS test while DUT is in Flight Mode [non FIT]</Description>
+        <Environment name="ANY">Any</Environment>
+        <Parameters>
+            <Parameter name="OVERRIDE_SETTLEDOWN_DURATION" type="DURATION_IN_SEC" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="DESTINATION_NUMBER" type="PHONE_NUMBER" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="MESSAGE_CONTENT" type="TEXT_MESSAGE" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="SMS_TRANSFER_TIMEOUT" type="TIMEOUT_IN_SEC" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="CALL_DURATION" type="DURATION_IN_SEC" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+        </Parameters>
+    </UseCase>
+    <UseCase Id="LAB_GSM_CB_SMS_VC" Domain="CELLULAR" SubDomain="FIT" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Communication.Messaging.LAB_GSM_CB_SMS_VC.LabGsmCbSmsVc</ClassName>
+        <Description>GSM Mobile Terminated SMS Cell Broadcast over CS on simulated network during CSV call</Description>
+        <Environment name="TEL">
+            <Dependency>EQT_AG_8960</Dependency>
+        </Environment>
+        <Parameters>
+            <Parameter name="CELL_BAND" type="CELL_BAND_2G" isOptional="false">
+                <!-- Field optional (PossibleValues, DefaultValue, Blank) if possible value not override available -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue>RGSM</DefaultValue>
+                <Blank/>
+                <Dependencies>
+                    <Dependency isOptional="false">BCH_ARFCN</Dependency>
+                    <Dependency isOptional="true">TCH_ARFCN</Dependency>
+                    <Dependency isOptional="true">PDTCH_ARFCN</Dependency>
+                </Dependencies>
+            </Parameter>
+            <Parameter name="CELL_POWER" type="CELL_POWER_IN_DBM" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="SMS_TEXT" type="TEXT_MESSAGE" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="CELL_BROADCAST_MESSAGE_IDENTIFIER" type="CELL_BROADCAST_MESSAGE_IDENTIFIER"
+                       isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="REPETITION_PERIOD" type="DURATION_IN_SEC" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="DATA_CODING_SCHEME" type="DATA_CODING_SCHEME" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="UPDATE_NUMBER" type="CELL_BROADCAST_UPDATE_NUMBER" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="SMS_TRANSFER_TIMEOUT" type="TIMEOUT_IN_SEC" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="VC_TYPE" type="VC_TYPE" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="PHONE_NUMBER" type="PHONE_NUMBER" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+        </Parameters>
+    </UseCase>
+    <UseCase Id="LAB_WCDMA_CB_SMS_VC" Domain="CELLULAR" SubDomain="FIT" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Communication.Messaging.LAB_WCDMA_CB_SMS_VC.LabWcdmaCbSmsVc</ClassName>
+        <Description>WCDMA Mobile Terminated SMS Cell Broadcast over CS on simulated network during CSV call
+        </Description>
+        <Environment name="TEL">
+            <Dependency>EQT_AG_8960</Dependency>
+        </Environment>
+        <Parameters>
+            <Parameter name="CELL_BAND" type="CELL_BAND_3G" isOptional="false">
+                <!-- Field optional (PossibleValues, DefaultValue, Blank) if possible value not override available -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue>1</DefaultValue>
+                <Blank/>
+                <Dependencies>
+                    <Dependency isOptional="false">DL_UARFCN</Dependency>
+                </Dependencies>
+            </Parameter>
+            <Parameter name="CELL_POWER" type="CELL_POWER_IN_DBM" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="SMS_TEXT" type="TEXT_MESSAGE" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="CELL_BROADCAST_MESSAGE_IDENTIFIER" type="CELL_BROADCAST_MESSAGE_IDENTIFIER"
+                       isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="REPETITION_PERIOD" type="DURATION_IN_SEC" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="DATA_CODING_SCHEME" type="DATA_CODING_SCHEME" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="UPDATE_NUMBER" type="CELL_BROADCAST_UPDATE_NUMBER" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="SMS_TRANSFER_TIMEOUT" type="TIMEOUT_IN_SEC" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="VC_TYPE" type="VC_TYPE" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="PHONE_NUMBER" type="PHONE_NUMBER" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+        </Parameters>
+    </UseCase>
+    <UseCase Id="LAB_WCDMA_FLIGHTMODE_EM_VC" Domain="CELLULAR" SubDomain="FIT" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Communication.VoiceCall.LAB_WCDMA_FLIGHTMODE_EM_VC.LabWcdmaFlightmodeEmVc</ClassName>
+        <Description>WCDMA Mobile Originated Call/ Flight Mode ON - Emergency Voice Call Mobile Release on simulated
+            network
+        </Description>
+        <Environment name="TEL">
+            <Capabilities>EQT_AG_8960</Capabilities>
+        </Environment>
+        <Parameters>
+            <Parameter name="CELL_BAND" type="CELL_BAND_3G" isOptional="false">
+                <!-- Field optional (PossibleValues, DefaultValue, Blank) if possible value not override available -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue>1</DefaultValue>
+                <Blank/>
+                <Dependencies>
+                    <Dependency isOptional="false">DL_UARFCN</Dependency>
+                </Dependencies>
+            </Parameter>
+            <Parameter name="CELL_SERVICE" type="CELL_SERVICE_3G" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="CELL_POWER" type="CELL_POWER_IN_DBM" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="VOICE_CODER_RATE" type="VOICE_CODER_RATE_3G" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="PHONE_NUMBER" type="PHONE_NUMBER" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="IS_EMERGENCY_NUMBER" type="IS_EMERGENCY_NUMBER" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="CALL_DURATION" type="DURATION_IN_SEC" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+        </Parameters>
+    </UseCase>
+    <UseCase Id="LAB_GSM_FLIGHTMODE_EM_VC" Domain="CELLULAR" SubDomain="FIT" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Communication.VoiceCall.LAB_GSM_FLIGHTMODE_EM_VC.LabGsmFlightmodeEmVc</ClassName>
+        <Description>Use Case GSM Voice Call Mobile Originated / Mobile release when Flight Mode is ON.</Description>
+        <Environment name="TEL">
+            <Capabilities>EQT_AG_8960</Capabilities>
+        </Environment>
+        <Parameters>
+            <Parameter name="CELL_BAND" type="CELL_BAND_2G" isOptional="false">
+                <!-- Field optional (PossibleValues, DefaultValue, Blank) if possible value not override available -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue>RGSM</DefaultValue>
+                <Blank/>
+                <Dependencies>
+                    <Dependency isOptional="false">BCH_ARFCN</Dependency>
+                    <Dependency isOptional="false">TCH_ARFCN</Dependency>
+                </Dependencies>
+            </Parameter>
+            <Parameter name="CELL_SERVICE" type="CELL_SERVICE_2G" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="CELL_POWER" type="CELL_POWER_IN_DBM" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="VOICE_CODER_RATE" type="VOICE_CODER_RATE_2G" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="PHONE_NUMBER" type="PHONE_NUMBER" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="IS_EMERGENCY_NUMBER" type="IS_EMERGENCY_NUMBER" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="CALL_DURATION" type="DURATION_IN_SEC" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="MCC" type="MCC" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="MNC" type="MNC" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+        </Parameters>
+    </UseCase>
+</UseCases>

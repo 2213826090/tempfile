@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="13.45">
+    <UseCase>LAB_EM_BATT_THERMAL_MAINTENANCE_CHARGING</UseCase>
+    <Description>battery monitoring - MOS maintenance charging at specific temperature</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>False</b2bContinuousMode>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters>
+        <Parameter>
+            <!-- maximal capacity limit for battery charging from 0% to 100% or 'full' -->
+            <Name>BATT_MAX_CAPACITY</Name>
+            <Value>92</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Battery charging state where to start measurement: FULL, CHARGING, DISCHARGING, NOT CHARGING -->
+            <Name>EXPECTED_BATT_STATE</Name>
+            <Value>FULL</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Charging time before reading information from board in seconds -->
+            <Name>CHARGE_TIME</Name>
+            <Value>300</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Time to spend in maintenance charging in seconds -->
+            <Name>MAINTENANCE_CHARGING_TIMEOUT</Name>
+            <Value>7200</Value>
+        </Parameter>
+        <Parameter>
+            <!-- LOAD to apply to the board when charging separate by ;
+            To be choosen (one or more) between following load : WIFI;BLUETOOTH;TORCH;VIBRA -->
+            <Name>LOAD</Name>
+            <Value>WIFI;BLUETOOTH;TORCH;VIBRA</Value>
+        </Parameter>
+        <Parameter>
+            <!--Delay before retrieving info during maintenance charging -->
+            <Name>DATA_POLLING</Name>
+            <Value>60</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Temperature Chamber Temperature in °C -->
+            <Name>TEMPERATURE</Name>
+            <Value>25</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='ASCII'?>
+<Campaign version="13.49">
+    <Parameters>
+        <Parameter isControlledPSUsed="False"/>
+        <Parameter isIoCardUsed="True"/>
+        <Parameter skipBootOnPowerCycle="False"/>
+        <Parameter bootRetryNumber="0"/>
+        <Parameter runHookScripts="False"/>
+        <Parameter powerCycleBetweenTC="False"/>
+        <Parameter powerCycleOnFailure="False"/>
+        <Parameter finalDutState="NoChange"/>
+        <Parameter stopCampaignOnCriticalFailure="False"/>
+        <Parameter stopCampaignOnFirstFailure="False"/>
+        <Parameter loggingLevel="debug"/>
+        <Parameter CampaignType="Other"/>
+        <Parameter TCRReportViaRESTAPI="True"/>
+    </Parameters>
+    <TestCases>
+        <!-- Flash related cases (N/N-1) -->
+        <TestCase Id="../../../../../TC/TR/TESTLIB/BootComponent/BXT-P/Fastboot_update_image"/>
+        <TestCase Id="../../../../../TC/TR/TESTLIB/BootComponent/BXT-P/Fastboot_update_userdata_recreation"/>
+        <TestCase Id="../../../../../TC/TR/TESTLIB/BootComponent/BXT-P/Update_boot_image_in_Fastboot"/>
+        <TestCase Id="../../../../../TC/TR/TESTLIB/BootComponent/BXT-P/Update_bootloader_image_in_Fastboot"/>
+        <TestCase Id="../../../../../TC/TR/TESTLIB/BootComponent/BXT-P/Update_multiboot_image_in_Fastboot"/>
+        <TestCase Id="../../../../../TC/TR/TESTLIB/BootComponent/BXT-P/Update_system_image_in_Fastboot"/>
+        <TestCase Id="../../../../../TC/TR/TESTLIB/BootComponent/BXT-P/Update_vbmeta_image_in_Fastboot"/>
+        <TestCase Id="../../../../../TC/TR/TESTLIB/BootComponent/BXT-P/Update_vendor_image_in_Fastboot"/>
+
+        <!-- Flash related cases (EB) -->
+        <TestCase Id="../../../../../TC/TR/TESTLIB/BootComponent/BXT-P/Check_ABL_config"/>
+        <TestCase Id="../../../../../TC/TR/TESTLIB/BootComponent/BXT-P/Class_A_device_boot_in_red_SBdisable"/>
+        <TestCase Id="../../../../../TC/TR/TESTLIB/BootComponent/BXT-P/Display_IOError_after_system_datablock"/>
+        <TestCase Id="../../../../../TC/TR/TESTLIB/BootComponent/BXT-P/Manufacturing_test_OS_enabler"/>
+        <TestCase Id="../../../../../TC/TR/TESTLIB/BootComponent/BXT-P/System_not_mount_if_hashtree_was_altered"/>
+        <TestCase Id="../../../../../TC/TR/TESTLIB/BootComponent/BXT-P/System_not_mount_if_metadata_fail_to_verify"/>
+        <TestCase Id="../../../../../TC/TR/TESTLIB/BootComponent/BXT-P/System_partition_should_notbe_modifiable"/>
+    </TestCases>
+</Campaign>

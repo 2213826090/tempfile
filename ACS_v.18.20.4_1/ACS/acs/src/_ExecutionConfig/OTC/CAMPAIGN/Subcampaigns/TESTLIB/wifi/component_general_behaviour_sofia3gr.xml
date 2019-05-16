@@ -1,0 +1,62 @@
+<?xml version="1.0" ?>
+<Campaign>
+      <Parameters>
+            <Parameter isControlledPSUsed="False"/>
+            <Parameter isIoCardUsed="False"/>
+            <Parameter skipBootOnPowerCycle="False"/>
+            <Parameter bootRetryNumber="0"/>
+            <Parameter runHookScripts="False"/>
+            <Parameter powerCycleBetweenTC="False"/>
+            <Parameter powerCycleOnFailure="False"/>
+            <Parameter finalDutState="NoChange"/>
+            <Parameter stopCampaignOnCriticalFailure="False"/>
+            <Parameter stopCampaignOnFirstFailure="False"/>
+            <Parameter loggingLevel="debug"/>
+            <Parameter CampaignType="Other"/>
+      </Parameters>
+      <TestCases>
+            <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/prereq_disable_captive_portal_detection"/>
+            <!--TestCase Id="../../../../TC/TR/TESTLIB/WiFi/Comms_WIFI_ComponentRelated_GeneralBehaviour_DUT-sleep-refresh-list"/-->
+            <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/Comms_WIFI_ComponentRelated_GeneralBehaviour_Airplane-mode"/>
+            <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/Comms_WIFI_ComponentRelated_GeneralBehaviour_Enable_Disable-WiFi-iterative"/>
+            <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/Comms_WIFI_ComponentRelated_GeneralBehaviour_Wi-Fi-Scan"/>
+            <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/Comms_WIFI_ComponentRelated_GeneralBehaviour_Wi-Fi-Scan-iterative"/>
+
+            <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/Comms_WIFI_ComponentRelated_GeneralBehaviour_Stay-connected-for-long-time-to-the-same-AP"/>
+            <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/Comms_WIFI_ComponentRelated_GeneralBehaviour_Add-A-New-Network"/>
+            <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/Comms_WIFI_ComponentRelated_GeneralBehaviour_Connected-Forget"/>
+            <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/Comms_WIFI_ComponentRelated_GeneralBehaviour_Reboot-Access-Point"/>
+            <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/Comms_WIFI_ComponentRelated_GeneralBehaviour_Remember-Wireless-Networks"/>
+            <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/Comms_WIFI_ComponentRelated_GeneralBehaviour_Restart-AP-no-SSID-remembered-N2400MHz-OPEN"/>
+            <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/Comms_WIFI_ComponentRelated_GeneralBehaviour_Scanning-is-continued-when-no-SSID-remembered"/>
+            <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/Comms_WIFI_ComponentRelated_GeneralBehaviour_WiFi-Settings-After-Reboot"/>
+            <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/Comms_WIFI_ComponentRelated_GeneralBehaviour_WLAN-AutoDisconnectConnect-OnOff"/>
+            <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/Comms_WIFI_ComponentRelated_GeneralBehaviour_Verify-Scan-Works"/>
+            <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/Comms_WIFI_ComponentRelated_GeneralBehaviour_WiFi-can-be-activated-when-Airplane-mode-is-on"/>
+            <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/Comms_WIFI_ComponentRelated_GeneralBehaviour_WLAN-ConnectDisconnect"/>
+            <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/Comms_WIFI_ComponentRelated_GeneralBehaviour_WrongPassword-CorrectPassword"/>
+            <!--TestCase Id="../../../../TC/TR/TESTLIB/WiFi/Comms_WIFI_ComponentRelated_GeneralBehaviour_Reconnect-after-DUT-reboot"/-->
+            <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/Comms_WIFI_ComponentRelated_GeneralBehaviour_Cannot-add-WiFi-networks-after-press-cancel"/>
+            <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/Comms_WIFI_ComponentRelated_GeneralBehaviour_Check-IP-and-mac-adress-after-connection"/>
+            <!--TestCase Id="../../../../TC/TR/TESTLIB/WiFi/Comms_WIFI_ComponentRelated_GeneralBehaviour_Check-WiFi-MAC-address-after-reboot"/-->
+            <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/Comms_WIFI_ComponentRelated_GeneralBehaviour_DiscoveryConfig-APStatus"/>
+            <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/Comms_WIFI_ComponentRelated_GeneralBehaviour_Driver"/>
+            <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/Comms_WIFI_ComponentRelated_GeneralBehaviour_Check-Network-Information"/>
+            <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/Comms_WIFI_ComponentRelated_GeneralBehaviour_DiscoveryConfig-PasswordRange"/>
+            <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/Comms_WIFI_ComponentRelated_GeneralBehaviour_Navigate-the-Internet"/>
+            <!--TestCase Id="../../../../TC/TR/TESTLIB/WiFi/Comms_WIFI_ComponentRelated_GeneralBehaviour_HiddenAccessPoints-WEPOpen"/-->
+            <!--TestCase Id="../../../../TC/TR/TESTLIB/WiFi/Comms_WIFI_ComponentRelated_GeneralBehaviour_HiddenAccessPoints-WEPShare"/-->
+            <!--TestCase Id="../../../../TC/TR/TESTLIB/WiFi/Comms_WIFI_ComponentRelated_GeneralBehaviour_WEP-SharedMode"/-->
+            <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/Comms_WIFI_ComponentRelated_GeneralBehaviour_Connected-ShowSSID-HideSSID"/>
+            <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/Comms_WIFI_ComponentRelated_GeneralBehaviour_Connection-to-a-hidden-network"/>
+            <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/Comms_WIFI_ComponentRelated_GeneralBehaviour_DUT-connect-with-a-long-name-WiFi-AP"/>
+            <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/Comms_WIFI_FlightMode_FeatureRequired_WiFi-OFF-AM-ON"/>
+            <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/Comms_WIFI_FlightMode_FeatureRequired_WiFi-works-AM-ON"/>
+            <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/Comms_WIFI_FlightMode_FeatureRequired_WiFi-OFF-AM-ON-OFF"/>
+            <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/Comms_WIFI_FlightMode_FeatureRequired_WiFi-ON-AM-ON-OFF"/>
+            <!--TestCase Id="../../../../TC/TR/TESTLIB/WiFi/Comms_WIFI_FlightMode_FeatureRelated_Radios-Coexistence"/>
+            <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/Comms_WIFI_FlightMode_FeatureRelated_Radios-Coexistence-AM-ON-OFF"/-->
+            <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/postreq_reset_AP"/>
+            <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/prereq_enable_captive_portal_detection"/>
+      </TestCases>
+</Campaign>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="16.15">
+    <UseCase>LIVE_DUAL_PHONE_VC_SMS_FLIGHT_MODE</UseCase>
+    <Description>SMS and Voice Call while DUT is in Flight Mode</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <!--<Environment name="TEL">
+    </Environment> -->
+    <Parameters>
+        <Parameter>
+            <!-- SMS text message -->
+            <Name>MESSAGE_CONTENT</Name>
+            <Value>This is my SMS text !</Value>
+        </Parameter>
+        <Parameter>
+            <!-- SMS transfer timeout in seconds -->
+            <Name>SMS_TRANSFER_TIMEOUT</Name>
+            <Value>30</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Call Duration (in seconds) -->
+            <Name>CALL_DURATION</Name>
+            <Value>15</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

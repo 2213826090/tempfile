@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<Sequence>
+<GPIBCommand equipment="NETWORK_SIMULATOR1" command="SYST:APPL:FORM 'WCDMA'" description="Set the application format to WCDMA" />
+<GPIBCommand equipment="NETWORK_SIMULATOR1" command="SYST:PRES2" description="Perform a full preset" />
+<GPIBCommand equipment="NETWORK_SIMULATOR1" command="CALL:OPER:MODE OFF" description="Set the cell to off" />
+<GPIBCommand equipment="NETWORK_SIMULATOR1" command="CALL:CHAN 10700" description="Set the cell downlink UArfcn" />
+<GPIBCommand equipment="NETWORK_SIMULATOR1" command="CALL:SET:PCR:CHAN:FDD:DOWN 10733" description="Set the PCR cell downlink UArfcn" />
+
+<GPIBCommand equipment="NETWORK_SIMULATOR1" command="SYST:PRES2"/>
+<GPIBCommand equipment="NETWORK_SIMULATOR1" command="call:oper:mode OFF"/>
+
+<GPIBCommand equipment="NETWORK_SIMULATOR1" command="CALL:PAGing:SERVice:TYPe GPRS "/>
+<GPIBCommand equipment="NETWORK_SIMULATOR1" command="CALL:SERVice:GPRS:RAB PSDH384"/>
+<GPIBCommand equipment="NETWORK_SIMULATOR1" command="CALL:SERVice:RBTest:RAB HSDP12"/>
+
+<GPIBCommand equipment="NETWORK_SIMULATOR1" command="CALL:CELL:POWer:AMPLitude:FDD -7.00000000E+001"/> 
+<GPIBCommand equipment="NETWORK_SIMULATOR1" command="CALL:CELL:POWer:AMPLitude -7.00000000E+001"/> 
+<GPIBCommand equipment="NETWORK_SIMULATOR1" command="CALL:CELL:POWer:SAMPlitude:FDD -7.00000000E+001"/> 
+<GPIBCommand equipment="NETWORK_SIMULATOR1" command="CALL:CELL:POWer:SAMPlitude -7.00000000E+001"/>
+
+<GPIBCommand equipment="NETWORK_SIMULATOR1" command="CALL:CELL:AICHannel:CCODe CODE3"/>
+<GPIBCommand equipment="NETWORK_SIMULATOR1" command="CALL:CELL:AICHannel:CCODe:CODE +3"/>
+<GPIBCommand equipment="NETWORK_SIMULATOR1" command="CALL:CELL:CCPChannel:SECondary:CCODe:CODE +2"/> 
+<GPIBCommand equipment="NETWORK_SIMULATOR1" command="CALL:CELL:CCPChannel:SECondary:CONNected:CONFig:STATe 0"/> 
+<GPIBCommand equipment="NETWORK_SIMULATOR1" command="CALL:CELL:DPCHannel:KSPS15:CCODe:CODE +14"/> 
+<GPIBCommand equipment="NETWORK_SIMULATOR1" command="CALL:CELL:DPCHannel:KSPS15:CCODe:CODE:HSDPa +14"/> 
+<GPIBCommand equipment="NETWORK_SIMULATOR1" command="CALL:CELL:DPCHannel:KSPS30:CCODe:CODE +7"/> 
+<GPIBCommand equipment="NETWORK_SIMULATOR1" command="CALL:CELL:DPCHannel:KSPS30:CCODe:CODE:HSDPa +4"/>
+
+<GPIBCommand equipment="NETWORK_SIMULATOR1" command="CALL:CELL:DPCHannel:TYPe HSDP12"/>
+<GPIBCommand equipment="NETWORK_SIMULATOR1" command="CALL:CELL:EAGChannel:CCODe:CODE +15"/> 
+<GPIBCommand equipment="NETWORK_SIMULATOR1" command="CALL:CELL:EDCHannel:CINDicator CNIN"/>
+<GPIBCommand equipment="NETWORK_SIMULATOR1" command="CALL:CELL:EHIChannel:CCODe:CODE +6"/>
+<GPIBCommand equipment="NETWORK_SIMULATOR1" command="CALL:CELL:PICHannel:CCODe:CODE +2"/> 
+
+<GPIBCommand equipment="NETWORK_SIMULATOR1" command="CALL:CELL:HSSC1:CONFig:STATe 1"/>
+<GPIBCommand equipment="NETWORK_SIMULATOR1" command="CALL:CELL:HSSC2:CONFig:STATe 1"/>
+<GPIBCommand equipment="NETWORK_SIMULATOR1" command="CALL:CELL:HSSC3:CONFig:STATe 0"/>
+<GPIBCommand equipment="NETWORK_SIMULATOR1" command="CALL:CELL:HSSC4:CONFig:STATe 0"/>
+<GPIBCommand equipment="NETWORK_SIMULATOR1" command="CALL:CELL:HSSC1:CCODe:CODE +2"/>
+<GPIBCommand equipment="NETWORK_SIMULATOR1" command="CALL:CELL:HSSC2:CCODe:CODE +3"/>
+
+<GPIBCommand equipment="NETWORK_SIMULATOR1" command="CALL:CELL:OCNSource:CCODe:CODE:HSDPa +5,+123,+124,+125,+126,+127"/> 
+<GPIBCommand equipment="NETWORK_SIMULATOR1" command="CALL:CELL:OCNSource:CONFig:STATe:HSDPa 1,0,0,0,0,0"/>
+
+<GPIBCommand equipment="NETWORK_SIMULATOR1" command="CALL:CONNected:CCPChannel:PRIMary:STATe:HSDPa 0"/> 
+<GPIBCommand equipment="NETWORK_SIMULATOR1" command="CALL:CONNected:CCPChannel:PRIMary:STATe:HSPA 0"/> 
+<GPIBCommand equipment="NETWORK_SIMULATOR1" command="CALL:CONNected:PICHannel:STATe:HSDPa 0"/> 
+<GPIBCommand equipment="NETWORK_SIMULATOR1" command="CALL:CONNected:PICHannel:STATe:HSPA 0"/> 
+<GPIBCommand equipment="NETWORK_SIMULATOR1" command="CALL:CONNected:DPCHannel:HSDPa -13.00"/>
+
+<GPIBCommand equipment="NETWORK_SIMULATOR1" command="CALL:CONNected:HSSCchannel -13.00"/>
+<GPIBCommand equipment="NETWORK_SIMULATOR1" command="CALL:CONNected:HSSCchannel2 -20.00"/>
+<GPIBCommand equipment="NETWORK_SIMULATOR1" command="CALL:CONNected:HSSCchannel2:HSPA -20.00"/>
+<GPIBCommand equipment="NETWORK_SIMULATOR1" command="CALL:CONNected:HSPDschannel -1.00"/>
+<GPIBCommand equipment="NETWORK_SIMULATOR1" command="CALL:CONNected:HSPDschannel:HSPA -2.00"/>
+
+<GPIBCommand equipment="NETWORK_SIMULATOR1" command="CALL:HSDPa:MS:HSDSchannel:CATegory:MANual +10"/> 
+<GPIBCommand equipment="NETWORK_SIMULATOR1" command="CALL:HSDPa:SERVice:PSData:HSDSchannel:CONFig:TYPE UDEF"/>
+<GPIBCommand equipment="NETWORK_SIMULATOR1" command="CALL:HSDPa:SERVice:PSData:HSPDschannel:CCODe:CODE +1"/> 
+<GPIBCommand equipment="NETWORK_SIMULATOR1" command="CALL:HSDPa:SERVice:PSData:MACD:PDUSize BITS656"/> 
+<GPIBCommand equipment="NETWORK_SIMULATOR1" command="CALL:HSDPa:SERVice:PSData:UDEFined:HSPDschannel:COUNt +15"/> 
+<GPIBCommand equipment="NETWORK_SIMULATOR1" command="CALL:HSDPa:SERVice:PSData:UDEFined:TBSize:INDex +62"/>
+<GPIBCommand equipment="NETWORK_SIMULATOR1" command="CALL:HSDPa:SERVice:RBTest:HSDSchannel:CONFig:TYPE UDEF"/>
+<GPIBCommand equipment="NETWORK_SIMULATOR1" command="CALL:HSDPa:SERVice:RBTest:HSPDschannel:CCODe:CODE +1"/> 
+<GPIBCommand equipment="NETWORK_SIMULATOR1" command="CALL:HSDPa:SERVice:RBTest:UDEFined:HSPDschannel:COUNt +15"/> 
+<GPIBCommand equipment="NETWORK_SIMULATOR1" command="CALL:HSUPa:EDCHannel:TTI MS2"/> 
+<GPIBCommand equipment="NETWORK_SIMULATOR1" command="CALL:HSUPa:SERVice:PSData:MACD:PDUSize +656"/> 
+<GPIBCommand equipment="NETWORK_SIMULATOR1" command="CALL:HSUPa:SGRant:ABSolute:MODE PATT"/> 
+
+<GPIBCommand equipment="NETWORK_SIMULATOR1" command="call:oper:mode CALL"/>		
+</Sequence> 

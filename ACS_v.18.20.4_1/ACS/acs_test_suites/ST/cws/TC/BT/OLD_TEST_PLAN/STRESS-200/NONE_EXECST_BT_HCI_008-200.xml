@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="13.37">
+  <UseCase>LIVE_DUAL_PHONE_BT_PAIRING</UseCase>
+  <Description>Pairing to BlueTooth device on another reference phone</Description>
+  <b2bIteration>200</b2bIteration>
+  <b2bContinuousMode>True</b2bContinuousMode>
+  <TcExpectedResult>PASS</TcExpectedResult>
+  <Parameters>
+    <Parameter>
+        <!-- Define who initiates the pairing request
+            Values are PHONE1 or PHONE2
+            This is a list of value separated by coma ','
+            That list adds the capability to do several pairing process in one Run.-->
+        <Name>INITIATOR_LIST</Name>
+        <Value>PHONE1</Value>
+    </Parameter>
+    <Parameter>
+        <!-- is the pairing request reply value of phone1.
+            Value can be 1 for Positive reply, 0 for Negative reply
+            This is a list of reply separated by coma ','
+            That list adds the capability to validate recovering pairing after a negative reply.-->
+        <Name>REPLY_LIST_1</Name>
+        <Value>1</Value>
+        </Parameter>
+    <Parameter>
+        <!-- is the pairing request reply value of phone2
+            Value can be 1 for Positive reply, 0 for Negative reply
+            This is a list of reply separated by coma ','
+            That list adds the capability to validate recovering pairing after a negative reply.-->
+        <Name>REPLY_LIST_2</Name>
+        <Value>1</Value>
+    </Parameter>
+    <Parameter>
+        <!-- is the discovery mode of phone1. Values are:
+            NOT_DISCOV: not discoverable
+            DISCOV_PAIR: discoverable only by paired devices
+            DISCOV_ALL: discoverable by all nearby devices-->
+        <Name>DISCOVERY_MODE_1</Name>
+        <Value>DISCOV_ALL</Value>
+    </Parameter>
+    <Parameter>
+        <!-- BT pincode used by phone1 as string (16 characters max)-->
+        <Name>CODEPIN_1</Name>
+        <Value>hello</Value>
+    </Parameter>
+    <Parameter>
+        <!-- code used by phone1 as Integer (6 digits max)-->
+        <Name>PASSKEY_1</Name>
+        <Value>1234</Value>
+    </Parameter>
+    <Parameter>
+        <!-- is the discovery mode of phone2. Values are:
+            NOT_DISCOV: not discoverable
+            DISCOV_PAIR: discoverable only by paired devices
+            DISCOV_ALL: discoverable by all nearby devices-->
+        <Name>DISCOVERY_MODE_2</Name>
+        <Value>DISCOV_ALL</Value>
+    </Parameter>
+    <Parameter>
+        <!-- BT pincode used by phone1 as string (16 characters max)-->
+        <Name>CODEPIN_2</Name>
+        <Value>hello</Value>
+    </Parameter>
+    <Parameter>
+        <!-- code used by phone1 as Integer (6 digits max)-->
+        <Name>PASSKEY_2</Name>
+        <Value>1234</Value>
+    </Parameter>
+    <Parameter>
+        <!-- duration in seconds of the pairing.
+            UC is Waiting during that value and checks devices are still paired at the end.
+            By default the value is 1 = stay paired for 1 second.-->
+        <Name>DURATION</Name>
+        <Value>2</Value>
+    </Parameter>
+    <Parameter>
+        <!-- [Optional] Is set to True, the flight mode will be enables before setting bt on
+            and disabled at tear down. -->
+        <Name>FLIGHT_MODE</Name>
+        <Value>False</Value>
+    </Parameter>
+  </Parameters>
+</TestCase>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<Include>
+    <TestStepSet Id="InstallPedometer">
+        <TestStep Id="GET_ARTIFACT"
+                  ARTIFACT="FROM_TC:ARTIFACT_PREFIX[+]/[+]FROM_TC:HECIWRITEANDROID_FILE"
+                  ARTIFACT_SOURCE="FROM_BENCH:ARTIFACT_MANAGER:URI"
+                  TRANSFER_TIMEOUT="DEFAULT"
+                  STORED_FILE_PATH="FILE_PATH_IN_CACHE1" EQT="DEFAULT" />
+
+        <TestStep Id="INSTALL_FILE"
+                  DEVICE="PHONE1"
+                  FILE_PATH="FROM_CTX:FILE_PATH_IN_CACHE1"
+                  TYPE="media"
+                  DESTINATION="FROM_DEVICE:PHONE1:binPath"
+                  TIMEOUT="DEFAULT"
+                  DESTINATION_STORED_PATH="HECIWRITEANDROID_FILE_PATH" />
+
+        <TestStep Id="GET_ARTIFACT"
+                  ARTIFACT="FROM_TC:ARTIFACT_PREFIX[+]/[+]FROM_TC:PEDOMETER_ON_FILE"
+                  ARTIFACT_SOURCE="FROM_BENCH:ARTIFACT_MANAGER:URI"
+                  TRANSFER_TIMEOUT="DEFAULT"
+                  STORED_FILE_PATH="FILE_PATH_IN_CACHE1" EQT="DEFAULT" />
+
+        <TestStep Id="INSTALL_FILE"
+                  DEVICE="PHONE1"
+                  FILE_PATH="FROM_CTX:FILE_PATH_IN_CACHE1"
+                  TYPE="media"
+                  DESTINATION="FROM_DEVICE:PHONE1:binPath"
+                  TIMEOUT="DEFAULT"
+                  DESTINATION_STORED_PATH="PEDOMETER_ON_FILE_PATH" />
+
+        <TestStep Id="START_PEDOMETER"
+                  DEVICE="PHONE1"  PEDOMETER_MODE_FILE="FROM_CTX:PEDOMETER_ON_FILE_PATH" HECIWRITEANDROID_FILE="FROM_CTX:HECIWRITEANDROID_FILE_PATH"/>
+    </TestStepSet>
+    <TestStepSet Id="UninstallPedometer">
+        <TestStep Id="GET_ARTIFACT"
+                  ARTIFACT="FROM_TC:ARTIFACT_PREFIX[+]/[+]FROM_TC:PEDOMETER_OFF_FILE"
+                  ARTIFACT_SOURCE="FROM_BENCH:ARTIFACT_MANAGER:URI"
+                  TRANSFER_TIMEOUT="DEFAULT"
+                  STORED_FILE_PATH="FILE_PATH_IN_CACHE1" EQT="DEFAULT" />
+
+        <TestStep Id="INSTALL_FILE"
+                  DEVICE="PHONE1"
+                  FILE_PATH="FROM_CTX:FILE_PATH_IN_CACHE1"
+                  TYPE="media"
+                  DESTINATION="FROM_DEVICE:PHONE1:binPath"
+                  TIMEOUT="DEFAULT"
+                  DESTINATION_STORED_PATH="PEDOMETER_OFF_FILE_PATH" />
+
+        <TestStep Id="STOP_PEDOMETER"
+                  DEVICE="PHONE1" PEDOMETER_MODE_FILE="FROM_CTX:PEDOMETER_OFF_FILE_PATH" HECIWRITEANDROID_FILE="FROM_CTX:HECIWRITEANDROID_FILE_PATH"/>
+    </TestStepSet>
+</Include>

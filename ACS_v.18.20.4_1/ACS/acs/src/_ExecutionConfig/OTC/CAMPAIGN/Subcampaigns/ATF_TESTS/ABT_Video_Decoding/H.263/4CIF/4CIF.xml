@@ -1,0 +1,24 @@
+<?xml version="1.0" ?>
+<Campaign>
+      <Parameters>
+            <Parameter isControlledPSUsed="False"/>
+            <Parameter isIoCardUsed="False"/>
+            <Parameter skipBootOnPowerCycle="False"/>
+            <Parameter bootRetryNumber="0"/>
+            <Parameter runHookScripts="False"/>
+            <Parameter powerCycleBetweenTC="False"/>
+            <Parameter powerCycleOnFailure="False"/>
+            <Parameter finalDutState="NoChange"/>
+            <Parameter stopCampaignOnCriticalFailure="False"/>
+            <Parameter stopCampaignOnFirstFailure="False"/>
+            <Parameter loggingLevel="debug"/>
+            <Parameter CampaignType="Other"/>
+      </Parameters>
+      <TestCases>
+            <TestCase Id="../../../../../../TC/TR/ATF_TESTS/ABT_Video_Decoding/H.263/4CIF/FULLTIME_h263_25fps_1248kbps_44khz_32kbps.MP4"/>
+            <!-- Not supported
+            <TestCase Id="../../../../../../TC/TR/ATF_TESTS/ABT_Video_Decoding/H.263/4CIF/H263_704x576_25fps_658kbps_AAC_LC_48kHz_165kbps_Stereo.3gp"/>
+            <TestCase Id="../../../../../../TC/TR/ATF_TESTS/ABT_Video_Decoding/H.263/4CIF/H263_704x576_15fps_328kbps_AAC_LC_24kHz_128kbps_Mono.3gp"/>
+            <TestCase Id="../../../../../../TC/TR/ATF_TESTS/ABT_Video_Decoding/H.263/4CIF/H263_704x576_30fps_548kbps_AAC_LC_44.1kHz_128kbps_Stereo.3gp"/>-->
+      </TestCases>
+</Campaign>

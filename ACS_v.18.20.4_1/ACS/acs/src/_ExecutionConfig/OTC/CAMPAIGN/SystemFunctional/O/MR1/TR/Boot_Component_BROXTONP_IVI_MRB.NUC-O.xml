@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='ASCII'?>
+<Campaign version="13.49">
+    <Parameters>
+        <Parameter isControlledPSUsed="False"/>
+        <Parameter isIoCardUsed="True"/>
+        <Parameter skipBootOnPowerCycle="False"/>
+        <Parameter bootRetryNumber="0"/>
+        <Parameter runHookScripts="False"/>
+        <Parameter powerCycleBetweenTC="False"/>
+        <Parameter powerCycleOnFailure="False"/>
+        <Parameter finalDutState="NoChange"/>
+        <Parameter stopCampaignOnCriticalFailure="False"/>
+        <Parameter stopCampaignOnFirstFailure="False"/>
+        <Parameter loggingLevel="debug"/>
+        <Parameter CampaignType="Other"/>
+        <Parameter TCRReportViaRESTAPI="True"/>
+    </Parameters>
+    <TestCases>
+        <!-- Relay related cases -->
+        <TestCase Id="../../../../../TC/TR/TESTLIB/BootComponent/AIA/All_passwd_set_cleared_after_factory_reset"/>
+        <TestCase Id="../../../../../TC/TR/TESTLIB/BootComponent/AIA/Boot_to_android"/>
+        <TestCase Id="../../../../../TC/TR/TESTLIB/BootComponent/AIA/Class_A_ device_ boot_ in_Green"/>
+        <TestCase Id="../../../../../TC/TR/TESTLIB/BootComponent/AIA/Contact_record_are_empty_after_factory_reset"/>
+        <TestCase Id="../../../../../TC/TR/TESTLIB/BootComponent/AIA/Factory_reset_applications_removed"/>
+        <TestCase Id="../../../../../TC/TR/TESTLIB/BootComponent/AIA/Factory_Reset_Data_Reset"/>
+        <TestCase Id="../../../../../TC/TR/TESTLIB/BootComponent/AIA/FORCED_SHUTDOWN"/>
+        <TestCase Id="../../../../../TC/TR/TESTLIB/BootComponent/AIA/FORCED_SHUTDOWN_50times"/>
+        <TestCase Id="../../../../../TC/TR/TESTLIB/BootComponent/AIA/GRACEFUL_SHUTDOWN-USBConnection"/>
+        <TestCase Id="../../../../../TC/TR/TESTLIB/BootComponent/AIA/Restore_factory_settings_with_reboot_10times"/>
+        <TestCase Id="../../../../../TC/TR/TESTLIB/BootComponent/AIA/Time_management_with_device_off"/>
+        <TestCase Id="../../../../../TC/TR/TESTLIB/BootComponent/AIA/TouchBTWIFI_works_after_flash_build"/>
+
+        <!-- UI related cases -->
+        <TestCase Id="../../../../../TC/TR/TESTLIB/BootComponent/AIA/Time_set"/>
+    </TestCases>
+</Campaign>

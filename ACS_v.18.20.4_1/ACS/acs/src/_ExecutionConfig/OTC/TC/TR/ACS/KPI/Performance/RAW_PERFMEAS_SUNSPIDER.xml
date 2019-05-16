@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase>
+    <UseCase>LIVE_PERFMEAS_APPLICATION</UseCase>
+    <Description>Sunspider benchmark (Browser Javascript engine)</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters>
+        <Parameter>
+            <Name>TECHNOLOGIES</Name>
+            <Value>
+                Wifi: status=on, ssid=WPA2, passphrase=13245768, security=WPA2;
+                Bluetooth: status=off;
+                Gps: status=off;
+                Cellular: status=off;
+            </Value>
+        </Parameter>
+        <Parameter>
+            <Name>APPLICATION_NAME</Name>
+            <Value>Sunspider</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TIMEOUT</Name>
+            <Value>200</Value>
+        </Parameter>
+        <Parameter>
+            <Name>MEASURE_NB</Name>
+            <Value>5</Value>
+        </Parameter>
+        <Parameter>
+            <Name>STAT_TYPE</Name>
+            <Value>MEDIAN</Value>
+        </Parameter>
+        <Parameter>
+            <Name>APPURI</Name>
+            <Value>DEFAULT: http://192.168.42.5/Sunspider/sunspider-1.0.2/sunspider-1.0.2/driver.html</Value>
+        </Parameter>
+        <Parameter>
+            <Name>ARGUMENTS</Name>
+            <Value>orientation: portrait; browser: native</Value>
+        </Parameter>
+        <Parameter>
+            <Name>SYSDEBUG_MODULES</Name>
+            <Value>Thermals: skin0=33, skin1=33, soc=33, Core 0=33, Core 1=33;</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<Campaign>
+    <Parameters>
+        <Parameter isControlledPSUsed="True" />
+        <Parameter isIoCardUsed="True" />
+        <Parameter skipBootOnPowerCycle="True" />
+        <Parameter runHookScripts="False" />
+        <Parameter powerCycleBetweenTC="False" />
+        <Parameter powerCycleOnFailure="False" />
+        <Parameter finalPowerOff="True" />
+        <Parameter finalDutState="PowerOff" />
+        <Parameter stopCampaignOnCriticalFailure="False" />
+        <Parameter stopCampaignOnFirstFailure="False" />
+        <!-- LoggingLevel possible values: info | warning | debug | error -->
+        <Parameter loggingLevel="debug" />
+        <!-- CampaignType format -> <TEAM>_<CAMPAIGNTYPE>
+            Possible values:
+            FT(Feature Team)-> SANITY | REGRESSION | STRESS, RELIABILTY | MTBF
+            ST(System Test)-> SANITY | REGRESSION | STRESS, RELIABILTY | MTBF
+            SI(System Integration)-> EAT | STAB | PACT | CAT0 | RELIABILITY | MTBF | CTS
+            Otherwise "Others" should be used -->
+        <Parameter CampaignType="ST_EM_PS_RELIABILITY" />
+    </Parameters>
+    <Targets>
+        <!-- Target Values -->
+        <Target targetB2bPassRate="49" />
+    </Targets>
+    <TestCases>
+        <!-- Testcase campaigns -->
+        <TestCase Id="..\..\..\TC\RELIA\ST_EM_RELIA_METATCD_06_DCP5-LAB_EM_PLUG_CHARGER" />
+        <TestCase Id="..\..\..\TC\RELIA\ST_EM_RELIA_METATCD_07_SDP5-LAB_EM_PLUG_CHARGER" />
+        <TestCase Id="..\..\..\TC\RELIA\ST_EM_RELIA_METATCD_08_CDP5-LAB_EM_REMOVE_CHARGER" />
+        <TestCase Id="..\..\..\TC\RELIA\ST_EM_RELIA_METATCD_19_5-LAB_EM_BATT_OVER_VOLTAGE" />
+        <TestCase Id="..\..\..\TC\RELIA\ST_EM_RELIA_METATCD_16_UNDER5-LAB_EM_USB_TEST_VOLTAGE" />
+        <TestCase Id="..\..\..\TC\RELIA\ST_EM_RELIA_METATCD_56_CTP5-LAB_EM_PS_LOW_BATT_SHUTDOWN" />
+        <TestCase Id="..\..\..\TC\RELIA\ST_EM_RELIA_METATCD_45_5-LAB_EM_PS_BOOT_ON_POWER_BUTTON" />
+        <TestCase Id="..\..\..\TC\RELIA\ST_EM_RELIA_METATCD_12_5-LAB_EM_THERMAL_TEMP_PROTECTION" />
+        <TestCase Id="..\..\..\TC\RELIA\ST_EM_RELIA_METATCD_HWSHT-LAB_EM_PS_TURN_OFF_DURING_BOOT" />
+        <TestCase Id="..\..\..\TC\RELIA\ST_EM_RELIA_METATCD_EMGSHT-LAB_EM_PS_TURN_OFF_DURING_BOOT" />
+        <TestCase Id="..\..\..\TC\RELIA\ST_EM_RELIA_METATCD_REMBATT-LAB_EM_PS_TURN_OFF_DURING_BOOT" />
+    </TestCases>
+</Campaign>

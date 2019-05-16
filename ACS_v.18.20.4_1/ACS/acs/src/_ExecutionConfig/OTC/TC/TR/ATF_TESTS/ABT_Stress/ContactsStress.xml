@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase>
+  <ClassName>UseCase.OTC.System.MONKEY_TOOL_RUNNER.MonkeyStressRunner</ClassName>
+  <Description>Test case for stressing the Contacts Application using Monkey Tool</Description>
+  <b2bIteration>1</b2bIteration>
+  <b2bContinuousMode>False</b2bContinuousMode>
+  <Parameters>
+    <Parameter>
+      <Name>TIMEOUT</Name>
+      <Value>10000</Value>
+    </Parameter>
+    <Parameter>
+      <Name>PACKAGE_NAME</Name>
+      <Value>com.google.android.contacts</Value>
+    </Parameter>
+    <Parameter>
+      <Name>NUMBER_OF_EVENTS</Name>
+      <Value>10000</Value>
+    </Parameter>
+ <Parameter>
+      <Name>TIME_BETWEEN_EVENTS</Name>
+      <Value>300</Value>
+    </Parameter>
+  </Parameters>
+</TestCase>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase>
+    <UseCase>LIVE_CHECK_ICON_VIDEO_RECORDED</UseCase>
+    <Description>Check if icon is display correctly in video application on pause</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>False</b2bContinuousMode>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters>
+        <Parameter>
+            <!-- Path to the image library -->
+            <Name>LIBRARY_IMAGE_PATH</Name>
+            <Value>C:/Users/</Value>
+        </Parameter>
+        <!--Images template-->
+        <Parameter>
+            <!-- Name of album icon image less extension (.png) -->
+            <Name>ALBUM_VIDEO</Name>
+            <Value>album_video</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Name of pause icon image less extension (.png) -->
+            <Name>PAUSE_VIDEO</Name>
+            <Value>pause_video</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Name of share icon image less extension (.png) -->
+            <Name>SHARE_VIDEO</Name>
+            <Value>share_video</Value>
+        </Parameter>
+        <Parameter>
+            <!-- [OPTIONAL] Set the video playback orientation, three possible value
+                    - "" : use the default orientation (landscape for tablet and portrait for phone)
+                    - portrait: force video playback in portrait orientation
+                    - landscape: force video playback in landscape orientation -->
+            <Name>VIDEO_ORIENTATION</Name>
+            <Value></Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<Campaign>
+      <Parameters>
+            <Parameter isControlledPSUsed="False"/>
+            <Parameter isIoCardUsed="False"/>
+            <Parameter skipBootOnPowerCycle="False"/>
+            <Parameter bootRetryNumber="0"/>
+            <Parameter runHookScripts="False"/>
+            <Parameter powerCycleBetweenTC="False"/>
+            <Parameter powerCycleOnFailure="False"/>
+            <Parameter finalDutState="NoChange"/>
+            <Parameter stopCampaignOnCriticalFailure="False"/>
+            <Parameter stopCampaignOnFirstFailure="False"/>
+            <Parameter loggingLevel="debug"/>
+            <Parameter CampaignType="Other"/>
+      </Parameters>
+      <TestCases>
+            <TestCase Id="../../../../../TC/TR/ATF_TESTS/ABT_Audio_Decoding/FLAC/FLAC_1kHz_21.2kbps_Stereo.flac"/>
+            <TestCase Id="../../../../../TC/TR/ATF_TESTS/ABT_Audio_Decoding/FLAC/FLAC_100Hz_1kbps_Stereo.flac"/>
+            <TestCase Id="../../../../../TC/TR/ATF_TESTS/ABT_Audio_Decoding/FLAC/FLAC_46kHz_620kbps_Stereo.flac"/>
+            <TestCase Id="../../../../../TC/TR/ATF_TESTS/ABT_Audio_Decoding/FLAC/FLAC_44.1kHz_602kbps_Stereo.flac"/>
+            <TestCase Id="../../../../../TC/TR/ATF_TESTS/ABT_Audio_Decoding/FLAC/FLAC_100Hz_1kbps_Mono.flac"/>
+            <TestCase Id="../../../../../TC/TR/ATF_TESTS/ABT_Audio_Decoding/FLAC/FLAC_48kHz_667kbps_Stereo.flac"/>
+            <TestCase Id="../../../../../TC/TR/ATF_TESTS/ABT_Audio_Decoding/FLAC/FLAC_48kHz_1480kbps_Stereo.flac"/>
+            <TestCase Id="../../../../../TC/TR/ATF_TESTS/ABT_Audio_Decoding/FLAC/FLAC_48kHz_659kbps_Mono.flac"/>
+            <TestCase Id="../../../../../TC/TR/ATF_TESTS/ABT_Audio_Decoding/FLAC/FLAC_32kHz_473kbps_Stereo.flac"/>
+            <TestCase Id="../../../../../TC/TR/ATF_TESTS/ABT_Audio_Decoding/FLAC/FLAC_42kHz_283kbps_Mono.flac"/>
+      </TestCases>
+</Campaign>

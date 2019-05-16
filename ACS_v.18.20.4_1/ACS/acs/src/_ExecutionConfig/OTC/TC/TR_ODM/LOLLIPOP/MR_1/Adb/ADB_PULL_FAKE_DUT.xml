@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase>
+    <UseCase>EXEC</UseCase>
+    <Description>Run "adb pull" command to using a non-existent file on DUT and a valid location on host</Description>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters>
+        <Parameter>
+               <Name>RUN_TIMEOUT</Name>
+               <Value>100</Value>
+          </Parameter>
+        <!--_____________ -->
+        <!-- RUN SECTION -->
+        <!--_____________ -->
+        <!-- One action or sequence of actions (RUN_CMD, RUN_CMD1, RUN_CMD2, ...) -->
+        <!-- FIRST ACTION -->
+        <Parameter>
+            <!-- Action to be run, should be in the executable path of the system -->
+            <!-- (mandatory) -->
+            <!-- For this template, we are running windows only command -->
+            <Name>RUN_CMD</Name>
+         <Value>adb pull /sdcard/non_existing_file ./</Value>
+        </Parameter>
+        <Parameter>
+            <Name>RUN_EXPECT_RESULT</Name>
+         <Value>remote object '/sdcard/non_existing_file' does not exist</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

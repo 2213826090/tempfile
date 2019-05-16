@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+<TestCase>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Discription>
+Check all sensor status, As a developer I need to ensure that all sensors comply with expected Android behavior so that the platform provides a consistent experience
+&lt;br /&gt;Correctly report supported sensor types
+&lt;br /&gt;Implement APIs defined by the Android SDK and Android Open Source Project Documentation
+&lt;br /&gt;Provide sensor measurements in relevant units
+&lt;br /&gt;Correctly handle requests for unsupported sensors (i.e. not registering listeners for non-existent sensors)
+</Discription>
+    <Domain>Sensor</Domain>
+    <Phase>CORE</Phase>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <Type>FUNCTIONAL</Type>
+    <UseCase>PY_UNIT</UseCase>
+    <b2bIteration>1</b2bIteration>
+    <Parameters>
+        <Parameter>
+            <Name>HpalmName</Name>
+            <Value>all_sensor_support.AllSensorSupport.test_all_sensor_support</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TEST_DATA_ROOT</Name>
+            <Value>testplan/Sensor</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TEST_CASE</Name>
+            <Value>tests.Sensor.Accelerometer.all_sensor_support.AllSensorSupport.test_all_sensor_support</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

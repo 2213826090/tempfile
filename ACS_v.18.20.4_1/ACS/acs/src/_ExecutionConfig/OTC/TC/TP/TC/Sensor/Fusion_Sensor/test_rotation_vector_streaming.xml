@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<TestCase>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Discription>
+Provide streaming data for any streaming sensor which does not inhibit suspend/wake (jitter should be &amp;lt; 3% and latency &amp;lt; 10ms)
+</Discription>
+    <Domain>Sensor</Domain>
+    <Phase>CORE</Phase>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <Type>FUNCTIONAL</Type>
+    <UseCase>PY_UNIT</UseCase>
+    <b2bIteration>1</b2bIteration>
+    <Parameters>
+        <Parameter>
+            <Name>HpalmName</Name>
+            <Value>rotation_vector_streaming.rotation_vector_streaming.test_rotation_vector_streaming</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TEST_DATA_ROOT</Name>
+            <Value>testplan/Sensor</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TEST_CASE</Name>
+            <Value>tests.Sensor.Fusion_Sensor.rotation_vector_streaming.rotation_vector_streaming.test_rotation_vector_streaming</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

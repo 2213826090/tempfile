@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase>
+    <UseCase>LAB_PUPDR_BOOT_TRANSITION</UseCase>
+    <Description>PUPDR - PUPDR Energy Management boot transition.</Description>
+    <b2bIteration>5</b2bIteration>
+    <b2bContinuousMode>False</b2bContinuousMode>
+    <Parameters>
+        <Parameter>
+            <!-- transition combo list, each element must be separated by a ','
+                eg: COS,MOS,POS
+                All combo are not possible!
+                1st element of the list is the start state -->
+            <Name>TRANSITION_COMBO</Name>
+            <Value>MOS,ROS</Value>
+        </Parameter>
+        <Parameter>
+            <!-- time to wait in seconds until transition is seen,
+                leave empty to use device catalog boot timeout -->
+            <Name>TRANSITION_TIMEOUT</Name>
+            <Value></Value>
+        </Parameter>
+        <Parameter>
+            <!-- OPTIONAL PARAMETER Temperature Chamber Temperature in degree Celsius, 
+            its use require that a temperature chamber is present. -->
+            <Name>TCT</Name>
+            <Value></Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

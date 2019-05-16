@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase>
+    <UseCase>LAB_AUDIO_QUALITY_ACCESSORIES_CHANGE_VOIP</UseCase>
+    <Description>Check Audio Quality Iteratively during VOIP Call on real network with accessories's list</Description>
+    <b2bIteration>20</b2bIteration>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <Parameters>
+        <Parameter>
+            <!-- DUT SIP address -->
+            <Name>DUT_SIP_ADDRESS</Name>
+            <Value>apxdut@192.168.0.150</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Peer SIP address -->
+            <Name>PEER_SIP_ADDRESS</Name>
+            <Value>apxrefphone@192.168.0.150</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Call origin (MO|MT) -->
+            <Name>CALL_ORIGIN_TYPE</Name>
+            <Value>MO</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Accessorie list ([EARPIECE|SPEAKER|HEADSET|BLUETOOTA2DP|BLUETOOTHHSP]) -->
+            <Name>ACC_LIST</Name>
+            <Value>[EARPIECE,HEADSET]</Value>
+        </Parameter>
+        <Parameter>
+            <Name>ACC_ACTIVE_LIST</Name>
+            <Value>[1,1,1]</Value>
+        </Parameter>
+        <Parameter>
+             <!-- >Stream Call Volume list for each accessories in percent of dut phone -->
+            <Name>CALL_VOLUME_DUT_LIST</Name>
+            <Value>[70,70,70]</Value>
+        </Parameter>
+        <Parameter>
+             <!-- >Stream Call Volume list for each accessories in percent of ref phone -->
+            <Name>CALL_VOLUME_REF_LIST</Name>
+            <Value>[70,70,70]</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Call end type (NR|MR) -->
+            <Name>CALL_END_TYPE</Name>
+            <Value>MR</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Call type (2G|3G|VOIP) -->
+            <Name>CALL_TYPE</Name>
+            <Value>VOIP</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Signal tested direction (UL|DL) -->
+            <Name>SIGNAL_TESTED_DIRECTION</Name>
+            <Value>UL</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Call duration in seconds -->
+            <Name>DURATION</Name>
+            <Value>5</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

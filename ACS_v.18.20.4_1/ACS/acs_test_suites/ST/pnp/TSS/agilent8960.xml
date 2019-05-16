@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<Include>
+    <TestStepSet Id="ConfigureRat">
+        <TestStep Id="GET_MODULE_CONFIG" DEVICE="PHONE1" MODULE="PnpModule" KEY="//network_simulator_files/[+]FROM_TC:CONFIG_TYPE"
+                  MODULE_VALUE="CONFIG_FILE"/>
+        <TestStep Id="FIND_NETWORK_SIMULATOR" EQT_NAME="AGILENT8960_SIMULATOR" FEATURE="FROM_TC:RAT" />
+        <TestStep Id="INIT_NETWORK_SIMULATOR" EQT="FROM_CTX:AGILENT8960_SIMULATOR" FEATURE="FROM_TC:RAT" />
+        <TestStep Id="NS_CONFIGURE_CELL" EQT="FROM_CTX:AGILENT8960_SIMULATOR" CONFIG="FROM_TC:CELL_BAND" CONFIG_FILE_NAME="FROM_CTX:CONFIG_FILE"/>
+
+        <TestStep Id="NS_SET_PARAM" EQT="FROM_CTX:AGILENT8960_SIMULATOR" NAME="SetCellOnOff"
+                    OPTION="DEFAULT" VALUE="OFF"/>
+
+        <TestStep Id="SET_FLIGHT_MODE" DEVICE="PHONE1" FLIGHT_MODE="disable" />
+        <TestStep Id="SUSPEND" DURATION_IN_SEC="20" />
+        <TestStep Id="GET_IMSI" DEVICE="PHONE1" TIMEOUT="60" SAVE_AS="DUT_IMSI" />
+        <TestStep Id="GET_SIM_OPERATOR_INFO" DEVICE="PHONE1" MCC="MCC" MNC="MNC" />
+        <TestStep Id="SET_SIM_OPERATOR_INFO" EQT="FROM_CTX:AGILENT8960_SIMULATOR" MCC="FROM_CTX:MCC" MNC="FROM_CTX:MNC"/>
+
+        <TestStep Id="DISABLE_MODEM_TRACES" DEVICE="PHONE1" />
+        <TestStep Id="SET_FLIGHT_MODE" DEVICE="PHONE1" FLIGHT_MODE="enable" />
+        <TestStep Id="NS_SET_PARAM" EQT="FROM_CTX:AGILENT8960_SIMULATOR" NAME="SetCellOnOff"
+                  OPTION="DEFAULT" VALUE="CALL"/>
+
+        <TestStep Id="SUSPEND" DURATION_IN_SEC="5" />
+        <TestStep Id="SET_FLIGHT_MODE" DEVICE="PHONE1" FLIGHT_MODE="disable" />
+
+        <TestStep Id="CHECK_CDK_STATE" DEVICE="PHONE1" STATE="registered"
+                  TIMEOUT="FROM_DEVICE:PHONE1:registrationTimeout"/>
+
+        <TestStep Id="NS_CHECK_DUT_REGISTRATION" EQT="FROM_CTX:AGILENT8960_SIMULATOR" FEATURE="FROM_TC:RAT"
+                  IMSI="FROM_CTX:DUT_IMSI" TIMEOUT="FROM_DEVICE:PHONE1:registrationTimeout"/>
+    </TestStepSet>
+    <TestStepSet Id="ConfigureRatData">
+        <TestStep SetId="ConfigureRat" />
+    </TestStepSet>
+    <TestStepSet Id="DataConnection">
+        <TestStep Id="SET_DEVICE_APN" DEVICE="PHONE1" INTERFACE="'Agilent TS34.108 (00101)'"
+                         APN="agilent_apn" USER="DEFAULT" PASSWORD="DEFAULT" PROTOCOL="DEFAULT"
+                         MMSC="DEFAULT" APN_TYPE="default" SET_DEFAULT="True" CLEAR_APN="True" />
+
+        <TestStep Id="ACTIVATE_DEVICE_PDP" DEVICE="PHONE1"/>
+        <TestStep Id="NS_WAIT_STATE" EQT="FROM_CTX:AGILENT8960_SIMULATOR" TIMEOUT="60" NAME="ConnectionStatus" STATE="PDP" OPTION="DEFAULT" />
+    </TestStepSet>
+</Include>

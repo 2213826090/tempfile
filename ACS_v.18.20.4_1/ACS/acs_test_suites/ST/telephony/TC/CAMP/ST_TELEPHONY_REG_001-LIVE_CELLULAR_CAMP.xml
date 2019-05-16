@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase>
+  <UseCase>LIVE_CELLULAR_CAMP</UseCase>
+  <Description>Camp on Cellular network</Description>
+  <b2bIteration>1</b2bIteration>
+  <b2bContinuousMode>True</b2bContinuousMode> 
+  <Parameters>
+    <Parameter>
+      <!-- Home Public Land Mobile Network Coverage (True | False) -->
+      <Name>HPLMN_COVERAGE</Name>
+      <Value>True</Value>
+    </Parameter>
+    <Parameter>
+      <!-- Mobile Country Code 0 to 999 as string. If MCC is empty, no operator check is done -->
+      <Name>MCC</Name>
+      <Value>208</Value>
+    </Parameter>
+    <Parameter>
+      <!-- Mobile Network Code 0 to 99 as string. If MNC is empty, no operator check is done -->
+      <Name>MNC</Name>
+      <Value>01</Value>
+    </Parameter>
+  </Parameters>
+</TestCase>

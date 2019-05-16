@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<Equipment version="13.44" name="CONFIGURABLE_AP1" description="Configurable Access Point">
+    <Parameter name="Model" value="CISCO_1260"/>
+    <Parameter name="IP" value="192.168.0.62"/>
+    <Parameter name="ConfigurationWaitingTime" value="10"/>
+    <Parameter name="username" value="Cisco"/>
+    <Parameter name="password" value="Cisco"/>
+    <Parameter name="ConsoleTimeout" value="5" description="Time required in order for the telnet/ssh server embedded in the AP to reset the connection (in minutes)" />
+    <Parameter name="TelnetDebug" value="1" description="1/0 to enable/disable telnetlib debug" />
+    
+    <Parameter name="SSID" value="CWS_arno__0423"/>
+    <Parameter name="passphrase_WEP64" value="12345"/>
+    <Parameter name="passphrase_WEP128" value="1234567890123"/>
+    <Parameter name="passphrase_WPA" value="1234567890123"/>
+    <Parameter name="passphrase_WPA2" value="1234567890123"/>
+    <Parameter name="radiusip" value="192.168.0.150"/>
+    <Parameter name="radiusport" value="1812"/>
+    <Parameter name="radiussecret" value="RadiusPass"/>
+    <Parameter name="EAP_user" value="Inteluser"/>    
+    <Parameter name="EAP_password" value="intelpassword"/>
+    <Parameter name="EAP_SIM_user" value="eapsimuser" description="SIM user specified in radius server configuration"/>
+    <Parameter name="EAP_AKA_user" value="eapakauser" description="AKA user specified in radius server configuration"/>
+    <Parameter name="Credential_password" value="12345678" description="credential password for EAP encryption. For ICS, the credential password is also the digit PIN code to lock the phone and the phone should not be initialy locked with a PIN, password nor patern" />
+    <Parameter name="CA_guard_password" value="VPN" description="ca guard password for EAP encryption" /> 
+    <Parameter name="certificate_file" value="client.p12" description="Filename of the certificate to be used for WPA-enterprise authentication with EAP method=TLS. This .p12 file should be placed into: [ACS_ROOT_FOLDER]/Executable/_Embedded/CERTIFICATE" />
+</Equipment>

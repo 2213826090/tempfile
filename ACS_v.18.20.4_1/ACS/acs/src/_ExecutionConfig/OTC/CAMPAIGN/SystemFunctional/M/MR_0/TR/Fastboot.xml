@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='ASCII'?>
+<Campaign version="13.49">
+    <Parameters>
+        <Parameter isControlledPSUsed="False"/>
+        <Parameter isIoCardUsed="False"/>
+        <Parameter skipBootOnPowerCycle="False"/>
+        <Parameter bootRetryNumber="0"/>
+        <Parameter runHookScripts="False"/>
+        <Parameter powerCycleBetweenTC="False"/>
+        <Parameter powerCycleOnFailure="False"/>
+        <Parameter finalDutState="NoChange"/>
+        <Parameter stopCampaignOnCriticalFailure="False"/>
+        <Parameter stopCampaignOnFirstFailure="False"/>
+        <Parameter loggingLevel="debug"/>
+        <Parameter CampaignType="Others"/>
+        <Parameter TCRReportViaRESTAPI="True"/>
+    </Parameters>
+    <Targets>
+        <!-- Target Values -->
+        <Target targetB2bPassRate="100"/>
+    </Targets>
+      <TestCases>
+            <TestCase Id="../../../../../TC/TR/ACS/System/OS/Fastboot/Fastboot_reboot"/>
+            <TestCase Id="../../../../../TC/TR/ACS/System/OS/Fastboot/Main-to-Recovery"/>
+            <TestCase Id="../../../../../TC/TR/ACS/System/OS/Fastboot_M/Fastboot_oem_unlock"/>
+            <TestCase Id="../../../../../TC/TR/ACS/System/OS/Fastboot_M/Fastboot_oem_lock"/>
+            <TestCase Id="../../../../../TC/TR/ACS/System/OS/Fastboot/Fastboot_reboot_bootloader"/>
+            <TestCase Id="../../../../../TC/TR/ACS/System/OS/Fastboot/Fastboot_getvar_all"/>
+            <TestCase Id="../../../../../TC/TR/ACS/System/OS/Fastboot_M/Fastboot_Bounds_Checks"/>
+<!--
+            <TestCase Id="../../../../../TC/TR/ACS/System/OS/Manageability_Android_Crash_reporting_encrypted_device"/>
+-->
+            <SubCampaign Id="../../../../Subcampaigns/ACS/System/OS/Boot_M_Dessert/FactoryReset_Data_Reset"/>
+            <SubCampaign Id="../../../../Subcampaigns/ACS/System/OS/Boot_M_Dessert/FactoryReset_applications_removed"/>
+            <SubCampaign Id="../../../../Subcampaigns/ACS/System/OS/Boot_M_Dessert/FactoryReset_Protection_reset_from_Settings"/>
+      </TestCases>
+</Campaign>

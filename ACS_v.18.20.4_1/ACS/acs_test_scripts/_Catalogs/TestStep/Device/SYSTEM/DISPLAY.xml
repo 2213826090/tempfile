@@ -1,0 +1,350 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestSteps xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../acs/src/_Catalogs/TestStep/teststep.xsd">
+    <TestStep Id="SET_SCREEN_PROPERTY" Domain="SYSTEM" SubDomain="DISPLAY" Feature="SETTINGS" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.System.Display.SetScreenProperty.SetScreenProperty</ClassName>
+        <Description>Set screen properties (state, timeout, brightness, backlight...). The state is intended to lock the display light always on or off (regardless of the timeout)</Description>
+        <Environment name="ANY" />
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="PROPERTY" type="STRING" isOptional="false">
+                <Description>Property to set</Description>
+                <PossibleValues>state;timeout;brightness;backlight</PossibleValues>
+                <DefaultValue>state</DefaultValue>
+            </Parameter>
+            <Parameter name="VALUE" type="STRING" isOptional="false">
+                <Description>Value of the property to set. state=[on|off], timeout=[num_of_seconds], brightness=[level], backlight=[level]</Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="GET_SCREEN_PROPERTY" Domain="SYSTEM" SubDomain="DISPLAY" Feature="SETTINGS" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.System.Display.GetScreenProperty.GetScreenProperty</ClassName>
+        <Description>Get screen properties (state, timeout, backlight, resolution...)</Description>
+        <Environment name="ANY" />
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="PROPERTY" type="STRING" isOptional="false">
+                <Description>Property to get</Description>
+                <PossibleValues>state;timeout;backlight;resolution</PossibleValues>
+                <DefaultValue>state</DefaultValue>
+            </Parameter>
+            <Parameter name="SAVE_AS" type="CONTEXT" isOptional="false">
+                <Description>
+                    <Key name="KEY_NAME_DEFINED_BY_USER" type="STRING">Name of the context variable where the value will be saved.</Key>
+                </Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="WAKE_SCREEN" Domain="SYSTEM" SubDomain="DISPLAY" Feature="SETTINGS" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.System.Display.WakeScreen.WakeScreen</ClassName>
+        <Description>Wake up the display. It will go off after the display timeout (set by SET_SCREEN_PROPERTY).</Description>
+        <Environment name="ANY" />
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="CAPTURE_SCREENSHOT" Domain="SYSTEM" SubDomain="DISPLAY" Feature="SETTINGS" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.System.Display.CaptureScreenShot.CaptureScreenShot</ClassName>
+        <Description>Capture a screen shot and save it in a file into the report folder (SCREEN folder).</Description>
+        <Environment name="ANY" />
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="FILEPATH" type="STRING" isOptional="true">
+                <Description>Path where screenshot has to be saved</Description>
+                <PossibleValues />
+                <DefaultValue></DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="GET_HDMI_CONNECTION_STATUS" Domain="SYSTEM" SubDomain="DISPLAY" Feature="SETTINGS" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.System.Display.GetHDMIConnectionStatus.GetHDMIConnectionStatus</ClassName>
+        <Description>Checks whether an HDMI monitor is connected.  Supports single check or a loop of repeated checks.
+            If single check is selected, then you may also specify whether it should throw an exception if no HDMI
+            connection is found.  Returns "True" if an HDMI monitor is connected.  Returns "False" if no HDMI monitor
+            is connected and if you tell it to continue on failure.</Description>
+        <Environment name="ANY" />
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="CHECK_MODE" type="INTEGER" isOptional="true">
+                <Description>Three different modes are supported.
+                    1.SINGLE_RUN and STOP_ON_FAIL
+                        - Run only one time
+                        - If HDMI display is connected: returns True
+                        - If HDMI display is not connected: throws DeviceException
+                        - CHECK_INTERVAL and DURATION will be ignored.
+                    2.SINGLE_RUN and CONTINUE_ON_FAIL
+                        - Run only one time
+                        - If HDMI display is connected: returns True
+                        - If HDMI display is not connected: returns False
+                        - CHECK_INTERVAL and DURATION will be ignored.
+                    3.CONTINUOUS_RUN and STOP_ON_FAIL
+                        - Continuously run for DURATION seconds and check every CHECK_INTERVAL seconds
+                        - If HDMI display is connected: returns True
+                        - If HDMI display is not connected: throws DeviceException
+                </Description>
+                <PossibleValues>1;2;3</PossibleValues>
+                <DefaultValue>1</DefaultValue>
+            </Parameter>
+            <Parameter name="CHECK_INTERVAL" type="INTEGER" isOptional="false">
+                <Description>When CHECK_MODE is set to 3, HDMI connection will be checked every CHECK_INTERVAL(seconds)</Description>
+                <PossibleValues />
+                <DefaultValue>0</DefaultValue>
+            </Parameter>
+            <Parameter name="DURATION" type="INTEGER" isOptional="true">
+                <Description>When CHECK_MODE is set to 3, HDMI connection will be run for DURATION(seconds)</Description>
+                <PossibleValues />
+                <DefaultValue>0</DefaultValue>
+            </Parameter>
+            <Parameter name="IS_HDMI_CONNECTED" type="CONTEXT" isOptional="false">
+                <Description>
+                    <Key name="KEY_IS_HDMI_CONNECTED" type="BOOLEAN">Name of the context variable where the return value will be saved.
+                        Value will be "True" if an HDMI monitor is connected, and "False" if not.</Key>
+                </Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="RUN_DISP_ON_OFF_LOOP" Domain="SYSTEM" SubDomain="DISPLAY" Feature="SETTINGS" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.System.Display.RunDispOnOffLoop.RunDispOnOffLoop</ClassName>
+        <Description>Repeatedly does power off and power on the display for the test duration.</Description>
+        <Environment name="ANY" />
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="DURATION" type="INTEGER" isOptional="false">
+               <Description>How long the loop will run, in minutes.</Description>
+               <PossibleValues/>
+               <DefaultValue>5</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="MONITOR_DISPLAY_ERRORS" Domain="SYSTEM" SubDomain="DISPLAY" Feature="CHECKS" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.System.Display.MonitorDisplayErrors.MonitorDisplayErrors</ClassName>
+        <Description>Set up log trigger messages to watch for errors resulting from the display.  Invoke this before running the application, and invoke CHECK_DISPLAY_ERRORS afterwards.</Description>
+        <Environment name="ANY"/>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues/>
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="CHECK_DISPLAY_ERRORS" Domain="SYSTEM" SubDomain="DISPLAY" Feature="CHECKS" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.System.Display.CheckDisplayErrors.CheckDisplayErrors</ClassName>
+        <Description>Check the status of log trigger messages that were set up by MONITOR_DISPLAY_ERRORS, which you should have invoked before running the application.</Description>
+        <Environment name="ANY"/>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues/>
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="ENABLE_DISPLAY_ERROR_DETECTION" Domain="SYSTEM" SubDomain="DISPLAY" Feature="CHECKS" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.System.Display.EnableDisplayErrorDetection.EnableDisplayErrorDetection</ClassName>
+        <Description>Performs enabling the display register checking</Description>
+        <Environment name="ANY" />
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="CHECK_DISPLAY_REGISTERS" Domain="SYSTEM" SubDomain="DISPLAY" Feature="CHECKS" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.System.Display.CheckDisplayRegisters.CheckDisplayRegisters</ClassName>
+        <Description>Checks for the mipi display status,display pipe hung and underflow.</Description>
+        <Environment name="ANY"/>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device on which to disable auto orientation</Description>
+                <PossibleValues/>
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="TYPE" type="STRING" isOptional="false">
+                <Description>mipi,hdmi_pipeunderflow and pipe_hung are used in the run part of the test for checking the status of the particular register for any errors. </Description>
+                <PossibleValues>mipi;hdmi_pipeunderflow;pipe_hung</PossibleValues>
+                <DefaultValue/>
+            </Parameter>
+         </Parameters>
+    </TestStep>
+    <TestStep Id="RUN_HDMI_RES_SWITCH_LOOP" Domain="SYSTEM" SubDomain="DISPLAY" Feature="SETTINGS" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.System.Display.RunHdmiResSwitchLoop.RunHdmiResSwitchLoop</ClassName>
+        <Description>Open the HDMI settings and repeatedly switches the HDMI display resolution between 480 and 1080.</Description>
+        <Environment name="ANY" />
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="DURATION" type="INTEGER" isOptional="false">
+               <Description>How long the loop will run, in minutes.</Description>
+               <PossibleValues/>
+               <DefaultValue>5</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="SET_ORIENTATION" Domain="SYSTEM" SubDomain="DISPLAY" Feature="SETTINGS" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.System.Display.SetOrientation.SetOrientation</ClassName>
+        <Description>Change orientation manually. portrait,landscape,reverse_portrait, and reverse_landscape are supported modes.
+            Pre-requisite: User orientation should be enabled
+        </Description>
+        <Environment name="ANY"/>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device on which to set orientation</Description>
+                <PossibleValues/>
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="ORIENTATION" type="STRING" isOptional="false">
+                <Description>Target orientation of the device</Description>
+                <PossibleValues>portrait;landscape;reverse_portrait;reverse_landscape;auto</PossibleValues>
+                <DefaultValue>portrait</DefaultValue>
+            </Parameter>
+            <Parameter name="API" type="STRING" isOptional="true">
+                <Description>API to use to set the orientation</Description>
+                <PossibleValues>user_settings;embedded_api</PossibleValues>
+                <DefaultValue>user_settings</DefaultValue>
+            </Parameter>
+         </Parameters>
+    </TestStep>
+    <TestStep Id="ENABLE_AUTO_ORIENTATION" Domain="SYSTEM" SubDomain="DISPLAY" Feature="SETTINGS" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.System.Display.EnableAutoOrientation.EnableAutoOrientation</ClassName>
+        <Description>Enable auto orientation change by accelerometer, and disable manual orientation change by user command.</Description>
+        <Environment name="ANY"/>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device on which to enable auto orientation</Description>
+                <PossibleValues/>
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+         </Parameters>
+    </TestStep>
+    <TestStep Id="DISABLE_AUTO_ORIENTATION" Domain="SYSTEM" SubDomain="DISPLAY" Feature="SETTINGS" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.System.Display.DisableAutoOrientation.DisableAutoOrientation</ClassName>
+        <Description>Disable auto orientation change by accelerometer, and enable manual orientation change by user command.</Description>
+        <Environment name="ANY"/>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device on which to disable auto orientation</Description>
+                <PossibleValues/>
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+         </Parameters>
+    </TestStep>
+    <TestStep Id="DISABLE_LOCK_SCREEN" Domain="SYSTEM" SubDomain="DISPLAY" Feature="SETTINGS" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.System.Settings.DisableLockScreen.DisableLockScreen</ClassName>
+        <Description>Disable screen lock on DUT (phone is rebooted by this step)</Description>
+        <Environment name="ANY"/>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues/>
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="WAIT_SETTLE_DOWN" type="BOOLEAN" isOptional="true">
+                <Description>On reboot wait settle down duration if needed
+                the duration is read from catalog in PhoneBase class.</Description>
+                <PossibleValues/>
+                <DefaultValue>False</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="RUN_ORIENTATION_CHANGE_LOOP" Domain="SYSTEM" SubDomain="DISPLAY" Feature="SETTINGS" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.System.Display.RunOrientationChangeLoop.RunOrientationChangeLoop</ClassName>
+        <Description>Repeatedly changes the screen orientation for the amount of time specified, and restores the screen to
+            auto-rotate mode at the end.  The sequence can be random or fixed.  If RANDOM_SEQUENCE=False then it goes in this order:
+            portrait, landscape, reverse portrait, reverse landscape. The amount of time between orientation changes will be
+            a fixed value if CHANGE_INTERVAL_MIN=CHANGE_INTERVAL_MAX, or a randomly selected amount between CHANGE_INTERVAL_MIN and
+            CHANGE_INTERVAL_MAX if they are not equal.
+            PREREQUISITES:
+                Installed application: orientation_change_loop.sh from Lib-ShellScripts-Android-Display-orientation_change
+        </Description>
+        <Environment name="ANY"/>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device that will run the stress applications</Description>
+                <PossibleValues/>
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="DURATION" type="INTEGER" isOptional="false">
+               <Description>How long the loop will run, in minutes.</Description>
+               <PossibleValues/>
+               <DefaultValue>5</DefaultValue>
+            </Parameter>
+            <Parameter name="SCRIPTS_PATH" type="STRING" isOptional="false">
+                <Description>Directory on the device where the required script and binary have been unpacked.</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+            <Parameter name="RANDOM_SEQUENCE" type="BOOLEAN" isOptional="false">
+                <Description>False = repeatedly goes through the same sequence of modes: portrait, landscape, reverse portrait, reverse landscape.
+                    True = randomly picks the orientation each time.</Description>
+               <PossibleValues/>
+               <DefaultValue>False</DefaultValue>
+            </Parameter>
+            <Parameter name="CHANGE_INTERVAL_MIN" type="INTEGER" isOptional="false">
+                <Description>Minimum number of seconds between orientation changes.</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+            <Parameter name="CHANGE_INTERVAL_MAX" type="INTEGER" isOptional="false">
+                <Description>Maximum number of seconds between orientation changes.
+                    Restriction: CHANGE_INTERVAL_MAX >= CHANGE_INTERVAL_MIN.</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="ENABLE_LOCK_SCREEN" Domain="SYSTEM" SubDomain="DISPLAY" Feature="SETTINGS" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.System.Settings.EnableLockScreen.EnableLockScreen</ClassName>
+        <Description>This teststep will enable a lock screen from the UI Settings Security menu. The teststep assumes
+            that we are already in the Settings Security menu. Also, the only 2 possible values implemented are
+            "Swipe" and "None</Description>
+        <Environment name="ANY"/>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues/>
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="LOCKSCREEN_TYPE" type="STRING" isOptional="true">
+                <Description>Which option to look for and selecte from the menu. Currently supported options are below:
+                Swipe and None</Description>
+                <PossibleValues>None;Swipe</PossibleValues>
+                <DefaultValue/>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+</TestSteps>

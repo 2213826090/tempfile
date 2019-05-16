@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<TestCase>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Discription>
+The Intel Android platform must support x86 ABI as follows: 32-bit kernel / 32-bit Userspace.
+</Discription>
+    <Domain>System_OS</Domain>
+    <Phase>CORE</Phase>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <Type>FUNCTIONAL</Type>
+    <UseCase>PY_UNIT</UseCase>
+    <b2bIteration>1</b2bIteration>
+    <Parameters>
+        <Parameter>
+            <Name>HpalmName</Name>
+            <Value>X86_ABI_Kernel_Userspace.Kernel_Userspace.test_verify_x86_abi_kernel_32_userspace_32</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TEST_DATA_ROOT</Name>
+            <Value>testplan/System_OS</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TEST_CASE</Name>
+            <Value>tests.System_OS.AndroidFramework.X86_ABI_Kernel_Userspace.Kernel_Userspace.test_verify_x86_abi_kernel_32_userspace_32</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

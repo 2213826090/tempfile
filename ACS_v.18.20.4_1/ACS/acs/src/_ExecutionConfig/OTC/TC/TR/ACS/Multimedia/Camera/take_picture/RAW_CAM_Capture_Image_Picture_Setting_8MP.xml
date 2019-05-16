@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase>
+    <UseCase>LIVE_CAMERA_PICTURE_DETAILS</UseCase>
+    <Description>Check picture details after updating camera parameters</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>False</b2bContinuousMode>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters>
+         <Parameter>
+             <Name>CAMERA</Name>
+             <Value>BACK</Value>
+         </Parameter>
+         <Parameter>
+             <Name>PICTURE_SIZE</Name>
+             <Value>8MP</Value>
+         </Parameter>
+         <Parameter>
+             <Name>FLASH_MODE</Name>
+             <Value></Value>
+         </Parameter>
+         <Parameter>
+             <Name>WHITE_BALANCE</Name>
+             <Value></Value>
+         </Parameter>
+         <Parameter>
+             <Name>SAVE_DIRECTORY</Name>
+             <Value>sdcard/</Value>
+         </Parameter>
+    </Parameters>
+</TestCase>

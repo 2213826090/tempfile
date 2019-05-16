@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<Campaign>
+    <Parameters>
+        <Parameter isControlledPSUsed="False"/>
+        <Parameter isIoCardUsed="False"/>
+        <Parameter skipBootOnPowerCycle="False"/>
+        <Parameter bootRetryNumber="0"/>
+        <Parameter runHookScripts="False"/>
+        <Parameter powerCycleBetweenTC="False"/>
+        <Parameter powerCycleOnFailure="False"/>
+        <Parameter finalDutState="NoChange"/>
+        <Parameter stopCampaignOnCriticalFailure="False"/>
+        <Parameter stopCampaignOnFirstFailure="False"/>
+        <Parameter loggingLevel="debug"/>
+        <Parameter CampaignType="Other"/>
+    </Parameters>
+    <TestCases>
+        <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/prereq_disable_captive_portal_detection"/>
+        <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/Browse_the_Test_web_page_via_the_valid_Http_Proxy_server_with_3128_default_port"/>
+        <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/Browse_the_Test_web_page_via_the_invalid_Http_Proxy_server"/>
+        <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/Check_the_Proxy_configuration_is_kept_after_WiFi_is_turn_off_on"/>
+        <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/Check_the_Proxy_configuration_is_kept_after_restarting_DUT"/>
+        <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/Check_the_Proxy_configuration_is_kept_after_restarting_WiFi_AP"/>
+        <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/Check_ICMP_Ping_to_Http_server_is_unsuccesfuly"/>
+        <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/Check_the_Proxy_configuration_is_kept_after_AP_old_to_AP_new_transition"/>
+        <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/postreq_reset_AP"/>
+        <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/prereq_enable_captive_portal_detection"/>
+    </TestCases>
+</Campaign>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="13.37">
+    <UseCase>LAB_EM_USB_TEST_VOLTAGE</UseCase>
+    <Description>Monitor battery Charge when setting USB over or under voltage.</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>False</b2bContinuousMode>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters>
+        <Parameter>
+            <!-- Battery Temperature (in degree Celsius) : 95, 70, 50, 25, 10, 5, 0, -15 -->
+            <Name>BATTERY_TEMPERATURE</Name>
+            <Value>25</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Charger Type to be plugged during the test : DCP | SDP | CDP | AC_CHGR | ACA  -->
+            <Name>CHARGER_TYPE</Name>
+            <Value>DCP</Value>
+        </Parameter>
+        <Parameter>
+            <!-- the idle (low power) state during the test : can be "TRUE" or "FALSE" -->
+            <Name>IDLE_STATE</Name>
+            <Value>FALSE</Value>
+        </Parameter>
+        <Parameter>
+            <!-- the idle (low power) duration  in second when IDLE_STATE is "TRUE" -->
+            <Name>IDLE_DURATION</Name>
+            <Value>240</Value>
+        </Parameter>
+        <Parameter>
+            <!-- the charger over/under voltage duration  in second  -->
+            <Name>TEST_VOLTAGE_DURATION</Name>
+            <Value>30</Value>
+        </Parameter>
+        <Parameter>
+            <!-- VUSB normal voltage -->
+            <Name>VUSB_NORMAL</Name>
+            <Value>6</Value>
+        </Parameter>
+        <Parameter>
+            <!-- VUSB over (8.0V) or under (4.0V) voltage -->
+            <Name>VUSB_TEST</Name>
+            <Value>8.0</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

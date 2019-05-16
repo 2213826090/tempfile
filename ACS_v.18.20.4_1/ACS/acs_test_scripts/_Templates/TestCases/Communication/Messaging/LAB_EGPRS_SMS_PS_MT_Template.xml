@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="13.37">
+    <UseCase>LAB_EGPRS_SMS_PS_MT</UseCase>
+    <Description>EGPRS Mobile Terminated SMS over PS on simulated network</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters>
+        <Parameter>
+            <!-- Cell Band (PGSM|RGSM|EGSM|GSM450|GSM480|GSM750|GSM850|TGSM810|PCS|DCS) -->
+            <Name>CELL_BAND</Name>
+            <Value>DCS</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Cell power in dB -->
+            <Name>CELL_POWER</Name>
+            <Value>-60</Value>
+        </Parameter>
+        <Parameter>
+            <!-- BCH ARFCN -->
+            <Name>BCH_ARFCN</Name>
+            <Value>512</Value>
+        </Parameter>
+        <Parameter>
+            <!-- PDTCH ARFCN -->
+            <Name>PDTCH_ARFCN</Name>
+            <Value>512</Value>
+        </Parameter>
+        <Parameter>
+            <!-- SMS text to send -->
+            <Name>SMS_TEXT</Name>
+            <Value>This is my SMS text !</Value>
+        </Parameter>
+        <Parameter>
+            <!-- SMS Data coding scheme in hexadecimal -->
+            <Name>DATA_CODING_SCHEME</Name>
+            <Value>00</Value>
+        </Parameter>
+        <Parameter>
+            <!-- SMS transfer timeout in seconds -->
+            <Name>SMS_TRANSFER_TIMEOUT</Name>
+            <Value>10</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="13.37">
+    <UseCase>LIVE_SYSTEM_CHECK_IMEI_IMEISV</UseCase>
+    <Description>Check IMEI and IMEISV Value</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>False</b2bContinuousMode>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters>
+        <Parameter>
+            <!-- The IMEI number, this champ is mandatory -->
+            <Name>IMEI</Name>
+            <Value>01234567891234</Value>
+        </Parameter>
+        <Parameter>
+            <!-- The IMEISV number, this champ is optional -->
+            <Name>IMEISV</Name>
+            <Value>10</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

@@ -1,0 +1,18 @@
+<?xml version="1.0" ?>
+<TestCase>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Discription>Verify switch front and rear camera 500 times in len blur mode</Discription>
+    <UseCase>PY_UNIT</UseCase>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <b2bIteration>1</b2bIteration>
+    <Parameters>
+        <Parameter>
+            <Name>TEST_DATA_ROOT</Name>
+            <Value>testplan/Multimedia_Camera</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TEST_CASE</Name>
+            <Value>tests.Multimedia_Camera.APP_GMS.camera_reliability.CameraReliabilityTest.test_Camera_LensBlur_SwitchFrontRear_500cycles</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

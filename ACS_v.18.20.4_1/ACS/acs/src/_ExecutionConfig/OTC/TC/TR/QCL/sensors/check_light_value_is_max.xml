@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='ASCII'?>
+<TestCase>
+    <UseCase>EXEC_SCRIPT</UseCase>
+    <Description>Test for checking light sensor values in a maximum light environment</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <TcMaxAttempt>1</TcMaxAttempt>
+    <TcAcceptanceCriteria>1</TcAcceptanceCriteria>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <TestSteps>
+        <Initialize/>
+        <Setup/>
+        <RunTest/>
+        <TearDown/>
+        <Finalize/>
+    </TestSteps>
+    <Tags>
+        <Tag>light</Tag>
+        <Tag>semi_auto</Tag>
+    </Tags>
+    <Priority>
+        <Value>11</Value>
+    </Priority>
+    <Parameters>
+        <Parameter>
+            <Name>SCRIPT_PATH</Name>
+            <Value>scripts/check_light_value_is_max.py</Value>
+        </Parameter>
+        <Parameter>
+            <Name>COMP_CONF</Name>
+            <Value>{comp_conf}</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

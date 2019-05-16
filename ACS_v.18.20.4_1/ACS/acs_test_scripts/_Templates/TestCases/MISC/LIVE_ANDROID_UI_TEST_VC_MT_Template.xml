@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="13.37">
+    <UseCase>ANDROID_UI_TEST_VC_MT</UseCase>
+    <Description>Use case that will interpret UI sequence described in another xml file</Description>
+    <b2bIteration>5</b2bIteration>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters>
+        <Parameter>
+            <Name>SCRIPT_PATH</Name>
+            <!-- Path to the script containing the UI sequence
+                It must be the full path
+                c:\my_file.xml
+                or
+                relative path VS ACS "_ExecutionConfig" folder
+                my_file.xml
+                sub_folder\my_file.xml
+            -->
+            <Value>ui_sequences\browsing_att.xml</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

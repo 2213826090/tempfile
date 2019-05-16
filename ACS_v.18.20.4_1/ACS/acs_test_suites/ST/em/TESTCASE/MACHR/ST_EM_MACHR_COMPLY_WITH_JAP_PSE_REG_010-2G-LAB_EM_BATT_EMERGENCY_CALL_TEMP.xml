@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCase version="13.37">
+    <UseCase>LAB_EM_BATT_EMERGENCY_CALL_TEMP</UseCase>
+    <Description>Test that an emergency call are not stopped when board is subject to a critical temperature</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>False</b2bContinuousMode>
+    <TcMaxAttempt>1</TcMaxAttempt>
+    <TcAcceptanceCriteria>1</TcAcceptanceCriteria>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters>
+        <Parameter>
+            <!-- Duration that the call must hold in seconds during overheat state -->
+            <Name>CALL_HOLD_TIME</Name>
+            <Value>300</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Fake emergency phone number, must not be equal to an existing one or the test will crash -->
+            <Name>FAKE_EMERGENCY_PHONE_NUMBER</Name>
+            <Value>12345</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Temperature that bring the DUT to reach a CRITICAL temperatue state in Degree Celsius -->
+            <Name>TEMPERATURE</Name>
+            <Value>60</Value>
+        </Parameter>
+        <Parameter>
+            <!-- timeout to let the temperature change be seen by the DUT in second -->
+            <Name>TEMPERATURE_CHANGE_TIMEOUT</Name>
+            <Value>3600</Value>
+        </Parameter>
+        <!-- CALL PART (2G and 3G possible) -->
+        <!-- VAR related to the call registration setup *************************************************** -->
+        <Parameter>
+            <!-- Type of the call (2G, 3G) -->
+            <Name>CALL_TYPE</Name>
+            <Value>2G</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Cell Band (PGSM|RGSM|EGSM|GSM450|GSM480|GSM750|GSM850|TGSM810|PCS|DCS) -->
+            <Name>CELL_BAND</Name>
+            <Value>DCS</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Broadcast Channel Arfcn frequency -->
+            <Name>BCH_ARFCN</Name>
+            <Value>698</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Traffic Channel Arfcn frequency -->
+            <Name>TCH_ARFCN</Name>
+            <Value>650</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Cell Service (GSM|GPRS|EGPRS) -->
+            <Name>CELL_SERVICE</Name>
+            <Value>EGPRS</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Cell Power (in dBm) -->
+            <Name>CELL_POWER</Name>
+            <Value>-80</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Voice coder rate
+                Possible values:
+                FR
+                EFR
+                HR
+                FR_AMR_NB_[1220|1020|795|740|670|590|515|475]
+                HR_AMR_NB_[795|740|670|590|515|475]
+                AMR_WB_[1265|885|660]
+            -->
+            <Name>VOICE_CODER_RATE</Name>
+            <Value>FR</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

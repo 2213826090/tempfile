@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<TestCase>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Discription>
+Verify video playback MPEG4 part 2 ASP (Advanced Simple Profile), Lvl5 (D1/SD 720x480@30fps) AAC_ST_160kbp_48KHz
+</Discription>
+    <Domain>Multimedia_Video</Domain>
+    <Phase>CORE</Phase>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <Type>FUNCTIONAL</Type>
+    <UseCase>PY_UNIT</UseCase>
+    <b2bIteration>1</b2bIteration>
+    <Parameters>
+        <Parameter>
+            <Name>HpalmName</Name>
+            <Value>video_api_test.VideoAPITest.testPlayback_MPEG4_ASP_Lv5_720X480_30fps_AAC_ST_160kbp_48KHZ</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TEST_DATA_ROOT</Name>
+            <Value>testplan/Multimedia_Video</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TEST_CASE</Name>
+            <Value>tests.Multimedia_Video.Decode.video_api_test.VideoAPITest.testPlayback_MPEG4_ASP_Lv5_720X480_30fps_AAC_ST_160kbp_48KHZ</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

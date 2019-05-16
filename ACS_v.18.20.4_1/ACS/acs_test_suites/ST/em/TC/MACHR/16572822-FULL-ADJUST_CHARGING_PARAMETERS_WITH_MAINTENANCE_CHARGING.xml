@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCase version="13.49">
+    <UseCase>LAB_EM_BATT_JAPANESE_REGULATION_COMPLIANCE</UseCase>
+    <Description>Charging Parameters during maintenance charging: Start to full and check charger current/voltage with cold/cool/warn/hot temperature value</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>False</b2bContinuousMode>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters>
+        <Parameter>
+            <!-- Critical threshold of the battery (%) -->
+            <Name>BATT_START_CAPACITY</Name>
+            <Value>FULL</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Initial Temperature ( in degrees ) -->
+            <Name>TEMPERATURE</Name>
+            <Value>25</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Cold Temperature Value ( in degrees ) -->
+            <Name>COLD_VALUE</Name>
+            <Value>5</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Cool Temperature Value ( in degrees ) -->
+            <Name>COOL_VALUE</Name>
+            <Value>19</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Warn Temperature Value ( in degrees ) -->
+            <Name>WARN_VALUE</Name>
+            <Value>33</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Hot Temperature Value ( in degrees ) -->
+            <Name>HOT_VALUE</Name>
+            <Value>50</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Critical Higher Temp Value ( in degrees ) -->
+            <Name>CRITICAL_HIGHER_TEMP</Name>
+            <Value>60</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Type of the charger ( SDP or CDP ) -->
+            <Name>CHARGER_TYPE</Name>
+            <Value>SDP</Value>
+        </Parameter>
+                <Parameter>
+            <!-- PATH OF THE VIDEO -->
+            <Name>MULTIMEDIA_FILE</Name>
+            <Value>video_test.mp4</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Volume of the video (%) -->
+            <Name>VOLUME</Name>
+            <Value>100</Value>
+        </Parameter>
+        <Parameter>
+            <!-- LOAD to apply to the board when discharging separate by ;. To be choosen between following loads (can be combinated) : WIFI;BLUETOOTH;TORCH;VIBRA;VIDEO -->
+            <Name>LOAD</Name>
+            <Value>TORCH;VIBRA;VIDEO</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="13.45">
+    <UseCase>EXEC_SCRIPT</UseCase>
+    <Description>Test case Platform - Power Management</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters>
+        <Parameter>
+            <Name>SCRIPT_PATH</Name>
+            <Value>scripts/halctl_power.py</Value>
+        </Parameter>
+            <Parameter>
+            <Name>lights_module_name</Name>
+            <Value>Intel PC Compatible Power HAL</Value>
+        </Parameter>
+        <Parameter>
+            <Name>lights_module_author</Name>
+            <Value>Intel Open Source Technology Center</Value>
+        </Parameter>
+
+    </Parameters>
+</TestCase>

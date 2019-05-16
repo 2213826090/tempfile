@@ -1,0 +1,32 @@
+<?xml version="1.0" ?>
+<Campaign>
+      <Parameters>
+            <Parameter isControlledPSUsed="False"/>
+            <Parameter isIoCardUsed="False"/>
+            <Parameter skipBootOnPowerCycle="False"/>
+            <Parameter bootRetryNumber="0"/>
+            <Parameter runHookScripts="False"/>
+            <Parameter powerCycleBetweenTC="False"/>
+            <Parameter powerCycleOnFailure="False"/>
+            <Parameter finalDutState="NoChange"/>
+            <Parameter stopCampaignOnCriticalFailure="False"/>
+            <Parameter stopCampaignOnFirstFailure="False"/>
+            <Parameter loggingLevel="debug"/>
+            <Parameter CampaignType="Other"/>
+      </Parameters>
+      <TestCases>
+            <TestCase Id="../../../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/camera/picture/back_camera/BACK_CAMERA_take_picture_1920x1080"/>
+            <TestCase Id="../../../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/camera/picture/back_camera/BACK_CAMERA_take_picture_1280x720"/>
+            <TestCase Id="../../../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/camera/picture/back_camera/BACK_CAMERA_take_picture_640x360"/>
+            <TestCase Id="../../../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/camera/picture/back_camera/BACK_CAMERA_take_picture_352x288"/>
+            <TestCase Id="../../../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/camera/picture/back_camera/BACK_CAMERA_take_picture_320x240"/>
+            <TestCase Id="../../../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/camera/picture/back_camera/BACK_CAMERA_take_picture_320x180"/>
+            <TestCase Id="../../../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/camera/picture/back_camera/BACK_CAMERA_take_picture_176x144"/>
+            <TestCase Id="../../../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/camera/picture/back_camera/BACK_CAMERA_take_picture_640x480"/>
+            <!--<TestCase Id="../../../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/camera/picture/back_camera/BACK_CAMERA_take_picture_960x540"/>-->
+            <!--<TestCase Id="../../../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/camera/picture/back_camera/BACK_CAMERA_take_picture_424x240"/>-->
+            <!--<TestCase Id="../../../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/camera/picture/back_camera/BACK_CAMERA_take_picture_800x600"/>-->
+            <!--<TestCase Id="../../../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/camera/picture/back_camera/BACK_CAMERA_take_picture_848x480"/>-->
+            <!--<TestCase Id="../../../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/camera/picture/back_camera/BACK_CAMERA_take_picture_160x120"/>-->
+      </TestCases>
+</Campaign>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase>
+  <UseCase>LAB_EGPRS_FTP</UseCase>
+  <Description>Successive FTP Upload over EGPRS on simulated network</Description>
+  <b2bIteration>100</b2bIteration>
+  <b2bContinuousMode>True</b2bContinuousMode>  
+  <Parameters>
+    <Parameter>
+      <!-- Cell Band (EGSM|GSM850|PCS|DCS) -->
+      <Name>CELL_BAND</Name>
+      <Value>DCS</Value>
+    </Parameter>
+    <Parameter>
+      <!-- Cell power in dBm -->
+      <Name>CELL_POWER</Name>
+      <Value>-60</Value>
+    </Parameter>
+    <Parameter>
+      <!-- Multislot configuration 
+      D1U1, D1U2, D1U3, D1U4, D1U5, D1U6, D2U1, D2U2, D2U3, D2U4, D2U5, 
+      D3U1, D3U2, D3U3, D3U4, D4U1, D4U2, D4U3, D5U1, D5U2, D6U1, MAX
+      If MAX is selected, value will be taken from DeviceCatalog.xml -->
+      <Name>MULTISLOT_CONFIG</Name>
+      <Value>MAX</Value>
+    </Parameter>
+    <Parameter>
+      <!-- Uplink Modulation Coding scheme (MCS1|MCS2|MCS3|MCS4|MCS5|MCS6|MCS7|MCS8|MCS9) -->
+      <Name>UL_MCS</Name>
+      <Value>MCS9</Value>
+    </Parameter>
+    <Parameter>
+      <!-- Downlink Modulation Coding scheme (MCS1|MCS2|MCS3|MCS4|MCS5|MCS6|MCS7|MCS8|MCS9) -->
+      <Name>DL_MCS</Name>
+      <Value>MCS9</Value>
+    </Parameter>
+    <Parameter>
+      <!-- Puncturing Modulation Coding scheme 
+      PS1 | PS2 | PS3 for DL_MCS 3,4,7,8,and 9
+      PS1 | PS2 for DL_MCS 1, 2, 5, and 6 -->
+      <Name>PS_MCS</Name>
+      <Value>PS1</Value>
+    </Parameter>
+    <Parameter>
+      <!-- FTP transfer direction: DL or UL -->
+      <Name>DIRECTION</Name>
+      <Value>UL</Value>
+    </Parameter>
+
+    <Parameter>
+      <!-- File to upload from the FTP server -->
+      <Name>UL_FILENAME</Name>
+      <Value>put2M</Value>
+    </Parameter>
+    <Parameter>
+      <!-- Transfer timeout in s -->
+      <Name>XFER_TIMEOUT</Name>
+      <Value>120</Value>
+    </Parameter>
+  </Parameters>
+</TestCase>

@@ -1,0 +1,8 @@
+[query]
+#ECS7 = Execution Type[Auto or Semi-Auto];Status[Completed];BOM Dependency[NOT (bom-nfc or bom-hdmi or bom-wwan or bom-telephony or bom-miracast)];SOC Dependency[Common or Baytrail-CR]
+
+ECS7 = Execution Type[Auto];BOM Dependency[NOT (bom-nfc or bom-hdmi or bom-wwan or bom-telephony or bom-miracast)];TC Type[NOT (Iterative Or "Long Lasting" Or "Low Resource")];Not Applicable for Platforms[NOT (Trekstor-ECS)];BaseFolder[Subject/SSG/System Functional Tests];SubFolders[Chromecast Graphics_RenderApp Graphics_Display Graphics_System IRDA_Auto_Detect IRDA_OEM_Customization Multimedia_Audio Multimedia_Camera Multimedia_DRM Multimedia_Image Multimedia_Media Multimedia_Video Sensor]
+
+ECS7B = Execution Type[Auto];BOM Dependency[NOT (bom-nfc or bom-hdmi or bom-wwan or bom-telephony or bom-miracast)];TC Type[NOT (Iterative Or "Long Lasting" Or "Low Resource")];Not Applicable for Platforms[NOT (ECS2-7B)];BaseFolder[Subject/SSG/System Functional Tests];SubFolders[Chromecast Graphics_RenderApp Graphics_Display Graphics_System IRDA_Auto_Detect IRDA_OEM_Customization Multimedia_Audio Multimedia_Camera Multimedia_DRM Multimedia_Image Multimedia_Media Multimedia_Video Sensor]
+
+ECS8A = Execution Type[Auto];BOM_dependency[NOT (bom-nfc or bom-hdmi or bom-gyro or bom-compass or bom-als or bom-wwan or bom-telephony or bom-miracast)];TC Type[NOT (Iterative Or "Long Lasting" Or "Low Resource")];Not Applicable for Platforms[NOT (ECS2-8A)];BaseFolder[Subject/SSG/System Functional Tests];SubFolders[Chromecast Graphics_RenderApp Graphics_Display Graphics_System IRDA_Auto_Detect IRDA_OEM_Customization Multimedia_Audio Multimedia_Camera Multimedia_DRM Multimedia_Image Multimedia_Media Multimedia_Video Sensor]

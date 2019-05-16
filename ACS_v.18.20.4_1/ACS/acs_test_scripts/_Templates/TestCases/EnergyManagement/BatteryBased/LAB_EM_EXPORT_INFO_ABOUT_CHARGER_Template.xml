@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="13.37">
+    <UseCase>LAB_EM_EXPORT_INFO_ABOUT_CHARGER</UseCase>
+    <Description>EM - Check the charger information exportation to userapp</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>False</b2bContinuousMode>
+    <TcMaxAttempt>1</TcMaxAttempt>
+    <TcAcceptanceCriteria>1</TcAcceptanceCriteria>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters>
+        <Parameter>
+            <!-- All charger info which are mandatory in sysfs to export to userapp
+                put the EM info to check here like :
+                NAME;MANUFACTURER;MAX_CHARGE_VOLTAGE;TYPE;PRESENT;HEALTH -->
+            <Name>SYSFS_MANDATORY_INFO</Name>
+            <Value>TYPE;HEALTH;PRESENT</Value>
+        </Parameter>
+        <Parameter>
+            <!-- All info which are optionnal in sysfs to export to userapp -->
+            <Name>CHARGER_TYPE</Name>
+            <Value>DCP</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Action to perform by the test : BOOT_BOARD, PLUG_CHARGER -->
+            <Name>ACTION</Name>
+            <Value>PLUG_CHARGER</Value>
+        </Parameter>
+        <Parameter>
+            <!-- this is the delay in second to wait before reading the info after action is performed -->
+            <Name>DELAY_BEFORE_CHECKING_INFO</Name>
+            <Value>0</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

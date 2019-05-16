@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="13.45">
+    <UseCase>LAB_WIFI_IPERF</UseCase>
+    <Description>WIFI Throuhput Measurement using IPERF</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <TcMaxAttempt>1</TcMaxAttempt>
+    <TcAcceptanceCriteria>1</TcAcceptanceCriteria>
+    <Parameters>
+        <Parameter>
+            <!-- Wifi standard of wifi env to be used. Can be "a", "b", "g", "an", "bg", "gn", "bgn", "n2.4G", "n5G", "off" -->
+            <!-- Depending on AP capabilities -->
+            <Name>WIFI_STANDARD</Name>
+            <Value>gb</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Wifi Security of wifi env to be used. Can be "OPEN", "WEP64","WEP64-OPEN","WEP128","WEP128-OPEN","WPA-PSK-TKIP", "WPA2-PSK-AES", "EAP-WPA" or "EAP-WPA2" -->
+            <Name>WIFI_SECURITY</Name>
+            <Value>OPEN</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Wifi SSID broadcast disabled: 0 (visible) or 1 (hidden) -->
+            <Name>WIFI_HIDDEN</Name>
+            <Value>0</Value>
+        </Parameter>
+        <Parameter>
+            <!-- EAP method used when WIFI_SECURTY is "EAP-WAP" or "EAP-WPA2", can be "PEAP", "TLS", "TTLS", "SIM" or "AKA" -->
+            <Name>EAP_METHOD</Name>
+            <Value>PEAP</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Phase2 authentication used when WIFI_SECURTY is "EAP-WAP" or "EAP-WPA2", can be "None", "PAP", "MSCHAP", "MSCHAPV2", "GTC" -->
+            <Name>PHASE2_AUTH</Name>
+            <Value>None</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Set to 'True' if you need to use certificates at the same time as TTLS or PEAP. If ommited, the default value for this parameter is false. -->
+            <Name>MANDATORY_CERT</Name>
+            <Value>False</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Wifi passphrase when WIFI_SECURITY is not "OPEN". If it is "NONE", use the default password. This parameter can be used to test connection failure -->
+            <Name>WIFI_PASSPHRASE</Name>
+            <Value>NONE</Value>
+        </Parameter>
+        <Parameter>
+            <!-- DUT static ip setting enable:True; disable: False. only when it is enabled, below paramters setting is available -->
+            <Name>IP_SETTING_ENABLE</Name>
+            <Value>False</Value>
+        </Parameter>
+        <Parameter>
+            <!-- DUT static ip setting for ip address -->
+            <Name>IP_ADDRESS</Name>
+            <Value>192.168.0.149</Value>
+        </Parameter>
+        <Parameter>
+            <!-- DUT static ip setting for netmask -->
+            <Name>NETMASK</Name>
+            <Value>255.255.255.0</Value>
+        </Parameter>
+        <Parameter>
+            <!-- DUT static ip setting for gateway -->
+            <Name>GATEWAY</Name>
+            <Value>192.168.0.1</Value>
+        </Parameter>
+        <Parameter>
+            <!-- DUT static ip setting for dns1 -->
+            <Name>DNS1</Name>
+            <Value>192.168.0.5</Value>
+        </Parameter>
+        <Parameter>
+            <!-- DUT static ip setting for dns2 -->
+            <Name>DNS2</Name>
+            <Value>0.0.0.0</Value>
+        </Parameter>
+        <Parameter>
+            <!-- [Optional] Wifi channel: 1-14 for 2.4GHz, 36-165 for 5GHz, 0:auto (default is AP current setup if not specified) -->
+            <!-- 2.4GHz real channel values (MHz): 2412,2417,2422,2427,2432,2437,2442,2447,2452,2457,2462,2467,2472,2484 -->
+            <!-- 5GHz real channel values (MHz): 5180,5200,5220,5240,5260,5280,5300,5320,5745,5765,5785,5805,5825 -->
+            <Name>WIFI_CHANNEL</Name>
+            <Value></Value>
+        </Parameter>
+        <Parameter>
+            <!-- [Optional] Wifi DTIM: 1,3,5 (default is AP current setup if not specified) -->
+            <Name>WIFI_DTIM</Name>
+            <Value></Value>
+        </Parameter>
+        <Parameter>
+            <!-- [Optional] Wifi beacon interval in ms: 50..500 (default is AP current setup if not specified) -->
+            <Name>WIFI_BEACON</Name>
+            <Value></Value>
+        </Parameter>
+        <Parameter>
+            <!-- [Optional] Wifi WMM: 0 or 1 (default is AP current setup if not specified) -->
+            <Name>WIFI_WMM</Name>
+            <Value></Value>
+        </Parameter>
+        <Parameter>
+            <!-- [Optional] Wifi Band: 20 or 40 (MHz) (default is AP current setup if not specified) -->
+            <Name>WIFI_BAND</Name>
+            <Value></Value>
+        </Parameter>
+        <Parameter>
+            <!-- [Optional] Enable WIFI Multiple Input Multiple Output (default value is Single Input Single Output) -->
+            <Name>WIFI_MIMO</Name>
+            <Value></Value>
+        </Parameter>
+        <Parameter>
+            <!-- [Optional] Sniffer capture: 0 or 1 (WIFI_CHANNEL must be specified) -->
+            <Name>WIFI_SNIFF</Name>
+            <Value>0</Value>
+        </Parameter>
+        <Parameter>
+            <Name>FLIGHT_MODE</Name>
+            <!-- [Optional] If set to True, the flight mode will be enabled before setting wifi on and disabled at tear down. -->
+            <Value></Value>
+        </Parameter>
+        <Parameter>
+            <Name>PACKAGES_TO_DISABLE</Name>
+            <!-- [Optional] comma separated list containing packages you want to disable before testing. -->
+            <Value></Value>
+        </Parameter>
+        <Parameter>
+            <!-- [Optional] Regulatory Domain to use for both AP and DUT (US, GB, FR, ...) -->
+            <Name>REGULATORY_DOMAIN</Name>
+            <Value>FR</Value>
+        </Parameter>
+        <Parameter>
+            <!--[Optional] Computer to use as iperf server. ACS user public ssh key must be installed on this host.
+                If unspecified, and iperf mode is dual, iperf will be launched on the ACS host instead of this remote computer. -->
+            <Name>COMPUTER</Name>
+            <Value></Value>
+        </Parameter>
+        <Parameter>
+            <!-- [Optional] Direction of iperf: both, up(from DUT to Server), down(from Server to DUT) -->
+            <Name>DIRECTION</Name>
+            <Value>both</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Iperf options that will be concatened into iperf command line.
+                -p [port]: Specify the port to be used. 5001 for TCP 5009 for UDP (Mandatory)
+                -t [duration]: The time in seconds to transmit for (Mandatory)
+                -u : UDP mode instead of TCP default mode
+                -P [threads_number]: Number of iperf thread to use. If not use the value is compute depending on expected throughput
+                -w [window size]: Sets the socket buffer sizes to the specified value. If not use the value is compute depending on expected throughput. ex: "-w 512K" or "-w 1M"
+                -l [buffer_length]: Sets the length of the buffer to read or write. If not use the value is compute depending on expected throughput
+                -b [bandwidth]: UDP bandwidth to send at, in bits/sec. This implies the -u option. ex: "-b 1M" or "-b 512K".
+                -N: Set the TCP no delay option, disabling Nagle's algorithm
+                See http://iperf.fr/ for more information -->
+            <Name>IPERF_OPTIONS</Name>
+            <Value>-p 5001 -t 30 -N</Value>
+        </Parameter>
+        <Parameter>
+            <!-- [Optional] Iperf mode: single (iperf server must be launched manually), or dual. default is single if unspecified -->
+            <Name>IPERF_MODE</Name>
+            <Value>single</Value>
+        </Parameter>
+        <Parameter>
+            <!-- [Optional] Iperf options tuning: '0' or 'off': do not modify threads/buffer size. '1' or 'on': update threads count/buffer size, default is '1' -->
+            <Name>IPERF_TUNE_OPTIONS</Name>
+            <Value>0</Value>
+        </Parameter>
+        <Parameter>
+            <!-- [Optional] Target uplink throughput value in Kbps if different from Throughput_Targets.xml -->
+            <Name>TARGET_UL</Name>
+            <Value></Value>
+        </Parameter>
+        <Parameter>
+            <!-- [Optional] Failure uplink throughput value in Kbps if different from Throughput_Targets.xml -->
+            <Name>FAILURE_UL</Name>
+            <Value></Value>
+        </Parameter>
+        <Parameter>
+            <!-- [Optional] Target downlink throughput value in Kbps if different from Throughput_Targets.xml -->
+            <Name>TARGET_DL</Name>
+            <Value></Value>
+        </Parameter>
+        <Parameter>
+            <!-- [Optional] Failure downlink throughput value in Kbps if different from Throughput_Targets.xml -->
+            <Name>FAILURE_DL</Name>
+            <Value></Value>
+        </Parameter>
+        <Parameter>
+            <!-- Ways to exchange the ciphering key ("WPS-PBC", "WPS-PIN-DUT" or "WPS-PIN-AP") -->
+            <Name>KEY_EXCHANGE_MODE</Name>
+            <Value></Value>
+        </Parameter>
+        <Parameter>
+            <!-- PIN to exchange key (in "WPS-PIN-xx") -->
+            <Name>KEY_EXCHANGE_PIN</Name>
+            <Value></Value>
+        </Parameter>
+        <Parameter>
+            <!-- True if we want to simulate a test failure (PBC timeout or wrong pin) -->
+            <Name>MAKE_WPS_TEST_FAIL</Name>
+            <Value>False</Value>
+        </Parameter>
+        <Parameter>
+            <!-- [OPTIONAL] To force an access point for this test -->
+            <Name>CONFIGURABLE_AP_TO_USE</Name>
+            <Value></Value>
+        </Parameter>
+        <Parameter>
+            <!-- [OPTIONAL] If 'ON', Bluetooth is activated prior to the test to perform FIT tests, and is restaured to initial value at the end of the test. If 'OFF', BT is de-activated. -->
+            <Name>WHILE_BLUETOOTH_ON</Name>
+            <Value></Value>
+        </Parameter>
+        <Parameter>
+            <Name>USE_IPV6</Name>
+            <!-- [OPTIONAL] IPV6 (True) or IPV4 (False) -->
+            <Value>False</Value>
+        </Parameter>
+        <Parameter>
+            <!-- [OPTIONAL] If USE_IPV6 == True, the is the way to configure the IPV6 client (STATEFUL, STATELESS or STATELESS_RDNSSD) -->
+            <Name>IPV6_CONFIGURATION_MODE</Name>
+            <Value></Value>
+        </Parameter>
+        <Parameter>
+            <!-- [OPTIONAL] If USE_IPV6 == True, Computer where the IPV6 server will be started -->
+            <Name>IPV6_COMPUTER</Name>
+            <Value></Value>
+        </Parameter>
+        <Parameter>
+            <!-- [OPTIONAL] Test-specific username for EAP authentication. If not provided, the bench config one will be used. -->
+            <Name>EAP_USER</Name>
+            <Value></Value>
+        </Parameter>
+    </Parameters>
+    <TestSteps>
+        <Initialize>
+            <!-- Download the artifact from artifactory to local host -->
+            <TestStep Id="GET_ARTIFACT"
+                      EQT="ARTIFACT_MANAGER"
+                      ARTIFACT="MISCELLANEOUS/BINARIES/[+]FROM_DEVICE:PHONE1:OS[+]/COMMON/iperf"
+                      ARTIFACT_SOURCE="FROM_BENCH:ARTIFACT_MANAGER:URI"
+                      TRANSFER_TIMEOUT="DEFAULT"
+                      STORED_FILE_PATH="FILE_PATH_IN_CACHE1" />
+            <!-- Then, Push it on the device. -->
+            <!-- FILE_PATH is retrieved from test step context -->
+            <TestStep Id="INSTALL_FILE"
+                      DEVICE="PHONE1"
+                      FILE_PATH="FROM_CTX:FILE_PATH_IN_CACHE1"
+                      TYPE="bin"
+                      DESTINATION="FROM_DEVICE:PHONE1:binPath"
+                      TIMEOUT="DEFAULT"
+                      DESTINATION_STORED_PATH="FILE_PATH_IN_CACHE1" />
+        </Initialize>
+
+        <Finalize>
+            <!-- When test has been run, we can remove the binary files if necessary -->
+            <TestStep Id="UNINSTALL_FILE"
+                      DEVICE="PHONE1"
+                      DEVICE_FOLDER="FROM_DEVICE:PHONE1:binPath"
+                      FILENAME="iperf"/>
+        </Finalize>
+    </TestSteps>
+</TestCase>

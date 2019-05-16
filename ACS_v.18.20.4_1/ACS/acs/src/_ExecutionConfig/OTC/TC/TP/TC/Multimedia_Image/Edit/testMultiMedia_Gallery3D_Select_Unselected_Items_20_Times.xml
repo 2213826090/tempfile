@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<TestCase>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Discription>
+Verify the DUT and Gallery/photos app no crash after select/unselect the items in Gallery/photos app for 20 times
+</Discription>
+    <Domain>Multimedia_Image</Domain>
+    <Phase>CORE</Phase>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <Type>FUNCTIONAL</Type>
+    <UseCase>PY_UNIT</UseCase>
+    <b2bIteration>1</b2bIteration>
+    <Parameters>
+        <Parameter>
+            <Name>HpalmName</Name>
+            <Value>image_api_test.ImageAPITest.testMultiMedia_Gallery3D_Select_Unselected_Items_20_Times</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TEST_DATA_ROOT</Name>
+            <Value>testplan/Multimedia_Image</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TEST_CASE</Name>
+            <Value>tests.Multimedia_Image.Edit.image_api_test.ImageAPITest.testMultiMedia_Gallery3D_Select_Unselected_Items_20_Times</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

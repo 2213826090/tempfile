@@ -1,0 +1,24 @@
+<?xml version="1.0" ?>
+<TestCase>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters/>
+    <Discription>
+Platform shall enter not crash mode after kernel panic happened WATCHDOG_COUNTER_MAX times in WATCHDOG_DELAY and combo buttons are pressed
+</Discription>
+    <Parameters/>
+    <UseCase>PY_UNIT</UseCase>
+    <Parameters/>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <Parameters/>
+    <b2bIteration>1</b2bIteration>
+    <Parameters>
+        <Parameter>
+            <Name>TEST_DATA_ROOT</Name>
+            <Value>testplan/System_FastBoot</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TEST_CASE</Name>
+            <Value>tests.System_FastBoot.P1-SystemFailure-Watchdog.PanicToCrashMode-ComboButtons</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

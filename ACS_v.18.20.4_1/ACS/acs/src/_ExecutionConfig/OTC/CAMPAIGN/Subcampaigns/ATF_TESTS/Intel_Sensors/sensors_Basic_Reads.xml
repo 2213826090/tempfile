@@ -1,0 +1,34 @@
+<?xml version="1.0" ?>
+<Campaign>
+      <Parameters>
+            <Parameter isControlledPSUsed="False"/>
+            <Parameter isIoCardUsed="False"/>
+            <Parameter skipBootOnPowerCycle="False"/>
+            <Parameter bootRetryNumber="0"/>
+            <Parameter runHookScripts="False"/>
+            <Parameter powerCycleBetweenTC="False"/>
+            <Parameter powerCycleOnFailure="False"/>
+            <Parameter finalDutState="NoChange"/>
+            <Parameter stopCampaignOnCriticalFailure="False"/>
+            <Parameter stopCampaignOnFirstFailure="False"/>
+            <Parameter loggingLevel="debug"/>
+            <Parameter CampaignType="Other"/>
+      </Parameters>
+      <TestCases>
+            <TestCase Id="../../../../TC/TR/ATF_TESTS/Intel_Sensors/Basic_Reads/testGetAvailableSensors"/>
+            <TestCase Id="../../../../TC/TR/ATF_TESTS/Intel_Sensors/Basic_Reads/testAccelerometerGravityVector"/>
+            <TestCase Id="../../../../TC/TR/ATF_TESTS/Intel_Sensors/Basic_Reads/testAccelerometerOrientation"/>
+            <TestCase Id="../../../../TC/TR/ATF_TESTS/Intel_Sensors/Basic_Reads/testGyroscopeDrift"/>
+            <TestCase Id="../../../../TC/TR/ATF_TESTS/Intel_Sensors/Basic_Reads/testReadAccelerometer"/>
+            <TestCase Id="../../../../TC/TR/ATF_TESTS/Intel_Sensors/Basic_Reads/testReadGravitySensor"/>
+            <TestCase Id="../../../../TC/TR/ATF_TESTS/Intel_Sensors/Basic_Reads/testReadGyroscope"/>
+            <TestCase Id="../../../../TC/TR/ATF_TESTS/Intel_Sensors/Basic_Reads/testReadLightSensor"/>
+            <TestCase Id="../../../../TC/TR/ATF_TESTS/Intel_Sensors/Basic_Reads/testReadLinearAcceleration"/>
+            <TestCase Id="../../../../TC/TR/ATF_TESTS/Intel_Sensors/Basic_Reads/testReadMagneticFieldSensor"/>
+            <TestCase Id="../../../../TC/TR/ATF_TESTS/Intel_Sensors/Basic_Reads/testProximitySensorNotPresent"/>
+            <TestCase Id="../../../../TC/TR/ATF_TESTS/Intel_Sensors/Basic_Reads/testReadRotationVectorSensor"/>
+            <TestCase Id="../../../../TC/TR/ATF_TESTS/Intel_Sensors/Basic_Reads/testReadGyroscopeUncalibrated"/>
+            <TestCase Id="../../../../TC/TR/ATF_TESTS/Intel_Sensors/Basic_Reads/testReadMagneticFieldUncalibratedSensor"/>
+            <TestCase Id="../../../../TC/TR/ATF_TESTS/Intel_Sensors/Basic_Reads/testReadGameRotationVectorSensor"/>
+      </TestCases>
+</Campaign>

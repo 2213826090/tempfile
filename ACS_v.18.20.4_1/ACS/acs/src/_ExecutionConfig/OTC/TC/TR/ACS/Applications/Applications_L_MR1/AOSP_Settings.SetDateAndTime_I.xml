@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="13.45">
+    <UseCase>EXEC_SCRIPT</UseCase>
+    <Description>check if date and time work</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <TestSteps>
+        <Setup>
+            <TestStep Id="RUN_CMD"
+                      DEVICE="PHONE1" TIMEOUT="20" FORCE_EXECUTION="False" WAIT_FOR_RESPONSE="True" SILENT_MODE="False" SAVE_AS="out1"
+                      COMMAND="adb shell input keyevent 82"/>
+            <TestStep Id="DISMISS_ANR_DIALOG" DEVICE="PHONE1" PRESS_HOME_FIRST="True" MAX_ATTEMPTS="5"/>
+        </Setup>
+    </TestSteps>
+    <Parameters>
+        <Parameter>
+            <Name>SCRIPT_PATH</Name>
+                <Value>scripts/set_date_and_time.py</Value>
+        </Parameter>
+        <Parameter>
+            <Name>new_timezone_value</Name>
+                <Value>Bogota</Value>
+        </Parameter>
+        <Parameter>
+            <Name>new_time_value</Name>
+                <Value>12:59</Value>
+        </Parameter>
+        <Parameter>
+            <Name>new_date_value</Name>
+                <Value>13/11/2011</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

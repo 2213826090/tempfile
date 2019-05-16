@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<Equipment version="13.44" name="ETHERNET_COMMUTATOR" description="Equipment used to switch between 2 different Ethernet networks. This equipment embeddes an USB_RLY08 card.">
+    <Parameter name="IOCard_master" value="IO_CARD1" description="[optional] If another USB_RLY08 is used to control the phone, the USB_RLY08 embedded into the ETHERNET_COMMUTATOR has to be plug after the main one in order not to mix COM port. That's why the master card has to control the power of the slaves."/>
+    <Parameter name="RelayOnOffMasterCard" value="8" description="[optional] The relay number on the master card to control the power ON for the ethernet commutator. If used, the USB cable of the ETHERNET_COMMUTATOR has to be reworked and plugged into the relay number of the main card specified here."/>
+    <Parameter name="ComPort" value="COM10" description="COM port used for communication with the USB_RLY08 included in the ETHERNET_COMMUTATOR"/>
+    <Parameter name="RelayStatesForBenchNetwork" value="ON" description="OFF or ON. Relay states to connect the bench network to the ACS host computer (The network connected to the relays OFF plug is the connected network when Ethernet Commutator is powered OFF)"/>
+    <Parameter name="RelayStatesForCorporateNetwork" value="OFF" description="[Unused] OFF or ON. Relay states to connect the corporate (Intel) network to the ACS host computer (This value should be the opposite of RelayStatesForCorporateNetwork value. This value is acutally ignored. It is only used to help the understanding of the user.)"/>
+    <Parameter name="time2waitAfterCommutation" value="10" description="Time to wait after a network commutation, in seconds."/>
+</Equipment>

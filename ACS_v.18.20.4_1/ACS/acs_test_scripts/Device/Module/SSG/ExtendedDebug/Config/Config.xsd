@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--This ACS debug module is used to extract Android specific Device logs for each test case in the Test Campaign -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="ModuleConfiguration">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="retrieveDmesg" type="xs:boolean"/>
+                <!--retrieveDmesg=true extract "adb shell dmesg" from the Android Device-->
+                <xs:element name="retrieveAnrTraces" type="xs:boolean"/>
+                <!--retrieveAnrTraces=true extract "/data/anr/traces.txt" from the Android Device -->
+                <xs:element name="retrieveTombstone" type="xs:boolean"/>
+                <!--retrieveTombstone=true extract "/data/tombstones/tombstone_XX" from the Android Device -->
+                <xs:element name="retrieveLogcat" type="xs:boolean"/>
+                <!--retrieveLogcat=true extract "adb logcat" from the Android Device -->
+                <xs:element name="OnlyForFailedTests" type="xs:boolean"/>
+                <!--OnlyForFailedTests=true extract above logs from the Android Device only for failed tests-->
+                <!--OnlyForFailedTests=false extract above logs from the Android Device for all tests-->
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

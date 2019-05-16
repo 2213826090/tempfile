@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="13.37">
+    <UseCase>LIVE_CAMERA_COLOR_EFFECT</UseCase>
+    <Description>Use Camera to captue image after setting a color effect</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>False</b2bContinuousMode>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters>
+        <Parameter>
+            <Name>CAMERA</Name>
+            <Value>BACK</Value>
+        </Parameter>
+         <Parameter>
+             <Name>COLOR_EFFECT</Name>
+             <Value>negative</Value>
+         </Parameter>
+         <Parameter>
+             <!-- Directory where to save pictures taken  -->
+             <Name>SAVE_DIRECTORY</Name>
+             <Value>sdcard/</Value>
+         </Parameter>
+    </Parameters>
+</TestCase>

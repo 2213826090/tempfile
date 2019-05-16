@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="13.37">
+    <UseCase>LAB_PWRMEAS_BOOT</UseCase>
+    <Description>PnP boot sequence checking</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>False</b2bContinuousMode>
+    <IsCritical>True</IsCritical>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters>
+        <Parameter>
+            <!-- Time left to platform to boot (switch on) in seconds, if empty, defaulted to Device_Catalog.xml value -->
+            <Name>BOOT_TIMEOUT</Name>
+            <Value></Value>
+        </Parameter>
+        <Parameter>
+            <!-- Time left to platform to finalize its initialization in seconds, if empty, defaulted to Device_Catalog.xml value -->
+            <Name>SETTLEDOWN_DURATION</Name>
+            <Value></Value>
+        </Parameter>
+        <Parameter>
+            <!-- Request for DAQ calibration.
+                 Calibration will be done if value is 'yes', 'true' or 1.
+                 It will be skipped otherwise -->
+            <Name>DAQ_CALIBRATION</Name>
+            <Value></Value>
+        </Parameter>
+        <Parameter>
+            <!-- [OPTIONAL] Configuration of SysDebug module
+                 - Module is activated with its name
+                 - Modules are separated by semi-colon
+                 - Each parameter may be configured with '='
+                 - Parameters are separated by comma
+              -->
+             <Name>SYSDEBUG_MODULES</Name>
+             <Value>
+                Residency: s3,s0i3,s0i1,lpmp3;
+                Pmu: interval=30;
+                S3Failure;
+                WakeLocks;
+                ModemPanic;
+                CrashInfo;
+                Thermals;
+            </Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

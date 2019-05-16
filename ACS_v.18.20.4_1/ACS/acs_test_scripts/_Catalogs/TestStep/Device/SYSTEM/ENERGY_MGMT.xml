@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestSteps xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../acs/src/_Catalogs/TestStep/teststep.xsd">
+    <TestStep Id="GET_EM_INFO" Domain="SYSTEM" SubDomain="ENERGY_MGMT" Feature="CONSUMPTION" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.EnergyManagement.GetEmInfo.GetEmInfo</ClassName>
+        <Description>
+            Get various EM info on device.
+        </Description>
+        <Environment name="ANY">
+        </Environment>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="BEHAVIOR" type="STRING" isOptional="true">
+                <Description>
+                        - "scheduled" to schedule the operation
+                        - "read" to read the output from a scheduled operation
+                        - Not set ro act like normaly</Description>
+                <PossibleValues>scheduled;read</PossibleValues>
+                <DefaultValue />
+            </Parameter>
+            <Parameter name="BEHAVIOR_VALUE" type="INTEGER" isOptional="true">
+                <Description>
+                    if behavior is equal to "scheduled":
+                    schedule the method to be launch after x seconds
+
+                    if behavior is equal to "read":
+                    read the output of a previous scheduled operation with given pid
+
+                    if behavior is not set behavior value is not used
+                </Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+            <Parameter name="SAVE_INFO_AS" type="CONTEXT" isOptional="false">
+                <Description>
+                    <Key name="KEY_NAME_DEFINED_BY_USER" type="STRING">
+                        Name of the context variable where the value will be saved.
+                        Common keys are:
+                            TIME_STAMP: The time stamp as YYYY-MM-DD_HHhmm.ss format
+                            BATTERY: Will contain many battery-related info
+                            CHARGER: Will contain many charger-related info
+
+                        This mean info will be available as KEY_NAME_DEFINED_BY_USER:TIME_STAMP,
+                        KEY_NAME_DEFINED_BY_USER:CHARGER, then KEY_NAME_DEFINED_BY_USER:BATTERY.
+                        Example SUB_KEY for BATTERY are:
+                            CAPACITY: The battery capacity value between 0 and 100%
+                            VOLTAGE: The battery capacity
+                            TEMP: The battery temperature in Degrees Celcius
+                            CURRENT_NOW: The current battery amperage in A
+                            STATUS: The battery status in FULL, NOT CHARGING, CHARGING, DISCHARGING
+
+                        Example to get the battery voltage value:
+                        KEY_NAME_DEFINED_BY_USER:BATTERY:VOLTAGE
+                    </Key>
+                </Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+        </Parameters>
+    </TestStep>
+</TestSteps>

@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<TestCase>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Discription>
+https://jira01.devtools.intel.com/browse/AREQ-1338
+&lt;br /&gt;
+&lt;br /&gt;The Intel Andorid platform must support Saturation and Hue (RGB and Video) Adjustments. Developers use the ColorToHSV to adjust an image's Hue &amp;amp; Saturation.
+</Discription>
+    <Domain>System_OS</Domain>
+    <Phase>CORE</Phase>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <Type>FUNCTIONAL</Type>
+    <UseCase>PY_UNIT</UseCase>
+    <b2bIteration>1</b2bIteration>
+    <Parameters>
+        <Parameter>
+            <Name>HpalmName</Name>
+            <Value>Saturation_and_Hue.SaturationHue.test_verify_saturation_and_hue</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TEST_DATA_ROOT</Name>
+            <Value>testplan/System_OS</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TEST_CASE</Name>
+            <Value>tests.System_OS.AndroidFramework.Saturation_and_Hue.SaturationHue.test_verify_saturation_and_hue</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

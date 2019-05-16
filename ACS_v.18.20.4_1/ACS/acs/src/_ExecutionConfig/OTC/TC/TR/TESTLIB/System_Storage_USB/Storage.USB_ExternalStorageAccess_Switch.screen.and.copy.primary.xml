@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase>
+    <UseCase>Testlib</UseCase>
+    <Description>Switch Screen orientation when copy is in progress</Description>
+	<b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <TcMaxAttempt>1</TcMaxAttempt>
+    <TestSteps>
+        <Initialize>
+            <TestStep Id="GET_ARTIFACT" EQT="ARTIFACT_MANAGER" ARTIFACT="APPLICATIONS/STORAGE_USB/es_filemanager.apk" ARTIFACT_SOURCE="FROM_BENCH:ARTIFACT_MANAGER:URI" TRANSFER_TIMEOUT="DEFAULT" STORED_FILE_PATH="FILE_PATH_IN_CACHE1"/>
+            <TestStep Id="INSTALL_APP"
+                      DEVICE="PHONE1"
+                      SIGN="False"
+                      SIGN_KEY_PATH="DEFAULT"
+                      FILE_PATH="FROM_CTX:FILE_PATH_IN_CACHE1"
+                      BACKUP="False"
+                      TIMEOUT="30"
+                      BACKUP_FILE_PATH="/backup"/>
+        </Initialize>
+        <Finalize>
+            <TestStep Id="UNINSTALL_APP"
+                      DEVICE="PHONE1"
+                      APP_NAME="es_filemanager.apk"
+                      BACKUP_APP_NAME="NO_BACKUP"
+                      BACKUP_FILE_PATH="/backup"
+                      TIMEOUT="30" />
+        </Finalize>
+    </TestSteps>
+    <Parameters>
+        <Parameter>
+            <Name>test</Name>
+            <Value>scripts/storage_usb/tests/Storage.USB_ExternalStorageAccess_Switch.screen.and.copy.primary.py</Value>
+        </Parameter>
+        <Parameter>
+            <Name>test-args</Name>
+            <Value>none=none</Value>
+        </Parameter>
+        <Parameter>
+            <Name>timeout</Name>
+            <Value>10000</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

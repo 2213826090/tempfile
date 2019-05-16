@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="13.37">
+    <UseCase>LAB_EM_EXPORT_CAB_INFO_ROB</UseCase>
+    <Description>EM - Check the cable information exportation robustness</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>False</b2bContinuousMode>
+    <TcMaxAttempt>1</TcMaxAttempt>
+    <TcAcceptanceCriteria>1</TcAcceptanceCriteria>
+    <Parameters>
+        <Parameter>
+            <!-- All info which are mandatory in sysfs to export to userapp -->
+            <Name>SYSFS_MANDATORY_INFO</Name>
+            <Value>TYPE;HEALTH;PRESENT</Value>
+        </Parameter>
+        <Parameter>
+            <!-- All info which are optionnal in sysfs to export to userapp -->
+            <Name>NUMBER_PASS</Name>
+            <Value>100</Value>
+        </Parameter>
+        <Parameter>
+            <!-- All info which are optionnal in sysfs to export to userapp -->
+            <Name>CHARGER_TYPE</Name>
+            <Value>SDP</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

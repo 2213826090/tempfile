@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='us-ascii'?>
+<Campaign version="13.49">
+    <Parameters>
+        <Parameter isControlledPSUsed="False" />
+        <Parameter isIoCardUsed="False" />
+        <Parameter skipBootOnPowerCycle="False" />
+        <Parameter bootRetryNumber="0" />
+        <Parameter runHookScripts="False" />
+        <Parameter powerCycleBetweenTC="False" />
+        <Parameter powerCycleOnFailure="False" />
+        <Parameter finalDutState="NoChange" />
+        <Parameter stopCampaignOnCriticalFailure="False" />
+        <Parameter stopCampaignOnFirstFailure="False" />
+        <Parameter loggingLevel="debug" />
+        <Parameter CampaignType="Other" />
+        <Parameter TCRReportViaRESTAPI="True" />
+    </Parameters>
+    <TestCases>
+        <TestCase Id="../../../../../TC/TP/TC/Graphics_Display/Display/test_HDMI_1_4" />
+        <TestCase Id="../../../../../TC/TP/TC/Graphics_Display/Display/test_DisplayInterface_HDMI_FHD" />
+        <TestCase Id="../../../../../TC/TP/TC/Graphics_Display/DisplayOut_HDMI/test_HDMI_ImageDisplay_JPEG" />
+        <TestCase Id="../../../../../TC/TP/TC/Graphics_Display/MultiDisplay/test_Two_Displays_Extended_Desktop_HDMI1_HDMI2" />
+        </TestCases>
+</Campaign>

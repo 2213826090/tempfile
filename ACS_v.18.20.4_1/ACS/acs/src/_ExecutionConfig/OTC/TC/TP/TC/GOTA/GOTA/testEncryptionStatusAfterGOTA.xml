@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<TestCase>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Discription>
+Check encrypted status is still in a state of encryption after GOTA Update
+</Discription>
+    <Domain>GOTA</Domain>
+    <Phase>CORE</Phase>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <Type>FUNCTIONAL</Type>
+    <UseCase>PY_UNIT</UseCase>
+    <b2bIteration>1</b2bIteration>
+    <Parameters>
+        <Parameter>
+            <Name>HpalmName</Name>
+            <Value>check_gota_encryption_status_after_gota.EncryptionStatusAfterGOTA.testEncryptionStatusAfterGOTA</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TEST_DATA_ROOT</Name>
+            <Value>testplan/GOTA</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TEST_CASE</Name>
+            <Value>tests.GOTA.GOTA.check_gota_encryption_status_after_gota.EncryptionStatusAfterGOTA.testEncryptionStatusAfterGOTA</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

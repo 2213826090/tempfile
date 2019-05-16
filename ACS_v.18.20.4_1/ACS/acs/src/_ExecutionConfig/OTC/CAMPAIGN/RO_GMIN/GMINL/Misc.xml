@@ -1,0 +1,37 @@
+<?xml version="1.0" ?>
+<Campaign>
+      <Parameters>
+            <Parameter isControlledPSUsed="False"/>
+            <Parameter isIoCardUsed="False"/>
+            <Parameter skipBootOnPowerCycle="False"/>
+            <Parameter bootRetryNumber="0"/>
+            <Parameter runHookScripts="False"/>
+            <Parameter powerCycleBetweenTC="False"/>
+            <Parameter powerCycleOnFailure="False"/>
+            <Parameter finalDutState="NoChange"/>
+            <Parameter stopCampaignOnCriticalFailure="False"/>
+            <Parameter stopCampaignOnFirstFailure="False"/>
+            <Parameter loggingLevel="debug"/>
+            <Parameter CampaignType="Other"/>
+      </Parameters>
+      <TestCases>
+          <TestCase Id="../../../TC/TR/ATF_TESTS/SETUP/ConnectToAP_Prereq"/>
+          <SubCampaign Id="../../Subcampaigns/ATF_TESTS/ABT_Api_Tests/am/am"/>
+          <SubCampaign Id="../../Subcampaigns/ATF_TESTS/ABT_Api_Tests/color/color"/>
+          <SubCampaign Id="../../Subcampaigns/ATF_TESTS/ABT_Api_Tests/display/display"/>
+          <SubCampaign Id="../../Subcampaigns/ATF_TESTS/ABT_Api_Tests/gallery/gallery"/>
+          <SubCampaign Id="../../Subcampaigns/ATF_TESTS/ABT_Api_Tests/generic/generic"/>
+          <SubCampaign Id="../../Subcampaigns/ATF_TESTS/ABT_Api_Tests/generic/dropbox_manager/dropbox_manager"/>
+          <SubCampaign Id="../../Subcampaigns/ATF_TESTS/ABT_Api_Tests/generic/context/context"/>
+          <SubCampaign Id="../../Subcampaigns/ATF_TESTS/ABT_Api_Tests/imageview/imageview"/>
+          <SubCampaign Id="../../Subcampaigns/ATF_TESTS/ABT_Api_Tests/jni/jni"/>
+          <SubCampaign Id="../../Subcampaigns/ATF_TESTS/ABT_Api_Tests/stream/browser_stream/browser_stream"/>
+          <SubCampaign Id="../../Subcampaigns/ATF_TESTS/ABT_Api_Tests/stream/player_stream/player_stream"/>
+          <SubCampaign Id="../../Subcampaigns/ATF_TESTS/ABT_Api_Tests/system_uid/airplane_mode/airplane_mode"/>
+          <SubCampaign Id="../../Subcampaigns/ATF_TESTS/ABT_Api_Tests/system_uid/wifi/wifi"/>
+          <SubCampaign Id="../../Subcampaigns/ATF_TESTS/ABT_Api_Tests/webview/webview"/>
+          <SubCampaign Id="../../Subcampaigns/ATF_TESTS/ABT_Power/ABT_Power"/>
+          <SubCampaign Id="../../Subcampaigns/ATF_TESTS/ABT_Api_Tests/audio/ringtone/ringtone"/>
+          <SubCampaign Id="../../Subcampaigns/ATF_TESTS/ABT_Api_Tests/launch/launch"/>
+      </TestCases>
+</Campaign>

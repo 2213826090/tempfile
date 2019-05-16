@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase>
+	<UseCase>LIVE_SYSTEM_CHECK_RINGER_PROFILE</UseCase>
+	<Description>Check different ringer profiles of DUT</Description>
+	<b2bIteration>1</b2bIteration>
+	<b2bContinuousMode>False</b2bContinuousMode>
+	<Parameters>
+		<Parameter>
+			<!-- The silent mode of ringer profile to be checked
+			     The possible value could be
+                 True/False
+			-->
+			<Name>SILENT_MODE</Name>
+			<Value>False</Value>
+		</Parameter>
+		<Parameter>
+			<!-- The vibra mode of ringer profile to be checked
+			     The possible value could be
+                 always/never/silent/notsilent
+			-->
+			<Name>VIBRA_MODE</Name>
+			<Value>silent</Value>
+		</Parameter>
+	</Parameters>
+</TestCase>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="13.45">
+    <UseCase>LIVE_WIFI_KPI_IPERF</UseCase>
+    <Description>WIFI Throuhput Measurement using IPERF</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters>
+        <Parameter>
+            <!--
+                Wifi access point on which board will connect to.
+                Must refers to a wifi router's name (equipment name of the bench configuration file).
+            -->
+            <Name>WIFI_ACCESS_POINT</Name>
+            <Value>AC_WIFI_ROUTER</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Computer to use as iperf server -->
+            <Name>COMPUTER</Name>
+            <Value>COMPUTER2</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Transfer direction. Can be "both" (default), "up" or "down" -->
+            <Name>DIRECTION</Name>
+            <Value>down</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Iperf options that will be concatened into iperf command line.
+                -p [port]: Specify the port to be used. 5001 for TCP 5009 for UDP (Mandatory)
+                -t [duration]: The time in seconds to transmit for (Mandatory)
+                -u : UDP mode instead of TCP default mode
+                -P [threads_number]: Number of iperf thread to use. If not use the value is compute depending on expected throughput
+                -w [window size]: Sets the socket buffer sizes to the specified value. If not use the value is compute depending on expected throughput. ex: "-w 512K" or "-w 1M"
+                -l [buffer_length]: Sets the length of the buffer to read or write. If not use the value is compute depending on expected throughput
+                -b [bandwidth]: UDP bandwidth to send at, in bits/sec. This implies the -u option. ex: "-b 1M" or "-b 512K".
+                -N: Set the TCP no delay option, disabling Nagle's algorithm
+                See http://iperf.fr/ for more information -->
+            <Name>IPERF_OPTIONS</Name>
+            <Value>-p 5009 -t 60 -P 1</Value>
+        </Parameter>
+        <Parameter>
+          <!-- [Optional] Iperf options tuning: '0' or 'off': do not modify threads/buffer size. '1' or 'on': update threads count/buffer size, default is '1' -->
+          <Name>IPERF_TUNE_OPTIONS</Name>
+          <Value>0</Value>
+        </Parameter>
+        <Parameter>
+            <!-- [OPTIONAL] If 'ON', Bluetooth is activated prior to the test to perform FIT tests, and is restaured to initial value at the end of the test. If 'OFF', BT is de-activated. -->
+            <Name>WHILE_BLUETOOTH_ON</Name>
+            <Value></Value>
+        </Parameter>
+        <Parameter>
+            <!-- Regrev to apply -->
+            <Name>COUNTRY_REGREV</Name>
+            <Value>5</Value>
+        </Parameter>
+        <Parameter>
+            <!-- [Optional] Regulatory Domain to use for both AP and DUT (US, GB, FR, ...) -->
+            <Name>REGULATORY_DOMAIN</Name>
+            <Value>FR</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

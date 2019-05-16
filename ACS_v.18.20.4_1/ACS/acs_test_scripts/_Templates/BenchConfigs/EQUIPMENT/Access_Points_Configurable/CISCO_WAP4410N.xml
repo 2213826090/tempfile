@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<Equipment version="13.44" name="CONFIGURABLE_AP_WPS1" description="Configurable Access Point">
+    <Parameter name="Model" value="CISCO_WAP4410N" description="Model of the equipment to use" />
+    <Parameter name="IP" value="192.168.1.7" description="ip address of the equipment" />
+    <Parameter name="ConfigurationWaitingTime" value="30" description="Time to wait after the configuration step (in second)" />
+    <Parameter name="username" value="admin" description="login used for the connection" />
+    <Parameter name="password" value="admin" description="password used for the connection" />
+    
+    <Parameter name="SSID" value="acs-lab1-bb01-WPS1" description="SSID to create" />
+    <Parameter name="passphrase_WEP64" value="12345" description="passphrase for WEP 64 bits" />
+    <Parameter name="passphrase_WEP128" value="1234567890123" description="passphrase for WEP 128 bits" />
+    <Parameter name="passphrase_WPA" value="1234567890123" description="passphrase for WPA" />
+    <Parameter name="passphrase_WPA2" value="1234567890123" description="passphrase for WPA2" />
+    <!-- Same EAP-WAP configuration as AP1 is used. That means same Radius server for the access point and same certificate for the phone -->
+</Equipment>

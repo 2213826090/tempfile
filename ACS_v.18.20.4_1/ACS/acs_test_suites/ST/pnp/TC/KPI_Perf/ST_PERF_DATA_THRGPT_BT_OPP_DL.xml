@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="13.41">
+    <UseCase>TEST_STEP_ENGINE</UseCase>
+    <Description></Description>
+    <b2bIteration>3</b2bIteration>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <TcMaxAttempt>1</TcMaxAttempt>
+    <TcAcceptanceCriteria>1</TcAcceptanceCriteria>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters>
+        <Parameter>
+            <Name>OPP_FILES_TO_TRANSFER</Name>
+            <Value>BBB_480p_1450Kbps_audio_44100_30fps_MP.mp4</Value>
+        </Parameter>
+        <Parameter>
+            <Name>REGEX_BLUETOOTH</Name>
+            <Value>BtOppObexServer</Value>
+        </Parameter>
+        <Parameter>
+            <Name>BT_MEASURE_UNIT</Name>
+            <Value>Kbps</Value>
+        </Parameter>
+    </Parameters>
+    <TestSteps>
+        <Include Src="ST/cws/TSS/Common/ST_CWS_COMMON.xml"/>
+        <Include Src="ST/cws/TSS/BT/ST_CWS_BT_COMMON.xml"/>
+
+        <TestStepSet Id="OppTransfer">
+            <TestStep Id="BT_OPP_CHECK" DEVICE="PHONE1"
+                      BDADDR="FROM_CTX:BT_MAC_ADDRESS_PHONE2"
+                      FILES="FROM_TC:OPP_FILES_TO_TRANSFER"
+                      EXPECTED_FILES_SIZE="FROM_CTX:OppSend:FileSize"
+                      EXPECTED_STATE="all_completed"
+                      SAVE_INFO_AS="OppCheck"
+                      TIMEOUT="0"
+                      THROUGHPUT_MARGIN="0"/>
+            <TestStep Id="COMPARE"
+                      FIRST="FROM_CTX:OppSend:FileChecksum"
+                      SECOND="FROM_CTX:OppCheck:FileChecksum"
+                      OPERATOR="EQUAL"
+                      PASS_IF="true"/>
+        </TestStepSet>
+
+        <Setup>
+            <!-- AUTOMATION - Install video file -->
+            <TestStep Id="GET_ARTIFACT" EQT="DEFAULT"
+                      ARTIFACT="VIDEO/480p/[+]FROM_TC:OPP_FILES_TO_TRANSFER"
+                      ARTIFACT_SOURCE="FROM_BENCH:ARTIFACT_MANAGER:URI"
+                      TRANSFER_TIMEOUT="DEFAULT"
+                      STORED_FILE_PATH="VIDEO_IN_CACHE"/>
+            <TestStep Id="CONNECT_DEVICE" DEVICE="PHONE2"/>
+            <TestStep Id="INSTALL_FILE"
+                      DEVICE="PHONE2"
+                      FILE_PATH="FROM_CTX:VIDEO_IN_CACHE"
+                      DESTINATION="/sdcard/acs_files/"
+                      DESTINATION_STORED_PATH="NOT_USED"
+                      TIMEOUT="120"
+                      TYPE="media"/>
+            <TestStep Id="REBOOT_DEVICE" DEVICE="PHONE2" WAY="soft" TYPE="MOS"/>
+            <!-- AUTOMATION - Set default configuration -->
+            <TestStep SetId="BTFullSetupPhones1and2"/>
+            <TestStep Id="GET_BT_THROUGHPUT_TARGETS" DEVICE="PHONE1"
+                      DIRECTION="up"
+                      BT_PROTOCOL="OPP"
+                      TARGET_THROUGHPUT="BT_TARGET"/>
+        </Setup>
+        <RunTest>
+            <Fork Id="TimeoutToNever">
+                <TestStep SetId="BTOppSetup" DEVICE="PHONE1"/>
+                <TestStep SetId="BTOppSetup" DEVICE="PHONE2"/>
+            </Fork>
+
+            <TestStep Id="ADD_TRIGGER_MSG" DEVICE="PHONE1" TRIGGER_MESSAGE="FROM_TC:REGEX_BLUETOOTH"/>
+            <TestStep Id="BT_OPP_SEND" DEVICE="PHONE2"
+                      BDADDR="FROM_CTX:BT_MAC_ADDRESS_PHONE1"
+                      FILES="FROM_TC:OPP_FILES_TO_TRANSFER"
+                      SAVE_INFO_AS="OppSend"/>
+            <Fork Id="ForkTransferAndCheck">
+                <TestStep SetId="OppTransfer"/>
+                <TestStep Id="BT_OPP_PI_GET_LOGS_THROUGHPUT" DEVICE="PHONE1"
+                        OPP_DIRECTION="DOWNLOAD"
+                        OPP_FILE_SIZE="FROM_CTX:OppSend:FileSize"
+                        SAVE_OPP_THROUGHPUT="OPP_THROUGHPUT"/>
+            </Fork>
+            <TestStep Id="REMOVE_TRIGGER_MSG" DEVICE="PHONE1"
+                      TRIGGER_MESSAGE="FROM_TC:REGEX_BLUETOOTH"/>
+
+            <TestStep Id="SAVE_KPI_MEASURE"
+                      TARGET_VALUE="FROM_CTX:BT_TARGET:FAILURE_VALUE"
+                      TARGET_UNIT="FROM_CTX:BT_TARGET:FAILURE_UNIT"
+                      MEASURE_VALUE="FROM_CTX:OPP_THROUGHPUT"
+                      MEASURE_UNIT="FROM_TC:BT_MEASURE_UNIT"/>
+            <TestStep Id="COMPARE_THROUGHPUTS"
+                      VALUE="FROM_CTX:OPP_THROUGHPUT"
+                      TARGET="FROM_CTX:BT_TARGET:FAILURE_VALUE"
+                      VALUE_UNIT="FROM_TC:BT_MEASURE_UNIT"
+                      TARGET_UNIT="FROM_CTX:BT_TARGET:FAILURE_UNIT"/>
+        </RunTest>
+        <TearDown>
+            <TestStep Id="BT_OPP_CLEANUP" DEVICE="PHONE1" REMOVE_FILES="true" FILES="FROM_TC:OPP_FILES_TO_TRANSFER" />
+            <TestStep Id="BT_OPP_CLEANUP" DEVICE="PHONE2" REMOVE_FILES="true" FILES="FROM_TC:OPP_FILES_TO_TRANSFER" />
+            <Fork Id="ForkTeardown">
+                <TestStep SetId="BTCommonTeardown" DEVICE="PHONE1" />
+                <TestStep SetId="BTCommonTeardown" DEVICE="PHONE2" />
+            </Fork>
+        </TearDown>
+    </TestSteps>
+</TestCase>

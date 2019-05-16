@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<TestCase>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Discription>
+Quick settings and main settings are in sync.
+</Discription>
+    <Domain>Comms_GPS</Domain>
+    <Phase>CORE</Phase>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <Type>FUNCTIONAL</Type>
+    <UseCase>PY_UNIT</UseCase>
+    <b2bIteration>1</b2bIteration>
+    <Parameters>
+        <Parameter>
+            <Name>HpalmName</Name>
+            <Value>test_locationStatus_consistency.LocationStatus.test_locationStatusInQuickSettingsVsMainSettings</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TEST_DATA_ROOT</Name>
+            <Value>testplan/Comms_GPS</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TEST_CASE</Name>
+            <Value>tests.Comms_GPS.SSG.test_locationStatus_consistency.LocationStatus.test_locationStatusInQuickSettingsVsMainSettings</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

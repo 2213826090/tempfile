@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="13.41">
+    <UseCase>TEST_STEP_ENGINE</UseCase>
+    <Description>GLBenchmark T-Rex HD Offsreen</Description>
+    <b2bIteration>3</b2bIteration>
+    <b2bContinuousMode>False</b2bContinuousMode>
+    <SavePatRawData>True</SavePatRawData>
+    <TcMaxAttempt>1</TcMaxAttempt>
+    <TcAcceptanceCriteria>1</TcAcceptanceCriteria>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters>
+        <Parameter>
+            <Name>SAVE_POWER_DATA</Name>
+            <Value>True</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TEST_DURATION</Name>
+            <Value>54</Value>
+        </Parameter>
+        <Parameter>
+            <Name>MEDIA_VOLUME</Name>
+            <Value>50</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Sleep duration before making the measure in seconds -->
+            <Name>SLEEP_DURATION</Name>
+            <Value>7</Value>
+        </Parameter>
+        <Parameter>
+            <Name>APPLICATION</Name>
+            <Value>gl_benchmark_270</Value>
+        </Parameter>
+        <Parameter>
+            <Name>ARTIFACT_PREFIX</Name>
+            <Value>BENCHMARKS/GLBENCHMARK</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TEST_NAME</Name>
+            <Value>com.intel.droidbot.perf.GLBenchmark#testTRexOffscreen</Value>
+        </Parameter>
+        <Parameter>
+            <Name>JSON_SCORE_FILE</Name>
+            <Value>SCORES_BENCHMARK_GLBENCHMARK</Value>
+        </Parameter>
+        <Parameter>
+            <Name>SYSDEBUG_MODULES</Name>
+            <Value>
+                Residency: s3, s0i3, s0i1, lpmp3;
+                ModemPanic;
+                CrashInfo;
+                Thermals: core=50, soc=50, skin=40;
+                Dstates;
+            </Value>
+        </Parameter>
+        <Parameter>
+            <Name>TEST_STEP_ENGINE_ENTRY</Name>
+            <Value>ST/pnp/UC/DroidBotSimple.xml</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

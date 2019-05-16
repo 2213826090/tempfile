@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="13.37">
+  <UseCase>LIVE_DUAL_PHONE_BT_CONNECT</UseCase>
+  <Description>Connect to another phone through BlueTooth</Description>
+  <b2bIteration>200</b2bIteration>
+  <b2bContinuousMode>True</b2bContinuousMode>
+  <TcExpectedResult>PASS</TcExpectedResult>
+  <Parameters>
+    <Parameter>
+      <!-- String representing bluetooth code pin -->
+      <Name>CODE_PIN</Name>
+      <Value>0000</Value>
+    </Parameter>
+    <Parameter>
+      <!-- String representing bluetooth passphrase (setted by default to '0000') -->
+      <Name>PASSPHRASE</Name>
+      <Value>0000</Value>
+    </Parameter>
+    <Parameter>
+      <!--Flag indicate send or receive message.[receive|send] -->
+      <Name>DIRECTION</Name>
+      <Value>receive</Value>
+    </Parameter>
+    <Parameter>
+      <!--Short message send to or receive from remote device to judge whether connect successfully -->
+      <Name>MESSAGE</Name>
+      <Value>hello world</Value>
+    </Parameter>
+    <Parameter>
+      <!-- [Optional] Is set to True, the flight mode will be enables before setting bt on
+          and disabled at tear down. -->
+      <Name>FLIGHT_MODE</Name>
+      <Value>False</Value>
+    </Parameter>
+  </Parameters>
+</TestCase>

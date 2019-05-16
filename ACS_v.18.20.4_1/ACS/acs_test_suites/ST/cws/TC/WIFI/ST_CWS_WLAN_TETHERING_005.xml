@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="13.41">
+    <UseCase>TEST_STEP_ENGINE</UseCase>
+    <Description/>
+    <b2bIteration>4</b2bIteration>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <TcMaxAttempt>1</TcMaxAttempt>
+    <TcAcceptanceCriteria>1</TcAcceptanceCriteria>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters />
+    <TestSteps>
+        <Include Src="ST/cws/TSS/Common/ST_CWS_COMMON.xml" />
+        <Include Src="ST/cws/TSS/WiFi/ST_CWS_WIFI_COMMON.xml" />
+
+        <Setup>
+            <!-- AUTOMATION - Set default configuration -->
+            <TestStep SetId="InitPhoneCWS" DEVICE="PHONE1" />
+            <!-- Configure DUT -->
+            <TestStep SetId="SoftAPCommonSetup" DEVICE="PHONE1" REGULATORY_DOMAIN="FR" MAC_ADDR="MAC_ADDR_SSID_HOTSPOT" />
+            <TestStep Id="WIFI_SET_HOTSPOT" DEVICE="PHONE1" POWER="on" SSID="FROM_CTX:MAC_ADDR_SSID_HOTSPOT" SECURITY="OPEN" PASSPHRASE="NOT_USED" STANDARD="2_4GHZ_20MHZ" CHANNEL="8" HIDDEN="off"/>
+        </Setup>
+        <RunTest>
+            <!-- SPEC - Step 1 : Turn Airplane Mode On -->
+            <TestStep Id="SET_FLIGHT_MODE" DEVICE="PHONE1" FLIGHT_MODE="enable" />
+            <TestStep Id="WIFI_GET_HOTSPOT" DEVICE="PHONE1" WIFI_HOTSPOT_PARAMETERS="CURRENT_HOTSPOT_STATUS"/>
+            <TestStep Id="COMPARE" FIRST="FROM_CTX:CURRENT_HOTSPOT_STATUS:POWER" SECOND="off" OPERATOR="EQUAL" PASS_IF="true"/>
+
+            <!-- SPEC - Step 2 : Turn Airplane Mode Off -->
+            <TestStep Id="SET_FLIGHT_MODE" DEVICE="PHONE1" FLIGHT_MODE="disable" />
+            <TestStep Id="WIFI_GET_HOTSPOT" DEVICE="PHONE1" WIFI_HOTSPOT_PARAMETERS="CURRENT_HOTSPOT_STATUS"/>
+            <TestStep Id="COMPARE" FIRST="FROM_CTX:CURRENT_HOTSPOT_STATUS:POWER" SECOND="off" OPERATOR="EQUAL" PASS_IF="true"/>
+
+            <!-- SPEC - Step 3 : Turn on SoftAP -->
+            <TestStep Id="WIFI_SET_HOTSPOT" DEVICE="PHONE1" POWER="on" SSID="FROM_CTX:MAC_ADDR_SSID_HOTSPOT" SECURITY="OPEN" PASSPHRASE="NOT_USED" STANDARD="2_4GHZ_20MHZ" CHANNEL="8" HIDDEN="off"/>
+        </RunTest>
+        <TearDown>
+            <!-- AUTOMATION - Teardown -->
+            <TestStep Id="SET_FLIGHT_MODE" DEVICE="PHONE1" FLIGHT_MODE="disable" />
+            <TestStep SetId="SoftAPCommonTeardown" DEVICE="PHONE1"/>
+        </TearDown>
+    </TestSteps>
+</TestCase>

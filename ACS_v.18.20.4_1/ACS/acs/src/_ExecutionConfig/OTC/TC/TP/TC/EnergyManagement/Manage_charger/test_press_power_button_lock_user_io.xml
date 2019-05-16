@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+<TestCase>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Discription>
+The usecase is about locking the user inputs / outputs upon short pressing the specific button (which is probably the power on button).
+&lt;br /&gt;Actions :
+&lt;br /&gt;The display/screen will be turned off, except any hardbutton on the screen to bring the disply back(if present, like home button).
+&lt;br /&gt;If key board present, it will be locked, except the keys to unlock it.
+&lt;br /&gt;The touchscreen is de-activated.
+</Discription>
+    <Domain>EnergyManagement</Domain>
+    <Phase>CORE</Phase>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <Type>FUNCTIONAL</Type>
+    <UseCase>PY_UNIT</UseCase>
+    <b2bIteration>1</b2bIteration>
+    <Parameters>
+        <Parameter>
+            <Name>HpalmName</Name>
+            <Value>press_power_button_lock_user_io.LockUserIO.test_press_power_button_lock_user_io</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TEST_DATA_ROOT</Name>
+            <Value>testplan/EnergyManagement</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TEST_CASE</Name>
+            <Value>tests.EnergyManagement.Manage_charger.press_power_button_lock_user_io.LockUserIO.test_press_power_button_lock_user_io</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

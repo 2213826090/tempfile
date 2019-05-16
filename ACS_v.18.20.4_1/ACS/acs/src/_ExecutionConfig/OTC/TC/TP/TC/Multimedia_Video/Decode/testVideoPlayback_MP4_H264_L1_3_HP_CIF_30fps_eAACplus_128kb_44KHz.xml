@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<TestCase>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Discription>
+Verify video playback with these meta info : Video Playback H.264 Level 1.3 High Profile (CIF 352x288@30 fps) eAAC+_Multimedia_128kb_44KHz
+</Discription>
+    <Domain>Multimedia_Video</Domain>
+    <Phase>CORE</Phase>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <Type>FUNCTIONAL</Type>
+    <UseCase>PY_UNIT</UseCase>
+    <b2bIteration>1</b2bIteration>
+    <Parameters>
+        <Parameter>
+            <Name>HpalmName</Name>
+            <Value>video_playback.VideoPlayBack.testVideoPlayback_MP4_H264_L1_3_HP_CIF_30fps_eAACplus_128kb_44KHz</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TEST_DATA_ROOT</Name>
+            <Value>testplan/Multimedia_Video</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TEST_CASE</Name>
+            <Value>tests.Multimedia_Video.Decode.video_playback.VideoPlayBack.testVideoPlayback_MP4_H264_L1_3_HP_CIF_30fps_eAACplus_128kb_44KHz</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

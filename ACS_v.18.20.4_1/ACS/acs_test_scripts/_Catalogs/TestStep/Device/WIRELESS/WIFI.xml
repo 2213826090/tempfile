@@ -1,0 +1,1166 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestSteps xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../acs/src/_Catalogs/TestStep/teststep.xsd">
+    <TestStep Id="INSTALL_WIFI_EAP_CERTIFICATE" Domain="WIRELESS" SubDomain="WIFI" Feature="CERTIFICATES" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Wireless.Wifi.InstallWifiEapCertificate.InstallWifiEapCertificate</ClassName>
+        <Description>Install a WIFI-EAP certificates on the device. Certificate should have been pushed on the DUT before installation.</Description>
+        <Environment name="ANY" />
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="CERTIFICATE_FILE" type="STRING" isOptional="false">
+                <Description>Full path (on the device) of the certificate file to install.</Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+            <Parameter name="CA_GUARD_PASSWORD" type="STRING" isOptional="false">
+                <Description>Password to install the certificate</Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+            <Parameter name="EAP_PASSWORD" type="STRING" isOptional="false">
+                <Description>Password to open the certificate file</Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+            <Parameter name="CREDENTIAL_PASSWORD" type="STRING" isOptional="false">
+                <Description>Password to set for the device credential</Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="CLEAR_WIFI_CREDENTIALS" Domain="WIRELESS" SubDomain="WIFI" Feature="CERTIFICATES" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Wireless.Wifi.ClearWifiCredentials.ClearWifiCredentials</ClassName>
+        <Description>Clears wifi credentials from device and remove pin code if necessary</Description>
+        <Environment name="ANY" />
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="CREDENTIAL_PASSWORD" type="STRING" isOptional="false">
+                <Description>Password to set for the device credential</Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+            <Parameter name="PIN_CODE_REMOVAL" type="BOOLEAN" isOptional="false">
+                <Description>option to remove pin code already set</Description>
+                <PossibleValues>True;False</PossibleValues>
+                <DefaultValue >False</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="WIFI_SET_POWER" Domain="WIRELESS" SubDomain="WIFI" Feature="COMMON" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Wireless.Wifi.WifiSetPower.WifiSetPower</ClassName>
+        <Description>Manages the wifi interface power state.</Description>
+        <Environment name="ANY" />
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="POWER" type="STRING" isOptional="false">
+                <Description>Power state you want to set</Description>
+                <PossibleValues>on;off</PossibleValues>
+                <DefaultValue />
+            </Parameter>
+            <Parameter name="TIMEOUT" type="INTEGER" isOptional="true">
+                <Description>Max time to wait for wifi to turn on/off, in seconds</Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="WIFI_GET_POWER" Domain="WIRELESS" SubDomain="WIFI" Feature="COMMON" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Wireless.Wifi.WifiGetPower.WifiGetPower</ClassName>
+        <Description>Gets the power state of the wifi interface.</Description>
+        <Environment name="ANY" />
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="SAVE_AS" type="CONTEXT" isOptional="false">
+                <Description>
+                    <Key name="KEY_NAME_DEFINED_BY_USER" type="STRING">Name of the context variable where the value will be saved.</Key>
+                </Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="WIFI_REQUEST_SCAN" Domain="WIRELESS" SubDomain="WIFI" Feature="COMMON" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Wireless.Wifi.WifiRequestScan.WifiRequestScan</ClassName>
+        <Description>Request a scan of wifi networks.</Description>
+        <Environment name="ANY" />
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="WIFI_SET_HOTSPOT" Domain="WIRELESS" SubDomain="WIFI" Feature="SOFTAP" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Wireless.Wifi.WifiSetHotspot.WifiSetHotspot</ClassName>
+        <Description>Manages the wifi softAP configuration.</Description>
+        <Environment name="ANY" />
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="POWER" type="STRING" isOptional="false">
+                <Description>Power state you want to set</Description>
+                <PossibleValues>on;off</PossibleValues>
+                <DefaultValue />
+            </Parameter>
+            <Parameter name="SSID" type="STRING" isOptional="true">
+                <Description>The soft access point's SSID</Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+            <Parameter name="SECURITY" type="STRING" isOptional="true">
+                <Description>The soft access point's security</Description>
+                <PossibleValues>OPEN;WPA2</PossibleValues>
+                <DefaultValue>WPA2</DefaultValue>
+            </Parameter>
+            <Parameter name="PASSPHRASE" type="STRING" isOptional="true">
+                <Description>The soft access point's passphrase</Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+            <Parameter name="STANDARD" type="STRING" isOptional="true">
+                <Description>The soft access point's standard</Description>
+                <PossibleValues>2_4GHZ_20MHZ;5GHZ_20MHZ;5GHZ_40MHZ;5GHZ_80MHZ</PossibleValues>
+                <DefaultValue>2_4GHZ_20MHZ</DefaultValue>
+            </Parameter>
+            <Parameter name="CHANNEL" type="STRING" isOptional="true">
+                <Description>The soft access point's channel</Description>
+                <PossibleValues>AUTO;1;2;3;4;5;6;7;8;9;10;11;12;13;14;36;40;44;48</PossibleValues>
+                <DefaultValue>AUTO</DefaultValue>
+            </Parameter>
+            <Parameter name="HIDDEN" type="STRING" isOptional="true">
+                <Description>Set the visibility status of the soft access point.If on, the soft access point doesn't broadcast his SSID</Description>
+                <PossibleValues>on;off</PossibleValues>
+                <DefaultValue>off</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="WIFI_GET_HOTSPOT" Domain="WIRELESS" SubDomain="WIFI" Feature="SOFTAP" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Wireless.Wifi.WifiGetHotspot.WifiGetHotspot</ClassName>
+        <Description>Get the wifi softAP parameters.</Description>
+        <Environment name="ANY" />
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="WIFI_HOTSPOT_PARAMETERS" type="CONTEXT" isOptional="false">
+                <Description>
+                    <Key name="HOTSPOT_PARAMETER:POWER" type="STRING">Hotspot power status. Values : on;off.</Key>
+                    <Key name="HOTSPOT_PARAMETER:SSID" type="STRING">Hotspot SSID.</Key>
+                    <Key name="HOTSPOT_PARAMETER:SECURITY" type="STRING">Type of hotspot security. Values : OPEN;WPA2.</Key>
+                    <Key name="HOTSPOT_PARAMETER:PASSPHRASE" type="STRING">Passphrase used for security.</Key>
+                    <Key name="HOTSPOT_PARAMETER:STANDARD" type="STRING">Standard of Hotspot. Values : 2_4GHZ_20MHZ;5GHZ_20MHZ;5GHZ_40MHZ;5GHZ_80MHZ.</Key>
+                    <Key name="HOTSPOT_PARAMETER:CHANNEL" type="STRING">Channel of Hotspot. Values : AUTO;1;2;3;4;5;6;7;8;9;10;11;12;13;14;36;40;44;48.</Key>
+                    <Key name="HOTSPOT_PARAMETER:HIDDEN" type="STRING">Hotspot hidden visibility. Values : on;off</Key>
+                </Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="WIFI_ADD_NETWORK" Domain="WIRELESS" SubDomain="WIFI" Feature="COMMON" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Wireless.Wifi.WifiAddNetwork.WifiAddNetwork</ClassName>
+        <Description>Adds a remembered Wifi network in the networks list.</Description>
+        <Environment name="ANY" />
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="SSID" type="STRING" isOptional="false">
+                <Description>The access point's SSID.</Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+            <Parameter name="SECURITY" type="STRING" isOptional="false">
+                <Description>The access point's security.</Description>
+                <PossibleValues>OPEN;WEP64;WEP64-OPEN;WEP128;WEP128-OPEN;WPA-PSK-TKIP;WPA2-PSK-AES;WPA2-PSK-TKIP-AES;EAP-WPA;EAP-WPA2;WPA-PSK;WEP;WPA;WPA2</PossibleValues>
+                <DefaultValue />
+            </Parameter>
+            <Parameter name="PASS_PHRASE" type="STRING" isOptional="true">
+                <Description>The access point's passphrase.</Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+            <Parameter name="EAP_METHOD" type="STRING" isOptional="true">
+                <Description>EAP method used when WIFI_SECURITY is "EAP-WAP" or "EAP-WPA2".</Description>
+                <PossibleValues>PEAP;TLS;TTLS;SIM;AKA;AKA';FAST;NONE</PossibleValues>
+                <DefaultValue />
+            </Parameter>
+            <Parameter name="EAP_USER" type="STRING" isOptional="true">
+                <Description>Optional EAP user used when WIFI_SECURITY is "EAP-WAP" or "EAP-WPA2".</Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+            <Parameter name="EAP_PASSWORD" type="STRING" isOptional="true">
+                <Description>Optional EAP password used when WIFI_SECURITY is "EAP-WAP" or "EAP-WPA2".</Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+            <Parameter name="PHASE2_AUTH" type="STRING" isOptional="true">
+                <Description>Phase2 authentication used when WIFI_SECURITY is "EAP-WAP" or "EAP-WPA2".</Description>
+                <PossibleValues>NONE;PAP;MSCHAP;MSCHAPV2;GTC</PossibleValues>
+                <DefaultValue />
+            </Parameter>
+            <Parameter name="CERTIFICAT_NAME" type="STRING" isOptional="true">
+                <Description>Certificate file name</Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+            <Parameter name="USE_CERTIFICATE" type="BOOLEAN" isOptional="true">
+                <Description>Set to 'true' if you need to use certificates at the same time as TTLS or PEAP.</Description>
+                <PossibleValues>True;False</PossibleValues>
+                <DefaultValue>False</DefaultValue>
+            </Parameter>
+            <Parameter name="STATIC_IP" type="STRING" isOptional="true">
+                <Description>static: DUT static ip setting; dhcp: DUT to retrieve the IP from DHCP server</Description>
+                <PossibleValues>static;dhcp</PossibleValues>
+                <DefaultValue>dhcp</DefaultValue>
+            </Parameter>
+            <Parameter name="IP_ADDRESS" type="STRING" isOptional="true">
+                <Description>DUT static ip setting for inet.</Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+            <Parameter name="IP_NETMASK" type="STRING" isOptional="true">
+                <Description>DUT static ip setting for netmask.</Description>
+                <PossibleValues />
+                <DefaultValue>255.255.255.0</DefaultValue>
+            </Parameter>
+            <Parameter name="IP_GATEWAY" type="STRING" isOptional="true">
+                <Description>DUT static ip setting for gateway</Description>
+                <PossibleValues />
+                <DefaultValue>0.0.0.0</DefaultValue>
+            </Parameter>
+            <Parameter name="IP_DNS1" type="STRING" isOptional="true">
+                <Description>DUT static ip setting for dns1</Description>
+                <PossibleValues />
+                <DefaultValue>0.0.0.0</DefaultValue>
+            </Parameter>
+            <Parameter name="IP_DNS2" type="STRING" isOptional="true">
+                <Description>DUT static ip setting for dns2</Description>
+                <PossibleValues />
+                <DefaultValue>0.0.0.0</DefaultValue>
+            </Parameter>
+            <Parameter name="PROXY_CONFIG" type="STRING" isOptional="true">
+                <Description>NONE: Don't use a proxy - MANUAL : use a proxy - AUTO : use an automatic proxy.</Description>
+                <PossibleValues>NONE;MANUAL;AUTO</PossibleValues>
+                <DefaultValue>NONE</DefaultValue>
+            </Parameter>
+            <Parameter name="PROXY_ADDRESS" type="STRING" isOptional="true">
+                <Description>Address used by the proxy.</Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+            <Parameter name="PROXY_PORT" type="STRING" isOptional="true">
+                <Description>Port used by the proxy.</Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+            <Parameter name="PROXY_BYPASS" type="STRING" isOptional="true">
+                <Description>Addresses which must be bypassed by the proxy. Add multiple addresses separated with ','</Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="WIFI_LIST_SSIDS" Domain="WIRELESS" SubDomain="WIFI" Feature="COMMON" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Wireless.Wifi.WifiListSSIDs.WifiListSSIDs</ClassName>
+        <Description>Analyse the network scan result to get the devices SSIDs.</Description>
+        <Environment name="ANY" />
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="SAVE_AS" type="CONTEXT" isOptional="false">
+                <Description>
+                    <Key name="KEY_NAME_DEFINED_BY_USER" type="STRING">Name of the context variable where the value will be saved.</Key>
+                </Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="WIFI_REMOVE_NETWORK" Domain="WIRELESS" SubDomain="WIFI" Feature="COMMON" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Wireless.Wifi.WifiRemoveNetwork.WifiRemoveNetwork</ClassName>
+        <Description>Remove from the (remembered) Network config the device using its SSID.</Description>
+        <Environment name="ANY" />
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="SSID" type="STRING" isOptional="false">
+                <Description>SSID to remove from config. To remove all the remembered networks, use SSID="all".</Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="WIFI_CONNECT" Domain="WIRELESS" SubDomain="WIFI" Feature="COMMON" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Wireless.Wifi.WifiConnect.WifiConnect</ClassName>
+        <Description>Connect to the Wifi network</Description>
+        <Environment name="ANY" />
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="SSID" type="STRING" isOptional="false">
+                <Description>Network SSID to connect to</Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+            <Parameter name="TIMEOUT" type="INTEGER" isOptional="true">
+                <Description>Connection timeout.</Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="WIFI_CHECK_SSID_STATE" Domain="WIRELESS" SubDomain="WIFI" Feature="COMMON" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Wireless.Wifi.WifiCheckSSIDState.WifiCheckSSIDState</ClassName>
+        <Description>             Check state of a SSID. You can pass multiple check parameters.             For example, STATE=CONNECTED,REMEMBERED,VISIBLE will check if SSID is connected, remembered and visible.         </Description>
+        <Environment name="ANY" />
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed.</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="SSID" type="STRING" isOptional="false">
+                <Description>Network SSID to check state.</Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+            <Parameter name="STATE" type="STRING" isOptional="true">
+                <Description>Expected state of the SSID.</Description>
+                <PossibleValues>CONNECTED;NOT_CONNECTED;REMEMBERED;NOT_REMEMBERED;VISIBLE;NOT_VISIBLE;ALL</PossibleValues>
+                <DefaultValue />
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="WIFI_WAIT_FOR_SSID_STATE" Domain="WIRELESS" SubDomain="WIFI" Feature="COMMON" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Wireless.Wifi.WifiWaitForSSIDState.WifiWaitForSSIDState</ClassName>
+        <Description>             Wait for a state of a SSID. You can pass multiple check parameters.             For example, STATE=CONNECTED,REMEMBERED,VISIBLE will wait for SSID is connected, remembered and visible.         </Description>
+        <Environment name="ANY" />
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed.</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="SSID" type="STRING" isOptional="false">
+                <Description>Network SSID to check state.</Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+            <Parameter name="STATE" type="STRING" isOptional="false">
+                <Description>Expected state of the SSID.</Description>
+                <PossibleValues>CONNECTED;NOT_CONNECTED;REMEMBERED;NOT_REMEMBERED;VISIBLE;NOT_VISIBLE;ALL</PossibleValues>
+                <DefaultValue />
+            </Parameter>
+            <Parameter name="TIMEOUT" type="INTEGER" isOptional="false">
+                <Description>Timeout before raise an error.</Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="WIFI_SET_NETWORK_NOTIFICATIONS" Domain="WIRELESS" SubDomain="WIFI" Feature="COMMON" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Wireless.Wifi.WifiSetNetworkNotifications.WifiSetNetworkNotifications</ClassName>
+        <Description>Set the WiFi network notifications setting.</Description>
+        <Environment name="ANY" />
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="NETWORK_NOTIFICATIONS" type="BOOLEAN" isOptional="false">
+                <Description>State of network notifications to set on DUT. Set true to enable, false to disable.</Description>
+                <PossibleValues>true;false</PossibleValues>
+                <DefaultValue />
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="WIFI_GET_NETWORK_NOTIFICATIONS" Domain="WIRELESS" SubDomain="WIFI" Feature="COMMON" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Wireless.Wifi.WifiGetNetworkNotifications.WifiGetNetworkNotifications</ClassName>
+        <Description>Get the WiFi network notifications setting.</Description>
+        <Environment name="ANY" />
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="SAVE_NETWORK_NOTIFICATIONS" type="CONTEXT" isOptional="false">
+                <Description>
+                    <Key name="DUT_NETWORK_NOTIFICATIONS" type="STRING">Name of the context variable where the value will be saved. Possible values : true;false</Key>
+                </Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="WIFI_SET_FREQUENCY_BAND" Domain="WIRELESS" SubDomain="WIFI" Feature="COMMON" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Wireless.Wifi.WifiSetFrequencyBand.WifiSetFrequencyBand</ClassName>
+        <Description>Set the WiFi frequency band.</Description>
+        <Environment name="ANY" />
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="FREQUENCY" type="STRING" isOptional="false">
+                <Description>Frequency band to set.</Description>
+                <PossibleValues>AUTO;2_4GHZ;5GHZ</PossibleValues>
+                <DefaultValue />
+            </Parameter>
+            <Parameter name="INTERFACE" type="STRING" isOptional="false">
+                <Description>Interface to configure (wlan0, wlan1,...).</Description>
+                <PossibleValues />
+                <DefaultValue>wlan0</DefaultValue>
+            </Parameter>
+            <Parameter name="SILENT_MODE" type="BOOLEAN" isOptional="true">
+                <Description>Enable or disable silent mode. In silent mode, errors doesn't raise an exception.</Description>
+                <PossibleValues>true;false</PossibleValues>
+                <DefaultValue>false</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="WIFI_GET_FREQUENCY_BAND" Domain="WIRELESS" SubDomain="WIFI" Feature="COMMON" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Wireless.Wifi.WifiGetFrequencyBand.WifiGetFrequencyBand</ClassName>
+        <Description>Get the WiFi frequency band on DUT.</Description>
+        <Environment name="ANY" />
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="INTERFACE" type="STRING" isOptional="false">
+                <Description>Interface to use (wlan0, wlan1,...).</Description>
+                <PossibleValues />
+                <DefaultValue>wlan0</DefaultValue>
+            </Parameter>
+            <Parameter name="SAVE_FREQUENCY_BAND" type="CONTEXT" isOptional="false">
+                <Description>
+                    <Key name="DUT_FREQUENCY_BAND" type="STRING">Name of the context variable where the value will be saved. Possible values : AUTO;2_4GHZ;5GHZ</Key>
+                </Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="WIFI_SET_REGULATORY_DOMAIN" Domain="WIRELESS" SubDomain="WIFI" Feature="COMMON" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Wireless.Wifi.WifiSetRegulatoryDomain.WifiSetRegulatoryDomain</ClassName>
+        <Description>Set the regulatory domain for a given interface.</Description>
+        <Environment name="ANY" />
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="REGULATORY_DOMAIN" type="STRING" isOptional="false">
+                <Description>Regulatory domain to set.</Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+            <Parameter name="INTERFACE" type="STRING" isOptional="false">
+                <Description>Interface to configure (wlan0, wlan1,...).</Description>
+                <PossibleValues />
+                <DefaultValue>wlan0</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="WIFI_GET_REGULATORY_DOMAIN" Domain="WIRELESS" SubDomain="WIFI" Feature="COMMON" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Wireless.Wifi.WifiGetRegulatoryDomain.WifiGetRegulatoryDomain</ClassName>
+        <Description>Get the regulatory domain for a given interface.</Description>
+        <Environment name="ANY" />
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed.</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="SAVE_REGULATORY_DOMAIN" type="CONTEXT" isOptional="false">
+                <Description>
+                    <Key name="DUT_REGULATORY_DOMAIN" type="STRING">Name of the context variable where the value will be saved.</Key>
+                </Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="WIFI_SET_SLEEP_POLICY" Domain="WIRELESS" SubDomain="WIFI" Feature="COMMON" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Wireless.Wifi.WifiSetSleepPolicy.WifiSetSleepPolicy</ClassName>
+        <Description>Set the WiFi sleep policy.</Description>
+        <Environment name="ANY" />
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="SLEEP_POLICY" type="STRING" isOptional="false">
+                <Description>Sleep policy to set.</Description>
+                <PossibleValues>ALWAYS;ONLY_WHEN_PLUGGED;NEVER</PossibleValues>
+                <DefaultValue />
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="WIFI_GET_SLEEP_POLICY" Domain="WIRELESS" SubDomain="WIFI" Feature="COMMON" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Wireless.Wifi.WifiGetSleepPolicy.WifiGetSleepPolicy</ClassName>
+        <Description>Get the WiFi sleep policy.</Description>
+        <Environment name="ANY" />
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed.</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="SAVE_SLEEP_POLICY" type="CONTEXT" isOptional="false">
+                <Description>
+                    <Key name="DUT_SLEEP_POLICY" type="STRING">Name of the context variable where the value will be saved. Possible values : ALWAYS;ONLY_WHEN_PLUGGED;NEVER</Key>
+                </Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="WIFI_SET_SCAN_ALWAYS_AVAILABLE" Domain="WIRELESS" SubDomain="WIFI" Feature="COMMON" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Wireless.Wifi.WifiSetScanAlwaysAvailable.WifiSetScanAlwaysAvailable</ClassName>
+        <Description>Set the WiFi scan always available setting.</Description>
+        <Environment name="ANY" />
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="SCAN_ALWAYS_AVAILABLE_STATE" type="STRING" isOptional="false">
+                <Description>State of WiFi scan always available to set on DUT. Set "ON" to enable, "OFF" to disable.</Description>
+                <PossibleValues>ON;OFF</PossibleValues>
+                <DefaultValue />
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="WIFI_GET_SCAN_ALWAYS_AVAILABLE" Domain="WIRELESS" SubDomain="WIFI" Feature="COMMON" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Wireless.Wifi.WifiGetScanAlwaysAvailable.WifiGetScanAlwaysAvailable</ClassName>
+        <Description>Get the WiFi scan always available setting.</Description>
+        <Environment name="ANY" />
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="SAVE_SCAN_ALWAYS_AVAILABLE" type="CONTEXT" isOptional="false">
+                <Description>
+                    <Key name="DUT_SCAN_ALWAYS_AVAILABLE" type="STRING">Name of the context variable where the value will be saved. Possible values : ON;OFF</Key>
+                </Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="WIFI_GET_RSSI" Domain="WIRELESS" SubDomain="WIFI" Feature="COMMON" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Wireless.Wifi.WifiGetRSSI.WifiGetRSSI</ClassName>
+        <Description>Get the RSSI for WiFi interface. Device must have WiFi On.</Description>
+        <Environment name="ANY" />
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed.</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="SSID" type="STRING" isOptional="false">
+                <Description>Name of the SSID to check.</Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+            <Parameter name="SAVE_WIFI_RSSI" type="CONTEXT" isOptional="false">
+                <Description>
+                    <Key name="WIFI_RSSI" type="STRING">Name of the context variable where the value will be saved. Unit is dBm.</Key>
+                </Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="WIFI_DUT_DO_WPS" Domain="WIRELESS" SubDomain="WIFI" Feature="COMMON" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Wireless.Wifi.WifiDutDoWps.WifiDutDoWps</ClassName>
+        <Description>Do a Wireless Protected Setup on the access point.</Description>
+        <Environment name="ANY" />
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="SSID" type="STRING" isOptional="false">
+                <Description>Name of the SSID to connect.</Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+            <Parameter name="WPS_METHOD" type="STRING" isOptional="false">
+                <Description>The WPS method you want to use. WPS-PIN-AP = LABEL mode WPS-PIN-DUT = PIN enrolee mode WPS-PBC = WPS Push button
+                </Description>
+                <PossibleValues>WPS-PIN-AP;WPS-PIN-DUT;WPS-PBC</PossibleValues>
+                <DefaultValue>WPS-PBC</DefaultValue>
+            </Parameter>
+            <Parameter name="WPS_AP_PIN" type="STRING" isOptional="true">
+                <Description>The access point PIN code (for WPS_PIN_FROM_AP mode).</Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+            <Parameter name="WPS_TIMEOUT" type="INTEGER" isOptional="true">
+                <Description>WPS Connection timeout.</Description>
+                <PossibleValues />
+                <DefaultValue>60</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="WIFI_DIRECT_REMOVE_REMEMBERED_GROUPS" Domain="WIRELESS" SubDomain="WIFI" Feature="WIFI_DIRECT" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Wireless.WifiDirect.WifiDirectRemoveRememberedGroups.WifiDirectRemoveRememberedGroups</ClassName>
+        <Description>Remove previously remembered groups.</Description>
+        <Environment name="ANY" />
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="WIFI_DIRECT_SCAN" Domain="WIRELESS" SubDomain="WIFI" Feature="WIFI_DIRECT" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Wireless.WifiDirect.WifiDirectScan.WifiDirectScan</ClassName>
+        <Description>Initiates wifi direct scan.</Description>
+        <Environment name="ANY" />
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="GET_WIFI_DIRECT_PEER_DEVICES" Domain="WIRELESS" SubDomain="WIFI" Feature="WIFI_DIRECT" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Wireless.WifiDirect.GetWifiDirectPeerDevices.GetWifiDirectPeerDevices</ClassName>
+        <Description>Gets the Wifi direct scanned devices. To update the list, you've got to call WIFI_DIRECT_SCAN.</Description>
+        <Environment name="ANY" />
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="STATE" type="STRING" isOptional="false">
+                <Description>If you want to get only the devices in a given state, use this field for filtering.</Description>
+                <PossibleValues>all;available;invited;connected</PossibleValues>
+                <DefaultValue>all</DefaultValue>
+            </Parameter>
+            <Parameter name="SAVE_AS" type="CONTEXT" isOptional="false">
+                <Description>
+                    <Key name="KEY_NAME_DEFINED_BY_USER" type="STRING">Name of the context variable where the peer devices list will be saved.Format is PEER1|PEER2|PEER3...</Key>
+                </Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="GET_WIFI_DIRECT_REMEMBERED_GROUPS" Domain="WIRELESS" SubDomain="WIFI" Feature="WIFI_DIRECT" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Wireless.WifiDirect.GetWifiDirectRememberedGroups.GetWifiDirectRememberedGroups</ClassName>
+        <Description>Gets the Wifi direct remembered groups.</Description>
+        <Environment name="ANY" />
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="SAVE_AS" type="CONTEXT" isOptional="false">
+                <Description>
+                    <Key name="KEY_NAME_DEFINED_BY_USER" type="STRING">Name of the context variable where the remembered groups list will be saved. Format is GROUP1|GROUP2|GROUP3... Return "EMPTY" if no groups are remembered.</Key>
+                </Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="SET_WIFI_DIRECT_DEV_NAME" Domain="WIRELESS" SubDomain="WIFI" Feature="WIFI_DIRECT" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Wireless.WifiDirect.SetWifiDirectDevName.SetWifiDirectDevName</ClassName>
+        <Description>Sets the Wifi direct devices name.</Description>
+        <Environment name="ANY" />
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="PEER_DEVICE_NAME" type="STRING" isOptional="false">
+                <Description>The name you want to set.</Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="GET_WIFI_DIRECT_DEV_ADDRESS_FROM_NAME" Domain="WIRELESS" SubDomain="WIFI" Feature="WIFI_DIRECT" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Wireless.WifiDirect.GetWifiDirectDevAddressFromName.GetWifiDirectDevAddressFromName</ClassName>
+        <Description>Gets a Wifi Direct device address from its name.</Description>
+        <Environment name="ANY" />
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="WIFI_DIRECT_NAME" type="STRING" isOptional="false">
+                <Description>The name of the peer device you want the address of.</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="SAVE_AS" type="CONTEXT" isOptional="false">
+                <Description>
+                    <Key name="KEY_NAME_DEFINED_BY_USER" type="STRING">Name of the context variable where the peer device address will be saved.</Key>
+                </Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="GET_WIFI_DIRECT_MAC_ADDRESS" Domain="WIRELESS" SubDomain="WIFI" Feature="WIFI_DIRECT" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Wireless.WifiDirect.GetWifiDirectMacAddress.GetWifiDirectMacAddress</ClassName>
+        <Description>Gets the device Wifi Direct mac address.</Description>
+        <Environment name="ANY" />
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="SAVE_AS" type="CONTEXT" isOptional="false">
+                <Description>
+                    <Key name="KEY_NAME_DEFINED_BY_USER" type="STRING">Name of the context variable where the device mac address will be saved.</Key>
+                </Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="WIFI_DIRECT_CONNECT" Domain="WIRELESS" SubDomain="WIFI" Feature="WIFI_DIRECT" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Wireless.WifiDirect.WifiDirectConnect.WifiDirectConnect</ClassName>
+        <Description>Connect to the wifi Direct peer device.</Description>
+        <Environment name="ANY" />
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the connection will be initiated.</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="PEER_DEVICE" type="STRING" isOptional="false">
+                <Description>Peer device to connect to.</Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+            <Parameter name="CONNECT_TYPE" type="STRING" isOptional="true">
+                <Description>Type of connection method.</Description>
+                <PossibleValues>auto;intent</PossibleValues>
+                <DefaultValue />
+            </Parameter>
+            <Parameter name="AUTHENTICATION_TYPE" type="STRING" isOptional="true">
+                <Description>Type of authentication method.</Description>
+                <PossibleValues>WPS-PBC;WPS-PIN</PossibleValues>
+                <DefaultValue />
+            </Parameter>
+            <Parameter name="PIN_CODE" type="STRING" isOptional="true">
+                <Description>PIN code for WPS-PIN.</Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+            <Parameter name="TIMEOUT" type="INTEGER" isOptional="true">
+                <Description>Connection timeout.</Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+            <Parameter name="GO_INTENT" type="INTEGER" isOptional="true">
+                <Description>Group owner intent.</Description>
+                <PossibleValues>0;1;2;3;4;5;6;7;8;9;10;11;12;13;14;15</PossibleValues>
+                <DefaultValue>8</DefaultValue>
+            </Parameter>
+            <Parameter name="P2P_COM_FREQ" type="INTEGER" isOptional="true">
+                <Description>Frequency used for the communication (forced).</Description>
+                <PossibleValues>0;2412;2417;2422;2427;2432;2437;2442;2447;2452;2457;2462;2467;2472;5180;5200;5220;5240;5260;5280;5300;5320;5500;5520;5540;5560;5580;5600;5620;5640;5660;5680;5700;5745;5765;5785;5805;5825</PossibleValues>
+                <DefaultValue>0</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="WIFI_DIRECT_ACCEPT_CONNECT" Domain="WIRELESS" SubDomain="WIFI" Feature="WIFI_DIRECT" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Wireless.WifiDirect.WifiDirectAcceptConnect.WifiDirectAcceptConnect</ClassName>
+        <Description>Grants a wifi Direct connection request (invitation) from another device. This should be called on the device receiving the connection before the initiator sends its connection request.</Description>
+        <Environment name="ANY" />
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the connection will be initiated.</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE2</DefaultValue>
+            </Parameter>
+            <Parameter name="PEER_DEV_MAC" type="STRING" isOptional="false">
+                <Description>MAC address of the peer device you want to allow the connection request.</Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+            <Parameter name="P2P_COM_FREQ" type="INTEGER" isOptional="true">
+                <Description>Frequency used for the communication (forced).</Description>
+                <PossibleValues>0;2412;2417;2422;2427;2432;2437;2442;2447;2452;2457;2462;2467;2472;5180;5200;5220;5240;5260;5280;5300;5320;5500;5520;5540;5560;5580;5600;5620;5640;5660;5680;5700;5745;5765;5785;5805;5825</PossibleValues>
+                <DefaultValue>0</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="WIFI_DIRECT_DISCONNECT" Domain="WIRELESS" SubDomain="WIFI" Feature="WIFI_DIRECT" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Wireless.WifiDirect.WifiDirectDisconnect.WifiDirectDisconnect</ClassName>
+        <Description>Disconnect from the wifi Direct peer device.</Description>
+        <Environment name="ANY" />
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the disconnection will be initiated.</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="WIFI_DIRECT_NAME" type="STRING" isOptional="true">
+                <Description>The name of the peer device you want the address of. If the parameter is not used, the test step will search a interface (get_wifi_direct_interface) to disconnect If no interface found, the test step will end with a message
+                </Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="CHECK_WIFI_DIRECT_GROUPS" Domain="WIRELESS" SubDomain="WIFI" Feature="WIFI_DIRECT" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Wireless.WifiDirect.CheckWifiDirectGroups.CheckWifiDirectGroups</ClassName>
+        <Description>Check if the peer devices are on the list of remembered groups. Call GET_WIFI_DIRECT_REMEMBERED_GROUPS to get this list.</Description>
+        <Environment name="ANY" />
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="REMEMBERED_GROUPS_LIST" type="STRING" isOptional="false">
+                <Description>Current remembered groups list. Format is GROUP1|GROUP2|GROUP3...</Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+            <Parameter name="GROUP_OWNER" type="STRING" isOptional="false">
+                <Description>Peer device initiator of the group you want to check.</Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="GET_WIFI_DIRECT_INTERFACE" Domain="WIRELESS" SubDomain="WIFI" Feature="WIFI_DIRECT" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Wireless.WifiDirect.GetWifiDirectInterface.GetWifiDirectInterface</ClassName>
+        <Description>Gets the Wifi direct interface name</Description>
+        <Environment name="ANY" />
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="SAVE_AS" type="CONTEXT" isOptional="false">
+                <Description>
+                    <Key name="KEY_NAME_DEFINED_BY_USER" type="STRING">Name of the context variable where the interface name will be saved.</Key>
+                </Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="WIFI_DIRECT_GET_MODE" Domain="WIRELESS" SubDomain="WIFI" Feature="COMMON" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Wireless.WifiDirect.WifiDirectGetMode.WifiDirectGetMode</ClassName>
+        <Description>Get the current mode of WiFi Direct. Device must have WiFi On and connected to another device with Wifi Direct.</Description>
+        <Environment name="ANY" />
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed.</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="INTERFACE" type="STRING" isOptional="false">
+                <Description>Name of the interface connected.</Description>
+                <PossibleValues />
+                <DefaultValue>wlan0</DefaultValue>
+            </Parameter>
+            <Parameter name="SAVE_WIFI_DIRECT_MODE" type="CONTEXT" isOptional="false">
+                <Description>
+                    <Key name="WIFI_DIRECT_MODE" type="STRING"> Name of the context variable where the value will be saved. Possible values : CLI, GO
+                    </Key>
+                </Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="WIFI_GET_BANDWIDTH" Domain="WIRELESS" SubDomain="WIFI" Feature="COMMON" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Wireless.Wifi.WifiGetBandwidth.WifiGetBandwidth</ClassName>
+        <Description>Get the current bandwidth for WiFi interface. Device must have WiFi On and connected.</Description>
+        <Environment name="ANY" />
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed.</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="INTERFACE" type="STRING" isOptional="false">
+                <Description>Name of the interface connected.</Description>
+                <PossibleValues />
+                <DefaultValue>wlan0</DefaultValue>
+            </Parameter>
+            <Parameter name="SAVE_WIFI_BANDWIDTH" type="CONTEXT" isOptional="false">
+                <Description>
+                    <Key name="WIFI_BANDWIDTH" type="STRING">Name of the context variable where the value will be saved. Unit is MHz. Possible values are : 20, 40 and 80
+                    </Key>
+                </Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="GET_WIFI_DIRECT_CHANNEL" Domain="WIRELESS" SubDomain="WIFI" Feature="WIFI_DIRECT" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Wireless.WifiDirect.GetWifiDirectChannel.GetWifiDirectChannel</ClassName>
+        <Description>Get the current channel used for WiFi Direct. Device must have WiFi On and connected to another device with Wifi Direct.</Description>
+        <Environment name="ANY" />
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed.</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="SAVE_WIFI_DIRECT_CHANNEL" type="CONTEXT" isOptional="false">
+                <Description>
+                    <Key name="FREQUENCY" type="STRING">Name of the context variable where the channel frequency will be saved.</Key>
+                    <Key name="NUMBER" type="STRING">Name of the context variable where the channel number will be saved.</Key>
+                </Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="WIFI_GET_HOTSPOT_CHANNEL" Domain="WIRELESS" SubDomain="WIFI" Feature="SOFTAP" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Wireless.Wifi.WifiGetHotspotChannel.WifiGetHotspotChannel</ClassName>
+        <Description>Gets the current Wi-Fi softAP used channel when using LTE. IT DEPENDS ON THE SYSDEBUG         MECHANISM. SYSDEBUG_INIT must have been called, with WifiSoftApChannel in SYSDEBUG_MODULES,         before using this step.</Description>
+        <Environment name="ANY" />
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed.</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="SAVE_WIFI_HOSTPOT_CHANNEL" type="CONTEXT" isOptional="false">
+                <Description>
+                    <Key name="CHANNEL" type="STRING">Name of the context variable where the channel number will be saved.</Key>
+                </Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="WIFI_GET_CHANNEL" Domain="WIRELESS" SubDomain="WIFI" Feature="COMMON" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Wireless.Wifi.WifiGetChannel.WifiGetChannel</ClassName>
+        <Description>Get the current channel for a WiFi interface. Device must have WiFi On and connected.</Description>
+        <Environment name="ANY" />
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed.</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="INTERFACE" type="STRING" isOptional="false">
+                <Description>Name of the interface connected. Available for WiFi STA or WiFi Direct.</Description>
+                <PossibleValues />
+                <DefaultValue>wlan0</DefaultValue>
+            </Parameter>
+            <Parameter name="SAVE_WIFI_CHANNEL" type="CONTEXT" isOptional="false">
+                <Description>
+                    <Key name="WIFI_CHANNEL" type="STRING">Name of the context variable where the value will be saved. Values are a valid channel.</Key>
+                </Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="WIFI_DIRECT_CONFIGURE" Domain="WIRELESS" SubDomain="WIFI" Feature="WIFI_DIRECT" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Wireless.WifiDirect.WifiDirectConfigure.WifiDirectConfigure</ClassName>
+        <Description>Configure WiFi Direct on Linux device</Description>
+        <Environment name="ANY" />
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="ENABLE_WIFI_DIRECT" Domain="WIRELESS" SubDomain="WIFI" Feature="WIFI_DIRECT" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Wireless.WifiDirect.EnableWifiDirect.EnableWifiDirect</ClassName>
+        <Description>Enable WiFi Direct on Linux device</Description>
+        <Environment name="ANY" />
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="WIFI_DIRECT_GROUP_CREATE" Domain="WIRELESS" SubDomain="WIFI" Feature="WIFI_DIRECT" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Wireless.WifiDirect.WifiDirectGroupCreate.WifiDirectGroupCreate</ClassName>
+        <Description>Create Autonomous Group for P2P connections on Linux</Description>
+        <Environment name="ANY" />
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="GROUP_FREQ" type="STRING" isOptional="false">
+                <Description>Frequency of the P2P group to be created</Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+            <Parameter name="AUTHENTICATION_TYPE" type="STRING" isOptional="false">
+                <Description>Type of authentication method.</Description>
+                <PossibleValues>WPS-PBC;WPS-PIN</PossibleValues>
+                <DefaultValue />
+            </Parameter>
+            <Parameter name="SAVE_AS" type="CONTEXT" isOptional="true">
+                <Description>
+                    <Key name="KEY_NAME_DEFINED_BY_USER" type="STRING">Name of the context variable where the pin code will be saved.</Key>
+                </Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="WIFI_DIRECT_DISCOVER" Domain="WIRELESS" SubDomain="WIFI" Feature="WIFI_DIRECT" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Wireless.WifiDirect.WifiDirectDiscover.WifiDirectDiscover</ClassName>
+        <Description>Set P2P interface to discover mode</Description>
+        <Environment name="ANY" />
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="WIFI_DIRECT_FLUSH" Domain="WIRELESS" SubDomain="WIFI" Feature="WIFI_DIRECT" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Wireless.WifiDirect.WifiDirectFlush.WifiDirectFlush</ClassName>
+        <Description>Clear all existing P2P connection information</Description>
+        <Environment name="ANY" />
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="WIFI_DIRECT_INVITE" Domain="WIRELESS" SubDomain="WIFI" Feature="WIFI_DIRECT" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Wireless.WifiDirect.WifiDirectInvite.WifiDirectInvite</ClassName>
+        <Description>Invite a peer to join a group or to reinvoke a persistent group.</Description>
+        <Environment name="ANY" />
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the connection will be initiated.</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="PEER_DEVICE" type="STRING" isOptional="false">
+                <Description>Peer device to connect to.</Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+            <Parameter name="P2P_COM_FREQ" type="INTEGER" isOptional="true">
+                <Description>Frequency used for the communication (forced).</Description>
+                <PossibleValues>0;2412;2417;2422;2427;2432;2437;2442;2447;2452;2457;2462;2467;2472;5180;5200;5220;5240;5260;5280;5300;5320;5500;5520;5540;5560;5580;5600;5620;5640;5660;5680;5700;5745;5765;5785;5805;5825</PossibleValues>
+                <DefaultValue>0</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="WIFI_DIRECT_FORCE_CONFIGURATION" Domain="WIRELESS" SubDomain="WIFI" Feature="WIFI_DIRECT" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Wireless.WifiDirect.WifiDirectForceConfiguration.WifiDirectForceConfiguration</ClassName>
+        <Description>Force specific parameters configuration for a WiFi Direct connection.</Description>
+        <Environment name="ANY" />
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the connection will be initiated.</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="P2P_MODE" type="STRING" isOptional="true">
+                <Description>Force P2P mode.</Description>
+                <PossibleValues>GO;CLI</PossibleValues>
+                <DefaultValue />
+            </Parameter>
+            <Parameter name="P2P_FREQUENCY" type="INTEGER" isOptional="true">
+                <Description>Force P2P frequency.</Description>
+                <PossibleValues>0;2412;2417;2422;2427;2432;2437;2442;2447;2452;2457;2462;2467;2472;5180;5200;5220;5240</PossibleValues>
+                <DefaultValue />
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="WIFI_DIRECT_GET_RSSI" Domain="WIRELESS" SubDomain="WIFI" Feature="COMMON" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Wireless.WifiDirect.WifiDirectGetRSSI.WifiDirectGetRSSI</ClassName>
+        <Description>Get the RSSI for WiFi Direct interface. Device must have WiFi On.</Description>
+        <Environment name="ANY" />
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed.</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="INTERFACE" type="STRING" isOptional="false">
+                <Description>Name of the interface to check.</Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+            <Parameter name="SAVE_WIFI_DIRECT_RSSI" type="CONTEXT" isOptional="false">
+                <Description>
+                    <Key name="WIFI_DIRECT_RSSI" type="STRING">Name of the context variable where the value will be saved. Unit is dBm.</Key>
+                </Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+        </Parameters>
+    </TestStep>
+</TestSteps>

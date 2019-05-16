@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="13.37">
+    <UseCase>LAB_MODEM_NVM_FLASHING_POS</UseCase>
+    <Description>Flash the modem's NVM when DUT is booted in Provisioning OS mode (POS) and check that an error occurred. Supported platform is Linux only.</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters>
+        <Parameter>
+            <!-- The expected flash operation result.
+                This parameters allows to test nominal conditions and error cases.
+                Possible values:
+                NVM_ERR_SUCESS
+                NVM_ERR_INTERNAL_AP_ERROR
+                NVM_ERR_MODEM_OPEN
+                NVM_ERR_MODEM_WRITE
+                NVM_ERR_MODEM_READ
+                NVM_ERR_DELTA_FILE_NOT_FOUND
+                NVM_ERR_SET_SCRIPT_ERROR
+                NVM_ERR_RUN_SCRIPT_ERROR
+                NVM_ERR_ID_READ_ERROR
+            -->
+            <Name>EXPECTED_RESULT</Name>
+            <Value>NVM_ERR_RUN_SCRIPT_ERROR</Value>
+        </Parameter>
+        <Parameter>
+            <!-- The path to the NVM flash file -->
+            <Name>MODEM_FLASH_FILE_PATH</Name>
+            <Value>./_ExecutionConfig/ModemFlashFiles/nvm_signature_error.bin</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Absolute path to the temporary directory
+                where the flash file will be stored before
+                the flash is actually performed.
+            -->
+            <Name>TARGET_DIRECTORY_PATH</Name>
+            <Value>/data</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

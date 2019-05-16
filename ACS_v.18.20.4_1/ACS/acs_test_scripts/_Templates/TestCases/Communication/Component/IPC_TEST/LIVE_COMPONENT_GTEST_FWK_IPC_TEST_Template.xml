@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="13.37">
+  <UseCase>LIVE_COMPONENT_GTEST_FWK_IPC_TEST</UseCase>
+  <Description>GTester Use Case</Description>
+  <b2bIteration>1</b2bIteration>
+  <b2bContinuousMode>True</b2bContinuousMode>
+  <TcExpectedResult>PASS</TcExpectedResult>
+  <Parameters>
+    <!--
+        The timeout value to use when issuing
+        ADB shell commands
+    -->
+    <Parameter>
+        <Name>COMMAND_TIMEOUT</Name>
+        <Value>240</Value>
+    </Parameter>
+    <Parameter>
+        <Name>GTEST_FILTER</Name>
+        <Value>DUMMY*</Value>
+    </Parameter>
+    <Parameter>
+        <Name>GTEST_OUTPUT_FOLDER</Name>
+        <Value>/logs/</Value>
+    </Parameter>
+    <Parameter>
+        <!-- If empty wil be auto generated -->
+        <Name>GTEST_OUTPUT_FILE</Name>
+        <Value>dummy_report.xml</Value>
+    </Parameter>
+  </Parameters>
+</TestCase>

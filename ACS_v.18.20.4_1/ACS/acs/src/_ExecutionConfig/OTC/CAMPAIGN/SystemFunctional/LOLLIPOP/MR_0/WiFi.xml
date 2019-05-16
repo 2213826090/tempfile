@@ -1,0 +1,38 @@
+<?xml version="1.0" ?>
+<Campaign>
+      <Parameters>
+            <Parameter isControlledPSUsed="False"/>
+            <Parameter isIoCardUsed="False"/>
+            <Parameter skipBootOnPowerCycle="False"/>
+            <Parameter bootRetryNumber="0"/>
+            <Parameter runHookScripts="False"/>
+            <Parameter powerCycleBetweenTC="False"/>
+            <Parameter powerCycleOnFailure="False"/>
+            <Parameter finalDutState="NoChange"/>
+            <Parameter stopCampaignOnCriticalFailure="False"/>
+            <Parameter stopCampaignOnFirstFailure="False"/>
+            <Parameter loggingLevel="debug"/>
+            <Parameter CampaignType="Other"/>
+      </Parameters>
+      <TestCases>
+            <SubCampaign Id="../../../Subcampaigns/ATF_TESTS/ABT_Api_Tests/wifi/General/General"/>
+            <SubCampaign Id="../../../Subcampaigns/ATF_TESTS/ABT_Api_Tests/wifi/Support_and_Encriptions/B/B"/>
+            <SubCampaign Id="../../../Subcampaigns/ATF_TESTS/ABT_Api_Tests/wifi/Support_and_Encriptions/BG/BG"/>
+            <SubCampaign Id="../../../Subcampaigns/ATF_TESTS/ABT_Api_Tests/wifi/Support_and_Encriptions/G/G"/>
+            <SubCampaign Id="../../../Subcampaigns/ATF_TESTS/ABT_Api_Tests/wifi/Support_and_Encriptions/Mixed/Mixed"/>
+            <SubCampaign Id="../../../Subcampaigns/ATF_TESTS/ABT_Api_Tests/wifi/Support_and_Encriptions/N/N"/>
+            <SubCampaign Id="../../../Subcampaigns/ATF_TESTS/ABT_Api_Tests/wifi/Support_and_Encriptions/NG/NG"/>
+            <SubCampaign Id="../../../Subcampaigns/ATF_TESTS/ABT_Api_Tests/system_uid/wifi/wifi"/>
+            <SubCampaign Id="../../../Subcampaigns/TESTLIB/wifi/component_general_behaviour"/>
+            <SubCampaign Id="../../../Subcampaigns/TESTLIB/wifi/reconnect_ap_reboot"/>
+            <SubCampaign Id="../../../Subcampaigns/TESTLIB/wifi/reconnect_ap_reconfig"/>
+            <SubCampaign Id="../../../Subcampaigns/TESTLIB/wifi/wifi_wrong_pass"/>
+            <TestCase Id="../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/wifi/Radius/B/Comms_WIFI_Security_FeatureRequired_SimpleConnection_EAP-PEAP-Authentication-None"/>
+            <TestCase Id="../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/wifi/Radius/B/Comms_WIFI_Security_FeatureRequired_SimpleConnection_EAP-PEAP-Authentication-MSCHAPv2"/>
+            <TestCase Id="../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/wifi/Radius/B/Comms_WIFI_Security_FeatureRequired_SimpleConnection_EAP-PEAP-Authentication-GTC"/>
+            <TestCase Id="../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/wifi/Radius/B/Comms_WIFI_Security_FeatureRequired_SimpleConnection_EAP-TTLS-Authentication-GTC"/>
+            <TestCase Id="../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/wifi/Radius/B/Comms_WIFI_Security_FeatureRequired_SimpleConnection_EAP-TTLS-Authentication-None"/>
+            <TestCase Id="../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/wifi/Radius/B/Comms_WIFI_Security_FeatureRequired_SimpleConnection_EAP-TTLS-Authentication-MSCHAP"/>
+            <TestCase Id="../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/wifi/Radius/B/Comms_WIFI_Security_FeatureRequired_SimpleConnection_EAP-TTLS-Authentication-MSCHAPv2"/>
+      </TestCases>
+</Campaign>

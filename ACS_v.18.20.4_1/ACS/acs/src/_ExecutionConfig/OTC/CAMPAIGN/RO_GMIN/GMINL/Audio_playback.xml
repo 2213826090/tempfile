@@ -1,0 +1,32 @@
+<?xml version="1.0" ?>
+<Campaign>
+      <Parameters>
+            <Parameter isControlledPSUsed="False"/>
+            <Parameter isIoCardUsed="False"/>
+            <Parameter skipBootOnPowerCycle="False"/>
+            <Parameter bootRetryNumber="0"/>
+            <Parameter runHookScripts="False"/>
+            <Parameter powerCycleBetweenTC="False"/>
+            <Parameter powerCycleOnFailure="False"/>
+            <Parameter finalDutState="NoChange"/>
+            <Parameter stopCampaignOnCriticalFailure="False"/>
+            <Parameter stopCampaignOnFirstFailure="False"/>
+            <Parameter loggingLevel="debug"/>
+            <Parameter CampaignType="Other"/>
+      </Parameters>
+      <TestCases>
+            <SubCampaign Id="../../Subcampaigns/ATF_TESTS/ABT_Audio_Decoding/AAC/AAC_Main/AAC_Main"/>
+            <SubCampaign Id="../../Subcampaigns/ATF_TESTS/ABT_Audio_Decoding/AMR-NB/AMR-NB"/>
+            <SubCampaign Id="../../Subcampaigns/ATF_TESTS/ABT_Audio_Decoding/AMR-WB/AMR-WB"/>
+            <SubCampaign Id="../../Subcampaigns/ATF_TESTS/ABT_Audio_Decoding/FLAC/FLAC"/>
+            <SubCampaign Id="../../Subcampaigns/ATF_TESTS/ABT_Audio_Decoding/MIDI/MIDI"/>
+            <SubCampaign Id="../../Subcampaigns/ATF_TESTS/ABT_Audio_Decoding/MP3/16kHZ/16kHz"/>
+            <SubCampaign Id="../../Subcampaigns/ATF_TESTS/ABT_Audio_Decoding/MP3/22.05kHz/22.05kHz"/>
+            <SubCampaign Id="../../Subcampaigns/ATF_TESTS/ABT_Audio_Decoding/MP3/24kHz/24kHz"/>
+            <SubCampaign Id="../../Subcampaigns/ATF_TESTS/ABT_Audio_Decoding/MP3/32kHz/32kHz"/>
+            <SubCampaign Id="../../Subcampaigns/ATF_TESTS/ABT_Audio_Decoding/MP3/44.1kHz/44.1kHz"/>
+            <SubCampaign Id="../../Subcampaigns/ATF_TESTS/ABT_Audio_Decoding/OGG/OGG"/>
+            <SubCampaign Id="../../Subcampaigns/ATF_TESTS/ABT_Audio_Decoding/PCM/PCM"/>
+            <SubCampaign Id="../../Subcampaigns/ATF_TESTS/ABT_Audio_Decoding/WAV/WAV"/>
+      </TestCases>
+</Campaign>

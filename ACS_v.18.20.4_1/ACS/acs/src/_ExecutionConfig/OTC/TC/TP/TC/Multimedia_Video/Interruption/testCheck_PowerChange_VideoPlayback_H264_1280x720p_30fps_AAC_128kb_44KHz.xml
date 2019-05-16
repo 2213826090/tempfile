@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<TestCase>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Discription>
+Verify power change during video resize with playing Video Playback H.264 Level 3.1 Main Profile (HD 1280x720p@30 fps) AAC+_Multimedia_128kb_44KHz
+</Discription>
+    <Domain>Multimedia_Video</Domain>
+    <Phase>CORE</Phase>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <Type>FUNCTIONAL</Type>
+    <UseCase>PY_UNIT</UseCase>
+    <b2bIteration>1</b2bIteration>
+    <Parameters>
+        <Parameter>
+            <Name>HpalmName</Name>
+            <Value>video_playback.VideoPlayBack.testCheck_PowerChange_VideoPlayback_H264_1280x720p_30fps_AAC_128kb_44KHz</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TEST_DATA_ROOT</Name>
+            <Value>testplan/Multimedia_Video</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TEST_CASE</Name>
+            <Value>tests.Multimedia_Video.Interruption.video_playback.VideoPlayBack.testCheck_PowerChange_VideoPlayback_H264_1280x720p_30fps_AAC_128kb_44KHz</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

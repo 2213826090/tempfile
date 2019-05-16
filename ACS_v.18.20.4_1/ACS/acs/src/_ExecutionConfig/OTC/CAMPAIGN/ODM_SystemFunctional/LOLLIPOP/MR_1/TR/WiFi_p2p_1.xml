@@ -1,0 +1,30 @@
+<?xml version="1.0" ?>
+<Campaign>
+      <Parameters>
+            <Parameter isControlledPSUsed="False"/>
+            <Parameter isIoCardUsed="False"/>
+            <Parameter skipBootOnPowerCycle="False"/>
+            <Parameter bootRetryNumber="0"/>
+            <Parameter runHookScripts="False"/>
+            <Parameter powerCycleBetweenTC="False"/>
+            <Parameter powerCycleOnFailure="False"/>
+            <Parameter finalDutState="NoChange"/>
+            <Parameter stopCampaignOnCriticalFailure="True"/>
+            <Parameter stopCampaignOnFirstFailure="False"/>
+            <Parameter loggingLevel="debug"/>
+            <Parameter CampaignType="Other"/>
+      </Parameters>
+      <TestCases>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/WiFi/prereq_SetupAP"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/WiFi/p2p/Comms_WIFI_WiFiDirect_FeatureRequired_CLI-Connect-P2P_WiFi-Connected-WiFi-Traffic-AM-OFF"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/WiFi/p2p/Comms_WIFI_WiFiDirect_FeatureRequired_CLI-Connect-P2P_WiFi-Connected-WiFi-Traffic-AM-ON"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/WiFi/p2p/Comms_WIFI_WiFiDirect_FeatureRequired_CLI-Connect-P2P_WiFi-Disconnected-AM-OFF"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/WiFi/p2p/Comms_WIFI_WiFiDirect_FeatureRequired_CLI-Connect-P2P_WiFi-Disconnected-AM-ON"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/WiFi/p2p/Comms_WIFI_WiFiDirect_FeatureRequired_Owner-Accept-Connect_WiFi-Connected-WiFi-Traffic-AM-OFF"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/WiFi/p2p/Comms_WIFI_WiFiDirect_FeatureRequired_Owner-Accept-Connect_WiFi-Connected-WiFi-Traffic-AM-ON"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/WiFi/p2p/Comms_WIFI_WiFiDirect_FeatureRequired_Owner-Accept-Connect_WiFi-Disconnected-AM-OFF"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/WiFi/p2p/Comms_WIFI_WiFiDirect_FeatureRequired_Owner-Accept-Connect_WiFi-Disconnected-AM-ON"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/WiFi/p2p/Comms_WIFI_WiFiDirect_FeatureRequired_Owner-Activate-AM_WiFi-Connected-WiFi-Traffic-P2P-Traffic"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/WiFi/p2p/Comms_WIFI_WiFiDirect_FeatureRequired_CLI-Activate-AM_WiFi-Connected-WiFi-Traffic-P2P-Traffic"/>
+      </TestCases>
+</Campaign>

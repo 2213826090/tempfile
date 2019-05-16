@@ -1,0 +1,36 @@
+<?xml version="1.0" ?>
+<Campaign>
+      <Parameters>
+            <Parameter isControlledPSUsed="False"/>
+            <Parameter isIoCardUsed="False"/>
+            <Parameter skipBootOnPowerCycle="False"/>
+            <Parameter bootRetryNumber="0"/>
+            <Parameter runHookScripts="False"/>
+            <Parameter powerCycleBetweenTC="False"/>
+            <Parameter powerCycleOnFailure="False"/>
+            <Parameter finalDutState="NoChange"/>
+            <Parameter stopCampaignOnCriticalFailure="False"/>
+            <Parameter stopCampaignOnFirstFailure="False"/>
+            <Parameter loggingLevel="debug"/>
+            <Parameter CampaignType="Other"/>
+      </Parameters>
+      <TestCases>
+            <TestCase Id="../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/launch/ReferenceApps_Amazed-launch.test"/>
+            <TestCase Id="../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/launch/ReferenceApps_AndroidGlobalTime-launch.test"/>
+            <TestCase Id="../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/launch/ReferenceApps_AnyCut-Launch.test"/>
+            <TestCase Id="../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/launch/ReferenceApps_ClickIn2DaBeat-launch.test"/>
+            <TestCase Id="../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/launch/ReferenceApps_DivideAndConquer-launch.test"/>
+            <TestCase Id="../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/launch/ReferenceApps_HeightMapProfiler-launch.test"/>
+            <TestCase Id="../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/launch/ReferenceApps_LOLcat.Builder.launch.test"/>
+            <TestCase Id="../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/launch/ReferenceApps_Panoramio-launch.test"/>
+            <TestCase Id="../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/launch/ReferenceApps_Photostream-launch.test"/>
+            <!--This apk is a library and cannot be tested for launch-->
+            <!--TestCase Id="../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/launch/launch_radar"/-->
+            <TestCase Id="../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/launch/ReferenceApps_Replica.Island.launch.test"/>
+            <TestCase Id="../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/launch/ReferenceApps_RingsExtended-launch.test"/>
+            <TestCase Id="../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/launch/ReferenceApps_SpriteMethodTest-launch.test"/>
+            <TestCase Id="../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/launch/ReferenceApps_WebViewDemo-launch.test"/>
+            <TestCase Id="../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/launch/ReferenceApps_WikiNotes-launch.test"/>
+            <TestCase Id="../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/launch/ReferenceApps_OpenGL.ES-launch.test"/>
+      </TestCases>
+</Campaign>

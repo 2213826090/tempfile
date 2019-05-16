@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<Campaign>
+    <Parameters>
+        <Parameter isControlledPSUsed="False" />
+        <Parameter isIoCardUsed="False" />
+        <!-- Set skipBootOnPowerCycle to True to disable the accs boot procedure -->
+        <!-- Important, it means that boot will be handle inside the campaign/tc -->
+        <Parameter skipBootOnPowerCycle="False" />
+        <!-- Set bootRetryNumber to maximum number of boot retries during the acs boot procedure -->
+        <!-- Important, it means that bootRetryNumber is set by default to 0 if not specified -->
+        <Parameter bootRetryNumber="0" />
+        <Parameter runHookScripts="False" />
+        <Parameter powerCycleBetweenTC="False" />
+        <Parameter powerCycleOnFailure="True" />
+        <!-- finalDutState allows user to leave the DUT in a specific state at the end of the campaign
+        Possible values: PowerOn | PowerOff | Charging
+        By default DUT is leaved in PowerOff state.
+        In case the user selects Charging as final state of the DUT and that DUT fails to enter Charging,
+        ACS shall try to switch the DUT off -->
+        <Parameter finalDutState="NoChange" />
+        <Parameter stopCampaignOnCriticalFailure="False" />
+        <Parameter stopCampaignOnFirstFailure="False" />
+        <!-- LoggingLevel possible values: info | warning | debug | error -->
+        <Parameter loggingLevel="info" />
+        <!-- CampaignType format -> <TEAM>_<CAMPAIGNTYPE>
+        Possible values:
+        FT(Feature Team)-> SANITY | REGRESSION | STRESS, RELIABILTY | MTBF
+        ST(System Test)-> SANITY | REGRESSION | STRESS, RELIABILTY | MTBF | EM
+        SI(System Integration)-> EAT | STAB | PACT | CAT0 | RELIABILITY | MTBF | CTS
+        Otherwise "Others" should be used -->
+        <Parameter CampaignType="ST_STRESS" />
+        <Parameter TCRReportViaRESTAPI="true"/>
+    </Parameters>
+
+    <Targets>
+        <!-- Target Values -->
+        <Target targetB2bPassRate ="100"/>
+    </Targets>
+
+    <TestCases>
+        <!-- SETUP -->
+        <TestCase Id="..\..\..\SI\BBot_EAT_PACT\TC\COMMON\SYSTEM\SI_SYSTEM_SETUP_EMBEDDED" TcMaxAttempt="2" TcAcceptanceCriteria="1"/>
+        <TestCase Id="..\TC\SETUP\ST_TELEPHONY_INSTALL" TcMaxAttempt="2" TcAcceptanceCriteria="1"/>
+
+        <!-- WCDMA/HSPA PDP -->
+        <TestCase Id="..\TC\NET_3G\ST_TELEPHONY_DATA_WCDMA_R99_010-LAB_PDP_DEACTIVATE_REACTIVATE" TcMaxAttempt="2" TcAcceptanceCriteria="1"/>
+        <TestCase Id="..\TC\NET_3G\ST_TELEPHONY_DATA_WCDMA_R7_010-LAB_PDP_DEACTIVATE_REACTIVATE" TcMaxAttempt="2" TcAcceptanceCriteria="1"/>
+        <TestCase Id="..\TC\NET_3G\ST_TELEPHONY_DATA_WCDMA_R7_011-LAB_HSPA_PDP_CONTEXT_CHECK" TcMaxAttempt="2" TcAcceptanceCriteria="1"/>
+        <TestCase Id="..\TC\NET_3G\ST_TELEPHONY_HSPA_CPC_PING_004-LAB_PDP_DEACTIVATE_REACTIVATE" TcMaxAttempt="2" TcAcceptanceCriteria="1"/>
+        <TestCase Id="..\TC\NET_3G\ST_TELEPHONY_HSPA_PDP_001-LAB_HSPA_PDP_CONTEXT_CHECK" TcMaxAttempt="2" TcAcceptanceCriteria="1"/>
+
+        <!-- WCDMA/HSPA FTP -->
+        <TestCase Id="..\TC\NET_3G\ST_TELEPHONY_DATA_3G_R99-PERF_005-LAB_WCDMA_FTP" TcMaxAttempt="2" TcAcceptanceCriteria="1"/>
+        <TestCase Id="..\TC\NET_3G\ST_TELEPHONY_DATA_3G_R99-PERF_006-LAB_WCDMA_FTP" TcMaxAttempt="2" TcAcceptanceCriteria="1"/>
+        <TestCase Id="..\TC\NET_3G\ST_TELEPHONY_DATA_3G_R99-PERF_007-LAB_WCDMA_FTP" TcMaxAttempt="2" TcAcceptanceCriteria="1"/>
+        <TestCase Id="..\TC\NET_3G\ST_TELEPHONY_DATA_3G_R99-PERF_008-LAB_WCDMA_FTP" TcMaxAttempt="2" TcAcceptanceCriteria="1"/>
+        <TestCase Id="..\TC\NET_3G\ST_TELEPHONY_WCDMA_FTP_003-LAB_WCDMA_FTP" TcMaxAttempt="2" TcAcceptanceCriteria="1"/>
+        <TestCase Id="..\TC\NET_3G\ST_TELEPHONY_WCDMA_FTP_006-LAB_WCDMA_FTP" TcMaxAttempt="2" TcAcceptanceCriteria="1"/>
+        <TestCase Id="..\TC\NET_3G\ST_TELEPHONY_DATA_HSPA-PERF_006-LAB_HSPA_FTP" TcMaxAttempt="2" TcAcceptanceCriteria="1"/>
+        <TestCase Id="..\TC\NET_3G\ST_TELEPHONY_DATA_HSPA-PERF_007-LAB_HSPA_FTP" TcMaxAttempt="2" TcAcceptanceCriteria="1"/>
+        <TestCase Id="..\TC\NET_3G\ST_TELEPHONY_HSPA_CPC_FTP_005-LAB_HSPA_FTP" TcMaxAttempt="2" TcAcceptanceCriteria="1"/>
+        <TestCase Id="..\TC\NET_3G\ST_TELEPHONY_DATA_HSPA-PERF_012-LAB_HSPA_MULTI_FTP" TcMaxAttempt="2" TcAcceptanceCriteria="1"/>
+
+        <!-- HSPA HHO during FTP -->
+        <TestCase Id="..\TC\NET_3G\ST_TELEPHONY_DATA_InterFreq_HO_010-LAB_HSPA_HHO_FTP" TcMaxAttempt="2" TcAcceptanceCriteria="1"/>
+        <TestCase Id="..\TC\NET_3G\ST_TELEPHONY_DATA_InterFreq_HO_011-LAB_HSPA_HHO_FTP" TcMaxAttempt="2" TcAcceptanceCriteria="1"/>
+
+        <!-- TD-SCDMA FTP -->
+        <TestCase Id="..\TC\NET_3G\ST_TELEPHONY_DATA_TDSCDMA_001-LAB_TDSCDMA_FTP" TcMaxAttempt="2" TcAcceptanceCriteria="1"/>
+        <TestCase Id="..\TC\NET_3G\ST_TELEPHONY_DATA_TDSCDMA_002-LAB_TDSCDMA_FTP" TcMaxAttempt="2" TcAcceptanceCriteria="1"/>
+    </TestCases>
+</Campaign>

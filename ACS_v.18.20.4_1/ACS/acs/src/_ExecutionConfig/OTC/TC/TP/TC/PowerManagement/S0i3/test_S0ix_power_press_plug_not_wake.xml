@@ -1,0 +1,43 @@
+<?xml version="1.0" ?>
+<TestCase>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters/>
+    <Discription> 
+&lt;div align=&quot;left&quot; style=&quot;min-height:9pt&quot;&gt;
+&lt;font face=&quot;Arial&quot; color=&quot;#ff0000&quot;&gt;&lt;span style=&quot;font-size:8pt&quot;&gt;&lt;b&gt;&lt;u&gt;Description:&lt;/u&gt;&lt;/b&gt;&lt;/span&gt;&lt;/font&gt;
+&lt;font face=&quot;Arial&quot;&gt;&lt;span style=&quot;font-size:8pt&quot;&gt;&lt;i&gt; (&lt;/i&gt;&lt;/span&gt;&lt;span style=&quot;font-size:8pt&quot;&gt;Check if DUT could wake up from S3 state by plugin the charger&lt;/span&gt;&lt;span style=&quot;font-size:8pt&quot;&gt;&lt;i&gt;)&lt;/i&gt;&lt;/span&gt;&lt;/font&gt;
+&lt;/div&gt; 
+&lt;div align=&quot;left&quot; style=&quot;min-height:9pt&quot;&gt;
+&lt;font face=&quot;Arial&quot;&gt;&lt;span style=&quot;font-size:8pt&quot;&gt;&lt;br /&gt;&amp;nbsp;&lt;/span&gt;&lt;/font&gt;
+&lt;/div&gt; 
+&lt;div align=&quot;left&quot; style=&quot;min-height:9pt&quot;&gt;&lt;/div&gt; 
+&lt;div align=&quot;left&quot; style=&quot;min-height:9pt&quot;&gt;
+&lt;font face=&quot;Arial&quot; color=&quot;#ff0000&quot;&gt;&lt;span style=&quot;font-size:8pt&quot;&gt;&lt;b&gt;&lt;u&gt;Preconditions:&lt;/u&gt;&lt;/b&gt;&lt;/span&gt;&lt;/font&gt;
+&lt;font face=&quot;Arial&quot;&gt;&lt;span style=&quot;font-size:8pt&quot;&gt;&lt;i&gt; (&lt;/i&gt;&lt;/span&gt;&lt;span style=&quot;font-size:8pt&quot;&gt;With only battery, make the DUT enter S3 state&lt;/span&gt;&lt;span style=&quot;font-size:8pt&quot;&gt;&lt;i&gt;) &lt;/i&gt;&lt;/span&gt;&lt;/font&gt;
+&lt;/div&gt; 
+&lt;div align=&quot;left&quot; style=&quot;min-height:9pt&quot;&gt;
+&lt;font face=&quot;Arial&quot;&gt;&lt;span style=&quot;font-size:8pt&quot;&gt;&lt;br /&gt;&amp;nbsp;&lt;/span&gt;&lt;/font&gt;
+&lt;/div&gt; 
+&lt;div align=&quot;left&quot; style=&quot;min-height:9pt&quot;&gt;&lt;/div&gt; 
+&lt;div align=&quot;left&quot; style=&quot;min-height:9pt&quot;&gt;
+&lt;font face=&quot;Arial&quot; color=&quot;#ff0000&quot;&gt;&lt;span style=&quot;font-size:8pt&quot;&gt;&lt;b&gt;&lt;u&gt;Postconditions:&lt;/u&gt;&lt;/b&gt;&lt;/span&gt;&lt;/font&gt;
+&lt;font face=&quot;Arial&quot;&gt;&lt;span style=&quot;font-size:8pt&quot;&gt;&lt;i&gt; (&lt;/i&gt;&lt;/span&gt;&lt;span style=&quot;font-size:8pt&quot;&gt;DUT will wake up from S3 state after the charger plugged&lt;/span&gt;&lt;span style=&quot;font-size:8pt&quot;&gt;&lt;i&gt;) &lt;/i&gt;&lt;/span&gt;&lt;/font&gt;
+&lt;/div&gt;  
+</Discription>
+    <Parameters/>
+    <UseCase>PY_UNIT</UseCase>
+    <Parameters/>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <Parameters/>
+    <b2bIteration>1</b2bIteration>
+    <Parameters>
+        <Parameter>
+            <Name>TEST_DATA_ROOT</Name>
+            <Value>testplan/PowerManagement</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TEST_CASE</Name>
+            <Value>tests.PowerManagement.S0i3.S0ix_power_press_plug_not_wake.S0ix_power_press_plug_not_wake.test_S0ix_power_press_plug_not_wake</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

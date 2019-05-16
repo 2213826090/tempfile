@@ -1,0 +1,74 @@
+<?xml version='1.0' encoding='ASCII'?>
+<Campaign version="13.49">
+    <Parameters>
+        <Parameter isControlledPSUsed="False"/>
+        <Parameter isIoCardUsed="False"/>
+        <!-- Set skipBootOnPowerCycle to True to disable the accs boot procedure -->
+        <!-- Important, it means that boot will be handle inside the campaign/tc -->
+        <Parameter skipBootOnPowerCycle="False"/>
+        <!-- Set bootRetryNumber to maximum number of boot retries during the acs boot procedure -->
+        <!-- Important, it means that bootRetryNumber is set by default to 0 if not specified -->
+        <Parameter bootRetryNumber="0"/>
+        <Parameter runHookScripts="False"/>
+        <Parameter powerCycleBetweenTC="False"/>
+        <Parameter powerCycleOnFailure="False"/>
+        <!-- finalDutState allows user to leave the DUT in a specific state at the end of the campaign
+            Possible values: PowerOn | PowerOff | Charging | NoChange
+            By default DUT is leaved in NoChange state.
+            In case the user selects Charging as final state of the DUT and that DUT fails to enter Charging,
+            ACS shall try to switch the DUT off -->
+        <Parameter finalDutState="NoChange"/>
+        <Parameter stopCampaignOnCriticalFailure="False"/>
+        <Parameter stopCampaignOnFirstFailure="False"/>
+        <!-- LoggingLevel possible values: info | warning | debug | error -->
+        <Parameter loggingLevel="debug"/>
+        <!-- CampaignType format -> <TEAM>_<CAMPAIGNTYPE>
+            Possible values:
+            FT(Feature Team)-> SANITY | REGRESSION | STRESS, RELIABILTY | MTBF
+            ST(System Test)-> SANITY | REGRESSION | STRESS, RELIABILTY | MTBF | EM
+            SI(System Integration)-> EAT | STAB | PACT | CAT0 | RELIABILITY | MTBF | CTS | ACS_CI
+            Otherwise "Others" should be used -->
+        <Parameter CampaignType="Others"/>
+    </Parameters>
+    <Targets>
+        <!-- Target Values -->
+        <Target targetB2bPassRate="100"/>
+    </Targets>
+    <TestCases>
+        <TestCase Id="../../../../../TC/TR_ODM/LOLLIPOP/MR_1/System_OS/System_OS_AndroidFramework_AndroidSdkApi_testExternalStorageDirectory"/>
+        <TestCase Id="../../../../../TC/TR_ODM/LOLLIPOP/MR_1/System_OS/System_OS_AndroidFramework_AndroidSdkApi_testFileObserver"/>
+        <TestCase Id="../../../../../TC/TR_ODM/LOLLIPOP/MR_1/System_OS/System_OS_AndroidFramework_AndroidSdkApi_testCpuAbi2String"/>
+        <TestCase Id="../../../../../TC/TR_ODM/LOLLIPOP/MR_1/System_OS/System_OS_AndroidFramework_AndroidSdkApi_testRootDirectory"/>
+        <TestCase Id="../../../../../TC/TR_ODM/LOLLIPOP/MR_1/System_OS/System_OS_AndroidFramework_AndroidSdkApi_testSerialString"/>
+        <TestCase Id="../../../../../TC/TR_ODM/LOLLIPOP/MR_1/System_OS/System_OS_AndroidFramework_AndroidSdkApi_testAcquireLock"/>
+        <TestCase Id="../../../../../TC/TR_ODM/LOLLIPOP/MR_1/System_OS/System_OS_AndroidFramework_AndroidSdkApi_testBrandString"/>
+        <TestCase Id="../../../../../TC/TR_ODM/LOLLIPOP/MR_1/System_OS/System_OS_AndroidFramework_AndroidSdkApi_testTagsString"/>
+        <TestCase Id="../../../../../TC/TR_ODM/LOLLIPOP/MR_1/System_OS/System_OS_AndroidFramework_AndroidSdkApi_testTypeString"/>
+        <TestCase Id="../../../../../TC/TR_ODM/LOLLIPOP/MR_1/System_OS/System_OS_AndroidFramework_AndroidSdkApi_testDownloadCacheDirectory"/>
+        <TestCase Id="../../../../../TC/TR_ODM/LOLLIPOP/MR_1/System_OS/System_OS_AndroidFramework_AndroidSdkApi_testProductString"/>
+        <TestCase Id="../../../../../TC/TR_ODM/LOLLIPOP/MR_1/System_OS/System_OS_AndroidFramework_AndroidSdkApi_testManufacturerString"/>
+        <TestCase Id="../../../../../TC/TR_ODM/LOLLIPOP/MR_1/System_OS/System_OS_AndroidFramework_AndroidSdkApi_testTimeString"/>
+        <TestCase Id="../../../../../TC/TR_ODM/LOLLIPOP/MR_1/System_OS/System_OS_AndroidFramework_AndroidSdkApi_testVibrateTime"/>
+        <TestCase Id="../../../../../TC/TR_ODM/LOLLIPOP/MR_1/System_OS/System_OS_AndroidFramework_AndroidSdkApi_testAllocateMemoryFile"/>
+        <TestCase Id="../../../../../TC/TR_ODM/LOLLIPOP/MR_1/System_OS/System_OS_AndroidFramework_AndroidSdkApi_testBoardString"/>
+        <TestCase Id="../../../../../TC/TR_ODM/LOLLIPOP/MR_1/System_OS/System_OS_AndroidFramework_AndroidSdkApi_testCpuAbiString"/>
+        <TestCase Id="../../../../../TC/TR_ODM/LOLLIPOP/MR_1/System_OS/System_OS_AndroidFramework_AndroidSdkApi_testModelString"/>
+        <TestCase Id="../../../../../TC/TR_ODM/LOLLIPOP/MR_1/System_OS/System_OS_AndroidFramework_AndroidSdkApi_testCreateCanvas"/>
+        <TestCase Id="../../../../../TC/TR_ODM/LOLLIPOP/MR_1/System_OS/System_OS_AndroidFramework_AndroidSdkApi_testRadioVersionString"/>
+        <TestCase Id="../../../../../TC/TR_ODM/LOLLIPOP/MR_1/System_OS/System_OS_AndroidFramework_AndroidSdkApi_testExternalStorageState"/>
+        <TestCase Id="../../../../../TC/TR_ODM/LOLLIPOP/MR_1/System_OS/System_OS_AndroidFramework_AndroidSdkApi_testScreenOn"/>
+        <TestCase Id="../../../../../TC/TR_ODM/LOLLIPOP/MR_1/System_OS/System_OS_AndroidFramework_AndroidSdkApi_testReadMemoryFile"/>
+        <TestCase Id="../../../../../TC/TR_ODM/LOLLIPOP/MR_1/System_OS/System_OS_AndroidFramework_AndroidSdkApi_testDisplayString"/>
+        <TestCase Id="../../../../../TC/TR_ODM/LOLLIPOP/MR_1/System_OS/System_OS_AndroidFramework_AndroidSdkApi_testIdString"/>
+        <TestCase Id="../../../../../TC/TR_ODM/LOLLIPOP/MR_1/System_OS/System_OS_AndroidFramework_AndroidSdkApi_testUserString"/>
+        <TestCase Id="../../../../../TC/TR_ODM/LOLLIPOP/MR_1/System_OS/System_OS_AndroidFramework_AndroidSdkApi_testVibratePattern"/>
+        <TestCase Id="../../../../../TC/TR_ODM/LOLLIPOP/MR_1/System_OS/System_OS_AndroidFramework_AndroidSdkApi_testBootloaderString"/>
+        <TestCase Id="../../../../../TC/TR_ODM/LOLLIPOP/MR_1/System_OS/System_OS_AndroidFramework_AndroidSdkApi_testDataDirectory"/>
+        <TestCase Id="../../../../../TC/TR_ODM/LOLLIPOP/MR_1/System_OS/System_OS_AndroidFramework_AndroidSdkApi_testWriteMemoryFile"/>
+        <TestCase Id="../../../../../TC/TR_ODM/LOLLIPOP/MR_1/System_OS/System_OS_AndroidFramework_AndroidSdkApi_testHostString"/>
+        <TestCase Id="../../../../../TC/TR_ODM/LOLLIPOP/MR_1/System_OS/System_OS_AndroidFramework_AndroidSdkApi_testFingerprintString"/>
+        <TestCase Id="../../../../../TC/TR_ODM/LOLLIPOP/MR_1/System_OS/System_OS_AndroidFramework_AndroidSdkApi_testDeviceString"/>
+        <TestCase Id="../../../../../TC/TR_ODM/LOLLIPOP/MR_1/System_OS/System_OS_AndroidFramework_AndroidSdkApi_testHardwareString"/>
+        <TestCase Id="../../../../../TC/TR_ODM/LOLLIPOP/MR_1/System_OS/System_OS_AndroidFramework_AndroidSdkApi_testDimensions"/>
+    </TestCases>
+</Campaign>

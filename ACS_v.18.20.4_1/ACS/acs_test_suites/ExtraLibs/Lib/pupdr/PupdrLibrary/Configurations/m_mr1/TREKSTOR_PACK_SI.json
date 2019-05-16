@@ -1,0 +1,24 @@
+{
+    "Configuration": {
+        "Boot": null,
+        "BootVars": null,
+        "Custom": null,
+        "Download": {
+            "INTERNAL_DOWNLOAD": [
+                {
+                    "pft_key": "fastboot",
+                    "regexp_key": "device_name_id-flashfiles",
+                    "flash_file": "flash.json",
+                    "configuration": "blank_TREKSTOR",
+                    "start_state": "dnx"
+                }
+            ]
+        },
+        "Inherit": {
+            "BOARD": "TREKSTOR"
+        },
+        "Logs": null,
+        "Timeout": null,
+        "WorkAround": null
+    }
+}

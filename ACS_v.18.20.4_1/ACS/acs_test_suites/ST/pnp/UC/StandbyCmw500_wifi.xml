@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="13.41">
+    <TestSteps>
+        <Include Src="ST/pnp/TSS/common.xml" />
+        <Include Src="ST/pnp/TSS/idle.xml" />
+        <Include Src="ST/pnp/TSS/wifi.xml" />
+        <Include Src="ST/pnp/TSS/cmw500.xml" />
+
+        <Initialize>
+            <TestStep SetId="DISABLE_GMS" />
+            <TestStep SetId="InitializePnPResources" />
+        </Initialize>
+        <Setup>
+            <TestStep SetId="ConfigureRat" />
+            <TestStep SetId="ConfigureWifi" />
+
+            <TestStep Id="CONFIGURE_SYSTEM_SLEEP_MODE" DEVICE="PHONE1" MODE="FROM_TC:MODE" />
+        </Setup>
+        <RunTest>
+            <TestStep SetId="CheckIdleConsumption" />
+            <TestStep Id="CONFIGURE_SYSTEM_SLEEP_MODE" DEVICE="PHONE1" MODE="FROM_TC:MODE" />
+            <TestStep SetId="StartPowerMeasurement" />
+            <TestStep Id="SUSPEND" DURATION_IN_SEC="FROM_TC:TEST_DURATION" REFRESH_STDOUT_IN_SEC="60" />
+            <TestStep SetId="StopPowerMeasurement" />
+            <TestStep SetId="CheckIdleConsumption" />
+        </RunTest>
+        <TearDown>
+            <TestStep Id="NS_SET_PARAM" EQT="FROM_CTX:CMW500_SIMULATOR" NAME="LteSetCellOnOff" OPTION="DEFAULT" VALUE="OFF"/>
+            <TestStep SetId="TearDown" />
+            <TestStep SetId="ENABLE_GMS" />
+        </TearDown>
+    </TestSteps>
+</TestCase>

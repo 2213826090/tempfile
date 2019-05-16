@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCase>
+    <UseCase>LAB_EM_BATT_CHARGER_TIMER_EXPIRATION</UseCase>
+    <Description>Check the main battery charging in case of charger timer expiration. Check the capacity and status. When the status is "not charging", the test is stopped and we check the value of timer.</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>False</b2bContinuousMode>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters>
+        <Parameter>
+            <!-- Choose the type of OS (MOS or COS) -->
+            <Name>BOOT_MODE</Name>
+            <Value>MOS</Value>
+        </Parameter>
+        <Parameter>
+            <!-- PATH OF THE VIDEO -->
+            <Name>VIDEO_PATH</Name>
+            <Value>H264_L2.1_BP_CIF_30fps_AAC+_ST_56kb_48KHz.mp4</Value>
+        </Parameter>
+        <Parameter>
+            <!-- VALUE OF THE TIMER EXPIRATION (seconds) -->
+            <Name>TIMER_EXPIRATION_VALUE</Name>
+            <Value>57600</Value>
+        </Parameter>
+        <Parameter>
+            <!-- WAIT TIME VALUE IN ORDER TO CHECK THE REGISTERS (seconds) -->
+            <Name>CHECK_VALUE_TIME</Name>
+            <Value>600</Value>
+        </Parameter>
+        <Parameter>
+            <!-- CAPACITY START WHEN BOOT MODE IS COS ( % ) -->
+            <Name>COS_CAPACITY_START</Name>
+            <Value>10</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

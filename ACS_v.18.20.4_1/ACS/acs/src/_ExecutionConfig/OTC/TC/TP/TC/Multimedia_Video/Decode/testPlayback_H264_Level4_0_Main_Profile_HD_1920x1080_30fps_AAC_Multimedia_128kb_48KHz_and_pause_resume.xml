@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<TestCase>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Discription>
+Verify Video Playback H.264 Level 4.0 Main Profile (HD 1920x1080@30 fps) AAC+_Multimedia_128kb_48KHz and pause/resume
+</Discription>
+    <Domain>Multimedia_Video</Domain>
+    <Phase>CORE</Phase>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <Type>FUNCTIONAL</Type>
+    <UseCase>PY_UNIT</UseCase>
+    <b2bIteration>1</b2bIteration>
+    <Parameters>
+        <Parameter>
+            <Name>HpalmName</Name>
+            <Value>video_api_test.VideoAPITest.testPlayback_H264_Level4_0_Main_Profile_HD_1920x1080_30fps_AAC_Multimedia_128kb_48KHz_and_pause_resume</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TEST_DATA_ROOT</Name>
+            <Value>testplan/Multimedia_Video</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TEST_CASE</Name>
+            <Value>tests.Multimedia_Video.Decode.video_api_test.VideoAPITest.testPlayback_H264_Level4_0_Main_Profile_HD_1920x1080_30fps_AAC_Multimedia_128kb_48KHz_and_pause_resume</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<Equipment version="13.44" name="COMPUTER1" description="Computer connected to the local ethernet network (bench)">
+    <Parameter name="Model" value="REMOTE_COMPUTER" description="LOCAL_COMPUTER or REMOTE_COMPUTER (only LOCAL is currently supported)" />
+    <Parameter name="IP" value="localhost" description="ip address of the equipment" />
+    <Parameter name="username" value="root" description="login used for the connection" />
+    <Parameter name="Interface" value="ra0" description="WireLess Interface to use (wlan1/ra0)" />
+    <Parameter name="IPv6Prefix" value="" description="IPv6 prefix of the computer." />
+    <Parameter name="SshPath" value="/usr/bin/ssh" description="[Optional] full path to local SSH client binary (default 'ssh')" />
+    <Parameter name="ScpPath" value="/usr/bin/scp" description="[Optional] full path to local SCP client binary (default 'scp')" />
+    <Parameter name="IP_TEST" value="" description="[Optional] ip address of the equipment from DUT point of view (only required on Conformance Bench)" />
+    <Parameter name="key_ssh" value="/home/.ssh/id_rsa" description="[Optional] RSA Key used for SSH connection" />
+</Equipment>

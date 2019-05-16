@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase>
+    <UseCase>TEST_STEP_ENGINE</UseCase>
+    <Description>Power consumption measurement (in mA) when signal is lost</Description>
+    <b2bIteration>3</b2bIteration>
+    <b2bContinuousMode>False</b2bContinuousMode>
+    <TcMaxAttempt>1</TcMaxAttempt>
+    <SavePatRawData>True</SavePatRawData>
+    <PowerCalculation>False</PowerCalculation>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters>
+        <Parameter>
+            <Name>SAVE_POWER_DATA</Name>
+            <Value>True</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Sleep duration before making the measure in seconds -->
+            <Name>SLEEP_DURATION</Name>
+            <Value>60</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Sleep duration before making the measure in seconds -->
+            <Name>TEST_DURATION</Name>
+            <Value>300</Value>
+        </Parameter>
+        <Parameter>
+            <Name>VIDEO_PAYLOAD</Name>
+            <Value>video_playback_h264_720p_30fps</Value>
+        </Parameter>
+        <Parameter>
+            <Name>VIDEO_PREFIX</Name>
+            <Value>VIDEO/720p/</Value>
+        </Parameter>
+        <Parameter>
+            <Name>URL</Name>
+            <Value>html5/play_video.php</Value>
+        </Parameter>
+        <Parameter>
+            <!--
+                 Configuration for Sysdebug modules.
+                 Syntax is :
+                 module_name[: [param1[=value1]][, param2[=value2]]*];
+              -->
+             <Name>SYSDEBUG_MODULES</Name>
+             <Value>
+                Residency: s3,s0i3,s0i1,lpmp3;
+                CrashInfo;
+                Thermals;
+                Dstates;
+             </Value>
+        </Parameter>
+        <Parameter>
+            <Name>REGEX_FULLSCREEN</Name>
+            <Value>regex:.*chromium.*Video_Streaming - switched to fullscreen.*</Value>
+        </Parameter>
+        <Parameter>
+            <Name>REGEX_PLAYING_VIDEO</Name>
+            <Value>regex:.*chromium.*Video_Streaming - playing.*</Value>
+        </Parameter>
+        <Parameter>
+            <Name>APP_PACKAGE_NAME</Name>
+            <Value>com.android.chrome</Value>
+        </Parameter>
+        <Parameter>
+            <Name>MEDIA_VOLUME</Name>
+            <Value>50</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TEST_STEP_ENGINE_ENTRY</Name>
+            <Value>ST/pnp/UC/VideoStreamingWlanNoAP.xml</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

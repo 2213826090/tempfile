@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="13.37">
+    <UseCase>LIVE_DUAL_PHONE_VC_RING_TONE_VIBRA</UseCase>
+    <Description>Check vibrator during a voice call when ring tone volume is set to 0%</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters>
+        <Parameter>
+            <!-- The minimum variation between accelerometer's values, when vibrator is off and when it is on.
+            This parameter is a float having value in [0.5:5] -->
+            <Name>MINIMUM_VARIATION</Name>
+            <Value>2.0</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

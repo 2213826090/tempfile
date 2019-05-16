@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='ASCII'?>
+<TestCase>
+    <UseCase>Testlib</UseCase>
+    <Description>Drive -- Check that user can star a file</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <TcMaxAttempt>1</TcMaxAttempt>
+    <Parameters>
+        <Parameter>
+            <Name>timeout</Name>
+            <Value>300</Value>
+        </Parameter>
+        <Parameter>
+            <Name>script-args</Name>
+            <Value>{"file_name":"How_to_get_started_with_Drive","account":"auto2test@gmail.com","password":"testing12345"}</Value>
+        </Parameter>
+        <Parameter>
+            <Name>test</Name>
+            <Value>scripts/gms/drive/tests/add_file_to_favorite.py</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

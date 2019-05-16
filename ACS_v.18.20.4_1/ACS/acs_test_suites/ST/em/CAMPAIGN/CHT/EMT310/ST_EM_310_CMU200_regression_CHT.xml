@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<Campaign>
+    <Parameters>
+        <Parameter isControlledPSUsed="False" />
+        <Parameter isIoCardUsed="True" />
+        <!-- Set skipBootOnPowerCycle to True to disable the acs boot procedure -->
+        <!-- Important, it means that boot will be handle inside the campaign/tc -->
+        <Parameter skipBootOnPowerCycle="False" />
+        <Parameter runHookScripts="False" />
+        <Parameter powerCycleBetweenTC="False" />
+        <Parameter powerCycleOnFailure="True" />
+        <Parameter finalPowerOff="True" />
+        <Parameter finalDutState="PowerOff" />
+        <Parameter stopCampaignOnCriticalFailure="False" />
+        <Parameter stopCampaignOnFirstFailure="False" />
+        <!-- LoggingLevel possible values: info | warning | debug | error -->
+        <Parameter loggingLevel="debug" />
+        <!-- CampaignType format -> <TEAM>_<CAMPAIGNTYPE>
+            Possible values:
+            FT(Feature Team)-> SANITY | REGRESSION | STRESS, RELIABILTY | MTBF
+            ST(System Test)-> SANITY | REGRESSION | STRESS, RELIABILTY | MTBF
+            SI(System Integration)-> EAT | STAB | PACT | CAT0 | RELIABILITY | MTBF | CTS
+            Otherwise "Others" should be used -->
+        <Parameter CampaignType="QCTV_EM_CMU200_REGRESSION" />
+    </Parameters>
+    <Targets>
+        <!-- Target Values -->
+        <Target targetB2bPassRate="80" />
+    </Targets>
+    <TestCases>
+        <!-- Testcase campaigns -->
+
+        <!-- CMU 200 required -->
+        <TestCase Id="..\..\..\TC\MOBAT\19878-NO_HANDS_FREE-LAB_EM_BATT_EMERGENCY_CALL_CRITICAL_THRESHOLD" />
+        <TestCase Id="..\..\..\TC\MOBAT\19878-WITH_HANDS_FREE-LAB_EM_BATT_EMERGENCY_CALL_CRITICAL_THRESHOLD" />
+
+    </TestCases>
+</Campaign>

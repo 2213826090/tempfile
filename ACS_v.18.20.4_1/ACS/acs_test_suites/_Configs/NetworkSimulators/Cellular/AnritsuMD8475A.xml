@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<Configs>
+    <!-- Common cell parameters -->
+    <Config name="COMMON">
+        <GPIB command="OLVL -40.0," />
+        <GPIB command="RFLVL 10.0," />
+        <GPIB command="CELLID 0," />
+        <GPIB command="MCC 001," />
+        <GPIB command="MNC 01," />
+        <GPIB command="NCLIST DEFAULT," />
+    </Config>
+    <!-- LTE cell parameters -->
+    <Config name="LTE" apply_to="COMMON">
+        <GPIB command="DUPLEXMODE FDD," />
+        <GPIB command="BAND 7," />
+        <GPIB command="BANDWIDTH 20MHz," />
+        <GPIB command="ANTENNAS 1," />
+        <GPIB command="TRANSMODE TM1," />
+        <GPIB command="PHYCELLID 0," />
+        <GPIB command="SCHEDULEMODE STATIC," />
+        <GPIB command="PACKETRATE BESTEFFORT," />
+        <GPIB command="ASINTEGRITYALG AUTO," />
+        <GPIB command="NASINTEGRITYALG AUTO," />
+    </Config>
+    <!-- HSPA cell parameters -->
+    <Config name="HSPA" apply_to="COMMON">
+        <GPIB command="ULPOWERCONTROL DPCCHPOWER," />
+        <GPIB command="MONITORPOWERAVERAGE ENABLE," />
+        <GPIB command="BAND 1," />
+        <GPIB command="HSDPAIND ON," />
+        <GPIB command="EDCHIND ON," />
+        <GPIB command="PACKETRATE DL43_2M_UL5_76M," />
+        <GPIB command="ULTTI 2," />
+        <GPIB command="INTEGRITYALG UIA1," />
+    </Config>
+    <!-- EGPRS cell parameters -->
+    <Config name="EGPRS" apply_to="COMMON">
+        <GPIB command="BAND E-GSM900," />
+        <GPIB command="GPRS EGPRS," />
+        <GPIB command="MCS MCS9,MCS9," />
+        <GPIB command="MLTSLTCFG 4,1," />
+    </Config>
+    <!-- Fast Dormancy Parameters -->
+    <Config name="FAST_DORMANCY">
+        <GPIB command="L_RRCSTAT ENABLE" />
+        <GPIB command="L_STATTMR 15" />
+        <GPIB command="W_RRCSTAT ENABLE" />
+        <GPIB command="W_RRCSTATDCH PRESERVATION" />
+        <GPIB command="W_STATTMRDCH 15" />
+        <GPIB command="W_RRCSTATFACH PRESERVATION" />
+        <GPIB command="W_STATTMRFACH 30" />
+        <GPIB command="W_DORMANT ENABLE" />
+        <GPIB command="W_DORMANTT323 10" />
+        <GPIB command="W_DORMANTDCH IDLE" />
+        <GPIB command="W_DORMANTFACH IDLE" />
+    </Config>
+</Configs>

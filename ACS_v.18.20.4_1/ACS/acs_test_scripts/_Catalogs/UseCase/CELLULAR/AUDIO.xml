@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<UseCases xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:noNamespaceSchemaLocation="../../../../acs/src/_Catalogs/UseCase/usecase.xsd">
+    <UseCase Id="LAB_AUDIO_GSM_VC_PESQ" Domain="CELLULAR" SubDomain="AUDIO" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Audio.LAB_AUDIO_GSM_VC_PESQ.LabAudioGsmVcPesq</ClassName>
+        <Description>Check Audio Quality (PESQ) during GSM Mobile Originated Call on simulated network</Description>
+        <Environment name="AUDIO_COMMS">
+            <Dependency>EQT_RS_CMU200</Dependency>
+            <Dependency>EQT_RS_UPV</Dependency>
+            <Dependency>SW_PESQ</Dependency>
+        </Environment>
+    </UseCase>
+    <UseCase Id="LAB_AUDIO_WCDMA_VC_PESQ" Domain="CELLULAR" SubDomain="AUDIO" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Audio.LAB_AUDIO_WCDMA_VC_PESQ.LabAudioWcdmaVcPesq</ClassName>
+        <Description>Check Audio Quality (PESQ) during WCDMA Mobile Originated Call on simulated network</Description>
+        <Environment name="AUDIO_COMMS">
+            <Dependency>EQT_RS_CMU200</Dependency>
+            <Dependency>EQT_RS_UPV</Dependency>
+            <Dependency>SW_PESQ</Dependency>
+        </Environment>
+    </UseCase>
+    <UseCase Id="LAB_AUDIO_GSM_VC_COD_SWI" Domain="CELLULAR" SubDomain="AUDIO" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Audio.LAB_AUDIO_GSM_VC_COD_SWI.LabAudioGsmVcCodSwi</ClassName>
+        <Description>Switch Codec during GSM Mobile Originated Voice call and check the audio quality</Description>
+        <Environment name="AUDIO_COMMS">
+            <Dependency>EQT_RS_CMU200</Dependency>
+            <Dependency>EQT_RS_UPV</Dependency>
+        </Environment>
+    </UseCase>
+    <UseCase Id="LAB_GSM_VC_RINGTONE_MTMR" Domain="CELLULAR" SubDomain="AUDIO" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Communication.VoiceCall.LAB_GSM_VC_RINGTONE_MTMR.LabGsmVcRingtoneMtmr</ClassName>
+        <Description>Test GSM Mobile Call Originated and ringtone</Description>
+        <Environment name="AUDIO_COMMS">
+            <Dependency>EQT_AG_8960</Dependency>
+        </Environment>
+    </UseCase>
+    <UseCase Id="LAB_WCDMA_VC_RINGTONE_MTMR" Domain="CELLULAR" SubDomain="AUDIO" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Communication.VoiceCall.LAB_WCDMA_VC_RINGTONE_MTMR.LabWcdmaVcRingtoneMtmr</ClassName>
+        <Description>Test GSM Mobile Call Originated and ringtone</Description>
+        <Environment name="AUDIO_COMMS">
+            <Dependency>EQT_AG_8960</Dependency>
+        </Environment>
+    </UseCase>
+    <UseCase Id="LIVE_AUDIO_RECORD_MIC" Domain="CELLULAR" SubDomain="AUDIO" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Multimedia.LIVE_AUDIO_RECORD_MIC.LiveAudioRecordMic</ClassName>
+        <Description>Test Audio Record from mic</Description>
+        <Environment name="ANY">
+        </Environment>
+    </UseCase>
+    <UseCase Id="LAB_PFW_PERMISSION_RIGHTS" Domain="CELLULAR" SubDomain="AUDIO" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Audio.LAB_PFW_PERMISSION_RIGHTS.LabPfwPermissionRights</ClassName>
+        <Description>verify the right permissions to use the file ParameterConfiguration.xml</Description>
+        <Environment name="TEL">
+            <Dependency>EQT_AG_8960</Dependency>
+        </Environment>
+    </UseCase>
+    <UseCase Id="LAB_AUDIO_QUALITY_CSV" Domain="CELLULAR" SubDomain="AUDIO" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Audio.LAB_AUDIO_QUALITY_CSV.LabAudioQualityCSV</ClassName>
+        <Description>Check Audio Quality during GSM Mobile Originated Call on real network with a specified
+            accessories
+        </Description>
+        <Environment name="AUDIO_COMMS">
+            <Dependency>EQT_APx585</Dependency>
+        </Environment>
+    </UseCase>
+    <UseCase Id="LAB_AUDIO_QUALITY_VOIP" Domain="CELLULAR" SubDomain="AUDIO" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Audio.LAB_AUDIO_QUALITY_VOIP.LabAudioQualityVOIP</ClassName>
+        <Description>Check Audio Quality during VOIP Call on real network with a specified accessories</Description>
+        <Environment name="AUDIO_COMMS">
+            <Dependency>EQT_APx585</Dependency>
+        </Environment>
+    </UseCase>
+    <UseCase Id="LAB_AUDIO_APX_CALIBRATION_CSV" Domain="CELLULAR" SubDomain="AUDIO" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Audio.LAB_AUDIO_APX_CALIBRATION_CSV.LabAudioAPxCalibrationCSV</ClassName>
+        <Description>Calibration for APX585 equipment for CSV call</Description>
+        <Environment name="AUDIO_COMMS">
+            <Dependency>EQT_APx585</Dependency>
+        </Environment>
+    </UseCase>
+    <UseCase Id="LAB_AUDIO_APX_CALIBRATION_VOIP" Domain="CELLULAR" SubDomain="AUDIO" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Audio.LAB_AUDIO_APX_CALIBRATION_VOIP.LabAudioAPxCalibrationVOIP</ClassName>
+        <Description>Calibration for APX585 equipment for VOIP call</Description>
+        <Environment name="AUDIO_COMMS">
+            <Dependency>EQT_APx585</Dependency>
+        </Environment>
+    </UseCase>
+    <UseCase Id="LAB_AUDIO_QUALITY_ACCESSORIES_CHANGE_CSV" Domain="CELLULAR" SubDomain="AUDIO" OS="ANDROID"
+             Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Audio.LAB_AUDIO_QUALITY_ACCESSORIES_CHANGE_CSV.LabAudioQualityAccessoriesChangeCSV</ClassName>
+        <Description>Check Audio Quality during GSM Mobile Originated Call on real network with accessories list
+        </Description>
+        <Environment name="AUDIO_COMMS">
+            <Dependency>EQT_APx585</Dependency>
+        </Environment>
+    </UseCase>
+    <UseCase Id="LAB_AUDIO_QUALITY_ACCESSORIES_CHANGE_VOIP" Domain="CELLULAR" SubDomain="AUDIO" OS="ANDROID"
+             Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Audio.LAB_AUDIO_QUALITY_ACCESSORIES_CHANGE_VOIP.LabAudioQualityAccessoriesChangeVOIP</ClassName>
+        <Description>Check Audio Quality during VOIP on real network with accessories list</Description>
+        <Environment name="AUDIO_COMMS">
+            <Dependency>EQT_APx585</Dependency>
+        </Environment>
+    </UseCase>
+    <UseCase Id="LAB_AUDIO_WCDMA_VC_RECORDTONES" Domain="CELLULAR" SubDomain="AUDIO" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Audio.LAB_AUDIO_WCDMA_VC_RECORDTONES.LabAudioWcdmaVcRecordtones</ClassName>
+        <Description>Check the presence of recording tones during recorded WCDMA Mobile Originated Call on simulated
+            network
+        </Description>
+        <Environment name="AUDIO_COMMS">
+            <Dependency>EQT_RS_CMU200</Dependency>
+            <Dependency>EQT_RS_UPV</Dependency>
+            <Dependency>SW_PESQ</Dependency>
+        </Environment>
+    </UseCase>
+    <UseCase Id="LAB_AUDIO_GSM_VC_RECORDTONES" Domain="CELLULAR" SubDomain="AUDIO" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Audio.LAB_AUDIO_GSM_VC_RECORDTONES.LabAudioGsmVcRecordtones</ClassName>
+        <Description>Check the presence of recording tones during recorded GSM Mobile Originated Call on simulated
+            network
+        </Description>
+        <Environment name="AUDIO_COMMS">
+            <Dependency>EQT_RS_CMU200</Dependency>
+            <Dependency>EQT_RS_UPV</Dependency>
+            <Dependency>SW_PESQ</Dependency>
+        </Environment>
+    </UseCase>
+    <UseCase Id="LAB_AUDIO_GSM_CSV" Domain="CELLULAR" SubDomain="AUDIO" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Audio.LAB_AUDIO_GSM_CSV.LabAudioGsmCsv</ClassName>
+        <Description>Check Audio is routed successfully to the DUT audio output in 2G</Description>
+        <Environment name="AUDIO_COMMS">
+            <Dependency>EQT_RS_CMU200</Dependency>
+            <Dependency>EQT_RS_UPV</Dependency>
+        </Environment>
+    </UseCase>
+    <UseCase Id="LAB_AUDIO_WCDMA_CSV" Domain="CELLULAR" SubDomain="AUDIO" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Audio.LAB_AUDIO_WCDMA_CSV.LabAudioWcdmaCsv</ClassName>
+        <Description>Check Audio is routed successfully to the DUT audio output in 3G</Description>
+        <Environment name="AUDIO_COMMS">
+            <Dependency>EQT_RS_CMU200</Dependency>
+            <Dependency>EQT_RS_UPV</Dependency>
+        </Environment>
+    </UseCase>
+    <UseCase Id="LAB_AUDIO_QUALITY_SWAP_CALL" Domain="CELLULAR" SubDomain="AUDIO" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Audio.LAB_AUDIO_QUALITY_SWAP_CALL.LabAudioQualitySwapCall</ClassName>
+        <Description>Check Audio Quality during GSM Mobile Originated Call on real network with a specified
+            accessories
+        </Description>
+        <Environment name="AUDIO_COMMS">
+            <Dependency>EQT_APx585</Dependency>
+        </Environment>
+    </UseCase>
+    <UseCase Id="LAB_AUDIO_GLITCHDETECTION_IN_CSV" Domain="CELLULAR" SubDomain="AUDIO" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Audio.LAB_AUDIO_GLITCHDETECTION_IN_CSV.LabAudioGlitchDetectionInCSV</ClassName>
+        <Description>Check Audio Quality during GSM Mobile Originated Call on real network with a specified
+            accessories
+        </Description>
+        <Environment name="AUDIO_COMMS">
+            <Dependency>EQT_APx585</Dependency>
+        </Environment>
+    </UseCase>
+    <UseCase Id="LAB_AUDIO_VOLUME_CSV" Domain="CELLULAR" SubDomain="AUDIO" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Audio.LAB_AUDIO_VOLUME_CSV.LabAudioVolumeCSV</ClassName>
+        <Description>Check Audio Quality during GSM Mobile Originated Call on real network with a specified
+            accessories
+        </Description>
+        <Environment name="AUDIO_COMMS">
+            <Dependency>EQT_APx585</Dependency>
+        </Environment>
+    </UseCase>
+    <UseCase Id="LAB_AUDIO_DTMF_CSV" Domain="CELLULAR" SubDomain="AUDIO" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Audio.LAB_AUDIO_DTMF_CSV.LabAudioDTMFCSV</ClassName>
+        <Description>Check Audio Quality during GSM Mobile Originated Call on real network with a specified
+            accessories
+        </Description>
+        <Environment name="AUDIO_COMMS">
+            <Dependency>EQT_APx585</Dependency>
+        </Environment>
+    </UseCase>
+    <UseCase Id="LIVE_AUDIO_LATENCY" Domain="CELLULAR" SubDomain="AUDIO" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Audio.LIVE_AUDIO_LATENCY.LiveAudioLatency</ClassName>
+        <Description>Launch an embedded audio test permit to calculate the audio latency</Description>
+        <Environment name="ANY">
+        </Environment>
+    </UseCase>
+    <UseCase Id="LAB_AUDIO_QUALITY_CSV_AIRPLANE_MODE" Domain="CELLULAR" SubDomain="AUDIO" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Audio.LAB_AUDIO_QUALITY_CSV_AIRPLANE_MODE.LabAudioQualityCSVAirplaneMode</ClassName>
+        <Description>Check Audio Quality during GSM Mobile Originated Call on real network with a specified
+            accessories
+        </Description>
+        <Environment name="AUDIO_COMMS">
+            <Dependency>EQT_APx585</Dependency>
+        </Environment>
+    </UseCase>
+    <UseCase Id="LAB_AUDIO_VOLUME_VOIP" Domain="CELLULAR" SubDomain="AUDIO" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Audio.LAB_AUDIO_VOLUME_VOIP.LabAudioVolumeVOIP</ClassName>
+        <Description>Check Audio Quality during VOIP Call on real network with a specified accessories</Description>
+        <Environment name="AUDIO_COMMS">
+            <Dependency>EQT_APx585</Dependency>
+        </Environment>
+    </UseCase>
+    <UseCase Id="LAB_AUDIO_GLITCHDETECTION_ACCESSORIES_CHANGE_CSV" Domain="CELLULAR" SubDomain="AUDIO" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Audio.LAB_AUDIO_GLITCHDETECTION_ACCESSORIES_CHANGE_CSV.LabAudioGlitchDetectionAccessoriesChangeCSV</ClassName>
+        <Description>Check Audio Glitch Detection during GSM Mobile Originated Call on real network with accessories
+            list
+        </Description>
+        <Environment name="AUDIO_COMMS">
+            <Dependency>EQT_APx585</Dependency>
+        </Environment>
+    </UseCase>
+    <UseCase Id="LAB_AUDIO_GLITCHDETECTION_SWAP_CALL" Domain="CELLULAR" SubDomain="AUDIO" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Audio.LAB_AUDIO_GLITCHDETECTION_SWAP_CALL.LabAudioGlitchDetectionSwapCall</ClassName>
+        <Description>Check Audio Quality during GSM Mobile Originated Call on real network with a specified
+            accessories
+        </Description>
+        <Environment name="AUDIO_COMMS">
+            <Dependency>EQT_APx585</Dependency>
+        </Environment>
+    </UseCase>
+    <UseCase Id="LAB_AUDIO_FIT_FLIGHTMODE" Domain="CELLULAR" SubDomain="AUDIO" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Fit.Audio.LAB_AUDIO_FIT_FLIGHTMODE.LabAudioFitFlightmode</ClassName>
+        <Description>Check Audio is routed successfully to the DUT audio output during MT voice call after exiting
+            flight mode
+        </Description>
+        <Environment name="AUDIO_COMMS">
+            <Dependency>EQT_RS_UPV</Dependency>
+        </Environment>
+    </UseCase>
+    <UseCase Id="LAB_AUDIO_FIT_FLIGHTMODE" Domain="CELLULAR" SubDomain="AUDIO" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Fit.Audio.LAB_AUDIO_FIT_FLIGHTMODE.LabAudioFitFlightmode</ClassName>
+        <Description>Check Audio is routed successfully to the DUT audio output during MT voice call after exiting
+            flight mode
+        </Description>
+        <Environment name="AUDIO_COMMS">
+            <Dependency>EQT_RS_UPV</Dependency>
+        </Environment>
+    </UseCase>
+    <UseCase Id="LAB_AUDIO_IMS_VC_RI" Domain="CELLULAR" SubDomain="AUDIO" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Audio.LAB_AUDIO_IMS_VC_RI.LabAudioImsVcRi</ClassName>
+        <Description>Check Audio Quality during IMS voice call in order to meet RI target</Description>
+        <Environment name="AUDIO_COMMS">
+            <Dependency>EQT_APx585</Dependency>
+        </Environment>
+    </UseCase>
+    <UseCase Id="LAB_AUDIO_VOIP_RI" Domain="CELLULAR" SubDomain="AUDIO" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Audio.LAB_AUDIO_VOIP_RI.LabAudioVoipRi</ClassName>
+        <Description>Check Audio Quality during VOIP call in order to meet RI target</Description>
+        <Environment name="AUDIO_COMMS">
+            <Dependency>EQT_APx585</Dependency>
+        </Environment>
+    </UseCase>
+    <UseCase Id="LAB_AUDIO_QUALITY_CSV_MUTE" Domain="CELLULAR" SubDomain="AUDIO" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Audio.LAB_AUDIO_QUALITY_CSV_MUTE.LabAudioQualityCSVMute</ClassName>
+        <Description>Check Audio Quality during GSM Mobile Originated Call after muted it on real network with a
+            specified accessories
+        </Description>
+        <Environment name="AUDIO_COMMS">
+            <Dependency>EQT_APx585</Dependency>
+        </Environment>
+    </UseCase>
+    <UseCase Id="LIVE_DUAL_PHONE_VC_RING_TONE_VIBRA" Domain="CELLULAR" SubDomain="AUDIO" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Multimedia.LIVE_DUAL_PHONE_VC_RING_TONE_VIBRA.LiveDualPhoneVcRingToneVibra</ClassName>
+        <Description>Check vibrator during a voice call when ring tone volume is set to 0%</Description>
+        <Environment name="ANY">
+        </Environment>
+        <Parameters>
+            <Parameter name="MINIMUM_VARIATION" type="FLOAT" isOptional="true">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+        </Parameters>
+    </UseCase>
+    <UseCase Id="LAB_AUDIO_CSV_RINGTONEDETECTION" Domain="CELLULAR" SubDomain="AUDIO" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Audio.LAB_AUDIO_CSV_RINGTONEDETECTION.LabAudioCSVRingtoneDetection</ClassName>
+        <Description>Check Ringtone on real network with a specified accessories</Description>
+        <Environment name="AUDIO_COMMS">
+            <Dependency>EQT_APx585</Dependency>
+        </Environment>
+    </UseCase>
+    <UseCase Id="LAB_AUDIO_QUALITY_VOIP_MUTE" Domain="CELLULAR" SubDomain="AUDIO" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Audio.LAB_AUDIO_QUALITY_VOIP_MUTE.LabAudioQualityVOIPMute</ClassName>
+        <Description>Check Audio Quality during VOIP Call on real network with a specified accessories</Description>
+        <Environment name="AUDIO_COMMS">
+            <Dependency>EQT_APx585</Dependency>
+        </Environment>
+    </UseCase>
+    <UseCase Id="LAB_AUDIO_ACTIVITY_VOIP_STRESS" Domain="CELLULAR" SubDomain="AUDIO" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Audio.LAB_AUDIO_ACTIVITY_VOIP_STRESS.LabAudioActivityVOIPStress</ClassName>
+        <Description>Check Audio Quality during VOIP Call on real network with a specified accessories</Description>
+        <Environment name="AUDIO_COMMS">
+            <Dependency>EQT_APx585</Dependency>
+        </Environment>
+    </UseCase>
+    <UseCase Id="LAB_AUDIO_QUALITY_ACCESSORIES_CHANGE_VOIP_MUTE" Domain="CELLULAR" SubDomain="AUDIO" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Audio.LAB_AUDIO_QUALITY_ACCESSORIES_CHANGE_VOIP_MUTE.LabAudioQualityAccessoriesChangeVOIPMute</ClassName>
+        <Description>Check Audio Quality during accessories change interaction with mute function in VOIP call</Description>
+        <Environment name="AUDIO_COMMS">
+            <Dependency>EQT_APx585</Dependency>
+        </Environment>
+    </UseCase>
+    <UseCase Id="LAB_AUDIO_QUALITY_ACCESSORIES_CHANGE_CSV_MUTE" Domain="CELLULAR" SubDomain="AUDIO" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Audio.LAB_AUDIO_QUALITY_ACCESSORIES_CHANGE_CSV_MUTE.LabAudioQualityAccessoriesChangeCSVMute</ClassName>
+        <Description>Check Audio Quality during accessories change interaction with mute function in CSV call</Description>
+        <Environment name="AUDIO_COMMS">
+            <Dependency>EQT_APx585</Dependency>
+        </Environment>
+    </UseCase>
+</UseCases>

@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestSteps xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../acs/src/_Catalogs/TestStep/teststep.xsd">
+    <TestStep Id="INIT_GPIO" Domain="LOWSPEEDIO" SubDomain="GPIO" Feature="" Status="PLANNED">
+        <ClassName>acs_test_scripts.TestStep.Device.LowSpeedIO.GPIO.InitGpio.InitGpio</ClassName>
+        <Description>Initialisation of a General Purpose Input Output.
+                PREREQUISITES:
+                Android: Device-side script not yet created.
+                Windows: Device-side script not yet created.
+                Linux: This requires init_gpio.sh to be installed on the system.</Description>
+        <Environment name="ANY"/>
+        <Parameters>
+             <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="GPIO_NUMBER" type="INTEGER" isOptional="false">
+                <Description>Numero of the GPIO to set</Description>
+                <PossibleValues>[0:999]</PossibleValues>
+                <DefaultValue>0</DefaultValue>
+            </Parameter>
+            <Parameter name="DIRECTION" type="STRING" isOptional="false">
+                <Description>The direction to set on the GPIO</Description>
+                <PossibleValues>input;output;low;high</PossibleValues>
+                <DefaultValue>output</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="GET_GPIO_DIRECTION" Domain="LOWSPEEDIO" SubDomain="GPIO" Feature="" Status="PLANNED">
+        <ClassName>acs_test_scripts.TestStep.Device.LowSpeedIO.GPIO.GetGpioDirection.GetGpioDirection</ClassName>
+        <Description>Set the direction of a General Purpose Input Output.
+                PREREQUISITES:
+                Android: Device-side script not yet created.
+                Windows: Device-side script not yet created.
+                Linux: This requires set_gpio.sh to be installed on the system.</Description>
+        <Environment name="ANY"/>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="GPIO_NUMBER" type="INTEGER" isOptional="false">
+                <Description>Numero of the GPIO to set</Description>
+                <PossibleValues>[0:999]</PossibleValues>
+                <DefaultValue>0</DefaultValue>
+            </Parameter>
+            <Parameter name="SAVE_AS" type="CONTEXT" isOptional="false">
+                <Description>
+                    <Key name="KEY_NAME_DEFINED_BY_USER" type="STRING">Name of the context variable where the value will be saved.</Key>
+                </Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="SET_GPIO_DIRECTION" Domain="LOWSPEEDIO" SubDomain="GPIO" Feature="" Status="PLANNED">
+        <ClassName>acs_test_scripts.TestStep.Device.LowSpeedIO.GPIO.SetGpioDirection.SetGpioDirection</ClassName>
+        <Description>Set the direction of a General Purpose Input Output.
+                PREREQUISITES:
+                Android: Device-side script not yet created.
+                Windows: Device-side script not yet created.
+                Linux: This requires set_gpio.sh to be installed on the system.</Description>
+        <Environment name="ANY"/>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="GPIO_NUMBER" type="INTEGER" isOptional="false">
+                <Description>Numero of the GPIO to set</Description>
+                <PossibleValues>[0:999]</PossibleValues>
+                <DefaultValue>0</DefaultValue>
+            </Parameter>
+            <Parameter name="DIRECTION" type="STRING" isOptional="false">
+                <Description>The direction to set on the GPIO</Description>
+                <PossibleValues>input;output;low;high</PossibleValues>
+                <DefaultValue>low</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="SET_GPIO_VALUE" Domain="LOWSPEEDIO" SubDomain="GPIO" Feature="" Status="PLANNED">
+        <ClassName>acs_test_scripts.TestStep.Device.LowSpeedIO.GPIO.SetGpioValue.SetGpioValue</ClassName>
+        <Description>Set the Value of a General Purpose Input Output.
+                PREREQUISITES:
+                Android: Device-side script not yet created.
+                Windows: Device-side script not yet created.
+                Linux: This requires set_gpio.sh to be installed on the system.</Description>
+        <Environment name="ANY"/>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="GPIO_NUMBER" type="INTEGER" isOptional="false">
+                <Description>Numero of the GPIO to set</Description>
+                <PossibleValues>[0:999]</PossibleValues>
+                <DefaultValue>0</DefaultValue>
+            </Parameter>
+            <Parameter name="VALUE" type="INTEGER" isOptional="true">
+                <Description>The value applied to the GPIO</Description>
+                <PossibleValues>0;1</PossibleValues>
+                <DefaultValue>0</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="GET_GPIO_VALUE" Domain="LOWSPEEDIO" SubDomain="GPIO" Feature="" Status="PLANNED">
+        <ClassName>acs_test_scripts.TestStep.Device.LowSpeedIO.GPIO.GetGpioValue.GetGpioValue</ClassName>
+        <Description>Set the direction of a General Purpose Input Output.
+                PREREQUISITES:
+                Android: Device-side script not yet created.
+                Windows: Device-side script not yet created.
+                Linux: This requires set_gpio.sh to be installed on the system.</Description>
+        <Environment name="ANY"/>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="GPIO_NUMBER" type="INTEGER" isOptional="false">
+                <Description>Numero of the GPIO to set</Description>
+                <PossibleValues>[0:999]</PossibleValues>
+                <DefaultValue>0</DefaultValue>
+            </Parameter>
+            <Parameter name="SAVE_AS" type="CONTEXT" isOptional="false">
+                <Description>
+                    <Key name="KEY_NAME_DEFINED_BY_USER" type="STRING">Name of the context variable where the value will be saved.</Key>
+                </Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+        </Parameters>
+    </TestStep>
+</TestSteps>

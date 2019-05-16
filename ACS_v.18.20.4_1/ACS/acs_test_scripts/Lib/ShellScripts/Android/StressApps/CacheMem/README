@@ -1,0 +1,6 @@
+By executing cacheMem.sh, this test will run:
+1) memorytest.sh - To stress the memory and IO
+2) run_me.sh which calls cachebench - CPU benchmark
+
+Note:
+The test won't stop at the planned duration. It will only stop after (1)Test duration elapsed + (2)that cycle of memorytest.sh and run_me.sh completed.

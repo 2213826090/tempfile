@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<UseCases xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:noNamespaceSchemaLocation="../../../../acs/src/_Catalogs/UseCase/usecase.xsd">
+    <UseCase Id="ANDROID_UI_TEST" Domain="MISC" SubDomain="UI" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Misc.ANDROID_UI_TEST.AndroidUiTest</ClassName>
+        <Description>Android UI test</Description>
+        <Environment name="ANY"/>
+    </UseCase>
+    <UseCase Id="ANDROID_UI_TEST_VC_MT" Domain="MISC" SubDomain="UI" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Misc.ANDROID_UI_TEST_VC_MT.AndroidUiTestVcMt</ClassName>
+        <Description>Android UI test during MT voice call from another phone</Description>
+        <Environment name="UI">
+            <Dependency>CAP_DUAL_DEVICE</Dependency>
+        </Environment>
+    </UseCase>
+    <UseCase Id="ANDROID_UI_TEST_WIDI_SCAN" Domain="MISC" SubDomain="UI" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Misc.ANDROID_UI_TEST_WIDI_SCAN.AndroidUiTestWidiScan</ClassName>
+        <Description>Android UI test for WiDi scan</Description>
+        <Environment name="UI">
+            <Dependency>EQT_WIDI_DEVICE</Dependency>
+        </Environment>
+    </UseCase>
+</UseCases>

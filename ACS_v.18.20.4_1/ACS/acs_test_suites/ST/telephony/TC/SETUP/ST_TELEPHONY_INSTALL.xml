@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase>
+    <UseCase>TEST_STEP_ENGINE</UseCase>
+    <Description>Install binaries needed for Telephony test</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>False</b2bContinuousMode>
+    <TcMaxAttempt>3</TcMaxAttempt>
+    <TcAcceptanceCriteria>1</TcAcceptanceCriteria>
+    <IsCritical>True</IsCritical>
+    <TestSteps>
+        <Initialize/>
+        <Setup/>
+        <RunTest>
+            <!-- Install busybox -->
+            <TestStep Id="GET_ARTIFACT" ARTIFACT="busybox/busybox" ARTIFACT_SOURCE="FROM_BENCH:ARTIFACT_MANAGER:URI" TRANSFER_TIMEOUT="DEFAULT" STORED_FILE_PATH="FILE_SRC_PATH" EQT="DEFAULT"/>
+            <TestStep Id="INSTALL_BUSYBOX" DEVICE="PHONE1" FILE="FROM_CTX:FILE_SRC_PATH"/>
+            <TestStep Id="FINALIZE_BUSYBOX_INSTALLATION" DEVICE="PHONE1"/>
+
+            <!-- Install Iperf -->
+            <TestStep Id="GET_ARTIFACT" EQT="ARTIFACT_MANAGER" ARTIFACT="MISCELLANEOUS/BINARIES/[+]FROM_DEVICE:PHONE1:OS[+]/COMMON/iperf" ARTIFACT_SOURCE="FROM_BENCH:ARTIFACT_MANAGER:URI" TRANSFER_TIMEOUT="DEFAULT" STORED_FILE_PATH="FILE_PATH_IN_CACHE1" />
+            <!-- Then, Push it on the device. -->
+            <!-- FILE_PATH is retrieved from test step context -->
+            <TestStep Id="INSTALL_FILE" DEVICE="PHONE1" FILE_PATH="FROM_CTX:FILE_PATH_IN_CACHE1" TYPE="bin" DESTINATION="FROM_DEVICE:PHONE1:binPath" TIMEOUT="DEFAULT" DESTINATION_STORED_PATH="FILE_PATH_IN_CACHE1" />
+
+            <!-- Install netcfg -->
+            <!-- Download the artifact from artifactory to local host -->
+            <TestStep Id="GET_ARTIFACT" EQT="ARTIFACT_MANAGER" ARTIFACT="MISCELLANEOUS/BINARIES/[+]FROM_DEVICE:PHONE1:OS[+]/COMMON/netcfg" ARTIFACT_SOURCE="FROM_BENCH:ARTIFACT_MANAGER:URI" TRANSFER_TIMEOUT="DEFAULT" STORED_FILE_PATH="FILE_PATH_IN_CACHE1" />
+            <!-- Then, Push it on the device. -->
+            <!-- FILE_PATH is retrieved from test step context -->
+            <TestStep Id="INSTALL_FILE" DEVICE="PHONE1" FILE_PATH="FROM_CTX:FILE_PATH_IN_CACHE1" TYPE="bin" DESTINATION="/system/bin" TIMEOUT="DEFAULT" DESTINATION_STORED_PATH="FILE_PATH_IN_CACHE1" />
+
+            <!-- Remove all configured APN for Test networks -->
+            <TestStep Id="REMOVE_DEVICE_APN" DEVICE="PHONE1" />
+        </RunTest>
+        <TearDown />
+    </TestSteps>
+</TestCase>

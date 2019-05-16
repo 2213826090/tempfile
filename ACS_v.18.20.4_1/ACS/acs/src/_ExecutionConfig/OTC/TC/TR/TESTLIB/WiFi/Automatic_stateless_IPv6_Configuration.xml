@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='ASCII'?>
+<TestCase>
+    <UseCase>Testlib</UseCase>
+    <Description>wifi</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <TcMaxAttempt>3</TcMaxAttempt>
+    <Parameters>
+        <Parameter>
+            <Name>test</Name>
+            <Value>scripts/wireless/wifi_generic/tests/stateless_ipv6_configuration.py</Value>
+        </Parameter>
+        <Parameter>
+            <Name>script-args</Name>
+            <Value>mode=mixed hidden_ssid=0 ap_name=atheros_test dut_security=None security=none ipv6_enable=1 radvd_enable=1 iterations=1 ap_ip=192.168.1.1 ap_username=root browse_ipv6=1 ipv6_ap_ssid=SSG_LAB_VAL_S4 ipv6_ap_pw=ssg_ba_otc_val_asuss4 ipv6_ap_security=WPA2 iterations=1</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

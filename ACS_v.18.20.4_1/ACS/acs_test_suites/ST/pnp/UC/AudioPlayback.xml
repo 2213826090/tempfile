@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="13.41">
+    <TestSteps>
+        <Include Src="ST/pnp/TSS/common.xml" />
+        <Include Src="ST/pnp/TSS/idle.xml" />
+        <Include Src="ST/pnp/TSS/benchmarks.xml" />
+        <Include Src="ST/pnp/TSS/audio_playback.xml" />
+        <Include Src="SI/pnp/perf/TC/DroidbotTestStepSet.xml"/>
+        <Initialize>
+            <TestStep SetId="InitializePnPResources" />
+            <TestStep SetId="DroibotJarInstall"/>
+        </Initialize>
+        <Setup>
+            <TestStep SetId="InstallAudioFile" />
+            <TestStep Id="CONFIGURE_SYSTEM_SLEEP_MODE" DEVICE="PHONE1" MODE="FROM_TC:MODE" />
+            <TestStep Id="SET_ORIENTATION" DEVICE="PHONE1" ORIENTATION="portrait" API="embedded_api" />
+            <TestStep Id="EXEC_PNP_DROIDBOT" DEVICE="PHONE1" TIMEOUT="5"
+                  TEST_NAME="FROM_TC:TEST_NAME"
+                  EXTRA_OPTS="-e scenario setup -e numRun 1" />
+        </Setup>
+        <RunTest>
+            <TestStep Id="SUSPEND" DURATION_IN_SEC="FROM_TC:IDLE_DURATION" REFRESH_STDOUT_IN_SEC="60"/>
+            <TestStep SetId="StartAudioPlaybackMeasurement" />
+            <TestStep Id="SUSPEND" DURATION_IN_SEC="FROM_TC:TEST_DURATION" />
+            <TestStep SetId="StopPowerMeasurement" />
+            <TestStep SetId="StopBenchmark" />
+        </RunTest>
+        <TearDown>
+            <TestStep SetId="TearDown" />
+            <TestStep Id="EXEC_PNP_DROIDBOT" DEVICE="PHONE1" TIMEOUT="30"
+                  TEST_NAME="FROM_TC:TEST_NAME"
+                  EXTRA_OPTS="-e scenario teardown -e numRun 1" />
+            <TestStep Id="DISCONNECT_HEADSET" EQT="FROM_DEVICE:PHONE1:IoCard"/>
+            <TestStep SetId="UninstallAudioFile" />
+            <TestStep Id="SET_ORIENTATION" DEVICE="PHONE1" ORIENTATION="auto" API="embedded_api" />
+            <TestStep Id="CONFIGURE_SYSTEM_SLEEP_MODE" DEVICE="PHONE1" MODE="default" />
+        </TearDown>
+    </TestSteps>
+</TestCase>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<Include>
+    <!-- Description : this TSS must be called when you want to check the FPS value during a video play -->
+    <!-- Precondition: Video must be active before the usage of this TSS-->
+    <TestStepSet Id="CheckFPS">
+            <!--Start acquisition-->
+            <TestStep Id="RUN_CMD" DEVICE="PHONE1" TIMEOUT="5" COMMAND="adb shell atrace --async_start -b 10000 video gfx" FORCE_EXECUTION="False" WAIT_FOR_RESPONSE="True" SILENT_MODE ="False" SAVE_AS="outputfps" />
+            <!--Wait 60Second-->
+            <TestStep Id="SUSPEND" DURATION_IN_SEC="60" />
+            <!--Stop acquisition-->
+            <TestStep Id="RUN_CMD" DEVICE="PHONE1" TIMEOUT="5" COMMAND="adb shell echo 0 > /sys/kernel/debug/tracing/tracing_on" FORCE_EXECUTION="False" WAIT_FOR_RESPONSE="True" SILENT_MODE ="False" SAVE_AS="outputfps"/>
+            <!--Get file -->
+            <TestStep Id="RUN_CMD" DEVICE="PHONE1" TIMEOUT="5" COMMAND="adb remount" FORCE_EXECUTION="False" WAIT_FOR_RESPONSE="True" SILENT_MODE ="False" SAVE_AS="ee"/>
+            <TestStep Id="RUN_CMD" DEVICE="PHONE1" TIMEOUT="5" COMMAND="adb shell cat /d/tracing/trace > /sdcard/fps.html" FORCE_EXECUTION="False" WAIT_FOR_RESPONSE="True" SILENT_MODE ="False" SAVE_AS="outputfps"/>
+            <TestStep Id="RUN_CMD" DEVICE="PHONE1" TIMEOUT="60" COMMAND="adb pull /sdcard/fps.html" FORCE_EXECUTION="False" WAIT_FOR_RESPONSE="True" SILENT_MODE ="False" SAVE_AS="outputfps"/>
+            <TestStep Id="RUN_CMD" DEVICE="PHONE1" TIMEOUT="60" COMMAND="adb shell getprop ro.build.id" FORCE_EXECUTION="False" WAIT_FOR_RESPONSE="True" SILENT_MODE ="False" SAVE_AS="PlatformToCheck"/>
+            <!--Compute FPS-->
+            <TestStep Id="CHECK_FPS" FILE_TO_CHECK="/sdcard/fps.html" FPS_VALUE="30" MARGIN="5"/>
+    </TestStepSet>
+    <TestStepSet Id="Check30FPS">
+            <!--Start acquisition-->
+            <TestStep Id="RUN_CMD" DEVICE="PHONE1" TIMEOUT="5" COMMAND="adb shell atrace --async_start -b 10000 video gfx" FORCE_EXECUTION="False" WAIT_FOR_RESPONSE="True" SILENT_MODE ="False" SAVE_AS="outputfps" />
+            <!--Wait 60Second-->
+            <TestStep Id="SUSPEND" DURATION_IN_SEC="60" />
+            <!--Stop acquisition-->
+            <TestStep Id="RUN_CMD" DEVICE="PHONE1" TIMEOUT="5" COMMAND="adb shell echo 0 > /sys/kernel/debug/tracing/tracing_on" FORCE_EXECUTION="False" WAIT_FOR_RESPONSE="True" SILENT_MODE ="False" SAVE_AS="outputfps"/>
+            <!--Get file -->
+            <TestStep Id="RUN_CMD" DEVICE="PHONE1" TIMEOUT="5" COMMAND="adb remount" FORCE_EXECUTION="False" WAIT_FOR_RESPONSE="True" SILENT_MODE ="False" SAVE_AS="ee"/>
+            <TestStep Id="RUN_CMD" DEVICE="PHONE1" TIMEOUT="5" COMMAND="adb shell cat /d/tracing/trace > /sdcard/fps.html" FORCE_EXECUTION="False" WAIT_FOR_RESPONSE="True" SILENT_MODE ="False" SAVE_AS="outputfps"/>
+            <TestStep Id="RUN_CMD" DEVICE="PHONE1" TIMEOUT="60" COMMAND="adb pull /sdcard/fps.html" FORCE_EXECUTION="False" WAIT_FOR_RESPONSE="True" SILENT_MODE ="False" SAVE_AS="outputfps"/>
+            <TestStep Id="RUN_CMD" DEVICE="PHONE1" TIMEOUT="60" COMMAND="adb shell getprop ro.build.id" FORCE_EXECUTION="False" WAIT_FOR_RESPONSE="True" SILENT_MODE ="False" SAVE_AS="PlatformToCheck"/>
+            <!--Compute FPS-->
+            <TestStep Id="CHECK_FPS" FILE_TO_CHECK="/sdcard/fps.html" FPS_VALUE="30" MARGIN="5"/>
+    </TestStepSet>
+    <TestStepSet Id="Check60FPS">
+            <!--Start acquisition-->
+            <TestStep Id="RUN_CMD" DEVICE="PHONE1" TIMEOUT="5" COMMAND="adb shell atrace --async_start -b 10000 video gfx" FORCE_EXECUTION="False" WAIT_FOR_RESPONSE="True" SILENT_MODE ="False" SAVE_AS="outputfps" />
+            <!--Wait 60Second-->
+            <TestStep Id="SUSPEND" DURATION_IN_SEC="60" />
+            <!--Stop acquisition-->
+            <TestStep Id="RUN_CMD" DEVICE="PHONE1" TIMEOUT="5" COMMAND="adb shell echo 0 > /sys/kernel/debug/tracing/tracing_on" FORCE_EXECUTION="False" WAIT_FOR_RESPONSE="True" SILENT_MODE ="False" SAVE_AS="outputfps"/>
+            <!--Get file -->
+            <TestStep Id="RUN_CMD" DEVICE="PHONE1" TIMEOUT="5" COMMAND="adb remount" FORCE_EXECUTION="False" WAIT_FOR_RESPONSE="True" SILENT_MODE ="False" SAVE_AS="ee"/>
+            <TestStep Id="RUN_CMD" DEVICE="PHONE1" TIMEOUT="5" COMMAND="adb shell cat /d/tracing/trace > /sdcard/fps.html" FORCE_EXECUTION="False" WAIT_FOR_RESPONSE="True" SILENT_MODE ="False" SAVE_AS="outputfps"/>
+            <TestStep Id="RUN_CMD" DEVICE="PHONE1" TIMEOUT="60" COMMAND="adb pull /sdcard/fps.html" FORCE_EXECUTION="False" WAIT_FOR_RESPONSE="True" SILENT_MODE ="False" SAVE_AS="outputfps"/>
+            <TestStep Id="RUN_CMD" DEVICE="PHONE1" TIMEOUT="60" COMMAND="adb shell getprop ro.build.id" FORCE_EXECUTION="False" WAIT_FOR_RESPONSE="True" SILENT_MODE ="False" SAVE_AS="PlatformToCheck"/>
+            <!--Compute FPS-->
+            <TestStep Id="CHECK_FPS" FILE_TO_CHECK="/sdcard/fps.html" FPS_VALUE="60" MARGIN="5"/>
+    </TestStepSet>
+    <TestStepSet Id="AutoJoinSequenceRForVideoStreaming">
+        <TestStep Id="SUSPEND" DURATION_IN_SEC="30" />
+        <!-- Display off/on sequence -->
+        <TestStep Id="PRESS_POWER_BUTTON" EQT="IO_CARD" TIME="0.1"/>
+        <!-- Check screen off -->
+        <TestStep Id="GET_SCREEN_PROPERTY" DEVICE="PHONE1" PROPERTY="state" SAVE_AS="cur_state" />
+        <TestStep Id="COMPARE" FIRST="off" SECOND="FROM_CTX:cur_state" OPERATOR="EQUAL" PASS_IF="True" />
+        <TestStep Id="PRESS_POWER_BUTTON" EQT="IO_CARD" TIME="0.1"/>
+        <TestStep Id="SUSPEND" DURATION_IN_SEC="1" />
+        <!-- Check screen on -->
+        <TestStep Id="GET_SCREEN_PROPERTY" DEVICE="PHONE1" PROPERTY="state" SAVE_AS="cur_state" />
+        <TestStep Id="COMPARE" FIRST="on" SECOND="FROM_CTX:cur_state" OPERATOR="EQUAL" PASS_IF="True" />
+        <TestStep Id="ADD_TRIGGER_MSG" DEVICE="PHONE1" TRIGGER_MESSAGE="FROM_TC:REGEX_PLAYING_VIDEO" />
+        <!-- Resume playback and Ensure UI (controls) disappear -->
+        <TestStep Id="RUN_CMD" DEVICE="PHONE1" TIMEOUT="5" COMMAND="adb shell input keyevent ENTER" FORCE_EXECUTION="False" WAIT_FOR_RESPONSE="False" SILENT_MODE="False" SAVE_AS="output"/>
+        <TestStep Id="SUSPEND" DURATION_IN_SEC="1"/>
+        <TestStep Id="RUN_CMD" DEVICE="PHONE1" TIMEOUT="5" COMMAND="adb shell input keyevent SPACE" FORCE_EXECUTION="False" WAIT_FOR_RESPONSE="False" SILENT_MODE="False" SAVE_AS="output"/>
+        <TestStep Id="CHECK_TRIGGER_MSG_STATUS" DEVICE="PHONE1" TRIGGER_MESSAGE="FROM_TC:REGEX_PLAYING_VIDEO" TIMEOUT="60" OUTPUT_SUCCESS="Video start to play properly"/>
+        <TestStep Id="REMOVE_TRIGGER_MSG" DEVICE="PHONE1" TRIGGER_MESSAGE="FROM_TC:REGEX_PLAYING_VIDEO" />
+    </TestStepSet>
+</Include>

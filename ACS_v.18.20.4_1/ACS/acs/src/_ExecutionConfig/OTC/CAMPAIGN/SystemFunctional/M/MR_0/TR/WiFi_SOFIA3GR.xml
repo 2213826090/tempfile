@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+<Campaign>
+      <Parameters>
+            <Parameter isControlledPSUsed="False"/>
+            <Parameter isIoCardUsed="False"/>
+            <Parameter skipBootOnPowerCycle="False"/>
+            <Parameter bootRetryNumber="0"/>
+            <Parameter runHookScripts="False"/>
+            <Parameter powerCycleBetweenTC="False"/>
+            <Parameter powerCycleOnFailure="False"/>
+            <Parameter finalDutState="NoChange"/>
+            <Parameter stopCampaignOnCriticalFailure="False"/>
+            <Parameter stopCampaignOnFirstFailure="False"/>
+            <Parameter loggingLevel="debug"/>
+            <Parameter CampaignType="Other"/>
+            <Parameter TCRReportViaRESTAPI="True"/>
+      </Parameters>
+      <TestCases>
+            <SubCampaign Id="../../../../Subcampaigns/TESTLIB/wifi/wifi_exhaustive_common"/>
+            <SubCampaign Id="../../../../Subcampaigns/TESTLIB/wifi/wifi_exhaustive_radius"/>
+            <SubCampaign Id="../../../../Subcampaigns/TESTLIB/wifi/reconnect_ap_reboot"/>
+            <SubCampaign Id="../../../../Subcampaigns/TESTLIB/wifi/reconnect_ap_reconfig"/>
+            <SubCampaign Id="../../../../Subcampaigns/TESTLIB/wifi/component_general_behaviour_sofia3gr"/>
+            <SubCampaign Id="../../../../Subcampaigns/TESTLIB/wifi/wifi_gui_n"/>
+            <SubCampaign Id="../../../../Subcampaigns/TESTLIB/wifi/wifi_wrong_pass"/>
+            <SubCampaign Id="../../../../Subcampaigns/TESTLIB/wifi/wifi_wrong_pass_good_pass"/>
+            <SubCampaign Id="../../../../Subcampaigns/TESTLIB/wifi/static_ip"/>
+            <SubCampaign Id="../../../../Subcampaigns/TESTLIB/wifi/wifi_high_risk_tests_n"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/WiFi/prereq_unlock_and_remove_pin"/>
+      </TestCases>
+</Campaign>

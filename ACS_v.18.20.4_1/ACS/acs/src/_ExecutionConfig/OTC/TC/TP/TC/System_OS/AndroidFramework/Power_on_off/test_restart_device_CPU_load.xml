@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+<TestCase>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Discription>
+Restart the device when CPU load &amp;gt;50%
+&lt;br /&gt;CPU load can be overclocked by 
+&lt;br /&gt;https://play.google.com/store/apps/details?id=jp.takke.cpustats
+&lt;br /&gt;https://play.google.com/store/apps/details?id=com.antutu.ABenchMark 
+&lt;br /&gt;https://play.google.com/store/apps/details?id=com.cpuid.cpu_z
+</Discription>
+    <Domain>System_OS</Domain>
+    <Phase>CORE</Phase>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <Type>FUNCTIONAL</Type>
+    <UseCase>PY_UNIT</UseCase>
+    <b2bIteration>1</b2bIteration>
+    <Parameters>
+        <Parameter>
+            <Name>HpalmName</Name>
+            <Value>power_on_off.PowerOnOff.test_restart_device_CPU_load</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TEST_DATA_ROOT</Name>
+            <Value>testplan/System_OS</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TEST_CASE</Name>
+            <Value>tests.System_OS.AndroidFramework.Power_on_off.power_on_off.PowerOnOff.test_restart_device_CPU_load</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

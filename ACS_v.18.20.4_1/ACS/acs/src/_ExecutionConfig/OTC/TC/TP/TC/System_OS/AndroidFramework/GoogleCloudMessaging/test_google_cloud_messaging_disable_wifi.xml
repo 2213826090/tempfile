@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<TestCase>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Discription>
+The Intel Android ULT must support receiving messages on the device using Google Cloud Messaging for Android (GCM). The target Android application running on the device must be able to receive the message sent using GCM.
+</Discription>
+    <Domain>System_OS</Domain>
+    <Phase>CORE</Phase>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <Type>FUNCTIONAL</Type>
+    <UseCase>PY_UNIT</UseCase>
+    <b2bIteration>1</b2bIteration>
+    <Parameters>
+        <Parameter>
+            <Name>HpalmName</Name>
+            <Value>GoogleCloudMessaging.Messaging.test_google_cloud_messaging_disable_wifi</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TEST_DATA_ROOT</Name>
+            <Value>testplan/System_OS</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TEST_CASE</Name>
+            <Value>tests.System_OS.AndroidFramework.GoogleCloudMessaging.GoogleCloudMessaging.Messaging.test_google_cloud_messaging_disable_wifi</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

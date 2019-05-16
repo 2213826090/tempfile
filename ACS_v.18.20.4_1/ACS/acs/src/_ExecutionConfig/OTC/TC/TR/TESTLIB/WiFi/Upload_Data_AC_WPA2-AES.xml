@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='ASCII'?>
+<TestCase>
+    <UseCase>Testlib</UseCase>
+    <Description>wifi</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <TcMaxAttempt>3</TcMaxAttempt>
+    <TestSteps>
+        <Setup>
+            <TestStep Id="GET_ARTIFACT" ARTIFACT="Connectivity/Comms_WiFi/ftp_server.apk" ARTIFACT_SOURCE="FROM_BENCH:ARTIFACT_MANAGER:URI" TRANSFER_TIMEOUT="DEFAULT" STORED_FILE_PATH="FTP_SERVER_APP_PATH" EQT="DEFAULT"/>
+            <!--TestStep Id="INSTALL_APP" DEVICE="PHONE1" SIGN="False" SIGN_KEY_PATH="DEFAULT" FILE_PATH="FROM_CTX:FTP_SERVER_APP_PATH" BACKUP="False" TIMEOUT="30" BACKUP_FILE_PATH="/backup"/-->
+            <TestStep Id="GET_ARTIFACT" ARTIFACT="Connectivity/Comms_WiFi/ftp_client.apk" ARTIFACT_SOURCE="FROM_BENCH:ARTIFACT_MANAGER:URI" TRANSFER_TIMEOUT="DEFAULT" STORED_FILE_PATH="FTP_CLIENT_APP_PATH" EQT="DEFAULT"/>
+            <!--TestStep Id="INSTALL_APP" DEVICE="PHONE2" SIGN="False" SIGN_KEY_PATH="DEFAULT" FILE_PATH="FROM_CTX:FTP_CLIENT_APP_PATH" BACKUP="False" TIMEOUT="30" BACKUP_FILE_PATH="/backup"/-->
+        </Setup>
+    </TestSteps>
+    <Parameters>
+        <Parameter>
+            <Name>test</Name>
+            <Value>scripts/wireless/wifi_generic/tests/multi_client_ftp.py</Value>
+        </Parameter>
+        <Parameter>
+            <Name>script-args</Name>
+            <Value>interface5ghz=1 security=wpa_psk passphrase=qwerasdf encryption=aes ssh_user=root ssh_host=192.168.1.1 ap_name=ftp_test_01 dut_security=WPA mode=ac channel_bw=20 ipv4_class='192.168.1.1' ftp_port=2221 file_name=raw_file file_size=50 serial2=INV144800373</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

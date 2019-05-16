@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="13.41">
+    <TestSteps>
+        <Include Src="ST/pnp/TSS/common.xml" />
+        <Include Src="ST/pnp/TSS/active.xml" />
+        <Initialize>
+            <TestStep SetId="InitializePnPResources" />
+        </Initialize>
+        <Setup>
+            <TestStep Id="GET_MODULE_CONFIG" DEVICE="PHONE1" MODULE="PnpModule" KEY="FROM_TC:APPLICATION"
+                      MODULE_VALUE="APK_NAME"/>
+            <TestStep Id="GET_ARTIFACT" ARTIFACT="FROM_TC:ARTIFACT_PREFIX[+]/[+]FROM_CTX:APK_NAME"
+                      ARTIFACT_SOURCE="FROM_BENCH:ARTIFACT_MANAGER:URI" TRANSFER_TIMEOUT="DEFAULT"
+                      STORED_FILE_PATH="FILE_PATH_IN_CACHE" EQT="DEFAULT" />
+            <TestStep Id="GET_APP_PACKAGE_NAME" DEVICE="PHONE1" APP_INSTALLER_PATH="FROM_CTX:FILE_PATH_IN_CACHE"
+                      OUTPUT="APK_PACKAGE_NAME" />
+            <TestStep Id="INSTALL_APP" DEVICE="PHONE1" FILE_PATH="FROM_CTX:FILE_PATH_IN_CACHE"
+                      BACKUP="false" BACKUP_FILE_PATH="FT/backup" TIMEOUT="DEFAULT" SIGN_KEY_PATH="DEFAULT" SIGN="false"/>
+
+            <TestStep Id="GET_MODULE_CONFIG" DEVICE="PHONE1" MODULE="PnpModule" KEY="FROM_TC:ADDITIONALS"
+                      MODULE_VALUE="APK_ADDITIONAL_NAME"/>
+            <TestStep Id="GET_ARTIFACT" ARTIFACT="FROM_TC:ARTIFACT_PREFIX[+]/[+]FROM_CTX:APK_ADDITIONAL_NAME"
+                      ARTIFACT_SOURCE="FROM_BENCH:ARTIFACT_MANAGER:URI" TRANSFER_TIMEOUT="DEFAULT"
+                      STORED_FILE_PATH="FILE_PATH_IN_CACHE" EQT="DEFAULT" />
+            <TestStep Id="RUN_CMD" DEVICE="PHONE1" TIMEOUT="DEFAULT" FORCE_EXECUTION="False"
+                      COMMAND="adb shell mkdir -p [+]FROM_TC:ADDITIONALS_PATH"
+                      WAIT_FOR_RESPONSE="True" SILENT_MODE="DEFAULT" SAVE_AS="OUTPUT_CMD" />
+            <TestStep Id="INSTALL_FILE" DEVICE="PHONE1" FILE_PATH="FROM_CTX:FILE_PATH_IN_CACHE" TIMEOUT="DEFAULT"
+                      TYPE="bin" DESTINATION="FROM_TC:ADDITIONALS_PATH" DESTINATION_STORED_PATH="FROM_TC:ADDITIONALS_PATH" />
+            <TestStep Id="UNTAR" DEVICE="PHONE1" SRC_PATH="FROM_TC:ADDITIONALS_PATH[+]FROM_CTX:APK_ADDITIONAL_NAME"
+                      DEST_PATH="FROM_TC:ADDITIONALS_PATH" UNZIP="True" />
+
+            <TestStep Id="SET_SCREEN_PROPERTY" DEVICE="PHONE1" PROPERTY="state" VALUE="on"/>
+            <TestStep Id="SET_ORIENTATION" DEVICE="PHONE1" ORIENTATION="FROM_TC:SCREEN_ORIENTATION" API="embedded_api" />
+        </Setup>
+        <RunTest>
+            <TestStep Id="SUSPEND" DURATION_IN_SEC="FROM_TC:SETTLE_TIME" />
+            <TestStep Id="GET_MODULE_CONFIG" DEVICE="PHONE1" MODULE="PnpModule" KEY="FROM_TC:ACTIVITY_NAME"
+                      MODULE_VALUE="ACTIVITY_TO_LAUNCH"/>
+            <TestStep Id="RUN_CMD" DEVICE="PHONE1" TIMEOUT="DEFAULT" FORCE_EXECUTION="False"
+                      COMMAND="adb shell am start -a android.intent.action.LAUNCHER -n [+]FROM_CTX:ACTIVITY_TO_LAUNCH"
+                      WAIT_FOR_RESPONSE="True" SILENT_MODE="DEFAULT" SAVE_AS="OUTPUT_CMD" />
+            <TestStep Id="RUN_CMD" DEVICE="PHONE1" TIMEOUT="1" FORCE_EXECUTION="False"
+                      COMMAND="adb shell nohup sh [+]FROM_TC:ADDITIONALS_PATH[+][+]FROM_TC:SCRIPT_NAME[+] > [+]FROM_TC:ADDITIONALS_PATH[+]nohup.out"
+                      WAIT_FOR_RESPONSE="False" SILENT_MODE="DEFAULT" SAVE_AS="OUTPUT_CMD" />
+            <TestStep SetId="StartPowerMeasurement" />
+            <TestStep Id="SUSPEND" DURATION_IN_SEC="FROM_TC:TEST_DURATION" />
+            <TestStep SetId="StopPowerMeasurement" />
+            <TestStep Id="STOP_APP" DEVICE="PHONE1" APP_PACKAGE_NAME="FROM_CTX:APK_PACKAGE_NAME" />
+            <TestStep Id="RUN_CMD" DEVICE="PHONE1" TIMEOUT="DEFAULT" FORCE_EXECUTION="False"
+                      COMMAND="adb shell cat [+]FROM_TC:ADDITIONALS_PATH[+]nohup.out"
+                      WAIT_FOR_RESPONSE="True" SILENT_MODE="DEFAULT" SAVE_AS="OUTPUT_CMD" />
+        </RunTest>
+        <TearDown>
+            <TestStep Id="SET_SCREEN_PROPERTY" DEVICE="PHONE1" PROPERTY="state" VALUE="off"/>
+            <TestStep Id="SET_ORIENTATION" DEVICE="PHONE1" ORIENTATION="auto" API="embedded_api" />
+            <TestStep Id="UNINSTALL_APP" DEVICE="PHONE1" APP_NAME="FROM_CTX:APK_PACKAGE_NAME" TIMEOUT="DEFAULT"
+                      BACKUP_APP_NAME="NO_BACKUP" BACKUP_FILE_PATH="DEFAULT"/>
+            <TestStep Id="UNINSTALL_FILE" DEVICE="PHONE1" DEVICE_FOLDER="FROM_TC:ADDITIONALS_PATH"
+                      FILENAME="FROM_CTX:APK_ADDITIONAL_NAME" />
+            <TestStep Id="DELETE_DIR" DEVICE="PHONE1" DEVICE_FOLDER="FROM_TC:ADDITIONALS_PATH" />
+            <TestStep SetId="TearDown" />
+        </TearDown>
+    </TestSteps>
+</TestCase>

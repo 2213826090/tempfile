@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<Campaign>
+    <Parameters>
+        <Parameter isControlledPSUsed="True" />
+        <Parameter isIoCardUsed="True" />
+        <Parameter skipBootOnPowerCycle="True" />
+        <Parameter runHookScripts="False" />
+        <Parameter powerCycleBetweenTC="False" />
+        <Parameter powerCycleOnFailure="False" />
+        <Parameter finalPowerOff="True" />
+        <Parameter finalDutState="PowerOff" />
+        <Parameter stopCampaignOnCriticalFailure="False" />
+        <Parameter stopCampaignOnFirstFailure="False" />
+        <!-- LoggingLevel possible values: info | warning | debug | error -->
+        <Parameter loggingLevel="debug" />
+        <!-- CampaignType format -> <TEAM>_<CAMPAIGNTYPE>
+            Possible values:
+            FT(Feature Team)-> SANITY | REGRESSION | STRESS, RELIABILTY | MTBF
+            ST(System Test)-> SANITY | REGRESSION | STRESS, RELIABILTY | MTBF
+            SI(System Integration)-> EAT | STAB | PACT | CAT0 | RELIABILITY | MTBF | CTS
+            Otherwise "Others" should be used -->
+        <Parameter CampaignType="ST_RELIABILITY" />
+        <Parameter TCRReportViaRESTAPI="true"/>
+    </Parameters>
+    <Targets>
+        <!-- Target Values -->
+        <Target targetB2bPassRate="49" />
+    </Targets>
+    <TestCases>
+        <!-- Testcase campaigns -->
+        <TestCase Id="..\TC\SETUP\LAB_SYSTEM_FLASH" />
+        <TestCase Id="..\TC\SETUP\LAB_SYSTEM_SETUP_EMBEDDED" />
+        <TestCase Id="..\TC\RELIA\ST_EM_RELIA_METATCD_15_5-LAB_EM_PRESS_SHUTDOWN" />
+        <TestCase Id="..\TC\RELIA\ST_EM_RELIA_METATCD_37_DCP5-LAB_EM_BATT_INSERTION" />
+        <TestCase Id="..\TC\RELIA\ST_EM_RELIA_METATCD_37_SDP5-LAB_EM_BATT_INSERTION" />
+        <TestCase Id="..\TC\RELIA\ST_EM_RELIA_METATCD_23_CDP5-LAB_EM_POWER_ON_CHARGER_INSERTION" />
+        <TestCase Id="..\TC\RELIA\ST_EM_RELIA_METATCD_23_SDP5-LAB_EM_POWER_ON_CHARGER_INSERTION" />
+        <TestCase Id="..\TC\RELIA\ST_EM_RELIA_METATCD_39_5-LAB_EM_TURN_OFF_DISPLAY" />
+        <TestCase Id="..\TC\RELIA\ST_EM_RELIA_METATCD_42_5-LAB_EM_PS_FORCED_SHUTDOWN" />
+        <TestCase Id="..\TC\RELIA\ST_EM_RELIA_METATCD_53_BOTH5-LAB_EM_PS_WATCHDOG_MECHANISM" />
+        <TestCase Id="..\TC\RELIA\ST_EM_RELIA_METATCD_57_3.65V5-LAB_EM_PS_BOOT" />
+        <TestCase Id="..\TC\RELIA\ST_EM_RELIA_METATCD_58_MOSTOCOS5-LAB_EM_GRACEFUL_SHUTDOWN" />
+        <TestCase Id="..\TC\RELIA\ST_EM_RELIA_METATCD_59_COSTOMOS5-LAB_EM_PS_BOOT" />
+        <TestCase Id="..\TC\RELIA\ST_EM_RELIA_METATCD_MOSROS5-LAB_PUPDR_BOOT_TRANSITION" />
+        <TestCase Id="..\TC\RELIA\ST_EM_RELIA_METATCD_ROSMOS5-LAB_PUPDR_BOOT_TRANSITION" />
+    </TestCases>
+</Campaign>

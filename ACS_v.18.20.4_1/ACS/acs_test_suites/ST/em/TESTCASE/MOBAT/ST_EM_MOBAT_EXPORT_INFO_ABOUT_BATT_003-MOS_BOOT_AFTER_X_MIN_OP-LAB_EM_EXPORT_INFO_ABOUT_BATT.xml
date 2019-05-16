@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="13.37">
+    <UseCase>LAB_EM_EXPORT_INFO_ABOUT_BATT</UseCase>
+    <Description>EM - Check the battery information exportation to userapp</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>False</b2bContinuousMode>
+    <TcMaxAttempt>1</TcMaxAttempt>
+    <TcAcceptanceCriteria>1</TcAcceptanceCriteria>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters>
+        <Parameter>
+            <!-- All info which are mandatories to check from battery info :
+                STATUS;HEALTH;PRESENT;VOLTAGE_NOW;TEMP;CURRENT_NOW;CHARGE_NOW;CHARGE_FULL;CAPACITY...
+                when testing PLUG_CHARGER action, numeric measured values are returned as delta
+            -->
+            <Name>SYSFS_MANDATORY_INFO</Name>
+            <Value>VOLTAGE_MAX_DESIGN;VOLTAGE_MIN_DESIGN;VOLTAGE_OCV;VOLTAGE_AVG;CURRENT_AVG;TECHNOLOGY;CHARGE_COUNTER</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Action to perform by the test : BOOT_BOARD, PLUG_CHARGER or BATTERY_INSERTION -->
+            <Name>ACTION</Name>
+            <Value>BOOT_BOARD</Value>
+        </Parameter>
+        <Parameter>
+            <!-- this is the delay in second to wait before reading the info after action is performed -->
+            <Name>DELAY_BEFORE_CHECKING_INFO</Name>
+            <Value>300</Value>
+        </Parameter>
+        <Parameter>
+            <!-- if you choose BOOT_BOARD then this is the boot mode applied :COS, MOS -->
+            <Name>BOOT_MODE_IF_BOOT_BOARD</Name>
+            <Value>MOS</Value>
+        </Parameter>
+        <Parameter>
+            <!-- If you choose PLUG_CHARGER then this is the cable type plugged -->
+            <Name>CABLE_TYPE_IF_PLUG_CHARGER</Name>
+            <Value></Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

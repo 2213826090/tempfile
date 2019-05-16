@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<data>
+    <audio_arch name="scalpe_audio_arch" description="List of scalpe-based audio algorithms
+                                                        with corresponding enable/disable commands">
+        <version name="default">
+            <algo name="rx_noisereduction">
+            <nb_modules>2</nb_modules>
+                <module name="nr">
+                    <path>/Audio/sst/pipe/rx_speech_loop/nr/switch/value</path>
+                    <enable_value>3</enable_value>
+                    <disable_value>0</disable_value>
+                </module>
+                <module name="tnr">
+                    <path>/Audio/sst/pipe/rx_speech_loop/tnr/switch/value</path>
+                    <enable_value>3</enable_value>
+                    <disable_value>0</disable_value>
+                </module>
+            </algo>
+            <algo name="tx_noisereduction">
+            <nb_modules>5</nb_modules>
+                <module name="nr_dnr_NR">
+                    <path>/Audio/sst/pipe/tx_speech_loop/nr_dnr/nr/switch/value</path>
+                    <enable_value>3</enable_value>
+                    <disable_value>0</disable_value>
+                </module>
+                <module name="nr_dnr_DNR">
+                    <path>/Audio/sst/pipe/tx_speech_loop/nr_dnr/dnr/switch/value</path>
+                    <enable_value>3</enable_value>
+                    <disable_value>0</disable_value>
+                </module>
+                <module name="bmf">
+                    <path>/Audio/sst/pipe/tx_speech_loop/bmf/switch/value</path>
+                    <enable_value>3</enable_value>
+                    <disable_value>0</disable_value>
+                </module>
+                <module name="wnr">
+                    <path>/Audio/sst/pipe/tx_speech_loop/wnr/switch/value</path>
+                    <enable_value>3</enable_value>
+                    <disable_value>0</disable_value>
+                </module>
+                <module name="tnr">
+                    <path>/Audio/sst/pipe/tx_speech_loop/tnr/switch/value</path>
+                    <enable_value>3</enable_value>
+                    <disable_value>0</disable_value>
+                </module>
+            </algo>
+            <algo name="tx_echoreduction">
+            <nb_modules>3</nb_modules>
+                <module name="ser">
+                    <path>/Audio/sst/pipe/tx_speech_loop/ser/switch/value</path>
+                    <enable_value>3</enable_value>
+                    <disable_value>0</disable_value>
+                </module>
+                <module name="aec">
+                    <path>/Audio/sst/pipe/tx_speech_loop/aec/switch/value</path>
+                    <enable_value>3</enable_value>
+                    <disable_value>0</disable_value>
+                </module>
+                <module name="agc">
+                    <path>/Audio/sst/pipe/tx_speech_loop/agc/switch/value</path>
+                    <enable_value>3</enable_value>
+                    <disable_value>0</disable_value>
+                </module>
+                </algo>
+                <algo name="tx_equalizer">
+                <nb_modules>2</nb_modules>
+                <module name="fir_speech">
+                    <path>/Audio/sst/pipe/tx_speech_loop/equalizer/fir/switch/value</path>
+                    <enable_value>3</enable_value>
+                    <disable_value>0</disable_value>
+                </module>
+                <module name="iir_speech">
+                    <path>/Audio/sst/pipe/tx_speech_loop/equalizer/iir/switch/value</path>
+                    <enable_value>3</enable_value>
+                    <disable_value>0</disable_value>
+                </module>
+            </algo>
+            <algo name="rx_equalizer">
+            <nb_modules>2</nb_modules>
+                <module name="fir_speech">
+                    <path>/Audio/sst/pipe/rx_speech_loop/equalizer/fir/switch/value</path>
+                    <enable_value>3</enable_value>
+                    <disable_value>0</disable_value>
+                </module>
+                <module name="iir_speech">
+                    <path>/Audio/sst/pipe/rx_speech_loop/equalizer/iir/switch/value</path>
+                    <enable_value>3</enable_value>
+                    <disable_value>0</disable_value>
+                </module>
+            </algo>
+            <algo name="sidetone_mute">
+            <nb_modules>1</nb_modules>
+                <module name="sidetone_mute">
+                    <path>/Audio/sst/pipe/sidetone/gain/mute</path>
+                    <enable_value>1</enable_value>
+                    <disable_value>0</disable_value>
+                </module>
+            </algo>
+            <algo name="wshs_phones_mute">
+            <nb_modules>1</nb_modules>
+                <module name="wsHS_phones_mute">
+                    <path>/Audio/sst/pipe/codec_out/headset/gain/mute</path>
+                    <enable_value>1</enable_value>
+                    <disable_value>0</disable_value>
+                </module>
+            </algo>
+            <algo name="wshs_mic_mute">
+            <nb_modules>1</nb_modules>
+                <module name="wsHS_mic_mute">
+                    <path>/Audio/sst/pipe/codec_in/amic/gain/mute</path>
+                    <enable_value>1</enable_value>
+                    <disable_value>0</disable_value>
+                </module>
+            </algo>
+        </version>
+    </audio_arch>
+    <audio_arch name="non_scalpe_audio_arch" description="List of non-scalpe-based audio algorithms
+                                                           with corresponding enable/disable commands">
+        <version name="default">
+            <algo name="sidetone_mute">
+            <nb_modules>1</nb_modules>
+                <module name="sidetone_mute">
+                    <cmd_enable>cmd=33,task=1,type=1,len=20,flag=1,plist=255:255:255:255:33:0:12:0:1:0:0:136:103:0:96:250:96:250:5:0</cmd_enable>
+                    <enable_value>-144.0</enable_value>
+                    <cmd_disable>cmd=33,task=1,type=1,len=20,flag=1,plist=255:255:255:255:33:0:12:0:1:0:0:136:103:0:61:255:61:255:5:0</cmd_disable>
+                    <disable_value>-37.5</disable_value>
+                </module>
+            </algo>
+            <algo name="wshs_phones_mute">
+            <nb_modules>1</nb_modules>
+                <module name="wsHS_phones_mute">
+                    <cmd_enable>cmd=33,task=1,type=1,len=20,flag=1,plist=255:255:255:255:33:0:12:0:1:0:0:3:103:0:96:250:96:250:5:0</cmd_enable>
+                    <enable_value>-144.0</enable_value>
+                    <cmd_disable>cmd=33,task=1,type=1,len=20,flag=1,plist=255:255:255:255:33:0:12:0:1:0:0:3:103:0:0:0:0:0:5:0</cmd_disable>
+                    <disable_value>0.0</disable_value>
+                </module>
+            </algo>
+            <algo name="wshs_mic_mute">
+            <nb_modules>1</nb_modules>
+                <module name="wsHS_mic_mute">
+                    <cmd_enable>cmd=33,task=1,type=1,len=20,flag=1,plist=255:255:255:255:33:0:12:0:1:0:0:131:103:0:96:250:96:250:5:0</cmd_enable>
+                    <enable_value>-144.0</enable_value>
+                    <cmd_disable>cmd=33,task=1,type=1,len=20,flag=1,plist=255:255:255:255:33:0:12:0:1:0:0:131:103:0:0:0:0:0:5:0</cmd_disable>
+                    <disable_value>0.0</disable_value>
+                </module>
+            </algo>
+            <algo name="rx_noisereduction">
+            <nb_modules>1</nb_modules>
+                <module name="nr">
+                    <cmd_enable>cmd=55,task=5,type=2,len=46,flag=1,plist=0:11:118:0:55:0:38:0:3:0:1:0:248:42:16:39:40:35:254:255:252:255:32:3:255:127:0:3:128:6:0:12:0:0:1:0:32:0:255:127:0:4:32:3:204:76</cmd_enable>
+                    <enable_value>ON</enable_value>
+                    <cmd_disable>cmd=55,task=5,type=2,len=46,flag=1,plist=0:11:118:0:55:0:38:0:0:0:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90</cmd_disable>
+                    <disable_value>OFF</disable_value>
+                </module>
+            </algo>
+            <algo name="tx_noisereduction">
+            <nb_modules>3</nb_modules>
+                <module name="nr">
+                    <cmd_enable>cmd=48,task=2,type=2,len=46,flag=1,plist=0:10:118:0:48:0:38:0:3:0:1:0:112:23:40:35:64:31:254:255:252:255:32:3:255:127:0:3:128:6:0:12:0:0:1:0:32:0:255:127:0:4:232:3:204:76</cmd_enable>
+                    <enable_value>ON</enable_value>
+                    <cmd_disable>cmd=48,task=2,type=2,len=46,flag=1,plist=0:10:118:0:48:0:38:0:0:0:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90</cmd_disable>
+                    <disable_value>OFF</disable_value>
+                </module>
+                <module name="sns_nr">
+                    <cmd_enable>cmd=72,task=2,type=2,len=332,flag=1,plist=0:10:124:0:72:0:68:1:3:0:0:0:1:0:0:0:0:0:0:32:1:0:3:0:184:126:0:8:7:0:205:12:232:3:102:6:51:115:0:0:92:15:143:2:56:0:96:2:0:40:0:32:170:26:170:26:170:26:170:26:170:26:170:26:170:26:170:26:170:26:170:26:0:80:170:106:28:0:48:1:0:20:0:16:85:13:85:13:85:13:85:13:85:13:85:13:85:13:85:13:85:13:85:13:0:40:85:53:57:0:204:84:54:3:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:176:255:175:126:73:5:0:6:0:5:0:5:0:5:0:5:0:5:0:5:0:5:0:5:0:5:0:5:0:15:0:20:51:3:0:3:51:255:0:2:0:2:0:2:0:2:0:2:0:2:0:2:0:2:0:2:0:2:0:2:0:2:0:2:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:4:0:36:0:34:0:24:0:20:0:20:0:20:0:20:0:20:0:20:0:20:0:20:0:20:0:20:0:60:0:80:27:8:77:2:71:1:71:1:71:1:71:1:71:1:71:1:71:1:71:1:71:1:71:1:71:1:71:1:71:1:71:1:20:14:24:4:71:1:71:1:71:1:71:1:71:1:71:1:71:1:71:1:71:1:71:1:71:1:71:1:71:1:71:1</cmd_enable>
+                    <enable_value>ON</enable_value>
+                    <cmd_disable>cmd=72,task=2,type=2,len=332,flag=1,plist=0:10:124:0:72:0:68:1:0:0:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90</cmd_disable>
+                    <disable_value>OFF</disable_value>
+                </module>
+                <module name="dnr">
+                    <cmd_enable>cmd=113,task=2,type=2,len=26,flag=1,plist=0:10:139:0:113:0:18:0:3:0:1:0:2:0:0:16:51:115:0:64:0:64:51:115:0:16</cmd_enable>
+                    <enable_value>ON</enable_value>
+                    <cmd_disable>cmd=113,task=2,type=2,len=26,flag=1,plist=0:10:139:0:113:0:18:0:0:0:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90</cmd_disable>
+                    <disable_value>OFF</disable_value>
+                </module>
+            </algo>
+            <algo name="tx_echoreduction">
+            <nb_modules>3</nb_modules>
+                <module name="ser">
+                    <cmd_enable>cmd=78,task=2,type=2,len=50,flag=1,plist=0:10:125:0:78:0:42:0:3:0:3:0:113:125:0:8:0:10:154:25:51:115:0:16:98:32:21:0:0:8:0:32:0:64:0:80:0:64:0:64:16:0:25:0:48:0:129:0:129:0</cmd_enable>
+                    <enable_value>ON</enable_value>
+                    <cmd_disable>cmd=78,task=2,type=2,len=50,flag=1,plist=0:10:125:0:78:0:42:0:0:0:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90</cmd_disable>
+                    <disable_value>OFF</disable_value>
+                </module>
+                <module name="aec">
+                    <cmd_enable>cmd=47,task=2,type=2,len=648,flag=1,plist=0:10:123:0:47:0:128:2:3:0:31:0:60:0:60:0:60:0:2:0:2:0:2:0:1:0:247:255:4:0:0:96:255:127:40:124:251:255:248:255:251:255:245:255:50:0:242:255:0:0:2:0:248:255:0:16:254:255:40:0:40:0:0:0:0:0:0:0:0:0:0:0:0:0:248:255:252:255:254:255:254:255:255:255:241:255:205:44:102:102:205:44:154:121:0:112:0:64:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0</cmd_enable>
+                    <enable_value>ON</enable_value>
+                    <cmd_disable>cmd=47,task=2,type=2,len=648,flag=1,plist=0:10:123:0:47:0:128:2:0:0:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90</cmd_disable>
+                    <disable_value>OFF</disable_value>
+                </module>
+                <module name="agc">
+                    <cmd_enable>cmd=49,task=2,type=2,len=66,flag=1,plist=0:10:126:0:49:0:58:0:3:0:3:0:0:0:0:0:0:20:244:255:254:255:254:255:254:255:255:255:232:3:2:0:0:0:252:255:0:24:0:48:0:1:26:1:115:1:255:255:255:255:0:3:24:155:42:153:90:147:175:137:131:83:121:95:92:115</cmd_enable>
+                    <enable_value>ON</enable_value>
+                    <cmd_disable>cmd=49,task=2,type=2,len=66,flag=1,plist=0:10:126:0:49:0:58:0:0:0:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90:90</cmd_disable>
+                    <disable_value>OFF</disable_value>
+                </module>
+            </algo>
+        </version>
+    </audio_arch>
+    <!-- DESCRIPTION of the AUDIO ARCHITECTURE, based on the platform (mrfld / mofd...) and the device name (saltbay, v0, v1...) -->
+    <platform_description>
+    <platform name="merrifield">
+        <device name="saltbay">
+        <audio_arch>non_scalpe_audio_arch</audio_arch>
+        <version>default</version>
+        </device>
+    </platform>
+    <platform name="moorefield">
+        <device name="mofd_v0">
+        <audio_arch>non_scalpe_audio_arch</audio_arch>
+        <version>default</version>
+        </device>
+        <device name="mofd_v1">
+        <audio_arch>scalpe_audio_arch</audio_arch>
+        <version>default</version>
+        </device>
+    </platform>
+    <platform name="sofia3gr">
+        <device name="s3gr10m6s">
+        <audio_arch>scalpe_audio_arch</audio_arch>
+        <version>default</version>
+        </device>
+    </platform>
+    <platform name="sofia_lte">
+        <device name="slti20mr6">
+        <audio_arch>scalpe_audio_arch</audio_arch>
+        <version>default</version>
+        </device>
+    </platform>
+    <platform name="gmin">
+        <device name="cht_hr">
+        <audio_arch>scalpe_audio_arch</audio_arch>
+        <version>default</version>
+        </device>
+    </platform>
+    <platform name="gmin">
+        <device name="r2_cht_ffd">
+        <audio_arch>scalpe_audio_arch</audio_arch>
+        <version>default</version>
+        </device>
+    </platform>
+    </platform_description>
+</data>
+
+

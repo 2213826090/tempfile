@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<UseCases xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:noNamespaceSchemaLocation="../../../../acs/src/_Catalogs/UseCase/usecase.xsd">
+    <UseCase Id="LIVE_AUDIO_PLAYBACK" Domain="MULTIMEDIA" SubDomain="AUDIO" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Multimedia.LIVE_AUDIO_PLAYBACK.LiveAudioPlayback</ClassName>
+        <Description>Audio media file playback on DUT</Description>
+        <Environment name="ANY">
+        </Environment>
+        <Parameters>
+            <Parameter name="AUDIO_FILE" type="MUM_FILE" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="VOLUME" type="VOLUME_IN_PERCENT" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="LENGTH" type="DURATION_IN_MSEC" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="DEVIATION_RATE" type="DEVIATION_IN_PERCENT" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="RECORD" type="IS_RECORDED_ENABLED" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="SILENT_MODE" type="IS_SILENT_MODE_ENABLED" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="AUDIO_OUTPUT" type="AUDIO_OUTPUT" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="WHILE_BLUETOOTH_ON" type="IS_BLUETOOTH_ENABLED" isOptional="true">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+        </Parameters>
+    </UseCase>
+    <UseCase Id="LIVE_AUDIO_PLAYBACK_QUALITY" Domain="MULTIMEDIA" SubDomain="AUDIO" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Audio.AudioMultimedia.LIVE_AUDIO_PLAYBACK_QUALITY.LiveAudioPlaybackQuality</ClassName>
+        <Description>Check audio playback quality with FFT</Description>
+        <Environment name="ANY">
+        </Environment>
+    </UseCase>
+    <UseCase Id="LIVE_CELLULAR_AUDIO_STREAM_QUALITY" Domain="MULTIMEDIA" SubDomain="AUDIO" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Audio.AudioMultimedia.LIVE_CELLULAR_AUDIO_STREAM_QUALITY.LiveCellularAudioStreamQuality</ClassName>
+        <Description>Audio streaming quality test, check if the sound of Youtube video is correctly playing. This is just an audio test.</Description>
+        <Environment name="ANY">
+        </Environment>
+    </UseCase>
+    <UseCase Id="LIVE_WIFI_AUDIO_STREAM_QUALITY" Domain="MULTIMEDIA" SubDomain="AUDIO" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Audio.AudioMultimedia.LIVE_WIFI_AUDIO_STREAM_QUALITY.LiveWifiAudioStreamQuality</ClassName>
+        <Description>Audio streaming quality test, check if the sound of Youtube video is correctly playing. This is just an audio test.</Description>
+        <Environment name="ANY">
+        </Environment>
+    </UseCase>
+    <UseCase Id="LIVE_AUDIO_KEYTONE" Domain="MULTIMEDIA" SubDomain="AUDIO" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Audio.AudioMultimedia.LIVE_AUDIO_KEYTONE.LiveAudioKeytone</ClassName>
+        <Description>Press every number in call application and check DTMF code.</Description>
+        <Environment name="ANY">
+        </Environment>
+    </UseCase>
+    <UseCase Id="LIVE_MUM_AUDIO_PLAYBACK" Domain="MULTIMEDIA" SubDomain="AUDIO" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Multimedia.LIVE_MUM_AUDIO_PLAYBACK.LiveMumAudioPlayback</ClassName>
+        <Description>Test audio playback</Description>
+        <Environment name="ANY">
+        </Environment>
+    </UseCase>
+    <UseCase Id="LIVE_WIFI_AUDIO_PLAYBACK" Domain="MULTIMEDIA" SubDomain="AUDIO" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.OTC.Media.Audio.LIVE_WIFI_AUDIO_PLAYBACK.LiveWifiAudioPlayback</ClassName>
+        <Description>Use case for audio playback over Wifi or from artifactory file.</Description>
+        <Environment name="ANY">
+        </Environment>
+    </UseCase>
+    <UseCase Id="AUDIO_PLAYBACK_FFT_ANALYSIS" Domain="MULTIMEDIA" SubDomain="AUDIO" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Multimedia.AUDIO_PLAYBACK_FFT_ANALYSIS.AnalyzeAudio</ClassName>
+        <Description>Analyze audio, recorded from host, using FFT</Description>
+        <Environment name="ANY">
+        </Environment>
+        <Parameters>
+            <Parameter name="FILE_NAME" type="STRING" isOptional="false">
+                <Description>Filename of music-file in Artifactory</Description>
+                <PossibleValues/>
+                <DefaultValue></DefaultValue>
+                <Blank/>
+            </Parameter>
+            <Parameter name="MIC_DISTANCE" type="STRING" isOptional="false">
+              <Description>Distance between the DUT-speaker and the reference microphone [mm]</Description>
+              <PossibleValues/>
+              <DefaultValue>50</DefaultValue>
+              <Blank/>
+          </Parameter>
+          <Parameter name="ANDROID_GAIN" type="INTEGER" isOptional="false">
+              <Description>Master gain to be set in Android [-]</Description>
+              <PossibleValues/>
+              <DefaultValue>5</DefaultValue>
+              <Blank/>
+          </Parameter>
+          <Parameter name="CHECK_GAIN_TOLERANCE" type="INTEGER" isOptional="false">
+              <Description>Power deviation tolerance in time domain [%]</Description>
+              <PossibleValues/>
+              <DefaultValue>10</DefaultValue>
+              <Blank/>
+          </Parameter>
+          <Parameter name="CHECK_FREQ_FREQUENCY_TOLERANCE" type="INTEGER" isOptional="false">
+              <Description>Frequency deviation tolerance in frequency domain [%]</Description>
+              <PossibleValues/>
+              <DefaultValue>10</DefaultValue>
+              <Blank/>
+          </Parameter>
+          <Parameter name="CHECK_FREQ_POWER_TOLERANCE" type="INTEGER" isOptional="false">
+              <Description>Power deviation tolerance in frequency domain [%]</Description>
+              <PossibleValues/>
+              <DefaultValue>10</DefaultValue>
+              <Blank/>
+          </Parameter>
+          <Parameter name="CHECK_DIST_TOLERANCE" type="INTEGER" isOptional="false">
+              <Description>Distortion tolerance in frequency domain difference [%]</Description>
+              <PossibleValues/>
+              <DefaultValue>10</DefaultValue>
+              <Blank/>
+          </Parameter>
+        </Parameters>
+    </UseCase>
+</UseCases>

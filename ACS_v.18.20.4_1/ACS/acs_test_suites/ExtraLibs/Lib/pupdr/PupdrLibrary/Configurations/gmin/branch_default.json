@@ -1,0 +1,35 @@
+{
+    "Configuration": {
+        "Boot": null,
+        "BootVars": null,
+        "Custom": null,
+        "Download": {
+            "INTERNAL_DOWNLOAD": [
+                {
+                    "pft_key": "fastboot",
+                    "buildbot_artifactory_path": {"path": "device_name_id/variant_id", "detection": "cactus-absp"},
+                    "regexp_key": ".*flashfiles.*.zip",
+                    "flash_file": null,
+                    "configuration": "blank",
+                    "start_state": "dnx"
+                },
+                {
+                    "pft_key": "ota",
+                    "buildbot_artifactory_path": {"path": "device_name_id/variant_id", "detection": "cactus-absp"},
+                    "regexp_key": ".*ota.*.zip",
+                    "flash_file": null,
+                    "configuration": null,
+                    "start_state": "mos"
+                }
+            ]
+        },
+        "Inherit": {
+            "BRANCH": "cht51"
+        },
+        "Logs": null,
+        "Timeout": {
+            "BOOT_TIMEOUT": 600
+        },
+        "WorkAround": null
+    }
+}

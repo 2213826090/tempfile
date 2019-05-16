@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase>
+    <UseCase>LAB_NFC_HOST_READER_MODE</UseCase>
+    <Description>Write data in tag, read it and compare to check if each action succeeds</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>False</b2bContinuousMode>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters>
+        <Parameter>
+            <!-- Define the tag type to write and read. Expected values are :
+                TOPAZ, MIFARE_ULTRALIGHT, FELICA, DESFIRE_A, TYPE4_B, MIFARE_CLASSIC, LIBRARY_TAG -->
+            <Name>TAG_TYPE</Name>
+            <Value>MIFARE_CLASSIC</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Define the RTD : RTD_TEXT, RTD_SMARTPOSTER, RTD_URI -->
+            <Name>RTD_TYPE</Name>
+            <Value>RTD_TEXT</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Define the data to write : RANDOM or any string -->
+            <Name>DATA</Name>
+            <Value>RANDOM</Value>
+        </Parameter>
+        <Parameter>
+            <!-- [OPTIONAL] If True, enable the NFC Beam prior to the test. If False, disable the NFC Beam prior to the test -->
+            <Name>NFC_BEAM_INITIAL_STATE</Name>
+            <Value></Value>
+        </Parameter>
+        <Parameter>
+            <!-- [OPTIONAL] If True, check the NFC Beam status in the test -->
+            <Name>NFC_BEAM_CHECK</Name>
+            <Value></Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

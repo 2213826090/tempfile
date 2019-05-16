@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Campaign>
+      <Parameters>
+            <Parameter isControlledPSUsed="False"/>
+            <Parameter isIoCardUsed="True"/>
+            <Parameter skipBootOnPowerCycle="False"/>
+            <Parameter bootRetryNumber="0"/>
+            <Parameter runHookScripts="False"/>
+            <Parameter powerCycleBetweenTC="False"/>
+            <Parameter powerCycleOnFailure="False"/>
+            <Parameter finalDutState="NoChange"/>
+            <Parameter stopCampaignOnCriticalFailure="True"/>
+            <Parameter stopCampaignOnFirstFailure="False"/>
+            <Parameter loggingLevel="debug"/>
+            <Parameter CampaignType="Other"/>
+            <Parameter TCRReportViaRESTAPI="True"/>
+      </Parameters>
+      <TestCases>
+             <TestCase Id="../../TC/TR/ACS/Communication/Bluetooth/setup/prereq_Bluetooth_SYSTEM_SETUP_EMBEDDED"/>
+             <TestCase Id="../../TC/TR/BAT/mini_BAT/RebootDevice"/>
+             <TestCase Id="../../TC/TR/DeviceSetup/LIVE_ONE_TIME_INIT_SETUP_M_DESSERT"/>
+             <TestCase Id="../../TC/TR/DeviceSetup/RebootDevice"/>
+             <TestCase Id="../../TC/TR/ACS/Applications/Applications_M/prerequisites/prereq_SKIP_LAUNCHER_TUTORIAL"/>
+     </TestCases>
+</Campaign>

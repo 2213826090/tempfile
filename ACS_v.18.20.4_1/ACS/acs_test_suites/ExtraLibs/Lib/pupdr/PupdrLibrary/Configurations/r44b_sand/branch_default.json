@@ -1,0 +1,22 @@
+{
+    "Configuration": {
+        "Boot": {
+            "MODEM": false
+        },
+        "BootVars": null,
+        "Custom": null,
+        "Flash": null,
+        "Inherit": {
+            "BRANCH": "r44b"
+        },
+        "Logs": null,
+        "Timeout": null,
+        "WorkAround": {
+            "TC": {
+                "Issue": "ACS-265",
+                "Name": "LAB_PUPDR_REBOOT_RECOVERY",
+                "Pattern": "actual: WD=0x00 RESETSRC1=0x00 WAKESRC=0x06, expected: \\.\\*WD=0x00 RESETSRC1=0x02 WAKESRC=0x05\\.\\*"
+            }
+        }
+    }
+}

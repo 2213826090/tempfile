@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<UI_SEQ xsi:noNamespaceSchemaLocation="ACS_ANDROID_UI_CHECK.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <ACTION>
+    <CMD>exec</CMD>
+    <PARAMETERS>start -a android.intent.action.MAIN -c android.intent.category.LAUNCHER -n com.android.browser/.BrowserActivity</PARAMETERS>
+    <TIMEOUT>5</TIMEOUT>
+  </ACTION>
+  <ACTION>
+    <CMD>search</CMD>
+    <PARAMETERS>http://3g.youku.com/</PARAMETERS>
+    <TIMEOUT>5</TIMEOUT>
+	<TRIG_LOG>calling gs_pRilEnv</TRIG_LOG>	
+  </ACTION>
+  <ACTION>
+    <CMD>wait</CMD>
+    <PARAMETERS>10</PARAMETERS>
+  </ACTION>
+  <ACTION>
+    <!--random touch on youtube website-->
+    <CMD>browsing_youku</CMD>
+	<ITERATION>1</ITERATION>
+  </ACTION>
+    <ACTION>
+    <!--Go back to home page-->
+    <CMD>keypress</CMD>
+    <PARAMETERS>KEYCODE_HOME</PARAMETERS>
+  </ACTION>
+</UI_SEQ>

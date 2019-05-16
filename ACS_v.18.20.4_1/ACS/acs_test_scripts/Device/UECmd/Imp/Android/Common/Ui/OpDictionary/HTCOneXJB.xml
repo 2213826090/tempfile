@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<operationsets>
+    <operationset name="go_home">
+        <operation>
+            <command comment="press the enter key to finish the input">keypress</command>
+            <parameter comment="the key to be pressed">KEYCODE_HOME</parameter>
+            <parameter comment="seconds to wait before next action">5</parameter>
+        </operation>
+    </operationset>
+    <operationset name="phone_lock">
+        <operation>
+            <command comment="press the enter key to finish the input">keypress</command>
+            <parameter comment="the key to be pressed">KEYCODE_POWER</parameter>
+            <parameter comment="seconds to wait before next action">5</parameter>
+        </operation>
+    </operationset>
+    <operationset name="phone_unlock">
+        <operation>
+            <command comment="wake the screen of the device">wake</command>
+            <parameter comment="seconds to wait before next action">1</parameter>
+        </operation>
+        <operation>
+            <command comment="drag element on the screen">drag_monkey</command>
+            <parameter comment="x coordinate of the starting point">345</parameter>
+            <parameter comment="y coordinate of the starting point">1235</parameter>
+            <parameter comment="x coordinate of the ending point">345</parameter>
+            <parameter comment="y coordinate of the ending point">500</parameter>
+            <parameter comment="seconds to wait before next action">1</parameter>
+        </operation>
+    </operationset>
+    <operationset name="search">
+        <operation>
+            <command comment="press the enter key to start the input">keypress</command>
+            <parameter comment="the key to be pressed">KEYCODE_SEARCH</parameter>
+            <parameter comment="seconds to wait before next action">1</parameter>
+        </operation>
+        <operation>
+            <command comment="url to search">type</command>
+        </operation>
+        <operation>
+            <command comment="press the enter key to finish the input">keypress</command>
+            <parameter comment="the key to be pressed">KEYCODE_ENTER</parameter>
+        </operation>
+    </operationset>
+    <operationset name="dial">
+        <operation>
+            <command comment="press the call key">keypress</command>
+            <parameter comment="the key to be pressed">KEYCODE_CALL</parameter>
+            <parameter comment="seconds to wait before next action">3</parameter>
+        </operation>
+        <operation>
+            <command comment="input the receiver">type</command>
+        </operation>
+        <operation>
+            <command comment="press the enter key to finish the input">keypress</command>
+            <parameter comment="the key to be pressed">KEYCODE_ENTER</parameter>
+            <parameter comment="seconds to wait before next action">5</parameter>
+        </operation>
+    </operationset>
+    <operationset name="call_answer">
+        <operation>
+            <command comment="press the answer button">touch</command>
+            <parameter comment="x  coordinate">520</parameter>
+            <parameter comment="y  coordinate">1235</parameter>
+            <parameter comment="seconds to wait before next action">2</parameter>
+        </operation>
+    </operationset>
+    <operationset name="release">
+        <operation>
+            <command comment="press the release key">keypress</command>
+            <parameter comment="the key to be pressed">KEYCODE_ENDCALL</parameter>
+        </operation>
+    </operationset>
+    <operationset name="hold_call">
+        <operation>
+            <command comment="press the parameters button">touch</command>
+            <parameter comment="x  coordinate">650</parameter>
+            <parameter comment="y  coordinate">1220</parameter>
+            <parameter comment="seconds to wait before next action">1</parameter>
+        </operation>
+        <operation>
+            <command comment="press the hold button">touch</command>
+            <parameter comment="x  coordinate">360</parameter>
+            <parameter comment="y  coordinate">690</parameter>
+            <parameter comment="seconds to wait before next action">1</parameter>
+        </operation>
+    </operationset>
+    <operationset name="swap_call">
+        <operation>
+            <command comment="press the parameters button">touch</command>
+            <parameter comment="x  coordinate">650</parameter>
+            <parameter comment="y  coordinate">1220</parameter>
+            <parameter comment="seconds to wait before next action">1</parameter>
+        </operation>
+        <operation>
+            <command comment="press the hold button">touch</command>
+            <parameter comment="x  coordinate">183</parameter>
+            <parameter comment="y  coordinate">591</parameter>
+            <parameter comment="seconds to wait before next action">1</parameter>
+        </operation>
+    </operationset>
+</operationsets>

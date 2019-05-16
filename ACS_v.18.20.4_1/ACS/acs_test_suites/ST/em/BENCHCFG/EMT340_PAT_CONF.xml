@@ -1,0 +1,25 @@
+<PowerProject name="New Project" ekey_file_version="" patlib_version="2.7" ekey_file_hash="" edition_date="Mon Jan 07 14:00:25 2013" saving_directory="C:\Users\ADMINI~1\AppData\Local\Temp">
+
+<Acquisition_Properties>
+<Samplerate>1000</Samplerate>
+<Duration>60</Duration>
+</Acquisition_Properties><Comment></Comment>
+
+
+<Channels>
+<DAQ hw_lowpass_filter_value="0" name="Dev1" sw_lowpass_filter_value="0">
+<Channel name="Ibatt" color="(112, 191, 140, 255)" max="2.0" hw_channel="ai0" type="diffI" resistor="0.1"/>
+
+<Channel name="Iusb" color="(111, 116, 156, 255)" max="2.0" hw_channel="ai1" type="diffI" resistor="0.1"/>
+
+<Channel name="Iac" color="(172, 125, 125, 255)" max="3.0" hw_channel="ai2" type="diffI" resistor="0.1"/>
+
+<Channel color="(111, 219, 102, 255)" max="6.0" type="RSE" name="Vbatt" hw_channel="ai3"/>
+
+<Channel color="(125, 162, 128, 255)" max="10.0" type="RSE" name="Vusb" hw_channel="ai11"/>
+
+<Channel color="(134, 136, 110, 255)" max="10.0" type="RSE" name="Vac" hw_channel="ai4"/>
+
+</DAQ>
+</Channels>
+</PowerProject>

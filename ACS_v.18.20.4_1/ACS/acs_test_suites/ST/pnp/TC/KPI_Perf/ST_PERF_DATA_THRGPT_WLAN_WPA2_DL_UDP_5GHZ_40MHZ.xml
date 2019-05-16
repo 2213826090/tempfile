@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="13.41">
+    <UseCase>TEST_STEP_ENGINE</UseCase>
+    <Description></Description>
+    <b2bIteration>5</b2bIteration>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <TcMaxAttempt>1</TcMaxAttempt>
+    <TcAcceptanceCriteria>1</TcAcceptanceCriteria>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters>
+        <Parameter>
+            <Name>KPI_RSSI_MIN</Name>
+            <Value>-45</Value>
+        </Parameter>
+        <Parameter>
+            <Name>KPI_RSSI_MAX</Name>
+            <Value>-40</Value>
+        </Parameter>
+        <Parameter>
+            <Name>KPI_WIFI_CHANNEL</Name>
+            <Value>44</Value>
+        </Parameter>
+        <Parameter>
+            <Name>KPI_SECURITY</Name>
+            <Value>WPA2-PSK-AES</Value>
+        </Parameter>
+        <Parameter>
+            <Name>KPI_STANDARD</Name>
+            <Value>n5G</Value>
+        </Parameter>
+        <Parameter>
+            <Name>KPI_BANDWIDTH</Name>
+            <Value>40</Value>
+        </Parameter>
+        <Parameter>
+            <Name>KPI_IPERF_PROTOCOL</Name>
+            <Value>udp</Value>
+        </Parameter>
+        <Parameter>
+            <Name>KPI_IPERF_OPTIONS</Name>
+            <Value>-b400M -i 61</Value>
+        </Parameter>
+        <Parameter>
+            <Name>KPI_AP_DTIM</Name>
+            <Value>3</Value>
+        </Parameter>
+        <Parameter>
+            <Name>KPI_REGULATORY_DOMAIN</Name>
+            <Value>FR</Value>
+        </Parameter>
+    </Parameters>
+    <TestSteps>
+        <Include Src="ST/cws/TSS/Common/ST_CWS_COMMON.xml"/>
+        <Include Src="ST/cws/TSS/WiFi/ST_CWS_WIFI_COMMON.xml"/>
+        <Include Src="ST/cws/TSS/WiFi/ST_CWS_WIFI_AP.xml"/>
+        <Include Src="ST/cws/TSS/WiFi/ST_CWS_WIFI_KPI.xml"/>
+
+        <Setup>
+            <!-- AUTOMATION - Set default configuration -->
+            <TestStep Id="AP_WIFI_LOAD_CONFIG_FILE" EQT="CONFIGURABLE_AP1" KPI_TEST="ST_PERF_DATA_THRGPT_WLAN_WPA2_40MHZ"/>
+            <TestStep SetId="WiFiKPI802.11NSetupIperf" DIRECTION="down"/>
+        </Setup>
+        <RunTest>
+            <!-- AUTOMATION - Run KPI -->
+            <TestStep SetId="WiFiKPIRunTestDownload"/>
+        </RunTest>
+        <TearDown>
+            <!-- AUTOMATION - Reset configuration -->
+            <TestStep SetId="WiFiKPI802.11NTeardown"/>
+        </TearDown>
+    </TestSteps>
+</TestCase>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<Equipment version="13.44" name="IO_CARD" description="Input output card used for power management, energy management on I/O ports of the DUT.">
+    <!-- Model possible values: ACBN (Normal) | ACBP (Prototype) | ACBE (Enhanced) |
+    ACBT (Enhanced for Tablet) | EMT311 (support AC CHARGER and DCP) | USB_RLY08 -->
+    <Parameter name="Model" value="USB_RLY08" />
+    <!-- USB_RLY08 parameters -->
+    <Parameter name="ComPort" value="COM3" description="COM port used for communication"/>
+    <Parameter name="SwitchOnOff" value="8" description="Number of the relay used to boot or stop the board"/>
+    <Parameter name="UsbHostPcConnect" value="4" description="Number of the relay used to plug or unplug USB on host PC" />
+    <Parameter name="UsbHostPcPowerMinus" value="3" description="Number of the relay used to plug or unplug USB on host PC" />
+    <Parameter name="UsbHostPcDataPlus" value="2" description="Number of the relay used to plug or unplug USB on host PC" />
+    <Parameter name="UsbHostPcDataMinus" value="1" description="Number of the relay used to plug or unplug USB on host PC" />
+    <!-- <Parameter name="WallCharger" value="" description="Number of the relay used to plug or unplug USB on host PC"/> -->
+    <!-- <Parameter name="ProvisioningMode" value="" description="Line to enable provisioning mode (volume up/down, home, ...)"/> -->
+    <!-- <Parameter name="IOCard_master" value="IO_CARD" description="name of the IO_CARD used as Master. that IOCard will switch power of that IOCard" /> -->
+    <!-- <Parameter name="TestStatusDisplayConnect" value="3" description="Number of the relay used to display the status of the bench (running or not)" /> -->
+    <!-- <Parameter name="RelayOnOffMasterCard" value="4" description="Number of the Master IOCard's relay used to switch USB power that IO Card" /> -->
+    <!-- Optional PowerSupply parameter (default : unused)
+         Using this PowerSupply with relay may damage system : If a device is "ON", the initialization of the IO_CARD will remove power of the device.
+         Consider using FT/pnp/TC/SETUP/LAB_SYSTEM_ALL_SWITCH_OFF test case -->
+    <!-- <Parameter name="PowerSupply" value="" description="Number of the relay used to link power supply to DUT"/> -->
+    
+    <!-- Optional DefaultStates parameter (default: all relays are opened)
+    This parameter indicates for each relay of the card if the relay
+    is by initially opened or closed when connected to USB Relay card.
+    This parameter is a string of 8 bits value "b8|b7|b6|b5|b4|b3|b2|b1"
+    where bi is the bit representing the relay number i.
+    If the bit is set to 1, the relay is closed.
+    If the bit is set to 0, the relay is opened.
+    For example, if relays 1, 2 and 6 are closed,
+    set default state is "00100011".
+
+    If DefaultStates is present and has empty value the IO_CARD relays state will remains unchanged
+    -->
+    <Parameter name="DefaultStates" value="00000000" description="Default relay states"/>
+    <!-- Optional WiringTable parameter (default: all relays are considered normally opened)
+    This parameter indicates for each relay of the card if the relay
+    is wired to NO (normally opened) or NC (normally closed) terminal.
+    This parameter is a string of 8 bits value "b8|b7|b6|b5|b4|b3|b2|b1"
+    where bi is the bit representing the relay number i.
+    If the bit is set to 1, the relay is normally closed.
+    If the bit is set to 0, the relay is normally opened.
+    For example, if relays 1, 2 and 6 are normally closed,
+    set wiring table "00100011". -->
+    <Parameter name="WiringTable" value="000000000" description="Wiring Table"/>
+</Equipment>

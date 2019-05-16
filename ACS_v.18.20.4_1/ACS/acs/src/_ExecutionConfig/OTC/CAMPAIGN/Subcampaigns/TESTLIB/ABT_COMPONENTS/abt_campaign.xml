@@ -1,0 +1,73 @@
+<?xml version="1.0" ?>
+<Campaign>
+      <Parameters>
+            <Parameter isControlledPSUsed="False"/>
+            <Parameter isIoCardUsed="False"/>
+            <Parameter skipBootOnPowerCycle="False"/>
+            <Parameter bootRetryNumber="0"/>
+            <Parameter runHookScripts="False"/>
+            <Parameter powerCycleBetweenTC="False"/>
+            <Parameter powerCycleOnFailure="False"/>
+            <Parameter finalDutState="NoChange"/>
+            <Parameter stopCampaignOnCriticalFailure="False"/>
+            <Parameter stopCampaignOnFirstFailure="False"/>
+            <Parameter loggingLevel="debug"/>
+            <Parameter CampaignType="Other"/>
+      </Parameters>
+      <TestCases>
+            <TestCase Id="TC/TESTLIB/Settings/about_phone"/>
+            <TestCase Id="TC/TESTLIB/Settings/app"/>
+            <TestCase Id="TC/TESTLIB/Settings/battery"/>
+            <TestCase Id="TC/TESTLIB/Settings/display_brightness"/>
+            <TestCase Id="TC/TESTLIB/Settings/bt_button"/>
+            <!--<TestCase Id="TC/TESTLIB/Settings/create_account"/>-->
+
+            <TestCase Id="TC/TESTLIB/Settings/date_time"/>
+            <TestCase Id="TC/TESTLIB/Settings/display_daydream"/>
+            <TestCase Id="TC/TESTLIB/Settings/display_cast_screen"/>
+            <TestCase Id="TC/TESTLIB/Settings/display_font_size"/>
+            <TestCase Id="TC/TESTLIB/Settings/language_and_input"/>
+            <TestCase Id="TC/TESTLIB/Settings/location"/>
+            <TestCase Id="TC/TESTLIB/Settings/security"/>
+            <TestCase Id="TC/TESTLIB/Settings/display_sleep"/>
+            <TestCase Id="TC/TESTLIB/Settings/start_bt"/>
+            <TestCase Id="TC/TESTLIB/Settings/stop_bt"/>
+            <TestCase Id="TC/TESTLIB/Settings/storage"/>
+            <TestCase Id="TC/TESTLIB/Settings/volume"/>
+            <TestCase Id="TC/TESTLIB/Settings/wireless_more"/>
+            <TestCase Id="TC/TESTLIB/Homescreen/add_icon"/>
+            <TestCase Id="TC/TESTLIB/Homescreen/app_button"/>
+            <TestCase Id="TC/TESTLIB/Homescreen/app_button_all_screens"/>
+            <TestCase Id="TC/TESTLIB/Homescreen/app_button_app_views"/>
+            <TestCase Id="TC/TESTLIB/Homescreen/google_bar"/>
+            <TestCase Id="TC/TESTLIB/Homescreen/notification_area"/>
+            <TestCase Id="TC/TESTLIB/Homescreen/recent_apps_button"/>
+            <TestCase Id="TC/TESTLIB/Homescreen/start_app_enter_key"/>
+            <TestCase Id="TC/TESTLIB/Homescreen/start_app"/>
+            <TestCase Id="TC/TESTLIB/Homescreen/system_utils"/>
+            <TestCase Id="TC/TESTLIB/Notification/install_notification"/>
+            <TestCase Id="TC/TESTLIB/Notification/click_notification"/>
+            <TestCase Id="TC/TESTLIB/Notification/open_notification"/>
+            <TestCase Id="TC/TESTLIB/Notification/clear_notification"/>
+            <TestCase Id="TC/TESTLIB/Interface/app_list"/>
+            <TestCase Id="TC/TESTLIB/Interface/app_pagination"/>
+            <TestCase Id="TC/TESTLIB/Interface/installed_apps"/>
+            <TestCase Id="TC/TESTLIB/Interface/no_duplicate_apps"/>
+            <TestCase Id="TC/TESTLIB/Interface/start_app"/>
+            <TestCase Id="TC/TESTLIB/Interface/widget_section"/>
+
+            <!--<TestCase Id="TC/TESTLIB/Browser/add_bookmarks"/>
+            <TestCase Id="TC/TESTLIB/Browser/clear_browsing_data"/>
+            <TestCase Id="TC/TESTLIB/Browser/delete_all_bookmarks"/>
+            <TestCase Id="TC/TESTLIB/Browser/go_back_button"/>
+            <TestCase Id="TC/TESTLIB/Browser/go_forward_button"/>
+            <TestCase Id="TC/TESTLIB/Browser/open_bookmarks"/>
+            <TestCase Id="TC/TESTLIB/Browser/open_browser_history"/>
+            <TestCase Id="TC/TESTLIB/Browser/open_browser"/>
+            <TestCase Id="TC/TESTLIB/Browser/open_image_in_a_new_tab"/>
+            <TestCase Id="TC/TESTLIB/Browser/open_incognito_tab"/>
+            <TestCase Id="TC/TESTLIB/Browser/print_button"/>
+            <TestCase Id="TC/TESTLIB/Browser/refresh_button"/>
+            <TestCase Id="TC/TESTLIB/Browser/save_image"/>-->
+      </TestCases>
+</Campaign>

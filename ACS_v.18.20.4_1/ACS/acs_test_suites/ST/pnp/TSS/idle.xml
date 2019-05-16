@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<Include>
+    <Include Src="ST/pnp/TSS/common.xml" />
+    <TestStepSet Id="InstallSPMActiveIdle">
+        <TestStep Id="GET_ARTIFACT"
+                  ARTIFACT="MISCELLANEOUS/APPLICATIONS/ANDROID/SPMActiveIdle-Service.apk"
+                  ARTIFACT_SOURCE="FROM_BENCH:ARTIFACT_MANAGER:URI"
+                  TRANSFER_TIMEOUT="DEFAULT"
+                  STORED_FILE_PATH="FILE_PATH_IN_CACHE1" EQT="DEFAULT" />
+
+        <TestStep Id="INSTALL_APP" DEVICE="PHONE1"
+                  FILE_PATH="FROM_CTX:FILE_PATH_IN_CACHE1"
+                  BACKUP="false" BACKUP_FILE_PATH="/tmp" TIMEOUT="30"
+                  SIGN_KEY_PATH="DEFAULT" SIGN="false"/>
+    </TestStepSet>
+    <TestStepSet Id="StartSPMActiveIdle">
+        <TestStep Id="START_MULTIPLE_HTTP_TRANSFER"
+                  DEVICE="PHONE1"
+                  URL="http://[+]FROM_BENCH:LAB_INTERNET_SERVER:IP[+]/[+]FROM_TC:URL"
+                  SYNC_INTERVAL="120000"
+                  DURATION="56000"
+                  AGENT="SPMActiveIdle"/>
+    </TestStepSet>
+    <TestStepSet Id="StopSPMActiveIdle">
+        <TestStep Id="STOP_MULTIPLE_HTTP_TRANSFER"
+                  DEVICE="PHONE1"
+                  URL="http://[+]FROM_BENCH:LAB_INTERNET_SERVER:IP[+]/[+]FROM_TC:URL"
+                  AGENT="SPMActiveIdle"/>
+    </TestStepSet>
+
+    <TestStepSet Id="TearDown">
+        <TestStep Id="STORE_STRING_IN_CTX" INPUT="True" OUTPUT="IDLE_TEST"/>
+        <TestStep Id="STORE_STRING_IN_CTX" INPUT="True" OUTPUT="POWER_MEASUREMENT"/>
+        <TestStep SetId="TearDown_common" />
+    </TestStepSet>
+
+    <TestStepSet Id="TearDown_residency_only">
+        <TestStep Id="STORE_STRING_IN_CTX" INPUT="True" OUTPUT="IDLE_TEST"/>
+        <TestStep Id="STORE_STRING_IN_CTX" INPUT="False" OUTPUT="POWER_MEASUREMENT"/>
+        <TestStep SetId="TearDown_common" />
+    </TestStepSet>
+
+    <TestStepSet Id="StopPowerMeasurement">
+        <TestStep Id="STORE_STRING_IN_CTX" INPUT="True" OUTPUT="IDLE_TEST"/>
+        <TestStep Id="STORE_STRING_IN_CTX" INPUT="True" OUTPUT="POWER_MEASUREMENT"/>
+        <TestStep SetId="StopPowerMeasurement_common" />
+    </TestStepSet>
+
+    <TestStepSet Id="StopResidencyMeasurement">
+        <TestStep Id="STORE_STRING_IN_CTX" INPUT="True" OUTPUT="IDLE_TEST"/>
+        <TestStep Id="STORE_STRING_IN_CTX" INPUT="False" OUTPUT="POWER_MEASUREMENT"/>
+        <TestStep SetId="StopPowerMeasurement_common" />
+    </TestStepSet>
+</Include>

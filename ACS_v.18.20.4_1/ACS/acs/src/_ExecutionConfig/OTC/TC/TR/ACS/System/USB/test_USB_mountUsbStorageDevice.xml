@@ -1,0 +1,63 @@
+<?xml version='1.0' encoding='ASCII'?>
+<TestCase>
+    <UseCase>ANDROID_INST</UseCase>
+
+    <Description>UIautomator test: it tests if USB storage can be mounted</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <TcMaxAttempt>1</TcMaxAttempt>
+    <TcAcceptanceCriteria>1</TcAcceptanceCriteria>
+    <TestSteps>
+        <Initialize/>
+        <Setup/>
+        <RunTest/>
+        <TearDown/>
+        <Finalize/>
+    </TestSteps>
+    <Parameters>
+        <Parameter>
+            <Name>TIMEOUT</Name>
+            <Value>180</Value>
+        </Parameter>
+        <Parameter>
+            <Name>PROCESS_NAME</Name>
+            <Value>uiautomator </Value>
+        </Parameter>
+        <Parameter>
+            <Name>AM_EXTRA</Name>
+            <Value>runtest test_usb.jar -c com.intel.testusb.TestUSB#mountUsbStorageDevice</Value>
+        </Parameter>
+        <Parameter>
+            <Name>APKS</Name>
+            <Value></Value>
+        </Parameter>
+        <Parameter>
+            <Name>TEST_FILES</Name>
+            <Value>BLUETOOTH_JAR/test_usb.jar</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TEST_FILES_DEST</Name>
+            <Value>/data/local/tmp</Value>
+        </Parameter>
+        <Parameter>
+            <Name>SET_PROPS</Name>
+            <Value/>
+        </Parameter>
+        <Parameter>
+            <Name>RETRIEVE_ARTIFACT</Name>
+            <Value/>
+        </Parameter>
+        <Parameter>
+            <Name>PRE_REBOOT</Name>
+            <Value>False</Value>
+        </Parameter>
+        <Parameter>
+            <Name>POST_REBOOT</Name>
+            <Value>False</Value>
+        </Parameter>
+        <Parameter>
+            <Name>POST_REBOOT_NOK</Name>
+            <Value>False</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="13.41">
+    <UseCase>LAB_MOBILITY_WCDMA_HHO_VC</UseCase>
+    <Description>Perform several WCDMA hard handovers during a voice call</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>False</b2bContinuousMode>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters>
+        <Parameter>
+            <!-- Number of hard handovers to perform (switch between 2 cell configurations) -->
+            <Name>CELL_JUMP_NUMBER</Name>
+            <Value>1</Value>
+        </Parameter>
+        <Parameter>
+            <!-- CONFIGURATION_FILE parameter representing a xml file name (without
+                extension) in which equipments configuration is described. -->
+            <Name>CONFIGURATION_FILE</Name>
+            <Value>Configurations/INTER_FREQ_WCDMA_HHO_VC</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Dialled Phone number (MSISDN). If value is [PHONE_NUMBER] the value used will be the phoneNumber defined in the Phone_Catalog.xml -->
+            <Name>PHONE_NUMBER</Name>
+            <Value>[PHONE_NUMBER]</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

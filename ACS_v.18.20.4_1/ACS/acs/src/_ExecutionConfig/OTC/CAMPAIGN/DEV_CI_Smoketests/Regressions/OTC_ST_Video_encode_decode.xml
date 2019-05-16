@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<Campaign>
+      <Parameters>
+            <Parameter isControlledPSUsed="False"/>
+            <Parameter isIoCardUsed="True"/>
+            <Parameter skipBootOnPowerCycle="False"/>
+            <Parameter bootRetryNumber="0"/>
+            <Parameter runHookScripts="False"/>
+            <Parameter powerCycleBetweenTC="False"/>
+            <Parameter powerCycleOnFailure="False"/>
+            <Parameter finalDutState="NoChange"/>
+            <Parameter stopCampaignOnCriticalFailure="False"/>
+            <Parameter stopCampaignOnFirstFailure="False"/>
+            <Parameter loggingLevel="debug"/>
+            <Parameter CampaignType="Other"/>
+      </Parameters>
+      <TestCases>
+            <TestCase Id="../../../TC/TR/ATF_TESTS/SETUP/ABT_FLASH" b2bIteration="1" TcMaxAttempt="3" TcAcceptanceCriteria="1"/>
+            <!--<SubCampaign Id="../../Subcampaigns/ATF_TESTS/ABT_Api_Tests/video/change_orientation_rotate/change_orientation_rotate"/>-->
+            <SubCampaign Id="../../Subcampaigns/ATF_TESTS/ABT_Api_Tests/video/decoding/decoding"/>
+            <SubCampaign Id="./Video_encode_decode_reviewed"/>
+            <!--<SubCampaign Id="../../Subcampaigns/ATF_TESTS/ABT_Api_Tests/video/encoding/encoding"/>-->
+            <!-- The TCs in the following subcampaign are on hold for now, until a proper tracing of the system
+            dependencies, as in their current form they cannot be run on Ubuntu 14 OS !-->
+            <!-- <SubCampaign Id="../../Subcampaigns/ACS/Multimedia/Video/Video"/> !-->
+      </TestCases>
+</Campaign>

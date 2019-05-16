@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase>
+    <UseCase>LAB_MODEM_FW_FLASHING</UseCase>
+    <Description>Flash the modem's firmware when DUT is booted in Main OS mode (MOS)</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <Parameters>
+        <Parameter>
+            <!-- The expected flash operation result.
+                This parameters allows to test nominal conditions and error cases.
+                Possible values:
+                FW_FLASHING_OPERATION_COMPLETE
+            -->
+            <Name>EXPECTED_RESULT</Name>
+            <Value>FW_FLASHING_OPERATION_COMPLETE</Value>
+        </Parameter>
+        <Parameter>
+            <!-- The flash timeout (in seconds). -->
+            <Name>FLASH_TIMEOUT</Name>
+            <Value>300</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Absolute path of the platform's configuration name -->
+            <Name>TARGET_PLATFORM_CONFIG_PATH</Name>
+            <Value>/sys/kernel/telephony/</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Absolute path of the scalability configuration file -->
+            <Name>TARGET_CONFIG_SCALABILITY_PATH</Name>
+            <Value>/system/etc/telephony/</Value>
+        </Parameter>
+        <Parameter>
+            <!-- The path to the firmware flash file -->
+            <Name>MODEM_FLASH_FILE_PATH</Name>
+            <Value>/system/vendor/firmware/telephony/</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Absolute path to the flash application -->
+            <Name>FLASH_APPLICATION</Name>
+            <Value>miu-app</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="13.37">
+    <UseCase>LAB_EM_PS_LOW_BATT_SHUTDOWN</UseCase>
+    <Description>EM - when the battery is very low, the phone shall initiate a graceful shutdown.</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>False</b2bContinuousMode>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters>
+        <Parameter>
+            <!-- the Vbatt Voltage to start the test -->
+            <Name>START_VBATT</Name>
+            <Value>3.65</Value>
+        </Parameter>
+        <Parameter>
+            <!-- the low Vbatt Voltage for the run test -->
+            <Name>LOW_VBATT</Name>
+            <Value>3.3</Value>
+        </Parameter>
+        <Parameter>
+            <!-- the Vbatt Voltage threshold for the board extinction -->
+            <Name>VBATT_EXTINCTION</Name>
+            <Value>3.4</Value>
+        </Parameter>
+        <Parameter>
+            <!-- the timeout of the test in second -->
+            <Name>TIMEOUT</Name>
+            <Value>7000</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

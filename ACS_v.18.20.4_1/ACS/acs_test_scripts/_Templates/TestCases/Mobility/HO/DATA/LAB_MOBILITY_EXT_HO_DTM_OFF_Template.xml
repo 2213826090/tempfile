@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="13.45">
+    <UseCase>LAB_MOBILITY_EXT_HO_DTM_OFF</UseCase>
+    <Description>Perform several 3G/2G Handovers while FTP transfer and voice call are both active, data transfer should be suspended if DUT is camped on a 2G cell (DTM OFF)</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>False</b2bContinuousMode>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters>
+        <Parameter>
+            <!-- Handover number to perform -->
+            <Name>CELL_JUMP_NUMBER</Name>
+            <Value>1</Value>
+        </Parameter>
+        <Parameter>
+            <!-- CONFIGURATION_FILE parameter representing a xml file pathname
+                (without extension) in which equipments configuration is described.
+                Configuration files must be stored in _ExecutionConfig directory. -->
+            <Name>CONFIGURATION_FILE</Name>
+            <Value>Configurations/INTER_RAT_3G_TO_2G_HO_DTM_OFF</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Dialled Phone number (MSISDN). If value is [PHONE_NUMBER] the value used will be the phoneNumber defined in the Phone_Catalog.xml -->
+            <Name>PHONE_NUMBER</Name>
+            <Value>[PHONE_NUMBER]</Value>
+        </Parameter>
+        <Parameter>
+            <!-- FTP transfer direction: DL or UL -->
+            <Name>DIRECTION</Name>
+            <Value>DL</Value>
+        </Parameter>
+        <Parameter>
+            <!-- File to download from the server. This file shall be available on the server. If the file to transfer is located in a specific directory, you can specify its path. i.e. : acs/download_file/get5M -->
+            <Name>DL_FILENAME</Name>
+            <Value>get150M</Value>
+        </Parameter>
+        <Parameter>
+            <!-- File to upload on the server. This file shall be available on the device. If the file to transfer is located in a specific directory, you can specify its path. i.e. : acs/upload_file/put5M -->
+            <Name>UL_FILENAME</Name>
+            <Value>50MB.txt</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

@@ -1,0 +1,16 @@
+{
+    "binaries": ["Java", "MicrosoftVCRedistribuable", "Graphviz"],
+    "pypi": ["minimal_requirement.txt", "doctool_requirement.txt", "devel_requirement.txt"],
+    "files": [
+        {
+            "name": "MobaXterm.zip",
+            "source": "acs/dependencies/third_parties/tools/MobaXterm/MobaXterm.zip",
+            "destination": ":home:/MobaXterm"
+        },
+        {
+            "name": "plantuml.jar",
+            "source": "pypi/doctool/plantuml.7995.jar",
+            "destination": ":home:/.doc/pypi/doctool"
+        }
+    ]
+}

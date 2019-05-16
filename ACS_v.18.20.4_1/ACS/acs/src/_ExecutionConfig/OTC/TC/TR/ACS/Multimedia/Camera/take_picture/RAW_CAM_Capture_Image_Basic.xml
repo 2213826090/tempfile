@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase>
+    <UseCase>LIVE_CAMERA_TAKE_PICTURE</UseCase>
+    <Description>Use Camera to captue image and check if it's corrupted</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>False</b2bContinuousMode>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters>
+         <Parameter>
+             <!-- Camera to open, possible values :
+                - BACK
+                - FRONT
+                 -->
+             <Name>CAMERA</Name>
+             <Value>BACK</Value>
+         </Parameter>
+         <Parameter>
+             <!-- Directory where to save pictures taken-->
+             <Name>SAVE_DIRECTORY</Name>
+             <Value>sdcard/</Value>
+         </Parameter>
+    </Parameters>
+</TestCase>

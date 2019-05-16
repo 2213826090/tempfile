@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestSteps xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../acs/src/_Catalogs/TestStep/teststep.xsd">
+    <TestStep Id="RUN_MULTISENSOR_READ_LOOP" Domain="SENSORS" SubDomain="HUB" Feature="" Status="DONE">
+            <ClassName>acs_test_scripts.TestStep.Device.Sensors.Hub.RunMultisensorReadLoop.RunMultisensorReadLoop</ClassName>
+            <Description>Repeatedly read various sensors connected to the device, such as accelerometer, gyroscope, magnetometer,
+                barometer, light sensor and proximity sensor.  The sensors list is maintained in the shell script
+                that is invoked by this test step.
+                This uses a device-side script to maintain the activity for an extended amount of time without
+                intervention from the host.  This is done to avoid adding traffic to the host-device connection
+                (e.g. ADB for Android) throughout the test.
+                WARNING: The current implementation of resp_cat makes it take almost an hour to complete one loop, so DURATION will
+                    be rounded up to the next hour.  Source code for resp_cat can be found in Artifactory at
+                    acs_test_artifacts/CONCURRENCY/TESTS/ipc_multisensor/resp_cat.rar.
+                SUPPORTED PLATFORMS: The read_sensors_loop.sh currently in Artifactory (15July2014) is known to work on Moorefield
+                    (Anniedale platform).  Different versions of the script may need to be created for other projects.
+                PREREQUISITES:
+                Android:  The following files must be in the directory specified in SCRIPTS_PATH:
+                        resp_cat
+                        read_sensors_loop.sh
+                    These can be found in Artifactory at acs_test_artifacts/CONCURRENCY/TESTS/ipc_multisensor/ipc_multisensor_files.tgz.
+                Windows: executable and device-side script not yet created.
+            </Description>
+            <Environment name="ANY"/>
+            <Parameters>
+                <Parameter name="DEVICE" type="STRING" isOptional="false">
+                    <Description>Device name on which the action will be executed</Description>
+                    <PossibleValues/>
+                    <DefaultValue>PHONE1</DefaultValue>
+                </Parameter>
+                <Parameter name="DURATION" type="INTEGER" isOptional="false">
+                   <Description>How long the test will run, in minutes.</Description>
+                   <PossibleValues/>
+                   <DefaultValue>5</DefaultValue>
+                </Parameter>
+                <Parameter name="SCRIPTS_PATH" type="STRING" isOptional="false">
+                    <Description>Directory on the device where the binary and script are located.</Description>
+                    <PossibleValues/>
+                    <DefaultValue>/data/Sensors/MultisensorReadLoop</DefaultValue>
+                </Parameter>
+            </Parameters>
+        </TestStep>
+        <TestStep Id="GET_SENSOR_DATA" Domain="SENSORS" SubDomain="HUB" Feature="" Status="DONE">
+                <ClassName>acs_test_scripts.TestStep.Device.Sensors.Hub.GetSensorData.GetSensorData</ClassName>
+                <Description>Read/Listen data from a specific sensor.</Description>
+                <Environment name="ANY"/>
+                <Parameters>
+                    <Parameter name="DEVICE" type="STRING" isOptional="false">
+                        <Description>Device name on which the action will be executed</Description>
+                        <PossibleValues/>
+                        <DefaultValue>PHONE1</DefaultValue>
+                    </Parameter>
+                    <Parameter name="MODE" type="STRING" isOptional="false">
+                            <Description>Mode to get data.
+                            listen: listen data until duration is reached
+                            data: get first available data event received on specified sensor until duration
+                            </Description>
+                            <PossibleValues>listen;data</PossibleValues>
+                            <DefaultValue/>
+                    </Parameter>
+                    <Parameter name="SENSOR" type="STRING" isOptional="false">
+                            <Description>The sensor to use</Description>
+                            <PossibleValues>accelerometer;compass;gyroscope;orientation;barometer;proximity;light;temperature;rotation_vector;gravity;linear_accelerometer;step_counter</PossibleValues>
+                            <DefaultValue/>
+                    </Parameter>
+                    <Parameter name="DURATION" type="INTEGER" isOptional="true">
+                       <Description>How long to listen or to get first data according to the mode.</Description>
+                       <PossibleValues/>
+                       <DefaultValue>0</DefaultValue>
+                    </Parameter>
+                    <Parameter name="SAVE_AS" type="CONTEXT" isOptional="false">
+                        <Description>Store the sensor value as dict</Description>
+                        <PossibleValues />
+                        <DefaultValue />
+                     </Parameter>
+                </Parameters>
+            </TestStep>
+    <TestStep Id="RUN_SENSORHUB_READ_LOOP" Domain="SENSORS" SubDomain="HUB" Feature="" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Sensors.Hub.RunSensorHubReadLoop.RunSensorHubReadLoop</ClassName>
+        <Description>Repeatedly read ALS, proximity, barometer, gyroscope, accelerometer and compass sensors connected to the device. 
+            This test step invokes shell script sensorhub_client.sh that uses the executable sensorhub_client to read the sensor values.
+            The sensors list and valid values are maintained in a text file Sensor_Range.txt. The executable and the text file can be found
+            in the artifactory at the following location:
+                    acs_test_artifacts/CONCURRENCY/TESTS/sensorhub/
+            This test step differs from RUN_MULTISENSOR_READ_LOOP which reads a different set of ipc sensors (Accelerometer, Gyroscope, 9DOF, Magnetometer and Barometer).
+            SUPPORTED PLATFORMS: The sensorhub_client.sh is known to work on MOFD and CHT platforms. Different versions of the script may need to be created for other projects.
+            It is located at the following path:
+                    Lib/ShellScripts/Android/Sensors/SensorHub/
+            INSTALL_SCRIPTS_FROM_LIB test step copies the script from above location to SCRIPTS_PATH on the device.
+            PREREQUISITES:
+            Android:The following files must be in the directory specified in SCRIPTS_PATH:
+                    sensorhub_client.sh
+                    sensorhub_client
+                    Sensor_Range.txt
+            Windows: executable and device-side script not yet created.
+        </Description>
+        <Environment name="ANY"/>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues/>
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="DURATION" type="INTEGER" isOptional="false">
+               <Description>How long the test will run, in minutes.</Description>
+               <PossibleValues/>
+               <DefaultValue>5</DefaultValue>
+            </Parameter>
+            <Parameter name="SCRIPTS_PATH" type="STRING" isOptional="false">
+                <Description>Directory on the device where the script is located.</Description>
+                <PossibleValues/>
+                <DefaultValue>/data/Sensors/SensorHubReadLoop</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+</TestSteps>

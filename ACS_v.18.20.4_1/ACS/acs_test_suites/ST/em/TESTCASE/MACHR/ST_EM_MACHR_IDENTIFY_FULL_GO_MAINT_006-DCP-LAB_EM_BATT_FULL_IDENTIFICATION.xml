@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCase version="13.49">
+    <UseCase>LAB_EM_BATT_FULL_IDENTIFICATION</UseCase>
+    <Description>test that the battery FULL identification is correctly done at an expected capacity and in time</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>False</b2bContinuousMode>
+    <TcMaxAttempt>1</TcMaxAttempt>
+    <TcAcceptanceCriteria>1</TcAcceptanceCriteria>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters>
+        <Parameter>
+            <!-- Initial Battery Capacity (%) to start the test with -->
+            <Name>BATT_START_CAPACITY</Name>
+            <Value>95</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Charger type to plug during test charging phase (SDP, CDP et DCP ) -->
+            <Name>CHARGER_TYPE</Name>
+            <Value>DCP</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Capacity at which the first battery FULL status should appear -->
+            <Name>CAPACITY_AT_WHICH_FULL_FIRST_APPEAR</Name>
+            <Value>100</Value>
+        </Parameter>
+        <Parameter>
+            <!-- the charge duration to wait in second to reach FULL once BATT_START_CAPACITY is reached -->
+            <Name>CHARGE_TO_FULL_DURATION</Name>
+            <Value>4800</Value>
+        </Parameter>
+        <Parameter>
+            <!-- LOAD to apply to the board when discharging is need to reach BATT_START_CAPACITY separate by ;. To be choosen between following loads (can be combinated) : WIFI;BLUETOOTH;TORCHLIGHT;VIBRA;VIDEO -->
+            <Name>LOAD_TO_HELP_DISCHARGE_IN_SETUP</Name>
+            <Value>FROM_BENCHCONFIG</Value>
+        </Parameter>
+        <Parameter>
+            <!-- this testcase can check different things after the charging to FULL phase is done:
+                CAPACITY_JUMP_NEAR_FULL
+                CAPACITY_AT_WHICH_FIRST_FULL_APPEAR
+                TIME_TO_CHARGE_TO_FULL_FROM_START_CAPACITY
+                TIME_TO_SEE_FULL_AT_MAX_CAPACITY
+                CHARGE_STOP_ONCE_FULL
+            -->
+            <Name>WHAT_TO_CHECK</Name>
+            <Value>CHARGE_STOP_ONCE_FULL</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

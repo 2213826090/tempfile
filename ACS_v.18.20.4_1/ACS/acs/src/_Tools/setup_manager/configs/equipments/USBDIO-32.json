@@ -1,0 +1,10 @@
+{
+    "windows": {
+        "check_exists": ["winreg", ["SOFTWARE/ACCES/Installed Packages"]],
+        "install": "{bin}",
+        "32": "acs/dependencies/equipment/USBDIO-32/ACCESDrivers903.zip",
+        "zip": {
+            "bin": "USB-COM-SETUP.EXE"
+        }
+    }
+}

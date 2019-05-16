@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="13.37">
+    <UseCase>LIVE_FLIGHTMODE_CHECK_RADIO_AND_CONNECTIVITY</UseCase>
+    <Description>Live Flight Mode and BT/NFC/WLAN/GPS check</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters>
+        <Parameter>
+            <!-- Parameter indicating whether we should test BT
+                technology or not (possible values: TRUE | FALSE) -->
+            <Name>CHECK_BT</Name>
+            <Value>TRUE</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Parameter indicating whether we should test NFC
+                technology or not (possible values: TRUE | FALSE) -->
+            <Name>CHECK_NFC</Name>
+            <Value>TRUE</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Parameter indicating whether we should test WLAN
+                technology or not (possible values: TRUE | FALSE) -->
+            <Name>CHECK_WLAN</Name>
+            <Value>TRUE</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Parameter indicating whether we should test GPS
+                technology or not (possible values: TRUE | FALSE) -->
+            <Name>CHECK_GPS</Name>
+            <Value>TRUE</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

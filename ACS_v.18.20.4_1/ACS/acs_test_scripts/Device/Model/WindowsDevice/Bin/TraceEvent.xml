@@ -1,0 +1,3310 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>TraceEvent</name>
+    </assembly>
+    <members>
+        <member name="T:Diagnostics.Eventing.TraceEventParser">
+            <summary>
+            code:TraceEventParser Represents a class that knows how to decode particular set of events (typcially
+            grouped by provider). It is the embodyment of all the type information that is typically stored in a
+            ETW MOF file (Windows XP events) or an ETW manifest (Vista events). It is expected that a
+            TraceEventParser can be generated completely mechanically from a MOF or ETW manifest (it really is
+            just a decoder of that type information).
+            
+            There is no static interface associated with a TraceEventParser, but there is a dynamic one. It is
+            expected that TraceEventsParsers have a set of public event APIs of the form
+            
+                public event Action[SubclassOfTraceEvent] EventName
+            
+            which allows users of the parser to subscribe to callbacks (in the case about called 'EventName'. The
+            callback take a single argument (in this case SubclassOfTraceEvent) which is passed to the callback.
+            
+            TraceEventParsers typically are constructed with a constructor that takes a code:TraceEventSource.
+            The parser remembers the source, and when users subscribe to events on the code:TraceEventParser, the
+            parser in turn calls code:TraceEventSource.RegisterEventTemplate with the correct subclass of
+            code:TraceEvent that knows how to decode all the fields a a paraticular event.
+            
+            Thus a code:TraceEventParser has built int support for a 'callback' model for subscribing to events.
+            Parsers also support interacting with sources that support an iterator model. The code:TraceLog class
+            is an example of this. In this model the user still 'registers' a parser with the source. When this
+            registration happens, the source in turn calls back to the code:TraceEventParser.All event on the
+            parser registering a 'null' callback. This causes the parser to register all events with the source
+            with null callbacks. The callbacks are are never used (afer all, they are null), but the source
+            needed the templates to be registered so the event payload data can be decoded.
+            
+            * See code:ClrTraceEventParser
+            * See code:KernelTraceEventParser
+            </summary>
+        </member>
+        <member name="M:Diagnostics.Eventing.TraceEventParser.AddToAllMatching``1(System.Action{``0})">
+            <summary>
+            Subscribe to all events compatible with 'callback' 
+            </summary>
+        </member>
+        <member name="F:Diagnostics.Eventing.TraceEventParser.source">
+            <summary>
+            The source that this parser is connected to.  
+            </summary>
+        </member>
+        <member name="E:Diagnostics.Eventing.TraceEventParser.All">
+            <summary>
+            Subscribe to all the events this parser can parse.  Note that it will only add to
+            events that are compatible with the delegate that is passed.  This is useful because
+            it allows you to match all events that a certain delegate understands.  
+            </summary>
+        </member>
+        <member name="T:Diagnostics.Eventing.ClrTraceEventParser.Keywords">
+            <summary>
+             Keywords are passed to code:TraceEventSession.EnableProvider to enable particular sets of
+            </summary>
+        </member>
+        <member name="F:Diagnostics.Eventing.ClrTraceEventParser.Keywords.GC">
+            <summary>
+            Logging when garbage collections and finalization happen. 
+            </summary>
+        </member>
+        <member name="F:Diagnostics.Eventing.ClrTraceEventParser.Keywords.Loader">
+            <summary>
+            Logging when modules actually get loaded and unloaded. 
+            </summary>
+        </member>
+        <member name="F:Diagnostics.Eventing.ClrTraceEventParser.Keywords.Jit">
+            <summary>
+            Logging when Just in time (JIT) compilation occurs. 
+            </summary>
+        </member>
+        <member name="F:Diagnostics.Eventing.ClrTraceEventParser.Keywords.NGen">
+            <summary>
+            Logging when precompiled native (NGEN) images are loaded.
+            </summary>
+        </member>
+        <member name="F:Diagnostics.Eventing.ClrTraceEventParser.Keywords.StartEnumeration">
+            <summary>
+            Indicates that on attach or module load , a rundown of all existing methods should be done
+            </summary>
+        </member>
+        <member name="F:Diagnostics.Eventing.ClrTraceEventParser.Keywords.StopEnumeration">
+            <summary>
+            Indicates that on detach or process shutdown, a rundown of all existing methods should be done
+            </summary>
+        </member>
+        <member name="F:Diagnostics.Eventing.ClrTraceEventParser.Keywords.Security">
+            <summary>
+            Events associted with validating security restrictions.
+            </summary>
+        </member>
+        <member name="F:Diagnostics.Eventing.ClrTraceEventParser.Keywords.AppDomainResourceManagement">
+            <summary>
+            Events for logging resource consumption on an app-domain level granularity
+            </summary>
+        </member>
+        <member name="F:Diagnostics.Eventing.ClrTraceEventParser.Keywords.JitTracing">
+            <summary>
+            Logging of the internal workings of the Just In Time compiler.  This is fairly verbose.  
+            It details decidions about interesting optimization (like inlining and tail call) 
+            </summary>
+        </member>
+        <member name="F:Diagnostics.Eventing.ClrTraceEventParser.Keywords.Interop">
+            <summary>
+            Log information about code thunks that transition between managed and unmanaged code. 
+            </summary>
+        </member>
+        <member name="F:Diagnostics.Eventing.ClrTraceEventParser.Keywords.Contention">
+            <summary>
+            Log when lock conentions occurs.  (Monitor.Enters actually blocks)
+            </summary>
+        </member>
+        <member name="F:Diagnostics.Eventing.ClrTraceEventParser.Keywords.Exception">
+            <summary>
+            Log exception processing.  
+            </summary>
+        </member>
+        <member name="F:Diagnostics.Eventing.ClrTraceEventParser.Keywords.Threading">
+            <summary>
+            Log events associated with the threadpool, and other threading events.  
+            </summary>
+        </member>
+        <member name="F:Diagnostics.Eventing.ClrTraceEventParser.Keywords.Stack">
+            <summary>
+            Also log the stack trace of events for which this is valuable.
+            </summary>
+        </member>
+        <member name="F:Diagnostics.Eventing.ClrTraceEventParser.Keywords.Default">
+            <summary>
+            Recommend default flags (good compromise on verbosity).  
+            </summary>
+        </member>
+        <member name="T:Diagnostics.Eventing.TraceEvent">
+             <summary>
+             code:TraceEvent represents the data from one event. Logically a TraceEventSource is mostly just a
+             stream of TraceEvent objects. An event is identified by a GUID (128 bit unique ID) of the event
+             provider that generated it PLUS a small integer (must fit in a ushort) code:TraceEventID that
+             distinguishes it among other events from the same provider.
+             
+             The provider GUID and the Event ID together uniquely identify the data format of the event. Event
+             providers can provide a description of events and their payloads in a manifest that is traditionally
+             defined by an XML file (in Windows Vista). For Pre-vista ETW, the descriptions are done with MOF
+             files. There are tools that can convert a XML manifest description to C# that defines a
+             code:TraceEventParser which can be used by this infrastructure.
+            
+             There are operations (Start, Stop), that are common to a broad set of differnet events (from
+             different providers), that should be processed in simmiar ways. To make identifing these common kinds
+             of events easier, events can be given an code:TraceEventOpcode which indentified these common
+             patterns.
+            
+             While Event data can have arbitrary data in it, there is a header that every event must have.
+             TraceEvent provides an interface to this header data and other operations that can be done without
+             needing to know that exact layout of the event data. In particular every event knows its Provider
+             GUID (but not necessarily its name), opcode number (but not necessarily its opocode name), the time
+             it happened, the code:TraceEventLevel (how important the event is) the thread it happened on (not all
+             events have an associated thread), and the size of the event-specific data.
+             
+             The basic architecture is that specific events (eg. the 'Process' event with opcode 'Start') define a
+             new subclass of code:TraceEvent (eg. code:ProcessTraceData) that define properties that know how to
+             parse the raw data into its various 'fields'.
+             
+             In addition a code:TraceEvent instance has support for the subscription model in the form a a the
+             code:TraceEvent.Dispatch virtual function. Events can remember a user-defined callback and dispatch
+             to that callback when the Dispatch' virtual methodIndex is called.
+             
+             An important restriction is that a TraceEvent becomes invalid after the callback is complete (it is
+             reused for the next event of that type in the stream). Thus callers should NOT cache instances of the
+             subclass of TraceEvent in their own data structures, but copy out the data they need or call
+             code:TraceEvent.Clone if they need a permanent copy.
+             </summary>
+        </member>
+        <member name="M:Diagnostics.Eventing.TraceEvent.EventData">
+            <summary>
+            Returns an array of bytes reprsenting the Event-specific payload associted with the event.  
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Diagnostics.Eventing.TraceEvent.EventData(System.Byte[],System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Gets the event data and puts it in 'targetBuffer' at 'targetStartIndex' and returns the resulting buffer.
+            If 'targetBuffer is null, it will allocate a buffer of the correct size.  Note that normally you
+            don't need to use this routine as some subclass of EventData that does proper parsing will work
+            for you instead.  
+            </summary>
+        </member>
+        <member name="M:Diagnostics.Eventing.TraceEvent.Clone">
+            <summary>
+            The events passed to the callback functions only last as long as the callback, so if you need to
+            keep the information around after that you need to copy it.  If it is convinient to store it as
+            the original event, you can do so using this Clone functionality.  Note that this operation is
+            not really cheap, so you should avoid calling it if you can. 
+            </summary>
+        </member>
+        <member name="M:Diagnostics.Eventing.TraceEvent.ToString">
+            <summary>
+            Pretty print the event.  It uses XML syntax so you can make XML with this routine too. 
+            </summary>
+        </member>
+        <member name="M:Diagnostics.Eventing.TraceEvent.Dump">
+            <summary>
+            Dumps a very verbose description of the event, including a dump of they payload bytes. It is in
+            XML format. This is very useful in debugging (put it in a watch window) when parsers are not
+            interpreting payloads properly.
+            </summary>
+        </member>
+        <member name="M:Diagnostics.Eventing.TraceEvent.PayloadValue(System.Int32)">
+            <summary>
+            Given an index from 0 to PayloadNames.Length-1, return the value for that payload item
+            as an object (boxed if necessary).  
+            </summary>
+        </member>
+        <member name="M:Diagnostics.Eventing.TraceEvent.PayloadString(System.Int32)">
+            <summary>
+            PayloadString is like PayloadValue(index).ToString(), however it allows the subclasses to do a better
+            job of doing a toString (in particular using symbolic names for enumerations.  
+            </summary>
+        </member>
+        <member name="M:Diagnostics.Eventing.TraceEvent.PayloadByName(System.String)">
+            <summary>
+            Only use this if you don't care about performance.  It fetches a field by name.  Will return
+            null if the name is not found.
+            </summary>
+        </member>
+        <member name="M:Diagnostics.Eventing.TraceEvent.Compare(Diagnostics.Eventing.EventIndex,Diagnostics.Eventing.EventIndex)">
+            <summary>
+            Used for binary searching of event IDs.    Abstracts the size (currently a int, could go to long) 
+            </summary>
+        </member>
+        <member name="M:Diagnostics.Eventing.TraceEvent.LogCodeAddresses(System.Action{Diagnostics.Eventing.TraceEvent,Diagnostics.Eventing.Address})">
+            <summary>
+            A standard way for events to are that certain addresses are addresses in code and ideally have
+            symbolic information associated with them. 
+            </summary>
+        </member>
+        <member name="M:Diagnostics.Eventing.TraceEvent.SkipAsciiString(System.Int32)">
+            <summary>
+            Assume that  'Offset' bytes into the 'mofData' is a ascii 
+            string.  Return the Offset after it is skipped.  This is intended
+            to be used by subclasses trying to parse mofData 
+            </summary>
+            <param name="offset">the starting Offset</param>
+            <returns>Offset just after the string</returns>
+        </member>
+        <member name="M:Diagnostics.Eventing.TraceEvent.SkipUnicodeString(System.Int32)">
+            <summary>
+            Assume that  'offset' bytes into the 'mofData' is a unicode 
+            string.  Return the Offset after it is skipped.  This is intended
+            to be used by subclasses trying to parse mofData 
+            </summary>
+            <param name="offset">the starting Offset</param>
+            <returns>Offset just after the string</returns>
+        </member>
+        <member name="M:Diagnostics.Eventing.TraceEvent.SkipSID(System.Int32)">
+            <summary>
+            Assume that  'offset' bytes into the 'mofData' is SID.
+            Return the Offset after it is skipped.  This is intended
+            to be used by subclasses trying to parse mofData 
+            </summary>
+            <param name="offset">the starting Offset</param>
+            <returns>Offset just after the string</returns>
+        </member>
+        <member name="M:Diagnostics.Eventing.TraceEvent.HostOffset(System.Int32,System.Int32)">
+            <summary>
+            Trivial helper that allows you to get the Offset of a field independent of 32 vs 64 bit pointer
+            size.
+            </summary>
+            <param name="offset">The Offset as it would be on a 32 bit system</param>
+            <param name="numPointers">The number of pointer-sized fields that came before this field.
+            </param>
+        </member>
+        <member name="M:Diagnostics.Eventing.TraceEvent.GetAsciiStringAt(System.Int32)">
+            <summary>
+            Given an Offset to a null terminated ASCII string in an event blob, return the string that is
+            held there.   
+            </summary>
+        </member>
+        <member name="M:Diagnostics.Eventing.TraceEvent.GetFixedUnicodeStringAt(System.Int32,System.Int32)">
+            <summary>
+            Given an Offset to a fixed sized string at 'offset', whose buffer size is 'charCount'
+            return the string value.  A null in the string will terminate the string before the
+            end of the buffer. 
+            </summary>        
+        </member>
+        <member name="M:Diagnostics.Eventing.TraceEvent.GetUnicodeStringAt(System.Int32)">
+            <summary>
+            Given an Offset to a null terminated unicode string in an event blob, return the string that is
+            held there.   
+            </summary>
+        </member>
+        <member name="M:Diagnostics.Eventing.TraceEvent.GetIntPtrAt(System.Int32)">
+            <summary>
+            Get something that is machine word sized for the provider that collected the data, but is an
+            integer (and not an address)
+            </summary>
+            <param name="offset"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Diagnostics.Eventing.TraceEvent.GetHostPointer(System.Int32)">
+            <summary>
+            Gets something that is pointer sized for the provider that collected the data.  
+            TODO rename to GetPointerAt()
+            </summary>
+        </member>
+        <member name="M:Diagnostics.Eventing.TraceEvent.Prefix(System.Text.StringBuilder)">
+            <summary>
+            Prints a standard prefix for a event (includes the time of the event, the process ID and the
+            thread ID.  
+            </summary>
+        </member>
+        <member name="M:Diagnostics.Eventing.TraceEvent.EventDataAsString">
+            <summary>
+             If the event data looks like a unicode string, then return it.  This is heuristic.  
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Diagnostics.Eventing.TraceEvent.Dispatch">
+            <summary>
+            Each code:TraceEvent items knows where it should Dispatch to.
+            code:ETWTraceEventSource.Dispatch calls this function to go to the right placed. By default we
+            do nothing. Typically a subclass just dispatches to another callback that passes itself to a
+            type-specific event callback.
+            </summary>
+        </member>
+        <member name="M:Diagnostics.Eventing.TraceEvent.Validate">
+            <summary>
+            This is a DEBUG-ONLY routine that allows a routine to do consistancy checking in a debug build.  
+            </summary>
+        </member>
+        <member name="F:Diagnostics.Eventing.TraceEvent.next">
+            <summary>
+            TraceEvent knows where to dispatch to. To support many subscriptions to the same event we chain
+            them.
+            </summary>
+        </member>
+        <member name="P:Diagnostics.Eventing.TraceEvent.ProviderGuid">
+            <summary>
+            The GUID that uniquely identifies the Provider for this event.  This can return Guid.Empty for
+            pre-VISTA ETW providers.  
+            </summary>        
+        </member>
+        <member name="P:Diagnostics.Eventing.TraceEvent.EventName">
+            <summary>
+            A name for the event.  This is simply the concatination of the task and opcode names. 
+            </summary>
+        </member>
+        <member name="P:Diagnostics.Eventing.TraceEvent.ID">
+            <summary>
+            Returns the provider-specific integer value that uniquely identifies event within the scope of
+            the provider. (Currently returns 0 for pre-VISTA ETW providers).
+            
+            The strong convention (but is is only a convention) is that every (Task x Opcode) pair is given
+            a unique ID.   
+            
+            TODO: Synthesize something for pre-Vista?
+            </summary>
+        </member>
+        <member name="P:Diagnostics.Eventing.TraceEvent.Task">
+            <summary>
+            Events for a given provider can be given a group identifier called a Task that indicates the
+            broad area within the provider that the event pertains to (for example the Kernel provider has
+            Tasks for Process, Threads, etc).  
+            </summary>
+        </member>
+        <member name="P:Diagnostics.Eventing.TraceEvent.TaskName">
+            <summary>
+            The human readable name for the event's task (group of related events) (eg. process, thread,
+            image, GC, ...).  May return a string Task(GUID) or Task(TASK_NUM) if no good symbolic name is
+            available. 
+            </summary>
+        </member>
+        <member name="P:Diagnostics.Eventing.TraceEvent.Opcode">
+            <summary>
+            Each event has a Type identifier that indicates what kind of an event is being logged. Note that
+            providers are free to extend this set, so the id may not be just the value in code:TraceEventOpcode
+            </summary>
+        </member>
+        <member name="P:Diagnostics.Eventing.TraceEvent.OpcodeName">
+            <summary>
+            Returns the human-readable string name for the code:Opcode property. 
+            </summary>
+        </member>
+        <member name="P:Diagnostics.Eventing.TraceEvent.Level">
+            <summary>
+            The verbosity of the event (Fatal, Error, ..., Info, Verbose)
+            </summary>
+        </member>
+        <member name="P:Diagnostics.Eventing.TraceEvent.Version">
+            <summary>
+            The version number for this event.  
+            </summary>
+        </member>
+        <member name="P:Diagnostics.Eventing.TraceEvent.Keyword">
+            <summary>
+            When an entry is logged it can specify a bitfield TraceEventKeyword that identifies
+            provider-specific 'areas' that the event is relevent to.  Return this bitfield for the event. 
+            Returns TraceEventKeyword.None for pre-VISTA ETW providers. 
+            </summary>
+        </member>
+        <member name="P:Diagnostics.Eventing.TraceEvent.Channel">
+            <summary>
+            A Channel is a provider defined 'audience' for the event.  It is TraceEventChannel.Default for
+            Pre-Vista providers.  
+            </summary>
+        </member>
+        <member name="P:Diagnostics.Eventing.TraceEvent.ThreadID">
+            <summary>
+            The thread ID for the event
+            </summary>
+        </member>
+        <member name="P:Diagnostics.Eventing.TraceEvent.ProcessID">
+            <summary>
+            The process ID of the process which caused the event. 
+            </summary>
+        </member>
+        <member name="P:Diagnostics.Eventing.TraceEvent.TimeStamp100ns">
+            <summary>
+            The time of the event, represented in 100ns units from the year 1601.  See also code:TimeDateStamp
+            </summary>
+        </member>
+        <member name="P:Diagnostics.Eventing.TraceEvent.TimeStamp">
+            <summary>
+            The time of the event. The overhead of creating a DateTime object can be avoided using
+            code:TimeStamp100ns
+            </summary>
+        </member>
+        <member name="P:Diagnostics.Eventing.TraceEvent.ProcessName">
+            <summary>
+            Returns a short name for the process. This the image file name (without the path or extension),
+            or if that is not present, then the string "(" ProcessID + ")" 
+            </summary>
+        </member>
+        <member name="P:Diagnostics.Eventing.TraceEvent.TimeStampRelativeMSec">
+            <summary>
+            Returns a double representing the number of milliseconds since the beining of the trace.     
+            </summary>
+        </member>
+        <member name="P:Diagnostics.Eventing.TraceEvent.ProcessorNumber">
+            <summary>
+            The processor Number (from 0 to code:TraceEventSource.NumberOfProcessors) that generated this
+            event. 
+            </summary>
+        </member>
+        <member name="P:Diagnostics.Eventing.TraceEvent.PointerSize">
+            <summary>
+            Get the size of a pointer associated with the event.  
+            
+            Note that for providers that run in the WOW this might return 4 on a 64 bit machines. 
+            TODO: Figure out what bit in the event is used to disginguish this!
+            </summary>
+        </member>
+        <member name="P:Diagnostics.Eventing.TraceEvent.EventIndex">
+            <summary>
+            An EventIndex is a integer that is guarenteed to be unique for this even over the entire log.  Its
+            primary purpose is to act as a key that allows side tables to be built up that allow value added
+            processing to 'attach' additional data to this particular event unambiguously.  
+            
+            EventIndex is currently a 4 byte quantity.  This does limit log sizes to 4Gig of events, but
+            that is a LOT of events.  (realistically > 100 GIG ETL files)   
+            </summary>
+        </member>
+        <member name="P:Diagnostics.Eventing.TraceEvent.Source">
+            <summary>
+            The TraceEventSource associated with this event
+            </summary>
+        </member>
+        <member name="P:Diagnostics.Eventing.TraceEvent.EventDataLength">
+            <summary>
+            The size of the Event-specific data payload.  (see code:EventData)
+            </summary>
+        </member>
+        <member name="P:Diagnostics.Eventing.TraceEvent.PayloadNames">
+            <summary>
+            returns the names of all the manifest declared field names for the event.  
+            </summary>
+        </member>
+        <member name="P:Diagnostics.Eventing.TraceEvent.FormattedMessage">
+            <summary>
+            Return a formatted string for the entire event, fit for human consumption.   It will return null if the event does not 
+            define a 'message' string that defines the formatting.  
+            </summary>
+        </member>
+        <member name="P:Diagnostics.Eventing.TraceEvent.ClassicProvider">
+            <summary>
+            Is this a Pre-Vista (classic) provider?
+            </summary>
+        </member>
+        <member name="P:Diagnostics.Eventing.TraceEvent.StringOnly">
+            <summary>
+            Was this written with WriteMessage?
+            </summary>
+        </member>
+        <member name="P:Diagnostics.Eventing.TraceEvent.DataStart">
+            <summary>
+            Returns the raw IntPtr pointer to the data blob associated with the event.  This is the way the
+            subclasses of TraceEvent get at the data to display it in a reasonable fashion.
+            </summary>
+        </member>
+        <member name="M:Diagnostics.Eventing.ClrStackWalkTraceData.InstructionPointer(System.Int32)">
+            <summary>
+            Fetches the instruction pointer of a eventToStack frame 0 is the deepest frame, and the maximum should
+            be a thread offset routine (if you get a complete eventToStack).  
+            </summary>
+            <param name="i">The index of the frame to fetch.  0 is the CPU EIP, 1 is the Caller of that
+            routine ...</param>
+            <returns>The instruction pointer of the specified frame.</returns>
+        </member>
+        <member name="T:DynamicManifestTraceEventData">
+            <summary>
+            This class is only used to pretty-print the manifest event itself.   It is pretty special purpose
+            </summary>
+        </member>
+        <member name="T:FastSerialization.IFastSerializable">
+            <summary>
+            A type can opt into being serializable by implementing code:IFastSerializable and a default constructor
+            (constructor that takes not arguments).
+            
+            Conceputally all clients of code:IFastSerializable also implement code:IFastSerializableVersion
+            however the serializer will assume a default implementation of code:IFastSerializableVersion (that
+            returns version 1 and assumes all versions are allowed to deserialize it.  
+            </summary>
+        </member>
+        <member name="M:FastSerialization.IFastSerializable.ToStream(FastSerialization.Serializer)">
+            <summary>
+            Given a Serializer, write youself to the output stream. Conceptually this routine is NOT
+            responsible for serializing its type information but only its field values. However it is
+            conceptually responsible for the full transitive closure of its fields.
+            
+            * For primitive fields, the choice is easy, simply call code:Serializer.Write
+            * For object fields there is a choice
+                * If is is only referneces by the enclosing object (eg and therefore field's lifetime is
+                    identical to referencing object), then the code:Serialize.WritePrivateObject can be
+                    used.  This skips placing the object in the interning table (that insures it is written
+                    exactly once).  
+                * Otherwise call code:Serialize.WriteObject
+            * For value type fields (or collections of structs), you serialize the component fields.  
+            * For collections, typically you serialize an integer inclusiveCountRet followed by each object. 
+            </summary>
+        </member>
+        <member name="M:FastSerialization.IFastSerializable.FromStream(FastSerialization.Deserializer)">
+            <summary>
+            
+            Given a reader, and a 'this' instance, made by calling the default constructor, create a fully
+            initialized instance of the object from the reader stream.  The deserializer provides the extra
+            state needed to do this for cyclic object graphs.  
+            
+            Note that it is legal for the instance to cache the deserializer and thus be 'lazy' about when
+            the actual deserialization happens (thus large persisted strucutre on the disk might stay on the
+            disk).  
+            
+            Typically the FromStream implementation is an exact mirror of the ToStream implementation, where
+            there is a Read() for every Write(). 
+            </summary>
+        </member>
+        <member name="T:Diagnostics.Eventing.ETWTraceEventSource">
+            <summary>
+            A code:ETWTraceEventSource represents the stream of events that was collected from a
+            code:TraceEventSession (eg the ETL moduleFile, or the live session event stream). Like all
+            code:TraceEventSource, it logically represents a stream of code:TraceEvent s. Like all
+            code:TraceEventDispather s it supports a callback model where Parsers attach themselves to this
+            soures, and user callbacks defined on the parsers are called when the 'Process' methodIndex is called.
+            
+            * See also code:TraceEventDispatcher
+            * See also code:TraceEvent
+            * See also code:#ETWTraceEventSourceInternals
+            * See also code:#ETWTraceEventSourceFields
+            </summary>    
+        </member>
+        <member name="T:Diagnostics.Eventing.TraceEventDispatcher">
+            <summary>
+            A code:TraceEventDispatcher is a code:TraceEventSource that supports a callback model for dispatching
+            events. Like all code:TraceEventSource, it represents a list of code:TraceEvent however a
+            code:TracEventDispatcher in addition has a hash table (from event GUI and EventID to code:TraceEvent)
+            that is filled in when RegisterEventTemplate is called. Once registration is complete, calling
+            code:TraceEventDispatcher.Process() will cause the callbacks to be triggered (in order)
+            
+            See also code:ETWTraceEventSource a dispatcher tailored for reading ETL files.
+            See also code:ETLXTraceEventSource a dispatcher tailored for reading ETLX files. 
+            </summary>
+        </member>
+        <member name="T:Diagnostics.Eventing.TraceEventSource">
+            <summary>
+            code:TraceEventSource represents a list of events (eg a ETL file or ETLX file or a real time stream).
+            There are two basic models for acessing such a list, either a callback model (where clients register
+            their desire to know about particular events), and the iterator model (where you can use a 'foreach'
+            on the list to get each event in turn. code:TraceEventSource represnts all those aspects of the list
+            of event that is INDEPENDENT of which model you use. Thus code:TraceEventSource does not actually
+            have the most interesting methods (Because the interesting methods deal with getting at the events)
+            those actually are on sublasses
+            
+                * code:TraceEventDispatcher - is a subclass of code:TraceEventSource that supports the callback
+                    model for accessing events. This interface can be used with 'real time' streams.
+                * code:Diagnostics.Eventing.TraceLog.TraceLog - is also a subclass of
+                    code:TraceEventSource that supports the iteration model (through its
+                    code:Diagnostics.Eventing.TraceLog.TraceLog.Events property. This mechanism can only
+                    be used on files, because it supports a much broader variety of access methods (eg moving
+                    backwards, annotating events ...)
+            
+            Regardless of the model used to access the events, an important aspect of the system is that
+            code:TraceEventSource does not know about the event-specific layout of an event (which allows new
+            events to be added easily). Instead there needs to be a way for event specific
+            parsers to register themselves (this is needed regarless of whether the callback or
+            iterator model is used).  Providing the interface to do this is the primary purpose
+            of code:TraceEventSource and is defined by the code:ITraceParserServices 
+                 
+            * see code:#Introduction for details
+            </summary>
+        </member>
+        <member name="T:Diagnostics.Eventing.ITraceParserServices">
+            <summary>
+            code:TraceEventSource has two roles.  The first is the obvious one of providing some properties
+            like 'SessionStartTime' for clients.  The other role is provide an anchor for code:TraceEventParser
+            to 'hook' to so that events can be decoded.  code:ITraceParserServices is the API service for this
+            second role.  It provides the methods that parsers use attach themselves to sources and register the
+            fact that they undertand how to decode certain events.  
+            </summary>
+        </member>
+        <member name="M:Diagnostics.Eventing.ITraceParserServices.RegisterEventTemplate(Diagnostics.Eventing.TraceEvent)">
+            <summary>
+            RegisterEventTemplate is the mechanism a particular event payload description 'template' (a
+            subclass of code:TraceEvent) is injected into the event processing stream. Once registered, an
+            event is 'parsed' simply by setting the 'rawData' field in the event. It is up to the template
+            then to take this raw data an present it in a useful way to the user (via properties). Note that
+            parsing is thus 'lazy' in no processing of the raw data is not done at event dispatch time but
+            only when the properties of an event are accessed.
+            
+            Another important aspect is that templates are reused by code:TraceEventSource agressively. The
+            expectation is that no memory needs to be allocated during a normal dispatch (in fact only one
+            field in the code:TraceEvent is set).
+            </summary>
+        </member>
+        <member name="M:Diagnostics.Eventing.ITraceParserServices.RegisterParser(Diagnostics.Eventing.TraceEventParser)">
+            <summary>
+            It is expected that when a subclass of code:TraceEventParser is created, it calls this
+            methodIndex on the source.  This allows the source to do any Parser-specific initialization.  
+            </summary>
+        </member>
+        <member name="M:Diagnostics.Eventing.ITraceParserServices.TaskNameForGuid(System.Guid)">
+            <summary>
+            Looks if any provider has registered an event with task with 'taskGuid'. Will return null if
+            there is no registered event.
+            </summary>
+        </member>
+        <member name="M:Diagnostics.Eventing.ITraceParserServices.ProviderNameForGuid(System.Guid)">
+            <summary>
+            Looks if any provider has registered with the given GUID OR has registered any task that mathces
+            the GUID. Will return null if there is no registered event.
+            </summary>
+        </member>
+        <member name="M:Diagnostics.Eventing.TraceEventSource.RelativeTimeMSec(System.Int64)">
+            <summary>
+            Returns a double representing the number of milliseconds 'time100ns' is from the offset of the log 
+            </summary>
+            <param name="time100ns">The time to convert to relative form</param>
+            <returns>number of milliseconds from the begining of the log</returns>
+        </member>
+        <member name="M:Diagnostics.Eventing.TraceEventSource.Dispose">
+            <summary>
+            Should be called when you are done with the source.  
+            </summary>
+        </member>
+        <member name="P:Diagnostics.Eventing.TraceEventSource.Kernel">
+            <summary>
+            For convinience, we provide a property that will instantiate an object that knows how to parse
+            all the Kernel events into callbacks.  See code:KernelTraceEventParser for more 
+            </summary>
+        </member>
+        <member name="P:Diagnostics.Eventing.TraceEventSource.Dynamic">
+            <summary>
+            For convinience, we provide a property that will instantiate an object that knows how to parse
+            all providers that dump their manifests into the event stream.  See code:DynamicTraceEventParser for more 
+            </summary>
+        </member>
+        <member name="P:Diagnostics.Eventing.TraceEventSource.SessionStartTime">
+            <summary>
+            The time when session started logging. 
+            </summary>
+        </member>
+        <member name="P:Diagnostics.Eventing.TraceEventSource.SessionStartTime100ns">
+            <summary>
+            The time is expressed as a windows moduleFile time (100ns ticks since 1601). This is very
+            efficient and useful for finding deltas between events quickly.
+            </summary>
+        </member>
+        <member name="P:Diagnostics.Eventing.TraceEventSource.SessionEndTime">
+            <summary>
+            The time that the session stopped logging.
+            </summary>
+        </member>
+        <member name="P:Diagnostics.Eventing.TraceEventSource.SessionEndTime100ns">
+            <summary>
+            The end time expresses as a windows moduleFile time (100ns ticks since 1601).  This is very efficient
+            and useful for finding deltas between events quickly.  
+            </summary>
+        </member>
+        <member name="P:Diagnostics.Eventing.TraceEventSource.SessionDuration">
+            <summary>
+            The differnet between SessionEndTime and SessionStartTime;
+            </summary>
+        </member>
+        <member name="P:Diagnostics.Eventing.TraceEventSource.PointerSize">
+            <summary>
+            Returns the size of a pointer on the machine where events were collected. 
+            </summary>
+        </member>
+        <member name="P:Diagnostics.Eventing.TraceEventSource.EventsLost">
+            <summary>
+            The number of events that were dropped (event rate was too fast)
+            </summary>
+        </member>
+        <member name="P:Diagnostics.Eventing.TraceEventSource.NumberOfProcessors">
+            <summary>
+            The number of processors on the machine doing the logging. 
+            </summary>
+        </member>
+        <member name="P:Diagnostics.Eventing.TraceEventSource.CpuSpeedMHz">
+            <summary>
+            Cpu speed of the processor doing the logging. 
+            </summary>
+        </member>
+        <member name="P:Diagnostics.Eventing.TraceEventSource.PerfFreq">
+            <summary>
+            This is the high frequency tick clock on the processor (what QueryPerformanceCounter uses).  
+            </summary>
+        </member>
+        <member name="P:Diagnostics.Eventing.TraceEventSource.UserData">
+            <summary>
+            code:TraceEventSource support attaching arbitary user data to the source.  One convetion that
+            has been established is that parsers that need additional state to parse their events should
+            store them in 'parsers\(ParserName)'.  
+            </summary>
+        </member>
+        <member name="M:Diagnostics.Eventing.TraceEventDispatcher.Process">
+            <summary>
+            Once a client has subscribed to the events of interest, calling Process actually causes
+            the callbacks to happen.   
+            </summary>
+            <returns>false If StopProcesing was called</returns>
+        </member>
+        <member name="M:Diagnostics.Eventing.TraceEventDispatcher.StopProcessing">
+            <summary>
+            Calling this function in a callback when 'Process' is running will indicate that processing
+            should be stopped immediately. 
+            </summary>
+        </member>
+        <member name="M:Diagnostics.Eventing.TraceEventDispatcher.Dispatch(Diagnostics.Eventing.TraceEvent)">
+            <summary>
+            This is the routine that is called back when any event arrives.  Basically it looks up the GUID
+            and the opcode associated with the event and finds right subclass of code:TraceEvent that
+            knows how to decode the packet, and calls its virtual code:TraceEvent.Dispatch methodIndex.  Note
+            that code:TraceEvent does NOT have a copy of hte data, but rather just a pointer to it. 
+            This data is ONLY valid during the callback. 
+            </summary>
+        </member>
+        <member name="M:Diagnostics.Eventing.TraceEventDispatcher.Lookup(Diagnostics.Eventing.TraceEventNativeMethods.EVENT_RECORD*)">
+            <summary>
+            Lookup up the event based on its ProviderID (GUID) and EventId (Classic use the TaskId and the
+            Opcode field for lookup, but use these same fields (see code:ETWTraceEventSource.RawDispatchClassic)
+            </summary>
+        </member>
+        <member name="M:Diagnostics.Eventing.TraceEventDispatcher.Insert(Diagnostics.Eventing.TraceEvent)">
+            <summary>
+            Inserts 'template' into the hash table, using 'providerGuid' and and 'eventID' as the key. 
+            For Vista ETW events 'providerGuid' must match the provider GUID and the 'eventID' the ID filed.
+            For PreVist ETW events 'providerGuid must match the task GUID the 'eventID' is the Opcode
+            </summary>
+        </member>
+        <member name="M:Diagnostics.Eventing.TraceEventDispatcher.GenTaskGuidFromProviderGuid(System.Guid,System.UInt16)">
+            <summary>
+            A helper for creating a set of related guids (knowing the providerGuid can can deduce the
+            'taskNumber' member of this group.  All we do is add the taskNumber to GUID as a number.  
+            </summary>
+        </member>
+        <member name="E:Diagnostics.Eventing.TraceEventDispatcher.UnhandledEvent">
+            <summary>
+            This event is called if no other hander has processed the event. Generally it is best not to use
+            this if possible as it means that no filtering can be done by ETWTraceEventSource.
+            </summary>
+        </member>
+        <member name="E:Diagnostics.Eventing.TraceEventDispatcher.EveryEvent">
+            <summary>
+            This event is called on every event in the trace.  Generally you should be picking off just he
+            events you want by using subclasses of code:ETWTraceEventSource like code:Kernel and code:CLR to
+            subscribe to specific events, but sometimes you want to uniformly process every event.  
+            
+            This is called AFTER any event-specific handlers.
+            </summary>
+        </member>
+        <member name="M:Diagnostics.Eventing.ETWTraceEventSource.#ctor(System.String)">
+            <summary>
+            Open a ETW event trace moduleFile (ETL moduleFile) for processing.  
+            </summary>
+            <param name="fileName">The ETL data moduleFile to open</param>
+        </member>
+        <member name="M:Diagnostics.Eventing.ETWTraceEventSource.#ctor(System.String,Diagnostics.Eventing.TraceEventSourceType)">
+            <summary>
+            Open a ETW event source for processing.  This can either be a moduleFile or a real time ETW session
+            </summary>
+            <param name="fileOrSessionName">
+            If type == ModuleFile this is the name of the moduleFile to open.
+            If type == Session this is the name of real time sessing to open.</param>
+            <param name="type"></param>
+        </member>
+        <member name="M:Diagnostics.Eventing.ETWTraceEventSource.Process">
+            <summary>
+            Processes all the events in the data soruce, issuing callbacks that were subscribed to.  See
+            code:#Introduction for more
+            </summary>
+            <returns>false If StopProcesing was called</returns>
+        </member>
+        <member name="M:Diagnostics.Eventing.ETWTraceEventSource.Close">
+            <summary>
+            Closes the ETL moduleFile or detaches from the session.  
+            </summary>  
+        </member>
+        <member name="P:Diagnostics.Eventing.ETWTraceEventSource.LogFileName">
+            <summary>
+            The log moduleFile that is being processed (if present)
+            TODO: what does this do for Real time sessions?
+            </summary>
+        </member>
+        <member name="P:Diagnostics.Eventing.ETWTraceEventSource.SessionName">
+            <summary>
+            The name of the session that generated the data. 
+            </summary>
+        </member>
+        <member name="P:Diagnostics.Eventing.ETWTraceEventSource.CanReset">
+            <summary>
+            Returns true if the code:Process can be called mulitple times (if the Data source is from a
+            moduleFile, not a real time stream.
+            </summary>
+        </member>
+        <member name="T:Diagnostics.Eventing.TraceEventSourceType">
+            <summary>
+            The kinds of data sources that can be opened (see code:ETWTraceEventSource)
+            </summary>
+        </member>
+        <member name="F:Diagnostics.Eventing.TraceEventSourceType.MergeAll">
+            <summary>
+            Look for any files like *.etl or *.*.etl (the later holds things like *.kernel.etl or *.clrRundown.etl ...)
+            </summary>
+        </member>
+        <member name="F:Diagnostics.Eventing.TraceEventSourceType.FileOnly">
+            <summary>
+            Look for a ETL moduleFile *.etl as the event data source 
+            </summary>
+        </member>
+        <member name="F:Diagnostics.Eventing.TraceEventSourceType.Session">
+            <summary>
+            Use a real time session as the event data source.
+            </summary>
+        </member>
+        <member name="T:ManifestEnvelope">
+            <summary>
+            Used to send the rawManifest into the event stream as a series of events.  
+            </summary>
+        </member>
+        <member name="M:PEFile.PEFile.GetPdbSignature(System.String@,System.Guid@,System.Int32@)">
+            <summary>
+            Looks up the debug signature information in the EXE.   Returns true and sets the parameters if it is found. 
+            </summary>
+        </member>
+        <member name="P:PEFile.PEFile.Header">
+            <summary>
+            The Header for the PE file.  This contains the infor in a link /dump /headers 
+            </summary>
+        </member>
+        <member name="M:PEFile.PEHeader.#ctor(System.IntPtr)">
+            <summary>
+            Returns a PEHeader for pointer in memory.  It does NO validity checking. 
+            </summary>
+            <param name="startOfPEFile"></param>
+        </member>
+        <member name="M:PEFile.PEHeader.Dispose">
+            <summary>
+            PEHeader pins a buffer, if you wish to eagerly dispose of this, it can be done here.  
+            </summary>
+        </member>
+        <member name="P:PEFile.PEHeader.Size">
+            <summary>
+            The total size, including section array of the the PE header.  
+            </summary>
+        </member>
+        <member name="T:Stacks.StackSource">
+            <summary>
+            It is the abstract contract for a sample.  All we need is the Metric and 
+            </summary>    
+        </member>
+        <member name="T:Stacks.StackSourceStacks">
+            <summary>
+            Samples have stacks (lists of frames, each frame contains a name) associated with them.  This interface allows you to get 
+            at this information.  We don't use normal objects to represent these but rather give each stack (and frame) a unique
+            (dense) index.   This has a number of advantages over using objects to represent the stack.
+            
+                * Indexes are very serialization friendly, and this data will be presisted.  Thus indexes are the natural form for data on disk. 
+                * It allows the data to be read from the serialized format (disk) lazily in a very straightfoward fashion, keeping only the
+                    hottest elements in memory.  
+                * Users of this API can associate additional data with the call stacks or frames trivially and efficiently simply by
+                    having an array indexed by the stack or frame index.   
+                    
+            So effecively a StackSourceStacks is simply a set of 'Get' methods that allow you to look up information given a Stack or
+            frame index.  
+            </summary>
+        </member>
+        <member name="M:Stacks.StackSourceStacks.GetCallerIndex(Stacks.StackSourceCallStackIndex)">
+            <summary>
+            Given a call stack, return the call stack of the caller.   This function can return StackSourceCallStackIndex.Discard
+            which means that this sample should be discarded.  
+            </summary>
+        </member>
+        <member name="M:Stacks.StackSourceStacks.GetFrameIndex(Stacks.StackSourceCallStackIndex)">
+            <summary>
+            For efficiency, m_frames are assumed have a integer ID instead of a string name that
+            is unique to the frame.  Note that it is expected that GetFrameIndex(x) == GetFrameId(y) 
+            then GetFrameName(x) == GetFrameName(y).   The converse does NOT have to be true (you 
+            can reused the same name for distict m_frames, however this can be confusing to your
+            users, so be careful.  
+            </summary>
+        </member>
+        <member name="M:Stacks.StackSourceStacks.GetNumberOfFoldedFrames(Stacks.StackSourceCallStackIndex)">
+            <summary>
+            FilterStackSources can combine more than one frame into a given frame.  It is useful to know
+            how many times this happened.   Returning 0 means no combining happened.  
+            </summary>
+        </member>
+        <member name="M:Stacks.StackSourceStacks.GetFrameName(Stacks.StackSourceFrameIndex,System.Boolean)">
+            <summary>
+            Get the frame name from the FrameIndex.   If 'verboseName' is true then full module path is included.
+            </summary>
+        </member>
+        <member name="P:Stacks.StackSourceStacks.CallStackIndexLimit">
+            <summary>
+            all StackSourceCallStackIndex are guarenteed to be less than this.  Allocate an array of this size to associate side information
+            </summary>
+        </member>
+        <member name="P:Stacks.StackSourceStacks.CallFrameIndexLimit">
+            <summary>
+            all StackSourceFrameIndex are guarenteed to be less than this.  Allocate an array of this size to associate side information
+            </summary>
+        </member>
+        <member name="M:Stacks.StackSource.GetSampleByIndex(Stacks.StackSourceSampleIndex)">
+            <summary>
+            If this source supports fetching the samples by index, this is how you get it.  Like ProduceSamples the sample that
+            is returned is not allowed to be modified.   Also the returned sample will become invalid the next time GetSampleIndex
+            is called (we reuse the StackSourceSample on each call)
+            </summary>
+        </member>
+        <member name="P:Stacks.StackSource.BaseStackSource">
+            <summary>
+            If this stack source is a source that simply groups another source, get tht base source.  It will return
+            itself if there is no base source.  
+            </summary>
+        </member>
+        <member name="T:Stacks.StackSourceSample">
+            <summary>
+            StackSourceSample represents a single sample that has a stack.  StackSource.GetNextSample returns these.  
+            </summary>
+        </member>
+        <member name="T:Stacks.StackSourceSampleIndex">
+            <summary>
+            Identifies a particular sample from the sample source, it allows 3rd parties to attach additional
+            information to the sample by creating an array indexed by sampleIndex.  
+            </summary>
+        </member>
+        <member name="T:Stacks.StackSourceCallStackIndex">
+            <summary>
+            An opaque handle that are 1-1 with a complete call stack
+            
+            </summary>
+        </member>
+        <member name="T:Stacks.StackSourceFrameIndex">
+            <summary>
+            Identifies a particular frame within a stack   It represents a particular instruction pointer (IP) location 
+            in the code or a group of such locations.  
+            </summary>
+        </member>
+        <member name="T:Stacks.CopyStackSource">
+            <summary>
+            This stack source takes another and copies out all its events.   This allows you to 'replay' the source 
+            efficiently when the original source only does this inefficiently.  
+            </summary>
+        </member>
+        <member name="T:Stacks.InternStackSource">
+            <summary>
+            Like CopyStackSource InternStackSource copies the samples. however unlike CopyStackSource
+            InternStackSource copies all the information in the stacks too (mapping stack indexes to names)
+            Thus it never refers to the original source again).   It also interns the stacks making for 
+            an efficient representation of the data.   This is useful when the original source is expensive 
+            to iterate over.   
+            
+            If you have 'raw' uninterned data, subclassing InternStackSource 
+            </summary>
+        </member>
+        <member name="M:Stacks.InternStackSource.Diff(Stacks.StackSource,Stacks.StackSource)">
+            <summary>
+            Compute only the delta of soruce from the baseline. 
+            </summary>
+        </member>
+        <member name="T:Stacks.CombinedStackSource">
+            <summary>
+            Creates a stack source that can refer to stacks from either the stack sources x or y.  This
+            is useful to diffing or other scenarios where we wish to combine sources.  
+            
+            TODO use InternStackSource instead?
+            </summary>
+        </member>
+        <member name="T:Stacks.CallTree">
+            <summary>
+            SampleInfos of a set of stackSource by eventToStack.  This represents the entire call tree.   You create an empty one in using
+            the default constructor and use 'AddSample' to add stackSource to it.   You traverse it by 
+            </summary>
+        </member>
+        <member name="M:Stacks.CallTree.#ctor">
+            <summary>
+            Creates an empty call tree.  Only useful so you can have a valid 'placeholder' value when you 
+            have no samples.  
+            </summary>
+        </member>
+        <member name="M:Stacks.CallTree.Callers(System.String)">
+            <summary>
+            Computes an 'inverted' tree root at 'nodeName' that represents the callers of 'nodeName'
+            Thus this tree is rooted at 'nodeName' and all its leaves are 'Root' nodes.  
+            This overlaps functionality in the caller-callee view, however this one displays information
+            more than one level away.  
+            </summary>
+        </member>
+        <member name="M:Stacks.CallTree.AccumlateCallers(System.String,Stacks.CallTreeNode,System.Int32)">
+            <summary>
+            Walks all inclusive samples of 'nodeInCalleesTree' and adds any that are for the method 'focusName' 
+            (inclusively) to the current tree.   numFocusSeen is the number of times 'focusName' was seen in
+            the callers of 'treeNode'. 
+            
+            TODO currently when there is recurisioin we show the deepest nodes.  
+            </summary>
+        </member>
+        <member name="M:Stacks.CallTree.Sort(System.Comparison{Stacks.CallTreeNode})">
+            <summary>
+            Cause each treeNode in the calltree to be sorted (accending) based on comparer
+            </summary>
+        </member>
+        <member name="M:Stacks.CallTree.SortInclusiveMetricDecending">
+            <summary>
+            Sorting by InclusiveMetric Decending is so common, provide a shortcut.  
+            </summary>
+        </member>
+        <member name="M:Stacks.CallTree.FoldNodesUnder(System.Single,System.Boolean)">
+            <summary>
+            If there are any nodes that have strictly less than to 'minInclusiveMetric'
+            then remove the node, placing its samples into its parent (thus the parent's
+            exclusive metric goes up).  
+            
+            If useWholeTraceMetric is true, nodes are only foled if their inclusive metric
+            OVER THE WHOLE TRACE is less than 'minInclusiveMetric'.  If false, then a node
+            is folded if THAT NODE has less than the 'minInclusiveMetric'  
+            
+            Thus if 'useWholeTraceMetric' == false then after calling this routine no
+            node will have less than minInclusiveMetric.  
+            
+            </summary>
+        </member>
+        <member name="M:Stacks.CallTree.AccumulateSumByID(Stacks.CallTreeNode,System.Collections.Generic.Dictionary{System.Int32,Stacks.CallTreeNodeBase})">
+            <summary>
+            Traverse the subtree of 'treeNode' into the m_sumByID dictionary.   We don't want to
+            double-count inclusive times, so we have to keep track of all m_callers currently on the
+            stack and we only add inclusive times for nodes that are not already on the stack.  
+            </summary>
+        </member>
+        <member name="P:Stacks.CallTree.TimeHistogramSize">
+            <summary>
+            The number of buckets to divide time into for the histogram.  see code:CallTreeNodeBase.InclusiveMetricByTime
+            Only has an effect before the stack source is assigned.  
+            
+            By default this is 0, which means that code:CallTreeNodeBase.InclusiveMetricByTime returns null;
+            </summary>
+        </member>
+        <member name="P:Stacks.CallTree.ByID">
+            <summary>
+            Return a list of nodes that have statisicts rolled up by treeNode by ID.  It is not
+            sorted by anything in particular.   Note that ID is not quite the same thing as the 
+            name.  You can have two nodes that have different IDs but the same Name.  These 
+            will show up as two distinct entries in the resulting list.  
+            </summary>
+        </member>
+        <member name="T:Stacks.CallTreeNodeBase">
+            <summary>
+            The part of a CalltreeNode that is common to Caller-calleeSum and the Calltree view.  
+            </summary>
+        </member>
+        <member name="M:Stacks.CallTreeNodeBase.GetUngroupedSamples(System.Boolean)">
+            <summary>
+            Return a StackSource that has all the samples in this node.  If exclusive==true then just he
+            sample exclusively in this node are returned, otherwise it is the inclusive samples.   
+            
+            If the original stack source that was used to create this CodeTreeNode was a FilterStackSource
+            then that filtering is removed in the returned StackSource.  
+            </summary>
+        </member>
+        <member name="M:Stacks.CallTreeNodeBase.CombineByIdSamples(Stacks.CallTreeNodeBase,System.Boolean,System.Double)">
+            <summary>
+            Combines the 'this' node with 'otherNode'.   If 'newOnStack' is true, then the inclusive
+            metrics are also updated.  
+            
+            Note that I DON'T accumlate other.m_samples into this.m_samples.   This is because this routine is
+            only intended to be called from AccumlateByID and the intent there is that m_nextSameId already handles
+            that.  
+            </summary>
+        </member>
+        <member name="P:Stacks.CallTreeNodeBase.DisplayName">
+            <summary>
+            Name also includes an indication of how many stack frames were folded into this node
+            Sutible for display but not for programatic comparision.  
+            </summary>
+        </member>
+        <member name="P:Stacks.CallTreeNodeBase.ID">
+             <summary>
+             The ID represents a most fine grained uniqueness associated with this node.   Typically it represents
+             a particular method (however it is possible that two methods can have the same name (because the scope
+             was not caputured).   Thus there can be multiple nodes with the same Name but different IDs.   
+             
+             This can be StackSourceFrameIndex.Invalid for Caller-callee nodes (which have names, but no useful ID.  
+            
+             If ID != Invalid, and the IDs are the same then the names need to be the same.  
+             </summary>
+        </member>
+        <member name="P:Stacks.CallTreeNodeBase.ExclusiveFoldedMetric">
+            <summary>
+            This is the exclusive metric that was added because nodes where folded into this node.  
+            </summary>
+        </member>
+        <member name="P:Stacks.CallTreeNodeBase.CallTree">
+            <summary>
+            The call tree that contains this node.  
+            </summary>
+        </member>
+        <member name="P:Stacks.CallTreeNodeBase.InclusiveMetricByTime">
+            <summary>
+            Time is broken up into N buckets and a imetric is summed into these buckets
+            
+            Returns null unless code:CallTree.TimeHistogramSize is set to some positive number
+            
+            The contact is that this is READ ONLY
+            </summary>
+        </member>
+        <member name="P:Stacks.CallTreeNodeBase.InclusiveMetricByTimeString">
+            <summary>
+            This is a string that respresents the buckets of samples InclusiveMetricByTime
+            </summary>
+        </member>
+        <member name="P:Stacks.CallTreeNodeBase.MaxFoldedFrames">
+            <summary>
+            If this node represents more than one call frame, this is the Maximum count of nodes
+            folded into this node.  
+            </summary>
+        </member>
+        <member name="P:Stacks.CallTreeNodeBase.MinFoldedFrames">
+            <summary>
+            If this node represents more than one call frame, this is the Minimum count of nodes
+            folded into this node.  
+            </summary>       
+        </member>
+        <member name="T:Stacks.CallTreeNodeBase.CallTreeNodeStackSource">
+            <summary>
+            Private StackSource implementation that the code:CallTreeNodeBase.Samples method returns.  This basically
+            just returns a stack source filtered to just those nodes.  
+            </summary>
+        </member>
+        <member name="M:Stacks.CallTreeNodeBase.CallTreeNodeStackSource.Reset">
+            <summary>
+            Resets the enumeration that GetNextSample goes through.  
+            </summary>
+        </member>
+        <member name="T:Stacks.CallTreeNode">
+            <summary>
+            Represents a single treeNode in a code:CallTree 
+            
+            Each node keeps all the sample with the same path to the root.  
+            Each node also remembers its parent (caller) and children (callees).
+            The nodes also keeps the IDs of all its samples (so no information
+            is lost, just sorted by stack).   You get at this through the
+            code:CallTreeNodeBase.GetUngroupedSamples method.  
+            </summary>
+        </member>
+        <member name="M:Stacks.CallTreeNode.GetBrokenStackCount(System.Int32)">
+            <summary>
+            Adds up the counts of all 'Broken' nodes in a particular tree node
+            </summary>
+        </member>
+        <member name="M:Stacks.CallTreeNode.FoldNodesUnder(System.Single,System.Collections.Generic.Dictionary{System.Int32,Stacks.CallTreeNodeBase})">
+            <summary>
+            Fold away any nodes having less than 'minInclusiveMetric'.  If 'sumByID' is non-null then the 
+            only nodes that have a less then the minInclusiveMetric for the whole trace are folded. 
+            </summary>
+        </member>
+        <member name="P:Stacks.CallTreeNode.IndentString">
+            <summary>
+            Creates a string that has spaces | and + signs that represent the indentation level 
+            for the tree node.  (Called from XAML)
+            </summary>
+        </member>
+        <member name="T:Stacks.CallerCalleeNode">
+            <summary>
+            A code:CallerCalleeNode gives statistics that focus on a NAME.  (unlike calltrees that use ID)
+            It takes all stackSource that have callStacks that include that treeNode and compute the metrics for
+            all the callers and all the callees for that treeNode.  
+            </summary>
+        </member>
+        <member name="M:Stacks.CallerCalleeNode.#ctor(System.String,Stacks.CallTree)">
+            <summary>
+            Given a complete call tree, and a Name within that call tree to focus on, create a
+            CallerCalleeNode that represents the single Caller-Callee view for that treeNode. 
+            </summary>
+        </member>
+        <member name="M:Stacks.CallerCalleeNode.AccumlateSamplesForNode(Stacks.CallTreeNode,System.Int32,Stacks.CallTreeNodeBase@,System.Double@,System.Boolean@)">
+            <summary>
+            A caller callee view is a sumation which centers around one 'focus' node which is represented by the CallerCalleeNode.
+            This node has a caller and callee list, an these nodes (as well as the CallerCalleNode itself) represent the aggregation
+            over the entire tree.
+            
+            AccumlateSamplesForNode is the routine that takes a part of a aggregated call tree (repsesented by 'treeNode' and adds
+            in the statistics for that call tree into the CallerCalleeNode aggregations (and its caller and callee lists).  
+            
+            'recursionsCount' is the number of times the focus node name has occured in the path from 'treeNode' to the root.   In 
+            addition to setting the CallerCalleeNode aggregation, it also returns a 'weightedSummary' inclusive aggregation 
+            FOR JUST treeNode (the CallerCalleNode is an aggregation over the entire call tree accumulated so far).  
+            
+            The key problem for this routine to avoid is double counting of inclusive samples in the face of recursive functions. 
+            Thus all samples are weighted by the recurision count before being included in 'weightedSummaryRet (as well as in
+            the CallerCalleeNode and its Callers and Callees).    
+            
+            An important optimization is the ability to NOT create (but rather reuse) CallTreeNodes when returning weightedSummaryRet.
+            To accompish this the summaryWeightRet is needed.  To get the correct numerical value for weightedSummaryRet, you actually
+            have to scale values by weightedSummaryScaleRet before use.   This allows us to represent weights of 0 (subtree has no
+            calls to the focus node), or cases where the subtree is completely uniform in its weigthing (the subtree does not contain
+            any additional focus nodes), by simply returning the tree node itself and scaling it by the recurision count).  
+            
+            isUniformRet is set to true if anyplace in 'treeNode' does not have the scaling factor weightedSummaryScaleRet.  This
+            means the the caller cannot simply scale 'treeNode' by a weight to get weightedSummaryRet.  
+            </summary>
+        </member>
+        <member name="M:Stacks.CallerCalleeNode.Find(System.Collections.Generic.List{Stacks.CallTreeNodeBase}@,System.String)">
+            <summary>
+            Find the Caller-Callee treeNode in 'elems' with name 'frameName'.  Always succeeds because it
+            creates one if necessary. 
+            </summary>
+        </member>
+        <member name="T:Diagnostics.Eventing.SymbolTraceEventParser">
+            <summary>
+            Kernel traces have information about images that are loaded, however they don't have enough information
+            in the events themselves to unambigously look up PDBs without looking at the data inside the images.
+            This means that symbols can't be resolved unless you are on the same machine on which you gathered the data.
+            
+            XPERF solves this problem by adding new 'synthetic' events that it creates by looking at the trace and then
+            opening each DLL mentioned and extracting the information needed to look PDBS up on a symbol server (this 
+            includes the PE file's TimeDateStamp as well as a PDB Guid, and 'pdbAge' that can be found in the DLLs header.
+            
+            These new events are added when XPERF runs the 'merge' command (or -d flag is passed).  It is also exposed 
+            through the KernelTraceControl.dll!CreateMergedTraceFile API.   
+            
+            SymbolTraceEventParser is a parser for extra events.   
+            </summary>
+        </member>
+        <member name="E:Diagnostics.Eventing.SymbolTraceEventParser.DbgIDRSDS">
+            <summary>
+             The DbgIDRSDS event is added by XPERF for every Image load.  It contains the 'PDB signature' for the DLL, 
+             which is enough to unambigously look the image's PDB up on a symbol server.  
+            </summary>
+        </member>
+        <member name="E:Diagnostics.Eventing.SymbolTraceEventParser.ImageID">
+            <summary>
+            Every DLL has a Timestamp in the PE file itself that indicates when it is built.  This event dumps this timestamp.
+            This timestamp is used to be as the 'signature' of the image and is used as a key to find the symbols, however 
+            this has mostly be superseeded by the DbgID/RSDS event. 
+            </summary>
+        </member>
+        <member name="E:Diagnostics.Eventing.SymbolTraceEventParser.FileVersion">
+            <summary>
+            The FileVersion event contains information from the file version resource that most DLLs have that indicated
+            detailed information about the exact version of the DLL.  (What is in the File->Properties->Version property
+            page)
+            </summary>
+        </member>
+        <member name="M:Symbols.SymbolReader.#ctor(System.IO.TextWriter)">
+            <summary>
+            Opens a new SymbolReader.   All diagnostics messages about symbol lookup go to 'log'.  
+            If 'localSymbolsOnly' is true, then network symbol servers are not consulted (but cached
+            PDBs that are local to the machine are checked).
+            </summary>
+        </member>
+        <member name="M:Symbols.SymbolReader.OpenSymbolsForModule(System.String,Diagnostics.Eventing.Address)">
+            <summary>
+            Loads the PDB file associated with 'moduleFilePath' loaded at at moduleImageBase.  Uses
+            the _NT_SYMBOL_PATH to look up the PDB.   'moduleFilePath' must exist, as it needs to be opened
+            to get the necessary information to look up the PDB.  
+            </summary>
+        </member>
+        <member name="M:Symbols.SymbolReader.FindSymbolFilePathForModule(System.String)">
+            <summary>
+            Finds the symbol file for 'exeFilePath' that exists on the current machine (we open
+            it to find the needed info).   Will fetch the file from the symbol server if necessary.
+            </summary>
+        </member>
+        <member name="M:Symbols.SymbolReader.FindSymbolFilePath(System.String,System.Guid,System.Int32,System.String)">
+            <summary>
+            Find the complete PDB path, given just the simple name (filename + pdb extension) as well as its 'signature', 
+            which uniquely identifies it (on symbol servers).   Uses the _NT_SYMBOL_PATH (including Symbol servers) to 
+            look up the PDB, and will download the PDB to the local cache if necessary.  
+            
+            </summary>
+            <param name="pdbSimpleName">The name of the PDB file (we only use the file name part)</param>
+            <param name="pdbGuid">The GUID that is embedded in the DLL in the debug information that allows matching the DLL and the PDB</param>
+            <param name="pdbAge">Tools like BBT transform a DLL into another DLL (with the same GUID) the 'pdbAge' is a small integers
+            that indicates how many transformations were done</param>
+            <param name="fileVersion">This is an optional string that identifies the file version (the 'Version' resource information.  
+            Use only for error messages.</param>
+        </member>
+        <member name="M:Symbols.SymbolReader.OpenSymbolFile(System.String,Diagnostics.Eventing.Address)">
+            <summary>
+            Given the path name to a particular PDB file, load it so that you can resolve symbols in it.  
+            </summary>
+            <param name="symbolFilePath">The name of the PDB file to open.</param>
+            <param name="moduleImageBase">The image base that the cooresponding DLL is expected to be loaded at.  Must be unique for all load PDBs. </param>
+            <returns>The SymbolReaderModule that represents the information in the symbol file (PDB)</returns>
+        </member>
+        <member name="M:Symbols.SymbolReaderModule.MapToOriginalRva(Diagnostics.Eventing.Address,System.Int32@)">
+            <summary>
+            BBT splits up methods into many chunks.  Map the final rva of a symbol back into its
+            pre-BBTed rva.  
+            </summary>
+        </member>
+        <member name="T:Symbols.SymPath">
+            <summary>
+            SymPath is a class that knows how to parse _NT_SYMBOL_PATH syntax.  
+            </summary>
+        </member>
+        <member name="M:Symbols.SymPath.InsureHasCache(System.String)">
+            <summary>
+            People can use symbol servers without a local cache.  This is bad, add one if necessary. 
+            </summary>
+        </member>
+        <member name="M:Symbols.SymPath.LocalOnly">
+            <summary>
+            Removes all references to remote paths.  This insures that network issues don't cause grief.  
+            </summary>
+        </member>
+        <member name="M:Symbols.SymPath.ComputerNameExists(System.String,System.Int32)">
+            <summary>
+            Checks to see 'computerName' exists (there is a Domain Names Service (DNS) reply to it)
+            This routine times out quickly (after 700 msec).  
+            </summary>
+        </member>
+        <member name="T:Symbols.SymPathElement">
+            <summary>
+            SymPathElement is a part of code:SymPath 
+            </summary>
+        </member>
+        <member name="F:Symbols.SymbolReaderNativeMethods.SSRVOPT_DWORD">
+                    [DllImport("kernel32.dll", CharSet = CharSet.Auto)]
+                    public static extern int GetCurrentProcessId();
+            
+                    [DllImport("kernel32.dll",  SetLastError = true)]
+                    public static extern IntPtr OpenProcess(int access, bool inherit, int processID);
+                    *
+        </member>
+        <member name="T:Diagnostics.Eventing.KernelTraceEventParser">
+            <summary>
+            The code:KernelTraceEventParser is a class that knows how to decode the 'standard' kernel events.
+            It exposes an event for each event of interest that users can subscribe to.
+            
+            see code:TraceEventParser for more 
+            </summary>
+        </member>
+        <member name="P:Diagnostics.Eventing.KernelTraceEventParser.KernelSessionName">
+            <summary>
+            The special name for the Kernel session
+            </summary>
+        </member>
+        <member name="E:Diagnostics.Eventing.KernelTraceEventParser.ProcessStartGroup">
+            <summary>
+            Registers both ProcessStart and ProcessDCStart
+            </summary>
+        </member>
+        <member name="E:Diagnostics.Eventing.KernelTraceEventParser.ProcessEndGroup">
+            <summary>
+            Registers both ProcessEnd and ProcessDCEnd
+            </summary>
+        </member>
+        <member name="E:Diagnostics.Eventing.KernelTraceEventParser.ThreadStartGroup">
+            <summary>
+            Registers both ThreadStart and ThreadDCStart
+            </summary>
+        </member>
+        <member name="E:Diagnostics.Eventing.KernelTraceEventParser.ThreadEndGroup">
+            <summary>
+            Registers both ThreadEnd and ThreadDCEnd
+            </summary>
+        </member>
+        <member name="E:Diagnostics.Eventing.KernelTraceEventParser.ImageLoadGroup">
+            <summary>
+            Registers both ImageLoad and ImageDCStart
+            </summary>
+        </member>
+        <member name="E:Diagnostics.Eventing.KernelTraceEventParser.ImageUnloadGroup">
+            <summary>
+            Registers both ImageUnload and ImageDCEnd
+            </summary>
+        </member>
+        <member name="E:Diagnostics.Eventing.KernelTraceEventParser.VolumeMapping">
+            <summary>
+            File names in ETW are the Kernel names, which need to be mapped to the drive specification users see. 
+            This event indicates this mapping. 
+            </summary>
+        </member>
+        <member name="T:Diagnostics.Eventing.KernelTraceEventParser.Keywords">
+            <summary>
+            This is passed to code:TraceEventSession.EnableKernelProvider to enable particular sets of
+            events.  See http://msdn.microsoft.com/en-us/library/aa363784(VS.85).aspx for more information on them 
+            </summary>
+        </member>
+        <member name="F:Diagnostics.Eventing.KernelTraceEventParser.Keywords.None">
+            <summary>
+            Logs nothing
+            </summary>
+        </member>
+        <member name="F:Diagnostics.Eventing.KernelTraceEventParser.Keywords.DiskFileIO">
+            <summary>
+            Logs the mapping of file IDs to actual (kernel) file names. 
+            </summary>
+        </member>
+        <member name="F:Diagnostics.Eventing.KernelTraceEventParser.Keywords.DiskIO">
+            <summary>
+            Loads the completion of Physical disk activity. 
+            </summary>
+        </member>
+        <member name="F:Diagnostics.Eventing.KernelTraceEventParser.Keywords.ImageLoad">
+            <summary>
+            Logs native modules loads (LoadLibrary), and unloads
+            </summary>
+        </member>
+        <member name="F:Diagnostics.Eventing.KernelTraceEventParser.Keywords.MemoryHardFaults">
+            <summary>
+            Logs all page faults that must fetch the data from the disk (hard faults)
+            </summary>
+        </member>
+        <member name="F:Diagnostics.Eventing.KernelTraceEventParser.Keywords.NetworkTCPIP">
+            <summary>
+            Logs TCP/IP network send and recieve events. 
+            </summary>
+        </member>
+        <member name="F:Diagnostics.Eventing.KernelTraceEventParser.Keywords.Process">
+            <summary>
+            Logs process starts and stops.
+            </summary>
+        </member>
+        <member name="F:Diagnostics.Eventing.KernelTraceEventParser.Keywords.ProcessCounters">
+            <summary>
+            Logs process performance counters (TODO When?) (Vista+ only)
+            see code:KernelTraceEventParser.ProcessPerfCtr, code:ProcessPerfCtrTraceData
+            </summary>
+        </member>
+        <member name="F:Diagnostics.Eventing.KernelTraceEventParser.Keywords.Profile">
+            <summary>
+            Sampled based profiling (every msec) (Vista+ only) (expect 1K events per proc per second)
+            </summary>
+        </member>
+        <member name="F:Diagnostics.Eventing.KernelTraceEventParser.Keywords.Thread">
+            <summary>
+            Logs threads starts and stops
+            </summary>
+        </member>
+        <member name="F:Diagnostics.Eventing.KernelTraceEventParser.Keywords.ContextSwitch">
+            <summary>
+            log thread context switches (Vista only) (can be > 10K events per second)
+            </summary>
+        </member>
+        <member name="F:Diagnostics.Eventing.KernelTraceEventParser.Keywords.DiskIOInit">
+            <summary>
+            log Disk operations (Vista+ only)
+            Generally not TOO volumous (typically less than 1K per second) (Stacks associated with this)
+            </summary>
+        </member>
+        <member name="F:Diagnostics.Eventing.KernelTraceEventParser.Keywords.Dispatcher">
+            <summary>
+            Thread Dispatcher (ReadyThread) (Vista+ only) (can be > 10K events per second)
+            </summary>
+        </member>
+        <member name="F:Diagnostics.Eventing.KernelTraceEventParser.Keywords.FileIO">
+            <summary>
+            log file operations when they complete (even ones that do not actually cause Disk I/O).  (Vista+ only)
+            Generally not TOO volumous (typically less than 1K per second) (No stacks associated with these)
+            </summary>
+        </member>
+        <member name="F:Diagnostics.Eventing.KernelTraceEventParser.Keywords.FileIOInit">
+            <summary>
+            log the start of the File I/O operation as well as the end. (Vista+ only)
+            Generally not TOO volumous (typically less than 1K per second)
+            </summary>
+        </member>
+        <member name="F:Diagnostics.Eventing.KernelTraceEventParser.Keywords.MemoryPageFaults">
+            <summary>
+            Logs all page faults (hard or soft)
+            Can be pretty volumous (> 1K per second)
+            </summary>
+        </member>
+        <member name="F:Diagnostics.Eventing.KernelTraceEventParser.Keywords.Registry">
+            <summary>
+            Logs activity to the windows registry. 
+            Can be pretty volumous (> 1K per second)
+            </summary>
+        </member>
+        <member name="F:Diagnostics.Eventing.KernelTraceEventParser.Keywords.SystemCall">
+            <summary>
+            log calls to the OS (Vista+ only)
+            This is VERY volumous (can be > 100K events per second)
+            </summary>
+        </member>
+        <member name="F:Diagnostics.Eventing.KernelTraceEventParser.Keywords.VirtualAlloc">
+            <summary>
+            Log Virtual Alloc calls and VirtualFree.   (Vista+ Only)
+            Generally not TOO volumous (typically less than 1K per second)
+            </summary> 
+        </member>
+        <member name="F:Diagnostics.Eventing.KernelTraceEventParser.Keywords.AdvancedLocalProcedureCalls">
+            <summary>
+            Logs Advanced Local Procedure call events. 
+            </summary>
+        </member>
+        <member name="F:Diagnostics.Eventing.KernelTraceEventParser.Keywords.DeferedProcedureCalls">
+            <summary>
+            log defered procedure calls (an Kernel mechanism for having work done asynchronously) (Vista+ only)
+            </summary> 
+        </member>
+        <member name="F:Diagnostics.Eventing.KernelTraceEventParser.Keywords.Driver">
+            <summary>
+            Device Driver logging (Vista+ only)
+            </summary>
+        </member>
+        <member name="F:Diagnostics.Eventing.KernelTraceEventParser.Keywords.Interrupt">
+            <summary>
+            log hardware interrupts. (Vista+ only)
+            </summary>
+        </member>
+        <member name="F:Diagnostics.Eventing.KernelTraceEventParser.Keywords.SplitIO">
+            <summary>
+            Disk I/O that was split (eg because of mirroring requirements) (Vista+ only)
+            </summary> 
+        </member>
+        <member name="F:Diagnostics.Eventing.KernelTraceEventParser.Keywords.Default">
+            <summary>
+            Good default kernel flags.  (TODO more detail)
+            </summary>  
+        </member>
+        <member name="F:Diagnostics.Eventing.KernelTraceEventParser.Keywords.Verbose">
+            <summary>
+            These events are too verbose for normal use, but this give you a quick way of turing on 'interesting' events
+            This does not include SystemCall because it is 'too verbose'
+            </summary>
+        </member>
+        <member name="F:Diagnostics.Eventing.KernelTraceEventParser.Keywords.OS">
+            <summary>
+            You mostly don't care about these unless you are dealing with OS internals.  
+            </summary>
+        </member>
+        <member name="F:Diagnostics.Eventing.KernelTraceEventParser.Keywords.All">
+            <summary>
+            All legal kernel events
+            </summary>
+        </member>
+        <member name="T:Diagnostics.Eventing.KernelTraceEventParserState">
+            <summary>
+            code:KernelTraceEventParserState holds all information that is shared among all events that is
+            needed to decode kernel events.   This class is registered with the source so that it will be
+            persisted.  Things in here include
+            
+                * FileID to FileName mapping, 
+                * ThreadID to ProcessID mapping
+                * Kernel file name to user file name mapping 
+            </summary>
+        </member>
+        <member name="M:Diagnostics.Eventing.ThreadTraceData.LogCodeAddresses(System.Action{Diagnostics.Eventing.TraceEvent,Diagnostics.Eventing.Address})">
+            <summary>
+            Indicate that StartAddr and Win32StartAddr are a code addresses that needs symbolic information
+            </summary>
+        </member>
+        <member name="P:Diagnostics.Eventing.CSwitchTraceData.NewThreadID">
+            <summary>
+            We report a context switch from from the new thread.  Thus NewThreadID == ThreadID.  
+            </summary>
+        </member>
+        <member name="P:Diagnostics.Eventing.DiskIoTraceData.Irp">
+            <summary>
+            The I/O Responce Packet address.  This represents the 'identity' of this particular I/O
+            </summary>
+        </member>
+        <member name="P:Diagnostics.Eventing.DiskIoTraceData.HighResResponseTime">
+            <summary>
+            This is the time since the I/O was initiated, in source.PerfFreq (QPC) ticks.  
+            </summary>
+        </member>
+        <member name="P:Diagnostics.Eventing.DiskIoTraceData.ElapsedTimeMSec">
+            <summary>
+            The time since the I/O was initiated.  
+            </summary>
+        </member>
+        <member name="P:Diagnostics.Eventing.DiskIoTraceData.ElapsedTime100ns">
+            <summary>
+            The time since the I/O was initiated.  
+            </summary>
+        </member>
+        <member name="M:Diagnostics.Eventing.PageFaultTraceData.LogCodeAddresses(System.Action{Diagnostics.Eventing.TraceEvent,Diagnostics.Eventing.Address})">
+            <summary>
+            Indicate that ProgramCounter is a code address that needs symbolic information
+            </summary>
+        </member>
+        <member name="M:Diagnostics.Eventing.SampledProfileTraceData.LogCodeAddresses(System.Action{Diagnostics.Eventing.TraceEvent,Diagnostics.Eventing.Address})">
+            <summary>
+            Indicate that SystemCallAddress is a code address that needs symbolic information
+            </summary>
+        </member>
+        <member name="M:Diagnostics.Eventing.BatchedSampledProfileTraceData.InstructionPointer(System.Int32)">
+            <summary>
+            The instruction pointer assocaited with this sample 
+            </summary>
+        </member>
+        <member name="M:Diagnostics.Eventing.BatchedSampledProfileTraceData.InstanceThreadID(System.Int32)">
+            <summary>
+            The thread ID associatd with the sample 
+            </summary>
+        </member>
+        <member name="M:Diagnostics.Eventing.BatchedSampledProfileTraceData.InstanceCount(System.Int32)">
+            <summary>
+            Each sample may represent mulitiple instances of samples with the same Instruction
+            Pointer and ThreadID.  
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Diagnostics.Eventing.BatchedSampledProfileTraceData.LogCodeAddresses(System.Action{Diagnostics.Eventing.TraceEvent,Diagnostics.Eventing.Address})">
+            <summary>
+            Indicate that SystemCallAddress is a code address that needs symbolic information
+            </summary>
+        </member>
+        <member name="P:Diagnostics.Eventing.BatchedSampledProfileTraceData.BatchCount">
+            <summary>
+            A BatchedSampleProfile contains many samples in a single payload.  The batchCount
+            indicates the number of samples in this payload.  Each sample has a
+            InstructionPointer, ThreadID and InstanceCount
+            </summary>
+        </member>
+        <member name="M:Diagnostics.Eventing.SysCallEnterTraceData.LogCodeAddresses(System.Action{Diagnostics.Eventing.TraceEvent,Diagnostics.Eventing.Address})">
+            <summary>
+            Indicate that SystemCallAddress is a code address that needs symbolic information
+            </summary>
+        </member>
+        <member name="T:Diagnostics.Eventing.StackWalkTraceData">
+            <summary>
+            Collects the call callStacks for some other event.  
+            
+            (TODO: always for the event that preceeded it on the same thread)?  
+            </summary>
+        </member>
+        <member name="M:Diagnostics.Eventing.StackWalkTraceData.InstructionPointer(System.Int32)">
+            <summary>
+            Fetches the instruction pointer of a eventToStack frame 0 is the deepest frame, and the maximum should
+            be a thread offset routine (if you get a complete eventToStack).  
+            </summary>
+            <param name="i">The index of the frame to fetch.  0 is the CPU EIP, 1 is the Caller of that
+            routine ...</param>
+            <returns>The instruction pointer of the specified frame.</returns>
+        </member>
+        <member name="M:Diagnostics.Eventing.StackWalkTraceData.FixupData">
+            <summary>
+            StackWalkTraceData does not set Thread and process ID fields properly.  if that.  
+            </summary>
+        </member>
+        <member name="P:Diagnostics.Eventing.StackWalkTraceData.EventTimeStampQPC">
+            <summary>
+            The timestamp of the event which caused this stack walk using QueryPerformaceCounter
+            cycles as the tick.
+            </summary>
+        </member>
+        <member name="P:Diagnostics.Eventing.StackWalkTraceData.FrameCount">
+            <summary>
+            The total number of eventToStack frames collected.  The Windows OS currently has a maximum of 96 frames. 
+            </summary>
+        </member>
+        <member name="P:Diagnostics.Eventing.SystemPathsTraceData.SystemDirectory">
+            <summary>
+            e.g. c:\windows\system32
+            </summary>
+        </member>
+        <member name="P:Diagnostics.Eventing.SystemPathsTraceData.SystemWindowsDirectory">
+            <summary>
+            .e.g c:\windows
+            </summary>
+        </member>
+        <member name="T:Diagnostics.Eventing.Address">
+            <summary>
+            represents an address for the machine where the log was created.  We use a ulong to support 32 and
+            64 bit machines uniformly.  
+            </summary>
+        </member>
+        <member name="T:Diagnostics.Eventing.TraceEventID">
+            <summary>
+            Individual event providers can supply many different types of events.  These are distinguished from each
+            other by a TraceEventID, which is just a 16 bit number.  Its meaning is provider-specific.  
+            </summary>
+        </member>
+        <member name="T:Diagnostics.Eventing.TraceEventChannel">
+            <summary>
+            Providers can define different audiences or Channels for an event (eg Admin, Developer ...) Its
+            meaning is provider 
+            </summary>
+        </member>
+        <member name="T:Diagnostics.Eventing.TraceEventOpcode">
+            <summary>
+            There are certain classes of events (like start and stop) which are common across a broad variety of
+            event providers for which it is useful to treat uniformly (for example, determing the elapsed time
+            between a start and stop event).  To facilitate this, event can have opcode which defines these
+            common operations.  Below are the standard ones but proivders can define additional ones about 10.
+            </summary>
+        </member>
+        <member name="F:Diagnostics.Eventing.TraceEventOpcode.Info">
+            <summary>
+            Generic opcode that does not have specific semantics associted with it. 
+            </summary>
+        </member>
+        <member name="F:Diagnostics.Eventing.TraceEventOpcode.Start">
+            <summary>
+            The entity (process, thread, ...) is starting
+            </summary>
+        </member>
+        <member name="F:Diagnostics.Eventing.TraceEventOpcode.Stop">
+            <summary>
+            The entity (process, thread, ...) is stoping (ending)
+            </summary>
+        </member>
+        <member name="F:Diagnostics.Eventing.TraceEventOpcode.DataCollectionStart">
+            <summary>
+            The entity (process, thread, ...) did not terminate before data collection ended, so indicate
+            this at data collection termination time.
+            </summary>
+        </member>
+        <member name="F:Diagnostics.Eventing.TraceEventOpcode.DataCollectionStop">
+            <summary>
+            The entity (process, thread, ...) did not terminate before data collection ended, so indicate
+            this at data collection termination time. This is mostly for 'flight recorder' scenarios where
+            you only have the 'tail' of the data and would like to know about everything that existed. 
+            </summary>
+        </member>
+        <member name="F:Diagnostics.Eventing.TraceEventOpcode.Extension">
+            <summary>
+            TODO document these. 
+            </summary>
+        </member>
+        <member name="T:Diagnostics.Eventing.TraceEventKeyword">
+            <summary>
+            VISTA ETW defines the concept of a Keyword, which is a 64 bit bitfield. Each bit in the bitfield
+            represents some proider defined 'area' that is useful for filtering. When processing the events, it
+            is then possible to filter based on whether various bits in the bitfield are set.  There are some
+            standard keywords, but most are provider specific. 
+            </summary>
+        </member>
+        <member name="T:Diagnostics.Eventing.TraceEventTask">
+            <summary>
+            Tasks are groups of related events for a given provider (for example Process, or Thread, or Registry
+            for the Kernel Provider).  They are defined by the provider.  
+            </summary>
+        </member>
+        <member name="T:Diagnostics.Eventing.EventIndex">
+            <summary>
+            code:EventIdex is a unsigned integer that is unique to a particular event. Like code:ProcessIndex and
+            code:ThreadIndex, code:EventIndex is guarenteed to be unique over the whole log.  
+            
+            The fact that EventIndex is a 32 bit number limits us to 4Gig events in a log.  Sample based profiling
+            takes 1K samples per CPU per second.  Context switches and page faults can happen at about the same
+            rate.  Thus 3K-6K is not uncommon and 10K /sec.  At that rate it will take 4E5 seconds == 111 hours
+            == 4.6 days to exceed the limit.  Even at 100K / sec, it would be 11 hours of trace (Keep in mind
+            we don't give StackTrace events IDs).   The file size would be greater than 100Gig which would make
+            it REALLY painful to work with.  
+            
+            We choose as the event ID simply the index in the log file of the event.  Thus the IDs are dense as
+            they can be.  We don't however guarentee ordering, as we probably want to be able to add new
+            events to the stream, and these will be addded at the end even if they occur elsewhere in the time
+            stream. 
+            </summary>
+        </member>
+        <member name="T:Diagnostics.Eventing.EmptyTraceData">
+            <summary>
+            When the event has no interesting data associated with it, you can use this shared event current
+            rather than making an event-specific class.
+            </summary>
+        </member>
+        <member name="T:Diagnostics.Eventing.Int32TraceData">
+            <summary>
+            When the event has just a single int value associated with it, you can use this shared event current
+            rather than making an event-specific class.
+            </summary>
+        </member>
+        <member name="T:Diagnostics.Eventing.Int64TraceData">
+            <summary>
+            When the event has just a single int value associated with it, you can use this shared event current
+            rather than making an event-specific class.
+            </summary>
+        </member>
+        <member name="T:Diagnostics.Eventing.StringTraceData">
+            <summary>
+            When the event has just a single string value associated with it, you can use this shared event
+            template rather than making an event-specific class.
+            </summary>
+        </member>
+        <member name="M:Diagnostics.Eventing.UnhandledTraceEvent.PrepForCallback">
+            <summary>
+            There is some work needed to prepare the generic unhandledTraceEvent that we defer
+            late (since we often don't care about unhandled events)  This is 
+            </summary>
+        </member>
+        <member name="T:Diagnostics.Eventing.TraceEventNativeMethods">
+            <summary>
+            TraceEventNativeMethods contains the PINVOKE declarations needed
+            to get at the Win32 TraceEvent infrastructure.  It is effectively
+            a port of evntrace.h to C# declarations.  
+            </summary>
+        </member>
+        <member name="M:Diagnostics.Eventing.TraceEventNativeMethods.SetSystemProfilePrivilege">
+            <summary>
+            The Sample based profiling requires the SystemProfilePrivilege, This code turns it on.   
+            </summary>
+        </member>
+        <member name="T:Diagnostics.Eventing.TraceEventNativeMethods.TIME_ZONE_INFORMATION">
+            <summary>
+            Time zone info.  Used as one field of TRACE_EVENT_LOGFILE, below.
+            Total struct size is 0xac.
+            </summary>
+        </member>
+        <member name="T:Diagnostics.Eventing.TraceEventNativeMethods.WNODE_HEADER">
+            <summary>
+            EventTraceHeader structure used by EVENT_TRACE_PROPERTIES
+            </summary>
+        </member>
+        <member name="T:Diagnostics.Eventing.TraceEventNativeMethods.EVENT_TRACE_PROPERTIES">
+            <summary>
+            EVENT_TRACE_PROPERTIES is a structure used by StartTrace, ControlTrace
+            however it can not be used directly in the defintion of these functions
+            because extra information has to be hung off the end of the structure
+            before beinng passed.  (LofFileNameOffset, LoggerNameOffset)
+            </summary>
+        </member>
+        <member name="T:Diagnostics.Eventing.TraceEventNativeMethods.EVENT_TRACE_HEADER">
+            <summary>
+            EventTraceHeader and structure used to defined EVENT_TRACE (the main packet)
+            I have simplified from the original struct definitions.  I have
+            omitted alternate union-fields which we don't use.
+            </summary>
+        </member>
+        <member name="T:Diagnostics.Eventing.TraceEventNativeMethods.EVENT_TRACE">
+            <summary>
+            EVENT_TRACE is the structure that represents a single 'packet'
+            of data repesenting a single event.  
+            </summary>
+        </member>
+        <member name="T:Diagnostics.Eventing.TraceEventNativeMethods.TRACE_LOGFILE_HEADER">
+            <summary>
+            TRACE_LOGFILE_HEADER is a header used to define EVENT_TRACE_LOGFILEW.
+            Total struct size is 0x110.
+            </summary>
+        </member>
+        <member name="T:Diagnostics.Eventing.TraceEventNativeMethods.EVENT_TRACE_LOGFILEW">
+            <summary>
+            EVENT_TRACE_LOGFILEW Main struct passed to OpenTrace() to be filled in.
+            It represents the collection of ETW events as a whole.
+            </summary>
+        </member>
+        <member name="T:Diagnostics.Eventing.TraceEventNativeMethods.EVENT_HEADER">
+            <summary>
+            EventTraceHeader and structure used to define EVENT_TRACE_LOGFILE (the main packet on Vista and above)
+            I have simplified from the original struct definitions.  I have
+            omitted alternate union-fields which we don't use.
+            </summary>
+        </member>
+        <member name="T:Diagnostics.Eventing.TraceEventNativeMethods.ETW_BUFFER_CONTEXT">
+            <summary>
+            Provides context information about the event
+            </summary>
+        </member>
+        <member name="T:Diagnostics.Eventing.TraceEventNativeMethods.EVENT_RECORD">
+            <summary>
+            Defines the layout of an event that ETW delivers
+            </summary>
+        </member>
+        <member name="T:Diagnostics.Eventing.TraceEventNativeMethods.STACK_TRACING_EVENT_ID">
+            <summary>
+            Used in code:StartKernelTrace to indicate the kernel events that should have stack traces
+            collected for them.
+            </summary>
+        </member>
+        <member name="T:Diagnostics.Eventing.TraceEventSession">
+            <summary>
+            #Introduction 
+            
+            A TraceEventSession represents a single ETW Tracing Session (something that logs a
+            single output moduleFile). Every ETL output moduleFile has exactly one session assoicated with it,
+            although you can have 'real time' sessions that have no output file and you can connect to
+            'directly' to get events without ever creating a file. You signify this simply by passing
+            'null' as the name of the file. You extract data from these 'real time' sources by specifying
+            the session name to the constructor of code:ETWTraceEventSource). Sessions are MACHINE WIDE and can
+            OUTLIVE the process that creates them. This it takes some care to insure that sessions are cleaned up
+            in all cases.
+            
+            Code that generated ETW events are called Providers. The Kernel has a provider (and it is often the
+            most intersting) but other components are free to use public OS APIs (eg WriteEvent), to create
+            user-mode providers. Each Provider is given a GUID that is used to identify it. You can get a list of
+            all providers on the system as well as their GUIDs by typing the command
+            
+                        logman query providers
+                        
+            The basic model is that you start a session (which creates a ETL moduleFile), and then you call
+            code:TraceEventSession.EnableProvider on it to add all the providers (event sources), that you are
+            interested in. A session is given a name (which is MACHINE WIDE), so that you can connect back up to
+            it from another process (since it might outlive the process that created it), so you can modify it or
+            (more commonly) close the session down later from another process.
+            
+            For implementation reasons, this is only one Kernel provider and it can only be specified in a
+            special 'Kernel Mode' session. There can be only one kernel mode session (MACHINE WIDE) and it is
+            distinguished by a special name 'NT Kernel Logger'. The framework allows you to pass flags to the
+            provider to control it and the Kernel provider uses these bits to indicate which particular events
+            are of interest. Because of these restrictions, you often need two sessions, one for the kernel
+            events and one for all user-mode events.
+            
+            Sample use. Enabling the Kernel's DLL image logging to the moduleFile output.etl
+            
+             * TraceEventSession session = new TraceEventSession(, KernelTraceEventParser.Keywords.ImageLoad); 
+             * Run you scenario 
+             * session.Close(); 
+            
+            Once the scenario is complete, you use the code:TraceEventSession.Close methodIndex to shut down a
+            session. You can also use the code:TraceEventSession.GetActiveSessionNames to get a list of all
+            currently running session on the machine (in case you forgot to close them!).
+            
+            When the sesion is closed, you can use the code:ETWTraceEventSource to parse the events in the ETL
+            moduleFile.  Alternatively, you can use code:TraceLog.CreateFromETL to convert the ETL file into an ETLX file. 
+            Once it is an ETLX file you have a much richer set of processing options availabe from code:TraceLog. 
+            </summary>
+        </member>
+        <member name="M:Diagnostics.Eventing.TraceEventSession.#ctor(System.String,System.String)">
+            <summary>
+            Create a new logging session.
+            </summary>
+            <param name="sessionName">
+            The name of the session. Since session can exist beyond the lifetime of the process this name is
+            used to refer to the session from other threads.
+            </param>
+            <param name="fileName">
+            The output moduleFile (by convention .ETL) to put the event data. If this parameter is null, it means
+            that the data is 'real time' (stored in the session memory itself)
+            </param>
+        </member>
+        <member name="M:Diagnostics.Eventing.TraceEventSession.#ctor(System.String)">
+            <summary>
+            Open an existing Windows Event Tracing Session, with name 'sessionName'. To create a new session,
+            use TraceEventSession(string, string)
+            </summary>
+            <param name="sessionName"> The name of the session to open (see GetActiveSessionNames)</param>
+        </member>
+        <member name="M:Diagnostics.Eventing.TraceEventSession.#ctor(System.String,Diagnostics.Eventing.KernelTraceEventParser.Keywords,Diagnostics.Eventing.KernelTraceEventParser.Keywords)">
+            <summary>
+            Start a kernel session (name is required to be NT Kernel Logger) and turn on 'eventsToEnable' events 
+            and 'eventStacksToEnable' stacks.  
+            </summary>
+        </member>
+        <member name="M:Diagnostics.Eventing.TraceEventSession.EnableKernelProvider(Diagnostics.Eventing.KernelTraceEventParser.Keywords,Diagnostics.Eventing.KernelTraceEventParser.Keywords)">
+            <summary>
+            #EnableKernelProvider
+            Enable the kernel provider for the session. If the session must be called 'NT Kernel Session'.   
+            <param name="flags">
+            Specifies the particular kernel events of interest</param>
+            <param name="stackCapture">
+            Specifies which events should have their eventToStack traces captured too (VISTA+ only)</param>
+            <returns>Returns true if the session had existed before and is now restarted</returns>
+            </summary>
+        </member>
+        <member name="M:Diagnostics.Eventing.TraceEventSession.EnableProvider(System.Guid,Diagnostics.Eventing.TraceEventLevel,System.UInt64,System.UInt64,System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.String,System.String}})">
+            <summary>
+            Add an additional USER MODE provider prepresented by 'providerGuid' (a list of
+            providers is available by using 'logman query providers').
+            </summary>
+            <param name="providerGuid">
+            The GUID that represents the event provider to turn on. Use 'logman query providers' or
+            for a list of possible providers. Note that additional user mode (but not kernel mode)
+            providers can be added to the session by using EnableProvider.</param>
+            <param name="providerLevel">The verbosity to turn on</param>
+            <param name="matchAnyKeywords">A bitvector representing the areas to turn on. Only the
+            low 32 bits are used by classic providers and passed as the 'flags' value.  Zero
+            is a special value which is a provider defined default, which is usuall 'everything'</param>
+            <param name="matchAllKeywords">A bitvector representing keywords of an event that must
+            be on for a particular event for the event to be logged.  A value of zero means
+            that no keyword must be on, which effectively ignores this value.  </param>
+            <param name="values">This is set of key-value strings that are passed to the provider
+            for provider-specific interpretation. Can be null if no additional args are needed.</param>
+            <returns>true if the session already existed and needed to be restarted.</returns>
+        </member>
+        <member name="M:Diagnostics.Eventing.TraceEventSession.Stop(System.Boolean)">
+            <summary>
+            Once started, event sessions will persist even after the process that created them dies. They are
+            only stoped by this explicit Stop() API. 
+            </summary>
+        </member>
+        <member name="M:Diagnostics.Eventing.TraceEventSession.GetActiveSessionNames">
+            <summary>
+            ETW trace sessions survive process shutdown. Thus you can attach to existing active sessions.
+            GetActiveSessionNames() returns a list of currently existing session names.  These can be passed
+            to the code:TraceEventSession constructor to control it.   
+            </summary>
+            <returns>A enumeration of strings, each of which is a name of a session</returns>
+        </member>
+        <member name="M:Diagnostics.Eventing.TraceEventSession.Merge(System.String[],System.String)">
+            <summary>
+            It is sometimes useful to merge the contents of several ETL files into a single 
+            output ETL file.   This routine does that.  It also will attach additional 
+            information that will allow correct file name and symbolic lookup if the 
+            ETL file is used on a machine other than the one that the data was collected on.
+            If you wish to transport the file to another machine you need to merge them.
+            </summary>
+            <param name="inputETLFileNames"></param>
+            <param name="outputETLFileName"></param>
+        </member>
+        <member name="M:Diagnostics.Eventing.TraceEventSession.MergeInPlace(System.String,System.Collections.Generic.List{System.String})">
+            <summary>
+            This variation of the Merge command takes the 'primary' etl file name (X.etl)
+            and will merge in any files that match the list of file pattern in 'suffixPats'
+            By default this list is .clr*.etl .user*.etl. and .kernel.etl.  
+            </summary>
+        </member>
+        <member name="M:Diagnostics.Eventing.TraceEventSession.IsElevated">
+            <summary>
+            Is the current process Elevated (allowed to turn on a ETW provider
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Diagnostics.Eventing.TraceEventSession.Finalize">
+            <summary>
+            The 'properties' field is only the header information.  There is 'tail' that is 
+            required.  'ToUnmangedBuffer' fills in this tail properly. 
+            </summary>
+        </member>
+        <member name="M:Diagnostics.Eventing.TraceEventSession.EnableProvider(System.Guid,Diagnostics.Eventing.TraceEventLevel,System.UInt64,System.UInt64,System.Int32,System.Byte[],System.Int32)">
+            <summary>
+            Do intialization common to the contructors.  
+            </summary>
+        </member>
+        <member name="M:Diagnostics.Eventing.TraceEventSession.SetStackTraceIds(Diagnostics.Eventing.KernelTraceEventParser.Keywords,Diagnostics.Eventing.TraceEventNativeMethods.STACK_TRACING_EVENT_ID*,System.Int32)">
+            <summary>
+            Given a mask of kernel flags, set the array stackTracingIds of size stackTracingIdsMax to match.
+            It returns the number of entries in stackTracingIds that were filled in.
+            </summary>
+        </member>
+        <member name="P:Diagnostics.Eventing.TraceEventSession.CircularBufferMB">
+            <summary>
+            Cause the log to be a circular buffer.  The buffer size (in MegaBytes) is the value of this property.
+            Setting this to 0 will cause it to revert to non-circular mode.  This routine can only be called BEFORE
+            a provider is enabled.  
+            </summary>
+        </member>
+        <member name="P:Diagnostics.Eventing.TraceEventSession.BufferSizeMB">
+            <summary>
+            Sets the size of the buffer the operating system should reserve to avoid lost packets.   Starts out 
+            as a very generous 32MB for files.  If events are lost, this can be increased.  
+            </summary>
+        </member>
+        <member name="P:Diagnostics.Eventing.TraceEventSession.StopOnDispose">
+            <summary>
+            If set then Stop() will be called automatically when this object is Disposed or GCed (which
+            will happen on program exit unless a unhandled exception occurs.  
+            </summary>
+        </member>
+        <member name="P:Diagnostics.Eventing.TraceEventSession.SessionName">
+            <summary>
+            The name of the session that can be used by other threads to attach to the session. 
+            </summary>
+        </member>
+        <member name="P:Diagnostics.Eventing.TraceEventSession.FileName">
+            <summary>
+            The name of the moduleFile that events are logged to.  Null means the session is real time. 
+            </summary>
+        </member>
+        <member name="P:Diagnostics.Eventing.TraceEventSession.IsActive">
+            <summary>
+            Creating a TraceEventSession does not actually interact with the operating system until a
+            provider is enabled. At that point the session is considered active (OS state that survives a
+            process exit has been modified). IsActive returns true if the session is active.
+            </summary>
+        </member>
+        <member name="T:Diagnostics.Eventing.TraceEventLevel">
+            <summary>
+            Indicates to a provider whether verbose events should be logged.  
+            </summary>
+        </member>
+        <member name="T:TraceEventStackSource">
+            <summary>
+            This is the traditional grouping by method.
+            
+            TraceEventStackSource create the folowing meaning for the code:StackSourceCallStackIndex
+            
+            * The call stacks ID consists of the following ranges concatinated together. 
+                * a small set of fixed Pseuo stacks (Start marks the end of these)
+                * CallStackIndex
+                * ThreadIndex
+                * ProcessIndex
+                * BrokenStacks (One per thread)
+                    
+            TraceEventStackSource create the folowing meaning for the code:StackSourceFrameIndex
+            
+            The frame ID consists of the following ranges concatinated together. 
+                * a small fixed number of Pseudo frame (Broken, and Unknown)
+                * MaxCodeAddressIndex - a known method (we can't use methodIndex because it does not know what DLL it comes from).  
+                    However we use the same CodeAddress for all samples within the method (thus it is effectivley a MethodIndex).  
+                * MaxFileModuleIndex - an unknown method in a module.  
+                * ThreadIndex
+                * ProcessIndex
+                
+            </summary>
+        </member>
+        <member name="T:Diagnostics.Eventing.TraceLog">
+            <summary>
+            #Introduction
+            
+            While the raw ETW events are valuable, they really need additional processing to be really useful.
+            Things like symbolic names for addresses, the ability to randomly access events, and having various
+            links between threads, threads, modules, and eventToStack traces are really needed. This is what
+            code:TraceLog provides.
+            
+            In addition the format of an ETL file is private (it can only be accessed through OS APIs), and the
+            only access is as stream of records. This makes it very difficult to do processing on the data
+            without reading all the data into memory or reading over the file more than once. Because the data is
+            very large, this is quite undesireable. There is also no good place to put digested information like
+            symbols, or indexes. code:TraceLog also defines a new file format for trace data, that is public and
+            seekable, extendable, and versionable. This is a key piece of added value.
+            
+            code:TraceLog is really the entry point for a true object model for event data that are cross linked
+            to each other as well as the raw events. Here are some of the players
+            
+            * code:TraceLog - represents the event log as a whole. It holds 'global' things, like a list of
+                code:TraceProcesss, and the list of code:TraceModuleFiles
+                * code:TraceProcesses - represents a list of code:TraceProcess s, that can be looked up by
+                    (PID,time)
+                * code:TraceProcess - represents a single process.
+                * code:TraceThread - reprsents a thread within a process.
+                * code:TraceLoadedModules - represents a list of code:TraceLoadedModule s that can be looked up
+                    by (address, time) or (filename, time)
+                * code:TraceLoadedModule - represents a loaded DLL or EXE (it knows its image base, and time
+                    loaded)
+                * code:TraceModuleFile - represents a DLL or EXE on the disk (it only contains information that
+                    is common to all threads that use it (eg its name). In particular it holds all the symbolic
+                    address to name mappings (extracted from PDBs).  New TraceModuleFiles are generated if a
+                    files is loaded in another locations (either later in the same process or a different
+                    process).   Thus the image base becomes a attribute of the ModuleFile
+                * code:TraceCallStack - represents a call stack associated with the event (on VISTA). It is
+                    logically a list of code addresses (from callee to caller).    
+                * code:TraceCodeAddress - represents instruction pointer into the code. This can be decorated
+                    with symbolic informaition, (methodIndex, source line, source file) information.
+                * code:TraceMethod - represents a particular method.  This class allows information that is
+                    common to many samples (it method name and source file), to be shared.  
+                
+            * See also code:TraceLog.CopyRawEvents for the routine that scans over the events during TraceLog
+                creation.
+            * See also code:#ProcessHandlersCalledFromTraceLog for callbacks made from code:TraceLog.CopyRawEvents
+            * See also code:#ModuleHandlersCalledFromTraceLog for callbacks made from code:TraceLog.CopyRawEvents
+            </summary>
+        </member>
+        <member name="M:Diagnostics.Eventing.TraceLog.OpenOrConvert(System.String,Diagnostics.Eventing.TraceLogOptions)">
+            <summary>
+            If etlxFilePath exists, it simply calls the constuctor.  However it it does not exist and a
+            cooresponding ETL file exists, generate the etlx file from the ETL file.  options indicate
+            conversion options (can be null). 
+            </summary>
+        </member>
+        <member name="M:Diagnostics.Eventing.TraceLog.#ctor(System.String)">
+            <summary>
+            Opens a existing Trace Event log file (and ETLX file).  If you need to create a new log file
+            from other data see 
+            </summary>
+        </member>
+        <member name="M:Diagnostics.Eventing.TraceLog.CreateFromETL(System.String)">
+            <summary>
+            Generates the cooresponding ETLX file from the raw ETL files.  Returns the name of ETLX file. 
+            </summary>
+        </member>
+        <member name="M:Diagnostics.Eventing.TraceLog.CreateFromETL(System.String,System.String,Diagnostics.Eventing.TraceLogOptions)">
+            <summary>
+            Given 'etlFilePath' create a etlxFile for the profile data. Options can be null.
+            </summary>
+        </member>
+        <member name="M:Diagnostics.Eventing.TraceLog.CreateFromSource(Diagnostics.Eventing.TraceEventDispatcher,System.String,Diagnostics.Eventing.TraceLogOptions)">
+            <summary>
+            Given a source of events 'source' generated a ETLX file representing these events from them. This
+            file can then be opened with the code:TraceLog constructor. 'options' can be null.
+            </summary>
+        </member>
+        <member name="M:Diagnostics.Eventing.TraceLog.CreateFromSourceTESTONLY(Diagnostics.Eventing.TraceEventDispatcher,System.String,Diagnostics.Eventing.TraceLogOptions)">
+            <summary>
+            TODO: only used for testing, will be removed eventually.  Use CreateFromSource
+            
+            Because the code path when reading from the file (and thus uses the deserializers), is very
+            different from when the data structures are in memory, and we don't want to have to test both
+            permutations, we don't allow getting a TraceLog that did NOT come from a file.  
+            
+            However for testing this is useful, because we can see the 'before serialization' and 'after
+            serialization' behavior and if they are differnet we know we hav a bug.  This routine should be
+            removed eventually, after we have high confidence that the log file works well.  
+            </summary>
+        </member>
+        <member name="M:Diagnostics.Eventing.TraceLog.GetCallStackForEvent(Diagnostics.Eventing.TraceEvent)">
+            <summary>
+            If the event has a call eventToStack associated with it, retrieve it. 
+            </summary>
+        </member>
+        <member name="M:Diagnostics.Eventing.TraceLog.GetCodeAddressAtEvent(Diagnostics.Eventing.Address,Diagnostics.Eventing.TraceEvent)">
+            <summary>
+            If an event has fields of type 'Address' the address can be converted to a symblic value (a
+            code:TraceCodeAddress) by calling this function.
+            </summary>
+        </member>
+        <member name="M:Diagnostics.Eventing.TraceLog.GetEvent(Diagnostics.Eventing.EventIndex)">
+            <summary>
+            Given an eventIndex, get the event.  This is relatively expensive because we need to create a
+            copy of the event that will not be reused by the TraceLog.   Ideally you woudld not use this API
+            but rather use iterate over event using code:TraceEvents
+            </summary>
+        </member>
+        <member name="M:Diagnostics.Eventing.TraceLog.Close">
+            <summary>
+            Agressively releases resources associated with the log. 
+            </summary>
+        </member>
+        <member name="M:Diagnostics.Eventing.TraceLog.CopyRawEvents(Diagnostics.Eventing.TraceEventDispatcher,FastSerialization.IStreamWriter)">
+            <summary>
+             Copies the events from the 'rawEvents' dispatcher to the output stream 'IStreamWriter'.  It
+             also creates auxillery data structures associated with the raw events (eg, processes, threads,
+             modules, address lookup maps...  Basically any information that needs to be determined by
+             scanning over the events during TraceLog creation should hook in here.  
+            </summary>
+        </member>
+        <member name="M:Diagnostics.Eventing.TraceLog.SeekToTimeOnPage(FastSerialization.PinnedStreamReader,System.Int64,System.Int32,System.Int32@,FastSerialization.StreamLabel[])">
+            <summary>
+            Advance 'reader' until it point at a event that occurs on or after 'time100ns'.  on page
+            'pageIndex'.  If 'positions' is non-null, fill in that array.  Also return the index in
+            'positions' for the entry that was found.  
+            </summary>
+        </member>
+        <member name="P:Diagnostics.Eventing.TraceLog.Events">
+            <summary>
+            All the events in the stream.  A code:TraceEvent can be used with foreach
+            directly but it can also be used to filter in arbitrary ways to form other
+            logical streams of data.  
+            </summary>
+        </member>
+        <member name="P:Diagnostics.Eventing.TraceLog.Processes">
+            <summary>
+            Enumerate all the processes that occured in the trace log. 
+            </summary>
+        </member>
+        <member name="P:Diagnostics.Eventing.TraceLog.Threads">
+            <summary>
+            Enumerate all the threads that occured in the trace log.
+            </summary>
+        </member>
+        <member name="P:Diagnostics.Eventing.TraceLog.ModuleFiles">
+            <summary>
+            A list of all the files that are loaded by some process during the logging. 
+            </summary>
+        </member>
+        <member name="P:Diagnostics.Eventing.TraceLog.CallStacks">
+            <summary>
+            Get the collection of all callstacks.  
+            </summary>
+        </member>
+        <member name="P:Diagnostics.Eventing.TraceLog.CodeAddresses">
+            <summary>
+            Get the collection of all symbolic code addresses. 
+            </summary>
+        </member>
+        <member name="P:Diagnostics.Eventing.TraceLog.MaxEventIndex">
+            <summary>
+            Events are given an Index (ID) that are unique across the whole code:TraceLog.   They are not guarenteed
+            to be sequential, but they are guarenteed to be between 0 and MaxEventIndex.  Ids can be used to
+            allow clients to associate additional information with event (with a side lookup table).   See
+            code:TraceEvent.EventIndex and code:EventIndex for more 
+            </summary>
+        </member>
+        <member name="P:Diagnostics.Eventing.TraceLog.EventCount">
+            <summary>
+            The total number of events in the log.  
+            </summary>
+        </member>
+        <member name="P:Diagnostics.Eventing.TraceLog.FilePath">
+            <summary>
+            The file path name for the ETLX file associated with this log.  
+            </summary>
+        </member>
+        <member name="P:Diagnostics.Eventing.TraceLog.MachineName">
+            <summary>
+            The machine one which the log was collected.  Returns empty string if unknown. 
+            </summary>
+        </member>
+        <member name="P:Diagnostics.Eventing.TraceLog.MemorySizeMeg">
+            <summary>
+            The size of the main memory (RAM) on the collection machine.  Will return 0 if memory size is unknown 
+            </summary>
+        </member>
+        <member name="P:Diagnostics.Eventing.TraceLog.HasCallStacks">
+            <summary>
+            Are there any events with stack traces in them?
+            </summary>
+        </member>
+        <member name="T:Diagnostics.Eventing.TraceLog.PastEventInfo">
+            <summary>
+            We need to remember the the EventIndexes of the events that were 'just before' this event so we can
+            associate eventToStack traces with the event that actually caused them.  PastEventInfo does this.  
+            </summary>
+        </member>
+        <member name="M:Diagnostics.Eventing.TraceLog.PastEventInfo.GetNextEvent(Diagnostics.Eventing.TraceLog.PastEventInfoIndex,System.Int32)">
+            <summary>
+            Gets the next event between index and now that has a matching 'threadID'.  
+            </summary>
+        </member>
+        <member name="T:Diagnostics.Eventing.TraceLog.QPCInfo">
+            <summary>
+            Stack traces have a tick count that indicats the event associated with that stack.  We
+            need to convert these tick counts to normal time (adjusting for clock skew) That is
+            what these variables are for. 
+            </summary>
+        </member>
+        <member name="M:Diagnostics.Eventing.TraceEvents.FilterByTime(System.DateTime)">
+            <summary>
+            Filter the events by time.  Startime is INCLUSIVE. 
+            </summary>
+        </member>
+        <member name="M:Diagnostics.Eventing.TraceEvents.FilterByTime(System.DateTime,System.DateTime)">
+            <summary>
+            Filter the events by time.  both startime and endTime are INCLUSIVE. 
+            </summary>
+        </member>
+        <member name="M:Diagnostics.Eventing.TraceEvents.FilterByTime(System.Int64)">
+            <summary>
+            Filter the events by time.  Startime is INCLUSIVE. 
+            </summary>
+        </member>
+        <member name="M:Diagnostics.Eventing.TraceEvents.FilterByTime(System.Int64,System.Int64)">
+            <summary>
+            Filter the events by time.  both startTime100ns and endTime100ns are INCLUSIVE. 
+            </summary>
+        </member>
+        <member name="P:Diagnostics.Eventing.TraceEvents.StartTime100ns">
+            <summary>
+            StartTime100ns for a code:TraceEvents is defined to be any time of the first event (or any time
+            before it and after any event in the whole log that is before the first event in the
+            TraceEvents).   
+            </summary>
+        </member>
+        <member name="T:Diagnostics.Eventing.ProcessIndex">
+            <summary>
+            We give each process a unique index from 0 to code:TraceProcesses.MaxProcessIndex. Thus it is unique
+            within the whole code:TraceLog. You are explictly allowed take advantage of the fact that this number
+            is in the range from 0 to code:TracesProcesses.BatchCount (you can create arrays indexed by
+            code:ProcessIndex). We create the Enum because the strong typing avoids a class of user errors.
+            </summary>
+        </member>
+        <member name="T:Diagnostics.Eventing.TraceProcesses">
+            <summary>
+            A code:TraceProcesses represents the list of procsses in the Event log.  
+            
+            TraceProcesses are IEnumerable, and will return the processes in order of time created.   
+            </summary>
+        </member>
+        <member name="M:Diagnostics.Eventing.TraceProcesses.System#Collections#Generic#IEnumerable{Diagnostics#Eventing#TraceProcess}#GetEnumerator">
+            <summary>
+            Enumerate all the threads that occured in the trace log.  It does so in order of their process
+            offset events in the log.  
+            </summary> 
+        </member>
+        <member name="M:Diagnostics.Eventing.TraceProcesses.GetProcess(System.Int32,System.Int64)">
+            <summary>
+            Given a OS process ID and a time, return the last code:TraceProcess that has the same process ID,
+            and whose offset time is less than 'time100ns'. If 'time100ns' is during the threads lifetime this
+            is guarenteed to be the correct process. Using time100ns = code:TraceLog.SessionEndTime100ns will return the
+            last process with the given PID, even if it had died.
+            </summary>
+        </member>
+        <member name="M:Diagnostics.Eventing.TraceProcesses.GetProcessForThreadID(System.Int32,System.Int64)">
+            <summary>
+            Given a thread ID and a time, find the process associated with the thread.  
+            </summary>
+        </member>
+        <member name="M:Diagnostics.Eventing.TraceProcesses.LastProcessWithID(System.Int32)">
+            <summary>
+            Return the last process in the log with the given process ID.  Useful when the logging session
+            was stopped just after the processes completed (a common scenario).  
+            </summary>
+            <param name="processID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Diagnostics.Eventing.TraceProcesses.FirstProcessWithName(System.String)">
+            <summary>
+            Gets the first process (in time) that has the name 'processName'. The name of a process is the file
+            name (not full path), without its extension. Returns null on failure
+            </summary>
+        </member>
+        <member name="M:Diagnostics.Eventing.TraceProcesses.FirstProcessWithName(System.String,System.Int64)">
+            <summary>
+            Gets the first process (in time) that has the name 'processName' that started after 'afterTime'
+            (inclusive). The name of a process is the file name (not full path), without its extension. Returns
+            null on failure
+            </summary>
+        </member>
+        <member name="M:Diagnostics.Eventing.TraceProcesses.#ctor(Diagnostics.Eventing.TraceLog)">
+            <summary>
+            TraceProcesses represents the entire ETL moduleFile log.   At the node level it is organized by threads.  
+            
+            The TraceProcesses also is where we put various caches that are independent of the process involved. 
+            These include a cache for code:TraceModuleFile that represent native images that can be loaded into a
+            process, as well as the process lookup tables and a cache that remembers the last calls to
+            GetNameForAddress(). 
+            </summary>
+        </member>
+        <member name="P:Diagnostics.Eventing.TraceProcesses.Log">
+            <summary>
+            The log associated with this collection of threads. 
+            </summary>
+        </member>
+        <member name="P:Diagnostics.Eventing.TraceProcesses.MaxProcessIndex">
+            <summary>
+            The count of the number of code:TraceProcess s in the trace log. 
+            </summary>
+        </member>
+        <member name="P:Diagnostics.Eventing.TraceProcesses.Item(Diagnostics.Eventing.ProcessIndex)">
+            <summary>
+            Each process that occurs in the log is given a unique index (which unlike the PID is unique), that
+            ranges from 0 to code:BatchCount - 1.   Return the code:TraceProcess for the given index.  
+            </summary>
+        </member>
+        <member name="T:Diagnostics.Eventing.TraceProcess">
+            <summary>
+            A code:TraceProcess represents a process.  
+            
+            </summary>
+        </member>
+        <member name="M:Diagnostics.Eventing.TraceProcess.#ctor(System.Int32,Diagnostics.Eventing.TraceLog,Diagnostics.Eventing.ProcessIndex)">
+            <summary>
+            Create a new code:TraceProcess.  It should only be done by code:log.CreateTraceProcess because
+            only code:TraceLog is responsible for generating a new ProcessIndex which we need.   'processIndex'
+            is a index that is unique for the whole log file (where as processID can be reused).  
+            </summary>
+        </member>
+        <member name="P:Diagnostics.Eventing.TraceProcess.ProcessID">
+            <summary>
+            The OS process ID associated with the process.   It is NOT unique across the whole log.  Use
+            code:ProcessIndex for if you need that. 
+            </summary>
+        </member>
+        <member name="P:Diagnostics.Eventing.TraceProcess.ProcessIndex">
+            <summary>
+            The index into the logical array of code:TraceProcesses for this process.  Unlike ProcessIndex (which
+            may be reused after the process dies, the process index is unique over the log.  
+            </summary>
+        </member>
+        <member name="P:Diagnostics.Eventing.TraceProcess.Log">
+            <summary>
+            The log file associated with the process. 
+            </summary>
+        </member>
+        <member name="P:Diagnostics.Eventing.TraceProcess.Threads">
+            <summary>
+            Enumerate all the threads that occured in this process.  
+            </summary> 
+        </member>
+        <member name="P:Diagnostics.Eventing.TraceProcess.Name">
+            <summary>
+            This is a short name for the process.  It is the image file name without the path or suffix.  
+            </summary>
+        </member>
+        <member name="P:Diagnostics.Eventing.TraceProcess.EventsInProcess">
+            <summary>
+            Filters events to only those for a particular process. 
+            </summary>
+        </member>
+        <member name="P:Diagnostics.Eventing.TraceProcess.EventsDuringProcess">
+            <summary>
+            Filters events to only that occured during the time a the process was alive. 
+            </summary>
+            
+        </member>
+        <member name="T:Diagnostics.Eventing.ThreadIndex">
+            <summary>
+            We give each thread  a unique index from 0 to code:TraceThreads.MaxThreadIndex. Thus it is unique
+            within the whole code:TraceLog. You are explictly allowed take advantage of the fact that this
+            number is in the range from 0 to code:TracesThreads.MaxThreadIndex (you can create arrays indexed by
+            code:ThreadIndex). We create the Enum because the strong typing avoids a class of user errors.
+            </summary>
+        </member>
+        <member name="T:Diagnostics.Eventing.TraceThreads">
+            <summary>
+            A code:TraceThreads represents the list of threads in a process. 
+            </summary>
+        </member>
+        <member name="M:Diagnostics.Eventing.TraceThreads.System#Collections#Generic#IEnumerable{Diagnostics#Eventing#TraceThread}#GetEnumerator">
+            <summary>
+            Enumerate all the threads that occured in the trace log.  It does so in order of their thread
+            offset events in the log.  
+            </summary> 
+        </member>
+        <member name="M:Diagnostics.Eventing.TraceThreads.GetThread(System.Int32,System.Int64)">
+            <summary>
+            Given a OS thread ID and a time, return the last code:TraceThread that has the same thread index,
+            and whose offset time is less than 'time100ns'. If 'time100ns' is during the threads lifetime this
+            is guarenteed to be the correct thread. 
+            </summary>
+        </member>
+        <member name="M:Diagnostics.Eventing.TraceThreads.#ctor(Diagnostics.Eventing.TraceLog)">
+            <summary>
+            TraceThreads   represents the collection of threads in a process. 
+            
+            </summary>
+        </member>
+        <member name="P:Diagnostics.Eventing.TraceThreads.MaxThreadIndex">
+            <summary>
+            The count of the number of code:TraceThread s in the trace log. 
+            </summary>
+        </member>
+        <member name="P:Diagnostics.Eventing.TraceThreads.Item(Diagnostics.Eventing.ThreadIndex)">
+            <summary>
+            Each thread that occurs in the log is given a unique index (which unlike the PID is unique), that
+            ranges from 0 to code:BatchCount - 1.   Return the code:TraceThread for the given index.  
+            </summary>
+        </member>
+        <member name="T:Diagnostics.Eventing.TraceThread">
+            <summary>
+            A code:TraceThread represents a tread of execution in a process.  
+            </summary>
+        </member>
+        <member name="M:Diagnostics.Eventing.TraceThread.#ctor(System.Int32,Diagnostics.Eventing.TraceProcess,Diagnostics.Eventing.ThreadIndex)">
+            <summary>
+            Create a new code:TraceProcess.  It should only be done by code:log.CreateTraceProcess because
+            only code:TraceLog is responsible for generating a new ProcessIndex which we need.   'processIndex'
+            is a index that is unique for the whole log file (where as processID can be reused).  
+            </summary>
+        </member>
+        <member name="P:Diagnostics.Eventing.TraceThread.ThreadID">
+            <summary>
+            The OS process ID associated with the process. 
+            </summary>
+        </member>
+        <member name="P:Diagnostics.Eventing.TraceThread.ThreadIndex">
+            <summary>
+            The index into the logical array of code:TraceProcesses for this process.  Unlike ProcessIndex (which
+            may be reused after the process dies, the process index is unique over the log.  
+            </summary>
+        </member>
+        <member name="P:Diagnostics.Eventing.TraceThread.Process">
+            <summary>
+            The process associated with the thread. 
+            </summary>
+        </member>
+        <member name="P:Diagnostics.Eventing.TraceThread.EventsInThread">
+            <summary>
+            Filters events to only those for a particular thread. 
+            </summary>
+        </member>
+        <member name="P:Diagnostics.Eventing.TraceThread.EventsDuringThread">
+            <summary>
+            Filters events to only that occured during the time a the thread was alive. 
+            </summary>
+            
+        </member>
+        <member name="T:Diagnostics.Eventing.TraceLoadedModules">
+            <summary>
+            code:TraceLoadedModules represents the collection of static modules (loaded DLLs or EXEs that
+            directly runnable) in a particular process.  
+            </summary>
+        </member>
+        <member name="M:Diagnostics.Eventing.TraceLoadedModules.GetManagedModule(System.Int64,System.Int64)">
+            <summary>
+            Returns the managedModule with the given moduleID.  For native images the managedModule ID is the image base.  For
+            managed images the managedModule returned is always the IL managedModule. 
+            TODO should managedModuleID be given an opaque type?
+            </summary>
+        </member>
+        <member name="M:Diagnostics.Eventing.TraceLoadedModules.GetModuleContainingAddress(Diagnostics.Eventing.Address,System.Int64)">
+            <summary>
+            This function will find the module assocated with 'address' at 'time100ns' however it will only
+            find modules that are mapped in memory (module assocated with JIT compiled methods will not be found).  
+            </summary>
+        </member>
+        <member name="M:Diagnostics.Eventing.TraceLoadedModules.GetLoadedModule(System.String,System.Int64)">
+            <summary>
+            Returns the module representing the unmanaged load of a file. 
+            </summary>
+        </member>
+        <member name="M:Diagnostics.Eventing.TraceLoadedModules.FindManagedModuleAndIndex(System.Int64,System.Int64,System.Int32@)">
+            <summary>
+            Finds the index and module for an a given managed module ID.  If not found, new module
+            should be inserated at index + 1;
+            </summary>
+        </member>
+        <member name="M:Diagnostics.Eventing.TraceLoadedModules.FindModuleAndIndexContainingAddress(Diagnostics.Eventing.Address,System.Int64,System.Int32@)">
+            <summary>
+            Finds the index and module for an address that lives within the image.  If the module
+            did not match the new entry should go at index+1.   
+            </summary>
+        </member>
+        <member name="T:Diagnostics.Eventing.TraceLoadedModule">
+            <summary>
+            A code:TraceLoadedModule represents a collection of code that is ready to run (it is loaded into a
+            process. 
+            </summary>
+        </member>
+        <member name="P:Diagnostics.Eventing.TraceLoadedModule.ImageBase">
+            <summary>
+            0 for managed modules without NGEN images.  
+            </summary>
+        </member>
+        <member name="P:Diagnostics.Eventing.TraceLoadedModule.LoadTime">
+            <summary>
+            The load time is the time the LoadLibrary was done if it was loaded from a file, otherwise is the
+            time the CLR loaded the module. 
+            </summary>
+        </member>
+        <member name="P:Diagnostics.Eventing.TraceLoadedModule.ModuleFile">
+            <summary>
+            If this managedModule was a file that was mapped into memory (eg LoadLibary), then ModuleFile points at
+            it.  If a managed module does not have a file associated with it, this can be null.  
+            </summary>
+        </member>
+        <member name="P:Diagnostics.Eventing.TraceLoadedModule.ManagedModule">
+            <summary>
+            If this module is an NGEN (or IL) image, return the first instance that this module was loaded as a
+            managed module (note that there may be more than one (if the code is Appdomain specific and loaded
+            in several appdomains).  
+            
+            TODO: provide a way of getting at all the loaded images.  
+            </summary>
+        </member>
+        <member name="T:Diagnostics.Eventing.TraceManagedModule">
+            <summary>
+            A code:TraceManagedModule is a .NET runtime loaded managedModule.  
+            TODO explain more
+            </summary>
+        </member>
+        <member name="P:Diagnostics.Eventing.TraceManagedModule.NativeModule">
+            <summary>
+            If the managed managedModule is an IL managedModule that has has an NGEN image, return it. 
+            </summary>
+        </member>
+        <member name="T:Diagnostics.Eventing.CallStackIndex">
+            <summary>
+            code:CallStackIndex uniquely identifies a callstack within the log.  Valid values are between 0 and
+            code:TraceCallStacks.CallStackIndexLimit, Thus an array can be used to 'attach' data to a callstack.   
+            </summary>
+        </member>
+        <member name="M:Diagnostics.Eventing.TraceCallStacks.SetSize(System.Int32)">
+            <summary>
+            Used to 'undo' the effects of adding a eventToStack that you no longer want.  This happens when we find
+            out that a eventToStack is actually got more callers in it (when a eventToStack is split).  
+            </summary>
+            <param name="origSize"></param>
+        </member>
+        <member name="M:Diagnostics.Eventing.TraceCallStacks.GetRootForThread(Diagnostics.Eventing.ThreadIndex)">
+            <summary>
+            Returns an index that represents the 'theads' of the stack.  It encodes the thread which owns this stack into this. 
+            We encode this as -ThreadIndex - 2 (since -1 is the Invalid node)
+            </summary>
+        </member>
+        <member name="T:Diagnostics.Eventing.TraceCallStack">
+            <summary>
+            A TraceCallStack is a structure that represents a call eventToStack as a linked list.  It contains the
+            Address in the current frame, and the pointer to the caller's eventToStack.  
+            </summary>
+        </member>
+        <member name="T:Diagnostics.Eventing.MethodIndex">
+            <summary>
+            code:MethodIndex uniquely identifies a method within the log.  Valid values are between 0 and
+            code:TraceMethods.MaxMethodIndex, Thus an array can be used to 'attach' data to a method.   
+            </summary>
+        </member>
+        <member name="T:Diagnostics.Eventing.TraceMethod">
+            <summary>
+            A TraceMethod represents the symbolic information for a particular method.
+            It does NOT know what process it lives in or what TraceLoadedModule it
+            is loaded in, but DOES know what TraceModuleFile and source line that is
+            associated with it
+            </summary>
+        </member>
+        <member name="T:Diagnostics.Eventing.CodeAddressIndex">
+            <summary>
+            code:CodeAddressIndex uniquely identifies a symbolic codeAddress within the log (note that the SAME
+            physical addresses can have a different symbolic codeAddress because they are in different
+            processes). Valid values are between 0 and code:TraceCodeAddresses.MaxCodeAddressIndex, Thus an array
+            can be used to 'attach' data to a method.
+            </summary>
+        </member>
+        <member name="M:Diagnostics.Eventing.TraceCodeAddresses.AddMethod(Diagnostics.Eventing.MethodLoadUnloadVerboseTraceData)">
+            <summary>
+            Called when JIT CLR Rundown events are processed. It will look if there is any
+            address that falls into the range of the JIT compiled method and if so log the
+            symbolic information (otherwise we simply ignore it)
+            </summary>
+        </member>
+        <member name="M:Diagnostics.Eventing.TraceCodeAddresses.GetCodeAddressEntry(Diagnostics.Eventing.TraceEvent,Diagnostics.Eventing.Address)">
+            <summary>
+            Gets the symbolic information entry for 'address' which can be any address.  If it falls in the
+            range of a symbol, then that symbolic information is returned.  Regardless of whether symbolic
+            information is found, however, an entry is created for it, so every unique address has an entry
+            in this table.  
+            </summary>
+        </member>
+        <member name="M:Diagnostics.Eventing.TraceCodeAddresses.GetSortedCodeAddressIndexes">
+            <summary>
+            Sort from lowest address to highest address. 
+            </summary>
+        </member>
+        <member name="M:Diagnostics.Eventing.TraceCodeAddresses.LookupSymbols(Diagnostics.Eventing.TraceLogOptions)">
+            <summary>
+            Do symbol resolution for all addresses in the log file. 
+            </summary>
+        </member>
+        <member name="M:Diagnostics.Eventing.TraceCodeAddresses.LookupSymbolsForModule(Symbols.SymbolReader,Diagnostics.Eventing.TraceModuleFile,System.Collections.Generic.IEnumerator{Diagnostics.Eventing.CodeAddressIndex},Diagnostics.Eventing.TraceLogOptions,System.Int32@)">
+            <summary>
+            LookupSymbolsForModule takes a IEumerator respresenting the 'cursor' to a list of
+            sorted code addresses, and this IEnumerator's 'Current' property is the first code
+            address in the module 'moduleFile'.  LookupSymbolsForModule should resolve all the
+            symbols that are in 'moduleFile' updating the cursor (which now points to the first
+            code address outside that module).  It should also increment 'totalAddressCount' for
+            each address it finds.   It will return 'true' if the updated cursor is not at the end
+            of the enumeration (that is Current is valid), and false otherwise.
+            </summary>
+        </member>
+        <member name="F:Diagnostics.Eventing.TraceCodeAddresses.codeAddressBuckets">
+            <summary>
+            Initialially we only have addresses and we need to group them into methods.   We do this by creating 64 byte 'buckets'
+            see code:bucketSize which allow us to create a hash table.   Once we have grouped all the code addresses together into
+            the smallest interesting units (e.g. methods), we don't need this table anymore.  
+            </summary>
+        </member>
+        <member name="P:Diagnostics.Eventing.TraceCodeAddresses.ManagedMethodRecordCount">
+            <summary>
+            Indicates the number of managed method record that were encountered.
+            </summary>
+        </member>
+        <member name="T:Diagnostics.Eventing.TraceCodeAddresses.CodeAddressBucketEntry">
+            <summary>
+            Code ranges need to be looked up by arbitrary address. There are two basic ways of doing this
+            efficiently. First a binary search, second create 'buckets' (fixed sized ranges, see
+            code:bucketSize and code:RoundToBucket) and round any address to these buckets and look them up
+            in a hash table. This latter option is what we use. What this means is that when a entry is added
+            to the table (see code:AddMethod) it must be added to every bucket over its range. Each entry in
+            the table is a code:CodeAddressBucketEntry which is simply a linked list.
+            </summary>
+        </member>
+        <member name="T:Diagnostics.Eventing.TraceCodeAddress">
+            <summary>
+            A TraceCodeAddress represents a address of code (where an instruction pointer might point). Unlike a
+            raw pointer, TraceCodeAddresses will be distinct if they come from different ModuleFiles (thus at
+            different times (or different processes) different modules were loaded and had the same virtual
+            address they would NOT have the same TraceCodeAddress because the load file (and thus the symbolic
+            information) would be different.
+            
+            TraceCodeAddresses hold the symbolic information associated with the address.
+            
+            TraceCodeAddress point at TraceMethod and TraceModuleFile.  None of these types know about the
+            TraceLoadedModule (whic does keep track of when it gets loaded and unloaded), however they
+            DO make certain that there is no confusion about the symbolic information (thus the same address
+            in memory might point at completely different TraceMethod and TraceModuleFile because the
+            code was unloaded and other code loaded between the two references.  
+            </summary>
+        </member>
+        <member name="P:Diagnostics.Eventing.TraceCodeAddress.ModuleName">
+            <summary>
+            ModuleName is the name of the file without path or extension. 
+            </summary>
+        </member>
+        <member name="T:Diagnostics.Eventing.TraceModuleFiles">
+            <summary>
+            Represents a collection of code:TraceModuleFile
+            </summary>
+        </member>
+        <member name="M:Diagnostics.Eventing.TraceModuleFiles.System#Collections#Generic#IEnumerable{Diagnostics#Eventing#TraceModuleFile}#GetEnumerator">
+            <summary>
+            Enumerate all the files that occured in the trace log.  
+            </summary> 
+        </member>
+        <member name="M:Diagnostics.Eventing.TraceModuleFiles.GetModuleFile(System.String,Diagnostics.Eventing.Address)">
+            <summary>
+            For a given file name, get the code:TraceModuleFile associated with it.  
+            </summary>
+        </member>
+        <member name="M:Diagnostics.Eventing.TraceModuleFiles.GetOrCreateModuleFile(System.String,Diagnostics.Eventing.Address)">
+            <summary>
+            We cache information about a native image load in a code:TraceModuleFile.  Retrieve or create a new
+            cache entry associated with 'nativePath' and 'moduleImageBase'.  'moduleImageBase' can be 0 for managed assemblies
+            that were not loaded with LoadLibrary.  
+            </summary>
+        </member>
+        <member name="P:Diagnostics.Eventing.TraceModuleFiles.MaxModuleFileIndex">
+            <summary>
+            Each file is given an index for quick lookup.   MaxModuleFileIndex is the
+            maximum such index (thus you can create an array that is 1-1 with the
+            files easily).  
+            </summary>
+        </member>
+        <member name="T:Diagnostics.Eventing.TraceModuleFile">
+            <summary>
+            The TraceModuleFile represents a executable file that can be loaded into memory (either an EXE or a
+            DLL).  It only represents the data file as well as the location in memory where it was loaded (or
+            its ModuleID if it is a managed module), but NOT the load or unload time or the process.  Thus 
+            it is good for shared symbolic information.    Also note that TraceModuleFiles are NOT guarenteed
+            to be interned (that is there could be two entries that have the same exact file name).  
+            </summary>
+        </member>
+        <member name="P:Diagnostics.Eventing.TraceModuleFile.FileName">
+            <summary>
+            The moduleFile name associted with the moduleFile.  May be the empty string if the moduleFile has no moduleFile
+            (dynamically generated).  For managed code, this is the IL moduleFile name.  
+            </summary>
+        </member>
+        <member name="P:Diagnostics.Eventing.TraceModuleFile.Name">
+            <summary>
+            This is the short name of the moduleFile (moduleFile name without exention). 
+            </summary>
+        </member>
+        <member name="T:Diagnostics.Eventing.TraceLogOptions">
+            <summary>
+            TraceLogOptions control the generation of a TraceLog.  
+            </summary>
+        </member>
+        <member name="F:Diagnostics.Eventing.TraceLogOptions.LocalSymbolsOnly">
+            <summary>
+            Resolving symbols from a symbol server can take a long time. If
+            there is a DLL that always fails, it can be quite anoying because
+            it will always cause delays, By specifying only local symbols it
+            will only resolve the symbols if it can do so without delay.
+            Symbols that have been reviously locally cached from a symbol
+            server count as local symobls.
+               
+            TODO NOT IMPLEMENTED.
+            </summary>
+        </member>
+        <member name="F:Diagnostics.Eventing.TraceLogOptions.SourceLineNumbers">
+            <summary>
+            If set, will resolve addresses to line numbers, not just names.  Default is not to have line
+            numbers.  
+            </summary>
+        </member>
+        <member name="F:Diagnostics.Eventing.TraceLogOptions.SymbolDebug">
+            <summary>
+            print detailed symbolic information (TODO where?)
+            </summary>
+        </member>
+        <member name="F:Diagnostics.Eventing.TraceLogOptions.AlwaysResolveSymbols">
+            <summary>
+            By default symbols are only resolve if there are stacks assocated with the trace. 
+            Setting this option forces resolution even if there are no stacks. 
+            </summary>
+        </member>
+        <member name="P:Diagnostics.Eventing.TraceLogOptions.ConversionLog">
+            <summary>
+            Writes status to this log.  Useful for debugging symbol issues.
+            </summary>
+        </member>
+        <member name="T:Diagnostics.Eventing.ETLXTraceEventSource">
+            <summary>
+            Represents a source for an ETLX file.  This is the class returned by the code:TraceEvents.GetSource
+            methodIndex 
+            </summary>
+        </member>
+        <member name="T:FastSerialization.StreamLabel">
+            <summary>
+            A StreamLabel is a 32 bit integer that represents a position in a code:IStreamReader or
+            code:IStreamWriter. During writing it is generated by the code:IStreamWriter.GetLabel methodIndex an
+            consumed by the code:IStreamWriter.WriteLabel methodIndex. On reading you can use
+            code:IStreamReader.Current and and code:IStreamReader. 
+            </summary>
+        </member>
+        <member name="T:FastSerialization.IStreamWriter">
+            <summary>
+            code:IStreamWriter is meant to be a very simple streaming protocol. You can write integral types,
+            strings, and labels to the stream itself.  
+            
+            code:IStreamWrite can be thought of a simplified code:System.IO.BinaryWriter, or maybe the writer
+            part of a System.IO.Stream with a few helpers for primitive types.
+            
+            See also code:IStreamReader
+            </summary>
+        </member>
+        <member name="T:FastSerialization.IStreamReader">
+            code:IStreamReader is meant to be a very simple streaming protocol. You can read integral types,
+            strings, and labels to the stream itself.  You can also goto labels you have read from the stream. 
+            
+            code:IStreamReader can be thought of a simplified code:System.IO.BinaryReder, or maybe the reader
+            part of a System.IO.Stream with a few helpers for primitive types.
+            
+            See also code:IStreamWriter
+        </member>
+        <member name="M:FastSerialization.IStreamReader.GotoSuffixLabel">
+            <summary>
+            Sometimes information is only known after writting the entire stream.  This information can be put
+            on the end of the stream, but there needs to be a way of finding it relative to the end, rather
+            than from the begining.   A IStreamReader, however, does not actually let you go 'backwards' easily
+            because it does not guarentee the size what it writes out (it might compress).  The solution is
+            the concept of a 'suffixLabel' which is a StreamLabel that can be written as the last entry in
+            the stream that IStreamReader knows how to read.  This can point at whatever information needs
+            to go at the end of the stream.  
+            </summary>
+        </member>
+        <member name="T:FastSerialization.Serializer">
+            <summary>
+            #SerializerIntroduction see also code:#StreamLayout
+            
+            The code:Serializer class is a general purpose object graph serializer helper. While it does not have
+            any knowledge of the serialization format of individual object, it does impose conventions on how to
+            serialize support information like the header (which holds verisioning information), a trailer (which
+            holds defered pointer information), and how types are versioned. However these conventions are
+            intended to be very generic and thus this class can be used for essentially any serialization need.
+            
+            Goals:
+                * Allows full range of serialization, including subclassing and cyclic object graphs.
+                * Can be serialized and deserialized efficiently sequentially (no seeks MANDATED on read or
+                    write). This allows the serializer to be used over pipes and other non-seekable devices).
+                * Pay for play (thus very efficient in simple cases (no subclassing or cyclic graphs).
+                * Ideally self-describing, and debuggable (output as XML if desired?)
+            
+            Versioning:
+                * We want the ability for new formats to accept old versions if objects wish to support old
+                    formats
+                * Also wish to allow new formats to be read by OLD version if the new format is just an
+                    'extension' (data added to end of objects). This makes making new versions almost pain-free.
+                    
+            Concepts:
+                * No-seek requirement
+                
+                    The serialized form should be such that it can be deseralized efficiently in a serial fasion
+                    (no seeks). This means all information needed to deserialize has to be 'just in time' (can't
+                    be some table at the end). Pragmatically this means that type information (needed to create
+                    instances), has to be output on first use, so it is available for the deserializer.
+                    
+                * Laziness requirement
+                
+                    While is should be possible to read the serialized for sequentially, we should also not force
+                    it. It should be possible to have a large file that represents a persisted stucture that can
+                    be lazily brought into memory on demand. This means that all information needed to
+                    deserialize must also be 'randomly available' and not depend on reading from the begining.
+                    Pragmatically this means that type information, and forward forwardReference information needs to
+                    have a table in a well known Location at the end so that it can be found without having to
+                    search the file sequentially.
+                
+                * Versioning requirement
+                    
+                    To allow OLD code to access NEW formats, it must be the case that the serialized form of
+                    every instance knows how to 'skip' past any new data (even if it does not know its exact
+                    size). To support this, objects have 'begin' and 'end' tags, which allows the deserializer to
+                    skip the next object.
+                    
+                * Polymorphsim requirement
+                
+                    Because the user of a filed may not know the exact instance stored there, in general objects
+                    need to store the exact type of the instance. Thus they need to store a type identifer, this
+                    can be folded into the 'begin' tag.
+                    
+                * Arbitrary object graph (cicularity) requirement (Forward references)
+                
+                    The serializer needs to be able to serialize arbirary object graphs, including those with
+                    cycles in them. While you can do this without forward references, the system is more flexible
+                    if it has the concept of a forward refernce. Thus whenever a object refernece is required, a
+                    'forward forwardReference' can be given instead. What gets serialized is simply an unique forward
+                    refernece index (index into an array), and at some later time that index is given its true
+                    value. This can either happen with the target object is serialied (see
+                    code:Serializer.Tags.ForwardDefintion) or at the end of the serialization in a forward
+                    refernece table (which allows forward references to be resolved without scanning then entire
+                    file.
+                    
+                * Contract between objects code:IFastSerializable.ToStream:
+                
+                    The heart of the serialization and deserialization process s the code:IFastSerializable
+                    interface, which implements just two methods: ToStream (for serializing an object), and
+                    FromStream (for deserializing and object). This intefaces is the mechanism by which objects
+                    tell the serializer what data to store for an individual instance. However this core is not
+                    enough. An object that implements code:IFastSerializable must also implement a default
+                    constructor (constructor with no args), so that that deserializer can create the object (and
+                    then call FromStream to populated it).
+                    
+                    The ToStream methodIndex is only responsible for serializing the data in the object, and by itself
+                    is not sufficient to serialize an interconnected, polymoriphic graph of objects. It needs
+                    help from the code:Serializer and code:Deserialize to do this. code:Serializer takes on the
+                    responsibility to deal with persisting type information (so that code:Deserialize can create
+                    the correct type before code:IFastSerializable.FromStream is called). It is also the
+                    serializer's responsibilty to provide the mechanism for dealing with circular object graphs
+                    and forward references.
+                
+                * Layout of a serialized object: A serialized object has the following basic format
+                
+                    * If the object is the defintion of a previous forward references, then the defintion must
+                        begin with a code:Serializer.Tags.ForwardDefintion tag followed by a forward forwardReference
+                        index which is being defined.
+                    * code:Serializer.Tags.BeginObject tag
+                    * A reference to the code:SerializationType for the object. This refernece CANNOT be a
+                        forward forwardReference because its value is needed during the deserialization process before
+                        forward references are resolved.
+                    * All the data that that objects 'code:IFastSerializable.ToStream methodIndex wrote. This is the
+                        heart of the deserialized data, and the object itself has a lot of control over this
+                        format.
+                    * code:Serializer.Tags.EndObject tag. This marks the end of the object. It quickly finds bugs
+                        in ToStream FromStream mismatches, and also allows for V1 deserializers to skip past
+                        additional fields added since V1.
+                    
+                * Serializing Object references:
+                  When an object forwardReference is serialized, any of the following may follow in the stream
+                  
+                    * code:Serializer.Tags.NullReference used to encode a null object forwardReference.
+                    * code:Serializer.Tags.BeginObject or code:Serializer.Tags.ForwardDefintion, which indicates
+                        that this the first time the target object has been referenced, and the target is being
+                        serialized on the spot.
+                    * code:Serializer.Tags.ObjectReference which indicates that the target object has already
+                        been serialized and what follows is the StreamLabel of where the definition is.
+                    * code:Serializer.Tags.ForwardReference followed by a new forward forwardReference index. This
+                        indicates that the object is not yet serialized, but the serializer has choosen not to
+                        immediately serialize the object. Ultimately this object will be defined, but has not
+                        happened yet.
+                       
+                * Serializing Types:
+                  Types are simply objects of type code:SerializationType which contain enough information about
+                  the type for the Deserializer to do its work (it full name and version number).   They are
+                  serialized just like all other types.  The only thing special about it is that references to
+                  types after the BeginObject tag must not be forward references.  
+             
+            #StreamLayout:
+                The structure of the file as a whole is simply a list of objects.  The first and last objects in
+                the file are part of the serialization infratructure.  
+                
+            Layout Synopsis
+                * Signature representing code:Serializer format
+                * EntryObject (most of the rest of the file)
+                    * BeginObject tag
+                    * Type for This object (which is a object of type code:SerializationType)
+                        * BeginObject tag
+                        * Type for code:SerializationType  POSITION1
+                            * BeginObject tag
+                            * Type for code:SerializationType
+                                 * ObjectReference tag           // This is how our recursion ends.  
+                                 * StreamLabel for POSITION1
+                            * Version Field for SerializationType
+                            * Miniumum Version Field for SerializationType
+                            * FullName string for SerializationType                
+                            * EndObject tag
+                        * Version field for EntryObject's type
+                        * Miniumum Version field for EntryObject's type
+                        * FullName string for EntryObject's type
+                        * EndObject tag
+                    * Field1  
+                    * Field2 
+                    * V2_Field (this should be tagged so that it can be skipped by V1 deserializers.  
+                    * EndObject tag
+                * ForwardReferenceTable pseudo-object
+                    * Count of forward references
+                    * StreamLabel for forward ref 0
+                    * StreamLabel for forward ref 1.
+                    * ...
+                * SerializationTrailer pseduo-object
+                    * StreamLabel ForwardReferenceTable
+                * StreamLabel to SerializationTrailer
+                * End of stream
+            </summary>
+        </member>
+        <member name="M:FastSerialization.Serializer.#ctor(System.String,FastSerialization.IFastSerializable)">
+            <summary>
+            Open a serializer to a file (for persistance). 
+            </summary>
+        </member>
+        <member name="M:FastSerialization.Serializer.Write(FastSerialization.IFastSerializable)">
+            <summary>
+            If the object is potentially aliased (multiple references to it), you should write it with this methodIndex.
+            </summary>
+        </member>
+        <member name="M:FastSerialization.Serializer.WriteDefered(FastSerialization.IFastSerializable)">
+            <summary>
+            To tune working set (or disk seeks), or to make the dump of the format more readable, it is
+            valueable to have control over which of several references to an object will actually cause it to
+            be serialized (by default the first encountered does it).
+            
+            WriteDeferedReference allows you to write just a forwardReference to an object with the expectation that
+            somewhere later in the serialization process the object will be serialized. If no call to
+            WriteObject() occurs, then the object is serialized automatically before the stream is closed
+            (thus dangling references are impossible).        
+            </summary>
+        </member>
+        <member name="M:FastSerialization.Serializer.WritePrivate(FastSerialization.IFastSerializable)">
+            <summary>
+            This is an optimized version of code:WriteObjectReference that can be used in some cases.
+            
+            If the object is not aliased (it has an 'owner' and only that owner has references to it (which
+            implies its lifetime is strictly less than its owners), then the serialzation system does not
+            need to put the object in the 'interning' table. This saves a space (entries in the intern table
+            as well as 'SyncEntry' overhead of creating hash codes for object) as well as time (to create
+            that bookkeeping) for each object that is treated as private (which can add up if because it is
+            common that many objects are private).  The private instances are also marked in the serialized
+            format so on reading there is a simmilar bookeeping savings. 
+            
+            The ultimate bits written by code:WritePrivateObject are the same as code:WriteObject.
+            
+            TODO Need a DEBUG mode where we detect if others besides the owner refernence the object.
+            </summary>
+        </member>
+        <member name="M:FastSerialization.Serializer.Close">
+            <summary>
+            Completes the writing of the stream. 
+            </summary>
+        </member>
+        <member name="P:FastSerialization.Serializer.Writer">
+            <summary>
+            Retrieve the underlying stream we are writing to.  Generally the Write* methods are enough. 
+            </summary>
+        </member>
+        <member name="T:FastSerialization.Deserializer">
+            <summary>
+            code:Deserializer is a helper class that holds all the information needed to deserialize an object
+            graph as a whole (things like the table of objects already deserialized, and the list of types in
+            the object graph.  
+            
+            see code:#SerializerIntroduction for more
+            </summary>
+        </member>
+        <member name="F:FastSerialization.Deserializer.deferForwardReferences">
+            <summary>
+            When we encounter a forward reference, we can either go to the forward reference table immediately and resolve it 
+            (deferForwardReferences == false), or simply remember that that position needs to be fixed up and continue with
+            the deserialization.   This later approach allows 'no seek' deserialization.   This variable which scheme we do. 
+            </summary>
+        </member>
+        <member name="P:FastSerialization.Deserializer.AllowLazyDeserialization">
+            <summary>
+            
+            
+            On by default.  
+            </summary>
+        </member>
+        <member name="T:FastSerialization.DeferedRegion">
+            <summary>
+            #DeferedRegionOverview. 
+            
+            A DeferedRegion help make 'lazy' objects. You will have a DeferedRegion for each block of object you
+            wish to independently decide whether to deserialize lazily (typically you have on per object however
+            in the limit you can have one per field, it is up to you).
+            
+            When you call code:DeferedRegion.Write you give it a delegate that will write all the defered fields.
+            The Write operation will place a forward reference in the stream that skips all the fields written,
+            then the fields themselves, then define the forward reference. This allows readers to skip the
+            defered fields.
+            
+            When you call code:DeferedRegion.Read  you also give it a delegate that reads all the defered fields.
+            However when 'Read' instead of reading the fields it
+            
+                * remembers the deseializer, stream position, and reading delegate.
+                * it uses the forward refernece to skip the region.
+                
+            When code:DeferedRegion.FinishRead is called, it first checks if the region was already restored. 
+            If not it used the information to read in the defered region and returns.  Thus this FinishRead
+            should be called before any deferred field is used.  
+            </summary>
+        </member>
+        <member name="M:FastSerialization.DeferedRegion.Write(FastSerialization.Serializer,System.Action)">
+            <summary>
+            see code:#DeferedRegionOverview.  
+            TODO more 
+            </summary>
+        </member>
+        <member name="M:FastSerialization.DeferedRegion.Read(FastSerialization.Deserializer,System.Action)">
+            <summary>
+            see code:#DeferedRegionOverview.  
+            fromStream can be null, if FinishRead is never used.  
+            TODO more 
+            </summary>
+        </member>
+        <member name="M:FastSerialization.DeferedRegion.FinishReadHelper">
+            <summary>
+            This helper is just here to insure that FinishRead gets inlined 
+            </summary>
+        </member>
+        <member name="T:FastSerialization.IFastSerializableVersion">
+            <summary>
+            Objects implement code:IFastSerializableVersion to indicate what the current version is for writing
+            and which readers can read the curent version.   If this interface is not implemented a default is
+            provided (assuming version 1 for writing and MinimumVersion = 0).  
+            
+            By default code:Serializer.WriteObject will place marks when the object ends and always skip to the
+            end even if the FromStream did not read all the object data.   This allows considerable versioning
+            flexibilty.  Simply by placing the new data at the end of the existing serialization, new versions
+            of the type can be read by OLD deserializers (new fields will have the value determined by the
+            default constructor (typically 0 or null).  This makes is relatively easy to keep MinimumVersion = 0
+            (the ideal case).  
+            </summary>
+        </member>
+        <member name="P:FastSerialization.IFastSerializableVersion.Version">
+            <summary>
+            This is the version number for the serialization format.  It should be incremented whenever a
+            changes is made to code:IFastSerializable.ToStream and the format is publicly diseminated.  It
+            must not vary from instance to instance 
+            </summary>
+        </member>
+        <member name="P:FastSerialization.IFastSerializableVersion.MinimumVersion">
+            <summary>
+            This is the minimum version that can read the current version's format (reader version strictly
+            less than the MinimumVersion of the writer will not be permitted to read he data). Ideally, this
+            number is always 0 (all readers can read any version) it must not vary from instance to instance
+            </summary>
+        </member>
+        <member name="T:System.Collections.Generic.GrowableArray`1">
+            <summary>
+            A cheap version of List(T). The idea is to make it as cheap as if you did it 'by hand' using an array and
+            a int which represents the logical charCount. It is a struct to avoid an extra pointer dereference, so this
+            is really meant to be embeded in other structures.
+            
+            Also made the Binary search is actually useful (by allowing the key to be something besides the element
+            itself).
+            </summary>
+        </member>
+        <member name="M:System.Collections.Generic.GrowableArray`1.Add(`0)">
+            <summary>
+            Add an item at the end of the array, growing as necessary. 
+            </summary>
+            <param name="item"></param>
+        </member>
+        <member name="M:System.Collections.Generic.GrowableArray`1.Insert(System.Int32,`0)">
+            <summary>
+            Insert 'item' directly at 'index', shifting all items >= index up.  'index' can be code:Count in
+            which case the item is appended to the end.  Larger indexes are not allowed. 
+            </summary>
+        </member>
+        <member name="M:System.Collections.Generic.GrowableArray`1.Trim(System.Int32)">
+            <summary>
+            Trims the size of the array so that no more than 'maxWaste' slots are wasted.   Useful when
+            you know that the array has stopped growing.  
+            </summary>
+        </member>
+        <member name="M:System.Collections.Generic.GrowableArray`1.BinarySearch``1(``0,System.Int32@,System.Collections.Generic.GrowableArray{`0}.Comparison{``0})">
+            <summary>
+            Sets 'index' to the the smallest index such that all elements with index > 'idx' are > key.  If
+            index does not match any elements a new element should always be placed AFTER index.  Note that this
+            means that index may be -1 if the new element belongs in the first position.  
+            
+            return true if the return index matched exactly (success)
+            </summary>
+        </member>
+        <member name="M:System.Collections.Generic.GrowableArray`1.Search``1(``0,System.Int32,System.Collections.Generic.GrowableArray{`0}.Comparison{``0},System.Int32@)">
+            <summary>
+            Perform a linear search starting at 'startIndex'.  If found return true and the index in 'index'.
+            It is legal that 'startIndex' is greater than the charCount, in which case, the search returns false
+            immediately.   This allows a nice loop to find all items matching a pattern. 
+            </summary>
+        </member>
+        <member name="P:System.Collections.Generic.GrowableArray`1.UnderlyingArray">
+            <summary>
+            Returns the underlying array.  Should not be used most of the time!
+            </summary>
+        </member>
+        <member name="T:FastSerialization.MemoryStreamReader">
+            <summary>
+            A MemoryStreamReader is an implementation of the IStreamReader interface that works over a given byte[] array.  
+            </summary>
+        </member>
+        <member name="T:FastSerialization.MemoryStreamWriter">
+            <summary>
+            A StreamWriter is an implementation of the IStreamWriter interface that generates a byte[] array. 
+            </summary>
+        </member>
+        <member name="T:FastSerialization.IOStreamStreamWriter">
+            <summary>
+            A IOStreamStreamWriter hooks a MemoryStreamWriter up to an output System.IO.Stream
+            </summary>
+        </member>
+        <member name="T:FastSerialization.IOStreamStreamReader">
+            <summary>
+            A IOStreamStreamReader hooks a MemoryStreamReader up to an input System.IO.Stream.  
+            </summary>
+        </member>
+        <member name="M:FastSerialization.IOStreamStreamReader.Fill(System.Int32)">
+            <summary>
+            Fill the buffer, making sure at least 'minimum' byte are available to read.  Throw an exception
+            if there are not that many bytes.  
+            </summary>
+            <param name="minimum"></param>
+        </member>
+        <member name="M:Utilities.StreamUtilities.CopyStream(System.IO.Stream,System.IO.Stream)">
+            <summary>
+            CopyStream simply copies 'fromStream' to 'toStream'
+            </summary>
+        </member>
+        <member name="T:XmlUtilities">
+            <summary>
+            The important thing about these general utilities is that they have only dependencies on mscorlib and
+            System (they can be used from anywhere).  
+            </summary>
+        </member>
+        <member name="T:HistoryDictionary`1">
+            <summary>
+            A HistoryDictionary is designed to look up 'handles' (pointer sized quantities), that might get reused
+            over time (eg Process IDs, thread IDs).  Thus it takes a handle AND A TIME, and finds the value
+            associated with that handles at that time.   
+            </summary>
+        </member>
+    </members>
+</doc>

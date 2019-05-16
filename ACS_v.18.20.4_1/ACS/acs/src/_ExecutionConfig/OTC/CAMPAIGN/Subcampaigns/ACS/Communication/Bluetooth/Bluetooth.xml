@@ -1,0 +1,34 @@
+<?xml version="1.0" ?>
+<Campaign>
+      <Parameters>
+            <Parameter isControlledPSUsed="False"/>
+            <Parameter isIoCardUsed="False"/>
+            <Parameter skipBootOnPowerCycle="False"/>
+            <Parameter bootRetryNumber="0"/>
+            <Parameter runHookScripts="False"/>
+            <Parameter powerCycleBetweenTC="False"/>
+            <Parameter powerCycleOnFailure="False"/>
+            <Parameter finalDutState="NoChange"/>
+            <Parameter stopCampaignOnCriticalFailure="False"/>
+            <Parameter stopCampaignOnFirstFailure="False"/>
+            <Parameter loggingLevel="debug"/>
+            <Parameter CampaignType="Other"/>
+      </Parameters>
+      <TestCases>
+            <TestCase Id="../../../../../TC/TR/ACS/Communication/Bluetooth/Bluetooth_GeneralTest_Turn_ON_OFF_Bluetooth_test_on_UI"/>
+            <TestCase Id="../../../../../TC/TR/ACS/Communication/Bluetooth/Bluetooth_GeneralTest_Turn_ON_OFF_Bluetooth_test_off_UI"/>
+            <TestCase Id="../../../../../TC/TR/ACS/Communication/Bluetooth/Bluetooth_GeneralTest_Scan_for_devices_UI"/>
+            <TestCase Id="../../../../../TC/TR/ACS/Communication/Bluetooth/Bluetooth_GeneralTest_Change_device_name_UI"/>
+            <TestCase Id="../../../../../TC/TR/ACS/Communication/Bluetooth/Bluetooth_GeneralTest_Bluetooth_symbol_present_in_taskbar_after_activation"/>
+            <TestCase Id="../../../../../TC/TR/ACS/Communication/Bluetooth/Bluetooth_GeneralTest_Airplane_Mode_on_UI"/>
+            <TestCase Id="../../../../../TC/TR/ACS/Communication/Bluetooth/Bluetooth_GeneralTest_Airplane_Mode_off_UI"/>
+
+            <!-- This TC depends on the ACS Agent
+            <TestCase Id="../../../../../TC/TR/ACS/Communication/Bluetooth/BT_TURN_ON_OFF"/> !-->
+
+            <!-- The methods in the following 2 TCs are valid, but there is a current need for handling the opposite device
+            hence they are not currently included in the Subcampaign
+            <TestCase Id="../../../../../TC/TR/ACS/Communication/Bluetooth/test_Bluetooth_pairDevice"/>
+            <TestCase Id="../../../../../TC/TR/ACS/Communication/Bluetooth/test_Bluetooth_unpairDevice"/> !-->
+      </TestCases>
+</Campaign>

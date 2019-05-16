@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<TestCase>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Discription>
+DUT can't enter MOS after flash a wrong system img file.
+</Discription>
+    <Domain>System_FastBoot</Domain>
+    <Phase>CORE</Phase>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <Type>FUNCTIONAL</Type>
+    <UseCase>PY_UNIT</UseCase>
+    <b2bIteration>1</b2bIteration>
+    <Parameters>
+        <Parameter>
+            <Name>HpalmName</Name>
+            <Value>DUT_cannot_enter_MOS_after_flash_wrong_image</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TEST_DATA_ROOT</Name>
+            <Value>testplan/System_FastBoot</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TEST_CASE</Name>
+            <Value>tests.System_FastBoot.P1-UpdateDeviceFlashImages.Flash_Image_Parts.System.Negative.DUT_cannot_enter_MOS_after_flash_wrong_image</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="13.37">
+    <UseCase>LAB_LTE_IPERF</UseCase>
+    <Description>Perform a IPERF transfer on simulated LTE network.</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters>
+        <Parameter>
+            <!-- Multiple-Input Multiple-Output to set : true or false -->
+            <Name>MIMO</Name>
+            <Value>TRUE</Value>
+        </Parameter>
+        <Parameter>
+            <!-- number of antennas to set : 1 or 2 -->
+            <Name>ANTENNAS_NUMBER</Name>
+            <Value>2</Value>
+        </Parameter>
+        <Parameter>
+            <!-- LTE category to use for the test, should be an int. -->
+            <Name>LTE_CATEGORY</Name>
+            <Value>3</Value>
+        </Parameter>
+        <Parameter>
+            <!-- TRANSMISSION_MODE to set: TM1, TM2, TM3,TM4 ... -->
+            <Name>TRANSMISSION_MODE</Name>
+            <Value>TM3</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Physical Cell ID : 0 to 503 -->
+            <Name>PHYSICAL_CELL_ID</Name>
+            <Value>0</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Cell Setup : "A" for A-cell or "B" for B-cell -->
+            <Name>CELL_ID</Name>
+            <Value>A</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Cell power for RFO1 -->
+            <Name>CELL_POWER_RFO1</Name>
+            <Value>-40</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Cell power for RFO2 -->
+            <Name>CELL_POWER_RFO2</Name>
+            <Value>-40</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Mobile Country Code 0 to 999 -->
+            <Name>MCC</Name>
+            <Value>1</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Mobile Network Code 0 to 999 -->
+            <Name>MNC</Name>
+            <Value>1</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Cell Band (from Band 1 to Band 32) -->
+            <Name>CELL_BAND</Name>
+            <Value>1</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Downlink channel -->
+            <Name>DL_EARFCN</Name>
+            <Value>300</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Port Number used by IPERF -->
+            <Name>PORT</Name>
+            <Value>5009</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Duration in seconds allowed to IPERF to perform measurements -->
+            <Name>DURATION</Name>
+            <Value>120</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Type of data transfer (UL/DL). Only used with the COMPUTER parameter. -->
+            <Name>DIRECTION</Name>
+            <Value>BOTH</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Cell Channel Bandwidth in MHz -->
+            <Name>CELL_CHANNEL_BANDWIDTH</Name>
+            <Value>20</Value>
+        </Parameter>
+        <Parameter>
+            <!-- RRC STATE Before FTP start (RRC_CONNECTED | RRC_IDLE ) -->
+            <Name>RRC_STATE</Name>
+            <Value>RRC_IDLE</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Protocol used by IPERF to perform measurements - (TCP | UDP) -->
+            <Name>IPERF_PROTOCOL</Name>
+            <Value>UDP</Value>
+        </Parameter>
+        <Parameter>
+        <!--Optional: Failure data average throughput value in Mbps (UL, DL)
+            it can be also the string FUTE (ie 70% of max throughput)
+            if the value is empty, test case will use default value defined
+            in _Configs/Throughput_Targets.xml	-->
+            <Name>FAILURE_TARGETS</Name>
+            <Value>FUTE</Value>
+        </Parameter>
+    </Parameters>
+    <TestSteps>
+        <Initialize>
+            <!-- Download the artifact from artifactory to local host -->
+            <TestStep Id="GET_ARTIFACT"
+                      EQT="ARTIFACT_MANAGER"
+                      ARTIFACT="MISCELLANEOUS/BINARIES/[+]FROM_DEVICE:PHONE1:OS[+]/COMMON/iperf"
+                      ARTIFACT_SOURCE="FROM_BENCH:ARTIFACT_MANAGER:URI"
+                      TRANSFER_TIMEOUT="DEFAULT"
+                      STORED_FILE_PATH="FILE_PATH_IN_CACHE1" />
+            <!-- Then, Push it on the device. -->
+            <!-- FILE_PATH is retrieved from test step context -->
+            <TestStep Id="INSTALL_FILE"
+                      DEVICE="PHONE1"
+                      FILE_PATH="FROM_CTX:FILE_PATH_IN_CACHE1"
+                      TYPE="bin"
+                      DESTINATION="FROM_DEVICE:PHONE1:binPath"
+                      TIMEOUT="DEFAULT"
+                      DESTINATION_STORED_PATH="FILE_PATH_IN_CACHE1" />
+        </Initialize>
+    </TestSteps>
+</TestCase>

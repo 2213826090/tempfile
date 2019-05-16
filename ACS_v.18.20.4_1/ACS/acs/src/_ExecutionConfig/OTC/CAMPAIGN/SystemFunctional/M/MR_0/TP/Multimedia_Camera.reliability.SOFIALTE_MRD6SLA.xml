@@ -1,0 +1,65 @@
+<?xml version="1.0" ?>
+<Campaign version="13.49">
+    <Parameters>
+        <Parameter isControlledPSUsed="False"/>
+        <Parameter isIoCardUsed="False"/>
+        <Parameter skipBootOnPowerCycle="False"/>
+        <Parameter bootRetryNumber="0"/>
+        <Parameter runHookScripts="False"/>
+        <Parameter powerCycleBetweenTC="False"/>
+        <Parameter powerCycleOnFailure="False"/>
+        <Parameter finalDutState="NoChange"/>
+        <Parameter stopCampaignOnCriticalFailure="False"/>
+        <Parameter stopCampaignOnFirstFailure="False"/>
+        <Parameter loggingLevel="debug"/>
+        <Parameter CampaignType="Other"/>
+        <Parameter TCRReportViaRESTAPI="True"/>
+    </Parameters>
+    <TestCases>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_Camera/Basic/test_Camera_ExposureBias_Front_ExposureSwitchCapture_100cycles"/>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_Camera/Basic/test_Camera_ExposureBias_Rear_ExposureSwitchCapture_100cycles"/>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_Camera/Basic/test_Camera_Snapshot_Rear_Iteration_500cycles"/>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_Camera/Basic/test_Camera_TraverseSetting_Iteration_200cycles"/>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_Camera/Basic/test_Camera_Front_TerminateInRecentAppAfterLaunch_500cycles"/>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_Camera/Basic/test_Camera_LaunchCameraViaAppIcon_Iteration_500cycles"/>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_Camera/Basic/test_Camera_LaunchCameraViaTaskManager_Iteration_500cycles"/>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_Camera/Basic/test_Camera_QuickPressShutter_CaptureMode_Iteration_500cycles"/>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_Camera/Basic/test_Camera_Front_Capture_Iteration_500cycles"/>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_Camera/Basic/test_Camera_Front_ResolutionSwitchCapture_Iteration_500cycles"/>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_Camera/Basic/test_Camera_Rear_ResolutionSwitchCapture_Iteration_500cycles"/>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_Camera/Basic/test_Camera_RebootDUT_LaunchCamera_20Times"/>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_Camera/Basic/test_Camera_switch_QuickViewAndFOV_20times"/>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_Camera/Basic/test_Camera_Front_Rear_SwitchCapture_Iteration_UntilStorageFull"/>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_Camera/Basic/test_Camera_SwitchFrontRear_Iteration_5000cycles"/>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_Camera/Basic/test_Camera_CaptureMode_SwitchFrontRear_Iteration_500cycles"/>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_Camera/Basic/test_Camera_VideoMode_Front_TerminateInRecentAppDuringRecord_Iteration_500cycles"/>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_Camera/Basic/test_Camera_VideoMode_Rear_TerminateInRecentAppDuringRecording_Iteration_500cycles"/>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_Camera/Basic/test_Camera_VideoMode_QuickShutterPress_Iteration_500cycles"/>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_Camera/Basic/test_Camera_VideoMode_SwitchFrontRear_Iteration_5000cycles"/>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_Camera/Basic/test_Camera_VideoMode_SwitchFrontRear_Iteration_500cycles"/>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_Camera/Basic/test_Camera_Snapshot_Front_Iteration_500cycles"/>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_Camera/Basic/test_Camera_VideoMode_Front_ResolutionSwitchRecord_10s_Iteration_500cycles"/>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_Camera/Basic/test_Camera_VideoMode_Rear_SwitchResolutionRecord_10s_Iteration_500cycles"/>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_Camera/Basic/test_Camera_VideoMode_Front_Longlasting_2hrs"/>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_Camera/Basic/test_Camera_VideoMode_Rear_Longlasting_2hrs"/>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_Camera/Basic/test_Camera_VideoMode_Front_ShortVideo_1s_Iteration_100cycles"/>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_Camera/Basic/test_Camera_VideoMode_Rear_ShortVideo_1s_Iteration_100cycles"/>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_Camera/Basic/test_Camera_Iteration_Switch_Mode_500cycles"/>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_Camera/Basic/test_Camera_Timer_EnableDisable_Continuously"/>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_Camera/Basic/test_Camera_TorchMode_On10Min"/>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_Camera/Basic/test_Camera_TouchFocus_20times"/>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_Camera/Basic/test_Camera_VideoMode_LackStorage_VideoMode"/>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_Camera/Basic/test_Camera_When_DUT_HighRAM_Or_CPU"/>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_Camera/Basic/test_Camera_DoubleClickViewfinder_RepeatManyTimes"/>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_Camera/Basic/test_Camera_Front_Capture_Iteration_5000cycles"/>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_Camera/Basic/test_Camera_Front_Capture_Longlasting_MaxResolution_8hrs"/>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_Camera/Basic/test_Camera_Rear_Capture_Iteration_5000cycles"/>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_Camera/Basic/test_Camera_Rear_Capture_Iteration_500cycles"/>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_Camera/Basic/test_Camera_Rear_Capture_Iteration_UntilStorageFull"/>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_Camera/Basic/test_Camera_Rear_Capture_Longlasting_MaxResolution_8hrs"/>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_Camera/Basic/test_Camera_VideoMode_PressShutterKeyQuickly"/>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_Camera/Basic/test_Camera_Preview_LockAndUnlock_30mins"/>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_Camera/Basic/test_Camera_ZoomIn_ZoomOut_20times"/>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_Camera/Basic/test_Camera_VideoMode_FullStorage"/>
+    </TestCases>
+</Campaign>

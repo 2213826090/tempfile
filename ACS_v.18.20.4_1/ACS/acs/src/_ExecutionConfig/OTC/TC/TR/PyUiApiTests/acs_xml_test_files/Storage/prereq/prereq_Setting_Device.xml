@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase>
+    <UseCase>EXEC</UseCase>
+    <Description>Test Prerequisites</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <TcMaxAttempt>2</TcMaxAttempt>
+    <TestSteps>
+        <Initialize>
+            <TestStep Id="UNINSTALL_APP" DEVICE="PHONE1" APP_NAME="com.intel.test.apitests" TIMEOUT="DEFAULT" BACKUP_APP_NAME="NO_BACKUP" BACKUP_FILE_PATH="APP_BACKUP_PATH"/>
+            <TestStep Id="GET_ARTIFACT" EQT="ARTIFACT_MANAGER" ARTIFACT="FROM_BENCH:ARTIFACT_APKS:ApiTests" ARTIFACT_SOURCE="FROM_BENCH:ARTIFACT_MANAGER:URI" TRANSFER_TIMEOUT="DEFAULT" STORED_FILE_PATH="FILE_PATH_IN_CACHE1"/>
+            <TestStep Id="INSTALL_APP"
+                      DEVICE="PHONE1"
+                      SIGN="False"
+                      SIGN_KEY_PATH="DEFAULT"
+                      FILE_PATH="FROM_CTX:FILE_PATH_IN_CACHE1"
+                      BACKUP="False"
+                      TIMEOUT="30"
+                      BACKUP_FILE_PATH="/backup"/>
+        </Initialize>
+        <Finalize>
+        </Finalize>
+    </TestSteps>
+    <Parameters>
+        <Parameter>
+            <Name>RUN_CMD</Name>
+            <Value>python ../../../entry_point_scripts/Storage/Storage.Device_Test_ENV.py</Value>
+        </Parameter>
+        <Parameter>
+            <Name>RUN_FROM_TCDIRECTORY</Name>
+            <Value>True</Value>
+        </Parameter>
+        <Parameter>
+            <Name>RUN_TIMEOUT</Name>
+            <Value>500</Value>
+        </Parameter>
+        <Parameter>
+            <Name>RUN_EXPECT_RESULT</Name>
+            <Value>PASS</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

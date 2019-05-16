@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<Include>
+    <Include Src="ST/pnp/TSS/common.xml" />
+    <TestStepSet Id="TearDown">
+        <TestStep Id="STORE_STRING_IN_CTX" INPUT="False" OUTPUT="IDLE_TEST"/>
+        <TestStep Id="STORE_STRING_IN_CTX" INPUT="True" OUTPUT="POWER_MEASUREMENT"/>
+        <TestStep SetId="TearDown_common" />
+    </TestStepSet>
+
+    <TestStepSet Id="StopPowerMeasurement">
+        <TestStep Id="STORE_STRING_IN_CTX" INPUT="False" OUTPUT="IDLE_TEST"/>
+        <TestStep Id="STORE_STRING_IN_CTX" INPUT="True" OUTPUT="POWER_MEASUREMENT"/>
+        <TestStep SetId="StopPowerMeasurement_common" />
+    </TestStepSet>
+</Include>

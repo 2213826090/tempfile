@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<Campaign>
+    <Parameters>
+        <Parameter isControlledPSUsed ="False"/>
+        <Parameter isIoCardUsed ="False"/>
+        <!-- Set skipBootOnPowerCycle to True to disable the accs boot procedure-->
+        <!-- Important, it means that boot will be handle inside the campaign/tc -->
+        <Parameter skipBootOnPowerCycle ="False"/>
+        <Parameter runHookScripts = "False"/>
+        <Parameter powerCycleBetweenTC ="False"/>
+        <Parameter powerCycleOnFailure ="False"/>
+        <Parameter finalPowerOff ="False"/>
+        <Parameter stopCampaignOnCriticalFailure = "False"/>
+        <Parameter stopCampaignOnFirstFailure = "False"/>
+        <!-- LoggingLevel possible values: info | warning | debug | error -->
+        <Parameter loggingLevel = "info"/>
+        <!-- CampaignType format -> <TEAM>_<CAMPAIGNTYPE>
+        Possible values:
+        FT(Feature Team)-> SANITY | REGRESSION | STRESS, RELIABILTY | MTBF
+        ST(System Test)-> SANITY | REGRESSION | STRESS, RELIABILTY | MTBF
+        SI(System Integration)-> EAT | STAB | PACT | CAT0 | RELIABILITY | MTBF | CTS
+        Otherwise "Others" should be used -->
+        <Parameter CampaignType = "ST_REGRESSION"/>
+        <Parameter TCRReportViaRESTAPI="true"/>
+    </Parameters>
+
+    <Targets>
+        <!-- Target Values -->
+        <Target targetB2bPassRate ="100"/>
+    </Targets>
+
+    <TestCases>
+        <!-- SETUP -->
+        <TestCase Id="..\..\..\SI\BBot_EAT_PACT\TC\COMMON\SYSTEM\SI_SYSTEM_SETUP_EMBEDDED" TcMaxAttempt="2" TcAcceptanceCriteria="1"/>
+
+        <!-- Accessory change - CSV Call -->
+        <TestCase Id="..\TC\CSV Calls\ST_AUDIOCOMMS_CSV_ACCESSORY_700-LAB_AUDIO_QUALITY_ACCESSORIES_CHANGE_CSV" TcMaxAttempt="2" TcAcceptanceCriteria="1"/>
+        <TestCase Id="..\TC\CSV Calls\ST_AUDIOCOMMS_CSV_ACCESSORY_701-LAB_AUDIO_QUALITY_ACCESSORIES_CHANGE_CSV" TcMaxAttempt="2" TcAcceptanceCriteria="1"/>
+        <TestCase Id="..\TC\CSV Calls\ST_AUDIOCOMMS_CSV_ACCESSORY_703-LAB_AUDIO_QUALITY_ACCESSORIES_CHANGE_CSV" TcMaxAttempt="2" TcAcceptanceCriteria="1"/>
+        <TestCase Id="..\TC\CSV Calls\ST_AUDIOCOMMS_CSV_ACCESSORY_706-LAB_AUDIO_QUALITY_ACCESSORIES_CHANGE_CSV" TcMaxAttempt="2" TcAcceptanceCriteria="1"/>
+        <TestCase Id="..\TC\CSV Calls\ST_AUDIOCOMMS_CSV_ACCESSORY_707-LAB_AUDIO_QUALITY_ACCESSORIES_CHANGE_CSV" TcMaxAttempt="2" TcAcceptanceCriteria="1"/>
+
+        <!-- Mobile Originated CSV Calls -->
+        <TestCase Id="..\TC\CSV Calls\ST_AUDIOCOMMS_CSV_MO_032-LAB_AUDIO_QUALITY_CSV" TcMaxAttempt="2" TcAcceptanceCriteria="1"/>
+        <TestCase Id="..\TC\CSV Calls\ST_AUDIOCOMMS_CSV_MO_045-LAB_AUDIO_QUALITY_CSV" TcMaxAttempt="2" TcAcceptanceCriteria="1"/>
+
+        <!-- Mobile Terminated CSV Calls -->
+        <TestCase Id="..\TC\CSV Calls\ST_AUDIOCOMMS_CSV_MT_004-LAB_AUDIO_QUALITY_CSV" TcMaxAttempt="2" TcAcceptanceCriteria="1"/>
+        <TestCase Id="..\TC\CSV Calls\ST_AUDIOCOMMS_CSV_MT_008-LAB_AUDIO_QUALITY_CSV" TcMaxAttempt="2" TcAcceptanceCriteria="1"/>
+        <TestCase Id="..\TC\CSV Calls\ST_AUDIOCOMMS_CSV_MT_023-LAB_AUDIO_QUALITY_CSV" TcMaxAttempt="2" TcAcceptanceCriteria="1"/>
+        <TestCase Id="..\TC\CSV Calls\ST_AUDIOCOMMS_CSV_MT_024-LAB_AUDIO_VOLUME_CSV" TcMaxAttempt="2" TcAcceptanceCriteria="1"/>
+        <TestCase Id="..\TC\CSV Calls\ST_AUDIOCOMMS_CSV_MT_025-LAB_AUDIO_VOLUME_CSV" TcMaxAttempt="2" TcAcceptanceCriteria="1"/>
+
+        <!-- Mute/Unmute - CSV -->
+        <TestCase Id="..\TC\CSV Calls\ST_AUDIOCOMMS_CSV_MO_053-LAB_AUDIO_QUALITY_CSV_MUTE" TcMaxAttempt="2" TcAcceptanceCriteria="1"/>
+        <TestCase Id="..\TC\CSV Calls\ST_AUDIOCOMMS_CSV_MO_056-LAB_AUDIO_QUALITY_CSV_MUTE" TcMaxAttempt="2" TcAcceptanceCriteria="1"/>
+        <TestCase Id="..\TC\CSV Calls\ST_AUDIOCOMMS_CSV_MO_062-LAB_AUDIO_QUALITY_CSV_MUTE" TcMaxAttempt="2" TcAcceptanceCriteria="1"/>
+        <TestCase Id="..\TC\CSV Calls\ST_AUDIOCOMMS_CSV_MO_063-LAB_AUDIO_QUALITY_CSV_MUTE" TcMaxAttempt="2" TcAcceptanceCriteria="1"/>
+
+        <!-- VoIP Calls over WLAN -->
+        <TestCase Id="..\TC\VOIP\ST_AUDIOCOMMS_VOIP_WLAN_102-LAB_AUDIO_QUALITY_VOIP" TcMaxAttempt="2" TcAcceptanceCriteria="1"/>
+        <TestCase Id="..\TC\VOIP\ST_AUDIOCOMMS_VOIP_WLAN_108-LAB_AUDIO_QUALITY_VOIP" TcMaxAttempt="2" TcAcceptanceCriteria="1"/>
+        <TestCase Id="..\TC\VOIP\ST_AUDIOCOMMS_VOIP_WLAN_604-LAB_AUDIO_QUALITY_VOIP" TcMaxAttempt="2" TcAcceptanceCriteria="1"/>
+
+        <!-- Accessory change - VOIP Call -->
+        <TestCase Id="..\TC\VOIP\ST_AUDIOCOMMS_VOIP_WLAN_700-LAB_AUDIO_QUALITY_ACCESSORIES_CHANGE_VOIP" TcMaxAttempt="2" TcAcceptanceCriteria="1"/>
+        <TestCase Id="..\TC\VOIP\ST_AUDIOCOMMS_VOIP_WLAN_701-LAB_AUDIO_QUALITY_ACCESSORIES_CHANGE_VOIP" TcMaxAttempt="2" TcAcceptanceCriteria="1"/>
+        <TestCase Id="..\TC\VOIP\ST_AUDIOCOMMS_VOIP_WLAN_703-LAB_AUDIO_QUALITY_ACCESSORIES_CHANGE_VOIP" TcMaxAttempt="2" TcAcceptanceCriteria="1"/>
+        <TestCase Id="..\TC\VOIP\ST_AUDIOCOMMS_VOIP_WLAN_705-LAB_AUDIO_QUALITY_ACCESSORIES_CHANGE_VOIP" TcMaxAttempt="2" TcAcceptanceCriteria="1"/>
+        <TestCase Id="..\TC\VOIP\ST_AUDIOCOMMS_VOIP_WLAN_713-LAB_AUDIO_QUALITY_ACCESSORIES_CHANGE_VOIP" TcMaxAttempt="2" TcAcceptanceCriteria="1"/>
+
+        <!-- Mute/Unmute - VOIP Call -->
+        <TestCase Id="..\TC\VOIP\ST_AUDIOCOMMS_VOIP_WLAN_139-LAB_AUDIO_QUALITY_VOIP_MUTE" TcMaxAttempt="2" TcAcceptanceCriteria="1"/>
+        <TestCase Id="..\TC\VOIP\ST_AUDIOCOMMS_VOIP_WLAN_301-LAB_AUDIO_QUALITY_VOIP_MUTE" TcMaxAttempt="2" TcAcceptanceCriteria="1"/>
+        <TestCase Id="..\TC\VOIP\ST_AUDIOCOMMS_VOIP_WLAN_606-LAB_AUDIO_QUALITY_VOIP_MUTE" TcMaxAttempt="2" TcAcceptanceCriteria="1"/>
+
+        <!-- Volume change - VOIP Call -->
+        <TestCase Id="..\TC\VOIP\ST_AUDIOCOMMS_VOIP_WLAN_502-LAB_AUDIO_VOLUME_VOIP" TcMaxAttempt="2" TcAcceptanceCriteria="1"/>
+
+        <!-- Call swap - VOIP Call -->
+        <TestCase Id="..\TC\VOIP\ST_AUDIOCOMMS_VOIP_WLAN_300-LAB_AUDIO_QUALITY_SWAP_CALL" TcMaxAttempt="2" TcAcceptanceCriteria="1"/>
+        <TestCase Id="..\TC\VOIP\ST_AUDIOCOMMS_VOIP_WLAN_302-LAB_AUDIO_QUALITY_SWAP_CALL" TcMaxAttempt="2" TcAcceptanceCriteria="1"/>
+
+    </TestCases>
+</Campaign>

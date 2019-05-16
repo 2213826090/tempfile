@@ -1,0 +1,81 @@
+<?xml version='1.0' encoding='ASCII'?>
+<TestCase>
+    <UseCase>ANDROID_INST</UseCase>
+
+    <Description/>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <TcMaxAttempt>3</TcMaxAttempt>
+    <TcAcceptanceCriteria>1</TcAcceptanceCriteria>
+    <TestSteps>
+        <Initialize>
+                <TestStep Id="UNINSTALL_APP"
+                          DEVICE="PHONE1"
+                          APP_NAME="com.intel.test.systemapitests"
+                          TIMEOUT="DEFAULT"
+                          BACKUP_APP_NAME="NO_BACKUP"
+                          BACKUP_FILE_PATH="APP_BACKUP_PATH"/>
+        </Initialize>
+        <Setup/>
+        <RunTest/>
+        <TearDown/>
+        <Finalize>
+                <TestStep Id="UNINSTALL_APP"
+                          DEVICE="PHONE1"
+                          APP_NAME="com.intel.test.systemapitests"
+                          TIMEOUT="DEFAULT"
+                          BACKUP_APP_NAME="NO_BACKUP"
+                          BACKUP_FILE_PATH="APP_BACKUP_PATH"/>
+        </Finalize>
+    </TestSteps>
+    <Parameters>
+        <Parameter>
+            <Name>TIMEOUT</Name>
+            <Value>300</Value>
+        </Parameter>
+        <Parameter>
+            <Name>PROCESS_NAME</Name>
+            <Value>com.intel.test.systemapitests/com.intel.test.systemapitests.runners.GenericArgumentPassingTestRunner</Value>
+        </Parameter>
+        <Parameter>
+            <Name>AM_EXTRA</Name>
+            <Value>-e class com.intel.test.systemapitests.tests.FileSystemTestsDriver#testMethodMultipleCreateDirs -e args 'createDir:/argsExtra/ fileName:MyTest.txt fileSizeKB:2 deleteCreatedFiles:true methodName:testCreateFileWithName' -e argsExtra '/mnt/sdcard/test/:true /storage/sdcard1/Android/data/com.intel.test.systemapitests/cache/test/:true /storage/sdcard1/test/:false'</Value>
+        </Parameter>
+        <Parameter>
+            <Name>APKS</Name>
+            <Value>INSTRUMENTATION/ANDROID/ApiTestsSystemUID_L_version.apk</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TEST_FILES</Name>
+            <Value></Value>
+        </Parameter>
+        <Parameter>
+            <Name>TEST_FILES_DEST</Name>
+            <Value></Value>
+        </Parameter>
+        <Parameter>
+            <Name>SET_PROPS</Name>
+            <Value/>
+        </Parameter>
+        <Parameter>
+            <Name>RETRIEVE_ARTIFACT</Name>
+            <Value/>
+        </Parameter>
+        <Parameter>
+            <Name>PRE_REBOOT</Name>
+            <Value/>
+        </Parameter>
+        <Parameter>
+            <Name>POST_REBOOT</Name>
+            <Value>False</Value>
+        </Parameter>
+        <Parameter>
+            <Name>POST_REBOOT_NOK</Name>
+            <Value>False</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TAGS</Name>
+            <Value>ABT,UNIT_TESTS,API_TESTS,SYSTEM_STORAGE_USB</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

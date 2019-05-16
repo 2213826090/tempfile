@@ -1,0 +1,106 @@
+{
+    "Configuration": {
+        "Boot": null,
+        "BootVars": null,
+        "Custom": null,
+        "Download": {
+            "INTERNAL_DOWNLOAD": [
+                {
+                    "pft_key": "fastboot",
+                    "buildbot_artifactory_path": {"path": "device_name_id/variant_id", "detection": "cactus-absp"},
+                    "regexp_key": ".*flashfiles.*.zip",
+                    "flash_file": null,
+                    "configuration": "update_lfh_a0",
+                    "start_state": "dnx_fw",
+                    "pft_fallback": null
+                }
+            ]
+        },
+        "Inherit": {
+            "BOARD": "bxt"
+        },
+        "Logs": null,
+        "Timeout": {
+            "BOOT_TIMEOUT": 1800,
+            "COS_BOOT": 200,
+            "MOS_BOOT": 230,
+            "POS_BOOT": 200,
+            "REBOOT_COMMAND_TIMEOUT": 120,
+            "ROS_BOOT": 200,
+            "TIMEOUT_TOLERANCE": 60
+        },
+        "WorkAround": {
+            "TestCase": [
+                {
+                    "Issue": "Not applicable on bxtp_lh_a0",
+                    "Name": "KernelWatchdogTestCase",
+                    "Skip": true
+                },
+                {
+                    "Issue": "Not applicable on bxtp_lh_a0",
+                    "Name": "WatchdogFallBackPolicyTestCase",
+                    "Skip": true
+                },
+                {
+                    "Issue": "Not implemented yet",
+                    "Name": "OtaForwardFlashingTestCase",
+                    "Skip": true
+                },
+                {
+                    "Issue": "Not applicable on bxtp_lh_a0",
+                    "Name": "GracefulShutdownAndCosBootTestCase",
+                    "Skip": true
+                },
+                {
+                    "Issue": "Not applicable on bxtp_lh_a0",
+                    "Name": "HardShutdownAndCosBootTestCase",
+                    "Skip": true
+                },
+                {
+                    "Issue": "Not applicable on bxtp_lh_a0",
+                    "Name": "AdbRebootInRosTestCase",
+                    "Skip": true
+                },
+                {
+                    "Issue": "Not applicable on bxtp_lh_a0",
+                    "Name": "PkpOnInCosTestCase",
+                    "Skip": true
+                }
+            ]
+        },
+        "TestDescription": {
+            "engineering": [
+                {
+                    "name": "default",
+                    "build_tag": "bootota_",
+                    "testing": [
+                        {
+                            "build_target": "bxtp-userdebug",
+                            "campaign": "BOOTOTA_PREINTEGRATION"
+                        },
+                        {
+                            "build_target": "bxtp-eng",
+                            "campaign": "BOOTOTA_PREINTEGRATION"
+                        }
+                    ]
+                }
+            ],
+            "release_candidate": [
+                {
+                    "name": "release",
+                    "build_tag": "",
+                    "testing": [
+                        {
+                            "build_target": "bxtp-userdebug",
+                            "campaign": "BOOTOTA_PREINTEGRATION"
+                        },
+                        {
+                            "build_target": "bxtp-eng",
+                            "campaign": "BOOTOTA_PREINTEGRATION"
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}

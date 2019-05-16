@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="13.37">
+    <UseCase>LAB_EM_BATT_RESUME_DURING_MAINT_CHRG</UseCase>
+    <Description>EM - charge the board to full, then the test run load to discharge the board in order to see the charge resume</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>False</b2bContinuousMode>
+    <TcMaxAttempt>1</TcMaxAttempt>
+    <TcAcceptanceCriteria>1</TcAcceptanceCriteria>
+    <Parameters>
+        <Parameter>
+            <!-- Charger to use (SDP or CDP) -->
+            <Name>CHARGER</Name>
+            <Value>CDP</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Features to enable for the test to discharge board -->
+            <!-- Features avaible are : -->
+            <!-- VIDEO, AUDIO, WIFI, BLUETOOTH, TORCHLIGHT, VIBRA, SCREEN ON -->
+            <Name>LOAD</Name>
+            <Value>FROM_BENCHCONFIG</Value>
+        </Parameter>
+        <Parameter>
+            <!--Time max to charge to FULL (in seconds) -->
+            <Name>TIME_TO_FULL</Name>
+            <Value>60</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Maintenance charging treshold, charge restart below this treshold (depend of the device) -->
+            <Name>EXIT_MAINTENANCE_CHARGING_THRESHOLD</Name>
+            <Value>4.3</Value>
+        </Parameter>
+        <Parameter>
+            <!-- What we are testing here STAY_IN_FULL or EXIT_MAINTENANCE_TRESHOLD -->
+            <Name>TEST_TYPE</Name>
+            <Value>STAY_IN_FULL</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Time to wait for changing status after the treshold is reached (in seconds) -->
+            <Name>TIME_TO_STABILIZE_BOARD</Name>
+            <Value>120</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Timeout to ending test if device doesn't charge -->
+            <Name>TEST_TIMEOUT</Name>
+            <Value>3600</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

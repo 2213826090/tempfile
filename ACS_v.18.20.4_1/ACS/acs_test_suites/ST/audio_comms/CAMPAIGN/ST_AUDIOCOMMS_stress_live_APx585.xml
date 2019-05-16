@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<Campaign>
+    <Parameters>
+        <Parameter isControlledPSUsed ="False"/>
+        <Parameter isIoCardUsed ="False"/>
+        <!-- Set skipBootOnPowerCycle to True to disable the accs boot procedure-->
+        <!-- Important, it means that boot will be handle inside the campaign/tc -->
+        <Parameter skipBootOnPowerCycle ="False"/>
+        <Parameter runHookScripts = "False"/>
+        <Parameter powerCycleBetweenTC ="False"/>
+        <Parameter powerCycleOnFailure ="False"/>
+        <Parameter finalPowerOff ="False"/>
+        <Parameter stopCampaignOnCriticalFailure = "False"/>
+        <Parameter stopCampaignOnFirstFailure = "False"/>
+        <!-- LoggingLevel possible values: info | warning | debug | error -->
+        <Parameter loggingLevel = "info"/>
+        <!-- CampaignType format -> <TEAM>_<CAMPAIGNTYPE>
+        Possible values:
+        FT(Feature Team)-> SANITY | REGRESSION | STRESS, RELIABILTY | MTBF
+        ST(System Test)-> SANITY | REGRESSION | STRESS, RELIABILTY | MTBF
+        SI(System Integration)-> EAT | STAB | PACT | CAT0 | RELIABILITY | MTBF | CTS
+        Otherwise "Others" should be used -->
+        <Parameter CampaignType = "ST_STRESS"/>
+        <Parameter TCRReportViaRESTAPI="true"/>
+    </Parameters>
+
+    <Targets>
+        <!-- Target Values -->
+        <Target targetB2bPassRate ="100"/>
+    </Targets>
+
+    <TestCases>
+        <!-- SETUP -->
+        <TestCase Id="..\..\..\SI\BBot_EAT_PACT\TC\COMMON\SYSTEM\SI_SYSTEM_SETUP_EMBEDDED" TcMaxAttempt="2" TcAcceptanceCriteria="1"/>
+
+        <!-- Mobile Originated Calls - CSV -->
+        <TestCase Id="..\TC\CSV Calls\ST_AUDIOCOMMS_CSV_MO_401-LAB_AUDIO_QUALITY_CSV" TcMaxAttempt="2" TcAcceptanceCriteria="1"/>
+
+        <!-- Mobile Terminated Calls - CSV -->
+        <TestCase Id="..\TC\CSV Calls\ST_AUDIOCOMMS_CSV_MT_401-LAB_AUDIO_QUALITY_CSV" TcMaxAttempt="2" TcAcceptanceCriteria="1"/>
+
+        <!-- Accessory Change - CSV -->
+        <TestCase Id="..\TC\CSV Calls\ST_AUDIOCOMMS_CSV_ACCESSORY_702-LAB_AUDIO_QUALITY_ACCESSORIES_CHANGE_CSV" TcMaxAttempt="2" TcAcceptanceCriteria="1"/>
+        <TestCase Id="..\TC\CSV Calls\ST_AUDIOCOMMS_CSV_ACCESSORY_704-LAB_AUDIO_QUALITY_ACCESSORIES_CHANGE_CSV" TcMaxAttempt="2" TcAcceptanceCriteria="1"/>
+        <TestCase Id="..\TC\CSV Calls\ST_AUDIOCOMMS_CSV_ACCESSORY_710-LAB_AUDIO_QUALITY_ACCESSORIES_CHANGE_CSV_MUTE" TcMaxAttempt="2" TcAcceptanceCriteria="1"/>
+        <TestCase Id="..\TC\CSV Calls\ST_AUDIOCOMMS_CSV_ACCESSORY_711-LAB_AUDIO_QUALITY_ACCESSORIES_CHANGE_CSV_MUTE" TcMaxAttempt="2" TcAcceptanceCriteria="1"/>
+
+        <!-- Mute/Unmute - CSV -->
+        <TestCase Id="..\TC\CSV Calls\ST_AUDIOCOMMS_CSV_MO_055-LAB_AUDIO_QUALITY_CSV_MUTE" TcMaxAttempt="2" TcAcceptanceCriteria="1"/>
+        <TestCase Id="..\TC\CSV Calls\ST_AUDIOCOMMS_CSV_MO_058-LAB_AUDIO_QUALITY_CSV_MUTE" TcMaxAttempt="2" TcAcceptanceCriteria="1"/>
+        <TestCase Id="..\TC\CSV Calls\ST_AUDIOCOMMS_CSV_MT_403-LAB_AUDIO_QUALITY_CSV_MUTE" TcMaxAttempt="2" TcAcceptanceCriteria="1"/>
+        <TestCase Id="..\TC\CSV Calls\ST_AUDIOCOMMS_CSV_MT_140-LAB_AUDIO_QUALITY_CSV_MUTE" TcMaxAttempt="2" TcAcceptanceCriteria="1"/>
+
+        <!-- VOIP Calls over WLAN-->
+        <TestCase Id="..\TC\VOIP\ST_AUDIOCOMMS_VOIP_WLAN_602-LAB_AUDIO_QUALITY_VOIP" TcMaxAttempt="2" TcAcceptanceCriteria="1"/>
+
+        <!-- Mute/Unmute - VOIP Call -->
+        <TestCase Id="..\TC\VOIP\ST_AUDIOCOMMS_VOIP_WLAN_140-LAB_AUDIO_QUALITY_VOIP_MUTE" TcMaxAttempt="2" TcAcceptanceCriteria="1"/>
+        <TestCase Id="..\TC\VOIP\ST_AUDIOCOMMS_VOIP_WLAN_403-LAB_AUDIO_QUALITY_VOIP_MUTE" TcMaxAttempt="2" TcAcceptanceCriteria="1"/>
+        <TestCase Id="..\TC\VOIP\ST_AUDIOCOMMS_VOIP_WLAN_608-LAB_AUDIO_QUALITY_VOIP_MUTE" TcMaxAttempt="2" TcAcceptanceCriteria="1"/>
+
+        <!-- Volume change - VOIP Call -->
+        <TestCase Id="..\TC\VOIP\ST_AUDIOCOMMS_VOIP_WLAN_001-LAB_AUDIO_VOLUME_VOIP" TcMaxAttempt="2" TcAcceptanceCriteria="1"/>
+        <TestCase Id="..\TC\VOIP\ST_AUDIOCOMMS_VOIP_WLAN_600-LAB_AUDIO_VOLUME_VOIP" TcMaxAttempt="2" TcAcceptanceCriteria="1"/>
+        <TestCase Id="..\TC\VOIP\ST_AUDIOCOMMS_VOIP_WLAN_702-LAB_AUDIO_VOLUME_VOIP" TcMaxAttempt="2" TcAcceptanceCriteria="1"/>
+        <TestCase Id="..\TC\VOIP\ST_AUDIOCOMMS_VOIP_WLAN_704-LAB_AUDIO_VOLUME_VOIP" TcMaxAttempt="2" TcAcceptanceCriteria="1"/>
+
+        <!-- Accessory Change - VOIP Call -->
+        <TestCase Id="..\TC\VOIP\ST_AUDIOCOMMS_VOIP_WLAN_002-LAB_AUDIO_QUALITY_ACCESSORIES_CHANGE_VOIP" TcMaxAttempt="2" TcAcceptanceCriteria="1"/>
+        <TestCase Id="..\TC\VOIP\ST_AUDIOCOMMS_VOIP_WLAN_709-LAB_AUDIO_QUALITY_ACCESSORIES_CHANGE_VOIP_MUTE" TcMaxAttempt="2" TcAcceptanceCriteria="1"/>
+        <TestCase Id="..\TC\VOIP\ST_AUDIOCOMMS_VOIP_WLAN_710-LAB_AUDIO_QUALITY_ACCESSORIES_CHANGE_VOIP_MUTE" TcMaxAttempt="2" TcAcceptanceCriteria="1"/>
+        <TestCase Id="..\TC\VOIP\ST_AUDIOCOMMS_VOIP_WLAN_714-LAB_AUDIO_QUALITY_ACCESSORIES_CHANGE_VOIP" TcMaxAttempt="2" TcAcceptanceCriteria="1"/>
+
+    </TestCases>
+</Campaign>

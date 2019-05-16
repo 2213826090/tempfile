@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase>
+  <UseCase>EXEC</UseCase>
+  <Description>General execution use case</Description>
+  <b2bIteration>2</b2bIteration>
+  <b2bContinuousMode>True</b2bContinuousMode>  
+  <Parameters>  
+    <Parameter>
+      <Name>RUN_CMD</Name>
+      <Value>python _ExecutionConfig/ST/system/TC/Stress/check_transfer_speed.py push _ExecutionConfig/ST/system/TC/Stress/6G /data/ 3500</Value>
+    </Parameter>
+    <Parameter>
+      <Name>RUN_TIMEOUT</Name>
+      <Value>6000</Value>
+    </Parameter>
+	<Parameter>
+	  <Name>RUN_EXPECT_RESULT</Name>
+	  <Value>transfer speed check passed</Value>
+	</Parameter>
+    
+    <Parameter>
+      <Name>RUN_CMD1</Name>
+      <Value>python _ExecutionConfig/ST/system/TC/Stress/check_transfer_speed.py pull /data/6G _ExecutionConfig/ST/system/TC/Stress 3800</Value>
+    </Parameter>
+    <Parameter>
+      <Name>RUN_TIMEOUT1</Name>
+      <Value>6000</Value>
+    </Parameter>
+	<Parameter>
+	  <Name>RUN_EXPECT_RESULT1</Name>
+	  <Value>transfer speed check passed</Value>
+	</Parameter>
+  </Parameters>  
+</TestCase>

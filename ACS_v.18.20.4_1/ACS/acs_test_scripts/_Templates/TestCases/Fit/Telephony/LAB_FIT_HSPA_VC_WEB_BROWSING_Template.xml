@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="13.37">
+    <UseCase>LAB_FIT_HSPA_VC_WEB_BROWSING</UseCase>
+    <Description>3G - VC + web browsing</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>False</b2bContinuousMode>
+    <TcAcceptanceCriteria>PASS</TcAcceptanceCriteria>
+    <TcMaxAttempt>1</TcMaxAttempt>
+    <Parameters>
+        <Parameter>
+            <!-- Cell Band (from Band 1 to Band 8) -->
+            <Name>CELL_BAND</Name>
+            <Value>1</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Downlink UARFCN Frequency -->
+            <Name>DL_UARFCN</Name>
+            <Value>10700</Value>
+        </Parameter>
+        <Parameter>
+            <!--Cell Service (CIRCUIT | PACKET | CIRCUIT_PACKET | RBTEST) -->
+            <Name>CELL_SERVICE</Name>
+            <Value>CIRCUIT_PACKET</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Cell power in dBm -->
+            <Name>CELL_POWER</Name>
+            <Value>-60</Value>
+        </Parameter>
+        <Parameter>
+            <!-- RBT CHANNEL TYPE (
+                - "HSParmc12" : (12.2k RMC + HSPA)
+                - "HSPA"
+                - "RMC12" : (12.2k RMC)
+                - "RMC64" : (64k RMC)
+                - "RMC144" : (144k RMC)
+                - "RMC384" : (384k RMC)
+                - "RMC33NC" : (33k No Coding RMC)
+                - "RMCAM1264" : (12.2k UL/64k DL AM RMC) (active cell operating mode only)
+                - "RMCAM12144" : (12.2k UL/144k DL AM RMC) (active cell operating mode only)
+                - "RMCAM12384" : (12.2k UL/384k DL AM RMC) (active cell operating mode only)
+                - "RMCAM64384" : (64k UL/384k DL AM RMC) (active cell operating mode only)
+                ) -->
+            <Name>RBT_CHANNEL_TYPE</Name>
+            <Value>HSParmc12</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Uplink Radio Access Bearer ( HSUPA_CAT5) -->
+            <Name>UL_RAB</Name>
+            <Value>HSUPA_CAT5</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Downlink Radio Access Bearer (HSDPA_CAT7) -->
+            <Name>DL_RAB</Name>
+            <Value>HSDPA_CAT7</Value>
+        </Parameter>
+        <Parameter>
+            <!-- CQI scheme : Fixed value or UE reported - FIXED|REPORTED -->
+            <Name>CQI_SCHEME</Name>
+            <Value>FIXED</Value>
+        </Parameter>
+        <Parameter>
+            <!-- CQI value : 5-30 -->
+            <Name>CQI</Name>
+            <Value>25</Value>
+        </Parameter>
+        <Parameter>
+            <!-- PS Data HS-DSCH MAC-d PDU Size - BITS336|BITS656 -->
+            <Name>MAC_D_PDU_SIZE</Name>
+            <Value>BITS656</Value>
+        </Parameter>
+        <Parameter>
+            <Name>CALL_SETUP_TIMEOUT</Name>
+            <Value>60</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Transfer timeout in s -->
+            <Name>TIMEOUT</Name>
+            <Value>120</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Dialled Phone number (MSISDN). If value is [PHONE_NUMBER] the value used will be the phoneNumber defined in the Phone_Catalog.xml -->
+            <Name>PHONE_NUMBER</Name>
+            <Value>123</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Browser to use.Possible values : "NATIVE", "ACS_AGENT"
+                Warning ! NATIVE mode is not verbose in term of verdict, because it uses the default browser of the system.
+                So the user should check manually in this mode if the page is correctly loaded -->
+            <Name>BROWSER_TYPE</Name>
+            <Value>ACS_AGENT</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Website url to open String as follow : http://www.intel.com-->
+            <Name>WEBSITE_URL</Name>
+            <Value></Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

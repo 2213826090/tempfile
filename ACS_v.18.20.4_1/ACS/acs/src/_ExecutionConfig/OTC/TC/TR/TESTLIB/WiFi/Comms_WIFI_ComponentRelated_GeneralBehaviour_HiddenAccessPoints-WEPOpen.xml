@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='ASCII'?>
+<TestCase>
+    <UseCase>Testlib</UseCase>
+    <Description>wifi</Description>
+    <b2bIteration>1</b2bIteration>`
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <TcMaxAttempt>3</TcMaxAttempt>
+    <Parameters>
+        <Parameter>
+            <Name>test</Name>
+            <Value>scripts/wireless/wifi_generic/tests/Connect_hidden_network.py</Value>
+        </Parameter>
+        <Parameter>
+            <Name>script-args</Name>
+            <Value>mode=g security=wep64 encryption=open ap_name=atheros_test passphrase=93A259B47C dut_security=WEP group_cipher=WEP-40 pairwise_cipher=WEP-40</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

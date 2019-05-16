@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<Campaign>
+    <Parameters>
+        <Parameter isControlledPSUsed ="False"/>
+        <Parameter isIoCardUsed ="False"/>
+        <!-- Set skipBootOnPowerCycle to True to disable the accs boot procedure-->
+        <!-- Important, it means that boot will be handle inside the campaign/tc -->
+        <Parameter skipBootOnPowerCycle ="False"/>
+        <Parameter runHookScripts = "False"/>
+        <Parameter powerCycleBetweenTC ="False"/>
+        <Parameter powerCycleOnFailure ="False"/>
+        <Parameter finalPowerOff ="False"/>
+        <Parameter stopCampaignOnCriticalFailure = "False"/>
+        <Parameter stopCampaignOnFirstFailure = "False"/>
+        <!-- LoggingLevel possible values: info | warning | debug | error -->
+        <Parameter loggingLevel = "info"/>
+        <!-- CampaignType format -> <TEAM>_<CAMPAIGNTYPE>
+        Possible values:
+        FT(Feature Team)-> SANITY | REGRESSION | STRESS, RELIABILTY | MTBF
+        ST(System Test)-> SANITY | REGRESSION | STRESS, RELIABILTY | MTBF
+        SI(System Integration)-> EAT | STAB | PACT | CAT0 | RELIABILITY | MTBF | CTS
+        Otherwise "Others" should be used -->
+        <Parameter CampaignType = "ST_REGRESSION"/>
+        <Parameter TCRReportViaRESTAPI="true"/>
+    </Parameters>
+
+    <Targets>
+        <!-- Target Values -->
+        <Target targetB2bPassRate ="100"/>
+    </Targets>
+
+    <TestCases>
+        <!-- SETUP -->
+        <TestCase Id="..\..\..\SI\BBot_EAT_PACT\TC\COMMON\SYSTEM\SI_SYSTEM_SETUP_EMBEDDED" TcMaxAttempt="2" TcAcceptanceCriteria="1"/>
+
+        <!-- Audio Quality -->
+        <TestCase Id="..\TC\AQ\ST_AUDIOCOMMS_AQ_CODEC_002-LAB_AUDIO_WCDMA_VC_PESQ" TcMaxAttempt="2" TcAcceptanceCriteria="1"/>
+        <TestCase Id="..\TC\AQ\ST_AUDIOCOMMS_AQ_CODEC_003-LAB_AUDIO_WCDMA_VC_PESQ" TcMaxAttempt="2" TcAcceptanceCriteria="1"/>
+        <TestCase Id="..\TC\AQ\ST_AUDIOCOMMS_AQ_CODEC_004-LAB_AUDIO_WCDMA_VC_PESQ" TcMaxAttempt="2" TcAcceptanceCriteria="1"/>
+        <TestCase Id="..\TC\AQ\ST_AUDIOCOMMS_AQ_CODEC_005-LAB_AUDIO_WCDMA_VC_PESQ" TcMaxAttempt="2" TcAcceptanceCriteria="1"/>
+        <TestCase Id="..\TC\AQ\ST_AUDIOCOMMS_AQ_CODEC_006-LAB_AUDIO_WCDMA_VC_PESQ" TcMaxAttempt="2" TcAcceptanceCriteria="1"/>
+        <TestCase Id="..\TC\AQ\ST_AUDIOCOMMS_AQ_CODEC_007-LAB_AUDIO_WCDMA_VC_PESQ" TcMaxAttempt="2" TcAcceptanceCriteria="1"/>
+        <TestCase Id="..\TC\AQ\ST_AUDIOCOMMS_AQ_CODEC_008-LAB_AUDIO_WCDMA_VC_PESQ" TcMaxAttempt="2" TcAcceptanceCriteria="1"/>
+        <TestCase Id="..\TC\AQ\ST_AUDIOCOMMS_AQ_CODEC_009-LAB_AUDIO_WCDMA_VC_PESQ" TcMaxAttempt="2" TcAcceptanceCriteria="1"/>
+        <TestCase Id="..\TC\AQ\ST_AUDIOCOMMS_AQ_CODEC_010-LAB_AUDIO_WCDMA_VC_PESQ" TcMaxAttempt="2" TcAcceptanceCriteria="1"/>
+        <TestCase Id="..\TC\AQ\ST_AUDIOCOMMS_AQ_CODEC_011-LAB_AUDIO_WCDMA_VC_PESQ" TcMaxAttempt="2" TcAcceptanceCriteria="1"/>
+        <TestCase Id="..\TC\AQ\ST_AUDIOCOMMS_AQ_CODEC_012-LAB_AUDIO_WCDMA_VC_PESQ" TcMaxAttempt="2" TcAcceptanceCriteria="1"/>
+        <TestCase Id="..\TC\AQ\ST_AUDIOCOMMS_AQ_CODEC_013-LAB_AUDIO_WCDMA_VC_PESQ" TcMaxAttempt="2" TcAcceptanceCriteria="1"/>
+        <TestCase Id="..\TC\AQ\ST_AUDIOCOMMS_AQ_CODEC_014-LAB_AUDIO_WCDMA_VC_PESQ" TcMaxAttempt="2" TcAcceptanceCriteria="1"/>
+        <TestCase Id="..\TC\AQ\ST_AUDIOCOMMS_AQ_CODEC_015-LAB_AUDIO_WCDMA_VC_PESQ" TcMaxAttempt="2" TcAcceptanceCriteria="1"/>
+        <TestCase Id="..\TC\AQ\ST_AUDIOCOMMS_AQ_CODEC_016-LAB_AUDIO_WCDMA_VC_PESQ" TcMaxAttempt="2" TcAcceptanceCriteria="1"/>
+        <TestCase Id="..\TC\AQ\ST_AUDIOCOMMS_AQ_CODEC_021-LAB_AUDIO_WCDMA_VC_PESQ" TcMaxAttempt="2" TcAcceptanceCriteria="1"/>
+
+        <!-- PFW -->
+        <TestCase Id="..\TC\PFW\ST_AUDIOCOMMS_PFW_026-LAB_PFW_PERMISSION_RIGHTS" TcMaxAttempt="2" TcAcceptanceCriteria="1"/>
+        <TestCase Id="..\TC\PFW\ST_AUDIOCOMMS_PFW_025-LAB_PFW_PERMISSION_RIGHTS" TcMaxAttempt="2" TcAcceptanceCriteria="1"/>
+        <TestCase Id="..\TC\PFW\ST_AUDIOCOMMS_PFW_003-LAB_PFW_PERMISSION_RIGHTS" TcMaxAttempt="2" TcAcceptanceCriteria="1"/>
+        <TestCase Id="..\TC\PFW\ST_AUDIOCOMMS_PFW_024-LAB_PFW_PERMISSION_RIGHTS" TcMaxAttempt="2" TcAcceptanceCriteria="1"/>
+
+        <!-- Mobile Originated Calls -->
+        <TestCase Id="..\TC\CSV Calls\ST_AUDIOCOMMS_CSV_MO_004-LAB_AUDIO_GSM_CSV" TcMaxAttempt="2" TcAcceptanceCriteria="1"/>
+
+        <!-- Mobile Terminated Calls -->
+        <TestCase Id="..\TC\CSV Calls\ST_AUDIOCOMMS_CSV_MT_006-LAB_AUDIO_WCDMA_CSV" TcMaxAttempt="2" TcAcceptanceCriteria="1"/>
+        <TestCase Id="..\TC\CSV Calls\ST_AUDIOCOMMS_CSV_MT_018-LAB_AUDIO_GSM_CSV" TcMaxAttempt="2" TcAcceptanceCriteria="1"/>
+
+        <!-- DTMF -->
+        <TestCase Id="..\TC\CSV Calls\DTMF\ST_AUDIOCOMMS_CSV_DTMF_001-LAB_AUDIO_DTMF_CSV" TcMaxAttempt="2" TcAcceptanceCriteria="1"/>
+        <TestCase Id="..\TC\CSV Calls\DTMF\ST_AUDIOCOMMS_CSV_DTMF_002-LAB_AUDIO_DTMF_CSV" TcMaxAttempt="2" TcAcceptanceCriteria="1"/>
+        <TestCase Id="..\TC\CSV Calls\DTMF\ST_AUDIOCOMMS_CSV_MO_050-LAB_AUDIO_DTMF_CSV" TcMaxAttempt="2" TcAcceptanceCriteria="1"/>
+    </TestCases>
+</Campaign>

@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='ASCII'?>
+<TestCase>
+    <UseCase>Testlib</UseCase>
+    <Description>Check Volume section from Settings</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <TcMaxAttempt>1</TcMaxAttempt>
+    <TestSteps>
+        <RunTest/>
+    </TestSteps>
+    <Parameters>
+        <Parameter>
+            <Name>timeout</Name>
+            <Value>300</Value>
+        </Parameter>
+        <Parameter>
+            <Name>test</Name>
+            <Value>_ExecutionConfig/TC/TESTLIB/testlib/scripts/android/ui/settings/tests/10_Settings_Volume.py</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

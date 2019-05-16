@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<Campaign version="13.49">
+    <Parameters>
+        <Parameter isControlledPSUsed="False"/>
+        <Parameter isIoCardUsed="True"/>
+        <Parameter skipBootOnPowerCycle="False"/>
+        <Parameter bootRetryNumber="0"/>
+        <Parameter runHookScripts="False"/>
+        <Parameter powerCycleBetweenTC="False"/>
+        <Parameter powerCycleOnFailure="False"/>
+        <Parameter finalDutState="NoChange"/>
+        <Parameter stopCampaignOnCriticalFailure="False"/>
+        <Parameter stopCampaignOnFirstFailure="False"/>
+        <Parameter loggingLevel="debug"/>
+        <Parameter CampaignType="Other"/>
+        <Parameter TCRReportViaRESTAPI="True"/>
+    </Parameters>
+    <TestCases>
+        <TestCase Id="../../../../../TC/TP/TC/ThermalManagement/Automotive_Thermal_Management/test_ivi_thermal_glbenchmark27"/>
+        <TestCase Id="../../../../../TC/TP/TC/ThermalManagement/Automotive_Thermal_Management/test_ivi_thermal_antutu56"/>
+        <TestCase Id="../../../../../TC/TP/TC/ThermalManagement/Automotive_Thermal_Management/test_ivi_thermal_play_video"/>
+        <TestCase Id="../../../../../TC/TP/TC/ThermalManagement/Automotive_Thermal_Management/test_ivi_thermal_video_recording"/>
+        <TestCase Id="../../../../../TC/TP/TC/ThermalManagement/Automotive_Thermal_Management/test_ivi_thermal_video_streaming"/>
+        <TestCase Id="../../../../../TC/TP/TC/ThermalManagement/Automotive_Thermal_Management/test_ivi_thermal_gps_audio_playback"/>
+        <TestCase Id="../../../../../TC/TP/TC/ThermalManagement/Automotive_Thermal_Management/test_ivi_thermal_adb_reboot"/>
+    </TestCases>
+</Campaign>

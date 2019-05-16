@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='ASCII'?>
+<TestCase>
+    <UseCase>EXEC</UseCase>
+    <Description>Check that polling works after platform enters sleep</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <TcMaxAttempt>1</TcMaxAttempt>
+    <TcAcceptanceCriteria>1</TcAcceptanceCriteria>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <TestSteps>
+        <Initialize/>
+        <Setup/>
+        <RunTest/>
+        <TearDown/>
+        <Finalize/>
+    </TestSteps>
+    <Tags>
+        <Tag>accelerometer</Tag>
+        <Tag>magnetometer</Tag>
+        <Tag>barometer</Tag>
+        <Tag>temperature</Tag>
+        <Tag>light</Tag>
+        <Tag>proximity</Tag>
+        <Tag>gyroscope</Tag>
+    </Tags>
+    <Priority>
+        <Value>5</Value>
+    </Priority>
+    <Parameters>
+        <Parameter>
+            <Name>RUN_CMD</Name>
+            <Value>python scripts/check_poll_after_sleep.py {comp_conf}</Value>
+        </Parameter>
+        <Parameter>
+            <Name>RUN_TIMEOUT</Name>
+            <Value>50</Value>
+        </Parameter>
+        <Parameter>
+            <Name>RUN_FROM_TCDIRECTORY</Name>
+            <Value>True</Value>
+        </Parameter>
+        <Parameter>
+            <Name>RUN_EXPECT_RESULT</Name>
+            <Value>PASSED</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

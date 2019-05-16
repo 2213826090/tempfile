@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase>
+    <UseCase>TEST_STEP_ENGINE</UseCase>
+    <Description>Perform a FIT test with MT SMS and voice call</Description>
+    <b2bIteration>100</b2bIteration>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <TcMaxAttempt>1</TcMaxAttempt>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters>
+        <Parameter>
+            <Name>2G_CELL_BAND</Name>
+            <Value>EGSM</Value>
+        </Parameter>
+        <Parameter>
+          <!-- Uplink Radio Access Bearer (384k | HSUPA_CAT6 | MAX [If MAX is selected, value will be taken from DeviceCatalog.xml]) -->
+          <Name>UL_RAB</Name>
+          <Value>CAT6</Value>
+        </Parameter>
+        <Parameter>
+          <!-- Downlink Radio Access Bearer (HSDPA_CAT10 | HSDPA_CAT14 | HSDPA_CAT24 | MAX [If MAX is selected, value will be taken from DeviceCatalog.xml]) -->
+          <Name>DL_RAB</Name>
+          <Value>CAT24</Value>
+        </Parameter>
+        <Parameter>
+            <Name>3G_CELL_BAND</Name>
+            <Value>BAND1</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Web site works the following way, every 50sec a web page is loaded. So add 10 seconds to 50 in order to wait for page loaded -->
+            <Name>TEST_DURATION</Name>
+            <Value>60</Value>
+        </Parameter>
+        <Parameter>
+            <Name>INIT_POWER</Name>
+            <Value>-75</Value>
+        </Parameter>
+        <Parameter>
+            <Name>END_POWER</Name>
+            <Value>-85</Value>
+        </Parameter>
+        <Parameter>
+            <Name>POWER_STEP</Name>
+            <Value>2</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TIME_STEP</Name>
+            <Value>4</Value>
+        </Parameter>
+        <Parameter>
+            <Name>PHONE_NUMBER</Name>
+            <Value>0679568120</Value>
+        </Parameter>
+        <Parameter>
+            <Name>SMS_TEXT</Name>
+            <Value>Stupid text for stupid test</Value>
+        </Parameter>
+        <Parameter>
+            <Name>SMS_DIRECTION</Name>
+            <Value>MT</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TEST_STEP_ENGINE_ENTRY</Name>
+            <Value>ST\telephony\UC\ST_TELEPHONY_FIT_VC_SMS_HO.xml</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

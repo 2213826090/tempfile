@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase>
+  <UseCase>LAB_EGPRS_IPERF</UseCase>
+  <Description>EGPRS throughput measurement using IPERF on simulated network</Description>
+  <b2bIteration>1</b2bIteration>
+  <b2bContinuousMode>True</b2bContinuousMode> 
+  <Parameters>
+    <Parameter>
+      <!-- Cell Band (EGSM|GSM850|PCS|DCS) -->
+      <Name>CELL_BAND</Name>
+      <Value>DCS</Value>
+    </Parameter>
+    <Parameter>
+      <!-- Cell power in dBm -->
+      <Name>CELL_POWER</Name>
+      <Value>-60</Value>
+    </Parameter>
+    <Parameter>
+      <!-- Multislot configuration
+      D1U1, D1U2, D1U3, D1U4, D1U5, D1U6, D2U1, D2U2, D2U3, D2U4, D2U5, 
+      D3U1, D3U2, D3U3, D3U4, D4U1, D4U2, D4U3, D5U1, D5U2, D6U1, MAX
+      If MAX is selected, value will be taken from DeviceCatalog.xml -->
+      <Name>MULTISLOT_CONFIG</Name>
+      <Value>MAX</Value>
+    </Parameter>
+    <Parameter>
+      <!-- Uplink Modulation Coding scheme (MCS1|MCS2|MCS3|MCS4|MCS5|MCS6|MCS7|MCS8|MCS9) -->
+      <Name>UL_MCS</Name>
+      <Value>MCS9</Value>
+    </Parameter>
+    <Parameter>
+      <!-- Downlink Modulation Coding scheme (MCS1|MCS2|MCS3|MCS4|MCS5|MCS6|MCS7|MCS8|MCS9) -->
+      <Name>DL_MCS</Name>
+      <Value>MCS9</Value>
+    </Parameter>
+    <Parameter>
+      <!-- Puncturing Modulation Coding scheme 
+      PS1 | PS2 | PS3 for DL_MCS 3,4,7,8,and 9
+      PS1 | PS2 for DL_MCS 1, 2, 5, and 6 -->
+      <Name>PS_MCS</Name>
+      <Value>PS1</Value>
+    </Parameter>
+    <Parameter>
+      <!-- Iperf port number -->
+      <Name>PORT</Name>
+      <Value>5009</Value>
+    </Parameter>
+    <Parameter>
+      <!-- Throughput measurement duration in seconds -->
+      <Name>DURATION</Name>
+      <Value>3600</Value>
+    </Parameter>
+    <Parameter>
+      <!-- Iperf Protocol used by IPERF to perform measurements - (TCP | UDP) -->
+      <Name>IPERF_PROTOCOL</Name>
+      <Value>TCP</Value>
+    </Parameter>
+    <Parameter>
+      <!-- Computer to use as iperf server -->
+      <Name>COMPUTER</Name>
+      <Value>COMPUTER2</Value>
+    </Parameter>
+    <Parameter>
+      <!-- [Optional] Iperf options tuning: '0' or 'off': do not modify threads/buffer size. '1' or 'on': update threads count/buffer size, default is '1' -->
+      <Name>IPERF_TUNE_OPTIONS</Name>
+      <Value>0</Value>
+    </Parameter>
+    <Parameter>
+        <!-- Type of data transfer (UL/DL/BOTH) -->
+        <Name>DIRECTION</Name>
+        <Value>DL</Value>
+    </Parameter>
+  </Parameters>
+</TestCase>

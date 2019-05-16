@@ -1,0 +1,1235 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<UseCases xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:noNamespaceSchemaLocation="../../../../acs/src/_Catalogs/UseCase/usecase.xsd">
+    <UseCase Id="LAB_GSM_SMS_CS_MO" Domain="CELLULAR" SubDomain="SMS" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Communication.Messaging.LAB_GSM_SMS_CS_MO.LabGsmSmsCsMo</ClassName>
+        <Description>GSM Mobile Originated SMS over CS on simulated network</Description>
+        <Environment name="TEL">
+            <Capabilities>EQT_AG_8960</Capabilities>
+        </Environment>
+        <Parameters>
+            <Parameter name="CELL_BAND" type="CELL_BAND_2G" isOptional="false">
+                <!-- Field optional (PossibleValues, DefaultValue, Blank) if possible value not override available -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue>RGSM</DefaultValue>
+                <Blank/>
+                <Dependencies>
+                    <Dependency isOptional="false">BCH_ARFCN</Dependency>
+                </Dependencies>
+            </Parameter>
+            <Parameter name="CELL_POWER" type="CELL_POWER_IN_DBM" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="DESTINATION_NUMBER" type="PHONE_NUMBER" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="SMS_TEXT" type="TEXT_MESSAGE" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="DATA_CODING_SCHEME" type="DATA_CODING_SCHEME" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="SMS_TRANSFER_TIMEOUT" type="TIMEOUT_IN_SEC" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+        </Parameters>
+    </UseCase>
+    <UseCase Id="LAB_GSM_SMS_CS_MT" Domain="CELLULAR" SubDomain="SMS" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Communication.Messaging.LAB_GSM_SMS_CS_MT.LabGsmSmsCsMt</ClassName>
+        <Description>GSM Mobile Terminated SMS over CS on simulated network</Description>
+        <Environment name="TEL">
+            <Capabilities>EQT_AG_8960</Capabilities>
+        </Environment>
+        <Parameters>
+            <Parameter name="CELL_BAND" type="CELL_BAND_2G" isOptional="false">
+                <!-- Field optional (PossibleValues, DefaultValue, Blank) if possible value not override available -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue>RGSM</DefaultValue>
+                <Blank/>
+                <Dependencies>
+                    <Dependency isOptional="false">BCH_ARFCN</Dependency>
+                </Dependencies>
+            </Parameter>
+            <Parameter name="CELL_POWER" type="CELL_POWER_IN_DBM" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="DESTINATION_NUMBER" type="PHONE_NUMBER" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="SMS_TEXT" type="TEXT_MESSAGE" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="DATA_CODING_SCHEME" type="DATA_CODING_SCHEME" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="SMS_TRANSFER_TIMEOUT" type="TIMEOUT_IN_SEC" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+        </Parameters>
+    </UseCase>
+        <UseCase Id="LAB_GSM_SMS_MT_ON_SIM" Domain="CELLULAR" SubDomain="SMS" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Communication.Messaging.LAB_GSM_SMS_MT_ON_SIM.LabGsmSmsMtOnSim</ClassName>
+        <Description>GSM Mobile Terminated SMS over CS on simulated network</Description>
+        <Environment name="TEL">
+            <Capabilities>EQT_AG_8960</Capabilities>
+        </Environment>
+        <Parameters>
+            <Parameter name="CELL_BAND" type="CELL_BAND_2G" isOptional="false">
+                <!-- Field optional (PossibleValues, DefaultValue, Blank) if possible value not override available -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue>RGSM</DefaultValue>
+                <Blank/>
+                <Dependencies>
+                    <Dependency isOptional="false">BCH_ARFCN</Dependency>
+                </Dependencies>
+            </Parameter>
+            <Parameter name="CELL_POWER" type="CELL_POWER_IN_DBM" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="DESTINATION_NUMBER" type="PHONE_NUMBER" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="SMS_TEXT" type="TEXT_MESSAGE" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="DATA_CODING_SCHEME" type="DATA_CODING_SCHEME" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="SMS_TRANSFER_TIMEOUT" type="TIMEOUT_IN_SEC" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="SMS_AMOUNT_TO_SEND" type="SMS_AMOUNT_TO_SEND" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+        </Parameters>
+    </UseCase>
+    <UseCase Id="LAB_EGPRS_SMS_PS_MT" Domain="CELLULAR" SubDomain="SMS" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Communication.Messaging.LAB_EGPRS_SMS_PS_MT.LabEgprsSmsPsMt</ClassName>
+        <Description>EGPRS Mobile Terminated SMS over PS on simulated network</Description>
+        <Environment name="TEL">
+            <Capabilities>EQT_AG_8960</Capabilities>
+        </Environment>
+        <Parameters>
+            <Parameter name="CELL_BAND" type="CELL_BAND_2G" isOptional="false">
+                <!-- Field optional (PossibleValues, DefaultValue, Blank) if possible value not override available -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue>RGSM</DefaultValue>
+                <Blank/>
+                <Dependencies>
+                    <Dependency isOptional="false">BCH_ARFCN</Dependency>
+                    <Dependency isOptional="false">PDTCH_ARFCN</Dependency>
+                </Dependencies>
+            </Parameter>
+            <Parameter name="CELL_POWER" type="CELL_POWER_IN_DBM" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="DESTINATION_NUMBER" type="PHONE_NUMBER" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="SMS_TEXT" type="TEXT_MESSAGE" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="DATA_CODING_SCHEME" type="DATA_CODING_SCHEME" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="SMS_TRANSFER_TIMEOUT" type="TIMEOUT_IN_SEC" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+        </Parameters>
+    </UseCase>
+    <UseCase Id="LAB_EGPRS_SMS_PS_MO" Domain="CELLULAR" SubDomain="SMS" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Communication.Messaging.LAB_EGPRS_SMS_PS_MO.LabEgprsSmsPsMo</ClassName>
+        <Description>EGPRS Mobile Originated SMS over PS on simulated network</Description>
+        <Environment name="TEL">
+            <Capabilities>EQT_AG_8960</Capabilities>
+        </Environment>
+        <Parameters>
+            <Parameter name="CELL_BAND" type="CELL_BAND_2G" isOptional="false">
+                <!-- Field optional (PossibleValues, DefaultValue, Blank) if possible value not override available -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue>RGSM</DefaultValue>
+                <Blank/>
+                <Dependencies>
+                    <Dependency isOptional="false">BCH_ARFCN</Dependency>
+                    <Dependency isOptional="false">PDTCH_ARFCN</Dependency>
+                </Dependencies>
+            </Parameter>
+            <Parameter name="CELL_POWER" type="CELL_POWER_IN_DBM" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="DESTINATION_NUMBER" type="PHONE_NUMBER" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="SMS_TEXT" type="TEXT_MESSAGE" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="DATA_CODING_SCHEME" type="DATA_CODING_SCHEME" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="SMS_TRANSFER_TIMEOUT" type="TIMEOUT_IN_SEC" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+        </Parameters>
+    </UseCase>
+    <UseCase Id="LAB_WCDMA_SMS_CS_MO" Domain="CELLULAR" SubDomain="SMS" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Communication.Messaging.LAB_WCDMA_SMS_CS_MO.LabWcdmaSmsCsMo</ClassName>
+        <Description>WCDMA Mobile Originated SMS over CS on simulated network</Description>
+        <Environment name="TEL">
+            <Capabilities>EQT_AG_8960</Capabilities>
+        </Environment>
+        <Parameters>
+            <Parameter name="MCC" type="MCC" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="MNC" type="MNC" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="HPLMN_COVERAGE" type="IS_HPLMN_COVERAGE_AVAILABLE" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="CELL_BAND" type="CELL_BAND_3G" isOptional="false">
+                <!-- Field optional (PossibleValues, DefaultValue, Blank) if possible value not override available -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue>1</DefaultValue>
+                <Blank/>
+                <Dependencies>
+                    <Dependency isOptional="false">DL_UARFCN</Dependency>
+                </Dependencies>
+            </Parameter>
+            <Parameter name="CELL_POWER" type="CELL_POWER_IN_DBM" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="DESTINATION_NUMBER" type="PHONE_NUMBER" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="SMS_TEXT" type="TEXT_MESSAGE" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="DATA_CODING_SCHEME" type="DATA_CODING_SCHEME" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="SMS_TRANSFER_TIMEOUT" type="TIMEOUT_IN_SEC" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+        </Parameters>
+    </UseCase>
+    <UseCase Id="LAB_WCDMA_SMS_CS_MT" Domain="CELLULAR" SubDomain="SMS" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Communication.Messaging.LAB_WCDMA_SMS_CS_MT.LabWcdmaSmsCsMt</ClassName>
+        <Description>WCDMA Mobile Terminated SMS over CS on simulated network</Description>
+        <Environment name="TEL">
+            <Capabilities>EQT_AG_8960</Capabilities>
+        </Environment>
+        <Parameters>
+            <Parameter name="MCC" type="MCC" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="MNC" type="MNC" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="HPLMN_COVERAGE" type="IS_HPLMN_COVERAGE_AVAILABLE" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="CELL_BAND" type="CELL_BAND_3G" isOptional="false">
+                <!-- Field optional (PossibleValues, DefaultValue, Blank) if possible value not override available -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue>1</DefaultValue>
+                <Blank/>
+                <Dependencies>
+                    <Dependency isOptional="false">DL_UARFCN</Dependency>
+                </Dependencies>
+            </Parameter>
+            <Parameter name="CELL_POWER" type="CELL_POWER_IN_DBM" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="DESTINATION_NUMBER" type="PHONE_NUMBER" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="SMS_TEXT" type="TEXT_MESSAGE" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="DATA_CODING_SCHEME" type="DATA_CODING_SCHEME" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="SMS_TRANSFER_TIMEOUT" type="TIMEOUT_IN_SEC" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+        </Parameters>
+    </UseCase>
+    <UseCase Id="LAB_WCDMA_SMS_PS_MT" Domain="CELLULAR" SubDomain="SMS" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Communication.Messaging.LAB_WCDMA_SMS_PS_MT.LabWcdmaSmsPsMt</ClassName>
+        <Description>WCDMA Mobile Terminated SMS (over PS) on network simulator</Description>
+        <Environment name="TEL">
+            <Capabilities>EQT_AG_8960</Capabilities>
+        </Environment>
+        <Parameters>
+            <Parameter name="CELL_BAND" type="CELL_BAND_3G" isOptional="false">
+                <!-- Field optional (PossibleValues, DefaultValue, Blank) if possible value not override available -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue>1</DefaultValue>
+                <Blank/>
+                <Dependencies>
+                    <Dependency isOptional="false">DL_UARFCN</Dependency>
+                </Dependencies>
+            </Parameter>
+            <Parameter name="CELL_POWER" type="CELL_POWER_IN_DBM" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="SMS_TEXT" type="TEXT_MESSAGE" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="DATA_CODING_SCHEME" type="DATA_CODING_SCHEME" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="SMS_TRANSFER_TIMEOUT" type="TIMEOUT_IN_SEC" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+        </Parameters>
+    </UseCase>
+    <UseCase Id="LAB_WCDMA_SMS_PS_MO" Domain="CELLULAR" SubDomain="SMS" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Communication.Messaging.LAB_WCDMA_SMS_PS_MO.LabWcdmaSmsPsMo</ClassName>
+        <Description>WCDMA Mobile Originated SMS over PS on simulated network</Description>
+        <Environment name="TEL">
+            <Capabilities>EQT_AG_8960</Capabilities>
+        </Environment>
+        <Parameters>
+            <Parameter name="CELL_BAND" type="CELL_BAND_3G" isOptional="false">
+                <!-- Field optional (PossibleValues, DefaultValue, Blank) if possible value not override available -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue>1</DefaultValue>
+                <Blank/>
+                <Dependencies>
+                    <Dependency isOptional="false">DL_UARFCN</Dependency>
+                </Dependencies>
+            </Parameter>
+            <Parameter name="CELL_POWER" type="CELL_POWER_IN_DBM" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="DESTINATION_NUMBER" type="PHONE_NUMBER" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="SMS_TEXT" type="TEXT_MESSAGE" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="DATA_CODING_SCHEME" type="DATA_CODING_SCHEME" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="SMS_TRANSFER_TIMEOUT" type="TIMEOUT_IN_SEC" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+        </Parameters>
+    </UseCase>
+    <UseCase Id="LIVE_SMS_LOOPBACK" Domain="CELLULAR" SubDomain="SMS" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Communication.Messaging.LIVE_SMS_LOOPBACK.LiveSmsLoopback</ClassName>
+        <Description>Live sms loopback test</Description>
+        <Environment name="TEL">
+            <Capabilities>EQT_LIVE_USIM</Capabilities>
+        </Environment>
+        <Parameters>
+            <Parameter name="DESTINATION_NUMBER" type="PHONE_NUMBER" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="MESSAGE_CONTENT" type="TEXT_MESSAGE" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="SMS_TRANSFER_TIMEOUT" type="TIMEOUT_IN_SEC" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="PREFERRED_NETWORK_TYPE" type="NETWORK_PREFERENCES" isOptional="true">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+        </Parameters>
+    </UseCase>
+    <UseCase Id="LIVE_DSDS_SMS" Domain="CELLULAR" SubDomain="SMS" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Communication.DSDS.LIVE_DSDS_SMS.LiveDsdsSms</ClassName>
+        <Description>Live sms loopback test</Description>
+        <Environment name="TEL">
+            <Capabilities>EQT_LIVE_USIM</Capabilities>
+        </Environment>
+        <Parameters>
+            <Parameter name="PHONE_NUMBER1" type="PHONE_NUMBER" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="PHONE_NUMBER2" type="PHONE_NUMBER" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="MESSAGE_CONTENT" type="TEXT_MESSAGE" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="SMS_TRANSFER_TIMEOUT" type="TIMEOUT_IN_SEC" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="PREFERRED_NETWORK_TYPE" type="NETWORK_PREFERENCES" isOptional="true">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+        </Parameters>
+    </UseCase>
+    <UseCase Id="LIVE_DUAL_PHONE_SMS" Domain="CELLULAR" SubDomain="SMS" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Communication.Messaging.LIVE_DUAL_PHONE_SMS.LiveDualPhoneSms</ClassName>
+        <Description>Live SMS from DUT to another Phone</Description>
+        <Environment name="TEL">
+            <Dependency>CAP_DUAL_DEVICE</Dependency>
+            <Dependency>EQT_LIVE_USIM</Dependency>
+        </Environment>
+    </UseCase>
+    <UseCase Id="LAB_LTE_IMS_SMS" Domain="CELLULAR" SubDomain="SMS" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Communication.Messaging.LAB_LTE_IMS_SMS.LabLteImsSms</ClassName>
+        <Description>LTE SMS over IMS</Description>
+        <Environment name="TEL">
+            <Capabilities>EQT_RS_CMW500</Capabilities>
+        </Environment>
+        <Parameters>
+            <Parameter name="IMS" type="IS_IMS_ENABLED" isOptional="false">
+                <!-- Description: IMS service status on call box : on or off -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="MIMO" type="IS_MIMO_ENABLED" isOptional="false">
+                <!-- Description: Multiple-Input Multiple-Output to set : TRUE or FALSE -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="ANTENNAS_NUMBER" type="ANTENNA" isOptional="false">
+                <!-- Description: number of antennas to set : 1 or 2 -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="TRANSMISSION_MODE" type="LTE_TRANSMISSION_MODE" isOptional="false">
+                <!-- Description: TRANSMISSION_MODE to set: TM1, TM2, TM3,TM4 ... -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="DL_RB_SIZE" type="LTE_RB_SIZE" isOptional="false">
+                <!-- Description: DL RB_SIZE to set: 1.4 MHz = 1 to 6 3 MHz = 1 to 15 5 MHz = 1 to 25 10 MHz = 1 to 50 15 MHz = 1 to 75 20 MHz = 1 to 100 -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="UL_RB_SIZE" type="LTE_RB_SIZE" isOptional="false">
+                <!-- Description: UL RB_SIZE to set: 1.4 MHz = 1 to 6 3 MHz = 1 to 15 5 MHz = 1 to 25 10 MHz = 1 to 50 15 MHz = 1 to 75 20 MHz = 1 to 100 -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="TYPE0_BITMAP" type="TYPE0_BITMAP" isOptional="true">
+                <!-- Description: TYPE0_BITMAP to set: requires to set TM3 or TM4 profile, MIMO to be set in scenario file 1.4 MHz = 1 to 63 (0x3F) 3 MHz = 1 to 255 (0xFF) 5 MHz = 1 to 8191 (0x1FFF) 10 MHz = 1 to 131071 (0x1FFFF) 15 MHz = 1 to 524287 (0x7FFFF) 20 MHz = 1 to 33554431 (0x1FFFFFF) -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="UL_GRANT_MODE" type="UL_GRANT_MODE" isOptional="false">
+                <!-- Description: UL GRANT MODE to set: AUTO or FIXEDMAC -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="DL_I_MCS" type="DL_I_MCS" isOptional="false">
+                <!-- Description: DL_I_MCS to set: 0 to 28 -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="UL_I_MCS" type="UL_I_MCS" isOptional="false">
+                <!-- Description: UL_I_MCS to set: 0 to 23, and 29 -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="CELL_CHANNEL_BANDWIDTH" type="LTE_CELL_CHANNEL_BANDWIDTH" isOptional="false">
+                <!-- Description: Cell Channel Bandwidth in MHz -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="SIGNAL_MODE" type="LTE_SIGNAL_MODE" isOptional="false">
+                <!-- Description: Operation mode to set : BSE or SA -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="PHYSICAL_CELL_ID" type="LTE_PHYSICAL_CELL_ID" isOptional="false">
+                <!-- Description: Physical Cell ID : 0 to 503 -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="CELL_ID" type="CELL_ID" isOptional="true">
+                <!-- Description: Cell Setup : "A" for A-cell or "B" for B-cell -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="CELL_POWER_RFO1" type="CELL_POWER_IN_DBM" isOptional="false">
+                <!-- Description: Cell power for RFO1 -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="CELL_POWER_RFO2" type="CELL_POWER_IN_DBM" isOptional="false">
+                <!-- Description: Cell power for RFO2 -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="MCC" type="MCC" isOptional="false">
+                <!-- Description: Mobile Country Code 0 to 999 -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="MNC" type="MNC" isOptional="false">
+                <!-- Description: Mobile Network Code 0 to 999 -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="CELL_BAND" type="CELL_BAND_4G" isOptional="false">
+                <!-- Description: Cell Band (from Band 1 to Band 32 for FDD; from Band 33 to Band 63 for TDD) -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="DL_EARFCN" type="DL_EARFCN" isOptional="false">
+                <!-- Description: Downlink channel -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="IP_VERSION" type="IP_VERSION" isOptional="true">
+                <!-- Description>the IP version to use to connect to the mobile network. IPV4 | IPV6 | IPV4V6 -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="SCENARIO_PATH" type="SCENARIO_PATH" isOptional="true">
+                <!-- Description: Path to the scenario filename to load on PXT -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="SMS_DIRECTION" type="MOBILE_DIRECTION" isOptional="false">
+                <!-- Description: SMS DIRECTION (MO [Mobile Originated] |MT [Mobile Terminated]) -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="SMS_TYPE" type="SMS_TYPE" isOptional="false">
+                <!-- Description: SMS Type for IMS, either TGPP (3GPP) or TGP2 (3GPP2)  -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="SMS_TEXT" type="TEXT_MESSAGE" isOptional="false">
+                <!-- Description: SMS Text Sent or Received  -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="DESTINATION_NUMBER" type="PHONE_NUMBER" isOptional="false">
+                <!-- Description: Phone number of SMS Receiver or Sender. If value is [PHONE_NUMBER] the value used will be the phoneNumber defined in the Phone_Catalog.xml -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="SMS_TIMEOUT" type="TIMEOUT_IN_SEC" isOptional="false">
+                <!-- Description: SMS timeout in seconds -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+        </Parameters>
+    </UseCase>
+    <UseCase Id="LAB_LTE_SMS_SGS" Domain="CELLULAR" SubDomain="SMS" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Communication.Messaging.LAB_LTE_SMS_SGS.LabLteSmsSgs</ClassName>
+        <Description>LTE SMS over SGS on simulated network</Description>
+        <Environment name="TEL">
+            <Capabilities>EQT_RS_CMW500</Capabilities>
+            <Capabilities>CAP_CALLBOX</Capabilities>
+        </Environment>
+        <Parameters>
+            <Parameter name="MIMO" type="MIMO_YPE" isOptional="false">
+                <Description>Multiple-Input Multiple-Output to set</Description>
+                <PossibleValues>TRUE,FALSE</PossibleValues>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="SIGNAL_MODE" type="SIGNAL_MODE" isOptional="false">
+                <!-- Operation mode to set : BSE or SA -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="PHYSICAL_CELL_ID" type="PHYSICAL_CELL_ID" isOptional="false">
+                <!-- Physical Cell ID : 0 to 503 -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="CELL_ID" type="CELL_ID" isOptional="false">
+                <!-- Cell Setup : "A" for A-cell or "B" for B-cell -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="CELL_POWER_RFO1" type="CELL_POWER_RFO1" isOptional="false">
+                <!-- Cell power for RFO1 -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="CELL_POWER_RFO2" type="CELL_POWER_RFO2" isOptional="false">
+                <!-- Cell power for RFO2 -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="MCC" type="MCC" isOptional="false">
+                <!-- Mobile Country Code 0 to 999 -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="MNC" type="MNC" isOptional="false">
+                <!-- Mobile Network Code 0 to 99 -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="CELL_BAND" type="CELL_BAND" isOptional="false">
+                <!-- Cell Band (from Band 1 to Band 32) -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="DL_EARFCN" type="DL_EARFCN" isOptional="false">
+                <!-- Downlink channel -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="SCENARIO_PATH" type="SCENARIO_PATH" isOptional="false">
+                <!-- Scenario filename to load on PXT -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="SMS_DIRECTION" type="SMS_DIRECTION" isOptional="false">
+                <!-- SMS DIRECTION: (MO [Mobile Originated]|MT [Mobile Terminated]) -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="INCOMING_NUMBER" type="INCOMING_NUMBER" isOptional="false">
+                <!-- Please let it empty, if the test will be executed with CMW500 -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="SMS_TEXT" type="SMS_TEXT" isOptional="false">
+                <!-- SMS text to send -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="SMS_TRANSFER_TIMEOUT" type="SMS_TRANSFER_TIMEOUT" isOptional="false">
+                <!-- SMS transfer timeout in seconds -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+        </Parameters>
+    </UseCase>
+    <UseCase Id="LIVE_SMS_CHECK_DELIVERY" Domain="CELLULAR" SubDomain="SMS" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Communication.Messaging.LIVE_SMS_CHECK_DELIVERY.LiveSmsCheckDelivery</ClassName>
+        <Description>Live sms checking delivery test</Description>
+        <Environment name="ANY"/>
+        <Parameters>
+            <Parameter name="DESTINATION_NUMBER" type="DESTINATION_NUMBER" isOptional="false">
+                <!-- SMS destination phone number. If the value [PHONE_NUMBER] is given, the phoneNumber defined in Phone_Catalog.xml will be used. -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="MESSAGE_CONTENT" type="MESSAGE_CONTENT" isOptional="false">
+                <!-- SMS text message. -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="SMS_TRANSFER_TIMEOUT" type="SMS_TRANSFER_TIMEOUT" isOptional="false">
+                <!-- SMS transfer timeout in seconds. -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="PREFERRED_NETWORK_TYPE" type="NETWORK_PREFERENCES" isOptional="true">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+        </Parameters>
+    </UseCase>
+    <UseCase Id="LIVE_SMS_LOOPBACK_FTP" Domain="CELLULAR" SubDomain="SMS" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Communication.Messaging.LIVE_SMS_LOOPBACK_FTP.LiveSmsLoopbackFtp</ClassName>
+        <Description>Live sms loopback tes during data transfert</Description>
+        <Environment name="TEL">
+            <Capabilities>EQT_LIVE_USIM</Capabilities>
+        </Environment>
+        <Parameters>
+            <Parameter name="DESTINATION_NUMBER" type="PHONE_NUMBER" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="MESSAGE_CONTENT" type="TEXT_MESSAGE" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="SMS_TRANSFER_TIMEOUT" type="TIMEOUT_IN_SEC" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="DL_FILENAME" type="DL_FILENAME" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="BASENAME" type="DL_FILENAME" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+        </Parameters>
+    </UseCase>
+    <UseCase Id="LIVE_LTE_IMS_SMS" Domain="CELLULAR" SubDomain="SMS" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Communication.Messaging.LIVE_LTE_IMS_SMS.LiveLteImsSms</ClassName>
+        <Description>Live sms IMS test</Description>
+        <Environment name="TEL">
+            <Capabilities>EQT_LIVE_USIM</Capabilities>
+        </Environment>
+        <Parameters>
+            <Parameter name="IMS_REGISTRATION_TIMEOUT" type="TIMEOUT_IN_SEC" isOptional="false">
+                <Description>The additional timeout for IMS registration.</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="IMS_PARAMETER_FILE" type="IMS_CONFIG_FILE" isOptional="false">
+                <Description>The path to the IMS parameter file to use to create the IMS_Config.ini file on the device.</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="IMS_AUTHENTICATION" type="IMS_PARAMETER" isOptional="false">
+                <Description>The authentication mode to use ("digest"|"aka").</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="IMS_PRECONDITIONS" type="IMS_PARAMETER" isOptional="false">
+                <Description>The precondition parameters ("3gpp" with preconditions, "ietf" without preconditions).</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="IMS_DIGEST_PASSWORD" type="IMS_PARAMETER" isOptional="false">
+                <Description>The DIGEST password to use when choosing DIGEST authentication mode.</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="IMS_REGISTRATION_OPERATION" type="IMS_REGISTRATION_OPERATION" isOptional="false">
+                <Description>Indicates the action to perform for IMS registration.
+                    REGISTER (perform IMS registration normally) or
+                    CHECK_ONLY (only check that the IMS status is REGISTERED).</Description>
+                <PossibleValues>REGISTER;CHECK_ONLY</PossibleValues>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="DESTINATION_NUMBER" type="PHONE_NUMBER" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="MESSAGE_CONTENT" type="TEXT_MESSAGE" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="SMS_TRANSFER_TIMEOUT" type="TIMEOUT_IN_SEC" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+        </Parameters>
+    </UseCase>
+    <UseCase Id="LIVE_LTE_IMS_SMS_FTP" Domain="CELLULAR" SubDomain="SMS" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Communication.Messaging.LIVE_LTE_IMS_SMS_FTP.LiveLteImsSmsFtp</ClassName>
+        <Description>Live sms ims loopback test during data transfert</Description>
+        <Environment name="TEL">
+            <Capabilities>EQT_LIVE_USIM</Capabilities>
+        </Environment>
+        <Parameters>
+            <Parameter name="IMS_REGISTRATION_TIMEOUT" type="TIMEOUT_IN_SEC" isOptional="false">
+                <Description>The additional timeout for IMS registration.</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="IMS_PARAMETER_FILE" type="IMS_CONFIG_FILE" isOptional="false">
+                <Description>The path to the IMS parameter file to use to create the IMS_Config.ini file on the device.</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="IMS_AUTHENTICATION" type="IMS_PARAMETER" isOptional="false">
+                <Description>The authentication mode to use ("digest"|"aka").</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="IMS_PRECONDITIONS" type="IMS_PARAMETER" isOptional="false">
+                <Description>The precondition parameters ("3gpp" with preconditions, "ietf" without preconditions).</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="IMS_DIGEST_PASSWORD" type="IMS_PARAMETER" isOptional="false">
+                <Description>The DIGEST password to use when choosing DIGEST authentication mode.</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="IMS_REGISTRATION_OPERATION" type="IMS_REGISTRATION_OPERATION" isOptional="false">
+                <Description>Indicates the action to perform for IMS registration.
+                    REGISTER (perform IMS registration normally) or
+                    CHECK_ONLY (only check that the IMS status is REGISTERED).</Description>
+                <PossibleValues>REGISTER;CHECK_ONLY</PossibleValues>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="DESTINATION_NUMBER" type="PHONE_NUMBER" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="MESSAGE_CONTENT" type="TEXT_MESSAGE" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="SMS_TRANSFER_TIMEOUT" type="TIMEOUT_IN_SEC" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="DL_FILENAME" type="DL_FILENAME" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="BASENAME" type="DL_FILENAME" isOptional="false">
+                <Description>To be filled</Description>
+                 <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+        </Parameters>
+    </UseCase>
+    <UseCase Id="LIVE_MO_SMS_PS" Domain="CELLULAR" SubDomain="SMS" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Communication.Messaging.LIVE_MO_SMS_PS.LiveSmsBrowsing</ClassName>
+        <Description>Live browsing with sms sending simultaneously</Description>
+        <Environment name="TEL">
+            <Capabilities>EQT_LIVE_USIM</Capabilities>
+        </Environment>
+        <Parameters>
+            <Parameter name="DESTINATION_NUMBER" type="PHONE_NUMBER" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="MESSAGE_CONTENT" type="TEXT_MESSAGE" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="SMS_TRANSFER_TIMEOUT" type="TIMEOUT_IN_SEC" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="PREFERRED_NETWORK_TYPE" type="NETWORK_PREFERENCES" isOptional="true">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="TIMEOUT" type="TIMEOUT_IN_SEC" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="SERVER_NAME" type="SERVER_DETAILS" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="XFER_TIMEOUT" type="TIMEOUT_IN_SEC" isOptional="false">
+                <Description>Transfer timeout in second.</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="DIRECTION" type="XFER_DIRECTION" isOptional="false">
+                <Description>Direction of FTP transfer</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="DL_FILE" type="STRING" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="BASENAME" type="STRING" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+        </Parameters>
+    </UseCase>
+    <UseCase Id="LIVE_DSDS_PS_SMS" Domain="CELLULAR" SubDomain="SMS" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Communication.DSDS.LIVE_DSDS_PS_SMS.LiveDsdsFtpSms</ClassName>
+        <Description>Live browsing with sms sending simultaneously in dsds</Description>
+        <Environment name="TEL">
+            <Capabilities>EQT_LIVE_USIM</Capabilities>
+        </Environment>
+        <Parameters>
+            <Parameter name="DESTINATION_NUMBER" type="PHONE_NUMBER" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="MESSAGE_CONTENT" type="TEXT_MESSAGE" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="SMS_TRANSFER_TIMEOUT" type="TIMEOUT_IN_SEC" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="PREFERRED_NETWORK_TYPE" type="NETWORK_PREFERENCES" isOptional="true">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="TIMEOUT" type="TIMEOUT_IN_SEC" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="SERVER_NAME" type="SERVER_DETAILS" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="XFER_TIMEOUT" type="TIMEOUT_IN_SEC" isOptional="false">
+                <Description>Transfer timeout in second.</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="DIRECTION" type="XFER_DIRECTION" isOptional="false">
+                <Description>Direction of FTP transfer</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="DL_FILE" type="STRING" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="BASENAME" type="STRING" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="DEFAULT_SIM" type="STRING" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+        </Parameters>
+    </UseCase>
+</UseCases>
+

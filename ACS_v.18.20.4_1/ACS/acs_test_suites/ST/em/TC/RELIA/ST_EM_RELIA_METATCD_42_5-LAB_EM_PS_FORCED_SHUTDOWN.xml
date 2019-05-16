@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase>
+    <UseCase>LAB_EM_PS_FORCED_SHUTDOWN</UseCase>
+    <Description>Press shutdown button to make a Forced shutdown.</Description>
+    <b2bIteration>5</b2bIteration>
+    <b2bContinuousMode>False</b2bContinuousMode>
+    <Parameters>
+        <Parameter>
+            <!-- Vbatt Voltage -->
+            <Name>VBATT</Name>
+            <Value>3.8</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Battery Temperature (in degree Celsius) : 95, 70, 50, 25, 10, 5, 0, -15 -->
+            <Name>BATTERY_TEMPERATURE</Name>
+            <Value>25</Value>
+        </Parameter>
+        <Parameter>
+            <!-- power button press time to do a Hardware shutdown -->
+            <Name>HW_SHUTDOWN_PRESS_TIME</Name>
+            <Value>7.2</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

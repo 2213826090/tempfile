@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase>
+    <UseCase>LAB_EM_BATT_PLUG_UNPLUG_DURING_CALL</UseCase>
+    <Description>Control a charger plug and unplug on a bench without powersupply and check battery and charger register value.</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>False</b2bContinuousMode>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters>
+        <Parameter>
+            <!-- Charger to plug and unplug depending of what your platform and io card can support, choose one of these : SDP|DCP|CDP|AC_CHGR -->
+            <Name>CHARGER_TYPE</Name>
+            <Value>DCP</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Time to wait (in second) in after an action to do the measure. -->
+            <Name>ACTION_TIMEOUT</Name>
+            <Value>35</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Define the action order on the charger: "PLUG;UNPLUG" or "UNPLUG;PLUG". -->
+            <Name>ACTION_ORDER</Name>
+            <Value>PLUG;UNPLUG</Value>
+        </Parameter>
+        <Parameter>
+            <!-- type of network to use (tc parameter below can change depending of your choice): 2G OR 3G -->
+            <Name>NETWORK_TYPE</Name>
+            <Value>3G</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Cell Band (from BAND1 to BAND10) for 3G or Cell Band (PGSM|RGSM|EGSM|GSM450|GSM480|GSM750|GSM850|TGSM810|PCS|DCS) for 2G -->
+            <Name>CELL_BAND</Name>
+            <Value>BAND1</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Cell power in dBm -->
+            <Name>CELL_POWER</Name>
+            <Value>-70</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Choose which device do the call: SIMULATOR|PHONE -->
+            <Name>CALL_ORIGIN</Name>
+            <Value>SIMULATOR</Value>
+        </Parameter>
+        <Parameter>
+            <!-- 3G ONLY:UPLINK ARFCN -->
+            <Name>UL_UARFCN</Name>
+            <Value>9750</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

@@ -1,0 +1,1 @@
+Contains specifics TC only for Android

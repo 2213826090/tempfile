@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="13.41">
+    <UseCase>TEST_STEP_ENGINE</UseCase>
+    <Description></Description>
+    <b2bIteration>4</b2bIteration>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <TcMaxAttempt>2</TcMaxAttempt>
+    <TcAcceptanceCriteria>1</TcAcceptanceCriteria>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters>
+        <Parameter>
+            <Name>WEBSITE_URL</Name>
+            <Value>http://192.168.0.150/</Value>
+        </Parameter>
+    </Parameters>
+    <TestSteps>
+        <Include Src="ST/cws/TSS/Common/ST_CWS_COMMON.xml"/>
+        <Include Src="ST/cws/TSS/WiFi/ST_CWS_WIFI_AP.xml"/>
+        <Include Src="ST/cws/TSS/WiFi/ST_CWS_WIFI_COMMON.xml"/>
+
+        <TestStepSet Id="DUTWiFiConfig">
+            <TestStep SetId="InitPhoneCWS"/>
+            <TestStep SetId="WiFiCommonSetup" REGULATORY_DOMAIN="FR"/>
+        </TestStepSet>
+        <TestStepSet Id="AP2ConfigWithAP1SSID">
+            <TestStep SetId="WiFiAPConfigStandard" EQT="CONFIGURABLE_AP2"
+                  SSID="FROM_BENCH:CONFIGURABLE_AP1:SSID"
+                  RADIUS_IP="FROM_BENCH:CONFIGURABLE_AP2:radiusip"
+                  RADIUS_PORT="FROM_BENCH:CONFIGURABLE_AP2:radiusport"
+                  RADIUS_SECRET="FROM_BENCH:CONFIGURABLE_AP2:radiussecret"
+                  REGULATORY_DOMAIN_SAVE_AS="CONFIGURABLE_AP2_REGULATORY_DOMAIN"
+                  STANDARD="n2.4G"
+                  AUTHENTICATION_TYPE="OPEN"
+                  PASSPHRASE="NOT_USED"
+                  CHANNEL="8"
+                  BANDWIDTH="20"/>
+        </TestStepSet>
+
+        <Setup>
+            <!-- AUTOMATION - Set default configuration -->
+            <Fork Id="ForkDUTReferencePhoneAndWiFiAP">
+                <TestStep SetId="DUTWiFiConfig" DEVICE="PHONE1"/>
+                <TestStep SetId="WiFiAPConfigStandardAP1"
+                          STANDARD="n2.4G"
+                          AUTHENTICATION_TYPE="OPEN"
+                          PASSPHRASE="NOT_USED"
+                          CHANNEL="8"
+                          BANDWIDTH="20"/>
+                <TestStep SetId="AP2ConfigWithAP1SSID"/>
+            </Fork>
+        </Setup>
+        <RunTest>
+            <!-- SPEC - Step 1 : Turn off AP2 radio -->
+            <TestStep SetId="WiFiAPShutdown" EQT="CONFIGURABLE_AP2"/>
+
+            <!-- SPEC - Step 2 : Connect DUT to the AP -->
+            <TestStep SetId="WiFiAddNetwork" DEVICE="PHONE1"
+                      SSID="FROM_BENCH:CONFIGURABLE_AP1:SSID"
+                      SECURITY="OPEN"
+                      PASS_PHRASE="NOT_USED"/>
+            <TestStep Id="WIFI_CONNECT" DEVICE="PHONE1"
+                      SSID="FROM_BENCH:CONFIGURABLE_AP1:SSID"
+                      TIMEOUT="90"/>
+            <TestStep Id="WIFI_WAIT_FOR_SSID_STATE" DEVICE="PHONE1"
+                      SSID="FROM_BENCH:CONFIGURABLE_AP1:SSID"
+                      STATE="CONNECTED"
+                      TIMEOUT="90"/>
+            <TestStep Id="PING" DEVICE="PHONE1"
+                      DESTINATION_IP="FROM_BENCH:CONFIGURABLE_AP1:IP"
+                      PACKET_SIZE="16" PACKET_COUNT="8"
+                      INTERVAL="1"
+                      FLOOD_MODE="false"
+                      BLOCKING="true"
+                      SOURCE_IP="NOT_USED"
+                      SAVE_AS="PING_PACKET_LOST"/>
+            <TestStep Id="COMPARE"
+                      FIRST="FROM_CTX:PING_PACKET_LOST"
+                      SECOND="0"
+                      OPERATOR="EQUAL"
+                      PASS_IF="true"/>
+
+            <!-- SPEC - Step 3&4 : Browse web page and clear cache memory -->
+            <TestStep Id="OPEN_HOME_PAGE" DEVICE="PHONE1"/>
+            <TestStep Id="BROWSE_AND_CHECK" DEVICE="PHONE1"
+                      BROWSER_TYPE="ACS_AGENT"
+                      WEBSITE_URL="FROM_TC:WEBSITE_URL"
+                      TIMEOUT="20"/>
+
+            <!-- SPEC - Step 5 : Turn AP1 radio off -->
+            <TestStep SetId="WiFiAPShutdown" EQT="CONFIGURABLE_AP1"/>
+
+            <!-- SPEC - Step 6 : Turn AP2 radio On and wait DUT reconnection -->
+            <TestStep SetId="AP2ConfigWithAP1SSID"/>
+            <TestStep Id="WIFI_WAIT_FOR_SSID_STATE" DEVICE="PHONE1"
+                      SSID="FROM_BENCH:CONFIGURABLE_AP1:SSID"
+                      STATE="CONNECTED"
+                      TIMEOUT="180"/>
+            <TestStep Id="PING" DEVICE="PHONE1"
+                      DESTINATION_IP="FROM_BENCH:CONFIGURABLE_AP2:IP"
+                      PACKET_SIZE="16" PACKET_COUNT="8"
+                      INTERVAL="1"
+                      FLOOD_MODE="false"
+                      BLOCKING="true"
+                      SOURCE_IP="NOT_USED"
+                      SAVE_AS="PING_PACKET_LOST"/>
+            <TestStep Id="COMPARE"
+                      FIRST="FROM_CTX:PING_PACKET_LOST"
+                      SECOND="0"
+                      OPERATOR="EQUAL"
+                      PASS_IF="true"/>
+
+            <!-- SPEC - Step 7&8 : Browse web page and clear cache memory -->
+            <TestStep Id="BROWSE_AND_CHECK" DEVICE="PHONE1"
+                      BROWSER_TYPE="ACS_AGENT"
+                      WEBSITE_URL="FROM_TC:WEBSITE_URL"
+                      TIMEOUT="20"/>
+
+            <!-- SPEC - Step 9 : Forget SSID on DUT -->
+            <TestStep Id="WIFI_REMOVE_NETWORK" DEVICE="PHONE1" SSID="FROM_BENCH:CONFIGURABLE_AP1:SSID"/>
+
+            <!-- SPEC - Step 10 : Turn AP1 radio On -->
+            <TestStep SetId="WiFiAPConfigStandardAP1"
+                      STANDARD="n2.4G"
+                      AUTHENTICATION_TYPE="OPEN"
+                      PASSPHRASE="NOT_USED"
+                      CHANNEL="8"
+                      BANDWIDTH="20"/>
+        </RunTest>
+        <TearDown>
+            <Fork Id="ForkTeardown">
+                <TestStep SetId="WiFiCommonTeardown" DEVICE="PHONE1"/>
+                <TestStep SetId="WiFiAPShutdown" EQT="CONFIGURABLE_AP1"/>
+                <TestStep SetId="WiFiAPShutdown" EQT="CONFIGURABLE_AP2"/>
+            </Fork>
+        </TearDown>
+    </TestSteps>
+</TestCase>

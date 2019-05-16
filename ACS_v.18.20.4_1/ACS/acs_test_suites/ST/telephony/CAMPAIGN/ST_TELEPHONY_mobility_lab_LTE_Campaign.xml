@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<Campaign>
+    <Parameters>
+        <Parameter isControlledPSUsed="False" />
+        <Parameter isIoCardUsed="False" />
+        <!-- Set skipBootOnPowerCycle to True to disable the accs boot procedure -->
+        <!-- Important, it means that boot will be handle inside the campaign/tc -->
+        <Parameter skipBootOnPowerCycle="False" />
+        <!-- Set bootRetryNumber to maximum number of boot retries during the acs boot procedure -->
+        <!-- Important, it means that bootRetryNumber is set by default to 0 if not specified -->
+        <Parameter bootRetryNumber="0" />
+        <Parameter runHookScripts="False" />
+        <Parameter powerCycleBetweenTC="False" />
+        <Parameter powerCycleOnFailure="True" />
+        <!-- finalDutState allows user to leave the DUT in a specific state at the end of the campaign
+        Possible values: PowerOn | PowerOff | Charging
+        By default DUT is leaved in PowerOff state.
+        In case the user selects Charging as final state of the DUT and that DUT fails to enter Charging,
+        ACS shall try to switch the DUT off -->
+        <Parameter finalDutState="NoChange" />
+        <Parameter stopCampaignOnCriticalFailure="False" />
+        <Parameter stopCampaignOnFirstFailure="False" />
+        <!-- LoggingLevel possible values: info | warning | debug | error -->
+        <Parameter loggingLevel="info" />
+        <!-- CampaignType format -> <TEAM>_<CAMPAIGNTYPE>
+        Possible values:
+        FT(Feature Team)-> SANITY | REGRESSION | STRESS, RELIABILTY | MTBF
+        ST(System Test)-> SANITY | REGRESSION | STRESS, RELIABILTY | MTBF | EM
+        SI(System Integration)-> EAT | STAB | PACT | CAT0 | RELIABILITY | MTBF | CTS
+        Otherwise "Others" should be used -->
+        <Parameter CampaignType="ST_MOBILITY" />
+        <Parameter TCRReportViaRESTAPI="true"/>
+    </Parameters>
+
+    <Targets>
+        <!-- Target Values -->
+        <Target targetB2bPassRate="100"/>
+    </Targets>
+
+    <TestCases>
+        <!-- SETUP -->
+        <TestCase Id="..\..\..\SI\BBot_EAT_PACT\TC\COMMON\SYSTEM\SI_SYSTEM_SETUP_EMBEDDED" TcMaxAttempt="2" TcAcceptanceCriteria="1"/>
+        <TestCase Id="..\TC\SETUP\ST_TELEPHONY_INSTALL" TcMaxAttempt="2" TcAcceptanceCriteria="1"/>
+
+        <!-- LTE CAMP with 3G adjacent cell -->
+        <TestCase Id="..\TC\IDLE_MOB\ST_TELEPHONY_DATA_LTE-REG_005-LAB_MOBILITY_LTE_3GSM_CAMP" TcMaxAttempt="2" TcAcceptanceCriteria="1"/>
+        <TestCase Id="..\TC\IDLE_MOB\ST_TELEPHONY_DATA_LTE-REG_006-LAB_MOBILITY_LTE_3GSM_CAMP" TcMaxAttempt="2" TcAcceptanceCriteria="1"/>
+        <TestCase Id="..\TC\IDLE_MOB\ST_TELEPHONY_DATA_LTE-REG_007-LAB_MOBILITY_LTE_3GSM_CAMP" TcMaxAttempt="2" TcAcceptanceCriteria="1"/>
+        <TestCase Id="..\TC\IDLE_MOB\ST_TELEPHONY_DATA_LTE-REG_008-LAB_MOBILITY_LTE_3GSM_CAMP" TcMaxAttempt="2" TcAcceptanceCriteria="1"/>
+        <TestCase Id="..\TC\IDLE_MOB\ST_TELEPHONY_DATA_LTE-REG_009-LAB_MOBILITY_LTE_3GSM_CAMP" TcMaxAttempt="2" TcAcceptanceCriteria="1"/>
+        <TestCase Id="..\TC\IDLE_MOB\ST_TELEPHONY_DATA_LTE-REG_010-LAB_MOBILITY_LTE_3GSM_CAMP" TcMaxAttempt="2" TcAcceptanceCriteria="1"/>
+        <TestCase Id="..\TC\IDLE_MOB\ST_TELEPHONY_DATA_LTE-REG_011-LAB_MOBILITY_LTE_3GSM_CAMP" TcMaxAttempt="2" TcAcceptanceCriteria="1"/>
+        <TestCase Id="..\TC\IDLE_MOB\ST_TELEPHONY_DATA_LTE-REG_012-LAB_MOBILITY_LTE_3GSM_CAMP" TcMaxAttempt="2" TcAcceptanceCriteria="1"/>
+        <TestCase Id="..\TC\IDLE_MOB\ST_TELEPHONY_DATA_LTE-REG_013-LAB_MOBILITY_LTE_3GSM_CAMP" TcMaxAttempt="2" TcAcceptanceCriteria="1"/>
+        <TestCase Id="..\TC\IDLE_MOB\ST_TELEPHONY_DATA_LTE-REG_014-LAB_MOBILITY_LTE_3GSM_CAMP" TcMaxAttempt="2" TcAcceptanceCriteria="1"/>
+        <TestCase Id="..\TC\IDLE_MOB\ST_TELEPHONY_DATA_LTE-REG_015-LAB_MOBILITY_LTE_3GSM_CAMP" TcMaxAttempt="2" TcAcceptanceCriteria="1"/>
+        <TestCase Id="..\TC\IDLE_MOB\ST_TELEPHONY_DATA_LTE-REG_016-LAB_MOBILITY_LTE_3GSM_CAMP" TcMaxAttempt="2" TcAcceptanceCriteria="1"/>
+        <TestCase Id="..\TC\IDLE_MOB\ST_TELEPHONY_DATA_LTE-REG_044-LAB_MOBILITY_LTE_3GSM_CAMP" TcMaxAttempt="2" TcAcceptanceCriteria="1"/>
+        <TestCase Id="..\TC\IDLE_MOB\ST_TELEPHONY_DATA_LTE-REG_045-LAB_MOBILITY_LTE_3GSM_CAMP" TcMaxAttempt="2" TcAcceptanceCriteria="1"/>
+        <TestCase Id="..\TC\IDLE_MOB\ST_TELEPHONY_DATA_LTE-REG_046-LAB_MOBILITY_LTE_3GSM_CAMP" TcMaxAttempt="2" TcAcceptanceCriteria="1"/>
+        <TestCase Id="..\TC\IDLE_MOB\ST_TELEPHONY_DATA_LTE-REG_047-LAB_MOBILITY_LTE_3GSM_CAMP" TcMaxAttempt="2" TcAcceptanceCriteria="1"/>
+        <TestCase Id="..\TC\IDLE_MOB\ST_TELEPHONY_DATA_LTE-REG_048-LAB_MOBILITY_LTE_3GSM_CAMP" TcMaxAttempt="2" TcAcceptanceCriteria="1"/>
+        <TestCase Id="..\TC\IDLE_MOB\ST_TELEPHONY_DATA_LTE-REG_049-LAB_MOBILITY_LTE_3GSM_CAMP" TcMaxAttempt="2" TcAcceptanceCriteria="1"/>
+        <TestCase Id="..\TC\IDLE_MOB\ST_TELEPHONY_DATA_LTE-REG_059-LAB_MOBILITY_LTE_3GSM_CAMP" TcMaxAttempt="2" TcAcceptanceCriteria="1"/>
+        <TestCase Id="..\TC\IDLE_MOB\ST_TELEPHONY_DATA_LTE-TDD_003-LAB_MOBILITY_LTE_3GSM_CAMP" TcMaxAttempt="2" TcAcceptanceCriteria="1"/>
+        <TestCase Id="..\TC\IDLE_MOB\ST_TELEPHONY_DATA_LTE-TDD_004-LAB_MOBILITY_LTE_3GSM_CAMP" TcMaxAttempt="2" TcAcceptanceCriteria="1"/>
+
+        <!-- LTE/3G CSFB -->
+        <TestCase Id="..\TC\NET_MOB\ST_TELEPHONY_DATA_LTE-CSFB_003-LAB_MOBILITY_LTE_CSFB" TcMaxAttempt="2" TcAcceptanceCriteria="1"/>
+        <TestCase Id="..\TC\NET_MOB\ST_TELEPHONY_DATA_LTE-CSFB_004-LAB_MOBILITY_LTE_CSFB" TcMaxAttempt="2" TcAcceptanceCriteria="1"/>
+        <TestCase Id="..\TC\NET_MOB\ST_TELEPHONY_DATA_LTE-CSFB_005-LAB_MOBILITY_LTE_CSFB" TcMaxAttempt="2" TcAcceptanceCriteria="1"/>
+        <TestCase Id="..\TC\NET_MOB\ST_TELEPHONY_DATA_LTE-CSFB_006-LAB_MOBILITY_LTE_CSFB" TcMaxAttempt="2" TcAcceptanceCriteria="1"/>
+        <TestCase Id="..\TC\NET_MOB\ST_TELEPHONY_DATA_LTE-CSFB_008-LAB_MOBILITY_LTE_CSFB_CALLS" TcMaxAttempt="2" TcAcceptanceCriteria="1"/>
+        <TestCase Id="..\TC\NET_MOB\ST_TELEPHONY_DATA_LTE-CSFB_016-LAB_MOBILITY_LTE_CSFB" TcMaxAttempt="2" TcAcceptanceCriteria="1"/>
+        <TestCase Id="..\TC\NET_MOB\ST_TELEPHONY_DATA_LTE-CSFB_023-LAB_MOBILITY_LTE_CSFB" TcMaxAttempt="2" TcAcceptanceCriteria="1"/>
+        <TestCase Id="..\TC\NET_MOB\ST_TELEPHONY_DATA_LTE-CSFB_026-LAB_MOBILITY_LTE_CSFB" TcMaxAttempt="2" TcAcceptanceCriteria="1"/>
+        <TestCase Id="..\TC\NET_MOB\ST_TELEPHONY_DATA_LTE-CSFB_029-LAB_MOBILITY_LTE_CSFB" TcMaxAttempt="2" TcAcceptanceCriteria="1"/>
+
+        <!-- LTE/2G CSFB -->
+        <TestCase Id="..\TC\NET_MOB\ST_TELEPHONY_DATA_LTE-CSFB_107-LAB_MOBILITY_LTE_CSFB" TcMaxAttempt="2" TcAcceptanceCriteria="1"/>
+        <TestCase Id="..\TC\NET_MOB\ST_TELEPHONY_DATA_LTE-CSFB_108-LAB_MOBILITY_LTE_CSFB" TcMaxAttempt="2" TcAcceptanceCriteria="1"/>
+        <TestCase Id="..\TC\NET_MOB\ST_TELEPHONY_DATA_LTE-CSFB_109-LAB_MOBILITY_LTE_CSFB" TcMaxAttempt="2" TcAcceptanceCriteria="1"/>
+        <TestCase Id="..\TC\NET_MOB\ST_TELEPHONY_DATA_LTE-CSFB_110-LAB_MOBILITY_LTE_CSFB" TcMaxAttempt="2" TcAcceptanceCriteria="1"/>
+        <TestCase Id="..\TC\NET_MOB\ST_TELEPHONY_DATA_LTE-CSFB_113-LAB_MOBILITY_LTE_CSFB" TcMaxAttempt="2" TcAcceptanceCriteria="1"/>
+        <TestCase Id="..\TC\NET_MOB\ST_TELEPHONY_DATA_LTE-CSFB_115-LAB_MOBILITY_LTE_CSFB" TcMaxAttempt="2" TcAcceptanceCriteria="1"/>
+        <TestCase Id="..\TC\NET_MOB\ST_TELEPHONY_DATA_LTE-CSFB_118_DTM_OFF-LAB_MOBILITY_LTE_CSFB_CALLS" TcMaxAttempt="2" TcAcceptanceCriteria="1"/>
+        <TestCase Id="..\TC\NET_MOB\ST_TELEPHONY_DATA_LTE-CSFB_119_DTM_OFF-LAB_MOBILITY_LTE_CSFB_CALLS" TcMaxAttempt="2" TcAcceptanceCriteria="1"/>
+        <TestCase Id="..\TC\NET_MOB\ST_TELEPHONY_DATA_LTE-CSFB_120-LAB_MOBILITY_LTE_CSFB_CALLS" TcMaxAttempt="2" TcAcceptanceCriteria="1"/>
+        <TestCase Id="..\TC\NET_MOB\ST_TELEPHONY_DATA_LTE-CSFB_127-LAB_MOBILITY_LTE_CSFB" TcMaxAttempt="2" TcAcceptanceCriteria="1"/>
+        <TestCase Id="..\TC\NET_MOB\ST_TELEPHONY_DATA_LTE-CSFB_132-LAB_MOBILITY_LTE_CSFB" TcMaxAttempt="2" TcAcceptanceCriteria="1"/>
+        <TestCase Id="..\TC\NET_MOB\ST_TELEPHONY_DATA_LTE-CSFB_135-LAB_MOBILITY_LTE_CSFB" TcMaxAttempt="2" TcAcceptanceCriteria="1"/>
+        <TestCase Id="..\TC\NET_MOB\ST_TELEPHONY_DATA_LTE-CSFB_138-LAB_MOBILITY_LTE_CSFB" TcMaxAttempt="2" TcAcceptanceCriteria="1"/>
+
+        <!-- LTE SMS over SG -->
+        <TestCase Id="..\TC\NET_MOB\ST_TELEPHONY_DATA_LTE-SMS_001-LAB_MOBILITY_LTE_SMS" TcMaxAttempt="2" TcAcceptanceCriteria="1" />
+        <TestCase Id="..\TC\NET_MOB\ST_TELEPHONY_DATA_LTE-SMS_002-LAB_MOBILITY_LTE_SMS" TcMaxAttempt="2" TcAcceptanceCriteria="1" />
+        <TestCase Id="..\TC\NET_MOB\ST_TELEPHONY_DATA_LTE-SMS_006-LAB_MOBILITY_LTE_SMS" TcMaxAttempt="2" TcAcceptanceCriteria="1" />
+        <TestCase Id="..\TC\NET_MOB\ST_TELEPHONY_DATA_LTE-SMS_007-LAB_MOBILITY_LTE_SMS" TcMaxAttempt="2" TcAcceptanceCriteria="1" />
+        <TestCase Id="..\TC\NET_MOB\ST_TELEPHONY_DATA_LTE-SMS_008-LAB_MOBILITY_LTE_SMS" TcMaxAttempt="2" TcAcceptanceCriteria="1" />
+        <TestCase Id="..\TC\NET_MOB\ST_TELEPHONY_DATA_LTE-SMS_009-LAB_MOBILITY_LTE_SMS" TcMaxAttempt="2" TcAcceptanceCriteria="1" />
+
+        <!-- Cell Reselection 3GSM/LTE IDLE-->
+        <TestCase Id="..\TC\IDLE_MOB\ST_TELEPHONY_DATA_LTE-RESEL_008-LAB_MOBILITY_LTE_CRESEL_IDLE_3GSM_LTE" TcMaxAttempt="2" TcAcceptanceCriteria="1"/>
+        <TestCase Id="..\TC\IDLE_MOB\ST_TELEPHONY_DATA_LTE-RESEL_011-LAB_MOBILITY_LTE_CRESEL_IDLE_3GSM_LTE" TcMaxAttempt="2" TcAcceptanceCriteria="1"/>
+        <TestCase Id="..\TC\IDLE_MOB\ST_TELEPHONY_DATA_LTE-RESEL_014-LAB_MOBILITY_LTE_CRESEL_IDLE_3GSM_LTE" TcMaxAttempt="2" TcAcceptanceCriteria="1"/>
+        <TestCase Id="..\TC\IDLE_MOB\ST_TELEPHONY_DATA_LTE-RESEL_018-LAB_MOBILITY_LTE_CRESEL_IDLE_3GSM_LTE" TcMaxAttempt="2" TcAcceptanceCriteria="1"/>
+        <TestCase Id="..\TC\IDLE_MOB\ST_TELEPHONY_DATA_LTE-RESEL_024-LAB_MOBILITY_LTE_CRESEL_IDLE_3GSM_LTE" TcMaxAttempt="2" TcAcceptanceCriteria="1"/>
+
+        <!-- Cell Reselection LTE/3GSM IDLE-->
+        <TestCase Id="..\TC\IDLE_MOB\ST_TELEPHONY_DATA_LTE-RESEL_003-LAB_MOBILITY_LTE_CRESEL_IDLE_LTE_3GSM" TcMaxAttempt="2" TcAcceptanceCriteria="1"/>
+        <TestCase Id="..\TC\IDLE_MOB\ST_TELEPHONY_DATA_LTE-RESEL_005-LAB_MOBILITY_LTE_CRESEL_IDLE_LTE_3GSM" TcMaxAttempt="2" TcAcceptanceCriteria="1"/>
+        <TestCase Id="..\TC\IDLE_MOB\ST_TELEPHONY_DATA_LTE-RESEL_006-LAB_MOBILITY_LTE_CRESEL_IDLE_LTE_3GSM" TcMaxAttempt="2" TcAcceptanceCriteria="1"/>
+        <TestCase Id="..\TC\IDLE_MOB\ST_TELEPHONY_DATA_LTE-RESEL_013-LAB_MOBILITY_LTE_CRESEL_IDLE_LTE_3GSM" TcMaxAttempt="2" TcAcceptanceCriteria="1"/>
+        <TestCase Id="..\TC\IDLE_MOB\ST_TELEPHONY_DATA_LTE-RESEL_017-LAB_MOBILITY_LTE_CRESEL_IDLE_LTE_3GSM" TcMaxAttempt="2" TcAcceptanceCriteria="1"/>
+    </TestCases>
+</Campaign>

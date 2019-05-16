@@ -1,0 +1,34 @@
+<?xml version="1.0" ?>
+<Campaign>
+      <Parameters>
+            <Parameter isControlledPSUsed="False"/>
+            <Parameter isIoCardUsed="False"/>
+            <Parameter skipBootOnPowerCycle="False"/>
+            <Parameter bootRetryNumber="0"/>
+            <Parameter runHookScripts="False"/>
+            <Parameter powerCycleBetweenTC="False"/>
+            <Parameter powerCycleOnFailure="False"/>
+            <Parameter finalDutState="NoChange"/>
+            <Parameter stopCampaignOnCriticalFailure="False"/>
+            <Parameter stopCampaignOnFirstFailure="False"/>
+            <Parameter loggingLevel="debug"/>
+            <Parameter CampaignType="Other"/>
+      </Parameters>
+      <TestCases>
+            <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/Comms_WIFI_ComponentRelated_Security_Reconnect_5GHz-a-EAP2-AES"/>
+            <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/Comms_WIFI_ComponentRelated_Security_Reconnect_5GHz-a-EAP-AES"/>
+            <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/Comms_WIFI_ComponentRelated_Security_Reconnect_5GHz-a-EAPmixed-AES"/>
+            <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/Comms_WIFI_ComponentRelated_Security_Reconnect_5GHz-a-OPEN"/>
+            <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/Comms_WIFI_ComponentRelated_Security_Reconnect_5GHz-a-WPA2-AES"/>
+            <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/Comms_WIFI_ComponentRelated_Security_Reconnect_5GHz-a-WPA-AES"/>
+            <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/Comms_WIFI_ComponentRelated_Security_Reconnect_5GHz-a-WPA-WPA2-AUTO-AES"/>
+            <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/Comms_WIFI_ComponentRelated_Security_Reconnect_5GHz-n-EAP2-AES"/>
+            <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/Comms_WIFI_ComponentRelated_Security_Reconnect_5GHz-n-EAP-AES"/>
+            <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/Comms_WIFI_ComponentRelated_Security_Reconnect_5GHz-n-EAPmixed-AES"/>
+            <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/Comms_WIFI_ComponentRelated_Security_Reconnect_5GHz-n-OPEN"/>
+            <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/Comms_WIFI_ComponentRelated_Security_Reconnect_5GHz-n-OPEN_WiFi-OFF-ON"/>
+	    <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/Comms_WIFI_ComponentRelated_Security_Reconnect_5GHz-n-WPA2-AES"/>
+            <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/Comms_WIFI_ComponentRelated_Security_Reconnect_5GHz-n-WPA-AES"/>
+            <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/Comms_WIFI_ComponentRelated_Security_Reconnect_5GHz-n-WPA-WPA2-AUTO-AES"/>
+      </TestCases>
+</Campaign>

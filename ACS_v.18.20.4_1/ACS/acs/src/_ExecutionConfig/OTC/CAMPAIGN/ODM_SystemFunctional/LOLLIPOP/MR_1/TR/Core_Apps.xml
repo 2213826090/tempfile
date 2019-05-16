@@ -1,0 +1,109 @@
+<?xml version='1.0' encoding='ASCII'?>
+<Campaign version="13.49">
+    <Parameters>
+        <Parameter isControlledPSUsed="False"/>
+        <Parameter isIoCardUsed="False"/>
+        <!-- Set skipBootOnPowerCycle to True to disable the accs boot procedure -->
+        <!-- Important, it means that boot will be handle inside the campaign/tc -->
+        <Parameter skipBootOnPowerCycle="False"/>
+        <!-- Set bootRetryNumber to maximum number of boot retries during the acs boot procedure -->
+        <!-- Important, it means that bootRetryNumber is set by default to 0 if not specified -->
+        <Parameter bootRetryNumber="0"/>
+        <Parameter runHookScripts="False"/>
+        <Parameter powerCycleBetweenTC="False"/>
+        <Parameter powerCycleOnFailure="False"/>
+        <!-- finalDutState allows user to leave the DUT in a specific state at the end of the campaign
+            Possible values: PowerOn | PowerOff | Charging | NoChange
+            By default DUT is leaved in NoChange state.
+            In case the user selects Charging as final state of the DUT and that DUT fails to enter Charging,
+            ACS shall try to switch the DUT off -->
+        <Parameter finalDutState="NoChange"/>
+        <Parameter stopCampaignOnCriticalFailure="False"/>
+        <Parameter stopCampaignOnFirstFailure="False"/>
+        <!-- LoggingLevel possible values: info | warning | debug | error -->
+        <Parameter loggingLevel="debug"/>
+        <!-- CampaignType format -> <TEAM>_<CAMPAIGNTYPE>
+            Possible values:
+            FT(Feature Team)-> SANITY | REGRESSION | STRESS, RELIABILTY | MTBF
+            ST(System Test)-> SANITY | REGRESSION | STRESS, RELIABILTY | MTBF | EM
+            SI(System Integration)-> EAT | STAB | PACT | CAT0 | RELIABILITY | MTBF | CTS | ACS_CI
+            Otherwise "Others" should be used -->
+        <Parameter CampaignType="MTBF"/>
+    </Parameters>
+    <Targets>
+        <!-- Target Values -->
+        <Target targetB2bPassRate="100"/>
+    </Targets>
+      <TestCases>
+
+            <TestCase Id="../../../../../TC/TR_ODM/LOLLIPOP/MR_1/AppTesting_AOSP/prerequisites/prereq_ConnectToAP"/>
+
+            <TestCase Id="../../../../../TC/TR_ODM/LOLLIPOP/MR_1/AppTesting_AOSP/AOSP_Calculator.Operation_Continue_Calculation" TcMaxAttempt="2"/>
+            <TestCase Id="../../../../../TC/TR_ODM/LOLLIPOP/MR_1/AppTesting_AOSP/AOSP_Calculator.OperationEventSending" TcMaxAttempt="2"/>
+            <TestCase Id="../../../../../TC/TR_ODM/LOLLIPOP/MR_1/AppTesting_AOSP/AOSP_Calculator.Operation_Extended_Operation" TcMaxAttempt="2"/>
+            <TestCase Id="../../../../../TC/TR_ODM/LOLLIPOP/MR_1/AppTesting_AOSP/AOSP_Calculator.Operation_Tap_Buttons" TcMaxAttempt="2"/>
+            <TestCase Id="../../../../../TC/TR_ODM/LOLLIPOP/MR_1/AppTesting_AOSP/AOSP_Calculator.Operation_Use_Functions" TcMaxAttempt="2"/>
+            <TestCase Id="../../../../../TC/TR_ODM/LOLLIPOP/MR_1/AppTesting_AOSP/AOSP_Calculator.CalculatorReportsError_I" TcMaxAttempt="2"/>
+            <TestCase Id="../../../../../TC/TR_ODM/LOLLIPOP/MR_1/AppTesting_AOSP/AOSP_Calculator.checkDelete_clearFunctionWorks_I" TcMaxAttempt="2"/>
+            <TestCase Id="../../../../../TC/TR_ODM/LOLLIPOP/MR_1/AppTesting_AOSP/AOSP_Calculator.factorial_opreation_I" TcMaxAttempt="2"/>
+            <TestCase Id="../../../../../TC/TR_ODM/LOLLIPOP/MR_1/AppTesting_AOSP/AOSP_Calculator.__log_ln_e__calculation_I" TcMaxAttempt="2"/>
+
+            <TestCase Id="../../../../../TC/TR_ODM/LOLLIPOP/MR_1/AppTesting_AOSP/AOSP_Calculator.StartApplicationCalculate" TcMaxAttempt="2"/>
+            <TestCase Id="../../../../../TC/TR_ODM/LOLLIPOP/MR_1/AppTesting_AOSP/AOSP_Settings.Core-Settings" TcMaxAttempt="2"/>
+            <TestCase Id="../../../../../TC/TR_ODM/LOLLIPOP/MR_1/AppTesting_AOSP/AOSP_Contacts.Core-Contacts_AKA_People_noAccount" TcMaxAttempt="2"/>
+            <TestCase Id="../../../../../TC/TR_ODM/LOLLIPOP/MR_1/AppTesting_AOSP/AOSP_Contacts.Core-Contacts_AKA_People_addAccount" TcMaxAttempt="2"/>
+
+            <TestCase Id="../../../../../TC/TR_ODM/LOLLIPOP/MR_1/AppTesting_AOSP/AOSP_Contacts.CreateContactNoNameAndOnlyWithNumber" TcMaxAttempt="2"/>
+            <TestCase Id="../../../../../TC/TR_ODM/LOLLIPOP/MR_1/AppTesting_AOSP/AOSP_Contacts.AddContact" TcMaxAttempt="2"/>
+            <TestCase Id="../../../../../TC/TR_ODM/LOLLIPOP/MR_1/AppTesting_AOSP/AOSP_Contacts.ContactwithMultipleEmailAddress_I" TcMaxAttempt="2"/>
+            <TestCase Id="../../../../../TC/TR_ODM/LOLLIPOP/MR_1/AppTesting_AOSP/AOSP_Contacts.ContactWithMultipleAddress" TcMaxAttempt="2"/>
+            <TestCase Id="../../../../../TC/TR_ODM/LOLLIPOP/MR_1/AppTesting_AOSP/AOSP_Contacts.ContactWithMultiplePhoneNumber" TcMaxAttempt="2"/>
+            <TestCase Id="../../../../../TC/TR_ODM/LOLLIPOP/MR_1/AppTesting_AOSP/AOSP_Contacts.EditContact_deleteAddress" TcMaxAttempt="2"/>
+            <TestCase Id="../../../../../TC/TR_ODM/LOLLIPOP/MR_1/AppTesting_AOSP/AOSP_Contacts.EditContact" TcMaxAttempt="2"/>
+            <TestCase Id="../../../../../TC/TR_ODM/LOLLIPOP/MR_1/AppTesting_AOSP/AOSP_Contacts.AddContactToFavorites" TcMaxAttempt="2"/>
+            <TestCase Id="../../../../../TC/TR_ODM/LOLLIPOP/MR_1/AppTesting_AOSP/AOSP_Contacts.DeleteContact" TcMaxAttempt="2"/>
+            <TestCase Id="../../../../../TC/TR_ODM/LOLLIPOP/MR_1/AppTesting_AOSP/AOSP_Contacts.OpenURLOfaContactWithMultipleWebsites" TcMaxAttempt="2"/>
+            <TestCase Id="../../../../../TC/TR_ODM/LOLLIPOP/MR_1/AppTesting_AOSP/AOSP_Contacts.Join_SeparateContacts" TcMaxAttempt="2"/>
+
+            <TestCase Id="../../../../../TC/TR_ODM/LOLLIPOP/MR_1/AppTesting_AOSP/AOSP_Settings.Enable_Disable__largetext" TcMaxAttempt="2"/>
+            <TestCase Id="../../../../../TC/TR_ODM/LOLLIPOP/MR_1/AppTesting_AOSP/AOSP_Settings.EnableDeveloperOptions" TcMaxAttempt="2"/>
+            <TestCase Id="../../../../../TC/TR_ODM/LOLLIPOP/MR_1/AppTesting_AOSP/AOSP_Settings.CheckLegalInfo" TcMaxAttempt="2"/>
+            <TestCase Id="../../../../../TC/TR_ODM/LOLLIPOP/MR_1/AppTesting_AOSP/AOSP_Settings.Enable_disable__AllowMockLocations__I" TcMaxAttempt="2"/>
+            <TestCase Id="../../../../../TC/TR_ODM/LOLLIPOP/MR_1/AppTesting_AOSP/AOSP_Settings.Enable_disable__ShowTouches__I" TcMaxAttempt="2"/>
+            <TestCase Id="../../../../../TC/TR_ODM/LOLLIPOP/MR_1/AppTesting_AOSP/AOSP_Settings.Enable_Disable__ShowAllANRS__I" TcMaxAttempt="2"/>
+            <TestCase Id="../../../../../TC/TR_ODM/LOLLIPOP/MR_1/AppTesting_AOSP/AOSP_Settings.OwnerInfoDisabled_I" TcMaxAttempt="2"/>
+            <TestCase Id="../../../../../TC/TR_ODM/LOLLIPOP/MR_1/AppTesting_AOSP/AOSP_Settings.AdjustBrightness50Times_I"/>
+            <TestCase Id="../../../../../TC/TR_ODM/LOLLIPOP/MR_1/AppTesting_AOSP/AOSP_Settings.ChangeTheFontSizeInSettings" TcMaxAttempt="2"/>
+            <TestCase Id="../../../../../TC/TR_ODM/LOLLIPOP/MR_1/AppTesting_AOSP/AOSP_Settings.Enable_disable__ForceGPURendering__I" TcMaxAttempt="2"/>
+            <TestCase Id="../../../../../TC/TR_ODM/LOLLIPOP/MR_1/AppTesting_AOSP/AOSP_Settings.EnableAndDisableTheDaydream" TcMaxAttempt="2"/>
+            <TestCase Id="../../../../../TC/TR_ODM/LOLLIPOP/MR_1/AppTesting_AOSP/AOSP_Settings.CheckTheStorageInSettings_I" TcMaxAttempt="2"/>
+            <TestCase Id="../../../../../TC/TR_ODM/LOLLIPOP/MR_1/AppTesting_AOSP/AOSP_Settings.TakeBugReport_I" TcMaxAttempt="2"/>
+            <TestCase Id="../../../../../TC/TR_ODM/LOLLIPOP/MR_1/AppTesting_AOSP/AOSP_Settings.VerifySortbySize_nameInAllTab" TcMaxAttempt="2"/>
+            <TestCase Id="../../../../../TC/TR_ODM/LOLLIPOP/MR_1/AppTesting_AOSP/AOSP_Settings.DeveloperOptions-ShowHardwareLayersUpdates_I" TcMaxAttempt="2"/>
+            <TestCase Id="../../../../../TC/TR_ODM/LOLLIPOP/MR_1/AppTesting_AOSP/AOSP_Settings.ViewDeviceStorage" TcMaxAttempt="2"/>
+            <TestCase Id="../../../../../TC/TR_ODM/LOLLIPOP/MR_1/AppTesting_AOSP/AOSP_Settings.DeveloperOptions__WindowAnimationScale__I" TcMaxAttempt="2"/>
+            <TestCase Id="../../../../../TC/TR_ODM/LOLLIPOP/MR_1/AppTesting_AOSP/AOSP_Settings.ViewDeviceAdminstrationSettingScreen_I" TcMaxAttempt="2"/>
+            <TestCase Id="../../../../../TC/TR_ODM/LOLLIPOP/MR_1/AppTesting_AOSP/AOSP_Settings.ModifyBrightness_I" TcMaxAttempt="2"/>
+            <TestCase Id="../../../../../TC/TR_ODM/LOLLIPOP/MR_1/AppTesting_AOSP/AOSP_Settings.ChangeTheDaydream-clockStyle" TcMaxAttempt="2"/>
+            <TestCase Id="../../../../../TC/TR_ODM/LOLLIPOP/MR_1/AppTesting_AOSP/AOSP_Settings.Enable_disable__Do_not_keepActivities__I" TcMaxAttempt="2"/>
+            <TestCase Id="../../../../../TC/TR_ODM/LOLLIPOP/MR_1/AppTesting_AOSP/AOSP_Settings.ChangeWallpaperInSettings" TcMaxAttempt="2"/>
+            <TestCase Id="../../../../../TC/TR_ODM/LOLLIPOP/MR_1/AppTesting_AOSP/AOSP_Settings.Enable_disable__ShowCPUusage__I" TcMaxAttempt="2"/>
+            <TestCase Id="../../../../../TC/TR_ODM/LOLLIPOP/MR_1/AppTesting_AOSP/AOSP_Settings.Enable_disable__PointerLocation__I" TcMaxAttempt="2"/>
+            <TestCase Id="../../../../../TC/TR_ODM/LOLLIPOP/MR_1/AppTesting_AOSP/AOSP_Settings.SortDownloadedApplicationsBySize_name_I" TcMaxAttempt="2"/>
+            <TestCase Id="../../../../../TC/TR_ODM/LOLLIPOP/MR_1/AppTesting_AOSP/AOSP_Settings.DeveloperOptions__TransitionAnimationScale__I" TcMaxAttempt="2"/>
+            <TestCase Id="../../../../../TC/TR_ODM/LOLLIPOP/MR_1/AppTesting_AOSP/AOSP_Settings.Set_whenToDaydream_to__Either" TcMaxAttempt="2"/>
+            <TestCase Id="../../../../../TC/TR_ODM/LOLLIPOP/MR_1/AppTesting_AOSP/AOSP_Settings.DeveloperOptions-Enable_Disable__StrictModeEnabled__I" TcMaxAttempt="2"/>
+            <TestCase Id="../../../../../TC/TR_ODM/LOLLIPOP/MR_1/AppTesting_AOSP/AOSP_Settings.enable_disableForce4xMSAA_I" TcMaxAttempt="2"/>
+            <TestCase Id="../../../../../TC/TR_ODM/LOLLIPOP/MR_1/AppTesting_AOSP/AOSP_Settings.Set__BackgroundProcessLimit__I" TcMaxAttempt="2"/>
+            <TestCase Id="../../../../../TC/TR_ODM/LOLLIPOP/MR_1/AppTesting_AOSP/AOSP_Settings.DeveloperOptions-Enable_disable__ShowSurfaceUpdates__I" TcMaxAttempt="2"/>
+            <TestCase Id="../../../../../TC/TR_ODM/LOLLIPOP/MR_1/AppTesting_AOSP/AOSP_Settings.Set_whenToDaydream_to__whileCharging" TcMaxAttempt="2"/>
+            <TestCase Id="../../../../../TC/TR_ODM/LOLLIPOP/MR_1/AppTesting_AOSP/AOSP_Settings.TheDisplayOfDeveloperOptions_I" TcMaxAttempt="2"/>
+            <TestCase Id="../../../../../TC/TR_ODM/LOLLIPOP/MR_1/AppTesting_AOSP/AOSP_Settings.TurnOn_Off_AirplaneMode50Times_I"/>
+            <TestCase Id="../../../../../TC/TR_ODM/LOLLIPOP/MR_1/AppTesting_AOSP/AOSP_Settings.DisplayProfileStatus_airplaneMode_I" TcMaxAttempt="2"/>
+            <TestCase Id="../../../../../TC/TR_ODM/LOLLIPOP/MR_1/AppTesting_AOSP/prerequisites/prereq_ConnectToAP"/>
+            <TestCase Id="../../../../../TC/TR_ODM/LOLLIPOP/MR_1/AppTesting_AOSP/AOSP_Settings.SetDefinedLiveWallpaper_I" TcMaxAttempt="2"/>
+            <TestCase Id="../../../../../TC/TR_ODM/LOLLIPOP/MR_1/AppTesting_AOSP/AOSP_Settings.RemoveEmailAccount" TcMaxAttempt="2"/>
+
+            <TestCase Id="../../../../../TC/TR_ODM/LOLLIPOP/MR_1/AppTesting_AOSP/prerequisites/prereq_REMOVE_GOOGLE_ACCOUNTS"/>
+      </TestCases>
+</Campaign>

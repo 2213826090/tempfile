@@ -1,0 +1,24 @@
+<?xml version="1.0" ?>
+<Campaign version="13.49">
+    <Parameters>
+        <Parameter isControlledPSUsed="False"/>
+        <Parameter isIoCardUsed="False"/>
+        <Parameter skipBootOnPowerCycle="False"/>
+        <Parameter bootRetryNumber="0"/>
+        <Parameter runHookScripts="False"/>
+        <Parameter powerCycleBetweenTC="False"/>
+        <Parameter powerCycleOnFailure="False"/>
+        <Parameter finalDutState="NoChange"/>
+        <Parameter stopCampaignOnCriticalFailure="False"/>
+        <Parameter stopCampaignOnFirstFailure="False"/>
+        <Parameter loggingLevel="debug"/>
+        <Parameter CampaignType="Other"/>
+    </Parameters>
+    <TestCases>
+        <TestCase Id="../../../../../TC/TP/TC/GOTA/GOTA.GOTA.check_AFW_device_owner_after_gota.CheckDeviceOwnerAfterGOTA.testCheckDeviceOwnerAfterGOTA"/>
+        <TestCase Id="../../../../../TC/TP/TC/GOTA/GOTA.GOTA.check_AFW_data_in_app_after_gota.CheckAFWDataInAppAfterGOTA.testCheckAFWDataInAppAfterGOTA"/>
+        <TestCase Id="../../../../../TC/TP/TC/GOTA/GOTA.GOTA.check_gota_package_deleted_if_failed.Gota_package_deleted_if_failed.testGota_package_deleted_if_failed"/>
+        <TestCase Id="../../../../../TC/TP/TC/GOTA/GOTA.GOTA.check_gota_wifi_reconnect_during_gota.WifiReconnectDuringGOTA.testWifiReconnectDuringGOTA"/>
+        <TestCase Id="../../../../../TC/TP/TC/GOTA/GOTA.GOTA.check_gota_five_times.CheckGotaFiveTimes.testGotaFiveTimes"/>
+    </TestCases>
+</Campaign>

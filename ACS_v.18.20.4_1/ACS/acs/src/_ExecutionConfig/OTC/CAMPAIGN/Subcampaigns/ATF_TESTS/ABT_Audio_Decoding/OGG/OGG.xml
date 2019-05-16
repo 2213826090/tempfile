@@ -1,0 +1,32 @@
+<?xml version="1.0" ?>
+<Campaign>
+      <Parameters>
+            <Parameter isControlledPSUsed="False"/>
+            <Parameter isIoCardUsed="False"/>
+            <Parameter skipBootOnPowerCycle="False"/>
+            <Parameter bootRetryNumber="0"/>
+            <Parameter runHookScripts="False"/>
+            <Parameter powerCycleBetweenTC="False"/>
+            <Parameter powerCycleOnFailure="False"/>
+            <Parameter finalDutState="NoChange"/>
+            <Parameter stopCampaignOnCriticalFailure="False"/>
+            <Parameter stopCampaignOnFirstFailure="False"/>
+            <Parameter loggingLevel="debug"/>
+            <Parameter CampaignType="Other"/>
+      </Parameters>
+      <TestCases>
+            <TestCase Id="../../../../../TC/TR/ATF_TESTS/ABT_Audio_Decoding/OGG/OGG_44.1KHz_256Kbps_Stereo.ogg"/>
+            <TestCase Id="../../../../../TC/TR/ATF_TESTS/ABT_Audio_Decoding/OGG/OGG_24kHz_128kbps_Stereo.ogg"/>
+            <TestCase Id="../../../../../TC/TR/ATF_TESTS/ABT_Audio_Decoding/OGG/OGG_44.1KHz_64Kbps_Stereo.ogg"/>
+            <TestCase Id="../../../../../TC/TR/ATF_TESTS/ABT_Audio_Decoding/OGG/OGG_44.1kHz_92kbps_Mono.ogg"/>
+            <TestCase Id="../../../../../TC/TR/ATF_TESTS/ABT_Audio_Decoding/OGG/OGG_48kHz_240kbps_Mono.ogg"/>
+            <TestCase Id="../../../../../TC/TR/ATF_TESTS/ABT_Audio_Decoding/OGG/OGG_8kHz_42kbps_Mono.ogg"/>
+            <TestCase Id="../../../../../TC/TR/ATF_TESTS/ABT_Audio_Decoding/OGG/OGG_48kHz_256kbps_Stereo.ogg"/>
+            <TestCase Id="../../../../../TC/TR/ATF_TESTS/ABT_Audio_Decoding/OGG/OGG_48kHz_128kbps_Stereo.ogg"/>
+            <TestCase Id="../../../../../TC/TR/ATF_TESTS/ABT_Audio_Decoding/OGG/OGG_48kHz_500kbps_Stereo.ogg"/>
+            <TestCase Id="../../../../../TC/TR/ATF_TESTS/ABT_Audio_Decoding/OGG/OGG_44.1KHz_128Kbps_Stereo.ogg"/>
+            <TestCase Id="../../../../../TC/TR/ATF_TESTS/ABT_Audio_Decoding/OGG/OGG_32kHz_128kbps_Mono.ogg"/>
+            <TestCase Id="../../../../../TC/TR/ATF_TESTS/ABT_Audio_Decoding/OGG/OGG_44.1kHz_128kbps_Mono.ogg"/>
+            <TestCase Id="../../../../../TC/TR/ATF_TESTS/ABT_Audio_Decoding/OGG/OGG_44.1kHz_64kbps_Mono.ogg"/>
+      </TestCases>
+</Campaign>

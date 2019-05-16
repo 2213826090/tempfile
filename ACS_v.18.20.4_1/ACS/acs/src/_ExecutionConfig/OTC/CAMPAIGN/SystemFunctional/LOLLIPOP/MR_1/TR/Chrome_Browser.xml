@@ -1,0 +1,149 @@
+<?xml version='1.0' encoding='ASCII'?>
+<Campaign version="13.49">
+    <Parameters>
+        <Parameter isControlledPSUsed="False"/>
+        <Parameter isIoCardUsed="False"/>
+        <!-- Set skipBootOnPowerCycle to True to disable the accs boot procedure -->
+        <!-- Important, it means that boot will be handle inside the campaign/tc -->
+        <Parameter skipBootOnPowerCycle="False"/>
+        <!-- Set bootRetryNumber to maximum number of boot retries during the acs boot procedure -->
+        <!-- Important, it means that bootRetryNumber is set by default to 0 if not specified -->
+        <Parameter bootRetryNumber="0"/>
+        <Parameter runHookScripts="False"/>
+        <Parameter powerCycleBetweenTC="False"/>
+        <Parameter powerCycleOnFailure="False"/>
+        <!-- finalDutState allows user to leave the DUT in a specific state at the end of the campaign
+            Possible values: PowerOn | PowerOff | Charging | NoChange
+            By default DUT is leaved in NoChange state.
+            In case the user selects Charging as final state of the DUT and that DUT fails to enter Charging,
+            ACS shall try to switch the DUT off -->
+        <Parameter finalDutState="NoChange"/>
+        <Parameter stopCampaignOnCriticalFailure="False"/>
+        <Parameter stopCampaignOnFirstFailure="False"/>
+        <!-- LoggingLevel possible values: info | warning | debug | error -->
+        <Parameter loggingLevel="debug"/>
+        <!-- CampaignType format -> <TEAM>_<CAMPAIGNTYPE>
+            Possible values:
+            FT(Feature Team)-> SANITY | REGRESSION | STRESS, RELIABILTY | MTBF
+            ST(System Test)-> SANITY | REGRESSION | STRESS, RELIABILTY | MTBF | EM
+            SI(System Integration)-> EAT | STAB | PACT | CAT0 | RELIABILITY | MTBF | CTS | ACS_CI
+            Otherwise "Others" should be used -->
+        <Parameter CampaignType="MTBF"/>
+        <Parameter TCRReportViaRESTAPI="True"/>
+    </Parameters>
+    <Targets>
+        <!-- Target Values -->
+        <Target targetB2bPassRate="100"/>
+    </Targets>
+    <TestCases>
+        <TestCase Id="../../../../../TC/TR/ACS/Applications/Chrome/prereq_ConnectToAP"/>
+        <!-- ensure connection to internet -->
+        <TestCase Id="../../../../../TC/TR/ACS/Applications/Chrome/prerequisites/prereq_UPDATE_GMS_CHROME" TcMaxAttempt="4"/>
+        <!-- install latest Chrome updates -->
+        <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Chrome/prerequisites/prereq_Get_chromedriver_from_ACS_download_dir"/>
+        <!-- fetch chromedriver binaries -->
+        <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Chrome/prerequisites/prereq_Disable_Merge_tabs_with_apps"/>
+        <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Chrome/prerequisites/prereq_Reboot_Device" TcMaxAttempt="2"/>
+
+        <TestCase Id="../../../../../TC/TR/ACS/Applications/Chrome/Browser_Chrome_Add.a.bookmark.shortcut.to.homescreen" TcMaxAttempt="2"/>
+        <TestCase Id="../../../../../TC/TR/ACS/Applications/Chrome/Browser_Chrome_Add.bookmark.to.specified.folder" TcMaxAttempt="2"/>
+        <TestCase Id="../../../../../TC/TR/ACS/Applications/Chrome/Browser_Chrome_Add.Bookmarks" TcMaxAttempt="2"/>
+        <TestCase Id="../../../../../TC/TR/ACS/Applications/Chrome/Browser_Chrome_Cancel.the.folder.creation" TcMaxAttempt="2"/>
+        <TestCase Id="../../../../../TC/TR/ACS/Applications/Chrome/Browser_Chrome_Create.a.folder.with.a.long.name" TcMaxAttempt="2"/>
+        <TestCase Id="../../../../../TC/TR/ACS/Applications/Chrome/Browser_Chrome_Create.bookmark.folder" TcMaxAttempt="2"/>
+        <TestCase Id="../../../../../TC/TR/ACS/Applications/Chrome/Browser_Chrome_Delete.folder.in.bookmark" TcMaxAttempt="2"/>
+        <TestCase Id="../../../../../TC/TR/ACS/Applications/Chrome/Browser_Chrome_Edit.Bookmark" TcMaxAttempt="2"/>
+        <TestCase Id="../../../../../TC/TR/ACS/Applications/Chrome/Browser_Chrome_Open.bookmark.in.current.window" TcMaxAttempt="2"/>
+        <TestCase Id="../../../../../TC/TR/ACS/Applications/Chrome/Browser_Chrome_Save.duplicated.name.when.edit.bookmark" TcMaxAttempt="2"/>
+
+        <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Chrome/Browser_Chrome_Check.the.Home.button"/>
+        <!--Leave this as first test as it clears any problems with the initial state-->
+        <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Chrome/Browser_Chrome_TBA_Enter.URL.address"/>
+        <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Chrome/Browser_Chrome_TBA_Navigation"/>
+        <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Chrome/Browser_Chrome_TBA_Print.Option"/>
+        <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Chrome/Browser_Chrome_TBA_Search.Google.for.the.image"/>
+        <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Chrome/Browser_Chrome_Check.Find.in.page.button"/>
+        <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Chrome/Browser_Chrome_Full.Screen.Browsing"/>
+        <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Chrome/Browser_Chrome_Help.and.Feedback"/>
+        <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Chrome/Browser_Chrome_Launch.the.browser.in.landscape.and.portrait.mode"/>
+        <!-- Chromedriver tests -->
+        <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Chrome/Browser_Chrome_Remove.a.page.from.History"/>
+        <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Chrome/Browser_Chrome_Remove.a.website.from.Most.visited.page"/>
+
+        <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Chrome/prerequisites/prereq_Reboot_Device" TcMaxAttempt="2"/>
+
+        <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Chrome/Browser_Chrome_Open.a Web.page.from.the.most.visited"/>
+        <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Chrome/Browser_Chrome_TBA_Check.Block.pop-ups"/>
+        <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Chrome/Browser_Chrome_TBA_Web.Worker"/>
+        <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Chrome/Browser_Chrome_TBA_Open.tabs.as.much.as.possible"/>
+        <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Chrome/Browser_Chrome_History_sorted_by_time"/>
+        <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Chrome/Browser_Chrome_Save.bookmark.in.incognito.tab"/>
+        <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Chrome/Browser_Chrome_Display.image.when.tap_clicks.the.image.in.webpage"/>
+        <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Chrome/Browser_Chrome_Context.Menu.Display"/>
+
+        <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Chrome/Browser_Chrome_TBA_Check_Enable.JavaScript"/>
+        <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Chrome/Browser_Chrome_Browser.support.https.protocol"/>
+        <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Chrome/Browser_Chrome_Copy.and.paste.text.in.browser"/>
+        <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Chrome/Browser_Chrome_New.tab"/>
+        <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Chrome/Browser_Chrome_Browser.support.select.Request.Desktop.site"/>
+        <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Chrome/Browser_Chrome_Click.input.history.on.Drop-down.list"/>
+        <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Chrome/Browser_Chrome_History"/>
+        <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Chrome/Browser_Chrome_TBA_Watching_HTML5.Video.Clips"/>
+        <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Chrome/Browser_Chrome_Download.file.from.incognito.tab"/>
+        <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Chrome/Browser_Chrome_Download.Manager.Sorting.files"/>
+        <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Chrome/Browser_Chrome_TBA_Tabs.Switch.Modes"/>
+
+        <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Chrome/prerequisites/prereq_Reboot_Device" TcMaxAttempt="2"/>
+
+        <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Chrome/Browser_Chrome_New.Incognito"/>
+        <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Chrome/Browser_Chrome_TBA_Open.a.link.in.new.tab"/>
+        <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Chrome/Browser_Chrome_Check.Accept.cookies"/>
+        <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Chrome/Browser_Chrome_Download.same.name.files"/>
+        <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Chrome/Browser_Chrome_Long.bookmark.name.and.URL"/>
+        <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Chrome/Browser_Chrome_Add.a.bookmark.after.playing.video.in.browser"/>
+        <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Chrome/Browser_Chrome_TBA_Play.streaming.audio.in.browser"/>
+        <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Chrome/Browser_Chrome_TBA_Text_Input_Text.Selection.and.deletion"/>
+        <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Chrome/Browser_Chrome_CSS.Validation"/>
+        <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Chrome/Browser_Chrome_Click.url.when.page.loading"/>
+        <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Chrome/Browser_Chrome_HTML5.Web.Storage"/>
+        <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Chrome/Browser_Chrome_Listening.HTML5.Audio"/>
+        <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Chrome/Browser_Chrome_Check.Text.scaling"/>
+        <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Chrome/Browser_Chrome_Input.text.after.page.zoomed"/>
+        <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Chrome/Browser_Chrome_Text_Input.Check.input.in.Password.field"/>
+        <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Chrome/Browser_Chrome_Check.Force.enable.zoom"/>
+        <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Chrome/Browser_Chrome_Check.Website.Settings"/>
+        <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Chrome/Browser_Chrome_Share.current.page.via.bluetooth"/>
+        <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Chrome/Browser_Chrome_SVG"/>
+        <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Chrome/Browser_Chrome_Cancel.download.multiple.objects"/>
+
+        <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Chrome/prerequisites/prereq_Reboot_Device" TcMaxAttempt="2"/>
+
+        <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Chrome/Browser_Chrome_Exit.browser.while.downloading"/>
+        <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Chrome/Browser_Chrome_Retry_Delete.download.file.after.download.failed"/>
+        <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Chrome/Browser_Chrome_TBA_Download.a.file.larger.than.free.space"/>
+        <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Chrome/Browser_Chrome_Download.Files.through.mirrors"/>
+        <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Chrome/Browser_Chrome_Multiple.download.tasks"/>
+        <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Chrome/Browser_Chrome_Share.a.file.while.downloading.is.in.progress"/>
+        <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Chrome/Browser_Chrome_Check_history_list_when_use_incognito_tab_to_visit_webpage"/>
+        <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Chrome/Browser_Chrome_Clear.all.download.before.all.tasks.are.finished"/>
+        <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Chrome/Browser_Chrome_Clear.download.notifications.in.expand.view"/>
+        <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Chrome/Browser_Chrome_Download.Manager_Details.of.the.downloaded.file"/>
+        <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Chrome/Browser_Chrome_TBA_Download.Files"/>
+        <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Chrome/Browser_Chrome_Download.when.the.DUT.locked"/>
+        <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Chrome/Browser_Chrome_Edit.bookmark.in.Portrait_Landscape.mode"/>
+        <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Chrome/Browser_Chrome_Edit.the.user.defined.folder"/>
+        <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Chrome/Browser_Chrome_Most.visited.Page.functionality"/>
+        <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Chrome/Browser_Chrome_Check.Autofill.forms"/>
+        <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Chrome/Browser_Chrome_Disconnect.then.reconnect.network.in.the.downloading.process"/>
+        <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Chrome/Browser_Chrome_Download.in.the.background.when.DUT.screen.sleeping"/>
+        <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Chrome/Browser_Chrome_TBA_Chat_IM"/>
+
+        <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Chrome/prerequisites/prereq_Reboot_Device" TcMaxAttempt="2"/>
+
+        <!-- Very long lasting test ... leave it at the end of the campaign-->
+        <!-- Test lasts for 40 minutes, so consider removing it when time is a constraint -->
+        <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Chrome/Browser_Chrome_TBA_HTML5-WebGL"/>
+        <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Chrome/Browser_Chrome_Alarm.clock.alert.when.clear.History.record"/>
+
+    </TestCases>
+</Campaign>

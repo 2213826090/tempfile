@@ -1,0 +1,24 @@
+{
+    "Configuration": {
+        "Boot": {
+            "BOOT_ON_FORCED_SHUTDOWN": true
+        },
+        "BootVars": null,
+        "Custom": null,
+        "Flash": {
+            "CHECK_OSLOADER": false,
+            "DEDIPROG": false,
+            "PARTITION_TYPE": "osip",
+            "UEFI": false
+        },
+        "Logs": null,
+        "Timeout": null,
+        "WorkAround": {
+            "TC": {
+                "Issue": "BZ 128101 - Wrong SPID",
+                "Name": "PUPDR_SPID_CHECK",
+                "Pattern": "(?!ERROR)*ERROR: HW_ID = .* mismatches with.*board_type = 'ctp_pr3.1'(?!ERROR)*"
+            }
+        }
+    }
+}

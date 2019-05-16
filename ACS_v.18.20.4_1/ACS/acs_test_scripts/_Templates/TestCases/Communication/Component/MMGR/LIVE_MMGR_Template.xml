@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="13.37">
+    <UseCase>LIVE_MMGR</UseCase>
+    <Description>Run a mmgr-test testcase in Main OS mode (MOS). Supported platform is Linux only.</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <Parameters>
+        <Parameter>
+            <!-- Test modem reset without core dump -->
+            <Name>TEST_NUMBER</Name>
+            <Value>1</Value>
+        </Parameter>
+        <Parameter>
+            <!-- A string indicating the expected result for mmgr-test -->
+            <Name>EXPECTED_RESULT</Name>
+            <Value>SUCCEED</Value>
+        </Parameter>
+        <Parameter>
+            <!-- The test execution timeout in seconds -->
+            <Name>EXECUTION_TIMEOUT</Name>
+            <Value>180</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Absolute path of the platform's configuration name -->
+            <Name>TARGET_PLATFORM_CONFIG_PATH</Name>
+            <Value>/sys/kernel/telephony/</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Absolute path of the scalability configuration file -->
+            <Name>TARGET_CONFIG_SCALABILITY_PATH</Name>
+            <Value>/system/etc/telephony/</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Maximum cold resets allowed before performing platform reboot -->
+            <Name>MAX_MODEM_COLD_RESET</Name>
+            <Value>10</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

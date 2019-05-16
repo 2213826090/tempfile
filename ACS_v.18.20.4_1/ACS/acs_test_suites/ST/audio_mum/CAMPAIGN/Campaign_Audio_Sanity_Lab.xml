@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<Campaign>
+  <Parameters>
+    <Parameter isControlledPSUsed ="False"/>
+    <Parameter isIoCardUsed ="False"/>
+    <!-- Set skipBootOnPowerCycle to True to disable the accs boot procedure-->
+    <!-- Important, it means that boot will be handle inside the campaign/tc -->
+    <Parameter skipBootOnPowerCycle ="False"/>
+    <Parameter runHookScripts = "False"/>
+    <Parameter powerCycleBetweenTC ="False"/>
+    <Parameter powerCycleOnFailure ="False"/>
+    <Parameter stopCampaignOnCriticalFailure = "False"/>
+    <!-- LoggingLevel possible values: info | warning | debug | error -->
+    <Parameter loggingLevel = "info"/>
+    <!-- CampaignType format -> <TEAM>_<CAMPAIGNTYPE>
+        Possible values:
+        FT(Feature Team)-> SANITY | REGRESSION | STRESS, RELIABILTY | MTBF
+        ST(System Test)-> SANITY | REGRESSION | STRESS, RELIABILTY | MTBF
+        SI(System Integration)-> EAT | STAB | PACT | CAT0 | RELIABILITY | MTBF | CTS
+        Otherwise "Others" should be used -->
+    <Parameter CampaignType = "ST_SANITY"/>
+  </Parameters>
+  <Targets>
+    <!-- Target Values -->
+    <Target targetB2bPassRate ="80"/>
+  </Targets>
+  <TestCases>
+
+          <!-- voice call record 1 -->
+
+          <!-- ringtone common -->
+    <TestCase Id="../TC/Lab/2g/ST_AUD_MM_Tone_006-LAB_GSM_VC_RINGTONE_MTMR"/>
+    <TestCase Id="../TC/Lab/2g/ST_AUD_MM_Tone_012-LAB_GSM_VC_RINGTONE_MTMR"/>
+
+  </TestCases>
+</Campaign>

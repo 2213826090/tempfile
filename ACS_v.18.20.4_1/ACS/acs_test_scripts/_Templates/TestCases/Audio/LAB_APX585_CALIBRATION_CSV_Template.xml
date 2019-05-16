@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="13.37">
+    <UseCase>LAB_AUDIO_APX_CALIBRATION_CSV</UseCase>
+    <Description>Calibration for APX585 equipment</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>False</b2bContinuousMode>
+    <Parameters>
+        <Parameter>
+            <!-- Accessorie type (EARPIECE|SPEAKER|HEADSET|BLUETOOTHA2DP|BLUETOOTHHSP) -->
+            <Name>ACC_TYPE</Name>
+            <Value>SPEAKER</Value>
+        </Parameter>
+        <Parameter>
+             <!-- >Stream Call Volume in percent of dut phone -->
+            <Name>CALL_VOLUME_DUT</Name>
+            <Value>80</Value>
+        </Parameter>
+        <Parameter>
+             <!-- >Stream Call Volume in percent of ref phone -->
+            <Name>CALL_VOLUME_REF</Name>
+            <Value>70</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

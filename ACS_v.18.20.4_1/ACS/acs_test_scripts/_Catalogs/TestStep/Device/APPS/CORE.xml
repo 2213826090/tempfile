@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestSteps xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../acs/src/_Catalogs/TestStep/teststep.xsd">
+    <TestStep Id="BROWSE_AND_CHECK" Domain="APPS" SubDomain="CORE" Feature="BROWSER" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Apps.Core.Browser.WebBrowseAndCheck.WebBrowseAndCheck</ClassName>
+        <Description>
+                    For each web pages given to the test step, this step do:
+                        - unlock device screen
+                        - wake up screen
+                        - open web browser and load a page
+                        - store verdict
+                        - close web browser
+                    At the end, a global verdict is computed.
+        </Description>
+        <Environment name="ANY"/>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues/>
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="BROWSER_TYPE" type="BROWSER_TYPE" isOptional="false">
+                <Description>Browser to use.</Description>
+                <PossibleValues>NATIVE;CHROME;ACS_AGENT</PossibleValues>
+                <DefaultValue>ACS_AGENT</DefaultValue>
+            </Parameter>
+            <Parameter name="WEBSITE_URL" type="WEBSITE_URL" isOptional="false">
+                <Description>
+                    Website url - Should follow the format: http://xxx. Multiple page browsing can also be achieved by
+                    providing multiple website urls separated by ";". Each page will be loaded one after an other
+                </Description>
+                <PossibleValues/>
+                <DefaultValue>http://www.intel.com</DefaultValue>
+            </Parameter>
+            <Parameter name="TIMEOUT" type="TIMEOUT_IN_SEC" isOptional="false">
+                <Description>
+                    The timeout to use when loading a webpage.
+                </Description>
+                <PossibleValues/>
+                <DefaultValue>20</DefaultValue>
+            </Parameter>
+            <Parameter name="LOOP_TIMER" type="TIMEOUT_IN_SEC" isOptional="true">
+                <Description>
+                    Time of the loop to browse web pages. Set to 0 to not use this value and do only one loop.
+                    All webpages are opened during each loop.
+                </Description>
+                <PossibleValues/>
+                <DefaultValue>0</DefaultValue>
+            </Parameter>
+            <Parameter name="EXPECTED_VERDICT" type="STRING" isOptional="true">
+                <Description>
+                    Used if you expect that the test step verdict is fail. Default expected verdict is PASS.
+                </Description>
+                <PossibleValues>PASS;FAIL</PossibleValues>
+                <DefaultValue>PASS</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="START_BROWSING" Domain="APPS" SubDomain="CORE" Feature="BROWSER" Status="DONE">
+            <ClassName>acs_test_scripts.TestStep.Device.Apps.Core.Browser.ExecuteWebBrowsing.StartBrowsing</ClassName>
+            <Description>
+                        Start a web browsing on specified URL
+            </Description>
+            <Environment name="ANY"/>
+            <Parameters>
+                <Parameter name="DEVICE" type="STRING" isOptional="false">
+                    <Description>Device name on which the action will be executed</Description>
+                    <PossibleValues/>
+                    <DefaultValue>PHONE1</DefaultValue>
+                </Parameter>
+                <Parameter name="BROWSER_TYPE" type="STRING" isOptional="false">
+                    <Description>Browser to use.</Description>
+                    <PossibleValues>native;chrome</PossibleValues>
+                    <DefaultValue>chrome</DefaultValue>
+                </Parameter>
+                <Parameter name="WEBSITE_URL" type="WEBSITE_URL" isOptional="false">
+                    <Description>
+                        Website url - Should follow the format: http://xxx.
+                    </Description>
+                    <PossibleValues/>
+                    <DefaultValue/>
+                </Parameter>
+                <Parameter name="APP_NAME" type="WEBSITE_URL" isOptional="true">
+                    <Description>
+                        App name to identify web browser process.
+                    </Description>
+                    <PossibleValues/>
+                    <DefaultValue/>
+                </Parameter>
+                <Parameter name="TIMEOUT" type="TIMEOUT_IN_SEC" isOptional="true">
+                    <Description>
+                        The timeout to use when loading a webpage.
+                        If value specified is 0, no wait to load the webpage
+                    </Description>
+                    <PossibleValues/>
+                    <DefaultValue>20</DefaultValue>
+                </Parameter>
+            </Parameters>
+    </TestStep>
+    <TestStep Id="STOP_BROWSING" Domain="APPS" SubDomain="CORE" Feature="BROWSER" Status="DONE">
+            <ClassName>acs_test_scripts.TestStep.Device.Apps.Core.Browser.ExecuteWebBrowsing.StopBrowsing</ClassName>
+            <Description>
+                        Start a web browsing on specified URL
+            </Description>
+            <Environment name="ANY"/>
+            <Parameters>
+                <Parameter name="DEVICE" type="STRING" isOptional="false">
+                    <Description>Device name on which the action will be executed</Description>
+                    <PossibleValues/>
+                    <DefaultValue>PHONE1</DefaultValue>
+                </Parameter>
+                <Parameter name="BROWSER_TYPE" type="STRING" isOptional="false">
+                    <Description>Browser to use.</Description>
+                    <PossibleValues>native;chrome</PossibleValues>
+                    <DefaultValue>chrome</DefaultValue>
+                </Parameter>
+            </Parameters>
+    </TestStep>
+    <TestStep Id="CHECK_ALARM_CLOCK" Domain="APPS" SubDomain="CORE" Feature="BROWSER" Status="DONE">
+            <ClassName>acs_test_scripts.TestStep.Device.Apps.Core.Clock.CheckAlarmClock.CheckAlarmClock</ClassName>
+            <Description>
+                        This teststep checks an alarm clock using an android intent. It is mandatory to sepcify the
+                device and the time given by the pair alarm_hour_to_check and alarm_minutes_to_check.
+            </Description>
+            <Environment name="ANY"/>
+            <Parameters>
+                <Parameter name="DEVICE" type="STRING" isOptional="false">
+                    <Description>Device name on which the action will be executed</Description>
+                    <PossibleValues/>
+                    <DefaultValue>PHONE1</DefaultValue>
+                </Parameter>
+                <Parameter name="ALARM_HOUR_TO_CHECK" type="STRING" isOptional="false">
+                    <Description>What was the set hour for the alarm to ring.</Description>
+                    <PossibleValues></PossibleValues>
+                    <DefaultValue>0</DefaultValue>
+                </Parameter>
+                <Parameter name="ALARM_MINUTES_TO_CHECK" type="STRING" isOptional="false">
+                    <Description>What were the set minutes for the alarm to ring.</Description>
+                    <PossibleValues></PossibleValues>
+                    <DefaultValue>5</DefaultValue>
+                </Parameter>
+            </Parameters>
+    </TestStep>
+    <TestStep Id="INSTALL_BUSYBOX" Domain="APPS" SubDomain="CORE" Feature="BROWSER" Status="DONE">
+            <ClassName>acs_test_scripts.TestStep.Device.Apps.Core.InstallBusyBox.InstallBusyBox</ClassName>
+            <Description>
+                        install busybox tool on the device.
+            </Description>
+            <Environment name="ANY"/>
+            <Parameters>
+                <Parameter name="DEVICE" type="STRING" isOptional="false">
+                    <Description>Device name on which the action will be executed</Description>
+                    <PossibleValues/>
+                    <DefaultValue>PHONE1</DefaultValue>
+                </Parameter>
+                <Parameter name="FILE" type="STRING" isOptional="false">
+                    <Description>busybox installation file.</Description>
+                    <PossibleValues/>
+                    <DefaultValue>busybox</DefaultValue>
+                </Parameter>
+            </Parameters>
+    </TestStep>
+    <TestStep Id="GRANT_RUNTIME_PERMISSION" Domain="APPS" SubDomain="CORE" Feature="BROWSER" Status="DONE">
+            <ClassName>acs_test_scripts.TestStep.Device.Apps.Core.GrantRuntimePermission.GrantRuntimePermission</ClassName>
+            <Description>
+                Grant runtime permission for given package
+            </Description>
+            <Environment name="ANY"/>
+            <Parameters>
+                <Parameter name="DEVICE" type="STRING" isOptional="false">
+                    <Description>Device name on which the action will be executed</Description>
+                    <PossibleValues/>
+                    <DefaultValue>PHONE1</DefaultValue>
+                </Parameter>
+                <Parameter name="PACKAGE" type="STRING" isOptional="false">
+                    <Description>package</Description>
+                    <PossibleValues/>
+                    <DefaultValue></DefaultValue>
+                </Parameter>
+            </Parameters>
+    </TestStep>
+    <TestStep Id="INSTALL_CHROME_IF_NEEDED" Domain="APPS" SubDomain="CORE" Feature="BROWSER" Status="DONE">
+            <ClassName>acs_test_scripts.TestStep.Device.Apps.Core.Browser.InstallChromeIfNeeded.InstallChromeIfNeeded</ClassName>
+            <Description>
+                        Uninstall Chrome application from the device.
+            </Description>
+            <Environment name="ANY"/>
+            <Parameters>
+            <Parameter name="FILE_PATH" type="STRING" isOptional="false">
+                    <Description>Path to the device application to install</Description>
+                    <PossibleValues/>
+                    <DefaultValue/>
+            </Parameter>
+            <Parameter name="BACKUP" type="BOOLEAN" isOptional="false">
+                   <Description>Before install app, backup existing application from device only if
+                       version is different</Description>
+                   <PossibleValues/>
+                   <DefaultValue>False</DefaultValue>
+            </Parameter>
+            <Parameter name="SIGN" type="BOOLEAN" isOptional="false">
+                   <Description>Before install app, sign it using SIGN_KEY_PATH
+                       teststep parameter. If key is distant use artifact manager equipment for download.
+                       If key is local, either use abs path or relative path to artifactmanager or local
+                       resource directly
+                   </Description>
+                   <PossibleValues/>
+                   <DefaultValue>False</DefaultValue>
+            </Parameter>
+            <Parameter name="SIGN_KEY_PATH" type="STRING" isOptional="false">
+                <Description> Relative path to artifact manager path or absolute local path to key file without
+                    extension:
+                    ArtifactManager: https://mcg-depot.intel.com/artifactory/acs_test_artifacts/, SIGN_KEY_PATH: CERTIFICATE/SIGNING/AOSP/platform
+                    ArtifactManager: C:\, SIGN_KEY_PATH: CERTIFICATE\SIGNING\AOSP\platform
+                    Without ArtifactManager: SIGN_KEY_PATH: C:\CERTIFICATE\SIGNING\AOSP\platform
+                    Without ArtifactManager: SIGN_KEY_PATH: .\CERTIFICATE\SIGNING\AOSP\platform
+                    Note 1: using relative path without ArtifactManager will lead teststep to infer path from
+                    execution path. Execution path is C:\dev\acs\src and SIGN_KEY_PATH: .\CERTIFICATE\SIGNING\AOSP\platform
+                    will build C:\dev\acs\src\CERTIFICATE\SIGNING\AOSP\platform)
+                    Note 2: in above examples, key is (platform.pk8, platform.x509.pem)
+                </Description>
+            <PossibleValues/>
+            <DefaultValue/>
+            </Parameter>
+            <Parameter name="TIMEOUT" type="INTEGER" isOptional="false">
+                  <Description>Operation timeout in seconds</Description>
+                  <PossibleValues/>
+                  <DefaultValue>60</DefaultValue>
+            </Parameter>
+            <Parameter name="BACKUP_FILE_PATH" type="CONTEXT" isOptional="false">
+                <Description>
+                     <Key name="APP_BACKUP_PATH" type="STRING">Path to backed-up app when BACKUP is requested during install</Key>
+                </Description>
+            <PossibleValues/>
+            <DefaultValue/>
+            </Parameter>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues/>
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="ALLOW_DOWNGRADE" type="BOOLEAN" isOptional="true">
+                   <Description>If the application is already installed on DUT, allow install of anterior version of this one</Description>
+                   <PossibleValues/>
+                   <DefaultValue/>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="SETUP_PNP_UX_TESTS" Domain="APPS" SubDomain="CORE" Feature="BROWSER" Status="DONE">
+            <ClassName>acs_test_scripts.TestStep.Device.Apps.Core.SetupPnpUxTest.SetupPnpUxTest</ClassName>
+            <Description>
+                        Step to connect google account and setup apps for pnp ux tests.
+            </Description>
+            <Environment name="ANY"/>
+            <Parameters>
+                <Parameter name="DEVICE" type="STRING" isOptional="false">
+                    <Description>Device name on which the action will be executed</Description>
+                    <PossibleValues/>
+                    <DefaultValue>PHONE1</DefaultValue>
+                </Parameter>
+                <Parameter name="EMAIL" type="STRING" isOptional="false">
+                    <Description>google account email</Description>
+                    <PossibleValues/>
+                    <DefaultValue></DefaultValue>
+                </Parameter>
+                <Parameter name="PASSWD" type="STRING" isOptional="false">
+                    <Description>google account password</Description>
+                    <PossibleValues/>
+                    <DefaultValue></DefaultValue>
+                </Parameter>
+            </Parameters>
+    </TestStep>
+    <TestStep Id="REMOVE_GOOGLE_ACCOUNT" Domain="APPS" SubDomain="CORE" Feature="BROWSER" Status="DONE">
+            <ClassName>acs_test_scripts.TestStep.Device.Apps.Core.RemoveGoogleAccount.RemoveGoogleAccount</ClassName>
+            <Description>
+                        Step to remove a google account on the device.
+            </Description>
+            <Environment name="ANY"/>
+            <Parameters>
+                <Parameter name="DEVICE" type="STRING" isOptional="false">
+                    <Description>Device name on which the action will be executed</Description>
+                    <PossibleValues/>
+                    <DefaultValue>PHONE1</DefaultValue>
+                </Parameter>
+            </Parameters>
+    </TestStep>
+</TestSteps>

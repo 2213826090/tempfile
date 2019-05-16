@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="13.37">
+    <UseCase>LAB_EM_PS_FLASH_LOW_BATT</UseCase>
+    <Description>Energy Management Flash with a low batt test.
+          First the test tries to flash the board under the battery voltage threshold.
+          Then it tries to flash the board with a normal battery voltage.
+          WARNING: if you got a non-default configuration of your LAB_SYSTEM_STUP_EMBEDDED UC,
+          you have to execute the LAB_SYSTEM_SETUP_EMBEDDED UC
+          after this one in order to restore a normal embedded configuration!!!</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>False</b2bContinuousMode>
+    <TcMaxAttempt>2</TcMaxAttempt>
+    <TcAcceptanceCriteria>3</TcAcceptanceCriteria>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters>
+        <Parameter>
+            <!-- The full path where the flash files are located. If the parameter is not defined ACS will read from optional parameter from CampaignEngine -->
+            <Name>FLASH_FILE_PATH</Name>
+            <Value></Value>
+        </Parameter>
+        <Parameter>
+            <!-- The timeout (in second) of the flash sequence.-->
+            <Name>FLASH_TIMEOUT</Name>
+            <Value>500</Value>
+        </Parameter>
+        <Parameter>
+            <!-- The low battery voltage for the first flash in Volt (float) -->
+            <Name>LOW_BATTERY_VOLTAGE</Name>
+            <Value>3.5</Value>
+        </Parameter>
+        <Parameter>
+            <!-- The normal battery voltage for the second flash in Volt (float) -->
+            <Name>NORMAL_BATTERY_VOLTAGE</Name>
+            <Value>3.8</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

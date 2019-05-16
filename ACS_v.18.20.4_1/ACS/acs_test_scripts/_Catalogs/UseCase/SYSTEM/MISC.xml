@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<UseCases xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:noNamespaceSchemaLocation="../../../../acs/src/_Catalogs/UseCase/usecase.xsd">
+    <UseCase Id="LIVE_SYSTEM_TUNE_SOUND" Domain="SYSTEM" SubDomain="MISC" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.System.LIVE_SYSTEM_TUNE_SOUND.LiveTuneSound</ClassName>
+        <Description>The tune sound test</Description>
+        <Environment name="ANY">
+        </Environment>
+    </UseCase>
+    <UseCase Id="LIVE_SYSTEM_RETRIEVE_SYSTEM_INFO" Domain="SYSTEM" SubDomain="MISC" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.System.LIVE_SYSTEM_RETRIEVE_SYSTEM_INFO.LiveRetrieveSystemInfo</ClassName>
+        <Description>Retrieve phone system information</Description>
+        <Environment name="ANY">
+        </Environment>
+    </UseCase>
+    <UseCase Id="LIVE_SYSTEM_FILE_OPERATION" Domain="SYSTEM" SubDomain="MISC" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.System.LIVE_SYSTEM_FILE_OPERATION.LiveSystemFileOperation</ClassName>
+        <Description>File operation on different storage</Description>
+        <Environment name="ANY">
+        </Environment>
+    </UseCase>
+    <UseCase Id="LIVE_SYSTEM_CONTACT_OPERATION" Domain="SYSTEM" SubDomain="MISC" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.System.LIVE_SYSTEM_CONTACT_OPERATION.LiveSystemContactOperation</ClassName>
+        <Description>Live contact operation, include insert, update, query, delete</Description>
+        <Environment name="ANY">
+        </Environment>
+    </UseCase>
+    <UseCase Id="LIVE_SYSTEM_CHECK_RINGER_PROFILE" Domain="SYSTEM" SubDomain="MISC" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.System.LIVE_SYSTEM_CHECK_RINGER_PROFILE.LiveSystemCheckRingerProfile</ClassName>
+        <Description>Check different ringer profiles of DUT</Description>
+        <Environment name="ANY">
+        </Environment>
+    </UseCase>
+    <UseCase Id="LIVE_SYSTEM_FILE_NAME_OPERATION" Domain="SYSTEM" SubDomain="MISC" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.System.LIVE_SYSTEM_FILE_NAME_OPERATION.LiveSystemFileNameOperation</ClassName>
+        <Description>File name operation, rename with ordinary/long name, create with multi-extension name in emmc</Description>
+        <Environment name="ANY">
+        </Environment>
+    </UseCase>
+    <UseCase Id="LIVE_SYSTEM_CHECK_IMEI_IMEISV" Domain="SYSTEM" SubDomain="MISC" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.System.LIVE_SYSTEM_CHECK_IMEI_IMEISV.LiveSystemCheckImeiImeisv</ClassName>
+        <Description>check the IMEI and IMEISV info of device</Description>
+        <Environment name="ANY">
+        </Environment>
+    </UseCase>
+    <UseCase Id="LIVE_SYSTEM_CHECK_SECOND_IMEI_IMEISV" Domain="SYSTEM" SubDomain="MISC" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.System.LIVE_SYSTEM_CHECK_SECOND_IMEI_IMEISV.LiveSystemCheckSecondImeiImeisv</ClassName>
+        <Description>check the second IMEI and IMEISV info of DSDS device</Description>
+        <Environment name="ANY">
+        </Environment>
+    </UseCase>
+    <UseCase Id="LIVE_SYSTEM_MANAGE_TIME_AUTO_UPDATE" Domain="SYSTEM" SubDomain="MISC" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.System.LIVE_SYSTEM_MANAGE_TIME_AUTO_UPDATE.LiveSystemManageTimeAutoUpdate</ClassName>
+        <Description>Check the auto time (NITZ) capability of device.</Description>
+        <Environment name="ANY">
+        </Environment>
+    </UseCase>
+    <UseCase Id="LAB_RF_MATRIX" Domain="SYSTEM" SubDomain="MISC" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.System.LAB_RF_MATRIX.LabRfMatrix</ClassName>
+        <Description>Change RF Matrix output port</Description>
+        <Environment name="ANY">
+        </Environment>
+    </UseCase>
+    <UseCase Id="LIVE_SYSTEM_CHECK_LAUNCHER" Domain="SYSTEM" SubDomain="MISC" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.System.LIVE_SYSTEM_CHECK_LAUNCHER.LiveSystemCheckLauncher</ClassName>
+        <Description>
+            Checks if the given launcher application package is installed on device and available for user selection.
+            It will search the given package on all installed packages, enabling it if necessary (only during the execution on the UC).
+            It is also possible to make a chooser window visible, allowing user to select launcher to use for semi-auto testing purpose.
+        </Description>
+        <Environment name="ANY">
+        </Environment>
+        <Parameters>
+            <Parameter name="LAUNCHER_NAME" type="STRING" isOptional="false">
+                <Description>Launcher application package name to search. (eg. com.android.launcher for default android launcher)</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="OPEN_CHOOSER" type="BOOLEAN" isOptional="false">
+                <Description>Determines if chooser window for launchers is visible. (true=visible)</Description>
+                <PossibleValues/>
+                <DefaultValue>false</DefaultValue>
+                <Blank/>
+            </Parameter>
+        </Parameters>
+    </UseCase>
+</UseCases>

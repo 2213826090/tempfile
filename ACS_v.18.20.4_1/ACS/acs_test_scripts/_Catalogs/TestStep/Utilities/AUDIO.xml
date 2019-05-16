@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestSteps xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../acs/src/_Catalogs/TestStep/teststep.xsd">
+    <TestStep Id="RUN_UMG_AUDIO_DOCK_TOOLKIT" Domain="UTILITIES" SubDomain="AUDIO" Feature="USB_DOCK" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Utilities.Audio.RunUMGAudioDockToolkit.RunUMGAudioDockToolkit</ClassName>
+        <Description>Starts audio docking toolkit.  This tool emulates android accessory dock on a Linux desktop, giving support of Android Open Accessory protocol 2.0 for audio over a USB connection.
+                    Stdout and stderr will be directed to log files stored in report directory. It plays back device audio through Linux desktop speaker/headphone. As an example, it could be run with
+                    DEVICE/MULTIMEDIA/AUDIO/PLAY_AUDIO_LOOP TS in order to play music on DUT that will play through host PC, using the dock toolkit.  Automated verification can be added using
+                    DEVICE/MULTIMEDIA/AUDIO/MONITOR_AUDIO_STREAM. To do this verification, you must also use an audio cable to loop back from PC audio output to PC line-in.
+            To setup the build env on UNIX HOST:
+            sudo apt-get install gnome-core-devel
+            sudo apt-get install pkg-config
+            sudo apt-get install libusb-dev
+            sudo apt-get install libasound2-dev
+            PREREQUISITES:
+            UNIX HOST PC:  The following file must be untarred on host at location given by SCRIPTS_PATH parameter.  Found in Artifactory under:  acs_test_artifacts:CONCURRENCY/TESTS/dock_toolkit
+                    docktoolkit.tar.gz
+            This test step should be run in parallel to some test step that initiates audio playback on 'docked' device.
+            </Description>
+        <Environment name="ANY"/>
+        <Parameters>
+            <Parameter name="EQT" type="STRING" isOptional="false">
+                   <Description>The equipment name shall refer to an existing equipment the Bench config</Description>
+                   <PossibleValues/>
+                   <DefaultValue>COMPUTER1</DefaultValue>
+            </Parameter>
+            <Parameter name="SCRIPTS_PATH" type="STRING" isOptional="false">
+                <Description>Directory on the host PC where docktoolkit.tar.gz is located.</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+            <Parameter name="DURATION" type="INTEGER" isOptional="false">
+                <Description>How long the test will run, in minutes.  Test step will add 2 minutes to this in order to work with TCs using the played audio for verification.</Description>
+                <PossibleValues/>
+                <DefaultValue>5</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="PLAY_AUDIO_ON_HOST" Domain="UTILITIES" SubDomain="AUDIO" Feature="PLAYBACK" Status="WIP">
+        <ClassName>acs_test_scripts.TestStep.Utilities.Audio.PlayAudioOnHost.PlayAudioOnHost</ClassName>
+        <Description>Plays an audio file on Ubuntu host machine</Description>
+        <Environment name="ANY"/>
+        <Parameters>
+            <Parameter name="AUDIO_FILE_PATH" type="STRING" isOptional="false">
+                <Description>Path to audio file to play. This needs to be a PCM encoded WAV file.</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+            <Parameter name="DURATION" type="INTEGER" isOptional="false">
+                <Description>Duration in seconds to play audio file</Description>
+                <PossibleValues/>
+                <DefaultValue>5</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="MANAGE_AUDIO_FRAMEWORK" Domain="UTILITIES" SubDomain="AUDIO" Feature="AUDIO" Status="WIP">
+        <ClassName>acs_test_scripts.TestStep.Utilities.Audio.ManageAFFuTe.ManageAFFuTe</ClassName>
+        <Description>Clean all previous session of AFFuTe and possibly start a new one</Description>
+        <Environment name="ANY"/>
+        <Parameters>
+            <Parameter name="FRAMEWORK_RUNNER_PATH" type="STRING" isOptional="true">
+                <Description>Path to the AFFuTe runner python file</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+            <Parameter name="START_FRAMEWORK" type="BOOLEAN" isOptional="false">
+                <Description>Determines whether AFFuTe process needs to be started or not</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="CHECK_AUDIO_ROUTING" Domain="UTILITIES" SubDomain="AUDIO" Feature="AUDIO" Status="WIP">
+        <ClassName>acs_test_scripts.TestStep.Utilities.Audio.CheckAudioRoutingAFFuTe.CheckAudioRoutingAFFuTe</ClassName>
+        <Description>Checks audio routing during a voice call using AFFuTe</Description>
+        <Environment name="ANY"/>
+        <Parameters>
+            <Parameter name="AUDIO_FILE_PATH" type="STRING" isOptional="false">
+                <Description>Path to audio file to be played by AFFuTe for routing check</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+            <Parameter name="SERVER_ADDRESS" type="STRING" isOptional="false">
+                <Description>Hostname/IP Address of the computer hosting the current running session of AFFuTe</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+            <Parameter name="SERVER_PORT" type="STRING" isOptional="false">
+                <Description>Port number of the current running session of AFFuTe</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+            <Parameter name="AUDIO_VERDICT_TIMEOUT" type="INTEGER" isOptional="false">
+                <Description>Determines after which duration AFFuTe returns a verdict</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+            <Parameter name="WAIT_FOR_TIMEOUT" type="BOOLEAN" isOptional="false">
+                <Description>Determines whether AFFuTe will take into account the TIMEOUT parameter or not</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="START_AUDIO_PLAYBACK" Domain="UTILITIES" SubDomain="AUDIO" Feature="PLAYBACK" Status="WIP">
+        <ClassName>acs_test_scripts.TestStep.Utilities.Audio.StartAudioPlaybackAFFuTe.StartAudioPlaybackAFFuTe</ClassName>
+        <Description>Starts an audio playback using AFFuTe</Description>
+        <Environment name="ANY"/>
+        <Parameters>
+            <Parameter name="AUDIO_FILE_PATH" type="STRING" isOptional="false">
+                <Description>Path to audio file to be played by AFFuTe for routing check</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+            <Parameter name="SERVER_ADDRESS" type="STRING" isOptional="false">
+                <Description>Hostname/IP Address of the computer hosting the current running session of AFFuTe</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+            <Parameter name="SERVER_PORT" type="STRING" isOptional="false">
+                <Description>Port number of the current running session of AFFuTe</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="STOP_AUDIO_PLAYBACK" Domain="UTILITIES" SubDomain="AUDIO" Feature="PLAYBACK" Status="WIP">
+        <ClassName>acs_test_scripts.TestStep.Utilities.Audio.StopAudioPlaybackAFFuTe.StopAudioPlaybackAFFuTe</ClassName>
+        <Description>Stops an audio playback using AFFuTe</Description>
+        <Environment name="ANY"/>
+        <Parameters>
+            <Parameter name="SERVER_ADDRESS" type="STRING" isOptional="false">
+                <Description>Hostname/IP Address of the computer hosting the current running session of AFFuTe</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+            <Parameter name="SERVER_PORT" type="STRING" isOptional="false">
+                <Description>Port number of the current running session of AFFuTe</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+</TestSteps>

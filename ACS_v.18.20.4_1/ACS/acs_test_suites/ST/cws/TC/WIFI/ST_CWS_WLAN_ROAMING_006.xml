@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="13.41">
+    <UseCase>TEST_STEP_ENGINE</UseCase>
+    <Description></Description>
+    <b2bIteration>4</b2bIteration>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <TcMaxAttempt>2</TcMaxAttempt>
+    <TcAcceptanceCriteria>1</TcAcceptanceCriteria>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters>
+        <Parameter>
+            <Name>FILE_TO_TRANSFER</Name>
+            <Value>acs_test/QCTV_CWS/get1GB</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TRANSFER_DIRECTION</Name>
+            <Value>DL</Value>
+        </Parameter>
+    </Parameters>
+    <TestSteps>
+        <Include Src="ST/cws/TSS/Common/ST_CWS_COMMON.xml"/>
+        <Include Src="ST/cws/TSS/WiFi/ST_CWS_WIFI_AP.xml"/>
+        <Include Src="ST/cws/TSS/WiFi/ST_CWS_WIFI_COMMON.xml"/>
+
+        <TestStepSet Id="DUTWiFiConfig">
+            <TestStep SetId="InitPhoneCWS"/>
+            <TestStep SetId="WiFiCommonSetup" REGULATORY_DOMAIN="FR"/>
+        </TestStepSet>
+        <TestStepSet Id="AP2ConfigWithAP1SSID">
+            <TestStep SetId="WiFiAPConfigStandard" EQT="CONFIGURABLE_AP2"
+                  SSID="FROM_BENCH:CONFIGURABLE_AP1:SSID"
+                  RADIUS_IP="FROM_BENCH:CONFIGURABLE_AP2:radiusip"
+                  RADIUS_PORT="FROM_BENCH:CONFIGURABLE_AP2:radiusport"
+                  RADIUS_SECRET="FROM_BENCH:CONFIGURABLE_AP2:radiussecret"
+                  REGULATORY_DOMAIN_SAVE_AS="CONFIGURABLE_AP2_REGULATORY_DOMAIN"
+                  STANDARD="n2.4G"
+                  AUTHENTICATION_TYPE="OPEN"
+                  PASSPHRASE="NOT_USED"
+                  CHANNEL="8"
+                  BANDWIDTH="20"/>
+        </TestStepSet>
+        <TestStepSet Id="FTPTransferSet">
+            <TestStep Id="FTP_TRANSFER" DEVICE="PHONE1"
+                      SERVER_IP="192.168.0.150"
+                      USERNAME="acs"
+                      PASSWORD="intelacs"
+                      DIRECTION="FROM_TC:TRANSFER_DIRECTION"
+                      FILENAME="FROM_TC:FILE_TO_TRANSFER"
+                      TIMEOUT="3600"
+                      CLIENT_IP="none"
+                      SAVE_THROUGHPUT_AS="THROUGHPUT_DLA"/>
+        </TestStepSet>
+        <TestStepSet Id="APsChangesDuringFTPTransfer">
+            <TestStep Id="SUSPEND" DURATION_IN_SEC="20.0"/>
+            <TestStep SetId="AP2ConfigWithAP1SSID"/>
+            <TestStep Id="SUSPEND" DURATION_IN_SEC="120.0"/>
+            <TestStep SetId="WiFiAPShutdown" EQT="CONFIGURABLE_AP1"/>
+        </TestStepSet>
+
+        <Setup>
+            <!-- AUTOMATION - Set default configuration -->
+            <Fork Id="ForkDUTReferencePhoneAndWiFiAP">
+                <TestStep SetId="DUTWiFiConfig" DEVICE="PHONE1"/>
+                <TestStep SetId="WiFiAPConfigStandardAP1"
+                          STANDARD="n2.4G"
+                          AUTHENTICATION_TYPE="OPEN"
+                          PASSPHRASE="NOT_USED"
+                          CHANNEL="8"
+                          BANDWIDTH="20"/>
+                <TestStep SetId="WiFiAPShutdown" EQT="CONFIGURABLE_AP2"/>
+            </Fork>
+        </Setup>
+        <RunTest>
+            <!-- SPEC - Step 1 : Turn Off radio AP2 -->
+            <TestStep SetId="WiFiAPShutdown" EQT="CONFIGURABLE_AP2"/>
+
+            <!-- SPEC - Step 2 : Connect DUT to AP1 -->
+            <TestStep SetId="WiFiAddNetwork" DEVICE="PHONE1"
+                      SSID="FROM_BENCH:CONFIGURABLE_AP1:SSID"
+                      SECURITY="OPEN"
+                      PASS_PHRASE="NOT_USED"/>
+            <TestStep Id="WIFI_CONNECT" DEVICE="PHONE1"
+                      SSID="FROM_BENCH:CONFIGURABLE_AP1:SSID"
+                      TIMEOUT="90"/>
+            <TestStep Id="WIFI_WAIT_FOR_SSID_STATE" DEVICE="PHONE1"
+                      SSID="FROM_BENCH:CONFIGURABLE_AP1:SSID"
+                      STATE="CONNECTED"
+                      TIMEOUT="90"/>
+
+            <!-- SPEC - Step 3&4&5&6 : Start FTP transfer, turn On radio AP2, wait 2min, turn Off radio AP1 and wait FTP transfer complete -->
+            <Fork Id="ForkAction">
+                <TestStep SetId="FTPTransferSet"/>
+                <TestStep SetId="APsChangesDuringFTPTransfer"/>
+            </Fork>
+
+            <!-- SPEC - Step 7 : Forget SSID -->
+            <TestStep Id="WIFI_REMOVE_NETWORK" DEVICE="PHONE1" SSID="FROM_BENCH:CONFIGURABLE_AP1:SSID"/>
+
+            <!-- SPEC - Step 8 : Power On radio AP1 -->
+            <TestStep SetId="WiFiAPConfigStandardAP1"
+                      STANDARD="n2.4G"
+                      AUTHENTICATION_TYPE="OPEN"
+                      PASSPHRASE="NOT_USED"
+                      CHANNEL="8"
+                      BANDWIDTH="20"/>
+        </RunTest>
+        <TearDown>
+            <Fork Id="ForkTeardown">
+                <TestStep SetId="WiFiCommonTeardown" DEVICE="PHONE1"/>
+                <TestStep SetId="WiFiAPShutdown" EQT="CONFIGURABLE_AP1"/>
+                <TestStep SetId="WiFiAPShutdown" EQT="CONFIGURABLE_AP2"/>
+            </Fork>
+        </TearDown>
+    </TestSteps>
+</TestCase>

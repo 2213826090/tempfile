@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestSteps xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../acs/src/_Catalogs/TestStep/teststep.xsd">
+    <TestStep Id="PATLIB_INIT" Domain="EQUIPMENT" SubDomain="POWER_ANALYZER" Feature="" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Equipment.PowerAnalyzerTool.PatLib.PatLibInit</ClassName>
+        <Description>Init the NIDAQ thanks to patlib, according to the test</Description>
+        <Environment name="ANY">
+            <Capabilities>EQT_NIDAQ</Capabilities>
+        </Environment>
+        <Parameters>
+            <Parameter name="EQT" type="STRING" isOptional="false">
+                <Description>The equipment name shall refer to an existing equipment the Bench config</Description>
+                <PossibleValues/>
+                <DefaultValue>POWER_ANALYZER_TOOL</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="PATLIB_ACQUISITION" Domain="EQUIPMENT" SubDomain="POWER_ANALYZER" Feature="" Status="DONE">
+            <ClassName>acs_test_scripts.TestStep.Equipment.PowerAnalyzerTool.PatLib.PatLibAcquisition</ClassName>
+            <Description>Do a NIDAQ acquisition</Description>
+            <Environment name="ANY">
+                <Capabilities>EQT_NIDAQ</Capabilities>
+            </Environment>
+            <Parameters>
+                <Parameter name="EQT" type="STRING" isOptional="false">
+                    <Description>The equipment name shall refer to an existing equipment the Bench config</Description>
+                    <PossibleValues/>
+                    <DefaultValue>POWER_ANALYZER_TOOL</DefaultValue>
+                </Parameter>
+                <Parameter name="ACTION" type="STRING" isOptional="false">
+                        <Description>The action to do on acquisition</Description>
+                        <PossibleValues>start;stop;START;STOP</PossibleValues>
+                        <DefaultValue/>
+                </Parameter>
+            </Parameters>
+    </TestStep>
+    <TestStep Id="PATLIB_GET_ACQUISITION" Domain="EQUIPMENT" SubDomain="POWER_ANALYZER" Feature="" Status="DONE">
+                <ClassName>acs_test_scripts.TestStep.Equipment.PowerAnalyzerTool.PatLib.PatLibGetAcquisition</ClassName>
+                <Description>Get NIDAQ value acquisition</Description>
+                <Environment name="ANY">
+                    <Capabilities>EQT_NIDAQ</Capabilities>
+                </Environment>
+                <Parameters>
+                    <Parameter name="EQT" type="STRING" isOptional="false">
+                        <Description>The equipment name shall refer to an existing equipment the Bench config</Description>
+                        <PossibleValues/>
+                        <DefaultValue>POWER_ANALYZER_TOOL</DefaultValue>
+                    </Parameter>
+                    <Parameter name="MEASURE_NAME" type="STRING" isOptional="false">
+                            <Description>The rail measure name</Description>
+                            <PossibleValues/>
+                            <DefaultValue/>
+                    </Parameter>
+                    <Parameter name="MEASURE_TYPE" type="STRING" isOptional="false">
+                            <Description>The rail measure name</Description>
+                            <PossibleValues>min;max;average</PossibleValues>
+                            <DefaultValue/>
+                    </Parameter>
+                    <Parameter name="SAVE_AS" type="CONTEXT" isOptional="false">
+                            <Description>
+                                 <Key name="ACQUIRED_MEASURE" type="STRING">Acquisition value</Key>
+                            </Description>
+                            <PossibleValues/>
+                            <DefaultValue/>
+                    </Parameter>
+                </Parameters>
+    </TestStep>
+    <TestStep Id="PATLIB_REPORT" Domain="EQUIPMENT" SubDomain="POWER_ANALYZER" Feature="" Status="DONE">
+                <ClassName>acs_test_scripts.TestStep.Equipment.PowerAnalyzerTool.PatLib.PatLibReportData</ClassName>
+                <Description>Report an acquisition in contexte</Description>
+                <Environment name="ANY">
+                    <Capabilities>EQT_NIDAQ</Capabilities>
+                </Environment>
+                <Parameters>
+                    <Parameter name="EQT" type="STRING" isOptional="false">
+                        <Description>The equipment name shall refer to an existing equipment the Bench config</Description>
+                        <PossibleValues/>
+                        <DefaultValue>POWER_ANALYZER_TOOL</DefaultValue>
+                    </Parameter>
+                    <Parameter name="POWER_CALCULATION" type="BOOLEAN" isOptional="false">
+                        <Description>True if you want compute the power calculation in report</Description>
+                        <PossibleValues/>
+                        <DefaultValue>True</DefaultValue>
+                    </Parameter>
+                    <Parameter name="SAVE_AS" type="CONTEXT" isOptional="false">
+                            <Description>
+                                 <Key name="ACQUIRED_MEASURE" type="STRING">Raw data file path</Key>
+                            </Description>
+                            <PossibleValues/>
+                            <DefaultValue/>
+                    </Parameter>
+                </Parameters>
+    </TestStep>
+    <TestStep Id="PATLIB_EXPORT" Domain="EQUIPMENT" SubDomain="POWER_ANALYZER" Feature="" Status="DONE">
+                    <ClassName>acs_test_scripts.TestStep.Equipment.PowerAnalyzerTool.PatLib.PatLibExportData</ClassName>
+                    <Description>Export acquisition data in ACS report folder</Description>
+                    <Environment name="ANY">
+                        <Capabilities>EQT_NIDAQ</Capabilities>
+                    </Environment>
+                    <Parameters>
+                        <Parameter name="EQT" type="STRING" isOptional="false">
+                            <Description>The equipment name shall refer to an existing equipment the Bench config</Description>
+                            <PossibleValues/>
+                            <DefaultValue>POWER_ANALYZER_TOOL</DefaultValue>
+                        </Parameter>
+                        <Parameter name="SAVE_RAW_DATA" type="BOOLEAN" isOptional="false">
+                            <Description>True if you want save data in ACS report folder</Description>
+                            <PossibleValues/>
+                            <DefaultValue>True</DefaultValue>
+                        </Parameter>
+                        <Parameter name="SAVE_AS" type="CONTEXT" isOptional="false">
+                                <Description>
+                                     <Key name="FILE_PATH_RAW_DATA" type="STRING">Raw data file path</Key>
+                                </Description>
+                                <PossibleValues/>
+                                <DefaultValue/>
+                        </Parameter>
+                    </Parameters>
+    </TestStep>
+    <TestStep Id="REPORT_POWER_RESULT" Domain="EQUIPMENT" SubDomain="POWER_ANALYZER" Feature="" Status="DONE">
+            <ClassName>acs_test_scripts.TestStep.Equipment.PowerAnalyzerTool.PatLib.PnPReportPowerVerdict</ClassName>
+            <Description>Export acquisition data in ACS report folder</Description>
+            <Environment name="ANY">
+                <Capabilities>EQT_NIDAQ</Capabilities>
+            </Environment>
+            <Parameters>
+                <Parameter name="EQT" type="STRING" isOptional="false">
+                    <Description>The equipment name shall refer to an existing equipment the Bench config</Description>
+                    <PossibleValues/>
+                    <DefaultValue>POWER_ANALYZER_TOOL</DefaultValue>
+                </Parameter>
+                <Parameter name="STORED_PNP_RESULT" type="STRING" isOptional="false">
+                    <Description>Key name where PnpResult object is stored in context</Description>
+                    <PossibleValues/>
+                    <DefaultValue>True</DefaultValue>
+                </Parameter>
+                <Parameter name="STORE_RAW_DATA" type="CONTEXT" isOptional="false">
+                        <Description>
+                             <Key name="NEED_TO_STORE" type="STRING">Raw data has to be stored ?</Key>
+                        </Description>
+                        <PossibleValues/>
+                        <DefaultValue/>
+                </Parameter>
+            </Parameters>
+    </TestStep>
+    <TestStep Id="COMPUTE_POWER_RESULT" Domain="EQUIPMENT" SubDomain="POWER_ANALYZER" Feature="" Status="DONE">
+            <ClassName>acs_test_scripts.TestStep.Equipment.PowerAnalyzerTool.PatLib.PnPComputePowerVerdict</ClassName>
+            <Description>Export acquisition data in ACS report folder</Description>
+            <Environment name="ANY">
+                <Capabilities>EQT_NIDAQ</Capabilities>
+            </Environment>
+            <Parameters>
+                <Parameter name="EQT" type="STRING" isOptional="false">
+                    <Description>The equipment name shall refer to an existing equipment the Bench config</Description>
+                    <PossibleValues/>
+                    <DefaultValue>POWER_ANALYZER_TOOL</DefaultValue>
+                </Parameter>
+                <Parameter name="STORED_PNP_RESULT" type="STRING" isOptional="false">
+                    <Description>Key name where PnpResult object is stored in context</Description>
+                    <PossibleValues/>
+                    <DefaultValue>True</DefaultValue>
+                </Parameter>
+                <Parameter name="OPERATION" type="STRING" isOptional="false">
+                        <Description>
+                        Type of operation to do
+                        </Description>
+                        <PossibleValues>ARITHMETIC_MEAN;GEOMETRIC_MEAN;MEDIAN;RAW</PossibleValues>
+                        <DefaultValue/>
+                </Parameter>
+                <Parameter name="VERDICT_CRITERIA" type="STRING" isOptional="true">
+                    <Description>
+                    Compute verdict from power, residency or both
+                    </Description>
+                    <PossibleValues>POWER;RESIDENCY;BOTH</PossibleValues>
+                    <DefaultValue>BOTH</DefaultValue>
+                </Parameter>
+            </Parameters>
+    </TestStep>
+</TestSteps>

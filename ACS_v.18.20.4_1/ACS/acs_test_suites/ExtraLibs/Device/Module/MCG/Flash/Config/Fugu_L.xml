@@ -1,0 +1,39 @@
+<ModuleConfiguration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                     xsi:noNamespaceSchemaLocation="FlashModule.xsd">
+
+    <!-- FLASH MODULE PARAMETERS -->
+
+    <!-- MODEM_FLASH: remove modem flash command in fastboot flash.xml -->
+    <MODEM_FLASH>true</MODEM_FLASH>
+    <!-- DEDIPROG: set to true if board possesses dediprog ability -->
+    <DEDIPROG>false</DEDIPROG>
+    <!-- RECOVERY: set to true to force use of dediprog to flash bios -->
+    <RECOVERY>false</RECOVERY>
+
+    <!-- PUPDR_COMMON PARAMETERS -->
+
+    <!-- UEFI: set to true if board has UEFI boot logic -->
+    <UEFI>false</UEFI>
+    <!-- MOOREFIELD: set to true for mofd base soc -->
+    <MOOREFIELD>true</MOOREFIELD>
+    <!-- NOCOS: set to true if board has no charger OS -->
+    <NOCOS>true</NOCOS>
+    <!-- PARTITIONS: list here the partitions that need to be checks on MOS boot -->
+    <!-- separate partitions with ";" -->
+    <PARTITIONS>/cache;/system;/userdata;/factory</PARTITIONS>
+    <!-- MODEM: set to true if board does not possess any modem-->
+    <MODEM>false</MODEM>
+    <!-- SHELL_IN_ROS: set to false if board has no shell in ROS -->
+    <SHELL_IN_ROS>false</SHELL_IN_ROS>
+    <!-- DNX_BOOT_ON_POWER_SUPPLY_INSERT: set to true for scu based board booting DNX on power supply insertion-->
+    <DNX_BOOT_ON_POWER_SUPPLY_INSERT>true</DNX_BOOT_ON_POWER_SUPPLY_INSERT>
+    <!-- CHECK_FASTBOOT: (un)able fastboot image check after flash -->
+    <CHECK_FASTBOOT>false</CHECK_FASTBOOT>
+    <!-- CHECK_OSLOADER: (un)able osloader efi application check after flash -->
+    <CHECK_OSLOADER>false</CHECK_OSLOADER>
+    <!-- CRASHLOGS: set to false to prevent history_event checks -->
+    <CRASHLOGS>false</CRASHLOGS>
+    <!-- PKP_5S: set if 5S power_key press does not shut down the board -->
+    <PKP_5S>false</PKP_5S>
+
+</ModuleConfiguration>

@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="13.45">
+    <UseCase>LAB_WIFI_CONNECT</UseCase>
+    <Description>test open and scan and connect wifi</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <TcMaxAttempt>1</TcMaxAttempt>
+    <TcAcceptanceCriteria>1</TcAcceptanceCriteria>
+    <Parameters>
+        <Parameter>
+            <!-- Wifi standard of wifi env to be used. Can be "a", "b", "g", "an", "bg", "gn", "bgn", "n2.4G", "n5G", "off" -->
+            <!-- Depending on AP capabilities -->
+            <Name>WIFI_STANDARD</Name>
+            <Value>gb</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Wifi Security of wifi env to be used. Can be "OPEN", "WEP64","WEP64-OPEN","WEP128","WEP128-OPEN","WPA-PSK-TKIP", "WPA2-PSK-AES", "EAP-WPA" or "EAP-WPA2" -->
+            <Name>WIFI_SECURITY</Name>
+            <Value>OPEN</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Wifi SSID broadcast disabled: 0 (visible) or 1 (hidden) -->
+            <Name>WIFI_HIDDEN</Name>
+            <Value>0</Value>
+        </Parameter>
+        <Parameter>
+            <!-- EAP method used when WIFI_SECURTY is "EAP-WAP" or "EAP-WPA2", can be "PEAP", "TLS", "TTLS", "SIM" or "AKA" -->
+            <Name>EAP_METHOD</Name>
+            <Value>PEAP</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Phase2 authentication used when WIFI_SECURTY is "EAP-WAP" or "EAP-WPA2", can be "None", "PAP", "MSCHAP", "MSCHAPV2", "GTC" -->
+            <Name>PHASE2_AUTH</Name>
+            <Value>None</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Set to 'True' if you need to use certificates at the same time as TTLS or PEAP. If ommited, the default value for this parameter is false. -->
+            <Name>MANDATORY_CERT</Name>
+            <Value>False</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Wifi passphrase when WIFI_SECURITY is not "OPEN". If it is "NONE", use the default password. This parameter can be used to test connection failure -->
+            <Name>WIFI_PASSPHRASE</Name>
+            <Value>NONE</Value>
+        </Parameter>
+        <Parameter>
+            <!-- DUT static ip setting enable:True; disable: False. only when it is enabled, below paramters setting is available -->
+            <Name>IP_SETTING_ENABLE</Name>
+            <Value>False</Value>
+        </Parameter>
+        <Parameter>
+            <!-- DUT static ip setting for ip address -->
+            <Name>IP_ADDRESS</Name>
+            <Value>192.168.0.149</Value>
+        </Parameter>
+        <Parameter>
+            <!-- DUT static ip setting for netmask -->
+            <Name>NETMASK</Name>
+            <Value>255.255.255.0</Value>
+        </Parameter>
+        <Parameter>
+            <!-- DUT static ip setting for gateway -->
+            <Name>GATEWAY</Name>
+            <Value>192.168.0.1</Value>
+        </Parameter>
+        <Parameter>
+            <!-- DUT static ip setting for dns1 -->
+            <Name>DNS1</Name>
+            <Value>192.168.0.5</Value>
+        </Parameter>
+        <Parameter>
+            <!-- DUT static ip setting for dns2 -->
+            <Name>DNS2</Name>
+            <Value>0.0.0.0</Value>
+        </Parameter>
+        <Parameter>
+            <!-- [Optional] Wifi channel: 1-14 for 2.4GHz, 36-165 for 5GHz, 0:auto (default is AP current setup if not specified) -->
+            <!-- 2.4GHz real channel values (MHz): 2412,2417,2422,2427,2432,2437,2442,2447,2452,2457,2462,2467,2472,2484 -->
+            <!-- 5GHz real channel values (MHz): 5180,5200,5220,5240,5260,5280,5300,5320,5745,5765,5785,5805,5825 -->
+            <Name>WIFI_CHANNEL</Name>
+            <Value></Value>
+        </Parameter>
+        <Parameter>
+            <!-- [Optional] Wifi DTIM: 1,3,5 (default is AP current setup if not specified) -->
+            <Name>WIFI_DTIM</Name>
+            <Value></Value>
+        </Parameter>
+        <Parameter>
+            <!-- [Optional] Wifi beacon interval in ms: 50..500 (default is AP current setup if not specified) -->
+            <Name>WIFI_BEACON</Name>
+            <Value></Value>
+        </Parameter>
+        <Parameter>
+            <!-- [Optional] Wifi WMM: 0 or 1 (default is AP current setup if not specified) -->
+            <Name>WIFI_WMM</Name>
+            <Value></Value>
+        </Parameter>
+        <Parameter>
+            <!-- [Optional] Wifi Band: 20 or 40 (MHz) (default is AP current setup if not specified) -->
+            <Name>WIFI_BAND</Name>
+            <Value></Value>
+        </Parameter>
+        <Parameter>
+            <!-- [Optional] Enable WIFI Multiple Input Multiple Output (default value is Single Input Single Output) -->
+            <Name>WIFI_MIMO</Name>
+            <Value></Value>
+        </Parameter>
+        <Parameter>
+            <!-- [Optional] Sniffer capture: 0 or 1 (WIFI_CHANNEL must be specified) -->
+            <Name>WIFI_SNIFF</Name>
+            <Value>0</Value>
+        </Parameter>
+        <Parameter>
+            <Name>FLIGHT_MODE</Name>
+            <!-- [Optional] Set to "True" for using flight mode instead of disabling/enabling Wifi interface only. -->
+            <Value></Value>
+        </Parameter>
+        <Parameter>
+            <Name>PACKAGES_TO_DISABLE</Name>
+            <!-- [Optional] comma separated list containing packages you want to disable before testing. -->
+            <Value></Value>
+        </Parameter>
+        <Parameter>
+            <!-- [Optional] Regulatory Domain to use for both AP and DUT (US, GB, FR, ...) -->
+            <Name>REGULATORY_DOMAIN</Name>
+            <Value>FR</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Ways to exchange the ciphering key ("WPS-PBC", "WPS-PIN-DUT" or "WPS-PIN-AP") -->
+            <Name>KEY_EXCHANGE_MODE</Name>
+            <Value></Value>
+        </Parameter>
+        <Parameter>
+            <!-- PIN to exchange key (in "WPS-PIN-xx") -->
+            <Name>KEY_EXCHANGE_PIN</Name>
+            <Value></Value>
+        </Parameter>
+        <Parameter>
+            <!-- True if we want to simulate a test failure (PBC timeout or wrong pin) -->
+            <Name>MAKE_WPS_TEST_FAIL</Name>
+            <Value>False</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Activate the restart Wifi interface or whole DUT. Possible values are: "OFF", "INTERFACE", "PHONE" -->
+            <Name>RESTART_DUT</Name>
+            <Value>OFF</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Switch OFF then back ON the Access Point radio (True / False). Default value is False -->
+            <Name>RESTART_AP_RADIO</Name>
+            <Value>False</Value>
+        </Parameter>
+        <Parameter>
+            <!-- [OPTIONAL] To force an access point for this test -->
+            <Name>CONFIGURABLE_AP_TO_USE</Name>
+            <Value></Value>
+        </Parameter>
+        <Parameter>
+            <Name>USE_IPV6</Name>
+            <!-- [OPTIONAL] IPV6 (True) or IPV4 (False) -->
+            <Value>False</Value>
+        </Parameter>
+        <Parameter>
+            <!-- [OPTIONAL] If USE_IPV6 == True, the is the way to configure the IPV6 client (STATEFUL, STATELESS or STATELESS_RDNSSD) -->
+            <Name>IPV6_CONFIGURATION_MODE</Name>
+            <Value></Value>
+        </Parameter>
+        <Parameter>
+            <!-- [OPTIONAL] If USE_IPV6 == True, Computer where the IPV6 server will be started -->
+            <Name>IPV6_COMPUTER</Name>
+            <Value></Value>
+        </Parameter>
+        <Parameter>
+            <!-- [OPTIONAL] Test-specific username for EAP authentication. If not provided, the bench config one will be used. -->
+            <Name>EAP_USER</Name>
+            <Value></Value>
+        </Parameter>
+        <Parameter>
+            <!-- [OPTIONAL] MAC address to add to the MAC filter of the Access Point. -->
+            <!-- You can set a valid MAC address or "DUT" for DUT MAC address or "!DUT" for a random MAC address different from DUT one. -->
+            <!-- Default value is "OFF" -->
+            <Name>MAC_FILTER</Name>
+            <Value>OFF</Value>
+        </Parameter>
+        <Parameter>
+            <!-- [OPTIONAL] Parameter to configure MAC address test. This parameter is used when parameter MAC_FILTER is not OFF.-->
+            <!-- You can set following values : "OFF", "DISCONNECTED", "DISCONNECTED_WAIT__NETWORK_DISABLE". -->
+            <!-- Default value is "OFF" -->
+            <Name>MAC_FILTER_PARAMETER</Name>
+            <Value>OFF</Value>
+        </Parameter>
+        <Parameter>
+            <!-- [OPTIONAL] If 'ON', Bluetooth is activated prior to the test to perform FIT tests, and is restaured to initial value at the end of the test. If 'OFF', BT is de-activated. -->
+            <Name>WHILE_BLUETOOTH_ON</Name>
+            <Value></Value>
+        </Parameter>
+        <Parameter>
+            <!-- Integer required > 0, specifies the reference wifi connection time to be used when wifi connection time is monitored -->
+            <!-- REF_CONNECTION_TIME is set to 0, wifi connection time will not be monitored -->
+            <Name>REF_CONNECTION_TIME</Name>
+            <Value></Value>
+        </Parameter>
+        <Parameter>
+            <!-- float, [0--100%] specifies the tolerance for wifi connection time. The computed mean should be  -->
+            <!-- in the -TOLERANCE%, +TOLERANCE% bounding box around the expected value.  -->
+            <!-- The standard deviation should be lower than TOLERANCE% of the expected value -->
+            <Name>TOLERANCE</Name>
+            <Value></Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

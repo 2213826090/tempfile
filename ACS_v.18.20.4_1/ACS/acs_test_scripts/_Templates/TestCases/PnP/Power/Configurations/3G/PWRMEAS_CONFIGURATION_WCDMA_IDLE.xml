@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<Sequence>
+    <!-- Common gpib commands to send to set the equipment. Those commands are sent first. -->
+    <GPIBCommand equipment="NETWORK_SIMULATOR1" setting="COMMON" command="CALL:OPER:MODE OFF" description="Set cell to off" />
+    <GPIBCommand equipment="NETWORK_SIMULATOR1" setting="COMMON" command="CALL:PAG:SERV AMR" description="Set Paging Service is AMR Voice" />
+    <GPIBCommand equipment="NETWORK_SIMULATOR1" setting="COMMON" command="CALL:PSDOMAIN ABSENT" description="Set PS Domain to ABSENT" />
+    <GPIBCommand equipment="NETWORK_SIMULATOR1" setting="COMMON" command="CALL:BCCH:GSMS:STAT 0,0,0,0,0,0,0,0" description="Set the 8 Gsm Neighbor cell states to OFF" />
+    <GPIBCommand equipment="NETWORK_SIMULATOR1" setting="COMMON" command="CALL:BCCH:ITRF:STAT 1,1,1,1,1,1,1,1" description="Set the 8 Inter Frequency Neighbor cell states to ON" />
+    <GPIBCommand equipment="NETWORK_SIMULATOR1" setting="COMMON" command="CALL:BCCH:ITAF:STAT 1,1,1,1,1,1,1,1 " description="Set the 8 Intra Frequency Neighbor cell states to ON" />
+    <GPIBCommand equipment="NETWORK_SIMULATOR1" setting="COMMON" command="CALL:DRX:CLEN FRAM128" description="Set Paging interval (DRX Cycle)" />
+    <GPIBCommand equipment="NETWORK_SIMULATOR1" setting="COMMON" command="CALL:BCCH:T3212 0" description="Set Periodic location updates (T3212)" />
+    <GPIBCommand equipment="NETWORK_SIMULATOR1" setting="COMMON" command="CALL:POW:STAT ON;*CLS;:CALL:POW:AMPL -97" description="Set Cell Power" />
+    <GPIBCommand equipment="NETWORK_SIMULATOR1" setting="COMMON" command="CALL:CONN:DPCH:LEV -12" description="Set DPCH Level" />
+    <GPIBCommand equipment="NETWORK_SIMULATOR1" setting="COMMON" command="CALL:CONN:DPCH:STAT ON" description="Set DPCH state to ON" />
+    <GPIBCommand equipment="NETWORK_SIMULATOR1" setting="COMMON" command="CALL:SMS:CBR:STOP" description="Stop the cell broadcast" />
+    <!-- Specific gpib commands to send in function of the cell band specified in the test case. -->
+    <GPIBCommand equipment="NETWORK_SIMULATOR1" setting="BAND1" command="CALL:CHAN 10712" description="Set Cell Band UARFCN (downlink)" />
+    <GPIBCommand equipment="NETWORK_SIMULATOR1" setting="BAND1" command="CALL:UPL:CHAN:CONT:AUTO ON" description="Set Cell Band UARFCN (uplink) in auto mode" />
+    <GPIBCommand equipment="NETWORK_SIMULATOR1" setting="BAND2" command="CALL:CHAN 9800" description="Set Cell Band UARFCN (downlink)" />
+    <GPIBCommand equipment="NETWORK_SIMULATOR1" setting="BAND2" command="CALL:UPL:CHAN:CONT:AUTO ON" description="Set Cell Band UARFCN (uplink) in auto mode" />
+    <GPIBCommand equipment="NETWORK_SIMULATOR1" setting="BAND3" command="CALL:CHAN 1338" description="Set Cell Band UARFCN (downlink)" />
+    <GPIBCommand equipment="NETWORK_SIMULATOR1" setting="BAND3" command="CALL:UPL:CHAN:CONT:AUTO ON" description="Set Cell Band UARFCN (uplink) in auto mode" />
+    <GPIBCommand equipment="NETWORK_SIMULATOR1" setting="BAND4" command="CALL:CHAN 1638" description="Set Cell Band UARFCN (downlink)" />
+    <GPIBCommand equipment="NETWORK_SIMULATOR1" setting="BAND4" command="CALL:UPL:CHAN:CONT:AUTO ON" description="Set Cell Band UARFCN (uplink) in auto mode" />
+    <GPIBCommand equipment="NETWORK_SIMULATOR1" setting="BAND5" command="CALL:CHAN 4408" description="Set Cell Band UARFCN (downlink)" />
+    <GPIBCommand equipment="NETWORK_SIMULATOR1" setting="BAND5" command="CALL:BARB BAND5" description="Set cell band arbitrator" />
+    <GPIBCommand equipment="NETWORK_SIMULATOR1" setting="BAND5" command="CALL:UPL:CHAN:CONT:AUTO ON" description="Set Cell Band UARFCN (uplink) in auto mode" />
+    <GPIBCommand equipment="NETWORK_SIMULATOR1" setting="BAND6" command="CALL:CHAN 4400" description="Set Cell Band UARFCN (downlink)" />
+    <GPIBCommand equipment="NETWORK_SIMULATOR1" setting="BAND6" command="CALL:BARB BAND6" description="Set cell band arbitrator" />
+    <GPIBCommand equipment="NETWORK_SIMULATOR1" setting="BAND6" command="CALL:UPL:CHAN:CONT:AUTO ON" description="Set Cell Band UARFCN (uplink) in auto mode" />
+    <GPIBCommand equipment="NETWORK_SIMULATOR1" setting="BAND7" command="CALL:CHAN 2400" description="Set Cell Band UARFCN (downlink)" />
+    <GPIBCommand equipment="NETWORK_SIMULATOR1" setting="BAND7" command="CALL:UPL:CHAN:CONT:AUTO ON" description="Set Cell Band UARFCN (uplink) in auto mode" />
+    <GPIBCommand equipment="NETWORK_SIMULATOR1" setting="BAND8" command="CALL:CHAN 3013" description="Set Cell Band UARFCN (downlink)" />
+    <GPIBCommand equipment="NETWORK_SIMULATOR1" setting="BAND8" command="CALL:UPL:CHAN:CONT:AUTO ON" description="Set Cell Band UARFCN (uplink) in auto mode" />
+    <GPIBCommand equipment="NETWORK_SIMULATOR1" setting="BAND9" command="CALL:CHAN 9312" description="Set Cell Band UARFCN (downlink)" />
+    <GPIBCommand equipment="NETWORK_SIMULATOR1" setting="BAND9" command="CALL:UPL:CHAN:CONT:AUTO ON" description="Set Cell Band UARFCN (uplink) in auto mode" />
+</Sequence>

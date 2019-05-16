@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="13.41">
+    <UseCase>TEST_STEP_ENGINE</UseCase>
+    <Description></Description>
+    <b2bIteration>3</b2bIteration>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <TcMaxAttempt>1</TcMaxAttempt>
+    <TcAcceptanceCriteria>1</TcAcceptanceCriteria>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters>
+        <Parameter>
+            <Name>WEBSITE_URL</Name>
+            <Value>www.google.com</Value>
+        </Parameter>
+        <Parameter>
+            <Name>OPEN_LINK_CHROME</Name>
+            <Value>adb shell am start -a android.intent.action.VIEW -d "http://www.google.com" -p com.android.chrome</Value>
+        </Parameter>
+        <Parameter>
+            <Name>CHECK_STRING</Name>
+            <Value>Starting: Intent { act=android.intent.action.VIEW dat=http://www.google.com/... pkg=com.android.chrome }</Value>
+        </Parameter>
+        <Parameter>
+            <Name>FORCE_STOP_CHROME</Name>
+            <Value>adb shell am force-stop com.android.chrome</Value>
+        </Parameter>
+    </Parameters>
+    <TestSteps>
+        <Include Src="OTC/TC/TR/ACS/Communication/Bluetooth/setup/BT/OTC_Comms_BT_Common.xml" />
+
+        <TestStepSet Id="BrowseAndCheck" >
+            <TestStep Id="RUN_CMD" TIMEOUT="10" COMMAND="FROM_TC:OPEN_LINK_CHROME"
+                      FORCE_EXECUTION="False" WAIT_FOR_RESPONSE="True" SILENT_MODE="False" SAVE_AS="CommandOutput"/>
+            <TestStep Id="CHECK_CONTENT_CMD" TIMEOUT="30" OUTPUT_TO_CHECK="FROM_CTX:CommandOutput"
+                      CHECK_CONTENT="FROM_TC:CHECK_STRING"/>
+            <TestStep Id="SUSPEND" DURATION_IN_SEC="2" />
+            <TestStep Id="RUN_ANDROID_INST"
+                      RUN_INSTR_CMD="am instrument -e class com.intel.uitests.steps.ChromeSteps#testCheckUrlBar
+                       -e website https://www.google. -e isFullWebsiteExpected false -e waitFirstToLoad true
+                        -w com.intel.uitests.test/com.intel.uitests.runner.UiTestRunner"
+                      TIMEOUT="120" RETRIEVE_ARTIFACT="/sdcard/UITESTS/testFail.png"/>
+        </TestStepSet>
+
+        <TestStepSet Id="TypeAndCheck" >
+            <Fork Id="WaitEvent" >
+                <TestStep Id="READ_KEYCODE_EVENTS" DEVICE="PHONE1" TIMEOUT="10" />
+                <TestStep Id="SUSPEND" DURATION_IN_SEC="3" />
+                <TestStep Id="SERIAL_SEND_COMMAND" />
+            </Fork>
+        </TestStepSet>
+
+        <TestStepSet Id="ScanAndType">
+            <Fork Id="FindAndType">
+                <TestStep Id="BT_FIND_DEVICE_INTERLEAVE_SEARCH" DEVICE="PHONE1" DEVICE_TO_FIND="FROM_BENCH:EMBEDDED_SERIAL_DEVICE:MAC_ADDRESS" MUST_FIND="true" />
+                <TestStep SetId="TypeAndCheck" />
+            </Fork>
+        </TestStepSet>
+
+        <TestStepSet Id="Phone1Config">
+            <TestStep Id="BT_SET_TETHERING_POWER" POWER="ON"/>
+        </TestStepSet>
+
+        <TestStepSet Id="Phone1Teardown">
+            <TestStep Id="BT_UNPAIR" DEVICE="PHONE2" BDADDR="FROM_CTX:BT_MAC_ADDRESS_PHONE1"/>
+            <TestStep Id="BT_SET_TETHERING_POWER" DEVICE="PHONE2" POWER="OFF"/>
+            <TestStep SetId="BTCommonTeardown" DEVICE="PHONE2" />
+        </TestStepSet>
+
+        <TestStepSet Id="Phone2Teardown">
+            <TestStep Id="BT_UNPAIR" DEVICE="PHONE1" BDADDR="FROM_CTX:BT_MAC_ADDRESS_PHONE2"/>
+            <TestStep SetId="BTCommonTeardown" DEVICE="PHONE1" />
+        </TestStepSet>
+
+        <Setup>
+            <TestStep Id="GET_ARTIFACT" ARTIFACT="UIAUTOMATOR/UiTests_M-debug.apk"
+                      ARTIFACT_SOURCE="FROM_BENCH:ARTIFACT_MANAGER:URI" TRANSFER_TIMEOUT="DEFAULT"
+                      STORED_FILE_PATH="FILE_PATH_IN_CACHE1" EQT="ARTIFACT_MANAGER"/>
+            <TestStep Id="GET_ARTIFACT" ARTIFACT="UIAUTOMATOR/UiTests_M-debug-androidTest-unaligned.apk"
+                      ARTIFACT_SOURCE="FROM_BENCH:ARTIFACT_MANAGER:URI" TRANSFER_TIMEOUT="DEFAULT"
+                      STORED_FILE_PATH="FILE_PATH_IN_CACHE2" EQT="ARTIFACT_MANAGER"/>
+            <!-- Install apps for Java TestSteps -->
+            <TestStep Id="INSTALL_APP" DEVICE="PHONE1" FILE_PATH="FROM_CTX:FILE_PATH_IN_CACHE1"
+                      BACKUP="false" SIGN="false" TIMEOUT="DEFAULT" BACKUP_FILE_PATH="None" SIGN_KEY_PATH="None"/>
+            <TestStep Id="INSTALL_APP" DEVICE="PHONE1" FILE_PATH="FROM_CTX:FILE_PATH_IN_CACHE2"
+                      BACKUP="false" SIGN="false" TIMEOUT="DEFAULT" BACKUP_FILE_PATH="None" SIGN_KEY_PATH="None"/>
+
+            <TestStep Id="GET_ARTIFACT" EQT="ARTIFACT_MANAGER" ARTIFACT="STM32F4xx/st-flash" ARTIFACT_SOURCE="FROM_BENCH:ARTIFACT_MANAGER:URI" TRANSFER_TIMEOUT="DEFAULT" STORED_FILE_PATH="FILE_PATH_IN_CACHE"/>
+            <TestStep Id="GET_ARTIFACT" EQT="ARTIFACT_MANAGER" ARTIFACT="STM32F4xx/usbreset" ARTIFACT_SOURCE="FROM_BENCH:ARTIFACT_MANAGER:URI" TRANSFER_TIMEOUT="DEFAULT" STORED_FILE_PATH="RESET_USB_PATH"/>
+            <TestStep Id="GET_ARTIFACT" EQT="ARTIFACT_MANAGER" ARTIFACT="STM32F4xx/HIDKeyDemo.bin" ARTIFACT_SOURCE="FROM_BENCH:ARTIFACT_MANAGER:URI" TRANSFER_TIMEOUT="DEFAULT" STORED_FILE_PATH="FILE_PATH_IN_CACHE2"/>
+            <TestStep Id="FLASH_STM32" EQT="STM32F4_Discovery" FLASHER_PATH="FROM_CTX:FILE_PATH_IN_CACHE" BINARY_NAME="FROM_CTX:FILE_PATH_IN_CACHE2" />
+
+            <TestStep Id="GET_ARTIFACT" EQT="ARTIFACT_MANAGER" ARTIFACT="STM32F4xx/HIDDemo.bin" ARTIFACT_SOURCE="FROM_BENCH:ARTIFACT_MANAGER:URI" TRANSFER_TIMEOUT="DEFAULT" STORED_FILE_PATH="FILE_PATH_IN_CACHE3"/>
+            <TestStep Id="FLASH_STM32" EQT="STM32F4_Discovery2" FLASHER_PATH="FROM_CTX:FILE_PATH_IN_CACHE" BINARY_NAME="FROM_CTX:FILE_PATH_IN_CACHE3" />
+
+            <TestStep Id="SERIAL_SEND_COMMAND" COMMAND="Device" EQT="EMBEDDED_SERIAL_DEVICE" />
+            <TestStep Id="SERIAL_READ_STRING" MAX_LINES="4" EQT="EMBEDDED_SERIAL_DEVICE" />
+
+            <TestStep Id="SERIAL_SEND_COMMAND" COMMAND="Device" EQT="EMBEDDED_SERIAL_DEVICE2" />
+            <TestStep Id="SERIAL_READ_STRING" MAX_LINES="4" EQT="EMBEDDED_SERIAL_DEVICE2" />
+
+            <TestStep Id="SERIAL_SEND_COMMAND" COMMAND="SetLocalName HIDMouse" EQT="EMBEDDED_SERIAL_DEVICE2" />
+            <TestStep Id="SERIAL_READ_STRING" MAX_LINES="4" EQT="EMBEDDED_SERIAL_DEVICE2" />
+
+            <TestStep SetId="BTFullSetupPhones1and2" />
+            <!--turn off wifi on DUT-->
+            <TestStep Id="WIFI_SET_POWER" DEVICE="PHONE1" POWER="off"/>
+
+            <!--connect to wifi on DEV-->
+            <TestStep Id="WIFI_REMOVE_NETWORK" DEVICE="PHONE2" SSID="all"/>
+            <TestStep Id="WIFI_SET_POWER" DEVICE="PHONE2" POWER="on"/>
+            <TestStep Id="WIFI_ADD_NETWORK" DEVICE="PHONE2" SSID="FROM_BENCH:WEP_WIFI_ROUTER:SSID"
+                      SECURITY="FROM_BENCH:WEP_WIFI_ROUTER:WIFI_SECURITY" PASS_PHRASE="FROM_BENCH:WEP_WIFI_ROUTER:passphrase"/>
+            <TestStep Id="WIFI_CONNECT" DEVICE="PHONE2" SSID="FROM_BENCH:WEP_WIFI_ROUTER:SSID" TIMEOUT="30"/>
+
+            <TestStep Id="RUN_CMD" DEVICE="PHONE1" TIMEOUT="10" COMMAND="adb shell pkill -SIGKILL uiautomator"
+                              FORCE_EXECUTION="False" WAIT_FOR_RESPONSE="True" SILENT_MODE="False" SAVE_AS="False"/>
+            <TestStep Id="RUN_ANDROID_INST" DEVICE="PHONE1"
+                      RUN_INSTR_CMD="am instrument -e class com.intel.uitests.tests.prerequisites.SkipTutorial#testSkipChrome
+                       -e timeout 15000 -w com.intel.uitests.test/com.intel.uitests.runner.UiTestRunner"
+                      TIMEOUT="60" RETRIEVE_ARTIFACT="/sdcard/UITESTS/testFail.png"/>
+
+            <!-- AUTOMATION - Set default configuration -->
+            <Fork Id="ForkDUTReferencePhoneAndWiFiAP">
+                <TestStep SetId="BTFullSetupPhones1and2" />
+            </Fork>
+            <TestStep SetId="Phone1Config" DEVICE="PHONE2"/>
+
+            <!-- SPEC - Pair devices -->
+            <TestStep Id="BT_SET_DISCOVERABLE" DEVICE="PHONE2" MODE="both" TIMEOUT="0"/>
+            <TestStep Id="SUSPEND" DURATION_IN_SEC="20"/>
+            <TestStep Id="BT_FIND_DEVICE_INTERLEAVE_SEARCH" DEVICE="PHONE1" DEVICE_TO_FIND="FROM_CTX:BT_MAC_ADDRESS_PHONE2" MUST_FIND="true" />
+            <TestStep Id="BT_WAIT_PAIRING" DEVICE="PHONE2" BDADDR="FROM_CTX:BT_MAC_ADDRESS_PHONE1" UNPAIR_FIRST="True" ACCEPT_PAIRING="True" PASS_KEY="0" PIN_CODE="0000" TIMEOUT="120"/>
+            <TestStep Id="BT_PAIR" DEVICE="PHONE1" BDADDR="FROM_CTX:BT_MAC_ADDRESS_PHONE2" UNPAIR_FIRST="True" ACCEPT_PAIRING="True" PASS_KEY="0" PIN_CODE="0000" />
+            <TestStep Id="BT_CHECK_PAIRED" DEVICE="PHONE1" BDADDR="FROM_CTX:BT_MAC_ADDRESS_PHONE2" />
+            <TestStep Id="SUSPEND" DURATION_IN_SEC="2"/>
+            <!-- SPEC - Step 1 : Connect PAN User from reference device -->
+            <TestStep Id="BT_CONNECT_PROFILE" DEVICE="PHONE1" BDADDR="FROM_CTX:BT_MAC_ADDRESS_PHONE2" PROFILE="PAN" CONNECT="True"/>
+            <TestStep Id="BT_CHECK_PROFILE_STATUS" DEVICE="PHONE1" BDADDR="FROM_CTX:BT_MAC_ADDRESS_PHONE2" PROFILE="PAN" FAIL_IF="disconnected" SAVE_AS="PROFILE_STATUS" />
+            <Fork Id="DismissPairing">
+                <TestStep Id="OPEN_HOME_PAGE" DEVICE="PHONE1"/>
+                <TestStep Id="OPEN_HOME_PAGE" DEVICE="PHONE2"/>
+            </Fork>
+            <!-- SPEC - Step 2 : Scan Reference device from DUT -->
+            <TestStep Id="BT_FIND_DEVICE_INTERLEAVE_SEARCH" DEVICE="PHONE1" DEVICE_TO_FIND="FROM_BENCH:EMBEDDED_SERIAL_DEVICE:MAC_ADDRESS" MUST_FIND="true" />
+            <TestStep Id="BT_PAIR" DEVICE="PHONE1" BDADDR="FROM_BENCH:EMBEDDED_SERIAL_DEVICE:MAC_ADDRESS" UNPAIR_FIRST="true" ACCEPT_PAIRING="true" PASS_KEY="0" PIN_CODE="0000" />
+            <TestStep Id="SUSPEND" DURATION_IN_SEC="3"/>
+            <TestStep Id="BT_CONNECT_PROFILE" DEVICE="PHONE1" BDADDR="FROM_BENCH:EMBEDDED_SERIAL_DEVICE:MAC_ADDRESS" PROFILE="HID" CONNECT="true" />
+            <TestStep Id="BT_CHECK_PROFILE_STATUS" DEVICE="PHONE1" BDADDR="FROM_BENCH:EMBEDDED_SERIAL_DEVICE:MAC_ADDRESS" PROFILE="HID" FAIL_IF="disconnected" SAVE_AS="PROFILE_STATUS" />
+
+            <TestStep Id="BT_FIND_DEVICE_INTERLEAVE_SEARCH" DEVICE="PHONE1" DEVICE_TO_FIND="FROM_BENCH:EMBEDDED_SERIAL_DEVICE2:MAC_ADDRESS" MUST_FIND="true" />
+            <!-- SPEC - Step 3 : Pair and connect to reference device -->
+            <TestStep Id="BT_PAIR" DEVICE="PHONE1" BDADDR="FROM_BENCH:EMBEDDED_SERIAL_DEVICE2:MAC_ADDRESS" UNPAIR_FIRST="true" ACCEPT_PAIRING="true" PASS_KEY="0" PIN_CODE="0000" />
+            <TestStep Id="SUSPEND" DURATION_IN_SEC="3"/>
+            <TestStep Id="BT_CONNECT_PROFILE" DEVICE="PHONE1" BDADDR="FROM_BENCH:EMBEDDED_SERIAL_DEVICE2:MAC_ADDRESS" PROFILE="HID" CONNECT="true" />
+            <TestStep Id="BT_CHECK_PROFILE_STATUS" DEVICE="PHONE1" BDADDR="FROM_BENCH:EMBEDDED_SERIAL_DEVICE2:MAC_ADDRESS" PROFILE="HID" FAIL_IF="disconnected" SAVE_AS="PROFILE_STATUS" />
+        </Setup>
+        <RunTest>
+            <TestStep Id="RUN_CMD" DEVICE="PHONE1" TIMEOUT="10" COMMAND="FROM_TC:FORCE_STOP_CHROME"
+                      FORCE_EXECUTION="False" WAIT_FOR_RESPONSE="True" SILENT_MODE="False" SAVE_AS="False"/>
+
+            <Fork Id="BrowseAndHIDEvent" >
+                <TestStep SetId="BrowseAndCheck" DEVICE="PHONE1" />
+                <TestStep SetId="TypeAndCheck" EQT="EMBEDDED_SERIAL_DEVICE2" INPUT_DEVICE="HIDMouse" COMMAND="MouseEvent 0 2"  EVENTS="BTN_MOUSE"/>
+                <TestStep SetId="TypeAndCheck" EQT="EMBEDDED_SERIAL_DEVICE" INPUT_DEVICE="HIDDemo" COMMAND="MouseEvent A"  EVENTS="KEY_A"/>
+            </Fork>
+            <TestStep Id="RUN_CMD" DEVICE="PHONE1" TIMEOUT="10" COMMAND="FROM_TC:FORCE_STOP_CHROME"
+                      FORCE_EXECUTION="False" WAIT_FOR_RESPONSE="True" SILENT_MODE="False" SAVE_AS="False"/>
+        </RunTest>
+        <TearDown>
+            <TestStep Id="BT_UNPAIR" DEVICE="PHONE1" BDADDR="FROM_BENCH:EMBEDDED_SERIAL_DEVICE2:MAC_ADDRESS" />
+
+            <TestStep Id="BT_UNPAIR" DEVICE="PHONE1" BDADDR="FROM_BENCH:EMBEDDED_SERIAL_DEVICE:MAC_ADDRESS" />
+
+            <TestStep Id="WIFI_REMOVE_NETWORK" DEVICE="PHONE1" SSID="all"/>
+            <TestStep Id="WIFI_SET_POWER" DEVICE="PHONE1" POWER="off"/>
+            <Fork Id="ForkTeardown">
+                <TestStep SetId="Phone1Teardown"/>
+                <TestStep SetId="Phone2Teardown"/>
+            </Fork>
+        </TearDown>
+    </TestSteps>
+</TestCase>

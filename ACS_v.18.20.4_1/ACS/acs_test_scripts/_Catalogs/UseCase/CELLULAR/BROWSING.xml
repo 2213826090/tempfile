@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<UseCases xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:noNamespaceSchemaLocation="../../../../acs/src/_Catalogs/UseCase/usecase.xsd">
+    <UseCase Id="LIVE_CELLULAR_WEB_BROWSING" Domain="CELLULAR" SubDomain="BROWSING" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Networking.LIVE_CELLULAR_WEB_BROWSING.LiveCellularWebBrowsing</ClassName>
+        <Description>
+            Browses web page(s) over cellular network.
+            It is possible to force usage of specific network technology.
+        </Description>
+        <Environment name="TEL">
+            <Capabilities>EQT_LIVE_USIM</Capabilities>
+        </Environment>
+        <Parameters>
+            <Parameter name="BROWSER_TYPE" type="BROWSER_TYPE" isOptional="false">
+                <Description>
+                    Browser to use.
+                    Warning ! NATIVE mode is not verbose in term of verdict, because it uses the default browser of the
+                    system.
+                    So the user should check manually in this mode if the page is correctly loaded.
+                </Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="WEBSITE_URL" type="WEBSITE_URL" isOptional="false">
+                <Description>
+                    Website url to open String as follow : http://www.intel.com
+                    For Multiple page loading separate each address by a ";".
+                </Description>
+                <PossibleValues/>
+                <DefaultValue>http://www.intel.com</DefaultValue>
+                <Blank/>
+            </Parameter>
+            <Parameter name="TIMEOUT" type="TIMEOUT_IN_SEC" isOptional="false">
+                <Description>Timeout (in second) to load web page</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="PREFERRED_NETWORK_TYPE" type="NETWORK_PREFERENCES" isOptional="true">
+                <Description>Preferred network to use for the test.</Description>
+                <PossibleValues/>
+                <DefaultValue>GLOBAL</DefaultValue>
+                <Blank/>
+            </Parameter>
+        </Parameters>
+    </UseCase>
+    <UseCase Id="LAB_WEB_BROWSING" Domain="CELLULAR" SubDomain="BROWSING" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Networking.LAB_WEB_BROWSING.LabWebBrowsing</ClassName>
+        <Description>LAB Web browsing Test Case</Description>
+        <Environment name="TEL">
+            <Dependency>EQT_AG_8960</Dependency>
+        </Environment>
+        <Parameters>
+            <Parameter name="CELL_TECH" type="CELL_TECH" isOptional="false">
+                <!-- Cell Technology (2G|3G) -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="CELL_BAND" type="CELL_BAND" isOptional="false">
+                <!-- Cell Band. For 2G : EGSM|GSM850|PCS|DCS. For 3G : 1,2,5,8 -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="CELL_SERVICE" type="CELL_SERVICE" isOptional="false">
+                <!-- Cell Service ( (GSM|GPRS|EGPRS) for 2G CELL, (CIRCUIT|PACKET|CIRCUIT_PACKET) for 3G CELL) -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="ARFCN" type="ARFCN" isOptional="false">
+                <!-- Arfcn -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="CELL_POWER" type="CELL_POWER" isOptional="false">
+                <!-- cell power -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="LAC" type="LAC" isOptional="false">
+                <!-- LAC, For 2G and 3G: 0 to 65535 -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="RAC" type="RAC" isOptional="false">
+                <!-- Cell Routing Area, For 2G and 3G: 1 to 255 -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="MCC" type="MCC" isOptional="false">
+                <!-- Mobile Country Code 0 to 999 -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="MNC" type="MNC" isOptional="false">
+                <!-- Mobile Network Code 0 to 999 -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="BROWSER_TYPE" type="BROWSER_TYPE" isOptional="false">
+                <!-- Browser to use.Possible values : "NATIVE","CHROME", "ACS_AGENT" Warning ! NATIVE mode is not verbose in term of verdict, because it uses the default browser of the system.So the user should check manually in this mode if the page is correctly loaded -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="WEBSITE_URL" type="WEBSITE_URL" isOptional="false">
+                <!-- Website url to open String as follow : http://www.intel.com. Multiple page browsing can also be achieved by providing multiple website urls separated by ";". Each page will be loaded one after an other. -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="TIMEOUT" type="TIMEOUT" isOptional="false">
+                <!-- Timeout (in second) to load web page -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+        </Parameters>
+    </UseCase>
+</UseCases>

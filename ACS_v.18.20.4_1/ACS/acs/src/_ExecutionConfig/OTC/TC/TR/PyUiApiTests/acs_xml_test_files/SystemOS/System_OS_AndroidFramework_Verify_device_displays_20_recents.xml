@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase>
+    <UseCase>EXEC</UseCase>
+    <Description>System OS test</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <TcMaxAttempt>1</TcMaxAttempt>
+    <TestSteps>
+        <Initialize>
+            <TestStep Id="GET_ARTIFACT" EQT="ARTIFACT_MANAGER" ARTIFACT="APPLICATIONS/SYSTEM_OS/20_APKS/test1-debug.apk" ARTIFACT_SOURCE="FROM_BENCH:ARTIFACT_MANAGER:URI" TRANSFER_TIMEOUT="DEFAULT" STORED_FILE_PATH="FILE_PATH_IN_CACHE1"/>
+            <TestStep Id="INSTALL_APP"
+                      DEVICE="PHONE1"
+                      SIGN="False"
+                      SIGN_KEY_PATH="DEFAULT"
+                      FILE_PATH="FROM_CTX:FILE_PATH_IN_CACHE1"
+                      BACKUP="False"
+                      TIMEOUT="30"
+                      BACKUP_FILE_PATH="/backup"/>
+            <TestStep Id="GET_ARTIFACT" EQT="ARTIFACT_MANAGER" ARTIFACT="APPLICATIONS/SYSTEM_OS/20_APKS/test2-debug.apk" ARTIFACT_SOURCE="FROM_BENCH:ARTIFACT_MANAGER:URI" TRANSFER_TIMEOUT="DEFAULT" STORED_FILE_PATH="FILE_PATH_IN_CACHE1"/>
+            <TestStep Id="INSTALL_APP"
+                      DEVICE="PHONE1"
+                      SIGN="False"
+                      SIGN_KEY_PATH="DEFAULT"
+                      FILE_PATH="FROM_CTX:FILE_PATH_IN_CACHE1"
+                      BACKUP="False"
+                      TIMEOUT="30"
+                      BACKUP_FILE_PATH="/backup"/>
+            <TestStep Id="GET_ARTIFACT" EQT="ARTIFACT_MANAGER" ARTIFACT="APPLICATIONS/SYSTEM_OS/20_APKS/test3-debug.apk" ARTIFACT_SOURCE="FROM_BENCH:ARTIFACT_MANAGER:URI" TRANSFER_TIMEOUT="DEFAULT" STORED_FILE_PATH="FILE_PATH_IN_CACHE1"/>
+            <TestStep Id="INSTALL_APP"
+                      DEVICE="PHONE1"
+                      SIGN="False"
+                      SIGN_KEY_PATH="DEFAULT"
+                      FILE_PATH="FROM_CTX:FILE_PATH_IN_CACHE1"
+                      BACKUP="False"
+                      TIMEOUT="30"
+                      BACKUP_FILE_PATH="/backup"/>
+            <TestStep Id="GET_ARTIFACT" EQT="ARTIFACT_MANAGER" ARTIFACT="APPLICATIONS/SYSTEM_OS/20_APKS/test4-debug.apk" ARTIFACT_SOURCE="FROM_BENCH:ARTIFACT_MANAGER:URI" TRANSFER_TIMEOUT="DEFAULT" STORED_FILE_PATH="FILE_PATH_IN_CACHE1"/>
+            <TestStep Id="INSTALL_APP"
+                      DEVICE="PHONE1"
+                      SIGN="False"
+                      SIGN_KEY_PATH="DEFAULT"
+                      FILE_PATH="FROM_CTX:FILE_PATH_IN_CACHE1"
+                      BACKUP="False"
+                      TIMEOUT="30"
+                      BACKUP_FILE_PATH="/backup"/>
+            <TestStep Id="GET_ARTIFACT" EQT="ARTIFACT_MANAGER" ARTIFACT="APPLICATIONS/SYSTEM_OS/20_APKS/test5-debug.apk" ARTIFACT_SOURCE="FROM_BENCH:ARTIFACT_MANAGER:URI" TRANSFER_TIMEOUT="DEFAULT" STORED_FILE_PATH="FILE_PATH_IN_CACHE1"/>
+            <TestStep Id="INSTALL_APP"
+                      DEVICE="PHONE1"
+                      SIGN="False"
+                      SIGN_KEY_PATH="DEFAULT"
+                      FILE_PATH="FROM_CTX:FILE_PATH_IN_CACHE1"
+                      BACKUP="False"
+                      TIMEOUT="30"
+                      BACKUP_FILE_PATH="/backup"/>
+            <TestStep Id="GET_ARTIFACT" EQT="ARTIFACT_MANAGER" ARTIFACT="APPLICATIONS/SYSTEM_OS/20_APKS/test6-debug.apk" ARTIFACT_SOURCE="FROM_BENCH:ARTIFACT_MANAGER:URI" TRANSFER_TIMEOUT="DEFAULT" STORED_FILE_PATH="FILE_PATH_IN_CACHE1"/>
+            <TestStep Id="INSTALL_APP"
+                      DEVICE="PHONE1"
+                      SIGN="False"
+                      SIGN_KEY_PATH="DEFAULT"
+                      FILE_PATH="FROM_CTX:FILE_PATH_IN_CACHE1"
+                      BACKUP="False"
+                      TIMEOUT="30"
+                      BACKUP_FILE_PATH="/backup"/>
+            <TestStep Id="GET_ARTIFACT" EQT="ARTIFACT_MANAGER" ARTIFACT="APPLICATIONS/SYSTEM_OS/20_APKS/test7-debug.apk" ARTIFACT_SOURCE="FROM_BENCH:ARTIFACT_MANAGER:URI" TRANSFER_TIMEOUT="DEFAULT" STORED_FILE_PATH="FILE_PATH_IN_CACHE1"/>
+            <TestStep Id="INSTALL_APP"
+                      DEVICE="PHONE1"
+                      SIGN="False"
+                      SIGN_KEY_PATH="DEFAULT"
+                      FILE_PATH="FROM_CTX:FILE_PATH_IN_CACHE1"
+                      BACKUP="False"
+                      TIMEOUT="30"
+                      BACKUP_FILE_PATH="/backup"/>
+            <TestStep Id="GET_ARTIFACT" EQT="ARTIFACT_MANAGER" ARTIFACT="APPLICATIONS/SYSTEM_OS/20_APKS/test8-debug.apk" ARTIFACT_SOURCE="FROM_BENCH:ARTIFACT_MANAGER:URI" TRANSFER_TIMEOUT="DEFAULT" STORED_FILE_PATH="FILE_PATH_IN_CACHE1"/>
+            <TestStep Id="INSTALL_APP"
+                      DEVICE="PHONE1"
+                      SIGN="False"
+                      SIGN_KEY_PATH="DEFAULT"
+                      FILE_PATH="FROM_CTX:FILE_PATH_IN_CACHE1"
+                      BACKUP="False"
+                      TIMEOUT="30"
+                      BACKUP_FILE_PATH="/backup"/>
+            <TestStep Id="GET_ARTIFACT" EQT="ARTIFACT_MANAGER" ARTIFACT="APPLICATIONS/SYSTEM_OS/20_APKS/test9-debug.apk" ARTIFACT_SOURCE="FROM_BENCH:ARTIFACT_MANAGER:URI" TRANSFER_TIMEOUT="DEFAULT" STORED_FILE_PATH="FILE_PATH_IN_CACHE1"/>
+            <TestStep Id="INSTALL_APP"
+                      DEVICE="PHONE1"
+                      SIGN="False"
+                      SIGN_KEY_PATH="DEFAULT"
+                      FILE_PATH="FROM_CTX:FILE_PATH_IN_CACHE1"
+                      BACKUP="False"
+                      TIMEOUT="30"
+                      BACKUP_FILE_PATH="/backup"/>
+            <TestStep Id="GET_ARTIFACT" EQT="ARTIFACT_MANAGER" ARTIFACT="APPLICATIONS/SYSTEM_OS/20_APKS/test10-debug.apk" ARTIFACT_SOURCE="FROM_BENCH:ARTIFACT_MANAGER:URI" TRANSFER_TIMEOUT="DEFAULT" STORED_FILE_PATH="FILE_PATH_IN_CACHE1"/>
+            <TestStep Id="INSTALL_APP"
+                      DEVICE="PHONE1"
+                      SIGN="False"
+                      SIGN_KEY_PATH="DEFAULT"
+                      FILE_PATH="FROM_CTX:FILE_PATH_IN_CACHE1"
+                      BACKUP="False"
+                      TIMEOUT="30"
+                      BACKUP_FILE_PATH="/backup"/>
+            <TestStep Id="GET_ARTIFACT" EQT="ARTIFACT_MANAGER" ARTIFACT="APPLICATIONS/SYSTEM_OS/20_APKS/test11-debug.apk" ARTIFACT_SOURCE="FROM_BENCH:ARTIFACT_MANAGER:URI" TRANSFER_TIMEOUT="DEFAULT" STORED_FILE_PATH="FILE_PATH_IN_CACHE1"/>
+            <TestStep Id="INSTALL_APP"
+                      DEVICE="PHONE1"
+                      SIGN="False"
+                      SIGN_KEY_PATH="DEFAULT"
+                      FILE_PATH="FROM_CTX:FILE_PATH_IN_CACHE1"
+                      BACKUP="False"
+                      TIMEOUT="30"
+                      BACKUP_FILE_PATH="/backup"/>
+            <TestStep Id="GET_ARTIFACT" EQT="ARTIFACT_MANAGER" ARTIFACT="APPLICATIONS/SYSTEM_OS/20_APKS/test12-debug.apk" ARTIFACT_SOURCE="FROM_BENCH:ARTIFACT_MANAGER:URI" TRANSFER_TIMEOUT="DEFAULT" STORED_FILE_PATH="FILE_PATH_IN_CACHE1"/>
+            <TestStep Id="INSTALL_APP"
+                      DEVICE="PHONE1"
+                      SIGN="False"
+                      SIGN_KEY_PATH="DEFAULT"
+                      FILE_PATH="FROM_CTX:FILE_PATH_IN_CACHE1"
+                      BACKUP="False"
+                      TIMEOUT="30"
+                      BACKUP_FILE_PATH="/backup"/>
+            <TestStep Id="GET_ARTIFACT" EQT="ARTIFACT_MANAGER" ARTIFACT="APPLICATIONS/SYSTEM_OS/20_APKS/test13-debug.apk" ARTIFACT_SOURCE="FROM_BENCH:ARTIFACT_MANAGER:URI" TRANSFER_TIMEOUT="DEFAULT" STORED_FILE_PATH="FILE_PATH_IN_CACHE1"/>
+            <TestStep Id="INSTALL_APP"
+                      DEVICE="PHONE1"
+                      SIGN="False"
+                      SIGN_KEY_PATH="DEFAULT"
+                      FILE_PATH="FROM_CTX:FILE_PATH_IN_CACHE1"
+                      BACKUP="False"
+                      TIMEOUT="30"
+                      BACKUP_FILE_PATH="/backup"/>
+            <TestStep Id="GET_ARTIFACT" EQT="ARTIFACT_MANAGER" ARTIFACT="APPLICATIONS/SYSTEM_OS/20_APKS/test14-debug.apk" ARTIFACT_SOURCE="FROM_BENCH:ARTIFACT_MANAGER:URI" TRANSFER_TIMEOUT="DEFAULT" STORED_FILE_PATH="FILE_PATH_IN_CACHE1"/>
+            <TestStep Id="INSTALL_APP"
+                      DEVICE="PHONE1"
+                      SIGN="False"
+                      SIGN_KEY_PATH="DEFAULT"
+                      FILE_PATH="FROM_CTX:FILE_PATH_IN_CACHE1"
+                      BACKUP="False"
+                      TIMEOUT="30"
+                      BACKUP_FILE_PATH="/backup"/>
+            <TestStep Id="GET_ARTIFACT" EQT="ARTIFACT_MANAGER" ARTIFACT="APPLICATIONS/SYSTEM_OS/20_APKS/test15-debug.apk" ARTIFACT_SOURCE="FROM_BENCH:ARTIFACT_MANAGER:URI" TRANSFER_TIMEOUT="DEFAULT" STORED_FILE_PATH="FILE_PATH_IN_CACHE1"/>
+            <TestStep Id="INSTALL_APP"
+                      DEVICE="PHONE1"
+                      SIGN="False"
+                      SIGN_KEY_PATH="DEFAULT"
+                      FILE_PATH="FROM_CTX:FILE_PATH_IN_CACHE1"
+                      BACKUP="False"
+                      TIMEOUT="30"
+                      BACKUP_FILE_PATH="/backup"/>
+            <TestStep Id="GET_ARTIFACT" EQT="ARTIFACT_MANAGER" ARTIFACT="APPLICATIONS/SYSTEM_OS/20_APKS/test16-debug.apk" ARTIFACT_SOURCE="FROM_BENCH:ARTIFACT_MANAGER:URI" TRANSFER_TIMEOUT="DEFAULT" STORED_FILE_PATH="FILE_PATH_IN_CACHE1"/>
+            <TestStep Id="INSTALL_APP"
+                      DEVICE="PHONE1"
+                      SIGN="False"
+                      SIGN_KEY_PATH="DEFAULT"
+                      FILE_PATH="FROM_CTX:FILE_PATH_IN_CACHE1"
+                      BACKUP="False"
+                      TIMEOUT="30"
+                      BACKUP_FILE_PATH="/backup"/>
+            <TestStep Id="GET_ARTIFACT" EQT="ARTIFACT_MANAGER" ARTIFACT="APPLICATIONS/SYSTEM_OS/20_APKS/test17-debug.apk" ARTIFACT_SOURCE="FROM_BENCH:ARTIFACT_MANAGER:URI" TRANSFER_TIMEOUT="DEFAULT" STORED_FILE_PATH="FILE_PATH_IN_CACHE1"/>
+            <TestStep Id="INSTALL_APP"
+                      DEVICE="PHONE1"
+                      SIGN="False"
+                      SIGN_KEY_PATH="DEFAULT"
+                      FILE_PATH="FROM_CTX:FILE_PATH_IN_CACHE1"
+                      BACKUP="False"
+                      TIMEOUT="30"
+                      BACKUP_FILE_PATH="/backup"/>
+            <TestStep Id="GET_ARTIFACT" EQT="ARTIFACT_MANAGER" ARTIFACT="APPLICATIONS/SYSTEM_OS/20_APKS/test18-debug.apk" ARTIFACT_SOURCE="FROM_BENCH:ARTIFACT_MANAGER:URI" TRANSFER_TIMEOUT="DEFAULT" STORED_FILE_PATH="FILE_PATH_IN_CACHE1"/>
+            <TestStep Id="INSTALL_APP"
+                      DEVICE="PHONE1"
+                      SIGN="False"
+                      SIGN_KEY_PATH="DEFAULT"
+                      FILE_PATH="FROM_CTX:FILE_PATH_IN_CACHE1"
+                      BACKUP="False"
+                      TIMEOUT="30"
+                      BACKUP_FILE_PATH="/backup"/>
+            <TestStep Id="GET_ARTIFACT" EQT="ARTIFACT_MANAGER" ARTIFACT="APPLICATIONS/SYSTEM_OS/20_APKS/test19-debug.apk" ARTIFACT_SOURCE="FROM_BENCH:ARTIFACT_MANAGER:URI" TRANSFER_TIMEOUT="DEFAULT" STORED_FILE_PATH="FILE_PATH_IN_CACHE1"/>
+            <TestStep Id="INSTALL_APP"
+                      DEVICE="PHONE1"
+                      SIGN="False"
+                      SIGN_KEY_PATH="DEFAULT"
+                      FILE_PATH="FROM_CTX:FILE_PATH_IN_CACHE1"
+                      BACKUP="False"
+                      TIMEOUT="30"
+                      BACKUP_FILE_PATH="/backup"/>
+            <TestStep Id="GET_ARTIFACT" EQT="ARTIFACT_MANAGER" ARTIFACT="APPLICATIONS/SYSTEM_OS/20_APKS/test20-debug.apk" ARTIFACT_SOURCE="FROM_BENCH:ARTIFACT_MANAGER:URI" TRANSFER_TIMEOUT="DEFAULT" STORED_FILE_PATH="FILE_PATH_IN_CACHE1"/>
+            <TestStep Id="INSTALL_APP"
+                      DEVICE="PHONE1"
+                      SIGN="False"
+                      SIGN_KEY_PATH="DEFAULT"
+                      FILE_PATH="FROM_CTX:FILE_PATH_IN_CACHE1"
+                      BACKUP="False"
+                      TIMEOUT="30"
+                      BACKUP_FILE_PATH="/backup"/>
+        </Initialize>
+        <Finalize>
+             <TestStep Id="UNINSTALL_APP" DEVICE="PHONE1" TIMEOUT="60" BACKUP_APP_NAME="NO_BACKUP" BACKUP_FILE_PATH="NO_BACKUP" APP_NAME="com.example.test1"/>
+             <TestStep Id="UNINSTALL_APP" DEVICE="PHONE1" TIMEOUT="60" BACKUP_APP_NAME="NO_BACKUP" BACKUP_FILE_PATH="NO_BACKUP" APP_NAME="com.example.test2"/>
+             <TestStep Id="UNINSTALL_APP" DEVICE="PHONE1" TIMEOUT="60" BACKUP_APP_NAME="NO_BACKUP" BACKUP_FILE_PATH="NO_BACKUP" APP_NAME="com.example.test3"/>
+             <TestStep Id="UNINSTALL_APP" DEVICE="PHONE1" TIMEOUT="60" BACKUP_APP_NAME="NO_BACKUP" BACKUP_FILE_PATH="NO_BACKUP" APP_NAME="com.example.test4"/>
+             <TestStep Id="UNINSTALL_APP" DEVICE="PHONE1" TIMEOUT="60" BACKUP_APP_NAME="NO_BACKUP" BACKUP_FILE_PATH="NO_BACKUP" APP_NAME="com.example.test5"/>
+             <TestStep Id="UNINSTALL_APP" DEVICE="PHONE1" TIMEOUT="60" BACKUP_APP_NAME="NO_BACKUP" BACKUP_FILE_PATH="NO_BACKUP" APP_NAME="com.example.test6"/>
+             <TestStep Id="UNINSTALL_APP" DEVICE="PHONE1" TIMEOUT="60" BACKUP_APP_NAME="NO_BACKUP" BACKUP_FILE_PATH="NO_BACKUP" APP_NAME="com.example.test7"/>
+             <TestStep Id="UNINSTALL_APP" DEVICE="PHONE1" TIMEOUT="60" BACKUP_APP_NAME="NO_BACKUP" BACKUP_FILE_PATH="NO_BACKUP" APP_NAME="com.example.test8"/>
+             <TestStep Id="UNINSTALL_APP" DEVICE="PHONE1" TIMEOUT="60" BACKUP_APP_NAME="NO_BACKUP" BACKUP_FILE_PATH="NO_BACKUP" APP_NAME="com.example.test9"/>
+             <TestStep Id="UNINSTALL_APP" DEVICE="PHONE1" TIMEOUT="60" BACKUP_APP_NAME="NO_BACKUP" BACKUP_FILE_PATH="NO_BACKUP" APP_NAME="com.example.test10"/>
+             <TestStep Id="UNINSTALL_APP" DEVICE="PHONE1" TIMEOUT="60" BACKUP_APP_NAME="NO_BACKUP" BACKUP_FILE_PATH="NO_BACKUP" APP_NAME="com.example.test11"/>
+             <TestStep Id="UNINSTALL_APP" DEVICE="PHONE1" TIMEOUT="60" BACKUP_APP_NAME="NO_BACKUP" BACKUP_FILE_PATH="NO_BACKUP" APP_NAME="com.example.test12"/>
+             <TestStep Id="UNINSTALL_APP" DEVICE="PHONE1" TIMEOUT="60" BACKUP_APP_NAME="NO_BACKUP" BACKUP_FILE_PATH="NO_BACKUP" APP_NAME="com.example.test13"/>
+             <TestStep Id="UNINSTALL_APP" DEVICE="PHONE1" TIMEOUT="60" BACKUP_APP_NAME="NO_BACKUP" BACKUP_FILE_PATH="NO_BACKUP" APP_NAME="com.example.test14"/>
+             <TestStep Id="UNINSTALL_APP" DEVICE="PHONE1" TIMEOUT="60" BACKUP_APP_NAME="NO_BACKUP" BACKUP_FILE_PATH="NO_BACKUP" APP_NAME="com.example.test15"/>
+             <TestStep Id="UNINSTALL_APP" DEVICE="PHONE1" TIMEOUT="60" BACKUP_APP_NAME="NO_BACKUP" BACKUP_FILE_PATH="NO_BACKUP" APP_NAME="com.example.test16"/>
+             <TestStep Id="UNINSTALL_APP" DEVICE="PHONE1" TIMEOUT="60" BACKUP_APP_NAME="NO_BACKUP" BACKUP_FILE_PATH="NO_BACKUP" APP_NAME="com.example.test17"/>
+             <TestStep Id="UNINSTALL_APP" DEVICE="PHONE1" TIMEOUT="60" BACKUP_APP_NAME="NO_BACKUP" BACKUP_FILE_PATH="NO_BACKUP" APP_NAME="com.example.test18"/>
+             <TestStep Id="UNINSTALL_APP" DEVICE="PHONE1" TIMEOUT="60" BACKUP_APP_NAME="NO_BACKUP" BACKUP_FILE_PATH="NO_BACKUP" APP_NAME="com.example.test19"/>
+             <TestStep Id="UNINSTALL_APP" DEVICE="PHONE1" TIMEOUT="60" BACKUP_APP_NAME="NO_BACKUP" BACKUP_FILE_PATH="NO_BACKUP" APP_NAME="com.example.test20"/>
+        </Finalize>
+    </TestSteps>
+    <Parameters>
+        <Parameter>
+            <Name>RUN_CMD</Name>
+            <Value>python ../../entry_point_scripts/SystemOS/System_OS_AndroidFramework_Verify_device_displays_20_recents.py</Value>
+        </Parameter>
+        <Parameter>
+            <Name>RUN_FROM_TCDIRECTORY</Name>
+            <Value>True</Value>
+        </Parameter>
+        <Parameter>
+            <Name>RUN_TIMEOUT</Name>
+            <Value>500</Value>
+        </Parameter>
+        <Parameter>
+            <Name>RUN_EXPECT_RESULT</Name>
+            <Value>PASS</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

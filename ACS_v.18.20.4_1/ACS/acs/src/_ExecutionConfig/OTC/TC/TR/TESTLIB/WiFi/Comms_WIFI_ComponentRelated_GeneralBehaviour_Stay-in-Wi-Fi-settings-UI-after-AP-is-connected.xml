@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='ASCII'?>
+<TestCase>
+    <UseCase>Testlib</UseCase>
+    <Description>wifi</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <TcMaxAttempt>3</TcMaxAttempt>
+    <Parameters>
+        <Parameter>
+            <Name>test</Name>
+            <Value>scripts/wireless/wifi_generic/tests/Stay-in-wifi-settings-UI.py</Value>
+        </Parameter>
+        <Parameter>
+            <Name>script-args</Name>
+            <Value>mode=bg txpwr=75 security=none dut_security=None ref_ap_security=WPA/WPA2 ref_ap_name=SSG_LAB_VAL_S3 ref_ap_pw=ssg_ba_otc_val_ciscos3 ap_name=CornelAP duration=600</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

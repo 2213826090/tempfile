@@ -1,0 +1,72 @@
+{
+    "Configuration": {
+        "Boot": null,
+        "BootVars": null,
+        "Custom": null,
+        "Download": {},
+        "Inherit": {
+            "BOARD": "sofia"
+        },
+        "Logs": null,
+        "Timeout": null,
+        "WorkAround": {
+            "TestCase": [
+                {
+                    "Issue": "Automation not working.",
+                    "Name": "FastbootForwardFlashingTestCase",
+                    "Skip": true
+                },
+                {
+                    "Issue": "Unstable on master branch.",
+                    "Name": "OtaForwardFlashingTestCase",
+                    "Skip": true
+                }
+            ]
+        },
+        "TestDescription": {
+            "warnings": {
+                 "BOOTOTA - POS - FASTBOOT REBOOT BOOTLOADER": "OAM-15659: serial opened under Linux"
+            },
+            "engineering": [
+                {
+                    "name": "default",
+                    "build_tag": "bootota_",
+                    "testing": [
+                        {
+                            "campaign": "BOOTOTA_PREINTEGRATION",
+                            "build_target": "r2_sltsvbV12-userdebug"
+                        },
+                        {
+                            "campaign": "BOOTOTA_USER_EAT",
+                            "build_target": "r2_sltsvbV12-user"
+                        }
+                    ]
+                }
+            ],
+            "release_candidate": [
+                {
+                    "name": "release",
+                    "build_tag": "",
+                    "testing": [
+                        {
+                            "campaign": "BOOTOTA_RELEASE",
+                            "build_target": "r2_sltsvbV12-userdebug"
+                        }
+                    ]
+                }
+            ],
+            "latest": [
+                {
+                    "name": "latest",
+                    "build_tag": "",
+                    "testing": [
+                        {
+                            "campaign": "BOOTOTA_PREINTEGRATION",
+                            "build_target": "r2_sltsvbV12-userdebug"
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}

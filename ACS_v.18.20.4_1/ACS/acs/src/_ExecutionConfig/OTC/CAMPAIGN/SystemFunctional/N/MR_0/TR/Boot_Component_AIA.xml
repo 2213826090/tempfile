@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='ASCII'?>
+<Campaign version="13.49">
+    <Parameters>
+        <Parameter isControlledPSUsed="False"/>
+        <Parameter isIoCardUsed="True"/>
+        <Parameter skipBootOnPowerCycle="False"/>
+        <Parameter bootRetryNumber="0"/>
+        <Parameter runHookScripts="False"/>
+        <Parameter powerCycleBetweenTC="False"/>
+        <Parameter powerCycleOnFailure="False"/>
+        <Parameter finalDutState="NoChange"/>
+        <Parameter stopCampaignOnCriticalFailure="False"/>
+        <Parameter stopCampaignOnFirstFailure="False"/>
+        <Parameter loggingLevel="debug"/>
+        <Parameter CampaignType="Other"/>
+        <Parameter TCRReportViaRESTAPI="True"/>
+    </Parameters>
+    <TestCases>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_Image/init.start_rpc_server.StartRPCServer.testStartRPCServer"/>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_Image/init.wake_up_and_unlock.WakeUnlock.testWakeUnlock"/>
+	<TestCase Id="../../../../../TC/TP/TC/Multimedia_Image/init.set_orientation_vertical.SetOrientationVertical.testSetOrientationVertical"/>
+	<TestCase Id="../../../../../TC/TP/TC/Multimedia_Image/init.config_first_boot_wizard.ConfigFirstBootWizard.testConfigFirstBootWizard"/>
+	<TestCase Id="../../../../../TC/TP/TC/Multimedia_Image/init.enable_developer_option.EnableDeveloperOption.testEnableDeveloperOption"/>
+	<TestCase Id="../../../../../TC/TP/TC/Multimedia_Image/init.keep_awake.KeepAwake.testKeepAwake"/>
+	<TestCase Id="../../../../../TC/TP/TC/Multimedia_Image/init.disable_verify_apps.DisableVerifyApp.testDisableVerifyApp"/>
+	<TestCase Id="../../../../../TC/TP/TC/Multimedia_Image/init.disable_screen_lock.DisableLockScreen.testDisableLockScreen"/>
+	<TestCase Id="../../../../../TC/TP/TC/Multimedia_Image/init.set_adb_root.AdbRoot.testAdbRoot"/>
+
+        <TestCase Id="../../../../../TC/TR/TESTLIB/BootComponent/BootToAndroid"/>
+        <TestCase Id="../../../../../TC/TR/TESTLIB/BootComponent/UEFI_Sopport_Android"/>
+        <TestCase Id="../../../../../TC/TR/TESTLIB/BootComponent/BootToMOS-BatteryAboveBOOT_OS-ChargerConnected"/>
+        <TestCase Id="../../../../../TC/TR/TESTLIB/BootComponent/GRACEFUL_SHUTDOWN-USBConnection"/>
+        <TestCase Id="../../../../../TC/TR/TESTLIB/BootComponent/Main-to-Main"/>
+        <TestCase Id="../../../../../TC/TR/TESTLIB/BootComponent/Main-to-Fastboot"/>
+        <TestCase Id="../../../../../TC/TR/TESTLIB/BootComponent/Fastboot_reboot"/>
+        <TestCase Id="../../../../../TC/TR/TESTLIB/BootComponent/Fastboot_reboot_bootloader"/>
+        <TestCase Id="../../../../../TC/TR/TESTLIB/BootComponent/Fastboot_continue"/>
+        <!--<TestCase Id="../../../../../TC/TR/TESTLIB/BootComponent/FORCED_SHUTDOWN"/>-->
+        <TestCase Id="../../../../../TC/TR/TESTLIB/BootComponent/Main-to-Main_50Times"/>
+        <!--<TestCase Id="../../../../../TC/TR/TESTLIB/BootComponent/FORCED_SHUTDOWN_50times"/>-->
+        <TestCase Id="../../../../../TC/TR/TESTLIB/BootComponent/Fastboot_getvar_serialno"/>
+        <TestCase Id="../../../../../TC/TR/TESTLIB/BootComponent/Class_A_ device_ boot_ in_Green"/>
+        <!--<TestCase Id="../../../../../TC/TR/TESTLIB/BootComponent/Get_product_value_in_POS"/>-->
+        <!--<TestCase Id="../../../../../TC/TR/TESTLIB/BootComponent/Get_hw-revision_info_in_POS"/>-->
+        <!--<TestCase Id="../../../../../TC/TR/TESTLIB/BootComponent/Getprop_product_value_in_MOS"/>-->
+        <!--<TestCase Id="../../../../../TC/TR/TESTLIB/BootComponent/Reboot_And_check_log"/>-->
+        <TestCase Id="../../../../../TC/TR/TESTLIB/BootComponent/Reboot_by_trigger_kernel_panic"/>
+    </TestCases>
+</Campaign>

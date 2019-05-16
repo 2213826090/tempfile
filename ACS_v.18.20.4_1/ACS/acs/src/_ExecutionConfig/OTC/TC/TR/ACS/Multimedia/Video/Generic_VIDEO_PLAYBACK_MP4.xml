@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase>
+    <UseCase>LIVE_MUM_VIDEO_PLAYBACK</UseCase>
+    <Description>Test video playback</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <TcMaxAttempt>2</TcMaxAttempt>
+    <TcAcceptanceCriteria>1</TcAcceptanceCriteria>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters>
+        <Parameter>
+            <!-- Path to video file. Possible values:
+                - string containing a local file. By default, acs considers that the file is stored in its multimedia path (e.g: /sdcard/acs_media)
+                But you can provide a file from another path. In this case provide the full path of your file (e.g: /my_path/my_video_file).
+            -->
+            <Name>FILENAME</Name>
+            <Value>H264_L2.1_BP_CIF_30fps_AAC+_ST_56kb_48KHz.mp4</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Multimedia volume to set in percent. Possible values: integer between 0 and 100 -->
+            <Name>VOLUME</Name>
+            <Value>5</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Orientation of the screen. Possible values:
+             - portrait
+             - landscape
+             - empty value will play with default device screen orientation (portrait)-->
+            <Name>SCREEN_ORIENTATION</Name>
+            <Value>portrait</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Duration of the video playback in second.
+            Possible values:
+                - If empty, whole file will be played,
+                - If lower or equal to 0, the video file will not be played,
+                - If upper than 0 and lower than video file length, it will play file during DURATION value,
+                - It upper than 0 and upper than video file length, il will play whole file, with a warning. -->
+            <Name>DURATION</Name>
+            <Value>16</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

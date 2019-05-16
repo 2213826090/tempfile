@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase>
+    <UseCase>LIVE_ANDROID_GFX_KHRONOS_VALIDATION</UseCase>
+    <Description>Run a GFX test sequence</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <TcExpectedResult>PASS</TcExpectedResult>
+     <TestSteps>
+        <Initialize>
+            <TestStep Id="GET_ARTIFACT" EQT="ARTIFACT_MANAGER" ARTIFACT="GFX_CONFORMANCE/OGLES_1.1.zip" ARTIFACT_SOURCE="FROM_BENCH:ARTIFACT_MANAGER:URI" TRANSFER_TIMEOUT="DEFAULT" STORED_FILE_PATH="FILE_PATH_IN_CACHE1"/>
+            <TestStep Id="UNZIP_ARTIFACT" EQT="ARTIFACT_MANAGER" ARTIFACT_NAME="GFX_CONFORMANCE/OGLES_1.1.zip" STORED_FILE_PATH="FROM_CTX:FILE_PATH_IN_CACHE1" EXTRACT_LOCATION="ZIP_EXTRACT_LOCATION"/>
+            <TestStep Id="INSTALL_FILE" DEVICE="PHONE1" FILE_PATH="FROM_CTX:ZIP_EXTRACT_LOCATION" TYPE="media" DESTINATION="/data/app/" DESTINATION_STORED_PATH="INSTALLED_FILE_PATH" TIMEOUT="DEFAULT"/>
+        </Initialize>
+    </TestSteps>
+    <Parameters>
+            <Parameter>
+                <Name>RESULT_FILENAME</Name>
+                <Value>ogl_es_1.1_conf_auto.csv</Value>
+            </Parameter>
+            <Parameter>
+                <Name>MANIFEST_FILENAME</Name>
+                <Value>ogl_es_1.1_conf_auto.xml</Value>
+            </Parameter>
+            <Parameter>
+                <Name>REMOVE_PARAMS</Name>
+                <Value>TES*;con*;cov*;prim*;VER*</Value>
+            </Parameter>
+      </Parameters>
+</TestCase>

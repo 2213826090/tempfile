@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase>
+    <UseCase>TEST_STEP_ENGINE</UseCase>
+    <Description>Power consumption measurement (in mA) when signal is lost</Description>
+    <b2bIteration>3</b2bIteration>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <TcMaxAttempt>1</TcMaxAttempt>
+    <SavePatRawData>True</SavePatRawData>
+    <PowerCalculation>False</PowerCalculation>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters>
+        <Parameter>
+            <Name>SAVE_POWER_DATA</Name>
+            <Value>True</Value>
+        </Parameter>
+        <Parameter>
+            <Name>CELL_BAND</Name>
+            <Value>PWR_3G_COMMON;PWR_AMP10</Value>
+        </Parameter>
+        <Parameter>
+            <Name>RAT</Name>
+            <Value>3G</Value>
+        </Parameter>
+        <Parameter>
+            <Name>MODE</Name>
+            <Value>s3</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Sleep duration before making the measure in seconds -->
+            <Name>SLEEP_DURATION</Name>
+            <Value>600</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Sleep duration before making the measure in seconds -->
+            <Name>TEST_DURATION</Name>
+            <Value>1800</Value>
+        </Parameter>
+        <Parameter>
+            <!--
+                 Configuration for Sysdebug modules.
+                 Syntax is :
+                 module_name[: [param1[=value1]][, param2[=value2]]*];
+              -->
+             <Name>SYSDEBUG_MODULES</Name>
+             <Value>
+                Residency: s0i0,s0i3,s0i1;
+                sleepstudy;
+                xperf;
+             </Value>
+         </Parameter>
+        <Parameter>
+            <!-- config type for agilent -->
+            <Name>CONFIG_TYPE</Name>
+            <Value>IDLE</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TEST_STEP_ENGINE_ENTRY</Name>
+            <Value>ST/pnp/UC/WIN/StandbyAgilent8960.xml</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

@@ -1,0 +1,28 @@
+{
+    "files": [
+        {
+            "artifacts_location": "@acs-artifactory-location@/",
+            "name": "campaigns.zip",
+            "source": "@release-folder-path@campaigns.zip",
+            "destination": ":home:/@release-target-folder@/acs_test_suites"
+        },
+        {
+            "artifacts_location": "@acs-artifactory-location@/",
+            "name": "acs_core.zip",
+            "source": "@release-folder-path@acs_core.zip",
+            "destination": ":home:/@release-target-folder@",
+            "shortcut": [{"name": "ACS Launcher",
+                          "type": "application",
+                          "path": ":pythonwexecutable:",
+                          "description": "Shortcut to ACS Launcher GUI",
+                          "icon_path": ":home:/@release-target-folder@/acs_fwk/src/_Tools/launcher/static/images/logo.:iconextension:",
+                          "extra_args": ":home:/@release-target-folder@/acs_fwk/src/AcsLauncher.py --pyside"}]
+        },
+        {
+            "artifacts_location": "https://mcg-depot.intel.com/artifactory/psi-tools/crashtooluploader/",
+            "name": "CrashToolUploader.jar",
+            "source": "CrashToolUploader.jar",
+            "destination": ":home:/@release-target-folder@/acs_test_scripts/Lib/CrashToolUploader"
+        }
+    ]
+}

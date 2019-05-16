@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="13.41">
+    <TestSteps>
+        <Include Src="ST/pnp/TSS/common.xml" />
+        <Include Src="ST/pnp/TSS/active.xml" />
+        <Include Src="ST/pnp/TSS/benchmarks.xml" />
+        <Include Src="SI/pnp/perf/TC/DroidbotTestStepSet.xml"/>
+        <Initialize>
+            <TestStep SetId="InitializePnPResources" />
+        </Initialize>
+        <Setup>
+            <TestStep Id="CONFIGURE_SYSTEM_SLEEP_MODE" DEVICE="PHONE1" MODE="default" />
+            <TestStep Id="SET_MEDIA_VOLUME" DEVICE="PHONE1" VOLUME="FROM_TC:MEDIA_VOLUME"/>
+            <TestStep SetId="SetupBenchmarkWithAdditionnals" />
+        </Setup>
+        <RunTest>
+            <TestStep SetId="LaunchBenchmarkPowerMeasure" />
+            <TestStep Id="SUSPEND" DURATION_IN_SEC="FROM_TC:TEST_DURATION" />
+            <TestStep SetId="StopPowerMeasurement" />
+            <TestStep SetId="StopBenchmark" />
+        </RunTest>
+        <TearDown>
+            <TestStep SetId="TearDownBenchmark" />
+            <TestStep SetId="TearDown" />
+        </TearDown>
+    </TestSteps>
+</TestCase>

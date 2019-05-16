@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="13.37">
+    <UseCase>LAB_EM_LOW_BATT_POLICY_MANAGEMENT</UseCase>
+    <Description>Monitor Battery - Low Batt Policy Management - P_IUC_3003</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>False</b2bContinuousMode>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters>
+        <Parameter>
+            <!-- Capability to test: "CRITICAL_BATT" or "BELOW_CRITICAL" or BOTH -->
+            <Name>TEST_TYPE</Name>
+            <Value>BOTH</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Threshold from which Main OS can start without charger connected -->
+            <Name>MOS_WO_CHARGER_THRESHOLD</Name>
+            <Value>3.6</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Threshold from which Main OS shutdown without charger -->
+            <Name>MOS_THRESHOLD_SHUTDOWN</Name>
+            <Value>3.4</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Controlled USB charger voltage -->
+            <Name>VUSB</Name>
+            <Value>6.0</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

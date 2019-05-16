@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="13.41">
+    <UseCase>TEST_STEP_ENGINE</UseCase>
+    <Description></Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>False</b2bContinuousMode>
+    <TcMaxAttempt>2</TcMaxAttempt>
+    <TcAcceptanceCriteria>1</TcAcceptanceCriteria>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters>
+        <Parameter>
+            <Name>WEBPAGE_PROXY</Name>
+            <Value>http://intellab.site1/</Value>
+        </Parameter>
+        <Parameter>
+            <Name>WRONG_PROXY_PORT</Name>
+            <Value>1801</Value>
+        </Parameter>
+    </Parameters>
+    <TestSteps>
+        <Include Src="ST/cws/TSS/Common/ST_CWS_COMMON.xml"/>
+        <Include Src="ST/cws/TSS/WiFi/ST_CWS_WIFI_AP.xml"/>
+        <Include Src="ST/cws/TSS/WiFi/ST_CWS_WIFI_COMMON.xml"/>
+
+        <TestStepSet Id="DUTWiFiConfig">
+            <TestStep SetId="InitPhoneCWS"/>
+            <TestStep SetId="WiFiCommonSetup" REGULATORY_DOMAIN="FR"/>
+        </TestStepSet>
+
+        <Setup>
+            <!-- AUTOMATION - Set default configuration -->
+            <Fork Id="ForkDUTReferencePhoneAndWiFiAP">
+                <TestStep SetId="DUTWiFiConfig" DEVICE="PHONE1"/>
+                <TestStep SetId="WiFiAPConfigStandardAP1" STANDARD="n2.4G" AUTHENTICATION_TYPE="WPA2-PSK-AES" PASSPHRASE="FROM_BENCH:CONFIGURABLE_AP1:passphrase_WPA2" CHANNEL="1" BANDWIDTH="20"/>
+            </Fork>
+        </Setup>
+        <RunTest>
+            <!-- SPEC - Step 1 : Connect to AP -->
+            <TestStep SetId="WiFiAddNetwork" DEVICE="PHONE1" SSID="FROM_BENCH:CONFIGURABLE_AP1:SSID" SECURITY="WPA2-PSK-AES" PASS_PHRASE="FROM_BENCH:CONFIGURABLE_AP1:passphrase_WPA2" PROXY_CONFIG="MANUAL" PROXY_ADDRESS="FROM_BENCH:PROXY_SERVER:IP" PROXY_PORT="FROM_BENCH:PROXY_SERVER:PORT"/>
+            <TestStep Id="WIFI_CONNECT" DEVICE="PHONE1" SSID="FROM_BENCH:CONFIGURABLE_AP1:SSID" TIMEOUT="90"/>
+            <TestStep Id="WIFI_WAIT_FOR_SSID_STATE" DEVICE="PHONE1" SSID="FROM_BENCH:CONFIGURABLE_AP1:SSID" STATE="CONNECTED,REMEMBERED,VISIBLE" TIMEOUT="90"/>
+
+            <!-- SPEC - Step 2 : Browse web page -->
+            <TestStep Id="BROWSE_AND_CHECK" DEVICE="PHONE1" BROWSER_TYPE="ACS_AGENT" WEBSITE_URL="FROM_TC:WEBPAGE_PROXY" TIMEOUT="20"/>
+
+            <!-- SPEC - Step 3 : Remove proxy settings -->
+            <TestStep SetId="WiFiAddNetwork" DEVICE="PHONE1" SSID="FROM_BENCH:CONFIGURABLE_AP1:SSID" SECURITY="WPA2-PSK-AES" PASS_PHRASE="FROM_BENCH:CONFIGURABLE_AP1:passphrase_WPA2" PROXY_CONFIG="MANUAL" PROXY_ADDRESS="FROM_BENCH:PROXY_SERVER:IP" PROXY_PORT="FROM_TC:WRONG_PROXY_PORT"/>
+            <TestStep Id="WIFI_CONNECT" DEVICE="PHONE1" SSID="FROM_BENCH:CONFIGURABLE_AP1:SSID" TIMEOUT="90"/>
+
+            <!-- SPEC - Step 4 : Try to browse web page -->
+            <TestStep Id="BROWSE_AND_CHECK" DEVICE="PHONE1" BROWSER_TYPE="ACS_AGENT" WEBSITE_URL="FROM_TC:WEBPAGE_PROXY" TIMEOUT="20" EXPECTED_VERDICT="FAIL"/>
+        </RunTest>
+        <TearDown>
+            <Fork Id="ForkTeardown">
+                <TestStep SetId="WiFiCommonTeardown" DEVICE="PHONE1"/>
+                <TestStep SetId="WiFiAPShutdown" EQT="CONFIGURABLE_AP1"/>
+            </Fork>
+        </TearDown>
+    </TestSteps>
+</TestCase>

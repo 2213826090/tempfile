@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<Campaign>
+    <Parameters>
+        <Parameter isControlledPSUsed="False" />
+        <Parameter isIoCardUsed="True" />
+        <!-- Set skipBootOnPowerCycle to True to disable the acs boot procedure -->
+        <!-- Important, it means that boot will be handle inside the campaign/tc -->
+        <Parameter skipBootOnPowerCycle="False" />
+        <Parameter runHookScripts="False" />
+        <Parameter powerCycleBetweenTC="False" />
+        <Parameter powerCycleOnFailure="True" />
+        <Parameter finalPowerOff="True" />
+        <Parameter finalDutState="PowerOff" />
+        <Parameter stopCampaignOnCriticalFailure="False" />
+        <Parameter stopCampaignOnFirstFailure="False" />
+        <!-- LoggingLevel possible values: info | warning | debug | error -->
+        <Parameter loggingLevel="debug" />
+        <!-- CampaignType format -> <TEAM>_<CAMPAIGNTYPE>
+            Possible values:
+            FT(Feature Team)-> SANITY | REGRESSION | STRESS, RELIABILTY | MTBF
+            ST(System Test)-> SANITY | REGRESSION | STRESS, RELIABILTY | MTBF
+            SI(System Integration)-> EAT | STAB | PACT | CAT0 | RELIABILITY | MTBF | CTS
+            Otherwise "Others" should be used -->
+        <Parameter CampaignType="ST_REGRESSION" />
+    </Parameters>
+    <Targets>
+        <!-- Target Values -->
+        <Target targetB2bPassRate="80" />
+    </Targets>
+    <TestCases>
+        <!-- Testcase campaigns -->
+        <TestCase Id="..\..\TESTCASE\KPI\ST_PNR_THERMAL_BACK_SKIN_TEMP_BROWSING-CHT" />
+        <TestCase Id="..\..\TESTCASE\KPI\ST_PNR_THERMAL_TIME_TO_FIRST_COOLING_ACTION_HD_GAMING" />
+        <TestCase Id="..\..\TESTCASE\KPI\ST_PNR_THERMAL_BACK_SKIN_TEMP_HD_GAMING-CHT" />
+        <TestCase Id="..\..\TESTCASE\KPI\ST_PNR_THERMAL_BACK_SKIN_TEMP_HD_VIDEO_REC-CHTMN" />
+        <TestCase Id="..\..\TESTCASE\KPI\ST_PNR_THERMAL_TIME_TO_FIRST_COOLING_ACTION_HD_VIDEO_REC-CHTMN" />
+    </TestCases>
+</Campaign>

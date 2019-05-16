@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<Include>
+    <TestStepSet Id="ConfigureRat">
+        <TestStep Id="DISABLE_MODEM_TRACES" DEVICE="PHONE1" />
+
+        <TestStep Id="COMPUTER_RUN_CMD" EQT="AMARISOFT" SAVE_OUTPUT_TO="AMARISOFT_CONFIGURATION"
+            TIMEOUT="200" CMD="bash /root/script_intel/[+]FROM_TC:LTE_CONFIGURATION" />
+
+        <TestStep Id="SUSPEND" DURATION_IN_SEC="5" />
+        <TestStep Id="SET_FLIGHT_MODE" DEVICE="PHONE1" FLIGHT_MODE="disable" />
+    </TestStepSet>
+    <TestStepSet Id="UpdateWorkloadOnWebServer">
+        <TestStep Id="GET_ARTIFACT" ARTIFACT="TELEPHONY/payload-update.sh"
+              ARTIFACT_SOURCE="FROM_BENCH:ARTIFACT_MANAGER:URI" TRANSFER_TIMEOUT="800"
+              STORED_FILE_PATH="FILE_PATH_IN_CACHE1" EQT="DEFAULT"/>
+        <TestStep Id="COMPUTER_COPY_FILE" EQT="AMARISOFT"
+                  LOCAL_FILENAME="FROM_CTX:FILE_PATH_IN_CACHE1"
+                  REMOTE_FILENAME="/tmp/payload-update.sh"/>
+
+        <TestStep Id="GET_ARTIFACT" ARTIFACT="TELEPHONY/play_video.php"
+              ARTIFACT_SOURCE="FROM_BENCH:ARTIFACT_MANAGER:URI" TRANSFER_TIMEOUT="800"
+              STORED_FILE_PATH="FILE_PATH_IN_CACHE1" EQT="DEFAULT"/>
+        <TestStep Id="COMPUTER_COPY_FILE" EQT="AMARISOFT"
+                  LOCAL_FILENAME="FROM_CTX:FILE_PATH_IN_CACHE1"
+                  REMOTE_FILENAME="/var/www/html/play_video.php"/>
+
+        <TestStep Id="COMPUTER_RUN_CMD" EQT="AMARISOFT" SAVE_OUTPUT_TO="UPDATE_PAYLOAD" TIMEOUT="600"
+            CMD="bash /tmp/payload-update.sh [+]FROM_TC:WORKLOAD_PREFIX[+]/[+]FROM_TC:WORKLOAD[+] /var/www/html" />
+    </TestStepSet>
+    <TestStepSet Id="UpdateVideoPayloadOnWebServer">
+        <TestStep Id="GET_ARTIFACT" ARTIFACT="TELEPHONY/payload-update.sh"
+              ARTIFACT_SOURCE="FROM_BENCH:ARTIFACT_MANAGER:URI" TRANSFER_TIMEOUT="800"
+              STORED_FILE_PATH="FILE_PATH_IN_CACHE1" EQT="DEFAULT"/>
+        <TestStep Id="COMPUTER_COPY_FILE" EQT="AMARISOFT"
+                  LOCAL_FILENAME="FROM_CTX:FILE_PATH_IN_CACHE1"
+                  REMOTE_FILENAME="/tmp/payload-update.sh"/>
+
+        <TestStep Id="GET_ARTIFACT" ARTIFACT="TELEPHONY/play_video.php"
+              ARTIFACT_SOURCE="FROM_BENCH:ARTIFACT_MANAGER:URI" TRANSFER_TIMEOUT="800"
+              STORED_FILE_PATH="FILE_PATH_IN_CACHE1" EQT="DEFAULT"/>
+        <TestStep Id="COMPUTER_COPY_FILE" EQT="AMARISOFT"
+                  LOCAL_FILENAME="FROM_CTX:FILE_PATH_IN_CACHE1"
+                  REMOTE_FILENAME="/var/www/html/play_video.php"/>
+
+        <TestStep Id="GET_MODULE_CONFIG" DEVICE="PHONE1" MODULE="PnpModule" KEY="FROM_TC:VIDEO_PAYLOAD"
+            MODULE_VALUE="VIDEO_PAYLOAD"/>
+
+        <TestStep Id="COMPUTER_RUN_CMD" EQT="AMARISOFT" SAVE_OUTPUT_TO="UPDATE_PAYLOAD" TIMEOUT="600"
+            CMD="bash /tmp/payload-update.sh [+]FROM_TC:VIDEO_PREFIX[+]/[+]FROM_CTX:VIDEO_PAYLOAD[+]" />
+    </TestStepSet>
+    <TestStepSet Id="UpdatePayloadOnWebServer">
+        <TestStep Id="GET_ARTIFACT" ARTIFACT="TELEPHONY/payload-update.sh"
+              ARTIFACT_SOURCE="FROM_BENCH:ARTIFACT_MANAGER:URI" TRANSFER_TIMEOUT="800"
+              STORED_FILE_PATH="FILE_PATH_IN_CACHE1" EQT="DEFAULT"/>
+        <TestStep Id="COMPUTER_COPY_FILE" EQT="AMARISOFT"
+                  LOCAL_FILENAME="FROM_CTX:FILE_PATH_IN_CACHE1"
+                  REMOTE_FILENAME="/tmp/payload-update.sh"/>
+
+        <TestStep Id="GET_ARTIFACT" ARTIFACT="TELEPHONY/browse.php"
+              ARTIFACT_SOURCE="FROM_BENCH:ARTIFACT_MANAGER:URI" TRANSFER_TIMEOUT="800"
+              STORED_FILE_PATH="FILE_PATH_IN_CACHE1" EQT="DEFAULT"/>
+        <TestStep Id="COMPUTER_COPY_FILE" EQT="AMARISOFT"
+                  LOCAL_FILENAME="FROM_CTX:FILE_PATH_IN_CACHE1"
+                  REMOTE_FILENAME="/var/www/html/browse.php"/>
+
+        <TestStep Id="COMPUTER_RUN_CMD" EQT="AMARISOFT" SAVE_OUTPUT_TO="UPDATE_PAYLOAD" TIMEOUT="600"
+            CMD="bash /tmp/payload-update.sh [+]FROM_TC:WORKLOAD_PREFIX[+]/[+]FROM_TC:WORKLOAD[+] FROM_TC:URL" />
+    </TestStepSet>
+    <TestStepSet Id="ConfigureRatData">
+    </TestStepSet>
+    <TestStepSet Id="DataConnection">
+        <TestStep Id="GET_ARTIFACT" ARTIFACT="TELEPHONY/amarisoft/apns-conf.xml"
+              ARTIFACT_SOURCE="FROM_BENCH:ARTIFACT_MANAGER:URI" TRANSFER_TIMEOUT="60"
+              STORED_FILE_PATH="FILE_PATH_IN_CACHE1" EQT="DEFAULT"/>
+
+        <TestStep Id="RUN_CMD" DEVICE="PHONE1" TIMEOUT="60"
+                    COMMAND="adb remount"
+                    FORCE_EXECUTION="False" WAIT_FOR_RESPONSE="False"
+                    SILENT_MODE="False" SAVE_AS="output"/>
+
+        <TestStep Id="INSTALL_FILE" DEVICE="PHONE1" FILE_PATH="FROM_CTX:FILE_PATH_IN_CACHE1" TYPE="xml"
+            DESTINATION="/system/etc" TIMEOUT="60" DESTINATION_STORED_PATH="FILE_PATH_IN_CACHE1"/>
+
+        <TestStep Id="RUN_CMD" DEVICE="PHONE1" TIMEOUT="60"
+                    COMMAND="adb shell content delete --uri content://telephony/carrier/restore"
+                    FORCE_EXECUTION="False" WAIT_FOR_RESPONSE="False"
+                    SILENT_MODE="False" SAVE_AS="output"/>
+
+        <TestStep Id="ACTIVATE_DEVICE_PDP" DEVICE="PHONE1" />
+
+        <TestStep Id="CHECK_CDK_STATE" DEVICE="PHONE1" STATE="registered"
+                  TIMEOUT="FROM_DEVICE:PHONE1:registrationTimeout" />
+    </TestStepSet>
+</Include>

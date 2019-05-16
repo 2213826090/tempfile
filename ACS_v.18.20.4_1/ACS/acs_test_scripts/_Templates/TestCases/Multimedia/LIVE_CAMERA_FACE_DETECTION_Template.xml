@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase>
+    <UseCase>LIVE_CAMERA_FACE_DETECTION</UseCase>
+    <Description>Use Camera for face detection</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>False</b2bContinuousMode>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters>
+         <Parameter>
+             <!-- Camera to open, possible values :
+                - BACK
+                - FRONT
+                 -->
+             <Name>CAMERA</Name>
+             <Value>FRONT</Value>
+         </Parameter>
+    </Parameters>
+</TestCase>

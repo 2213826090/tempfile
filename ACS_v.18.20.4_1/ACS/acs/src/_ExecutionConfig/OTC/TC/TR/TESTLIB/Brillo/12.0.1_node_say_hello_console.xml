@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='ASCII'?>
+<TestCase>
+    <UseCase>Testlib</UseCase>
+    <Description>Test node print message via console</Description>
+    <Description>Command: adb push files/hello-console.js /data/nodejs/hello-console.js</Description>
+    <Description>Result:  hello-console.js in /data/nodejs/ of device</Description>
+    <Description>Command: adb shell node /data/nodejs/hello-console.js</Description>
+    <Description>Result:  Hello World</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <TcMaxAttempt>1</TcMaxAttempt>
+    <Parameters>
+        <Parameter>
+            <Name>test</Name>
+            <Value>scripts/brillo/tests/12.0.1_node_say_hello_console.py</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

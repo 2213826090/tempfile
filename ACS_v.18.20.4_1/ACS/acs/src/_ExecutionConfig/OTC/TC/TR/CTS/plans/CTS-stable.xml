@@ -1,0 +1,29 @@
+<?xml version="1.0" ?><TestCase>
+  <ClassName>UseCase.OTC.CTS.CTS_NOTELEPHONY_TCR_FORMAT.CTS</ClassName>
+  <Description>Run CTS plan CTS-stable</Description>
+  <b2bContinuousMode>False</b2bContinuousMode>
+  <b2bIteration>1</b2bIteration>
+  <TcMaxAttempt>1</TcMaxAttempt>
+  <TcAcceptanceCriteria>1</TcAcceptanceCriteria>
+  <Parameters>
+    <Parameter>
+        <Name>CTS_LOCAL_PATH</Name>
+        <Description>Specify path/url to android CTS framework</Description>
+        <Value>OTC_CTS_FOR_CACTUS/android-cts/android-cts</Value>
+    </Parameter>
+    <Parameter>
+        <Name>TEST_CMD_LINES</Name>
+        <Description>Test cmd lines to execute.</Description>
+        <Value>run cts --plan CTS-stable -l debug --disable-reboot</Value>
+    </Parameter>
+    <Parameter>
+        <Name>TEST_FAILED_RETRY_NO</Name>
+        <Description>Number of times to rerun the failed cts tests.</Description>
+        <Value>1</Value>
+    </Parameter>
+    <Parameter>
+        <Name>TEST_TIMEOUT</Name>
+        <Value>100000</Value>
+    </Parameter>
+  </Parameters>
+</TestCase>

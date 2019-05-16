@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="13.41">
+    <UseCase>TEST_STEP_ENGINE</UseCase>
+    <Description></Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <TcMaxAttempt>1</TcMaxAttempt>
+    <TcAcceptanceCriteria>1</TcAcceptanceCriteria>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters>
+        <Parameter>
+            <Name>CELL_BAND</Name>
+            <Value>BAND1</Value>
+        </Parameter>
+        <Parameter>
+            <Name>RAT</Name>
+            <Value>3G</Value>
+        </Parameter>
+    </Parameters>
+    <TestSteps>
+        <Include Src="ST/telephony/TSS/Common.xml" />
+        <Include Src="ST/telephony/TSS/8960.xml" />
+        <Setup>
+            <TestStep SetId="AllCommsOff" DEVICE="PHONE1"/>
+            <TestStep SetId="Configure8960"/>
+            <TestStep SetId="ConfigureWCDMA" EQT="FROM_CTX:AGILENT8960_SIMULATOR_VISA"/>
+            <TestStep Id="GET_EQT_CONFIG" EQT="FROM_CTX:AGILENT8960_SIMULATOR_VISA" SAVE_AS="eqt_config" />
+        </Setup>
+        <RunTest>
+            <!-- Power On the DUT -->
+            <TestStep Id="REBOOT_DEVICE" WAY="soft" MODE="MOS" DEVICE="PHONE1"/>
+            <TestStep SetId="Registration" EQT="FROM_CTX:AGILENT8960_SIMULATOR_VISA" TIMEOUT="FROM_DEVICE:PHONE1:registrationTimeout" DEVICE="PHONE1" />
+            <TestStep Id="SET_DEVICE_APN" DEVICE="PHONE1" INTERFACE="FROM_BENCH:CELLULAR_NETWORK:SSID"
+                      APN="FROM_BENCH:CELLULAR_NETWORK:APN" USER="DEFAULT" PASSWORD="DEFAULT"
+                      PROTOCOL="DEFAULT" MMSC="DEFAULT" APN_TYPE="default" SET_DEFAULT="True" CLEAR_APN="True" />
+            <TestStep Id="AT_PROXY" ACTION="START" BOOT_MODE="MOS" PROXY_MODE="NORMAL" SAVE_AT_PROXY_TTY_AS="at_proxy" DEVICE="PHONE1"/>
+
+            <!-- AT Command: ATE0-->
+            <TestStep Id="AT_COMMAND" SERIAL_DEVICE="FROM_CTX:at_proxy" COMMAND="ATE0" TIMEOUT="DEFAULT" SAVE_AS="command_result" DEVICE="PHONE1"/>
+            <TestStep Id="COMPARE" OPERATOR="EQUAL" FIRST="FROM_CTX:command_result" SECOND="OK" PASS_IF="True"/>
+
+            <!-- AT Command : AT => OK -->
+            <TestStep Id="AT_COMMAND" SERIAL_DEVICE="FROM_CTX:at_proxy" COMMAND="AT" TIMEOUT="DEFAULT" SAVE_AS="command_result" DEVICE="PHONE1"/>
+            <TestStep Id="COMPARE" OPERATOR="EQUAL" FIRST="FROM_CTX:command_result" SECOND="OK" PASS_IF="True"/>
+
+            <!-- AT Command : AT+CGDCONT? => +CGDCONT: 1,"IP","APN","",0,0,0,0,0,0  -->
+            <TestStep Id="AT_COMMAND" SERIAL_DEVICE="FROM_CTX:at_proxy" COMMAND="AT+CGDCONT?" TIMEOUT="DEFAULT" SAVE_AS="command_result" DEVICE="PHONE1" />
+            <TestStep Id="SPLIT" STRING="FROM_CTX:command_result" SEP="," ELEMENT="1" SAVE_AS="apn_ip"/>
+            <TestStep Id="COMPARE" OPERATOR="EQUAL" FIRST="FROM_CTX:apn_ip" SECOND='"IP"' PASS_IF="True" />
+            <TestStep Id="SPLIT" STRING="FROM_CTX:command_result" SEP="," ELEMENT="2" SAVE_AS="apn_name"/>
+            <TestStep Id="COMPARE" OPERATOR="EQUAL" FIRST="FROM_CTX:apn_name" SECOND='"[+]FROM_BENCH:CELLULAR_NETWORK:APN[+]"' PASS_IF="True" />
+
+            <!-- AT Command : AT+CGDCONT=1,"IP","testAPN" => OK -->
+            <TestStep Id="AT_COMMAND" SERIAL_DEVICE="FROM_CTX:at_proxy" COMMAND='AT+CGDCONT=1,"IP","testAPN"' TIMEOUT="DEFAULT" SAVE_AS="command_result" DEVICE="PHONE1" />
+            <TestStep Id="COMPARE" OPERATOR="EQUAL" FIRST="FROM_CTX:command_result" SECOND="OK" PASS_IF="True" />
+
+            <!--<TestStep Id="SUSPEND" DURATION_IN_SEC="10" />-->
+            <!-- AT Command : AT+CGACT=1,1 => OK -->
+            <TestStep Id="AT_COMMAND" SERIAL_DEVICE="FROM_CTX:at_proxy" COMMAND="AT+CGACT=1,1" TIMEOUT="DEFAULT" SAVE_AS="command_result" DEVICE="PHONE1" />
+            <TestStep Id="COMPARE" OPERATOR="EQUAL" FIRST="FROM_CTX:command_result" SECOND="OK" PASS_IF="True" />
+
+            <!-- PDP context is activated -->
+            <TestStep Id="NS_WAIT_STATE" EQT="FROM_CTX:AGILENT8960_SIMULATOR_VISA" TIMEOUT="60" NAME="ConnectionStatus" STATE="PDP" OPTION="DEFAULT" />
+
+            <!-- Wait 30 seconds -->
+            <TestStep Id="SUSPEND" DURATION_IN_SEC="30" />
+
+            <!-- AT Command : AT+CGACT? => +CGACT: 1,1 -->
+            <TestStep Id="AT_COMMAND" SERIAL_DEVICE="FROM_CTX:at_proxy" COMMAND="AT+CGACT?" TIMEOUT="DEFAULT" SAVE_AS="command_result" DEVICE="PHONE1" />
+            <TestStep Id="REGEX" ACTION="MATCH" PATTERN="\+CGACT: 1,1" STRING="FROM_CTX:command_result" PASS_IF="True"/>
+
+            <!-- PDP context is activated -->
+            <TestStep Id="NS_WAIT_STATE" EQT="FROM_CTX:AGILENT8960_SIMULATOR_VISA" TIMEOUT="60" NAME="ConnectionStatus" STATE="PDP" OPTION="DEFAULT" />
+
+            <!-- AT Command : AT+CGDCONT? => +CGDCONT: 1,"IP","testAPN","<IP address>",0,0,0,0,0,0 -->
+            <TestStep Id="AT_COMMAND" SERIAL_DEVICE="FROM_CTX:at_proxy" COMMAND="AT+CGDCONT?" TIMEOUT="DEFAULT" SAVE_AS="command_result" DEVICE="PHONE1" />
+            <TestStep Id="SPLIT" STRING="FROM_CTX:command_result" SEP="," ELEMENT="1" SAVE_AS="apn_ip"/>
+            <TestStep Id="COMPARE" OPERATOR="EQUAL" FIRST="FROM_CTX:apn_ip" SECOND='"IP"' PASS_IF="True" />
+            <TestStep Id="SPLIT" STRING="FROM_CTX:command_result" SEP="," ELEMENT="2" SAVE_AS="apn_name"/>
+            <TestStep Id="COMPARE" OPERATOR="EQUAL" FIRST="FROM_CTX:apn_name" SECOND='"testAPN"' PASS_IF="True" />
+            <TestStep Id="SPLIT" STRING="FROM_CTX:command_result" SEP="," ELEMENT="3" SAVE_AS="apn_address"/>
+            <TestStep Id="COMPARE" OPERATOR="EQUAL" FIRST="FROM_CTX:apn_address" SECOND='"[+]FROM_CTX:eqt_config:DUT_IP_Address[+]"' PASS_IF="True" />
+
+            <!--  AT Command : AT+CGDATA="PPP",1 => CONNECT -->
+            <TestStep Id="AT_COMMAND" SERIAL_DEVICE="FROM_CTX:at_proxy" COMMAND='AT+CGDATA="PPP",1' TIMEOUT="DEFAULT" SAVE_AS="command_result" DEVICE="PHONE1" />
+            <TestStep Id="COMPARE" OPERATOR="EQUAL" FIRST="FROM_CTX:command_result" SECOND="CONNECT" PASS_IF="True" />
+
+            <!-- Wait 30 seconds -->
+            <TestStep Id="SUSPEND" DURATION_IN_SEC="30" />
+
+            <!-- AT Command : AT => OK -->
+            <TestStep Id="AT_COMMAND" SERIAL_DEVICE="FROM_CTX:at_proxy" COMMAND="AT" TIMEOUT="DEFAULT" SAVE_AS="command_result" DEVICE="PHONE1" />
+            <TestStep Id="COMPARE" OPERATOR="EQUAL" FIRST="FROM_CTX:command_result" SECOND="OK" PASS_IF="True" />
+
+            <!-- AT Command : AT+CGACT=0,1 => OK -->
+            <TestStep Id="AT_COMMAND" SERIAL_DEVICE="FROM_CTX:at_proxy" COMMAND="AT+CGACT=0,1" TIMEOUT="DEFAULT" SAVE_AS="command_result" DEVICE="PHONE1" />
+            <TestStep Id="COMPARE" OPERATOR="EQUAL" FIRST="FROM_CTX:command_result" SECOND="OK" PASS_IF="True" />
+
+            <!-- PDP context is deactivated-->
+            <TestStep Id="CHECK_CDK_STATE" DEVICE="PHONE1" STATE="registered" TIMEOUT="FROM_DEVICE:PHONE1:registrationTimeout"/>
+            <TestStep Id="NS_WAIT_STATE" EQT="FROM_CTX:AGILENT8960_SIMULATOR_VISA" TIMEOUT="60" NAME="ConnectionStatus" STATE="IDLE" OPTION="DEFAULT" />
+
+            <!-- AT Command : AT+CGDCONT=1,"IP","APN" => OK -->
+            <TestStep Id="AT_COMMAND" SERIAL_DEVICE="FROM_CTX:at_proxy" COMMAND='AT+CGDCONT=1,"IP","[+]FROM_BENCH:CELLULAR_NETWORK:APN[+]"' TIMEOUT="DEFAULT" SAVE_AS="command_result" DEVICE="PHONE1" />
+            <TestStep Id="COMPARE" OPERATOR="EQUAL" FIRST="FROM_CTX:command_result" SECOND="OK" PASS_IF="True" />
+
+            <!-- AT Command : +CGACT: 1,1 => OK -->
+            <TestStep Id="AT_COMMAND" SERIAL_DEVICE="FROM_CTX:at_proxy" COMMAND="AT+CGACT=1,1" TIMEOUT="DEFAULT" SAVE_AS="command_result" DEVICE="PHONE1" />
+            <TestStep Id="COMPARE" OPERATOR="EQUAL" FIRST="FROM_CTX:command_result" SECOND="OK" PASS_IF="True" />
+
+            <!-- PDP context is activated -->
+            <TestStep Id="NS_WAIT_STATE" EQT="FROM_CTX:AGILENT8960_SIMULATOR_VISA" TIMEOUT="60" NAME="ConnectionStatus" STATE="PDP" OPTION="DEFAULT" />
+
+            <!-- AT Command : AT+CGDCONT? => +CGDCONT: 1,"IP","testAPN","<IP address>",0,0,0,0,0,0 -->
+            <TestStep Id="AT_COMMAND" SERIAL_DEVICE="FROM_CTX:at_proxy" COMMAND="AT+CGDCONT?" TIMEOUT="DEFAULT" SAVE_AS="command_result" DEVICE="PHONE1" />
+            <TestStep Id="SPLIT" STRING="FROM_CTX:command_result" SEP="," ELEMENT="1" SAVE_AS="apn_ip"/>
+            <TestStep Id="COMPARE" OPERATOR="EQUAL" FIRST="FROM_CTX:apn_ip" SECOND='"IP"' PASS_IF="True" />
+            <TestStep Id="SPLIT" STRING="FROM_CTX:command_result" SEP="," ELEMENT="2" SAVE_AS="apn_name"/>
+            <TestStep Id="COMPARE" OPERATOR="EQUAL" FIRST="FROM_CTX:apn_name" SECOND='"[+]FROM_BENCH:CELLULAR_NETWORK:APN[+]"' PASS_IF="True" />
+            <TestStep Id="SPLIT" STRING="FROM_CTX:command_result" SEP="," ELEMENT="3" SAVE_AS="apn_address"/>
+            <TestStep Id="COMPARE" OPERATOR="EQUAL" FIRST="FROM_CTX:apn_address" SECOND='"[+]FROM_CTX:eqt_config:DUT_IP_Address[+]"' PASS_IF="True" />
+
+        </RunTest>
+        <TearDown>
+             <TestStep SetId="CommonTearDown" EQT="FROM_CTX:AGILENT8960_SIMULATOR_VISA" DEVICE="PHONE1"/>
+            <TestStep Id="AT_PROXY" ACTION="STOP" BOOT_MODE="MOS" PROXY_MODE="NORMAL" SAVE_AT_PROXY_TTY_AS="at_proxy" DEVICE="PHONE1"/>
+        </TearDown>
+    </TestSteps>
+</TestCase>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase>
+    <UseCase>LIVE_MO_SMS_PS</UseCase>
+    <Description>3G Mobile Originated SMS with text counting 160 characters</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>False</b2bContinuousMode>
+    <Parameters>
+        <Parameter>
+            <!-- SMS destination phone number. If the value [PHONE_NUMBER] is given, the phoneNumber defined in Phone_Catalog.xml will be used -->
+            <Name>DESTINATION_NUMBER</Name>
+            <Value>+917899787556</Value>
+        </Parameter>
+        <Parameter>
+            <!-- SMS text message -->
+            <Name>MESSAGE_CONTENT</Name>
+            <!-- Message to be send -->
+            <Value>This is my SMS text</Value>
+        </Parameter>
+        <Parameter>
+            <!-- SMS transfer timeout in seconds -->
+            <Name>SMS_TRANSFER_TIMEOUT</Name>
+            <Value>100</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Setting the preferred network -->
+            <Name>PREFERRED_NETWORK_TYPE</Name>
+            <Value>3G_PREF</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Timeout (in second) to load web page -->
+            <Name>TIMEOUT</Name>
+            <Value>90</Value>
+        </Parameter>
+        <Parameter>
+            <!-- live FTP server -->
+            <Name>SERVER_NAME</Name>
+            <Value>LIVE_FTP_SERVER</Value>
+        </Parameter>
+        <Parameter>
+            <Name>XFER_TIMEOUT</Name>
+            <Value>500</Value>
+        </Parameter>
+        <Parameter>
+            <!-- direction download or upload -->
+            <Name>DIRECTION</Name>
+            <Value>DL</Value>
+        </Parameter>
+        <Parameter>
+            <!-- live FTP file name -->
+            <Name>DL_FILE</Name>
+            <Value>pub/linux/kernel/v3.x/patch-3.1.gz</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

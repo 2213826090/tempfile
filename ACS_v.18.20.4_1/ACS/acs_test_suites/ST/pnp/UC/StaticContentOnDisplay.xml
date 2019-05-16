@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="13.41">
+    <TestSteps>
+        <Include Src="ST/pnp/TSS/common.xml" />
+        <Include Src="ST/pnp/TSS/active.xml" />
+        <Setup>
+            <TestStep SetId="InitializePnPResources" />
+            <TestStep Id="CONFIGURE_SYSTEM_SLEEP_MODE" DEVICE="PHONE1" MODE="FROM_TC:MODE" />
+        </Setup>
+        <RunTest>
+            <TestStep Id="SET_SCREEN_PROPERTY" DEVICE="PHONE1" PROPERTY="state" VALUE="on"/>
+            <TestStep Id="DISABLE_AUTO_ORIENTATION" DEVICE="PHONE1" />
+            <TestStep Id="SET_ORIENTATION" DEVICE="PHONE1" ORIENTATION="portrait"/>
+            <TestStep Id="CAPTURE_SCREENSHOT" DEVICE="PHONE1" FILEPATH="SCREEN/Start_Screenshot.png"/>
+            <TestStep SetId="StartPowerMeasurement" />
+            <TestStep Id="SUSPEND" DURATION_IN_SEC="FROM_TC:TEST_DURATION" />
+            <TestStep SetId="StopPowerMeasurement" />
+            <TestStep Id="CAPTURE_SCREENSHOT" DEVICE="PHONE1" FILEPATH="SCREEN/End_Screenshot.png" />
+            <TestStep Id="SET_ORIENTATION" DEVICE="PHONE1" ORIENTATION="auto"/>
+            <TestStep Id="SET_SCREEN_PROPERTY" DEVICE="PHONE1" PROPERTY="state" VALUE="off"/>
+        </RunTest>
+        <TearDown>
+            <TestStep SetId="TearDown" />
+        </TearDown>
+    </TestSteps>
+</TestCase>

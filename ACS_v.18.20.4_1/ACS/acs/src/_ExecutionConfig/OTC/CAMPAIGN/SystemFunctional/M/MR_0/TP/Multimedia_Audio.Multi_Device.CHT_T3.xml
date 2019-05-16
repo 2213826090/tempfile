@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+<Campaign version="13.49">
+    <Parameters>
+        <Parameter isControlledPSUsed="False"/>
+        <Parameter isIoCardUsed="False"/>
+        <Parameter skipBootOnPowerCycle="False"/>
+        <Parameter bootRetryNumber="0"/>
+        <Parameter runHookScripts="False"/>
+        <Parameter powerCycleBetweenTC="False"/>
+        <Parameter powerCycleOnFailure="False"/>
+        <Parameter finalDutState="NoChange"/>
+        <Parameter stopCampaignOnCriticalFailure="False"/>
+        <Parameter stopCampaignOnFirstFailure="False"/>
+        <Parameter loggingLevel="debug"/>
+        <Parameter CampaignType="Other"/>
+        <Parameter TCRReportViaRESTAPI="True"/>
+    </Parameters>
+    <TestCases>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_Audio/VOIP_Call/testVOIPCall_LockUnlockScreenSound"/>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_Audio/VOIP_Call/testVOIPCall_PlaybackMusic"/>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_Audio/VOIP_Call/testVOIPCall_While_WLANStreaming_MT"/>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_Audio/VOIP_Call/testVOIPCall_VolumeControl_HWVolumeKey"/>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_Audio/VOIP_Call/testVOIPCall_MO_While_AudioPlayback"/>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_Audio/VOIP_Call/testVOIPCall_MT_While_AudioPlayback"/>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_Audio/VOIP_Call/testVOIPCall_Switch_Audio_Video"/>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_Audio/VOIP_Call/testVOIPCall_While_PlayingClockAlert_MT"/>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_Audio/VOIP_Call/testVOIPCall_VideoEnabled_RotateScreen"/>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_Audio/VOIP_Call/testVOIPCall_ReveiveIM_Notfication"/>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_Audio/VOIP_Call/testVOIPCall_MediaVolumeControl_InSetting"/>
+    </TestCases>
+</Campaign>

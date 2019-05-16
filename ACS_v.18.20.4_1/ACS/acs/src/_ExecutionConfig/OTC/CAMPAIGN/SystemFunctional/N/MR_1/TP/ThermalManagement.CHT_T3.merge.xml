@@ -1,0 +1,38 @@
+<?xml version="1.0" ?>
+<Campaign version="13.49">
+    <Parameters>
+        <Parameter isControlledPSUsed="False"/>
+        <Parameter isIoCardUsed="True"/>
+        <Parameter skipBootOnPowerCycle="False"/>
+        <Parameter bootRetryNumber="0"/>
+        <Parameter runHookScripts="False"/>
+        <Parameter powerCycleBetweenTC="False"/>
+        <Parameter powerCycleOnFailure="False"/>
+        <Parameter finalDutState="NoChange"/>
+        <Parameter stopCampaignOnCriticalFailure="False"/>
+        <Parameter stopCampaignOnFirstFailure="False"/>
+        <Parameter loggingLevel="debug"/>
+        <Parameter CampaignType="Other"/>
+        <Parameter TCRReportViaRESTAPI="True"/>
+    </Parameters>
+    <TestCases>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/init.set_adb_root.AdbRoot.testAdbRoot"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/init.start_rpc_server.StartRPCServer.testStartRPCServer"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/init.set_orientation_vertical.SetOrientationVertical.testSetOrientationVertical"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/init.wake_up_and_unlock.WakeUnlock.testWakeUnlock"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/init.config_first_boot_wizard.ConfigFirstBootWizard.testConfigFirstBootWizard"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/init.enable_developer_option.EnableDeveloperOption.testEnableDeveloperOption"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/init.keep_awake.KeepAwake.testKeepAwake"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/init.disable_verify_apps.DisableVerifyApp.testDisableVerifyApp"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/init.set_language_to_United_States.SetLanguageUS.testSetLanguageUS"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/init.set_system_time.SetTimeDate.testSetTimeDate"/>
+        <TestCase Id="../../../../../TC/TP/TC/ThermalManagement/thermal_management/test_check_thermal_zone0"/>
+        <TestCase Id="../../../../../TC/TP/TC/ThermalManagement/thermal_management/test_check_thermal_zone2"/>
+        <TestCase Id="../../../../../TC/TP/TC/ThermalManagement/thermal_management/test_check_thermal_zone1"/>
+        <TestCase Id="../../../../../TC/TP/TC/ThermalManagement/thermal_management/test_check_thermal_daemon_running"/>
+        <TestCase Id="../../../../../TC/TP/TC/ThermalManagement/thermal_management/test_check_thermal_zone3"/>
+        <TestCase Id="../../../../../TC/TP/TC/ThermalManagement/thermal_management/test_check_thermal_zone4"/>
+        <TestCase Id="../../../../../TC/TP/TC/Post_Test/postTestRemoveGoogleAccount"/>
+        <TestCase Id="../../../../../TC/TP/TC/Post_Test/postTestWifiOff"/>
+    </TestCases>
+</Campaign>

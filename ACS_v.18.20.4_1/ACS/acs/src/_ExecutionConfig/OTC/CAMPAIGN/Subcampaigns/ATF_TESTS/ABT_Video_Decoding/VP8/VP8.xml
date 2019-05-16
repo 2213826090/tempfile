@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<Campaign>
+      <Parameters>
+            <Parameter isControlledPSUsed="False"/>
+            <Parameter isIoCardUsed="False"/>
+            <Parameter skipBootOnPowerCycle="False"/>
+            <Parameter bootRetryNumber="0"/>
+            <Parameter runHookScripts="False"/>
+            <Parameter powerCycleBetweenTC="False"/>
+            <Parameter powerCycleOnFailure="False"/>
+            <Parameter finalDutState="NoChange"/>
+            <Parameter stopCampaignOnCriticalFailure="False"/>
+            <Parameter stopCampaignOnFirstFailure="False"/>
+            <Parameter loggingLevel="debug"/>
+            <Parameter CampaignType="Other"/>
+      </Parameters>
+      <TestCases>
+            <TestCase Id="../../../../../TC/TR/ATF_TESTS/ABT_Video_Decoding/VP8/VP8_30fps_352x288_1933kbps_Vorbis_44.1kHz_80kbps_Stereo.MKV"/>
+            <TestCase Id="../../../../../TC/TR/ATF_TESTS/ABT_Video_Decoding/VP8/vp8_Decode_SW_SD_640x480_30fps"/>
+            <TestCase Id="../../../../../TC/TR/ATF_TESTS/ABT_Video_Decoding/VP8/VP8_30fps_852x480_AAC_LC_44.1kHz_.MKV"/>
+            <TestCase Id="../../../../../TC/TR/ATF_TESTS/ABT_Video_Decoding/VP8/VP8_30fps_352x288_1930kbps_AC3_44.1kHz_112kbps_Stereo.MKV"/>
+            <TestCase Id="../../../../../TC/TR/ATF_TESTS/ABT_Video_Decoding/VP8/VP8_Decode_SW_HD(1280X720)_30fps"/>
+            <TestCase Id="../../../../../TC/TR/ATF_TESTS/ABT_Video_Decoding/VP8/VP8_854x480_24fps_160kbps_48kHz_160kbps_Stereo.webm"/>
+            <TestCase Id="../../../../../TC/TR/ATF_TESTS/ABT_Video_Decoding/VP8/VP8_1920_1080_24fps_382kbps_48kHz_160kbps_Stereo.webm"/>
+            <TestCase Id="../../../../../TC/TR/ATF_TESTS/ABT_Video_Decoding/VP8/VP8_30fps_852x480_AAC_LC_44.1kHz_Stereo.MKV"/>
+      </TestCases>
+</Campaign>

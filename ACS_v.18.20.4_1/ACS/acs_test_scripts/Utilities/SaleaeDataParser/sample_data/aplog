@@ -1,0 +1,40 @@
+01-21 14:37:56.730  5474  5474 W         : Failed to bind-mount /system/lib/x86/cpuinfo as /proc/cpuinfo: No such file or directory
+01-21 14:37:56.730  5474  5474 E         : Cannot create code cache directory ./code_cache: Read-only file system.
+01-21 14:37:56.780  5474  5474 E memtrack: Couldn't load memtrack module (No such file or directory)
+01-21 14:37:56.780  5474  5474 E android.os.Debug: failed to load memtrack module: -2
+01-21 14:37:56.800  5474  5474 D AndroidRuntime: Calling main entry com.android.commands.am.Am
+01-21 14:37:56.810  2356  2356 D ACS     : ------------------------------------
+01-21 14:37:56.810  2356  2356 D ACS     : AcsCmd broadcast received
+01-21 14:37:56.810  2356  2356 I ACS     : Class: acscmd.connectivity.wifi.WifiModule
+01-21 14:37:56.810  2356  2356 D ACS     : Intent action :intel.intent.action.acs.cmd
+01-21 14:37:56.810  2356  2356 I ACS     : method: setWifiPower
+01-21 14:37:56.810  2356  2356 D ACS     : Extra: OpCode :4289668476
+01-21 14:37:56.810  2356  2356 I ACS_RSP : opcode::4289668476 - status::SUCCESS - output::RECEIVED - function::setWifiPower
+01-21 14:37:56.810  2356  2356 D ACS     : exec AcsCmd acscmd.connectivity.wifi.WifiModule#setWifiPower
+01-21 14:37:56.810  2356  2356 D ACS     : Creating class com.intel.acs.agentv2.llp.acscmd.connectivity.wifi.WifiModule
+01-21 14:37:56.810  2356  2356 D ACS     : Searching method com.intel.acs.agentv2.llp.acscmd.connectivity.wifi.WifiModule#setWifiPower(Bundle bundle)
+01-21 14:37:56.810  2356  4357 I ACS     : *** Set Wifi Power Status ***
+01-21 14:37:56.810  5474  5474 D AndroidRuntime: Shutting down VM
+01-21 14:37:56.810   892  2536 D WifiService: setWifiEnabled: true pid=2356, uid=1000
+01-21 14:37:56.810   892  2536 E WifiService: Invoking mWifiStateMachine.setWifiEnabled
+01-21 14:37:56.830   892  1307 I backup_data_changed: com.android.providers.settings
+01-21 14:37:56.830   892  1026 V CsmClient: [1] Start called.
+01-21 14:37:56.830  2356  4357 I ACS_RSP : opcode::4289668476 - status::SUCCESS - output::Wifi Enabled successfully
+01-21 14:37:56.830   574   862 D SoftapController: Softap fwReload - Ok
+01-21 14:37:56.830   574   862 D CommandListener: Setting iface cfg
+01-21 14:37:56.830   574   862 D CommandListener: Trying to bring down wlan0
+01-21 14:37:56.830   574   862 D CommandListener: Clearing all IP addresses on wlan0
+01-21 14:37:56.840   892  1025 E WifiMonitor: killSupplicant p2ptrue init.svc.wpa_supplicant=unknown init.svc.p2p_supplicant=unknown
+01-21 14:37:56.950   892  1025 D WifiMonitor: startMonitoring(wlan0) with mConnected = false
+01-21 14:37:56.950  1820  1820 D DCT     : [0]onReceive: action=android.net.wifi.WIFI_STATE_CHANGED
+01-21 14:37:56.950  1820  1820 D DCT     : [0]WIFI_STATE_CHANGED_ACTION: enabled=false mIsWifiConnected=false
+01-21 14:37:56.990  5500  5500 D wpa_supplicant: wpa_supplicant v2.3-5.1
+01-21 14:37:56.990  5500  5500 D wpa_supplicant: random: Added entropy from /data/misc/wifi/entropy.bin (own_pool_ready=2)
+01-21 14:37:56.990  5500  5500 D wpa_supplicant: random: Trying to read entropy from /dev/random
+01-21 14:37:56.990  5500  5500 D wpa_supplicant: random: Updated entropy file /data/misc/wifi/entropy.bin (own_pool_ready=2)
+01-21 14:37:56.990  5500  5500 D wpa_supplicant: Global control interface '@android:wpa_wlan0'
+01-21 14:37:56.990  5500  5500 D wpa_supplicant: Using Android control socket 'wpa_wlan0'
+01-21 14:37:56.990  5500  5500 I wpa_supplicant: Successfully initialized wpa_supplicant
+01-21 14:37:56.990  5500  5500 D wpa_supplicant: Override interface parameter: ctrl_interface ('(null)' -> '/data/misc/wifi/sockets')
+01-21 14:37:56.990  5500  5500 D wpa_supplicant: Initializing interface 'wlan0' conf '/data/misc/wifi/wpa_supplicant.conf' driver 'nl80211' ctrl_interface '/data/misc/wifi/sockets' bridge 'N/A'
+                                                                                                                                                     1363,47       14%

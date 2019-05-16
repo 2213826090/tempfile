@@ -1,0 +1,42 @@
+<?xml version="1.0" ?>
+<TestCase>
+  <UseCase>CTS_NOTELEPHONY</UseCase>
+  <Description>Exec CTS package android.animation</Description>
+  <b2bContinuousMode>False</b2bContinuousMode>
+  <b2bIteration>1</b2bIteration>
+  <TcMaxAttempt>1</TcMaxAttempt>
+  <TcAcceptanceCriteria>1</TcAcceptanceCriteria>
+  <Parameters>
+    <Parameter>
+        <Name>CTS_PATH</Name>
+        <Description>Specify path/url to android CTS framework</Description>
+        <Value>http://tldlabintbb01.tl.intel.com:5901/acsbbshare/official/cts/android-cts-4.4_r1.95-linux_x86.zip</Value>
+    </Parameter>
+    <Parameter>
+        <!-- Optional -->
+        <Name>CTS_MEDIA_PATH</Name>
+        <Description>Specify path/url to android CTS videos media files</Description>
+        <Value>http://tldlabintbb01.tl.intel.com:5901/acsbbshare/official/cts/buildbot-cts-media-1.0.zip</Value>
+    </Parameter>
+    <Parameter>
+        <!-- Optional -->
+        <Name>CTS_REPORT_COMPARISON_PATH</Name>
+        <Description>Specify path/url to a previous CTS result. Verdict will be built according to this one</Description>
+        <Value></Value>
+    </Parameter>
+    <Parameter>
+        <Name>WIFI_ACCESS_POINT</Name>
+        <Description> Wifi access point to use for test </Description>
+        <Value>WIFI_CTS</Value>
+    </Parameter>
+    <Parameter>
+        <Name>TEST_CMD_LINES</Name>
+        <Description>Test cmd lines to execute. Separate with ';' if more than one.</Description>
+        <Value>run cts --package android.animation -l debug</Value>
+    </Parameter>
+    <Parameter>
+        <Name>TEST_TIMEOUT</Name>
+        <Value>3600</Value>
+    </Parameter>
+  </Parameters>
+</TestCase>

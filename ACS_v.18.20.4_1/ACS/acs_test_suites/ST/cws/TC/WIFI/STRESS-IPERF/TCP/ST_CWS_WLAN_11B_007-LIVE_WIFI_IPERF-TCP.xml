@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase>
+  <UseCase>LIVE_WIFI_IPERF</UseCase>
+  <Description>WIFI Throuhput Measurement using IPERF</Description>
+  <b2bIteration>1</b2bIteration>
+  <b2bContinuousMode>True</b2bContinuousMode>
+  <Parameters>
+    <Parameter>
+      <!-- Wifi standard of wifi env to be used. Can be "a", "b", "g", "an", "bg", "gn", "bgn", "n2.4G", "n5G", "off" -->
+      <!-- Depending on AP capabilities -->
+      <Name>WIFI_STANDARD</Name>
+      <Value>b</Value>
+    </Parameter>
+    <Parameter>
+      <!-- Wifi Security of wifi env to be used. Can be "OPEN", "WEP", "WPA" or "WPA2".
+      If a WIFI_ACCESS_POINT has been choosen, this parameter refers to the access point's security. -->
+      <Name>WIFI_SECURITY</Name>
+      <Value>WEP</Value>
+    </Parameter>
+    <Parameter>
+      <!-- Wifi access point on which board will connect to.
+      Must refers to a wifi router's name (equipment name of the bench configuration file).
+      If no value has been set, a default router will be choosen in the bench configuration,
+      depending on WIFI_SECURITY.-->
+      <Name>WIFI_ACCESS_POINT</Name>
+      <Value>B_ONLY_WIFI_ROUTER</Value>
+    </Parameter>
+    <Parameter>
+      <!-- Sniffer capture: 0 or 1 -->
+      <Name>WIFI_SNIFF</Name>
+      <Value>0</Value>
+    </Parameter>
+    <Parameter>
+      <!-- [Optional] iperf mode: single or dual (default is single if not specified) -->
+      <Name>IPERF_MODE</Name>
+      <Value>dual</Value>
+    </Parameter>
+    <Parameter>
+      <!-- Computer to use as iperf server -->
+      <Name>COMPUTER</Name>
+      <Value>COMPUTER2</Value>
+    </Parameter>
+    <Parameter>
+      <!-- Transfer direction. Can be "both" (default), "up" or "down" -->
+      <Name>DIRECTION</Name>
+      <Value>down</Value>
+    </Parameter>
+    <Parameter>
+      <!-- Iperf options that will be concatened into iperf command line.
+        -p [port]: Specify the port to be used. 5001 for TCP 5009 for UDP (Mandatory)
+        -t [duration]: The time in seconds to transmit for (Mandatory)
+        -u : UDP mode instead of TCP default mode
+        -P [threads_number]: Number of iperf thread to use. If not use the value is compute depending on expected throughput
+        -w [window size]: Sets the socket buffer sizes to the specified value. If not use the value is compute depending on expected throughput. ex: "-w 512K" or "-w 1M"
+        -l [buffer_length]: Sets the length of the buffer to read or write. If not use the value is compute depending on expected throughput
+        -b [bandwidth]: UDP bandwidth to send at, in bits/sec. This implies the -u option. ex: "-b 1M" or "-b 512K".
+        -N: Set the TCP no delay option, disabling Nagle's algorithm
+        See http://iperf.fr/ for more information -->
+      <Name>IPERF_OPTIONS</Name>
+      <Value>-p5009 -t60 -P1</Value>
+    </Parameter>
+    <Parameter>
+      <!-- [Optional] Iperf options tuning: '0' or 'off': do not modify threads/buffer size. '1' or 'on': update threads count/buffer size, default is '1' -->
+      <Name>IPERF_TUNE_OPTIONS</Name>
+      <Value>0</Value>
+    </Parameter>
+  </Parameters>
+</TestCase>

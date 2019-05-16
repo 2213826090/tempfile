@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<Campaign>
+      <Parameters>
+            <Parameter isControlledPSUsed="False"/>
+            <Parameter isIoCardUsed="False"/>
+            <Parameter skipBootOnPowerCycle="False"/>
+            <Parameter bootRetryNumber="0"/>
+            <Parameter runHookScripts="False"/>
+            <Parameter powerCycleBetweenTC="False"/>
+            <Parameter powerCycleOnFailure="False"/>
+            <Parameter finalDutState="NoChange"/>
+            <Parameter stopCampaignOnCriticalFailure="False"/>
+            <Parameter stopCampaignOnFirstFailure="False"/>
+            <Parameter loggingLevel="debug"/>
+            <Parameter CampaignType="Other"/>
+      <Parameter TCRReportViaRESTAPI="True"/>
+      </Parameters>
+      <TestCases>
+            <TestCase Id="../../TC/TR/QCL/config/check_sample_rate"/>
+            <TestCase Id="../../TC/TR/QCL/config/check_gyro_axes_when_stationary"/>
+            <TestCase Id="../../TC/TR/QCL/config/check_standard_deviation_x"/>
+            <TestCase Id="../../TC/TR/QCL/config/check_standard_deviation_y"/>
+            <TestCase Id="../../TC/TR/QCL/config/check_standard_deviation_z"/>
+      </TestCases>
+</Campaign>

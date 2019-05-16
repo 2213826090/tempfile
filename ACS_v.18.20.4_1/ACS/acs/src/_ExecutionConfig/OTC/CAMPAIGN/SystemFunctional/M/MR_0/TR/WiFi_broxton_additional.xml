@@ -1,0 +1,30 @@
+<?xml version="1.0" ?>
+<Campaign>
+      <Parameters>
+            <Parameter isControlledPSUsed="False"/>
+            <Parameter isIoCardUsed="False"/>
+            <Parameter skipBootOnPowerCycle="False"/>
+            <Parameter bootRetryNumber="0"/>
+            <Parameter runHookScripts="False"/>
+            <Parameter powerCycleBetweenTC="False"/>
+            <Parameter powerCycleOnFailure="False"/>
+            <Parameter finalDutState="NoChange"/>
+            <Parameter stopCampaignOnCriticalFailure="False"/>
+            <Parameter stopCampaignOnFirstFailure="False"/>
+            <Parameter loggingLevel="debug"/>
+            <Parameter CampaignType="Other"/>
+            <Parameter TCRReportViaRESTAPI="True"/>
+      </Parameters>
+      <TestCases>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/WiFi/Comms_WIFI_ComponentRelated_GeneralBehaviour_SSL"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/WiFi/Comms_WIFI_ComponentRelated_Network_Configure-and-confirm-test-access-point-for-IPv4-only-protocol"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/WiFi/Comms_WIFI_ComponentRelated_Network_Renew-IP-Address"/>
+            <SubCampaign Id="../../../../Subcampaigns/TESTLIB/wifi/wifi_wlan_roaming"/>
+            <SubCampaign Id="../../../../Subcampaigns/TESTLIB/wifi/http_proxy"/>
+            <SubCampaign Id="../../../../Subcampaigns/TESTLIB/wifi/wifi_ipv6"/>
+            <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/Comms_WIFI_ComponentRelated_HotSpot"/>
+            <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/Comms_WIFI_ComponentRelated_HotSpot_On_wifi_off"/>
+            <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/Comms_WIFI_ComponentRelated_HotSpot_On_turn_on_airplane"/>
+            <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/Comms_WIFI_ComponentRelated_airplane_ON_HotSpot_disabled"/>
+      </TestCases>
+</Campaign>

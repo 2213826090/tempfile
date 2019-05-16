@@ -1,0 +1,17 @@
+{
+    "windows": {
+        "check_exists": ["winreg",
+                         ["SOFTWARE/Microsoft/Windows/CurrentVersion/Uninstall/iSocUSB Driver_is1",
+                          "SYSTEM/ControlSet001/Enum/ROOT/INTEL_SOC"]],
+        "pre_install": [
+            {"cmd": "certutil -addstore -f TrustedPublisher :home:/.acs/cache/binaries/iSocUSBDriver/iSocUSB-Driver-Setup-1.2.0/isocUsbDriver_Certificate.cer"},
+            {"cmd": "certutil -addstore -f root :home:/.acs/cache/binaries/iSocUSBDriver/iSocUSB-Driver-Setup-1.2.0/isocUsbDriver_Certificate.cer"}
+        ],
+        "install": "{bin} /VERYSILENT /SUPPRESSMSGBOXES /NORESTART",
+        "zip": {
+            "bin": "iSocUSB-Driver-Setup-1.2.0/iSocUSB-Driver-Setup-1.2.0.exe"
+        },
+        "32": "acs/dependencies/third_parties/tools/iSocUSBDriver/iSocUSB-Driver-Setup-1.2.0.zip",
+        "64": "acs/dependencies/third_parties/tools/iSocUSBDriver/iSocUSB-Driver-Setup-1.2.0.zip"
+    }
+}

@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<UI_SEQ xsi:noNamespaceSchemaLocation="ACS_ANDROID_UI_CHECK.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <ACTION>
+    <!--Go back to home page-->
+    <CMD>go_home</CMD>
+    <TIMEOUT>1</TIMEOUT>
+  </ACTION>
+   <ACTION>
+    <CMD>exec</CMD>
+    <PARAMETERS>start -a android.intent.action.Main -n com.android.phone/.Settings</PARAMETERS>
+    <TIMEOUT>1</TIMEOUT>
+  </ACTION>
+   <ACTION>
+    <CMD>settings_toggle_preferred_radio_2G</CMD>
+    <TIMEOUT>1</TIMEOUT>
+    <TRIG_LOG>set preferred network type done</TRIG_LOG>
+  </ACTION>
+  <ACTION>
+    <CMD>wait</CMD>
+    <PARAMETERS>15</PARAMETERS>
+  </ACTION>  
+   <ACTION>
+    <CMD>settings_toggle_data_access</CMD>
+    <TIMEOUT>1</TIMEOUT>
+    <TRIG_LOG>AT+CGACT=0,1</TRIG_LOG>
+  </ACTION>
+ <ACTION>
+    <CMD>wait</CMD>
+    <PARAMETERS>10</PARAMETERS>
+  </ACTION>
+  <ACTION>
+    <CMD>screenshot</CMD>
+    <PARAMETERS>pdp_context_off;jpg</PARAMETERS>
+    <TIMEOUT>3</TIMEOUT>
+  </ACTION>  
+  <ACTION>
+    <CMD>settings_toggle_data_access</CMD>
+    <TIMEOUT>1</TIMEOUT>
+    <TRIG_LOG>AT+CGDCONT=1,"IP"</TRIG_LOG>
+  </ACTION>
+ <ACTION>
+    <CMD>screenshot</CMD>
+    <PARAMETERS>pdp_context_on;jpg</PARAMETERS>
+    <TIMEOUT>3</TIMEOUT>
+ </ACTION>
+   <ACTION>
+    <CMD>exec</CMD>
+    <PARAMETERS>start -a android.intent.action.Main -n com.android.phone/.Settings</PARAMETERS>
+    <TIMEOUT>1</TIMEOUT>
+  </ACTION>
+   <ACTION>
+    <CMD>settings_toggle_preferred_radio_2G</CMD>
+    <TIMEOUT>1</TIMEOUT>
+    <TRIG_LOG>set preferred network type done</TRIG_LOG>
+  </ACTION>
+  <ACTION>
+    <CMD>wait</CMD>
+    <PARAMETERS>15</PARAMETERS>
+  </ACTION>   
+</UI_SEQ>

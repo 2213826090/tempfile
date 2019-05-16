@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<TestCase>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Discription>
+The Intel Android ULT device must support HW Composition with 2 planes per output (1 primary + 1 sprite)
+</Discription>
+    <Domain>Graphics_System</Domain>
+    <Phase>CORE</Phase>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <Type>FUNCTIONAL</Type>
+    <UseCase>PY_UNIT</UseCase>
+    <b2bIteration>1</b2bIteration>
+    <Parameters>
+        <Parameter>
+            <Name>HpalmName</Name>
+            <Value>test_HW_Composition_2PlanesPerOutput.NotificationAndQuickSettings.test_HW_Composition_2PlanesPerOutput</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TEST_DATA_ROOT</Name>
+            <Value>testplan/Graphics_System</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TEST_CASE</Name>
+            <Value>tests.Graphics_System.UFO.test_HW_Composition_2PlanesPerOutput.NotificationAndQuickSettings.test_HW_Composition_2PlanesPerOutput</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

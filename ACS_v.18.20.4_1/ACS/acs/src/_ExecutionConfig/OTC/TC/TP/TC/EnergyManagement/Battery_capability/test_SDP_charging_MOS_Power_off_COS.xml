@@ -1,0 +1,24 @@
+<?xml version="1.0" ?>
+<TestCase>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters/>
+    <Discription>
+DUT connecting SDP charger and power on, check DUT inter MOS mode, connecting SDP charger and power off, check DUT inter COS mode
+</Discription>
+    <Parameters/>
+    <UseCase>PY_UNIT</UseCase>
+    <Parameters/>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <Parameters/>
+    <b2bIteration>1</b2bIteration>
+    <Parameters>
+        <Parameter>
+            <Name>TEST_DATA_ROOT</Name>
+            <Value>testplan/EnergyManagement</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TEST_CASE</Name>
+            <Value>tests.EnergyManagement.Battery_capability.SDP_charging_MOS_Power_off_COS.SDP_charging_MOS_Power_off_COS.test_SDP_charging_MOS_Power_off_COS</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

@@ -1,0 +1,18 @@
+{
+    "windows": {
+        "check_exists": ["winreg",
+                [
+                    "SOFTWARE/Microsoft/VisualStudio/10.0/VC/VCRedist/x86",
+                    "SOFTWARE/Microsoft/VisualStudio/10.0/VC/VCRedist/x64",
+                    "SOFTWARE/Microsoft/VisualStudio/10.0/VC/VCRedist/ia64",
+                    "SOFTWARE/Wow6432Node/Microsoft/VisualStudio/10.0/VC/VCRedist/x86",
+                    "SOFTWARE/Wow6432Node/Microsoft/VisualStudio/10.0/VC/VCRedist/x64",
+                    "SOFTWARE/Wow6432Node/Microsoft/VisualStudio/10.0/VC/VCRedist/ia64"
+                ]
+        ],
+        "install": "{bin} /q /norestart",
+        "uninstall": "{bin} /q /uninstall /norestart",
+        "32": "acs/dependencies/third_parties/tools/MicrosoftVCRedistribuable/vc2010redist_x86.exe",
+        "64": "acs/dependencies/third_parties/tools/MicrosoftVCRedistribuable/vc2010redist_x64.exe"
+    }
+}

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Campaign>
+    <Parameters>
+        <Parameter isControlledPSUsed="False"/>
+        <Parameter isIoCardUsed="True"/>
+        <!-- Set skipBootOnPowerCycle to True to disable the acs boot procedure -->
+        <!-- Important, it means that boot will be handle inside the campaign/tc -->
+        <Parameter skipBootOnPowerCycle="False"/>
+        <Parameter runHookScripts="False"/>
+        <Parameter powerCycleBetweenTC="False"/>
+        <Parameter powerCycleOnFailure="True"/>
+        <Parameter finalDutState="NoChange"/>
+        <Parameter stopCampaignOnCriticalFailure="False"/>
+        <Parameter stopCampaignOnFirstFailure="False"/>
+        <!-- LoggingLevel possible values: info | warning | debug | error -->
+        <Parameter loggingLevel="info"/>
+        <!-- CampaignType format -> <TEAM>_<CAMPAIGNTYPE>
+            Possible values:
+            FT(Feature Team)-> SANITY | REGRESSION | STRESS, RELIABILTY | MTBF
+            ST(System Test)-> SANITY | REGRESSION | STRESS, RELIABILTY | MTBF
+            SI(System Integration)-> EAT | STAB | PACT | CAT0 | RELIABILITY | MTBF
+            Otherwise "Others" should be used -->
+        <Parameter CampaignType="ST_SANITY"/>
+        <Parameter TCRReportViaRESTAPI="true"/>
+    </Parameters>
+    <Targets>
+        <!-- Target Values -->
+        <Target targetB2bPassRate="100"/>
+    </Targets>
+    <TestCases>
+
+        <!-- AKA/SIM tests -->
+        <TestCase Id="../TC/WIFI/ST_CWS_WLAN_WPA_EAP_AKA_001-LAB_WIFI_CONNECT"/>
+        <TestCase Id="../TC/WIFI/ST_CWS_WLAN_WPA_EAP_SIM_001-LAB_WIFI_CONNECT"/>
+        <TestCase Id="../TC/WIFI/ST_CWS_WLAN_WPA2_EAP_AKA_001-LAB_WIFI_CONNECT"/>
+        <TestCase Id="../TC/WIFI/ST_CWS_WLAN_WPA2_EAP_AKA_002-LAB_WIFI_CONNECT_AFTER_LOSS_OF_COVERAGE"/>
+        <TestCase Id="../TC/WIFI/ST_CWS_WLAN_WPA2_EAP_AKA_009-LAB_WIFI_CONNECT"/>
+        <TestCase Id="../TC/WIFI/ST_CWS_WLAN_WPA2_EAP_AKA_011-LAB_WIFI_CONNECTION_FAIL"/>
+        <TestCase Id="../TC/WIFI/ST_CWS_WLAN_WPA2_EAP_AKA_012"/>
+        <TestCase Id="../TC/WIFI/ST_CWS_WLAN_WPA2_EAP_AKA_013-LAB_WIFI_FORGET_RECONNECT"/>
+        <TestCase Id="../TC/WIFI/ST_CWS_WLAN_WPA2_EAP_SIM_001-LAB_WIFI_CONNECT"/>
+        <TestCase Id="../TC/WIFI/ST_CWS_WLAN_WPA2_EAP_SIM_002-LAB_WIFI_CONNECT_AFTER_LOSS_OF_COVERAGE"/>
+        <TestCase Id="../TC/WIFI/ST_CWS_WLAN_WPA2_EAP_SIM_009-LAB_WIFI_CONNECT"/>
+        <TestCase Id="../TC/WIFI/ST_CWS_WLAN_WPA2_EAP_SIM_011-LAB_WIFI_CONNECTION_FAIL"/>
+        <TestCase Id="../TC/WIFI/ST_CWS_WLAN_WPA2_EAP_SIM_012"/>
+        <TestCase Id="../TC/WIFI/ST_CWS_WLAN_WPA2_EAP_SIM_013-LAB_WIFI_FORGET_RECONNECT"/>
+        <TestCase Id="../TC/WIFI/STRESS-IPERF/TCP/ST_CWS_WLAN_WPA2_EAP_AKA_006-LAB_WIFI_IPERF-TCP"/>
+        <TestCase Id="../TC/WIFI/STRESS-IPERF/TCP/ST_CWS_WLAN_WPA2_EAP_AKA_007-LAB_WIFI_IPERF-TCP"/>
+        <TestCase Id="../TC/WIFI/STRESS-IPERF/TCP/ST_CWS_WLAN_WPA2_EAP_SIM_006-LAB_WIFI_IPERF-TCP"/>
+        <TestCase Id="../TC/WIFI/STRESS-IPERF/TCP/ST_CWS_WLAN_WPA2_EAP_SIM_007-LAB_WIFI_IPERF-TCP"/>
+
+
+    </TestCases>
+</Campaign>

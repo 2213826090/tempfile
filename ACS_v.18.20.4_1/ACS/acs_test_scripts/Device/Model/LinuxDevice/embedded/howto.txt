@@ -1,0 +1,22 @@
+HOW TO:
+
+source files installation:
+- ensure the installation folder exists on DUT
+      mkdir -p /usr/local/bin
+- copy (scp -r) all files and folders from acs_test_scripts/Device/LinuxDevice/embedded
+  to /usr/local/bin/ on DUT
+
+
+to register the command_server.py script as service:
+- move command_server.service to /etc/systemd/system/
+- run "systemctl daemon-reload"
+
+to start the service
+- run "systemctl start command_server"
+
+to test the server in command line, try the client.py script under acs_test_scripts/Device/LinuxDevice/embedded
+CAUTION: the SRV_IP variable need to be updated with real server IP address
+
+
+you can start with a "python client.py help" command.
+If everything worked fine, you should get a list of available commands

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="13.45">
+    <UseCase>LIVE_LTE_IMS_VC_DUAL</UseCase>
+    <Description>IMS MO Voice Call between two phones</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters>
+        <Parameter>
+            <!--
+                The parameters that controls what should be done for
+                IMS registration:
+                - REGISTER: performs the IMS registration normally
+                - CHECK_ONLY: simply check that the IMS status is REGISTERED
+            -->
+            <Name>IMS_REGISTRATION_OPERATION</Name>
+            <Value>CHECK_ONLY</Value>
+        </Parameter>
+        <Parameter>
+            <!-- The IMS registration timeout given in seconds -->
+            <Name>IMS_REGISTRATION_TIMEOUT</Name>
+            <Value>60</Value>
+        </Parameter>
+        <Parameter>
+            <!-- The path to the IMS configuration file to push on the device.
+                    If no such file is required indicate 'None' here. -->
+            <Name>IMS_PARAMETER_FILE</Name>
+            <Value>_ExecutionConfig/FT/telephony/configurations/ims_config.yaml</Value>
+        </Parameter>
+        <Parameter>
+            <!-- The authentication mode to use ("digest"|"aka"). -->
+            <Name>IMS_AUTHENTICATION</Name>
+            <Value>digest</Value>
+        </Parameter>
+        <Parameter>
+             <!-- [optional] The DIGEST password to use when chosing DIGEST authentication mode. -->
+            <Name>IMS_DIGEST_PASSWORD</Name>
+            <Value>AC7q3eOfBrSj</Value>
+        </Parameter>
+        <Parameter>
+             <!-- The precondition parameters ("3gpp" with preconditions, "ietf" without preconditions) -->
+            <Name>IMS_PRECONDITIONS</Name>
+            <Value>ietf</Value>
+        </Parameter>
+        <Parameter>
+            <!-- IMS call direction: MO for Mobile Originated or MT for Mobile Terminated-->
+            <Name>CALL_DIRECTION</Name>
+            <Value>MO</Value>
+        </Parameter>
+        <Parameter>
+             <!--
+             The parameters that controls who's releaseing the IMS voice call
+                     - MR: Mobile release, main DUT is releasing
+                     - NR: Network Realease - sumulated by releasing the call from
+                             secondary DUT
+             -->
+            <Name>CALL_RELEASE</Name>
+            <Value>MR</Value>
+        </Parameter>
+        <Parameter>
+            <!-- IMS call type: IR92 or IR94 -->
+            <Name>CALL_TYPE</Name>
+            <Value>IR92</Value>
+        </Parameter>
+        <Parameter>
+            <!-- IMS call duration in seconds -->
+            <Name>CALL_DURATION</Name>
+            <Value>30</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Perform call hold and resume procedures -->
+            <Name>CHECK_CALL_ON_HOLD_RESUME</Name>
+            <Value>True</Value>
+        </Parameter>
+        <Parameter>
+            <Name>PHONE_NUMBER</Name>
+            <Value>+918041392255</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

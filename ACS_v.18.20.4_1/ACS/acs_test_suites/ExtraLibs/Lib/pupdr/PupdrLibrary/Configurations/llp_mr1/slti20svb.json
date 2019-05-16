@@ -1,0 +1,41 @@
+{
+    "Configuration": {
+        "Boot": null,
+        "BootVars": null,
+        "Custom": null,
+        "Flash": {},
+        "Inherit": {
+            "BOARD": "slti20mr6"
+        },
+        "Logs": null,
+        "Timeout": null,
+        "WorkAround": null,
+        "TestDescription": {
+            "warnings": {},
+            "engineering": [
+                {
+                    "name": "default",
+                    "build_tag": "bootota_",
+                    "testing": [
+                        {
+                            "build_target": "r2_slti20svb-userdebug",
+                            "campaign": "BOOTOTA_PREINTEGRATION"
+                        }
+                    ]
+                }
+            ],
+            "release_candidate": [
+                {
+                    "name": "release",
+                    "build_tag": "",
+                    "testing": [
+                        {
+                            "build_target": "r2_slti20svb-userdebug",
+                            "campaign": "BOOTOTA_RELEASE"
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}

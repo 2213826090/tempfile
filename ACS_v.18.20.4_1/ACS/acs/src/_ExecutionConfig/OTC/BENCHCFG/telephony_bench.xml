@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='ISO-8859-1'?>
+<BenchConfig>
+    <Phones>
+        <Phone name="PHONE1" description="Phone tested">
+            <Parameter uploadCrashToServer="false"/>
+            <Parameter disableTcReboot="true" description="Disable TC reboot options"/>
+            <Parameter serialNumber="004402524017062"/>
+            <Parameter phoneNumber="0737040994"/>
+            <Parameter internationalPrefix="+4"/>
+            <Parameter multipleDevices="false"/>
+            <Parameter ACTIVATE_VOICE_CALL="**004*332#"/>
+            <Parameter DEACTIVATE_VOICE_CALL="##002#"/>
+            <Parameter VOICE_CALL_SERVER="334"/>
+            <Parameter REQUEST_SUBSCRIPTION_SUMMARY="*123#"/>
+        </Phone>
+        <Phone name="PHONE2" description="Reference phone">
+            <Parameter multipleDevices="false"/>
+            <Parameter cleanDeviceCrashLog="true"/>
+            <Parameter serialNumber="ZX1G426X7Z"/>
+            <Parameter phoneNumber="0722436559"/>
+            <Parameter retrieveDeviceCrashLog="false"/>
+            <Parameter disableTcReboot="true" description="Disable TC reboot options"/>
+            <Parameter retrieveAPLog="false"/>
+        </Phone>
+        <Phone name="PHONE3" description="Reference phone2">
+            <Parameter multipleDevices="false"/>
+            <Parameter cleanDeviceCrashLog="true"/>
+            <Parameter serialNumber="00bf0ed0d9c1cb04"/>
+            <Parameter phoneNumber="0722435358"/>
+            <Parameter retrieveDeviceCrashLog="false"/>
+            <Parameter disableTcReboot="true" description="Disable TC reboot options"/>
+            <Parameter retrieveAPLog="false"/>
+        </Phone>
+    </Phones>
+    <Equipments>
+        <Equipment version="14.09" name="ARTIFACT_MANAGER"
+                   description="ArtifactManager configuration to get all test case necessary artifacts">
+            <Parameter name="URI" value="https://mcg-depot.intel.com/artifactory/acs_test_artifacts/"
+                       description="Local path/URL to the artifact source"/>
+            <Parameter name="http_timeout" value="10" description="Response timeout if URI is an URL"/>
+        </Equipment>
+    </Equipments>
+</BenchConfig>

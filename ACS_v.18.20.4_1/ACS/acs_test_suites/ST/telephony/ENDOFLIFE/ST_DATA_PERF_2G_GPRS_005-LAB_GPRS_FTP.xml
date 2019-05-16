@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase>
+  <UseCase>LAB_GPRS_FTP</UseCase>
+  <Description>Successive FTP  Download over GPRS on simulated network</Description>
+  <b2bIteration>200</b2bIteration>
+  <b2bContinuousMode>True</b2bContinuousMode>  
+  <Parameters>
+    <Parameter>
+      <!-- Cell Band (EGSM|GSM850|PCS|DCS) -->
+      <Name>CELL_BAND</Name>
+      <Value>DCS</Value>
+    </Parameter>
+    <Parameter>
+      <!-- Cell power in dBm -->
+      <Name>CELL_POWER</Name>
+      <Value>-60</Value>
+    </Parameter>
+    <Parameter>
+      <!-- Multislot configuration
+      D1U1, D1U2, D1U3, D1U4, D1U5, D1U6, D2U1, D2U2, D2U3, D2U4, D2U5, 
+      D3U1, D3U2, D3U3, D3U4, D4U1, D4U2, D4U3, D5U1, D5U2, D6U1, MAX
+      If MAX is selected, value will be taken from DeviceCatalog.xml -->
+      <Name>MULTISLOT_CONFIG</Name>
+      <Value>D5U1</Value>
+    </Parameter>
+    <Parameter>
+      <!-- Uplink Coding scheme (CS1 | CS2 | CS3 | CS4)-->
+      <Name>UL_CS</Name>
+      <Value>CS4</Value>
+    </Parameter>
+    <Parameter>
+      <!-- Downlink Coding scheme (CS1 | CS2 | CS3 | CS4)-->
+      <Name>DL_CS</Name>
+      <Value>CS4</Value>
+    </Parameter>
+    <Parameter>
+      <!-- FTP transfer direction: DL or UL -->
+      <Name>DIRECTION</Name>
+      <Value>DL</Value>
+    </Parameter>
+    <Parameter>
+      <!-- File to download from the server. This file shall be available on the server. If the file to transfer is located in a specific directory, you can specify its path. i.e. : acs/download_file/get5M -->
+      <Name>DL_FILENAME</Name>
+      <Value>get500k</Value>
+    </Parameter>    
+    <Parameter>
+      <!-- Transfer timeout in s -->
+      <Name>XFER_TIMEOUT</Name>
+      <Value>120</Value>
+    </Parameter>
+  </Parameters>
+</TestCase>

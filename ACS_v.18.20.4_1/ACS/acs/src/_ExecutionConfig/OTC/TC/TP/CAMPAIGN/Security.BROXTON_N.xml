@@ -1,0 +1,65 @@
+<?xml version="1.0" ?>
+<Campaign version="13.49">
+    <Parameters>
+        <Parameter isControlledPSUsed="False"/>
+        <Parameter isIoCardUsed="False"/>
+        <Parameter skipBootOnPowerCycle="False"/>
+        <Parameter bootRetryNumber="0"/>
+        <Parameter runHookScripts="False"/>
+        <Parameter powerCycleBetweenTC="False"/>
+        <Parameter powerCycleOnFailure="False"/>
+        <Parameter finalDutState="NoChange"/>
+        <Parameter stopCampaignOnCriticalFailure="False"/>
+        <Parameter stopCampaignOnFirstFailure="False"/>
+        <Parameter loggingLevel="debug"/>
+        <Parameter CampaignType="Other"/>
+        <Parameter TCRReportViaRESTAPI="True"/>
+    </Parameters>
+    <TestCases>
+        <TestCase Id="../../../../../TC/TP/TC/Security/New/test_google_verified_boot_boot_state_green"/>
+        <TestCase Id="../../../../../TC/TP/TC/Security/New/test_vmx_flag_for_trusty_os"/>
+        <TestCase Id="../../../../../TC/TP/TC/Security/New/test_brute_force_pin_more_than_30times"/>
+        <TestCase Id="../../../../../TC/TP/TC/Security/New/test_brute_force_password_more_than_30times"/>
+        <TestCase Id="../../../../../TC/TP/TC/Security/New/test_brute_force_pattern_more_than_30times"/>
+        <TestCase Id="../../../../../TC/TP/TC/Security/New/test_boot_with_screen_lock_pin"/>
+        <TestCase Id="../../../../../TC/TP/TC/Security/New/test_boot_with_screen_lock_password"/>
+        <TestCase Id="../../../../../TC/TP/TC/Security/New/test_boot_with_screen_lock_pattern"/>
+        <TestCase Id="../../../../../TC/TP/TC/Security/New/test_instant_lock_with_password_pin_pattern"/>
+        <TestCase Id="../../../../../TC/TP/TC/Security/New/test_lock_protected_options_with_password_pin_pattern"/>
+        <TestCase Id="../../../../../TC/TP/TC/Security/New/Lock_timer_with_PIN_or_password_or_pattern"/>
+        <TestCase Id="../../../../../TC/TP/TC/Security/New/test_screen_lock_to_no_password"/>
+        <TestCase Id="../../../../../TC/TP/TC/Security/New/test_screen_lock_with_password_pin_pattern_update"/>
+        <TestCase Id="../../../../../TC/TP/TC/Security/New/test_screen_lock_update_wrong_password_pin_pattern"/>
+        <TestCase Id="../../../../../TC/TP/TC/Security/New/test_screen_lock_password_pin_pattern_update_no_changes"/>
+        <TestCase Id="../../../../../TC/TP/TC/Security/New/test_check_adb_connection_and_key_userdebug_image"/>
+        <TestCase Id="../../../../../TC/TP/TC/Security/New/test_selinux_mode_check"/>
+        <TestCase Id="../../../../../TC/TP/TC/Security/New/test_disk_encryption_flag_check"/>
+        <TestCase Id="../../../../../TC/TP/TC/Security/New/test_system_mount_are_read_only"/>
+        <TestCase Id="../../../../../TC/TP/TC/Security/New/test_disk_update_password_key_on_without_lock_key"/>
+        <TestCase Id="../../../../../TC/TP/TC/Security/New/test_disk_update_pin_key_on_without_lock_key"/>
+        <TestCase Id="../../../../../TC/TP/TC/Security/New/test_disk_update_pattern_key_on_without_lock_key"/>
+        <TestCase Id="../../../../../TC/TP/TC/Security/New/test_disk_update_lock_type_key_on_passwd_pin_pattern_switch_lock"/>
+        <TestCase Id="../../../../../TC/TP/TC/Security/New/test_disk_encryption_lock_type_check_vold_decrypt_status"/>
+        <TestCase Id="../../../../../TC/TP/TC/Security/New/test_data_partition_access_incorrect_key_more_than_30_times"/>
+        <TestCase Id="../../../../../TC/TP/TC/Security/New/test_gatekeeperd_running_in_background"/>
+        <TestCase Id="../../../../../TC/TP/TC/Security/New/test_gatekeeperd_killed_with_screen_lock_update"/>
+        <TestCase Id="../../../../../TC/TP/TC/Security/New/test_hardware_backed_keystore"/>
+        <TestCase Id="../../../../../TC/TP/TC/Security/New/test_eb_image_tipc_test"/>
+        <TestCase Id="../../../../../TC/TP/TC/Security/New/test_ca_credentials_check"/>
+        <TestCase Id="../../../../../TC/TP/TC/Security/New/test_direct_boot_fbe_enable_check"/>
+        <TestCase Id="../../../../../TC/TP/TC/Security/New/test_direct_boot_fbe_enable_check_for_encrypted_file"/>
+        <TestCase Id="../../../../../TC/TP/TC/Security/New/test_minimium_requirement_check_screen_lock_pin"/>
+        <TestCase Id="../../../../../TC/TP/TC/Security/New/test_minimium_requirement_check_screen_lock_password"/>
+        <TestCase Id="../../../../../TC/TP/TC/Security/New/test_minimium_requirement_check_screen_lock_pattern"/>
+        <TestCase Id="../../../../../TC/TP/TC/Security/New/test_brute_force_password_pin_pattern_wait_time_with_reboot"/>
+        <TestCase Id="../../../../../TC/TP/TC/Security/New/test_eb_image_negative_tipc_test"/>
+        <TestCase Id="../../../../../TC/TP/TC/Security/New/test_keymaster_version_check"/>
+        <TestCase Id="../../../../../TC/TP/TC/Security/New/test_hardware_backed_keystore_libary_check"/>
+        <TestCase Id="../../../../../TC/TP/TC/Security/New/test_eb_image_unit_test_secure_storage"/>
+        <TestCase Id="../../../../../TC/TP/TC/Security/New/test_eb_image_unit_test_hwcrypto"/>
+        <TestCase Id="../../../../../TC/TP/TC/Security/New/test_selinux_mode_switch"/>
+        <TestCase Id="../../../../../TC/TP/TC/Security/New/test_eb_image_alsr_variable_function_address_check"/>
+        <TestCase Id="../../../../../TC/TP/TC/Security/New/test_eb_image_tipc_test_app"/>
+        <TestCase Id="../../../../../TC/TP/TC/Security/New/test_eb_image_unit_test_hwcrypto_app"/>
+    </TestCases>
+</Campaign>

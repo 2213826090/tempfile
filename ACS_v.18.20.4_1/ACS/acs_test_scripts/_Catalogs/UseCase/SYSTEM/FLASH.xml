@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!-- Usecases dedicated to System -->
+<UseCases xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:noNamespaceSchemaLocation="../../../../acs/src/_Catalogs/UseCase/usecase.xsd">
+    <UseCase Id="LAB_SYSTEM_FLASH" Domain="SYSTEM" SubDomain="FLASH" OS="ANDROID" Status="DONE">
+        <ClassName>UseCase.BootFlashSetup.LAB_SYSTEM_FLASH.LabSystemFlash</ClassName>
+        <Description>Flashes the DUT</Description>
+        <Environment name="BOOT_FLASH_SETUP">
+            <Capabilities>EQT_USB_RLY08</Capabilities>
+            <Capabilities>CAP_SWITCH_ON_OFF</Capabilities>
+            <Capabilities>CAP_USB_HOST_PC_ON_OFF</Capabilities>
+        </Environment>
+        <Parameters>
+            <Parameter name="FLASH_FILE_PATH" type="FLASH_FILE_PATH" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="FLASH_TIMEOUT" type="FLASH_TIMEOUT_IN_SEC" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="FLASH_MODULE_CONFIG" type="SETUP_PATH" isOptional="true">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="BOOT_AFTER_FLASH" type="BOOLEAN" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+        </Parameters>
+    </UseCase>
+    <UseCase Id="LAB_PUPDR_FLASH" Domain="SYSTEM" SubDomain="FLASH" OS="ANDROID" Status="DONE">
+        <ClassName>UseCase.BootFlashSetup.LAB_PUPDR_FLASH.LabPupdrFlash</ClassName>
+        <Description>Flashes the DUT</Description>
+        <Environment name="BOOT_FLASH_SETUP">
+            <Capabilities>EQT_USB_RLY08</Capabilities>
+            <Capabilities>CAP_SWITCH_ON_OFF</Capabilities>
+            <Capabilities>CAP_USB_HOST_PC_ON_OFF</Capabilities>
+        </Environment>
+        <Parameters>
+            <Parameter name="SCRIPT_PATH" type="RUN_SCRIPT" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="RECOVERY" type="BOOLEAN" isOptional="true">
+                <Description>To be filled</Description>
+                <PossibleValues>True;False</PossibleValues>
+                <DefaultValue>False</DefaultValue>
+                <Blank/>
+            </Parameter>
+            <Parameter name="NO_MODEM_FLASH" type="BOOLEAN" isOptional="true">
+                <Description>To be filled</Description>
+                <PossibleValues>True;False</PossibleValues>
+                <DefaultValue>False</DefaultValue>
+                <Blank/>
+            </Parameter>
+        </Parameters>
+    </UseCase>
+</UseCases>

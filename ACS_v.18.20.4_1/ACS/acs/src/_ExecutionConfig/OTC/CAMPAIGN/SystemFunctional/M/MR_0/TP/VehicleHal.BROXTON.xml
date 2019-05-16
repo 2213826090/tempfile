@@ -1,0 +1,37 @@
+<?xml version="1.0" ?>
+<Campaign version="13.49">
+    <Parameters>
+        <Parameter isControlledPSUsed="False"/>
+        <Parameter isIoCardUsed="False"/>
+        <Parameter skipBootOnPowerCycle="False"/>
+        <Parameter bootRetryNumber="0"/>
+        <Parameter runHookScripts="False"/>
+        <Parameter powerCycleBetweenTC="False"/>
+        <Parameter powerCycleOnFailure="False"/>
+        <Parameter finalDutState="NoChange"/>
+        <Parameter stopCampaignOnCriticalFailure="False"/>
+        <Parameter stopCampaignOnFirstFailure="False"/>
+        <Parameter loggingLevel="debug"/>
+        <Parameter CampaignType="Other"/>
+        <Parameter TCRReportViaRESTAPI="True"/>
+    </Parameters>
+    <TestCases>
+        <TestCase Id="../../../../../TC/TP/TC/VehicleHal/VehicalHalPhase2/test_VehicalHal_SendMsgToCanBox_HVAC"/>
+        <TestCase Id="../../../../../TC/TP/TC/VehicleHal/VehicalHalPhase2/test_VehicalHal_SendMsgToCanBox_SensorsData"/>
+        <TestCase Id="../../../../../TC/TP/TC/VehicleHal/VehicalHalPhase2/test_VehicalHal_SendMsgToCanBox_HVACRecirc"/>
+        <TestCase Id="../../../../../TC/TP/TC/VehicleHal/VehicalHalPhase2/test_VehicalHal_SendMsgToCanBox_HVACFanDirection"/>
+        <TestCase Id="../../../../../TC/TP/TC/VehicleHal/VehicalHalPhase2/test_VehicalHal_SendMsgToCanBox_HVACAC"/>
+        <TestCase Id="../../../../../TC/TP/TC/VehicleHal/VehicalHalPhase2/test_VehicalHal_SendMsgToCanBox_HVACDefrosterFront"/>
+        <TestCase Id="../../../../../TC/TP/TC/VehicleHal/VehicalHalPhase2/test_VehicalHal_SendMsgToCanBox_HVACAuto"/>
+        <TestCase Id="../../../../../TC/TP/TC/VehicleHal/VehicalHalPhase2/test_VehicalHal_SendMsgToCanBox_HVACDefrosterRear"/>
+        <TestCase Id="../../../../../TC/TP/TC/VehicleHal/VehicalHalPhase2/test_VehicalHal_SendMsgToCanBox_HVACTemperatureDriver"/>
+        <TestCase Id="../../../../../TC/TP/TC/VehicleHal/VehicalHalPhase2/test_VehicalHal_SendMsgToCanBox_HVACFanSpeed"/>
+        <TestCase Id="../../../../../TC/TP/TC/VehicleHal/VehicalHalPhase2/test_VehicalHal_SendMsgToCanBox_HVACTemperaturePassenger"/>
+        <TestCase Id="../../../../../TC/TP/TC/VehicleHal/VehicalHalPhase2/test_VehicalHal_SendMsgToCanBox_SensorNightMode"/>
+        <TestCase Id="../../../../../TC/TP/TC/VehicleHal/VehicalHalPhase2/test_VehicalHal_SendMsgToCanBox_SensorFuelLevelLow"/>
+        <TestCase Id="../../../../../TC/TP/TC/VehicleHal/VehicalHalPhase2/test_VehicalHal_SendMsgToCanBox_SensorEngineRPM"/>
+        <TestCase Id="../../../../../TC/TP/TC/VehicleHal/VehicalHalPhase2/test_VehicalHal_SendMsgToCanBox_SensorTurnSignalState"/>
+        <TestCase Id="../../../../../TC/TP/TC/VehicleHal/VehicalHalPhase2/test_VehicalHal_SendMsgToCanBox_SensorSpeed"/>
+        <TestCase Id="../../../../../TC/TP/TC/VehicleHal/VehicalHalPhase2/test_VehicalHal_SendMsgToCanBox_SensorEngineOilTemp"/>
+    </TestCases>
+</Campaign>

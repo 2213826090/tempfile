@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="13.45">
+    <UseCase>LAB_SYSTEM_FLASH</UseCase>
+    <Description>Flash sequence checking</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>False</b2bContinuousMode>
+    <DeviceConnection>False</DeviceConnection>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <TcMaxAttempt>3</TcMaxAttempt>
+    <TcAcceptanceCriteria>1</TcAcceptanceCriteria>
+    <IsCritical>True</IsCritical>
+    <Parameters>
+        <Parameter>
+            <!-- The full path where the flash files are located. If the parameter is not defined ACS will read from optional parameter from CampaignEngine -->
+            <!--  Note: list of flash files should be ordered, first of list is first to be flashed -->
+            <Name>FLASH_FILE_PATH</Name>
+            <Value></Value>
+        </Parameter>
+        <Parameter>
+            <!-- The timeout (in second) of the flash sequence. If the parameter is not defined ACS will read as default value flashTimeout from Device_Catalog.xml -->
+            <Name>FLASH_TIMEOUT</Name>
+            <Value></Value>
+        </Parameter>
+        <Parameter>
+            <!-- Override flash module configuration parameters from xml file. Value must be a full path to the xml file or relative path from the test case file -->
+            <!-- For xml formalist, have a look to src/Device/DeviceModule/Flash/Config -->
+            <Name>FLASH_MODULE_CONFIG</Name>
+            <Value></Value>
+        </Parameter>
+        <Parameter>
+            <!-- The boolean value for switching on device after flash. -->
+            <Name>BOOT_AFTER_FLASH</Name>
+            <Value></Value>
+        </Parameter>
+        <Parameter>
+            <!-- Extra Check: Is Board available (in other words "usable") after flash? -->
+            <Name>CHECK_BOARD_AVAILABILITY</Name>
+            <Value></Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

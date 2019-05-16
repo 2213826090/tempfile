@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="13.41">
+    <UseCase>TEST_STEP_ENGINE</UseCase>
+    <Description/>
+    <b2bIteration>3</b2bIteration>
+    <b2bContinuousMode>False</b2bContinuousMode>
+    <TcMaxAttempt>1</TcMaxAttempt>
+    <TcAcceptanceCriteria>1</TcAcceptanceCriteria>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters />
+    <TestSteps>
+        <Include Src="ST/cws/TSS/Common/ST_CWS_COMMON.xml" />
+        <Include Src="ST/cws/TSS/WiFi/ST_CWS_WIFI_COMMON.xml" />
+
+        <TestStepSet Id="ScanAndConnectReferenceDevice">
+            <!-- SPEC - Step 2 : Scan and check SSID -->
+            <TestStep Id="WIFI_REQUEST_SCAN" />
+            <TestStep Id="WIFI_WAIT_FOR_SSID_STATE" SSID="FROM_CTX:MAC_ADDR_SSID_HOTSPOT" STATE="NOT_CONNECTED,NOT_REMEMBERED,VISIBLE" TIMEOUT="90"/>
+
+            <!-- SPEC - Step 3 : Connect Reference device to DUT -->
+            <TestStep SetId="WiFiAddNetwork" SSID="FROM_CTX:MAC_ADDR_SSID_HOTSPOT" SECURITY="WPA2-PSK-AES" PASS_PHRASE="WPA2_PASSWORD"/>
+            <TestStep Id="WIFI_CONNECT" SSID="FROM_CTX:MAC_ADDR_SSID_HOTSPOT" TIMEOUT="20"/>
+            <TestStep Id="WIFI_WAIT_FOR_SSID_STATE" SSID="FROM_CTX:MAC_ADDR_SSID_HOTSPOT" STATE="CONNECTED,REMEMBERED,VISIBLE" TIMEOUT="90"/>
+        </TestStepSet>
+
+        <TestStepSet Id="DisconnectReferenceDevice">
+            <TestStep Id="WIFI_REMOVE_NETWORK" SSID="all"/>
+            <TestStep Id="WIFI_WAIT_FOR_SSID_STATE" SSID="FROM_CTX:MAC_ADDR_SSID_HOTSPOT" STATE="NOT_CONNECTED,NOT_REMEMBERED,VISIBLE" TIMEOUT="90"/>
+        </TestStepSet>
+
+        <TestStepSet Id="PingDutFromDevice2">
+            <TestStep Id="PING" DEVICE="PHONE2" DESTINATION_IP="FROM_CTX:DUT_IP_ADDR" PACKET_SIZE="16" PACKET_COUNT="32" INTERVAL="1" FLOOD_MODE="false" BLOCKING="true" SOURCE_IP="NOT_USED" SAVE_AS="PING_PACKET_LOST_PHONE2"/>
+            <TestStep Id="COMPARE" FIRST="FROM_CTX:PING_PACKET_LOST_PHONE2" SECOND="0" OPERATOR="EQUAL" PASS_IF="true"/>
+        </TestStepSet>
+        <TestStepSet Id="PingDutFromDevice3">
+            <TestStep Id="PING" DEVICE="PHONE3" DESTINATION_IP="FROM_CTX:DUT_IP_ADDR" PACKET_SIZE="16" PACKET_COUNT="32" INTERVAL="1" FLOOD_MODE="false" BLOCKING="true" SOURCE_IP="NOT_USED" SAVE_AS="PING_PACKET_LOST_PHONE3"/>
+            <TestStep Id="COMPARE" FIRST="FROM_CTX:PING_PACKET_LOST_PHONE3" SECOND="0" OPERATOR="EQUAL" PASS_IF="true"/>
+        </TestStepSet>
+        <TestStepSet Id="PingDutFromDevice4">
+            <TestStep Id="PING" DEVICE="PHONE4" DESTINATION_IP="FROM_CTX:DUT_IP_ADDR" PACKET_SIZE="16" PACKET_COUNT="32" INTERVAL="1" FLOOD_MODE="false" BLOCKING="true" SOURCE_IP="NOT_USED" SAVE_AS="PING_PACKET_LOST_PHONE4"/>
+            <TestStep Id="COMPARE" FIRST="FROM_CTX:PING_PACKET_LOST_PHONE4" SECOND="0" OPERATOR="EQUAL" PASS_IF="true"/>
+        </TestStepSet>
+        <TestStepSet Id="PingDutFromDevice5">
+            <TestStep Id="PING" DEVICE="PHONE5" DESTINATION_IP="FROM_CTX:DUT_IP_ADDR" PACKET_SIZE="16" PACKET_COUNT="32" INTERVAL="1" FLOOD_MODE="false" BLOCKING="true" SOURCE_IP="NOT_USED" SAVE_AS="PING_PACKET_LOST_PHONE5"/>
+            <TestStep Id="COMPARE" FIRST="FROM_CTX:PING_PACKET_LOST_PHONE5" SECOND="0" OPERATOR="EQUAL" PASS_IF="true"/>
+        </TestStepSet>
+        <TestStepSet Id="PingDutFromDevice6">
+            <TestStep Id="PING" DEVICE="PHONE6" DESTINATION_IP="FROM_CTX:DUT_IP_ADDR" PACKET_SIZE="16" PACKET_COUNT="32" INTERVAL="1" FLOOD_MODE="false" BLOCKING="true" SOURCE_IP="NOT_USED" SAVE_AS="PING_PACKET_LOST_PHONE6"/>
+            <TestStep Id="COMPARE" FIRST="FROM_CTX:PING_PACKET_LOST_PHONE6" SECOND="0" OPERATOR="EQUAL" PASS_IF="true"/>
+        </TestStepSet>
+        <TestStepSet Id="PingDutFromDevice7">
+            <TestStep Id="PING" DEVICE="PHONE7" DESTINATION_IP="FROM_CTX:DUT_IP_ADDR" PACKET_SIZE="16" PACKET_COUNT="32" INTERVAL="1" FLOOD_MODE="false" BLOCKING="true" SOURCE_IP="NOT_USED" SAVE_AS="PING_PACKET_LOST_PHONE7"/>
+            <TestStep Id="COMPARE" FIRST="FROM_CTX:PING_PACKET_LOST_PHONE7" SECOND="0" OPERATOR="EQUAL" PASS_IF="true"/>
+        </TestStepSet>
+        <TestStepSet Id="PingDutFromDevice8">
+            <TestStep Id="PING" DEVICE="PHONE8" DESTINATION_IP="FROM_CTX:DUT_IP_ADDR" PACKET_SIZE="16" PACKET_COUNT="32" INTERVAL="1" FLOOD_MODE="false" BLOCKING="true" SOURCE_IP="NOT_USED" SAVE_AS="PING_PACKET_LOST_PHONE8  "/>
+            <TestStep Id="COMPARE" FIRST="FROM_CTX:PING_PACKET_LOST_PHONE8" SECOND="0" OPERATOR="EQUAL" PASS_IF="true"/>
+        </TestStepSet>
+
+        <Setup>
+            <!-- AUTOMATION - Set default configuration -->
+            <Fork Id="ForkInitPhones">
+                <TestStep SetId="InitPhoneCWS" DEVICE="PHONE1"/>
+                <TestStep SetId="InitPhoneCWS" DEVICE="PHONE2"/>
+            </Fork>
+            <TestStep SetId="InitPhoneCWS" DEVICE="PHONE3"/>
+            <TestStep SetId="InitPhoneCWS" DEVICE="PHONE4"/>
+            <TestStep SetId="InitPhoneCWS" DEVICE="PHONE5"/>
+            <TestStep SetId="InitPhoneCWS" DEVICE="PHONE6"/>
+            <TestStep SetId="InitPhoneCWS" DEVICE="PHONE7"/>
+            <TestStep SetId="InitPhoneCWS" DEVICE="PHONE8"/>
+            <!-- Configure DUT and reference phone -->
+            <Fork Id="ConfigurePhones">
+                <TestStep SetId="SoftAPCommonSetup" DEVICE="PHONE1" REGULATORY_DOMAIN="FR" MAC_ADDR="MAC_ADDR_SSID_HOTSPOT"/>
+                <TestStep SetId="WiFiCommonSetup" DEVICE="PHONE2" REGULATORY_DOMAIN="FR"/>
+            </Fork>
+                <TestStep SetId="WiFiCommonSetup" DEVICE="PHONE3" REGULATORY_DOMAIN="FR"/>
+                <TestStep SetId="WiFiCommonSetup" DEVICE="PHONE4" REGULATORY_DOMAIN="FR"/>
+                <TestStep SetId="WiFiCommonSetup" DEVICE="PHONE5" REGULATORY_DOMAIN="FR"/>
+                <TestStep SetId="WiFiCommonSetup" DEVICE="PHONE6" REGULATORY_DOMAIN="FR"/>
+                <TestStep SetId="WiFiCommonSetup" DEVICE="PHONE7" REGULATORY_DOMAIN="FR"/>
+                <TestStep SetId="WiFiCommonSetup" DEVICE="PHONE8" REGULATORY_DOMAIN="FR"/>
+        </Setup>
+        <RunTest>
+
+            <!-- SPEC - Step 1 : Turn SoftAP On -->
+            <TestStep Id="WIFI_SET_HOTSPOT" DEVICE="PHONE1" POWER="on" SSID="FROM_CTX:MAC_ADDR_SSID_HOTSPOT" SECURITY="WPA2" PASSPHRASE="WPA2_PASSWORD" STANDARD="5GHZ_20MHZ" CHANNEL="44" HIDDEN="off"/>
+
+            <!-- SPEC - Step 2&3 : Scan and connect to DUT SoftAP -->
+            <TestStep SetId="ScanAndConnectReferenceDevice" DEVICE="PHONE2"/>
+
+            <!-- SPEC - Step 4 : Connect all other stations -->
+            <TestStep SetId="ScanAndConnectReferenceDevice" DEVICE="PHONE3"/>
+            <TestStep SetId="ScanAndConnectReferenceDevice" DEVICE="PHONE4"/>
+            <TestStep SetId="ScanAndConnectReferenceDevice" DEVICE="PHONE5"/>
+            <TestStep SetId="ScanAndConnectReferenceDevice" DEVICE="PHONE6"/>
+            <TestStep SetId="ScanAndConnectReferenceDevice" DEVICE="PHONE7"/>
+            <TestStep SetId="ScanAndConnectReferenceDevice" DEVICE="PHONE8"/>
+
+            <!-- SPEC - Step 5 : Ping DUT from each Reference phone -->
+            <TestStep Id="GET_DEVICE_IPV4_ADDRESS" DEVICE="PHONE1" IP_ADDR="DUT_IP_ADDR" NET_INTERFACE="wlan0"/>
+            <Fork Id="ForkPingDUT">
+                <TestStep SetId="PingDutFromDevice2"/>
+                <TestStep SetId="PingDutFromDevice3"/>
+                <TestStep SetId="PingDutFromDevice4"/>
+                <TestStep SetId="PingDutFromDevice5"/>
+                <TestStep SetId="PingDutFromDevice6"/>
+                <TestStep SetId="PingDutFromDevice7"/>
+                <TestStep SetId="PingDutFromDevice8"/>
+            </Fork>
+
+            <!-- SPEC - Step 6 : Disconnect reference device one by one -->
+            <TestStep SetId="DisconnectReferenceDevice" DEVICE="PHONE2"/>
+            <TestStep SetId="DisconnectReferenceDevice" DEVICE="PHONE3"/>
+            <TestStep SetId="DisconnectReferenceDevice" DEVICE="PHONE4"/>
+            <TestStep SetId="DisconnectReferenceDevice" DEVICE="PHONE5"/>
+            <TestStep SetId="DisconnectReferenceDevice" DEVICE="PHONE6"/>
+            <TestStep SetId="DisconnectReferenceDevice" DEVICE="PHONE7"/>
+            <TestStep SetId="DisconnectReferenceDevice" DEVICE="PHONE8"/>
+
+            <!-- SPEC - Step 7 : Turn off SoftAP -->
+            <TestStep Id="WIFI_SET_HOTSPOT" DEVICE="PHONE1" POWER="off" SSID="FROM_CTX:MAC_ADDR_SSID_HOTSPOT" SECURITY="WPA2" PASSPHRASE="WPA2_PASSWORD" STANDARD="5GHZ_20MHZ" CHANNEL="44" HIDDEN="off"/>
+        </RunTest>
+        <TearDown>
+            <!-- AUTOMATION - Teardown -->
+            <TestStep SetId="SoftAPCommonTeardown" DEVICE="PHONE1"/>
+            <TestStep SetId="WiFiCommonTeardown" DEVICE="PHONE2"/>
+            <TestStep SetId="WiFiCommonTeardown" DEVICE="PHONE3"/>
+            <TestStep SetId="WiFiCommonTeardown" DEVICE="PHONE4"/>
+            <TestStep SetId="WiFiCommonTeardown" DEVICE="PHONE5"/>
+            <TestStep SetId="WiFiCommonTeardown" DEVICE="PHONE6"/>
+            <TestStep SetId="WiFiCommonTeardown" DEVICE="PHONE7"/>
+            <TestStep SetId="WiFiCommonTeardown" DEVICE="PHONE8"/>
+        </TearDown>
+    </TestSteps>
+</TestCase>

@@ -1,0 +1,327 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestSteps xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../acs/src/_Catalogs/TestStep/teststep.xsd">
+    <TestStep Id="SET_STAYON_POLICY" Domain="SYSTEM" SubDomain="PWR_MGMT" Feature="CONSUMPTION" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.System.Settings.SetStayonPolicy.SetStayonPolicy</ClassName>
+        <Description>Choose the policy of Android stay on</Description>
+        <Environment name="ANY"/>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues/>
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="POLICY" type="STRING" isOptional="false">
+                <Description>Policy among {true, false, usb, ac, wireless}</Description>
+                <PossibleValues>true;false;usb;ac;wireless</PossibleValues>
+                <DefaultValue>true</DefaultValue>
+            </Parameter>
+            <Parameter name="AGENT" type="BOOLEAN" isOptional="false">
+                <Description>call system operation (you need to reboot then) or use agent to do the action</Description>
+                <PossibleValues>true;false</PossibleValues>
+                <DefaultValue>false</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+        <TestStep Id="SYSTEM_STATE_MEASUREMENT" Domain="SYSTEM" SubDomain="PWR_MGMT" Feature="CONSUMPTION" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Power.PowerGetResidencyState.PowerGetResidencyState</ClassName>
+        <Description>Measure sleep mode residency : this provides the time spent by the device in the given Sleep Mode</Description>
+        <Environment name="ANY" />
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="MODE" type="SLEEP_MODE" isOptional="false">
+                <Description>MODE parameter you want to measure</Description>
+                <PossibleValues></PossibleValues>
+                <DefaultValue>S0I3</DefaultValue>
+            </Parameter>
+            <Parameter name="SAVE_AS" type="CONTEXT" isOptional="false">
+                <Description>
+                    <Key name="KEY_NAME_DEFINED_BY_USER" type="STRING">Name of the context variable where the value will be saved.</Key>
+                </Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+            <Parameter name="PWR_MEAS_UNIT" type="MEASUREMENT_UNIT" isOptional="false">
+                <Description>Measurement unit for the sleep mode parameter you want to measure</Description>
+                <PossibleValues></PossibleValues>
+                <DefaultValue>residency</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="CLEAR_RESIDENCY" Domain="SYSTEM" SubDomain="PWR_MGMT" Feature="CONSUMPTION" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Power.PowerResidencyClear.PowerResidencyClear</ClassName>
+        <Description>Reset the sleep mode data of the device for all sleep modes</Description>
+        <Environment name="ANY" />
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="CONFIGURE_SYSTEM_SLEEP_MODE" Domain="SYSTEM" SubDomain="PWR_MGMT" Feature="CONSUMPTION" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Power.ConfigureSystemSleepMode.ConfigureSystemSleepMode</ClassName>
+        <Description>Configure the requested sleep mode on the device</Description>
+        <Environment name="ANY" />
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="MODE" type="STRING" isOptional="false">
+                <Description>Sleep mode that will be authorized</Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+            <Parameter name="AUDIO_FILE" type="STRING" isOptional="true">
+                <Description>Audio file to play</Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+            <Parameter name="PLAYER" type="STRING" isOptional="true">
+                <Description>Audio file to play</Description>
+                <PossibleValues>native;default</PossibleValues>
+                <DefaultValue>default</DefaultValue>
+            </Parameter>
+            <Parameter name="VOLUME" type="VOLUME_IN_PERCENT" isOptional="true">
+                <Description>Media Volume to set</Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="BATTERY_GET_CAPACITY" Domain="SYSTEM" SubDomain="PWR_MGMT" Feature="CONSUMPTION" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Power.BatteryGetCapacity.BatteryGetCapacity</ClassName>
+        <Description>
+            Get the current capacity level of the battery.
+        </Description>
+        <Environment name="ANY">
+        </Environment>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="SAVE_BATTERY_CAPACITY_AS" type="CONTEXT" isOptional="false">
+                <Description>
+                    <Key name="KEY_NAME_DEFINED_BY_USER" type="STRING">Name of the context variable where the value will be saved. Return the current battery capacity value between 0 and 100%.</Key>
+                </Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="RUN_SOCWATCH" Domain="SYSTEM" SubDomain="PWR_MGMT" Feature="CONSUMPTION" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Power.RunSOCWatch.RunSOCWatch</ClassName>
+        <Description>
+            Run SOCWatch
+        </Description>
+        <Environment name="ANY">
+        </Environment>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="SCRIPTS_PATH" type="STRING" isOptional="false">
+                <Description>Path on the device where run_socwatch test script is located.</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+            <Parameter name="FEATURE" type="STRING" isOptional="false">
+               <Description>The available data types that SoC Watch can collect. Refer SOCWatch features for more detail</Description>
+               <PossibleValues>cpu-cstate;cpu-pstate;sstate;nc-dstate;ns-state;wakelock;core-temp;pmic-temp;skin-temp;soc-temp;gfx-pstate;gfx-cstate;ddr-bw;cpu-ddr-mod0-bw;cpu-ddr-mod1-bw;io-bw;disp-ddr-bw;gfx-ddr-bw;isp-ddr-bw;all-approx-bw;dram-srr;cpu;device;gfx;sys;temp</PossibleValues>
+               <DefaultValue>sstate</DefaultValue>
+            </Parameter>
+            <Parameter name="DURATION" type="INTEGER" isOptional="false">
+               <Description>How long the test will run, in minutes.</Description>
+               <PossibleValues/>
+               <DefaultValue>5</DefaultValue>
+            </Parameter>
+            <Parameter name="OUTPUT" type="STRING" isOptional="false">
+               <Description>File name for SOCWatch result</Description>
+               <PossibleValues/>
+               <DefaultValue>test</DefaultValue>
+            </Parameter>
+            <Parameter name="SAVED_SOCWATCH_RESULT" type="CONTEXT" isOptional="false">
+                <Description>
+                    <Key name="KEY_NAME_DEFINED_BY_USER" type="STRING">Name of the context variable where the value will be saved. Return a path to the SOCWatch result file</Key>
+                </Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="VERIFY_SOCWATCH_NC_DSTATE" Domain="SYSTEM" SubDomain="PWR_MGMT" Feature="CONSUMPTION" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Power.VerifySOCWatchNcDstate.VerifySOCWatchNcDstate</ClassName>
+        <Description>
+            Verify SOCWatch result
+        </Description>
+        <Environment name="ANY">
+        </Environment>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="CSV_STORED_PATH" type="STRING" isOptional="false">
+                <Description>Path on the device where run_socwatch test script result will be stored.</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+            <Parameter name="CSV_FILE_NAME" type="STRING" isOptional="false">
+                <Description>Name of the SocWatch result file.</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+            <Parameter name="TARGET_BLOCK" type="STRING" isOptional="false">
+                <Description>Name of the target IP block to be verified for D state residency</Description>
+                <PossibleValues>RENder;Media;Display DPIO;CMNLN;Video Decoder;ISP;Display Controller;GUnit</PossibleValues>
+                <DefaultValue>GUnit</DefaultValue>
+            </Parameter>
+            <Parameter name="TARGET_CRITERIA" type="STRING" isOptional="false">
+                <Description>Decision criteria to be used for D state verification. This should be given as a semi-colon separated string list.i.e. GT;EQ;LE</Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+            <Parameter name="TARGET_VALUE" type="STRING" isOptional="false">
+                <Description>Criteria value to be used for D state verification, and this will be combined with TARGET_CRITERIA. This should be given as a semi-colon separated percentage list.i.e. 10;90;10.</Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="VERIFY_SOCWATCH_SSTATE" Domain="SYSTEM" SubDomain="PWR_MGMT" Feature="CONSUMPTION" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Power.VerifySOCWatchSstate.VerifySOCWatchSstate</ClassName>
+        <Description>
+            Verify SOCWatch result
+        </Description>
+        <Environment name="ANY">
+        </Environment>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="CSV_STORED_PATH" type="STRING" isOptional="false">
+                <Description>Path on the device where run_socwatch test script result will be stored.</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+            <Parameter name="CSV_FILE_NAME" type="STRING" isOptional="false">
+                <Description>Name of the SocWatch result file.</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+            <Parameter name="TARGET_CRITERIA" type="STRING" isOptional="false">
+                <Description>Decision criteria to be used for verification. This should be given as a semi-colon separated string list.i.e. GT;EQ;LE</Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+            <Parameter name="TARGET_VALUE" type="STRING" isOptional="false">
+                <Description>Criteria value to be used for decision, and this will be combined with TARGET_CRITERIA. This should be given as a semi-colon separated percentage list.i.e. 10;90;10.</Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="RESIDENT_SSTATE" Domain="SYSTEM" SubDomain="PWR_MGMT" Feature="CONSUMPTION" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Power.ResidentSState.ResidentSState</ClassName>
+        <Description>
+            Force the device to stay on state for a given duration
+        </Description>
+        <Environment name="ANY">
+        </Environment>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="FEATURE" type="STRING" isOptional="false">
+               <Description>Type of S state on which the device will stay</Description>
+               <PossibleValues>S0I3;S3</PossibleValues>
+               <DefaultValue>S0I3</DefaultValue>
+            </Parameter>
+            <Parameter name="DURATION" type="INTEGER" isOptional="false">
+               <Description>How long the test will run, in minutes.</Description>
+               <PossibleValues/>
+               <DefaultValue>5</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="LAUNCH_SOCWATCH" Domain="SYSTEM" SubDomain="PWR_MGMT" Feature="CONSUMPTION" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Power.LaunchSocwatch.LaunchSocwatch</ClassName>
+        <Description>
+            Run SOCWatch
+        </Description>
+        <Environment name="ANY">
+        </Environment>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="INSTALL_PATH" type="STRING" isOptional="false">
+                <Description>Path on the device where socwatch files are located.</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+            <Parameter name="FEATURE" type="STRING" isOptional="false">
+               <Description>The available data types that SoC Watch can collect. Refer SOCWatch features for more detail</Description>
+               <PossibleValues>cpu-cstate;cpu-pstate;sstate;nc-dstate;ns-state;wakelock;core-temp;pmic-temp;skin-temp;soc-temp;gfx-pstate;gfx-cstate;ddr-bw;cpu-ddr-mod0-bw;cpu-ddr-mod1-bw;io-bw;disp-ddr-bw;gfx-ddr-bw;isp-ddr-bw;all-approx-bw;dram-srr;cpu;device;gfx;sys;temp</PossibleValues>
+               <DefaultValue>sys</DefaultValue>
+            </Parameter>
+            <Parameter name="DURATION" type="INTEGER" isOptional="false">
+               <Description>How long the test will run, in seconds.</Description>
+               <PossibleValues/>
+               <DefaultValue>60</DefaultValue>
+            </Parameter>
+            <Parameter name="DELAY" type="STRING" isOptional="false">
+               <Description>Delay before starting socwatch tool</Description>
+               <PossibleValues/>
+               <DefaultValue>1</DefaultValue>
+            </Parameter>
+            <Parameter name="RESULT_FILENAME" type="STRING" isOptional="false">
+                <Description>csv result desired filename</Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="GET_SOCWATCH_PACKAGE" Domain="SYSTEM" SubDomain="PWR_MGMT" Feature="CONSUMPTION" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Power.GetSocwatchPackage.GetSocwatchPackage</ClassName>
+        <Description>
+            Get the socwatch package name to download according to version installed
+        </Description>
+        <Environment name="ANY">
+        </Environment>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="PACKAGE" type="CONTEXT" isOptional="false">
+               <Description>Package name according to socwatch version available on device.</Description>
+               <PossibleValues/>
+               <DefaultValue></DefaultValue>
+            </Parameter>
+            <Parameter name="NEED_INSTALL" type="CONTEXT" isOptional="false">
+               <Description>Return to define if socwatch can be installed, values are 1 if it can be installed, otherwise 0 </Description>
+               <PossibleValues/>
+               <DefaultValue></DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+</TestSteps>

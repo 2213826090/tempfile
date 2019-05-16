@@ -1,0 +1,29 @@
+<?xml version="1.0" ?><TestCase>
+  <UseCase>ANDROID_ITS</UseCase>
+  <Description>Run Android Image Test Suite (ITS) </Description>
+  <b2bContinuousMode>False</b2bContinuousMode>
+  <b2bIteration>1</b2bIteration>
+  <TcMaxAttempt>1</TcMaxAttempt>
+  <TcAcceptanceCriteria>1</TcAcceptanceCriteria>
+  <Parameters>
+    <Parameter>
+        <Name>ITS_PACKAGE_M</Name>
+        <Description>Specify name of ITS package that should be used for M release</Description>
+        <Value>android-cts-verifier-6.0_r3-linux_x86-x86.zip</Value>
+    </Parameter>
+    <Parameter>
+        <Name>ITS_PACKAGE_N</Name>
+        <Description>Specify which bundle that should be used for N release</Description>
+        <Value>TBD</Value>
+    </Parameter>
+    <Parameter>
+        <Name>ARTIFACTORY_URI</Name>
+        <Description>Specify path/url to android ITS bundles</Description>
+        <Value>https://mcg-depot.intel.com/artifactory/acs_test_artifacts/CTS_Camera</Value>
+    </Parameter>
+    <Parameter>
+        <Name>TEST_TIMEOUT</Name>
+        <Value>360000</Value>
+    </Parameter>
+  </Parameters>
+</TestCase>

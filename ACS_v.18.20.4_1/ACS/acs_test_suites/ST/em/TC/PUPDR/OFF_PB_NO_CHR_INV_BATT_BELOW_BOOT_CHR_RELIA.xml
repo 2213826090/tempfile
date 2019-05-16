@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="13.37">
+    <UseCase>LAB_PUPDR_PS_ACTION_SCHEDULER</UseCase>
+    <Description>usecase that allow user to create a sequence of action.</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>False</b2bContinuousMode>
+    <Parameters>
+        <!-- The ACTION below can be composed of following:
+
+            battery action:
+            BATTERY_"plug/unplug"_"type": "plug/unplug" the battery "type" that can support your battery.
+            - BATTERY_PLUG_ANALOG
+            - BATTERY_PLUG_DEFAULT
+            - BATTERY_PLUG_DIGITAL
+            - BATTERY_PLUG_INVALID
+            - BATTERY_PLUG_EMULATOR
+            - BATTERY_UNPLUG
+            battery set:
+            to set a value you can use keyword below plus an operator followed by a numeric value
+            or use direct value
+            keywords will refer to value entered in device catalog
+            - BATTERY_SET_VOLTAGE_BOOT_MOS
+            - BATTERY_SET_VOLTAGE_BOOT_MOS+1
+            - BATTERY_SET_VOLTAGE_BOOT_COS
+            - BATTERY_SET_VOLTAGE_BOOT_COS-1
+            - BATTERY_SET_VOLTAGE_FULL
+            - BATTERY_SET_VOLTAGE_CRITICAL_MOS
+            - BATTERY_SET_VOLTAGE_FLASH
+            - BATTERY_SET_VOLTAGE_OVERVOLTAGE
+            direct value
+            - BATTERY_SET_VOLTAGE_3.6
+            - BATTERY_SET_VOLTAGE_4
+
+            battery get:
+            getter are used to compute test verdict
+            last element of getter will be the var where to store read info
+            this var must be align with what you put in energy_management.xml
+            file to allow verdict computing to be done.
+            - BATTERY_GET_VOLTAGE_IBATT1
+
+            charger action:
+            CHARGER_"plug/unplug"_"type" : "plug/unplug" the charger "type".
+            if action is plug then charger type is defined by your io card supported charger
+            - CHARGER_PLUG_DCP
+            - CHARGER_PLUG_DCP
+            - CHARGER_PLUG_CDP
+            - CHARGER_PLUG_AC_CHGR
+            - CHARGER_PLUG_WALL_CHARGER
+            else it can only be USB to unplug an USB cable and AC_CHGR for ACDC connector
+            - CHARGER_UNPLUG_USB
+            - CHARGER_UNPLUG_AC_CHGR
+            - CHARGER_UNPLUG_ALL
+            - CHARGER_UNPLUG_WALL_CHARGER
+
+            charger get:
+            getter are used to compute test verdict
+            last element of getter will be the var where to store read info
+            this var must be align with what you put in energy_management.xml
+            file to allow verdict computing to be done.
+            you must specify the type of charger where to read the info as
+            in tablet you may have both charger connected at the same time
+            - CHARGER_GET_USB_CURRENT_IUSB1
+            - CHARGER_GET_AC_CHGR_CURRENT_IUSB1
+
+            action that press on button:
+            BUTTON_PRESS_"button_name"_x : press x second(s) on the combo "button_name" which is a button controllable from your io card.
+            - BUTTON_PRESS_POWER_BUTTON_5
+            - BUTTON_PRESS_FASTBOOT_COMBO_x : press x second(s) on the combo fastboot combo defined in Device_Catalog.xml.
+            - BUTTON_PRESS_KEY_COMBO_x : press x second(s) on the combo define by KEY_COMBO TC parameter
+            x can also be one of the following list:HARD_SHUTDOWN, SOFT_SHUTDOWN, BOOT
+            in that case the value behind will be taken from device catalog.
+            You should use this keywords only when you push on power button only.
+            - BUTTON_PRESS_POWER_BUTTON_HARD_SHUTDOWN
+            - BUTTON_PRESS_POWER_BUTTON_SOFT_SHUTDOWN
+            - BUTTON_PRESS_POWER_BUTTON_BOOT
+
+            sleep action:
+            - WAIT_x : where x is a number in second to wait.
+            e.g., WAIT_10
+
+            internal iteration action:
+            LOOP_START: mark the beginning of a loop , all action after this will be looped
+            LOOP_STOP_x: mark the end of a loop all action before this tag will be include in the loop and looped x times
+            e.g., BATTERY_PLUG_ANALOG;LOOP_START;CHARGER_PLUG_SDP;LOOP_STOP_10 will plug SDP 10 times
+            LOOP_START;LOOP_START;CHARGER_PLUG_SDP;LOOP_STOP_2;LOOP_STOP_5 will do sdp PLUG 2*5 times
+            a loop with a value of 1 has no effect.
+
+            global get:
+            getter are used to compute test verdict
+            last element of getter will be the var where to store read info
+            this var must be align with what you put in energy_management.xml
+            file to allow verdict computing to be done.
+            the last element
+            - GET_BOOT_MODE_MODE1
+        -->
+        <Parameter>
+            <!-- this describe the order of actions done in the test, actions can be composed of : BATTERY;CHARGER;BUTTON_PRESS, WAIT -->
+            <Name>RUN_TEST_ACTION</Name>
+            <Value>LOOP_START;
+                BUTTON_PRESS_POWER_BUTTON_BOOT;
+                WAIT_60;
+                BATTERY_GET_CURRENT_IBATT1;
+                CHARGER_PLUG_SDP;
+                WAIT_5;
+                GET_BOOT_MODE_BOOT1;
+                CHARGER_UNPLUG_ALL;
+                BUTTON_PRESS_POWER_BUTTON_HARD_SHUTDOWN;
+                LOOP_STOP_100</Value>        
+        </Parameter>
+        <Parameter>
+            <!-- this describe the very first action do in the test, it just set your board in a wanted state before running the test itself, if left empty
+                nothing will be done in setup meaning that by default board will be ON and usb pc host connect -->
+            <Name>SETUP_ACTION</Name>
+            <Value>CHARGER_UNPLUG_ALL;BUTTON_PRESS_POWER_BUTTON_HARD_SHUTDOWN;BATTERY_PLUG_INVALID;BATTERY_SET_VOLTAGE_BOOT_COS-0.25</Value>
+        </Parameter>
+        <Parameter>
+            <!-- ID to map this test with energy management target -->
+            <Name>TEST_ID</Name>
+            <Value>OFF_PB_NO_CHR_INV_BATT_BELOW_BOOT_CHR_RELIA</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Key combo to perform can be the key word that represent unitary (use ; as separator) button or a known combo
+                like VOLUME_UP;VOLUME_DOWN;CAMERA;POWER_BUTTON or FASTBOOT_COMBO link to ACTION_BUTTON -->
+            <Name>KEY_COMBO</Name>
+            <Value>FASTBOOT_COMBO</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

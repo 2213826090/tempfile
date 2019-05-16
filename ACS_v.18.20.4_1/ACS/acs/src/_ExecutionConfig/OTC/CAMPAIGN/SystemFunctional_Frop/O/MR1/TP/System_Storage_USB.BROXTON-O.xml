@@ -1,0 +1,63 @@
+<?xml version='1.0' encoding='us-ascii'?>
+<Campaign version="13.49">
+    <Parameters>
+        <Parameter isControlledPSUsed="False" />
+        <Parameter isIoCardUsed="False" />
+        <Parameter skipBootOnPowerCycle="False" />
+        <Parameter bootRetryNumber="0" />
+        <Parameter runHookScripts="False" />
+        <Parameter powerCycleBetweenTC="False" />
+        <Parameter powerCycleOnFailure="False" />
+        <Parameter finalDutState="NoChange" />
+        <Parameter stopCampaignOnCriticalFailure="False" />
+        <Parameter stopCampaignOnFirstFailure="False" />
+        <Parameter loggingLevel="debug" />
+        <Parameter CampaignType="Other" />
+        <Parameter TCRReportViaRESTAPI="True" />
+    </Parameters>
+    <TestCases>
+        <TestCase Id="../../../../../TC/TP/TC/System_Storage_USB/Emulated External Storage/files" />
+        <TestCase Id="../../../../../TC/TP/TC/System_Storage_USB/Emulated External Storage/USB_EmulatedStorage_ReadWriteWithAPI_create_file_multi_extension" />
+        <TestCase Id="../../../../../TC/TP/TC/System_Storage_USB/Emulated External Storage/USB_EmulatedStorage_ReadWriteWithAPI_create_file" />
+        <TestCase Id="../../../../../TC/TP/TC/System_Storage_USB/Emulated External Storage/USB_EmulatedStorage_ReadWriteWithAPI_rename_folder" />
+        <TestCase Id="../../../../../TC/TP/TC/System_Storage_USB/Emulated External Storage/USB_EmulatedStorage_ReadWriteWithAPI_rename_file" />
+        <TestCase Id="../../../../../TC/TP/TC/System_Storage_USB/Emulated External Storage/USB_EmulatedStorage_ReadWriteWithAPI_delete_file_255_chars_name" />
+        <TestCase Id="../../../../../TC/TP/TC/System_Storage_USB/Emulated External Storage/USB_EmulatedStorage_ReadWriteWithAPI_create_folder_255_chars_name" />
+        <TestCase Id="../../../../../TC/TP/TC/System_Storage_USB/Emulated External Storage/USB_EmulatedStorage_ReadWriteWithAPI_create_folder" />
+        <TestCase Id="../../../../../TC/TP/TC/System_Storage_USB/Emulated External Storage/USB_EmulatedStorage_ReadWriteWithAPI_create_file_in_folder" />
+        <TestCase Id="../../../../../TC/TP/TC/System_Storage_USB/Emulated External Storage/USB_EmulatedStorage_ReadWriteWithAPI_create_file_255_chars_name" />
+        <TestCase Id="../../../../../TC/TP/TC/System_Storage_USB/Emulated External Storage/USB_EmulatedStorage_ReadWriteWithAPI_cpy_folder_emulated_to_emulated" />
+        <TestCase Id="../../../../../TC/TP/TC/System_Storage_USB/Emulated External Storage/USB_EmulatedStorage_ReadWriteWithAPI_cpy_folder_emulated_to_data" />
+        <TestCase Id="../../../../../TC/TP/TC/System_Storage_USB/Emulated External Storage/USB_EmulatedStorage_ReadWriteWithAPI_cpy_folder_data_to_emulated" />
+        <TestCase Id="../../../../../TC/TP/TC/System_Storage_USB/Emulated External Storage/USB_EmulatedStorage_ReadWriteWithAPI_cpy_file_emulated_to_emulated" />
+        <TestCase Id="../../../../../TC/TP/TC/System_Storage_USB/Emulated External Storage/USB_EmulatedStorage_ReadWriteWithAPI_cpy_file_emulated_to_data" />
+        <TestCase Id="../../../../../TC/TP/TC/System_Storage_USB/Emulated External Storage/USB_EmulatedStorage_ReadWriteWithAPI_cpy_file_data_to_emulated" />
+        <TestCase Id="../../../../../TC/TP/TC/System_Storage_USB/Emulated External Storage/USB_EmulatedStorage_ReadWriteWithADB_cpy_file_data_to_emulated" />
+        <TestCase Id="../../../../../TC/TP/TC/System_Storage_USB/Emulated External Storage/USB_EmulatedStorage_ReadWriteWithADB_cpy_file_emulated_to_data" />
+        <TestCase Id="../../../../../TC/TP/TC/System_Storage_USB/Emulated External Storage/USB_EmulatedStorage_ReadWriteWithADB_cpy_file_emulated_to_emulated" />
+        <TestCase Id="../../../../../TC/TP/TC/System_Storage_USB/Emulated External Storage/USB_EmulatedStorage_ReadWriteWithADB_cpy_folder_data_to_emulated" />
+        <TestCase Id="../../../../../TC/TP/TC/System_Storage_USB/Emulated External Storage/USB_EmulatedStorage_ReadWriteWithADB_cpy_folder_emulated_to_data" />
+        <TestCase Id="../../../../../TC/TP/TC/System_Storage_USB/Emulated External Storage/USB_EmulatedStorage_ReadWriteWithADB_cpy_folder_emulated_to_emulated" />
+        <TestCase Id="../../../../../TC/TP/TC/System_Storage_USB/Emulated External Storage/USB_EmulatedStorage_ReadWriteWithADB_create_file" />
+        <TestCase Id="../../../../../TC/TP/TC/System_Storage_USB/Emulated External Storage/USB_EmulatedStorage_ReadWriteWithADB_create_file_255_chars_name" />
+        <TestCase Id="../../../../../TC/TP/TC/System_Storage_USB/Emulated External Storage/USB_EmulatedStorage_ReadWriteWithADB_create_folder" />
+        <TestCase Id="../../../../../TC/TP/TC/System_Storage_USB/Emulated External Storage/USB_EmulatedStorage_ReadWriteWithADB_create_folder_255_chars_name" />
+        <TestCase Id="../../../../../TC/TP/TC/System_Storage_USB/Emulated External Storage/USB_EmulatedStorage_ReadWriteWithADB_delete_file_255_chars_name" />
+        <TestCase Id="../../../../../TC/TP/TC/System_Storage_USB/Emulated External Storage/USB_EmulatedStorage_ReadWriteWithADB_delete_folder_255_chars_name" />
+        <TestCase Id="../../../../../TC/TP/TC/System_Storage_USB/Emulated External Storage/USB_EmulatedStorage_ReadWriteWithADB_rename_file" />
+        <TestCase Id="../../../../../TC/TP/TC/System_Storage_USB/Emulated External Storage/USB_EmulatedStorage_ReadWriteWithADB_rename_folder" />
+        <TestCase Id="../../../../../TC/TP/TC/System_Storage_USB/Emulated External Storage/USB_EmulatedStorage_ReadWriteWithAPI_delete_folder_255_with_file" />
+        <TestCase Id="../../../../../TC/TP/TC/System_Storage_USB/Emulated External Storage/USB_EmulatedStorage_Read_file_with_adb_command" />
+        <TestCase Id="../../../../../TC/TP/TC/System_Storage_USB/Internal Storage/time" />
+        <TestCase Id="../../../../../TC/TP/TC/System_Storage_USB/Internal Storage/USB_InternalStorage_HS200" />
+        <TestCase Id="../../../../../TC/TP/TC/System_Storage_USB/Internal Storage/USB_InternalStorage_Memory" />
+        <TestCase Id="../../../../../TC/TP/TC/System_Storage_USB/Internal Storage/USB_InternalStorage_ReadWriteWithADB_cpy_file_data_to_data" />
+        <TestCase Id="../../../../../TC/TP/TC/System_Storage_USB/Internal Storage/USB_InternalStorage_HS400" />
+        <TestCase Id="../../../../../TC/TP/TC/System_Storage_USB/External Storage Access/pictures" />
+        <TestCase Id="../../../../../TC/TP/TC/System_Storage_USB/USB MTP_PTP/time" />
+        <TestCase Id="../../../../../TC/TP/TC/System_Storage_USB/QCTV/USB_EmulatedStorage_CopyFileWithADBFromPhysical" />
+        <TestCase Id="../../../../../TC/TP/TC/System_Storage_USB/Embedded UFS/files" />
+        <TestCase Id="../../../../../TC/TP/TC/System_Storage_USB/Embedded UFS/time" />
+        <TestCase Id="../../../../../TC/TP/TC/System_Storage_USB/Embedded UFS/pictures" />
+        </TestCases>
+</Campaign>

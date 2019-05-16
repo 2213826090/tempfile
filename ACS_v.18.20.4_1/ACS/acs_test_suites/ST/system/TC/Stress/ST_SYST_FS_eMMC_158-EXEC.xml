@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase>
+  <UseCase>EXEC</UseCase>
+  <Description>General execution use case</Description>
+  <b2bIteration>1</b2bIteration>
+  <b2bContinuousMode>True</b2bContinuousMode>  
+  <Parameters>
+    <Parameter>
+      <Name>RUN_CMD</Name>
+      <Value>python _ExecutionConfig/ST/system/TC/Stress/ST_SYST_FS_eMMC_158.py</Value>
+    </Parameter>
+    <Parameter>
+      <Name>RUN_TIMEOUT</Name>
+      <Value>60000</Value>
+    </Parameter>
+	<Parameter>
+	  <Name>RUN_EXPECT_RESULT</Name>
+	  <Value>md5 test passed</Value>
+	</Parameter>
+	
+	<Parameter>
+      <Name>TEAR_DOWN_CMD</Name>
+      <Value>adb shell echo "tear down"</Value>
+    </Parameter>
+    <Parameter>
+      <Name>TEAR_DOWN_TIMEOUT</Name>
+      <Value>5</Value>
+    </Parameter>
+	<Parameter>
+	  <Name>TEAR_DOWN_EXPECT_RESULT</Name>
+	  <Value>tear down</Value>
+	</Parameter>
+  </Parameters>  
+</TestCase>

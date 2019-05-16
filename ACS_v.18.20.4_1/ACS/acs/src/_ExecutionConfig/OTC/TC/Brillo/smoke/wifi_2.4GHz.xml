@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="13.45">
+    <UseCase>EXEC_SCRIPT</UseCase>
+    <Description>Test 2.4GHz AP connection</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <TcAcceptanceCriteria>1</TcAcceptanceCriteria>
+    <TcMaxAttempt>3</TcMaxAttempt>
+    <Parameters>
+        <!--<Parameter>
+            <Name>SETUP_SCRIPT_PATH</Name>
+            <Value>exec_script_setup.py[optional]</Value>
+            </Parameter> -->
+        <Parameter>
+            <Name>SCRIPT_PATH</Name>
+            <Value>./scripts/wifi_conn.py</Value>
+        </Parameter>
+        <!--<Parameter>
+            <Name>TEAR_DOWN_SCRIPT_PATH</Name>
+            <Value>exec_script_tear_down.py[optional]</Value>
+            </Parameter> -->
+        <!-- Optional -->
+        <!--<Parameter>
+            <Name>FINALIZE_SCRIPT_PATH</Name>
+            <Value>exec_script_finalize.py[optional]</Value>
+            </Parameter> -->
+        <!-- Optional -->
+        <Parameter>
+            <Name>AP_SSID</Name>
+            <Value>OTC-CR1211-BG</Value>
+        </Parameter>
+        <Parameter>
+            <Name>AP_PASS</Name>
+            <Value>Ext3rna1</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

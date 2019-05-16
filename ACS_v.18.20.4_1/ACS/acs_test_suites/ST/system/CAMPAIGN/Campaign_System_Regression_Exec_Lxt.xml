@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<Campaign>
+  <Parameters>
+    <Parameter isControlledPSUsed ="False"/>
+    <Parameter isIoCardUsed ="False"/>
+    <!-- Set skipBootOnPowerCycle to True to disable the accs boot procedure-->
+    <!-- Important, it means that boot will be handle inside the campaign/tc -->
+    <Parameter skipBootOnPowerCycle ="False"/>
+    <Parameter runHookScripts = "False"/>        
+    <Parameter powerCycleBetweenTC ="False"/>
+    <Parameter powerCycleOnFailure ="False"/>
+    <Parameter stopCampaignOnCriticalFailure = "False"/>
+    <!-- LoggingLevel possible values: info | warning | debug | error -->
+    <Parameter loggingLevel = "info"/>
+    <Parameter CampaignType = "Default Acs Campaign"/> 
+  </Parameters> 
+  <Targets>
+    <!-- Target Values -->
+    <Target targetB2bPassRate ="80"/>
+  </Targets>
+  <TestCases>
+    <!-- Boot, Flash, Setup 
+    <TestCase Id="Testcases/BootFlashSetup/LAB_SYSTEM_SETUP_EMBEDDED"/>-->
+    
+    <!-- Log & Debug -->
+    <TestCase Id="../TC/Exec/ST_SYST_TOOLS_LOG_001-EXEC"/>
+    <TestCase Id="../TC/Exec/ST_SYST_TOOLS_LOG_007-EXEC"/>
+    <TestCase Id="../TC/Exec/ST_SYST_TOOLS_LOG_009-EXEC"/>
+    <TestCase Id="../TC/Exec/ST_SYST_TOOLS_LOG_010-EXEC"/>
+    <TestCase Id="../TC/Exec/ST_SYST_TOOLS_LOG_014-EXEC"/>
+    <TestCase Id="../TC/Exec/ST_SYST_TOOLS_LOG_017-EXEC"/>
+    <TestCase Id="../TC/Exec/ST_SYST_TOOLS_LOG_122-EXEC"/>
+    <TestCase Id="../TC/Exec/ST_SYST_TOOLS_LOG_125-EXEC"/>
+    <TestCase Id="../TC/Exec/ST_SYST_TOOLS_LOG_126-EXEC"/>
+    <TestCase Id="../TC/Exec/ST_SYST_TOOLS_LOG_127-EXEC"/>
+    <TestCase Id="../TC/Exec/ST_SYST_TOOLS_LOG_130-EXEC"/>
+    <TestCase Id="../TC/Exec/ST_SYST_TOOLS_LOG_131-EXEC"/>
+    <TestCase Id="../TC/Exec/ST_SYST_TOOLS_LOG_133-EXEC"/>
+    <TestCase Id="../TC/Exec/ST_SYST_TOOLS_LOG_134-EXEC"/>
+    <TestCase Id="../TC/Exec/ST_SYST_TOOLS_LOG_145-EXEC"/>
+    <TestCase Id="../TC/Exec/ST_SYST_TOOLS_LOG_172-EXEC"/>
+    <TestCase Id="../TC/Exec/ST_SYST_TOOLS_LOG_173-EXEC"/>
+    <TestCase Id="../TC/Exec/ST_SYST_TOOLS_LOG_174-EXEC"/>
+    <TestCase Id="../TC/Exec/ST_SYST_TOOLS_LOG_175-EXEC"/>
+    <TestCase Id="../TC/Exec/ST_SYST_TOOLS_LOG_176-EXEC"/>
+    <TestCase Id="../TC/Exec/ST_SYST_TOOLS_LOG_177-EXEC"/>
+    <TestCase Id="../TC/Exec/ST_SYST_TOOLS_LOG_178-EXEC"/>
+    <TestCase Id="../TC/Exec/ST_SYST_TOOLS_LOG_179-EXEC"/>
+
+    <!-- SensorInfo -->
+     <TestCase Id="../TC/Exec/Lxt/ST_SYST_SENSORS_PRELOAD_INSTALL_APK"/>
+    <TestCase Id="../TC/Exec/Lxt/ST_SYST_SENSORS_308_LIVE_SYSTEM_SENSOR_LIST_acc1"/>
+    <TestCase Id="../TC/Exec/Lxt/ST_SYST_SENSORS_311_LIVE_SYSTEM_SENSOR_LIST_cmpas1"/>
+    <TestCase Id="../TC/Exec/Lxt/ST_SYST_SENSORS_313_LIVE_SYSTEM_SENSOR_LIST_ori1"/>
+    <TestCase Id="../TC/Exec/Lxt/ST_SYST_SENSORS_316_LIVE_SYSTEM_SENSOR_LIST_pro1"/>
+    <TestCase Id="../TC/Exec/Lxt/ST_SYST_SENSORS_315_LIVE_SYSTEM_SENSOR_LIST_lig1"/>
+    <TestCase Id="../TC/Exec/Lxt/ST_SYST_SENSORS_385_LIVE_SYSTEM_SENSOR_CONCURRENT_acc1"/>
+    <TestCase Id="../TC/Exec/Lxt/ST_SYST_SENSORS_385_LIVE_SYSTEM_SENSOR_CONCURRENT_acc2"/>
+    <TestCase Id="../TC/Exec/Lxt/ST_SYST_SENSORS_385_LIVE_SYSTEM_SENSOR_CONCURRENT_acc3"/>
+    <TestCase Id="../TC/Exec/Lxt/ST_SYST_SENSORS_385_LIVE_SYSTEM_SENSOR_CONCURRENT_acc4"/>
+    <TestCase Id="../TC/Exec/Lxt/ST_SYST_SENSORS_387_LIVE_SYSTEM_SENSOR_CONCURRENT_cmpas1"/>
+    <TestCase Id="../TC/Exec/Lxt/ST_SYST_SENSORS_387_LIVE_SYSTEM_SENSOR_CONCURRENT_cmpas2"/>
+    <TestCase Id="../TC/Exec/Lxt/ST_SYST_SENSORS_387_LIVE_SYSTEM_SENSOR_CONCURRENT_cmpas3"/>
+    <TestCase Id="../TC/Exec/Lxt/ST_SYST_SENSORS_387_LIVE_SYSTEM_SENSOR_CONCURRENT_cmpas4"/>
+    <TestCase Id="../TC/Exec/Lxt/ST_SYST_SENSORS_391_LIVE_SYSTEM_SENSOR_CONCURRENT_ori1"/>
+    <TestCase Id="../TC/Exec/Lxt/ST_SYST_SENSORS_391_LIVE_SYSTEM_SENSOR_CONCURRENT_ori2"/>
+    <TestCase Id="../TC/Exec/Lxt/ST_SYST_SENSORS_391_LIVE_SYSTEM_SENSOR_CONCURRENT_ori3"/>
+    <TestCase Id="../TC/Exec/Lxt/ST_SYST_SENSORS_391_LIVE_SYSTEM_SENSOR_CONCURRENT_ori4"/>
+    <TestCase Id="../TC/Exec/Lxt/ST_SYST_SENSORS_290_LIVE_SYSTEM_SENSOR_DELAY_acc1"/>
+    <TestCase Id="../TC/Exec/Lxt/ST_SYST_SENSORS_290_LIVE_SYSTEM_SENSOR_DELAY_acc2"/>
+    <TestCase Id="../TC/Exec/Lxt/ST_SYST_SENSORS_290_LIVE_SYSTEM_SENSOR_DELAY_acc3"/>
+    <TestCase Id="../TC/Exec/Lxt/ST_SYST_SENSORS_290_LIVE_SYSTEM_SENSOR_DELAY_acc4"/>
+    <TestCase Id="../TC/Exec/Lxt/ST_SYST_SENSORS_294_LIVE_SYSTEM_SENSOR_DELAY_cmpas1"/>
+    <TestCase Id="../TC/Exec/Lxt/ST_SYST_SENSORS_294_LIVE_SYSTEM_SENSOR_DELAY_cmpas2"/>
+    <TestCase Id="../TC/Exec/Lxt/ST_SYST_SENSORS_294_LIVE_SYSTEM_SENSOR_DELAY_cmpas3"/>
+    <TestCase Id="../TC/Exec/Lxt/ST_SYST_SENSORS_294_LIVE_SYSTEM_SENSOR_DELAY_cmpas4"/>
+    <TestCase Id="../TC/Exec/Lxt/ST_SYST_SENSORS_377_LIVE_SYSTEM_SENSOR_DELAY_ori1"/>
+    <TestCase Id="../TC/Exec/Lxt/ST_SYST_SENSORS_377_LIVE_SYSTEM_SENSOR_DELAY_ori2"/>
+    <TestCase Id="../TC/Exec/Lxt/ST_SYST_SENSORS_377_LIVE_SYSTEM_SENSOR_DELAY_ori3"/>
+    <TestCase Id="../TC/Exec/Lxt/ST_SYST_SENSORS_377_LIVE_SYSTEM_SENSOR_DELAY_ori4"/>
+    <TestCase Id="../TC/Exec/Lxt/ST_SYST_SENSORS_379_LIVE_SYSTEM_SENSOR_DELAY_lig1"/>
+    <TestCase Id="../TC/Exec/Lxt/ST_SYST_SENSORS_379_LIVE_SYSTEM_SENSOR_DELAY_lig2"/>
+    <TestCase Id="../TC/Exec/Lxt/ST_SYST_SENSORS_379_LIVE_SYSTEM_SENSOR_DELAY_lig3"/>
+    <TestCase Id="../TC/Exec/Lxt/ST_SYST_SENSORS_379_LIVE_SYSTEM_SENSOR_DELAY_lig4"/>
+    <TestCase Id="../TC/Exec/Lxt/ST_SYST_SENSORS_380_LIVE_SYSTEM_SENSOR_DELAY_pro1"/>
+    <TestCase Id="../TC/Exec/Lxt/ST_SYST_SENSORS_380_LIVE_SYSTEM_SENSOR_DELAY_pro2"/>
+    <TestCase Id="../TC/Exec/Lxt/ST_SYST_SENSORS_380_LIVE_SYSTEM_SENSOR_DELAY_pro3"/>
+    <TestCase Id="../TC/Exec/Lxt/ST_SYST_SENSORS_380_LIVE_SYSTEM_SENSOR_DELAY_pro4"/>
+    <TestCase Id="../TC/Exec/Lxt/ST_SYST_SENSORS_289_LIVE_SYSTEM_SENSOR_FREQUENCY_acc1"/>
+    <TestCase Id="../TC/Exec/Lxt/ST_SYST_SENSORS_289_LIVE_SYSTEM_SENSOR_FREQUENCY_acc2"/>
+    <TestCase Id="../TC/Exec/Lxt/ST_SYST_SENSORS_289_LIVE_SYSTEM_SENSOR_FREQUENCY_acc3"/>
+    <TestCase Id="../TC/Exec/Lxt/ST_SYST_SENSORS_289_LIVE_SYSTEM_SENSOR_FREQUENCY_acc4"/>
+    <TestCase Id="../TC/Exec/Lxt/ST_SYST_SENSORS_293_LIVE_SYSTEM_SENSOR_FREQUENCY_cmpas1"/>
+    <TestCase Id="../TC/Exec/Lxt/ST_SYST_SENSORS_293_LIVE_SYSTEM_SENSOR_FREQUENCY_cmpas2"/>
+    <TestCase Id="../TC/Exec/Lxt/ST_SYST_SENSORS_293_LIVE_SYSTEM_SENSOR_FREQUENCY_cmpas3"/>
+    <TestCase Id="../TC/Exec/Lxt/ST_SYST_SENSORS_293_LIVE_SYSTEM_SENSOR_FREQUENCY_cmpas4"/>
+    <TestCase Id="../TC/Exec/Lxt/ST_SYST_SENSORS_383_LIVE_SYSTEM_SENSOR_FREQUENCY_ori1"/>
+    <TestCase Id="../TC/Exec/Lxt/ST_SYST_SENSORS_383_LIVE_SYSTEM_SENSOR_FREQUENCY_ori2"/>
+    <TestCase Id="../TC/Exec/Lxt/ST_SYST_SENSORS_383_LIVE_SYSTEM_SENSOR_FREQUENCY_ori3"/>
+    <TestCase Id="../TC/Exec/Lxt/ST_SYST_SENSORS_383_LIVE_SYSTEM_SENSOR_FREQUENCY_ori4"/>
+    <TestCase Id="../TC/Exec/Lxt/ST_SYST_SENSORS_308_LIVE_SYSTEM_SENSOR_RANGE_acc2"/>
+    <TestCase Id="../TC/Exec/Lxt/ST_SYST_SENSORS_311_LIVE_SYSTEM_SENSOR_RANGE_cmpas2"/>
+    <TestCase Id="../TC/Exec/Lxt/ST_SYST_SENSORS_313_LIVE_SYSTEM_SENSOR_RANGE_ori2"/>
+    <TestCase Id="../TC/Exec/Lxt/ST_SYST_SENSORS_315_LIVE_SYSTEM_SENSOR_RANGE_lig2"/>
+    <TestCase Id="../TC/Exec/Lxt/ST_SYST_SENSORS_316_LIVE_SYSTEM_SENSOR_RANGE_pro2"/>
+    
+  </TestCases>
+</Campaign>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestSteps xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../acs/src/_Catalogs/TestStep/teststep.xsd">
+    <TestStep Id="PERFORM_SUPPORTED_MO_ACTION" Domain="COMMS" SubDomain="MISC" Feature="" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Comms.Misc.PerformSupportedMoAction.PerformSupportedMoAction</ClassName>
+        <Description>Perform a MO Action depending of supported capabilities. Actions are VoiceCall, Sms or ping.</Description>
+        <Environment name="ANY" />
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="EQT" type="STRING" isOptional="false">
+                <Description>The equipment name shall refer to an existing equipment in the Bench config</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+            <Parameter name="DESTINATION_NUMBER" type="STRING" isOptional="false">
+                <Description>Destination Phone number for the VoiceCall/SMS</Description>
+                <PossibleValues />
+                <DefaultValue>123</DefaultValue>
+            </Parameter>
+            <Parameter name="SMS" type="STRING" isOptional="false">
+                <Description>The name of the SMS object in the context</Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+            <Parameter name="DESTINATION_IP" type="STRING" isOptional="false">
+                <Description>IP address to ping.</Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+        </Parameters>
+    </TestStep>
+</TestSteps>

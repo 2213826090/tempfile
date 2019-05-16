@@ -1,0 +1,57 @@
+<?xml version="1.0" ?>
+<Campaign>
+      <Parameters>
+            <Parameter isControlledPSUsed="False"/>
+            <Parameter isIoCardUsed="False"/>
+            <Parameter skipBootOnPowerCycle="False"/>
+            <Parameter bootRetryNumber="0"/>
+            <Parameter runHookScripts="False"/>
+            <Parameter powerCycleBetweenTC="False"/>
+            <Parameter powerCycleOnFailure="False"/>
+            <Parameter finalDutState="NoChange"/>
+            <Parameter stopCampaignOnCriticalFailure="False"/>
+            <Parameter stopCampaignOnFirstFailure="False"/>
+            <Parameter loggingLevel="debug"/>
+            <Parameter CampaignType="Other"/>
+      </Parameters>
+      <TestCases>
+            <TestCase Id="../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/filesystem/Create_100_files_on_eMMC"/>
+            <TestCase Id="../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/filesystem/Take_a_photo_and_check_in_Gallery"/>
+            <TestCase Id="../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/filesystem/Copy_a_picture_to_eMMC_and_check_in_Gallery"/>
+            <TestCase Id="../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/filesystem/Take_a_picture(8M)_and_check_in_gallery"/>
+            <TestCase Id="../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/filesystem/Copy_100_mp3_files_to_eMMC_and_check_in_music_app"/>
+            <TestCase Id="../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/filesystem/Check_internal_storage_mount_to_sdcard"/>
+            <TestCase Id="../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/filesystem/Take_a_video_and_check_in_Gallery"/>
+            <TestCase Id="../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/filesystem/Create_folder_with_Long(255 char)_name"/>
+            <TestCase Id="../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/filesystem/Listen_to_music_and_take_10_pictures"/>
+            <TestCase Id="../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/filesystem/Copy_100_pictures_to_eMMC_and_check_in_Gallery"/>
+            <TestCase Id="../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/filesystem/Copy_100_videos_to_eMMC_and_check_in_Gallery"/>
+            <TestCase Id="../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/filesystem/Save_100_screen_shot_and_check_in_Gallery"/>
+            <TestCase Id="../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/filesystem/Take_5mins_video_(1080p)_and_check_in_Gallery"/>
+            <TestCase Id="../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/filesystem/Check_sdcard_partition_is_writable_without_SD_card_on_board"/>
+            <TestCase Id="../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/filesystem/Listen_to_music_and_take_100_pictures"/>
+            <TestCase Id="../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/filesystem/Copy_10000_pictures_to_eMMC_and_check_in_Gallery"/>
+            <TestCase Id="../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/filesystem/Copy_1_video_file_to_eMMC_and_check_in_Gallery"/>
+            <!--TestCase Id="../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/filesystem/Copy_1000_pictures_in_a_1000_level-deep_folder_to SDCARD_and_check_in_Gallery"/-->
+            <!--TestCase Id="../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/filesystem/Switch_screen_between_LandScape_mode_and_Portrait_mode_when_copy_file_from_eMMC_to_USB_storage"/-->
+            <!--<TestCase Id="../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/filesystem/Enable_airplane_mode_when_copying_file_from_eMMC_to_SD_card"/>-->
+            <!--TestCase Id="../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/filesystem/Copy_1000_pictures_in_a_1000_level-deep_folder_to eMMC_and_check_in_Gallery"/-->
+
+            <!--This tests need write rights on External SDCARD which apparently is not accepted by google-->
+            <TestCase Id="../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/filesystem/Create_file_on_SD_card"/>
+            <!--<TestCase Id="../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/filesystem/Copy_1000_pictures_to_SDCARD_and_check_in_Gallery"/>-->
+            <!--<TestCase Id="../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/filesystem/Switch_screen_between_LandScape_mode_and_Portrait_mode_when_copy_file_from_eMMC_to_SD_card"/>-->
+            <!--<TestCase Id="../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/filesystem/Copy_1000_videos_to_SDCARD_and_check_in_Gallery"/>-->
+            <!--<TestCase Id="../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/filesystem/Create_50_files_on_SD_card"/>-->
+            <!--<TestCase Id="../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/filesystem/Multi_thread_write_write_on_SD_card"/>-->
+            <!--<TestCase Id="../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/filesystem/Multithread_readwrite_on_SD_card_copy_file_and_play_music"/>-->
+            <!--<TestCase Id="../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/filesystem/20_threads_operate_on_sd_card_for_3_mins"/>-->
+            <!--<TestCase Id="../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/filesystem/Copy_10000_pictures_to_SDCARD_and_check_in_Gallery"/>-->
+            <!--<TestCase Id="../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/filesystem/Copy_1000_mp3_files_to_SDCARD_and_check_in_music_app"/>-->
+            <!--<TestCase Id="../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/filesystem/Copy_100M_file_from_SD_card_to_eMMC"/>-->
+            <!--<TestCase Id="../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/filesystem/Copy_100M_file_from_eMMC_to_SD_card"/>-->
+            <!--<TestCase Id="../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/filesystem/Copy_100_files_from_SD_card_to_eMMC"/>-->
+            <!--<TestCase Id="../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/filesystem/Copy_100_files_from_eMMC_to_SD_card"/>-->
+            <TestCase Id="../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/filesystem/test_primary_external_storage_properties"/>
+      </TestCases>
+</Campaign>

@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<Campaign>
+      <Parameters>
+            <Parameter isControlledPSUsed="False"/>
+            <Parameter isIoCardUsed="False"/>
+            <Parameter skipBootOnPowerCycle="False"/>
+            <Parameter bootRetryNumber="0"/>
+            <Parameter runHookScripts="False"/>
+            <Parameter powerCycleBetweenTC="False"/>
+            <Parameter powerCycleOnFailure="False"/>
+            <Parameter finalDutState="NoChange"/>
+            <Parameter stopCampaignOnCriticalFailure="False"/>
+            <Parameter stopCampaignOnFirstFailure="False"/>
+            <Parameter loggingLevel="debug"/>
+            <Parameter CampaignType="Other"/>
+      </Parameters>
+      <TestCases>
+            <SubCampaign Id="../../Subcampaigns/ATF_TESTS/ABT_Image_Codecs/ABT_Image_Codecs"/>
+            <SubCampaign Id="../../Subcampaigns/ATF_TESTS/ABT_Api_Tests/image_codecs/BMP/BMP"/>
+            <SubCampaign Id="../../Subcampaigns/ATF_TESTS/ABT_Api_Tests/image_codecs/GIF/GIF"/>
+            <SubCampaign Id="../../Subcampaigns/ATF_TESTS/ABT_Api_Tests/image_codecs/INVALID/INVALID"/>
+            <SubCampaign Id="../../Subcampaigns/ATF_TESTS/ABT_Api_Tests/image_codecs/JPEG/JPEG"/>
+            <SubCampaign Id="../../Subcampaigns/ATF_TESTS/ABT_Api_Tests/image_codecs/PNG/PNG"/>
+            <SubCampaign Id="../../Subcampaigns/ATF_TESTS/ABT_Api_Tests/image_codecs/WBMP/WBMP"/>
+            <SubCampaign Id="../../Subcampaigns/ATF_TESTS/ABT_Api_Tests/image_codecs/WEBP/WEBP"/>
+      </TestCases>
+</Campaign>

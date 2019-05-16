@@ -1,0 +1,56 @@
+<?xml version="1.0" ?>
+<Campaign version="13.49">
+    <Parameters>
+        <Parameter isControlledPSUsed="False"/>
+        <Parameter isIoCardUsed="False"/>
+        <Parameter skipBootOnPowerCycle="False"/>
+        <Parameter bootRetryNumber="0"/>
+        <Parameter runHookScripts="False"/>
+        <Parameter powerCycleBetweenTC="False"/>
+        <Parameter powerCycleOnFailure="False"/>
+        <Parameter finalDutState="NoChange"/>
+        <Parameter stopCampaignOnCriticalFailure="False"/>
+        <Parameter stopCampaignOnFirstFailure="False"/>
+        <Parameter loggingLevel="debug"/>
+        <Parameter CampaignType="Other"/>
+    </Parameters>
+    <TestCases>
+        <TestCase Id="../../../../../TC/TP/TC/Graphics_RenderApp/init.start_rpc_server.StartRPCServer.testStartRPCServer"/>
+        <TestCase Id="../../../../../TC/TP/TC/Graphics_RenderApp/init.set_adb_root.AdbRoot.testAdbRoot"/>
+        <TestCase Id="../../../../../TC/TP/TC/Graphics_RenderApp/init.set_orientation_vertical.SetOrientationVertical.testSetOrientationVertical"/>
+        <TestCase Id="../../../../../TC/TP/TC/Graphics_RenderApp/init.config_first_boot_wizard.ConfigFirstBootWizard.testConfigFirstBootWizard"/>
+        <TestCase Id="../../../../../TC/TP/TC/Graphics_RenderApp/init.wake_up_and_unlock.WakeUnlock.testWakeUnlock"/>
+        <TestCase Id="../../../../../TC/TP/TC/Graphics_RenderApp/init.enable_developer_option.EnableDeveloperOption.testEnableDeveloperOption"/>
+        <TestCase Id="../../../../../TC/TP/TC/Graphics_RenderApp/init.keep_awake.KeepAwake.testKeepAwake"/>
+        <TestCase Id="../../../../../TC/TP/TC/Graphics_RenderApp/init.disable_screen_lock.DisableLockScreen.testDisableLockScreen"/>
+        <TestCase Id="../../../../../TC/TP/TC/Graphics_RenderApp/init.disable_verify_apps.DisableVerifyApp.testDisableVerifyApp"/>
+        <TestCase Id="../../../../../TC/TP/TC/Graphics_RenderApp/init.connect_wifi.ConnectWifi.testConnectWifi"/>
+        <TestCase Id="../../../../../TC/TP/TC/Graphics_RenderApp/init.configure_google_account.ConfigGoogleAccount.testConfigGoogleAccount"/>
+        <TestCase Id="../../../../../TC/TP/TC/Graphics_RenderApp/init.init_play_store_app.InitPlayStore.testInitPlayStore"/>
+        <TestCase Id="../../../../../TC/TP/TC/Graphics_RenderApp/init.init_camera_app.InitCamera.testInitCamera"/>
+        <TestCase Id="../../../../../TC/TP/TC/Graphics_RenderApp/init.init_photos_app.InitPhotos.testInitPhotos"/>
+        <TestCase Id="../../../../../TC/TP/TC/Graphics_RenderApp/init.init_chrome_app.InitChrome.testInitChrome"/>
+        <TestCase Id="../../../../../TC/TP/TC/Graphics_RenderApp/Render/testRsBalls"/>
+        <TestCase Id="../../../../../TC/TP/TC/Graphics_RenderApp/Render/testGraphicTextureView"/>
+        <TestCase Id="../../../../../TC/TP/TC/Graphics_RenderApp/Render/imageprocessing_launchexit_20times"/>
+        <TestCase Id="../../../../../TC/TP/TC/Graphics_RenderApp/Render/imageprocessing_suspend_resume"/>
+        <TestCase Id="../../../../../TC/TP/TC/Graphics_RenderApp/Render/testimageprocessing_switch_to_photos_switch_back"/>
+        <TestCase Id="../../../../../TC/TP/TC/Graphics_RenderApp/Render/test_rsmiscsamples_rsstates"/>
+        <TestCase Id="../../../../../TC/TP/TC/Graphics_RenderApp/Render/test_sdksample_basicsurfaceview"/>
+        <TestCase Id="../../../../../TC/TP/TC/Graphics_RenderApp/Render/test_sdksample_fountainfbo"/>
+        <TestCase Id="../../../../../TC/TP/TC/Graphics_RenderApp/Render/test_sdksampleballs_suspendresume"/>
+        <TestCase Id="../../../../../TC/TP/TC/Graphics_RenderApp/Render/test_sdksamplefountain_suspendresume"/>
+        <TestCase Id="../../../../../TC/TP/TC/Graphics_RenderApp/Render/test_sdksamplehellocompute_suspendresume"/>
+        <TestCase Id="../../../../../TC/TP/TC/Graphics_RenderApp/Render/test_videorecording_severalclips"/>
+        <TestCase Id="../../../../../TC/TP/TC/Graphics_RenderApp/Render/testRenderScriptRinsic"/>
+        <TestCase Id="../../../../../TC/TP/TC/Graphics_RenderApp/AppBasedOnOgl/test_APIDemos_CompressedTexture_30minutes"/>
+        <TestCase Id="../../../../../TC/TP/TC/Graphics_RenderApp/AppBasedOnOgl/test_APIDemos_Kube_30minutes"/>
+        <TestCase Id="../../../../../TC/TP/TC/Graphics_RenderApp/AppBasedOnOgl/test_APIDemos_TouchRotate_30minutes"/>
+        <TestCase Id="../../../../../TC/TP/TC/Graphics_RenderApp/AppBasedOnOgl/test_webgl_performance_aquarium"/>
+        <TestCase Id="../../../../../TC/TP/TC/Graphics_RenderApp/AppBasedOnOgl/test_webgl_performance_blob"/>
+        <TestCase Id="../../../../../TC/TP/TC/Graphics_RenderApp/Render/test_ImageProcessing_AnyValues"/>
+        <TestCase Id="../../../../../TC/TP/TC/Graphics_RenderApp/Render/test_sdksampleballs_appswitching"/>
+        <TestCase Id="../../../../../TC/TP/TC/Graphics_RenderApp/Render/test_sdksamplehellocompute_appswitching"/>
+        <TestCase Id="../../../../../TC/TP/TC/Graphics_RenderApp/AppBasedOnOgl/test_webgl_performance_fishtank"/>
+    </TestCases>
+</Campaign>

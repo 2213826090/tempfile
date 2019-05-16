@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Campaign>
+    <Parameters>
+        <Parameter isControlledPSUsed="False"/>
+        <Parameter isIoCardUsed="True"/>
+        <!-- Set skipBootOnPowerCycle to True to disable the acs boot procedure -->
+        <!-- Important, it means that boot will be handle inside the campaign/tc -->
+        <Parameter skipBootOnPowerCycle="False"/>
+        <Parameter runHookScripts="False"/>
+        <Parameter powerCycleBetweenTC="False"/>
+        <Parameter powerCycleOnFailure="True"/>
+        <Parameter finalDutState="NoChange"/>
+        <Parameter stopCampaignOnCriticalFailure="False"/>
+        <Parameter stopCampaignOnFirstFailure="False"/>
+        <!-- LoggingLevel possible values: info | warning | debug | error -->
+        <Parameter loggingLevel="info"/>
+        <!-- CampaignType format -> <TEAM>_<CAMPAIGNTYPE>
+            Possible values:
+            FT(Feature Team)-> SANITY | REGRESSION | STRESS, RELIABILTY | MTBF
+            ST(System Test)-> SANITY | REGRESSION | STRESS, RELIABILTY | MTBF
+            SI(System Integration)-> EAT | STAB | PACT | CAT0 | RELIABILITY | MTBF
+            Otherwise "Others" should be used -->
+        <Parameter CampaignType="ST_SANITY"/>
+        <Parameter TCRReportViaRESTAPI="true"/>
+    </Parameters>
+    <Targets>
+        <!-- Target Values -->
+        <Target targetB2bPassRate="90"/>
+    </Targets>
+    <TestCases>
+
+        <!-- ACS Test Steps -->
+        <TestCase Id="../TC/BT/ST_CWS_BT_CONNECT_ITERATIVE_001"/>
+        <TestCase Id="../TC/BT/ST_CWS_BT_FRIENDLY_NAME_CHANGE_ITERATIVE_001"/>
+        <TestCase Id="../TC/BT/ST_CWS_BT_ONOFF_ITERATIVE_RI_001"/>
+        <TestCase Id="../TC/BT/ST_CWS_BT_OPP_CLIENT_ITERATIVE_004"/>
+        <TestCase Id="../TC/BT/ST_CWS_BT_OPP_SERVER_ITERATIVE_003"/>
+        <TestCase Id="../TC/BT/ST_CWS_BT_SCAN_ITERATIVE_KRI_001"/>
+        <TestCase Id="../TC/BT/ST_CWS_BT_SCAN_ITERATIVE_002"/>
+        <TestCase Id="../TC/BT/ST_CWS_BT_PAIR_SSPAIR_ITERATIVE_001"/>
+        <TestCase Id="../TC/BT/ST_CWS_BT_HID_CONNECT_ITERATIVE_001"/>
+        <TestCase Id="../TC/BT/ST_CWS_BT_PANU_CONNECT_ITERATIVE_001"/>
+        <TestCase Id="../TC/BT/ST_CWS_BT_PANU_CONNECT_ITERATIVE_002"/>
+        <TestCase Id="../TC/BT/ST_CWS_BT_PANU_CONNECT_ITERATIVE_004"/>
+        <TestCase Id="../TC/BT/ST_CWS_BT_PAN_NAP_CONNECT_ITERATIVE_001"/>
+        <TestCase Id="../TC/BT/ST_CWS_BT_PAN_NAP_CONNECT_ITERATIVE_002"/>
+        <TestCase Id="../TC/BT/ST_CWS_BT_PAN_NAP_CONNECT_ITERATIVE_003"/>
+        <TestCase Id="../TC/BT/ST_CWS_BT_PAN_NAP_CONNECT_ITERATIVE_004"/>
+
+    </TestCases>
+</Campaign>

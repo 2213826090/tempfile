@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<operationsets>
+    <operationset name="cittest_get_acc_values">
+        <operation>
+            <command comment="Close eventually displayed power off menu by tapping [1;1] pixel of the screen">touch</command>
+            <parameter comment="x coordinate">1</parameter>
+            <parameter comment="y coordinate">1</parameter>
+            <parameter comment="seconds to wait before next action">1</parameter>
+        </operation>
+        <operation>
+            <command comment="Used to reinitialize focus at first element">keypress</command>
+            <parameter comment="the key to be pressed">KEYCODE_DPAD_UP</parameter>
+            <parameter comment="seconds to wait before next action">2</parameter>
+        </operation>
+        <operation>
+            <command comment="Used to reinitialize focus at first element">keypress</command>
+            <parameter comment="the key to be pressed">KEYCODE_DPAD_UP</parameter>
+            <parameter comment="seconds to wait before next action">2</parameter>
+        </operation>
+        <operation>
+            <command comment="Used to reinitialize focus at first element">keypress</command>
+            <parameter comment="the key to be pressed">KEYCODE_DPAD_UP</parameter>
+            <parameter comment="seconds to wait before next action">2</parameter>
+        </operation>
+        <operation>
+            <command comment="Focus on accelerometer checkbox">keypress</command>
+            <parameter comment="the key to be pressed">KEYCODE_DPAD_DOWN</parameter>
+            <parameter comment="seconds to wait before next action">2</parameter>
+        </operation>
+        <operation>
+            <command comment="Check accelerometer checkbox to launch components logging">keypress</command>
+            <parameter comment="the key to be pressed">KEYCODE_ENTER</parameter>
+            <parameter comment="seconds to wait before next action">10</parameter>
+        </operation>
+        <operation>
+            <command comment="Uncheck accelerometer checkbox to stop components logging">keypress</command>
+            <parameter comment="the key to be pressed">KEYCODE_ENTER</parameter>
+        </operation>
+    </operationset>
+
+    <operationset name="cittest_get_gyr_values">
+        <operation>
+            <command comment="Close eventually displayed power off menu by tapping [1;1] pixel of the screen">touch</command>
+            <parameter comment="x coordinate">1</parameter>
+            <parameter comment="y coordinate">1</parameter>
+            <parameter comment="seconds to wait before next action">1</parameter>
+        </operation>
+        <operation>
+            <command comment="Used to reinitialize focus at first element">keypress</command>
+            <parameter comment="the key to be pressed">KEYCODE_DPAD_UP</parameter>
+            <parameter comment="seconds to wait before next action">2</parameter>
+        </operation>
+        <operation>
+            <command comment="Used to reinitialize focus at first element">keypress</command>
+            <parameter comment="the key to be pressed">KEYCODE_DPAD_UP</parameter>
+            <parameter comment="seconds to wait before next action">2</parameter>
+        </operation>
+        <operation>
+            <command comment="Used to reinitialize focus at first element">keypress</command>
+            <parameter comment="the key to be pressed">KEYCODE_DPAD_UP</parameter>
+            <parameter comment="seconds to wait before next action">2</parameter>
+        </operation>
+        <operation>
+            <command comment="Focus on accelerometer checkbox">keypress</command>
+            <parameter comment="the key to be pressed">KEYCODE_DPAD_DOWN</parameter>
+            <parameter comment="seconds to wait before next action">2</parameter>
+        </operation>
+        <operation>
+            <command comment="Focus on gyro checkbox">keypress</command>
+            <parameter comment="the key to be pressed">KEYCODE_DPAD_DOWN</parameter>
+            <parameter comment="seconds to wait before next action">2</parameter>
+        </operation>
+        <operation>
+            <command comment="Check gyro checkbox to launch components logging">keypress</command>
+            <parameter comment="the key to be pressed">KEYCODE_ENTER</parameter>
+            <parameter comment="seconds to wait before next action">10</parameter>
+        </operation>
+        <operation>
+            <command comment="Uncheck gyro checkbox to stop components logging">keypress</command>
+            <parameter comment="the key to be pressed">KEYCODE_ENTER</parameter>
+        </operation>
+    </operationset>
+</operationsets>

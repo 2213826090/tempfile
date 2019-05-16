@@ -1,0 +1,24 @@
+<?xml version="1.0" ?>
+<TestCase>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Discription>
+	The Intel Android ULT device must support EGL_KHR_image_base extension.
+Defines a new EGL resource type that is suitable for sharing 2D arrays of image data between client APIs, the EGLImage.
+
+
+
+</Discription>
+    <UseCase>PY_UNIT</UseCase>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <b2bIteration>1</b2bIteration>
+    <Parameters>
+        <Parameter>
+            <Name>TEST_DATA_ROOT</Name>
+            <Value>testplan/Graphics_System</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TEST_CASE</Name>
+            <Value>tests.Graphics_System.GLES.conformance.RunConformance.test_EGL_KHR_image_base</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

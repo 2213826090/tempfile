@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+<Campaign version="13.49">
+    <Parameters>
+        <Parameter isControlledPSUsed="False"/>
+        <Parameter isIoCardUsed="False"/>
+        <Parameter skipBootOnPowerCycle="False"/>
+        <Parameter bootRetryNumber="0"/>
+        <Parameter runHookScripts="False"/>
+        <Parameter powerCycleBetweenTC="False"/>
+        <Parameter powerCycleOnFailure="False"/>
+        <Parameter finalDutState="NoChange"/>
+        <Parameter stopCampaignOnCriticalFailure="False"/>
+        <Parameter stopCampaignOnFirstFailure="False"/>
+        <Parameter loggingLevel="debug"/>
+        <Parameter CampaignType="Other"/>
+        <Parameter TCRReportViaRESTAPI="True"/>
+    </Parameters>
+    <TestCases>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_Audio/Decode/test4ChannelsAnalogAudioOutput_RightOnly"/>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_Audio/Decode/test4ChannelsAnalogAudioOutput_LeftOnly"/> 
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_Audio/Decode/test4ChannelsAnalogAudioOutput"/>
+    </TestCases>
+</Campaign>

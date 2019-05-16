@@ -1,0 +1,535 @@
+{
+    "build_info": {
+        "dalvik.vm.heapgrowthlimit": "100m",
+        "dalvik.vm.heapmaxfree": "8m",
+        "dalvik.vm.heapminfree": "512k",
+        "dalvik.vm.heapsize": "174m",
+        "dalvik.vm.heapstartsize": "8m",
+        "dalvik.vm.heaptargetutilization": "0.75",
+        "dalvik.vm.isa.x86.features": "default",
+        "dalvik.vm.isa.x86.variant": "silvermont",
+        "dalvik.vm.lockprof.threshold": "500",
+        "dalvik.vm.stack-trace-file": "/data/anr/traces.txt",
+        "debug.hwui.render_dirty_regions": "true",
+        "drm.service.enabled": "true",
+        "keyguard.no_require_sim": "false",
+        "media.awesome-local-audio": "1",
+        "media.stagefright.audio.deep": "true",
+        "net.bt.name": "Android",
+        "persist.audio.digmic": "1",
+        "persist.audio.log": "1",
+        "persist.audio.low_latency": "1",
+        "persist.ril-daemon.disable": "dsds",
+        "persist.sys.dalvik.vm.lib.2": "libart",
+        "ro.board.platform": "sofia_lte",
+        "ro.build.characteristics": "default",
+        "ro.build.date": "Sun Feb 14 06:06:18 UTC 2016",
+        "ro.build.date.utc": "1455429978",
+        "ro.build.description": "r2_sltsvbV12-userdebug 6.0.1 MMB29M M1l000554 test-keys",
+        "ro.build.display.id": "r2_sltsvbV12-userdebug 6.0.1 MMB29M M1l000554 test-keys",
+        "ro.build.fingerprint": "intel/r2_sltsvbV12/r2_sltsvbV12:6.0.1/MMB29M/M1l000554:userdebug/test-keys",
+        "ro.build.flavor": "r2_sltsvbV12-userdebug",
+        "ro.build.host": "jf5sisbld017l",
+        "ro.build.id": "MMB29M",
+        "ro.build.product": "r2_sltsvbV12",
+        "ro.build.tags": "test-keys",
+        "ro.build.type": "userdebug",
+        "ro.build.user": "buildbot",
+        "ro.build.version.all_codenames": "REL",
+        "ro.build.version.base_os": "",
+        "ro.build.version.codename": "REL",
+        "ro.build.version.incremental": "M1l000554",
+        "ro.build.version.preview_sdk": "0",
+        "ro.build.version.release": "6.0.1",
+        "ro.build.version.sdk": "23",
+        "ro.build.version.security_patch": "2016-02-01",
+        "ro.carrier": "unknown",
+        "ro.com.android.dataroaming": "true",
+        "ro.com.google.clientidbase": "android-intel",
+        "ro.com.google.gmsversion": "6.0_r2",
+        "ro.config.alarm_alert": "Alarm_Classic.ogg",
+        "ro.config.notification_sound": "pixiedust.ogg",
+        "ro.config.ringtone": "Ring_Synth_04.ogg",
+        "ro.dalvik.vm.isa.arm": "x86",
+        "ro.enable.native.bridge.exec": "1",
+        "ro.expect.recovery_id": "0xcb4012eb82a3d3cd32bb363fb33968edcf9a77de000000000000000000000000",
+        "ro.frp.pst": "/dev/block/by-name/ImcPartID126",
+        "ro.opengles.version": "196608",
+        "ro.product.board": "SF_LTE",
+        "ro.product.brand": "intel",
+        "ro.product.cpu.abi": "x86",
+        "ro.product.cpu.abilist": "x86,armeabi-v7a,armeabi",
+        "ro.product.cpu.abilist32": "x86,armeabi-v7a,armeabi",
+        "ro.product.cpu.abilist64": "",
+        "ro.product.device": "r2_sltsvbV12",
+        "ro.product.locale": "en-US",
+        "ro.product.manufacturer": "Intel",
+        "ro.product.model": "sltsvbV12",
+        "ro.product.name": "r2_sltsvbV12",
+        "ro.setupwizard.mode": "OPTIONAL",
+        "ro.telephony.default_network": "9,1",
+        "ro.wifi.channels": "",
+        "sys.hwc.compose_policy": "6",
+        "sys.hwc.enable": "1"
+    },
+    "flash": {
+        "commands": [
+            {
+                "args": " flashing unlock",
+                "description": "unlock the device",
+                "mandatory": true,
+                "restrict": [
+                    "fastboot_config"
+                ],
+                "retry": 2,
+                "timeout": 60000,
+                "tool": "fastboot"
+            },
+            {
+                "args": " -x ${psi_flash_signed} --replace -o ${psi_flash_signed_temp}",
+                "description": "Extract image parts from psi_flash_signed.fls",
+                "mandatory": true,
+                "restrict": [
+                    "fastboot_config"
+                ],
+                "retry": 2,
+                "timeout": 60000,
+                "tool": "flsTool"
+            },
+            {
+                "args": " flash psi ${psi_flash_signed_temp}/psi_flash.fls_ID0_PSI_LoadMap0.bin",
+                "description": "Flashing psi with fastboot",
+                "mandatory": true,
+                "restrict": [
+                    "fastboot_config"
+                ],
+                "retry": 2,
+                "timeout": 60000,
+                "tool": "fastboot"
+            },
+            {
+                "args": " -x ${slb_signed} --replace -o ${slb_signed_temp}",
+                "description": "Extract image parts from slb_signed.fls",
+                "mandatory": true,
+                "restrict": [
+                    "fastboot_config"
+                ],
+                "retry": 2,
+                "timeout": 60000,
+                "tool": "flsTool"
+            },
+            {
+                "args": " flash slb ${slb_signed_temp}/slb.fls_ID0_SLB_LoadMap0.bin",
+                "description": "Flashing slb with fastboot",
+                "mandatory": true,
+                "restrict": [
+                    "fastboot_config"
+                ],
+                "retry": 2,
+                "timeout": 60000,
+                "tool": "fastboot"
+            },
+            {
+                "args": " -x ${boot_signed} --replace -o ${boot_signed_temp}",
+                "description": "Extract image parts from boot_signed.fls",
+                "mandatory": true,
+                "restrict": [
+                    "fastboot_config"
+                ],
+                "retry": 2,
+                "timeout": 60000,
+                "tool": "flsTool"
+            },
+            {
+                "args": " flash boot ${boot_signed_temp}/boot.fls_ID0_CUST_LoadMap0.bin",
+                "description": "Flashing boot with fastboot",
+                "mandatory": true,
+                "restrict": [
+                    "fastboot_config"
+                ],
+                "retry": 2,
+                "timeout": 60000,
+                "tool": "fastboot"
+            },
+            {
+                "args": " -x ${recovery_signed} --replace -o ${recovery_signed_temp}",
+                "description": "Extract image parts from recovery_signed.fls",
+                "mandatory": true,
+                "restrict": [
+                    "fastboot_config"
+                ],
+                "retry": 2,
+                "timeout": 60000,
+                "tool": "flsTool"
+            },
+            {
+                "args": " flash recovery ${recovery_signed_temp}/recovery.fls_ID0_CUST_LoadMap0.bin",
+                "description": "Flashing recovery with fastboot",
+                "mandatory": true,
+                "restrict": [
+                    "fastboot_config"
+                ],
+                "retry": 2,
+                "timeout": 60000,
+                "tool": "fastboot"
+            },
+            {
+                "args": " -x ${cache_signed} --replace -o ${cache_signed_temp}",
+                "description": "Extract image parts from cache_signed.fls",
+                "mandatory": true,
+                "restrict": [
+                    "fastboot_config"
+                ],
+                "retry": 2,
+                "timeout": 60000,
+                "tool": "flsTool"
+            },
+            {
+                "args": " flash cache ${cache_signed_temp}/cache.fls_ID0_CUST_LoadMap0.bin",
+                "description": "Flashing cache with fastboot",
+                "mandatory": true,
+                "restrict": [
+                    "fastboot_config"
+                ],
+                "retry": 2,
+                "timeout": 60000,
+                "tool": "fastboot"
+            },
+            {
+                "args": " -x ${system_signed} --replace -o ${system_signed_temp}",
+                "description": "Extract image parts from system_signed.fls",
+                "mandatory": true,
+                "restrict": [
+                    "fastboot_config"
+                ],
+                "retry": 2,
+                "timeout": 600000,
+                "tool": "flsTool"
+            },
+            {
+                "args": " flash system ${system_signed_temp}/system.fls_ID0_CUST_LoadMap0.bin",
+                "description": "Flashing system with fastboot",
+                "mandatory": true,
+                "restrict": [
+                    "fastboot_config"
+                ],
+                "retry": 2,
+                "timeout": 600000,
+                "tool": "fastboot"
+            },
+            {
+                "args": " -x ${userdata_signed} --replace -o ${userdata_signed_temp}",
+                "description": "Extract image parts from userdata_signed.fls",
+                "mandatory": true,
+                "restrict": [
+                    "fastboot_config"
+                ],
+                "retry": 2,
+                "timeout": 60000,
+                "tool": "flsTool"
+            },
+            {
+                "args": " flash userdata ${userdata_signed_temp}/userdata.fls_ID0_CUST_LoadMap0.bin",
+                "description": "Flashing userdata with fastboot",
+                "mandatory": true,
+                "restrict": [
+                    "fastboot_config"
+                ],
+                "retry": 2,
+                "timeout": 60000,
+                "tool": "fastboot"
+            },
+            {
+                "args": " -x ${fwu_image_signed} --replace -o ${fwu_image_signed_temp}",
+                "description": "Extract image parts from fwu_image_signed.fls",
+                "mandatory": true,
+                "restrict": [
+                    "fastboot_config"
+                ],
+                "retry": 2,
+                "timeout": 60000,
+                "tool": "flsTool"
+            },
+            {
+                "args": " flash bootloader ${fwu_image_signed_temp}/fwu_image.fls_ID0_CUST_LoadMap0.bin",
+                "description": "Flashing bootloader with fastboot",
+                "mandatory": true,
+                "restrict": [
+                    "fastboot_config"
+                ],
+                "retry": 2,
+                "timeout": 60000,
+                "tool": "fastboot"
+            },
+            {
+                "args": " -x ${ucode_patch_signed} --replace -o ${ucode_patch_signed_temp}",
+                "description": "Extract image parts from ucode_patch_signed.fls",
+                "mandatory": true,
+                "restrict": [
+                    "fastboot_config"
+                ],
+                "retry": 2,
+                "timeout": 60000,
+                "tool": "flsTool"
+            },
+            {
+                "args": " flash ucode_patch ${ucode_patch_signed_temp}/ucode_patch.fls_ID0_CUST_LoadMap0.bin",
+                "description": "Flashing ucode_patch with fastboot",
+                "mandatory": true,
+                "restrict": [
+                    "fastboot_config"
+                ],
+                "retry": 2,
+                "timeout": 60000,
+                "tool": "fastboot"
+            },
+            {
+                "description": "This configuration will erase *all* your NVM, including calibration data. Unplug now your board to abort",
+                "restrict": [
+                    "smp_erase_fls_config"
+                ],
+                "tool": "popup",
+                "type": "warn"
+            },
+            {
+                "args": "--erase-mode=1 ${psi_flash_signed} ${slb_signed} ${mobilevisor_signed} ${boot_signed} ${recovery_signed} ${cache_signed} ${secvm_signed} ${splash_img_signed} ${system_signed} ${userdata_signed} ${fwu_image_signed} ${mvconfig_smp_signed} ${ucode_patch_signed} ",
+                "description": "Flashing SMP FLS w/ NVM erase image",
+                "mandatory": true,
+                "restrict": [
+                    "smp_erase_fls_config"
+                ],
+                "retry": 2,
+                "timeout": 600000,
+                "tool": "flsDownloader"
+            },
+            {
+                "args": "${psi_flash_signed} ${slb_signed} ${mobilevisor_signed} ${boot_signed} ${recovery_signed} ${cache_signed} ${secvm_signed} ${splash_img_signed} ${system_signed} ${userdata_signed} ${fwu_image_signed} ${mvconfig_smp_profiling_signed} ${ucode_patch_signed} ",
+                "description": "Flashing SMP PROFILING FLS only image",
+                "mandatory": true,
+                "restrict": [
+                    "smp_profiling_fls_config"
+                ],
+                "retry": 2,
+                "timeout": 600000,
+                "tool": "flsDownloader"
+            },
+            {
+                "args": "${psi_flash_signed} ${slb_signed} ${mobilevisor_signed} ${boot_signed} ${recovery_signed} ${cache_signed} ${secvm_signed} ${splash_img_signed} ${system_signed} ${userdata_signed} ${fwu_image_signed} ${mvconfig_smp_signed} ${ucode_patch_signed} ",
+                "description": "Flashing SMP FLS only image",
+                "mandatory": true,
+                "restrict": [
+                    "smp_fls_config"
+                ],
+                "retry": 2,
+                "timeout": 600000,
+                "tool": "flsDownloader"
+            },
+            {
+                "args": " flashing lock",
+                "description": "lock the device",
+                "mandatory": true,
+                "restrict": [
+                    "fastboot_config"
+                ],
+                "retry": 2,
+                "timeout": 60000,
+                "tool": "fastboot"
+            },
+            {
+                "args": " continue ",
+                "description": "fastboot continue",
+                "mandatory": true,
+                "restrict": [
+                    "fastboot_config"
+                ],
+                "retry": 2,
+                "timeout": 60000,
+                "tool": "fastboot"
+            }
+        ],
+        "configurations": {
+            "fastboot_config": {
+                "brief": "Fastboot configurations to flash device in POS",
+                "default": false,
+                "description": "fastboot configurations",
+                "groupsState": {},
+                "name": "Fastboot",
+                "parameters": {},
+                "startState": "pos"
+            },
+            "smp_erase_fls_config": {
+                "brief": "FLS configurations to erase and flash SMP FLS file only with DownloaderTool",
+                "default": false,
+                "description": "SMP FLS configurations",
+                "groupsState": {},
+                "name": "SMP FLS w/ NVM erase",
+                "parameters": {},
+                "startState": "dnx_fw",
+                "timeout": 600000
+            },
+            "smp_fls_config": {
+                "brief": "FLS configurations to flash SMP FLS file only with DownloaderTool",
+                "default": true,
+                "description": "SMP FLS configurations",
+                "groupsState": {},
+                "name": "SMP FLS only",
+                "parameters": {},
+                "startState": "dnx_fw",
+                "timeout": 600000
+            },
+            "smp_profiling_fls_config": {
+                "brief": "FLS configurations to flash SMP PROFILING FLS file only with DownloaderTool",
+                "default": false,
+                "description": "SMP PROFILING FLS configurations",
+                "groupsState": {},
+                "name": "SMP PROFILING FLS only",
+                "parameters": {},
+                "startState": "dnx_fw",
+                "timeout": 600000
+            }
+        },
+        "groups": {},
+        "osplatform": "android",
+        "parameters": {
+            "boot_signed": {
+                "description": "boot_signed.fls",
+                "name": "boot_signed",
+                "type": "file",
+                "value": "boot_signed.fls"
+            },
+            "boot_signed_temp": {
+                "description": "boot.fls_ID0_CUST_LoadMap0.bin",
+                "name": "boot_signed_temp",
+                "type": "temporary_file",
+                "value": "boot.fls_ID0_CUST_LoadMap0.bin"
+            },
+            "cache_signed": {
+                "description": "cache_signed.fls",
+                "name": "cache_signed",
+                "type": "file",
+                "value": "cache_signed.fls"
+            },
+            "cache_signed_temp": {
+                "description": "cache.fls_ID0_CUST_LoadMap0.bin",
+                "name": "cache_signed_temp",
+                "type": "temporary_file",
+                "value": "cache.fls_ID0_CUST_LoadMap0.bin"
+            },
+            "fwu_image_signed": {
+                "description": "fwu_image_signed.fls",
+                "name": "fwu_image_signed",
+                "type": "file",
+                "value": "fwu_image_signed.fls"
+            },
+            "fwu_image_signed_temp": {
+                "description": "fwu_image.fls_ID0_CUST_LoadMap0.bin",
+                "name": "fwu_image_signed_temp",
+                "type": "temporary_file",
+                "value": "fwu_image.fls_ID0_CUST_LoadMap0.bin"
+            },
+            "mobilevisor_signed": {
+                "description": "mobilevisor_signed.fls",
+                "name": "mobilevisor_signed",
+                "type": "file",
+                "value": "mobilevisor_signed.fls"
+            },
+            "mvconfig_smp_profiling_signed": {
+                "description": "mvconfig_smp_profiling_signed.fls",
+                "name": "mvconfig_smp_profiling_signed",
+                "type": "file",
+                "value": "mvconfigs/mvconfig_smp_profiling_signed.fls"
+            },
+            "mvconfig_smp_signed": {
+                "description": "mvconfig_smp_signed.fls",
+                "name": "mvconfig_smp_signed",
+                "type": "file",
+                "value": "mvconfig_smp_signed.fls"
+            },
+            "psi_flash_signed": {
+                "description": "psi_flash_signed.fls",
+                "name": "psi_flash_signed",
+                "type": "file",
+                "value": "psi_flash_signed.fls"
+            },
+            "psi_flash_signed_temp": {
+                "description": "psi_flash.fls_ID0_PSI_LoadMap0.bin",
+                "name": "psi_flash_signed_temp",
+                "type": "temporary_file",
+                "value": "psi_flash.fls_ID0_PSI_LoadMap0.bin"
+            },
+            "recovery_signed": {
+                "description": "recovery_signed.fls",
+                "name": "recovery_signed",
+                "type": "file",
+                "value": "recovery_signed.fls"
+            },
+            "recovery_signed_temp": {
+                "description": "recovery.fls_ID0_CUST_LoadMap0.bin",
+                "name": "recovery_signed_temp",
+                "type": "temporary_file",
+                "value": "recovery.fls_ID0_CUST_LoadMap0.bin"
+            },
+            "secvm_signed": {
+                "description": "secvm_signed.fls",
+                "name": "secvm_signed",
+                "type": "file",
+                "value": "secvm_signed.fls"
+            },
+            "slb_signed": {
+                "description": "slb_signed.fls",
+                "name": "slb_signed",
+                "type": "file",
+                "value": "slb_signed.fls"
+            },
+            "slb_signed_temp": {
+                "description": "slb.fls_ID0_SLB_LoadMap0.bin",
+                "name": "slb_signed_temp",
+                "type": "temporary_file",
+                "value": "slb.fls_ID0_SLB_LoadMap0.bin"
+            },
+            "splash_img_signed": {
+                "description": "splash_img_signed.fls",
+                "name": "splash_img_signed",
+                "type": "file",
+                "value": "splash_img_signed.fls"
+            },
+            "system_signed": {
+                "description": "system_signed.fls",
+                "name": "system_signed",
+                "type": "file",
+                "value": "system_signed.fls"
+            },
+            "system_signed_temp": {
+                "description": "system.fls_ID0_CUST_LoadMap0.bin",
+                "name": "system_signed_temp",
+                "type": "temporary_file",
+                "value": "system.fls_ID0_CUST_LoadMap0.bin"
+            },
+            "ucode_patch_signed": {
+                "description": "ucode_patch_signed.fls",
+                "name": "ucode_patch_signed",
+                "type": "file",
+                "value": "ucode_patch_signed.fls"
+            },
+            "ucode_patch_signed_temp": {
+                "description": "ucode_patch.fls_ID0_CUST_LoadMap0.bin",
+                "name": "ucode_patch_signed_temp",
+                "type": "temporary_file",
+                "value": "ucode_patch.fls_ID0_CUST_LoadMap0.bin"
+            },
+            "userdata_signed": {
+                "description": "userdata_signed.fls",
+                "name": "userdata_signed",
+                "type": "file",
+                "value": "userdata_signed.fls"
+            },
+            "userdata_signed_temp": {
+                "description": "userdata.fls_ID0_CUST_LoadMap0.bin",
+                "name": "userdata_signed_temp",
+                "type": "temporary_file",
+                "value": "userdata.fls_ID0_CUST_LoadMap0.bin"
+            }
+        },
+        "version": "2.1"
+    }
+}

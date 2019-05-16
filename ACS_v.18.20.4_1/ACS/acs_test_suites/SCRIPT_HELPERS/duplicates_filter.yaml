@@ -1,0 +1,12 @@
+# This dict declares the files to keep when removing doubles.
+# All the files that have the same filename (case insensitive) will be replaced by the file declared in this dict: doubles
+# will be removed.
+# "There can be only one" (@MacLeod)
+
+# key: filename, lower case, without extension
+# value: full path to the file to keep (others with the same filename will be erased)
+
+{
+    my_testcase_filename: /the/full/path/to/the/file/to/keep/My_Testcase_Filename.xml,
+    my_other_testcase_filename: /the/full/path/to/the/file/to/keep/My_Other_Testcase_Filename.xml
+}

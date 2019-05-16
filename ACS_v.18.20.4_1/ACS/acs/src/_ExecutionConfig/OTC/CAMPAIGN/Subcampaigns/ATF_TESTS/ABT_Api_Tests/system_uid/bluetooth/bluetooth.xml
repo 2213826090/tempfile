@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<Campaign>
+      <Parameters>
+            <Parameter isControlledPSUsed="False"/>
+            <Parameter isIoCardUsed="False"/>
+            <Parameter skipBootOnPowerCycle="False"/>
+            <Parameter bootRetryNumber="0"/>
+            <Parameter runHookScripts="False"/>
+            <Parameter powerCycleBetweenTC="False"/>
+            <Parameter powerCycleOnFailure="False"/>
+            <Parameter finalDutState="NoChange"/>
+            <Parameter stopCampaignOnCriticalFailure="False"/>
+            <Parameter stopCampaignOnFirstFailure="False"/>
+            <Parameter loggingLevel="debug"/>
+            <Parameter CampaignType="Other"/>
+      </Parameters>
+      <TestCases>
+            <TestCase Id="../../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/system_uid/bluetooth/Bluetooth_GeneralTest_BT_can_be_activated_even_if_Airplane_mode_is_ON"/>
+            <TestCase Id="../../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/system_uid/bluetooth/Bluetooth_GeneralTest_Airplane_Mode_on_INST"/>
+            <TestCase Id="../../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/system_uid/bluetooth/Bluetooth_GeneralTest_Scan_for_devices_INST"/>
+            <TestCase Id="../../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/system_uid/bluetooth/Bluetooth_GeneralTest_Airplane_Mode_off_INST"/>
+            <TestCase Id="../../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/system_uid/bluetooth/Bluetooth_GeneralTest_Change_device_name_INST"/>
+            <TestCase Id="../../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/system_uid/bluetooth/Bluetooth_GeneralTest_Turn_ON_OFF_Bluetooth_test_INST"/>
+      </TestCases>
+</Campaign>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="13.37">
+    <UseCase>LAB_AUDIO_APX_CALIBRATION_VOIP</UseCase>
+    <Description>Calibration for APX585 equipment</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>False</b2bContinuousMode>
+    <Parameters>
+        <Parameter>
+            <!-- DUT SIP address -->
+            <Name>DUT_SIP_ADDRESS</Name>
+            <Value>apxdut@192.168.0.150</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Peer SIP address -->
+            <Name>PEER_SIP_ADDRESS</Name>
+            <Value>apxrefphone@192.168.0.150</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Accessorie type (EARPIECE|SPEAKER|HEADSET|BLUETOOTHA2DP|BLUETOOTHHSP) -->
+            <Name>ACC_TYPE</Name>
+            <Value>EARPIECE</Value>
+        </Parameter>
+        <Parameter>
+             <!-- >Stream Call Volume in percent of dut phone -->
+            <Name>CALL_VOLUME_DUT</Name>
+            <Value>70</Value>
+        </Parameter>
+        <Parameter>
+             <!-- >Stream Call Volume in percent of ref phone -->
+            <Name>CALL_VOLUME_REF</Name>
+            <Value>80</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

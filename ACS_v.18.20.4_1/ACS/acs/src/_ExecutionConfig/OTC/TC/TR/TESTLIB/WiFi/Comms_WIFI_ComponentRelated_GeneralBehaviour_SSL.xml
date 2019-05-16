@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='ASCII'?>
+<TestCase>
+    <UseCase>Testlib</UseCase>
+    <Description>wifi</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <TcMaxAttempt>3</TcMaxAttempt>
+    <Parameters>
+        <Parameter>
+            <Name>test</Name>
+            <Value>scripts/wireless/wifi_generic/tests/General_behavior_open_secure_website.py</Value>
+        </Parameter>
+        <Parameter>
+            <Name>script-args</Name>
+            <Value>mode=bg txpwr=75 security=none ref_ap_name=SSG_LAB_VAL_S4 ref_ap_pw=ssg_ba_otc_val_asuss4 duration=6 ref_ap_security="WPA/WPA2 PSK"</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

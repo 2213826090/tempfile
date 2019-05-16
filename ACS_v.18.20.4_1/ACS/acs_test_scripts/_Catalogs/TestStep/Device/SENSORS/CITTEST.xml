@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestSteps xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../acs/src/_Catalogs/TestStep/teststep.xsd">
+    <TestStep Id="START_CITTEST" Domain="SENSORS" SubDomain="HUB" Feature="" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Sensors.Cittest.StartCittest.StartCittest</ClassName>
+        <Description>Launch Cittest application on device</Description>
+        <Environment name="ANDROID">This test step is only for android (cittest only exists for this OS)</Environment>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action shall be executed</Description>
+                <PossibleValues/>
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="STOP_CITTEST" Domain="SENSORS" SubDomain="HUB" Feature="" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Sensors.Cittest.StopCittest.StopCittest</ClassName>
+        <Description>Stop Cittest application on device</Description>
+        <Environment name="ANDROID">This test step is only for android (cittest only exists for this OS)</Environment>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action shall be executed</Description>
+                <PossibleValues/>
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="GET_SENSOR_VALUES_WITH_CITTEST" Domain="SENSORS" SubDomain="HUB" Feature="" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Sensors.Cittest.GetSensorValuesWithCittest.GetSensorValuesWithCittest</ClassName>
+        <Description>Get sensor values using Cittest embedded application.
+            The 3 components of the sensor value (one for each axis) are extracted and stored in context variables specified in parameters.
+        </Description>
+        <Environment name="ANDROID">This test step is only for android (cittest only exists for this OS).
+            WARNING: this test step assumes that Cittest is already running on device</Environment>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action shall be executed</Description>
+                <PossibleValues/>
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="SENSOR_NAME" type="STRING" isOptional="false">
+               <Description>Sensor whose components shall be extracted. Allowed values are:
+               - ACC for accelerometer
+               - GYR for gyroscope
+               </Description>
+               <PossibleValues>ACC;GYR</PossibleValues>
+               <DefaultValue>ACC</DefaultValue>
+            </Parameter>
+            <Parameter name="X_COMP" type="CONTEXT" isOptional="false">
+                <Description>X axis component of the sensor</Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+            <Parameter name="Y_COMP" type="CONTEXT" isOptional="false">
+                <Description>Y axis component of the sensor</Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+            <Parameter name="Z_COMP" type="CONTEXT" isOptional="false">
+                <Description>Z axis component of the sensor</Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+        </Parameters>
+    </TestStep>
+</TestSteps>

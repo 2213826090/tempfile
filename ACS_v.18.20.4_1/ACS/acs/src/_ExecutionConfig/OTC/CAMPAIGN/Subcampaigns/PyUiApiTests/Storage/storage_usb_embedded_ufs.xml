@@ -1,0 +1,81 @@
+<?xml version='1.0' encoding='ASCII'?>
+<Campaign version="13.49">
+    <Parameters>
+        <Parameter isControlledPSUsed="False"/>
+        <Parameter isIoCardUsed="False"/>
+        <!-- Set skipBootOnPowerCycle to True to disable the accs boot procedure -->
+        <!-- Important, it means that boot will be handle inside the campaign/tc -->
+        <Parameter skipBootOnPowerCycle="False"/>
+        <!-- Set bootRetryNumber to maximum number of boot retries during the acs boot procedure -->
+        <!-- Important, it means that bootRetryNumber is set by default to 0 if not specified -->
+        <Parameter bootRetryNumber="0"/>
+        <Parameter runHookScripts="False"/>
+        <Parameter powerCycleBetweenTC="False"/>
+        <Parameter powerCycleOnFailure="False"/>
+        <!-- finalDutState allows user to leave the DUT in a specific state at the end of the campaign
+            Possible values: PowerOn | PowerOff | Charging | NoChange
+            By default DUT is leaved in NoChange state.
+            In case the user selects Charging as final state of the DUT and that DUT fails to enter Charging,
+            ACS shall try to switch the DUT off -->
+        <Parameter finalDutState="NoChange"/>
+        <Parameter stopCampaignOnCriticalFailure="False"/>
+        <Parameter stopCampaignOnFirstFailure="False"/>
+        <!-- LoggingLevel possible values: info | warning | debug | error -->
+        <Parameter loggingLevel="debug"/>
+        <!-- CampaignType format -> <TEAM>_<CAMPAIGNTYPE>
+            Possible values:
+            FT(Feature Team)-> SANITY | REGRESSION | STRESS, RELIABILTY | MTBF
+            ST(System Test)-> SANITY | REGRESSION | STRESS, RELIABILTY | MTBF | EM
+            SI(System Integration)-> EAT | STAB | PACT | CAT0 | RELIABILITY | MTBF | CTS | ACS_CI
+            Otherwise "Others" should be used -->
+        <Parameter CampaignType="MTBF"/>
+        <Parameter TCRReportViaRESTAPI="True"/>
+    </Parameters>
+    <Targets>
+        <!-- Target Values -->
+        <Target targetB2bPassRate="100"/>
+    </Targets>
+    <TestCases>
+        <TestCase Id="../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Storage/prereq_Portable_SDCARD"/>
+        <TestCase Id="../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Storage/UFS/Storage.USB_EmbeddedUFS_ADB_Shell.commands.are.functional"/>
+        <TestCase Id="../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Storage/UFS/Storage.USB_EmbeddedUFS_CopyMP3File_and_check_in_music_app"/>
+        <TestCase Id="../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Storage/UFS/Storage.USB_EmbeddedUFS_EmulatedStorage_Check.mountpoint"/>
+        <TestCase Id="../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Storage/UFS/Storage.USB_EmbeddedUFS_InternalStorage_Check.mountpoint"/>
+        <TestCase Id="../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Storage/UFS/Storage.USB_EmbeddedUFS_InternalStorage_Memory"/>
+        <TestCase Id="../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Storage/UFS/Storage.USB_EmbeddedUFS_Multi-thread.ReadWriteCreateDelete.files"/>
+        <TestCase Id="../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Storage/UFS/Storage.USB_EmbeddedUFS_Open.all.app.at.the.same.time"/>
+        <TestCase Id="../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Storage/UFS/adb/Storage.USB_EmbeddedUFS_ReadWriteWithADB_cpy_file_data_to_emulated"/>
+        <TestCase Id="../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Storage/UFS/adb/Storage.USB_EmbeddedUFS_ReadWriteWithADB_cpy_file_emulated_to_data"/>
+        <TestCase Id="../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Storage/UFS/adb/Storage.USB_EmbeddedUFS_ReadWriteWithADB_cpy_file_emulated_to_emulated"/>
+        <TestCase Id="../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Storage/UFS/adb/Storage.USB_EmbeddedUFS_ReadWriteWithADB_cpy_folder_data_to_emulated"/>
+        <TestCase Id="../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Storage/UFS/adb/Storage.USB_EmbeddedUFS_ReadWriteWithADB_cpy_folder_emulated_to_data"/>
+        <TestCase Id="../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Storage/UFS/adb/Storage.USB_EmbeddedUFS_ReadWriteWithADB_cpy_folder_emulated_to_emulated"/>
+        <TestCase Id="../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Storage/UFS/adb/Storage.USB_EmbeddedUFS_ReadWriteWithADB_create_file_255_chars_name"/>
+        <TestCase Id="../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Storage/UFS/adb/Storage.USB_EmbeddedUFS_ReadWriteWithADB_create_file"/>
+        <TestCase Id="../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Storage/UFS/adb/Storage.USB_EmbeddedUFS_ReadWriteWithADB_create_folder_255_chars_name"/>
+        <TestCase Id="../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Storage/UFS/adb/Storage.USB_EmbeddedUFS_ReadWriteWithADB_create_folder"/>
+        <TestCase Id="../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Storage/UFS/adb/Storage.USB_EmbeddedUFS_ReadWriteWithADB_delete_file_255_chars_name"/>
+        <TestCase Id="../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Storage/UFS/adb/Storage.USB_EmbeddedUFS_ReadWriteWithADB_delete_folder_255_chars_name"/>
+        <TestCase Id="../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Storage/UFS/adb/Storage.USB_EmbeddedUFS_ReadWriteWithADB_rename_file"/>
+        <TestCase Id="../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Storage/UFS/adb/Storage.USB_EmbeddedUFS_ReadWriteWithADB_rename_folder"/>
+        <TestCase Id="../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Storage/UFS/api/Storage.USB_EmbeddedUFS_ReadWriteWithAPI_cpy_file_data_to_emulated"/>
+        <TestCase Id="../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Storage/UFS/api/Storage.USB_EmbeddedUFS_ReadWriteWithAPI_cpy_file_emulated_to_data"/>
+        <TestCase Id="../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Storage/UFS/api/Storage.USB_EmbeddedUFS_ReadWriteWithAPI_cpy_file_emulated_to_emulated"/>
+        <TestCase Id="../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Storage/UFS/api/Storage.USB_EmbeddedUFS_ReadWriteWithAPI_cpy_folder_data_to_emulated"/>
+        <TestCase Id="../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Storage/UFS/api/Storage.USB_EmbeddedUFS_ReadWriteWithAPI_cpy_folder_emulated_to_data"/>
+        <TestCase Id="../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Storage/UFS/api/Storage.USB_EmbeddedUFS_ReadWriteWithAPI_cpy_folder_emulated_to_emulated"/>
+        <TestCase Id="../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Storage/UFS/api/Storage.USB_EmbeddedUFS_ReadWriteWithAPI_create_file_255_chars_name"/>
+        <TestCase Id="../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Storage/UFS/api/Storage.USB_EmbeddedUFS_ReadWriteWithAPI_create_file_in_folder"/>
+        <TestCase Id="../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Storage/UFS/api/Storage.USB_EmbeddedUFS_ReadWriteWithAPI_create_file_multi_extension"/>
+        <TestCase Id="../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Storage/UFS/api/Storage.USB_EmbeddedUFS_ReadWriteWithAPI_create_file"/>
+        <TestCase Id="../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Storage/UFS/api/Storage.USB_EmbeddedUFS_ReadWriteWithAPI_create_folder_255_chars_name"/>
+        <TestCase Id="../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Storage/UFS/api/Storage.USB_EmbeddedUFS_ReadWriteWithAPI_create_folder"/>
+        <TestCase Id="../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Storage/UFS/api/Storage.USB_EmbeddedUFS_ReadWriteWithAPI_delete_file_255_chars_name"/>
+        <TestCase Id="../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Storage/UFS/api/Storage.USB_EmbeddedUFS_ReadWriteWithAPI_delete_folder_255_chars_name_with_file"/>
+        <TestCase Id="../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Storage/UFS/api/Storage.USB_EmbeddedUFS_ReadWriteWithAPI_rename_file"/>
+        <TestCase Id="../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Storage/UFS/api/Storage.USB_EmbeddedUFS_ReadWriteWithAPI_rename_folder"/>
+        <TestCase Id="../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Storage/UFS/adb/Storage.USB_EmbeddedUFS_ReadWriteWithADB_cpy_file_data_to_data"/>
+        <TestCase Id="../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Storage/UFS/Storage.USB_EmbeddedUFS_Open.all.app.at.the.same.time.full.emulated.storage"/>
+        <TestCase Id="../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Storage/UFS/Storage.USB_EmbeddedUFS_InternalStorage_Low.internal.memory"/>
+    </TestCases>
+</Campaign>

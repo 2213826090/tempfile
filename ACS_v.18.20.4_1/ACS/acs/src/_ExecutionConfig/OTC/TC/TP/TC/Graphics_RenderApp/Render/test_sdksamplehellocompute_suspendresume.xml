@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<TestCase>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Discription>
+Run SDK sample HelloCompute during running get system to standby and then resume
+</Discription>
+    <Domain>Graphics_RenderApp</Domain>
+    <Phase>CORE</Phase>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <Type>FUNCTIONAL</Type>
+    <UseCase>PY_UNIT</UseCase>
+    <b2bIteration>1</b2bIteration>
+    <Parameters>
+        <Parameter>
+            <Name>HpalmName</Name>
+            <Value>test_SDKSampleHelloCompute_SuspendResume.Render.test_sdksamplehellocompute_suspendresume</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TEST_DATA_ROOT</Name>
+            <Value>testplan/Graphics_RenderApp</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TEST_CASE</Name>
+            <Value>tests.Graphics_RenderApp.Render.test_SDKSampleHelloCompute_SuspendResume.Render.test_sdksamplehellocompute_suspendresume</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

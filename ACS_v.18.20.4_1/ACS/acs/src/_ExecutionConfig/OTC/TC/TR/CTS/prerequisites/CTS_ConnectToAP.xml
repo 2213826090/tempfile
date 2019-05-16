@@ -1,0 +1,56 @@
+<?xml version='1.0' encoding='ASCII'?>
+<TestCase>
+    <UseCase>ANDROID_INST</UseCase>
+    <Description/>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <TcMaxAttempt>5</TcMaxAttempt>
+    <TcAcceptanceCriteria>1</TcAcceptanceCriteria>
+    <IsCritical>True</IsCritical>
+    <TestSteps>
+        <Initialize/>
+        <Setup/>
+        <RunTest/>
+        <TearDown/>
+        <Finalize/>
+    </TestSteps>
+    <Parameters>
+        <Parameter>
+            <Name>TIMEOUT</Name>
+            <Value>60</Value>
+        </Parameter>
+        <Parameter>
+            <Name>PROCESS_NAME</Name>
+            <Value>com.intel.test.apitests/com.intel.test.apitests.runners.WifiEncryptionTestRunner</Value>
+        </Parameter>
+        <Parameter>
+            <Name>AM_EXTRA</Name>
+            <Value>-e apName "Android Core QA" -e apPassword AndroidQA -e TEST_RUN_COUNT 1 -e apTestPage http://www.google.com -e class com.intel.test.apitests.tests.WiFiConnectionTest#testMTBFConnectToAP</Value>
+        </Parameter>
+        <Parameter>
+            <Name>APKS</Name>
+            <Value>INSTRUMENTATION/ANDROID/ApiTests.apk</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TEST_FILES</Name>
+            <Value/>
+        </Parameter>
+        <Parameter>
+            <Name>TEST_FILES_DEST</Name>
+            <Value/>
+        </Parameter>
+        <Parameter>
+            <Name>SET_PROPS</Name>
+            <Value/>
+        </Parameter>
+        <Parameter>
+            <Name>RETRIEVE_ARTIFACT</Name>
+            <Value/>
+        </Parameter>
+        <Parameter>
+            <Name>TAGS</Name>
+            <Value>MTBF</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

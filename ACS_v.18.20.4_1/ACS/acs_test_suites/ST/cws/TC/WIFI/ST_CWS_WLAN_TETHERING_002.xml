@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="13.41">
+    <UseCase>TEST_STEP_ENGINE</UseCase>
+    <Description/>
+    <b2bIteration>10</b2bIteration>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <TcMaxAttempt>1</TcMaxAttempt>
+    <TcAcceptanceCriteria>1</TcAcceptanceCriteria>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters />
+    <TestSteps>
+
+        <Include Src="ST/cws/TSS/Common/ST_CWS_COMMON.xml" />
+        <Include Src="ST/cws/TSS/WiFi/ST_CWS_WIFI_COMMON.xml" />
+        <Setup>
+            <!-- AUTOMATION - Set default configuration -->
+            <Fork Id="ForkInitPhones">
+                <TestStep SetId="InitPhoneCWS" DEVICE="PHONE1" />
+                <TestStep SetId="InitPhoneCWS" DEVICE="PHONE2" />
+            </Fork>
+            <!-- Configure DUT and reference phone -->
+            <Fork Id="ConfigurePhones">
+                <TestStep SetId="SoftAPCommonSetup" DEVICE="PHONE1" REGULATORY_DOMAIN="FR" MAC_ADDR="MAC_ADDR_SSID_HOTSPOT" />
+                <TestStep SetId="WiFiSetCheckCellularNetwork" DEVICE="PHONE1" PREFERRED_NETWORK="3G_PREF"/>
+                <TestStep SetId="WiFiCommonSetup" DEVICE="PHONE2" REGULATORY_DOMAIN="FR" />
+            </Fork>
+        </Setup>
+        <RunTest>
+            <!-- AUTOMATION - Reboot and clean WiFi for iterative test -->
+            <TestStep Id="WIFI_SET_POWER" DEVICE="PHONE1" POWER="off,on"/>
+            <TestStep Id="WIFI_REMOVE_NETWORK" DEVICE="PHONE2" SSID="all"/>
+
+            <!-- SPEC - Step 1&2 : Turn SoftAP On and configure WPA2 -->
+            <TestStep Id="WIFI_SET_HOTSPOT" DEVICE="PHONE1" POWER="on" SSID="FROM_CTX:MAC_ADDR_SSID_HOTSPOT" SECURITY="WPA2" PASSPHRASE="WPA2_PASSWORD" STANDARD="2_4GHZ_20MHZ" CHANNEL="8" HIDDEN="off"/>
+            <TestStep Id="WIFI_GET_POWER" DEVICE="PHONE1" SAVE_AS="WIFI_POWER_STATUS"/>
+            <TestStep Id="COMPARE" FIRST="FROM_CTX:WIFI_POWER_STATUS" SECOND="off" OPERATOR="EQUAL" PASS_IF="true"/>
+
+            <!-- SPEC - Step 3 : Connect WiFi station to DUT -->
+            <TestStep SetId="WiFiAddNetwork" DEVICE="PHONE2" SSID="FROM_CTX:MAC_ADDR_SSID_HOTSPOT" SECURITY="WPA2-PSK-AES" PASS_PHRASE="WPA2_PASSWORD" />
+            <TestStep Id="WIFI_CONNECT" DEVICE="PHONE2" SSID="FROM_CTX:MAC_ADDR_SSID_HOTSPOT" TIMEOUT="20"/>
+
+            <!-- SPEC - Step 4 : Ping DUT from reference phone -->
+            <TestStep SetId="WiFiPingDutFromReferencePhone" NET_INTERFACE="wlan0"/>
+
+            <!-- SPEC - Step 5 : Browse google.fr -->
+            <TestStep Id="BROWSE_AND_CHECK" DEVICE="PHONE1" BROWSER_TYPE="ACS_AGENT" WEBSITE_URL="www.google.fr" TIMEOUT="20"/>
+
+            <!-- SPEC - Step 6 : Turn off SoftAP and check WiFi back On-->
+            <TestStep Id="WIFI_SET_HOTSPOT" DEVICE="PHONE1" POWER="off" SSID="FROM_CTX:MAC_ADDR_SSID_HOTSPOT" SECURITY="WPA2" PASSPHRASE="WPA2_PASSWORD" STANDARD="2_4GHZ_20MHZ" CHANNEL="8" HIDDEN="off"/>
+            <TestStep Id="SUSPEND" DURATION_IN_SEC="5.0"/>
+            <TestStep Id="WIFI_GET_POWER" DEVICE="PHONE1" SAVE_AS="WIFI_POWER_STATUS"/>
+            <TestStep Id="COMPARE" FIRST="FROM_CTX:WIFI_POWER_STATUS" SECOND="on" OPERATOR="EQUAL" PASS_IF="true"/>
+        </RunTest>
+        <TearDown>
+            <!-- AUTOMATION - Teardown -->
+            <Fork Id="ForkTeardownPhones">
+                <TestStep SetId="SoftAPCommonTeardown" DEVICE="PHONE1"/>
+                <TestStep SetId="WiFiCommonTeardown" DEVICE="PHONE2"/>
+            </Fork>
+        </TearDown>
+    </TestSteps>
+</TestCase>

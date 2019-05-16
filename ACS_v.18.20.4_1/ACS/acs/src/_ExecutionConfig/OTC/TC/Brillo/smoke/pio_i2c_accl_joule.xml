@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="13.37">
+    <UseCase>EXEC</UseCase>
+    <Description>GPIO LED light</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <TcExpectedResult>PASS</TcExpectedResult>
+
+    <Parameters>
+        <Parameter>
+            <Name>RUN_FROM_TCDIRECTORY</Name>
+            <Value>True</Value>
+        </Parameter>
+        <Parameter>
+            <Name>RUN_CMD</Name>
+            <Value>./scripts/fb-adb shell pio_7660</Value>
+        </Parameter>
+        <Parameter>
+            <Name>RUN_TIMEOUT</Name>
+            <Value>30</Value>
+        </Parameter>
+          <Parameter>
+            <Name>RUN_EXPECT_RESULT</Name>
+            <Value>0</Value>
+        </Parameter>
+       <!-- Tear Down:
+        <Parameter>
+            <Name>TEAR_DOWN_CMD</Name>
+            <Value>rm testfile.log testfile.sh</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TEAR_DOWN_TIMEOUT</Name>
+            <Value>1</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TEAR_DOWN_EXPECT_RESULT</Name>
+            <Value>0</Value>
+        </Parameter>
+	-->
+     </Parameters>
+</TestCase>

@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='ASCII'?>
+<TestCase>
+    <UseCase>EXEC</UseCase>
+    <Description>Check the event frequency of barometer is greater than 5Hz</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <TcMaxAttempt>1</TcMaxAttempt>
+    <TcAcceptanceCriteria>1</TcAcceptanceCriteria>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <TestSteps>
+        <Initialize/>
+        <Setup/>
+        <RunTest/>
+        <TearDown/>
+        <Finalize/>
+    </TestSteps>
+    <Tags>
+        <Tag>barometer</Tag>
+    </Tags>
+    <Priority>
+        <Value>2</Value>
+    </Priority>
+    <Parameters>
+        <Parameter>
+            <Name>RUN_CMD</Name>
+            <Value>python scripts/check_sample_rate.py {comp_conf} 5</Value>
+        </Parameter>
+        <Parameter>
+            <Name>RUN_TIMEOUT</Name>
+            <Value>35</Value>
+        </Parameter>
+        <Parameter>
+            <Name>RUN_FROM_TCDIRECTORY</Name>
+            <Value>True</Value>
+        </Parameter>
+        <Parameter>
+            <Name>RUN_EXPECT_RESULT</Name>
+            <Value>PASSED</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

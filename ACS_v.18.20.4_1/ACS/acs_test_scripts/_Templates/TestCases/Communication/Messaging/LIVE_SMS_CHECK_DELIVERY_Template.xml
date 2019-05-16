@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="13.37">
+    <UseCase>LIVE_SMS_CHECK_DELIVERY</UseCase>
+    <Description>Live SMS check delivery</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters>
+        <Parameter>
+            <!-- SMS destination phone number. If the value [PHONE_NUMBER] is given, the phoneNumber defined in Phone_Catalog.xml will be used -->
+            <Name>DESTINATION_NUMBER</Name>
+            <Value>[PHONE_NUMBER]</Value>
+        </Parameter>
+        <Parameter>
+            <!-- SMS text message -->
+            <Name>MESSAGE_CONTENT</Name>
+            <Value>This is my SMS text !</Value>
+        </Parameter>
+        <Parameter>
+            <!-- SMS transfer timeout in seconds -->
+            <Name>SMS_TRANSFER_TIMEOUT</Name>
+            <Value>30</Value>
+        </Parameter>
+        <Parameter>
+            <!-- (Optional) Preferred network to use for the test. Possible values:
+                "2G_ONLY"
+                "3G_PREF"
+                "4G_PREF"
+                "3G_ONLY"
+                "2G_3G"
+                "CDMA_PREF"
+                "CDMA_ONLY"
+                "EVDO_ONLY"
+                "GLOBAL"
+                "4G_PREF_US"
+                "WORLD_MODE"
+                "4G_ONLY" -->
+            <Name>PREFERRED_NETWORK_TYPE</Name>
+            <Value></Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

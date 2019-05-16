@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="13.44">
+    <UseCase>ANY_USB_TETHER</UseCase>
+    <Description>Enable USB tethering interface, perform ping on FTP server, upload a local file to the FTP server, then disable USB tethering and ping FTP server again.</Description>
+    <Requirements>
+        <Contour>
+            <Global_ID>12208097</Global_ID>
+            <Test_Case_ID>ST_TELEPHONY_DATA_LTE-TETH_003</Test_Case_ID>
+            <Name>LTE - Tethering USB - FTP Upload</Name>
+        </Contour>
+    </Requirements>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters>
+        <!-- Parameters for the USB tethering test case itself -->
+        <Parameter>
+            <!--Optional: Failure data average throughput value in Mbps (UL, DL). If the value is empty, test case will use default value defined in _Configs/Throughput_Targets.xml-->
+            <Name>FAILURE_TARGETS</Name>
+            <Value>FUTE</Value>
+        </Parameter>
+        <Parameter>
+            <!--Optional: full path to the FTP file (UL: name used to store local file on FTP server - DL: name of the file to download). FTP server address is given in the Bench_Config ("LAB_SERVER" or "LAB_LTE_SERVER"). If the value is empty, test case will use not perform FTP transfer-->
+            <Name>FTP_FILE</Name>
+            <Value>put500M</Value>
+        </Parameter>
+        <Parameter>
+            <!--overall timeout for ftp connection, ftp transfer, usb tethering connection-->
+            <Name>TIMEOUT</Name>
+            <Value>120</Value>
+        </Parameter>
+        <Parameter>
+            <!-- 2G | 3G | HSDPA+ | 4G | LIVE-->
+            <Name>RAT</Name>
+            <Value>4G</Value>
+        </Parameter>
+        <Parameter>
+            <!--Optional: the FTP transfer direction. Should be 'UL' or 'DL'. If the value is empty, test case will use not perform FTP transfer-->
+            <Name>DIRECTION</Name>
+            <Value>UL</Value>
+        </Parameter>
+        <!-- Parameters for network configurations -->
+        <Parameter>
+            <!-- Multiple-Input Multiple-Output to set : true or false -->
+            <Name>MIMO</Name>
+            <Value>TRUE</Value>
+        </Parameter>
+        <Parameter>
+            <!-- number of antennas to set : 1 or 2 -->
+            <Name>ANTENNAS_NUMBER</Name>
+            <Value>2</Value>
+        </Parameter>
+        <Parameter>
+            <!-- TRANSMISSION_MODE to set: TM1, TM2, TM3,TM4 ... -->
+            <Name>TRANSMISSION_MODE</Name>
+            <Value>TM3</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Physical Cell ID : 0 to 503 -->
+            <Name>PHYSICAL_CELL_ID</Name>
+            <Value>0</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Cell Setup : "A" for A-cell or "B" for B-cell -->
+            <Name>CELL_ID</Name>
+            <Value>A</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Cell power for RFO1 -->
+            <Name>CELL_POWER_RFO1</Name>
+            <Value>-40</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Cell power for RFO2 -->
+            <Name>CELL_POWER_RFO2</Name>
+            <Value>-40</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Mobile Country Code 0 to 999 -->
+            <Name>MCC</Name>
+            <Value>1</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Mobile Network Code 0 to 999 -->
+            <Name>MNC</Name>
+            <Value>1</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Cell Band (from Band 1 to Band 32) -->
+            <Name>CELL_BAND</Name>
+            <Value>1</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Downlink channel -->
+            <Name>DL_EARFCN</Name>
+            <Value>300</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Cell channel bandwidth to set: 1.4MHz; 3 MHz; 5MHz; 10 MHz; 15MHz; 20 MHz-->
+            <Name>CELL_CHANNEL_BANDWIDTH</Name>
+            <Value>20</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

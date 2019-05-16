@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase>
+    <UseCase>LIVE_CRM</UseCase>
+    <Description>Validate the CRM sanity test suite. Supported platform is Sofia-LTE.</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <TcMaxAttempt>1</TcMaxAttempt>
+    <TcAcceptanceCriteria>1</TcAcceptanceCriteria>
+    <IsCritical>False</IsCritical>
+    <Parameters>
+        <Parameter>
+            <!-- Test a complete reset escalation recovery -->
+            <Name>RUN_CMD</Name>
+            <Value>adb shell crm_test</Value>
+        </Parameter>
+        <Parameter>
+            <!-- A string indicating the expected result for ipc-test -->
+            <Name>EXPECTED_RESULT</Name>
+            <Value>sanity test succeed</Value>
+        </Parameter>
+        <Parameter>
+            <!-- The test execution timeout in seconds -->
+            <Name>EXECUTION_TIMEOUT</Name>
+            <Value>1200</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

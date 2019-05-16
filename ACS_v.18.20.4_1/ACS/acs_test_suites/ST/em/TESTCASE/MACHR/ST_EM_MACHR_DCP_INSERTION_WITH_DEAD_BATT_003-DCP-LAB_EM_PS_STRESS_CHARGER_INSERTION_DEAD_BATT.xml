@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="13.45">
+    <UseCase>LAB_EM_PS_STRESS_CHARGER_INSERTION_DEAD_BATT</UseCase>
+    <Description>Plug the charger when dead battery is present and measure the battery current or the battery/charger current ratio. Stress test start with voltage start to voltage end every battery step</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>False</b2bContinuousMode>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters>
+        <Parameter>
+            <!-- Type of the charger : SDP/CDP/DCP -->
+            <Name>CHARGER_TYPE</Name>
+            <Value>DCP</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Test begins with this voltage value (float value)Be careful, If you see the spec, start voltage should be higher than end voltage. If this condition is not respected, test will fail.-->
+            <Name>START_BATTERY_VOLTAGE</Name>
+            <Value>3.2</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Test begins with this voltage value (float value)Be careful, If you see the spec, start voltage should be higher than end voltage. If this condition is not respected, test will fail.-->
+            <Name>END_BATTERY_VOLTAGE</Name>
+            <Value>2.5</Value>
+        </Parameter>
+        <Parameter>
+            <!-- This value permits to decrease the voltage to the end voltage value. In the spec, you have voltage = old_voltage - ( iteration * BATTERY_STEP). The parameter permits to decreases the old_voltage to a new voltage in order to do a new measure. (float value) -->
+            <Name>BATTERY_STEP</Name>
+            <Value>0.025</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Current Threshold (float value) -->
+            <Name>EXPECTED_CHARGE_CURRENT</Name>
+            <Value>-0.400</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Time to wait (int value) This time is in the test specification. You set this value in order to wait the current stabilization. Before this sleep time, the code plug the charger. After this sleep time, we check the current. We use this value for both type of measure -->
+            <Name>WAIT_TIME</Name>
+            <Value>20</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

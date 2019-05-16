@@ -1,0 +1,98 @@
+{
+    "Configuration": {
+        "Boot": {
+            "NOCOS": true,
+            "SHELL_IN_ROS": false,
+            "PKP_5S": false,
+            "MODEM": false,
+            "BOOT_COS_ON_FORCED_SHUTDOWN_PLUG": true
+        },
+        "BootVars": null,
+        "Custom": null,
+        "Download": {
+            "INTERNAL_DOWNLOAD": [
+                {
+                    "pft_key": "fastboot",
+                    "buildbot_artifactory_path": {"path": "device_name_id/flash_files/blankphone", "detection": "cactus-absp"},
+                    "regexp_key": "fastboot",
+                    "flash_file": null,
+                    "configuration": null,
+                    "start_state": "dnx"
+                },
+                {
+                    "pft_key": "ota",
+                    "buildbot_artifactory_path": {"path": "device_name_id/flash_files/blankphone", "detection": "cactus-absp"},
+                    "regexp_key": ".*ota.*.zip",
+                    "flash_file": null,
+                    "configuration": null,
+                    "start_state": "mos"
+                }
+            ]
+        },
+        "Flash": {
+            "CHECK_FASTBOOT": false,
+            "CHECK_OSLOADER": false,
+            "CHECK_RECOVERY": false,
+            "DEDIPROG": false,
+            "FORCE_FLASH_ALGO" : ["force_shutdown_during_PFT_execution"],
+            "UEFI": false,
+            "PARTITIONS": "/cache;/system;/data"
+        },
+        "Inherit": {
+            "BRANCH": null
+        },
+        "Logs": {
+            "CRASHLOGS": false
+        },
+        "Timeout": {
+            "BOOT_TIMEOUT": 600,
+            "WATCHDOG_EXPIRATION": 100
+        },
+        "WorkAround": {
+            "Function": {
+                "Issue": "Not applicable on Sofia",
+                "Name": "__ifwi_check",
+                "Pattern": ".*"
+            },
+            "TC": [
+                {
+                    "Issue": "Not applicable on Sofia",
+                    "Name": "PUPDR_SPID_CHECK",
+                    "Skip": true
+                },
+                {
+                    "Issue": "Not applicable on Sofia",
+                    "Name": "LAB_PUPDR_OTA_FORWARD_FLASHING",
+                    "Skip": true
+                },
+                {
+                    "Issue": "Not applicable on Sofia",
+                    "Name": "LAB_PUPDR_OTA_FLASHING",
+                    "Skip": true
+                },
+                {
+                    "Issue": "Not applicable on Sofia",
+                    "Name": "FT_PUPDR_INCREMENTAL_FOTA",
+                    "Skip": true
+                }
+            ],
+            "TestCase": [
+                {
+                    "Issue": "Not applicable on Sofia",
+                    "Name": "KernelWatchdogTestCase",
+                    "Skip": true
+                },
+                {
+                    "Issue": "Not applicable on Sofia",
+                    "Name": "SecurityWatchdogTestCase",
+                    "Skip": true
+                },
+                {
+                    "Issue": "Not applicable on Sofia",
+                    "Name": "WatchdogFallBackPolicyTestCase",
+                    "Skip": true
+                }
+            ]
+        }
+    }
+}

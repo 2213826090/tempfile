@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<Campaign>
+    <Parameters>
+        <Parameter isControlledPSUsed="False"/>
+        <Parameter isIoCardUsed="False"/>
+        <Parameter skipBootOnPowerCycle="False"/>
+        <Parameter bootRetryNumber="0"/>
+        <Parameter runHookScripts="False"/>
+        <Parameter powerCycleBetweenTC="False"/>
+        <Parameter powerCycleOnFailure="False"/>
+        <Parameter finalDutState="NoChange"/>
+        <Parameter stopCampaignOnCriticalFailure="False"/>
+        <Parameter stopCampaignOnFirstFailure="False"/>
+        <Parameter loggingLevel="debug"/>
+        <Parameter CampaignType="Other"/>
+    </Parameters>
+    <TestCases>
+        <TestCase Id="../../../../../TC/TR/TESTLIB/WiFi/prereq_Comms_WIFI_ComponentRelated_FTP_Download_CleanUp"/>
+        <TestCase Id="../../../../../TC/TR/TESTLIB/WiFi/prereq_Comms_WIFI_ComponentRelated_FTP_Download_start_server"/>
+        <TestCase Id="../../../../../TC/TR/TESTLIB/WiFi/Comms_WIFI_ComponentRelated_FTP_Download_11bg-OPEN"/>
+        <TestCase Id="../../../../../TC/TR/TESTLIB/WiFi/Comms_WIFI_ComponentRelated_FTP_Download_WPA-TKIP"/>
+        <TestCase Id="../../../../../TC/TR/TESTLIB/WiFi/Comms_WIFI_ComponentRelated_FTP_Download_WPA-AES"/>
+        <TestCase Id="../../../../../TC/TR/TESTLIB/WiFi/Comms_WIFI_ComponentRelated_FTP_Download_WPA-TKIP-AES"/>
+        <TestCase Id="../../../../../TC/TR/TESTLIB/WiFi/Comms_WIFI_ComponentRelated_FTP_Download_WPA2-TKIP-AES"/>
+        <TestCase Id="../../../../../TC/TR/TESTLIB/WiFi/Comms_WIFI_ComponentRelated_FTP_Download_WPA2-AES"/>
+        <TestCase Id="../../../../../TC/TR/TESTLIB/WiFi/Comms_WIFI_ComponentRelated_FTP_Download_WPA2-TKIP"/>
+        <TestCase Id="../../../../../TC/TR/TESTLIB/WiFi/prereq_Comms_WIFI_ComponentRelated_FTP_Download_CleanUp"/>
+    </TestCases>
+</Campaign>

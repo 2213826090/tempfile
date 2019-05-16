@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="13.45">
+    <UseCase>LAB_EM_PS_COS_REMOVE_USB</UseCase>
+    <Description>Boot in COS Mode, Remove the USB Charger and check that the board shuts down</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>False</b2bContinuousMode>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters>
+        <Parameter>
+            <!-- Type of the charger : SDP/CDP/ACA -->
+            <Name>CHARGER_TYPE</Name>
+            <Value>SDP</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Battery Type : BATTERY_EMULATOR or ANALOG or DIGITAL or leave empty to use the one from device catalog-->
+            <Name>BATTERY_TYPE</Name>
+            <Value>DIGITAL</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Timeout value for the board shutdown after cable removal (int value) -->
+            <Name>COS_SHUTDOWN_TIMEOUT_VALUE</Name>
+            <Value>120</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Timeout value for the board boot at the end of the test (int value) -->
+            <Name>MOS_BOOT_TIMEOUT</Name>
+            <Value>60</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Tiemout value for the boot in COS mode (int value) -->
+            <Name>COS_BOOT_TIMEOUT</Name>
+            <Value>120</Value>
+        </Parameter>
+        <Parameter>
+            <!-- COS Voltage for the test (int value) -->
+            <Name>COS_BATTERY_VOLTAGE</Name>
+            <Value>3.6</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Target for the current, current range (float value) -->
+            <Name>CURRENT_RANGE_VALUE</Name>
+            <Value>0.002</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Wait the screen off (int value) -->
+            <Name>SCREEN_OFF_WAIT</Name>
+            <Value>300</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

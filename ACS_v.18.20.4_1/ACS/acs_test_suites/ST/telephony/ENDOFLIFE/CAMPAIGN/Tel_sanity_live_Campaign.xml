@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<Campaign>
+  <Parameters>
+    <Parameter isControlledPSUsed ="False"/>
+    <Parameter isIoCardUsed ="False"/>
+    <!-- Set skipBootOnPowerCycle to True to disable the accs boot procedure-->
+    <!-- Important, it means that boot will be handle inside the campaign/tc -->
+    <Parameter skipBootOnPowerCycle ="False"/>
+    <Parameter runHookScripts = "False"/>        
+    <Parameter powerCycleBetweenTC ="False"/>
+    <Parameter powerCycleOnFailure ="False"/>
+    <Parameter finalPowerOff ="False"/>
+    <Parameter stopCampaignOnCriticalFailure = "False"/>
+    <Parameter stopCampaignOnFirstFailure = "False"/>
+    <!-- LoggingLevel possible values: info | warning | debug | error -->
+    <Parameter loggingLevel = "info"/>
+    <!-- CampaignType format -> <TEAM>_<CAMPAIGNTYPE> 
+        Possible values:        
+        FT(Feature Team)-> SANITY | REGRESSION | STRESS, RELIABILTY | MTBF
+        ST(System Test)-> SANITY | REGRESSION | STRESS, RELIABILTY | MTBF
+        SI(System Integration)-> EAT | STAB | PACT | CAT0 | RELIABILITY | MTBF | CTS
+        Otherwise "Others" should be used -->
+    <Parameter CampaignType = "ST_SANITY"/>
+  </Parameters> 
+  <Targets>
+    <!-- Target Values -->  
+    <Target targetB2bPassRate ="80"/>
+  </Targets>
+  <TestCases>
+    <!-- Testcase campaigns -->
+    
+    <!-- SETUP -->
+    <TestCase Id="..\TC\SETUP\LAB_SYSTEM_SETUP_EMBEDDED"/>
+    
+    <!-- Test SCRIPTS -->
+    <TestCase Id="..\TC\CAMP\ST_COM_VC_NW_001-LIVE_CELLULAR_CAMP"/>
+    <TestCase Id="..\TC\UI_ICS\ST_COM_MSG_MMS_001-ANDROID_UI_TEST"/> 
+    <TestCase Id="..\TC\UI_ICS\ST_COM_MSG_MMS_006-ANDROID_UI_TEST"/> 
+    <TestCase Id="..\TC\UI_ICS\ST_COM_MSG_MMS_217-ANDROID_UI_TEST"/> 
+    <TestCase Id="..\TC\UI_ICS\ST_DATA_WCDMA_R7_PS_009-ANDROID_UI_TEST"/> 
+    <TestCase Id="..\TC\UI_ICS\ST_DATA_WCDMA_R99_PS_019-ANDROID_UI_TEST"/>
+
+  </TestCases>
+</Campaign>

@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="13.37">
+    <UseCase>LAB_RAT_SELECTION</UseCase>
+    <Description>RAT selection - 3G only, using two Network Simulators NS1 and NS2</Description>
+    <Requirements>
+        <Contour>
+            <Global_ID>16525962</Global_ID>
+            <Test_Case_ID>ST_TELEPHONY_RATSEL_003</Test_Case_ID>
+            <Name>RAT selection - 3G only</Name>
+        </Contour>
+    </Requirements>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>False</b2bContinuousMode>
+    <TcExpectedResult>PASS</TcExpectedResult>
+      <Parameters>
+        <Parameter>
+            <!-- NS1 cell power -->
+            <Name>NS1_CELL_POWER</Name>
+            <Value>-80</Value>
+        </Parameter>
+        <Parameter>
+                <!-- NS1 Cell Technology (2G|3G) -->
+                <Name>NS1_CELL_TECH</Name>
+                <Value>2G</Value>
+        </Parameter>
+        <Parameter>
+                <!-- NS1 Cell Band
+                    For 2G : EGSM|GSM850|PCS|DCS
+                    For 3G : 1,2,5,8
+                -->
+                <Name>NS1_CELL_BAND</Name>
+                <Value>EGSM</Value>
+        </Parameter>
+        <Parameter>
+                <!-- NS1 Cell Service ( (GSM|GPRS|EGPRS) for 2G CELL, (CIRCUIT|PACKET|CIRCUIT_PACKET) for 3G CELL) -->
+                <Name>NS1_CELL_SERVICE</Name>
+                <Value>EGPRS</Value>
+        </Parameter>
+        <Parameter>
+                <!-- NS1 ARFCN -->
+                <Name>NS1_ARFCN</Name>
+                <Value>20</Value>
+        </Parameter>
+        <Parameter>
+            <!-- the initial wanted RAT to set, the value is a string, it can be:
+                "2G_ONLY"
+                "3G_PREF"
+                "4G_PREF"
+                "3G_ONLY"
+                "2G_3G"
+                "CDMA_PREF"
+                "CDMA_ONLY"
+                "EVDO_ONLY"
+                "GLOBAL"
+                "4G_PREF_US"
+                "WORLD_MODE"
+                "4G_ONLY" -->
+            <Name>WANTED_NETWORK1</Name>
+            <Value>4G_PREF</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Network 1 registration time-out (in seconds) -->
+            <Name>NETWORK1_REG_TIMEOUT</Name>
+            <Value>30</Value>
+        </Parameter>
+        <Parameter>
+                <!-- NS2 Cell Technology (2G|3G) -->
+                <Name>NS2_CELL_TECH</Name>
+                <Value>3G</Value>
+        </Parameter>
+        <Parameter>
+                <!-- NS2 Cell Band
+                    For 2G : EGSM|GSM850|PCS|DCS
+                    For 3G : 1,2,5,8
+                -->
+                <Name>NS2_CELL_BAND</Name>
+                <Value>1</Value>
+        </Parameter>
+        <Parameter>
+                <!-- NS2 Cell Service ( (GSM|GPRS|EGPRS) for 2G CELL, (CIRCUIT|PACKET|CIRCUIT_PACKET) for 3G CELL) -->
+                <Name>NS2_CELL_SERVICE</Name>
+                <Value>PACKET</Value>
+        </Parameter>
+        <Parameter>
+                <!-- NS2 ARFCN -->
+                <Name>NS2_ARFCN</Name>
+                <Value>10700</Value>
+        </Parameter>
+        <Parameter>
+            <!-- NS2 cell power  -->
+            <Name>NS2_CELL_POWER</Name>
+            <Value>-80</Value>
+        </Parameter>
+        <Parameter>
+            <!-- the second wanted RAT to set, the value is a string, it can be:
+                "2G_ONLY"
+                "3G_PREF"
+                "4G_PREF"
+                "3G_ONLY"
+                "2G_3G"
+                "CDMA_PREF"
+                "CDMA_ONLY"
+                "EVDO_ONLY"
+                "GLOBAL"
+                "4G_PREF_US"
+                "WORLD_MODE"
+                "4G_ONLY" -->
+            <Name>WANTED_NETWORK2</Name>
+            <Value>3G_ONLY</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Network 2 registration time-out (in seconds) -->
+            <Name>NETWORK2_REG_TIMEOUT</Name>
+            <Value>30</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Activate the NS2 cell with a delay :
+                    <value> to activate NS2 Cell with a delay, in second
+                    None to activate NS2 Cell at the beginning of the test -->
+            <Name>NS2_DELAY_CELL_ACTIVATION</Name>
+            <Value>60</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Voice call type (MO [Mobile Originated]|MT [Mobile Terminated]) -->
+            <Name>VC_TYPE</Name>
+            <Value>MT</Value>
+        </Parameter>
+        <Parameter>
+            <!-- SMS type (MO [Mobile Originated]|MT [Mobile Terminated]) -->
+            <Name>SMS_TYPE</Name>
+             <Value>MT</Value>
+        </Parameter>
+        <Parameter>
+            <!-- SMS text to send -->
+            <Name>SMS_TEXT</Name>
+            <Value>This is my SMS text !</Value>
+        </Parameter>
+        <Parameter>
+            <!-- SMS Data coding scheme in hexadecimal -->
+            <Name>DATA_CODING_SCHEME</Name>
+            <Value>00</Value>
+        </Parameter>
+        <Parameter>
+            <!-- SMS transfert timeout in seconds -->
+            <Name>SMS_TRANSFER_TIMEOUT</Name>
+            <Value>10</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

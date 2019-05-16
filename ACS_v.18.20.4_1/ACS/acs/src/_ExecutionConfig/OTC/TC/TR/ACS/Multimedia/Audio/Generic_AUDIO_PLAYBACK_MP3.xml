@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase>
+    <UseCase>LIVE_WIFI_AUDIO_PLAYBACK</UseCase>
+    <Description>Test audio playback</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>False</b2bContinuousMode>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <TcMaxAttempt>1</TcMaxAttempt>
+    <TcAcceptanceCriteria>1</TcAcceptanceCriteria>
+    <Parameters>
+        <Parameter>
+            <!-- Path to audio file. Possible values:
+                - string containing an url, e.g : http://www.soundjay.com/ambient/kids-playing-1.mp3, http://www.freesfx.co.uk/rx2/mp3s/2/1604_1262210159.mp3
+                - string containing a local file. By defaut, acs considers that the file is stored in its multimedia path (e.g: /sdcard/acs_media)
+                But you can provide a file from another path. In this case provide the full path of your file (e.g: /my_path/my_audio_file).
+            -->
+            <Name>FILENAME</Name>
+            <Value>AUDIO/MP3/AQ_MP3_44100KHZ_192KBPS.mp3</Value>
+        </Parameter>
+        <Parameter>
+            <Name>USE_ARTIFACTORY</Name>
+            <Value>True</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Multimedia volume to set in percent. Possible values: integer between 0 and 100 -->
+            <Name>VOLUME</Name>
+            <Value>5</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Duration of the audio playback in second.
+            Possible values:
+                - If empty, whole file will be played,
+                - If lower or equal to 0, the audio file will not be played,
+                - If upper than 0 and lower than audio file length, it will play file during DURATION value,
+                - It upper than 0 and upper than audio file length, il will play whole file, with a warning. -->
+            <Name>DURATION</Name>
+            <Value>10</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

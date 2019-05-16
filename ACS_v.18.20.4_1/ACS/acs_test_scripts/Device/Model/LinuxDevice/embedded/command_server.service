@@ -1,0 +1,13 @@
+[Unit]
+Description=bluetooth control service for test automation
+After=network.target
+
+[Service]
+Type=simple
+#EnvironmentFile=/etc/conf.d/squeezelite
+ExecStart=/usr/bin/python /usr/local/bin/command_server.py
+RestartSec=5
+Restart=on-failure
+
+[Install]
+WantedBy=

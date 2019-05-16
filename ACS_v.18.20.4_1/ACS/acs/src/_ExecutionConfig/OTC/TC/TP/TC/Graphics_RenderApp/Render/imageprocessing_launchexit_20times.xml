@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<TestCase>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Discription>
+Run APK ImageProcessing and then press back key to exit and then lauch it again 20 times.
+</Discription>
+    <Domain>Graphics_RenderApp</Domain>
+    <Phase>CORE</Phase>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <Type>FUNCTIONAL</Type>
+    <UseCase>PY_UNIT</UseCase>
+    <b2bIteration>1</b2bIteration>
+    <Parameters>
+        <Parameter>
+            <Name>HpalmName</Name>
+            <Value>test_imagepprocessing_launchexit_20times.RunImageProcessing.imageprocessing_launchexit_20times</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TEST_DATA_ROOT</Name>
+            <Value>testplan/Graphics_RenderApp</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TEST_CASE</Name>
+            <Value>tests.Graphics_RenderApp.Render.test_imagepprocessing_launchexit_20times.RunImageProcessing.imageprocessing_launchexit_20times</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

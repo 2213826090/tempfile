@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase>
+    <UseCase>TEST_STEP_ENGINE</UseCase>
+    <Description>Simple power consumption measurement (in mA)</Description>
+    <b2bIteration>3</b2bIteration>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <TcMaxAttempt>3</TcMaxAttempt>
+    <SavePatRawData>False</SavePatRawData>
+    <PowerCalculation>False</PowerCalculation>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters>
+        <Parameter>
+            <Name>SAVE_POWER_DATA</Name>
+            <Value>True</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Sleep duration before making the measure in seconds -->
+            <Name>SLEEP_DURATION</Name>
+            <Value>60</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Sleep duration before making the measure in seconds -->
+            <Name>TEST_DURATION</Name>
+            <Value>1800</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Sleep duration before making the measure in seconds -->
+            <Name>URL</Name>
+            <Value>active_idle/fileChunk</Value>
+        </Parameter>
+        <Parameter>
+            <!--
+                 Configuration for Sysdebug modules.
+                 Syntax is :
+                 module_name[: [param1[=value1]][, param2[=value2]]*];
+              -->
+             <Name>SYSDEBUG_MODULES</Name>
+             <Value>
+                Residency: s3,s0i3,s0i1,lpmp3;
+                S3Failure;
+                WakeLocks;
+                ModemPanic;
+                Thermals;
+             </Value>
+         </Parameter>
+    </Parameters>
+    <TestSteps>
+        <Include Src="ST/pnp/TSS/common.xml"/>
+        <Include Src="ST/pnp/TSS/idle.xml"/>
+        <Include Src="ST/cws/TSS/WiFi/ST_CWS_WIFI_AP.xml"/>
+        <Include Src="ST/cws/TSS/WiFi/ST_CWS_WIFI_COMMON.xml"/>
+        <Initialize>
+            <TestStep Id="AP_WIFI_LOAD_CONFIG_FILE" EQT="CONFIGURABLE_AP1" KPI_TEST="ST_PWR"/>
+            <!-- <TestStep SetId="WiFiAPConfigStandardKPIPowerAP1" STANDARD="n2.4G" AUTHENTICATION_TYPE="WPA2-PSK-AES" PASSPHRASE="FROM_BENCH:CONFIGURABLE_AP1:passphrase_WPA2" CHANNEL="7" BANDWIDTH="20"/> -->
+            <TestStep Id="GET_ARTIFACT"
+                      ARTIFACT="MISCELLANEOUS/APPLICATIONS/ANDROID/SPMActiveIdle-Service.apk"
+                      ARTIFACT_SOURCE="FROM_BENCH:ARTIFACT_MANAGER:URI"
+                      TRANSFER_TIMEOUT="DEFAULT"
+                      STORED_FILE_PATH="FILE_PATH_IN_CACHE1" EQT="DEFAULT"/>
+
+            <TestStep Id="INSTALL_APP" DEVICE="PHONE1"
+                      FILE_PATH="FROM_CTX:FILE_PATH_IN_CACHE1"
+                      BACKUP="false" BACKUP_FILE_PATH="/tmp" TIMEOUT="10"
+                      SIGN_KEY_PATH="DEFAULT" SIGN="false"/>
+            <TestStep SetId="InitializePnPResources"/>
+        </Initialize>
+        <Setup>
+            <!--TestStep SetId="CONFIGURE_WIFI" /-->
+            <TestStep SetId="CONNECT_DUT_TO_TEST_AP"/>
+            <TestStep Id="PING" DEVICE="PHONE1" DESTINATION_IP="8.8.8.8" PACKET_SIZE="16" PACKET_COUNT="16" INTERVAL="1" FLOOD_MODE="false" BLOCKING="true" SOURCE_IP="none" SAVE_AS="PING_PACKET_LOST"/>
+            <TestStep Id="COMPARE" FIRST="FROM_CTX:PING_PACKET_LOST" SECOND="8" OPERATOR="LESS_OR_EQUAL" PASS_IF="true"/>
+            <TestStep Id="SET_SCREEN_PROPERTY" PROPERTY="timeout" DEVICE="PHONE1" VALUE="30"/>
+            <TestStep Id="SET_SCREEN_PROPERTY" DEVICE="PHONE1" PROPERTY="state" VALUE="off"/>
+
+            <TestStep Id="START_MULTIPLE_HTTP_TRANSFER"
+                      DEVICE="PHONE1"
+                      URL="http://[+]FROM_BENCH:LAB_INTERNET_SERVER:IP[+]/[+]FROM_TC:URL"
+                      SYNC_INTERVAL="120000"
+                      DURATION="6000"
+                      AGENT="SPMActiveIdle"/>
+            <TestStep Id="SUSPEND" DURATION_IN_SEC="FROM_TC:TEST_DURATION" REFRESH_STDOUT_IN_SEC="60"/>
+            <TestStep Id="CONFIGURE_SYSTEM_SLEEP_MODE" DEVICE="PHONE1" MODE="default"/>
+        </Setup>
+        <RunTest>
+            <TestStep SetId="StartPowerMeasurement"/>
+            <TestStep Id="SUSPEND" DURATION_IN_SEC="FROM_TC:TEST_DURATION" REFRESH_STDOUT_IN_SEC="60"/>
+            <TestStep SetId="StopPowerMeasurement"/>
+        </RunTest>
+        <TearDown>
+            <TestStep SetId="TearDown"/>
+            <TestStep Id="STOP_MULTIPLE_HTTP_TRANSFER" DEVICE="PHONE1" URL="http://[+]FROM_BENCH:LAB_INTERNET_SERVER:IP[+]/[+]FROM_TC:URL" AGENT="SPMActiveIdle"/>
+            <TestStep Id="CONFIGURE_SYSTEM_SLEEP_MODE" DEVICE="PHONE1" MODE="default"/>
+            <TestStep SetId="WiFiAPShutdown" EQT="CONFIGURABLE_AP1"/>
+        </TearDown>
+    </TestSteps>
+</TestCase>

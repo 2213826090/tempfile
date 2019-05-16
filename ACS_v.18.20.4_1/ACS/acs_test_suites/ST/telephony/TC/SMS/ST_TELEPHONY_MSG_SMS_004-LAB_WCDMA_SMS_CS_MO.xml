@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase>
+  <UseCase>LAB_WCDMA_SMS_CS_MO</UseCase>
+  <Description>WCDMA Mobile Originated SMS over CS on simulated network</Description>
+  <b2bIteration>1</b2bIteration>
+  <b2bContinuousMode>True</b2bContinuousMode>
+  <Parameters>
+    <Parameter>
+      <!-- Cell band -->
+      <Name>CELL_BAND</Name>
+      <Value>1</Value>
+    </Parameter>
+    <Parameter>
+      <!-- Cell power in dB -->
+      <Name>CELL_POWER</Name>
+      <Value>-75</Value>
+    </Parameter>
+    <Parameter>
+      <!-- Downlink UARFCN -->
+      <Name>DL_UARFCN</Name>
+      <Value>10700</Value>
+    </Parameter>
+    <Parameter>
+      <!--Cell Service (CIRCUIT | PACKET | CIRCUIT_PACKET | RBTEST) -->
+      <Name>CELL_SERVICE</Name>
+      <Value>CIRCUIT</Value>
+    </Parameter>
+    <Parameter>
+<!-- Destination number.  If the value [PHONE_NUMBER] is given, the phoneNumber defined in Phone_Catalog.xml will be used -->
+      <Name>DESTINATION_NUMBER</Name>
+      <Value>0689688522</Value>
+    </Parameter>
+    <Parameter>
+      <!-- SMS text to send -->
+      <Name>SMS_TEXT</Name>
+      <Value>starteazeeaazeazeazeazeazeazeazeazeazeazeazeazeazezaeazeazdfsdfsdfsdcsdcdscsdcsdcsdcsdcsdcsdcsdcsdccsdcscsdcscsdcsdcsdcsdcsdcccdssdcsdcsdccsdcsdccdcdcdcdddezeeaeaeazeazeaezezaeazeazeazeazeazeazeazezaeazeeaazeazeazeazeazeazeazeazeazeazeazeazeazezaeazeazezeeaeaeazeazeaezezaeazeazeazeazeazeazeazezaeazejjseazeeaazeazeazeazeazeazeazeazeazeazeazeazeazezaeazeazezeeaeaeazeazeaezezaeazeazeazeazeazeazeazezaeazeeaazeazeazeazeazeazeazeazeazeazeazeazeazezaeazeazezeeaeaeazeazeaezezaeazeazeazeazeazeazeazezaeazejjsend</Value>
+    </Parameter>
+    <Parameter>
+      <!-- SMS Data coding scheme in hexadecimal -->
+      <Name>DATA_CODING_SCHEME</Name>
+      <Value>00</Value>
+    </Parameter>
+    <Parameter>
+      <!-- SMS transfer timeout in seconds -->
+      <Name>SMS_TRANSFER_TIMEOUT</Name>
+      <Value>60</Value>
+    </Parameter>
+  </Parameters>
+</TestCase>

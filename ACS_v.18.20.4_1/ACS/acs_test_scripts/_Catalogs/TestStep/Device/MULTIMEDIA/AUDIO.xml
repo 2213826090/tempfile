@@ -1,0 +1,365 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestSteps xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../acs/src/_Catalogs/TestStep/teststep.xsd">
+    <TestStep Id="PLAY_AUDIO_LOOP" Domain="MULTIMEDIA" SubDomain="AUDIO" Feature="PLAYBACK" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Multimedia.Audio.PlayAudioLoop.PlayAudioLoop</ClassName>
+        <Description>Repeatedly play an audio file for the specified amount of time.  This uses a device-side
+            script to maintain the playback for an extended amount of time without intervention from the host.  This
+            is done to avoid adding traffic to the host-device connection (e.g. ADB for Android) throughout the test.
+            PREREQUISITES:
+            Android:
+            * AudioPlayback.apk must be installed (Artifactory: acs_test_artifacts/CONCURRENCY/TESTS/audio_playback).
+            * loopAudioPlayback.sh must be located in the directory specified by SCRIPTS_PATH (from acs_test_scripts/Lib/ShellScripts/Android/Multimedia/audio_playback, can use INSTALL_SCRIPTS_FROM_LIB).
+            * at least one music file in the /sdcard/Music directory.
+            Windows: Device-side script not yet created.
+        </Description>
+        <Environment name="ANY"/>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues/>
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="SCRIPTS_PATH" type="STRING" isOptional="false">
+                <Description>Path on the device where loopAudioPlayback test script is located.</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+            <Parameter name="DURATION" type="INTEGER" isOptional="false">
+               <Description>How long the test will run, in minutes.</Description>
+               <PossibleValues/>
+               <DefaultValue>5</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="PLAY_AUDIO_ALSA_LOOP" Domain="MULTIMEDIA" SubDomain="AUDIO" Feature="PLAYBACK" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Multimedia.Audio.PlayAudioAlsaLoop.PlayAudioAlsaLoop</ClassName>
+        <Description>(Android only)Repeatedly play an audio file for the specified amount of time, using the low-level ALSA audio player.
+            ALSA is unique to Linux/Android, so this does not apply to other OSes.
+            PREREQUISITES:
+            The following files must be installed in the /system/bin directory on the DUT:
+                /system/bin/alsa_amixer
+                /system/bin/alsa_aplay
+            The contents of audio_playback_alsa_scripts.tgz must be unpacked in the directory specified by SCRIPTS_PATH.
+                This tarball can be found in Artifactory at acs_test_artifacts/CONCURRENCY/TESTS/audio_playback_alsa/audio_playback_alsa_scripts.tgz
+            This audio file must be installed on the DUT:
+                /sdcard/Music/s_48k_16.wav.
+                It can be found in Artifactory at acs_test_artifacts/CONCURRENCY/AUDIO/s_48k_16.wav.</Description>
+        <Environment name="ANY"/>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues/>
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="DURATION" type="INTEGER" isOptional="false">
+               <Description>How long the test will run, in minutes.</Description>
+               <PossibleValues/>
+               <DefaultValue>5</DefaultValue>
+            </Parameter>
+            <Parameter name="SCRIPTS_PATH" type="STRING" isOptional="false">
+                <Description>Path on the device where test script from the unpacked tarball along with any other contents has been unpacked.</Description>
+                <PossibleValues/>
+                <DefaultValue>/data/Multimedia/AudioLoopAlsa/</DefaultValue>
+            </Parameter>
+            <Parameter name="USE_HEADPHONES" type="BOOLEAN" isOptional="false">
+                <Description>Set to True if the audio should be played through wired headphones,
+                    False to play through on-board speakers.</Description>
+                <PossibleValues/>
+                <DefaultValue>False</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="MONITOR_AUDIO_STREAM" Domain="MULTIMEDIA" SubDomain="AUDIO" Feature="RECORD" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Multimedia.Audio.MonitorAudioStream.MonitorAudioStream</ClassName>
+        <Description>Monitors audio stream on host PC for silence for the test duration.  Continously takes samples of line in audio on host PC to monitor for silence.
+                     This can be accomplished with a cable attached from headphone out of the audio source connected to the line in on host PC.
+        </Description>
+        <Environment name="ANY"/>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues/>
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="DURATION" type="INTEGER" isOptional="false">
+               <Description>How long the test will run, in minutes.</Description>
+               <PossibleValues/>
+               <DefaultValue>5</DefaultValue>
+            </Parameter>
+            <Parameter name="LISTEN_LENGTH" type="INTEGER" isOptional="false">
+                <Description>Length of time in minutes of the samples to listen to for silence. Making this parameter smaller can help with out of memory issues that may occur during testing.
+                             Generally, less than 30 minutes is advisable.  Especially for longer test runs.
+                </Description>
+                <PossibleValues/>
+                <DefaultValue>10</DefaultValue>
+            </Parameter>
+            <Parameter name="SILENCE_THRESHOLD_LENGTH" type="INTEGER" isOptional="false">
+                <Description>Length of time acceptable as silence in seconds before silence is considered enough to fail test.</Description>
+                <PossibleValues/>
+                <DefaultValue>10</DefaultValue>
+            </Parameter>
+            <Parameter name="SILENCE_THRESHOLD_RAW" type="INTEGER" isOptional="false">
+                <Description>The integer raw value that audio must be below to be considered silence.  Reading data chunks (1024 bytes at a time) of the stream sample (an array of shorts),
+                             if max(data_chunk) is less than this parameter, it considers it as silence.
+                 </Description>
+                <PossibleValues>[0:32767]</PossibleValues>
+                <DefaultValue>300</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="RECORD_AUDIO_LOOP" Domain="MULTIMEDIA" SubDomain="AUDIO" Feature="RECORD" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Multimedia.Audio.RecordAudioLoop.RecordAudioLoop</ClassName>
+        <Description>Repeatedly record audio clips for the specified amount of time.  This uses a device-side
+            script to maintain the recording for an extended amount of time without intervention from the host.  This
+            is done to avoid adding traffic to the host-device connection (e.g. ADB for Android) throughout the test.
+            PREREQUISITES:
+            Android: Installed application: CVAudioRecording.apk
+                Script located in directory specified by SCRIPTS_PATH: audio_record_loop.sh
+                The app and script can be found in Artifactory at acs_test_artifacts/CONCURRENCY/TESTS/audio_record.
+            Windows: Device-side script not yet created.
+        </Description>
+        <Environment name="ANY"/>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues/>
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="DURATION" type="INTEGER" isOptional="false">
+               <Description>How long the test will run, in minutes.</Description>
+               <PossibleValues/>
+               <DefaultValue>5</DefaultValue>
+            </Parameter>
+            <Parameter name="SCRIPTS_PATH" type="STRING" isOptional="false">
+                <Description>Directory on the device where audio_record_loop.sh is located.</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="MP3_DECODING_OFFLOAD" Domain="MULTIMEDIA" SubDomain="AUDIO" Feature="PLAYBACK" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Multimedia.Audio.MP3DecodingOffload.MP3DecodingOffload</ClassName>
+        <Description>For IA decode only, enable/disable MP3 decoding offload.</Description>
+        <Environment name="ANY"/>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues/>
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="MODE" type="STRING" isOptional="false">
+                <Description>MP3 decoding offload mode to set.</Description>
+                <PossibleValues>enable;disable</PossibleValues>
+                <DefaultValue/>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="PLAY_AUDIO_FILE_WITH_GOOGLE_MUSIC" Domain="MULTIMEDIA" SubDomain="AUDIO" Feature="PLAYBACK" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Multimedia.Audio.PlayAudioFileWithGooglePlayMusic.PlayAudioFileWithGooglePlayMusic</ClassName>
+        <Description>Play audio file with Google Play Music</Description>
+        <Environment name="ANY"/>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues/>
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="FILE_PATH" type="STRING" isOptional="false">
+                <Description>The name of the file to play</Description>
+                <PossibleValues/>
+                <DefaultValue></DefaultValue>
+            </Parameter>
+            <Parameter name="FILE_TYPE" type="STRING" isOptional="false">
+                <Description>The name of the file to play</Description>
+                <PossibleValues>MP3;M4A;WMA;FLAC;OGG;M4P</PossibleValues>
+                <DefaultValue>MP3</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="SET_GOOGLE_MUSIC_DEFAULT_AUDIO_PLAYER" Domain="MULTIMEDIA" SubDomain="AUDIO" Feature="PLAYBACK" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Multimedia.Audio.SetGoogleMusicDefaultAudioPlayer.SetGoogleMusicDefaultAudioPlayer</ClassName>
+        <Description>Make Google Music the default audio player for the specified type</Description>
+        <Environment name="ANY"/>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues/>
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="FILE_TYPE" type="STRING" isOptional="false">
+                <Description>The name of the file to play</Description>
+                <PossibleValues>MP3;M4A;WMA;FLAC;OGG;M4P</PossibleValues>
+                <DefaultValue>MP3</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="PLAY_AUDIO_FILE" Domain="MULTIMEDIA" SubDomain="AUDIO" Feature="PLAYBACK" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Multimedia.Audio.PlayAudioFile.PlayAudioFile</ClassName>
+        <Description>Play audio file with native player</Description>
+        <Environment name="ANY"/>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues/>
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="AUDIO_FILE" type="STRING" isOptional="false">
+                <Description>The name of the file to play</Description>
+                <PossibleValues/>
+                <DefaultValue></DefaultValue>
+            </Parameter>
+            <Parameter name="AUDIO_VOLUME" type="STRING" isOptional="false">
+                <Description>The name of the file to play</Description>
+                <PossibleValues/>
+                <DefaultValue></DefaultValue>
+            </Parameter>
+            <Parameter name="MUSIC_PLAYER" type="STRING" isOptional="false">
+                <Description>The name of the file to play</Description>
+                <PossibleValues>native</PossibleValues>
+                <DefaultValue></DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="CLOSE_AUDIO_PLAYER" Domain="MULTIMEDIA" SubDomain="AUDIO" Feature="PLAYBACK" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Multimedia.Audio.CloseAudioPlayer.CloseAudioPlayer</ClassName>
+        <Description>Play audio file with native player</Description>
+        <Environment name="ANY"/>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues/>
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="MUSIC_PLAYER" type="STRING" isOptional="false">
+                <Description>The name of the file to play</Description>
+                <PossibleValues>native</PossibleValues>
+                <DefaultValue></DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="RESET_MUSIC_PLAYBACK_STATE" Domain="MULTIMEDIA" SubDomain="AUDIO" Feature="AUDIO" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Multimedia.Audio.ResetMusicPlaybackState.ResetMusicPlaybackState</ClassName>
+        <Description>Reset Google Play Music app to a defined state for a specific audio file</Description>
+        <Environment name="ANY"/>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues/>
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="FNAME_ARTIFACT" type="STRING" isOptional="false">
+                <Description>Path to local copy of reference audio-file</Description>
+                <PossibleValues/>
+                <DefaultValue>./</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="RECORDAUDIO_HOST" Domain="MULTIMEDIA" SubDomain="AUDIO" Feature="AUDIO" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Multimedia.Audio.RecordAudio_Host.RecordAudio_Host</ClassName>
+        <Description>Start playback on DUT, and then start recording on host</Description>
+        <Environment name="ANY"/>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues/>
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+          <Parameter name="FNAME_ARTIFACT" type="STRING" isOptional="false">
+                <Description>Path to local copy of reference audio-file</Description>
+                <PossibleValues/>
+                <DefaultValue>./</DefaultValue>
+            </Parameter>
+            <Parameter name="FNAME_REC" type="STRING" isOptional="false">
+                <Description>Name of the audio-file to record to on the host</Description>
+                <PossibleValues/>
+                <DefaultValue></DefaultValue>
+            </Parameter>
+            <Parameter name="DURATION" type="INTEGER" isOptional="false">
+                <Description>Duration of recording time</Description>
+                <PossibleValues/>
+                <DefaultValue></DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="ANALYZEAUDIOFILE" Domain="MULTIMEDIA" SubDomain="AUDIO" Feature="AUDIO" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Multimedia.Audio.AnalyzeAudioFile.AnalyzeAudioFile</ClassName>
+        <Description>Perform analysis of an audio-file</Description>
+        <Environment name="ANY"/>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues/>
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="FNAME_REF" type="STRING" isOptional="false">
+                <Description>Path to reference audio-file</Description>
+                <PossibleValues/>
+                <DefaultValue></DefaultValue>
+            </Parameter>
+            <Parameter name="FNAME_REC" type="STRING" isOptional="false">
+                <Description>Name of the recorded audio-file to analyze</Description>
+                <PossibleValues/>
+                <DefaultValue></DefaultValue>
+            </Parameter>
+            <Parameter name="MIC_DISTANCE" type="STRING" isOptional="false">
+                <Description>Distance between the DUT-speaker and the reference microphone [mm]</Description>
+                <PossibleValues/>
+                <DefaultValue>50</DefaultValue>
+            </Parameter>
+            <Parameter name="ANDROID_GAIN" type="STRING" isOptional="false">
+                <Description>Master gain to be set in Android [-]</Description>
+                <PossibleValues/>
+                <DefaultValue>5</DefaultValue>
+            </Parameter>
+            <Parameter name="CHECK_GAIN_TOLERANCE" type="STRING" isOptional="false">
+                <Description>Power deviation tolerance in time domain [%]</Description>
+                <PossibleValues/>
+                <DefaultValue>10</DefaultValue>
+            </Parameter>
+            <Parameter name="CHECK_FREQ_FREQUENCY_TOLERANCE" type="STRING" isOptional="false">
+                <Description>Frequency deviation tolerance in frequency domain [%]</Description>
+                <PossibleValues/>
+                <DefaultValue>10</DefaultValue>
+            </Parameter>
+            <Parameter name="CHECK_FREQ_POWER_TOLERANCE" type="STRING" isOptional="false">
+                <Description>Power deviation tolerance in frequency domain [%]</Description>
+                <PossibleValues/>
+                <DefaultValue>10</DefaultValue>
+            </Parameter>
+            <Parameter name="CHECK_DIST_TOLERANCE" type="STRING" isOptional="false">
+                <Description>Distortion tolerance in frequency domain difference [%]</Description>
+                <PossibleValues/>
+                <DefaultValue>1</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="SET_ANDROID_VOLUME" Domain="MULTIMEDIA" SubDomain="AUDIO" Feature="AUDIO" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Multimedia.Audio.SetAndroidVolume.SetAndroidVolume</ClassName>
+        <Description>Sets the global volume in Android</Description>
+        <Environment name="ANY"/>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues/>
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="VOLUME" type="STRING" isOptional="false">
+                <Description>Volume to set</Description>
+                <PossibleValues/>
+                <DefaultValue>./</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="FORCESTOP_MUSIC_PLAYER" Domain="MULTIMEDIA" SubDomain="AUDIO" Feature="AUDIO" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Multimedia.Audio.ForceStopMusicPlayer.ForceStopMusicPlayer</ClassName>
+        <Description>Execute the force-stop command on the Android Music-player</Description>
+        <Environment name="ANY"/>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues/>
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+</TestSteps>

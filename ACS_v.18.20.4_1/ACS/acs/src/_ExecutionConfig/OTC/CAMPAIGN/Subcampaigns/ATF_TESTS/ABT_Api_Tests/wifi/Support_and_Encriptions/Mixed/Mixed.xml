@@ -1,0 +1,30 @@
+<?xml version="1.0" ?>
+<Campaign>
+      <Parameters>
+            <Parameter isControlledPSUsed="False"/>
+            <Parameter isIoCardUsed="False"/>
+            <Parameter skipBootOnPowerCycle="False"/>
+            <Parameter bootRetryNumber="0"/>
+            <Parameter runHookScripts="False"/>
+            <Parameter powerCycleBetweenTC="False"/>
+            <Parameter powerCycleOnFailure="False"/>
+            <Parameter finalDutState="NoChange"/>
+            <Parameter stopCampaignOnCriticalFailure="False"/>
+            <Parameter stopCampaignOnFirstFailure="False"/>
+            <Parameter loggingLevel="debug"/>
+            <Parameter CampaignType="Other"/>
+      </Parameters>
+      <TestCases>
+            <TestCase Id="../../../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/wifi/Support_and_Encriptions/Mixed/Comms_WIFI_ComponentRelated_Encryptions_WPA2_Mixed-PersonalMixed-TKIP"/>
+            <TestCase Id="../../../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/wifi/Support_and_Encriptions/Mixed/Comms_WIFI_ComponentRelated_Encryptions_WEP_Mixed-Long-Password"/>
+            <TestCase Id="../../../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/wifi/Support_and_Encriptions/Mixed/Comms_WIFI_ComponentRelated_Encryptions_WPA2_Mixed-Personal-TKIP"/>
+            <TestCase Id="../../../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/wifi/Support_and_Encriptions/Mixed/Comms_WIFI_ComponentRelated_Encryptions_WPA2_Mixed-Personal-AES-TKIP"/>
+            <TestCase Id="../../../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/wifi/Support_and_Encriptions/Mixed/Comms_WIFI_ComponentRelated_Encryptions_WPA_Mixed-AES"/>
+            <TestCase Id="../../../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/wifi/Support_and_Encriptions/Mixed/Comms_WIFI_IEE80211abgn_FeatureRelated_Connect-AP-mixed-OPEN"/>
+            <TestCase Id="../../../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/wifi/Support_and_Encriptions/Mixed/Comms_WIFI_ComponentRelated_Encryptions_WPA2_Mixed-Personal-AES"/>
+            <TestCase Id="../../../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/wifi/Support_and_Encriptions/Mixed/Comms_WIFI_ComponentRelated_Encryptions_WPA_Mixed-AES-TKIP"/>
+            <TestCase Id="../../../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/wifi/Support_and_Encriptions/Mixed/Comms_WIFI_ComponentRelated_Encryptions_WEP_Mixed-Short-Passwords"/>
+            <TestCase Id="../../../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/wifi/Support_and_Encriptions/Mixed/Comms_WIFI_ComponentRelated_Encryptions_WPA_Mixed-TKIP"/>
+            <TestCase Id="../../../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/wifi/Support_and_Encriptions/Mixed/Comms_WIFI_ComponentRelated_Encryptions_WPA2_Mixed-PersonalMixed-TKIP-AES"/>
+      </TestCases>
+</Campaign>

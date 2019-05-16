@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="13.37">
+    <UseCase>LIVE_SMS_LOOPBACK_FTP</UseCase>
+    <Description>Live SMS loopback test</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters>
+        <Parameter>
+            <!-- SMS destination phone number. If the value [PHONE_NUMBER] is given, the phoneNumber defined in Phone_Catalog.xml will be used -->
+            <Name>DESTINATION_NUMBER</Name>
+            <Value>[PHONE_NUMBER]</Value>
+        </Parameter>
+        <Parameter>
+            <!-- SMS text message -->
+            <Name>MESSAGE_CONTENT</Name>
+            <Value>This is my SMS text !</Value>
+        </Parameter>
+        <Parameter>
+            <!-- SMS transfer timeout in seconds -->
+            <Name>SMS_TRANSFER_TIMEOUT</Name>
+            <Value>30</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Filepath used for FTP data transfer -->
+            <Name>DL_FILENAME</Name>
+            <Value></Value>
+        </Parameter>
+        <Parameter>
+            <!-- Filename used for FTP data transfer -->
+            <Name>BASENAME</Name>
+            <Value></Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

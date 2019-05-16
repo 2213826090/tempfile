@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="13.45">
+    <UseCase>LAB_EM_BATT_NEWBATTECHNO</UseCase>
+    <Description>check that the battery board used the new battery technology with Li-Ion/polymer : 4.35V</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>False</b2bContinuousMode>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters>
+        <Parameter>
+            <!-- Minimal capacity to start the test, if you are below it, a charge setup will be done -->
+            <Name>BATT_MIN_CAPACITY</Name>
+            <Value>99</Value>
+        </Parameter>
+        <Parameter>
+            <!-- the highest value for battery voltage when reaching FULL, if we are above it this will cause a FAIL -->
+            <Name>HIGH_VOLTAGE_RANGE</Name>
+            <Value>4.36</Value>
+        </Parameter>
+        <Parameter>
+            <!-- the lowest value for battery voltage when reaching FULL, if we are below it, this will cause a FAIL -->
+            <Name>LOW_VOLTAGE_RANGE</Name>
+            <Value>4.25</Value>
+        </Parameter>
+        <Parameter>
+            <!-- max time in second allowed to charge the board to FULL once the minimal capacity for this test is reached -->
+            <Name>TIME_TO_CHARGE_TO_FULL</Name>
+            <Value>1800</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

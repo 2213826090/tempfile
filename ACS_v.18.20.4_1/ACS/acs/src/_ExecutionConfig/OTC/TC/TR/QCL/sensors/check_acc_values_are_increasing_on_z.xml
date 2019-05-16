@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='ASCII'?>
+<TestCase>
+    <UseCase>EXEC_SCRIPT</UseCase>
+    <Description>Test for checking that accelerometer value Z on axis are increasing when the device is moved to the
+        right
+    </Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <TcMaxAttempt>1</TcMaxAttempt>
+    <TcAcceptanceCriteria>1</TcAcceptanceCriteria>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <TestSteps>
+        <Initialize/>
+        <Setup/>
+        <RunTest/>
+        <TearDown/>
+        <Finalize/>
+    </TestSteps>
+    <Tags>
+        <Tag>accelerometer</Tag>
+        <Tag>semi_auto</Tag>
+    </Tags>
+    <Priority>
+        <Value>7</Value>
+    </Priority>
+    <Parameters>
+        <Parameter>
+            <Name>SCRIPT_PATH</Name>
+            <Value>scripts/check_acc_values_are_increasing.py</Value>
+        </Parameter>
+        <Parameter>
+            <Name>COMP_CONF</Name>
+            <Value>{comp_conf}</Value>
+        </Parameter>
+        <Parameter>
+            <Name>PARAMETERS</Name>
+            <Value>z</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

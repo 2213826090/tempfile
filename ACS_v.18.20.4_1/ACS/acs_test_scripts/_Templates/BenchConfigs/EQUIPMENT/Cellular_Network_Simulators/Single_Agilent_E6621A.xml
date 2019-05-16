@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<Equipment version="13.44" name="NETWORK_SIMULATOR1" description="Network simulator used for non mobility test cases">
+    <!-- Model possible values: AGILENT_8960 | RS_CMU200 | AGILENT_E6621A | RS_CMW500 -->
+    <Parameter name="Model" value="AGILENT_E6621A" />
+    <Parameter name="Transport" value="GPIB" />
+    <Parameter name="GPIBBoardId" value="1" />
+    <Parameter name="GPIBAddress" value="10" />
+    <Parameter name="AmplitudeOffsetTable" value="Amplitude_Offset_Table" />
+    <Parameter name="IP_Lan1" value="10.102.160.60" />
+    <Parameter name="IP_Lan2" value="10.102.160.61" />
+    <Parameter name="DUT_IP_Address" value="10.102.160.62" />
+    <Parameter name="DNS1" value="0.0.0.0" />
+    <Parameter name="DNS2" value="0.0.0.0" />
+    <Parameter name="Subnet_Mask" value="255.255.252.0" />
+    <Parameter name="Default_Gateway" value="10.102.160.128" />
+</Equipment>

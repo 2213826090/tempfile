@@ -1,0 +1,76 @@
+<?xml version="1.0" ?>
+<Campaign>
+    <Parameters>
+        <Parameter isControlledPSUsed="False"/>
+        <Parameter isIoCardUsed="False"/>
+        <Parameter skipBootOnPowerCycle="False"/>
+        <Parameter bootRetryNumber="0"/>
+        <Parameter runHookScripts="False"/>
+        <Parameter powerCycleBetweenTC="False"/>
+        <Parameter powerCycleOnFailure="False"/>
+        <Parameter finalDutState="NoChange"/>
+        <Parameter stopCampaignOnCriticalFailure="False"/>
+        <Parameter stopCampaignOnFirstFailure="False"/>
+        <Parameter loggingLevel="debug"/>
+        <Parameter CampaignType="Other"/>
+    </Parameters>
+    <TestCases>
+        <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/prereq_disable_captive_portal_detection"/>
+        <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/exhaustive/Comms_WIFI_IEE80211abgn_FeatureRelated_Connect_2dot4Ghz_b_channel-20Mhz-hideSSID"/>
+        <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/exhaustive/Comms_WIFI_IEE80211abgn_FeatureRequired_Connect_2dot4Ghz_b_channel-20Mhz-showSSID"/>
+        <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/exhaustive/Comms_WIFI_IEE80211abgn_FeatureRelated_Connect_2dot4Ghz_bg_channel-20Mhz-hideSSID"/>
+        <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/exhaustive/Comms_WIFI_IEE80211abgn_FeatureRequired_Connect_2dot4Ghz_bg_channel-20Mhz-showSSID"/>
+        <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/exhaustive/Comms_WIFI_IEE80211abgn_FeatureRelated_Connect_2dot4Ghz_bgn_channel-20Mhz-hideSSID"/>
+        <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/exhaustive/Comms_WIFI_IEE80211abgn_FeatureRequired_Connect_2dot4Ghz_bgn_channel-20Mhz-showSSID"/>
+        <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/exhaustive/Comms_WIFI_IEE80211abgn_FeatureRelated_Connect_2dot4Ghz_bgn_channel-40Mhz-hideSSID"/>
+        <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/exhaustive/Comms_WIFI_IEE80211abgn_FeatureRequired_Connect_2dot4Ghz_bgn_channel-40Mhz-showSSID"/>
+        <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/exhaustive/Comms_WIFI_IEE80211abgn_FeatureRelated_Connect_2dot4Ghz_bgn_channel-20MHz-40Mhz-hideSSID"/>
+        <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/exhaustive/Comms_WIFI_IEE80211abgn_FeatureRelated_Connect_2dot4Ghz_bgn_channel-20MHz-40Mhz-showSSID"/>
+        <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/exhaustive/Comms_WIFI_IEE80211abgn_FeatureRelated_Connect_2dot4Ghz_g_channel-20Mhz-hideSSID"/>
+        <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/exhaustive/Comms_WIFI_IEE80211abgn_FeatureRequired_Connect_2dot4Ghz_g_channel-20Mhz-showSSID"/>
+        <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/exhaustive/Comms_WIFI_IEE80211abgn_FeatureRelated_Connect_2dot4Ghz_n_channel-20Mhz-hideSSID"/>
+        <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/exhaustive/Comms_WIFI_IEE80211abgn_FeatureRequired_Connect_2dot4Ghz_n_channel-20Mhz-showSSID"/>
+        <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/exhaustive/Comms_WIFI_IEE80211abgn_FeatureRelated_Connect_2dot4Ghz_n_channel-40Mhz-hideSSID"/>
+        <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/exhaustive/Comms_WIFI_IEE80211abgn_FeatureRequired_Connect_2dot4Ghz_n_channel-40Mhz-showSSID"/>
+        <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/exhaustive/Comms_WIFI_IEE80211abgn_FeatureRelated_Connect_2dot4Ghz_n_channel-20MHz-40Mhz-hideSSID"/>
+        <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/exhaustive/Comms_WIFI_IEE80211abgn_FeatureRelated_Connect_2dot4Ghz_n_channel-20MHz-40Mhz-showSSID"/>
+        <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/exhaustive/Comms_WIFI_IEE80211abgn_FeatureRelated_Connect_2dot4Ghz_ng_channel-20Mhz-hideSSID"/>
+        <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/exhaustive/Comms_WIFI_IEE80211abgn_FeatureRequired_Connect_2dot4Ghz_ng_channel-20Mhz-showSSID"/>
+        <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/exhaustive/Comms_WIFI_IEE80211abgn_FeatureRelated_Connect_2dot4Ghz_ng_channel-40Mhz-hideSSID"/>
+        <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/exhaustive/Comms_WIFI_IEE80211abgn_FeatureRequired_Connect_2dot4Ghz_ng_channel-40Mhz-showSSID"/>
+        <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/exhaustive/Comms_WIFI_IEE80211abgn_FeatureRelated_Connect_2dot4Ghz_ng_channel-20MHz-40Mhz-hideSSID"/>
+        <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/exhaustive/Comms_WIFI_IEE80211abgn_FeatureRelated_Connect_2dot4Ghz_ng_channel-20MHz-40Mhz-showSSID"/>
+        <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/exhaustive/Comms_WIFI_IEE80211abgn_FeatureRelated_Connect_2dot4Ghz_n_channel-auto-20Mhz-showSSID"/>
+        <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/exhaustive/Comms_WIFI_IEE80211abgn_FeatureRelated_Connect_2dot4Ghz_n_channel-1-20Mhz-showSSID"/>
+        <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/exhaustive/Comms_WIFI_IEE80211abgn_FeatureRelated_Connect_2dot4Ghz_n_channel-2-20Mhz-showSSID"/>
+        <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/exhaustive/Comms_WIFI_IEE80211abgn_FeatureRelated_Connect_2dot4Ghz_n_channel-3-20Mhz-showSSID"/>
+        <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/exhaustive/Comms_WIFI_IEE80211abgn_FeatureRelated_Connect_2dot4Ghz_n_channel-4-20Mhz-showSSID"/>
+        <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/exhaustive/Comms_WIFI_IEE80211abgn_FeatureRelated_Connect_2dot4Ghz_n_channel-5-20Mhz-showSSID"/>
+        <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/exhaustive/Comms_WIFI_IEE80211abgn_FeatureRelated_Connect_2dot4Ghz_n_channel-6-20Mhz-showSSID"/>
+        <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/exhaustive/Comms_WIFI_IEE80211abgn_FeatureRelated_Connect_2dot4Ghz_n_channel-7-20Mhz-showSSID"/>
+        <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/exhaustive/Comms_WIFI_IEE80211abgn_FeatureRelated_Connect_2dot4Ghz_n_channel-8-20Mhz-showSSID"/>
+        <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/exhaustive/Comms_WIFI_IEE80211abgn_FeatureRelated_Connect_2dot4Ghz_n_channel-9-20Mhz-showSSID"/>
+        <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/exhaustive/Comms_WIFI_IEE80211abgn_FeatureRelated_Connect_2dot4Ghz_n_channel-10-20Mhz-showSSID"/>
+        <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/exhaustive/Comms_WIFI_IEE80211abgn_FeatureRelated_Connect_2dot4Ghz_n_channel-11-20Mhz-showSSID"/>
+        <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/exhaustive/Comms_WIFI_Security_FeatureRelated_Connect_bgn-mixed_OPEN"/>
+        <!--TestCase Id="../../../../TC/TR/TESTLIB/WiFi/exhaustive/Comms_WIFI_Security_FeatureRelated_Connect_bgn-mixed_WEP-128bit-open"/-->
+        <!--TestCase Id="../../../../TC/TR/TESTLIB/WiFi/exhaustive/Comms_WIFI_Security_FeatureRelated_Connect_bgn-mixed_WEP-128bit-shared"/-->
+        <!--TestCase Id="../../../../TC/TR/TESTLIB/WiFi/exhaustive/Comms_WIFI_Security_FeatureRelated_Connect_bgn-mixed_WEP-64bit-open"/-->
+        <!--TestCase Id="../../../../TC/TR/TESTLIB/WiFi/exhaustive/Comms_WIFI_Security_FeatureRelated_Connect_bgn-mixed_WEP-64bit-shared"/-->
+        <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/exhaustive/Comms_WIFI_Security_FeatureRelated_Connect_bgn-mixed_WPA2-aes"/>
+        <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/exhaustive/Comms_WIFI_Security_FeatureRelated_Connect_bgn-mixed_WPA2-tkip-aes"/>
+        <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/exhaustive/Comms_WIFI_Security_FeatureRelated_Connect_bgn-mixed_WPA2-tkip"/>
+        <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/exhaustive/Comms_WIFI_Security_FeatureRelated_Connect_bgn-mixed_WPA-aes"/>
+        <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/exhaustive/Comms_WIFI_Security_FeatureRelated_Connect_bgn-mixed_WPAmixed-aes"/>
+        <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/exhaustive/Comms_WIFI_Security_FeatureRelated_Connect_bgn-mixed_WPAmixed-tkip-aes"/>
+        <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/exhaustive/Comms_WIFI_Security_FeatureRelated_Connect_bgn-mixed_WPAmixed-tkip"/>
+        <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/exhaustive/Comms_WIFI_Security_FeatureRelated_Connect_bgn-mixed_WPA-tkip-aes"/>
+        <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/exhaustive/Comms_WIFI_Security_FeatureRelated_Connect_bgn-mixed_WPA-tkip"/>
+        <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/prereq_enable_captive_portal_detection"/>
+        <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/prereq_disable_captive_portal_detection"/>
+        <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/roaming/ST_CWS_WLAN_ROAMING_ENTERPRISE_002"/>
+        <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/roaming/ST_CWS_WLAN_ROAMING_ENTERPRISE_006"/>
+        <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/roaming/ST_CWS_WLAN_ROAMING_ENTERPRISE_007"/>
+        <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/prereq_enable_captive_portal_detection"/>
+    </TestCases>
+</Campaign>

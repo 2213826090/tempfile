@@ -1,0 +1,2048 @@
+<?xml version='1.0'?>
+<ogl_es_1.1_conf_auto>
+    <test_case name='ogles1.1_conf_test_default_state' id='1'>
+        <test_item name=''>
+            <test_step type='fun' fun_name='test_sequence_handler'>
+                <parameter name='adb_cmd'>adb shell chmod -R 777 /data/app</parameter>
+            </test_step>
+            <test_step type='fun' fun_name='ogles_conformance_test_run'>
+                <parameter name='test_file_name'>mustpass.c</parameter>
+                <parameter name='test_bin_name'>conform;/data/app</parameter>
+                <parameter name='path_0'></parameter>
+                <parameter name='path_1'></parameter>
+                <parameter name='path_2'></parameter>
+                <parameter name='path_3'></parameter>
+                <parameter name='test_bin_name'>conform;/data/app</parameter>
+                <parameter name='path_0'></parameter>
+                <parameter name='path_1'></parameter>
+                <parameter name='path_2'></parameter>
+                <parameter name='path_3'></parameter>
+                <parameter name='result_check_string'>Default State test</parameter>
+            </test_step>
+        </test_item>
+    </test_case>
+    <test_case name='ogles1.1_conf_test_MustPass' id='2'>
+        <test_item name=''>
+            <test_step type='fun' fun_name='test_sequence_handler'>
+                <parameter name='adb_cmd'>adb shell chmod -R 777 /data/app</parameter>
+            </test_step>
+            <test_step type='fun' fun_name='ogles_conformance_test_run'>
+                <parameter name='test_file_name'>mustpass.c</parameter>
+                <parameter name='test_bin_name'>conform;/data/app</parameter>
+                <parameter name='path_0'></parameter>
+                <parameter name='path_1'></parameter>
+                <parameter name='path_2'></parameter>
+                <parameter name='path_3'></parameter>
+                <parameter name='test_bin_name'>conform;/data/app</parameter>
+                <parameter name='path_0'></parameter>
+                <parameter name='path_1'></parameter>
+                <parameter name='path_2'></parameter>
+                <parameter name='path_3'></parameter>
+                <parameter name='result_check_string'>Must Pass test</parameter>
+            </test_step>
+        </test_item>
+    </test_case>
+
+    <test_case name='ogles1.1_conf_test_DivideByZero' id='3'>
+        <test_item name=''>
+            <test_step type='fun' fun_name='test_sequence_handler'>
+                <parameter name='adb_cmd'>adb shell chmod -R 777 /data/app</parameter>
+            </test_step>
+            <test_step type='fun' fun_name='ogles_conformance_test_run'>
+                <parameter name='test_file_name'>divzero.c</parameter>
+                <parameter name='test_bin_name'>conform;/data/app</parameter>
+                <parameter name='path_0'></parameter>
+                <parameter name='path_1'></parameter>
+                <parameter name='path_2'></parameter>
+                <parameter name='path_3'></parameter>
+                <parameter name='test_bin_name'>conform;/data/app</parameter>
+                <parameter name='path_0'></parameter>
+                <parameter name='path_1'></parameter>
+                <parameter name='path_2'></parameter>
+                <parameter name='path_3'></parameter>
+                <parameter name='result_check_string'>Divide By Zero test</parameter>
+            </test_step>
+        </test_item>
+    </test_case>
+
+    <test_case name='ogles1.1_conf_test_ViewportClamp' id='4'>
+        <test_item name=''>
+            <test_step type='fun' fun_name='test_sequence_handler'>
+                <parameter name='adb_cmd'>adb shell chmod -R 777 /data/app</parameter>
+            </test_step>
+            <test_step type='fun' fun_name='ogles_conformance_test_run'>
+                <parameter name='test_file_name'>vpclamp.c</parameter>
+                <parameter name='test_bin_name'>conform;/data/app</parameter>
+                <parameter name='path_0'></parameter>
+                <parameter name='path_1'></parameter>
+                <parameter name='path_2'></parameter>
+                <parameter name='path_3'></parameter>
+                <parameter name='test_bin_name'>conform;/data/app</parameter>
+                <parameter name='path_0'></parameter>
+                <parameter name='path_1'></parameter>
+                <parameter name='path_2'></parameter>
+                <parameter name='path_3'></parameter>
+                <parameter name='result_check_string'>Viewport Clamp test</parameter>
+            </test_step>
+        </test_item>
+    </test_case>
+
+    <test_case name='ogles1.1_conf_test_MatrixQuery' id='5'>
+        <test_item name=''>
+            <test_step type='fun' fun_name='test_sequence_handler'>
+                <parameter name='adb_cmd'>adb shell chmod -R 777 /data/app</parameter>
+            </test_step>
+            <test_step type='fun' fun_name='ogles_conformance_test_run'>
+                <parameter name='test_file_name'>mquery.c</parameter>
+                <parameter name='test_bin_name'>conform;/data/app</parameter>
+                <parameter name='path_0'></parameter>
+                <parameter name='path_1'></parameter>
+                <parameter name='path_2'></parameter>
+                <parameter name='path_3'></parameter>
+                <parameter name='test_bin_name'>conform;/data/app</parameter>
+                <parameter name='path_0'></parameter>
+                <parameter name='path_1'></parameter>
+                <parameter name='path_2'></parameter>
+                <parameter name='path_3'></parameter>
+                <parameter name='result_check_string'>Matrix Query test</parameter>
+            </test_step>
+        </test_item>
+    </test_case>
+
+    <test_case name='ogles1.1_conf_test_MatrixStackMixing' id='6'>
+        <test_item name=''>
+            <test_step type='fun' fun_name='test_sequence_handler'>
+                <parameter name='adb_cmd'>adb shell chmod -R 777 /data/app</parameter>
+            </test_step>
+            <test_step type='fun' fun_name='ogles_conformance_test_run'>
+                <parameter name='test_file_name'>xformmix.c</parameter>
+                <parameter name='test_bin_name'>conform;/data/app</parameter>
+                <parameter name='path_0'></parameter>
+                <parameter name='path_1'></parameter>
+                <parameter name='path_2'></parameter>
+                <parameter name='path_3'></parameter>
+                <parameter name='test_bin_name'>conform;/data/app</parameter>
+                <parameter name='path_0'></parameter>
+                <parameter name='path_1'></parameter>
+                <parameter name='path_2'></parameter>
+                <parameter name='path_3'></parameter>
+                <parameter name='result_check_string'>Matrix Stack Mixing test</parameter>
+            </test_step>
+        </test_item>
+    </test_case>
+
+    <test_case name='ogles1.1_conf_test_VertexOrder' id='7'>
+        <test_item name=''>
+            <test_step type='fun' fun_name='test_sequence_handler'>
+                <parameter name='adb_cmd'>adb shell chmod -R 777 /data/app</parameter>
+            </test_step>
+            <test_step type='fun' fun_name='ogles_conformance_test_run'>
+                <parameter name='test_file_name'>vorder.c</parameter>
+                <parameter name='test_bin_name'>conform;/data/app</parameter>
+                <parameter name='path_0'></parameter>
+                <parameter name='path_1'></parameter>
+                <parameter name='path_2'></parameter>
+                <parameter name='path_3'></parameter>
+                <parameter name='test_bin_name'>conform;/data/app</parameter>
+                <parameter name='path_0'></parameter>
+                <parameter name='path_1'></parameter>
+                <parameter name='path_2'></parameter>
+                <parameter name='path_3'></parameter>
+                <parameter name='result_check_string'>Vertex Order test</parameter>
+            </test_step>
+        </test_item>
+    </test_case>
+
+    <test_case name='ogles1.1_conf_test_Transformations' id='8'>
+        <test_item name=''>
+            <test_step type='fun' fun_name='test_sequence_handler'>
+                <parameter name='adb_cmd'>adb shell chmod -R 777 /data/app</parameter>
+            </test_step>
+            <test_step type='fun' fun_name='ogles_conformance_test_run'>
+                <parameter name='test_file_name'>xform.c</parameter>
+                <parameter name='test_bin_name'>conform;/data/app</parameter>
+                <parameter name='path_0'></parameter>
+                <parameter name='path_1'></parameter>
+                <parameter name='path_2'></parameter>
+                <parameter name='path_3'></parameter>
+                <parameter name='test_bin_name'>conform;/data/app</parameter>
+                <parameter name='path_0'></parameter>
+                <parameter name='path_1'></parameter>
+                <parameter name='path_2'></parameter>
+                <parameter name='path_3'></parameter>
+                <parameter name='result_check_string'>Transformations test</parameter>
+            </test_step>
+        </test_item>
+    </test_case>
+
+    <test_case name='ogles1.1_conf_test_ViewportTransformation' id='9'>
+        <test_item name=''>
+            <test_step type='fun' fun_name='test_sequence_handler'>
+                <parameter name='adb_cmd'>adb shell chmod -R 777 /data/app</parameter>
+            </test_step>
+            <test_step type='fun' fun_name='ogles_conformance_test_run'>
+                <parameter name='test_file_name'>xformvp.c</parameter>
+                <parameter name='test_bin_name'>conform;/data/app</parameter>
+                <parameter name='path_0'></parameter>
+                <parameter name='path_1'></parameter>
+                <parameter name='path_2'></parameter>
+                <parameter name='path_3'></parameter>
+                <parameter name='test_bin_name'>conform;/data/app</parameter>
+                <parameter name='path_0'></parameter>
+                <parameter name='path_1'></parameter>
+                <parameter name='path_2'></parameter>
+                <parameter name='path_3'></parameter>
+                <parameter name='result_check_string'>Viewport Transformation test</parameter>
+            </test_step>
+        </test_item>
+    </test_case>
+
+    <test_case name='ogles1.1_conf_test_TransformHomogenousCoordinates' id='10'>
+        <test_item name=''>
+            <test_step type='fun' fun_name='test_sequence_handler'>
+                <parameter name='adb_cmd'>adb shell chmod -R 777 /data/app</parameter>
+            </test_step>
+            <test_step type='fun' fun_name='ogles_conformance_test_run'>
+                <parameter name='test_file_name'>xformw.c</parameter>
+                <parameter name='test_bin_name'>conform;/data/app</parameter>
+                <parameter name='path_0'></parameter>
+                <parameter name='path_1'></parameter>
+                <parameter name='path_2'></parameter>
+                <parameter name='path_3'></parameter>
+                <parameter name='test_bin_name'>conform;/data/app</parameter>
+                <parameter name='path_0'></parameter>
+                <parameter name='path_1'></parameter>
+                <parameter name='path_2'></parameter>
+                <parameter name='path_3'></parameter>
+                <parameter name='result_check_string'>Transform Homogenous Coordinates test</parameter>
+            </test_step>
+        </test_item>
+    </test_case>
+
+    <test_case name='ogles1.1_conf_test_BufferClear' id='11'>
+        <test_item name=''>
+            <test_step type='fun' fun_name='test_sequence_handler'>
+                <parameter name='adb_cmd'>adb shell chmod -R 777 /data/app</parameter>
+            </test_step>
+            <test_step type='fun' fun_name='ogles_conformance_test_run'>
+                <parameter name='test_file_name'>bclear.c</parameter>
+                <parameter name='test_bin_name'>conform;/data/app</parameter>
+                <parameter name='path_0'></parameter>
+                <parameter name='path_1'></parameter>
+                <parameter name='path_2'></parameter>
+                <parameter name='path_3'></parameter>
+                <parameter name='test_bin_name'>conform;/data/app</parameter>
+                <parameter name='path_0'></parameter>
+                <parameter name='path_1'></parameter>
+                <parameter name='path_2'></parameter>
+                <parameter name='path_3'></parameter>
+                <parameter name='result_check_string'>Buffer Clear test</parameter>
+            </test_step>
+        </test_item>
+    </test_case>
+
+    <test_case name='ogles1.1_conf_test_BufferCorners' id='12'>
+        <test_item name=''>
+            <test_step type='fun' fun_name='test_sequence_handler'>
+                <parameter name='adb_cmd'>adb shell chmod -R 777 /data/app</parameter>
+            </test_step>
+            <test_step type='fun' fun_name='ogles_conformance_test_run'>
+                <parameter name='test_file_name'>bcorner.c</parameter>
+                <parameter name='test_bin_name'>conform;/data/app</parameter>
+                <parameter name='path_0'></parameter>
+                <parameter name='path_1'></parameter>
+                <parameter name='path_2'></parameter>
+                <parameter name='path_3'></parameter>
+                <parameter name='test_bin_name'>conform;/data/app</parameter>
+                <parameter name='path_0'></parameter>
+                <parameter name='path_1'></parameter>
+                <parameter name='path_2'></parameter>
+                <parameter name='path_3'></parameter>
+                <parameter name='result_check_string'>Buffer Corners test</parameter>
+            </test_step>
+        </test_item>
+    </test_case>
+
+    <test_case name='ogles1.1_conf_test_BufferColor' id='13'>
+        <test_item name=''>
+            <test_step type='fun' fun_name='test_sequence_handler'>
+                <parameter name='adb_cmd'>adb shell chmod -R 777 /data/app</parameter>
+            </test_step>
+            <test_step type='fun' fun_name='ogles_conformance_test_run'>
+                <parameter name='test_file_name'>bcolor.c</parameter>
+                <parameter name='test_bin_name'>conform;/data/app</parameter>
+                <parameter name='path_0'></parameter>
+                <parameter name='path_1'></parameter>
+                <parameter name='path_2'></parameter>
+                <parameter name='path_3'></parameter>
+                <parameter name='test_bin_name'>conform;/data/app</parameter>
+                <parameter name='path_0'></parameter>
+                <parameter name='path_1'></parameter>
+                <parameter name='path_2'></parameter>
+                <parameter name='path_3'></parameter>
+                <parameter name='result_check_string'>Buffer Color test</parameter>
+            </test_step>
+        </test_item>
+    </test_case>
+
+    <test_case name='ogles1.1_conf_test_Clip' id='14'>
+        <test_item name=''>
+            <test_step type='fun' fun_name='test_sequence_handler'>
+                <parameter name='adb_cmd'>adb shell chmod -R 777 /data/app</parameter>
+            </test_step>
+            <test_step type='fun' fun_name='ogles_conformance_test_run'>
+                <parameter name='test_file_name'>clip.c</parameter>
+                <parameter name='test_bin_name'>conform;/data/app</parameter>
+                <parameter name='path_0'></parameter>
+                <parameter name='path_1'></parameter>
+                <parameter name='path_2'></parameter>
+                <parameter name='path_3'></parameter>
+                <parameter name='test_bin_name'>conform;/data/app</parameter>
+                <parameter name='path_0'></parameter>
+                <parameter name='path_1'></parameter>
+                <parameter name='path_2'></parameter>
+                <parameter name='path_3'></parameter>
+                <parameter name='result_check_string'>Clip test</parameter>
+            </test_step>
+        </test_item>
+    </test_case>
+
+    <test_case name='ogles1.1_conf_test_ColorRamp' id='15'>
+        <test_item name=''>
+            <test_step type='fun' fun_name='test_sequence_handler'>
+                <parameter name='adb_cmd'>adb shell chmod -R 777 /data/app</parameter>
+            </test_step>
+            <test_step type='fun' fun_name='ogles_conformance_test_run'>
+                <parameter name='test_file_name'>colramp.c</parameter>
+                <parameter name='test_bin_name'>conform;/data/app</parameter>
+                <parameter name='path_0'></parameter>
+                <parameter name='path_1'></parameter>
+                <parameter name='path_2'></parameter>
+                <parameter name='path_3'></parameter>
+                <parameter name='test_bin_name'>conform;/data/app</parameter>
+                <parameter name='path_0'></parameter>
+                <parameter name='path_1'></parameter>
+                <parameter name='path_2'></parameter>
+                <parameter name='path_3'></parameter>
+                <parameter name='result_check_string'>Color Ramp test</parameter>
+            </test_step>
+        </test_item>
+    </test_case>
+
+    <test_case name='ogles1.1_conf_test_Mask' id='16'>
+        <test_item name=''>
+            <test_step type='fun' fun_name='test_sequence_handler'>
+                <parameter name='adb_cmd'>adb shell chmod -R 777 /data/app</parameter>
+            </test_step>
+            <test_step type='fun' fun_name='ogles_conformance_test_run'>
+                <parameter name='test_file_name'>mask.c</parameter>
+                <parameter name='test_bin_name'>conform;/data/app</parameter>
+                <parameter name='path_0'></parameter>
+                <parameter name='path_1'></parameter>
+                <parameter name='path_2'></parameter>
+                <parameter name='path_3'></parameter>
+                <parameter name='test_bin_name'>conform;/data/app</parameter>
+                <parameter name='path_0'></parameter>
+                <parameter name='path_1'></parameter>
+                <parameter name='path_2'></parameter>
+                <parameter name='path_3'></parameter>
+                <parameter name='result_check_string'>Mask test</parameter>
+            </test_step>
+        </test_item>
+    </test_case>
+
+    <test_case name='ogles1.1_conf_test_Scissor' id='17'>
+        <test_item name=''>
+            <test_step type='fun' fun_name='test_sequence_handler'>
+                <parameter name='adb_cmd'>adb shell chmod -R 777 /data/app</parameter>
+            </test_step>
+            <test_step type='fun' fun_name='ogles_conformance_test_run'>
+                <parameter name='test_file_name'>scissor.c</parameter>
+                <parameter name='test_bin_name'>conform;/data/app</parameter>
+                <parameter name='path_0'></parameter>
+                <parameter name='path_1'></parameter>
+                <parameter name='path_2'></parameter>
+                <parameter name='path_3'></parameter>
+                <parameter name='test_bin_name'>conform;/data/app</parameter>
+                <parameter name='path_0'></parameter>
+                <parameter name='path_1'></parameter>
+                <parameter name='path_2'></parameter>
+                <parameter name='path_3'></parameter>
+                <parameter name='result_check_string'>Scissor test</parameter>
+            </test_step>
+        </test_item>
+    </test_case>
+
+    <test_case name='ogles1.1_conf_test_AlphaPlaneFunction' id='18'>
+        <test_item name=''>
+            <test_step type='fun' fun_name='test_sequence_handler'>
+                <parameter name='adb_cmd'>adb shell chmod -R 777 /data/app</parameter>
+            </test_step>
+            <test_step type='fun' fun_name='ogles_conformance_test_run'>
+                <parameter name='test_file_name'>apfunc.c</parameter>
+                <parameter name='test_bin_name'>conform;/data/app</parameter>
+                <parameter name='path_0'></parameter>
+                <parameter name='path_1'></parameter>
+                <parameter name='path_2'></parameter>
+                <parameter name='path_3'></parameter>
+                <parameter name='test_bin_name'>conform;/data/app</parameter>
+                <parameter name='path_0'></parameter>
+                <parameter name='path_1'></parameter>
+                <parameter name='path_2'></parameter>
+                <parameter name='path_3'></parameter>
+                <parameter name='result_check_string'>Alpha Plane Function test</parameter>
+            </test_step>
+        </test_item>
+    </test_case>
+
+    <test_case name='ogles1.1_conf_test_StencilPlaneClear' id='19'>
+        <test_item name=''>
+            <test_step type='fun' fun_name='test_sequence_handler'>
+                <parameter name='adb_cmd'>adb shell chmod -R 777 /data/app</parameter>
+            </test_step>
+            <test_step type='fun' fun_name='ogles_conformance_test_run'>
+                <parameter name='test_file_name'>spclear.c</parameter>
+                <parameter name='test_bin_name'>conform;/data/app</parameter>
+                <parameter name='path_0'></parameter>
+                <parameter name='path_1'></parameter>
+                <parameter name='path_2'></parameter>
+                <parameter name='path_3'></parameter>
+                <parameter name='test_bin_name'>conform;/data/app</parameter>
+                <parameter name='path_0'></parameter>
+                <parameter name='path_1'></parameter>
+                <parameter name='path_2'></parameter>
+                <parameter name='path_3'></parameter>
+                <parameter name='result_check_string'>Stencil Plane Clear test</parameter>
+            </test_step>
+        </test_item>
+    </test_case>
+
+    <test_case name='ogles1.1_conf_test_StencilPlaneCorners' id='20'>
+        <test_item name=''>
+            <test_step type='fun' fun_name='test_sequence_handler'>
+                <parameter name='adb_cmd'>adb shell chmod -R 777 /data/app</parameter>
+            </test_step>
+            <test_step type='fun' fun_name='ogles_conformance_test_run'>
+                <parameter name='test_file_name'>spcorner.c</parameter>
+                <parameter name='test_bin_name'>conform;/data/app</parameter>
+                <parameter name='path_0'></parameter>
+                <parameter name='path_1'></parameter>
+                <parameter name='path_2'></parameter>
+                <parameter name='path_3'></parameter>
+                <parameter name='test_bin_name'>conform;/data/app</parameter>
+                <parameter name='path_0'></parameter>
+                <parameter name='path_1'></parameter>
+                <parameter name='path_2'></parameter>
+                <parameter name='path_3'></parameter>
+                <parameter name='result_check_string'>Stencil Plane Corners test</parameter>
+            </test_step>
+        </test_item>
+    </test_case>
+
+    <test_case name='ogles1.1_conf_test_StencilPlaneOperation' id='21'>
+        <test_item name=''>
+            <test_step type='fun' fun_name='test_sequence_handler'>
+                <parameter name='adb_cmd'>adb shell chmod -R 777 /data/app</parameter>
+            </test_step>
+            <test_step type='fun' fun_name='ogles_conformance_test_run'>
+                <parameter name='test_file_name'>spop.c</parameter>
+                <parameter name='test_bin_name'>conform;/data/app</parameter>
+                <parameter name='path_0'></parameter>
+                <parameter name='path_1'></parameter>
+                <parameter name='path_2'></parameter>
+                <parameter name='path_3'></parameter>
+                <parameter name='test_bin_name'>conform;/data/app</parameter>
+                <parameter name='path_0'></parameter>
+                <parameter name='path_1'></parameter>
+                <parameter name='path_2'></parameter>
+                <parameter name='path_3'></parameter>
+                <parameter name='result_check_string'>Stencil Plane Operation test</parameter>
+            </test_step>
+        </test_item>
+    </test_case>
+
+    <test_case name='ogles1.1_conf_test_StencilPlaneFunction' id='22'>
+        <test_item name=''>
+            <test_step type='fun' fun_name='test_sequence_handler'>
+                <parameter name='adb_cmd'>adb shell chmod -R 777 /data/app</parameter>
+            </test_step>
+            <test_step type='fun' fun_name='ogles_conformance_test_run'>
+                <parameter name='test_file_name'>spfunc.c</parameter>
+                <parameter name='test_bin_name'>conform;/data/app</parameter>
+                <parameter name='path_0'></parameter>
+                <parameter name='path_1'></parameter>
+                <parameter name='path_2'></parameter>
+                <parameter name='path_3'></parameter>
+                <parameter name='test_bin_name'>conform;/data/app</parameter>
+                <parameter name='path_0'></parameter>
+                <parameter name='path_1'></parameter>
+                <parameter name='path_2'></parameter>
+                <parameter name='path_3'></parameter>
+                <parameter name='result_check_string'>Stencil Plane Function test</parameter>
+            </test_step>
+        </test_item>
+    </test_case>
+
+    <test_case name='ogles1.1_conf_test_DepthBufferClear' id='23'>
+        <test_item name=''>
+            <test_step type='fun' fun_name='test_sequence_handler'>
+                <parameter name='adb_cmd'>adb shell chmod -R 777 /data/app</parameter>
+            </test_step>
+            <test_step type='fun' fun_name='ogles_conformance_test_run'>
+                <parameter name='test_file_name'>zbclear.c</parameter>
+                <parameter name='test_bin_name'>conform;/data/app</parameter>
+                <parameter name='path_0'></parameter>
+                <parameter name='path_1'></parameter>
+                <parameter name='path_2'></parameter>
+                <parameter name='path_3'></parameter>
+                <parameter name='test_bin_name'>conform;/data/app</parameter>
+                <parameter name='path_0'></parameter>
+                <parameter name='path_1'></parameter>
+                <parameter name='path_2'></parameter>
+                <parameter name='path_3'></parameter>
+                <parameter name='result_check_string'>Depth Buffer Clear test</parameter>
+            </test_step>
+        </test_item>
+    </test_case>
+
+    <test_case name='ogles1.1_conf_test_DepthBufferFunction' id='24'>
+        <test_item name=''>
+            <test_step type='fun' fun_name='test_sequence_handler'>
+                <parameter name='adb_cmd'>adb shell chmod -R 777 /data/app</parameter>
+            </test_step>
+            <test_step type='fun' fun_name='ogles_conformance_test_run'>
+                <parameter name='test_file_name'>zbfunc.c</parameter>
+                <parameter name='test_bin_name'>conform;/data/app</parameter>
+                <parameter name='path_0'></parameter>
+                <parameter name='path_1'></parameter>
+                <parameter name='path_2'></parameter>
+                <parameter name='path_3'></parameter>
+                <parameter name='test_bin_name'>conform;/data/app</parameter>
+                <parameter name='path_0'></parameter>
+                <parameter name='path_1'></parameter>
+                <parameter name='path_2'></parameter>
+                <parameter name='path_3'></parameter>
+                <parameter name='result_check_string'>Depth Buffer Function test</parameter>
+            </test_step>
+        </test_item>
+    </test_case>
+
+    <test_case name='ogles1.1_conf_test_Dither' id='25'>
+        <test_item name=''>
+            <test_step type='fun' fun_name='test_sequence_handler'>
+                <parameter name='adb_cmd'>adb shell chmod -R 777 /data/app</parameter>
+            </test_step>
+            <test_step type='fun' fun_name='ogles_conformance_test_run'>
+                <parameter name='test_file_name'>dither.c</parameter>
+                <parameter name='test_bin_name'>conform;/data/app</parameter>
+                <parameter name='path_0'></parameter>
+                <parameter name='path_1'></parameter>
+                <parameter name='path_2'></parameter>
+                <parameter name='path_3'></parameter>
+                <parameter name='test_bin_name'>conform;/data/app</parameter>
+                <parameter name='path_0'></parameter>
+                <parameter name='path_1'></parameter>
+                <parameter name='path_2'></parameter>
+                <parameter name='path_3'></parameter>
+                <parameter name='result_check_string'>Dither test</parameter>
+            </test_step>
+        </test_item>
+    </test_case>
+
+    <test_case name='ogles1.1_conf_test_LogicOpFunction' id='26'>
+        <test_item name=''>
+            <test_step type='fun' fun_name='test_sequence_handler'>
+                <parameter name='adb_cmd'>adb shell chmod -R 777 /data/app</parameter>
+            </test_step>
+            <test_step type='fun' fun_name='ogles_conformance_test_run'>
+                <parameter name='test_file_name'>logicop.c</parameter>
+                <parameter name='test_bin_name'>conform;/data/app</parameter>
+                <parameter name='path_0'></parameter>
+                <parameter name='path_1'></parameter>
+                <parameter name='path_2'></parameter>
+                <parameter name='path_3'></parameter>
+                <parameter name='test_bin_name'>conform;/data/app</parameter>
+                <parameter name='path_0'></parameter>
+                <parameter name='path_1'></parameter>
+                <parameter name='path_2'></parameter>
+                <parameter name='path_3'></parameter>
+                <parameter name='result_check_string'>LogicOp Function test</parameter>
+            </test_step>
+        </test_item>
+    </test_case>
+
+    <test_case name='ogles1.1_conf_test_Anti-aliasedPoint' id='27'>
+        <test_item name=''>
+            <test_step type='fun' fun_name='test_sequence_handler'>
+                <parameter name='adb_cmd'>adb shell chmod -R 777 /data/app</parameter>
+            </test_step>
+            <test_step type='fun' fun_name='ogles_conformance_test_run'>
+                <parameter name='test_file_name'>pntaa.c</parameter>
+                <parameter name='test_bin_name'>conform;/data/app</parameter>
+                <parameter name='path_0'></parameter>
+                <parameter name='path_1'></parameter>
+                <parameter name='path_2'></parameter>
+                <parameter name='path_3'></parameter>
+                <parameter name='test_bin_name'>conform;/data/app</parameter>
+                <parameter name='path_0'></parameter>
+                <parameter name='path_1'></parameter>
+                <parameter name='path_2'></parameter>
+                <parameter name='path_3'></parameter>
+                <parameter name='result_check_string'>Anti-aliased Point test</parameter>
+            </test_step>
+        </test_item>
+    </test_case>
+
+    <test_case name='ogles1.1_conf_test_PointRasterization' id='28'>
+        <test_item name=''>
+            <test_step type='fun' fun_name='test_sequence_handler'>
+                <parameter name='adb_cmd'>adb shell chmod -R 777 /data/app</parameter>
+            </test_step>
+            <test_step type='fun' fun_name='ogles_conformance_test_run'>
+                <parameter name='test_file_name'>pntrast.c</parameter>
+                <parameter name='test_bin_name'>conform;/data/app</parameter>
+                <parameter name='path_0'></parameter>
+                <parameter name='path_1'></parameter>
+                <parameter name='path_2'></parameter>
+                <parameter name='path_3'></parameter>
+                <parameter name='test_bin_name'>conform;/data/app</parameter>
+                <parameter name='path_0'></parameter>
+                <parameter name='path_1'></parameter>
+                <parameter name='path_2'></parameter>
+                <parameter name='path_3'></parameter>
+                <parameter name='result_check_string'>Point Rasterization test</parameter>
+            </test_step>
+        </test_item>
+    </test_case>
+
+    <test_case name='ogles1.1_conf_test_HorizontalandVerticalLine' id='29'>
+        <test_item name=''>
+            <test_step type='fun' fun_name='test_sequence_handler'>
+                <parameter name='adb_cmd'>adb shell chmod -R 777 /data/app</parameter>
+            </test_step>
+            <test_step type='fun' fun_name='ogles_conformance_test_run'>
+                <parameter name='test_file_name'>linehv.c</parameter>
+                <parameter name='test_bin_name'>conform;/data/app</parameter>
+                <parameter name='path_0'></parameter>
+                <parameter name='path_1'></parameter>
+                <parameter name='path_2'></parameter>
+                <parameter name='path_3'></parameter>
+                <parameter name='test_bin_name'>conform;/data/app</parameter>
+                <parameter name='path_0'></parameter>
+                <parameter name='path_1'></parameter>
+                <parameter name='path_2'></parameter>
+                <parameter name='path_3'></parameter>
+                <parameter name='result_check_string'>Horizontal and Vertical Line test</parameter>
+            </test_step>
+        </test_item>
+    </test_case>
+
+    <test_case name='ogles1.1_conf_test_LineRasterization' id='30'>
+        <test_item name=''>
+            <test_step type='fun' fun_name='test_sequence_handler'>
+                <parameter name='adb_cmd'>adb shell chmod -R 777 /data/app</parameter>
+            </test_step>
+            <test_step type='fun' fun_name='ogles_conformance_test_run'>
+                <parameter name='test_file_name'>linerast.c</parameter>
+                <parameter name='test_bin_name'>conform;/data/app</parameter>
+                <parameter name='path_0'></parameter>
+                <parameter name='path_1'></parameter>
+                <parameter name='path_2'></parameter>
+                <parameter name='path_3'></parameter>
+                <parameter name='test_bin_name'>conform;/data/app</parameter>
+                <parameter name='path_0'></parameter>
+                <parameter name='path_1'></parameter>
+                <parameter name='path_2'></parameter>
+                <parameter name='path_3'></parameter>
+                <parameter name='result_check_string'>Line Rasterization test</parameter>
+            </test_step>
+        </test_item>
+    </test_case>
+
+    <test_case name='ogles1.1_conf_test_TriangleRasterizationtest' id='31'>
+        <test_item name=''>
+            <test_step type='fun' fun_name='test_sequence_handler'>
+                <parameter name='adb_cmd'>adb shell chmod -R 777 /data/app</parameter>
+            </test_step>
+            <test_step type='fun' fun_name='ogles_conformance_test_run'>
+                <parameter name='test_file_name'>trirast.c</parameter>
+                <parameter name='test_bin_name'>conform;/data/app</parameter>
+                <parameter name='path_0'></parameter>
+                <parameter name='path_1'></parameter>
+                <parameter name='path_2'></parameter>
+                <parameter name='path_3'></parameter>
+                <parameter name='test_bin_name'>conform;/data/app</parameter>
+                <parameter name='path_0'></parameter>
+                <parameter name='path_1'></parameter>
+                <parameter name='path_2'></parameter>
+                <parameter name='path_3'></parameter>
+                <parameter name='result_check_string'>Triangle Rasterization test</parameter>
+            </test_step>
+        </test_item>
+    </test_case>
+
+    <test_case name='ogles1.1_conf_test_TriangleTile' id='32'>
+        <test_item name=''>
+            <test_step type='fun' fun_name='test_sequence_handler'>
+                <parameter name='adb_cmd'>adb shell chmod -R 777 /data/app</parameter>
+            </test_step>
+            <test_step type='fun' fun_name='ogles_conformance_test_run'>
+                <parameter name='test_file_name'>tritile.c</parameter>
+                <parameter name='test_bin_name'>conform;/data/app</parameter>
+                <parameter name='path_0'></parameter>
+                <parameter name='path_1'></parameter>
+                <parameter name='path_2'></parameter>
+                <parameter name='path_3'></parameter>
+                <parameter name='test_bin_name'>conform;/data/app</parameter>
+                <parameter name='path_0'></parameter>
+                <parameter name='path_1'></parameter>
+                <parameter name='path_2'></parameter>
+                <parameter name='path_3'></parameter>
+                <parameter name='result_check_string'>Triangle Tile test</parameter>
+            </test_step>
+        </test_item>
+    </test_case>
+
+    <test_case name='ogles1.1_conf_test_PolygonCull' id='33'>
+        <test_item name=''>
+            <test_step type='fun' fun_name='test_sequence_handler'>
+                <parameter name='adb_cmd'>adb shell chmod -R 777 /data/app</parameter>
+            </test_step>
+            <test_step type='fun' fun_name='ogles_conformance_test_run'>
+                <parameter name='test_file_name'>polycull.c</parameter>
+                <parameter name='test_bin_name'>conform;/data/app</parameter>
+                <parameter name='path_0'></parameter>
+                <parameter name='path_1'></parameter>
+                <parameter name='path_2'></parameter>
+                <parameter name='path_3'></parameter>
+                <parameter name='test_bin_name'>conform;/data/app</parameter>
+                <parameter name='path_0'></parameter>
+                <parameter name='path_1'></parameter>
+                <parameter name='path_2'></parameter>
+                <parameter name='path_3'></parameter>
+                <parameter name='result_check_string'>Polygon Cull test</parameter>
+            </test_step>
+        </test_item>
+    </test_case>
+
+    <test_case name='ogles1.1_conf_test_AmbientLight' id='34'>
+        <test_item name=''>
+            <test_step type='fun' fun_name='test_sequence_handler'>
+                <parameter name='adb_cmd'>adb shell chmod -R 777 /data/app</parameter>
+            </test_step>
+            <test_step type='fun' fun_name='ogles_conformance_test_run'>
+                <parameter name='test_file_name'>l_al.c</parameter>
+                <parameter name='test_bin_name'>conform;/data/app</parameter>
+                <parameter name='path_0'></parameter>
+                <parameter name='path_1'></parameter>
+                <parameter name='path_2'></parameter>
+                <parameter name='path_3'></parameter>
+                <parameter name='test_bin_name'>conform;/data/app</parameter>
+                <parameter name='path_0'></parameter>
+                <parameter name='path_1'></parameter>
+                <parameter name='path_2'></parameter>
+                <parameter name='path_3'></parameter>
+                <parameter name='result_check_string'>Ambient Light test</parameter>
+            </test_step>
+        </test_item>
+    </test_case>
+
+    <test_case name='ogles1.1_conf_test_AmbientMaterial' id='35'>
+        <test_item name=''>
+            <test_step type='fun' fun_name='test_sequence_handler'>
+                <parameter name='adb_cmd'>adb shell chmod -R 777 /data/app</parameter>
+            </test_step>
+            <test_step type='fun' fun_name='ogles_conformance_test_run'>
+                <parameter name='test_file_name'>l_am.c</parameter>
+                <parameter name='test_bin_name'>conform;/data/app</parameter>
+                <parameter name='path_0'></parameter>
+                <parameter name='path_1'></parameter>
+                <parameter name='path_2'></parameter>
+                <parameter name='path_3'></parameter>
+                <parameter name='test_bin_name'>conform;/data/app</parameter>
+                <parameter name='path_0'></parameter>
+                <parameter name='path_1'></parameter>
+                <parameter name='path_2'></parameter>
+                <parameter name='path_3'></parameter>
+                <parameter name='result_check_string'>Ambient Material test</parameter>
+            </test_step>
+        </test_item>
+    </test_case>
+
+    <test_case name='ogles1.1_conf_test_AmbientScene' id='36'>
+        <test_item name=''>
+            <test_step type='fun' fun_name='test_sequence_handler'>
+                <parameter name='adb_cmd'>adb shell chmod -R 777 /data/app</parameter>
+            </test_step>
+            <test_step type='fun' fun_name='ogles_conformance_test_run'>
+                <parameter name='test_file_name'>l_as.c</parameter>
+                <parameter name='test_bin_name'>conform;/data/app</parameter>
+                <parameter name='path_0'></parameter>
+                <parameter name='path_1'></parameter>
+                <parameter name='path_2'></parameter>
+                <parameter name='path_3'></parameter>
+                <parameter name='test_bin_name'>conform;/data/app</parameter>
+                <parameter name='path_0'></parameter>
+                <parameter name='path_1'></parameter>
+                <parameter name='path_2'></parameter>
+                <parameter name='path_3'></parameter>
+                <parameter name='result_check_string'>Ambient Scene test</parameter>
+            </test_step>
+        </test_item>
+    </test_case>
+
+    <test_case name='ogles1.1_conf_test_AttenuationConstants' id='37'>
+        <test_item name=''>
+            <test_step type='fun' fun_name='test_sequence_handler'>
+                <parameter name='adb_cmd'>adb shell chmod -R 777 /data/app</parameter>
+            </test_step>
+            <test_step type='fun' fun_name='ogles_conformance_test_run'>
+                <parameter name='test_file_name'>l_ac.c</parameter>
+                <parameter name='test_bin_name'>conform;/data/app</parameter>
+                <parameter name='path_0'></parameter>
+                <parameter name='path_1'></parameter>
+                <parameter name='path_2'></parameter>
+                <parameter name='path_3'></parameter>
+                <parameter name='test_bin_name'>conform;/data/app</parameter>
+                <parameter name='path_0'></parameter>
+                <parameter name='path_1'></parameter>
+                <parameter name='path_2'></parameter>
+                <parameter name='path_3'></parameter>
+                <parameter name='result_check_string'>Attenuation Constants test</parameter>
+            </test_step>
+        </test_item>
+    </test_case>
+
+    <test_case name='ogles1.1_conf_test_AttenuationPosition' id='38'>
+        <test_item name=''>
+            <test_step type='fun' fun_name='test_sequence_handler'>
+                <parameter name='adb_cmd'>adb shell chmod -R 777 /data/app</parameter>
+            </test_step>
+            <test_step type='fun' fun_name='ogles_conformance_test_run'>
+                <parameter name='test_file_name'>l_ap.c</parameter>
+                <parameter name='test_bin_name'>conform;/data/app</parameter>
+                <parameter name='path_0'></parameter>
+                <parameter name='path_1'></parameter>
+                <parameter name='path_2'></parameter>
+                <parameter name='path_3'></parameter>
+                <parameter name='test_bin_name'>conform;/data/app</parameter>
+                <parameter name='path_0'></parameter>
+                <parameter name='path_1'></parameter>
+                <parameter name='path_2'></parameter>
+                <parameter name='path_3'></parameter>
+                <parameter name='result_check_string'>Attenuation Position test</parameter>
+            </test_step>
+        </test_item>
+    </test_case>
+
+    <test_case name='ogles1.1_conf_test_DiffuseLight' id='39'>
+        <test_item name=''>
+            <test_step type='fun' fun_name='test_sequence_handler'>
+                <parameter name='adb_cmd'>adb shell chmod -R 777 /data/app</parameter>
+            </test_step>
+            <test_step type='fun' fun_name='ogles_conformance_test_run'>
+                <parameter name='test_file_name'>l_dl.c</parameter>
+                <parameter name='test_bin_name'>conform;/data/app</parameter>
+                <parameter name='path_0'></parameter>
+                <parameter name='path_1'></parameter>
+                <parameter name='path_2'></parameter>
+                <parameter name='path_3'></parameter>
+                <parameter name='test_bin_name'>conform;/data/app</parameter>
+                <parameter name='path_0'></parameter>
+                <parameter name='path_1'></parameter>
+                <parameter name='path_2'></parameter>
+                <parameter name='path_3'></parameter>
+                <parameter name='result_check_string'>Diffuse Light test</parameter>
+            </test_step>
+        </test_item>
+    </test_case>
+
+    <test_case name='ogles1.1_conf_test_DiffuseMaterial' id='40'>
+        <test_item name=''>
+            <test_step type='fun' fun_name='test_sequence_handler'>
+                <parameter name='adb_cmd'>adb shell chmod -R 777 /data/app</parameter>
+            </test_step>
+            <test_step type='fun' fun_name='ogles_conformance_test_run'>
+                <parameter name='test_file_name'>l_dm.c</parameter>
+                <parameter name='test_bin_name'>conform;/data/app</parameter>
+                <parameter name='path_0'></parameter>
+                <parameter name='path_1'></parameter>
+                <parameter name='path_2'></parameter>
+                <parameter name='path_3'></parameter>
+                <parameter name='test_bin_name'>conform;/data/app</parameter>
+                <parameter name='path_0'></parameter>
+                <parameter name='path_1'></parameter>
+                <parameter name='path_2'></parameter>
+                <parameter name='path_3'></parameter>
+                <parameter name='result_check_string'>Diffuse Material test</parameter>
+            </test_step>
+        </test_item>
+    </test_case>
+
+    <test_case name='ogles1.1_conf_test_DiffuseMaterialNormal' id='41'>
+        <test_item name=''>
+            <test_step type='fun' fun_name='test_sequence_handler'>
+                <parameter name='adb_cmd'>adb shell chmod -R 777 /data/app</parameter>
+            </test_step>
+            <test_step type='fun' fun_name='ogles_conformance_test_run'>
+                <parameter name='test_file_name'>l_dmn.c</parameter>
+                <parameter name='test_bin_name'>conform;/data/app</parameter>
+                <parameter name='path_0'></parameter>
+                <parameter name='path_1'></parameter>
+                <parameter name='path_2'></parameter>
+                <parameter name='path_3'></parameter>
+                <parameter name='test_bin_name'>conform;/data/app</parameter>
+                <parameter name='path_0'></parameter>
+                <parameter name='path_1'></parameter>
+                <parameter name='path_2'></parameter>
+                <parameter name='path_3'></parameter>
+                <parameter name='result_check_string'>Diffuse Material Normal test</parameter>
+            </test_step>
+        </test_item>
+    </test_case>
+
+    <test_case name='ogles1.1_conf_test_DiffuseMaterialPositioning' id='42'>
+        <test_item name=''>
+            <test_step type='fun' fun_name='test_sequence_handler'>
+                <parameter name='adb_cmd'>adb shell chmod -R 777 /data/app</parameter>
+            </test_step>
+            <test_step type='fun' fun_name='ogles_conformance_test_run'>
+                <parameter name='test_file_name'>l_dmp.c</parameter>
+                <parameter name='test_bin_name'>conform;/data/app</parameter>
+                <parameter name='path_0'></parameter>
+                <parameter name='path_1'></parameter>
+                <parameter name='path_2'></parameter>
+                <parameter name='path_3'></parameter>
+                <parameter name='test_bin_name'>conform;/data/app</parameter>
+                <parameter name='path_0'></parameter>
+                <parameter name='path_1'></parameter>
+                <parameter name='path_2'></parameter>
+                <parameter name='path_3'></parameter>
+                <parameter name='result_check_string'>Diffuse Material Positioning test</parameter>
+            </test_step>
+        </test_item>
+    </test_case>
+
+    <test_case name='ogles1.1_conf_test_EmissiveMaterial' id='43'>
+        <test_item name=''>
+            <test_step type='fun' fun_name='test_sequence_handler'>
+                <parameter name='adb_cmd'>adb shell chmod -R 777 /data/app</parameter>
+            </test_step>
+            <test_step type='fun' fun_name='ogles_conformance_test_run'>
+                <parameter name='test_file_name'>l_em.c</parameter>
+                <parameter name='test_bin_name'>conform;/data/app</parameter>
+                <parameter name='path_0'></parameter>
+                <parameter name='path_1'></parameter>
+                <parameter name='path_2'></parameter>
+                <parameter name='path_3'></parameter>
+                <parameter name='test_bin_name'>conform;/data/app</parameter>
+                <parameter name='path_0'></parameter>
+                <parameter name='path_1'></parameter>
+                <parameter name='path_2'></parameter>
+                <parameter name='path_3'></parameter>
+                <parameter name='result_check_string'>Emissive Material test</parameter>
+            </test_step>
+        </test_item>
+    </test_case>
+
+    <test_case name='ogles1.1_conf_test_SpecularExponent' id='44'>
+        <test_item name=''>
+            <test_step type='fun' fun_name='test_sequence_handler'>
+                <parameter name='adb_cmd'>adb shell chmod -R 777 /data/app</parameter>
+            </test_step>
+            <test_step type='fun' fun_name='ogles_conformance_test_run'>
+                <parameter name='test_file_name'>l_se.c</parameter>
+                <parameter name='test_bin_name'>conform;/data/app</parameter>
+                <parameter name='path_0'></parameter>
+                <parameter name='path_1'></parameter>
+                <parameter name='path_2'></parameter>
+                <parameter name='path_3'></parameter>
+                <parameter name='test_bin_name'>conform;/data/app</parameter>
+                <parameter name='path_0'></parameter>
+                <parameter name='path_1'></parameter>
+                <parameter name='path_2'></parameter>
+                <parameter name='path_3'></parameter>
+                <parameter name='result_check_string'>Specular Exponent test</parameter>
+            </test_step>
+        </test_item>
+    </test_case>
+
+    <test_case name='ogles1.1_conf_test_SpecularExponentNormal' id='45'>
+        <test_item name=''>
+            <test_step type='fun' fun_name='test_sequence_handler'>
+                <parameter name='adb_cmd'>adb shell chmod -R 777 /data/app</parameter>
+            </test_step>
+            <test_step type='fun' fun_name='ogles_conformance_test_run'>
+                <parameter name='test_file_name'>l_sen.c</parameter>
+                <parameter name='test_bin_name'>conform;/data/app</parameter>
+                <parameter name='path_0'></parameter>
+                <parameter name='path_1'></parameter>
+                <parameter name='path_2'></parameter>
+                <parameter name='path_3'></parameter>
+                <parameter name='test_bin_name'>conform;/data/app</parameter>
+                <parameter name='path_0'></parameter>
+                <parameter name='path_1'></parameter>
+                <parameter name='path_2'></parameter>
+                <parameter name='path_3'></parameter>
+                <parameter name='result_check_string'>Specular Exponent Normal test</parameter>
+            </test_step>
+        </test_item>
+    </test_case>
+
+    <test_case name='ogles1.1_conf_test_SpecularLight' id='46'>
+        <test_item name=''>
+            <test_step type='fun' fun_name='test_sequence_handler'>
+                <parameter name='adb_cmd'>adb shell chmod -R 777 /data/app</parameter>
+            </test_step>
+            <test_step type='fun' fun_name='ogles_conformance_test_run'>
+                <parameter name='test_file_name'>l_sl.c</parameter>
+                <parameter name='test_bin_name'>conform;/data/app</parameter>
+                <parameter name='path_0'></parameter>
+                <parameter name='path_1'></parameter>
+                <parameter name='path_2'></parameter>
+                <parameter name='path_3'></parameter>
+                <parameter name='test_bin_name'>conform;/data/app</parameter>
+                <parameter name='path_0'></parameter>
+                <parameter name='path_1'></parameter>
+                <parameter name='path_2'></parameter>
+                <parameter name='path_3'></parameter>
+                <parameter name='result_check_string'>Specular Light test</parameter>
+            </test_step>
+        </test_item>
+    </test_case>
+
+    <test_case name='ogles1.1_conf_test_SpecularMaterial' id='47'>
+        <test_item name=''>
+            <test_step type='fun' fun_name='test_sequence_handler'>
+                <parameter name='adb_cmd'>adb shell chmod -R 777 /data/app</parameter>
+            </test_step>
+            <test_step type='fun' fun_name='ogles_conformance_test_run'>
+                <parameter name='test_file_name'>l_sm.c</parameter>
+                <parameter name='test_bin_name'>conform;/data/app</parameter>
+                <parameter name='path_0'></parameter>
+                <parameter name='path_1'></parameter>
+                <parameter name='path_2'></parameter>
+                <parameter name='path_3'></parameter>
+                <parameter name='test_bin_name'>conform;/data/app</parameter>
+                <parameter name='path_0'></parameter>
+                <parameter name='path_1'></parameter>
+                <parameter name='path_2'></parameter>
+                <parameter name='path_3'></parameter>
+                <parameter name='result_check_string'>Specular Material test</parameter>
+            </test_step>
+        </test_item>
+    </test_case>
+
+    <test_case name='ogles1.1_conf_test_SpecularNormal' id='48'>
+        <test_item name=''>
+            <test_step type='fun' fun_name='test_sequence_handler'>
+                <parameter name='adb_cmd'>adb shell chmod -R 777 /data/app</parameter>
+            </test_step>
+            <test_step type='fun' fun_name='ogles_conformance_test_run'>
+                <parameter name='test_file_name'>l_sn.c</parameter>
+                <parameter name='test_bin_name'>conform;/data/app</parameter>
+                <parameter name='path_0'></parameter>
+                <parameter name='path_1'></parameter>
+                <parameter name='path_2'></parameter>
+                <parameter name='path_3'></parameter>
+                <parameter name='test_bin_name'>conform;/data/app</parameter>
+                <parameter name='path_0'></parameter>
+                <parameter name='path_1'></parameter>
+                <parameter name='path_2'></parameter>
+                <parameter name='path_3'></parameter>
+                <parameter name='result_check_string'>Specular Normal test</parameter>
+            </test_step>
+        </test_item>
+    </test_case>
+
+    <test_case name='ogles1.1_conf_test_SpotPositioning' id='49'>
+        <test_item name=''>
+            <test_step type='fun' fun_name='test_sequence_handler'>
+                <parameter name='adb_cmd'>adb shell chmod -R 777 /data/app</parameter>
+            </test_step>
+            <test_step type='fun' fun_name='ogles_conformance_test_run'>
+                <parameter name='test_file_name'>l_sp.c</parameter>
+                <parameter name='test_bin_name'>conform;/data/app</parameter>
+                <parameter name='path_0'></parameter>
+                <parameter name='path_1'></parameter>
+                <parameter name='path_2'></parameter>
+                <parameter name='path_3'></parameter>
+                <parameter name='test_bin_name'>conform;/data/app</parameter>
+                <parameter name='path_0'></parameter>
+                <parameter name='path_1'></parameter>
+                <parameter name='path_2'></parameter>
+                <parameter name='path_3'></parameter>
+                <parameter name='result_check_string'>Spot Positioning test</parameter>
+            </test_step>
+        </test_item>
+    </test_case>
+
+    <test_case name='ogles1.1_conf_test_Blend' id='50'>
+        <test_item name=''>
+            <test_step type='fun' fun_name='test_sequence_handler'>
+                <parameter name='adb_cmd'>adb shell chmod -R 777 /data/app</parameter>
+            </test_step>
+            <test_step type='fun' fun_name='ogles_conformance_test_run'>
+                <parameter name='test_file_name'>blend.c</parameter>
+                <parameter name='test_bin_name'>conform;/data/app</parameter>
+                <parameter name='path_0'></parameter>
+                <parameter name='path_1'></parameter>
+                <parameter name='path_2'></parameter>
+                <parameter name='path_3'></parameter>
+                <parameter name='test_bin_name'>conform;/data/app</parameter>
+                <parameter name='path_0'></parameter>
+                <parameter name='path_1'></parameter>
+                <parameter name='path_2'></parameter>
+                <parameter name='path_3'></parameter>
+                <parameter name='result_check_string'>Blend test</parameter>
+            </test_step>
+        </test_item>
+    </test_case>
+
+    <test_case name='ogles1.1_conf_test_FogLinear' id='51'>
+        <test_item name=''>
+            <test_step type='fun' fun_name='test_sequence_handler'>
+                <parameter name='adb_cmd'>adb shell chmod -R 777 /data/app</parameter>
+            </test_step>
+            <test_step type='fun' fun_name='ogles_conformance_test_run'>
+                <parameter name='test_file_name'>foglin.c</parameter>
+                <parameter name='test_bin_name'>conform;/data/app</parameter>
+                <parameter name='path_0'></parameter>
+                <parameter name='path_1'></parameter>
+                <parameter name='path_2'></parameter>
+                <parameter name='path_3'></parameter>
+                <parameter name='test_bin_name'>conform;/data/app</parameter>
+                <parameter name='path_0'></parameter>
+                <parameter name='path_1'></parameter>
+                <parameter name='path_2'></parameter>
+                <parameter name='path_3'></parameter>
+                <parameter name='result_check_string'>Fog Linear test</parameter>
+            </test_step>
+        </test_item>
+    </test_case>
+
+    <test_case name='ogles1.1_conf_test_TextureDecal' id='52'>
+        <test_item name=''>
+            <test_step type='fun' fun_name='test_sequence_handler'>
+                <parameter name='adb_cmd'>adb shell chmod -R 777 /data/app</parameter>
+            </test_step>
+            <test_step type='fun' fun_name='ogles_conformance_test_run'>
+                <parameter name='test_file_name'>texdecal.c</parameter>
+                <parameter name='test_bin_name'>conform;/data/app</parameter>
+                <parameter name='path_0'></parameter>
+                <parameter name='path_1'></parameter>
+                <parameter name='path_2'></parameter>
+                <parameter name='path_3'></parameter>
+                <parameter name='test_bin_name'>conform;/data/app</parameter>
+                <parameter name='path_0'></parameter>
+                <parameter name='path_1'></parameter>
+                <parameter name='path_2'></parameter>
+                <parameter name='path_3'></parameter>
+                <parameter name='result_check_string'>Texture Decal test</parameter>
+            </test_step>
+        </test_item>
+    </test_case>
+
+    <test_case name='ogles1.1_conf_test_TextureEdgeClamp' id='53'>
+        <test_item name=''>
+            <test_step type='fun' fun_name='test_sequence_handler'>
+                <parameter name='adb_cmd'>adb shell chmod -R 777 /data/app</parameter>
+            </test_step>
+            <test_step type='fun' fun_name='ogles_conformance_test_run'>
+                <parameter name='test_file_name'>texedge.c</parameter>
+                <parameter name='test_bin_name'>conform;/data/app</parameter>
+                <parameter name='path_0'></parameter>
+                <parameter name='path_1'></parameter>
+                <parameter name='path_2'></parameter>
+                <parameter name='path_3'></parameter>
+                <parameter name='test_bin_name'>conform;/data/app</parameter>
+                <parameter name='path_0'></parameter>
+                <parameter name='path_1'></parameter>
+                <parameter name='path_2'></parameter>
+                <parameter name='path_3'></parameter>
+                <parameter name='result_check_string'>Texture Edge Clamp test</parameter>
+            </test_step>
+        </test_item>
+    </test_case>
+
+    <test_case name='ogles1.1_conf_test_EXT_CompressedPalettedTexture' id='54'>
+        <test_item name=''>
+            <test_step type='fun' fun_name='test_sequence_handler'>
+                <parameter name='adb_cmd'>adb shell chmod -R 777 /data/app</parameter>
+            </test_step>
+            <test_step type='fun' fun_name='ogles_conformance_test_run'>
+                <parameter name='test_file_name'>texpalet.c</parameter>
+                <parameter name='test_bin_name'>conform;/data/app</parameter>
+                <parameter name='path_0'></parameter>
+                <parameter name='path_1'></parameter>
+                <parameter name='path_2'></parameter>
+                <parameter name='path_3'></parameter>
+                <parameter name='test_bin_name'>conform;/data/app</parameter>
+                <parameter name='path_0'></parameter>
+                <parameter name='path_1'></parameter>
+                <parameter name='path_2'></parameter>
+                <parameter name='path_3'></parameter>
+                <parameter name='result_check_string'>Compressed Paletted Texture test</parameter>
+            </test_step>
+        </test_item>
+    </test_case>
+
+    <test_case name='ogles1.1_conf_test_MipmapsSelection' id='55'>
+        <test_item name=''>
+            <test_step type='fun' fun_name='test_sequence_handler'>
+                <parameter name='adb_cmd'>adb shell chmod -R 777 /data/app</parameter>
+            </test_step>
+            <test_step type='fun' fun_name='ogles_conformance_test_run'>
+                <parameter name='test_file_name'>mipsel.c</parameter>
+                <parameter name='test_bin_name'>conform;/data/app</parameter>
+                <parameter name='path_0'></parameter>
+                <parameter name='path_1'></parameter>
+                <parameter name='path_2'></parameter>
+                <parameter name='path_3'></parameter>
+                <parameter name='test_bin_name'>conform;/data/app</parameter>
+                <parameter name='path_0'></parameter>
+                <parameter name='path_1'></parameter>
+                <parameter name='path_2'></parameter>
+                <parameter name='path_3'></parameter>
+                <parameter name='result_check_string'>Mipmaps Selection test</parameter>
+            </test_step>
+        </test_item>
+    </test_case>
+
+    <test_case name='ogles1.1_conf_test_MipmapsInterpolation' id='56'>
+        <test_item name=''>
+            <test_step type='fun' fun_name='test_sequence_handler'>
+                <parameter name='adb_cmd'>adb shell chmod -R 777 /data/app</parameter>
+            </test_step>
+            <test_step type='fun' fun_name='ogles_conformance_test_run'>
+                <parameter name='test_file_name'>miplin.c</parameter>
+                <parameter name='test_bin_name'>conform;/data/app</parameter>
+                <parameter name='path_0'></parameter>
+                <parameter name='path_1'></parameter>
+                <parameter name='path_2'></parameter>
+                <parameter name='path_3'></parameter>
+                <parameter name='test_bin_name'>conform;/data/app</parameter>
+                <parameter name='path_0'></parameter>
+                <parameter name='path_1'></parameter>
+                <parameter name='path_2'></parameter>
+                <parameter name='path_3'></parameter>
+                <parameter name='result_check_string'>Mipmaps Interpolation test</parameter>
+            </test_step>
+        </test_item>
+    </test_case>
+
+    <test_case name='ogles1.1_conf_test_PackedPixels' id='57'>
+        <test_item name=''>
+            <test_step type='fun' fun_name='test_sequence_handler'>
+                <parameter name='adb_cmd'>adb shell chmod -R 777 /data/app</parameter>
+            </test_step>
+            <test_step type='fun' fun_name='ogles_conformance_test_run'>
+                <parameter name='test_file_name'>packpix.c</parameter>
+                <parameter name='test_bin_name'>conform;/data/app</parameter>
+                <parameter name='path_0'></parameter>
+                <parameter name='path_1'></parameter>
+                <parameter name='path_2'></parameter>
+                <parameter name='path_3'></parameter>
+                <parameter name='test_bin_name'>conform;/data/app</parameter>
+                <parameter name='path_0'></parameter>
+                <parameter name='path_1'></parameter>
+                <parameter name='path_2'></parameter>
+                <parameter name='path_3'></parameter>
+                <parameter name='result_check_string'>Packed Pixels test</parameter>
+            </test_step>
+        </test_item>
+    </test_case>
+
+    <test_case name='ogles1.1_conf_test_MultiTexture' id='58'>
+        <test_item name=''>
+            <test_step type='fun' fun_name='test_sequence_handler'>
+                <parameter name='adb_cmd'>adb shell chmod -R 777 /data/app</parameter>
+            </test_step>
+            <test_step type='fun' fun_name='ogles_conformance_test_run'>
+                <parameter name='test_file_name'>multitex.c</parameter>
+                <parameter name='test_bin_name'>conform;/data/app</parameter>
+                <parameter name='path_0'></parameter>
+                <parameter name='path_1'></parameter>
+                <parameter name='path_2'></parameter>
+                <parameter name='path_3'></parameter>
+                <parameter name='test_bin_name'>conform;/data/app</parameter>
+                <parameter name='path_0'></parameter>
+                <parameter name='path_1'></parameter>
+                <parameter name='path_2'></parameter>
+                <parameter name='path_3'></parameter>
+                <parameter name='result_check_string'>MultiTexture test</parameter>
+            </test_step>
+        </test_item>
+    </test_case>
+
+    <test_case name='ogles1.1_conf_test_CopyTexture' id='59'>
+        <test_item name=''>
+            <test_step type='fun' fun_name='test_sequence_handler'>
+                <parameter name='adb_cmd'>adb shell chmod -R 777 /data/app</parameter>
+            </test_step>
+            <test_step type='fun' fun_name='ogles_conformance_test_run'>
+                <parameter name='test_file_name'>copytex.c</parameter>
+                <parameter name='test_bin_name'>conform;/data/app</parameter>
+                <parameter name='path_0'></parameter>
+                <parameter name='path_1'></parameter>
+                <parameter name='path_2'></parameter>
+                <parameter name='path_3'></parameter>
+                <parameter name='test_bin_name'>conform;/data/app</parameter>
+                <parameter name='path_0'></parameter>
+                <parameter name='path_1'></parameter>
+                <parameter name='path_2'></parameter>
+                <parameter name='path_3'></parameter>
+                <parameter name='result_check_string'>Copy Texture test</parameter>
+            </test_step>
+        </test_item>
+    </test_case>
+
+    <test_case name='ogles1.1_conf_test_ReadFormat' id='60'>
+        <test_item name=''>
+            <test_step type='fun' fun_name='test_sequence_handler'>
+                <parameter name='adb_cmd'>adb shell chmod -R 777 /data/app</parameter>
+            </test_step>
+            <test_step type='fun' fun_name='ogles_conformance_test_run'>
+                <parameter name='test_file_name'>readfmt.c</parameter>
+                <parameter name='test_bin_name'>conform;/data/app</parameter>
+                <parameter name='path_0'></parameter>
+                <parameter name='path_1'></parameter>
+                <parameter name='path_2'></parameter>
+                <parameter name='path_3'></parameter>
+                <parameter name='test_bin_name'>conform;/data/app</parameter>
+                <parameter name='path_0'></parameter>
+                <parameter name='path_1'></parameter>
+                <parameter name='path_2'></parameter>
+                <parameter name='path_3'></parameter>
+                <parameter name='result_check_string'>Read Format test</parameter>
+            </test_step>
+        </test_item>
+    </test_case>
+
+    <test_case name='ogles1.1_conf_test_MatrixStack' id='61'>
+        <test_item name=''>
+            <test_step type='fun' fun_name='test_sequence_handler'>
+                <parameter name='adb_cmd'>adb shell chmod -R 777 /data/app</parameter>
+            </test_step>
+            <test_step type='fun' fun_name='ogles_conformance_test_run'>
+                <parameter name='test_file_name'>mstack.c</parameter>
+                <parameter name='test_bin_name'>conform;/data/app</parameter>
+                <parameter name='path_0'></parameter>
+                <parameter name='path_1'></parameter>
+                <parameter name='path_2'></parameter>
+                <parameter name='path_3'></parameter>
+                <parameter name='test_bin_name'>conform;/data/app</parameter>
+                <parameter name='path_0'></parameter>
+                <parameter name='path_1'></parameter>
+                <parameter name='path_2'></parameter>
+                <parameter name='path_3'></parameter>
+                <parameter name='result_check_string'>Matrix Stack test</parameter>
+            </test_step>
+        </test_item>
+    </test_case>
+
+    <test_case name='ogles1.1_conf_test_TransformationNormal' id='62'>
+        <test_item name=''>
+            <test_step type='fun' fun_name='test_sequence_handler'>
+                <parameter name='adb_cmd'>adb shell chmod -R 777 /data/app</parameter>
+            </test_step>
+            <test_step type='fun' fun_name='ogles_conformance_test_run'>
+                <parameter name='test_file_name'>xformn.c</parameter>
+                <parameter name='test_bin_name'>conform;/data/app</parameter>
+                <parameter name='path_0'></parameter>
+                <parameter name='path_1'></parameter>
+                <parameter name='path_2'></parameter>
+                <parameter name='path_3'></parameter>
+                <parameter name='test_bin_name'>conform;/data/app</parameter>
+                <parameter name='path_0'></parameter>
+                <parameter name='path_1'></parameter>
+                <parameter name='path_2'></parameter>
+                <parameter name='path_3'></parameter>
+                <parameter name='result_check_string'>Transformation Normal test</parameter>
+            </test_step>
+        </test_item>
+    </test_case>
+
+    <test_case name='ogles1.1_conf_test_FogExponential' id='63'>
+        <test_item name=''>
+            <test_step type='fun' fun_name='test_sequence_handler'>
+                <parameter name='adb_cmd'>adb shell chmod -R 777 /data/app</parameter>
+            </test_step>
+            <test_step type='fun' fun_name='ogles_conformance_test_run'>
+                <parameter name='test_file_name'>fogexp.c</parameter>
+                <parameter name='test_bin_name'>conform;/data/app</parameter>
+                <parameter name='path_0'></parameter>
+                <parameter name='path_1'></parameter>
+                <parameter name='path_2'></parameter>
+                <parameter name='path_3'></parameter>
+                <parameter name='test_bin_name'>conform;/data/app</parameter>
+                <parameter name='path_0'></parameter>
+                <parameter name='path_1'></parameter>
+                <parameter name='path_2'></parameter>
+                <parameter name='path_3'></parameter>
+                <parameter name='result_check_string'>Fog Exponential test</parameter>
+            </test_step>
+        </test_item>
+    </test_case>
+
+    <test_case name='ogles1.1_conf_test_RescaleNormal' id='64'>
+        <test_item name=''>
+            <test_step type='fun' fun_name='test_sequence_handler'>
+                <parameter name='adb_cmd'>adb shell chmod -R 777 /data/app</parameter>
+            </test_step>
+            <test_step type='fun' fun_name='ogles_conformance_test_run'>
+                <parameter name='test_file_name'>rescalen.c</parameter>
+                <parameter name='test_bin_name'>conform;/data/app</parameter>
+                <parameter name='path_0'></parameter>
+                <parameter name='path_1'></parameter>
+                <parameter name='path_2'></parameter>
+                <parameter name='path_3'></parameter>
+                <parameter name='test_bin_name'>conform;/data/app</parameter>
+                <parameter name='path_0'></parameter>
+                <parameter name='path_1'></parameter>
+                <parameter name='path_2'></parameter>
+                <parameter name='path_3'></parameter>
+                <parameter name='result_check_string'>Rescale Normal test</parameter>
+            </test_step>
+        </test_item>
+    </test_case>
+
+    <test_case name='ogles1.1_conf_test_SpotExponentandDirection' id='65'>
+        <test_item name=''>
+            <test_step type='fun' fun_name='test_sequence_handler'>
+                <parameter name='adb_cmd'>adb shell chmod -R 777 /data/app</parameter>
+            </test_step>
+            <test_step type='fun' fun_name='ogles_conformance_test_run'>
+                <parameter name='test_file_name'>l_sed.c</parameter>
+                <parameter name='test_bin_name'>conform;/data/app</parameter>
+                <parameter name='path_0'></parameter>
+                <parameter name='path_1'></parameter>
+                <parameter name='path_2'></parameter>
+                <parameter name='path_3'></parameter>
+                <parameter name='test_bin_name'>conform;/data/app</parameter>
+                <parameter name='path_0'></parameter>
+                <parameter name='path_1'></parameter>
+                <parameter name='path_2'></parameter>
+                <parameter name='path_3'></parameter>
+                <parameter name='result_check_string'>Spot Exponent and Direction test</parameter>
+            </test_step>
+        </test_item>
+    </test_case>
+
+    <test_case name='ogles1.1_conf_test_SpotExponentandPositioning' id='66'>
+        <test_item name=''>
+            <test_step type='fun' fun_name='test_sequence_handler'>
+                <parameter name='adb_cmd'>adb shell chmod -R 777 /data/app</parameter>
+            </test_step>
+            <test_step type='fun' fun_name='ogles_conformance_test_run'>
+                <parameter name='test_file_name'>l_sep.c</parameter>
+                <parameter name='test_bin_name'>conform;/data/app</parameter>
+                <parameter name='path_0'></parameter>
+                <parameter name='path_1'></parameter>
+                <parameter name='path_2'></parameter>
+                <parameter name='path_3'></parameter>
+                <parameter name='test_bin_name'>conform;/data/app</parameter>
+                <parameter name='path_0'></parameter>
+                <parameter name='path_1'></parameter>
+                <parameter name='path_2'></parameter>
+                <parameter name='path_3'></parameter>
+                <parameter name='result_check_string'>Spot Exponent and Positioning test</parameter>
+            </test_step>
+        </test_item>
+    </test_case>
+
+    <test_case name='ogles1.1_conf_test_Gets' id='67'>
+        <test_item name=''>
+            <test_step type='fun' fun_name='test_sequence_handler'>
+                <parameter name='adb_cmd'>adb shell chmod -R 777 /data/app</parameter>
+            </test_step>
+            <test_step type='fun' fun_name='ogles_conformance_test_run'>
+                <parameter name='test_file_name'>gets.c</parameter>
+                <parameter name='test_bin_name'>conform;/data/app</parameter>
+                <parameter name='path_0'></parameter>
+                <parameter name='path_1'></parameter>
+                <parameter name='path_2'></parameter>
+                <parameter name='path_3'></parameter>
+                <parameter name='test_bin_name'>conform;/data/app</parameter>
+                <parameter name='path_0'></parameter>
+                <parameter name='path_1'></parameter>
+                <parameter name='path_2'></parameter>
+                <parameter name='path_3'></parameter>
+                <parameter name='result_check_string'>Gets test</parameter>
+            </test_step>
+        </test_item>
+    </test_case>
+
+    <test_case name='ogles1.1_conf_test_TextureCombine' id='68'>
+        <test_item name=''>
+            <test_step type='fun' fun_name='test_sequence_handler'>
+                <parameter name='adb_cmd'>adb shell chmod -R 777 /data/app</parameter>
+            </test_step>
+            <test_step type='fun' fun_name='ogles_conformance_test_run'>
+                <parameter name='test_file_name'>texcombine.c</parameter>
+                <parameter name='test_bin_name'>conform;/data/app</parameter>
+                <parameter name='path_0'></parameter>
+                <parameter name='path_1'></parameter>
+                <parameter name='path_2'></parameter>
+                <parameter name='path_3'></parameter>
+                <parameter name='test_bin_name'>conform;/data/app</parameter>
+                <parameter name='path_0'></parameter>
+                <parameter name='path_1'></parameter>
+                <parameter name='path_2'></parameter>
+                <parameter name='path_3'></parameter>
+                <parameter name='result_check_string'>Texture Combine test</parameter>
+            </test_step>
+        </test_item>
+    </test_case>
+
+    <test_case name='ogles1.1_conf_test_UserClipPlanetest' id='69'>
+        <test_item name=''>
+            <test_step type='fun' fun_name='test_sequence_handler'>
+                <parameter name='adb_cmd'>adb shell chmod -R 777 /data/app</parameter>
+            </test_step>
+            <test_step type='fun' fun_name='ogles_conformance_test_run'>
+                <parameter name='test_file_name'>userclip.c</parameter>
+                <parameter name='test_bin_name'>conform;/data/app</parameter>
+                <parameter name='path_0'></parameter>
+                <parameter name='path_1'></parameter>
+                <parameter name='path_2'></parameter>
+                <parameter name='path_3'></parameter>
+                <parameter name='test_bin_name'>conform;/data/app</parameter>
+                <parameter name='path_0'></parameter>
+                <parameter name='path_1'></parameter>
+                <parameter name='path_2'></parameter>
+                <parameter name='path_3'></parameter>
+                <parameter name='result_check_string'>User Clip Plane test</parameter>
+            </test_step>
+        </test_item>
+    </test_case>
+
+    <test_case name='ogles1.1_conf_test_BufferObjects' id='70'>
+        <test_item name=''>
+            <test_step type='fun' fun_name='test_sequence_handler'>
+                <parameter name='adb_cmd'>adb shell chmod -R 777 /data/app</parameter>
+            </test_step>
+            <test_step type='fun' fun_name='ogles_conformance_test_run'>
+                <parameter name='test_file_name'>bufobj.c</parameter>
+                <parameter name='test_bin_name'>conform;/data/app</parameter>
+                <parameter name='path_0'></parameter>
+                <parameter name='path_1'></parameter>
+                <parameter name='path_2'></parameter>
+                <parameter name='path_3'></parameter>
+                <parameter name='test_bin_name'>conform;/data/app</parameter>
+                <parameter name='path_0'></parameter>
+                <parameter name='path_1'></parameter>
+                <parameter name='path_2'></parameter>
+                <parameter name='path_3'></parameter>
+                <parameter name='result_check_string'>Buffer Objects test</parameter>
+            </test_step>
+        </test_item>
+    </test_case>
+
+    <test_case name='ogles1.1_conf_test_MatrixGet' id='71'>
+        <test_item name=''>
+            <test_step type='fun' fun_name='test_sequence_handler'>
+                <parameter name='adb_cmd'>adb shell chmod -R 777 /data/app</parameter>
+            </test_step>
+            <test_step type='fun' fun_name='ogles_conformance_test_run'>
+                <parameter name='test_file_name'>mget.c</parameter>
+                <parameter name='test_bin_name'>conform;/data/app</parameter>
+                <parameter name='path_0'></parameter>
+                <parameter name='path_1'></parameter>
+                <parameter name='path_2'></parameter>
+                <parameter name='path_3'></parameter>
+                <parameter name='test_bin_name'>conform;/data/app</parameter>
+                <parameter name='path_0'></parameter>
+                <parameter name='path_1'></parameter>
+                <parameter name='path_2'></parameter>
+                <parameter name='path_3'></parameter>
+                <parameter name='result_check_string'>Matrix Get test</parameter>
+            </test_step>
+        </test_item>
+    </test_case>
+
+    <test_case name='ogles1.1_conf_test_EXT_PointSizeArray' id='72'>
+        <test_item name=''>
+            <test_step type='fun' fun_name='test_sequence_handler'>
+                <parameter name='adb_cmd'>adb shell chmod -R 777 /data/app</parameter>
+            </test_step>
+            <test_step type='fun' fun_name='ogles_conformance_test_run'>
+                <parameter name='test_file_name'>pntszary.c</parameter>
+                <parameter name='test_bin_name'>conform;/data/app</parameter>
+                <parameter name='path_0'></parameter>
+                <parameter name='path_1'></parameter>
+                <parameter name='path_2'></parameter>
+                <parameter name='path_3'></parameter>
+                <parameter name='test_bin_name'>conform;/data/app</parameter>
+                <parameter name='path_0'></parameter>
+                <parameter name='path_1'></parameter>
+                <parameter name='path_2'></parameter>
+                <parameter name='path_3'></parameter>
+                <parameter name='result_check_string'>Point Size Array test</parameter>
+            </test_step>
+        </test_item>
+    </test_case>
+
+    <test_case name='ogles1.1_conf_test_EXT_PointSprite' id='73'>
+        <test_item name=''>
+            <test_step type='fun' fun_name='test_sequence_handler'>
+                <parameter name='adb_cmd'>adb shell chmod -R 777 /data/app</parameter>
+            </test_step>
+            <test_step type='fun' fun_name='ogles_conformance_test_run'>
+                <parameter name='test_file_name'>pntsprt.c</parameter>
+                <parameter name='test_bin_name'>conform;/data/app</parameter>
+                <parameter name='path_0'></parameter>
+                <parameter name='path_1'></parameter>
+                <parameter name='path_2'></parameter>
+                <parameter name='path_3'></parameter>
+                <parameter name='test_bin_name'>conform;/data/app</parameter>
+                <parameter name='path_0'></parameter>
+                <parameter name='path_1'></parameter>
+                <parameter name='path_2'></parameter>
+                <parameter name='path_3'></parameter>
+                <parameter name='result_check_string'>Point Sprite test</parameter>
+            </test_step>
+        </test_item>
+    </test_case>
+
+    <test_case name='ogles1.1_conf_test_AutomaticMipmapGenerationTest' id='74'>
+        <test_item name=''>
+            <test_step type='fun' fun_name='test_sequence_handler'>
+                <parameter name='adb_cmd'>adb shell chmod -R 777 /data/app</parameter>
+            </test_step>
+            <test_step type='fun' fun_name='ogles_conformance_test_run'>
+                <parameter name='test_file_name'>mipgen.c</parameter>
+                <parameter name='test_bin_name'>conform;/data/app</parameter>
+                <parameter name='path_0'></parameter>
+                <parameter name='path_1'></parameter>
+                <parameter name='path_2'></parameter>
+                <parameter name='path_3'></parameter>
+                <parameter name='test_bin_name'>conform;/data/app</parameter>
+                <parameter name='path_0'></parameter>
+                <parameter name='path_1'></parameter>
+                <parameter name='path_2'></parameter>
+                <parameter name='path_3'></parameter>
+                <parameter name='result_check_string'>Automatic mipmap generation test</parameter>
+            </test_step>
+        </test_item>
+    </test_case>
+
+    <test_case name='ogles1.1_conf_ext_EXT_MatrixPalette' id='75'>
+        <test_item name=''>
+            <test_step type='fun' fun_name='test_sequence_handler'>
+                <parameter name='adb_cmd'>adb shell chmod -R 777 /data/app</parameter>
+            </test_step>
+            <test_step type='fun' fun_name='ogles_conformance_test_run'>
+                <parameter name='test_file_name'>mpalette.c</parameter>
+                <parameter name='test_bin_name'>conform;/data/app</parameter>
+                <parameter name='path_0'></parameter>
+                <parameter name='path_1'></parameter>
+                <parameter name='path_2'></parameter>
+                <parameter name='path_3'></parameter>
+                <parameter name='test_bin_name'>conform;/data/app</parameter>
+                <parameter name='path_0'></parameter>
+                <parameter name='path_1'></parameter>
+                <parameter name='path_2'></parameter>
+                <parameter name='path_3'></parameter>
+                <parameter name='result_check_string'>Matrix Palette test</parameter>
+            </test_step>
+        </test_item>
+    </test_case>
+
+    <test_case name='ogles1.1_conf_ext_EXT_draw_texture' id='76'>
+        <test_item name=''>
+            <test_step type='fun' fun_name='test_sequence_handler'>
+                <parameter name='adb_cmd'>adb shell chmod -R 777 /data/app</parameter>
+            </test_step>
+            <test_step type='fun' fun_name='ogles_conformance_test_run'>
+                <parameter name='test_file_name'>drawtex.c</parameter>
+                <parameter name='test_bin_name'>conform;/data/app</parameter>
+                <parameter name='path_0'></parameter>
+                <parameter name='path_1'></parameter>
+                <parameter name='path_2'></parameter>
+                <parameter name='path_3'></parameter>
+                <parameter name='test_bin_name'>conform;/data/app</parameter>
+                <parameter name='path_0'></parameter>
+                <parameter name='path_1'></parameter>
+                <parameter name='path_2'></parameter>
+                <parameter name='path_3'></parameter>
+                <parameter name='result_check_string'>Draw Texture test</parameter>
+            </test_step>
+        </test_item>
+    </test_case>
+
+    <test_case name='ogles1.1_conf_test_MipmapLevels' id='77'>
+        <test_item name=''>
+            <test_step type='fun' fun_name='test_sequence_handler'>
+                <parameter name='adb_cmd'>adb shell chmod -R 777 /data/app</parameter>
+            </test_step>
+            <test_step type='fun' fun_name='ogles_conformance_test_run'>
+                <parameter name='test_file_name'>miplevels.c</parameter>
+                <parameter name='test_bin_name'>conform;/data/app</parameter>
+                <parameter name='path_0'></parameter>
+                <parameter name='path_1'></parameter>
+                <parameter name='path_2'></parameter>
+                <parameter name='path_3'></parameter>
+                <parameter name='test_bin_name'>conform;/data/app</parameter>
+                <parameter name='path_0'></parameter>
+                <parameter name='path_1'></parameter>
+                <parameter name='path_2'></parameter>
+                <parameter name='path_3'></parameter>
+                <parameter name='result_check_string'>Mipmap Levels test</parameter>
+            </test_step>
+        </test_item>
+    </test_case>
+    <!-- Bad option -es1
+    <test_case name='ogles1.1_conf_ext_EXT_mapbuffer' id='78'>
+        <test_item name=''>
+            <test_step type='fun' fun_name='test_sequence_handler'>
+                <parameter name='adb_cmd'>adb shell chmod -R 777 /data/app</parameter>
+            </test_step>
+            <test_step type='fun' fun_name='ogles_conformance_test_run'>
+                <parameter name='test_file_name'>mapbuffer_es1</parameter>
+                <parameter name='test_bin_name'>conform;/data/app</parameter>
+                <parameter name='run_ext_es1'></parameter>
+                <parameter name='result_check_string'>mapbuffer_es</parameter>
+            </test_step>
+        </test_item>
+    </test_case>
+    !-->
+    <test_case name='ogles1.1_conf_ext_EXT_texture_format_BGRA8888' id='79'>
+        <test_item name=''>
+            <test_step type='fun' fun_name='test_sequence_handler'>
+                <parameter name='instruction'>Run in GLES2.0</parameter>
+                <parameter name='deprecated'>Run in GLES2.0</parameter>
+            </test_step>
+        </test_item>
+    </test_case>
+    <!-- Bad option -es1
+    <test_case name='ogles1.1_conf_ext_EXT_multi_draw_arrays' id='80'>
+        <test_item name=''>
+            <test_step type='fun' fun_name='test_sequence_handler'>
+                <parameter name='adb_cmd'>adb shell chmod -R 777 /data/app</parameter>
+            </test_step>
+            <test_step type='fun' fun_name='ogles_conformance_test_run'>
+                <parameter name='test_file_name'>multi_draw_arrays_es1</parameter>
+                <parameter name='test_bin_name'>conform;/data/app</parameter>
+                <parameter name='run_ext_es1'></parameter>
+                <parameter name='result_check_string'>multi_draw_arrays_es1</parameter>
+            </test_step>
+        </test_item>
+    </test_case>
+
+    <test_case name='ogles1.1_conf_test_EXT_MatrixGet' id='81'>
+        <test_item name=''>
+            <test_step type='fun' fun_name='test_sequence_handler'>
+                <parameter name='adb_cmd'>adb shell chmod -R 777 /data/app</parameter>
+            </test_step>
+            <test_step type='fun' fun_name='ogles_conformance_test_run'>
+                <parameter name='test_file_name'>matrix_get_es1</parameter>
+                <parameter name='test_bin_name'>conform;/data/app</parameter>
+                <parameter name='run_ext_es1'></parameter>
+                <parameter name='result_check_string'>matrix_get_es1</parameter>
+            </test_step>
+        </test_item>
+    </test_case>
+
+    <test_case name='ogles1.1_conf_ext_EXT_compressed_ETC1_RGB8_texture' id='82'>
+        <test_item name=''>
+            <test_step type='fun' fun_name='test_sequence_handler'>
+                <parameter name='instruction'>Run in GLES2.0</parameter>
+                <parameter name='deprecated'>Run in GLES2.0</parameter>
+            </test_step>
+        </test_item>
+    </test_case>
+    !-->
+    <!-- Bad option -es1
+    <test_case name='ogles1.1_conf_ext_EXT_texture_mirrored_repeat' id='83'>
+        <test_item name=''>
+            <test_step type='fun' fun_name='test_sequence_handler'>
+                <parameter name='adb_cmd'>adb shell chmod -R 777 /data/app</parameter>
+            </test_step>
+            <test_step type='fun' fun_name='ogles_conformance_test_run'>
+                <parameter name='test_file_name'>tex-mirrored_es</parameter>
+                <parameter name='test_bin_name'>conform;/data/app</parameter>
+                <parameter name='run_ext_es1'></parameter>
+                <parameter name='result_check_string'>tex-mirrored_es</parameter>
+            </test_step>
+        </test_item>
+    </test_case>
+
+    <test_case name='ogles1.1_conf_ext_EXT_required_internalformat' id='84'>
+        <test_item name=''>
+            <test_step type='fun' fun_name='test_sequence_handler'>
+                <parameter name='instruction'>Run in GLES2.0</parameter>
+                <parameter name='deprecated'>Run in GLES2.0</parameter>
+            </test_step>
+        </test_item>
+    </test_case>
+
+    <test_case name='ogles1.1_conf_ext_EXT_texture_env_crossbar' id='85'>
+        <test_item name=''>
+            <test_step type='fun' fun_name='test_sequence_handler'>
+                <parameter name='adb_cmd'>adb shell chmod -R 777 /data/app</parameter>
+            </test_step>
+            <test_step type='fun' fun_name='ogles_conformance_test_run'>
+                <parameter name='test_file_name'>texenv-crossbar_es1</parameter>
+                <parameter name='test_bin_name'>conform;/data/app</parameter>
+                <parameter name='run_ext_es1'></parameter>
+                <parameter name='result_check_string'>texenv-crossbar_es1</parameter>
+            </test_step>
+        </test_item>
+    </test_case>
+
+    <test_case name='ogles1.1_conf_ext_EXT_framebuffer_object' id='86'>
+        <test_item name=''>
+            <test_step type='fun' fun_name='test_sequence_handler'>
+                <parameter name='adb_cmd'>adb shell chmod -R 777 /data/app</parameter>
+            </test_step>
+            <test_step type='fun' fun_name='ogles_conformance_test_run'>
+                <parameter name='test_file_name'>fbo_es1</parameter>
+                <parameter name='test_bin_name'>conform;/data/app</parameter>
+                <parameter name='run_ext_es1'></parameter>
+                <parameter name='result_check_string'>fbo_es</parameter>
+            </test_step>
+        </test_item>
+    </test_case>
+
+    <test_case name='ogles1.1_conf_ext_EXT_texture_cubemap' id='87'>
+        <test_item name=''>
+            <test_step type='fun' fun_name='test_sequence_handler'>
+                <parameter name='adb_cmd'>adb shell chmod -R 777 /data/app</parameter>
+            </test_step>
+            <test_step type='fun' fun_name='ogles_conformance_test_run'>
+                <parameter name='test_file_name'>tex-cubemap_es1</parameter>
+                <parameter name='test_bin_name'>conform;/data/app</parameter>
+                <parameter name='run_ext_es1'></parameter>
+                <parameter name='result_check_string'>tex-cubemap_es1</parameter>
+            </test_step>
+        </test_item>
+    </test_case>
+    !-->
+    <test_case name='ogles1.1_conf_test_CopyTexSubImage' id='88'>
+        <test_item name=''>
+            <test_step type='fun' fun_name='test_sequence_handler'>
+                <parameter name='instruction'>Run in GLES2.0</parameter>
+                <parameter name='deprecated'>Run in GLES2.0</parameter>
+            </test_step>
+        </test_item>
+    </test_case>
+    <!-- Bad option -es1
+    <test_case name='ogles1.1_conf_ext_EXT_blend_subtract' id='89'>
+        <test_item name=''>
+            <test_step type='fun' fun_name='test_sequence_handler'>
+                <parameter name='adb_cmd'>adb shell chmod -R 777 /data/app</parameter>
+            </test_step>
+            <test_step type='fun' fun_name='ogles_conformance_test_run'>
+                <parameter name='test_file_name'>blend-subtract_es1</parameter>
+                <parameter name='test_bin_name'>conform;/data/app</parameter>
+                <parameter name='run_ext_es1'></parameter>
+                <parameter name='result_check_string'>blend-subtract_es1</parameter>
+            </test_step>
+        </test_item>
+    </test_case>
+
+    <test_case name='ogles1.1_conf_ext_EXT_blend_func_separate' id='90'>
+        <test_item name=''>
+            <test_step type='fun' fun_name='test_sequence_handler'>
+                <parameter name='adb_cmd'>adb shell chmod -R 777 /data/app</parameter>
+            </test_step>
+            <test_step type='fun' fun_name='ogles_conformance_test_run'>
+                <parameter name='test_file_name'>blend-funcseparate_es1</parameter>
+                <parameter name='test_bin_name'>conform;/data/app</parameter>
+                <parameter name='run_ext_es1'></parameter>
+                <parameter name='result_check_string'>blend-funcseparate_es1</parameter>
+            </test_step>
+        </test_item>
+    </test_case>
+
+    <test_case name='ogles1.1_conf_ext_EXT_blend_equation_separate' id='91'>
+        <test_item name=''>
+            <test_step type='fun' fun_name='test_sequence_handler'>
+                <parameter name='adb_cmd'>adb shell chmod -R 777 /data/app</parameter>
+            </test_step>
+            <test_step type='fun' fun_name='ogles_conformance_test_run'>
+                <parameter name='test_file_name'>blend-eqseparate_es1</parameter>
+                <parameter name='test_bin_name'>conform;/data/app</parameter>
+                <parameter name='run_ext_es1'></parameter>
+                <parameter name='result_check_string'>blend-eqseparate_es1</parameter>
+            </test_step>
+        </test_item>
+    </test_case>
+    !-->
+    <test_case name='ogles1.1_conf_ext_EXT_vertex_array_object' id='92'>
+        <test_item name=''>
+            <test_step type='fun' fun_name='test_sequence_handler'>
+                <parameter name='instruction'>Run in GLES2.0</parameter>
+                <parameter name='deprecated'>Run in GLES2.0</parameter>
+            </test_step>
+        </test_item>
+    </test_case>
+     <!-- Bad option -es1
+    <test_case name='ogles1.1_conf_ext_GL_OES_byte_coordinates' id='93'>
+        <test_item name=''>
+            <test_step type='fun' fun_name='test_sequence_handler'>
+                <parameter name='adb_cmd'>adb shell chmod -R 777 /data/app</parameter>
+            </test_step>
+            <test_step type='fun' fun_name='ogles_conformance_test_run'>
+                <parameter name='test_file_name'>byte_coords_es1</parameter>
+                <parameter name='test_bin_name'>conform;/data/app</parameter>
+                <parameter name='run_ext_es1'></parameter>
+                <parameter name='result_check_string'>byte_coords_es1</parameter>
+            </test_step>
+        </test_item>
+    </test_case>
+
+    <test_case name='ogles1.1_conf_ext_GL_OES_single_precision' id='94'>
+        <test_item name=''>
+            <test_step type='fun' fun_name='test_sequence_handler'>
+                <parameter name='adb_cmd'>adb shell chmod -R 777 /data/app</parameter>
+            </test_step>
+            <test_step type='fun' fun_name='ogles_conformance_test_run'>
+                <parameter name='test_file_name'>single_precision_es1</parameter>
+                <parameter name='test_bin_name'>conform;/data/app</parameter>
+                <parameter name='run_ext_es1'></parameter>
+                <parameter name='result_check_string'>single_precision_es1</parameter>
+            </test_step>
+        </test_item>
+    </test_case>
+
+    <test_case name='ogles1.1_conf_ext_GL_OES_compressed_paletted_texture' id='95'>
+        <test_item name=''>
+            <test_step type='fun' fun_name='test_sequence_handler'>
+                <parameter name='adb_cmd'>adb shell chmod -R 777 /data/app</parameter>
+            </test_step>
+            <test_step type='fun' fun_name='ogles_conformance_test_run'>
+                <parameter name='test_file_name'>tex-comppaletted_es</parameter>
+                <parameter name='test_bin_name'>conform;/data/app</parameter>
+                <parameter name='run_ext_es1'></parameter>
+                <parameter name='result_check_string'>tex-comppaletted_es</parameter>
+            </test_step>
+        </test_item>
+    </test_case>
+
+    <test_case name='ogles1.1_conf_ext_GL_OES_stencil_wrap' id='96'>
+        <test_item name=''>
+            <test_step type='fun' fun_name='test_sequence_handler'>
+                <parameter name='adb_cmd'>adb shell chmod -R 777 /data/app</parameter>
+            </test_step>
+            <test_step type='fun' fun_name='ogles_conformance_test_run'>
+                <parameter name='test_file_name'>spop-wrap_es</parameter>
+                <parameter name='test_bin_name'>conform;/data/app</parameter>
+                <parameter name='run_ext_es1'></parameter>
+                <parameter name='result_check_string'>spop-wrap_es</parameter>
+            </test_step>
+        </test_item>
+    </test_case>
+
+    <test_case name='ogles1.1_conf_ext_GL_OES_rgb8_rgba8' id='97'>
+        <test_item name=''>
+            <test_step type='fun' fun_name='test_sequence_handler'>
+                <parameter name='adb_cmd'>adb shell chmod -R 777 /data/app</parameter>
+            </test_step>
+            <test_step type='fun' fun_name='ogles_conformance_test_run'>
+                <parameter name='test_bin_name'>conform;/data/app</parameter>
+                <parameter name='test_file_name'>fbo_es1 7.7</parameter>
+                <parameter name='run_ext_es1'></parameter>
+                <parameter name='test_file_name'>fbo_es1 7.8</parameter>
+                <parameter name='run_ext_es1'></parameter>
+                <parameter name='test_file_name'>fbo_es1 7.9</parameter>
+                <parameter name='run_ext_es1'></parameter>
+                <parameter name='test_file_name'>fbo_es1 7.10</parameter>
+                <parameter name='run_ext_es1'></parameter>
+                <parameter name='result_check_string'>fbo_es</parameter>
+            </test_step>
+        </test_item>
+    </test_case>
+    !-->
+     <!-- Bad option -egl
+    <test_case name='ogles1.1_conf_ext_GL_OES_egl_sync' id='98'>
+        <test_item name=''>
+            <test_step type='fun' fun_name='test_sequence_handler'>
+                <parameter name='adb_cmd'>adb shell chmod -R 777 /data/app</parameter>
+            </test_step>
+            <test_step type='fun' fun_name='ogles_conformance_test_run'>
+                <parameter name='test_bin_name'>conform;/data/app</parameter>
+                <parameter name='test_file_name'>egl-sync</parameter>
+                <parameter name='run_ext_egl'></parameter>
+                <parameter name='result_check_string'>egl-sync</parameter>
+            </test_step>
+        </test_item>
+    </test_case>
+    !-->
+    <test_case name='ogles1.1_conf_covgl' id='99'>
+        <test_item name=''>
+            <test_step type='fun' fun_name='test_sequence_handler'>
+                <parameter name='app_file'>covgl</parameter>
+                <parameter name='src_folder'>.</parameter>
+                <parameter name='dst_folder'>/data/app</parameter>
+                <parameter name='adb_push_app_cmd'></parameter>
+                <parameter name='output_file'>ogles1.1_conf_covgl.txt</parameter>
+                <parameter name='instruction'>covgl start...</parameter>
+                <parameter name='adb_cmd_pipe_host'></parameter>
+                <parameter name='instruction'>covgl Done...</parameter>
+                <parameter name='rm_app_file'></parameter>
+                <parameter name='keyword'>passed</parameter>
+                <parameter name='find_match_in_file'>covgl</parameter>
+                <parameter name='write_report'></parameter>
+            </test_step>
+        </test_item>
+    </test_case>
+
+    <test_case name='ogles1.1_conf_covegl' id='100'>
+        <test_item name=''>
+            <test_step type='fun' fun_name='test_sequence_handler'>
+                <parameter name='app_file'>covegl</parameter>
+                <parameter name='src_folder'>.</parameter>
+                <parameter name='dst_folder'>/data/app</parameter>
+                <parameter name='adb_push_app_cmd'></parameter>
+                <parameter name='output_file'>ogles1.1_conf_covegl.txt</parameter>
+                <parameter name='instruction'>covegl start...</parameter>
+                <parameter name='adb_cmd_pipe_host'></parameter>
+                <parameter name='instruction'>covegl Done...</parameter>
+                <parameter name='rm_app_file'></parameter>
+                <parameter name='keyword'>passed</parameter>
+                <parameter name='find_match_in_file'>covegl</parameter>
+                <parameter name='write_report'></parameter>
+            </test_step>
+        </test_item>
+    </test_case>
+
+    <test_case name='ogles1.1_conf_primtest_fixed_point' id='101'>
+        <test_item name=''>
+            <test_step type='fun' fun_name='test_sequence_handler'>
+                <parameter name='app_file'>primtest_fixed</parameter>
+                <parameter name='src_folder'>.</parameter>
+                <parameter name='dst_folder'>/data/app</parameter>
+                <parameter name='adb_push_app_cmd'></parameter>
+                <parameter name='output_file'>ogles1.1_conf_primtest_fixed_point.txt</parameter>
+                <parameter name='instruction'>primtest start...</parameter>
+                <parameter name='adb_cmd_pipe_host'></parameter>
+                <parameter name='instruction'>primtest Done...</parameter>
+                <parameter name='rm_app_file'></parameter>
+                <parameter name='keyword'>passed</parameter>
+                <parameter name='find_match_in_file'>primtest (fixed point)</parameter>
+                <parameter name='write_report'></parameter>
+            </test_step>
+        </test_item>
+    </test_case>
+
+    <test_case name='ogles1.1_conf_primtest_float_point' id='102'>
+        <test_item name=''>
+            <test_step type='fun' fun_name='test_sequence_handler'>
+                <parameter name='app_file'>primtest_float</parameter>
+                <parameter name='src_folder'>.</parameter>
+                <parameter name='dst_folder'>/data/app</parameter>
+                <parameter name='adb_push_app_cmd'></parameter>
+                <parameter name='output_file'>ogles1.1_conf_primtest_float_point.txt</parameter>
+                <parameter name='instruction'>primtest start...</parameter>
+                <parameter name='adb_cmd_pipe_host'></parameter>
+                <parameter name='instruction'>primtest Done...</parameter>
+                <parameter name='rm_app_file'></parameter>
+                <parameter name='keyword'>passed</parameter>
+                <parameter name='find_match_in_file'>primtest (single precision)</parameter>
+                <parameter name='write_report'></parameter>
+            </test_step>
+        </test_item>
+    </test_case>
+</ogl_es_1.1_conf_auto>

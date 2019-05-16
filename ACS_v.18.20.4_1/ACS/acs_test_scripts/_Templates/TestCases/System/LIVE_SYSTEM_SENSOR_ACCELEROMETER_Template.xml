@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase>
+    <UseCase>LIVE_SYSTEM_SENSOR_ACCELEROMETER</UseCase>
+    <Description>Check accelerometer value after setting vibrator on</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>False</b2bContinuousMode>
+    <Parameters>
+        <Parameter>
+            <!-- The minimum variation between accelerometer's values, when vibrator is off and when it is on.
+             This parameter is a float having value in [0.1:5] -->
+            <Name>MINIMUM_VARIATION</Name>
+            <Value>4</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

@@ -1,0 +1,8 @@
+#!/system/bin/sh
+
+echo "Clean Matrix Multiply Test files..."
+
+dir=`dirname $0`
+rm -r mm mm*.log
+
+echo "Done"

@@ -1,0 +1,28 @@
+<?xml version="1.0" ?>
+<TestCase>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Discription>
+Multi-user test: only device owner(main user) could detect GOTA package and install it.
+&lt;br /&gt;Only_device_owner_could_detect/install_GOTA
+</Discription>
+    <Domain>GOTA</Domain>
+    <Phase>CORE</Phase>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <Type>FUNCTIONAL</Type>
+    <UseCase>PY_UNIT</UseCase>
+    <b2bIteration>1</b2bIteration>
+    <Parameters>
+        <Parameter>
+            <Name>HpalmName</Name>
+            <Value>check_only_device_owner_could_gota.CheckOnlyDeviceOwnerCouldGOTA.testCheckOnlyDeviceOwnerCouldGOTA</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TEST_DATA_ROOT</Name>
+            <Value>testplan/GOTA</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TEST_CASE</Name>
+            <Value>tests.GOTA.GOTA.check_only_device_owner_could_gota.CheckOnlyDeviceOwnerCouldGOTA.testCheckOnlyDeviceOwnerCouldGOTA</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

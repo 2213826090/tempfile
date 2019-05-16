@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='ASCII'?>
+<TestCase>
+    <UseCase>EXEC_SCRIPT</UseCase>
+    <Description>Test for checking temperature sensor values when decreasing</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <TcMaxAttempt>1</TcMaxAttempt>
+    <TcAcceptanceCriteria>1</TcAcceptanceCriteria>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <TestSteps>
+        <Initialize/>
+        <Setup/>
+        <RunTest/>
+        <TearDown/>
+        <Finalize/>
+    </TestSteps>
+    <Tags>
+        <Tag>ambient temperature</Tag>
+        <Tag>semi_auto</Tag>
+    </Tags>
+    <Priority>
+        <Value>13</Value>
+    </Priority>
+    <Parameters>
+        <Parameter>
+            <Name>SCRIPT_PATH</Name>
+            <Value>scripts/check_temperature_change.py</Value>
+        </Parameter>
+        <Parameter>
+            <Name>COMP_CONF</Name>
+            <Value>{comp_conf}</Value>
+        </Parameter>
+        <Parameter>
+            <Name>PARAMETERS</Name>
+            <Value>-1</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>
+

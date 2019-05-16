@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase>
+  <UseCase>LAB_SYSTEM_FLASH</UseCase>
+  <Description>Flash sequence checking</Description>
+  <b2bIteration>1</b2bIteration>
+  <b2bContinuousMode>False</b2bContinuousMode>
+  <DeviceConnection>False</DeviceConnection>
+  <TcMaxAttempt>3</TcMaxAttempt>
+  <TcAcceptanceCriteria>1</TcAcceptanceCriteria>
+  <IsCritical>True</IsCritical>  
+  <Parameters>  
+    <Parameter>
+        <!-- The full path where the flash files are located. If the parameter is not defined ACS will read from optional parameter from CampaignEngine -->
+        <Name>FLASH_FILE_PATH</Name>
+        <Value></Value>
+    </Parameter>
+    <Parameter>
+        <!-- The timeout (in second) of the flash sequence. If the parameter is not defined ACS will read as default value flashTimeout from Phone_Catalog.xml -->
+        <Name>FLASH_TIMEOUT</Name>
+        <Value></Value>
+    </Parameter>
+  </Parameters>
+</TestCase>

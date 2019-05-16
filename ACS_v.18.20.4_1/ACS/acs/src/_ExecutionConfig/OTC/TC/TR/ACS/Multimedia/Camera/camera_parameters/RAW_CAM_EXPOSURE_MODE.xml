@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase>
+    <UseCase>LIVE_CAMERA_EXPOSURE_MODE</UseCase>
+    <Description>Use Camera to take pictures in burst mode</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>False</b2bContinuousMode>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters>
+         <Parameter>
+             <!-- Camera to open, possible values :
+                - BACK
+                - FRONT
+                 -->
+             <Name>CAMERA</Name>
+             <Value>BACK</Value>
+         </Parameter>
+         <Parameter>
+             <Name>HIGHER_EXPOSURE_VALUE</Name>
+             <Value>6</Value>
+         </Parameter>
+        <Parameter>
+            <Name>LOWER_EXPOSURE_VALUE</Name>
+            <Value>-6</Value>
+        </Parameter>
+         <Parameter>
+             <!-- Directory where to save pictures taken, should be an existing directory-->
+             <Name>SAVE_DIRECTORY</Name>
+             <Value>sdcard/</Value>
+         </Parameter>
+    </Parameters>
+</TestCase>

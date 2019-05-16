@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<Equipment version="13.44" name="IO_CARD" description="Input output card used for power management, energy management on I/O ports of the DUT.">
+    <Parameter name="Model" value="ACBMD" />
+    <!-- ACB Multi Device:
+        This ACB board allow one PC to control several DUT where the original implementation allow one
+        1 DUT to be controlled by several accessories.
+        Only one DUT can be controlled at a time, meaning that you cant do simultaneous PC to DUT connection.
+
+        1)Here declare the default usb/power supply to use.
+        leave empty to declare that there is no mapping for usb/pwr button meanning
+        that actions on this relay will be avoided.
+        Use these fields when you control only 1 device during a campaign.
+    -->
+    <Parameter name="DEFAULT_USB" value="USB_1" />
+    <Parameter name="DEFAULT_POWER_BUTTON" value="POWER_BUTTON_1" />
+    <!-- 2)below command are for multi device used during 1 campaign
+        put your phone name like "PHONE1" on the USB/power button value field at which it is mapped with.
+        if your phone name is found then the default parameter above will be overridden by the USB/POWER_BUTTON values defined for this phone name.
+        ACB have up to 4 usb ports, one next to another known and sorted as following [OTG][CDP][DCP][SDP] on normal ACB setup
+        USB are counted from right to left starting by number 1 to match with normal ACB setup (SDP = USB_1)
+        Here is how they are sorted and located:
+        [USB_4][USB_3][USB_2][USB_1] *Right side of ACB where USBDIO black connector is located*
+    -->
+    <Parameter name="USB_1" value="PHONE1" />
+    <Parameter name="USB_2" value="" />
+    <Parameter name="USB_3" value="" />
+    <Parameter name="USB_4" value="" />
+    <!-- Power button are counted from down to up starting by number 1 to match with normal ACB setup.
+        Here is how they are sorted and located:
+        [..] DONT USE *Right side of ACB where USBDIO black connector is located*
+        [..] DONT USE
+        [..] DONT USE
+        [..] DONT USE
+        [..] POWER_BUTTON_4
+        [..] POWER_BUTTON_3
+        [..] POWER_BUTTON_2
+        [..] POWER_BUTTON_1
+        *down side of ACB where USB connectors are*
+    -->
+    <Parameter name="POWER_BUTTON_1" value="PHONE1" />
+    <Parameter name="POWER_BUTTON_2" value="" />
+    <Parameter name="POWER_BUTTON_3" value="" />
+    <Parameter name="POWER_BUTTON_4" value="" />
+    <!-- ACB serial number in case of multi ACB use in 1 campaign -->
+    <!-- <Parameter name="serialNumber" value=""/> -->
+</Equipment>

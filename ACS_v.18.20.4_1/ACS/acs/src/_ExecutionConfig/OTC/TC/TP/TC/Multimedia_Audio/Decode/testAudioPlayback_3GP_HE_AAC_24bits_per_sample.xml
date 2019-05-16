@@ -1,0 +1,18 @@
+<?xml version="1.0" ?>
+<TestCase>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Discription>Verify HE AAC Codec with 24 bits per sample audio playback well</Discription>
+    <UseCase>PY_UNIT</UseCase>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <b2bIteration>1</b2bIteration>
+    <Parameters>
+        <Parameter>
+            <Name>TEST_DATA_ROOT</Name>
+            <Value>testplan/Multimedia_Audio</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TEST_CASE</Name>
+            <Value>tests.Multimedia_Audio.Decode.audio_playback.AudioPlayback.testAudioPlayback_3GP_HE_AAC_24bits_per_sample</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

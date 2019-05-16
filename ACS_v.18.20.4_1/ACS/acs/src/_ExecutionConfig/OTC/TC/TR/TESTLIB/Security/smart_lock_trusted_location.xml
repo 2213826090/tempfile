@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='ASCII'?>
+<TestCase>
+    <UseCase>Testlib</UseCase>
+    <Description>security</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <TcMaxAttempt>3</TcMaxAttempt>
+    <Parameters>
+        <Parameter>
+            <Name>test</Name>
+            <Value>../testlib/scripts/security/scripts/smart_lock_trusted_location.py</Value>
+        </Parameter>
+        <Parameter>
+            <Name>script-args</Name>
+            <Value>net_ap_ssid=sp_gpt net_ap_password=Starpeakqwe123! widevine_apk=/home/ccarabas/work/flash_ECS2/ExoPlayerDemo.apk</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

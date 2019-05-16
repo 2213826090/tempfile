@@ -1,0 +1,43 @@
+<TestCase>
+	<UseCase>LIVE_AUDIO_PLAYBACK</UseCase>
+	<Description>L_MUSIC Audio Playback AAC (AAC-LC) Decoder With Bits Per Sample : 32</Description>
+	<b2bIteration>1</b2bIteration>
+	<b2bContinuousMode>False</b2bContinuousMode>
+	<Parameters>
+		<Parameter>
+			
+			<Name>AUDIO_FILE</Name>
+			<Value>AAC_LC_32bits_per_sample.mka</Value>
+		</Parameter>
+		<Parameter>
+			
+			<Name>VOLUME</Name>
+			<Value>80</Value>
+		</Parameter>
+		<Parameter>
+			
+			<Name>LENGTH</Name>
+			<Value>60000</Value>
+		</Parameter>
+		<Parameter>
+			
+			<Name>DEVIATION_RATE</Name>
+			<Value>5</Value>
+		</Parameter>
+		<Parameter>
+			
+			<Name>RECORD</Name>
+			<Value>False</Value>
+		</Parameter>		
+		<Parameter>
+			
+			<Name>SILENT_MODE</Name>
+			<Value>False</Value>
+		</Parameter>			
+        <Parameter>
+        	
+            <Name>AUDIO_OUTPUT</Name>
+            <Value>none</Value>
+        </Parameter>  					
+	</Parameters>
+</TestCase>

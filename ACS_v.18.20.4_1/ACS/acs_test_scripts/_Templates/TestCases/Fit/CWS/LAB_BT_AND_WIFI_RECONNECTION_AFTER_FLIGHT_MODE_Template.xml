@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="13.37">
+    <UseCase>LAB_BT_AND_WIFI_RECONNECTION_AFTER_FLIGHT_MODE</UseCase>
+    <Description>Connect WiFi and BT, then switch on/off Flight mode and check if BT and WiFi reconnect automatically</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>False</b2bContinuousMode>
+    <TcAcceptanceCriteria>PASS</TcAcceptanceCriteria>
+    <TcMaxAttempt>1</TcMaxAttempt>
+    <Parameters>
+        <Parameter>
+            <!-- Reference to the WiFi access point -->
+            <Name>WIFI_ACCESS_POINT</Name>
+            <Value>B_ONLY_WIFI_ROUTER</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

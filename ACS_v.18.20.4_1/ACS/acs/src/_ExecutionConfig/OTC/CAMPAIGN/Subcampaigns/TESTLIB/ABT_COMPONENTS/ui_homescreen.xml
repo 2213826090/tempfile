@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<Campaign>
+      <Parameters>
+            <Parameter isControlledPSUsed="False"/>
+            <Parameter isIoCardUsed="False"/>
+            <Parameter skipBootOnPowerCycle="False"/>
+            <Parameter bootRetryNumber="0"/>
+            <Parameter runHookScripts="False"/>
+            <Parameter powerCycleBetweenTC="False"/>
+            <Parameter powerCycleOnFailure="False"/>
+            <Parameter finalDutState="NoChange"/>
+            <Parameter stopCampaignOnCriticalFailure="False"/>
+            <Parameter stopCampaignOnFirstFailure="False"/>
+            <Parameter loggingLevel="debug"/>
+            <Parameter CampaignType="Other"/>
+      </Parameters>
+      <TestCases>
+            <TestCase Id="TC/TESTLIB/Homescreen/add_icon"/>
+            <TestCase Id="TC/TESTLIB/Homescreen/app_button"/>
+            <TestCase Id="TC/TESTLIB/Homescreen/app_button_all_screens"/>
+            <TestCase Id="TC/TESTLIB/Homescreen/app_button_app_views"/>
+            <TestCase Id="TC/TESTLIB/Homescreen/google_bar"/>
+            <TestCase Id="TC/TESTLIB/Homescreen/notification_area"/>
+            <TestCase Id="TC/TESTLIB/Homescreen/recent_apps_button"/>
+            <TestCase Id="TC/TESTLIB/Homescreen/start_app_enter_key"/>
+            <TestCase Id="TC/TESTLIB/Homescreen/start_app"/>
+            <TestCase Id="TC/TESTLIB/Homescreen/system_utils"/>
+      </TestCases>
+</Campaign>

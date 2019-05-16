@@ -1,0 +1,57 @@
+<?xml version="1.0" ?>
+<Campaign>
+      <Parameters>
+            <Parameter isControlledPSUsed="False"/>
+            <Parameter isIoCardUsed="False"/>
+            <Parameter skipBootOnPowerCycle="False"/>
+            <Parameter bootRetryNumber="0"/>
+            <Parameter runHookScripts="False"/>
+            <Parameter powerCycleBetweenTC="False"/>
+            <Parameter powerCycleOnFailure="False"/>
+            <Parameter finalDutState="NoChange"/>
+            <Parameter stopCampaignOnCriticalFailure="False"/>
+            <Parameter stopCampaignOnFirstFailure="False"/>
+            <Parameter loggingLevel="debug"/>
+            <Parameter CampaignType="Other"/>
+      </Parameters>
+      <TestCases>
+            <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/prereq_disable_captive_portal_detection"/>
+            <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/Comms_WIFI_ComponentRelated_Security_Reconnect_2dot4GHz-g-EAP2-AES"/>
+            <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/Comms_WIFI_ComponentRelated_Security_Reconnect_2dot4GHz-g-EAP2-TKIP"/>
+            <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/Comms_WIFI_ComponentRelated_Security_Reconnect_2dot4GHz-g-EAP-AES"/>
+            <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/Comms_WIFI_ComponentRelated_Security_Reconnect_2dot4GHz-g-EAPmixed-AES"/>
+            <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/Comms_WIFI_ComponentRelated_Security_Reconnect_2dot4GHz-g-EAP-TKIP"/>
+            <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/Comms_WIFI_ComponentRelated_Security_Reconnect_2dot4GHz-g-OPEN"/>
+            <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/Comms_WIFI_ComponentRelated_Security_Reconnect_2dot4GHz-g-WPA2-AES"/>
+            <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/Comms_WIFI_ComponentRelated_Security_Reconnect_2dot4GHz-g-WPA2-TKIP"/>
+            <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/Comms_WIFI_ComponentRelated_Security_Reconnect_2dot4GHz-g-WPA-AES"/>
+            <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/Comms_WIFI_ComponentRelated_Security_Reconnect_2dot4GHz-g-WPA-TKIP"/>
+            <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/Comms_WIFI_ComponentRelated_Security_Reconnect_2dot4GHz-g-WPA-WPA2-AUTO-AES"/>
+            <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/Comms_WIFI_ComponentRelated_Security_Reconnect_2dot4GHz-n-EAP2-AES-PEAP-GTC"/>
+            <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/Comms_WIFI_ComponentRelated_Security_Reconnect_2dot4GHz-n-EAP2-AES-PEAP-MSCHAPV2"/>
+	    <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/Comms_WIFI_ComponentRelated_Security_Reconnect_2dot4GHz-n-EAP2-AES-PEAP-MSCHAPV2_WiFi-OFF-ON"/>
+            <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/Comms_WIFI_ComponentRelated_Security_Reconnect_2dot4GHz-n-EAP2-AES-PEAP-None"/>
+            <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/Comms_WIFI_ComponentRelated_Security_Reconnect_2dot4GHz-n-EAP2-AES-PWD"/>
+            <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/Comms_WIFI_ComponentRelated_Security_Reconnect_2dot4GHz-n-EAP2-AES-TTLS-GTC"/>
+            <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/Comms_WIFI_ComponentRelated_Security_Reconnect_2dot4GHz-n-EAP2-AES-TTLS-MSCHAPV2"/>
+            <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/Comms_WIFI_ComponentRelated_Security_Reconnect_2dot4GHz-n-EAP2-AES-TTLS-MSCHAP"/>
+            <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/Comms_WIFI_ComponentRelated_Security_Reconnect_2dot4GHz-n-EAP2-AES-TTLS-None"/>
+            <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/Comms_WIFI_ComponentRelated_Security_Reconnect_2dot4GHz-n-EAP2-AES-TTLS-PAP"/>
+            <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/Comms_WIFI_ComponentRelated_Security_Reconnect_2dot4GHz-n-EAP-AES"/>
+            <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/Comms_WIFI_ComponentRelated_Security_Reconnect_2dot4GHz-n-EAPmixed-AES"/>
+            <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/Comms_WIFI_ComponentRelated_Security_Reconnect_2dot4GHz-ng-EAP2-TKIP-AES"/>
+            <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/Comms_WIFI_ComponentRelated_Security_Reconnect_2dot4GHz-ng-EAP-TKIP-AES"/>
+            <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/Comms_WIFI_ComponentRelated_Security_Reconnect_2dot4GHz-ng-WPA2-TKIP-AES"/>
+            <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/Comms_WIFI_ComponentRelated_Security_Reconnect_2dot4GHz-ng-WPA-TKIP-AES"/>
+            <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/Comms_WIFI_ComponentRelated_Security_Reconnect_2dot4GHz-n-OPEN"/>
+            <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/Comms_WIFI_ComponentRelated_Security_Reconnect_2dot4GHz-n-WPA2-AES"/>
+            <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/Comms_WIFI_ComponentRelated_Security_Reconnect_2dot4GHz-n-WPA-AES"/>
+            <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/Comms_WIFI_ComponentRelated_Security_Reconnect_2dot4GHz-n-WPA-WPA2-AUTO-AES"/>
+            <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/Comms_WIFI_ComponentRelated_Security_Reconnect_2dot4GHz-n-WPA-WPA2-AUTO-AES_Wi-Fi-OFF-ON"/>
+            <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/prereq_install_certificate"/>
+            <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/Comms_WIFI_ComponentRelated_Security_Reconnect_2dot4GHz-n-EAP2-AES-TLS"/>
+            <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/Comms_WIFI_ComponentRelated_Security_Reconnect_2dot4GHz-n-EAP2-AES-TLS_WiFi-OFF-ON"/>
+            <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/postreq_remove_wifi_certificates"/>
+            <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/prereq_enable_captive_portal_detection"/>
+      </TestCases>
+</Campaign>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase>
+  <UseCase>LAB_AUDIO_GSM_VC_PESQ</UseCase>
+  <Description>Check Audio Quality (PESQ) during GSM Mobile Terminated Call on simulated network</Description>
+  <b2bIteration>1</b2bIteration>
+  <b2bContinuousMode>False</b2bContinuousMode>
+  <Parameters>
+    <Parameter>
+      <!-- Keep the recorded audio file whether the test result is good or not (TRUE|FALSE) -->
+      <Name>KEEP_RECORD</Name>
+      <Value>FALSE</Value>
+    </Parameter>
+    <Parameter>
+      <!-- Cell Band (PGSM|RGSM|EGSM|GSM450|GSM480|GSM750|GSM850|TGSM810|PCS|DCS) -->
+      <Name>CELL_BAND</Name>
+      <Value>EGSM</Value>
+    </Parameter>
+    <Parameter>
+        <!-- Cell Service (GSM|GPRS|EGPRS) -->
+        <Name>CELL_SERVICE</Name>
+        <Value>GSM</Value>
+    </Parameter>
+    <Parameter>
+		<!-- Voice coder rate
+          Possible values:
+             FR
+             EFR
+             HR
+             FR_AMR_NB_[1220|1020|795|740|670|590|515|475]
+             HR_AMR_NB_[795|740|670|590|515|475]
+             AMR_WB_[1265|885|660]
+        -->
+        <Name>CODEC</Name>
+        <Value>FR</Value>
+    </Parameter>
+    <Parameter>
+        <!-- Voice call type (MO [Mobile Originated]|MT [Mobile Terminated]) -->
+        <Name>VC_TYPE</Name>
+         <Value>MT</Value>
+     </Parameter>
+    <Parameter>
+      <!-- Audio file to play -->
+      <Name>AUDIO_FILE</Name>
+      <Value>voice.wav</Value>
+    </Parameter>
+    <Parameter>
+      <!-- Audio file sample rate
+      8000 | 16000 -->
+      <Name>SAMPLE_RATE</Name>
+      <Value>8000</Value>
+    </Parameter>
+    <Parameter>
+      <!-- Audio file channel mode
+      Mono | Stereo -->
+      <Name>CHANNEL_MODE</Name>
+      <Value>Mono</Value>
+    </Parameter>
+    <Parameter>
+      <!-- Audio file sample size
+      16-bits | 8-bits -->
+      <Name>SAMPLE_SIZE</Name>
+      <Value>16-bits</Value>
+    </Parameter>
+    <Parameter>
+      <!-- Audio file duration in seconds -->
+      <Name>DURATION</Name>
+      <Value>8</Value>
+    </Parameter>
+   </Parameters>
+</TestCase>

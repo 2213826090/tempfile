@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase>
+    <UseCase>LAB_DUAL_PHONE_BT_OPP_A2DP_WITH_WIFI_ACTIVITIES</UseCase>
+    <Description>BT OPP transfer with A2DP playing music and WiFi activities</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>False</b2bContinuousMode>
+    <TcAcceptanceCriteria>PASS</TcAcceptanceCriteria>
+    <TcMaxAttempt>2</TcMaxAttempt>
+    <Parameters>
+        <Parameter>
+            <!-- Duration of the test - Switches will loop all this time-->
+            <Name>DURATION</Name>
+            <Value>60</Value>
+        </Parameter>
+        <Parameter>
+            <!-- State of DUT for OPP transfer : DUT_CLIENT or DUT_SERVER -->
+            <Name>DUT_STATE</Name>
+            <Value>DUT_CLIENT</Value>
+        </Parameter>
+        <Parameter>
+            <!-- File name to send -->
+            <Name>OPP_LOCAL_FILE</Name>
+            <Value>20MB.txt</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Name of the WiFi access point -->
+            <Name>WIFI_ACCESS_POINT</Name>
+            <Value>B_ONLY_WIFI_ROUTER</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Type of WiFi activity : WIFI_SWITCH_SCAN_CONNECT, WIFI_FTP_DOWNLOAD -->
+            <Name>WIFI_ACTIVITY</Name>
+            <Value>WIFI_FTP_DOWNLOAD</Value>
+        </Parameter>
+        <Parameter>
+            <!-- [Optional] Ftp file name in case of WIFI_ACTIVITY = WIFI_FTP_DOWNLOAD -->
+            <Name>FTP_REMOTE_FILE</Name>
+            <Value>get10M</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase>
+    <UseCase>LAB_EM_REMOVE_CHARGER</UseCase>
+    <Description>UnPlug USB charger while platform is ON, charge level is enough to carry on.</Description>
+    <b2bIteration>1</b2bIteration>
+    <TcMaxAttempt>2</TcMaxAttempt>
+    <TcAcceptanceCriteria>1</TcAcceptanceCriteria>
+    <b2bContinuousMode>False</b2bContinuousMode>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters>
+        <Parameter>
+            <!-- Charger Type : DCP | SDP (Current=0.5mA) | CDP(Current= 1.5mA) -->
+            <Name>CHARGER_TYPE</Name>
+            <Value>DCP</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Vbatt Voltage -->
+            <Name>VBATT</Name>
+            <Value>3.8</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Vusb Voltage -->
+            <Name>VUSB</Name>
+            <Value>5.7</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Battery Temperature (in degree Celsius) : 95, 70, 50, 25, 10, 5, 0, -15 -->
+            <Name>BATTERY_TEMPERATURE</Name>
+            <Value>25</Value>
+        </Parameter>
+        <Parameter>
+            <!-- The os to start : can be 'MOS' or 'ROS' -->
+            <Name>START_OS</Name>
+            <Value>MOS</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Delay in second between starting of test and first measure of ibatt, before charger plug -->
+            <Name>DELAY_TO_MEASURE_BEFORE_PLUG</Name>
+            <Value>60</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Delay in second between starting of test and second measure of ibatt, after charger plug-->
+            <Name>DELAY_TO_MEASURE_AFTER_PLUG</Name>
+            <Value>90</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

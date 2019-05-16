@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="13.41">
+    <UseCase>TEST_STEP_ENGINE</UseCase>
+    <Description></Description>
+    <b2bIteration>3</b2bIteration>
+    <b2bContinuousMode>False</b2bContinuousMode>
+    <TcMaxAttempt>2</TcMaxAttempt>
+    <TcAcceptanceCriteria>1</TcAcceptanceCriteria>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters>
+        <Parameter>
+            <Name>WEBSITE_URL</Name>
+            <Value>http://192.168.0.150;http://192.168.0.150/page2.html;http://192.168.0.150/page3.html;http://192.168.0.150/page2.html;http://192.168.0.150/page3.html</Value>
+        </Parameter>
+        <Parameter>
+            <Name>SIMPLE_WEBSITE_URL_CHECK</Name>
+            <Value>http://192.168.0.150</Value>
+        </Parameter>
+    </Parameters>
+    <TestSteps>
+        <Include Src="ST/cws/TSS/Common/ST_CWS_COMMON.xml"/>
+        <Include Src="ST/cws/TSS/BT/ST_CWS_BT_COMMON.xml"/>
+        <Include Src="ST/cws/TSS/WiFi/ST_CWS_WIFI_COMMON.xml"/>
+        <Include Src="ST/cws/TSS/WiFi/ST_CWS_WIFI_AP.xml"/>
+
+        <TestStepSet Id="Phone1Config">
+            <TestStep SetId="WiFiCommonSetup" DEVICE="PHONE1" REGULATORY_DOMAIN="FR"/>
+            <TestStep SetId="WiFiAddNetwork" DEVICE="PHONE1" SSID="FROM_BENCH:CONFIGURABLE_AP1:SSID" SECURITY="OPEN" PASS_PHRASE="OPEN"/>
+            <TestStep Id="BT_SET_DISCOVERABLE" DEVICE="PHONE1" MODE="both" TIMEOUT="0"/>
+        </TestStepSet>
+
+        <TestStepSet Id="Phone1Teardown">
+            <TestStep Id="BT_SET_TETHERING_POWER" DEVICE="PHONE1" POWER="OFF"/>
+            <TestStep SetId="BTCommonTeardown" DEVICE="PHONE1" />
+            <TestStep SetId="WiFiCommonTeardown" DEVICE="PHONE1"/>
+        </TestStepSet>
+        <TestStepSet Id="Phone2Teardown">
+            <TestStep SetId="BTCommonTeardown" DEVICE="PHONE2" />
+        </TestStepSet>
+
+
+        <Setup>
+            <!-- AUTOMATION - Set default configuration -->
+            <Fork Id="ForkDUTReferencePhoneAndWiFiAP">
+                <TestStep SetId="BTFullSetupPhones1and2" />
+                <TestStep SetId="WiFiAPConfigStandardAP1" STANDARD="bgn" AUTHENTICATION_TYPE="OPEN" PASSPHRASE="OPEN" CHANNEL="6" BANDWIDTH="20"/>
+            </Fork>
+            <TestStep SetId="Phone1Config"/>
+            <TestStep Id="BT_SET_DISCOVERABLE" DEVICE="PHONE2" MODE="both" TIMEOUT="0"/>
+
+            <!-- SPEC - DUT connected to the AP -->
+            <TestStep Id="WIFI_CONNECT" DEVICE="PHONE1" SSID="FROM_BENCH:CONFIGURABLE_AP1:SSID" TIMEOUT="90"/>
+            <!-- SPEC - Pair devices -->
+            <TestStep Id="BT_FIND_DEVICE" DEVICE="PHONE1" DEVICE_TO_FIND="FROM_CTX:BT_MAC_ADDRESS_PHONE2" MUST_FIND="true" />
+            <TestStep Id="BT_WAIT_PAIRING" DEVICE="PHONE2" BDADDR="FROM_CTX:BT_MAC_ADDRESS_PHONE1" UNPAIR_FIRST="True" ACCEPT_PAIRING="True" PASS_KEY="0" PIN_CODE="0000" TIMEOUT="120"/>
+            <TestStep Id="BT_PAIR" DEVICE="PHONE1" BDADDR="FROM_CTX:BT_MAC_ADDRESS_PHONE2" UNPAIR_FIRST="True" ACCEPT_PAIRING="True" PASS_KEY="0" PIN_CODE="0000" />
+            <TestStep Id="BT_CHECK_PAIRED" DEVICE="PHONE1" BDADDR="FROM_CTX:BT_MAC_ADDRESS_PHONE2" />
+            <TestStep Id="BT_SET_TETHERING_POWER" DEVICE="PHONE1" POWER="ON"/>
+        </Setup>
+        <RunTest>
+            <!-- SPEC - Step 1 : Connect PAN User from reference device -->
+            <TestStep Id="OPEN_BLUETOOTH_SETTINGS" DEVICE="PHONE1"/>
+            <TestStep Id="BT_CONNECT_PROFILE" DEVICE="PHONE2" BDADDR="FROM_CTX:BT_MAC_ADDRESS_PHONE1" PROFILE="PAN" CONNECT="True" />
+            <TestStep Id="BT_CHECK_PROFILE_STATUS" DEVICE="PHONE2" BDADDR="FROM_CTX:BT_MAC_ADDRESS_PHONE1" PROFILE="PAN" FAIL_IF="disconnected" SAVE_AS="PROFILE_STATUS" />
+
+            <!-- SPEC - Step 2 : Browse 10 web pages from reference device -->
+            <TestStep Id="BROWSE_AND_CHECK" DEVICE="PHONE2" BROWSER_TYPE="ACS_AGENT" WEBSITE_URL="FROM_TC:WEBSITE_URL" TIMEOUT="20"/>
+            <TestStep Id="BROWSE_AND_CHECK" DEVICE="PHONE2" BROWSER_TYPE="ACS_AGENT" WEBSITE_URL="FROM_TC:WEBSITE_URL" TIMEOUT="20"/>
+
+            <!-- SPEC - Step 3 : Disconnect PAN User from DUT -->
+            <TestStep Id="BT_CONNECT_PROFILE" DEVICE="PHONE1" BDADDR="FROM_CTX:BT_MAC_ADDRESS_PHONE2" PROFILE="PAN" CONNECT="False" />
+            <TestStep Id="BT_CHECK_PROFILE_STATUS" DEVICE="PHONE1" BDADDR="FROM_CTX:BT_MAC_ADDRESS_PHONE2" PROFILE="PAN" FAIL_IF="connected" SAVE_AS="PROFILE_STATUS" />
+
+            <!-- SPEC - Step 4 : Reconnect PAN User from reference device -->
+            <TestStep Id="BT_CONNECT_PROFILE" DEVICE="PHONE2" BDADDR="FROM_CTX:BT_MAC_ADDRESS_PHONE1" PROFILE="PAN" CONNECT="True" />
+            <TestStep Id="BT_CHECK_PROFILE_STATUS" DEVICE="PHONE2" BDADDR="FROM_CTX:BT_MAC_ADDRESS_PHONE1" PROFILE="PAN" FAIL_IF="disconnected" SAVE_AS="PROFILE_STATUS" />
+            <TestStep Id="BROWSE_AND_CHECK" DEVICE="PHONE2" BROWSER_TYPE="ACS_AGENT" WEBSITE_URL="FROM_TC:SIMPLE_WEBSITE_URL_CHECK" TIMEOUT="20"/>
+
+            <!-- SPEC - Step 5 : Disable connection on DUT -->
+            <TestStep Id="BT_CONNECT_PROFILE" DEVICE="PHONE1" BDADDR="FROM_CTX:BT_MAC_ADDRESS_PHONE2" PROFILE="PAN" CONNECT="False" />
+            <TestStep Id="BT_CHECK_PROFILE_STATUS" DEVICE="PHONE1" BDADDR="FROM_CTX:BT_MAC_ADDRESS_PHONE2" PROFILE="PAN" FAIL_IF="connected" SAVE_AS="PROFILE_STATUS" />
+
+            <!-- SPEC - Step 6 : Reconnect PAN User from reference device -->
+            <TestStep Id="BT_CONNECT_PROFILE" DEVICE="PHONE2" BDADDR="FROM_CTX:BT_MAC_ADDRESS_PHONE1" PROFILE="PAN" CONNECT="True" />
+            <TestStep Id="BT_CHECK_PROFILE_STATUS" DEVICE="PHONE2" BDADDR="FROM_CTX:BT_MAC_ADDRESS_PHONE1" PROFILE="PAN" FAIL_IF="disconnected" SAVE_AS="PROFILE_STATUS" />
+            <TestStep Id="BROWSE_AND_CHECK" DEVICE="PHONE2" BROWSER_TYPE="ACS_AGENT" WEBSITE_URL="FROM_TC:SIMPLE_WEBSITE_URL_CHECK" TIMEOUT="20"/>
+        </RunTest>
+        <TearDown>
+            <!-- AUTOMATION - Unpair devices -->
+            <TestStep Id="BT_UNPAIR" DEVICE="PHONE1" BDADDR="FROM_CTX:BT_MAC_ADDRESS_PHONE2"/>
+            <TestStep Id="BT_UNPAIR" DEVICE="PHONE2" BDADDR="FROM_CTX:BT_MAC_ADDRESS_PHONE1"/>
+            <Fork Id="ForkTeardown">
+                <TestStep SetId="Phone1Teardown"/>
+                <TestStep SetId="Phone2Teardown"/>
+                <TestStep SetId="WiFiAPShutdown" EQT="CONFIGURABLE_AP1"/>
+            </Fork>
+        </TearDown>
+    </TestSteps>
+</TestCase>

@@ -1,0 +1,187 @@
+<?xml version="1.0" ?>
+<Campaign>
+      <Parameters>
+            <Parameter isControlledPSUsed="False"/>
+            <Parameter isIoCardUsed="False"/>
+            <Parameter skipBootOnPowerCycle="False"/>
+            <Parameter bootRetryNumber="0"/>
+            <Parameter runHookScripts="False"/>
+            <Parameter powerCycleBetweenTC="False"/>
+            <Parameter powerCycleOnFailure="False"/>
+            <Parameter finalDutState="NoChange"/>
+            <Parameter stopCampaignOnCriticalFailure="False"/>
+            <Parameter stopCampaignOnFirstFailure="False"/>
+            <Parameter loggingLevel="debug"/>
+            <Parameter CampaignType="Other"/>
+      </Parameters>
+      <TestCases>
+<!--
+            EAP - Radius
+-->
+            <TestCase Id="../../../../../TC/TR/TESTLIB/WiFi/exhaustive/Comms_WIFI_Security_FeatureRequired_Connect_bgn-mixed_EAP2-aes-PEAP-GTC"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/WiFi/exhaustive/Comms_WIFI_Security_FeatureRequired_Connect_bgn-mixed_EAP2-aes-PEAP-MSCHAPV2"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/WiFi/exhaustive/Comms_WIFI_Security_FeatureRequired_Connect_bgn-mixed_EAP2-aes-PEAP-None"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/WiFi/exhaustive/Comms_WIFI_Security_FeatureRequired_Connect_bgn-mixed_EAP2-aes-PWD"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/WiFi/exhaustive/Comms_WIFI_Security_FeatureRequired_Connect_bgn-mixed_EAP2-aes-TTLS-GTC"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/WiFi/exhaustive/Comms_WIFI_Security_FeatureRequired_Connect_bgn-mixed_EAP2-aes-TTLS-MSCHAPV2"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/WiFi/exhaustive/Comms_WIFI_Security_FeatureRequired_Connect_bgn-mixed_EAP2-aes-TTLS-MSCHAP"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/WiFi/exhaustive/Comms_WIFI_Security_FeatureRequired_Connect_bgn-mixed_EAP2-aes-TTLS-None"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/WiFi/exhaustive/Comms_WIFI_Security_FeatureRequired_Connect_bgn-mixed_EAP2-aes-TTLS-PAP"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/WiFi/exhaustive/Comms_WIFI_Security_FeatureRequired_Connect_bgn-mixed_EAP2-tkip-aes-PEAP-GTC"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/WiFi/exhaustive/Comms_WIFI_Security_FeatureRequired_Connect_bgn-mixed_EAP2-tkip-aes-PEAP-MSCHAPV2"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/WiFi/exhaustive/Comms_WIFI_Security_FeatureRequired_Connect_bgn-mixed_EAP2-tkip-aes-PEAP-None"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/WiFi/exhaustive/Comms_WIFI_Security_FeatureRequired_Connect_bgn-mixed_EAP2-tkip-aes-PWD"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/WiFi/exhaustive/Comms_WIFI_Security_FeatureRequired_Connect_bgn-mixed_EAP2-tkip-aes-TTLS-GTC"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/WiFi/exhaustive/Comms_WIFI_Security_FeatureRequired_Connect_bgn-mixed_EAP2-tkip-aes-TTLS-MSCHAPV2"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/WiFi/exhaustive/Comms_WIFI_Security_FeatureRequired_Connect_bgn-mixed_EAP2-tkip-aes-TTLS-MSCHAP"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/WiFi/exhaustive/Comms_WIFI_Security_FeatureRequired_Connect_bgn-mixed_EAP2-tkip-aes-TTLS-None"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/WiFi/exhaustive/Comms_WIFI_Security_FeatureRequired_Connect_bgn-mixed_EAP2-tkip-aes-TTLS-PAP"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/WiFi/exhaustive/Comms_WIFI_Security_FeatureRequired_Connect_bgn-mixed_EAP2-tkip-PEAP-GTC"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/WiFi/exhaustive/Comms_WIFI_Security_FeatureRequired_Connect_bgn-mixed_EAP2-tkip-PEAP-MSCHAPV2"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/WiFi/exhaustive/Comms_WIFI_Security_FeatureRequired_Connect_bgn-mixed_EAP2-tkip-PEAP-None"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/WiFi/exhaustive/Comms_WIFI_Security_FeatureRequired_Connect_bgn-mixed_EAP2-tkip-PWD"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/WiFi/exhaustive/Comms_WIFI_Security_FeatureRequired_Connect_bgn-mixed_EAP2-tkip-TTLS-GTC"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/WiFi/exhaustive/Comms_WIFI_Security_FeatureRequired_Connect_bgn-mixed_EAP2-tkip-TTLS-MSCHAPV2"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/WiFi/exhaustive/Comms_WIFI_Security_FeatureRequired_Connect_bgn-mixed_EAP2-tkip-TTLS-MSCHAP"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/WiFi/exhaustive/Comms_WIFI_Security_FeatureRequired_Connect_bgn-mixed_EAP2-tkip-TTLS-None"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/WiFi/exhaustive/Comms_WIFI_Security_FeatureRequired_Connect_bgn-mixed_EAP2-tkip-TTLS-PAP"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/WiFi/exhaustive/Comms_WIFI_Security_FeatureRequired_Connect_bgn-mixed_EAP-aes-PEAP-GTC"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/WiFi/exhaustive/Comms_WIFI_Security_FeatureRequired_Connect_bgn-mixed_EAP-aes-PEAP-MSCHAPV2"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/WiFi/exhaustive/Comms_WIFI_Security_FeatureRequired_Connect_bgn-mixed_EAP-aes-PEAP-None"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/WiFi/exhaustive/Comms_WIFI_Security_FeatureRequired_Connect_bgn-mixed_EAP-aes-PWD"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/WiFi/exhaustive/Comms_WIFI_Security_FeatureRequired_Connect_bgn-mixed_EAP-aes-TTLS-GTC"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/WiFi/exhaustive/Comms_WIFI_Security_FeatureRequired_Connect_bgn-mixed_EAP-aes-TTLS-MSCHAPV2"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/WiFi/exhaustive/Comms_WIFI_Security_FeatureRequired_Connect_bgn-mixed_EAP-aes-TTLS-MSCHAP"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/WiFi/exhaustive/Comms_WIFI_Security_FeatureRequired_Connect_bgn-mixed_EAP-aes-TTLS-None"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/WiFi/exhaustive/Comms_WIFI_Security_FeatureRequired_Connect_bgn-mixed_EAP-aes-TTLS-PAP"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/WiFi/exhaustive/Comms_WIFI_Security_FeatureRequired_Connect_bgn-mixed_EAPmixed-aes-PEAP-GTC"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/WiFi/exhaustive/Comms_WIFI_Security_FeatureRequired_Connect_bgn-mixed_EAPmixed-aes-PEAP-MSCHAPV2"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/WiFi/exhaustive/Comms_WIFI_Security_FeatureRequired_Connect_bgn-mixed_EAPmixed-aes-PEAP-None"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/WiFi/exhaustive/Comms_WIFI_Security_FeatureRequired_Connect_bgn-mixed_EAPmixed-aes-PWD"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/WiFi/exhaustive/Comms_WIFI_Security_FeatureRequired_Connect_bgn-mixed_EAPmixed-aes-TTLS-GTC"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/WiFi/exhaustive/Comms_WIFI_Security_FeatureRequired_Connect_bgn-mixed_EAPmixed-aes-TTLS-MSCHAPV2"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/WiFi/exhaustive/Comms_WIFI_Security_FeatureRequired_Connect_bgn-mixed_EAPmixed-aes-TTLS-MSCHAP"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/WiFi/exhaustive/Comms_WIFI_Security_FeatureRequired_Connect_bgn-mixed_EAPmixed-aes-TTLS-None"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/WiFi/exhaustive/Comms_WIFI_Security_FeatureRequired_Connect_bgn-mixed_EAPmixed-aes-TTLS-PAP"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/WiFi/exhaustive/Comms_WIFI_Security_FeatureRequired_Connect_bgn-mixed_EAPmixed-tkip-aes-PEAP-GTC"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/WiFi/exhaustive/Comms_WIFI_Security_FeatureRequired_Connect_bgn-mixed_EAPmixed-tkip-aes-PEAP-MSCHAPV2"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/WiFi/exhaustive/Comms_WIFI_Security_FeatureRequired_Connect_bgn-mixed_EAPmixed-tkip-aes-PEAP-None"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/WiFi/exhaustive/Comms_WIFI_Security_FeatureRequired_Connect_bgn-mixed_EAPmixed-tkip-aes-PWD"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/WiFi/exhaustive/Comms_WIFI_Security_FeatureRequired_Connect_bgn-mixed_EAPmixed-tkip-aes-TTLS-GTC"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/WiFi/exhaustive/Comms_WIFI_Security_FeatureRequired_Connect_bgn-mixed_EAPmixed-tkip-aes-TTLS-MSCHAPV2"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/WiFi/exhaustive/Comms_WIFI_Security_FeatureRequired_Connect_bgn-mixed_EAPmixed-tkip-aes-TTLS-MSCHAP"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/WiFi/exhaustive/Comms_WIFI_Security_FeatureRequired_Connect_bgn-mixed_EAPmixed-tkip-aes-TTLS-None"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/WiFi/exhaustive/Comms_WIFI_Security_FeatureRequired_Connect_bgn-mixed_EAPmixed-tkip-aes-TTLS-PAP"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/WiFi/exhaustive/Comms_WIFI_Security_FeatureRequired_Connect_bgn-mixed_EAPmixed-tkip-PEAP-GTC"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/WiFi/exhaustive/Comms_WIFI_Security_FeatureRequired_Connect_bgn-mixed_EAPmixed-tkip-PEAP-MSCHAPV2"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/WiFi/exhaustive/Comms_WIFI_Security_FeatureRequired_Connect_bgn-mixed_EAPmixed-tkip-PEAP-None"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/WiFi/exhaustive/Comms_WIFI_Security_FeatureRequired_Connect_bgn-mixed_EAPmixed-tkip-PWD"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/WiFi/exhaustive/Comms_WIFI_Security_FeatureRequired_Connect_bgn-mixed_EAPmixed-tkip-TTLS-GTC"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/WiFi/exhaustive/Comms_WIFI_Security_FeatureRequired_Connect_bgn-mixed_EAPmixed-tkip-TTLS-MSCHAPV2"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/WiFi/exhaustive/Comms_WIFI_Security_FeatureRequired_Connect_bgn-mixed_EAPmixed-tkip-TTLS-MSCHAP"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/WiFi/exhaustive/Comms_WIFI_Security_FeatureRequired_Connect_bgn-mixed_EAPmixed-tkip-TTLS-None"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/WiFi/exhaustive/Comms_WIFI_Security_FeatureRequired_Connect_bgn-mixed_EAPmixed-tkip-TTLS-PAP"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/WiFi/exhaustive/Comms_WIFI_Security_FeatureRequired_Connect_bgn-mixed_EAP-tkip-aes-PEAP-GTC"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/WiFi/exhaustive/Comms_WIFI_Security_FeatureRequired_Connect_bgn-mixed_EAP-tkip-aes-PEAP-MSCHAPV2"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/WiFi/exhaustive/Comms_WIFI_Security_FeatureRequired_Connect_bgn-mixed_EAP-tkip-aes-PEAP-None"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/WiFi/exhaustive/Comms_WIFI_Security_FeatureRequired_Connect_bgn-mixed_EAP-tkip-aes-PWD"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/WiFi/exhaustive/Comms_WIFI_Security_FeatureRequired_Connect_bgn-mixed_EAP-tkip-aes-TTLS-GTC"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/WiFi/exhaustive/Comms_WIFI_Security_FeatureRequired_Connect_bgn-mixed_EAP-tkip-aes-TTLS-MSCHAPV2"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/WiFi/exhaustive/Comms_WIFI_Security_FeatureRequired_Connect_bgn-mixed_EAP-tkip-aes-TTLS-MSCHAP"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/WiFi/exhaustive/Comms_WIFI_Security_FeatureRequired_Connect_bgn-mixed_EAP-tkip-aes-TTLS-None"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/WiFi/exhaustive/Comms_WIFI_Security_FeatureRequired_Connect_bgn-mixed_EAP-tkip-aes-TTLS-PAP"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/WiFi/exhaustive/Comms_WIFI_Security_FeatureRequired_Connect_bgn-mixed_EAP-tkip-PEAP-GTC"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/WiFi/exhaustive/Comms_WIFI_Security_FeatureRequired_Connect_bgn-mixed_EAP-tkip-PEAP-MSCHAPV2"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/WiFi/exhaustive/Comms_WIFI_Security_FeatureRequired_Connect_bgn-mixed_EAP-tkip-PEAP-None"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/WiFi/exhaustive/Comms_WIFI_Security_FeatureRequired_Connect_bgn-mixed_EAP-tkip-PWD"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/WiFi/exhaustive/Comms_WIFI_Security_FeatureRequired_Connect_bgn-mixed_EAP-tkip-TTLS-GTC"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/WiFi/exhaustive/Comms_WIFI_Security_FeatureRequired_Connect_bgn-mixed_EAP-tkip-TTLS-MSCHAPV2"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/WiFi/exhaustive/Comms_WIFI_Security_FeatureRequired_Connect_bgn-mixed_EAP-tkip-TTLS-MSCHAP"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/WiFi/exhaustive/Comms_WIFI_Security_FeatureRequired_Connect_bgn-mixed_EAP-tkip-TTLS-None"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/WiFi/exhaustive/Comms_WIFI_Security_FeatureRequired_Connect_bgn-mixed_EAP-tkip-TTLS-PAP"/>
+
+<!--
+            Wrong password
+-->
+            <TestCase Id="../../../../../TC/TR/TESTLIB/WiFi/Comms_WIFI_ComponentRelated_Security_WrongPassword_WPA2-AES"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/WiFi/Comms_WIFI_ComponentRelated_Security_WrongPassword_WPA2-TKIP-AES"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/WiFi/Comms_WIFI_ComponentRelated_Security_WrongPassword_WPA2-TKIP"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/WiFi/Comms_WIFI_ComponentRelated_Security_WrongPassword_WPA-AES"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/WiFi/Comms_WIFI_ComponentRelated_Security_WrongPassword_WPA-TKIP-AES"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/WiFi/Comms_WIFI_ComponentRelated_Security_WrongPassword_WPA-TKIP"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/WiFi/Comms_WIFI_ComponentRelated_Security_WrongPassword_WPA-WPA2-AUTO"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/WiFi/Comms_WIFI_ComponentRelated_Security_WrongPassword_WPA2-EAP-PEAP-GTC"/>
+
+<!--
+            reconnect - AP reboot
+-->
+
+            <TestCase Id="../../../../../TC/TR/TESTLIB/WiFi/Comms_WIFI_ComponentRelated_Security_Reconnect_2dot4GHz-g-EAP2-AES"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/WiFi/Comms_WIFI_ComponentRelated_Security_Reconnect_2dot4GHz-g-EAP2-TKIP"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/WiFi/Comms_WIFI_ComponentRelated_Security_Reconnect_2dot4GHz-g-EAP-AES"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/WiFi/Comms_WIFI_ComponentRelated_Security_Reconnect_2dot4GHz-g-EAPmixed-AES"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/WiFi/Comms_WIFI_ComponentRelated_Security_Reconnect_2dot4GHz-g-EAP-TKIP"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/WiFi/Comms_WIFI_ComponentRelated_Security_Reconnect_2dot4GHz-g-OPEN"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/WiFi/Comms_WIFI_ComponentRelated_Security_Reconnect_2dot4GHz-g-WPA2-AES"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/WiFi/Comms_WIFI_ComponentRelated_Security_Reconnect_2dot4GHz-g-WPA2-TKIP"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/WiFi/Comms_WIFI_ComponentRelated_Security_Reconnect_2dot4GHz-g-WPA-AES"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/WiFi/Comms_WIFI_ComponentRelated_Security_Reconnect_2dot4GHz-g-WPA-TKIP"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/WiFi/Comms_WIFI_ComponentRelated_Security_Reconnect_2dot4GHz-g-WPA-WPA2-AUTO-AES"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/WiFi/Comms_WIFI_ComponentRelated_Security_Reconnect_2dot4GHz-n-EAP2-AES-PEAP-GTC"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/WiFi/Comms_WIFI_ComponentRelated_Security_Reconnect_2dot4GHz-n-EAP2-AES-PEAP-MSCHAPV2"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/WiFi/Comms_WIFI_ComponentRelated_Security_Reconnect_2dot4GHz-n-EAP2-AES-PEAP-None"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/WiFi/Comms_WIFI_ComponentRelated_Security_Reconnect_2dot4GHz-n-EAP2-AES-PWD"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/WiFi/Comms_WIFI_ComponentRelated_Security_Reconnect_2dot4GHz-n-EAP2-AES-TTLS-GTC"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/WiFi/Comms_WIFI_ComponentRelated_Security_Reconnect_2dot4GHz-n-EAP2-AES-TTLS-MSCHAPV2"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/WiFi/Comms_WIFI_ComponentRelated_Security_Reconnect_2dot4GHz-n-EAP2-AES-TTLS-MSCHAP"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/WiFi/Comms_WIFI_ComponentRelated_Security_Reconnect_2dot4GHz-n-EAP2-AES-TTLS-None"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/WiFi/Comms_WIFI_ComponentRelated_Security_Reconnect_2dot4GHz-n-EAP2-AES-TTLS-PAP"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/WiFi/Comms_WIFI_ComponentRelated_Security_Reconnect_2dot4GHz-n-EAP-AES"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/WiFi/Comms_WIFI_ComponentRelated_Security_Reconnect_2dot4GHz-n-EAPmixed-AES"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/WiFi/Comms_WIFI_ComponentRelated_Security_Reconnect_2dot4GHz-ng-EAP2-TKIP-AES"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/WiFi/Comms_WIFI_ComponentRelated_Security_Reconnect_2dot4GHz-ng-EAP-TKIP-AES"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/WiFi/Comms_WIFI_ComponentRelated_Security_Reconnect_2dot4GHz-ng-WPA2-TKIP-AES"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/WiFi/Comms_WIFI_ComponentRelated_Security_Reconnect_2dot4GHz-ng-WPA-TKIP-AES"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/WiFi/Comms_WIFI_ComponentRelated_Security_Reconnect_2dot4GHz-n-OPEN"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/WiFi/Comms_WIFI_ComponentRelated_Security_Reconnect_2dot4GHz-n-WPA2-AES"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/WiFi/Comms_WIFI_ComponentRelated_Security_Reconnect_2dot4GHz-n-WPA-AES"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/WiFi/Comms_WIFI_ComponentRelated_Security_Reconnect_2dot4GHz-n-WPA-WPA2-AUTO-AES"/>
+
+<!--
+            AP reconfig
+-->
+            <TestCase Id="../../../../../TC/TR/TESTLIB/WiFi/Comms_WIFI_ComponentRelated_Security_ConfigTransition_SSID-OPEN-WPA"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/WiFi/Comms_WIFI_ComponentRelated_Security_ConfigTransition_SSID-WPA-OPEN"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/WiFi/Comms_WIFI_ComponentRelated_Security_ConfigTransition_WPA2TKIP-WPA2AES"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/WiFi/Comms_WIFI_ComponentRelated_Security_ConfigTransition_WPA2TKIP-WPAAES"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/WiFi/Comms_WIFI_ComponentRelated_Security_ConfigTransition_WPA2TKIP-WPATKIP"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/WiFi/Comms_WIFI_ComponentRelated_Security_ConfigTransition_WPAAES-WPA2AES"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/WiFi/Comms_WIFI_ComponentRelated_Security_ConfigTransition_WPAAES-WPA2TKIP"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/WiFi/Comms_WIFI_ComponentRelated_Security_ConfigTransition_WPAAES-WPATKIP"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/WiFi/Comms_WIFI_ComponentRelated_Security_ConfigTransition_WPA-WPA2"/>
+
+<!--
+            Connect
+-->
+            <TestCase Id="../../../../../TC/TR/TESTLIB/WiFi/exhaustive/Comms_WIFI_IEE80211abgn_FeatureRequired_Connect_2dot4Ghz_b_channel-20Mhz-showSSID"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/WiFi/exhaustive/Comms_WIFI_IEE80211abgn_FeatureRequired_Connect_2dot4Ghz_g_channel-20Mhz-showSSID"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/WiFi/exhaustive/Comms_WIFI_IEE80211abgn_FeatureRequired_Connect_2dot4Ghz_n_channel-20Mhz-showSSID"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/WiFi/exhaustive/Comms_WIFI_IEE80211abgn_FeatureRequired_Connect_2dot4Ghz_n_channel-40Mhz-showSSID"/>
+
+<!--
+            general
+-->
+            <TestCase Id="../../../../../TC/TR_ODM/LOLLIPOP/MR_1/wifi_api_tests/Comms_WIFI_ComponentRelated_GeneralBehaviour_Disable-WiFi"/>
+            <TestCase Id="../../../../../TC/TR_ODM/LOLLIPOP/MR_1/wifi_api_tests/Comms_WIFI_ComponentRelated_GeneralBehaviour_Enable-WiFi"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/WiFi/Comms_WIFI_ComponentRelated_GeneralBehaviour_Connected-Forget"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/WiFi/Comms_WIFI_ComponentRelated_GeneralBehaviour_Connection-to-a-hidden-network"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/WiFi/Comms_WIFI_ComponentRelated_GeneralBehaviour_Restart-AP-no-SSID-remembered-N2400MHz-OPEN"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/WiFi/Comms_WIFI_ComponentRelated_GeneralBehaviour_WLAN-AutoDisconnectConnect-OnOff"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/WiFi/Comms_WIFI_ComponentRelated_GeneralBehaviour_WLAN-ConnectDisconnect"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/WiFi/Comms_WIFI_ComponentRelated_GeneralBehaviour_WrongPassword-CorrectPassword"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/WiFi/Comms_WIFI_ComponentRelated_GeneralBehaviour_Driver"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/WiFi/Comms_WIFI_ComponentRelated_GeneralBehaviour_DiscoveryConfig-PasswordRange"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/WiFi/Comms_WIFI_ComponentRelated_GeneralBehaviour_Navigate-the-Internet"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/WiFi/postreq_reset_AP"/>
+      </TestCases>
+</Campaign>

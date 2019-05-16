@@ -1,0 +1,35 @@
+<?xml version="1.0" ?>
+<Campaign>
+    <Parameters>
+        <Parameter isControlledPSUsed="False"/>
+        <Parameter isIoCardUsed="False"/>
+        <Parameter skipBootOnPowerCycle="False"/>
+        <Parameter bootRetryNumber="0"/>
+        <Parameter runHookScripts="False"/>
+        <Parameter powerCycleBetweenTC="False"/>
+        <Parameter powerCycleOnFailure="False"/>
+        <Parameter finalDutState="NoChange"/>
+        <Parameter stopCampaignOnCriticalFailure="False"/>
+        <Parameter stopCampaignOnFirstFailure="False"/>
+        <Parameter loggingLevel="debug"/>
+        <Parameter CampaignType="Other"/>
+    </Parameters>
+    <TestCases>
+        <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/prereq_disable_captive_portal_detection"/>
+        <!--TestCase Id="../../../../TC/TR/TESTLIB/WiFi/Comms_WIFI_ComponentRelated_Security_ConfigTransition_SSID-OPEN-WEP"/-->
+        <!--TestCase Id="../../../../TC/TR/TESTLIB/WiFi/Comms_WIFI_ComponentRelated_Security_ConfigTransition_SSID-WEP-OPEN"/-->
+        <!--TestCase Id="../../../../TC/TR/TESTLIB/WiFi/Comms_WIFI_ComponentRelated_Security_ConfigTransition_SSID-WEP-WPA"/-->
+        <!--TestCase Id="../../../../TC/TR/TESTLIB/WiFi/Comms_WIFI_ComponentRelated_Security_ConfigTransition_SSID-WPA-WEP"/-->
+        <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/Comms_WIFI_ComponentRelated_Security_ConfigTransition_WPA2TKIP-WPA2AES"/>
+        <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/Comms_WIFI_ComponentRelated_Security_ConfigTransition_WPA2TKIP-WPAAES"/>
+        <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/Comms_WIFI_ComponentRelated_Security_ConfigTransition_WPA2TKIP-WPATKIP"/>
+        <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/Comms_WIFI_ComponentRelated_Security_ConfigTransition_WPAAES-WPA2AES"/>
+        <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/Comms_WIFI_ComponentRelated_Security_ConfigTransition_WPAAES-WPA2TKIP"/>
+        <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/Comms_WIFI_ComponentRelated_Security_ConfigTransition_WPAAES-WPATKIP"/>
+        <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/Comms_WIFI_ComponentRelated_Security_ConfigTransition_WPA-WPA2"/>
+        <!--TestCase Id="../../../../TC/TR/TESTLIB/WiFi/Comms_WIFI_ComponentRelated_Security_ConfigTransition_SSID-WEPShare-WEPOpen"/-->
+        <!--TestCase Id="../../../../TC/TR/TESTLIB/WiFi/Comms_WIFI_ComponentRelated_Security_ConfigTransition_SSID-WEPOpen-WEPShare"/-->
+        <!--TestCase Id="../../../../TC/TR/TESTLIB/WiFi/Comms_WIFI_ComponentRelated_Security_ConfigTransition_SSID-WEPshared-WPA"/-->
+        <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/prereq_enable_captive_portal_detection"/>
+    </TestCases>
+</Campaign>

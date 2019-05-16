@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="iso-8859-1"?>	
+<Sequence>	
+
+	<GPIBCommand equipment="NETWORK_SIMULATOR1" command="SYST:APPL:FORM 'GSM/GPRS'" />
+	<GPIBCommand equipment="NETWORK_SIMULATOR1" command="CALL:OPER:MODE OFF" description="Set cell to off"/>
+	<GPIBCommand equipment="NETWORK_SIMULATOR1" command="CALL:CELL:BAND EGSM" description="Set band to EGSM"/>
+	<GPIBCommand equipment="NETWORK_SIMULATOR1" command="CALL:BCH:SCEL GPRS" description="Set serving cell. Possible values are : EGPRS, GPRS"/>
+	<GPIBCommand equipment="NETWORK_SIMULATOR1" command="CALL:MS:PATTACH ON" description="Enable the persistent attach state"/>
+	<GPIBCommand equipment="NETWORK_SIMULATOR1" command="CALL:IATTACH ON" description="Enable the imsi attach flag state"/>
+	<GPIBCommand equipment="NETWORK_SIMULATOR1" command="CALL:CELL:NMOPERATION 1" description="Set the network mode operation to 1"/>
+	<GPIBCommand equipment="NETWORK_SIMULATOR1" command="CALL:BCH:NCOR 1" description="Set the network control order to 1"/>
+	<GPIBCommand equipment="NETWORK_SIMULATOR1" command="CALL:FUNCTION:CONNECTION:TYPE AUTO" description="The connection type must be set to AUTO"/>
+	<GPIBCommand equipment="NETWORK_SIMULATOR1" command="CALL:POW:STAT ON;*CLS;:CALL:POW:AMPL -60" description="Set cell power"/>
+	<GPIBCommand equipment="NETWORK_SIMULATOR1" command="CALL:BCH:CID 2" description="Set cell id"/>
+	<GPIBCommand equipment="NETWORK_SIMULATOR1" command="CALL:MNC 1" description="Set the MNC"/>
+	<GPIBCommand equipment="NETWORK_SIMULATOR1" command="CALL:MCC 1" description="Set the MCC"/>
+	<GPIBCommand equipment="NETWORK_SIMULATOR1" command="CALL:LAC 256" description="Set the LAC"/>
+	<GPIBCommand equipment="NETWORK_SIMULATOR1" command="CALL:RAC 20" description="Set the RAC"/>
+	<GPIBCommand equipment="NETWORK_SIMULATOR1" command="CALL:NCC 1" description="Set the NCC"/>
+	<GPIBCommand equipment="NETWORK_SIMULATOR1" command="CALL:BCC 5" description="Set the BCC"/>
+	<GPIBCommand equipment="NETWORK_SIMULATOR1" command="CALL:BCH 20" description="Set the BCH Arfcn"/>
+	<GPIBCommand equipment="NETWORK_SIMULATOR1" command="CALL:BIND DCS" description="Set the Band Indicator. This command is only needed for DCS and PCS bands"/>
+	<GPIBCommand equipment="NETWORK_SIMULATOR1" command="CALL:UTRAN:FDDUPLEX:TABLE 3000,1,256,1" description="Enable the 3G neighbour Cell 1 . Set its Uarfcn, Scrambling code."/>
+	
+	<GPIBCommand equipment="NETWORK_SIMULATOR2" command="SYST:APPL:FORM 'WCDMA'" />
+	<GPIBCommand equipment="NETWORK_SIMULATOR2" command="CALL:OPER:MODE OFF" description="Set cell to off"/>
+	<GPIBCommand equipment="NETWORK_SIMULATOR2" command="CALL:BCCH:UPDA AUTO" description="Set bch update page state to AUTO"/>
+	<GPIBCommand equipment="NETWORK_SIMULATOR2" command="CALL:CELL:NMOPERATION 1" description="Set the network mode operation to 1"/>
+	<GPIBCommand equipment="NETWORK_SIMULATOR2" command="CALL:ATTFLAG:STATE ON" description="Enable the imsi attach flag state"/>
+	<GPIBCommand equipment="NETWORK_SIMULATOR2" command="CALL:PSDOMAIN PRESENT" description="The PS domain must always be present"/>
+	<GPIBCommand equipment="NETWORK_SIMULATOR2" command="CALL:PAG:SERV GPRS" description="Set the paging service. Possible values are AMR, GPRS"/>
+	<GPIBCommand equipment="NETWORK_SIMULATOR2" command="CALL:POW:STAT ON;*CLS;:CALL:POW:AMPL -60" description="Set cell power"/>
+	<GPIBCommand equipment="NETWORK_SIMULATOR2" command="CALL:IDENTITY 1" description="Set cell id"/>
+	<GPIBCommand equipment="NETWORK_SIMULATOR2" command="CALL:MNC 1" description="Set the MNC"/>
+	<GPIBCommand equipment="NETWORK_SIMULATOR2" command="CALL:MCC 1" description="Set the MCC"/>
+	<GPIBCommand equipment="NETWORK_SIMULATOR2" command="CALL:LAC 1024" description="Set the LAC"/>
+	<GPIBCommand equipment="NETWORK_SIMULATOR2" command="CALL:RAC 50" description="Set the RAC"/>
+	<GPIBCommand equipment="NETWORK_SIMULATOR2" command="CALL:CHANNEL 3000" description="Set the cell UArfcn"/>
+	<GPIBCommand equipment="NETWORK_SIMULATOR2" command="CALL:SCOD 256" description="Set the scrambling code"/>
+	<GPIBCommand equipment="NETWORK_SIMULATOR2" command="CALL:BCCH:GSMS:STATE 1,0,0,0,0,0,0,0" description="Enable the neighbour Cell 1 state"/>
+	<GPIBCommand equipment="NETWORK_SIMULATOR2" command="CALL:BCCH:GSMS:BCH 20,0,0,0,0,0,0,0" description="Set the neighbour BCH Arfcn. The value is equal to the value of the NetworkSimulator 1 ARFCN"/>
+	<GPIBCommand equipment="NETWORK_SIMULATOR2" command="CALL:BCCH:GSMS:BAND DCS1800,DCS1800,DCS1800,DCS1800,DCS1800,DCS1800,DCS1800,DCS1800" description="Set the neighbour Band indicator. The value is equal to the value of the NetworkSimulator 1 Band indicator. This command is only needed for DCS or PCS"/>
+	<GPIBCommand equipment="NETWORK_SIMULATOR2" command="CALL:BCCH:GSMS:NCC 1,0,0,0,0,0,0,0" description="Set the neighbour NCC.  The value is equal to the value of the NetworkSimulator 1 NCC"/>
+	<GPIBCommand equipment="NETWORK_SIMULATOR2" command="CALL:BCCH:GSMS:BCC 5,0,0,0,0,0,0,0" description="Set the neighbour BCC. The value is equal to the value of the NetworkSimulator 1 BCC"/>
+	<GPIBCommand equipment="NETWORK_SIMULATOR2" command="CALL:CCPC:SEC:CONF STR" description="Set the secondary control channel to signaling + traffic"/>
+	<GPIBCommand equipment="NETWORK_SIMULATOR2" command="CALL:RES:GSM:STAT ON" description="Set the Inter-RAT (GSM) 'S' Parameters State to ON"/>
+	<GPIBCommand equipment="NETWORK_SIMULATOR2" command="CALL:RES:GSM:SLIM 20" description="Set the Slimit, searchrat (GSM)."/>
+	<GPIBCommand equipment="NETWORK_SIMULATOR2" command="CALL:RES:QUAL:MEAS RSCP" description="Set the Quality Measure to CPICH RSCP"/>
+	<GPIBCommand equipment="NETWORK_SIMULATOR2" command="CALL:BCCH:FMOC:CONT PRES" description="Set the BCCH SIB11 FACH measurement occasion info Present setting to PRESENT"/>
+	<GPIBCommand equipment="NETWORK_SIMULATOR2" command="CALL:BCCH:FMOC:FDDI OFF" description="Set the BCCH SIB 11 Inter-frequency FDD measurement indicator to OFF"/>
+	
+</Sequence>

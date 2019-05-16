@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='ASCII'?>
+<TestCase>
+    <UseCase>Testlib</UseCase>
+    <Description>DUT can reboot in safe mode using system property</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <TcMaxAttempt>1</TcMaxAttempt>
+
+    <Parameters>
+        <Parameter>
+            <Name>test</Name>
+            <Value>scripts/android/system_os/tests/package.py</Value>
+        </Parameter>
+        <Parameter>
+            <Name>script-args</Name>
+            <Value>package_name=com.android.car.radio</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

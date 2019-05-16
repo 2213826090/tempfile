@@ -1,0 +1,50 @@
+{
+    "Configuration": {
+        "Boot": null,
+        "BootVars": null,
+        "Custom": null,
+        "Download": null,
+        "Flash": null,
+        "Inherit": {
+            "BOARD": "cht_cr_rvp"
+        },
+        "Logs": null,
+        "Timeout": null,
+        "WorkAround": null,
+        "TestDescription": {
+            "warnings": {
+                "LAB_PUPDR_COS_PKPON_PKP|BOOTOTA - COS - PKP ON IN COS": "OAM-3084: power key press not detected in COS",
+                "BOOTOTA - POS - FASTBOOT COMBO KEY": "OAM-23996: Fastboot combo key fails for Provisioning OS",
+                "BOOTOTA - BOOT - PKP 2S WITHOUT USB": "OAM-27101: Device remains offline after power key pressed for 2s"
+            },
+            "engineering": [
+                {
+                    "name": "default",
+                    "build_tag": "bootota_",
+                    "testing": [
+                        {
+                            "build_target": "r2_cht_mrd-userdebug",
+                            "campaign": "BOOTOTA_PREINTEGRATION"
+                        },
+                        {
+                            "build_target": "r2_cht_mrd-user",
+                            "campaign": "BOOTOTA_USER_EAT"
+                        }
+                    ]
+                }
+            ],
+            "release_candidate": [
+                {
+                    "name": "release",
+                    "build_tag": "",
+                    "testing": [
+                        {
+                            "build_target": "r2_cht_mrd-userdebug",
+                            "campaign": "BOOTOTA_RELEASE"
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="13.41">
+    <TestSteps>
+        <Include Src="ST/pnp/TSS/common.xml" />
+        <Include Src="ST/pnp/TSS/active.xml" />
+        <Include Src="ST/pnp/TSS/video.xml" />
+        <Initialize>
+            <TestStep SetId="InitializePnPResources" />
+        </Initialize>
+        <Setup>
+            <TestStep Id="SET_SCREEN_PROPERTY" DEVICE="PHONE1" PROPERTY="state" VALUE="on"/>
+            <TestStep Id="DELETE_DIR" DEVICE="PHONE1" DEVICE_FOLDER="FROM_TC:VIDEO_PATH" />
+        </Setup>
+        <RunTest>
+            <TestStep SetId="StartIntelVideoRecorder" />
+            <TestStep Id="SUSPEND" DURATION_IN_SEC="FROM_TC:TEST_DURATION" />
+            <TestStep SetId="StopPowerMeasurement" />
+            <TestStep SetId="StopIntelVideoRecorder" />
+        </RunTest>
+        <TearDown>
+            <TestStep SetId="StopIntelVideoRecorder" />
+            <TestStep Id="SET_SCREEN_PROPERTY" DEVICE="PHONE1" PROPERTY="state" VALUE="off"/>
+            <TestStep SetId="TearDown" />
+        </TearDown>
+    </TestSteps>
+</TestCase>

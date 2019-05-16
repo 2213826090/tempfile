@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="13.37">
+    <ClassName>UseCase.OTC.System.TEXT_RELOCATION_CHECK.TextRelocationCheck</ClassName>
+    <Description>This test pull the /system/lib/ libraries from the DUT, then runs an scanelf command on them.
+                  This test requires "pax-utils" linux package to properly run.</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>False</b2bContinuousMode>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters>
+        <Parameter >
+            <!--
+                Here you can state all the libraries we can filter after the scanelf -qT -R command, separated by whitespace.
+                Example: libdvm.so libart.so libc_malloc_debug_leak.so libc_malloc_debug_qemu.so
+                              libhoudini.so libgcam.so libvorbisidec.so libcrypto.so libaudioresample.so
+            -->
+            <Name>white_list_libraries</Name>
+            <Value>
+                libstagefright_soft_amrdec_mdp.so libstagefright_soft_amrenc_mdp.so libstagefright_soft_mp3dec_mdp.so libdvm.so libart.so libc_malloc_debug_leak.so libc_malloc_debug_qemu.so libhoudini.so libgcam.so libvorbisidec.so libcrypto.so libaudioresample.so libstagefright_soft_aacdec_mdp.so libstagefright_soft_aacenc_mdp.so libstagefright_soft_vorbisdec_mdp.so
+            </Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

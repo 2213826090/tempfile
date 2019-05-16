@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="13.45">
+    <UseCase>LIVE_CELLULAR_WEB_BROWSING</UseCase>
+    <Description>Browsing web pages over cellular networks</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters>
+        <Parameter>
+            <!-- Browser to use.Possible values : "NATIVE", "ACS_AGENT"
+                Warning ! NATIVE mode is not verbose in term of verdict, because it uses the default browser of the system.
+                So the user should check manually in this mode if the page is correctly loaded -->
+            <Name>BROWSER_TYPE</Name>
+            <Value>ACS_AGENT</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Website url to open String as follow : http://www.intel.com 
+            For Multiple page loading separate each address by a ";". -->
+            <Name>WEBSITE_URL</Name>
+            <Value>http://www.intel.com</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Timeout (in second) to load web page -->
+            <Name>TIMEOUT</Name>
+            <Value>10</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Preferred network to use for the test. Possible values:
+                    - "WCDMA_PREF",
+                    - "GSM_ONLY",
+                    - "WCDMA_ONLY",
+                    - "GSM_UMTS",
+                    - "CDMA",
+                    - "CDMA_NO_EVDO",
+                    - "EVDO_NO_CDMA",
+                    - "GLOBAL",
+                    - "LTE_CDMA_EVDO",
+                    - "LTE_GSM_WCDMA",
+                    - "LTE_CMDA_EVDO_GSM_WCDMA",
+                    - "LTE_ONLY" -->
+            <Name>PREFERRED_NETWORK_TYPE</Name>
+            <Value>WCDMA_PREF</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

@@ -1,0 +1,644 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<Configs>
+<!--     COMMON_2G Parameters for 2G  -->
+    <Config name="GPRS">
+        <GPIB command="CALL:BCH:SCEL GPRS" />
+        <GPIB command="CALL:PDTChannel:CSCHeme:UPLink CS4" />
+        <GPIB command="CALL:PDTCH:MSLot:CONFig D5U1" />
+        <GPIB command="CALL:CELL:DTMode OFF" />
+        <GPIB command="CALL:TBFLow:UPLink:EXTended ON" />
+        <GPIB command="CALL:CELL:NMOPERATION 2" />
+        <GPIB command="CALL:BCHannel:NCOrder 0" />
+        <GPIB command="CALL:MS:PATTach ON" />
+        <GPIB command="CALL:IATTach ON" />
+        <GPIB command="CALL:BCH:CID 1" />
+        <GPIB command="CALL:PPR:PDPC:NIN OFF" />
+        <GPIB command="CALL:TCHANNEL:CMODe:LSPeech:CHANnel EFS" />
+        <GPIB command="CALL:PDTCH:TBFLow:DOWNlink:DELayed 2.6" />
+        <GPIB command="CALL:PDTCH:TBFLow:UPLink:EXTended:DURation 1" />
+        <GPIB command="CALL:UTRan:MPDescr INCLude" />
+        <GPIB command="CALL:UTRan:MPDescr:TGSPriority ON" />
+        <GPIB command="CALL:UTRan:MPDescr:FDDinfo INCLude" />
+        <GPIB command="CALL:UTRan:MPDescr:FDDinfo:RQUantity 1" />
+        <GPIB command="CALL:UTRan:MPDescr:FDDinfo:RTHReshold 0" />
+        <GPIB command="CALL:UTRan:MPDescr:FDDinfo:MREPorting 0" />
+        <GPIB command="CALL:UTRan:MPDescr:FDDinfo:QMINimum 5" />
+        <GPIB command="CALL:UTRan:MPDescr:FDDinfo:QOFFset 0" />
+        <GPIB command="CALL:UTRan:MPDescr:QSI 7" />
+        <GPIB command="CALL:UTRan:MPDescr:QSC:INITial 0" />
+        <GPIB command="CALL:UTRan:MPDescr:QSP 7" />
+        <GPIB command="CALL:UTRan:MPDescr:QSC 7" />
+        <GPIB command="CALL:POW:AMPL -60.0" />
+        <GPIB command="SYSTem:FATal:ERRor:RESTart ON" />
+    </Config>
+    <Config name="EGPRS" apply_to="GPRS">
+        <GPIB command="CALL:BCH:SCEL EGPRS" />
+        <GPIB command="CALL:PDTCH:MCSCheme:UPLink MCS9" />
+        <GPIB command="CALL:PDTCH:MSLot:CONFig D5U1" />
+        <GPIB command="CALL:PDTCH:MCSC:PSCH PS1" />
+    </Config>
+<!--     -   Europe cell 1 for 2G -->
+    <Config name="EGSM" apply_to="EGPRS">
+        <GPIB command="CALL:CELL:BAND EGSM" />
+        <GPIB command="CALL:CELL:BINDicator DCS" />
+        <GPIB command="CALL:CELL:BCHannel:ARFCn:EGSM 20" />
+        <GPIB command="CALL:PDTCH:ARFCn 32" />
+        <GPIB command="CALL:CELL:BA:TABLe:NCELl1 ON" />
+        <GPIB command="CALL:CELL:BA:TABLe:NCELl1:ARFCn 20" />
+        <GPIB command="CALL:CELL:BA:TABLE:NCELL1:NCCODE 1" />
+        <GPIB command="CALL:CELL:BA:TABLE:NCELL1:BCCODE 5" />
+        <GPIB command="CALL:CELL:BA:TABLe:NCELl2 ON" />
+        <GPIB command="CALL:CELL:BA:TABLe:NCELl2:ARFCn 50" />
+        <GPIB command="CALL:CELL:BA:TABLE:NCELL2:NCCODE 1" />
+        <GPIB command="CALL:CELL:BA:TABLE:NCELL2:BCCODE 5" />
+        <GPIB command="CALL:CELL:BA:TABLe:NCELl3 ON" />
+        <GPIB command="CALL:CELL:BA:TABLe:NCELl3:ARFCn 512" />
+        <GPIB command="CALL:CELL:BA:TABLE:NCELL3:NCCODE 1" />
+        <GPIB command="CALL:CELL:BA:TABLE:NCELL3:BCCODE 5" />
+        <GPIB command="CALL:CELL:BA:TABLe:NCELl4 ON" />
+        <GPIB command="CALL:CELL:BA:TABLe:NCELl4:ARFCn 550" />
+        <GPIB command="CALL:CELL:BA:TABLE:NCELL4:NCCODE 1" />
+        <GPIB command="CALL:CELL:BA:TABLE:NCELL4:BCCODE 5" />
+        <GPIB command="CALL:UTRan:FDDuplex:TABLe 10700,1,1,1,3000,1,1,1" />
+    </Config>
+<!-- -   Europe cell 2 for 2G -->
+    <Config name="DCS" apply_to="EGPRS">
+        <GPIB command="CALL:CELL:BAND DCS" />
+        <GPIB command="CALL:CELL:BINDicator DCS" />
+        <GPIB command="CALL:CELL:BCHannel:ARFCn:DCS 512" />
+        <GPIB command="CALL:PDTCH:ARFCn 698" />
+        <GPIB command="CALL:CELL:BA:TABLe:NCELl1 ON" />
+        <GPIB command="CALL:CELL:BA:TABLe:NCELl1:ARFCn 20" />
+        <GPIB command="CALL:CELL:BA:TABLE:NCELL1:NCCODE 1" />
+        <GPIB command="CALL:CELL:BA:TABLE:NCELL1:BCCODE 5" />
+        <GPIB command="CALL:CELL:BA:TABLe:NCELl2 ON" />
+        <GPIB command="CALL:CELL:BA:TABLe:NCELl2:ARFCn 50" />
+        <GPIB command="CALL:CELL:BA:TABLE:NCELL2:NCCODE 1" />
+        <GPIB command="CALL:CELL:BA:TABLE:NCELL2:BCCODE 5" />
+        <GPIB command="CALL:CELL:BA:TABLe:NCELl3 ON" />
+        <GPIB command="CALL:CELL:BA:TABLe:NCELl3:ARFCn 512" />
+        <GPIB command="CALL:CELL:BA:TABLE:NCELL3:NCCODE 1" />
+        <GPIB command="CALL:CELL:BA:TABLE:NCELL3:BCCODE 5" />
+        <GPIB command="CALL:CELL:BA:TABLe:NCELl4 ON" />
+        <GPIB command="CALL:CELL:BA:TABLe:NCELl4:ARFCn 550" />
+        <GPIB command="CALL:CELL:BA:TABLE:NCELL4:NCCODE 1" />
+        <GPIB command="CALL:CELL:BA:TABLE:NCELL4:BCCODE 5" />
+        <GPIB command="CALL:UTRan:FDDuplex:TABLe 10700,1,1,1,3000,1,1,1" />
+    </Config>
+<!-- -   US cell 3 for 2G -->
+    <Config name="PCS" apply_to="EGPRS">
+        <GPIB command="CALL:CELL:BAND PCS" />
+        <GPIB command="CALL:CELL:BINDicator PCS" />
+        <GPIB command="CALL:CELL:BCHannel:ARFCn:PCS 540" />
+        <GPIB command="CALL:PDTCH:ARFCn 698" />
+        <GPIB command="CALL:CELL:BA:TABLe:NCELl1 ON" />
+        <GPIB command="CALL:CELL:BA:TABLe:NCELl1:ARFCn 128" />
+        <GPIB command="CALL:CELL:BA:TABLE:NCELL1:NCCODE 1" />
+        <GPIB command="CALL:CELL:BA:TABLE:NCELL1:BCCODE 5" />
+        <GPIB command="CALL:CELL:BA:TABLe:NCELl2 ON" />
+        <GPIB command="CALL:CELL:BA:TABLe:NCELl2:ARFCn 140" />
+        <GPIB command="CALL:CELL:BA:TABLE:NCELL2:NCCODE 1" />
+        <GPIB command="CALL:CELL:BA:TABLE:NCELL2:BCCODE 5" />
+        <GPIB command="CALL:CELL:BA:TABLe:NCELl3 ON" />
+        <GPIB command="CALL:CELL:BA:TABLe:NCELl3:ARFCn 540" />
+        <GPIB command="CALL:CELL:BA:TABLE:NCELL3:NCCODE 1" />
+        <GPIB command="CALL:CELL:BA:TABLE:NCELL3:BCCODE 5" />
+        <GPIB command="CALL:CELL:BA:TABLe:NCELl4 ON" />
+        <GPIB command="CALL:CELL:BA:TABLe:NCELl4:ARFCn 550" />
+        <GPIB command="CALL:CELL:BA:TABLE:NCELL4:NCCODE 1" />
+        <GPIB command="CALL:CELL:BA:TABLE:NCELL4:BCCODE 5" />
+        <GPIB command="CALL:UTRan:FDDuplex:TABLe 1700,1,1,1,9700,1,1,1,4400,1,1,1" />
+    </Config>
+<!-- -   US cell 4 for 2G -->
+    <Config name="GSM850" apply_to="EGPRS">
+        <GPIB command="CALL:CELL:BAND GSM850" />
+        <GPIB command="CALL:CELL:BINDicator PCS" />
+        <GPIB command="CALL:CELL:BCHannel:ARFCn:GSM850 160" />
+        <GPIB command="CALL:PDTCH:ARFCn 160" />
+        <GPIB command="CALL:CELL:BA:TABLe:NCELl1 ON" />
+        <GPIB command="CALL:CELL:BA:TABLe:NCELl1:ARFCn 128" />
+        <GPIB command="CALL:CELL:BA:TABLE:NCELL1:NCCODE 1" />
+        <GPIB command="CALL:CELL:BA:TABLE:NCELL1:BCCODE 5" />
+        <GPIB command="CALL:CELL:BA:TABLe:NCELl2 ON" />
+        <GPIB command="CALL:CELL:BA:TABLe:NCELl2:ARFCn 140" />
+        <GPIB command="CALL:CELL:BA:TABLE:NCELL2:NCCODE 1" />
+        <GPIB command="CALL:CELL:BA:TABLE:NCELL2:BCCODE 5" />
+        <GPIB command="CALL:CELL:BA:TABLe:NCELl3 ON" />
+        <GPIB command="CALL:CELL:BA:TABLe:NCELl3:ARFCn 540" />
+        <GPIB command="CALL:CELL:BA:TABLE:NCELL3:NCCODE 1" />
+        <GPIB command="CALL:CELL:BA:TABLE:NCELL3:BCCODE 5" />
+        <GPIB command="CALL:CELL:BA:TABLe:NCELl4 ON" />
+        <GPIB command="CALL:CELL:BA:TABLe:NCELl4:ARFCn 550" />
+        <GPIB command="CALL:CELL:BA:TABLE:NCELL4:NCCODE 1" />
+        <GPIB command="CALL:CELL:BA:TABLE:NCELL4:BCCODE 5" />
+        <GPIB command="CALL:UTRan:FDDuplex:TABLe 1700,1,1,1,9700,1,1,1,4400,1,1,1" />
+    </Config>
+<!--     -   Europe cell 1 Release 8 capable for 2G -->
+    <Config name="R8" apply_to="EGSM;DCS">
+        <GPIB command="CALL:SCELl:PPARameters:PRIority 4" />
+        <!--    LTE Neighbour Cells EU Band 1,3 & 7  -->
+        <GPIB command="CALL:EUTR:TABL 300,1,3,1,6,4,1,2,1,-100,1575,1,3,1,6,4,1,2,1,-100,3100,1,3,1,6,4,1,2,1,-100" />
+    </Config>
+<!--     -   US cell 3 Release 8 capable for 2G -->
+    <Config name="R8" apply_to="PCS;GSM850">
+        <GPIB command="CALL:SCELl:PPARameters:PRIority 4" />
+        <!--    LTE Neighbour Cells US Band 4 & 17  -->
+        <GPIB command="CALL:EUTR:TABL 2175,1,3,1,6,4,1,2,1,-100,5790,1,3,1,6,4,1,2,1,-100" />
+    </Config>
+
+<!--     COMMON_3G Parameters for 3G  -->
+    <Config name="HSPA" >
+        <GPIB command="CALL:SERVice:RBTest:RAB HSPA" />
+        <GPIB command="CALL:SERV:GPRS:RAB GPRSRAB5" />
+        <GPIB command="CALL:PAGing:SERVice GPRS" />
+        <GPIB command="CALL:CELL:SCODe 1" />
+        <GPIB command="CALL:CELL:NMOPERATION 2" />
+        <GPIB command="CALL:IDENTITY 1" />
+        <GPIB command="CALL:ATTFLAG:STATE ON" />
+        <GPIB command="CALL:EDCH:CIND CNIN" />
+        <GPIB command="CALL:HSDP:CIND CNIN" />
+        <GPIB command="CALL:CCPChannel:SECondary:CONFigure STRaffic" />
+    <!--     Cell Reselection Parameters for 3G  -->
+        <GPIB command="CALL:BCCHannel:SERSearch 2" />
+        <GPIB command="CALL:BCCHannel:SRASearch 4" />
+        <GPIB command="CALL:RESelection:QUALity:MEASure RSCP" />
+        <GPIB command="CALL:RESelection:HYSTeresis 1" />
+        <GPIB command="CALL:RESelection:QUALity:LMINimum -16" />
+        <GPIB command="CALL:RESelection:RLMinimum -100" />
+        <GPIB command="CALL:RESelection:GSM:STATe ON" />
+        <GPIB command="CALL:RESelection:GSM:SSEarch 2" />
+        <GPIB command="CALL:RESelection:GSM:SHCS 1" />
+        <GPIB command="CALL:RESelection:GSM:SHCS:STATe OFF" />
+        <GPIB command="CALL:RESelection:GSM:SLIMit 0" />
+        <GPIB command="CALL:RESelection:TIMer 1" />
+        <GPIB command="CALL:POW:AMPL -60.0" />
+        <GPIB command="CALL:CELL:LACode 1" />
+        <GPIB command="CALL:CELL:RACode 1" />
+        <GPIB command="CALL:MCC 1" />
+        <GPIB command="CALL:MNC 1" />
+        <GPIB command="CALL:BCCH:UPDA AUTO" />
+    </Config>
+
+    <!--     Packet settings  -->
+    <Config name="3G_PACKET" >
+        <GPIB command="CALL:PSDOMAIN PRESENT" />
+        <GPIB command="CALL:UPL:CHAN:CONT:AUTO ON" />
+        <GPIB command="CALL:SRB:CCH:DED:DRAT:CONT:AUTO ON" />
+    </Config>
+    <!--     Fast Dormancy settings  -->
+    <Config name="FDOR" >
+        <GPIB command="CALL:CCPChannel:SECondary:CONFigure STRaffic" />
+        <GPIB command="CALL:SERVice:PSData:RRC:TRANsition:SCRI:FDORmancy:DCH:DESTination IDLE" />
+        <GPIB command="CALL:SERVice:PSData:RRC:TRANsition:AUTO ON" />
+        <GPIB command="CALL:SERVice:PSData:RRC:TRANsition:SCRI:RRCIdle ON" />
+        <GPIB command="CALL:SERV:PSD:RRC:TRAN:ITIMer:DCH:DEST IDLE" />
+        <GPIB command="CALL:SERVice:PSData:RRC:TRANsition:ITIMer:DCH:VALue 5" />
+        <GPIB command="CALL:SERV:PSD:RRC:TRAN:SCRI:FDOR:FACH:DEST IDLE" />
+        <GPIB command="CALL:SERVice:PSData:RRC:TRANsition:ITIMer:FACH:VALue 5" />
+        <GPIB command="CALL:SERVice:PSData:RRC:TRANsition:SCRI:FDOR ON" />
+        <GPIB command="CALL:SERVice:PSData:RRC:TRANsition:TVOL:TRIG:STAT:EVent4B OFF" />
+        <GPIB command="CALL:BCCH:T323 10" />
+        <GPIB command="CALL:SERVice:PSData:RRC:INITial:STATe DCH" />
+        <GPIB command="CALL:SERVice:PSData:RRC:TRANsition:TVOLume:RTHReshold:EVent4A BYTes128" />
+        <GPIB command="CALL:SERVice:PSData:RRC:TRANsition:ITIMer:DCH:STATe ON" />
+        <GPIB command="CALL:SERVice:PSData:RRC:TRANsition:ITIMer:FACH:STATe ON" />
+    </Config>
+    <!--     Fast Dormancy settings  -->
+    <Config name="FDOR_PNP" >
+        <GPIB command="CALL:SERVice:PSData:RRC:TRANsition:AUTO ON" />
+        <GPIB command="CALL:SERVice:PSData:RRC:INITial:STATe DCH" />
+        <GPIB command="CALL:SERVice:PSData:RRC:TRANsition:ITIMer:DCH:STATe ON" />
+        <GPIB command="CALL:SERVice:PSData:RRC:TRANsition:ITIMer:DCH 5s" />
+        <GPIB command="CALL:SERVice:PSData:RRC:TRANsition:ITIMer:DCH:VALue 5s" />
+        <GPIB command="CALL:SERVice:PSData:RRC:TRANsition:ITIMer:DCH:DESTination FACH" />
+        <GPIB command="CALL:SERVice:PSData:RRC:TRANsition:ITIMer:FACH:STATe ON" />
+        <GPIB command="CALL:SERVice:PSData:RRC:TRANsition:ITIMer:FACH 10s" />
+        <GPIB command="CALL:SERVice:PSData:RRC:TRANsition:ITIMer:FACH:VALue 10s" />
+        <GPIB command="CALL:SERVice:PSData:RRC:TRANsition:ITIMer:FACH:DESTination PCH" />
+        <GPIB command="CALL:SERVice:PSData:RRC:TRANsition:TVOLume:RTHReshold:EVent4A BYTes128" />
+        <GPIB command="CALL:SERVice:PSData:RRC:TRANsition:SCRI:RRCIdle ON" />
+    </Config>
+    <!-- Configure IMS PDP reject -->
+    <Config name="IMS_REJECT" >
+        <GPIB command="CALL:SERVice:PSData:RAPName:STATe ON, OFF, OFF, OFF, OFF, OFF" />
+        <!-- # Set PDP reject cause to 33 (Requested Service Opt Not Suscribed) -->
+        <GPIB command="CALL:SERVice:PSData:RAPName:REJect:CAUSe 33, 33, 33, 33, 33, 33" />
+        <!-- # Set First APN name -->
+        <GPIB command="CALL:SERVice:PSData:RAPName1:VAlue CUST" />
+        <GPIB command="CALL:SERVice:PSData:RAPName1:CUSTom 'ims'" />
+    </Config>
+<!--     -   Europe cell 1 for 3G   -->
+    <Config name="BAND1" apply_to="HSPA">
+        <GPIB command="CALL:CHANnel 10700" />
+        <GPIB command="CALL:BCCHannel:GSMSystem:STATe 1,1,1,1,0,0,0,0" />
+        <GPIB command="CALL:BCCHannel:GSMSystem:NCC 1,1,1,1,0,0,0,0" />
+        <GPIB command="CALL:BCCHannel:GSMSystem:BCC 5,5,5,5,0,0,0,0" />
+        <GPIB command="CALL:BCCHannel:GSMSystem:BAND DCS1800,DCS1800,DCS1800,DCS1800,DCS1800,DCS1800,DCS1800,DCS1800" />
+        <GPIB command="CALL:BCCHannel:GSMSystem:BCHannel 20,50,512,550,0,0,0,0" />
+        <GPIB command="CALL:BCCHannel:ITAFrequency:STATe 1,1,0,0,0,0,0,0" />
+        <GPIB command="CALL:BCCHannel:ITAFrequency:SCODe 1,2,0,0,0,0,0,0" />
+        <GPIB command="CALL:BCCHannel:ITAFrequency:CRESelection:OFFSet 0,0,0,0,0,0,0,0" />
+        <GPIB command="CALL:BCCHannel:ITAFrequency:CRESelection:OFFSet2 0,0,0,0,0,0,0,0" />
+        <GPIB command="CALL:BCCHannel:ITRFrequency:DOWNlink:CHANnel 3000,3000,3000,3000,3000,3000,3000,3000" />
+    </Config>
+<!--     -   US cell 4 for 3G   -->
+    <Config name="BAND2" apply_to="HSPA">
+        <GPIB command="CALL:CHANnel 9700" />
+        <GPIB command="CALL:BCCHannel:GSMSystem:STATe 1,1,1,1,0,0,0,0" />
+        <GPIB command="CALL:BCCHannel:GSMSystem:NCC 1,1,1,1,0,0,0,0" />
+        <GPIB command="CALL:BCCHannel:GSMSystem:BCC 5,5,5,5,0,0,0,0" />
+        <GPIB command="CALL:BCCHannel:GSMSystem:BAND PCS1900,PCS1900,PCS1900,PCS1900,PCS1900,PCS1900,PCS1900,PCS1900" />
+        <GPIB command="CALL:BCCHannel:GSMSystem:BCHannel 128,140,540,550,0,0,0,0" />
+        <GPIB command="CALL:BCCHannel:ITAFrequency:STATe 1,1,0,0,0,0,0,0" />
+        <GPIB command="CALL:BCCHannel:ITAFrequency:SCODe 2,1,0,0,0,0,0,0" />
+        <GPIB command="CALL:BCCHannel:ITAFrequency:CRESelection:OFFSet 0,0,0,0,0,0,0,0" />
+        <GPIB command="CALL:BCCHannel:ITAFrequency:CRESelection:OFFSet2 0,0,0,0,0,0,0,0" />
+        <GPIB command="CALL:BCCHannel:ITRFrequency:DOWNlink:CHANnel 4400,4400,4400,4400,4400,4400,4400,4400" />
+    </Config>
+<!--     -   US cell 3  for 3G  -->
+    <Config name="BAND5"  apply_to="HSPA">
+        <GPIB  command="CALL:CHANnel 4400" />
+        <GPIB  command="CALL:BARBitrator BAND5" />
+        <GPIB  command="CALL:BCCHannel:GSMSystem:STATe 1,1,1,1,0,0,0,0" />
+        <GPIB  command="CALL:BCCHannel:GSMSystem:NCC 1,1,1,1,0,0,0,0" />
+        <GPIB  command="CALL:BCCHannel:GSMSystem:BCC 5,5,5,5,0,0,0,0" />
+        <GPIB  command="CALL:BCCHannel:GSMSystem:BAND PCS1900,PCS1900,PCS1900,PCS1900,PCS1900,PCS1900,PCS1900,PCS1900" />
+        <GPIB  command="CALL:BCCHannel:GSMSystem:BCHannel 128,140,540,550,0,0,0,0" />
+        <GPIB  command="CALL:BCCHannel:ITAFrequency:STATe 1,1,0,0,0,0,0,0" />
+        <GPIB  command="CALL:BCCHannel:ITAFrequency:SCODe 1,2,0,0,0,0,0,0" />
+        <GPIB  command="CALL:BCCHannel:ITAFrequency:CRESelection:OFFSet 0,0,0,0,0,0,0,0" />
+        <GPIB  command="CALL:BCCHannel:ITAFrequency:CRESelection:OFFSet2 0,0,0,0,0,0,0,0" />
+        <GPIB  command="CALL:BCCHannel:ITRFrequency:DOWNlink:CHANnel 9700,9700,9700,9700,9700,9700,9700,9700" />
+    </Config>
+<!--     -   Europe cell 2 for 3G   -->
+    <Config name="BAND8" apply_to="HSPA" >
+        <GPIB command="CALL:CHANnel 3000" />
+        <GPIB command="CALL:BCCHannel:GSMSystem:STATe 1,1,1,1,0,0,0,0" />
+        <GPIB command="CALL:BCCHannel:GSMSystem:NCC 1,1,1,1,0,0,0,0" />
+        <GPIB command="CALL:BCCHannel:GSMSystem:BCC 5,5,5,5,0,0,0,0" />
+        <GPIB command="CALL:BCCHannel:GSMSystem:BAND DCS1800,DCS1800,DCS1800,DCS1800,DCS1800,DCS1800,DCS1800,DCS1800" />
+        <GPIB command="CALL:BCCHannel:GSMSystem:BCHannel 20,50,512,550,0,0,0,0" />
+        <GPIB command="CALL:BCCHannel:ITAFrequency:STATe 1,1,0,0,0,0,0,0" />
+        <GPIB command="CALL:BCCHannel:ITAFrequency:SCODe 2,1,0,0,0,0,0,0" />
+        <GPIB command="CALL:BCCHannel:ITAFrequency:CRESelection:OFFSet 0,0,0,0,0,0,0,0" />
+        <GPIB command="CALL:BCCHannel:ITAFrequency:CRESelection:OFFSet2 0,0,0,0,0,0,0,0" />
+        <GPIB command="CALL:BCCHannel:ITRFrequency:DOWNlink:CHANnel 10700,10700,10700,10700,10700,10700,10700,10700" />
+    </Config>
+<!--     -   US cell 3 Release 8 capable for 3G  -->
+    <Config name="R8" apply_to="BAND5;BAND2">
+        <GPIB command="CALL:BCCHannel:SIB19:UTRA:SCEL1:PRIority 5" />
+        <!--    LTE Neighbour Cell 1 US Band 4  -->
+        <GPIB command="CALL:BCCHannel:SIB19:INFormation PRESent" />
+        <GPIB command="CALL:BCCHannel:SIB19:EUTRa2:STATe On" />
+        <GPIB command="CALL:BCCHannel:SIB19:EUTRa2:DETection On" />
+        <GPIB command="CALL:BCCHannel:SIB19:EUTRa2:EARFCN 2175" />
+        <GPIB command="CALL:BCCHannel:SIB19:EUTRa2:MBWidth MBW50" />
+        <GPIB command="CALL:BCCHannel:SIB19:EUTRa2:PRIority 6" />
+        <GPIB command="CALL:BCCHannel:SIB19:EUTRa2:RLMinimum -100" />
+        <GPIB command="CALL:BCCHannel:SIB19:EUTRa2:THReshold:HIGH 4" />
+        <GPIB command="CALL:BCCHannel:SIB19:EUTRa2:THReshold:LOW 2" />
+        <!--    LTE Neighbour Cell 3 US Band 17  -->
+        <GPIB command="CALL:BCCHannel:SIB19:EUTRa3:STATe On" />
+        <GPIB command="CALL:BCCHannel:SIB19:EUTRa3:DETection On" />
+        <GPIB command="CALL:BCCHannel:SIB19:EUTRa3:EARFCN 5790" />
+        <GPIB command="CALL:BCCHannel:SIB19:EUTRa3:MBWidth MBW50" />
+        <GPIB command="CALL:BCCHannel:SIB19:EUTRa3:PRIority 6" />
+        <GPIB command="CALL:BCCHannel:SIB19:EUTRa3:RLMinimum -100" />
+        <GPIB command="CALL:BCCHannel:SIB19:EUTRa3:THReshold:HIGH 4" />
+        <GPIB command="CALL:BCCHannel:SIB19:EUTRa3:THReshold:LOW 2" />
+    </Config>
+<!--     -   US cell 4 Release 8 capable for 3G   -->
+    <Config name="R8" apply_to="BAND1;BAND8">
+        <GPIB command="CALL:BCCHannel:SIB19:UTRA:SCEL1:PRIority 5" />
+        <!--    LTE Neighbour Cell 1 EU Band 1  -->
+        <GPIB command="CALL:BCCHannel:SIB19:INFormation PRESent" />
+        <GPIB command="CALL:BCCHannel:SIB19:EUTRa1:STATe On" />
+        <GPIB command="CALL:BCCHannel:SIB19:EUTRa1:DETection On" />
+        <GPIB command="CALL:BCCHannel:SIB19:EUTRa1:EARFCN 300" />
+        <GPIB command="CALL:BCCHannel:SIB19:EUTRa1:MBWidth MBW50" />
+        <GPIB command="CALL:BCCHannel:SIB19:EUTRa1:PRIority 6" />
+        <GPIB command="CALL:BCCHannel:SIB19:EUTRa1:RLMinimum -100" />
+        <GPIB command="CALL:BCCHannel:SIB19:EUTRa1:THReshold:HIGH 4" />
+        <GPIB command="CALL:BCCHannel:SIB19:EUTRa1:THReshold:LOW 2" />
+        <!--    LTE Neighbour Cell 2 EU Band 3  -->
+        <GPIB command="CALL:BCCHannel:SIB19:INFormation PRESent" />
+        <GPIB command="CALL:BCCHannel:SIB19:EUTRa2:STATe On" />
+        <GPIB command="CALL:BCCHannel:SIB19:EUTRa2:DETection On" />
+        <GPIB command="CALL:BCCHannel:SIB19:EUTRa2:EARFCN 1575" />
+        <GPIB command="CALL:BCCHannel:SIB19:EUTRa2:MBWidth MBW50" />
+        <GPIB command="CALL:BCCHannel:SIB19:EUTRa2:PRIority 6" />
+        <GPIB command="CALL:BCCHannel:SIB19:EUTRa2:RLMinimum -100" />
+        <GPIB command="CALL:BCCHannel:SIB19:EUTRa2:THReshold:HIGH 4" />
+        <GPIB command="CALL:BCCHannel:SIB19:EUTRa2:THReshold:LOW 2" />
+        <!--    LTE Neighbour Cell 3 EU Band 7  -->
+        <GPIB command="CALL:BCCHannel:SIB19:EUTRa3:STATe On" />
+        <GPIB command="CALL:BCCHannel:SIB19:EUTRa3:DETection On" />
+        <GPIB command="CALL:BCCHannel:SIB19:EUTRa3:EARFCN 3100" />
+        <GPIB command="CALL:BCCHannel:SIB19:EUTRa3:MBWidth MBW50" />
+        <GPIB command="CALL:BCCHannel:SIB19:EUTRa3:PRIority 6" />
+        <GPIB command="CALL:BCCHannel:SIB19:EUTRa3:RLMinimum -100" />
+        <GPIB command="CALL:BCCHannel:SIB19:EUTRa3:THReshold:HIGH 4" />
+        <GPIB command="CALL:BCCHannel:SIB19:EUTRa3:THReshold:LOW 2" />
+    </Config>
+
+    <Config name="CAT10">
+        <GPIB command="CALL:OPER:MODE OFF" />
+        <GPIB command="CALL:POW:STAT ON" />
+        <GPIB command="CALL:MS:POW:TARG -25" />
+        <GPIB command="CALL:CELL:RLC:REES OFF" />
+        <GPIB command="CALL:HSDP:MS:HSDS:CAT:CONT:AUTO ON" />
+        <GPIB command="CALL:PICH:CCODE:CODE 2" />
+        <GPIB command="CALL:AICH:CCODE:CODE 3" />
+        <GPIB command="CALL:CCPCHANNEL:SECONDARY:CONNECTED:CONFIG:STATE OFF" />
+        <GPIB command="CALL:CCPCHANNEL:SECONDARY:CCODE:CODE 2" />
+        <GPIB command="CALL:DPCHANNEL:KSPS15:CODE:HSDPA 14" />
+        <GPIB command="CALL:DPCHANNEL:KSPS30:CODE:HSDPA 4" />
+        <GPIB command="CALL:EHICHANNEL:CCODE:CODE 6" />
+        <GPIB command="CALL:EAGCHANNEL:CCODE:CODE 15" />
+        <GPIB command="CALL:HSSCCHANNEL1:CONFIG:STATE ON" />
+        <GPIB command="CALL:HSSCCHANNEL2:CONFIG:STATE ON" />
+        <GPIB command="CALL:HSSCCHANNEL3:CONFIG:STATE OFF" />
+        <GPIB command="CALL:HSSCCHANNEL4:CONFIG:STATE OFF" />
+        <GPIB command="CALL:HSSCCHANNEL1:CCODE:CODE 2" />
+        <GPIB command="CALL:HSSCCHANNEL2:CCODE:CODE 3" />
+        <GPIB command="CALL:HSDPA:SERVICE:RBTEST:HSPDSCHANNEL:CCODE:CODE 1" />
+        <GPIB command="CALL:HSDPA:SERVICE:PSDATA:HSPDSCHANNEL:CCODE:CODE 1" />
+        <GPIB command="CALL:OCNSOURCE:CONFIG:STATE:HSDPA 1,0,0,0,0,0" />
+        <GPIB command="CALL:OCNSOURCE:CCODE:CODE:HSDPA 5,123,124,125,126,127" />
+        <GPIB command="CALL:CONNECTED:CPICHANNEL:HSDPA -10" />
+        <GPIB command="CALL:CONNECTED:CCPCHANNEL:PRIMARY:STATE:HSDPA OFF" />
+        <GPIB command="CALL:CONNECTED:PICHANNEL:STATE:HSDPA OFF" />
+        <GPIB command="CALL:CONNECTED:DPCHANNEL:HSDPA -20" />
+        <GPIB command="CALL:CONNECTED:HSSCCHANNEL1 -10" />
+        <GPIB command="CALL:CONNECTED:HSSCCHANNEL2 -20" />
+        <GPIB command="CALL:CONNECTED:HSPDSCHANNEL -1.5" />
+        <GPIB command="CALL:CONNECTED:CCPCHANNEL:PRIMARY:STATE:HSPA OFF" />
+        <GPIB command="CALL:CONNECTED:PICHANNEL:STATE:HSPA OFF" />
+        <GPIB command="CALL:CONNECTED:EAGCHANNEL -30" />
+        <GPIB command="CALL:CONNECTED:HSSCCHANNEL2:HSPA -20" />
+        <GPIB command="CALL:CONNECTED:HSPDSCHANNEL:HSPA -1.8" />
+        <GPIB command="CALL:SERV:RBT:RAB HSDP12" />
+        <GPIB command="CALL:HSDP:SERV:RBT:HSDS:CONF UDEF" />
+        <GPIB command="CALL:HSDPA:SERVICE:RBTEST:UDEFINED:HSDSCHANNEL:MAC EHSPEED" />
+        <GPIB command="CALL:HSDPA:SERVICE:RBTEST:UDEFINED:QAM64:STATE ON" />
+        <GPIB command="CALL:HSDPA:SERVICE:RBTEST:UDEFINED:HSPDSCHANNEL:COUNT 15" />
+        <GPIB command="CALL:HSDPA:SERVICE:RBTEST:UDEFINED:TBSIZE:INDEX 62" />
+        <GPIB command="CALL:HSDPA:SERVICE:RBTEST:UDEFINED:MODULATION QAM64" />
+        <GPIB command="CALL:HSDPA:SERVICE:RBTEST:UDEFINED:MACEHS:RLC:SDU 656" />
+        <GPIB command="CALL:HSDPA:SERVICE:RBTEST:UDEFINED:ITTI 1" />
+        <GPIB command="CALL:HSDPA:SERVICE:RBTEST:UDEFINED:HARQ:PROCESS:COUNT 6" />
+        <GPIB command="CALL:HSDPA:SERVICE:PSDATA:HSDSCHANNEL:MAC EHSPEED" />
+        <GPIB command="CALL:HSDPA:SERVICE:PSDATA:QAM64:STATE ON" />
+        <GPIB command="CALL:HSDPA:SERVICE:PSDATA:HSDSCHANNEL:CONFIG UDEFINED" />
+        <GPIB command="CALL:HSDPA:SERVICE:PSDATA:UDEFINED:HSPDSCHANNEL:COUNT 15" />
+        <GPIB command="CALL:HSDPA:SERVICE:PSDATA:UDEFINED:TBSIZE:INDEX 62" />
+        <GPIB command="CALL:HSDPA:SERVICE:PSDATA:MACD:PDUSIZE:CONTROL PRED" />
+        <GPIB command="CALL:HSDPA:SERVICE:PSDATA:UDEFINED:MODULATION QAM16" />
+        <GPIB command="CALL:HSDPA:SERVICE:PSDATA:HSDSCHANNEL:MAC HSP" />
+        <GPIB command="CALL:HSDPA:SERVICE:PSDATA:QAM64:STATE OFF" />
+        <GPIB command="CALL:HSDP:SERV:PSD:MACD:PDUSIZE BITS656" />
+        <GPIB command="CALL:HSDPA:SERVICE:PSDATA:RLC:DOWNLINK:MODE FIXED" />
+        <GPIB command="CALL:HSDP:SERV:PSD:CQI 30" />
+        <GPIB command="CALL:SERV:GPRS:RAB PHSP" />
+        <GPIB command="CALL:SERV:RBT:RAB HSPA" />
+        <GPIB command="CALL:CONN:CPIC:LEV:HSPA -15" />
+        <GPIB command="CALL:CONN:CPIC:STAT:HSPA ON" />
+        <GPIB command="CALL:CONN:CCPC:SEC:LEV:HSPA -20" />
+        <GPIB command="CALL:CONN:CCPC:SEC:STAT:HSPA OFF" />
+        <GPIB command="CALL:CONN:CCPC:PRIM:LEV:HSPA -15" />
+        <GPIB command="CALL:CONN:CCPC:PRIM:STAT:HSPA ON" />
+        <GPIB command="CALL:CONN:PICH:LEV:HSPA -15.00" />
+        <GPIB command="CALL:CONN:PICH:STAT:HSPA ON" />
+        <GPIB command="CALL:CONN:DPCH:LEV:HSPA -15" />
+        <GPIB command="CALL:CONN:DPCH:STAT:HSPA ON" />
+        <GPIB command="CALL:CONN:HSSC1:LEV:HSPA -15" />
+        <GPIB command="CALL:CONN:HSSC1:STAT:HSPA ON" />
+        <GPIB command="CALL:CONN:HSSC2:LEV:HSPA -20" />
+        <GPIB command="CALL:CONN:HSSC2:STAT:HSPA ON" />
+        <GPIB command="CALL:CONN:HSSC3:LEV:HSPA -15" />
+        <GPIB command="CALL:CONN:HSSC3:STAT:HSPA OFF" />
+        <GPIB command="CALL:CONN:HSSC4:LEV:HSPA -15" />
+        <GPIB command="CALL:CONN:HSSC4:STAT:HSPA OFF" />
+        <GPIB command="CALL:CONN:HSPD:LEV:HSPA -1.0" />
+        <GPIB command="CALL:CONN:HSPD:STAT:HSPA ON" />
+        <GPIB command="CALL:CONN:ERGC:LEV:HSPA -20.00" />
+        <GPIB command="CALL:CONN:ERGC:STAT:HSPA ON" />
+        <GPIB command="CALL:SERV:PSD:SRB:MAPP UEDH" />
+        <GPIB command="CALL:HSUP:SERV:PSD:EDPD:CCOD:MAX T2T4" />
+        <GPIB command="CALL:HSUP:EDCH:TTI MS10" />
+        <GPIB command="CALL:HSUP:SERV:PSD:ERGC:INF:STAT OFF" />
+        <!-- <GPIB command="CALL:OPER:MODE CALL" /> -->
+        <GPIB command="CALL:EDCH:CIND CAP" />
+        <GPIB command="CALL:HSDP:CIND CAP" />
+        <GPIB command="CALL:COUNT:DTMONITOR:DISPLAY:DRATE:START 0" />
+        <GPIB command="CALL:COUNT:DTMONITOR:DISPLAY:DRATE:STOP 15000" />
+        <GPIB command="CALL:COUNT:DTMONITOR:TRACE2:DISPLAY:STATE ON" />
+        <GPIB command="CALL:COUNT:DTMONITOR:TRACE3:DISPLAY:STATE ON" />
+        <GPIB command="CALL:COUNT:DTMONITOR:TRACE4:DISPLAY:STATE ON" />
+    </Config>
+    <Config name="CAT14">
+        <GPIB command="CALL:OPER:MODE OFF" />
+        <GPIB command="CALL:POW:STAT ON" />
+        <GPIB command="CALL:MS:POW:TARG -20" />
+        <GPIB command="CALL:CELL:RLC:REES OFF" />
+        <GPIB command="CALL:HSDP:MS:HSDS:CAT:CONT:AUTO ON" />
+        <GPIB command="CALL:PICH:CCODE:CODE 2" />
+        <GPIB command="CALL:AICH:CCODE:CODE 3" />
+        <GPIB command="CALL:CCPCHANNEL:SECONDARY:CONNECTED:CONFIG:STATE OFF" />
+        <GPIB command="CALL:CCPCHANNEL:SECONDARY:CCODE:CODE 2" />
+        <GPIB command="CALL:DPCHANNEL:KSPS15:CODE:HSDPA 14" />
+        <GPIB command="CALL:DPCHANNEL:KSPS30:CODE:HSDPA 4" />
+        <GPIB command="CALL:EHICHANNEL:CCODE:CODE 6" />
+        <GPIB command="CALL:EAGCHANNEL:CCODE:CODE 15" />
+        <GPIB command="CALL:HSSCCHANNEL1:CONFIG:STATE ON" />
+        <GPIB command="CALL:HSSCCHANNEL2:CONFIG:STATE ON" />
+        <GPIB command="CALL:HSSCCHANNEL3:CONFIG:STATE OFF" />
+        <GPIB command="CALL:HSSCCHANNEL4:CONFIG:STATE OFF" />
+        <GPIB command="CALL:HSSCCHANNEL1:CCODE:CODE 2" />
+        <GPIB command="CALL:HSSCCHANNEL2:CCODE:CODE 3" />
+        <GPIB command="CALL:HSDPA:SERVICE:RBTEST:HSPDSCHANNEL:CCODE:CODE 1" />
+        <GPIB command="CALL:HSDPA:SERVICE:PSDATA:HSPDSCHANNEL:CCODE:CODE 1" />
+        <GPIB command="CALL:OCNSOURCE:CONFIG:STATE:HSDPA 1,0,0,0,0,0" />
+        <GPIB command="CALL:OCNSOURCE:CCODE:CODE:HSDPA 5,123,124,125,126,127" />
+        <GPIB command="CALL:CONNECTED:CPICHANNEL:HSDPA -10" />
+        <GPIB command="CALL:CONNECTED:CCPCHANNEL:PRIMARY:STATE:HSDPA OFF" />
+        <GPIB command="CALL:CONNECTED:PICHANNEL:STATE:HSDPA OFF" />
+        <GPIB command="CALL:CONNECTED:DPCHANNEL:HSDPA -20" />
+        <GPIB command="CALL:CONNECTED:HSSCCHANNEL1 -20" />
+        <GPIB command="CALL:CONNECTED:HSSCCHANNEL2 -20" />
+        <GPIB command="CALL:CONNECTED:HSPDSCHANNEL -1.8" />
+        <GPIB command="CALL:CONNECTED:CCPCHANNEL:PRIMARY:STATE:HSPA OFF" />
+        <GPIB command="CALL:CONNECTED:PICHANNEL:STATE:HSPA OFF" />
+        <GPIB command="CALL:CONNECTED:EAGCHANNEL -30" />
+        <GPIB command="CALL:CONNECTED:HSSCCHANNEL2:HSPA -20" />
+        <GPIB command="CALL:CONNECTED:HSPDSCHANNEL:HSPA -1.8" />
+        <GPIB command="CALL:SERV:RBT:RAB HSDP12" />
+        <GPIB command="CALL:HSDP:SERV:RBT:HSDS:CONF UDEF" />
+        <GPIB command="CALL:HSDPA:SERVICE:RBTEST:UDEFINED:HSDSCHANNEL:MAC EHSPEED" />
+        <GPIB command="CALL:HSDPA:SERVICE:RBTEST:UDEFINED:QAM64:STATE ON" />
+        <GPIB command="CALL:HSDPA:SERVICE:RBTEST:UDEFINED:HSPDSCHANNEL:COUNT 15" />
+        <GPIB command="CALL:HSDPA:SERVICE:RBTEST:UDEFINED:TBSIZE:INDEX 62" />
+        <GPIB command="CALL:HSDPA:SERVICE:RBTEST:UDEFINED:MODULATION QAM64" />
+        <GPIB command="CALL:HSDPA:SERVICE:RBTEST:UDEFINED:MACEHS:RLC:SDU 656" />
+        <GPIB command="CALL:HSDPA:SERVICE:RBTEST:UDEFINED:ITTI 1" />
+        <GPIB command="CALL:HSDPA:SERVICE:RBTEST:UDEFINED:HARQ:PROCESS:COUNT 6" />
+        <GPIB command="CALL:HSDPA:SERVICE:PSDATA:HSDSCHANNEL:MAC EHSPEED" />
+        <GPIB command="CALL:HSDPA:SERVICE:PSDATA:QAM64:STATE ON" />
+        <GPIB command="CALL:HSDPA:SERVICE:PSDATA:HSDSCHANNEL:CONFIG UDEFINED" />
+        <GPIB command="CALL:HSDPA:SERVICE:PSDATA:UDEFINED:HSPDSCHANNEL:COUNT 15" />
+        <GPIB command="CALL:HSDPA:SERVICE:PSDATA:UDEFINED:TBSIZE:INDEX 62" />
+        <GPIB command="CALL:HSDPA:SERVICE:PSDATA:UDEFINED:MODULATION QAM64" />
+        <GPIB command="CALL:HSDPA:SERVICE:PSDATA:MACD:PDUSIZE:CONTROL PRED" />
+        <GPIB command="CALL:HSDPA:SERVICE:PSDATA:RLC:DOWNLINK:MODE FLEX" />
+        <GPIB command="CALL:HSDP:SERV:PSD:RLC:DOWNLINK:MAXIMUM:PDU:PSIZE 1503" />
+        <GPIB command="CALL:HSDP:SERV:PSD:CQI 30" />
+        <GPIB command="CALL:SERV:RBT:RAB HSPA" />
+        <GPIB command="CALL:CONN:CPIC:LEV:HSPA -15" />
+        <GPIB command="CALL:CONN:CPIC:STAT:HSPA ON" />
+        <GPIB command="CALL:CONN:CCPC:SEC:LEV:HSPA -20" />
+        <GPIB command="CALL:CONN:CCPC:SEC:STAT:HSPA OFF" />
+        <GPIB command="CALL:CONN:CCPC:PRIM:LEV:HSPA -15" />
+        <GPIB command="CALL:CONN:CCPC:PRIM:STAT:HSPA ON" />
+        <GPIB command="CALL:CONN:PICH:LEV:HSPA -15.00" />
+        <GPIB command="CALL:CONN:PICH:STAT:HSPA ON" />
+        <GPIB command="CALL:CONN:DPCH:LEV:HSPA -15" />
+        <GPIB command="CALL:CONN:DPCH:STAT:HSPA ON" />
+        <GPIB command="CALL:CONN:HSSC1:LEV:HSPA -15" />
+        <GPIB command="CALL:CONN:HSSC1:STAT:HSPA ON" />
+        <GPIB command="CALL:CONN:HSSC2:LEV:HSPA -20" />
+        <GPIB command="CALL:CONN:HSSC2:STAT:HSPA ON" />
+        <GPIB command="CALL:CONN:HSSC3:LEV:HSPA -15" />
+        <GPIB command="CALL:CONN:HSSC3:STAT:HSPA OFF" />
+        <GPIB command="CALL:CONN:HSSC4:LEV:HSPA -15" />
+        <GPIB command="CALL:CONN:HSSC4:STAT:HSPA OFF" />
+        <GPIB command="CALL:CONN:HSPD:LEV:HSPA -1.0" />
+        <GPIB command="CALL:CONN:HSPD:STAT:HSPA ON" />
+        <GPIB command="CALL:CONN:ERGC:LEV:HSPA -20.00" />
+        <GPIB command="CALL:CONN:ERGC:STAT:HSPA ON" />
+        <GPIB command="CALL:SERV:PSD:SRB:MAPP UEDD" />
+        <GPIB command="CALL:HSUP:SERV:PSD:EDPD:CCOD:MAX T2T4" />
+        <GPIB command="CALL:HSUP:EDCH:TTI MS2" />
+        <GPIB command="CALL:HSUP:SERV:PSD:ERGC:INF:STAT OFF" />
+        <GPIB command="CALL:SERV:GPRS:RAB PHSP" />
+        <!-- <GPIB command="CALL:OPER:MODE CALL" /> -->
+        <GPIB command="CALL:COUNT:DTMONITOR:DISPLAY:DRATE:START 0" />
+        <GPIB command="CALL:COUNT:DTMONITOR:DISPLAY:DRATE:STOP 22000" />
+        <GPIB command="CALL:COUNT:DTMONITOR:TRACE3:DISPLAY:STATE ON" />
+        <GPIB command="CALL:COUNT:DTMONITOR:TRACE4:DISPLAY:STATE ON" />
+        <GPIB command="CALL:EDCH:CIND CAP" />
+        <GPIB command="CALL:HSDP:CIND CAP" />
+    </Config>
+    <Config name="CAT24">
+        <GPIB command="CALL:OPER:MODE OFF" />
+        <GPIB command="CALL:PICH:CCOD:CODE 2" />
+        <GPIB command="CALL:DPCH:KSPS15:CODE:HSDPA 14" />
+        <GPIB command="CALL:DPCH:KSPS30:CODE:HSDPA 7" />
+        <GPIB command="CALL:EAGC:CCOD:CODE 10" />
+        <GPIB command="CALL:EHIC:CCOD:CODE 4" />
+        <GPIB command="CALL:HSDP:SERV:PSD:HSPD:CCOD:CODE 1" />
+        <GPIB command="CALL:HSDP:SERV:RBT:HSPD:CCOD:CODE 1" />
+        <GPIB command="CALL:HSSC:CCOD:CODE 2" />
+        <GPIB command="CALL:HSSC2:CCOD:CODE 3" />
+        <GPIB command="CALL:SSC:PICH:CCOD:CODE 2" />
+        <GPIB command="CALL:HSDP:SSC:PSD:HSPD:CCOD:CODE 1" />
+        <GPIB command="CALL:SSC:HSSC:CCOD:CODE 2" />
+        <GPIB command="CALL:HSDP:SSC:RBT:HSPD:CCOD:CODE 1" />
+        <GPIB command="CALL:SSC:HSSC2:CCOD:CODE 3" />
+        <GPIB command="CALL:OCNS:CCOD:CODE:HSDP 6,123,124,125,126,127" />
+        <GPIB command="CALL:SSC:OCNS:CCOD:CODE 6,123,124,125,126,127" />
+        <GPIB command="CALL:CCPC:SEC:CONN:CONF:STAT OFF" />
+        <GPIB command="CALL:HSSC3:CONF:STAT OFF" />
+        <GPIB command="CALL:HSSC4:CONF:STAT OFF" />
+        <GPIB command="CALL:SSC:HSSC3:CONF:STAT OFF" />
+        <GPIB command="CALL:SSC:HSSC4:CONF:STAT OFF" />
+        <GPIB command="CALL:OCNS:CONF:STAT:HSDP 1,0,0,0,0,0" />
+        <GPIB command="CALL:SSC:OCNS:CONF:STAT:HSDP 1,0,0,0,0,0" />
+        <GPIB command="CALL:CONN:CPIC:HSDP -8" />
+        <GPIB command="CALL:CONN:CCPC:PRIM:HSDP -20" />
+        <GPIB command="CALL:CONN:PICH:STAT:HSDP OFF" />
+        <GPIB command="CALL:CONN:DPCH:HSDP -30" />
+        <GPIB command="CALL:CONN:HSSC -20" />
+        <GPIB command="CALL:CONN:HSSC2 -20" />
+        <GPIB command="CALL:CONN:HSPD -1" />
+        <GPIB command="CALL:SSC:CONN:CPIC:LEV:HSDP -8" />
+        <GPIB command="CALL:SSC:CONN:CCPC:PRIM:LEV:HSDP -20" />
+        <GPIB command="CALL:SSC:CONN:PICH:STAT:HSDP OFF" />
+        <GPIB command="CALL:SSC:CONN:HSSC:LEV:HSDP -20" />
+        <GPIB command="CALL:SSC:CONN:HSSCCHANNEL2:LEV:HSDP -20" />
+        <GPIB command="CALL:SSC:CONN:HSPD:LEV:HSDP -1" />
+        <GPIB command="CALL:CONN:CPIC:HSPA -8" />
+        <GPIB command="CALL:CONN:CCPC:PRIM:HSPA -20" />
+        <GPIB command="CALL:CONN:PICH:STAT:HSPA OFF" />
+        <GPIB command="CALL:CONN:DPCH:HSPA -30" />
+        <GPIB command="CALL:CONN:EAGC -40" />
+        <GPIB command="CALL:CONN:EHIC -40" />
+        <GPIB command="CALL:CONN:HSSC:HSPA -20" />
+        <GPIB command="CALL:CONN:HSSC2:HSPA -20" />
+        <GPIB command="CALL:CONN:HSPD:HSPA -1" />
+        <GPIB command="CALL:SSC:CONN:CPIC:LEV:HSPA -8" />
+        <GPIB command="CALL:SSC:CONN:CCPC:PRIM:LEV:HSPA -20" />
+        <GPIB command="CALL:SSC:CONN:PICH:STAT:HSPA OFF" />
+        <GPIB command="CALL:SSC:CONN:HSSC:LEV:HSPA -20" />
+        <GPIB command="CALL:SSC:CONN:HSSCCHANNEL2:LEV:HSPA -20" />
+        <GPIB command="CALL:SSC:CONN:HSPD:LEV:HSPA -1" />
+        <GPIB command="CALL:HSDP:SERV:PSD:HSDS:MAC EHSPEED" />
+        <GPIB command="CALL:HSDP:SERV:PSD:RLC:DOWN:MODE FLEXIBLE" />
+        <GPIB command="CALL:HSDP:SERV:PSD:DCHSDPA ON" />
+        <GPIB command="CALL:HSDP:SERV:PSD:HSDS:CONF UDEF" />
+        <GPIB command="CALL:HSDP:SERV:PSD:QAM64:STAT ON" />
+        <GPIB command="CALL:HSDP:SERV:PSD:UDEF:MOD QAM64" />
+        <GPIB command="CALL:HSDP:SERV:PSD:UDEF:HSPD:COUN 15" />
+        <GPIB command="CALL:HSDP:SERV:PSD:UDEF:TBS:IND 62" />
+        <GPIB command="CALL:HSDP:SSC:PSD:HSDS:CONF UDEF" />
+        <GPIB command="CALL:HSDP:SSC:PSD:QAM64:STAT ON" />
+        <GPIB command="CALL:HSDP:SSC:PSD:UDEF:MOD QAM64" />
+        <GPIB command="CALL:HSDP:SSC:PSD:UDEF:HSPD:COUN 15" />
+        <GPIB command="CALL:HSDP:SSC:PSD:UDEF:TBS:IND 62" />
+        <GPIB command="CALL:HSDP:SERV:RBT:HSDS:CONF UDEF" />
+        <GPIB command="CALL:HSDP:SERV:RBT:UDEF:HSDS:MAC EHSPEED" />
+        <GPIB command="CALL:HSDP:SERV:RBT:UDEF:HARQ:PROC:COUN 6" />
+        <GPIB command="CALL:HSDP:SERV:RBT:UDEF:DCHS ON" />
+        <GPIB command="CALL:HSDP:SERV:RBT:DCHS:DPCH:LOOP ON" />
+        <GPIB command="CALL:HSDP:SERV:RBT:UDEF:QAM64:STAT ON" />
+        <GPIB command="CALL:HSDP:SERV:RBT:UDEF:HSPD:COUN 15" />
+        <GPIB command="CALL:HSDP:SERV:RBT:UDEF:TBS:IND 62" />
+        <GPIB command="CALL:HSDP:SERV:RBT:UDEF:MOD QAM64" />
+        <GPIB command="CALL:HSDP:SERV:RBT:UDEF:ITTI 1" />
+        <GPIB command="CALL:HSDP:SSC:RBT:UDEF:QAM64:STAT ON" />
+        <GPIB command="CALL:HSDP:SSC:RBT:UDEF:HSPD:COUN 15" />
+        <GPIB command="CALL:HSDP:SSC:RBT:UDEF:TBS:IND 62" />
+        <GPIB command="CALL:HSDP:SSC:RBT:UDEF:MOD QAM64" />
+        <GPIB command="CALL:HSDP:SSC:RBT:UDEF:ITTI 1" />
+        <GPIB command="CALL:SERV:PSD:SRB:MAPP UEDD" />
+        <GPIB command="CALL:HSUP:SERV:PSD:MACD:PDUS 360" />
+        <GPIB command="CALL:HSUP:SERV:PSD:EDPD:CCOD:MAX T2T4" />
+        <GPIB command="CALL:HSUP:EDCH:TTI MS2" />
+        <GPIB command="CALL:SSC:POW -45" />
+   <!--      <GPIB command="CALL:POW -45" /> -->
+        <GPIB command="CALL:SERV:RBT:RAB HSPA" />
+        <GPIB command="CALL:SERV:GPRS:RAB PHSP" />
+       <!--  <GPIB command="CALL:OPER:MODE CALL" /> -->
+        <GPIB command="CALL:COUN:DTM:DISP:DRAT:STOP 50000" />
+        <GPIB command="CALL:COUN:DTM:TRAC2 OTRX" />
+        <GPIB command="CALL:COUN:DTM:TRAC3:DISP:STAT ON" />
+        <GPIB command="CALL:COUN:DTM:TRAC4:DISP:STAT ON" />
+        <GPIB command="CALL:SSC:CONN:HSSC2:STAT:HSPA ON" />
+        <GPIB command="CALL:SSC:CONN:HSSC2:STAT:HSDP ON" />
+        <GPIB command="CALL:COUN:DTM:TRAC5:DISP:STAT ON" />
+        <GPIB command="CALL:COUN:DTM:TRAC6:DISP:STAT ON" />
+        <GPIB command="CALL:COUN:DTM:TRAC5 OTARX" />
+        <GPIB command="CALL:COUN:DTM:TRAC6 OTA2RX" />
+        <GPIB command="CALL:EDCH:CIND CAP" />
+        <GPIB command="CALL:HSDP:CIND CAP" />
+    </Config>
+    <Config name="CAT6">
+        <GPIB command="CALL:SERVice:GPRS:RAB PHSPa" />
+        <GPIB command="CALL:SERVice:PSData:SRBearer:MAPPing:MODE EDCHDch" />
+        <GPIB command="CALL:HSUPa:SERVice:PSData:EDPDchannel:CCODes:MAX T2T4" />
+        <GPIB command="CALL:HSUPa:EDCHannel:TTI MS2" />
+        <GPIB command="CALL:HSUPa:SGRant:ABSolute:PATTern:Value INDex31" />
+        <GPIB command="CALL:HSUPa:SGRant:ABSolute:MODE PATTern" />
+        <GPIB command="CALL:EDCH:CIND CAP" />
+        <GPIB command="CALL:HSDP:CIND CAP" />
+    </Config>
+</Configs>

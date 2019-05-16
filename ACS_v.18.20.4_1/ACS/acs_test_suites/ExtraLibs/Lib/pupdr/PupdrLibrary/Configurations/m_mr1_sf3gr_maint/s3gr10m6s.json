@@ -1,0 +1,35 @@
+{
+    "Configuration": {
+        "Boot": null,
+        "BootVars": null,
+        "Custom": null,
+        "Download": {
+            "REFERENCE_BUILD_BLACKLIST": {
+                "2015_WW52": "https://mcg-depot.intel.com/artifactory/cactus-absp-tl/master-engineering/18234/"
+            }
+        },
+        "Flash": {
+            "UPDATE_CONFIGURATION": "fastboot_config"
+        },
+        "Inherit": {
+            "BOARD": "sofia"
+        },
+        "Timeout": null,
+        "WorkAround": null,
+        "TestDescription": {
+            "warnings": {},
+            "engineering": [
+                {
+                    "name": "default",
+                    "build_tag": "",
+                    "testing": [
+                        {
+                            "build_target": "r2_s3gr10m6s-userdebug",
+                            "campaign": "BOOTOTA_PREINTEGRATION"
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}

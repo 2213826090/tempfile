@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<UseCases xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:noNamespaceSchemaLocation="../../../../acs/src/_Catalogs/UseCase/usecase.xsd">
+    <UseCase Id="LAB_GSM_CB_SMS_CS_MT" Domain="CELLULAR" SubDomain="SMSCB" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Communication.Messaging.LAB_GSM_CB_SMS_CS_MT.LabGsmCbSmsCsMt</ClassName>
+        <Description>GSM Mobile Cell Broadcast message over CS on simulated network</Description>
+        <Environment name="TEL">
+            <Capabilities>EQT_AG_8960</Capabilities>
+        </Environment>
+        <Parameters>
+            <Parameter name="CELL_BAND" type="CELL_BAND_2G" isOptional="false">
+                <!-- Field optional (PossibleValues, DefaultValue, Blank) if possible value not override available -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue>RGSM</DefaultValue>
+                <Blank/>
+                <Dependencies>
+                    <Dependency isOptional="false">BCH_ARFCN</Dependency>
+                    <Dependency isOptional="true">PDTCH_ARFCN</Dependency>
+                </Dependencies>
+            </Parameter>
+            <Parameter name="CELL_POWER" type="CELL_POWER_IN_DBM" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="SMS_TEXT" type="TEXT_MESSAGE" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="CELL_BROADCAST_MESSAGE_IDENTIFIER" type="CELL_BROADCAST_MESSAGE_IDENTIFIER"
+                       isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="REPETITION_PERIOD" type="DURATION_IN_SEC" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="UPDATE_NUMBER" type="CELL_BROADCAST_UPDATE_NUMBER" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="DATA_CODING_SCHEME" type="DATA_CODING_SCHEME" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="SMS_TRANSFER_TIMEOUT" type="TIMEOUT_IN_SEC" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+        </Parameters>
+    </UseCase>
+    <UseCase Id="LAB_WCDMA_CB_SMS_CS_MT" Domain="CELLULAR" SubDomain="SMSCB" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Communication.Messaging.LAB_WCDMA_CB_SMS_CS_MT.LabWcdmaCbSmsCsMt</ClassName>
+        <Description>WCDMA Mobile Cell Broadcast message over CS on simulated network</Description>
+        <Environment name="TEL">
+            <Capabilities>EQT_AG_8960</Capabilities>
+        </Environment>
+        <Parameters>
+            <Parameter name="CELL_BAND" type="CELL_BAND_3G" isOptional="false">
+                <!-- Field optional (PossibleValues, DefaultValue, Blank) if possible value not override available -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue>1</DefaultValue>
+                <Blank/>
+                <Dependencies>
+                    <Dependency isOptional="false">DL_UARFCN</Dependency>
+                </Dependencies>
+            </Parameter>
+            <Parameter name="CELL_POWER" type="CELL_POWER_IN_DBM" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="SMS_TEXT" type="TEXT_MESSAGE" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="CELL_BROADCAST_MESSAGE_IDENTIFIER" type="CELL_BROADCAST_MESSAGE_IDENTIFIER"
+                       isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="REPETITION_PERIOD" type="DURATION_IN_SEC" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="UPDATE_NUMBER" type="CELL_BROADCAST_UPDATE_NUMBER" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="DATA_CODING_SCHEME" type="DATA_CODING_SCHEME" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="SMS_TRANSFER_TIMEOUT" type="TIMEOUT_IN_SEC" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+        </Parameters>
+    </UseCase>
+</UseCases>

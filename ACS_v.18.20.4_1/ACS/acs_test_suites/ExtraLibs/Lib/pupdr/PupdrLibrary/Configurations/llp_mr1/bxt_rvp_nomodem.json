@@ -1,0 +1,35 @@
+{
+    "Configuration": {
+        "Boot": null,
+        "BootVars": null,
+        "Custom": null,
+        "Download": {
+            "INTERNAL_DOWNLOAD": [
+                {
+                    "pft_key": "fastboot",
+                    "local_key": "firmware",
+                    "buildbot_artifactory_path": {"path": "device_name_id/variant_id", "detection": "cactus-absp"},
+                    "regexp_key": ".*flashfiles.*.zip",
+                    "flash_file": null,
+                    "configuration": "fw_update",
+                    "start_state": "dnx_fw"
+                },
+                {
+                    "pft_key": "fastboot",
+                    "buildbot_artifactory_path": {"path": "device_name_id/variant_id", "detection": "cactus-absp"},
+                    "regexp_key": ".*flashfiles.*.zip",
+                    "flash_file": null,
+                    "configuration": "blank",
+                    "groups": {"Disable_Telephony": true, "tel-7360_V1_NA_EU": false},
+                    "start_state": "dnx_os"
+                }
+            ]
+        },
+        "Inherit": {
+            "BOARD": "bxt_rvp"
+        },
+        "Logs": null,
+        "Timeout": null,
+        "WorkAround": null
+    }
+}

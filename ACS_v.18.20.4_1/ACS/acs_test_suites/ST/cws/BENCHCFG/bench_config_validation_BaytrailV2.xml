@@ -1,0 +1,281 @@
+<?xml version='1.0' encoding='ISO-8859-1'?>
+<BenchConfig>
+  <Phones>
+      <Phone name="PHONE1" description="Phone to use during test campaign. Please refer to Device_Catalog.xml to fill DeviceModel parameter" deviceModel="BYT_T_FFRD8-Android-KK">
+          <Parameter serialNumber="Baytrail9F1FE576" description="Give the Serial Number of the phone (Used for Android phone only)"/>
+            <Parameter phoneNumber="" description="Give the phone number of the phone"/>
+            <Parameter adbOverEthernet="" description="Use ADB over Ethernet (Used for Android phone only)"/>
+            <Parameter ipAddress="" description="Give the IP address of the phone (Used for Android phone only)"/>
+            <Parameter adbPort="5555" description="Give ADB ethernet port of the phone (Used for Android phone only)"/>
+            <Parameter uploadCrashToServer="false"/>
+        </Phone>
+        <Phone name="PHONE2" description="Phone to use during test campaign. Please refer to Device_Catalog.xml to fill DeviceModel parameter" deviceModel="SALTBAY-Android-KK">
+          <Parameter serialNumber="INV133600980" description="Give the Serial Number of the phone (Used for Android phone only)"/>
+            <Parameter phoneNumber="" description="Give the phone number of the phone"/>
+            <Parameter adbOverEthernet="" description="Use ADB over Ethernet (Used for Android phone only)"/>
+            <Parameter ipAddress="" description="Give the IP address of the phone (Used for Android phone only)"/>
+            <Parameter adbPort="5555" description="Give ADB ethernet port of the phone (Used for Android phone only)"/>
+            <Parameter uploadCrashToServer="false"/>
+        </Phone>
+    </Phones>
+    <Equipments>
+      <Equipment name="ARTIFACT_MANAGER" description="ArtifactManager configuration to get all test case necessary artifacts">
+          <Parameter name="URI" value="https://mcg-depot.intel.com/artifactory/acs_test_artifacts/" description="Local path/URL to the artifact source"/>
+            <!-- Optional options
+          <Parameter name="proxy" value="system" description="Proxy to use if URI is an URL - system: use HTTP_PROXY system value - no_proxy: use empty proxy - a proxy adress" />
+          <Parameter name="http_timeout" value="10" description="Response timeout if URI is an URL" />
+          <Parameter name="creds" value="anonymous" description="Credentials to use if URL is access protected - anonymous: no creds will be used - creds format user:password" />
+          <Parameter name="cache_folder" value="/tmp/artifact_cache" description="Local path to a directory to store artifacts - if not specified, your_home_folder/.acs/Artifacts will be used" />
+          <Parameter name="max_cache_size" value="1000" description="Maximum cache directory size on the disk in Mb" />
+          -->
+        </Equipment>
+        <Equipment name="WPA2_WIFI_ROUTER" description="Wifi Protected Access II Router">
+          <Parameter name="SSID" value="INTELTEST_WPA2"/>
+            <Parameter name="IP" value="192.168.0.4"/>
+            <Parameter name="passphrase" value="acdc123456"/>
+            <!--
+            Wifi Security of wifi env to be used. Can be "OPEN", "WEP","WPA" or "WPA2"
+          -->
+            <Parameter name="WIFI_SECURITY" value="WPA2"/>
+            <!-- Standard possible values:  "a", "b", "g", "an", "bg", "gn", "bgn", "n2.4G", "n5G", "off" -->
+            <Parameter name="standard" value=""/>
+        </Equipment>
+        <Equipment name="WPA_WIFI_ROUTER" description="Wifi Protected Access Router">
+          <Parameter name="SSID" value="INTELTEST_WPA"/>
+            <Parameter name="IP" value="192.168.0.3"/>
+            <Parameter name="passphrase" value="acdc123456"/>
+            <!--
+            Wifi Security of wifi env to be used. Can be "OPEN", "WEP","WPA" or "WPA2"
+          -->
+            <Parameter name="WIFI_SECURITY" value="WPA"/>
+            <!-- Standard possible values:  "a", "b", "g", "an", "bg", "gn", "bgn", "n2.4G", "n5G", "off" -->
+            <Parameter name="standard" value=""/>
+        </Equipment>
+        <Equipment name="B_ONLY_WIFI_ROUTER" description="Wired Equivalent Privacy Router">
+          <Parameter name="SSID" value="CWS_B_ONLY_acsst01"/>
+            <Parameter name="IP" value="192.168.0.40"/>
+            <Parameter name="passphrase" value="acdc123456"/>
+            <!--
+            Wifi Security of wifi env to be used. Can be "OPEN", "WEP","WPA" or "WPA2"
+          -->
+            <Parameter name="WIFI_SECURITY" value="WEP"/>
+            <!-- Standard possible values:  "a", "b", "g", "an", "bg", "gn", "bgn", "n2.4G", "n5G", "off" -->
+            <Parameter name="standard" value="b"/>
+        </Equipment>
+        <Equipment name="NO_SECURITY_WIFI_ROUTER" description="Not secured Router">
+          <Parameter name="SSID" value="INTELTEST_NOSEC"/>
+            <Parameter name="IP" value="192.168.0.1"/>
+            <Parameter name="passphrase" value="None"/>
+            <!--
+            Wifi Security of wifi env to be used. Can be "OPEN", "WEP","WPA" or "WPA2"
+          -->
+            <Parameter name="WIFI_SECURITY" value="OPEN"/>
+            <!-- Standard possible values:  "a", "b", "g", "an", "bg", "gn", "bgn", "n2.4G", "n5G", "off" -->
+            <Parameter name="standard" value=""/>
+        </Equipment>
+        <Equipment name="CELLULAR_NETWORK" description="Cellular access network">
+          <Parameter name="SSID" value="'Agilent TS34.108 (00101)'"/>
+            <Parameter name="APN" value="agilent_apn"/>
+        </Equipment>
+        <Equipment name="LAB_SERVER" description="Server Configuration used for FTP, IPERF">
+          <Parameter name="IP" value="192.168.0.150"/>
+            <Parameter name="username" value="acs"/>
+            <Parameter name="password" value="intelacs"/>
+            <Parameter name="ftp_path" value="acs_test"/>
+        </Equipment>
+        <Equipment name="WIFI_SERVER" description="Server Configuration used for FTP, IPERF">
+          <Parameter name="IP" value="192.168.0.150"/>
+            <Parameter name="username" value="acs"/>
+            <Parameter name="password" value="intelacs"/>
+            <Parameter name="ftp_path" value="acs_test"/>
+        </Equipment>
+        <Equipment name="POWER_SUPPLY1" description="Power supply used for device Power cycle">
+          <!-- Model possible values: AGILENT_66311D | AGILENT_66319D | AGILENT_E364xA -->
+            <Parameter name="Model" value=""/>
+            <!-- GPIB -->
+            <Parameter name="Transport" value="GPIB"/>
+            <Parameter name="GPIBBoardId" value=""/>
+            <Parameter name="GPIBAddress" value=""/>
+            <Output name="OUTPUT1">
+              <!-- Type possible values: NONE | ACCHG (AC Charger) | BATT (Battery) | USB -->
+                <Parameter name="Type" value="ACCHG" description="Output Type"/>
+                <Parameter name="PortNumber" value="1"/>
+                <Parameter name="MaxCurrent" value=""/>
+                <Parameter name="Voltage" value=""/>
+            </Output>
+        </Equipment>
+        <Equipment name="POWER_SUPPLY2" description="Power supply used for device Power cycle">
+          <!-- Model possible values: AGILENT_66311D | AGILENT_66319D | AGILENT_E364xA -->
+            <Parameter name="Model" value=""/>
+            <!-- GPIB -->
+            <Parameter name="Transport" value="GPIB"/>
+            <Parameter name="GPIBBoardId" value=""/>
+            <Parameter name="GPIBAddress" value=""/>
+            <Output name="OUTPUT1">
+              <!-- Type possible values: NONE | ACCHG (AC Charger) | BATT (Battery) | USB -->
+                <Parameter name="Type" value="ACCHG" description="Output Type"/>
+                <Parameter name="PortNumber" value="1"/>
+                <Parameter name="MaxCurrent" value=""/>
+                <Parameter name="Voltage" value=""/>
+            </Output>
+        </Equipment>
+        <Equipment name="NETWORK_SIMULATOR1" description="Network simulator used for non mobility test cases">
+          <!-- Model possible values:  AGILENT_8960 | RS_CMU200 -->
+            <Parameter name="Model" value=""/>
+            <Parameter name="Transport" value="GPIB"/>
+            <Parameter name="GPIBBoardId" value=""/>
+            <Parameter name="GPIBAddress" value=""/>
+            <Parameter name="AmplitudeOffsetTable" value="Amplitude_Offset_Table"/>
+            <Parameter name="IP_Lan1" value=""/>
+            <Parameter name="IP_Lan2" value=""/>
+            <Parameter name="DUT_IP_Address" value=""/>
+            <Parameter name="DNS1" value=""/>
+            <Parameter name="DNS2" value=""/>
+            <Parameter name="Subnet_Mask" value=""/>
+            <Parameter name="Default_Gateway" value=""/>
+        </Equipment>
+        <Equipment name="NETWORK_SIMULATOR2" description="Network simulator used for non mobility test cases">
+          <!-- Model possible values:  AGILENT_8960 only -->
+            <Parameter name="Model" value="AGILENT_8960"/>
+            <Parameter name="Transport" value="GPIB"/>
+            <Parameter name="GPIBBoardId" value=""/>
+            <Parameter name="GPIBAddress" value=""/>
+            <Parameter name="AmplitudeOffsetTable" value="Amplitude_Offset_Table"/>
+            <Parameter name="IP_Lan1" value=""/>
+            <Parameter name="IP_Lan2" value=""/>
+            <Parameter name="DUT_IP_Address" value=""/>
+            <Parameter name="DNS1" value=""/>
+            <Parameter name="DNS2" value=""/>
+            <Parameter name="Subnet_Mask" value=""/>
+            <Parameter name="Default_Gateway" value=""/>
+        </Equipment>
+        <Equipment name="POWER_ANALYZER_TOOL" description="PAT used for power consumption measurements test cases">
+          <!-- Model possible values:  STUB | NIDAQ -->
+            <Parameter name="Model" value=""/>
+            <Parameter name="ConfFile" value=""/>
+        </Equipment>
+        <Equipment name="IO_CARD" description="Input output card used for power management, energy management on I/O ports of the DUT.">
+          <Parameter name="Model" value="USB_RLY08"/>
+            <Parameter name="ComPort" value="/dev/ttyUSB0" description="COM port used for communication"/>
+            <Parameter name="SwitchOnOff" value="2" description="Number of the relay used to boot or stop the board"/>
+            <Parameter name="UsbHostPcConnect" value="1" description="Number of the relay used to plug or unplug USB on host PC"/>
+        </Equipment>
+        <Equipment name="IO_CARD2" description="Input output card used for power management, energy management on I/O ports of the DUT.">
+          <Parameter name="Model" value="USB_RLY08"/>
+            <Parameter name="ComPort" value="/dev/ttyUSB0" description="COM port used for communication"/>
+            <Parameter name="SwitchOnOff" value="8" description="Number of the relay used to boot or stop the board"/>
+            <Parameter name="UsbHostPcConnect" value="7" description="Number of the relay used to plug or unplug USB on host PC"/>
+        </Equipment>
+        <Equipment name="IO_CARD3" description="Input output card used for power management, energy management on I/O ports of the DUT.">
+          <Parameter name="Model" value="USB_RLY08"/>
+            <Parameter name="ComPort" value="/dev/ttyUSB1" description="COM port used for communication"/>
+            <!--Parameter name="SwitchOnOff" value="" description="Number of the relay used to boot or stop the board"/>
+          <Parameter name="UsbHostPcConnect" value="" description="Number of the relay used to plug or unplug USB on host PC"/-->
+        </Equipment>
+        <Equipment name="CONFIGURABLE_AP1" description="Configurable Access Point">
+          <!-- Model possible values:  DLINK_DAP2553 | CISCO_1250 | CISCO_WAP4410N | CISCO_WRVS4400N | CISCO_AP541N -->
+            <Parameter name="Model" value="CISCO_1250" description="Model of the equipment to use"/>
+            <Parameter name="IP" value="192.168.0.55" description="ip address of the equipment"/>
+            <Parameter name="ConfigurationWaitingTime" value="10" description="Time to wait after the configuration step (in second)"/>
+            <Parameter name="username" value="Cisco" description="login used for the connection"/>
+            <Parameter name="password" value="Cisco" description="password used for the connection"/>
+            <!-- >Parameter name="Model" value="DLINK_DAP2553" description="Model of the equipment to use" />
+           <Parameter name="IP" value="192.168.0.52" description="ip address of the equipment" />
+           <Parameter name="ConfigurationWaitingTime" value="45" description="Time to wait after the configuration step (in second)" />
+           <Parameter name="username" value="admin" description="login used for the connection" />
+           <Parameter name="password" value="" description="password used for the connection" /-->
+            <Parameter name="SSID" value="CWS_VALIDATION1_bench1" description="SSID to create"/>
+            <Parameter name="passphrase_WEP64" value="12345" description="passphrase for WEP 64 bits"/>
+            <Parameter name="passphrase_WEP128" value="1234567890123" description="passphrase for WEP 128 bits"/>
+            <Parameter name="passphrase_WPA" value="1234567890123" description="passphrase for WPA"/>
+            <Parameter name="passphrase_WPA2" value="1234567890123" description="passphrase for WPA2"/>
+            <Parameter name="radiusip" value="192.168.0.150" description="IP of the Radius server"/>
+            <Parameter name="radiusport" value="1815" description="Listening port of the radius server"/>
+            <Parameter name="radiussecret" value="RadiusPass" description="Secret password to connect AP to the Radius server"/>
+            <Parameter name="EAP_user" value="Inteluser" description="login used for EAP encryption"/>
+            <Parameter name="EAP_password" value="intelpassword" description="password used for EAP encryption"/>
+            <Parameter name="EAP_SIM_user" value="eapsimuser" description="SIM user specified in radius server configuration"/>
+            <Parameter name="EAP_AKA_user" value="eapakauser" description="AKA user specified in radius server configuration"/>
+            <Parameter name="Credential_password" value="12345678" description="credential password for EAP encryption. For ICS, the credential password is also the digit PIN code to lock the phone and the phone should not be initialy locked with a PIN, password nor patern"/>
+            <Parameter name="CA_guard_password" value="VPN" description="ca guard password for EAP encryption"/>
+            <Parameter name="certificate_file" value="client.p12" description="Filename of the certificate to be used for WPA-enterprise authentication with EAP method=TLS. This .p12 file should be placed into: [ACS_ROOT_FOLDER]/Executable/_Embedded/CERTIFICATE"/>
+            <Parameter name="DHCP_ENABLED" value="False" description="Enable dhcp on AP"/>
+            <Parameter name="LOW_EXCLUDED_IP" value="192.168.1.1" description="Defines the low end of the excluded ip range for dhcp"/>
+            <Parameter name="HIGH_EXCLUDED_IP" value="192.168.1.50" description="Defines the high end of the excluded ip range for dhcp"/>
+            <Parameter name="DHCP_SUBNET" value="192.168.1.0" description="Defines the dhcp subnet (with the addition of a mask)"/>
+            <Parameter name="DHCP_SUBNET_MASK" value="255.255.255.0" description="Defines the dhcp subnet mask"/>
+            <Parameter name="DHCP_LEASE" value="infinite" description="Defines the dhcp lease  { days [ hours ] [ minutes ] | infinite }"/>
+            <Parameter name="DHCP_GATEWAY" value="192.168.1.1" description="The gateway that should be pushed to dhcp clients"/>
+            <Parameter name="ConsoleTimeout" value="5" description="Time required in order for the telnet/ssh server embedded in the AP to reset the connection (in minutes)"/>
+        </Equipment>
+        <Equipment name="CONFIGURABLE_AP2" description="Secondary Configurable Access Point">
+          <Parameter name="Model" value="DLINK_DAP2553" description="Model of the equipment to use"/>
+            <Parameter name="IP" value="192.168.0.52" description="ip address of the equipment"/>
+            <Parameter name="ConfigurationWaitingTime" value="45" description="Time to wait after the configuration step (in second)"/>
+            <Parameter name="username" value="admin" description="login used for the connection"/>
+            <Parameter name="password" value="" description="password used for the connection"/>
+            <Parameter name="SSID" value="CWS_VALIDATION2_bench1" description="SSID to create"/>
+            <Parameter name="passphrase_WEP64" value="12345" description="passphrase for WEP 64 bits"/>
+            <Parameter name="passphrase_WEP128" value="1234567890123" description="passphrase for WEP 128 bits"/>
+            <Parameter name="passphrase_WPA" value="1234567890123" description="passphrase for WPA"/>
+            <Parameter name="passphrase_WPA2" value="1234567890123" description="passphrase for WPA2"/>
+        </Equipment>
+        <Equipment name="GPS_NETWORK_SIMULATOR1" description="Gps Network simulator used for GPS test cases">
+          <!-- Model possible values:  SPIRENT_GSS6700 -->
+            <Parameter name="Model" value="SPIRENT_GSS6700" description="Model of equipment to use. Refer to Equipment_Catalog.xml"/>
+            <Parameter name="Transport" value="SERIAL" description="Transport used to connect the equipment"/>
+            <Parameter name="ComPort" value="" description="COM port used for communication"/>
+            <Parameter name="BaudRate" value="" description="Baud rate used for serial port communication"/>
+            <Parameter name="ConnectionRetry" value="" description="The number of retry in case of SERIAL connection"/>
+        </Equipment>
+        <Equipment name="BT_DEVICE" description="Bluetooth device to use for BT tests (pairing)">
+          <Parameter name="MacAddress" value="00:00:00:00:00:00" description="MAC address of the bluetooth device available on the bench"/>
+        </Equipment>
+        <!--Equipment name="COMPUTER1" description="Computer connected to the local ethernet network (bench)">
+          <Parameter name="Model" value="LOCAL_COMPUTER" description="LOCAL_COMPUTER or REMOTE_COMPUTER (only LOCAL is currently supported)"/>
+          <Parameter name="USBInterface" value="usb0" description="USB Interface to use (usb0)" />
+        </Equipment-->
+        <Equipment version="13.44" name="COMPUTER1" description="Computer connected to the local ethernet network (bench)">
+          <Parameter name="Model" value="LOCAL_COMPUTER" description="LOCAL_COMPUTER or REMOTE_COMPUTER (only LOCAL is currently supported)"/>
+            <Parameter name="USBInterface" value="usb0" description="USB Interface to use (usb0)"/>
+            <Parameter name="BenchNetInterface" value="eth0" description="Network Interface use to connect to the Bench network (eth0) [Linux]"/>
+        </Equipment>
+        <Equipment name="WIFI_SNIFFER1" description="WiFi Sniffer">
+          <!-- Model possible values: TCPDump | WireShark -->
+            <Parameter name="Model" value="WireShark" description="Model of the equipment to use"/>
+            <Parameter name="Computer" value="COMPUTER2" description="Computer equipment to use (COMPUTERX)"/>
+            <Parameter name="Interface" value="wlan0" description="WireLess Interface to use (wlan1/ra0)"/>
+        </Equipment>
+        <Equipment name="COMPUTER2" description="Computer connected to the local ethernet network (bench)">
+          <Parameter name="Model" value="REMOTE_COMPUTER" description="LOCAL_COMPUTER or REMOTE_COMPUTER"/>
+            <Parameter name="IP" value="192.168.0.150" description="ip address of the equipment"/>
+            <Parameter name="IP_TEST" value="" description="[Optional] ip address of the equipment from DUT point of view (only required on Conformance Bench)"/>
+            <Parameter name="username" value="root" description="login used for the connection"/>
+            <Parameter name="Interface" value="eth0" description="WireLess Interface to use (wlan1/ra0)"/>
+            <Parameter name="SshPath" value="ssh" description="[Optional] full path to local SSH client binary (default 'ssh')"/>
+            <Parameter name="ScpPath" value="scp" description="[Optional] full path to local SCP client binary (default 'scp')"/>
+            <Parameter name="IPv6Prefix" value="" description="IPv6 prefix of the computer."/>
+        </Equipment>
+        <Equipment version="13.44" name="BT_HEADSET" description="Bluetooth headset device reworked to be used with IOCards.">
+          <!-- Model possible values: NokiaBH214 -->
+            <Parameter name="Model" value="NokiaBH214"/>
+            <Parameter name="BD_Address" value="00:0B:E4:94:E1:91"/>
+            <Parameter name="IOCard" value="IO_CARD3" description="name of the IO_CARD used to manage headset buttons"/>
+            <Parameter name="powerButton" value="1" description="Number of the Slave IOCard's relay used to poweronoff the headset"/>
+            <Parameter name="volUpButton" value="3" description="Number of the Slave IOCard's relay from Slave IOCard used to increase volume"/>
+            <Parameter name="volDownButton" value="5" description="Number of the Slave IOCard's relay from Slave IOCard used to decrease volume"/>
+            <Parameter name="callButton" value="8" description="Number of the Slave IOCard's relay used to place a call"/>
+            <Parameter name="fwdButton" value="7" description="Number of the Slave IOCard's relay used to fwd music"/>
+            <Parameter name="rwdButton" value="2" description="Number of the Slave IOCard's relay used to rwd music"/>
+            <Parameter name="playPauseButton" value="6" description="Number of the Slave IOCard's relay used to play/pause audio"/>
+            <Parameter name="powerOnTimer" value="1" description="Timer for poweron, in second"/>
+            <Parameter name="powerOffTimer" value="5" description="Timer for poweroff, in second"/>
+            <Parameter name="defaultShortKeyPressTimer" value="1" description="Timer for default short key press, in second"/>
+            <Parameter name="defaultLongKeyPressTimer" value="3" description="Timer for default long key press, in second"/>
+            <Parameter name="betweenDoubleKeyPressTimer" value="0.5" description="Timer for pause between double key press, in second"/>
+            <Parameter name="pairingTimer" value="8" description="Timer to enter in pairing mode, in second"/>
+            <Parameter name="voiceDialTimer" value="2" description="Timer to access to redial option, in second"/>
+        </Equipment>
+    </Equipments>
+</BenchConfig>
+

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase>
+<UseCase>LAB_GSM_CB_SMS_VC</UseCase>
+<Description>GSM Mobile Terminated SMS Cell Broadcast over CS on simulated network during CSV call</Description>
+<b2bIteration>1</b2bIteration>
+<b2bContinuousMode>True</b2bContinuousMode>
+<Parameters>
+        <Parameter>
+            <!-- Cell Band (PGSM|RGSM|EGSM|GSM450|GSM480|GSM750|GSM850|TGSM810|PCS|DCS) -->
+            <Name>CELL_BAND</Name>
+            <Value>DCS</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Cell power in dB -->
+            <Name>CELL_POWER</Name>
+            <Value>-60</Value>
+        </Parameter>
+        <Parameter>
+            <!-- BCH ARFCN -->
+            <Name>BCH_ARFCN</Name>
+            <Value>512</Value>
+        </Parameter>
+        <Parameter>
+            <!-- SMS text to send -->
+            <Name>SMS_TEXT</Name>
+            <Value>This is a CMAS SMS-CB for imminent threats in 2G</Value>
+        </Parameter>
+        <Parameter>
+            <!-- CELL_BROADCAST_MESSAGE_IDENTIFIER -->
+            <Name>CELL_BROADCAST_MESSAGE_IDENTIFIER</Name>
+            <Value>4378</Value>
+        </Parameter>
+        <Parameter>
+            <!-- REPETITION_PERIOD In Seconds -->
+            <Name>REPETITION_PERIOD</Name>
+            <Value>5</Value>
+        </Parameter>
+        <Parameter>
+            <!-- SMS Data coding scheme in hexadecimal -->
+            <Name>DATA_CODING_SCHEME</Name>
+            <Value>00</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Update number should be between 0-15 -->
+            <Name>UPDATE_NUMBER</Name>
+            <Value>0</Value>
+        </Parameter>
+        <Parameter>
+            <!-- SMS transfer timeout in seconds -->
+            <Name>SMS_TRANSFER_TIMEOUT</Name>
+            <Value>60</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Voice call type (MO [Mobile Originated]|MT [Mobile Terminated]) -->
+            <Name>VC_TYPE</Name>
+            <Value>MO</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Voice call type (MO [Mobile Originated]|MT [Mobile Terminated]) -->
+            <Name>PHONE_NUMBER</Name>
+            <Value>11111</Value>
+        </Parameter>
+</Parameters>
+</TestCase>

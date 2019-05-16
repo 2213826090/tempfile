@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase>
+    <UseCase>LIVE_DISPLAY_IMAGE_ROTATE</UseCase>
+    <Description>Check if a picture is correctly displayed by Gallery</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <TcMaxAttempt>3</TcMaxAttempt>
+    <TcAcceptanceCriteria>1</TcAcceptanceCriteria>
+    <Parameters>
+        <Parameter>
+             <!-- Uri in the DUT of the image to display, should be a valid uri of an existing image in the DUT-->
+             <Name>IMAGE_URI</Name>
+             <Value></Value>
+        </Parameter>
+        <Parameter>
+            <!-- Path to the image library -->
+            <Name>LIBRARY_IMAGE_PATH</Name>
+            <Value></Value>
+        </Parameter>
+        <Parameter>
+            <!-- photos icon -->
+            <Name>PHOTOS_ICON</Name>
+            <Value></Value>
+         </Parameter>
+        <Parameter>
+            <!-- JUST_ONCE_ICON icon -->
+            <Name>JUST_ONCE_ICON</Name>
+            <Value></Value>
+        </Parameter>
+        <Parameter>
+            <!-- DUT's default orientations, reverse_landscape for tablet, protrait for phone, this parameter
+            should be one of {portrait, reverse_landscape}
+             -->
+            <Name>DEFAULT_ORIENTATION</Name>
+            <Value></Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

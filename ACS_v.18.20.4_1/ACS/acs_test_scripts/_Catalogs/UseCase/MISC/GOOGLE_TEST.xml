@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<UseCases xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:noNamespaceSchemaLocation="../../../../acs/src/_Catalogs/UseCase/usecase.xsd">
+    <UseCase Id="GOOGLE_TEST" Domain="MISC" SubDomain="GOOGLE_TEST" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Misc.GoogleTest.GoogleTest</ClassName>
+        <Description>UC that will execute google test</Description>
+        <Environment name="ANY">
+        </Environment>
+        <Parameters>
+            <Parameter name="GTEST_TIMEOUT" type="TIMEOUT_IN_SEC" isOptional="false">
+                <Description>The timeout value in seconds to use when issuing ADB shell commands to execute google test binary</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="GTEST_BINARY" type="STRING" isOptional="false">
+                <Description>The google test binary absolute file path over the device</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+        </Parameters>
+    </UseCase>
+</UseCases>

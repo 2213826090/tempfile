@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase>
+    <UseCase>TEST_STEP_ENGINE</UseCase>
+    <Description />
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <b2bIteration>5</b2bIteration>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <TcMaxAttempt />
+    <TcAcceptanceCriteria>1</TcAcceptanceCriteria>
+    <TestSteps>
+        <Include Src="ST/cws/TSS/WiFi/ST_CWS_WIFI_AP.xml" />
+        <Setup>
+            <TestStep SetId="APConfig"
+                      EQT="CONFIGURABLE_AP1"
+                      SSID="FROM_BENCH:CONFIGURABLE_AP1:SSID"
+                      HIDDEN="false"
+                      STANDARD="n5G"
+                      AUTHENTICATION_TYPE="WPA2-PSK-AES"
+                      PASSPHRASE="FROM_BENCH:CONFIGURABLE_AP1:passphrase_WPA2"
+                      BANDWIDTH="20"
+                      CHANNEL="44"/>
+            <TestStep Id="BT_SET_POWER" DEVICE="PHONE1" POWER="OFF"/>
+        </Setup>
+        <RunTest>
+            <TestStep Id="WIFI_SET_POWER" DEVICE="PHONE1" POWER="on" />
+            <TestStep Id="SUSPEND" DURATION_IN_SEC="5" />
+            <TestStep Id="WIFI_REQUEST_SCAN" DEVICE="PHONE1"  />
+            <TestStep Id="SUSPEND" DURATION_IN_SEC="5" />
+            <TestStep Id="WIFI_LIST_SSIDS" DEVICE="PHONE1" SAVE_AS="ssid_list"  />
+            <TestStep Id="WIFI_REMOVE_NETWORK" DEVICE="PHONE1"  SSID="FROM_BENCH:CONFIGURABLE_AP1:SSID"/>
+            <TestStep Id="WIFI_ADD_NETWORK" DEVICE="PHONE1"
+                      SSID="FROM_BENCH:CONFIGURABLE_AP1:SSID"
+                      PASS_PHRASE="FROM_BENCH:CONFIGURABLE_AP1:passphrase_WPA2"
+                      SECURITY="WPA2-PSK-AES"
+                      EAP_METHOD="NONE"
+                      EAP_USER="NONE"
+                      EAP_PASSWORD="NONE"
+                      PHASE2_AUTH="NONE"
+                      CERTIFICAT_NAME="NONE"
+                      USE_CERTIFICATE="false"
+                      STATIC_IP="dhcp"
+                      IP_ADDRESS="192.168.0.142"
+                      IP_NETMASK="255.255.255.0"
+                      IP_GATEWAY="192.168.0.1"
+                      IP_DNS1="0.0.0.0"
+                      IP_DNS2="0.0.0.0"/>
+            <TestStep Id="WIFI_CONNECT" DEVICE="PHONE1" SSID="FROM_BENCH:CONFIGURABLE_AP1:SSID" TIMEOUT="30"/>
+            <TestStep Id="RUN_IPERF" DEVICE="PHONE1"
+                       DURATION="1"
+                       IPERF_PROTOCOL="DEFAULT"
+                       DIRECTION="down"
+                       SERVER_TYPE="equipment"
+                       SERVER_NAME="COMPUTER2"
+                       NET_INTERFACE="wlan0"
+                       WINDOW_SIZE="compute"
+                       NO_DELAY="DEFAULT"
+                       NR_OF_THREADS="DEFAULT"
+                       IPERF_OPTIONS="None"
+                       MEASURED_THROUGHPUT="CTX_IPERF_THRPUT"/>
+            <TestStep Id="COMPARE" FIRST="FROM_CTX:CTX_IPERF_THRPUT:DL_VALUE" SECOND="0" OPERATOR="EQUAL" PASS_IF="false" />
+        </RunTest>
+        <TearDown>
+            <TestStep Id="WIFI_REMOVE_NETWORK" DEVICE="PHONE1" SSID="FROM_BENCH:CONFIGURABLE_AP1:SSID"/>
+            <TestStep Id="WIFI_SET_POWER" DEVICE="PHONE1" POWER="off" />
+            <TestStep SetId="APDown" EQT="CONFIGURABLE_AP1"/>
+        </TearDown>
+    </TestSteps>
+</TestCase>

@@ -1,0 +1,36 @@
+<TestCase>
+    <UseCase>TEST_STEP_ENGINE</UseCase>
+    <Description>wifi</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <TcMaxAttempt>3</TcMaxAttempt>
+    <TestSteps>
+        <Setup></Setup>
+        <RunTest>
+            <TestStep Id="GET_ARTIFACT" EQT="ARTIFACT_MANAGER" ARTIFACT="MISCELLANEOUS/TXT/1MB.txt" ARTIFACT_SOURCE="FROM_BENCH:ARTIFACT_MANAGER:URI" TRANSFER_TIMEOUT="DEFAULT" STORED_FILE_PATH="FILE_PATH_IN_CACHE"/>
+            <Fork Id="ForkInstallFile1">
+                <TestStep Id="INSTALL_FILE" DEVICE="PHONE1" FILE_PATH="FROM_CTX:FILE_PATH_IN_CACHE" TYPE="media" DESTINATION="/sdcard/acs_files/" DESTINATION_STORED_PATH="INSTALLED_FILE_PATH" TIMEOUT="DEFAULT"/>
+                <TestStep Id="INSTALL_FILE" DEVICE="PHONE2" FILE_PATH="FROM_CTX:FILE_PATH_IN_CACHE" TYPE="media" DESTINATION="/sdcard/acs_files/" DESTINATION_STORED_PATH="INSTALLED_FILE_PATH" TIMEOUT="DEFAULT"/>
+            </Fork>
+            <TestStep Id="GET_ARTIFACT" EQT="ARTIFACT_MANAGER" ARTIFACT="MISCELLANEOUS/TXT/10MB.txt" ARTIFACT_SOURCE="FROM_BENCH:ARTIFACT_MANAGER:URI" TRANSFER_TIMEOUT="DEFAULT" STORED_FILE_PATH="FILE_PATH_IN_CACHE"/>
+            <Fork Id="ForkInstallFile2">
+                <TestStep Id="INSTALL_FILE" DEVICE="PHONE1" FILE_PATH="FROM_CTX:FILE_PATH_IN_CACHE" TYPE="media" DESTINATION="/sdcard/acs_files/" DESTINATION_STORED_PATH="INSTALLED_FILE_PATH" TIMEOUT="DEFAULT"/>
+                <TestStep Id="INSTALL_FILE" DEVICE="PHONE2" FILE_PATH="FROM_CTX:FILE_PATH_IN_CACHE" TYPE="media" DESTINATION="/sdcard/acs_files/" DESTINATION_STORED_PATH="INSTALLED_FILE_PATH" TIMEOUT="DEFAULT"/>
+            </Fork>
+            <TestStep Id="GET_ARTIFACT" EQT="ARTIFACT_MANAGER" ARTIFACT="MISCELLANEOUS/TXT/5MB.txt" ARTIFACT_SOURCE="FROM_BENCH:ARTIFACT_MANAGER:URI" TRANSFER_TIMEOUT="DEFAULT" STORED_FILE_PATH="FILE_PATH_IN_CACHE"/>
+            <Fork Id="ForkInstallFile3">
+                <TestStep Id="INSTALL_FILE" DEVICE="PHONE1" FILE_PATH="FROM_CTX:FILE_PATH_IN_CACHE" TYPE="media" DESTINATION="/sdcard/acs_files/" DESTINATION_STORED_PATH="INSTALLED_FILE_PATH" TIMEOUT="DEFAULT"/>
+                <TestStep Id="INSTALL_FILE" DEVICE="PHONE2" FILE_PATH="FROM_CTX:FILE_PATH_IN_CACHE" TYPE="media" DESTINATION="/sdcard/acs_files/" DESTINATION_STORED_PATH="INSTALLED_FILE_PATH" TIMEOUT="DEFAULT"/>
+            </Fork>
+            <Fork Id="ForkSetup1">
+                <TestStep Id="BT_SET_POWER" DEVICE="PHONE1" POWER="ON"/>
+                <TestStep Id="WIFI_SET_POWER" DEVICE="PHONE2" POWER="on"/>
+            </Fork>
+            <Fork Id="ForkSetup2">
+                <TestStep Id="BT_SET_POWER" DEVICE="PHONE2" POWER="ON"/>
+                <TestStep Id="WIFI_SET_POWER" DEVICE="PHONE1" POWER="on"/>
+            </Fork>
+        </RunTest>
+        <TearDown></TearDown>
+    </TestSteps>
+</TestCase>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="13.45">
+    <UseCase>LIVE_LTE_IMS_REG</UseCase>
+    <Description>IMS registration over LTE</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters>
+        <Parameter>
+            <!-- The IMS registration timeout given in seconds -->
+            <Name>IMS_REGISTRATION_TIMEOUT</Name>
+            <Value>60</Value>
+        </Parameter>
+        <Parameter>
+            <!-- The path to the IMS parameter file to
+                    use to create the IMS_Config.ini file
+                    on the device.  -->
+            <Name>IMS_PARAMETER_FILE</Name>
+            <Value>_ExecutionConfig/ims_config.yaml</Value>
+        </Parameter>
+        <Parameter>
+            <!-- The authentication mode to use ("digest"|"aka"). -->
+            <Name>IMS_AUTHENTICATION</Name>
+            <Value>aka</Value>
+        </Parameter>
+        <Parameter>
+             <!-- The precondition parameters ("3gpp" with preconditions, "ietf" without preconditions) -->
+            <Name>IMS_PRECONDITIONS</Name>
+            <Value>ietf</Value>
+        </Parameter>
+        <Parameter>
+             <!-- [optional] The DIGEST password to use when chosing DIGEST authentication mode. -->
+            <Name>IMS_DIGEST_PASSWORD</Name>
+            <Value>azerty</Value>
+        </Parameter>
+        <Parameter>
+            <!-- [optional]IP version used for the APN to connect to the C4I network. (IPV4 | IPV6 | IPV4V6).
+                 Default: IPV4
+            -->
+            <Name>IP_VERSION</Name>
+            <Value>IPV4</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Check deregistration method (None, AIRPLANE_ON_OFF, AT_COMMAND) -->
+            <Name>DEREGISTRATION_METHOD</Name>
+            <Value>AIRPLANE_ON_OFF</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

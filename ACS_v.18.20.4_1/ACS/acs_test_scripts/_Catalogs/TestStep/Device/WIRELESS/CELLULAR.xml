@@ -1,0 +1,413 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestSteps xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../acs/src/_Catalogs/TestStep/teststep.xsd">
+    <TestStep Id="SET_FLIGHT_MODE" Domain="WIRELESS" SubDomain="CELLULAR" Feature="SETTINGS" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.System.Settings.SetFlightMode.SetFlightMode</ClassName>
+        <Description>Enable or disable flight mode on DUT, can restore previous setting
+        Before setting the flight mode, the step will store the current flight mode into the context as FLIGHT_MODE key.
+        If the user set SET_FLIGHT_MODE value to 'restore', the step will use the value of FLIGHT_MODE from the context.
+        </Description>
+        <Environment name="ANY"/>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues/>
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="FLIGHT_MODE" type="STRING" isOptional="false">
+                <Description>Flight mode status</Description>
+                <PossibleValues>enable;disable;restore</PossibleValues>
+                <DefaultValue>disable</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="ENABLE_FLIGHT_MODE" Domain="WIRELESS" SubDomain="CELLULAR" Feature="SETTINGS" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.System.Settings.EnableFlightMode.EnableFlightMode</ClassName>
+        <Description>Enable flight mode on DUT</Description>
+        <Environment name="ANY"/>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues/>
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="DISABLE_FLIGHT_MODE" Domain="WIRELESS" SubDomain="CELLULAR" Feature="SETTINGS" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.System.Settings.DisableFlightMode.DisableFlightMode</ClassName>
+        <Description>Disable flight mode on DUT</Description>
+        <Environment name="ANY"/>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues/>
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="SET_PREFERRED_NETWORK" Domain="WIRELESS" SubDomain="CELLULAR" Feature="SETTINGS" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Wireless.Cellular.SetPreferredNetwork.SetPreferredNetwork</ClassName>
+        <Description>Set preferred network on a device.</Description>
+        <Environment name="ANY"/>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues/>
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="PREFERRED_NETWORK" type="NETWORK_PREFERENCES" isOptional="false">
+                <Description>Network to set.</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="GET_PREFERRED_NETWORK" Domain="WIRELESS" SubDomain="CELLULAR" Feature="SETTINGS" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Wireless.Cellular.GetPreferredNetwork.GetPreferredNetwork</ClassName>
+        <Description>Get preferred network on a device.</Description>
+        <Environment name="ANY"/>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues/>
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="SAVE_AS" type="CONTEXT" isOptional="false">
+                <Description>
+                    <Key name="KEY_NAME_DEFINED_BY_USER" type="STRING">Name of the context variable where the value will be saved.
+                        Possible values are NETWORK_PREFERENCES type.</Key>
+                </Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="CHECK_RAT_WITH_PREFERRED_NETWORK" Domain="WIRELESS" SubDomain="CELLULAR" Feature="COMMON" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Wireless.Cellular.CheckRatWithPreferredNetwork.CheckRatWithPreferredNetwork</ClassName>
+        <Description>Wait up to [TIMEOUT] seconds for the device's network rat to be in [PREFERRED_NETWORK] type.</Description>
+        <Environment name="ANY" />
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed.</Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+            <Parameter name="PREFERRED_NETWORK" type="NETWORK_PREFERENCES" isOptional="false">
+                <Description>The expected type of preferred network.</Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+            <Parameter name="TIMEOUT" type="TIMEOUT_IN_SEC" isOptional="false">
+                <Description>Time in seconds to wait before raising an exception.</Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+            <Parameter name="LOOP_TIMER" type="TIMEOUT_IN_SEC" isOptional="true">
+                <Description>
+                    Time to loop the check of preferred network.
+                </Description>
+                <PossibleValues/>
+                <DefaultValue>0</DefaultValue>
+            </Parameter>
+            <Parameter name="TIMEOUT_BETWEEN_CHECKS" type="TIMEOUT_IN_SEC" isOptional="true">
+                <Description>
+                    Time between checks when test step is used as loop.
+                </Description>
+                <PossibleValues/>
+                <DefaultValue>0</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="CELLULAR_SET_POWER" Domain="WIRELESS" SubDomain="CELLULAR" Feature="COMMON" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Wireless.Cellular.CellularSetPower.CellularSetPower</ClassName>
+        <Description>Manages the cellular interface power state.</Description>
+        <Environment name="ANY" />
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="POWER" type="STRING" isOptional="false">
+                <Description>Power state you want to set</Description>
+                <PossibleValues>on;off</PossibleValues>
+                <DefaultValue />
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="CELLULAR_GET_POWER" Domain="WIRELESS" SubDomain="CELLULAR" Feature="COMMON" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Wireless.Cellular.CellularGetPower.CellularGetPower</ClassName>
+        <Description>Gets the power state of the cellular interface.</Description>
+        <Environment name="ANY" />
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="SAVE_AS" type="CONTEXT" isOptional="false">
+                <Description>
+                    <Key name="KEY_NAME_DEFINED_BY_USER" type="STRING">Name of the context variable where the value will be saved.</Key>
+                </Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="GET_WIFI_SAFE_CHANNELS_FOR_LTE" Domain="WIRELESS" SubDomain="CELLULAR" Feature="COMMON" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Wireless.Cellular.GetWifiSafeChannelsForLte.GetWifiSafeChannelsForLte</ClassName>
+        <Description>Gets the safe wifi channels or frequencies range for LTE coexistence (depending on your SYSDEBUG_INIT configuration).</Description>
+        <Environment name="ANY" />
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="WIFI_SAFE_CHANNELS" type="CONTEXT" isOptional="false">
+                <Description>
+                    <Key name="MIN" type="STRING">Minimum safe channel/frequency.</Key>
+                    <Key name="MAX" type="STRING">Maximum safe channel/frequency.</Key>
+                </Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="GET_BT_SAFE_CHANNELS_FOR_LTE" Domain="WIRELESS" SubDomain="CELLULAR" Feature="COMMON" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Wireless.Cellular.GetBtSafeChannelsForLte.GetBtSafeChannelsForLte</ClassName>
+        <Description>Gets the safe bluetooth channels or frequencies range for LTE coexistence (depending on your SYSDEBUG_INIT configuration).</Description>
+        <Environment name="ANY" />
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="BT_SAFE_CHANNELS" type="CONTEXT" isOptional="false">
+                <Description>
+                    <Key name="MIN" type="STRING">Minimum safe channel/frequency.</Key>
+                    <Key name="MAX" type="STRING">Maximum safe channel/frequency.</Key>
+                </Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="GET_BLE_SAFE_CHANNELS_FOR_LTE" Domain="WIRELESS" SubDomain="CELLULAR" Feature="COMMON" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Wireless.Cellular.GetBleSafeChannelsForLte.GetBleSafeChannelsForLte</ClassName>
+        <Description>Gets the safe Bluetooth Low Energy channels range for LTE coexistence.</Description>
+        <Environment name="ANY" />
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="BLE_SAFE_CHANNELS" type="CONTEXT" isOptional="false">
+                <Description>
+                    <Key name="MIN" type="STRING">Minimum safe channel.</Key>
+                    <Key name="MAX" type="STRING">Maximum safe channel.</Key>
+                </Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="SET_COEX_MANAGER_TRACES" Domain="WIRELESS" SubDomain="CELLULAR" Feature="COMMON" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Wireless.Cellular.SetCoexManagerTraces.SetCoexManagerTraces</ClassName>
+        <Description>Enables the LTE coexistence manager traces.</Description>
+        <Environment name="ANY" />
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="COEX_MANAGER_TRACES_STATE" type="CONTEXT" isOptional="false">
+                <Description>on to enable the traces, off to disable them.</Description>
+                <PossibleValues >on;off</PossibleValues>
+                <DefaultValue>on</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="GET_IMSI" Domain="WIRELESS" SubDomain="CELLULAR" Feature="COMMON" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Wireless.Cellular.GetImsi.GetImsi</ClassName>
+        <Description>Get IMSI on the device and save it in context.</Description>
+        <Environment name="ANY" />
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="SAVE_AS" type="CONTEXT" isOptional="false">
+                <Description>
+                    <Key name="KEY_NAME_DEFINED_BY_USER" type="STRING">Name of the context variable where the value will be saved.</Key>
+                </Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+            <Parameter name="TIMEOUT" type="INTEGER" isOptional="false">
+                <Description>Time in seconds to wait before raising an exception.</Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="GET_SIM_OPERATOR_INFO" Domain="WIRELESS" SubDomain="CELLULAR" Feature="COMMON" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Wireless.Cellular.GetSimOperatorInfo.GetSimOperatorInfo</ClassName>
+        <Description>Get SIM MCC/MNC and save it in context.</Description>
+        <Environment name="ANY" />
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="MCC" type="CONTEXT" isOptional="false">
+                <Description>
+                    <Key name="KEY_NAME_DEFINED_BY_USER" type="STRING">Name of the context variable where the MCC value will be saved.</Key>
+                </Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+            <Parameter name="MNC" type="CONTEXT" isOptional="false">
+                <Description>
+                    <Key name="KEY_NAME_DEFINED_BY_USER" type="STRING">Name of the context variable where the MNC value will be saved.</Key>
+                </Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="CHECK_CDK_STATE" Domain="WIRELESS" SubDomain="CELLULAR" Feature="COMMON" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Wireless.Cellular.CheckCdkState.CheckCdkState</ClassName>
+        <Description>Check CDK state on device before timeout expires</Description>
+        <Environment name="ANY" />
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="STATE" type="STRING" isOptional="false">
+                <Description>The state to check</Description>
+                <PossibleValues>unregistered;registered;searching;denied;unknown;roaming</PossibleValues>
+                <DefaultValue />
+            </Parameter>
+            <Parameter name="TIMEOUT" type="INTEGER" isOptional="false">
+                <Description>Time in seconds to wait before raising an exception.</Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="CHECK_CDK_NO_REGISTRATION" Domain="WIRELESS" SubDomain="CELLULAR" Feature="COMMON" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Wireless.Cellular.CheckCdkNoRegistration.CheckCdkNoRegistration</ClassName>
+        <Description>Check CDK state on device before timeout expires</Description>
+        <Environment name="ANY" />
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="TIMEOUT" type="INTEGER" isOptional="false">
+                <Description>Time in seconds to wait before raising an exception.</Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="CHECK_NETWORK_TYPE" Domain="WIRELESS" SubDomain="CELLULAR" Feature="COMMON" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Wireless.Cellular.CheckNetworkType.CheckNetworkType</ClassName>
+        <Description>Check RAT on which DUT is registered before timeout</Description>
+        <Environment name="ANY" />
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="NETWORK_TYPE" type="STRING" isOptional="false">
+                <Description>RAT on which DUT is registered</Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+            <Parameter name="TIMEOUT" type="INTEGER" isOptional="false">
+                <Description>Time in seconds to wait before raising an exception.</Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="SET_ROAMING_MODE" Domain="WIRELESS" SubDomain="CELLULAR" Feature="COMMON" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Wireless.Cellular.SetRoamingMode.SetRoamingMode</ClassName>
+        <Description>Set data roaming state on phone</Description>
+        <Environment name="ANY" />
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="ROAMING_MODE" type="STRING" isOptional="false">
+                <Description>Roaming data mode</Description>
+                <PossibleValues>ON;OFF</PossibleValues>
+                <DefaultValue />
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="CHECK_IMS_REGISTRATION" Domain="WIRELESS" SubDomain="CELLULAR" Feature="COMMON" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Wireless.Cellular.CheckImsRegistration.CheckImsRegistration</ClassName>
+        <Description>Check IMS registration on device before timeout expires</Description>
+        <Environment name="ANY" />
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="TIMEOUT" type="INTEGER" isOptional="false">
+                <Description>Time in seconds to wait before raising an exception.</Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="GET_EXPECTED_SAFE_CHANNELS_FOR_LTE" Domain="WIRELESS" SubDomain="CELLULAR" Feature="COMMON" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Wireless.Cellular.GetExpectedSafeRangesForLte.GetExpectedSafeRangesForLte</ClassName>
+        <Description>Gets the expected safe WiFi/BLE/BT channels and frequencies ranges for the current DUT.</Description>
+        <Environment name="ANY" />
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="LTE_CHANNEL" type="STRING" isOptional="false">
+                <Description>Channel for which you want the safe range of.</Description>
+                <PossibleValues />
+                <DefaultValue/>
+            </Parameter>
+            <Parameter name="EXPECTED_SAFE_RANGES" type="CONTEXT" isOptional="false">
+                <Description>
+                    <Key name="WIFI_MIN_CHANNEL" type="STRING">Minimum safe channel for WIFI.</Key>
+                    <Key name="WIFI_MAX_CHANNEL" type="STRING">Maximum safe channel for WIFI.</Key>
+                    <Key name="WIFI_MIN_FREQ" type="STRING">Minimum safe frequency for WIFI.</Key>
+                    <Key name="WIFI_MAX_FREQ" type="STRING">Maximum safe frequency for WIFI.</Key>
+                    <Key name="BLE_MIN_CHANNEL" type="STRING">Minimum safe channel for BLE.</Key>
+                    <Key name="BLE_MAX_CHANNEL" type="STRING">Maximum safe channel for BLE.</Key>
+                    <Key name="BLE_MIN_FREQ" type="STRING">Minimum safe frequency for BLE.</Key>
+                    <Key name="BLE_MAX_FREQ" type="STRING">Maximum safe frequency for BLE.</Key>
+                    <Key name="BT_MIN_CHANNEL" type="STRING">Minimum safe channel for BT.</Key>
+                    <Key name="BT_MAX_CHANNEL" type="STRING">Maximum safe channel for BT.</Key>
+                    <Key name="BT_MIN_FREQ" type="STRING">Minimum safe frequency for BT.</Key>
+                    <Key name="BT_MAX_FREQ" type="STRING">Maximum safe frequency for BT.</Key>
+                </Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+        </Parameters>
+    </TestStep>
+</TestSteps>

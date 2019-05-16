@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="13.37">
+    <UseCase>LIVE_ANDROID_GFX_APK_KHRONOS_VALIDATION</UseCase>
+    <Description>Test the conformance of GFX features that require the use of the OGLConform tool</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <TestSteps>
+        <Initialize>
+            <TestStep Id="GET_ARTIFACT" EQT="ARTIFACT_MANAGER" ARTIFACT="GFX_CONFORMANCE/CTS-debug.apk" ARTIFACT_SOURCE="FROM_BENCH:ARTIFACT_MANAGER:URI" TRANSFER_TIMEOUT="DEFAULT" STORED_FILE_PATH="FILE_PATH_IN_CACHE1"/>
+            <TestStep Id="INSTALL_APP" DEVICE="PHONE1" FILE_PATH="FROM_CTX:FILE_PATH_IN_CACHE1" SIGN="False" BACKUP="False" BACKUP_FILE_PATH="." SIGN_KEY_PATH="." TIMEOUT="60"/>
+        </Initialize>
+        <Finalize>
+            <TestStep Id="UNINSTALL_APP" DEVICE="PHONE1" APP_NAME="org.khronos.gl_cts" BACKUP_APP_NAME="NO_BACKUP" BACKUP_FILE_PATH="FROM_CTX:FILE_PATH_IN_CACHE1" TIMEOUT="60"/>
+        </Finalize>
+    </TestSteps>
+    <Parameters>
+        <Parameter>
+            <Name>CERT_MODE</Name>
+            <Value>False</Value>
+        </Parameter>
+
+        <Parameter>
+            <Name>DEVICE_LOGDIR</Name>
+            <Value>gfx-mockup</Value>
+        </Parameter>
+        <Parameter>
+            <Name>SINGLE_TEST_PARAM</Name>
+            <Value>ES2-CTS.gtf.GL2ExtensionTests.compressed_etc1_rgb8_texture.*;ES3-CTS.gtf.GL3Tests.etc2_compression_rgb8_pt_alpha1.*;ES3-CTS.gtf.GL3Tests.etc2_compression_rgba8.*</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

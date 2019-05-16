@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="13.37">
+    <UseCase>LIVE_VIDEO_QUALITY</UseCase>
+    <Description>Video playback</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <TestSteps>
+        <Initialize>
+            <TestStep Id="GET_ARTIFACT" EQT="ARTIFACT_MANAGER" ARTIFACT="POST_COMMIT/VIDEO/VIDEO_PUSH/3GP_ACS_VIDEO_QUALITY.3gp" ARTIFACT_SOURCE="FROM_BENCH:ARTIFACT_MANAGER:URI" TRANSFER_TIMEOUT="DEFAULT" STORED_FILE_PATH="FILE_PATH_IN_CACHE1"/>
+            <TestStep Id="INSTALL_FILE" DEVICE="PHONE1" FILE_PATH="FROM_CTX:FILE_PATH_IN_CACHE1" TYPE="media" DESTINATION="/sdcard/Movies/" DESTINATION_STORED_PATH="/sdcard/Movies/3GP_ACS_VIDEO_QUALITY.3gp" TIMEOUT="DEFAULT"/>
+        </Initialize>
+    </TestSteps>
+    <Parameters>
+        <Parameter>
+            <!-- Path to video file to play -->
+            <Name>FILENAME</Name>
+            <Value>/sdcard/Movies/3GP_ACS_VIDEO_QUALITY.3gp</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Path to video file on host to compare with VIDEO_FILE -->
+            <Name>VIDEO_REFERENCE</Name>
+            <Value>~/.acs/video_ref/3GP_ACS_VIDEO_QUALITY_reference.mp4</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Orientation of video playback, possible value: portrait or landscape-->
+            <Name>SCREEN_ORIENTATION</Name>
+            <Value>landscape</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Where to call stop in second -->
+            <Name>DURATION</Name>
+            <Value>15</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Brightness percentage of the screen -->
+            <Name>DISP_BRIGHTNESS</Name>
+            <Value>100</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Time in second, wait before launch screenrecord after start of video playback. -->
+            <Name>SAVE_DIRECTORY</Name>
+            <Value>/sdcard/Movies/</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Time in second, wait before launch screenrecord after start of video playback. -->
+            <Name>WAIT_BEFORE_RECORD</Name>
+            <Value>3</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Bit rate use for screenrecord -->
+            <Name>BIT_RATE</Name>
+            <Value>32000000</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Time limit use for screenrecord -->
+            <Name>TIME_LIMIT</Name>
+            <Value>5</Value>
+        </Parameter>
+        <Parameter>
+                    <!-- Time limit use for screenrecord -->
+                    <Name>SAVE_DIRECTORY_HOST</Name>
+                    <Value>~/.acs/saved_screenrecords/</Value>
+                </Parameter>
+    </Parameters>
+</TestCase>

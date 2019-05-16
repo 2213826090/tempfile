@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="13.45">
+    <UseCase>LAB_EM_BATT_VBATT_LOAD</UseCase>
+    <Description>battery monitoring - cycle 2G with wifi, flash, vibration, audio playing, emmc stress, cpu stress, display on, brightness 100%</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>False</b2bContinuousMode>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters>
+        <Parameter>
+            <!-- LOAD to apply during stress (some testcase parameters are not required following the load) : LIGHT, MEDIUM, HEAVY -->
+            <Name>LOAD</Name>
+            <Value>HEAVY</Value>
+        </Parameter>
+        <Parameter>
+            <!-- minimal capacity limit for battery discharging from 0% to 100%, a value below 0% will cause the test stop when battery is totally discharged after several connection lost -->
+            <Name>BATT_MIN_CAPACITY</Name>
+            <Value>0</Value>
+        </Parameter>
+        <Parameter>
+            <!-- maximal capacity limit for battery charging from 0% to 100% or 'full' -->
+            <Name>BATT_MAX_CAPACITY</Name>
+            <Value>100</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Charging time before reading information from board in seconds -->
+            <Name>CHARGE_TIME</Name>
+            <Value>300</Value>
+        </Parameter>
+        <Parameter>
+            <!-- time to spend in stress cycle in seconds (at least 60 seconds) -->
+            <Name>STRESS_PERIOD</Name>
+            <Value>120</Value>
+        </Parameter>
+        <Parameter>
+            <!-- time to spend in no stress cycle in seconds (at least 60 seconds) -->
+            <Name>NO_STRESS_PERIOD</Name>
+            <Value>240</Value>
+        </Parameter>
+        <Parameter>
+            <!-- OPTIONAL PARAMETER Temperature Chamber Temperature in °C, its use require that a temperature chamber is present. (can be replace by execution room temperature if no TCT used) -->
+            <Name>TCT</Name>
+            <Value>35</Value>
+        </Parameter>
+        <Parameter>
+            <!--Only for LOAD [HEAVY, MEDIUM]:Cell Service GSM|GPRS|EGPRS -->
+            <Name>CELL_SERVICE</Name>
+            <Value>GPRS</Value>
+        </Parameter>
+        <Parameter>
+            <!--Only for LOAD [HEAVY, MEDIUM]:Cell Band (PGSM|RGSM|EGSM|GSM450|GSM480|GSM750|GSM850|TGSM810|PCS|DCS) -->
+            <Name>CELL_BAND</Name>
+            <Value>EGSM</Value>
+        </Parameter>
+        <Parameter>
+            <!--Only for LOAD [HEAVY, MEDIUM]:TCH ARFCN -->
+            <Name>TCH_ARFCN</Name>
+            <Value>62</Value>
+        </Parameter>
+        <Parameter>
+            <!--Only for LOAD [HEAVY, MEDIUM]:Cell power in dBm -->
+            <Name>CELL_POWER</Name>
+            <Value>-70</Value>
+        </Parameter>
+        <Parameter>
+            <!--Only for LOAD [HEAVY, MEDIUM]:Uplink data channel in dBm -->
+            <Name>UPLINK_CHANNEL</Name>
+            <Value>33</Value>
+        </Parameter>
+        <Parameter>
+            <!--Only for LOAD [HEAVY, MEDIUM]:Activate burst slot 3 (True/False) -->
+            <Name>USE_SLOT_3</Name>
+            <Value>True</Value>
+        </Parameter>
+        <Parameter>
+            <!--Only for LOAD [HEAVY, MEDIUM]:Activate burst slot 4 (True/False) -->
+            <Name>USE_SLOT_4</Name>
+            <Value>True</Value>
+        </Parameter>
+        <Parameter>
+            <!--Only for LOAD [HEAVY, MEDIUM]:Activate burst slot 5 (True/False) -->
+            <Name>USE_SLOT_5</Name>
+            <Value>False</Value>
+        </Parameter>
+        <Parameter>
+            <!--Only for LOAD [HEAVY, MEDIUM]:Activate burst slot 6 (True/False) -->
+            <Name>USE_SLOT_6</Name>
+            <Value>False</Value>
+        </Parameter>
+        <Parameter>
+            <!--Only for LOAD [HEAVY, MEDIUM]:configure slot 3 uplink/Gamma PCL level :a value of 3 is equal to 33dBm -->
+            <Name>SLOT_3_PCL</Name>
+            <Value>3</Value>
+        </Parameter>
+        <Parameter>
+            <!--Only for LOAD [HEAVY, MEDIUM]:configure slot 4 uplink/Gamma PCL level :a value of 3 is equal to 33dBm -->
+            <Name>SLOT_4_PCL</Name>
+            <Value>3</Value>
+        </Parameter>
+        <Parameter>
+            <!--Only for LOAD [HEAVY, MEDIUM]:configure slot 5 uplink/Gamma PCL level :a value of 3 is equal to 33dBm -->
+            <Name>SLOT_5_PCL</Name>
+            <Value>3</Value>
+        </Parameter>
+        <Parameter>
+            <!--Only for LOAD [HEAVY, MEDIUM]:configure slot 6 uplink/Gamma PCL level :a value of 3 is equal to 33dBm -->
+            <Name>SLOT_6_PCL</Name>
+            <Value>3</Value>
+        </Parameter>
+        <Parameter>
+            <!--Only for LOAD [HEAVY, MEDIUM]:Path to audio file to play -->
+            <Name>AUDIO_FILE</Name>
+            <Value>FerrariF355.mp3</Value>
+        </Parameter>
+        <Parameter>
+            <!--Only for LOAD [HEAVY, MEDIUM]:Volume value in percent from 0 to 100 -->
+            <Name>VOLUME</Name>
+            <Value>100</Value>
+        </Parameter>
+        <Parameter>
+            <!--Only for LOAD [HEAVY]: Wifi Security of wifi env to be used. Can be "OPEN", "WEP", "WPA" or "WPA2". If a WIFI_ACCESS_POINT has been choosen, this parameter refers to the access point's security. -->
+            <Name>WIFI_SECURITY</Name>
+            <Value>WPA</Value>
+        </Parameter>
+        <Parameter>
+            <!--Only for LOAD [HEAVY]: Wifi access point on which board will connect to. Must refers to a wifi router's name (equipment name of the bench configuration file). If no value has been set, a default router will be choosen in the bench configuration, depending on WIFI_SECURITY. -->
+            <Name>WIFI_ACCESS_POINT</Name>
+            <Value>WPA_WIFI_ROUTER</Value>
+        </Parameter>
+        <Parameter>
+            <!--Only for LOAD [HEAVY]: File to download from the server. This file shall be available on the server. If the file to transfer is located in a specific directory, you can specify its path. i.e. : acs/download_file/get5M -->
+            <Name>DL_FILE</Name>
+            <Value>get100M</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

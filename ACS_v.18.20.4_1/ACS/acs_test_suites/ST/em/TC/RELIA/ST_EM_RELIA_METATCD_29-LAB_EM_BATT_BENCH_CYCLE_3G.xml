@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase>
+    <UseCase>LAB_EM_BATT_BENCH_CYCLE_3G</UseCase>
+    <Description>battery monitoring - Bench cycle in 3G</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>False</b2bContinuousMode>
+    <Parameters>
+        <Parameter>
+            <!-- Cell Band (from Band 1 to Band 10) -->
+            <Name>CELL_BAND</Name>
+            <Value>1</Value>
+        </Parameter>
+        <Parameter>
+            <!-- TCH ARFCN -->
+            <Name>UL_UARFCN</Name>
+            <Value>9750</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Mobile power in dBm -->
+            <Name>MOBILE_POWER</Name>
+            <Value>24</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Cell power in dBm -->
+            <Name>CELL_POWER</Name>
+            <Value>-70</Value>
+        </Parameter>
+        <Parameter>
+            <!-- minimal capacity limit for battery discharging from 0% to 100% -->
+            <Name>BATT_MIN_CAPACITY</Name>
+            <Value>0</Value>
+        </Parameter>
+        <Parameter>
+            <!-- maximal capacity limit for battery charging from 0% to 100% or 'full' -->
+            <Name>BATT_MAX_CAPACITY</Name>
+            <Value>FULL</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Charging time before reading information from board in seconds -->
+            <Name>CHARGE_TIME</Name>
+            <Value>900</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Discharging time before reading information from board in seconds -->
+            <Name>DISCHARGE_TIME</Name>
+            <Value>150</Value>
+        </Parameter>
+        <Parameter>
+            <!-- OPTIONAL PARAMETER Temperature Chamber Temperature in degree Celsius, its use require that a temperature chamber is present. -->
+            <Name>TCT</Name>
+            <Value></Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

@@ -1,0 +1,77 @@
+<?xml version="1.0"?>
+<DeviceModel xsi:noNamespaceSchemaLocation="../../../../../acs/src/_Catalogs/Device/Models/LinuxDeviceModel.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <DeviceModule>
+        <FlashModule className="Device.Module.NDG.Flash.EdisonFlashModule.EdisonFlashModule" config="Config/Edison.xml"/>
+        <CrashModule className="Device.Module.Common.Crash.CrashToolUploaderModule.CrashToolUploaderModule" config="Config/CrashToolUploader/Edison.xml"/>
+        <SystemModule className="Device.Module.Common.System.SystemModule.SystemModule" config="Config/Default.yaml"/>
+        <NetworkingModule className="Device.Module.Common.Networking.EdisonNetworkingModule.EdisonNetworkingModule" config="Config/Edison.yaml"/>
+        <EnergyManagementModule className="Device.Module.MCG.EnergyManagement.EmModule.EmModule" config="Config/Default.yaml"/>
+    </DeviceModule>
+    <BootShutdown>
+        <Parameter bootTimeout="30"/>
+        <Parameter checkDeviceBootMode="false"/>
+        <Parameter settleDownDuration="90"/>
+        <Parameter softShutdownDuration="5"/>
+        <Parameter hardShutdownDuration="15"/>
+        <Parameter softShutdownSettleDownDuration="40"/>
+        <Parameter pressPowerBtnTimeSwitchOn="3"/>
+        <Parameter pressPowerBtnTimeSwitchOff="8"/>
+        <Parameter waitSoftRebootCmdReturns="false"/>
+        <Parameter rebootOnRetryOnSetup="false"/>
+    </BootShutdown>
+    <Connection>
+        <Parameter ipAddress="192.168.2.15"/>
+        <Parameter usbSleep="10"/>
+        <Parameter serialNumber=""/>
+    </Connection>
+    <Debug>
+        <Parameter retrieveModemTrace="false"/>
+        <Parameter cleanModemTrace="false"/>
+        <Parameter retrieveSerialTrace="true"/>
+        <Parameter serialPort="/dev/ttyUSB0"/>
+        <Parameter serialBaudRate="115200"/>
+        <Parameter serialHdwFlowControl="false"/>
+        <Parameter serialLogin="root"/>
+        <Parameter serialPassword=""/>
+        <!--
+                 Define the type(s) of kernel logs to retrieve.
+                 You can define a set of filters by separating them with " | "
+                 (e.g : kernelLogFilter="OS | Process | Thread")
+                 Main filters are (from lowest to highest quantity of information retrieved):
+                 None, Verbose, Default, All
+                 Other specifics filters available are:
+                 AdvancedLocalProcedureCalls, ContextSwitch, DeferedProcedureCalls, DiskFileIO,
+                 DiskIO, DiskIOInit, Dispatcher, Driver, FileIO, FileIOInit, ImageLoad,
+                 Interrupt, MemoryHardFaults, MemoryPageFaults, NetworkTCPIP,
+                 OS, Process, ProcessCounters, Profile, Registry, SplitIO, SystemCall, Thread,
+                 VirtualAlloc
+                -->
+        <Parameter kernelLogFilter="Verbose"/>
+    </Debug>
+    <Devices>
+        <Parameter wlanDevice="wlan0:0"/>
+        <Parameter wlanInterface="wlan0"/>
+        <Parameter sdcard_ext="/sdcard/"/>
+        <Parameter sdcard_dev="/dev/mmcblk1p1"/>
+        <Parameter usbdrive_ext="/usbdrive/"/>
+        <Parameter userdataPath="/home/root/"/>
+        <Parameter binPath="/usr/bin/"/>
+        <Parameter usb_vendor_id="8087"/>
+        <Parameter usb_product_id="0a9e"/>
+        <Parameter boardType="edison1"/>
+        <Parameter ipAddress="192.168.2.15"/>
+        <Parameter flashTimeout="200"/>
+        <Parameter btIface="hci0"/>
+        <Parameter btDefaultScanTimeout="10"/>
+        <Parameter btDefaultFindDeviceTimeout="30"/>
+        <Parameter btDefaultDisconnectionTimeout="10"/>
+        <Parameter btDefaultConnectionTimeout="10"/>
+    </Devices>
+    <Implementation>
+        <Parameter deviceCapabilities="Capabilities/maker_board.xml"
+                   ClassName="Device.Model.LinuxDevice.EdisonDevice.EdisonDevice"
+                   UECmd="acs_test_scripts.Device.UECmd.Imp.Linux.Common"
+                   OS="LINUX" OSVersion="Yocto"
+                   waitBetweenCmd="5"/>
+    </Implementation>
+</DeviceModel>

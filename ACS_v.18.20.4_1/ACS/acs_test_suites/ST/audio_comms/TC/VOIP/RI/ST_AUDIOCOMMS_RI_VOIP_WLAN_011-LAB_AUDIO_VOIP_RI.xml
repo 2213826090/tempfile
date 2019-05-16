@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase>
+    <UseCase>LAB_AUDIO_VOIP_RI</UseCase>
+    <Description>Check Audio Quality during VOIP call in order to meet RI target</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>False</b2bContinuousMode>
+    <Parameters>
+        <Parameter>
+            <!-- Keep the recorded audio file whether the test result is good or not (TRUE|FALSE) -->
+            <Name>KEEP_RECORD</Name>
+            <Value>False</Value>
+        </Parameter>
+        <Parameter>
+            <!-- DUT SIP address -->
+            <Name>DUT_SIP_ADDRESS</Name>
+            <Value>jmgvoip1@ippi.fr</Value>
+        </Parameter>
+        <Parameter>
+            <!-- DUT SIP passphrase -->
+            <Name>DUT_SIP_PASSPHRASE</Name>
+            <Value>jmg2004</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Peer SIP address -->
+            <Name>PEER_SIP_ADDRESS</Name>
+            <Value>jmgvoip2@ippi.fr</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Peer SIP passphrase -->
+            <Name>PEER_SIP_PASSPHRASE</Name>
+            <Value>jmg2004</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Call origin (MO|MT) -->
+            <Name>CALL_ORIGIN_TYPE</Name>
+            <Value>MO</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Accessorie type (EARPIECE|SPEAKER|HEADSET|BLUETOOTHA2DP|BLUETOOTHHSP) -->
+            <Name>ACC_TYPE</Name>
+            <Value>HEADSET</Value>
+        </Parameter>
+        <Parameter>
+             <!-- >Stream Call Volume in percent of dut phone -->
+            <Name>CALL_VOLUME_DUT</Name>
+            <Value>100</Value>
+        </Parameter>
+        <Parameter>
+             <!-- >Stream Call Volume in percent of ref phone -->
+            <Name>CALL_VOLUME_REF</Name>
+            <Value>100</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Call end type (NR|MR) -->
+            <Name>CALL_END_TYPE</Name>
+            <Value>MR</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Call type (2G|3G|VOIP) -->
+            <Name>CALL_TYPE</Name>
+            <Value>VOIP</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Signal tested direction (UL|DL) -->
+            <Name>SIGNAL_TESTED_DIRECTION</Name>
+            <Value>DL</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Call duration in seconds
+            Has to be < 4 hours (ippi maximum call duration) -->
+            <Name>DURATION</Name>
+            <Value>14000</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Call duration in seconds -->
+            <Name>WAIT_BETWEEN_MEASURE</Name>
+            <Value>120</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

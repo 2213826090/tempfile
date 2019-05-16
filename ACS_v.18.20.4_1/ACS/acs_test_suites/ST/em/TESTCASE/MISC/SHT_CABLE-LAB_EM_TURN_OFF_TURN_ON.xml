@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="13.37">
+    <UseCase>LAB_EM_TURN_OFF_TURN_ON</UseCase>
+    <Description>a turn OFF then ON board test that try to stick to end user way to do.</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>False</b2bContinuousMode>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters>
+        <Parameter>
+            <!-- Battery minimal capacity to start the test -->
+            <Name>BATT_MIN_CAPACITY</Name>
+            <Value>40</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Battery minimal capacity to stop the test -->
+            <Name>MIN_CAPACITY_TO_STOP_TEST</Name>
+            <Value>10</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Cable type to use during test, must be a data cable -->
+            <Name>CABLE_TYPE</Name>
+            <Value>USB_HOST_PC</Value>
+        </Parameter>
+        <Parameter>
+            <!-- if TRUE, the cable will be left during the shutdown process, which can cause a COS boot else the cable will be remove before initationg the shutdown
+                and plug back during the boot process -->
+            <Name>KEEP_CABLE_DURING_SHUTDOWN</Name>
+            <Value>TRUE</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Timeout in seconds to let the board boot -->
+            <Name>BOOT_TIMEOUT</Name>
+            <Value>120</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Time in second to wait before interacting with the board after an iniate boot , this will have effect especially
+                if you choose to not keep cable plug as the cable plug back will be done after this time
+            -->
+            <Name>TIME_TO_WAIT_AFTER_JUST_PERFORM_BOOT</Name>
+            <Value>10</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Timeout in seconds to let the board shutdown, if data cable is not kept during shutdown proces the whole timeout will be waited -->
+            <Name>SHUTDOWN_TIMEOUT</Name>
+            <Value>60</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Number of boot iteration to do -->
+            <Name>MAX_ITERATION</Name>
+            <Value>200</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Number consecutive fail that will lead to stop the test -->
+            <Name>MAX_CONSECUTIVE_FAIL</Name>
+            <Value>10</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<TestCase>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Discription>
+Verify that playing audio and then pause and then lock screen for 5 minutes loop for 200 times.
+</Discription>
+    <Domain>Multimedia_Audio</Domain>
+    <Phase>CORE</Phase>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <Type>FUNCTIONAL</Type>
+    <UseCase>PY_UNIT</UseCase>
+    <b2bIteration>1</b2bIteration>
+    <Parameters>
+        <Parameter>
+            <Name>HpalmName</Name>
+            <Value>audio_playback_screen.AudioPlayback.testAudioPlayback_Iteration_PauseLockScreen5mins_200cycles</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TEST_DATA_ROOT</Name>
+            <Value>testplan/Multimedia_Audio</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TEST_CASE</Name>
+            <Value>tests.Multimedia_Audio.Decode.audio_playback_screen.AudioPlayback.testAudioPlayback_Iteration_PauseLockScreen5mins_200cycles</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

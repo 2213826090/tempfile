@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="13.49">
+    <UseCase>LIVE_EM_TEST_FILE</UseCase>
+    <Description> this usecase test that it is not possible to hack important files.</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>False</b2bContinuousMode>
+    <TcMaxAttempt>1</TcMaxAttempt>
+    <TcAcceptanceCriteria>1</TcAcceptanceCriteria>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters>
+        <Parameter>
+            <!-- absolute path to a file or several file, use ; as separator -->
+            <Name>FILE</Name>
+            <Value>/etc/fg_config.bin;/config/em/battid.dat</Value>
+        </Parameter>
+        <Parameter>
+            <!-- action to perform , choose one among them : TRY_DELETE,TRY_REPLACE,TRY_EDIT,CHECK_PERMISSION -->
+            <Name>ACTION</Name>
+            <Value>TRY_DELETE</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Expected result for the file you want to test, keep the same
+                order than the file list you put and use ; as separator
+                if ACTION is TRY_DELETE,TRY_REPLACE,TRY_EDIT, expected result will be FAILED or SUCCEED
+                if ACTION is CHECK_PERMISSION, expected result will be READ_ONLY, WRITE_ONLY, READ_WRITE or NO_READ_WRITE
+            -->
+            <Name>EXPECTED_RESULT</Name>
+            <Value>FAILED;FAILED</Value>
+        </Parameter>
+        <Parameter>
+            <!-- user privilege asked to perform this checking : ROOT or USER -->
+            <Name>USER_PRIVILEGE</Name>
+            <Value>USER</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

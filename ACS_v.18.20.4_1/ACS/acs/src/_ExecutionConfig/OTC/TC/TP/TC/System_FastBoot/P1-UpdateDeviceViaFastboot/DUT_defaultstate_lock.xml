@@ -1,0 +1,41 @@
+<?xml version="1.0" ?>
+<TestCase>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters/>
+    <Discription>
+&lt;font color=&quot;#FF0000&quot;&gt;&lt;b&gt;&lt;u&gt; Description:&lt;/u&gt;&lt;/b&gt;&lt;/font&gt;
+&lt;i&gt; (Objective of what you are trying to test.)&lt;/i&gt;
+&lt;br /&gt;
+&lt;br /&gt;
+&lt;font color=&quot;#FF0000&quot;&gt;&lt;b&gt;&lt;u&gt; Preconditions:&lt;/u&gt;&lt;/b&gt;&lt;/font&gt;
+&lt;i&gt; (What conditions must be met or data must exist in the system for this test to be executed?) &lt;/i&gt;
+&lt;br /&gt;
+&lt;br /&gt;
+&lt;font color=&quot;#FF0000&quot;&gt;&lt;b&gt;&lt;u&gt; Postconditions:&lt;/u&gt;&lt;/b&gt;&lt;/font&gt;
+&lt;i&gt; (triggers/states created by test) &lt;/i&gt;
+&lt;br /&gt;
+&lt;br /&gt;
+</Discription>
+    <Parameters/>
+    <Domain>System_FastBoot</Domain>
+    <Parameters/>
+    <Phase>CORE</Phase>
+    <Parameters/>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <Parameters/>
+    <Type>FUNCTIONAL</Type>
+    <Parameters/>
+    <UseCase>PY_UNIT</UseCase>
+    <Parameters/>
+    <b2bIteration>1</b2bIteration>
+    <Parameters>
+        <Parameter>
+            <Name>TEST_DATA_ROOT</Name>
+            <Value>testplan/System_FastBoot</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TEST_CASE</Name>
+            <Value>tests.System_FastBoot.P1-UpdateDeviceViaFastboot.DUT_defaultstate_lock</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

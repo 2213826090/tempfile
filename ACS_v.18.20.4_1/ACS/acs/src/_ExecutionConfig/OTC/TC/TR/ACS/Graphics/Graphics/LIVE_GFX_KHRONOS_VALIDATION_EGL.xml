@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="13.37">
+    <UseCase>LIVE_ANDROID_GFX_KHRONOS_VALIDATION</UseCase>
+    <Description>Test the conformance of GFX features that require the use of the OGLConform tool</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <TestSteps>
+        <Initialize>
+            <TestStep Id="GET_ARTIFACT" EQT="ARTIFACT_MANAGER" ARTIFACT="GFX_CONFORMANCE/OGLCONFORM.zip" ARTIFACT_SOURCE="FROM_BENCH:ARTIFACT_MANAGER:URI" TRANSFER_TIMEOUT="DEFAULT" STORED_FILE_PATH="FILE_PATH_IN_CACHE1"/>
+            <TestStep Id="UNZIP_ARTIFACT" EQT="ARTIFACT_MANAGER" ARTIFACT_NAME="GFX_CONFORMANCE/OGLCONFORM.zip" STORED_FILE_PATH="FROM_CTX:FILE_PATH_IN_CACHE1" EXTRACT_LOCATION="ZIP_EXTRACT_LOCATION"/>
+            <TestStep Id="INSTALL_FILE" DEVICE="PHONE1" FILE_PATH="FROM_CTX:ZIP_EXTRACT_LOCATION" TYPE="media" DESTINATION="/data/app/" DESTINATION_STORED_PATH="/data/app/" TIMEOUT="DEFAULT"/>
+        </Initialize>
+    </TestSteps>
+    <Parameters>
+        <Parameter>
+            <!-- Name of the file containing the results -->
+            <Name>RESULT_FILENAME</Name>
+            <Value>oglconform.csv</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Name manifest file containing the test cases-->
+            <Name>MANIFEST_FILENAME</Name>
+            <Value>oglconform_auto.xml</Value>
+        </Parameter>
+         <Parameter>
+                <Name>REMOVE_PARAMS</Name>
+                <Value>oglconform</Value>
+            </Parameter>
+    </Parameters>
+</TestCase>

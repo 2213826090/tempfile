@@ -1,0 +1,8 @@
+{
+    "windows": {
+        "check_exists": ["which", ["tesseract.exe"]],
+        "install": "{bin} /S",
+        "uninstall": "C:/Program Files (x86)/Tesseract-OCR/uninstall.exe /S",
+        "32": "acs/dependencies/third_parties/tools/TesseractOCR/tesseract-ocr-setup-3.02.02.exe"
+    }
+}

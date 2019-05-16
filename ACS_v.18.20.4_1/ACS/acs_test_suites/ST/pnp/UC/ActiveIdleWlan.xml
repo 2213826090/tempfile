@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="13.41">
+    <TestSteps>
+        <Include Src="ST/pnp/TSS/common.xml" />
+        <Include Src="ST/pnp/TSS/idle.xml" />
+        <Include Src="ST/pnp/TSS/wifi.xml" />
+
+        <Initialize>
+            <TestStep SetId="DISABLE_GMS" />
+            <TestStep SetId="InstallSPMActiveIdle" />
+            <TestStep SetId="InitializePnPResources" />
+        </Initialize>
+        <Setup>
+            <TestStep SetId="ConfigureWifi" />
+            <TestStep Id="CONFIGURE_SYSTEM_SLEEP_MODE" DEVICE="PHONE1" MODE="FROM_TC:MODE" />
+            <TestStep SetId="StartSPMActiveIdle" />
+        </Setup>
+        <RunTest>
+            <TestStep SetId="StartPowerMeasurement" />
+            <TestStep Id="SUSPEND" DURATION_IN_SEC="FROM_TC:TEST_DURATION" REFRESH_STDOUT_IN_SEC="60" />
+            <TestStep SetId="StopPowerMeasurement" />
+        </RunTest>
+        <TearDown>
+            <TestStep SetId="StopSPMActiveIdle" />
+            <TestStep SetId="TearDown" />
+            <TestStep SetId="ENABLE_GMS" />
+        </TearDown>
+    </TestSteps>
+</TestCase>

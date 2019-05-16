@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="13.45">
+    <UseCase>LAB_EM_COOLING_ACTION_VIDEO_CAPTURE</UseCase>
+    <Description>This usecase measure the time it takes to trigger a thermal cooling action during a video capture</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters>
+        <Parameter>
+            <!-- minimal battery capacity to start the test. If you are below it, a charge will occur -->
+            <Name>BATT_MIN_CAPACITY</Name>
+            <Value>30</Value>
+        </Parameter>
+        <Parameter>
+            <!-- If a thermal camera is present ,this option allow to use it to cooldown the board which may help to reduce the test duration -->
+            <Name>SETUP_COOLDOWN_WITH_CAMERA</Name>
+            <Value>TRUE</Value>
+        </Parameter>
+        <Parameter>
+            <!-- before starting the test we need to wait this second to let the board cool down ( board is off during this time) -->
+            <Name>SETUP_TIME_COOLDOWN_BOARD</Name>
+            <Value>1200</Value>
+        </Parameter>
+        <Parameter>
+            <!-- duration of the video record in second, this duration may be limited by the video record timeout of your DUT -->
+            <Name>VIDEO_RECORD_DURATION</Name>
+            <Value>900</Value>
+        </Parameter>
+        <Parameter>
+            <!-- thermal zone to inspect after video record is done -->
+            <Name>THERMAL_ZONE_TO_MONITOR</Name>
+            <Value>ANY</Value>
+        </Parameter>
+        <Parameter>
+            <!-- technology to apply before starting the test -->
+            <Name>SETUP_TECHNO</Name>
+            <Value>GPS_ON;WIFI_STANDBY;BLUETOOTH</Value>
+        </Parameter>
+        <Parameter>
+            <!-- which camera app to use. In r3 build there are several cameras -->
+            <!-- default camera app is 'camera'. -->
+            <!-- camera|testcamera|camera_google for now -->
+            <Name>CAMERA_NAME</Name>
+            <Value>camera_google</Value>
+        </Parameter>
+        <Parameter>
+            <!-- record quality, can be 1080P, 720P, 460P, LOW, MAX -->
+            <Name>QUALITY</Name>
+            <Value>MAX</Value>
+        </Parameter>
+        <Parameter>
+            <!--Wifi access point on which board will connect to.
+                Must refers to a wifi router's name (equipment name of the bench configuration file). -->
+            <Name>WIFI_ACCESS_POINT</Name>
+            <Value>YOUR_AP</Value>
+        </Parameter>
+        <Parameter>
+            <!--the video to play on the media player on the host side, this video will be record by the DUT -->
+            <Name>MEDIA_TO_RECORD</Name>
+            <Value>C:\_Dev\BBB_1080p_12Mbps_audio_44100_30fps_HP_240s.mp4</Value>
+        </Parameter>
+        <Parameter>
+            <!-- the monitor on which the video should be displayed: 0 is the main, -1 will target the last seen, otherwise put the monitor no -->
+            <Name>MONITOR_ON_WHICH_MEDIA_IS_PLAY</Name>
+            <Value>0</Value>
+        </Parameter>
+    </Parameters>
+    <TestSteps>
+        <Initialize>
+            <!-- Get the artifact on local host -->
+            <TestStep Id="GET_ARTIFACT" ARTIFACT="VIDEO/1080p/BBB_1080p_12Mbps_audio_44100_30fps_HP_240s.mp4" ARTIFACT_SOURCE="FROM_BENCH:ARTIFACT_MANAGER:URI" TRANSFER_TIMEOUT="DEFAULT" STORED_FILE_PATH="FILE_PATH_IN_CACHE1" EQT="DEFAULT" />
+            <!-- FILE_PATH is retrieved from test step context -->
+            <TestStep Id="INSTALL_FILE_HOST" SRC_FILE_PATH="FROM_CTX:FILE_PATH_IN_CACHE1" TYPE="media" DEST_DIR="C:\_Dev\" DESTINATION_STORED_PATH="VIDEO_PATH_IN_HOST1" />
+        </Initialize>
+    </TestSteps>
+</TestCase>

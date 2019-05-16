@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<DeviceModel xsi:noNamespaceSchemaLocation="../../../../../../acs/src/_Catalogs/Device/Models/AndroidDeviceModel.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <DeviceModule>
+        <FlashModule className="Device.Module.SSG.Flash.GminFlashModule.GminFlashModule" config="Config/AndroidEmulator.xml"/>
+        <DebugModule className="Device.Module.SSG.ExtendedDebug.ExtendedDebugModule.ExtendedDebugModule" config="Config/DmesgOnly.xml"/>
+        <SystemModule className="Device.Module.Common.System.SystemModule.SystemModule" config="Config/Default.yaml"/>
+        <PnpModule className = "Device.Module.MCG.Pnp.PnpModule.PnpModule" config = "Config/Default.yaml"/>
+        <EnergyManagementModule className="Device.Module.MCG.EnergyManagement.EmModule.EmModule" config="Config/Dummy.yaml"/>
+    </DeviceModule>
+    <BootShutdown>
+        <Parameter bootTimeout="150"/>
+        <Parameter settleDownDuration="40"/>
+        <Parameter softShutdownDuration="5"/>
+        <Parameter hardShutdownDuration="5"/>
+        <Parameter softShutdownSettleDownDuration="30"/>
+        <Parameter pressPowerBtnTimeSwitchOn="3"/>
+        <Parameter pressPowerBtnTimeSwitchOff="15"/>
+        <Parameter waitSoftRebootCmdReturns="false"/>
+        <Parameter rebootOnRetryOnSetup="false"/>
+    </BootShutdown>
+    <Connection>
+        <Parameter handleAdbRestart="false"/>
+        <Parameter adbOverEthernet="false"/>
+        <Parameter adbPort="5555"/>
+        <Parameter serialNumber=""/>
+        <Parameter adbRootTimeout="10"/>
+        <Parameter adbRootCmdTimeout="2"/>
+        <Parameter adbConnectTimeout="10"/>
+        <Parameter usbReplugRetries="1"/>
+    </Connection>
+    <Debug>
+        <Parameter retrieveApplicationLog="false"/>
+        <Parameter writeLogcat="true"/>
+        <Parameter logcatCmdLine="adb shell logcat -v threadtime"/>
+        <Parameter enableWatchdog="false"/>
+        <Parameter retrievePTITrace="false"/>
+        <Parameter PTIProbe="FIDO"/>
+        <Parameter enableAplogptiCmdLine="adb shell setprop persist.service.aplogpti.enable 1"/>
+        <Parameter retrieveSerialTrace="false"/>
+        <Parameter cleanLogcat="true"/>
+        <Parameter serialPort=""/>
+        <Parameter serialBaudRate="115200"/>
+        <Parameter serialHdwFlowControl="false"/>
+        <Parameter takeScreenshot="false"/>
+        <Parameter enableSocwatch="false"/>
+    </Debug>
+    <UITesting>
+    </UITesting>
+    <Devices>
+    </Devices>
+    <Implementation>
+        <Parameter deviceCapabilities="Capabilities/emulator.xml"
+                   ClassName="Device.Model.AndroidDevice.AndroidQemuVM.AndroidQemuVM"
+                   UECmd="acs_test_scripts.Device.UECmd.Imp.Android.KK"
+                   OS="ANDROID" OSVersion="KitKat"
+                   defaultTimeout="50"
+                   waitBetweenCmd="5"/>
+    </Implementation>
+</DeviceModel>

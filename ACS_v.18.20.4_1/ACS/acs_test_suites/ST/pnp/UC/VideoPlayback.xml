@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="13.41">
+    <TestSteps>
+        <Include Src="ST/pnp/TSS/common.xml" />
+        <Include Src="ST/pnp/TSS/active.xml" />
+        <Include Src="ST/pnp/TSS/video.xml" />
+        <Initialize>
+            <TestStep SetId="InitializePnPResources" />
+            <TestStep SetId="InstallVideoFile" />
+        </Initialize>
+        <Setup>
+            <TestStep Id="SET_SCREEN_PROPERTY" DEVICE="PHONE1" PROPERTY="state" VALUE="on"/>
+            <TestStep Id="SET_ORIENTATION" DEVICE="PHONE1" ORIENTATION="landscape" API="embedded_api" />
+        </Setup>
+        <RunTest>
+            <TestStep SetId="StartVideoPlaybackMeasurement" />
+            <TestStep Id="SUSPEND" DURATION_IN_SEC="FROM_TC:TEST_DURATION" />
+            <TestStep SetId="StopPowerMeasurement" />
+        </RunTest>
+        <TearDown>
+            <TestStep Id="DISCONNECT_HEADSET" EQT="FROM_DEVICE:PHONE1:IoCard"/>
+            <TestStep Id="SET_ORIENTATION" DEVICE="PHONE1" ORIENTATION="auto" API="embedded_api" />
+            <TestStep Id="SET_SCREEN_PROPERTY" DEVICE="PHONE1" PROPERTY="state" VALUE="off"/>
+            <TestStep Id="CLOSE_NATIVE_PLAYER" DEVICE="PHONE1" />
+            <TestStep SetId="TearDown" />
+        </TearDown>
+        <Finalize>
+            <TestStep SetId="UninstallVideoFile" />
+        </Finalize>
+    </TestSteps>
+</TestCase>

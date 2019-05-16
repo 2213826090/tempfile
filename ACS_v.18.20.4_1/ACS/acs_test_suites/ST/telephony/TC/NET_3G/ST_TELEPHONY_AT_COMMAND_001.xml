@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="13.41">
+    <UseCase>TEST_STEP_ENGINE</UseCase>
+    <Description></Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <TcMaxAttempt>1</TcMaxAttempt>
+    <TcAcceptanceCriteria>1</TcAcceptanceCriteria>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters>
+        <Parameter>
+            <Name>CELL_BAND</Name>
+            <Value>BAND1</Value>
+        </Parameter>
+        <Parameter>
+            <Name>RAT</Name>
+            <Value>3G</Value>
+        </Parameter>
+    </Parameters>
+    <TestSteps>
+        <Include Src="ST/telephony/TSS/Common.xml" />
+        <Include Src="ST/telephony/TSS/8960.xml" />
+        <Setup>
+            <TestStep SetId="AllCommsOff" DEVICE="PHONE1"/>
+            <TestStep SetId="Configure8960"/>
+            <TestStep SetId="ConfigureWCDMA" EQT="FROM_CTX:AGILENT8960_SIMULATOR_VISA"/>
+        </Setup>
+        <RunTest>
+            <!-- Power On the DUT -->
+            <TestStep Id="REBOOT_DEVICE" WAY="soft" MODE="MOS" DEVICE="PHONE1"/>
+            <TestStep SetId="Registration" EQT="FROM_CTX:AGILENT8960_SIMULATOR_VISA" TIMEOUT="FROM_DEVICE:PHONE1:registrationTimeout" DEVICE="PHONE1" />
+            <TestStep Id="AT_PROXY" ACTION="START" BOOT_MODE="MOS" PROXY_MODE="NORMAL" SAVE_AT_PROXY_TTY_AS="at_proxy" DEVICE="PHONE1"/>
+
+            <!-- AT Command: ATE0-->
+            <TestStep Id="AT_COMMAND" SERIAL_DEVICE="FROM_CTX:at_proxy" COMMAND="ATE0" TIMEOUT="DEFAULT" SAVE_AS="command_result" DEVICE="PHONE1"/>
+            <TestStep Id="COMPARE" OPERATOR="EQUAL" FIRST="FROM_CTX:command_result" SECOND="OK" PASS_IF="True"/>
+
+            <!-- AT Command : AT => OK -->
+            <TestStep Id="AT_COMMAND" SERIAL_DEVICE="FROM_CTX:at_proxy" COMMAND="AT" TIMEOUT="DEFAULT" SAVE_AS="command_result" DEVICE="PHONE1"/>
+            <TestStep Id="COMPARE" OPERATOR="EQUAL" FIRST="FROM_CTX:command_result" SECOND="OK" PASS_IF="True"/>
+
+            <!-- AT Command : AT+COPS? => +COPS: *,*,"00101",2 -->
+            <TestStep Id="AT_COMMAND" SERIAL_DEVICE="FROM_CTX:at_proxy" COMMAND="AT+COPS?" TIMEOUT="DEFAULT" SAVE_AS="command_result" DEVICE="PHONE1"/>
+            <TestStep Id="SPLIT" STRING="FROM_CTX:command_result" SEP="," ELEMENT="2" SAVE_AS="mcc_mnc"/>
+            <TestStep Id="COMPARE" OPERATOR="EQUAL" FIRST="FROM_CTX:mcc_mnc" SECOND='"00101"' PASS_IF="True"/>
+            <TestStep Id="SPLIT" STRING="FROM_CTX:command_result" SEP="," ELEMENT="3" SAVE_AS="act"/>
+            <TestStep Id="SPLIT" STRING="FROM_CTX:act" ELEMENT="0" SAVE_AS="act"/>
+            <TestStep Id="COMPARE" OPERATOR="EQUAL" FIRST="FROM_CTX:act" SECOND="2" PASS_IF="True"/>
+
+            <!-- Switch Off 3G Cell -->
+            <TestStep Id="NS_SET_PARAM" EQT="FROM_CTX:AGILENT8960_SIMULATOR_VISA" NAME="SetCellOnOff" OPTION="DEFAULT" VALUE="OFF" />
+            <TestStep Id="CHECK_CDK_STATE" DEVICE="PHONE1" STATE="unregistered" TIMEOUT="FROM_DEVICE:PHONE1:registrationTimeout"/>
+
+            <!-- AT Command : AT+COPS? => +COPS: 0 -->
+            <TestStep Id="AT_COMMAND" SERIAL_DEVICE="FROM_CTX:at_proxy" COMMAND="AT+COPS?" TIMEOUT="DEFAULT" SAVE_AS="command_result" DEVICE="PHONE1" />
+            <TestStep Id="REGEX" ACTION="MATCH" PATTERN="\+COPS: 0" STRING="FROM_CTX:command_result" PASS_IF="True"/>
+        </RunTest>
+        <TearDown>
+            <TestStep SetId="CommonTearDown" EQT="FROM_CTX:AGILENT8960_SIMULATOR_VISA" DEVICE="PHONE1"/>
+            <TestStep Id="AT_PROXY" ACTION="STOP" BOOT_MODE="MOS" PROXY_MODE="NORMAL" SAVE_AT_PROXY_TTY_AS="at_proxy" DEVICE="PHONE1"/>
+        </TearDown>
+    </TestSteps>
+</TestCase>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<Equipment version="13.44" name="CONFIGURABLE_AP1" description="Configurable Access Point">
+    <Parameter name="Model" value="CISCO_1250" description="Model of the equipment to use" />
+    <Parameter name="IP" value="192.168.1.5" description="ip address of the equipment" />
+    <Parameter name="ConfigurationWaitingTime" value="10" description="Time to wait after the configuration step (in second)" />
+    <Parameter name="username" value="Cisco" description="login used for the connection" />
+    <Parameter name="password" value="Cisco" description="password used for the connection" />
+    
+    <Parameter name="SSID" value="acs-lab1-acsdev-ap1" description="SSID to create" />
+    <Parameter name="passphrase_WEP64" value="1234567890" description="passphrase for WEP 64 bits" />
+    <Parameter name="passphrase_WEP128" value="12345678901234567890123456" description="passphrase for WEP 128 bits" />
+    <Parameter name="passphrase_WPA" value="1234567890123AA" description="passphrase for WPA" />
+    <Parameter name="passphrase_WPA2" value="1234567890123AA" description="passphrase for WPA2" />
+    <Parameter name="radiusip" value="192.168.1.22" description="IP of the Radius server" />
+    <Parameter name="radiusport" value="1812" description="Listening port of the radius server" />
+    <Parameter name="radiussecret" value="pass" description="Secret password to connect AP to the Radius server" />
+    <Parameter name="EAP_user" value="Inteluser" description="login used for EAP encryption" />
+    <Parameter name="EAP_password" value="pass" description="password used for EAP encryption" />
+    <Parameter name="EAP_SIM_user" value="" description="SIM user specified in radius server configuration" />
+    <Parameter name="EAP_AKA_user" value="" description="AKA user specified in radius server configuration" />
+    <Parameter name="Credential_password" value="0000" description="credential password for EAP encryption. For ICS, the credential password is also the digit PIN code to lock the phone and the phone should not be initialy locked with a PIN, password nor patern" />
+    <Parameter name="CA_guard_password" value="VPN" description="ca guard password for EAP encryption" />
+    <Parameter name="certificate_file" value="hostapd_client.p12" description="Filename of the certificate to be used for WPA-enterprise authentication with EAP method=TLS. This .p12 file should be placed into: [ACS_ROOT_FOLDER]/Executable/_Embedded/CERTIFICATE" />
+    
+    <Parameter name="DHCP_ENABLED" value="True" description="Enable dhcp on AP" />
+    <Parameter name="LOW_EXCLUDED_IP" value="192.168.1.1" description="Defines the low end of the excluded ip range for dhcp" />
+    <Parameter name="HIGH_EXCLUDED_IP" value="192.168.1.49" description="Defines the high end of the excluded ip range for dhcp" />
+    <Parameter name="DHCP_SUBNET" value="192.168.1.0" description="Defines the dhcp subnet (with the addition of a mask)" />
+    <Parameter name="DHCP_SUBNET_MASK" value="255.255.255.0" description="Defines the dhcp subnet mask" />
+    <Parameter name="DHCP_LEASE" value="infinite" description="Defines the dhcp lease  { days [ hours ] [ minutes ] | infinite }" />
+    <Parameter name="DHCP_GATEWAY" value="192.168.1.5" description="The gateway that should be pushed to dhcp clients" />
+</Equipment>

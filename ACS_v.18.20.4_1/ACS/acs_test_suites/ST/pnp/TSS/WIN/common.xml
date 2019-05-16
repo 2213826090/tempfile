@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<Include>
+    <TestStepSet Id="InitializePnPResources">
+        <TestStep Id="PATLIB_INIT" EQT="DEFAULT"/>
+        <TestStep Id="INIT_PNP_RESULT" SAVE_AS="pnp_res"/>
+        <TestStep Id="INSERT_USB" EQT="FROM_DEVICE:PHONE1:IoCard" />
+<!--         <TestStep Id="SYSDEBUG_INIT" DEVICE="PHONE1" SYSDEBUG_CONFIG="FROM_TC:SYSDEBUG_MODULES" /> -->
+        <TestStep SetId="AllCommsOff"/>
+    </TestStepSet>
+    <TestStepSet Id="AllCommsOff">
+        <TestStep Id="SET_FLIGHT_MODE" DEVICE="PHONE1" FLIGHT_MODE="disable" />
+        <TestStep Id="WIFI_SET_POWER" DEVICE="PHONE1" POWER="off" />
+        <TestStep Id="BT_SET_POWER" DEVICE="PHONE1" POWER="off"/>
+        <TestStep Id="GNSS_SET_POWER" DEVICE="PHONE1" POWER="off" />
+        <TestStep Id="NFC_SET_POWER" DEVICE="PHONE1" POWER="off" />
+        <TestStep Id="DEACTIVATE_DEVICE_PDP" DEVICE="PHONE1" CHECK="True"/>
+        <TestStep Id="SET_FLIGHT_MODE" DEVICE="PHONE1" FLIGHT_MODE="enable" />
+    </TestStepSet>
+
+    <TestStepSet Id="StartPowerMeasurement">
+<!--         <TestStep Id="SYSDEBUG_START_ACQUISITION" DEVICE="PHONE1" /> -->
+        <TestStep Id="DISCONNECT_DEVICE_FROM_FWK" DEVICE="PHONE1" />
+        <TestStep Id="PRESS_POWER_BUTTON" EQT="FROM_DEVICE:PHONE1:IoCard" TIME="1"/>
+        <TestStep Id="REMOVE_USB" EQT="FROM_DEVICE:PHONE1:IoCard" />
+        <TestStep Id="SUSPEND" DURATION_IN_SEC="FROM_TC:SLEEP_DURATION" />
+        <TestStep Id="PATLIB_ACQUISITION" EQT="DEFAULT" ACTION="start"/>
+    </TestStepSet>
+</Include>

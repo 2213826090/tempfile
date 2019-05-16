@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="13.37">
+    <UseCase>MODEM_ACTIVATE_TRACE</UseCase>
+    <Description>Activate and check modem trace on device.</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>False</b2bContinuousMode>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters>
+        <Parameter>
+            <!-- HSI speed for tracing (u | d | h)
+            see configure_trace_modem script usage
+            Warning:
+            Lexington/Blackbay:
+            	-u: disable
+            	-d: default HSI speed
+            	-h: High Speed HSI
+
+            Redhookbay:
+            	-u: disable USB CDC ACM and HSI
+            	-d: default USB CDC ACM
+            	-h: HSI
+             -->
+            <Name>HSI_SPEED</Name>
+            <Value>h</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Trace level for tracing (0 | 1 | 2 | 3)
+            see configure_trace_modem script usage -->
+            <Name>TRACE_LEVEL</Name>
+            <Value>2</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Location of bplog file (EMMC | SDCARD)
+            see activate_trace_modem script usage -->
+            <Name>LOG_LOCATION</Name>
+            <Value>EMMC</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Size of bplog files (1 | 2)
+            see activate_trace_modem script usage for each platform
+            for more detail on size according option selected -->
+            <Name>FILE_SIZE_OPTION</Name>
+            <Value>2</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Time period to check bplog file size (in seconds) -->
+            <Name>TIME_PERIOD</Name>
+            <Value>10</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Target rate of time that bplog should grow up (from 0 to 100) -->
+            <Name>TARGET_RATE</Name>
+            <Value>40</Value>
+        </Parameter>
+        <Parameter>
+            <!-- First command to configure modem trace (specific to PF450CL)-->
+            <Name>COMMAND_CONFIG_1</Name>
+            <Value>echo -e -r "at+xsio=3\r\n" > /dev/gsmtty19</Value>
+        </Parameter>
+        <Parameter>
+            <!-- First command to configure modem trace -->
+            <Name>COMMAND_CONFIG_2</Name>
+            <Value>echo -e -r "at+trace=1\r\n" > /dev/gsmtty19</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Second command to configure modem trace -->
+            <Name>COMMAND_CONFIG_3</Name>
+            <Value>echo -e -r "at+xsystrace=0,\"bb_sw=1;3g_sw=1;digrfx=1;lte_l1_sw=1;3g_dsp=1\",\"bb_sw=sdl:th,tr,st,pr,mo,lt,db,li,gt,ae|fts:xllt(gprs,umts)sdl(gprs,umts)|egdci:0x00000001|lte_stk:0x02,0x801FFFFF;digrfx=0x0003;lte_l1_sw=(ALL,NORMAL,ALL,ALL)\",\"oct=4\"\r\n" > /dev/gsmtty19</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Command to stop configure modem trace -->
+            <Name>COMMAND_CONFIG_STOP</Name>
+            <Value>echo -e -r "at+xsystrace=0\r\n" > /dev/gsmtty19</Value>
+        </Parameter>
+        <Parameter>
+            <!-- BPlog target size (in MB) -->
+            <Name>TARGET_SIZE</Name>
+            <Value>10</Value>
+        </Parameter>
+        <Parameter>
+            <!-- HW reboot using IO card -->
+            <Name>HW_REBOOT</Name>
+            <Value>TRUE</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Set wether deactivate at UC end of not (TRUE| FALSE) -->
+            <Name>RESTORE_INITIAL</Name>
+            <Value>TRUE</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

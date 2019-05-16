@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestSteps xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../teststep.xsd">
+    <TestStep Id="PLAY_HELIDROID" Domain="APPS" SubDomain="BENCHMARKS" Feature="" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Apps.Games.PlayHelidroid.PlayHelidroid</ClassName>
+        <Description>Invokes Helidroid and keeps it running for the specified duration.
+            PREREQUISITES:
+            Android: Helidroid_3D.apk should be installed on the DUT:
+                It can be found in Artifactory at acs_test_artifacts/CONCURRENCY/TESTS/Helidroid_3D.
+                In addition, the following APK should be installed on the DUT:
+                    Helidroid_3D.apk
+            Windows: Windows version of the game is not available.
+        </Description>
+        <Environment name="ANY"/>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device that will run the application</Description>
+                <PossibleValues/>
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="DURATION" type="INTEGER" isOptional="false">
+                <Description>How long the test will run, in minutes.</Description>
+                <PossibleValues/>
+                <DefaultValue>5</DefaultValue>
+            </Parameter>
+            <Parameter name="GAME_PACKAGE" type="STRING" isOptional="false">
+                <Description>Package name for Helidroid, as it appears in PackageManager</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+            <Parameter name="GAME_ACTIVITY" type="STRING" isOptional="false">
+                <Description>Activity to invoke for Helidroid</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+</TestSteps>

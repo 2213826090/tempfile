@@ -1,0 +1,37 @@
+<?xml version="1.0" ?>
+<Campaign>
+      <Parameters>
+            <Parameter isControlledPSUsed="False"/>
+            <Parameter isIoCardUsed="False"/>
+            <Parameter skipBootOnPowerCycle="False"/>
+            <Parameter bootRetryNumber="0"/>
+            <Parameter runHookScripts="False"/>
+            <Parameter powerCycleBetweenTC="False"/>
+            <Parameter powerCycleOnFailure="False"/>
+            <Parameter finalDutState="NoChange"/>
+            <Parameter stopCampaignOnCriticalFailure="False"/>
+            <Parameter stopCampaignOnFirstFailure="False"/>
+            <Parameter loggingLevel="debug"/>
+            <Parameter CampaignType="Other"/>
+      </Parameters>
+      <TestCases>
+            <TestCase Id="../../../../../TC/TR/ACS/System/HAL/halctl_help"/>
+            <TestCase Id="../../../../../TC/TR/ACS/System/HAL/kmod_n"/>
+            <TestCase Id="../../../../../TC/TR/ACS/System/HAL/halctl_get_module"/>
+            <TestCase Id="../../../../../TC/TR/ACS/System/HAL/halctl_graphics"/>
+            <TestCase Id="../../../../../TC/TR/ACS/System/HAL/halctl_input"/>
+            <TestCase Id="../../../../../TC/TR/ACS/System/HAL/halctl_TPM"/>
+            <TestCase Id="../../../../../TC/TR/ACS/System/HAL/halctl_del_stress"/>
+            <TestCase Id="../../../../../TC/TR/ACS/System/HAL/halctl_camera"/>
+            <TestCase Id="../../../../../TC/TR/ACS/System/HAL/halctl_lights"/>
+            <TestCase Id="../../../../../TC/TR/ACS/System/HAL/process_recovery"/>
+            <TestCase Id="../../../../../TC/TR/ACS/System/HAL/halctl_del"/>
+            <TestCase Id="../../../../../TC/TR/ACS/System/HAL/kmod_usage"/>
+            <TestCase Id="../../../../../TC/TR/ACS/System/HAL/halctl_sensors"/>
+            <TestCase Id="../../../../../TC/TR/ACS/System/HAL/halctl_add"/>
+            <TestCase Id="../../../../../TC/TR/ACS/System/HAL/halctl_wifi"/>
+            <TestCase Id="../../../../../TC/TR/ACS/System/HAL/halctl_list"/>
+            <TestCase Id="../../../../../TC/TR/ACS/System/HAL/halctl_power"/>
+            <TestCase Id="../../../../../TC/TR/ACS/System/HAL/process_owner"/>
+      </TestCases>
+</Campaign>

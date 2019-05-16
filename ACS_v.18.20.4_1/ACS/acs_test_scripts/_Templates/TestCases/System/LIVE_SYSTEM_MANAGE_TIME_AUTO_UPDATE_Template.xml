@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="13.37">
+    <UseCase>LIVE_SYSTEM_MANAGE_TIME_AUTO_UPDATE</UseCase>
+    <Description>Check the auto time (NITZ) capability of device</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>False</b2bContinuousMode>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters>
+        <Parameter>
+            <!--This is possible to use a specific date for testing
+            Date format is YEAR.MONTH.DAY_OF_MONTH
+            ie: 2013.04.18
+            Left empty if not used, in that case default date
+            will be 1st january 1970
+            -->
+            <Name>TEST_DATE</Name>
+            <Value></Value>
+        </Parameter>
+        <Parameter>
+            <!--This is possible to use a specific time for testing
+            Time format is HOUR.MIN.SECOND (24h format)
+            ie: 15.43.01
+            Left empty if not used, in that case default time
+            will be 00h 00m 00s
+            -->
+            <Name>TEST_TIME</Name>
+            <Value></Value>
+        </Parameter>
+        <Parameter>
+            <!--Time to wait in seconds between activation on auto time and date check
+            -->
+            <Name>TIME_TO_WAIT</Name>
+            <Value>10</Value>
+        </Parameter>
+        <Parameter>
+            <!--Time gap in seconds what we allow the automatic update of time
+            -->
+            <Name>TIME_GAP</Name>
+            <Value>30</Value>
+        </Parameter>
+        <Parameter>
+            <!--
+                Optional parameter, if not indicated defaults to False.
+                This parameter indicates whether we should deactivate data during
+                the test or not.
+                This parameter is mostly useful for avoiding fake SUCCESS when
+                ntp capability is activated on DATA.
+                Possible values: True | False.
+             -->
+            <Name>DEACTIVATE_DATA</Name>
+            <Value>False</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

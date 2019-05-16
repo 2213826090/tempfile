@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<Campaign>
+  <Parameters>
+    <Parameter isControlledPSUsed ="False"/>
+    <Parameter isIoCardUsed ="False"/>
+    <!-- Set skipBootOnPowerCycle to True to disable the accs boot procedure-->
+    <!-- Important, it means that boot will be handle inside the campaign/tc -->
+    <Parameter skipBootOnPowerCycle ="False"/>
+    <Parameter runHookScripts = "False"/>        
+    <Parameter powerCycleBetweenTC ="False"/>
+    <Parameter powerCycleOnFailure ="False"/>
+    <Parameter finalPowerOff ="False"/>
+    <Parameter stopCampaignOnCriticalFailure = "False"/>
+    <Parameter stopCampaignOnFirstFailure = "False"/>
+    <!-- LoggingLevel possible values: info | warning | debug | error -->
+    <Parameter loggingLevel = "info"/>
+    <!-- CampaignType format -> <TEAM>_<CAMPAIGNTYPE> 
+        Possible values:
+        FT(Feature Team)-> SANITY | REGRESSION | STRESS, RELIABILTY | MTBF
+        ST(System Test)-> SANITY | REGRESSION | STRESS, RELIABILTY | MTBF
+        SI(System Integration)-> EAT | STAB | PACT | CAT0 | RELIABILITY | MTBF | CTS
+        Otherwise "Others" should be used -->
+    <Parameter CampaignType = "ST_STRESS"/>
+  </Parameters> 
+  <Targets>
+    <!-- Target Values -->  
+    <Target targetB2bPassRate ="80"/>
+  </Targets>
+  <TestCases>
+  
+    <!-- SETUP -->
+    <TestCase Id="..\TC\SETUP\LAB_SYSTEM_SETUP_EMBEDDED"/>
+
+    <!-- Test SCRIPTS -->
+
+    <!-- UI_JB --> 
+    <TestCase Id="..\TC\UI_JB\ST_TELEPHONY_MSG_MMS_012-ANDROID_UI_TEST"/>
+    <TestCase Id="..\TC\UI_JB\ST_TELEPHONY_MSG_MMS_013-ANDROID_UI_TEST"/>
+    <TestCase Id="..\TC\UI_JB\ST_TELEPHONY_MSG_MMS_216-ANDROID_UI_TEST"/>
+    <TestCase Id="..\TC\UI_JB\ST_TELEPHONY_MSG_MMS_217-ANDROID_UI_TEST"/>
+    <TestCase Id="..\TC\UI_JB\ST_TELEPHONY_MSG_MMS_218-ANDROID_UI_TEST"/>
+    <TestCase Id="..\TC\UI_JB\ST_COM_FIT_VC_MMS_016-ANDROID_UI_TEST"/>
+    <TestCase Id="..\TC\UI_JB\ST_COM_FIT_VC_SMS_013-ANDROID_UI_TEST"/>
+    <TestCase Id="..\TC\UI_JB\ST_DATA_EDGE_007-ANDROID_UI_TEST"/>
+    <TestCase Id="..\TC\UI_JB\ST_DATA_EDGE_009-ANDROID_UI_TEST"/>
+    <TestCase Id="..\TC\UI_JB\ST_DATA_WCDMA_R6_PS_016-ANDROID_UI_TEST"/>
+    <TestCase Id="..\TC\UI_JB\ST_DATA_WCDMA_R7_PS_010-ANDROID_UI_TEST"/>
+    <TestCase Id="..\TC\UI_JB\ST_DATA_WCDMA_R5_PS_012-ANDROID_UI_TEST"/>
+    <TestCase Id="..\TC\UI_JB\ST_DATA_WCDMA_R5_PS_016-ANDROID_UI_TEST"/>
+    <TestCase Id="..\TC\UI_JB\ST_DATA_FIT_PS_001-ANDROID_UI_TEST"/>
+    <TestCase Id="..\TC\UI_JB\ST_DATA_FIT_PS_002-ANDROID_UI_TEST"/>
+    <TestCase Id="..\TC\UI_JB\ST_DATA_FIT_PS_010-ANDROID_UI_TEST"/>
+    <TestCase Id="..\TC\UI_JB\ST_DATA_WCDMA_R7_PDP_003-ANDROID_UI_TEST"/>
+    <TestCase Id="..\TC\UI_JB\ST_COM_SIND_Flight_105-ANDROID_UI_TEST"/>
+    <TestCase Id="..\TC\UI_JB\ST_DATA_GPRS_PS_006-ANDROID_UI_TEST"/>
+
+    <!-- UI_JB ITERATION number = 100  -->
+    <TestCase Id="..\TC\UI_JB\ST_TELEPHONY_MSG_MMS_023-ANDROID_UI_TEST"/>
+    <TestCase Id="..\TC\UI_JB\ST_TELEPHONY_MSG_MMS_219-ANDROID_UI_TEST"/>
+    <TestCase Id="..\TC\UI_JB\ST_TELEPHONY_MSG_MMS_222-ANDROID_UI_TEST"/>
+    <TestCase Id="..\TC\UI_JB\ST_TELEPHONY_MSG_MMS_225-ANDROID_UI_TEST"/>
+
+    <!-- UI_JB ITERATION number = 500  --> 
+<!-- <TestCase Id="..\TC\UI_JB\ST_TELEPHONY_MSG_MMS_024-ANDROID_UI_TEST"/>
+<TestCase Id="..\TC\UI_JB\ST_TELEPHONY_MSG_MMS_220-ANDROID_UI_TEST"/>
+<TestCase Id="..\TC\UI_JB\ST_TELEPHONY_MSG_MMS_223-ANDROID_UI_TEST"/>
+<TestCase Id="..\TC\UI_JB\ST_TELEPHONY_MSG_MMS_226-ANDROID_UI_TEST"/> -->
+
+  </TestCases>
+</Campaign>

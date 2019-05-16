@@ -1,0 +1,24 @@
+<?xml version="1.0" ?>
+<Campaign>
+      <Parameters>
+            <Parameter isControlledPSUsed="False"/>
+            <Parameter isIoCardUsed="False"/>
+            <Parameter skipBootOnPowerCycle="False"/>
+            <Parameter bootRetryNumber="0"/>
+            <Parameter runHookScripts="False"/>
+            <Parameter powerCycleBetweenTC="False"/>
+            <Parameter powerCycleOnFailure="False"/>
+            <Parameter finalDutState="NoChange"/>
+            <Parameter stopCampaignOnCriticalFailure="False"/>
+            <Parameter stopCampaignOnFirstFailure="False"/>
+            <Parameter loggingLevel="debug"/>
+            <Parameter CampaignType="Other"/>
+      </Parameters>
+      <TestCases>
+            <TestCase Id="../../../../../../TC/TR/DeviceSetup/prereq_ConnectToAP"/>
+            <TestCase Id="../../../../../../TC/TR/ACS/System/OS/Fastboot/Factory_reset/prereq_Add_google_account_M_dessert"/>
+            <TestCase Id="../../../../../../TC/TR/ACS/System/OS/Fastboot/prereq_Factory_reset_step_M_dessert"/>
+            <TestCase Id="../../../../../../TC/TR/ACS/System/OS/Fastboot/Factory_reset/prereq_wait_for_android"/>
+            <TestCase Id="../../../../../../TC/TR/ACS/System/OS/Fastboot_M/Factory_reset/FactoryReset_Protection_reset_from_Settings"/>
+      </TestCases>
+</Campaign>

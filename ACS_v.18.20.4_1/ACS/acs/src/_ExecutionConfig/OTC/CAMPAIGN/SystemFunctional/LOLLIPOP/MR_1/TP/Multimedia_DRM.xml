@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<Campaign version="13.49">
+    <Parameters>
+        <Parameter isControlledPSUsed="False"/>
+        <Parameter isIoCardUsed="False"/>
+        <Parameter skipBootOnPowerCycle="False"/>
+        <Parameter bootRetryNumber="0"/>
+        <Parameter runHookScripts="False"/>
+        <Parameter powerCycleBetweenTC="False"/>
+        <Parameter powerCycleOnFailure="False"/>
+        <Parameter finalDutState="NoChange"/>
+        <Parameter stopCampaignOnCriticalFailure="False"/>
+        <Parameter stopCampaignOnFirstFailure="False"/>
+        <Parameter loggingLevel="debug"/>
+        <Parameter CampaignType="Other"/>
+        <Parameter TCRReportViaRESTAPI="True"/>
+    </Parameters>
+    <TestCases>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_DRM/Classic_WV/testProvisionKeyBox_Reboot"/>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_DRM/Classic_WV/testWVClassic_Provision"/>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_DRM/Classic_WV/testWVClassicPlayback_WVDemo_Local_720p"/>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_DRM/Classic_WV/testWVClassic_WVDemo_Local_1080p"/>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_DRM/Classic_WV/testWVClassic_WVDemo_Local_360"/>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_DRM/Classic_WV/testWVClassic_WVDemo_Local_480p"/>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_DRM/Classic_WV/testWVClassic_WVDemo_HD_Local"/>
+    </TestCases>
+</Campaign>

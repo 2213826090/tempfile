@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestSteps xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:noNamespaceSchemaLocation="../../../../../acs/src/_Catalogs/TestStep/teststep.xsd">
+    <TestStep Id="START_PEDOMETER" Domain="APPS" SubDomain="BENCHMARKS" Feature="" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Misc.StartPedometer.StartPedometer</ClassName>
+        <Description>
+        </Description>
+        <Environment name="ANY"/>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues/>
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="PEDOMETER_MODE_FILE" type="STRING" isOptional="false">
+                <Description>pushed pedometer mode on file path</Description>
+                <PossibleValues/>
+                <DefaultValue></DefaultValue>
+            </Parameter>
+            <Parameter name="HECIWRITEANDROID_FILE" type="STRING" isOptional="false">
+                <Description>pushed heciwriteandroid script file path</Description>
+                <PossibleValues/>
+                <DefaultValue></DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="STOP_PEDOMETER" Domain="APPS" SubDomain="BENCHMARKS" Feature="" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Misc.StopPedometer.StopPedometer</ClassName>
+        <Description>
+        </Description>
+        <Environment name="ANY"/>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues/>
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="PEDOMETER_MODE_FILE" type="STRING" isOptional="false">
+                <Description>pushed pedometer mode off file path</Description>
+                <PossibleValues/>
+                <DefaultValue></DefaultValue>
+            </Parameter>
+            <Parameter name="HECIWRITEANDROID_FILE" type="STRING" isOptional="false">
+                <Description>pushed heciwriteandroid script file path</Description>
+                <PossibleValues/>
+                <DefaultValue></DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="RUN_ANDROID_INST" Domain="UTILITIES" SubDomain="CHECKS" Feature="" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Misc.RunAndroidInst.RunAndroidInst</ClassName>
+        <Description>
+        </Description>
+        <Environment name="ANY"/>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues/>
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="RUN_INSTR_CMD" type="STRING" isOptional="false">
+                <Description>The am instrument/uiautomator command to be sent to the test runner</Description>
+                <PossibleValues/>
+                <DefaultValue></DefaultValue>
+            </Parameter>
+            <Parameter name="TIMEOUT" type="FLOAT" isOptional="false">
+                <Description>The time until the instrumentation script times out</Description>
+                <PossibleValues/>
+                <DefaultValue></DefaultValue>
+            </Parameter>
+            <Parameter name="RETRIEVE_ARTIFACT" type="STRING" isOptional="true">
+                <Description>The location of the files from DUT to be pulled at the end of the instrumentation script in
+                    case of failure
+                </Description>
+                <PossibleValues/>
+                <DefaultValue></DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+</TestSteps>

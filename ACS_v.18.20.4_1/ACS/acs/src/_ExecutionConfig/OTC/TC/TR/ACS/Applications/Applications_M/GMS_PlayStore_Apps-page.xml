@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="13.45">
+    <UseCase>ANDROID_INST</UseCase>
+    <Description>This test will verify if the user can access Apps page and the correct info is displayed</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <TcMaxAttempt>2</TcMaxAttempt>
+    <Parameters>
+        <Parameter>
+            <!-- The time until the test times out-->
+            <!-- (mandatory) -->
+            <Name>TIMEOUT</Name>
+            <Value>400</Value>
+        </Parameter>
+        <Parameter>
+            <!-- The package name of the instrumentation and the test runner in the form or package/TestRunner-->
+            <!-- (mandatory) -->
+            <Name>PROCESS_NAME</Name>
+            <Value>com.intel.uitests.test/com.intel.uitests.runner.UiTestRunner</Value>
+        </Parameter>
+        <Parameter>
+            <!-- The parameters to be sent to the test runner. It should start with the -e command and insert it between each parameter-->
+            <!-- (optional, no default value) -->
+            <Name>AM_EXTRA</Name>
+            <Value>-e class com.intel.uitests.tests.apps.playstore.ContentValidation#testAppsPage -e account auto2test@gmail.com -e password testing12345</Value>
+        </Parameter>
+        <Parameter>
+            <!-- The location of the test apks to be installed relative to the acs_test_arifacts folder in the artifactory-->
+            <!-- Multiple apks can be installed, they need to be sepparated by ;-->
+            <!-- ex: INSTRUMENTATION/ANDROID/AtfVideo.apk;INSTRUMENTATION/ANDROID/AtfVideoTests.apk-->
+            <!-- (mandatory) -->
+            <Name>APKS</Name>
+            <Value>UIAUTOMATOR/UiTests_M-debug.apk;UIAUTOMATOR/UiTests_M-debug-androidTest-unaligned.apk</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Extra files that are needed by the test-->
+            <!-- Their path need to be relative to the acs_test_arifacts folder in the artifactory-->
+            <!-- (optional, no default value) -->
+            <Name>TEST_FILES</Name>
+            <Value></Value>
+        </Parameter>
+        <Parameter>
+            <!-- The destination on the DUT where to push the files from TEST_FILES -->
+            <!-- (optional, mandatory only if TEST_FILES is used) -->
+            <Name>TEST_FILES_DEST</Name>
+            <Value></Value>
+        </Parameter>
+        <Parameter>
+            <!-- DUT Properties using setprop-->
+            <!-- (optional, no default value) -->
+            <Name>SET_PROPS</Name>
+            <Value></Value>
+        </Parameter>
+        <Parameter>
+            <!-- The location of the files from DUT tu be pulled at the end of the test -->
+            <!-- (optional, no default value) -->
+            <Name>RETRIEVE_ARTIFACT</Name>
+            <Value>/sdcard/UITESTS/testFail.png</Value>
+        </Parameter>
+        <Parameter>
+            <Name>PRE_REBOOT</Name>
+            <Value>False</Value>
+        </Parameter>
+        <Parameter>
+            <Name>POST_REBOOT</Name>
+            <Value>False</Value>
+        </Parameter>
+        <Parameter>
+            <Name>POST_REBOOT_NOK</Name>
+            <Value>True</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

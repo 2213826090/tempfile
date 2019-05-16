@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<DeviceModel xsi:noNamespaceSchemaLocation="../../../../../acs/src/_Catalogs/Device/Models/BareMetalDeviceModel.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <DeviceModule>
+        <FlashModule className="Device.Module.NDG.Flash.SensorEnabledDeviceFlashModule.SensorEnabledDeviceFlashModule" config="Config/Clark.xml"/>
+        <CrashModule className="Device.Module.Common.Crash.DummyCrashModule.DummyCrashModule" config="Config/CrashInfo/Default.xml"/>
+        <SystemModule className="Device.Module.Common.System.SystemModule.SystemModule" config="Config/Default.yaml"/>
+        <NetworkingModule className="Device.Module.Common.Networking.NetworkingModule.NetworkingModule" config="Config/Clark.yaml"/>
+    </DeviceModule>
+    <Implementation>
+        <Parameter deviceCapabilities="Capabilities/sed.xml"
+                   ClassName="Device.Model.SensorEnabledDevice.SensorEnabledDeviceBase.SensorEnabledDeviceBase"
+                   UECmd="acs_test_scripts.Device.UECmd.Imp.BareMetal.Common"
+                   OS="NORDIC" OSVersion="Alpha"
+                   waitBetweenCmd="4"/>
+    </Implementation>
+    <BootShutdown>
+        <Parameter bootTimeout="15"/>
+        <Parameter checkDeviceBootMode="false"/>
+        <Parameter settleDownDuration="2"/>
+        <Parameter softShutdownDuration="5"/>
+        <Parameter hardShutdownDuration="15"/>
+        <Parameter softShutdownSettleDownDuration="4"/>
+        <Parameter pressPowerBtnTimeSwitchOn="1"/>
+        <Parameter pressPowerBtnTimeSwitchOff="5"/>
+        <Parameter waitSoftRebootCmdReturns="true"/>
+        <Parameter rebootOnRetryOnSetup="false"/>
+    </BootShutdown>
+  <Connection>
+    <Parameter usbSleep="10"/>
+    <Parameter serialNumber=""/>
+  </Connection>
+  <Debug>
+    <Parameter retrieveSerialTrace="true"/>
+    <Parameter serialPort="/dev/ttyUSB0"/>
+    <Parameter serialBaudRate="115200"/>
+    <Parameter serialHdwFlowControl="false"/>
+    <Parameter serialLogin=""/>
+    <Parameter serialPassword=""/>
+    <!--
+             Define the type(s) of kernel logs to retrieve.
+             You can define a set of filters by separating them with " | "
+             (e.g : kernelLogFilter="OS | Process | Thread")
+             Main filters are (from lowest to highest quantity of information retrieved):
+             None, Verbose, Default, All
+             Other specifics filters available are:
+             AdvancedLocalProcedureCalls, ContextSwitch, DeferedProcedureCalls, DiskFileIO,
+             DiskIO, DiskIOInit, Dispatcher, Driver, FileIO, FileIOInit, ImageLoad,
+             Interrupt, MemoryHardFaults, MemoryPageFaults, NetworkTCPIP,
+             OS, Process, ProcessCounters, Profile, Registry, SplitIO, SystemCall, Thread,
+             VirtualAlloc
+            -->
+    <Parameter kernelLogFilter="Verbose"/>
+  </Debug>
+  <Devices>
+    <Parameter usb_vendor_id="0403"/> <!-- refer to uart module -->
+    <Parameter usb_product_id="6001"/>
+    <Parameter boardType="lois"/>
+  </Devices>
+    <Power>
+        <Parameter FailureFile="NDG/sw/BENCHCFG/bench_target_fail.csv"/>
+        <Parameter TargetFile="NDG/sw/BENCHCFG/BENCHCFG/bench_target.csv"/>
+    </Power>
+</DeviceModel>

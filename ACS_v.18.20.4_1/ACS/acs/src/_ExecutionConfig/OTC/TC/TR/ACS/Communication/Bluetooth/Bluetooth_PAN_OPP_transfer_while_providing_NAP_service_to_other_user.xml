@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase>
+    <UseCase>Bluetooth_PAN_NAP_OPP</UseCase>
+    <Description>The device initiates a PAN profile connection to another device to which it also provides
+    NAP services(Wifi). During this, it also send a file via the Opp protocole.</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>False</b2bContinuousMode>
+    <TcAcceptanceCriteria>PASS</TcAcceptanceCriteria>
+    <TcMaxAttempt>1</TcMaxAttempt>
+    <TestSteps>
+        <Setup>
+                  <!--OPP: download and push file(s) for OPP transfer-->
+            <TestStep Id="GET_ARTIFACT" EQT="ARTIFACT_MANAGER" ARTIFACT="MISCELLANEOUS/TXT/5MB.txt" ARTIFACT_SOURCE="FROM_BENCH:ARTIFACT_MANAGER:URI" TRANSFER_TIMEOUT="DEFAULT" STORED_FILE_PATH="FILE_PATH_IN_CACHE"/>
+            <TestStep Id="INSTALL_FILE" DEVICE="PHONE1" FILE_PATH="FROM_CTX:FILE_PATH_IN_CACHE" TYPE="media" DESTINATION="/sdcard/acs_files/" DESTINATION_STORED_PATH="INSTALLED_FILE_PATH" TIMEOUT="DEFAULT"/>
+        </Setup>
+        <Finalize>
+            <TestStep Id="UNINSTALL_FILE" DEVICE="PHONE1" DEVICE_FOLDER="/sdcard/acs_files/" FILENAME="FROM_TC:OPP_LOCAL_FILE"/>
+        </Finalize>
+    </TestSteps>
+    <Parameters>
+        <Parameter>
+            <!-- Name of the access point -->
+            <Name>WIFI_ACCESS_POINT</Name>
+            <Value>WEP_WIFI_ROUTER</Value>
+        </Parameter>
+        <Parameter>
+            <!--  -->
+            <Name>DUT_STATE</Name>
+            <Value>DUT_SERVER</Value>
+        </Parameter>
+        <Parameter>
+            <!--  -->
+            <Name>OPP_LOCAL_FILE</Name>
+            <Value>5MB.txt</Value>
+        </Parameter>
+        <Parameter>
+            <Name>NAP_OR_PAN_TEST</Name>
+            <Value>nap</Value>
+        </Parameter>
+         <Parameter>
+            <!-- Defines who disconnect the tethering link (NAP or PAN-U. Default is PAN-U) -->
+            <Name>WHO_DISCONNECT</Name>
+            <Value>NAP</Value>
+        </Parameter>
+        <Parameter>
+            <Name>CONNECTION_TO_SHARE</Name>
+            <Value>wifi</Value>
+        </Parameter>
+        <Parameter>
+            <Name>PAIRING_INITIATOR</Name>
+            <Value>PHONE1</Value>
+        </Parameter>
+        <Parameter>
+            <!--Enable / Disable PAN-User disconnection initiated by the NAP device (True/False) -->
+            <Name>ENABLE_BT_TETHERING_DEACTIVATION_TEST</Name>
+            <Value>False</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Type of WiFi activity : WIFI_WEB_BROWSING, WIFI_FTP_DOWNLOAD -->
+            <Name>WIFI_ACTIVITY</Name>
+            <Value>WIFI_WEB_BROWSING</Value>
+        </Parameter>
+        <Parameter>
+            <!-- [Optional] Address used to browse in case of WIFI_ACTIVITY = WIFI_WEB_BROWSING -->
+            <Name>URL_TO_BROWSE</Name>
+            <Value>www.google.com</Value>
+        </Parameter>
+        <Parameter>
+            <!-- [Optional] When should the test fail the pairing check. Default is set to "disconnected" -->
+            <Name>PAIRING_CHECK_FAIL_IF</Name>
+            <Value>disconnected</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

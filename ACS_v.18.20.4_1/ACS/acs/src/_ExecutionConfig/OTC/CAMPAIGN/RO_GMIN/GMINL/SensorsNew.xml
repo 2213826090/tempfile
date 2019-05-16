@@ -1,0 +1,26 @@
+<?xml version="1.0" ?>
+<Campaign>
+      <Parameters>
+            <Parameter isControlledPSUsed="False"/>
+            <Parameter isIoCardUsed="False"/>
+            <Parameter skipBootOnPowerCycle="False"/>
+            <Parameter bootRetryNumber="0"/>
+            <Parameter runHookScripts="False"/>
+            <Parameter powerCycleBetweenTC="False"/>
+            <Parameter powerCycleOnFailure="False"/>
+            <Parameter finalDutState="NoChange"/>
+            <Parameter stopCampaignOnCriticalFailure="False"/>
+            <Parameter stopCampaignOnFirstFailure="False"/>
+            <Parameter loggingLevel="debug"/>
+            <Parameter CampaignType="Other"/>
+      </Parameters>
+      <TestCases>
+            <SubCampaign Id="../../Subcampaigns/ATF_TESTS/Intel_Sensors/sensors_Basic_Reads"/>
+            <SubCampaign Id="../../Subcampaigns/ATF_TESTS/Intel_Sensors/sensors_SensorFrequency"/>
+            <SubCampaign Id="../../Subcampaigns/ATF_TESTS/Intel_Sensors/sensors_SensorJitter"/>
+            <SubCampaign Id="../../Subcampaigns/ATF_TESTS/Intel_Sensors/sensors_SensorReportingLatency"/>
+            <SubCampaign Id="../../Subcampaigns/ATF_TESTS/Intel_Sensors/sensors_SensorSyncError"/>
+            <SubCampaign Id="../../Subcampaigns/ATF_TESTS/Intel_Sensors/sensors_SensorStandardDeviation"/>
+            <!--Works on ECS but not on Anchor <SubCampaign Id="../../Subcampaigns/ACS/System/Sensors/Sensors"/>-->
+      </TestCases>
+</Campaign>

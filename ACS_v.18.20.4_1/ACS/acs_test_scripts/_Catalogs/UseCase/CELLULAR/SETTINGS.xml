@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<UseCases xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:noNamespaceSchemaLocation="../../../../acs/src/_Catalogs/UseCase/usecase.xsd">
+    <UseCase Id="LIVE_FLIGHTMODE_CHECK_RADIO_AND_CONNECTIVITY" Domain="CELLULAR" SubDomain="SETTINGS" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Communication.Misc.LIVE_FLIGHTMODE_CHECK_RADIO_AND_CONNECTIVITY.LiveFlightModeCheckRadioAndConnectivity</ClassName>
+        <Description>Live Flight Mode and BT/NFC/WLAN/GPS check. We test that the Flight Mode deactivates all radio types, except GPS,
+            and that any radio type (except modem) can then be activated while in Flight Mode
+        </Description>
+        <Environment name="ANY"/>
+        <Parameters>
+            <Parameter name="CHECK_BT" type="CHECK_BT" isOptional="false">
+                <!-- Parameter indicating whether we should test BT technology or not (possible values: TRUE | FALSE)
+                 -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="CHECK_NFC" type="CHECK_NFC" isOptional="false">
+                <!-- Parameter indicating whether we should test NFC technology or not (possible values: TRUE | FALSE)
+                 -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="CHECK_WLAN" type="CHECK_WLAN" isOptional="false">
+                <!-- Parameter indicating whether we should test WLAN technology or not (possible values: TRUE | FALSE)
+                 -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="CHECK_GPS" type="CHECK_GPS" isOptional="false">
+                <!-- Parameter indicating whether we should test GPS technology or not (possible values: TRUE | FALSE)
+                 -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+        </Parameters>
+    </UseCase>
+</UseCases>

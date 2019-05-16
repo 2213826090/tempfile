@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<Include>
+    <TestStepSet Id="AutoJoinSequenceForBrowsing">
+        <TestStep Id="SUSPEND" DURATION_IN_SEC="15"/>
+        <!-- Display off/on sequence -->
+        <TestStep Id="PRESS_POWER_BUTTON" EQT="IO_CARD" TIME="0.1"/>
+        <TestStep Id="SUSPEND" DURATION_IN_SEC="1" />
+        <!-- Check screen off -->
+        <TestStep Id="GET_SCREEN_PROPERTY" DEVICE="PHONE1" PROPERTY="state" SAVE_AS="cur_state" />
+        <TestStep Id="COMPARE" FIRST="off" SECOND="FROM_CTX:cur_state" OPERATOR="EQUAL" PASS_IF="True" />
+        <TestStep Id="PRESS_POWER_BUTTON" EQT="IO_CARD" TIME="0.1"/>
+        <TestStep Id="SUSPEND" DURATION_IN_SEC="1" />
+        <!-- Check screen on -->
+        <TestStep Id="GET_SCREEN_PROPERTY" DEVICE="PHONE1" PROPERTY="state" SAVE_AS="cur_state" />
+        <TestStep Id="COMPARE" FIRST="on" SECOND="FROM_CTX:cur_state" OPERATOR="EQUAL" PASS_IF="True" />
+    </TestStepSet>
+</Include>

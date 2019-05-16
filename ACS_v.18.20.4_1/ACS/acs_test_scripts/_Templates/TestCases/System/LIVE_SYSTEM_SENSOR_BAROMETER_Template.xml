@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase>
+    <UseCase>LIVE_SYSTEM_SENSOR_BAROMETER</UseCase>
+    <Description>Check barometer value</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>False</b2bContinuousMode>
+    <Parameters>
+        <Parameter>
+            <!-- expected value of atmospheric pressure returned by the sensor,
+            it depends on where the DUT is (example Toulouse : 1006).
+             This parameter is an integer in hectopascal (Hpa)-->
+            <Name>EXPECTED_VALUE</Name>
+            <Value>1006</Value>
+        </Parameter>
+        <Parameter>
+             <!-- flexibility value concerning the value of atmospheric pressure returned by the DUT.
+              This parameter is an integer in hectopascal (Hpa)  -->
+             <Name>FLEXIBILITY</Name>
+             <Value>20</Value>
+         </Parameter>
+    </Parameters>
+</TestCase>

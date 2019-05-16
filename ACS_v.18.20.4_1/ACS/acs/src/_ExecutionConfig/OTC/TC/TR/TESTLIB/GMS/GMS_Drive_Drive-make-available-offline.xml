@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='ASCII'?>
+<TestCase>
+    <UseCase>Testlib</UseCase>
+    <Description>Drive -- make file available offline</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <TcMaxAttempt>1</TcMaxAttempt>
+    <Parameters>
+        <Parameter>
+            <Name>timeout</Name>
+            <Value>300</Value>
+        </Parameter>
+        <Parameter>
+            <Name>script-args</Name>
+            <Value>{"online_file_name":"Unix_cmd","offline_file_name":"How_to_get_started_with_Drive","account":"auto2test@gmail.com","password":"testing12345"}</Value>
+        </Parameter>
+        <Parameter>
+            <Name>test</Name>
+            <Value>scripts/gms/drive/tests/make_available_offline.py</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

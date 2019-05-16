@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<Sequence>
+    <GPIBCommand type="2" equipment="NETWORK_SIMULATOR2" command="CALL:OPERating:MODE Off" />
+    <GPIBCommand type="2" equipment="NETWORK_SIMULATOR2" command="CALL:DPCH:DOFF 2" />
+    <GPIBCommand type="2" equipment="NETWORK_SIMULATOR2" command="CALL:UPL:DPCC:SLOT:FORM 1" />
+    <GPIBCommand type="2" equipment="NETWORK_SIMULATOR2" command="CALL:HSUPA:EDCHANNEL:TTI MS2" />
+    <GPIBCommand type="2" equipment="NETWORK_SIMULATOR2" command="CALL:CPC:STAT ON" />
+    <GPIBCommand type="2" equipment="NETWORK_SIMULATOR2" command="CALL:CPC:MODE DTRX" />
+    <GPIBCommand type="2" equipment="NETWORK_SIMULATOR2" command="CALL:CPC:MS:DRX:CYCL SUBF8" />
+    <GPIBCommand type="2" equipment="NETWORK_SIMULATOR2" command="CALL:SERV:PSD:SRB:MAPP UEDH" />
+    <GPIBCommand type="2" equipment="NETWORK_SIMULATOR2" command="CALL:HSUPa:SGRant:ABSolute:MODE SSHot" />
+    <GPIBCommand type="2" equipment="NETWORK_SIMULATOR2" command="CALL:OPER:MODE CALL" />
+
+
+
+    <GPIBCommand type="10" equipment="NETWORK_SIMULATOR2" command="CALL:OPERating:MODE Off" />
+    <GPIBCommand type="10" equipment="NETWORK_SIMULATOR2" command="CALL:DPCH:DOFF 2" />
+    <GPIBCommand type="10" equipment="NETWORK_SIMULATOR2" command="CALL:UPL:DPCC:SLOT:FORM 1" />
+    <GPIBCommand type="10" equipment="NETWORK_SIMULATOR2" command="CALL:HSUPA:EDCHANNEL:TTI MS10" />
+    <GPIBCommand type="10" equipment="NETWORK_SIMULATOR2" command="CALL:CPC:STAT ON" />
+    <GPIBCommand type="10" equipment="NETWORK_SIMULATOR2" command="CALL:CPC:MODE DTRX" />
+    <GPIBCommand type="10" equipment="NETWORK_SIMULATOR2" command="CALL:CPC:MS:DRX:CYCL SUBF10" />
+    <GPIBCommand type="10" equipment="NETWORK_SIMULATOR2" command="CALL:SERV:PSD:SRB:MAPP UEDH" />
+    <GPIBCommand type="10" equipment="NETWORK_SIMULATOR2" command="CALL:HSUPa:SGRant:ABSolute:MODE SSHot" />
+    <GPIBCommand type="10" equipment="NETWORK_SIMULATOR2" command="CALL:OPER:MODE CALL" />
+</Sequence>

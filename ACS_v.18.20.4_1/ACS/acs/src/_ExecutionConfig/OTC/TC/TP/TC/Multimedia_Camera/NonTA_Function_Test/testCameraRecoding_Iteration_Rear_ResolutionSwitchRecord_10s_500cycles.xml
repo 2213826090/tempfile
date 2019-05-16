@@ -1,0 +1,18 @@
+<?xml version="1.0" ?>
+<TestCase>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Discription>Verify change video size then record video iteratively for 500 times in rear camera (change size then record a short video clip about 10s every time)</Discription>
+    <UseCase>PY_UNIT</UseCase>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <b2bIteration>1</b2bIteration>
+    <Parameters>
+        <Parameter>
+            <Name>TEST_DATA_ROOT</Name>
+            <Value>testplan/Multimedia_Camera</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TEST_CASE</Name>
+            <Value>tests.Multimedia_Camera.NonTA_Function_Test.camera_reliability.CameraReliabilityTest.testCameraRecoding_Iteration_Rear_ResolutionSwitchRecord_10s_500cycles</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

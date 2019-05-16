@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase>
+  <UseCase>LAB_WCDMA_VC_MOMR</UseCase>
+  <Description>WCDMA Mobile Originated Call / Mobile Release on simulated network</Description>
+  <b2bIteration>1000</b2bIteration>
+  <b2bContinuousMode>True</b2bContinuousMode>
+  <Parameters>
+    <Parameter>
+      <!-- Cell Band (from Band 1 to Band 8)-->
+      <Name>CELL_BAND</Name>
+      <Value>1</Value>
+    </Parameter>
+    <Parameter>
+      <!-- Downlink UARFCN Frequency -->
+      <Name>DL_UARFCN</Name>
+      <Value>10700</Value>
+    </Parameter>
+    <Parameter>
+      <!--Cell Service (CIRCUIT | PACKET | CIRCUIT_PACKET | RBTEST) -->
+      <Name>CELL_SERVICE</Name>
+      <Value>CIRCUIT_PACKET</Value>
+    </Parameter>
+    <Parameter>
+      <!-- Cell Power in dBm -->
+      <Name>CELL_POWER</Name>
+      <Value>-80</Value>
+    </Parameter>
+    <Parameter>
+            <!-- Voice NARROWBAND coder rate, possible values:
+
+                - FR_AMR_NB_1220
+                - FR_AMR_NB_1020
+                - FR_AMR_NB_795
+                - FR_AMR_NB_740
+                - FR_AMR_NB_670
+                - FR_AMR_NB_590
+                - FR_AMR_NB_515
+                - FR_AMR_NB_475
+
+                Voice WIDEBAND coder rate, possible values::
+
+                AMR_WB_2385 | AMR_WB_2305 | AMR_WB_1985 | AMR_WB_1825
+                AMR_WB_1585 | AMR_WB_1425 | AMR_WB_1265 | AMR_WB_885
+                AMR_WB_660
+            -->
+      <Name>VOICE_CODER_RATE</Name>
+      <Value>FR_AMR_NB_1220</Value>
+    </Parameter>
+    <Parameter>
+      <!-- Dialled Phone number (MSISDN). If value is [PHONE_NUMBER] the value used will be the phoneNumber defined in the Phone_Catalog.xml -->
+      <Name>PHONE_NUMBER</Name>
+      <Value>0493001498</Value>
+    </Parameter>
+    <Parameter>
+      <!-- Call Duration in seconds -->
+      <Name>CALL_DURATION</Name>
+      <Value>10</Value>
+    </Parameter>
+  </Parameters>
+</TestCase>

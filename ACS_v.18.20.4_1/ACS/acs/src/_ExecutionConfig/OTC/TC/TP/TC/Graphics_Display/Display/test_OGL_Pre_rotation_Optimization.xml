@@ -1,0 +1,34 @@
+<?xml version="1.0" ?>
+<TestCase>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Discription> 
+&lt;div align=&quot;left&quot; style=&quot;min-height:9pt&quot;&gt;
+&lt;font face=&quot;Arial&quot;&gt;&lt;span style=&quot;font-size:8pt&quot;&gt;&lt;u&gt;The Intel Android platform device shall support SurfaceFlinger hardware adaptation:&lt;/u&gt;&lt;/span&gt;&lt;/font&gt;
+&lt;/div&gt; 
+&lt;div align=&quot;left&quot; style=&quot;min-height:9pt&quot;&gt;
+&lt;font face=&quot;Arial&quot;&gt;&lt;span style=&quot;font-size:8pt&quot;&gt;&lt;u&gt;Pre-rotation. NATIVE_WINDOW_TRANSFORM_HINT is used to represent the most likely transform to be be applied to the buffer by SurfaceFlinger. The GL driver can use this hint to pre-transform the buffer before it reaches SurfaceFlinger, so when the buffer actually reaches SurfaceFlinger, it is correctly transformed. (Source: http://source.android.com/devices/graphics.html)&lt;/u&gt;&lt;/span&gt;&lt;/font&gt;
+&lt;/div&gt; 
+&lt;p style=&quot;margin-left:0mm;margin-right:0mm;text-indent:0mm;margin-top:2.38mm;margin-bottom:4.76mm;min-height:9pt&quot;&gt;&lt;font face=&quot;Arial&quot;&gt;&lt;span style=&quot;font-size:8pt&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/font&gt;&lt;/p&gt; 
+&lt;div align=&quot;left&quot; style=&quot;min-height:9pt&quot;&gt;&lt;/div&gt;  
+</Discription>
+    <Domain>Graphics_Display</Domain>
+    <Phase>CORE</Phase>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <Type>FUNCTIONAL</Type>
+    <UseCase>PY_UNIT</UseCase>
+    <b2bIteration>1</b2bIteration>
+    <Parameters>
+        <Parameter>
+            <Name>HpalmName</Name>
+            <Value>hdmi.HDMI.test_OGL_Pre_rotation_Optimization</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TEST_DATA_ROOT</Name>
+            <Value>testplan/Graphics_Display</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TEST_CASE</Name>
+            <Value>tests.Graphics_Display.Display.hdmi.HDMI.test_OGL_Pre_rotation_Optimization</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

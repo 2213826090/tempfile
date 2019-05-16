@@ -1,0 +1,32 @@
+<?xml version="1.0" ?>
+<Campaign version="13.49">
+    <Parameters>
+        <Parameter isControlledPSUsed="False"/>
+        <Parameter isIoCardUsed="False"/>
+        <Parameter skipBootOnPowerCycle="False"/>
+        <Parameter bootRetryNumber="0"/>
+        <Parameter runHookScripts="False"/>
+        <Parameter powerCycleBetweenTC="False"/>
+        <Parameter powerCycleOnFailure="False"/>
+        <Parameter finalDutState="NoChange"/>
+        <Parameter stopCampaignOnCriticalFailure="False"/>
+        <Parameter stopCampaignOnFirstFailure="False"/>
+        <Parameter loggingLevel="debug"/>
+        <Parameter CampaignType="Other"/>
+        <Parameter TCRReportViaRESTAPI="True"/>
+    </Parameters>
+    <TestCases>
+        <TestCase Id="../../../../../TC/TP/TC/ThermalManagement/Automotive_Thermal_Management/test_check_DPTF"/>
+        <TestCase Id="../../../../../TC/TP/TC/ThermalManagement/Automotive_Thermal_Management/test_monitor_current_cpu_temp_sysfs"/>
+        <TestCase Id="../../../../../TC/TP/TC/ThermalManagement/Automotive_Thermal_Management/test_monitor_cpu_temp_freq_antutu"/>
+        <TestCase Id="../../../../../TC/TP/TC/ThermalManagement/Automotive_Thermal_Management/test_monitor_gpu_temp_freq_glbenchmark"/>
+        <TestCase Id="../../../../../TC/TP/TC/ThermalManagement/Automotive_Thermal_Management/test_ivi_thermal_glbenchmark"/>
+        <TestCase Id="../../../../../TC/TP/TC/ThermalManagement/Automotive_Thermal_Management/test_ivi_thermal_antutu"/>
+        <TestCase Id="../../../../../TC/TP/TC/ThermalManagement/Automotive_Thermal_Management/test_ivi_thermal_play_video"/>
+        <TestCase Id="../../../../../TC/TP/TC/ThermalManagement/Automotive_Thermal_Management/test_ivi_thermal_video_recording"/>
+        <TestCase Id="../../../../../TC/TP/TC/ThermalManagement/Automotive_Thermal_Management/test_ivi_thermal_video_streaming"/>
+        <TestCase Id="../../../../../TC/TP/TC/ThermalManagement/Automotive_Thermal_Management/test_ivi_thermal_gps_audio_playback"/>
+        <TestCase Id="../../../../../TC/TP/TC/ThermalManagement/Automotive_Thermal_Management/test_ivi_thermal_adb_reboot"/>
+        <TestCase Id="../../../../../TC/TP/TC/ThermalManagement/Automotive_Thermal_Management/Test_power_limit_power-limit_check_Suspend_Resume"/>
+    </TestCases>
+</Campaign>

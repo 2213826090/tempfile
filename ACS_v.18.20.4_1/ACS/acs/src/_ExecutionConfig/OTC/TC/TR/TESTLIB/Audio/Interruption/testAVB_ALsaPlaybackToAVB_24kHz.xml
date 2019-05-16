@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='ASCII'?>
+<TestCase>
+    <UseCase>Testlib</UseCase>
+    <Description>Verify that alsa playback of 24kHz wav file is successful via avb</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <TcMaxAttempt>3</TcMaxAttempt>
+    <TestSteps>
+        <Initialize>
+            <TestStep Id="GET_ARTIFACT" EQT="ARTIFACT_MANAGER"
+                      ARTIFACT="AUDIO/eavb/24kHz.wav"
+                      ARTIFACT_SOURCE="FROM_BENCH:ARTIFACT_MANAGER:URI"
+                      TRANSFER_TIMEOUT="DEFAULT" STORED_FILE_PATH="FILE_PATH_IN_CACHE1"/>
+        </Initialize>
+        <Setup>
+            <TestStep Id="INSTALL_FILE" DEVICE="PHONE1"
+                      FILE_PATH="FROM_CTX:FILE_PATH_IN_CACHE1"
+                      TYPE="media"
+                      DESTINATION="/sdcard/Music/" TIMEOUT="DEFAULT"
+                      DESTINATION_STORED_PATH="FILE_PATH_IN_CACHE1"/>
+        </Setup>
+        <Finalize>
+        </Finalize>
+    </TestSteps>
+    <Parameters>
+        <Parameter>
+            <Name>test</Name>
+            <Value>scripts/audio/tests/eavb_stream_play_and_record_audio.py</Value>
+        </Parameter>
+        <Parameter>
+            <Name>script-args</Name>
+            <Value>input_audio_file=/sdcard/Music/24kHz.wav record_audio=false eavb_stream=eavb_media</Value>
+        </Parameter>
+    </Parameters>
+    <TestSteps>
+        <Finalize>
+            <TestStep Id="UNINSTALL_FILE" DEVICE="PHONE1"
+                      DEVICE_FOLDER="/sdcard/Music/" FILENAME="24kHz.wav"/>
+        </Finalize>
+    </TestSteps>
+</TestCase>

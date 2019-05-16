@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase>
+    <UseCase>LIVE_AUDIO_RECORD_MIC</UseCase>
+    <Description>Audio Record from mic</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>False</b2bContinuousMode>
+    <TcMaxAttempt>1</TcMaxAttempt>
+    <TcAcceptanceCriteria>1</TcAcceptanceCriteria>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters>
+        <Parameter>
+            <!-- Record CODEC: aaclc|amrnb|amrwb|pcm_16bit|aac_eld|he_aac,
+                pcm_16bit only support wav container, aac_eld|he_aac only support on jellybean -->
+            <Name>CODEC</Name>
+            <Value>aaclc</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Record CONTAINER: 3gp|3ga|aac_adts|wav|mp4|m4a,
+                mp4|m4a only support on jellybean -->
+            <Name>CONTAINER</Name>
+            <Value>3gp</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Record Duration in milliseconds -->
+            <Name>DURATION</Name>
+            <Value>10000</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Deviation rate for total playtime check in percent from 1 to 100 -->
+            <Name>DEVIATION_RATE</Name>
+            <Value>10</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Record sample rate in khz -->
+            <Name>SAMPLERATE</Name>
+            <Value>8</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Record bit rate in bps -->
+            <Name>BITRATE</Name>
+            <Value>48</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Record Channel Num: 1|2 -->
+            <Name>CHANNELNUM</Name>
+            <Value>1</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Whether play the record file to check record quality: True|False -->
+            <Name>PLAY</Name>
+            <Value>False</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Volume value in percent from 0 to 100 -->
+            <Name>VOLUME</Name>
+            <Value>80</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Whether to record in silent mode, True|False|none -->
+            <!-- if set as "none", will keep default setting, nothing will be done -->
+            <Name>SILENT_MODE</Name>
+            <Value>none</Value>
+        </Parameter>
+        <!-- ++++++++++++++++++++ optional parameters for host pc audio output ++++++++++++++++++++++++++++++++++++ -->
+        <Parameter>
+            <!-- Whether to use pc to play sound, True|False -->
+            <Name>HOST_PLAY</Name>
+            <Value>False</Value>
+        </Parameter>
+        <Parameter>
+            <!-- if HOST_PLAY set as True, should set the file name used to play -->
+            <!-- absolute path or relative path as compared to _Embedded/MEDIA/ -->
+            <Name>HOST_PLAY_FILE</Name>
+            <!-- <Value>C:\\CC\\Work\\media_root\\audio_test_sample_files\\acs_media\\8bits_per_sample.wav</Value> -->
+            <Value>8bits_per_sample.wav</Value>
+        </Parameter>
+        <Parameter>
+            <!-- if HOST_PLAY set as True, user can specify the output device HOST_PLAY_DEVICE, int -->
+            <!-- leave it blank or remove this parameter will use the default device -->
+            <Name>HOST_PLAY_DEVICE</Name>
+            <Value></Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

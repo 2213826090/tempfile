@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestSteps xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../acs/src/_Catalogs/TestStep/teststep.xsd">
+    <TestStep Id="SERIAL_SEND_COMMAND" Domain="EQUIPMENT" SubDomain="SERIAL_CMD" Feature="" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Equipment.SerialCommInterface.SerialSendCmd.SerialSendCmd</ClassName>
+        <Description>
+            Send a string through the ttyUSB/COM port device interface
+        </Description>
+        <Environment name="ANY">
+        </Environment>
+        <Parameters>
+            <Parameter name="EQT" type="STRING" isOptional="false">
+                <Description>The equipment name shall refer to an existing equipment the Bench config</Description>
+                <PossibleValues />
+                <DefaultValue/>
+            </Parameter>
+            <Parameter name="COMMAND" type="STRING" isOptional="false">
+                <Description> The command to be sent through serial as a string
+                </Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="SERIAL_READ_STRING" Domain="EQUIPMENT" SubDomain="SERIAL_CMD" Feature="" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Equipment.SerialCommInterface.SerialReadCmd.SerialReadCmd</ClassName>
+        <Description>
+            Read output from a serial interfaced device
+        </Description>
+        <Environment name="ANY">
+        </Environment>
+        <Parameters>
+            <Parameter name="EQT" type="STRING" isOptional="false">
+                <Description>The equipment name shall refer to an existing equipment the Bench config</Description>
+                <PossibleValues />
+                <DefaultValue/>
+            </Parameter>
+            <Parameter name="MAX_LINES" type="STRING" isOptional="false">
+                <Description> The maximum number of lines to be read from the serial line
+                </Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+            <Parameter name="SAVE_AS" type="CONTEXT" isOptional="true">
+                <Description>This parameter can return the output as a context parameter</Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+            <Parameter name="READLINE_TIMEOUT" type="FLOAT" isOptional="true">
+                <Description>This parameter sets the read line timeout, if not specified default is 10 seconds</Description>
+                <PossibleValues />
+                <DefaultValue>10</DefaultValue>
+            </Parameter>
+            <Parameter name="TIMEOUT_LINES_STOP" type="INTEGER" isOptional="true">
+                <Description>Stops read after the specified amount of read lines timeout</Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+        </Parameters>
+    </TestStep>
+</TestSteps>

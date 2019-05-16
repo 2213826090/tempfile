@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCase version="13.49">
+    <UseCase>LAB_EM_FUEL_GAUGING</UseCase>
+    <Description>test that charge and discharge the board</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>False</b2bContinuousMode>
+    <TcMaxAttempt>1</TcMaxAttempt>
+    <TcAcceptanceCriteria>1</TcAcceptanceCriteria>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters>
+        <Parameter>
+            <!-- minimal capacity limit that can reach from 0% to 100%, or 'dead' to let the board turn off by itself,
+                will also be used as test setup if CYCLE_BEHAVIOR is equal to CHARGE_DISCHARGE or CHARGE_ONLY -->
+            <Name>BATT_MIN_CAPACITY</Name>
+            <Value>0</Value>
+        </Parameter>
+        <Parameter>
+            <!-- maximal capacity limit that can be reach from 0% to 100% or 'full' for the full state,
+                will also be used as test setup if CYCLE_BEHAVIOR is equal to DISCHARGE_CHARGE or DISCHARGE_ONLY -->
+            <Name>BATT_MAX_CAPACITY</Name>
+            <Value>FULL</Value>
+        </Parameter>
+        <!-- Test cycle behavior, allow you to chose how to treat the fuel gauging step :
+            DISCHARGE_CHARGE, CHARGE_DISCHARGE, CHARGE_ONLY, DISCHARGE_ONLY -->
+        <Parameter>
+            <Name>CYCLE_BEHAVIOR</Name>
+            <Value>DISCHARGE_CHARGE</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Charging time before reading information from board in seconds -->
+            <Name>CHARGE_TIME</Name>
+            <Value>900</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Charger type to plug during the observation. Depending of what your io card can supoport, it can be one among : DCP, SDP, CDP and ACA -->
+            <Name>CHARGER_TYPE</Name>
+            <Value>DCP</Value>
+        </Parameter>
+        <Parameter>
+            <!-- LOAD to apply to the board when battery capacity is above BATT_MAX_CAPACITY, separated by ;. To be choosen between following loads (can be combinated) : WIFI;BLUETOOTH;TORCH;VIBRA;VIDEO -->
+            <Name>LOAD</Name>
+            <Value>FROM_BENCHCONFIG</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

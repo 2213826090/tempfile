@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<Campaign>
+  <Parameters>
+    <Parameter isControlledPSUsed ="False"/>
+    <Parameter isIoCardUsed ="False"/>
+    <!-- Set skipBootOnPowerCycle to True to disable the accs boot procedure-->
+    <!-- Important, it means that boot will be handle inside the campaign/tc -->
+    <Parameter skipBootOnPowerCycle ="False"/>
+    <Parameter runHookScripts = "False"/>        
+    <Parameter powerCycleBetweenTC ="False"/>
+    <Parameter powerCycleOnFailure ="False"/>
+    <Parameter finalPowerOff ="False"/>
+    <Parameter stopCampaignOnCriticalFailure = "False"/>
+    <Parameter stopCampaignOnFirstFailure = "False"/>
+    <!-- LoggingLevel possible values: info | warning | debug | error -->
+    <Parameter loggingLevel = "info"/>
+    <!-- CampaignType format -> <TEAM>_<CAMPAIGNTYPE> 
+        Possible values:        
+        FT(Feature Team)-> SANITY | REGRESSION | STRESS, RELIABILTY | MTBF
+        ST(System Test)-> SANITY | REGRESSION | STRESS, RELIABILTY | MTBF
+        SI(System Integration)-> EAT | STAB | PACT | CAT0 | RELIABILITY | MTBF | CTS
+        Otherwise "Others" should be used -->
+    <Parameter CampaignType = "ST_STRESS"/>
+  </Parameters> 
+  <Targets>
+    <!-- Target Values -->
+    <Target targetB2bPassRate ="80"/>
+  </Targets>
+  <TestCases>
+    <!-- Boot, Flash, Setup 
+    <TestCase Id="../TC/BootFlashSetup/LAB_SYSTEM_SETUP_EMBEDDED"/>-->
+    
+    <!-- ADB -->
+    <!-- Note: 
+        ADB Stress test need big volume files, but they can't be pushed to ACS, please prepare them and name as follow by yourself.
+        ST_SYST_USB_Gadget_ADB_004
+        ST_SYST_USB_Gadget_ADB_005
+        ST_SYST_USB_Gadget_ADB_013
+        ST_SYST_USB_Gadget_ADB_014
+        ST_SYST_USB_Gadget_ADB_022
+        ST_SYST_USB_Gadget_ADB_023    - 10M        
+        
+        ST_SYST_USB_Gadget_ADB_006
+        ST_SYST_USB_Gadget_ADB_007
+        ST_SYST_USB_Gadget_ADB_015
+        ST_SYST_USB_Gadget_ADB_016
+        ST_SYST_USB_Gadget_ADB_024
+        ST_SYST_USB_Gadget_ADB_025    - 100M
+
+        ST_SYST_USB_Gadget_ADB_008
+        ST_SYST_USB_Gadget_ADB_009
+        ST_SYST_USB_Gadget_ADB_017
+        ST_SYST_USB_Gadget_ADB_018
+        ST_SYST_USB_Gadget_ADB_026
+        ST_SYST_USB_Gadget_ADB_027    - 500M
+
+        ST_SYST_USB_Gadget_ADB_011
+        ST_SYST_USB_Gadget_ADB_020
+        ST_SYST_USB_Gadget_ADB_029    - 1G
+
+        ST_SYST_USB_Gadget_ADB_010
+        ST_SYST_USB_Gadget_ADB_019
+        ST_SYST_USB_Gadget_ADB_028    - 2G
+
+        ST_SYST_USB_Gadget_ADB_012
+        ST_SYST_USB_Gadget_ADB_021
+        ST_SYST_USB_Gadget_ADB_030    - 6G
+        
+        Before running ADB TCs, please:
+        1) set phone "airplane mode" to "on"
+        2) reboot phone
+        3) keep idle state >20s to enter idle state
+    -->
+    <TestCase Id="../TC/Stress/ST_SYST_USB_Gadget_ADB_004-EXEC"/>
+    <TestCase Id="../TC/Stress/ST_SYST_USB_Gadget_ADB_005-EXEC"/>
+    <TestCase Id="../TC/Stress/ST_SYST_USB_Gadget_ADB_006-EXEC"/>
+    <TestCase Id="../TC/Stress/ST_SYST_USB_Gadget_ADB_007-EXEC"/>
+    <TestCase Id="../TC/Stress/ST_SYST_USB_Gadget_ADB_008-EXEC"/>
+    <TestCase Id="../TC/Stress/ST_SYST_USB_Gadget_ADB_009-EXEC"/>
+    <TestCase Id="../TC/Stress/ST_SYST_USB_Gadget_ADB_010-EXEC"/>
+    <TestCase Id="../TC/Stress/ST_SYST_USB_Gadget_ADB_011-EXEC"/>
+    <TestCase Id="../TC/Stress/ST_SYST_USB_Gadget_ADB_012-EXEC"/>
+    <TestCase Id="../TC/Stress/ST_SYST_USB_Gadget_ADB_013-EXEC"/>
+    <TestCase Id="../TC/Stress/ST_SYST_USB_Gadget_ADB_014-EXEC"/>
+    <TestCase Id="../TC/Stress/ST_SYST_USB_Gadget_ADB_015-EXEC"/>
+    <TestCase Id="../TC/Stress/ST_SYST_USB_Gadget_ADB_016-EXEC"/>
+    <TestCase Id="../TC/Stress/ST_SYST_USB_Gadget_ADB_017-EXEC"/>
+    <TestCase Id="../TC/Stress/ST_SYST_USB_Gadget_ADB_018-EXEC"/>
+    <TestCase Id="../TC/Stress/ST_SYST_USB_Gadget_ADB_019-EXEC"/>
+    <TestCase Id="../TC/Stress/ST_SYST_USB_Gadget_ADB_020-EXEC"/>
+    <TestCase Id="../TC/Stress/ST_SYST_USB_Gadget_ADB_021-EXEC"/>
+    <TestCase Id="../TC/Stress/ST_SYST_USB_Gadget_ADB_022-EXEC"/>
+    <TestCase Id="../TC/Stress/ST_SYST_USB_Gadget_ADB_023-EXEC"/>
+    <TestCase Id="../TC/Stress/ST_SYST_USB_Gadget_ADB_024-EXEC"/>
+    <TestCase Id="../TC/Stress/ST_SYST_USB_Gadget_ADB_025-EXEC"/>
+    <TestCase Id="../TC/Stress/ST_SYST_USB_Gadget_ADB_026-EXEC"/>
+    <TestCase Id="../TC/Stress/ST_SYST_USB_Gadget_ADB_027-EXEC"/>
+    <TestCase Id="../TC/Stress/ST_SYST_USB_Gadget_ADB_028-EXEC"/>
+    <TestCase Id="../TC/Stress/ST_SYST_USB_Gadget_ADB_029-EXEC"/>
+    <TestCase Id="../TC/Stress/ST_SYST_USB_Gadget_ADB_030-EXEC"/>
+    
+    <!-- MD5 -->
+    <TestCase Id="../TC/Stress/ST_SYST_FS_eMMC_155-EXEC"/>
+    <TestCase Id="../TC/Stress/ST_SYST_FS_eMMC_156-EXEC"/>
+    <TestCase Id="../TC/Stress/ST_SYST_FS_eMMC_157-EXEC"/>
+    <TestCase Id="../TC/Stress/ST_SYST_FS_eMMC_158-EXEC"/>
+    <TestCase Id="../TC/Stress/ST_SYST_FS_eMMC_159-EXEC"/>
+    
+    <!-- Multiple operations -->
+    <TestCase Id="../TC/Stress/ST_SYST_FS_eMMC_104-EXEC"/>
+    <TestCase Id="../TC/Stress/ST_SYST_FS_eMMC_113-EXEC"/>
+    <TestCase Id="../TC/Stress/ST_SYST_FS_eMMC_114-EXEC"/>
+    <TestCase Id="../TC/Stress/ST_SYST_FS_SDCARD_284-EXEC"/>
+    <TestCase Id="../TC/Stress/ST_SYST_FS_SDCARD_098-EXEC"/>
+    <TestCase Id="../TC/Stress/ST_SYST_FS_SDCARD_100-EXEC"/>
+    <TestCase Id="../TC/Stress/ST_SYST_FS_SDCARD_101-EXEC"/>
+    <TestCase Id="../TC/Stress/ST_SYST_FS_SDCARD_102-EXEC"/>
+    
+    <!-- Monkey -->
+    <TestCase Id="../TC/Stress/ST_SYST_INPUT_TOUCH_111-EXEC"/>
+    <TestCase Id="../TC/Stress/ST_SYST_INPUT_TOUCH_112-EXEC"/>
+    <TestCase Id="../TC/Stress/ST_SYST_INPUT_TOUCH_113-EXEC"/>
+    <TestCase Id="../TC/Stress/ST_SYST_INPUT_TOUCH_114-EXEC"/>
+    <TestCase Id="../TC/Stress/ST_SYST_INPUT_TOUCH_115-EXEC"/>
+    <TestCase Id="../TC/Stress/ST_SYST_INPUT_TOUCH_116-EXEC"/>
+    <TestCase Id="../TC/Stress/ST_SYST_MONKEY_001-EXEC"/>
+    <TestCase Id="../TC/Stress/ST_SYST_MONKEY_002-EXEC"/>
+    <TestCase Id="../TC/Stress/ST_SYST_MONKEY_003-EXEC"/>
+    <TestCase Id="../TC/Stress/ST_SYST_MONKEY_004-EXEC"/>
+    <TestCase Id="../TC/Stress/ST_SYST_MONKEY_006-EXEC"/>
+    <TestCase Id="../TC/Stress/ST_SYST_MONKEY_007-EXEC"/>
+    <TestCase Id="../TC/Stress/ST_SYST_MONKEY_009-EXEC"/>
+    <TestCase Id="../TC/Stress/ST_SYST_MONKEY_011-EXEC"/>
+    <TestCase Id="../TC/Stress/ST_SYST_MONKEY_012-EXEC"/>
+    <TestCase Id="../TC/Stress/ST_SYST_MONKEY_014-EXEC"/>
+    <TestCase Id="../TC/Stress/ST_SYST_MONKEY_015-EXEC"/>
+    <TestCase Id="../TC/Stress/ST_SYST_MONKEY_016-EXEC"/>
+    <TestCase Id="../TC/Stress/ST_SYST_MONKEY_018-EXEC"/> 
+    <TestCase Id="../TC/Stress/ST_SYST_MONKEY_019-EXEC"/>
+    <TestCase Id="../TC/Stress/ST_SYST_MONKEY_023-EXEC"/>
+    <TestCase Id="../TC/Stress/ST_SYST_MONKEY_025-EXEC"/>
+    <TestCase Id="../TC/Stress/ST_SYST_MONKEY_026-EXEC"/>
+    <TestCase Id="../TC/Stress/ST_SYST_MONKEY_027-EXEC"/>
+    <TestCase Id="../TC/Stress/ST_SYST_MONKEY_029-EXEC"/>
+    <TestCase Id="../TC/Stress/ST_SYST_MONKEY_030-EXEC"/>
+    <TestCase Id="../TC/Stress/ST_SYST_MONKEY_032-EXEC"/>
+    <TestCase Id="../TC/Stress/ST_SYST_MONKEY_034-EXEC"/>
+    <TestCase Id="../TC/Stress/ST_SYST_MONKEY_035-EXEC"/>
+    
+    <!-- UI_DV10 -->
+     <TestCase Id="../TC/UI/UI_DV10/ST_SYST_FS_eMMC_062-LIVE_ANDROID_UI_TEST"/>
+     <TestCase Id="../TC/UI/UI_DV10/ST_SYST_FS_eMMC_063-LIVE_ANDROID_UI_TEST"/>
+     <TestCase Id="../TC/UI/UI_DV10/ST_SYST_FS_SDCARD_237-LIVE_ANDROID_UI_TEST"/>
+    <TestCase Id="../TC/UI/UI_DV10/ST_SYST_INPUT_TOUCH_003-LIVE_ANDROID_UI_TEST"/>
+    <TestCase Id="../TC/UI/UI_DV10/ST_SYST_INPUT_TOUCH_007-LIVE_ANDROID_UI_TEST"/>
+    <TestCase Id="../TC/UI/UI_DV10/ST_SYST_INPUT_TOUCH_008-LIVE_ANDROID_UI_TEST"/>
+    <TestCase Id="../TC/UI/UI_DV10/ST_SYST_INPUT_TOUCH_016-LIVE_ANDROID_UI_TEST"/>
+    <TestCase Id="../TC/UI/UI_DV10/ST_SYST_INPUT_TOUCH_020-LIVE_ANDROID_UI_TEST"/>
+    <TestCase Id="../TC/UI/UI_DV10/ST_SYST_INPUT_TOUCH_031-LIVE_ANDROID_UI_TEST"/>
+    <TestCase Id="../TC/UI/UI_DV10/ST_SYST_INPUT_TOUCH_036-LIVE_ANDROID_UI_TEST"/>
+    <TestCase Id="../TC/UI/UI_DV10/ST_SYST_INPUT_TOUCH_038-LIVE_ANDROID_UI_TEST"/>
+    <TestCase Id="../TC/UI/UI_DV10/ST_SYST_INPUT_TOUCH_039-LIVE_ANDROID_UI_TEST"/>
+    <TestCase Id="../TC/UI/UI_DV10/ST_SYST_INPUT_TOUCH_040-LIVE_ANDROID_UI_TEST"/>
+    <TestCase Id="../TC/UI/UI_DV10/ST_SYST_INPUT_TOUCH_041-LIVE_ANDROID_UI_TEST"/>
+      <TestCase Id="../TC/UI/UI_DV10/ST_SYST_INPUT_TOUCH_042-LIVE_ANDROID_UI_TEST"/>
+    <TestCase Id="../TC/UI/UI_DV10/ST_SYST_INPUT_TOUCH_050-LIVE_ANDROID_UI_TEST"/>
+    <TestCase Id="../TC/UI/UI_DV10/ST_SYST_INPUT_TOUCH_090-LIVE_ANDROID_UI_TEST"/>
+    <TestCase Id="../TC/UI/UI_DV10/ST_SYST_INPUT_TOUCH_092-LIVE_ANDROID_UI_TEST"/>
+    <TestCase Id="../TC/UI/UI_DV10/ST_SYST_INPUT_TOUCH_102-LIVE_ANDROID_UI_TEST"/>
+    <TestCase Id="../TC/UI/UI_DV10/ST_SYST_INPUT_TOUCH_107-LIVE_ANDROID_UI_TEST"/>
+    <TestCase Id="../TC/UI/UI_DV10/ST_SYST_INPUT_TOUCH_108-LIVE_ANDROID_UI_TEST"/>
+    <TestCase Id="../TC/UI/UI_DV10/ST_SYST_INPUT_TOUCH_109-LIVE_ANDROID_UI_TEST"/>
+    <TestCase Id="../TC/UI/UI_DV10/ST_SYST_INPUT_TOUCH_110-LIVE_ANDROID_UI_TEST"/>
+    <TestCase Id="../TC/UI/UI_DV10/ST_SYST_IO_POWER_KEY_001-LIVE_ANDROID_UI_TEST"/>
+    <TestCase Id="../TC/UI/UI_DV10/ST_SYST_IO_POWER_KEY_002-LIVE_ANDROID_UI_TEST"/>
+    <TestCase Id="../TC/UI/UI_DV10/ST_SYST_IO_SOFT_KEY_001-LIVE_ANDROID_UI_TEST"/>
+    <TestCase Id="../TC/UI/UI_DV10/ST_SYST_IO_SOFT_KEY_004-LIVE_ANDROID_UI_TEST"/>
+      <TestCase Id="../TC/UI/UI_DV10/ST_SYST_IO_SOFT_KEY_005-LIVE_ANDROID_UI_TEST"/>
+    <TestCase Id="../TC/UI/UI_DV10/ST_SYST_IO_SOFT_KEY_006-LIVE_ANDROID_UI_TEST"/>
+    <TestCase Id="../TC/UI/UI_DV10/ST_SYST_IO_TS_GESTURE_001-LIVE_ANDROID_UI_TEST"/>
+    <TestCase Id="../TC/UI/UI_DV10/ST_SYST_IO_VOL_KEY_001-LIVE_ANDROID_UI_TEST"/>
+    <TestCase Id="../TC/UI/UI_DV10/ST_SYST_IO_VOL_KEY_003-LIVE_ANDROID_UI_TEST"/>
+    <TestCase Id="../TC/UI/UI_DV10/ST_SYST_IO_VOL_KEY_004-LIVE_ANDROID_UI_TEST"/>
+    
+  </TestCases>
+</Campaign>

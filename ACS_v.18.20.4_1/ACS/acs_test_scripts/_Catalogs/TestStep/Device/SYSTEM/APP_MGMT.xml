@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestSteps xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../acs/src/_Catalogs/TestStep/teststep.xsd">
+    <TestStep Id="ALLOW_INSTALL_NON_MARKET_APPS" Domain="SYSTEM" SubDomain="APP_MGMT" Feature="" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.System.AppMgmt.AllowInstallNonMarketApps.AllowInstallNonMarketApps</ClassName>
+        <Description>Choose to allow installing non market applications</Description>
+        <Environment name="ANY"/>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues/>
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="ALLOW" type="BOOLEAN" isOptional="false">
+                <Description>allow or not installation</Description>
+                <PossibleValues>true;false</PossibleValues>
+                <DefaultValue>true</DefaultValue>
+            </Parameter>
+            <Parameter name="AGENT" type="BOOLEAN" isOptional="false">
+                <Description>call system operation (you need to reboot then) or use agent to do the action </Description>
+                <PossibleValues>true;false</PossibleValues>
+                <DefaultValue>false</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="SET_VERIFY_APPLICATIONS" Domain="SYSTEM" SubDomain="APP_MGMT" Feature="" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.System.AppMgmt.SetVerifyApplications.SetVerifyApplications</ClassName>
+        <Description>Choose if applications should be verified</Description>
+        <Environment name="ANY"/>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues/>
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="VERIFY" type="BOOLEAN" isOptional="false">
+                <Description>set verification or not on applications</Description>
+                <PossibleValues>true;false</PossibleValues>
+                <DefaultValue>true</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="INSTALL_APP" Domain="SYSTEM" SubDomain="APP_MGMT" Feature="" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.System.AppMgmt.InstallApp.InstallApp</ClassName>
+        <Description>Install a device application (Only Android implementation is available). If same
+            version is already installed, install will not be done</Description>
+        <Environment name="ANY"/>
+        <Parameters>
+            <Parameter name="FILE_PATH" type="STRING" isOptional="false">
+                    <Description>Path to the device application to install</Description>
+                    <PossibleValues/>
+                    <DefaultValue/>
+            </Parameter>
+            <Parameter name="BACKUP" type="BOOLEAN" isOptional="false">
+                   <Description>Before install app, backup existing application from device only if
+                       version is different</Description>
+                   <PossibleValues/>
+                   <DefaultValue>False</DefaultValue>
+            </Parameter>
+            <Parameter name="SIGN" type="BOOLEAN" isOptional="false">
+                   <Description>Before install app, sign it using SIGN_KEY_PATH
+                       teststep parameter. If key is distant use artifact manager equipment for download.
+                       If key is local, either use abs path or relative path to artifactmanager or local
+                       resource directly
+                   </Description>
+                   <PossibleValues/>
+                   <DefaultValue>False</DefaultValue>
+            </Parameter>
+            <Parameter name="SIGN_KEY_PATH" type="STRING" isOptional="false">
+                <Description> Relative path to artifact manager path or absolute local path to key file without
+                    extension:
+                    ArtifactManager: https://mcg-depot.intel.com/artifactory/acs_test_artifacts/, SIGN_KEY_PATH: CERTIFICATE/SIGNING/AOSP/platform
+                    ArtifactManager: C:\, SIGN_KEY_PATH: CERTIFICATE\SIGNING\AOSP\platform
+                    Without ArtifactManager: SIGN_KEY_PATH: C:\CERTIFICATE\SIGNING\AOSP\platform
+                    Without ArtifactManager: SIGN_KEY_PATH: .\CERTIFICATE\SIGNING\AOSP\platform
+                    Note 1: using relative path without ArtifactManager will lead teststep to infer path from
+                    execution path. Execution path is C:\dev\acs\src and SIGN_KEY_PATH: .\CERTIFICATE\SIGNING\AOSP\platform
+                    will build C:\dev\acs\src\CERTIFICATE\SIGNING\AOSP\platform)
+                    Note 2: in above examples, key is (platform.pk8, platform.x509.pem)
+                </Description>
+            <PossibleValues/>
+            <DefaultValue/>
+            </Parameter>
+            <Parameter name="TIMEOUT" type="INTEGER" isOptional="false">
+                  <Description>Operation timeout in seconds</Description>
+                  <PossibleValues/>
+                  <DefaultValue>60</DefaultValue>
+            </Parameter>
+            <Parameter name="BACKUP_FILE_PATH" type="CONTEXT" isOptional="false">
+                <Description>
+                     <Key name="APP_BACKUP_PATH" type="STRING">Path to backed-up app when BACKUP is requested during install</Key>
+                </Description>
+            <PossibleValues/>
+            <DefaultValue/>
+            </Parameter>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues/>
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="ALLOW_DOWNGRADE" type="BOOLEAN" isOptional="true">
+                   <Description>If the application is already installed on DUT, allow install of anterior version of this one</Description>
+                   <PossibleValues/>
+                   <DefaultValue/>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="UNINSTALL_APP" Domain="SYSTEM" SubDomain="APP_MGMT" Feature="" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.System.AppMgmt.UninstallApp.UninstallApp</ClassName>
+        <Description>Uninstall a device application</Description>
+        <Environment name="ANY"/>
+        <Parameters>
+            <Parameter name="APP_NAME" type="STRING" isOptional="false">
+                  <Description>Reference to the application to remove (on android: the application package name)</Description>
+                  <PossibleValues/>
+                  <DefaultValue/>
+            </Parameter>
+            <Parameter name="TIMEOUT" type="INTEGER" isOptional="false">
+                  <Description>Operation timeout in seconds</Description>
+                  <PossibleValues/>
+                  <DefaultValue>60</DefaultValue>
+            </Parameter>
+            <Parameter name="FORCED" type="BOOLEAN" isOptional="true">
+                  <Description>If true, app uninstall will be forced, even if it is a protected or system app (this may take longer to complete).</Description>
+                  <PossibleValues/>
+                  <DefaultValue>False</DefaultValue>
+            </Parameter>
+            <Parameter name="BACKUP_APP_NAME" type="STRING" isOptional="false">
+                  <Description>Before uninstalling app, backup existing application from device as backup name. If no backup required, NO_BACKUP must be used</Description>
+                  <PossibleValues/>
+                  <DefaultValue>NO_BACKUP</DefaultValue>
+            </Parameter>
+            <Parameter name="BACKUP_FILE_PATH" type="CONTEXT" isOptional="false">
+                  <Description>
+                         <Key name="APP_BACKUP_PATH" type="STRING">Path to backed-up app when BACKUP is requested during uninstall</Key>
+                  </Description>
+                  <PossibleValues/>
+                  <DefaultValue/>
+            </Parameter>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                 <Description>Device name on which the action will be executed</Description>
+                 <PossibleValues/>
+                 <DefaultValue>PHONE1</DefaultValue>
+             </Parameter>
+        </Parameters>
+     </TestStep>
+    <TestStep Id="GET_APP_PACKAGE_NAME" Domain="SYSTEM" SubDomain="APP_MGMT" Feature="" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.System.AppMgmt.GetAppPackageName.GetAppPackageName</ClassName>
+        <Description>Get package name from an application installer</Description>
+        <Environment name="ANY"/>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                 <Description>Device name on which the action will be executed</Description>
+                 <PossibleValues/>
+                 <DefaultValue>PHONE1</DefaultValue>
+             </Parameter>
+            <Parameter name="APP_INSTALLER_PATH" type="STRING" isOptional="false">
+                  <Description>Path to the app installer</Description>
+                  <PossibleValues/>
+                  <DefaultValue/>
+            </Parameter>
+            <Parameter name="OUTPUT" type="CONTEXT" isOptional="false">
+                  <Description>
+                         <Key name="APP_PACKAGE_NAME" type="STRING">Package name of the application</Key>
+                  </Description>
+                  <PossibleValues/>
+                  <DefaultValue/>
+            </Parameter>
+        </Parameters>
+     </TestStep>
+    <TestStep Id="STOP_APP" Domain="SYSTEM" SubDomain="APP_MGMT" Feature="" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.System.AppMgmt.StopApp.StopApp</ClassName>
+        <Description>Stop an application running on the device</Description>
+        <Environment name="ANY"/>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                 <Description>Device name on which the action will be executed</Description>
+                 <PossibleValues/>
+                 <DefaultValue>PHONE1</DefaultValue>
+             </Parameter>
+            <Parameter name="APP_PACKAGE_NAME" type="STRING" isOptional="false">
+                  <Description>App package name</Description>
+                  <PossibleValues/>
+                  <DefaultValue/>
+            </Parameter>
+        </Parameters>
+     </TestStep>
+    <TestStep Id="CLEAN_APP_CACHE" Domain="SYSTEM" SubDomain="APP_MGMT" Feature="" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.System.AppMgmt.CleanAppCache.CleanAppCache</ClassName>
+        <Description>Clean a device application's cache</Description>
+        <Environment name="ANY"/>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues/>
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="APP_NAME" type="STRING" isOptional="false">
+                <Description>Reference to the application to clean cache (on android: the application package name)</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+        </Parameters>
+     </TestStep>
+    <TestStep Id="CHANGE_APP_PREFERENCES" Domain="SYSTEM" SubDomain="APP_MGMT" Feature="" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.System.AppMgmt.ChangeAppPreferences.ChangeAppPreferences</ClassName>
+        <Description>Modify application preferences (shared prefs on Android)</Description>
+        <Environment name="ANY"/>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues/>
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="PACKAGE" type="STRING" isOptional="false">
+                <Description>application package name</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+            <Parameter name="FILENAME" type="STRING" isOptional="false">
+                <Description>preference filename</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+            <Parameter name="VALUE" type="STRING" isOptional="false">
+                <Description>content to add in preference file</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="APP_ENABLE_DISABLE" Domain="SYSTEM" SubDomain="APP_MGMT" Feature="" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.System.AppMgmt.AppEnableDisable.AppEnableDisable</ClassName>
+        <Description>Enable or disable an application running on the device</Description>
+        <Environment name="ANY"/>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                 <Description>Device name on which the action will be executed</Description>
+                 <PossibleValues/>
+                 <DefaultValue>PHONE1</DefaultValue>
+             </Parameter>
+            <Parameter name="APP_PACKAGE_NAME" type="STRING" isOptional="false">
+                  <Description>App package name</Description>
+                  <PossibleValues/>
+                  <DefaultValue/>
+            </Parameter>
+            <Parameter name="ACTION" type="STRING" isOptional="false">
+                  <Description>Action you want to do (ENABLE or DISABLE the package)</Description>
+                  <PossibleValues>ENABLE;DISABLE</PossibleValues>
+                  <DefaultValue/>
+            </Parameter>
+        </Parameters>
+     </TestStep>
+</TestSteps>

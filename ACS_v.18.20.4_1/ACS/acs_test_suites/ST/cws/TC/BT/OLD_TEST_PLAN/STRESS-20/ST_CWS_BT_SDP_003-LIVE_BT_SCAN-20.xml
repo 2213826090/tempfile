@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="13.37">
+  <UseCase>LIVE_BT_SCAN</UseCase>
+  <Description>BlueTooth Scan of list of devices in range</Description>
+  <b2bIteration>20</b2bIteration>
+  <b2bContinuousMode>False</b2bContinuousMode>
+  <TcExpectedResult>PASS</TcExpectedResult>
+  <Parameters>
+    <Parameter>
+      <!-- List of BlueTooth device (address or name) to search within range. semi-colon (;) as separator
+          Let field empty to use MacAddress parameter of BT_DEVICE equipment in bench_config file -->
+      <Name>DEVICE_TO_SEARCH</Name>
+      <Value></Value>
+      <!-- 7C:8E:E4:04:E7:A0 Phone ICS or 00:1F:82:1F:A1:87 headset-->
+      <!--<Value>SHWDE9444</Value>-->
+    </Parameter>
+    <Parameter>
+        <!-- [Optional] Is set to True, the flight mode will be enables before setting bt on
+            and disabled at tear down. -->
+        <Name>FLIGHT_MODE</Name>
+        <Value>False</Value>
+    </Parameter>
+  </Parameters>
+</TestCase>

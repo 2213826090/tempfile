@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="13.37">
+    <UseCase>LAB_HSPA_PDP_CONTEXT_CHECK</UseCase>
+    <Description>HSPA PDP activation and PDP deactivation</Description>
+    <Requirements>
+        <Contour>
+            <Global_ID>1678745</Global_ID>
+            <Test_Case_ID>ST_DATA_WCDMA_R7_PDP_003</Test_Case_ID>
+            <Name>HSPA+ - Successive PDP context activation and deactivation</Name>
+        </Contour>
+    </Requirements>
+    <b2bIteration>100</b2bIteration>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters>
+        <Parameter>
+            <!-- Cell Band (from Band 1 to Band 8) -->
+            <Name>CELL_BAND</Name>
+            <Value>1</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Downlink UARFCN Frequency -->
+            <Name>DL_UARFCN</Name>
+            <Value>10700</Value>
+        </Parameter>
+        <Parameter>
+            <!--Cell Service (CIRCUIT | PACKET | CIRCUIT_PACKET | RBTEST) -->
+            <Name>CELL_SERVICE</Name>
+            <Value>CIRCUIT_PACKET</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Cell power in dBm -->
+            <Name>CELL_POWER</Name>
+            <Value>-60</Value>
+        </Parameter>
+        <Parameter>
+            <!-- IP version IPV4 | IPV6 | IPV4V6 -->
+            <Name>IP_VERSION</Name>
+            <Value>IPV4</Value>
+        </Parameter>
+        <Parameter>
+            <!-- PDP ACTIVATION: TRUE | FALSE -->
+            <Name>PDP_ACTIVATION</Name>
+            <Value>FALSE</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Uplink Radio Access Bearer (384k | HSUPA_CAT6 | MAX [If MAX is selected, value will be taken from DeviceCatalog.xml]) -->
+            <Name>UL_RAB</Name>
+            <Value>HSUPA_CAT6</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Downlink Radio Access Bearer (HSDPA_CAT10 | HSDPA_CAT14 | HSDPA_CAT24 | MAX [If MAX is selected, value will be taken from DeviceCatalog.xml]) -->
+            <Name>DL_RAB</Name>
+            <Value>HSDPA_CAT24</Value>
+        </Parameter>
+        <Parameter>
+            <!-- CQI scheme : Fixed value or UE reported - FIXED|REPORTED -->
+            <Name>CQI_SCHEME</Name>
+            <Value>FIXED</Value>
+        </Parameter>
+        <Parameter>
+            <!-- PS Data HS-DSCH MAC-d PDU Size - BITS336|BITS656 -->
+            <Name>MAC_D_PDU_SIZE</Name>
+            <Value>BITS336</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Specifies if the test will use ping to check status of connection. (TRUE | FALSE) -->
+            <Name>WITH_PING</Name>
+            <Value>FALSE</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

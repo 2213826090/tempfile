@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestSteps xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../acs/src/_Catalogs/TestStep/teststep.xsd">
+    <TestStep Id="GNSS_SET_POWER" Domain="WIRELESS" SubDomain="GNSS" Feature="AUTONOMOUS_GNSS" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Wireless.GNSS.GNSSSetPower.GNSSSetPower</ClassName>
+        <Description>
+            Sets The location service power state to ON or OFF depending on the given string param "POWER"
+        </Description>
+        <Environment name="ANY" />
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="true">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="POWER" type="STRING" isOptional="false">
+                <Description>Defines whether to Enable or Disable GPS</Description>
+                <PossibleValues>on;off</PossibleValues>
+                <DefaultValue />
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="GNSS_GET_POWER" Domain="WIRELESS" SubDomain="GNSS" Feature="AUTONOMOUS_GNSS" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Wireless.GNSS.GNSSGetPower.GNSSGetPower</ClassName>
+        <Description>Gets the power state of the location service.</Description>
+        <Environment name="ANY" />
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="true">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="SAVE_AS" type="CONTEXT" isOptional="false">
+                <Description>
+                    <Key name="KEY_NAME_DEFINED_BY_USER" type="STRING">Name of the context variable where the value will be saved.</Key>
+                </Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+        </Parameters>
+    </TestStep>
+</TestSteps>

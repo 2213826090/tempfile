@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<TestCase>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Discription>
+Verify that route can change between IHF, wsHS and BT during playing he aac 5.1 channel music
+</Discription>
+    <Domain>Multimedia_Audio</Domain>
+    <Phase>CORE</Phase>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <Type>FUNCTIONAL</Type>
+    <UseCase>PY_UNIT</UseCase>
+    <b2bIteration>1</b2bIteration>
+    <Parameters>
+        <Parameter>
+            <Name>HpalmName</Name>
+            <Value>headset.HeadsetTest.testAudioDecode_RouteChange_IHF_wsHS_BT_HEAAC_5_1Channel</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TEST_DATA_ROOT</Name>
+            <Value>testplan/Multimedia_Audio</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TEST_CASE</Name>
+            <Value>tests.Multimedia_Audio.Headset.headset.HeadsetTest.testAudioDecode_RouteChange_IHF_wsHS_BT_HEAAC_5_1Channel</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

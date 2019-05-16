@@ -1,0 +1,329 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<?xml-stylesheet type="text/xsl" href="equipments_api.xsl"?>
+<Equipment_Catalog>
+    <EquipmentType name="NFCTool">
+        <Parameter name="DefaultFolderPath" value="..\..\acs_test_scripts\Lib\NFCTools" />
+        <Equipment name="MP_MANAGER">
+            <Parameter name="FolderPath" value="C:\MPManager" />
+            <Parameter name="Binary" value="MPManager.exe" />
+        </Equipment>
+        <Equipment name="GPSHELL">
+            <Parameter name="Binary" value="GPShell\GPShell.exe" />
+        </Equipment>
+        <Equipment name="NFC_EMULATOR">
+            <Parameter name="Binary" value="NfcEmulator\NfcEmulation.exe" />
+        </Equipment>
+    </EquipmentType>
+    <EquipmentType name="NFCRobot">
+        <Parameter name="DefaultFolderPath" value="..\..\acs_test_scripts\Lib\NFCRobot" />
+        <Equipment name="MICROBOT">
+            <Parameter name="Binary" value="Microbot.exe" />
+            <Transports>
+                <Parameter name="SERIAL" value="enable" />
+            </Transports>
+        </Equipment>
+    </EquipmentType>
+    <EquipmentType name="CellularNetworkSimulator">
+        <Parameter name="DefaultFolderPath" value="..\..\acs_test_scripts\Lib\DLLs" />
+        <Equipment name="AGILENT_8960">
+            <Parameter name="Binary" value="EqIOAgilent8960.dll" />
+            <Transports>
+                <Parameter name="GPIB" value="enable" />
+            </Transports>
+            <Features>
+                <Parameter name="2G" value="enable" />
+                <Parameter name="3G" value="enable" />
+            </Features>
+        </Equipment>
+        <Equipment name="RS_CMU200">
+            <Parameter name="Binary" value="EqIORsCmu200.dll" />
+            <Transports>
+                <Parameter name="GPIB" value="enable" />
+            </Transports>
+            <Features>
+                <Parameter name="2G" value="enable" />
+                <Parameter name="3G" value="enable" />
+            </Features>
+        </Equipment>
+        <Equipment name="AGILENT_E6621A">
+            <Transports>
+                <Parameter name="GPIB" value="enable" />
+                <Parameter name="TCPIP" value="enable" />
+            </Transports>
+            <Features>
+                <Parameter name="LTE" value="enable" />
+            </Features>
+        </Equipment>
+        <Equipment name="RS_CMW500">
+            <Transports>
+                <Parameter name="GPIB" value="enable" />
+                <Parameter name="TCPIP" value="enable" />
+            </Transports>
+            <Features>
+                <Parameter name="2G" value="enable" />
+                <Parameter name="3G" value="enable" />
+                <Parameter name="TDSCDMA" value="enable" />
+                <Parameter name="LTE" value="enable" />
+            </Features>
+        </Equipment>
+        <Equipment name="ANRITSU_M8475A">
+            <Transports>
+                <Parameter name="GPIB" value="enable" />
+                <Parameter name="TCPIP" value="enable" />
+            </Transports>
+            <Features>
+                <Parameter name="2G" value="enable" />
+                <Parameter name="3G" value="enable" />
+                <Parameter name="LTE" value="enable" />
+            </Features>
+        </Equipment>
+    </EquipmentType>
+    <EquipmentType name="WLanNetworkSimulator">
+        <Parameter name="DefaultFolderPath" value="..\..\acs_test_scripts\Lib\DLLs" />
+        <Equipment name="ANRITSU_8860">
+            <Parameter name="Binary" value="EqIOAnritsu8860x.dll" />
+            <Transports>
+                <Parameter name="GPIB" value="enable" />
+                <Parameter name="TCPIP" value="enable" />
+            </Transports>
+        </Equipment>
+    </EquipmentType>
+    <EquipmentType name="GPSNetworkSimulator">
+        <Parameter name="DefaultFolderPath" value="..\..\acs_test_scripts\Lib\DLLs" />
+        <Equipment name="SPIRENT_GSS6700">
+            <Transports>
+                <Parameter name="SERIAL" value="enable" />
+                <Parameter name="TCPIP" value="disable" />
+            </Transports>
+        </Equipment>
+    </EquipmentType>
+    <EquipmentType name="BTNetworkSimulator">
+        <Parameter name="DefaultFolderPath" value="..\..\acs_test_scripts\Lib\DLLs" />
+        <Equipment name="AGILENT_N4010A">
+            <Parameter name="Binary" value="EqIOAgilentN4010A.dll" />
+            <Transports>
+                <Parameter name="GPIB" value="enable" />
+                <Parameter name="TCPIP" value="enable" />
+            </Transports>
+        </Equipment>
+    </EquipmentType>
+    <EquipmentType name="PowerSupply">
+        <Parameter name="DefaultFolderPath" value="..\..\acs_test_scripts\Lib\DLLs" />
+        <Equipment name="AGILENT_66311D">
+            <Parameter name="Binary" value="EqIOAgilent663xxD.dll" />
+            <Transports>
+                <Parameter name="GPIB" value="enable" />
+            </Transports>
+        </Equipment>
+        <Equipment name="AGILENT_66319D">
+            <Parameter name="Binary" value="EqIOAgilent663xxD.dll" />
+            <Transports>
+                <Parameter name="GPIB" value="enable" />
+            </Transports>
+        </Equipment>
+        <Equipment name="AGILENT_66321D">
+            <Parameter name="Binary" value="EqIOAgilent663xxD.dll" />
+            <Transports>
+                <Parameter name="GPIB" value="enable" />
+            </Transports>
+        </Equipment>
+        <Equipment name="AGILENT_E364xA">
+            <Parameter name="Binary" value="EqIOAgilentE364xA.dll" />
+            <Transports>
+                <Parameter name="GPIB" value="enable" />
+            </Transports>
+        </Equipment>
+        <Equipment name="Keithley2200_20_5"/>
+        <Equipment name="NPC108" />
+        <Equipment name="DLI_WPS5">
+            <Transports>
+                <Parameter name="TCPIP" value="enable" />
+            </Transports>
+        </Equipment>
+    </EquipmentType>
+    <EquipmentType name="IOAdapters">
+        <Parameter name="DefaultFolderPath" value="/usr/local/lib" />
+        <Equipment name="DLN4S">
+            <Parameter name="FolderPath" value="../../acs_test_scripts/Lib/DLLs" />
+            <Parameter name="Binary" value="libdln.so" />
+        </Equipment>
+    </EquipmentType>
+    <EquipmentType name="IOCard">
+        <Parameter name="DefaultFolderPath" value="C:\WINDOWS\system32" />
+        <Equipment name="MDAC" />
+        <Equipment name="USB_RLY08" />
+        <Equipment name="USB_RLY08_REV1" />
+        <Equipment name="JSB291">
+            <Parameter name="FolderPath" value="..\..\acs_test_scripts\Lib\DLLs" />
+            <Parameter name="Binary" value="JWorksRelay.dll" />
+        </Equipment>
+        <Equipment name="JSB291_64">
+            <Parameter name="FolderPath" value="..\..\acs_test_scripts\Lib\DLLs" />
+            <Parameter name="Binary" value="JWRelayX64.dll" />
+        </Equipment>
+        <Equipment name="ACBP">
+            <Parameter name="Binary" value="AIOUSB.dll" />
+            <Transports>
+                <Parameter name="USB" value="enable" />
+            </Transports>
+        </Equipment>
+        <Equipment name="ACBN">
+            <Parameter name="Binary" value="AIOUSB.dll" />
+            <Transports>
+                <Parameter name="USB" value="enable" />
+            </Transports>
+        </Equipment>
+        <Equipment name="ACBE">
+            <Parameter name="Binary" value="AIOUSB.dll" />
+            <Transports>
+                <Parameter name="USB" value="enable" />
+            </Transports>
+        </Equipment>
+        <Equipment name="ACBT">
+            <Parameter name="Binary" value="AIOUSB.dll" />
+            <Transports>
+                <Parameter name="USB" value="enable" />
+            </Transports>
+        </Equipment>
+        <Equipment name="EMT311">
+            <Parameter name="Binary" value="AIOUSB.dll" />
+            <Transports>
+                <Parameter name="USB" value="enable" />
+            </Transports>
+        </Equipment>
+        <Equipment name="EMT340">
+            <Parameter name="Binary" value="AIOUSB.dll" />
+            <Transports>
+                <Parameter name="USB" value="enable" />
+            </Transports>
+        </Equipment>
+        <Equipment name="EMT350">
+        </Equipment>
+        <Equipment name="ACBMD">
+            <Parameter name="Binary" value="AIOUSB.dll" />
+            <Transports>
+                <Parameter name="USB" value="enable" />
+            </Transports>
+        </Equipment>
+        <Equipment name="USBRELAY32" />
+    </EquipmentType>
+    <EquipmentType name="BluetoothHeadset">
+        <Equipment name="NokiaBH214" />
+        <Equipment name="SonySBH20" />
+        <Equipment name="NokiaBH111" />
+    </EquipmentType>
+    <EquipmentType name="BluetoothMouse">
+        <Equipment name="MICROSOFT_SculptComfortMouse" />
+        <Equipment name="HPMouseZ8000"/>
+    </EquipmentType>
+    <EquipmentType name="WiredHeadset">
+        <Equipment name="AkgK370" />
+    </EquipmentType>
+    <EquipmentType name="EthernetCommutator">
+        <Equipment name="ETHERNET_COMMUTATOR" />
+    </EquipmentType>
+    <EquipmentType name="AudioAnalyzer">
+        <Parameter name="DefaultFolderPath" value="..\..\acs_test_scripts\Lib\DLLs" />
+        <Equipment name="RS_UPV">
+            <Parameter name="Binary" value="EqIORsUpv.dll" />
+            <Transports>
+                <Parameter name="GPIB" value="enable" />
+                <Parameter name="USB" value="enable" />
+            </Transports>
+        </Equipment>
+        <Equipment name="APx585">
+            <Parameter name="FolderPath" value="C:\APx585" />
+            <Parameter name="Binary" value="APx585.exe" />
+            <Transports>
+                <Parameter name="USB" value="enable" />
+            </Transports>
+        </Equipment>
+    </EquipmentType>
+    <EquipmentType name="ConfigurableAccessPoint">
+        <Equipment name="DLINK_DAP2553" />
+        <Equipment name="CISCO_1250" />
+        <Equipment name="CISCO_1260" />
+        <Equipment name="CISCO_WAP4410N" />
+        <Equipment name="CISCO_WRVS4400N" />
+        <Equipment name="CISCO_AP541N" />
+        <Equipment name="ASUS_AC66U" />
+        <Equipment name="AP_CONTROLLER" />
+    </EquipmentType>
+    <EquipmentType name="RFAttenuator">
+        <Equipment name="VaunixLDALinux">
+            <Parameter name="FolderPath" value="../../acs_binaries/acs_test_scripts/Lib/DLLs" />
+            <Parameter name="Binary" value="VNX_atten.so" />
+        </Equipment>
+        <Equipment name="VaunixLDAWindows">
+            <Parameter name="FolderPath" value="..\..\acs_binaries\acs_test_scripts\Lib\DLLs" />
+            <Parameter name="Binary" value="VNX_atten.dll" />
+        </Equipment>
+        <Equipment name="MC_RCDAT">
+            <Parameter name="IP" value="192.168.1.30" description="ip address of the equipment" />
+        </Equipment>
+    </EquipmentType>
+    <EquipmentType name="Sniffer">
+        <Equipment name="TCPDump" />
+        <Equipment name="WireShark" />
+    </EquipmentType>
+    <EquipmentType name="P2P">
+        <Parameter name="DefaultFolderPath" value="..\..\acs_test_scripts\Lib\P2Pwpa" />
+        <Equipment name="P2pClient">
+            <Parameter name="Binary" value="wpa_cli" />
+        </Equipment>
+        <Equipment name="P2pSupplicant">
+            <Parameter name="Binary" value="wpa_supplicant" />
+            <Parameter name="Configuration" value="wpa_p2p.conf" />
+        </Equipment>
+    </EquipmentType>
+    <EquipmentType name="TemperatureChamber">
+        <Equipment name="TMT80">
+            <Controllers>
+                <Parameter name="EUROTHERM2204E" value="supported" />
+            </Controllers>
+        </Equipment>
+    </EquipmentType>
+    <EquipmentType name="Controller">
+        <Equipment name="EUROTHERM2204E">
+            <Transports>
+                <Parameter name="SERIAL" value="enable" />
+            </Transports>
+        </Equipment>
+    </EquipmentType>
+    <EquipmentType name="ThermalCamera">
+        <Equipment name="FLIRA305sc">
+        </Equipment>
+    </EquipmentType>
+    <EquipmentType name="PowerAnalyzerTool">
+        <Equipment name="NIDAQ" />
+        <Equipment name="STUB" />
+    </EquipmentType>
+    <EquipmentType name="USBHub">
+        <Equipment name="U3H415E1Hub" />
+    </EquipmentType>
+    <EquipmentType name="KeyboardEmulator">
+        <Equipment name="USBKM232" />
+    </EquipmentType>
+    <EquipmentType name="Tool">
+        <Equipment name="ArtifactManager" />
+    </EquipmentType>
+    <EquipmentType name="LogicAnalyzer">
+        <Equipment name="SALEAE_LOGIC16">
+            <Parameter name="ServerSWLocation" value="../../acs_binaries/acs_test_scripts/Lib/LogicAnalyzer/SaleaeLogic16/Logic_1.1.18-64/Logic" />
+            <Parameter name="ClientSWLocation" value="../../acs_binaries/acs_test_scripts/Lib/LogicAnalyzer/SaleaeLogic16/Logic_Socket_Interface/LogicAutomationController/bin/Release/LogicAutomationController.exe" />
+        </Equipment>
+    </EquipmentType>
+    <EquipmentType name="RFMatrix">
+        <Equipment name="USB-4SPDT-A18" />
+    </EquipmentType>
+    <EquipmentType name="LOGGER">
+        <Equipment name="INSTANTLogger" />
+    </EquipmentType>
+    <EquipmentType name="SerialCommInterface">
+        <Equipment name="SerialCom" />
+        <Equipment name="Arduino" />
+    </EquipmentType>
+    <EquipmentType name="STM32Fxx">
+        <Equipment name="STM32F4xx" />
+    </EquipmentType>
+</Equipment_Catalog>

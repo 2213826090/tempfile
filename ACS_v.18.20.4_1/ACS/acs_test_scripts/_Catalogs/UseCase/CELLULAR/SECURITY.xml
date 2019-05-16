@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<UseCases xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:noNamespaceSchemaLocation="../../../../acs/src/_Catalogs/UseCase/usecase.xsd">
+    <UseCase Id="LIVE_SIM_CARD_PIN_LOCK_SYSTEM" Domain="CELLULAR" SubDomain="SECURITY" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Communication.Sim.LIVE_SIM_CARD_PIN_LOCK_SYSTEM.LiveSimCardPinLockSystem</ClassName>
+        <Description>Usecase asserting that we can enable, disable and change PIN on Device</Description>
+        <Environment name="TEL">
+            <Capabilities>EQT_LIVE_USIM</Capabilities>
+        </Environment>
+        <Parameters>
+            <Parameter name="NEW_PIN" type="SIM_PIN_CODE" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue>0000</DefaultValue>
+                <Blank/>
+            </Parameter>
+            <Parameter name="DOUBLE_CHECK_AFTER_REBOOT" type="DOUBLE_CHECK_AFTER_REBOOT" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue>false</DefaultValue>
+                <Blank/>
+            </Parameter>
+        </Parameters>
+    </UseCase>
+    <UseCase Id="LIVE_SIM_CARD_PUK_LOCK_SYSTEM" Domain="CELLULAR" SubDomain="SECURITY" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Communication.Sim.LIVE_SIM_CARD_PUK_LOCK_SYSTEM.LiveSimCardPukLockSystem</ClassName>
+        <Description>Usecase asserting that we can enable PIN and lock SIM (PUK request) on Device</Description>
+        <Environment name="TEL">
+            <Capabilities>EQT_LIVE_USIM</Capabilities>
+        </Environment>
+        <Parameters>
+            <!--NO PARAMETERS FOR THIS UC, stub for Tplanner -->
+            <Parameter name="dummy" type="dummy" isOptional="true">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+        </Parameters>
+    </UseCase>
+</UseCases>

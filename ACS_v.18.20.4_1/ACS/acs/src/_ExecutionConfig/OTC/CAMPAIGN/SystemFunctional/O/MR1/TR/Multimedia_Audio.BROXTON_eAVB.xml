@@ -1,0 +1,52 @@
+<?xml version="1.0" ?>
+<Campaign version="13.49">
+    <Parameters>
+        <Parameter isControlledPSUsed="False"/>
+        <Parameter isIoCardUsed="False"/>
+        <Parameter skipBootOnPowerCycle="False"/>
+        <Parameter bootRetryNumber="0"/>
+        <Parameter runHookScripts="False"/>
+        <Parameter powerCycleBetweenTC="False"/>
+        <Parameter powerCycleOnFailure="False"/>
+        <Parameter finalDutState="NoChange"/>
+        <Parameter stopCampaignOnCriticalFailure="False"/>
+        <Parameter stopCampaignOnFirstFailure="False"/>
+        <Parameter loggingLevel="debug"/>
+        <Parameter CampaignType="Other"/>
+        <Parameter TCRReportViaRESTAPI="True"/>
+    </Parameters>
+    <TestCases>
+	<TestCase Id="../../../../../TC/TR/TESTLIB/Audio/Interruption/testAVB_eAVBDeviceSetup"/>
+        <TestCase Id="../../../../../TC/TR/TESTLIB/Audio/Interruption/testAVB_alsa_audio_TX_to_speaker"/>
+        <TestCase Id="../../../../../TC/TR/TESTLIB/Audio/Interruption/testAutomotiveAudioCrossbar_alsa_audio_TX_to_speaker"/>
+        <TestCase Id="../../../../../TC/TR/TESTLIB/Audio/Interruption/testAutomotiveAudioCrossbar_AVB_AlsaPlaybackToAVB"/>
+        <TestCase Id="../../../../../TC/TR/TESTLIB/Audio/Interruption/testAutomotiveAdditionalSink_eAVBSpeakers_48kHz"/>
+	<TestCase Id="../../../../../TC/TR/TESTLIB/Audio/Interruption/testAVB_alsa_TX_to_speaker"/>
+	<TestCase Id="../../../../../TC/TR/TESTLIB/Audio/Interruption/testAVB_Alsa_TX_to_speaker_Long"/>
+	<TestCase Id="../../../../../TC/TR/TESTLIB/Audio/Interruption/testAVB_AlsaAudioMediaPlaybackToAVB"/>
+	<TestCase Id="../../../../../TC/TR/TESTLIB/Audio/Interruption/testAVB_AlsaPlaybackToAVB"/>
+	<TestCase Id="../../../../../TC/TR/TESTLIB/Audio/Interruption/testAVB_ALsaPlaybackToAVB_11.025kHz"/>
+	<TestCase Id="../../../../../TC/TR/TESTLIB/Audio/Interruption/testAVB_ALsaPlaybackToAVB_12kHz"/>
+	<TestCase Id="../../../../../TC/TR/TESTLIB/Audio/Interruption/testAVB_ALsaPlaybackToAVB_16kHz"/>
+	<TestCase Id="../../../../../TC/TR/TESTLIB/Audio/Interruption/testAVB_ALsaPlaybackToAVB_22.050kHz"/>
+	<TestCase Id="../../../../../TC/TR/TESTLIB/Audio/Interruption/testAVB_ALsaPlaybackToAVB_24kHz"/>
+	<TestCase Id="../../../../../TC/TR/TESTLIB/Audio/Interruption/testAVB_ALsaPlaybackToAVB_32kHz"/>
+	<TestCase Id="../../../../../TC/TR/TESTLIB/Audio/Interruption/testAVB_ALsaPlaybackToAVB_44.1kHz"/>
+	<TestCase Id="../../../../../TC/TR/TESTLIB/Audio/Interruption/testAVB_ALsaPlaybackToAVB_48kHz"/>
+	<TestCase Id="../../../../../TC/TR/TESTLIB/Audio/Interruption/testAVB_ALsaPlaybackToAVB_8kHz"/>
+	<TestCase Id="../../../../../TC/TR/TESTLIB/Audio/Interruption/testAVB_alsa_TX_to_speaker_eavbHmi"/>
+	<TestCase Id="../../../../../TC/TR/TESTLIB/Audio/Interruption/testAVB_alsa_TX_to_speaker_eavbNavigation"/>
+        <TestCase Id="../../../../../TC/TR/TESTLIB/Audio/Interruption/testAVB_AlsaPlaybackRecordWithAVB"/>
+        <TestCase Id="../../../../../TC/TR/TESTLIB/Audio/Interruption/testAVB_alsa_TX_record_to_file"/>
+        <TestCase Id="../../../../../TC/TR/TESTLIB/Audio/Interruption/testAVB_alsa_TX_record_to_file_eavbNavigation"/>
+        <TestCase Id="../../../../../TC/TR/TESTLIB/Audio/Interruption/testAVB_alsa_TX_record_to_file_rate24000"/>
+        <TestCase Id="../../../../../TC/TR/TESTLIB/Audio/Interruption/testAVB_alsa_TX_record_to_file_eavbHmi"/>
+        <TestCase Id="../../../../../TC/TR/TESTLIB/Audio/Interruption/testAVB_alsa_TX_record_to_file_Long"/>
+        <TestCase Id="../../../../../TC/TR/TESTLIB/Audio/Interruption/testAutomotiveAudioCrossbar_AVB_AlsaPlaybackRecordWithAVB"/>
+        <TestCase Id="../../../../../TC/TR/TESTLIB/Audio/Interruption/testAVB_alsa_TX_multichannel_record_to_file"/>
+        <TestCase Id="../../../../../TC/TR/TESTLIB/Audio/Interruption/testAVB_CheckTSCSupport"/>
+        <TestCase Id="../../../../../TC/TR/TESTLIB/Audio/Interruption/testAVB_alsa_gptp_service_stop_start"/>
+        <TestCase Id="../../../../../TC/TR/TESTLIB/Audio/Interruption/testAVB_alsa_avbstreamhandler_service_stop_start"/>
+	<TestCase Id="../../../../../TC/TR/TESTLIB/Audio/Interruption/testAVB_Check_SoundCard"/>
+    </TestCases>
+</Campaign>

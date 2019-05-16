@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!-- File with common test step set for QCTV telephony team -->
+<Include>
+    <!-- Block all communication on phone -->
+    <!-- Parameters : DEVICE (phone)-->
+    <TestStepSet Id="AllCommsOff">
+        <TestStep Id="SET_FLIGHT_MODE" FLIGHT_MODE="disable" />
+        <TestStep Id="WIFI_SET_POWER" POWER="off" />
+        <TestStep Id="DEACTIVATE_DEVICE_PDP" CHECK="True"/>
+        <TestStep Id="SET_FLIGHT_MODE" FLIGHT_MODE="enable" />
+    </TestStepSet>
+    <!-- Stop 8960 cell and put DUT in airplane mode -->
+    <!-- Parameters : EQT (equipment), DEVICE (phone) -->
+    <TestStepSet Id="CommonTearDown">
+        <TestStep Id="NS_SET_PARAM" NAME="SetCellOnOff" OPTION="DEFAULT" VALUE="OFF"/>
+        <TestStep SetId="AllCommsOff"/>
+    </TestStepSet>
+    <TestStepSet Id="LteCommonTearDown">
+        <TestStep Id="NS_SET_PARAM" NAME="LteSetCellOnOff" OPTION="DEFAULT" VALUE="OFF"/>
+        <TestStep SetId="AllCommsOff"/>
+    </TestStepSet>
+    <!-- Registration test step sets -->
+    <!-- DUT registration on DUT and Callbox -->
+    <!-- Parameters : EQT (equipment), DEVICE (phone), TIMEOUT (registration time-out) -->
+    <TestStepSet Id="CheckRegistration">
+        <TestStep Id="GET_IMSI" TIMEOUT="60" SAVE_AS="DUT_IMSI" />
+        <TestStep Id="CHECK_CDK_STATE" STATE="registered" />
+        <TestStep Id="NS_CHECK_DUT_REGISTRATION" FEATURE="FROM_TC:RAT" IMSI="FROM_CTX:DUT_IMSI"/>
+    </TestStepSet>
+    <!-- Registration test step sets -->
+    <!-- DUT registration on DUT and Callbox -->
+    <!-- Parameters : EQT (equipment), DEVICE (phone), TIMEOUT (registration time-out), FEATURE (RAT) -->
+    <TestStepSet Id="CheckRegistration2">
+        <TestStep Id="GET_IMSI" TIMEOUT="60" SAVE_AS="DUT_IMSI" />
+        <TestStep Id="CHECK_CDK_STATE" STATE="registered" />
+        <TestStep Id="NS_CHECK_DUT_REGISTRATION" IMSI="FROM_CTX:DUT_IMSI"/>
+    </TestStepSet>
+    <!-- Registration test step sets -->
+    <!-- DUT registration on DUT and Callbox -->
+    <!-- Parameters : EQT (equipment), DEVICE (phone), TIMEOUT (registration time-out) -->
+    <TestStepSet Id="Registration">
+        <TestStep Id="NS_SET_PARAM" NAME="SetCellOnOff" OPTION="DEFAULT" VALUE="CALL"/>
+        <TestStep Id="SET_FLIGHT_MODE" FLIGHT_MODE="disable" />
+        <TestStep SetId="CheckRegistration" />
+    </TestStepSet>
+
+    <!-- LTE Registration test step sets -->
+    <!-- DUT registration on DUT and Callbox -->
+    <!-- Parameters : EQT (equipment), DEVICE (phone), TIMEOUT (registration time-out) -->
+    <TestStepSet Id="LTERegistration">
+        <TestStep Id="SET_FLIGHT_MODE" FLIGHT_MODE="disable" />
+        <TestStep Id="CHECK_CDK_STATE" STATE="registered" />
+        <TestStep Id="SET_DEVICE_APN" INTERFACE="FROM_BENCH:CELLULAR_NETWORK:SSID"
+                 APN="FROM_BENCH:CELLULAR_NETWORK:APN" USER="DEFAULT" PASSWORD="DEFAULT" PROTOCOL="DEFAULT"
+                 MMSC="DEFAULT" APN_TYPE="default" SET_DEFAULT="True" CLEAR_APN="True" />
+        <TestStep Id="ACTIVATE_DEVICE_PDP" />
+        <TestStep Id="NS_WAIT_STATE" NAME="LteRegistrationState" STATE="ATT" OPTION="DEFAULT" />
+    </TestStepSet>
+    <!-- Configure and enable DUT data connection then wait PDP activation on Callbox -->
+    <!-- Parameters : EQT (equipment), DEVICE (phone), TIMEOUT (registration time-out) -->
+    <TestStepSet Id="DataConnection">
+        <TestStep SetId="SetDataConnection" />
+        <TestStep Id="NS_WAIT_STATE" NAME="ConnectionStatus" STATE="PDP" OPTION="DEFAULT" />
+    </TestStepSet>
+     <!-- Configure and enable DUT data connection -->
+    <!-- Parameters : DEVICE (phone) -->
+    <TestStepSet Id="SetDataConnection">
+        <TestStep Id="SET_DEVICE_APN" INTERFACE="FROM_BENCH:CELLULAR_NETWORK:SSID"
+                     APN="FROM_BENCH:CELLULAR_NETWORK:APN" USER="DEFAULT" PASSWORD="DEFAULT" PROTOCOL="DEFAULT"
+                     MMSC="DEFAULT" APN_TYPE="default" SET_DEFAULT="True" CLEAR_APN="True" />
+        <!-- Set IMS APN (in order to force 8960 to reject it) -->
+        <TestStep Id="SET_DEVICE_APN" INTERFACE="ims" APN="ims" USER="DEFAULT" PASSWORD="DEFAULT" PROTOCOL="DEFAULT"
+                     MMSC="DEFAULT" APN_TYPE="ims" SET_DEFAULT="False" CLEAR_APN="False" />
+        <TestStep Id="ACTIVATE_DEVICE_PDP" />
+    </TestStepSet>
+    <!-- Clear SMS on DUT and Callbox -->
+    <!-- Parameters : DEVICE (phone) EQT(equipment)-->
+    <TestStepSet Id="ClearSms">
+        <TestStep Id="DELETE_ALL_SMS" />
+        <TestStep Id="NS_SET_PARAM" NAME="ClearSMS" OPTION="DEFAULT"/>
+    </TestStepSet>
+    <!-- Send SMS and check if it has been received without corruption (need a 8960) -->
+    <!-- Parameters : SMS (SMS to send) EQT(equipment)-->
+    <TestStepSet Id="SendSMS">
+        <!-- Clear SMS on 8960 -->
+        <TestStep Id="NS_SET_PARAM" NAME="ClearSMS" OPTION="DEFAULT"/>
+        <!--  Send SMS -->
+        <TestStep Id="SEND_SMS"/>
+        <!-- Receive SMS and check if received SMS is identical to sent SMS -->
+        <TestStep Id="RECEIVE_SMS"/>
+    </TestStepSet>
+    <!-- Decrease cell power then trig an external handover-->
+    <!-- Parameters : DEVICE (phone) EQT(equipment) TIMEOUT (call setup time-out) -->
+    <TestStepSet Id="CheckVCStatusAndTrigHO">
+         <!-- Check if VC is still active on cell1 -->
+        <TestStep Id="WAIT_FOR_VOICE_CALL_STATE" VC_STATE="ACTIVE" />
+        <TestStep Id="SUSPEND" DURATION_IN_SEC="5"/>
+        <!-- Trigger an handover from cell1 to cell2 -->
+        <TestStep Id="NS_SET_PARAM" NAME="ExtHOTrigger" OPTION="DEFAULT"/>
+    </TestStepSet>
+    <!-- Trig a voice call and wait its activation on DUT and 8960 -->
+    <!-- Parameters : EQT (equipment), DEVICE (phone), TIMEOUT (call setup time-out) NUMBER_TO_CALL-->
+    <TestStepSet Id="LaunchVoiceCall">
+        <TestStep Id="INITIATE_VOICE_CALL" VC_TYPE="CIRCUIT"/>
+        <TestStep Id="WAIT_FOR_VOICE_CALL_STATE" VC_STATE="ACTIVE" />
+        <TestStep Id="NS_WAIT_STATE" NAME="CallStatus" STATE="CONN" OPTION="DEFAULT" />
+    </TestStepSet>
+</Include>

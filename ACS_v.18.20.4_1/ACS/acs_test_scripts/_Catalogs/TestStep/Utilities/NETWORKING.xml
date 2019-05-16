@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestSteps xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../acs/src/_Catalogs/TestStep/teststep.xsd">
+    <TestStep Id="RUN_HTTP_SERVER_HOST" Domain="UTILITIES" SubDomain="NETWORKING" Feature="" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Utilities.Networking.RunHttpServerHost.RunHttpServerHost</ClassName>
+        <Description>Runs Python's BasicHTTPServer on the host</Description>
+        <Environment name="ANY"/>
+        <Parameters>
+            <Parameter name="DEST_SUBDIR" type="STRING" isOptional="false">
+               <Description>A directory name under _Reports to be used as a root of HTTP server</Description>
+               <PossibleValues/>
+               <DefaultValue>5</DefaultValue>
+            </Parameter>
+            <Parameter name="STORED_HTTPD_ROOT_PATH" type="CONTEXT" isOptional="false">
+                <Description>
+                    <Key name="HTTP_ROOT" type="STRING">This will be the concatenation of the path to the campaign report directory,
+                    the test case name, DEST_SUBDIR, and http_serve</Key>
+                </Description>
+               <PossibleValues/>
+               <DefaultValue>5</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="GET_HOST_HTTP_DOWNLOAD_RATE" Domain="UTILITIES" SubDomain="NETWORKING" Feature="" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Utilities.Networking.GetHostHttpDownloadRate.GetHostHttpDownloadRate</ClassName>
+        <Description>Get average http download rate of the host</Description>
+        <Environment name="ANY" />
+        <Parameters>
+            <Parameter name="HTTP_SOURCE_URL" type="STRING" isOptional="false">
+                <Description>Remote HTTP server from which host will download files</Description>
+                <PossibleValues />
+                <DefaultValue>http://anllabave66.an.intel.com/media</DefaultValue>
+            </Parameter>
+            <Parameter name="REPETITION" type="INTEGER" isOptional="false">
+                <Description>Repetition times to calculate average rate</Description>
+                <PossibleValues />
+                <DefaultValue>3</DefaultValue>
+            </Parameter>
+            <Parameter name="AVG_XFER_RATE_SEC" type="CONTEXT" isOptional="false">
+                <Description>
+                    <Key name="AVG_RATE" type="INTEGER">Average http download rate of the host</Key>
+                </Description>
+               <PossibleValues/>
+               <DefaultValue />
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="ENABLE_NETWORK_INTERFACE_HOST" Domain="UTILITIES" SubDomain="NETWORKING" Feature="" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Utilities.Networking.EnableNetworkInterfaceHost.EnableNetworkInterfaceHost</ClassName>
+        <Description>Enable the network interface.
+            Pre-requisite: Add Equipment COMPUTER1 to Bench_Config XML with Model, IP(Linux only) and username(Linux only).
+                Model: REMOTE_COMPUTER only
+                IP: Ip address of the equipment. Only required for Linux, and localhost is a common value
+                username: login used for the connection. Only required for Linux, and root is a common value
+        </Description>
+        <Environment name="ANY" />
+        <Parameters>
+            <Parameter name="INTERFACE" type="STRING" isOptional="false">
+                <Description>Interface name on which the action will be executed</Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+            <Parameter name="DHCP_TIMEOUT_SEC" type="INTEGER" isOptional="false">
+                <Description>Timeout seconds to wait for dhcp allocation</Description>
+                <PossibleValues />
+                <DefaultValue>5</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="DISABLE_NETWORK_INTERFACE_HOST" Domain="UTILITIES" SubDomain="NETWORKING" Feature="" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Utilities.Networking.DisableNetworkInterfaceHost.DisableNetworkInterfaceHost</ClassName>
+        <Description>Disable the network interface.
+            Pre-requisite: Add Equipment COMPUTER1 to Bench_Config XML with Model, IP(Linux only) and username(Linux only).
+                Model: REMOTE_COMPUTER only
+                IP: Ip address of the equipment. Only required for Linux, and localhost is a common value
+                username: login used for the connection. Only required for Linux, and root is a common value
+        </Description>
+        <Environment name="ANY" />
+        <Parameters>
+            <Parameter name="INTERFACE" type="STRING" isOptional="false">
+                <Description>Interface name on which the action will be executed</Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="CHECK_NETWORK_CONNECTION_HOST" Domain="UTILITIES" SubDomain="NETWORKING" Feature="" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Utilities.Networking.CheckNetworkConnectionHost.CheckNetworkConnectionHost</ClassName>
+        <Description>Check network connection of the host pc.</Description>
+        <Environment name="ANY" />
+        <Parameters>
+            <Parameter name="TEST_URL" type="STRING" isOptional="false">
+                <Description>Remote HTTP server to be used for connection test</Description>
+                <PossibleValues />
+                <DefaultValue>http://www.google.com</DefaultValue>
+            </Parameter>
+            <Parameter name="TIME_OUT_SEC" type="INTEGER" isOptional="false">
+                <Description>Timeout seconds to wait for tethering establishment</Description>
+                <PossibleValues />
+                <DefaultValue>5</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="CONFIGURE_WIFI_RSSI" Domain="UTILITIES" SubDomain="NETWORKING" Feature="" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Utilities.Networking.ConfigureWifiRSSI.ConfigureWifiRSSI</ClassName>
+        <Description>Configure RSSI of the DUT to be between two values.</Description>
+        <Environment name="ANY" />
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="CONFIGURABLE_AP" type="STRING" isOptional="false">
+                <Description>The equipment name shall refer to an existing equipment the Bench config.</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+            <Parameter name="RF_ATTENUATOR" type="STRING" isOptional="true">
+                <Description>The equipment name shall refer to an existing equipment the Bench config. If no equipment is set or found, the step will try to configure RSSI only with AP.</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+            <Parameter name="RSSI_MIN" type="STRING" isOptional="false">
+                <Description>Minimum value of the RSSI in dBm.</Description>
+                <PossibleValues />
+                <DefaultValue>-45</DefaultValue>
+            </Parameter>
+            <Parameter name="RSSI_MAX" type="STRING" isOptional="false">
+                <Description>Maximum value of the RSSI in dBm.</Description>
+                <PossibleValues />
+                <DefaultValue>-40</DefaultValue>
+            </Parameter>
+            <Parameter name="STANDARD" type="STRING" isOptional="false">
+                <Description>The standard used on the radio.</Description>
+                <PossibleValues>a;b;g;n;an;bg;gb;bgn;ngb;n2.4G;n5G;ac</PossibleValues>
+                <DefaultValue/>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="COMPUTE_WIFI_RECONNECTION_TIME_WITH_LOGS" Domain="UTILITIES" SubDomain="NETWORKING" Feature="" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Utilities.Networking.ComputeWifiReconnectionTimeWithLogs.ComputeWifiReconnectionTimeWithLogs</ClassName>
+        <Description>Compute WiFi reconnection time based on aplogs. Procedure to use it :
+            A WiFi network must be remembered. Turn Off/On WiFi and start this Test Step to check the reconnection time with aplogs.</Description>
+        <Environment name="ANY" />
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="TIMEOUT" type="INTEGER" isOptional="true">
+                <Description>Maximum time to wait the reconnection. Default timeout is 120s.</Description>
+                <PossibleValues/>
+                <DefaultValue>120</DefaultValue>
+            </Parameter>
+            <Parameter name="SAVE_WIFI_RECONNECTION_TIME" type="CONTEXT" isOptional="false">
+                <Description>
+                    <Key name="WIFI_RECONNECTION_TIME" type="STRING">Name of the context variable where the value will be saved. Unit is seconds.</Key>
+                </Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="SAVE_KPI_MEASURE" Domain="UTILITIES" SubDomain="NETWORKING" Feature="" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Utilities.Networking.SaveKPIMeasure.SaveKPIMeasure</ClassName>
+        <Description>Create a file in the campaign report and write data. If the file already exists, a new line is added.</Description>
+        <Environment name="ANY" />
+        <Parameters>
+            <Parameter name="TARGET_VALUE" type="STRING" isOptional="false">
+                <Description>Target expected value.</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+            <Parameter name="TARGET_UNIT" type="STRING" isOptional="false">
+                <Description>Target unit.</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+            <Parameter name="MEASURE_VALUE" type="STRING" isOptional="false">
+                <Description>Measure value.</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+            <Parameter name="MEASURE_UNIT" type="STRING" isOptional="false">
+                <Description>Measure unit.</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+            <Parameter name="WIFI_RSSI" type="STRING" isOptional="true">
+                <Description>RSSI value in dBm.</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+            <Parameter name="COMMENTS" type="STRING" isOptional="true">
+                <Description>Optional comment to add for a measure.</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+            <Parameter name="FILE_NAME" type="STRING" isOptional="true">
+                <Description>File name where to save data. Optional, default created file is "KPI_RESULTS".</Description>
+                <PossibleValues/>
+                <DefaultValue>KPI_RESULTS</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+</TestSteps>

@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='ASCII'?>
+<Campaign version="13.49">
+    <Parameters>
+            <Parameter isControlledPSUsed="False"/>
+            <Parameter isIoCardUsed="False"/>
+            <Parameter skipBootOnPowerCycle="False"/>
+            <Parameter bootRetryNumber="0"/>
+            <Parameter runHookScripts="False"/>
+            <Parameter powerCycleBetweenTC="False"/>
+            <Parameter powerCycleOnFailure="False"/>
+            <Parameter finalDutState="NoChange"/>
+            <Parameter stopCampaignOnCriticalFailure="False"/>
+            <Parameter stopCampaignOnFirstFailure="False"/>
+            <Parameter loggingLevel="debug"/>
+            <Parameter CampaignType="Other"/>
+      </Parameters>
+    <TestCases>
+            <TestCase Id="../../../../TC/TR/ATF_TESTS/ABT_Audio_Decoding/WAV/WAV_48000Hz_24bit"/>
+            <TestCase Id="../../../../TC/TR/ATF_TESTS/ABT_Audio_Decoding/AAC/AAC_Main/AAC_Main_48kHz_128kbps_Stereo.m4a"/>
+            <TestCase Id="../../../../TC/TR/ATF_TESTS/ABT_Audio_Decoding/OGG/OGG_8kHz_42kbps_Mono.ogg"/>
+            <TestCase Id="../../../../TC/TR/ATF_TESTS/ABT_Audio_Decoding/FLAC/FLAC_48kHz_667kbps_Stereo.flac"/>
+            <TestCase Id="../../../../TC/TR/ATF_TESTS/ABT_Audio_Decoding/AMR-WB/AMR_WB_16kHz_12.65kbps_Mono"/>
+            <TestCase Id="../../../../TC/TR/ATF_TESTS/ABT_Audio_Decoding/AMR-NB/AMR_NB_8kHz_10.2kbps_Mono"/>
+            <TestCase Id="../../../../TC/TR/ATF_TESTS/ABT_Audio_Decoding/MP3/24kHz/MP3_24kHz_160kbps_Stereo.mp3"/>
+            <TestCase Id="../../../../TC/TR/ATF_TESTS/ABT_Audio_Decoding/PCM/PCM_Standard_44.1kHz.wav"/>
+            <TestCase Id="../../../../TC/TR/ATF_TESTS/ABT_Audio_Decoding/MIDI/ISawHerStandingThere.mid"/>
+            <TestCase Id="../../../../TC/TR/ATF_TESTS/ABT_Audio_Decoding/AAC/AAC_Main/AAC_Main_48kHz_128kbps_Stereo.m4a"/>
+    </TestCases>
+</Campaign>

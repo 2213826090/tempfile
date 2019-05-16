@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<Equipment version="13.44" name="CONTROLLER" description="controller">
+    <!-- possible Model values: EUROTHERM2204E -->
+    <Parameter name="Model" value="EUROTHERM2204E" description="Model of equipment to use. Refer to Equipment_Catalog.xml" />
+    <Parameter name="Transport" value="SERIAL" description="Transport used to connect the equipment" />
+    <Parameter name="ComPort" value="0" description="COM port used for communication" />
+    <Parameter name="BaudRate" value="9600" description="Baud rate used for serial port communication" />
+    <Parameter name="ConnectionRetry" value="1" description="The number of retry in case of SERIAL connection" />
+</Equipment>

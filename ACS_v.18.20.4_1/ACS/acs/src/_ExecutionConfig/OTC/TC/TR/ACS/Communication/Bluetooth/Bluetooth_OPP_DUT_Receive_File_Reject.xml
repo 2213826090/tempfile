@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="13.41">
+    <UseCase>TEST_STEP_ENGINE</UseCase>
+    <Description>DUT serves as server, receives a file via OPP and rejects it</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>False</b2bContinuousMode>
+    <TcMaxAttempt>1</TcMaxAttempt>
+    <TcAcceptanceCriteria>1</TcAcceptanceCriteria>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters>
+        <Parameter>
+            <Name>OPP_FILES_TO_TRANSFER</Name>
+            <Value>1MB.jpg</Value>
+        </Parameter>
+    </Parameters>
+    <TestSteps>
+        <Include Src="OTC/TC/TR/ACS/Communication/Bluetooth/setup/BT/OTC_Comms_BT_Common.xml" />
+        <Setup>
+            <!-- AUTOMATION - Set default configuration -->
+            <TestStep SetId="BTFullSetupPhones1and2" />
+            <TestStep Id="GET_ARTIFACT" EQT="ARTIFACT_MANAGER" ARTIFACT="MISCELLANEOUS/JPG/1MB.jpg" ARTIFACT_SOURCE="FROM_BENCH:ARTIFACT_MANAGER:URI" TRANSFER_TIMEOUT="DEFAULT" STORED_FILE_PATH="FILE_PATH_IN_CACHE"/>
+            <TestStep Id="INSTALL_FILE" DEVICE="PHONE2" FILE_PATH="FROM_CTX:FILE_PATH_IN_CACHE" TYPE="media" DESTINATION="/sdcard/acs_files/" DESTINATION_STORED_PATH="INSTALLED_FILE_PATH" TIMEOUT="DEFAULT"/>
+        </Setup>
+        <RunTest>
+            <!-- SPEC - Step 2 : Configure and send the file with OPP -->
+            <Fork Id="TimeoutToNever">
+                <TestStep SetId="BTOppSetup" DEVICE="PHONE1" />
+                <TestStep SetId="BTOppSetup" DEVICE="PHONE2" />
+            </Fork>
+            <TestStep Id="BT_OPP_SEND" DEVICE="PHONE2" BDADDR="FROM_CTX:BT_MAC_ADDRESS_PHONE1" FILES="FROM_TC:OPP_FILES_TO_TRANSFER" SAVE_INFO_AS="OppSend" />
+            <TestStep Id="SUSPEND" DURATION_IN_SEC="5.0" />
+            <TestStep Id="BT_OPP_REJECT" DEVICE="PHONE1" FILES="FROM_TC:OPP_FILES_TO_TRANSFER" />
+        </RunTest>
+        <TearDown>
+            <TestStep Id="BT_OPP_CLEANUP" DEVICE="PHONE1" REMOVE_FILES="true" FILES="FROM_TC:OPP_FILES_TO_TRANSFER" />
+            <Fork Id="ForkTeardown">
+                <TestStep SetId="BTCommonTeardown" DEVICE="PHONE1" />
+                <TestStep SetId="BTCommonTeardown" DEVICE="PHONE2" />
+            </Fork>
+        </TearDown>
+    </TestSteps>
+</TestCase>

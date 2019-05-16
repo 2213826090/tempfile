@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="13.37">
+    <UseCase>LIVE_ANDROID_EGL_MIX_APK_VALIDATION</UseCase>
+    <Description>Test the conformance of GFX features that require more than 1 step for validation using the OGLConform and Khronos tools</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <TestSteps>
+        <Initialize>
+            <TestStep Id="GET_ARTIFACT" EQT="ARTIFACT_MANAGER" ARTIFACT="GFX_CONFORMANCE/OGLCONFORM.zip" ARTIFACT_SOURCE="FROM_BENCH:ARTIFACT_MANAGER:URI" TRANSFER_TIMEOUT="DEFAULT" STORED_FILE_PATH="FILE_PATH_IN_CACHE1"/>
+            <TestStep Id="UNZIP_ARTIFACT" EQT="ARTIFACT_MANAGER" ARTIFACT_NAME="GFX_CONFORMANCE/OGLCONFORM.zip" STORED_FILE_PATH="FROM_CTX:FILE_PATH_IN_CACHE1" EXTRACT_LOCATION="ZIP_EXTRACT_LOCATION"/>
+            <TestStep Id="INSTALL_FILE" DEVICE="PHONE1" FILE_PATH="FROM_CTX:ZIP_EXTRACT_LOCATION" TYPE="media" DESTINATION="/data/app/" DESTINATION_STORED_PATH="/data/app/" TIMEOUT="DEFAULT"/>
+        </Initialize>
+        <Finalize>
+            <TestStep Id="UNINSTALL_FILE" DEVICE="PHONE1" DEVICE_FOLDER="/data/app" FILENAME="oglconform"/>
+        </Finalize>
+    </TestSteps>
+    <Parameters>
+        <Parameter>
+            <!-- Name of the feature under test -->
+            <Name>FEATURE_NAME</Name>
+            <Value>GL_OES_element_index_uint</Value>
+        </Parameter>
+        <Parameter>
+            <!-- OGLConform option for diag parameter -diag -es1 or -es2  -->
+            <Name>DIAG_PARAMETER</Name>
+            <Value>-diag -es2</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Name of test after -test option. Can be empty-->
+            <Name>TEST_PARAMETER</Name>
+            <Value>-es2 -test draw-uintindex_es;-es2 -test mapbuffer_es</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Khronos condition; tests or suites that must pass for validating this conformance. Can be empty -->
+            <Name>KHRONOS_PARAMETER</Name>
+            <Value></Value>
+        </Parameter>
+        <Parameter>
+            <Name>DEVICE_LOGDIR</Name>
+            <Value>gfx-mockup</Value>
+        </Parameter>
+        <Parameter>
+            <Name>CERT_MODE</Name>
+            <Value>False</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

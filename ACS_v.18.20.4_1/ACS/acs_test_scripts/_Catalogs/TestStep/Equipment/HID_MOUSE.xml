@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestSteps xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../acs/src/_Catalogs/TestStep/teststep.xsd">
+    <TestStep Id="HID_MOUSE_CLICK" Domain="EQUIPMENT" SubDomain="HID_MOUSE" Feature="" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Equipment.Bluetooth.HidMouseClick.HidMouseClick</ClassName>
+        <Description>
+            Acts on an HID mouse clicking one of the three buttons
+        </Description>
+        <Environment name="ANY">
+        </Environment>
+        <Parameters>
+            <Parameter name="BUTTONS" type="STRING" isOptional="false">
+                <Description>The sequence (comma separated) of the buttons to click</Description>
+                <PossibleValues>LEFT;RIGHT;MIDDLE</PossibleValues>
+                <DefaultValue/>
+            </Parameter>
+            <Parameter name="INTERVAL_SECS" type="FLOAT" isOptional="false">
+                <Description>The period in seconds between one click and the other</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="SET_HID_MOUSE_STATE" Domain="EQUIPMENT" SubDomain="HID_MOUSE" Feature="" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Equipment.Bluetooth.SetHidMouseState.SetHidMouseState</ClassName>
+        <Description>
+            Sets HID mouse state (e.g. turns it on, off or sets it as pairable)
+        </Description>
+        <Environment name="ANY">
+        </Environment>
+        <Parameters>
+            <Parameter name="STATE" type="STRING" isOptional="false">
+                <Description>The state to put the mouse in</Description>
+                <PossibleValues>ON;OFF;PAIRABLE</PossibleValues>
+                <DefaultValue/>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+</TestSteps>

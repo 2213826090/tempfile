@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='us-ascii'?>
+<Campaign version="13.49">
+    <Parameters>
+        <Parameter isControlledPSUsed="False" />
+        <Parameter isIoCardUsed="False" />
+        <Parameter skipBootOnPowerCycle="False" />
+        <Parameter bootRetryNumber="0" />
+        <Parameter runHookScripts="False" />
+        <Parameter powerCycleBetweenTC="False" />
+        <Parameter powerCycleOnFailure="False" />
+        <Parameter finalDutState="NoChange" />
+        <Parameter stopCampaignOnCriticalFailure="False" />
+        <Parameter stopCampaignOnFirstFailure="False" />
+        <Parameter loggingLevel="debug" />
+        <Parameter CampaignType="Other" />
+        <Parameter TCRReportViaRESTAPI="True" />
+    </Parameters>
+    <TestCases>
+        <!-- Flash related cases (EB) -->
+        <TestCase Id="../../../../../TC/TR/TESTLIB/BootComponent/BXT-P/AVB_boot_in_Red_O"/>
+        <TestCase Id="../../../../../TC/TR/TESTLIB/BootComponent/BXT-P/Check_ABL_config"/>
+        <TestCase Id="../../../../../TC/TR/TESTLIB/BootComponent/BXT-P/Display_IOError_after_system_datablock_O"/>
+        <TestCase Id="../../../../../TC/TR/TESTLIB/BootComponent/BXT-P/Display_IOError_after_vendor_datablock_O"/>
+        <TestCase Id="../../../../../TC/TR/TESTLIB/BootComponent/BXT-P/System_not_mount_if_hashtree_was_altered_O"/>
+        <TestCase Id="../../../../../TC/TR/TESTLIB/BootComponent/BXT-P/System_not_mount_if_metadata_fail_to_verify_O"/>
+        <TestCase Id="../../../../../TC/TR/TESTLIB/BootComponent/BXT-P/Vendor_not_mount_if_hashtree_was_altered_O"/>
+        <TestCase Id="../../../../../TC/TR/TESTLIB/BootComponent/BXT-P/Vendor_not_mount_if_metadata_fail_to_verify_O"/>
+    </TestCases>
+</Campaign>

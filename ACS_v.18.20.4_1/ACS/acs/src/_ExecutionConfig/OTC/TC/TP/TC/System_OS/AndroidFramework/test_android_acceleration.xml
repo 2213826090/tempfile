@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+<TestCase>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Discription>
+Hardware acceleration on 2D Graphics is enabled by default. However, not all 2D drawing operations ae supported, problems may occur as a side effect. Developers can switch off the acceralations at the app level or individual level - Activity, Window and View. The system must be able to enable or disable the acceleration according to the manifest file.
+&lt;br /&gt;Application Levle - &amp;lt;activity android:hardwareAccelerated=&amp;quot;false&amp;quot; /&amp;gt;
+&lt;br /&gt;Window Level - WindowManager.LayoutParams.FLAG_HARDWARE_ACCELERATED
+&lt;br /&gt;View Level - myView.setLayerType(View.LAYER_TYPE_SOFTWARE, null);
+&lt;br /&gt;
+</Discription>
+    <Domain>System_OS</Domain>
+    <Phase>CORE</Phase>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <Type>FUNCTIONAL</Type>
+    <UseCase>PY_UNIT</UseCase>
+    <b2bIteration>1</b2bIteration>
+    <Parameters>
+        <Parameter>
+            <Name>HpalmName</Name>
+            <Value>Cts_Acceleration.Acceleration.test_android_acceleration</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TEST_DATA_ROOT</Name>
+            <Value>testplan/System_OS</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TEST_CASE</Name>
+            <Value>tests.System_OS.AndroidFramework.Cts_Acceleration.Acceleration.test_android_acceleration</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

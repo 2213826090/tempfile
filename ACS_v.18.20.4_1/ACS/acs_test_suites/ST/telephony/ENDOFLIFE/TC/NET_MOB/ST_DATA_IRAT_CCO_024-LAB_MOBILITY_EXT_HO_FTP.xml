@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase>
+  <UseCase>LAB_MOBILITY_EXT_HO_FTP</UseCase>
+  <Description>Perform several 2G/3G Handovers during a FTP transfer</Description>
+  <b2bIteration>2</b2bIteration>
+  <b2bContinuousMode>False</b2bContinuousMode>  
+  <Parameters>
+    <Parameter>
+      <!-- Handover number to perform -->
+      <Name>CELL_JUMP_NUMBER</Name>
+      <Value>1</Value>
+    </Parameter>
+    <Parameter>
+      <!-- CONFIGURATION_FILE parameter representing a xml file pathname 
+      (without extension) in which equipments configuration is described.
+      Configuration files must be stored in _ExecutionConfig directory. -->
+      <Name>CONFIGURATION_FILE</Name>
+      <Value>ST\telephony\Configurations\CONF_ST_DATA_IRAT_CCO_024-LAB_MOBILITY_EXT_HO_FTP</Value>
+    </Parameter>
+    <Parameter>
+      <!-- FTP transfer direction: DL or UL -->
+      <Name>DIRECTION</Name>
+      <Value>DL</Value>
+    </Parameter> 
+ </Parameters>
+</TestCase>
+

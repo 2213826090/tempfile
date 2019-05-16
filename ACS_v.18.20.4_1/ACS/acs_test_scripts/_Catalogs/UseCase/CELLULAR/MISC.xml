@@ -1,0 +1,834 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<UseCases xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:noNamespaceSchemaLocation="../../../../acs/src/_Catalogs/UseCase/usecase.xsd">
+    <UseCase Id="LIVE_COMPONENT_GTESTER_MCD" Domain="CELLULAR" SubDomain="MISC" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Communication.Component.MCD.LIVE_COMPONENT_GTESTER_MCD.LiveComponentGTesterMcd</ClassName>
+        <Description>GTester MCD Use Case</Description>
+        <Environment name="ANY">
+        </Environment>
+    </UseCase>
+    <UseCase Id="LIVE_CELLULAR_CHECK_RAT" Domain="CELLULAR" SubDomain="MISC" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Communication.Camp.LIVE_CELLULAR_CHECK_RAT.LiveCellularCheckRat</ClassName>
+        <Description>Live Cellular Check RAT: checks the user chosen preferred radio.</Description>
+        <Environment name="ANY"/>
+        <Parameters>
+            <Parameter name="FAIL_ON_ERROR" type="FAIL_ON_ERROR" isOptional="true">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="EXPECTED_NETWORK_TYPE" type="NETWORK_TYPE" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+        </Parameters>
+    </UseCase>
+    <UseCase Id="LIVE_DSDS_FLIGHTMODE_CHECK_RAT" Domain="CELLULAR" SubDomain="MISC" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Communication.DSDS.LIVE_DSDS_FLIGHTMODE_CHECK_RAT.LiveFlightModeCheckRatDsds</ClassName>
+        <Description>This test checks that RAT is persistent over a flight mode procedure </Description>
+        <Environment name="ANY"/>
+    </UseCase>
+    <UseCase Id="LIVE_FLIGHTMODE_OVER_REBOOT" Domain="CELLULAR" SubDomain="MISC" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Communication.Misc.LIVE_FLIGHTMODE_OVER_REBOOT.LiveFlightModeOverReboot</ClassName>
+        <Description>This test checks that flight mode state is persistent over a reboot (initially enabled or not).
+        </Description>
+        <Environment name="ANY">
+        </Environment>
+        <Parameters>
+            <Parameter name="FLIGHT_MODE_ENABLED" type="IS_FLIGHT_MODE_ENABLED" isOptional="true">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+        </Parameters>
+    </UseCase>
+    <UseCase Id="LIVE_FLIGHTMODE_CHECK_RAT" Domain="CELLULAR" SubDomain="MISC" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Communication.Misc.LIVE_FLIGHTMODE_CHECK_RAT.LiveFlightModeCheckRat</ClassName>
+        <Description>This test checks that RAT is persistent over a flight mode procedure.
+        </Description>
+        <Environment name="ANY">
+        </Environment>
+        <Parameters>
+            <Parameter name="PREFERRED_NETWORK_TYPE" type="PREFERRED_NETWORK_TYPE" isOptional="true">
+                <Description>Preferred network to use for the test.</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+        </Parameters>
+    </UseCase>
+    <UseCase Id="LIVE_COMPONENT_GTESTER_HTA" Domain="CELLULAR" SubDomain="MISC" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Communication.Component.HTA.LIVE_COMPONENT_GTESTER_HTA.LiveComponentGTesterHta</ClassName>
+        <Description>GTester HTA Use Case</Description>
+        <Environment name="ANY">
+        </Environment>
+    </UseCase>
+    <UseCase Id="LIVE_COMPONENT_GTESTER_MTS" Domain="CELLULAR" SubDomain="MISC" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Communication.Component.MTS.LIVE_COMPONENT_GTESTER_MTS.LiveComponentGTesterMts</ClassName>
+        <Description>GTester MTS Use Case</Description>
+        <Environment name="ANY">
+        </Environment>
+        <Parameters>
+            <Parameter name="COMMAND_TIMEOUT" type="TIMEOUT_IN_SEC" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="TEST_COMMAND" type="GTESTER_COMMAND" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+        </Parameters>
+    </UseCase>
+    <UseCase Id="LIVE_MMGR" Domain="CELLULAR" SubDomain="MISC" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Communication.Component.MMGR.LIVE_MMGR.LiveMMGR</ClassName>
+        <Description>Run a mmgr-test testcase in Main OS mode (MOS). Supported platform is Linux only.</Description>
+        <Environment name="ANY">
+        </Environment>
+        <Parameters>
+            <Parameter name="TEST_NUMBER" type="ITERATION" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="EXPECTED_RESULT" type="MMGR_TEST_VERDICT" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="EXECUTION_TIMEOUT" type="TIMEOUT_IN_SEC" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="TARGET_PLATFORM_CONFIG_PATH" type="PLATFORM_CONFIG_PATH" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="TARGET_CONFIG_SCALABILITY_PATH" type="SCALABILITY_CONFIG_PATH" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="MAX_MODEM_COLD_RESET" type="ITERATION" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+        </Parameters>
+    </UseCase>
+    <UseCase Id="LIVE_AT_PROXY" Domain="CELLULAR" SubDomain="MISC" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Communication.Component.AT_PROXY.LIVE_AT_PROXY.LiveAtProxy</ClassName>
+        <Description>Used on an Android Main OS, this usecase will check that the AT proxy is functionnal (it must be
+            able to transmit commands and returns an answer)
+        </Description>
+        <Environment name="ANY"/>
+        <Parameters>
+            <Parameter name="LAUNCH_MODE" type="AT_PROXY_LAUNCH_MODE" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="COMMAND" type="AT_COMMAND" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="EXPECTED_RESULT" type="AT_COMMAND_RETURN_CODE" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="COMMAND_TIMEOUT" type="TIMEOUT_IN_SEC" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+        </Parameters>
+    </UseCase>
+    <UseCase Id="LIVE_IPC" Domain="CELLULAR" SubDomain="MISC" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Communication.Component.IPC.LIVE_IPC.LiveIPC</ClassName>
+        <Description>Run a IPC-test testcase</Description>
+        <Environment name="ANY">
+        </Environment>
+        <Parameters>
+            <Parameter name="RUN_CMD" type="ADB_COMMAND" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="EXPECTED_RESULT" type="LIVE_IPC_TEST_VERDICT" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="EXECUTION_TIMEOUT" type="TIMEOUT_IN_SEC" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+        </Parameters>
+    </UseCase>
+    <UseCase Id="LIVE_CRM" Domain="CELLULAR" SubDomain="MISC" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Communication.Component.CRM.LIVE_CRM.LiveCRM</ClassName>
+        <Description>Validate the CRM sanity test suite. Supported platform is Sofia-LTE.</Description>
+        <Environment name="TEL">
+        </Environment>
+        <Parameters>
+            <Parameter name="RUN_CMD" type="ADB_COMMAND" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="EXPECTED_RESULT" type="LIVE_CRM_TEST_VERDICT" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="EXECUTION_TIMEOUT" type="TIMEOUT_IN_SEC" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+        </Parameters>
+    </UseCase>
+    <UseCase Id="LIVE_DSDS_SIM_SELECTION" Domain="CELLULAR" SubDomain="MISC" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Communication.Camp.LIVE_DSDS_SIM_SELECTION.LiveDsdsSeletion</ClassName>
+        <Description>To select the sim in DSDS senario</Description>
+        <Environment name="TEL">
+        </Environment>
+        <Parameters>
+            <Parameter name="SIM" type="SIM_VALUE" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+        </Parameters>
+    </UseCase>
+    <UseCase Id="LAB_TEL_DEBUG_TEST" Domain="CELLULAR" SubDomain="MISC" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Communication.LAB_TEL_DEBUG_TEST.LabTelDebugTest</ClassName>
+        <Description>TEL - This UseCase valid all uecmd used in TEL domain.</Description>
+        <Environment name="TEL">
+            <Capabilities>EQT_AG_8960</Capabilities>
+        </Environment>
+    </UseCase>
+    <UseCase Id="LIVE_VOICEMAIL_INDICATOR" Domain="CELLULAR" SubDomain="MISC" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Communication.Messaging.LIVE_VOICEMAIL_INDICATOR.LiveVoicemailIndicator</ClassName>
+        <Description>Mobile Originated_Mobile Release on live network</Description>
+        <Environment name="TEL">
+            <Capabilities>EQT_LIVE_USIM</Capabilities>
+        </Environment>
+        <Parameters>
+            <Parameter name="PHONE_NUMBER" type="PHONE_NUMBER" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="CALL_DURATION" type="DURATION_IN_SEC" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="MSG_WAITING_TIME" type="DURATION_IN_SEC" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+        </Parameters>
+    </UseCase>
+    <UseCase Id="LIVE_TEL_DEBUG_TEST" Domain="CELLULAR" SubDomain="MISC" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Communication.LIVE_TEL_DEBUG_TEST.LiveTelDebugTest</ClassName>
+        <Description>TEL - This UseCase valid all uecmd used in TEL domain.</Description>
+        <Environment name="TEL">
+            <Capabilities>EQT_LIVE_USIM</Capabilities>
+        </Environment>
+        <Parameters>
+            <Parameter name="UECMD_TYPE_LIST" type="UECMD_TYPE_LIST" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+        </Parameters>
+    </UseCase>
+    <UseCase Id="LIVE_CELLULAR_REPORT_NETWORK_INFO" Domain="CELLULAR" SubDomain="MISC" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Communication.Camp.LIVE_CELLULAR_REPORT_NETWORK_INFO.LiveCellularReportNetworkInfo</ClassName>
+        <Description>Live Cellular check of reported information about serving cell and neighboring cells.</Description>
+        <Environment name="ANY"/>
+        <Parameters>
+            <Parameter name="CHECK_SERVING_CELL" type="CHECK_SERVING_CELL" isOptional="false">
+                <!-- A boolean indicating whether we have to check the serving cell or not(TRUE|FALSE) -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="CHECK_NEIGHBORING_CELLS" type="CHECK_NEIGHBORING_CELLS" isOptional="false">
+                <!-- A boolean indicating whether we have to check the neighboring cells or not(TRUE|FALSE) -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="PREFERRED_NETWORK_TYPE" type="PREFERRED_NETWORK_TYPE" isOptional="true">
+                <Description>Preferred network to use for the test.</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+        </Parameters>
+    </UseCase>
+    <UseCase Id="LIVE_COMPONENT_GTEST_FWK_IPC_TEST" Domain="CELLULAR" SubDomain="MISC" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Communication.Component.IPC_TEST.LIVE_COMPONENT_GTEST_FWK_IPC_TEST.LiveComponentGTestFwkIpcTest</ClassName>
+        <Description>GTest Framework Use Case</Description>
+        <Environment name="ANY">
+        </Environment>
+        <Parameters>
+            <Parameter name="COMMAND_TIMEOUT" type="COMMAND_TIMEOUT" isOptional="false">
+                <!-- The timeout value to use when issuing ADB shell commands. -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="GTEST_FILTER" type="GTEST_FILTER" isOptional="false">
+                <!-- Filter on test to be executed -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="GTEST_OUTPUT_FOLDER" type="GTEST_OUTPUT_FOLDER" isOptional="false">
+                <!-- output folder where tests are exported on device. -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="GTEST_OUTPUT_FILE" type="GTEST_OUTPUT_FILE" isOptional="false">
+                <!-- Name of the report fil eon device, if None, will be auto-generated -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+        </Parameters>
+    </UseCase>
+    <UseCase Id="WINTAB_LAB_TURN_OFF_PXT" Domain="MISC" SubDomain="CHECKS" OS="WINDOWS" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Networking.WINTAB_LAB_TURN_OFF_PXT.LabLteBase</ClassName>
+        <Description>check if dut rat matches network rat</Description>
+        <Environment name="TEL">
+            <Capabilities>EQT_AG_E6621A</Capabilities>
+            <Capabilities>EQT_RS_CMW500</Capabilities>
+            <Capabilities>CAP_CALLBOX</Capabilities>
+        </Environment>
+        <Parameters>
+            <Parameter name="MIMO" type="STRING" isOptional="true">
+                <Description>Multiple-Input Multiple-Output to set : TRUE or FALSE</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="ANTENNAS_NUMBER" type="STRING" isOptional="true">
+                <Description>number of antennas to set : 1 or 2</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="TRANSMISSION_MODE" type="STRING" isOptional="true">
+                <Description>TRANSMISSION_MODE to set: TM1, TM2, TM3,TM4 ...</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="DL_RB_SIZE" type="STRING" isOptional="true">
+                <Description>
+                    DL RB_SIZE to set: 1.4 MHz = 1 to 6 3 MHz = 1 to 15 5 MHz = 1 to 25 10 MHz = 1 to 50 15 MHz = 1 to 75 20 MHz = 1 to 100
+                </Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="UL_RB_SIZE" type="STRING" isOptional="true">
+                <Description>
+                    UL RB_SIZE to set: 1.4 MHz = 1 to 6 3 MHz = 1 to 15 5 MHz = 1 to 25 10 MHz = 1 to 50 15 MHz = 1 to 75 20 MHz = 1 to 100
+                </Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="TYPE0_BITMAP" type="STRING" isOptional="true">
+                <Description>
+                    TYPE0_BITMAP to set: requires to set TM3 or TM4 profile, MIMO to be set in scenario file 1.4 MHz = 1 to 63 (0x3F) 3 MHz = 1 to 255 (0xFF) 5 MHz = 1 to 8191 (0x1FFF) 10 MHz = 1 to 131071 (0x1FFFF) 15 MHz = 1 to 524287 (0x7FFFF) 20 MHz = 1 to 33554431 (0x1FFFFFF)
+                </Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="UL_GRANT_MODE" type="STRING" isOptional="true">
+                <Description>UL GRANT MODE to set: AUTO or FIXEDMAC</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="DL_I_MCS" type="STRING" isOptional="true">
+                <Description>DL_I_MCS to set: 0 to 28</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="UL_I_MCS" type="STRING" isOptional="true">
+                <Description>UL_I_MCS to set: 0 to 31</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="CELL_CHANNEL_BANDWIDTH" type="STRING" isOptional="true">
+                <Description>Cell Channel Bandwidth in MHz</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="SIGNAL_MODE" type="STRING" isOptional="true">
+                <Description>Operation mode to set : BSE or SA</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="PHYSICAL_CELL_ID" type="STRING" isOptional="true">
+                <Description>Physical Cell ID : 0 to 503</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="CELL_ID" type="STRING" isOptional="true">
+                <Description>Cell Setup : "A" for A-cell or "B" for B-cell</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="CELL_POWER_RFO1" type="STRING" isOptional="true">
+                <Description>Cell power for RFO1</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="CELL_POWER_RFO2" type="STRING" isOptional="true">
+                <Description>Cell power for RFO2</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="MCC" type="STRING" isOptional="true">
+                <Description>Mobile Country Code 0 to 999</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="MNC" type="STRING" isOptional="true">
+                <Description>Mobile Network Code 0 to 99</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="CELL_BAND" type="STRING" isOptional="true">
+                <Description>Cell Band (from Band 1 to Band 32)</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="DL_EARFCN" type="STRING" isOptional="true">
+                <Description>Downlink channel</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="SCENARIO_PATH" type="STRING" isOptional="true">
+                <Description>Scenario filename to load on PXT</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="PACKET_COUNT" type="STRING" isOptional="true">
+                <Description>Number of Packet to be sent</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="PACKET_SIZE" type="STRING" isOptional="true">
+                <Description>Size of a data packet (in bytes) sent when trying to ping the network</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="TARGET_PACKET_LOSS_RATE" type="STRING" isOptional="true">
+                <Description>Target of Ping Packet Loss Rate (in %)</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+        </Parameters>
+    </UseCase>
+    <UseCase Id="LAB_SIM_CARD_PIN_LOCK_SYSTEM" Domain="MISC" SubDomain="CHECKS" OS="WINDOWS" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Communication.Sim.LAB_SIM_CARD_PIN_LOCK_SYSTEM.LabSimCardPinLockSystem</ClassName>
+        <Description>Usecase asserting that we can enable, disable and change PIN on Device</Description>
+        <Environment name="TEL">
+            <Capabilities>EQT_LIVE_USIM</Capabilities>
+        </Environment>
+        <Parameters>
+            <Parameter name="NEW_PIN" type="STRING" isOptional="true">
+                <Description>Default</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="DOUBLE_CHECK_AFTER_REBOOT" type="STRING" isOptional="true">
+                 <Description>Default</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+        </Parameters>
+    </UseCase>
+    <UseCase Id="LAB_SIM_CARD_PUK_LOCK_SYSTEM" Domain="MISC" SubDomain="CHECKS" OS="WINDOWS" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Communication.Sim.LAB_SIM_CARD_PUK_LOCK_SYSTEM.LabSimCardPukLockSystem</ClassName>
+        <Description>Usecase asserting that we can enable, disable and change PIN on Device</Description>
+        <Environment name="TEL">
+            <Capabilities>EQT_LIVE_USIM</Capabilities>
+        </Environment>
+        <Parameters>
+            <Parameter name="NEW_PIN" type="STRING" isOptional="true">
+                 <Description>Default</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="DOUBLE_CHECK_AFTER_REBOOT" type="STRING" isOptional="true">
+                 <Description>Default</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+        </Parameters>
+    </UseCase>
+    <UseCase Id="TURN_OFF_CELL" Domain="MISC" SubDomain="CHECKS" OS="WINDOWS" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Networking.TURN_OFF_CELL.TurnOffCell</ClassName>
+        <Description>Ping over EGPRS simulated network</Description>
+        <Environment name="TEL">
+            <Capabilities>EQT_AG_8960</Capabilities>
+        </Environment>
+        <Parameters>
+            <Parameter name="CELL_BAND" type="STRING" isOptional="true">
+                <Description>Default</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="CELL_POWER" type="STRING" isOptional="true">
+                 <Description>Default</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="MULTISLOT_CONFIG" type="STRING" isOptional="true">
+                <Description>Default</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="UL_MCS" type="STRING" isOptional="true">
+                <Description>Default</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="DL_MCS" type="STRING" isOptional="true">
+                <Description>Default</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="PACKET_COUNT" type="STRING" isOptional="true">
+                <Description>Default</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="PACKET_SIZE" type="STRING" isOptional="true">
+                <Description>Default</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+        </Parameters>
+    </UseCase>
+    <UseCase Id="WINTAB_LAB_TURN_OFF_PXT" Domain="MISC" SubDomain="CHECKS" OS="WINDOWS" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Networking.WINTAB_LAB_TURN_OFF_PXT.LabLteBase</ClassName>
+        <Description>check if dut rat matches network rat</Description>
+        <Environment name="TEL">
+            <Capabilities>EQT_AG_E6621A</Capabilities>
+            <Capabilities>EQT_RS_CMW500</Capabilities>
+            <Capabilities>CAP_CALLBOX</Capabilities>
+        </Environment>
+        <Parameters>
+            <Parameter name="MINO" type="STRING" isOptional="true">
+                <Description>Multiple-Input Multiple-Output to set : TRUE or FALSE</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="ANTENNAS_NUMBER" type="STRING" isOptional="true">
+                <Description>number of antennas to set : 1 or 2</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="TRANSMISSION_MODE" type="STRING" isOptional="true">
+                <Description>TRANSMISSION_MODE to set: TM1, TM2, TM3,TM4 ...</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="DL_RB_SIZE" type="STRING" isOptional="true">
+                <Description>
+                    DL RB_SIZE to set: 1.4 MHz = 1 to 6 3 MHz = 1 to 15 5 MHz = 1 to 25 10 MHz = 1 to 50 15 MHz = 1 to 75 20 MHz = 1 to 100
+                </Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="UL_RB_SIZE" type="STRING" isOptional="true">
+                <Description>
+                   UL RB_SIZE to set: 1.4 MHz = 1 to 6 3 MHz = 1 to 15 5 MHz = 1 to 25 10 MHz = 1 to 50 15 MHz = 1 to 75 20 MHz = 1 to 100
+                </Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="TYPE0_BITMAP" type="STRING" isOptional="true">
+                <Description>
+                   TYPE0_BITMAP to set: requires to set TM3 or TM4 profile, MIMO to be set in scenario file 1.4 MHz = 1 to 63 (0x3F) 3 MHz = 1 to 255 (0xFF) 5 MHz = 1 to 8191 (0x1FFF) 10 MHz = 1 to 131071 (0x1FFFF) 15 MHz = 1 to 524287 (0x7FFFF) 20 MHz = 1 to 33554431 (0x1FFFFFF)
+                </Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="UL_GRANT_MODE" type="STRING" isOptional="true">
+                <Description>UL GRANT MODE to set: AUTO or FIXEDMAC</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="DL_I_MCS" type="STRING" isOptional="true">
+                <Description>DL_I_MCS to set: 0 to 28</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="UL_I_MCS" type="STRING" isOptional="true">
+                <Description>UL_I_MCS to set: 0 to 31</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="CELL_CHANNEL_BANDWIDTH" type="STRING" isOptional="true">
+                <Description>Cell Channel Bandwidth in MHz</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="SIGNAL_MODE" type="STRING" isOptional="true">
+                <Description>Operation mode to set : BSE or SA</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="PHYSICAL_CELL_ID" type="STRING" isOptional="true">
+                <Description>Physical Cell ID : 0 to 503</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="CELL_ID" type="STRING" isOptional="true">
+                <Description>Cell Setup : "A" for A-cell or "B" for B-cell</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="CELL_POWER_RFO1" type="STRING" isOptional="true">
+                <Description>Cell power for RFO1</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="CELL_POWER_RFO2" type="STRING" isOptional="true">
+                <Description>Cell power for RFO2</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="MCC" type="STRING" isOptional="true">
+                <Description>Mobile Country Code 0 to 999</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="MNC" type="STRING" isOptional="true">
+                <Description>Mobile Network Code 0 to 99</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="CELL_BAND" type="STRING" isOptional="true">
+                <Description>Cell Band (from Band 1 to Band 32)</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="DL_EARFCN" type="STRING" isOptional="true">
+                <Description>Downlink channel</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="SCENARIO_PATH" type="STRING" isOptional="true">
+                <Description>Scenario filename to load on PXT</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="PACKET_COUNT" type="STRING" isOptional="true">
+                <Description>Number of Packet to be sent</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="PACKET_SIZE" type="STRING" isOptional="true">
+                <Description>Size of a data packet (in bytes) sent when trying to ping the network</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="TARGET_PACKET_LOSS_RATE" type="STRING" isOptional="true">
+                <Description>Target of Ping Packet Loss Rate (in %)</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+        </Parameters>
+    </UseCase>
+    <UseCase Id="LAB_DUT_REBOOT_WHEN_MB_OFF" Domain="MISC" SubDomain="CHECKS" OS="WINDOWS" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.System.LAB_DUT_REBOOT_WHEN_MB_OFF.LabDutRebootWhenMbOff</ClassName>
+        <Description>Reboot the DUT in Main OS (MOS)</Description>
+        <Environment name="ANY">
+        </Environment>
+        <Parameters>
+            <Parameter name="BOOT_TIMEOUT" type="STRING" isOptional="true">
+                <Description>Time left for Boot to complete (in seconds), if empty defaults to phone values</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="SETTLEDOWN_DURATION" type="STRING" isOptional="true">
+                <Description>Settle down duration after boot detection (in seconds), if empty defaults to phone values. This value is required when the phone is not started when this Use Case is executed.</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+        </Parameters>
+    </UseCase>
+    <UseCase Id="LAB_DUT_REBOOT_MB_ENUMERATION" Domain="MISC" SubDomain="CHECKS" OS="WINDOWS" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.System.LAB_DUT_REBOOT_MB_ENUMERATION.LabDutRebootMbEnumeration</ClassName>
+        <Description>Reboot the DUT in Main OS (MOS)</Description>
+        <Environment name="ANY">
+        </Environment>
+        <Parameters>
+            <Parameter name="BOOT_TIMEOUT" type="STRING" isOptional="true">
+                <Description>Time left for Boot to complete (in seconds), if empty defaults to phone values</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="SETTLEDOWN_DURATION" type="STRING" isOptional="true">
+                <Description>Settle down duration after boot detection (in seconds), if empty defaults to phone values. This value is required when the phone is not started when this Use Case is executed.</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+        </Parameters>
+    </UseCase>
+    <UseCase Id="LAB_LTE_COEXISTENCE_CHECK" Domain="CELLULAR" SubDomain="MISC" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Networking.LAB_LTE_COEXISTENCE_CHECK.LabLteCoexistenceCheck</ClassName>
+        <Description>Checking LTE coexistence with WIFI and BT ON/OFF procedures</Description>
+        <Environment name="TEL">
+            <Capabilities>EQT_AG_E6621A</Capabilities>
+            <Capabilities>EQT_RS_CMW500</Capabilities>
+            <Capabilities>CAP_CALLBOX</Capabilities>
+        </Environment>
+        <Parameters>
+            <Parameter name="CHECK_BT" type="CHECK_BT" isOptional="false">
+                <!-- Filter on test to be executed -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="CHECK_WLAN" type="CHECK_WLAN" isOptional="false">
+                <!-- Filter on test to be executed -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="ON_OFF_ITERATION" type="ON_OFF_ITERATION" isOptional="false">
+                <!-- Number of ON/OFF iterations -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="WAIT_ON" type="WAIT_ON" isOptional="false">
+                <!-- Seconds to wait with BT or WIFI ON -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+        </Parameters>
+    </UseCase>
+    <UseCase Id="LIVE_NETWORK_SCAN" Domain="CELLULAR" SubDomain="MISC" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Communication.Camp.LIVE_NETWORK_SCAN.LiveNetworkScan</ClassName>
+        <Description>Live network scan mode test</Description>
+        <Environment name="TEL">
+            <Capabilities>EQT_LIVE_USIM</Capabilities>
+        </Environment>
+    </UseCase>
+</UseCases>

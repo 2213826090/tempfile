@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase>
+    <UseCase>TEST_STEP_ENGINE</UseCase>
+    <Description>Reference Test Case for Idle Display on comsumption</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>False</b2bContinuousMode>
+    <SavePatRawData>True</SavePatRawData>
+    <PowerCalculation>False</PowerCalculation>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <TcMaxAttempt>1</TcMaxAttempt>
+    <TcAcceptanceCriteria>1</TcAcceptanceCriteria>
+    <Parameters>
+        <Parameter>
+            <Name>SAVE_POWER_DATA</Name>
+            <Value>True</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Sleep duration before making the measure in seconds -->
+            <Name>SLEEP_DURATION</Name>
+            <Value>5</Value>
+        </Parameter>
+        <Parameter>
+            <!-- s0i1 / s0i3 / s3 / s0 (LDC_ON)-->
+            <Name>MODE</Name>
+            <Value>s0</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Sleep time before 1st iteration, or all for b2bContinuousMode = False -->
+            <Name>SETTLE_TIME</Name>
+            <Value>60</Value>
+        </Parameter>
+        <Parameter>
+            <!-- measure duration -->
+            <Name>TEST_DURATION</Name>
+            <Value>300</Value>
+        </Parameter>
+        <Parameter>
+             <Name>SYSDEBUG_MODULES</Name>
+             <Value>
+                Residency: s3,s0i3,s0i1,lpmp3;
+                WakeLocks;
+                Alarms;
+                ModemPanic;
+                CrashInfo;
+                Thermals;
+                Dstates;
+                Interrupts;
+            </Value>
+        </Parameter>
+        <Parameter>
+            <Name>TEST_STEP_ENGINE_ENTRY</Name>
+            <Value>ST/pnp/UC/StaticContentOnDisplay.xml</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

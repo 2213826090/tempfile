@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCase version="13.49">
+    <UseCase>LAB_EM_TEST_CHARGING_BATT_TEMP</UseCase>
+    <Description>check that the charge RESUME or STOP when exiting DUT temperature change</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>False</b2bContinuousMode>
+    <TcMaxAttempt>1</TcMaxAttempt>
+    <TcAcceptanceCriteria>1</TcAcceptanceCriteria>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters>
+        <Parameter>
+            <!-- maximum capacity at which the test is run, if you are above a discharge will be done -->
+            <Name>BATT_MAX_CAPACITY</Name>
+            <Value>90</Value>
+        </Parameter>
+        <Parameter>
+            <!-- LOAD to apply to the board when battery capacity is above BATT_MAX_CAPACITY, separated by ;. To be choosen between following loads (can be combinated) : WIFI;BLUETOOTH;TORCHLIGHT;VIBRA;VIDEO -->
+            <Name>SETUP_LOAD</Name>
+            <Value>FROM_BENCHCONFIG</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Charger type to plug during the observation -->
+            <Name>CHARGER_TYPE</Name>
+            <Value>DCP</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Temperature at which we start to observe the battery/charger info in degrees Celsius
+                this is the min inclusive value that the test temperature can reach -->
+            <Name>START_MIN_TEMPERATURE</Name>
+            <Value>0</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Temperature at which we start to observe the battery/charger info in degrees Celsius
+                this is the max inclusive value that the test temperature can reach -->
+            <Name>START_MAX_TEMPERATURE</Name>
+            <Value>60</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Temperature at which we expect that there is a change in charger/battery behavior in degrees Celsius -->
+            <Name>STOP_TEMPERATURE</Name>
+            <Value>63</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Maximum time in second to wait to let the battery adapt to the START range temperature -->
+            <Name>TIME_TO_ADJUST_TO_START_TEMPERATURE</Name>
+            <Value>1800</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Maximum time in second to wait to let the battery adapt to the STOP temperature -->
+            <Name>TIME_TO_ADJUST_TO_STOP_TEMPERATURE</Name>
+            <Value>900</Value>
+        </Parameter>
+        <Parameter>
+            <!-- this is what this test can check.
+                Possible value are : CHARGE_STOP or CHARGE_RESUME
+                this test verdict will change depending of your choice.
+                dont forget to update all other tc parameters to match with your choice.
+            -->
+            <Name>WHAT_TO_CHECK</Name>
+            <Value>CHARGE_STOP</Value>
+        </Parameter>
+        <Parameter>
+            <!-- this testcase can cover different measurement when you board reach the temperature targets on this file.
+                it can check different value on charger and battery at this time.
+                These checkable values have special syntaxes that allow you to indicate what sub values you want to evaluate
+                among all that they are able to read.
+                e,g:<Value>EM_INFO_RESUME_CHARGING.BATTERY.STATUS</Value>
+                the dot allows you specifcy that you want STATUS info from BATTERY for the TAG EM_INFO
+
+                The verdict of your usecase will be based only on the result of target you put here.
+                use ; as separator
+                check energy_management.xml on _config folder for details on what can be tested
+
+                this test can currently check EM info about EM_INFO_STOP_CHARGING, EM_INFO_RESUME_CHARGING, TIME_TO_SEE_A_CHANGE,
+                EM_INFO_STOP_TEMP.BATTERY.STATUS, EM_INFO_START_TEMP.BATTERY.STATUS
+            -->
+            <Name>EM_TARGET</Name>
+            <Value>EM_INFO_STOP_TEMP.BATTERY.HEALTH;EM_INFO_STOP_TEMP.BATTERY.STATUS;EM_INFO_START_TEMP.BATTERY.HEALTH;EM_INFO_START_TEMP.BATTERY.STATUS;TIME_TO_SEE_A_CHANGE</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

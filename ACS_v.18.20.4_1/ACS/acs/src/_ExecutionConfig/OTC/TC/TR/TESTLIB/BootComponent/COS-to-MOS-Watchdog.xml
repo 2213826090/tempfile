@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='ASCII'?>
+<TestCase>
+    <UseCase>Testlib</UseCase>
+    <Description>The platform shall REBOOT to MOS mode upon WATCHDOG event happening in the RUNNING phase of the CHARGING mode</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <TcMaxAttempt>5</TcMaxAttempt>
+    <Parameters/>
+    <Domain>System_FastBoot</Domain>
+    <Parameters/>
+    <Phase>CORE</Phase>
+    <Parameters/>
+    <Type>FUNCTIONAL</Type>
+    <Parameters>
+        <Parameter>
+            <Name>timeout</Name>
+            <Value>1500</Value>
+        </Parameter>
+        <Parameter>
+            <Name>test</Name>
+            <Value>scripts/android/fastboot/tests/COS-to-MOS-Watchdog.py</Value>
+        </Parameter>
+        <Parameter>
+            <Name>script-args</Name>
+            <Value>iterations=5</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

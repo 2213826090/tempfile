@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase>
+  <UseCase>LAB_WCDMA_CAMP</UseCase>
+  <Description>B2B- Power on/off WCDMA Mobile Camp on simulated network (x100)</Description>
+  <b2bIteration>100</b2bIteration>
+  <b2bContinuousMode>True</b2bContinuousMode>
+  <Parameters>
+    <Parameter>
+      <!-- Switch off/on Mode -->
+      <Name>SWITCH_MODE</Name>
+      <Value>softshutdown</Value>
+    </Parameter>
+    <Parameter>
+      <!-- Cell Band -->
+      <Name>CELL_BAND</Name>
+      <Value>1</Value>
+    </Parameter>
+    <Parameter>
+      <!-- DL UARFCN -->
+      <Name>DL_UARFCN</Name>
+      <Value>10700</Value>
+    </Parameter>
+    <Parameter>
+      <!-- Cell Service CIRCUIT|PACKET|CIRCUIT_PACKET-->
+      <Name>CELL_SERVICE</Name>
+      <Value>PACKET</Value>
+    </Parameter>
+    <Parameter>
+      <!-- Cell power in dBm -->
+      <Name>CELL_POWER</Name>
+      <Value>-80</Value>
+    </Parameter>
+    <Parameter>
+      <!-- Mobile Country Code 0 to 999-->
+      <Name>MCC</Name>
+      <Value>1</Value>
+    </Parameter>
+    <Parameter>
+      <!-- Mobile Network Code 0 to 999 -->
+      <Name>MNC</Name>
+      <Value>1</Value>
+    </Parameter>
+    <Parameter>
+      <!-- PDP ACTIVATION TRUE|FALSE -->
+      <Name>PDP_ACTIVATION</Name>
+      <Value>FALSE</Value>
+    </Parameter>
+  </Parameters>
+</TestCase>

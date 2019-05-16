@@ -1,0 +1,90 @@
+{
+    "Configuration": {
+        "Boot": null,
+        "BootVars": {
+            "BOOT_DATA_CHECK": false
+        },
+        "Custom": null,
+        "Download": {
+            "INTERNAL_DOWNLOAD": [
+                {
+                    "pft_key": "fastboot",
+                    "buildbot_artifactory_path": {"path": "device_name_id/variant_id", "detection": "cactus-absp"},
+                    "regexp_key": ".*flashfiles.*.zip",
+                    "flash_file": null,
+                    "configuration": "blank_gr_mrb_b1",
+                    "start_state": "dnx_fw",
+                    "pft_fallback": null
+                },
+                {
+                    "local_key": "ota",
+                    "buildbot_artifactory_path": {"path": "device_name_id/variant_id", "detection": "cactus-absp"},
+                    "regexp_key": ".*ota-gr_mrb_b1-.*.zip",
+                    "flash_file": null,
+                    "configuration": null,
+                    "start_state": "mos"
+                }
+            ],
+            "REFERENCE_BUILD_BLACKLIST": {
+                "2016_WW50": "2016_WW51"
+            }
+        },
+        "Flash": {
+            "CHECK_GET_HASHES": {
+                "algorithm": "md5",
+                "list": [
+                    "/bootloader",
+                    "/boot",
+                    "/recovery"
+                ]
+            },
+            "BXTP_ABL_BUILD": "gr_mrb_b1",
+            "BXTP_FLASH_IOC": true
+        },
+        "Inherit": {
+            "BOARD": "bxt"
+        },
+        "Logs": null,
+        "Timeout": {
+            "BOOT_TIMEOUT": 1800,
+            "COS_BOOT": 200,
+            "MOS_BOOT": 230,
+            "POS_BOOT": 200,
+            "REBOOT_COMMAND_TIMEOUT": 120,
+            "ROS_BOOT": 200,
+            "TIMEOUT_TOLERANCE": 60
+        },
+        "WorkAround": {
+            "Function": {
+                "Issue": "No image check",
+                "Name": "__img_check",
+                "Pattern": ".*"
+            },
+            "Step": {
+                "Issue": "SSN differs between adb and fastboot",
+                "Name": "AdbRebootProvisioningStep",
+                "Pattern": "SSN differ \\(main=.*, fastboot=.*\\)"
+            }
+        },
+        "TestDescription": {
+            "warnings": {},
+            "engineering": [
+                {
+                    "name": "default",
+                    "build_tag": "bootota_",
+                    "testing": [
+                        {
+                            "build_target": "bxtp_abl-userdebug",
+                            "campaign": "BOOTOTA_PREINTEGRATION_BXTP"
+                        },
+                        {
+                            "build_target": "bxtp_abl-userdebug",
+                            "campaign": "BOOTOTA_EAT"
+                        }
+                    ]
+                }
+            ],
+            "release_candidate": []
+        }
+    }
+}

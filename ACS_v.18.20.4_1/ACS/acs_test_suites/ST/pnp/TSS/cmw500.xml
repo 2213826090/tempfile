@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<Include>
+    <TestStepSet Id="ConfigureRat">
+        <TestStep Id="GET_MODULE_CONFIG" DEVICE="PHONE1" MODULE="PnpModule" KEY="//network_simulator_files/[+]FROM_TC:CONFIG_TYPE"
+                  MODULE_VALUE="CONFIG_FILE"/>
+        <TestStep Id="FIND_NETWORK_SIMULATOR" EQT_NAME="CMW500_SIMULATOR" FEATURE="FROM_TC:RAT" />
+        <TestStep Id="INIT_NETWORK_SIMULATOR" EQT="FROM_CTX:CMW500_SIMULATOR" FEATURE="FROM_TC:RAT" />
+        <TestStep Id="NS_CONFIGURE_CELL" EQT="FROM_CTX:CMW500_SIMULATOR" CONFIG="FROM_TC:CELL_BAND" CONFIG_FILE_NAME="FROM_CTX:CONFIG_FILE"/>
+
+        <TestStep Id="NS_SET_PARAM" EQT="FROM_CTX:CMW500_SIMULATOR" NAME="LteSetCellOnOff" OPTION="DEFAULT" VALUE="OFF"/>
+
+        <TestStep Id="SET_FLIGHT_MODE" DEVICE="PHONE1" FLIGHT_MODE="disable" />
+        <TestStep Id="SUSPEND" DURATION_IN_SEC="20" />
+        <TestStep Id="GET_IMSI" DEVICE="PHONE1" TIMEOUT="60" SAVE_AS="DUT_IMSI" />
+        <TestStep Id="DISABLE_MODEM_TRACES" DEVICE="PHONE1" />
+        <TestStep Id="SET_FLIGHT_MODE" DEVICE="PHONE1" FLIGHT_MODE="enable" />
+        <TestStep Id="SUSPEND" DURATION_IN_SEC="5" />
+
+        <TestStep Id="NS_SET_PARAM" EQT="FROM_CTX:CMW500_SIMULATOR" NAME="LteSetCellOnOff" OPTION="DEFAULT" VALUE="ON"/>
+
+        <TestStep Id="SET_FLIGHT_MODE" DEVICE="PHONE1" FLIGHT_MODE="disable" />
+        <TestStep Id="SUSPEND" DURATION_IN_SEC="20" />
+
+        <TestStep Id="CHECK_CDK_STATE" DEVICE="PHONE1" STATE="registered"
+                  TIMEOUT="FROM_DEVICE:PHONE1:registrationTimeout"/>
+
+        <TestStep Id="NS_CHECK_DUT_REGISTRATION" EQT="FROM_CTX:CMW500_SIMULATOR" FEATURE="FROM_TC:RAT"
+                  IMSI="FROM_CTX:DUT_IMSI" TIMEOUT="FROM_DEVICE:PHONE1:registrationTimeout"/>
+    </TestStepSet>
+    <TestStepSet Id="ConfigureRatData">
+        <TestStep Id="GET_MODULE_CONFIG" DEVICE="PHONE1" MODULE="PnpModule" KEY="//network_simulator_files/[+]FROM_TC:CONFIG_TYPE"
+                  MODULE_VALUE="CONFIG_FILE"/>
+        <TestStep Id="FIND_NETWORK_SIMULATOR" EQT_NAME="CMW500_SIMULATOR" FEATURE="FROM_TC:RAT" />
+        <TestStep Id="INIT_NETWORK_SIMULATOR" EQT="FROM_CTX:CMW500_SIMULATOR" FEATURE="FROM_TC:RAT" />
+        <TestStep Id="NS_CONFIGURE_CELL" EQT="FROM_CTX:CMW500_SIMULATOR" CONFIG="FROM_TC:CELL_BAND" CONFIG_FILE_NAME="FROM_CTX:CONFIG_FILE"/>
+
+        <TestStep Id="NS_SET_PARAM" EQT="FROM_CTX:CMW500_SIMULATOR" NAME="LteSetCellOnOff" OPTION="DEFAULT" VALUE="OFF"/>
+        <TestStep Id="NS_SET_PARAM" EQT="FROM_CTX:CMW500_SIMULATOR" NAME="LteULDynamicSched" OPTION="DEFAULT" VALUE="OFF" />
+
+        <TestStep Id="SET_FLIGHT_MODE" DEVICE="PHONE1" FLIGHT_MODE="disable" />
+        <TestStep Id="SUSPEND" DURATION_IN_SEC="20" />
+        <TestStep Id="GET_IMSI" DEVICE="PHONE1" TIMEOUT="60" SAVE_AS="DUT_IMSI" />
+        <TestStep Id="DISABLE_MODEM_TRACES" DEVICE="PHONE1" />
+        <TestStep Id="SET_FLIGHT_MODE" DEVICE="PHONE1" FLIGHT_MODE="enable" />
+        <TestStep Id="SUSPEND" DURATION_IN_SEC="5" />
+
+        <TestStep Id="NS_SET_PARAM" EQT="FROM_CTX:CMW500_SIMULATOR" NAME="LteSetCellOnOff" OPTION="DEFAULT" VALUE="ON"/>
+
+        <TestStep Id="SET_FLIGHT_MODE" DEVICE="PHONE1" FLIGHT_MODE="disable" />
+        <TestStep Id="SUSPEND" DURATION_IN_SEC="20" />
+
+        <TestStep Id="CHECK_CDK_STATE" DEVICE="PHONE1" STATE="registered"
+                  TIMEOUT="FROM_DEVICE:PHONE1:registrationTimeout"/>
+
+        <TestStep Id="NS_CHECK_DUT_REGISTRATION" EQT="FROM_CTX:CMW500_SIMULATOR" FEATURE="FROM_TC:RAT"
+                  IMSI="FROM_CTX:DUT_IMSI" TIMEOUT="FROM_DEVICE:PHONE1:registrationTimeout"/>
+
+        <TestStep Id="NS_SET_PARAM" EQT="FROM_CTX:CMW500_SIMULATOR" NAME="LteULDynamicSched"
+                    OPTION="DEFAULT" VALUE="ON" />
+    </TestStepSet>
+
+    <TestStepSet Id="DataConnection">
+        <TestStep Id="SET_DEVICE_APN" DEVICE="PHONE1" INTERFACE="'Agilent TS34.108 (00101)'"
+                         APN="cmw500_apn" USER="DEFAULT" PASSWORD="DEFAULT" PROTOCOL="DEFAULT"
+                         MMSC="DEFAULT" APN_TYPE="default" SET_DEFAULT="True" CLEAR_APN="True" />
+
+        <TestStep Id="ACTIVATE_DEVICE_PDP" DEVICE="PHONE1"/>
+        <TestStep Id="NS_WAIT_STATE" EQT="FROM_CTX:CMW500_SIMULATOR" TIMEOUT="60" NAME="RrcConnectionStatus" STATE="CONN" OPTION="DEFAULT" />
+    </TestStepSet>
+
+    <TestStepSet Id="CheckIdleConsumption">
+        <TestStep Id="CONFIGURE_SYSTEM_SLEEP_MODE" DEVICE="PHONE1" MODE="default" />
+        <TestStep Id="DISCONNECT_DEVICE_FROM_FWK" DEVICE="PHONE1" />
+        <TestStep Id="SET_SCREEN_PROPERTY" DEVICE="PHONE1" PROPERTY="state" VALUE="off"/>
+        <TestStep Id="REMOVE_USB" EQT="FROM_DEVICE:PHONE1:IoCard" />
+        <TestStep Id="SUSPEND" DURATION_IN_SEC="60" />
+        <TestStep Id="PATLIB_ACQUISITION" EQT="DEFAULT" ACTION="start"/>
+        <TestStep Id="SUSPEND" DURATION_IN_SEC="30" />
+        <TestStep Id="PATLIB_ACQUISITION" EQT="DEFAULT" ACTION="stop"/>
+        <TestStep Id="INSERT_USB_WITH_RETRIES" RETRY="FROM_DEVICE:PHONE1:usbReplugRetries" SLEEP_BETWEEN_RETRY="10" DEVICE="PHONE1" EQT="FROM_DEVICE:PHONE1:IoCard" />
+        <TestStep Id="WAIT_FOR_DEVICE" DEVICE="PHONE1" TIMEOUT_IN_SEC="60" />
+        <TestStep Id="CONNECT_DEVICE_TO_FWK" DEVICE="PHONE1" />
+        <TestStep Id="PATLIB_GET_ACQUISITION" EQT="DEFAULT" MEASURE_NAME="V_Batt" MEASURE_TYPE="average" SAVE_AS="VBAT_MEAN"/>
+        <!-- value must be under 100ma. If not, raise error -->
+        <TestStep Id="COMPARE" FIRST="FROM_CTX:VBAT_MEAN" SECOND="100" OPERATOR="LESS" PASS_IF="True"/>
+    </TestStepSet>
+
+</Include>

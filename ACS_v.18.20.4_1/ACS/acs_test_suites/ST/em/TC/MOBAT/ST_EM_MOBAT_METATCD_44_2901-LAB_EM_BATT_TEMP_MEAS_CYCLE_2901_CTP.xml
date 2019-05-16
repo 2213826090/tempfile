@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase>
+    <UseCase>LAB_EM_BATT_TEMP_MEAS_CYCLE</UseCase>
+    <Description>Monitor battery Charge when setting Battery temperature.</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>False</b2bContinuousMode>
+    <Parameters>
+        <Parameter>
+            <!-- Peripheral to plug and unplug (SDP|DCP|CDP|AC_CHGR|NONE) -->
+            <Name>CHARGER_TYPE</Name>
+            <Value>NONE</Value>
+        </Parameter>
+        <Parameter>
+            <!-- timeout in second before reading info -->
+            <Name>READ_INFO_TIMEOUT</Name>
+            <Value>120</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Temperature CYCLE in degree Celsius eg: 25,50,-15,25. The cycle must match with declared EM capabilities : there must be as many capabilities as temperatures in the cycle -->
+            <Name>TEMPERATURE_CYCLE</Name>
+            <Value>25,-15,55</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

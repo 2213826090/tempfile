@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="13.42">
+    <UseCase>TEST_STEP_ENGINE</UseCase>
+    <Description>Get the chromedriver binary from artifactory</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>False</b2bContinuousMode>
+    <TcMaxAttempt>3</TcMaxAttempt>
+    <TcAcceptanceCriteria>1</TcAcceptanceCriteria>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <TestSteps>
+        <Setup>
+            <TestStep Id="GET_ARTIFACT" EQT="ARTIFACT_MANAGER" ARTIFACT="APPLICATIONS/CHROME/CHROMEDRIVER/chromedriver_linux64" ARTIFACT_SOURCE="FROM_BENCH:ARTIFACT_MANAGER:URI" TRANSFER_TIMEOUT="DEFAULT" STORED_FILE_PATH="FILE_PATH_IN_CACHE2"/>
+        </Setup>
+        <RunTest>
+            <TestStep Id="RUN_LOCAL_CMD"
+                      COMMAND="cp -r [+]FROM_CTX:FILE_PATH_IN_CACHE2[+] ./_ExecutionConfig/TC/RO/ACS/Applications/Chrome/scripts/chromedriver"
+                      TIMEOUT="20" SILENT_MODE="False" SAVE_AS="out1"/>
+            <TestStep Id="RUN_LOCAL_CMD"
+                      COMMAND="cp -r [+]FROM_CTX:FILE_PATH_IN_CACHE2[+] ./_ExecutionConfig/TC/RO/PyUiApiTests/PyUiApi/app_utils/chromedriver"
+                      TIMEOUT="20" SILENT_MODE="False" SAVE_AS="out2"/>
+        </RunTest>
+    </TestSteps>
+</TestCase>

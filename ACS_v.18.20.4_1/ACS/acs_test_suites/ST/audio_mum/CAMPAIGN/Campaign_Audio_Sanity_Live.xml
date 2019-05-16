@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<Campaign>
+  <Parameters>
+    <Parameter isControlledPSUsed ="False"/>
+    <Parameter isIoCardUsed ="False"/>
+    <!-- Set skipBootOnPowerCycle to True to disable the accs boot procedure-->
+    <!-- Important, it means that boot will be handle inside the campaign/tc -->
+    <Parameter skipBootOnPowerCycle ="False"/>
+    <Parameter runHookScripts = "False"/>        
+    <Parameter powerCycleBetweenTC ="False"/>
+    <Parameter powerCycleOnFailure ="False"/>
+    <Parameter stopCampaignOnCriticalFailure = "False"/>
+    <!-- LoggingLevel possible values: info | warning | debug | error -->
+    <Parameter loggingLevel = "info"/>
+    <!-- CampaignType format -> <TEAM>_<CAMPAIGNTYPE> 
+        Possible values:        
+        FT(Feature Team)-> SANITY | REGRESSION | STRESS, RELIABILTY | MTBF
+        ST(System Test)-> SANITY | REGRESSION | STRESS, RELIABILTY | MTBF
+        SI(System Integration)-> EAT | STAB | PACT | CAT0 | RELIABILITY | MTBF | CTS
+        Otherwise "Others" should be used -->
+    <Parameter CampaignType = "ST_SANITY"/>
+  </Parameters> 
+  <Targets>
+    <!-- Target Values -->  
+    <Target targetB2bPassRate ="80"/>
+  </Targets>
+  <TestCases>
+  
+    <!-- SETUP
+    <TestCase Id="../TC/SETUP/LAB_SYSTEM_SETUP_EMBEDDED_Template"/>    
+    <TestCase Id="../TC/SETUP/LAB_SYSTEM_BOOT_Template"/>
+    -->
+    
+    <!-- Test SCRIPTS 22 = 11+3+6+2 -->
+  
+          <!-- playback common: 11 -->  
+    <TestCase Id="../TC/Live/ST_AUD_MM_L_M_080-LIVE_AUDIO_PLAYBACK"/>
+    <TestCase Id="../TC/Live/ST_AUD_MM_L_M_083_01-LIVE_AUDIO_PLAYBACK"/>
+    <TestCase Id="../TC/Live/ST_AUD_MM_L_M_089-LIVE_AUDIO_PLAYBACK"/>
+    <TestCase Id="../TC/Live/ST_AUD_MM_L_M_091-LIVE_AUDIO_PLAYBACK"/>
+    <TestCase Id="../TC/Live/ST_AUD_MM_L_M_093-LIVE_AUDIO_PLAYBACK"/>
+    <TestCase Id="../TC/Live/ST_AUD_MM_L_M_096_01-LIVE_AUDIO_PLAYBACK"/>
+    <TestCase Id="../TC/Live/ST_AUD_MM_L_M_116_01-LIVE_AUDIO_PLAYBACK"/>
+    <TestCase Id="../TC/Live/ST_AUD_MM_L_M_263_01-LIVE_AUDIO_PLAYBACK"/>
+    <TestCase Id="../TC/Live/ST_AUD_MM_L_M_389-LIVE_AUDIO_PLAYBACK"/>
+    <TestCase Id="../TC/Live/ST_AUD_MM_L_M_400_01-LIVE_AUDIO_PLAYBACK"/>
+    <TestCase Id="../TC/Live/ST_AUD_MM_L_M_400_02-LIVE_AUDIO_PLAYBACK"/>
+    
+        <!-- playback r3 3 --> 
+    
+        <!-- record common: 6 -->  
+    
+    <!-- r3 new encode 2 -->
+
+
+    
+  </TestCases>
+</Campaign>

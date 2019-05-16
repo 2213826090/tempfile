@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<Equipment version="13.44" name="CONFIGURABLE_AP4" description="Configurable Access Point">
+    <!-- Model possible values: DLINK_DAP2553 | CISCO_1250 | CISCO_1260 | CISCO_WAP4410N | CISCO_WRVS4400N | CISCO_AP541N | AP_CONTROLLER -->
+    <Parameter name="Model" value="AP_CONTROLLER"/>
+    <Parameter name="IP" value="192.168.250.20:7000"/>
+    <Parameter name="username" value="none"/>
+    <Parameter name="password" value="none"/>
+    <Parameter name="ConfigurationWaitingTime" value="45"/>
+    <Parameter name="ConsoleTimeout" value="" description="Time required in order for the telnet/ssh server embedded in the AP to reset the connection (in minutes)" />
+
+    <!-- The 12 next paramters are optional and should only be filled when Model = AP_CONTROLLER -->
+    <Parameter name="APC_AccessPoint" value="Atheros11nAP" description="Name of the AP to use behind the AP controller of the conformance bench" />
+    <Parameter name="APC_IP" value="192.165.112.1" description="IP address of the AP to use behind the AP controller of the conformance bench" />
+    <Parameter name="APC_UserName" value="root" description="Username to use to connect to the AP to use behind the AP controller of the conformance bench" />
+    <Parameter name="APC_Password" value="5up" description="Password to use to connect to the AP to use behind the AP controller of the conformance bench" />
+    <Parameter name="APC_SerialPortIP" value="" description="Virtual IP address of the serial port connected to the AP to use behind the AP controller of the conformance bench" />
+    <Parameter name="APC_HostName" value="~" description="Hostname of the AP to use behind the AP controller of the conformance bench" />
+    <Parameter name="APC_PowerSwitchIPAddress" value="192.168.250.15" description="Power switch IP address" />
+    <Parameter name="APC_PowerSwitchHostname" value=">" description="Power switch IP address" />
+    <Parameter name="APC_PowerSwitchUsername" value="apc" description="Power switch username" />
+    <Parameter name="APC_PowerSwitchPassword" value="apc -c" description="Power switch password" />
+    <Parameter name="APC_PowerSwitchPort" value="1" description="Power switch port to use to control the reboot of the AP to use behind the AP controller of the conformance bench" />
+    <Parameter name="APC_PowerSwitchPorts" value="3,1,8,7" description="List of ports available for controlling power of all AP of the bench" />
+
+    <Parameter name="SSID" value="CWS_CONFORMANCE_ATHEROS"/>
+    <Parameter name="passphrase_WEP64" value="12345"/>
+    <Parameter name="passphrase_WEP128" value="1234567890123"/>
+    <Parameter name="passphrase_WPA" value="1234567890123"/>
+    <Parameter name="passphrase_WPA2" value="1234567890123"/>
+    <Parameter name="radiusip" value="192.168.0.150"/>
+    <Parameter name="radiusport" value="1812"/>
+    <Parameter name="radiussecret" value="RadiusPass"/>
+    <Parameter name="EAP_user" value="Inteluser"/>
+    <Parameter name="EAP_password" value="intelpassword"/>
+    <Parameter name="EAP_SIM_user" value="eapsimuser" description="SIM user specified in radius server configuration"/>
+    <Parameter name="EAP_AKA_user" value="eapakauser" description="AKA user specified in radius server configuration"/>
+    <Parameter name="Credential_password" value="12345678"/>
+    <Parameter name="CA_guard_password" value="VPN"/>
+    <Parameter name="certificate_file" value="client.p12"/>
+</Equipment>

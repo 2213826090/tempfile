@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<Equipment name="LOADMODULE" description="Default load used by tests that call load module class like when doing discharge">
+    <!-- default Load ;. To be choosen between following loads (can be combinated with a ';' as separator) :
+        SCREEN_ON: Screen always ON and at full brightness
+        WIFI: WIFI ON
+        WIFI_STANDBY: WIFI connected to an AP
+        BLUETOOTH: bluetooth ON
+        GPS_ON: GPS ON
+        TORCHLIGHT: turn on torchlight
+        VIBRA: vibrate the phone
+        VIDEO: video playback, it requires a video path and audio volume
+        AUDIO: audio playback, it requires a video path and audio volume
+        VIDEO_CAPTURE: camera video capture
+
+        Pay attention that the loads may fail if your board does not support it.
+        Also all loads are not compatible in between.
+    -->
+    <Parameter name="DefaultLoad" value="GPS_ON;WIFI_STANDBY;BLUETOOTH" />
+    <!-- Media file to use for audio or video load -->
+    <Parameter name="MediaPath" value="media in acs media folder on board" />
+    <Parameter name="MediaVolume" value="100" />
+    <!-- wifi access point to use for wifi standby load, it correspond to the AP declare on the same benchconfig -->
+    <Parameter name="WifiAP" value="your ap in benchconfig" />
+</Equipment>

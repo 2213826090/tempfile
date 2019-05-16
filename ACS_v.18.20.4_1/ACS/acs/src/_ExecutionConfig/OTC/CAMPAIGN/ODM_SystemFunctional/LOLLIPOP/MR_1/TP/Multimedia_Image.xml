@@ -1,0 +1,39 @@
+<?xml version="1.0" ?>
+<Campaign version="13.49">
+    <Parameters>
+        <Parameter isControlledPSUsed="False"/>
+        <Parameter isIoCardUsed="False"/>
+        <Parameter skipBootOnPowerCycle="False"/>
+        <Parameter bootRetryNumber="0"/>
+        <Parameter runHookScripts="False"/>
+        <Parameter powerCycleBetweenTC="False"/>
+        <Parameter powerCycleOnFailure="False"/>
+        <Parameter finalDutState="NoChange"/>
+        <Parameter stopCampaignOnCriticalFailure="False"/>
+        <Parameter stopCampaignOnFirstFailure="False"/>
+        <Parameter loggingLevel="debug"/>
+        <Parameter CampaignType="Other"/>
+    </Parameters>
+    <TestCases>
+		<TestCase Id="../../../../../TC/TP/TC/Multimedia_Image/init.start_rpc_server.StartRPCServer.testStartRPCServer"/>
+		<TestCase Id="../../../../../TC/TP/TC/Multimedia_Image/init.wake_up_and_unlock.WakeUnlock.testWakeUnlock"/>
+		<TestCase Id="../../../../../TC/TP/TC/Multimedia_Image/init.set_orientation_vertical.SetOrientationVertical.testSetOrientationVertical"/>
+		<TestCase Id="../../../../../TC/TP/TC/Multimedia_Image/init.config_first_boot_wizard.ConfigFirstBootWizard.testConfigFirstBootWizard"/>
+		<TestCase Id="../../../../../TC/TP/TC/Multimedia_Image/init.enable_developer_option.EnableDeveloperOption.testEnableDeveloperOption"/>
+		<TestCase Id="../../../../../TC/TP/TC/Multimedia_Image/init.keep_awake.KeepAwake.testKeepAwake"/>
+		<TestCase Id="../../../../../TC/TP/TC/Multimedia_Image/init.disable_verify_apps.DisableVerifyApp.testDisableVerifyApp"/>
+		<TestCase Id="../../../../../TC/TP/TC/Multimedia_Image/init.install_all_video_app.InstallAllVideoApp.testInstallAllVideoApp"/>
+		<TestCase Id="../../../../../TC/TP/TC/Multimedia_Image/init.connect_wifi.ConnectWifi.testConnectWifi"/>
+		<TestCase Id="../../../../../TC/TP/TC/Multimedia_Image/init.disable_screen_lock.DisableLockScreen.testDisableLockScreen"/>
+		<TestCase Id="../../../../../TC/TP/TC/Multimedia_Image/init.set_adb_root.AdbRoot.testAdbRoot"/>
+		<TestCase Id="../../../../../TC/TP/TC/Multimedia_Image/init.delete_camera_folder_file.DeleteCameraFolderFile.testDeleteCameraFolderFile"/>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_Image/Edit/test_Album_Delete"/>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_Image/Decode/testImage_View_RotatePicture"/>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_Image/Decode/testMultiMedia_Gallery_SlideShow_Continue_Idle"/>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_Image/Edit/testImage_View_Edit_BMP"/>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_Image/Edit/testImage_View_Edit_WEBP"/>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_Image/Encode/testImage_Capture_JPEG"/>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_Image/Decode/testJPEG_HW_Decode"/>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_Image/Edit/testImage_View_Edit_PNG"/>
+    </TestCases>
+</Campaign>

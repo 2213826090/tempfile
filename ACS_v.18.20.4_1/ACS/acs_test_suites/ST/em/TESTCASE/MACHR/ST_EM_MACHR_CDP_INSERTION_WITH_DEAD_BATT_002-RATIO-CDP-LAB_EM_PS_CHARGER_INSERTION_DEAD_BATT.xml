@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="13.45">
+    <UseCase>LAB_EM_PS_CHARGER_INSERTION_DEAD_BATT</UseCase>
+    <Description>Plug the charger when dead battery is present and measure the battery current or the battery/charger current ratio</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>False</b2bContinuousMode>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters>
+        <Parameter>
+            <!-- Type of the charger : SDP/CDP/DCP -->
+            <Name>CHARGER_TYPE</Name>
+            <Value>CDP</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Battery Voltage Value (float value) -->
+            <Name>BATTERY_VOLTAGE</Name>
+            <Value>2.6</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Expected charge current value (float value) -->
+            <Name>EXPECTED_CHARGE_CURRENT</Name>
+            <Value>0.400</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Expected current ratio (int value). The ratio is a division between battery and charger like this : Battery value / Charger value. The result is a %. -->
+            <Name>EXPECTED_CURRENT_RATIO</Name>
+            <Value>90</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Type of the measure (Should be : CURRENT or RATIO) (str value) -->
+            <Name>MEASURE_TYPE</Name>
+            <Value>RATIO</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Time to wait (int value) This time is in the test specification. You set this value in order to wait the current stabilization. Before this sleep time, the code plug the charger. After this sleep time, we check the current. We use this value for both type of measure -->
+            <Name>WAIT_TIME</Name>
+            <Value>20</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Range of the current (float value). The current value is not exactly the same all the time. This parameter permits to add and remove a current offset in order to have a current range. -->
+            <Name>CURRENT_RANGE</Name>
+            <Value>0.02</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

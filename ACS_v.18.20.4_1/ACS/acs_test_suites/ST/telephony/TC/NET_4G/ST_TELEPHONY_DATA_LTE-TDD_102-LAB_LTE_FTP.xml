@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase>
+    <UseCase>LAB_LTE_FTP</UseCase>
+    <Description>FTP transfer over LTE simulated network</Description>
+    <b2bIteration>100</b2bIteration>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters>
+        <Parameter>
+            <!-- Multiple-Input Multiple-Output to set : true or false -->
+            <Name>MIMO</Name>
+            <Value>TRUE</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Duplex type TDD or FDD -->
+            <Name>DUPLEX_TYPE</Name>
+            <Value>TDD</Value>
+        </Parameter>
+        <Parameter>
+            <!-- number of antennas to set : 1 or 2  -->
+            <Name>ANTENNAS_NUMBER</Name>
+            <Value>2</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Select band : 1 or 2  -->
+            <Name>CELL_BAND</Name>
+            <Value>41</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Downlink channel -->
+            <Name>DL_EARFCN</Name>
+            <Value>40620</Value>  
+         </Parameter>
+        <Parameter>
+            <!-- RRC STATE Before FTP start (RRC_CONNECTED | RRC_IDLE )-->
+            <Name>RRC_STATE</Name>
+            <Value>RRC_CONNECTED</Value>
+        </Parameter>
+        <Parameter>
+            <!-- FTP transfer direction: DL or UL -->
+            <Name>DIRECTION</Name>
+            <Value>UL</Value>
+        </Parameter>
+        <Parameter>
+            <!-- File to upload on the server. This file shall be available on the device. If the file to transfer is located in a specific directory, you can specify its path. i.e. : acs/upload_file/put5M -->
+            <Name>UL_FILENAME</Name>
+            <Value>put100M</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Transfer timeout in s -->
+            <Name>XFER_TIMEOUT</Name>
+            <Value>600</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

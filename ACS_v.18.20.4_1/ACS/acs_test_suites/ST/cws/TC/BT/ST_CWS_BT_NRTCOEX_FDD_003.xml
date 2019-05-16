@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase>
+    <UseCase>TEST_STEP_ENGINE</UseCase>
+    <Description></Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>False</b2bContinuousMode>
+    <TcMaxAttempt>3</TcMaxAttempt>
+    <TcAcceptanceCriteria>1</TcAcceptanceCriteria>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters>
+        <Parameter>
+            <!-- INITIAL Duplex mode (FDD/TDD) -->
+            <Name>LTE_INITIAL_DUPLEX_MODE</Name>
+            <Value>FDD</Value>
+        </Parameter>
+        <Parameter>
+            <!-- INITIAL LTE band (OBx) -->
+            <Name>LTE_INITIAL_BAND</Name>
+            <Value>OB7</Value>
+        </Parameter>
+        <Parameter>
+            <!-- INITIAL LTE channel -->
+            <Name>LTE_INITIAL_CHANNEL</Name>
+            <Value>2850</Value> <!-- 2510MHz -->
+        </Parameter>
+        <Parameter>
+            <!-- safe LTE band (OBx) -->
+            <Name>LTE_2ND_BAND</Name>
+            <Value>OB1</Value>
+        </Parameter>
+        <Parameter>
+            <!-- LTE HANDOVER destination channel - Download channel mandatory -->
+            <Name>LTE_2ND_CHANNEL</Name>
+            <Value>300</Value>
+        </Parameter>
+        <Parameter>
+            <Name>LTE_SIMULATOR</Name>
+            <Value>NETWORK_SIMULATOR1</Value>
+        </Parameter>
+        <Parameter>
+            <Name>SYSDEBUG_MODULES</Name>
+            <Value>SafeRangeBT: frequencies</Value>
+        </Parameter>
+    </Parameters>
+    <TestSteps>
+        <Include Src="FT/cws/TSS/CMW500_Common.xml" />
+        <Include Src="FT/cws/TSS/LTECoex_Common.xml" />
+        <Include Src="FT/cws/TSS/CWS_Common.xml" />
+        <Include Src="FT/cws/TSS/Cellular_Common.xml" />
+        <Include Src="FT/cws/TSS/UseCase/BT/FT_CWS_BT_LTE_NRTCOEX_HANDOVER_UNSAFE-2-SAFE.xml" />
+        <Include Src="ST/cws/TSS/BT/ST_CWS_BT_LTE_NRTCOEX_HANDOVER_UNSAFE-2-SAFE_HID.xml" />
+        <Setup>
+            <TestStep SetId="ST_CWS_BT_LTE_NRTCOEX_HANDOVER_UNSAFE-2-SAFE_HID-SETUP" DEVICE="PHONE1" />
+        </Setup>
+        <RunTest>
+            <TestStep SetId="ST_CWS_BT_LTE_NRTCOEX_HANDOVER_UNSAFE-2-SAFE_HID-RUNTEST" DEVICE="PHONE1" />
+        </RunTest>
+        <TearDown>
+            <TestStep SetId="ST_CWS_BT_LTE_NRTCOEX_HANDOVER_UNSAFE-2-SAFE_HID-TEARDOWN" DEVICE="PHONE1" />
+        </TearDown>
+    </TestSteps>
+</TestCase>

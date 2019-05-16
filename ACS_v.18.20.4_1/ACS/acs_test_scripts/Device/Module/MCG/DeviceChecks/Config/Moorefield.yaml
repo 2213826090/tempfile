@@ -1,0 +1,24 @@
+ModuleConfiguration:
+    as_extra_charger_info: True
+    msic_bcu_current_path: ""
+    battery_interrupts: ["intel_mdf_battery", "max170xx_battery", "ulpmc-battery"]
+    batt_capacity: "/sys/class/*ower_supply/*battery/capacity"
+    bcu_interrput: ["msic_vdd", "bcove_bcu", "crystal_cove_bcu"]
+    #since common ics : "/sys/devices/ipc/msic_battery/charge_enable"
+    thermal_orig_file: "/etc/thermal_sensor_config.orig"
+    thermal_file: "/etc/thermal_sensor_config.xml"
+    charger_enable_file_path: "/sys/devices/platform/msic_battery.17/charge_enable"
+    # VAR RELATED TO CHARGER
+    possible_charger_name: ["charger", "smb", "b*_charger", "bq"]
+    mode_mapping:
+        "on": 4
+        "off": 0
+        "low": 1
+        "medium": 2
+        "high": 3
+    mode_mapping_cooling_device:
+        "on": 0
+        "off": 3
+        "low": 2
+        "medium": 1
+        "high": 0

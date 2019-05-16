@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="13.41">
+    <UseCase>LIVE_FIT_PDP_CONTEXTS</UseCase>
+    <Description>Check that multiple concurrent data network connectivity opens different PDP contexts</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <Parameters>
+        <Parameter>
+            <!-- is a FTP download test used to create PDP context</Description> -->
+            <Name>USE_FTP_DOWNLOAD</Name>
+            <Value>True</Value>
+        </Parameter>
+        <Parameter>
+            <!-- True|False|Check -->
+            <!-- is a MMS sending test used to create PDP context -->
+            <!-- 'Check' means that the MMS sending is also checked -->
+            <Name>USE_MMS</Name>
+            <Value>True</Value>
+        </Parameter>
+        <Parameter>
+            <!--full FTP path to file to get. The file should be large enough to ensure PDP context stay active long enough for check-->
+            <Name>FTP_FILE</Name>
+            <Value></Value>
+        </Parameter>
+        <Parameter>
+            <!--FTP transfer timeout-->
+            <Name>FTP_TIMEOUT</Name>
+            <Value>60</Value>
+        </Parameter>
+        <Parameter>
+            <Name>FTP_USER</Name>
+            <!--(optional) user required for FTP connection. Defaults to "anonymous"-->
+            <Value></Value>
+        </Parameter>
+        <Parameter>
+            <Name>FTP_PASSWD</Name>
+            <!--(optional) password required for FTP connection. defaults to "none"-->
+            <Value></Value>
+        </Parameter>
+        <Parameter>
+            <!--the number of expected simultaneous PDP contexts-->
+            <Name>TARGET</Name>
+            <Value>2</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Describes the type of MMS that will be build.
+                Should be "picture" or "text".
+                "picture" for a MMS with subject, text and an attached picture.
+                "text" fot a MMS with subject and text. -->
+            <Name>MMS_TYPE</Name>
+            <Value>picture</Value>
+        </Parameter>
+        <Parameter>
+            <!-- MMS destination phone number. If the value [PHONE_NUMBER] is given, the phoneNumber defined in Phone_Catalog.xml will be used -->
+            <Name>DESTINATION_NUMBER</Name>
+            <Value>[PHONE_NUMBER]</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Text to add to the MMS subject. -->
+            <Name>MMS_SUBJECT</Name>
+            <Value>MMS subject</Value>
+        </Parameter>
+        <Parameter>
+            <!-- MMS text message -->
+            <Name>MESSAGE_CONTENT</Name>
+            <Value></Value>
+        </Parameter>
+        <Parameter>
+            <!-- Name of a file, present in the multimedia path of the device, that will be attach to the MMS. -->
+            <Name>ATTACHED_FILE</Name>
+            <Value>ACS_Sample_Picture.jpg</Value>
+        </Parameter>
+        <Parameter>
+            <!-- MMS transfer timeout in seconds -->
+            <Name>SENT_MMS_TIMEOUT</Name>
+            <Value>240</Value>
+        </Parameter>
+        <Parameter>
+            <!-- MMS transfer timeout in seconds -->
+            <Name>RECEIVED_MMS_TIMEOUT</Name>
+            <Value>240</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

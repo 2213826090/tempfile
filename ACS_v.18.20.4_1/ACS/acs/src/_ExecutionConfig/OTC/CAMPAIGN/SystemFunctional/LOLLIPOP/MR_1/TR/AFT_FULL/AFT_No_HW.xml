@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<Campaign>
+      <Parameters>
+            <Parameter isControlledPSUsed="False"/>
+            <Parameter isIoCardUsed="True"/>
+            <Parameter skipBootOnPowerCycle="False"/>
+            <Parameter bootRetryNumber="0"/>
+            <Parameter runHookScripts="False"/>
+            <Parameter powerCycleBetweenTC="False"/>
+            <Parameter powerCycleOnFailure="False"/>
+            <Parameter finalDutState="NoChange"/>
+            <Parameter stopCampaignOnCriticalFailure="False"/>
+            <Parameter stopCampaignOnFirstFailure="False"/>
+            <Parameter loggingLevel="debug"/>
+            <Parameter CampaignType="Other"/>
+      </Parameters>
+      <TestCases>
+            <SubCampaign Id="../Adb"/>
+            <SubCampaign Id="../Android_Framework_SDK_API"/>
+            <SubCampaign Id="../Bluetooth"/>
+            <SubCampaign Id="../Chrome_Browser"/>
+            <SubCampaign Id="../GPS"/>
+            <SubCampaign Id="../System_Storage_USB"/>
+            <SubCampaign Id="../System_Touch"/>
+            <SubCampaign Id="../Houdini"/>
+            <SubCampaign Id="../Core_Apps"/>
+            <SubCampaign Id="./GMS_FULL"/>
+      </TestCases>
+</Campaign>

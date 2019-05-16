@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase> 
+    <UseCase>LIVE_PERFMEAS_SETTINGS_LAUNCH_TIME</UseCase>
+    <Description>Settings application launch time</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters>
+        <Parameter>
+            <Name>TIMEOUT</Name>
+            <Value>120</Value>
+        </Parameter>
+		<Parameter>
+            <Name>ARGUMENTS</Name>
+            <Value>DEFAULT: artifact://UIAUTOMATOR/Performance.jar;</Value>
+        </Parameter>
+        <Parameter>
+            <Name>MEASURE_NB</Name>
+            <Value>2</Value>
+        </Parameter>
+        <Parameter>
+            <Name>SYSDEBUG_MODULES</Name>
+            <Value></Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

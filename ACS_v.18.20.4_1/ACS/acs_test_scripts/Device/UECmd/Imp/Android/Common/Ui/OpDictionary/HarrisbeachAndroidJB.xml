@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<operationsets>
+    <operationset name="phone_unlock">
+        <operation>
+            <command comment="wake the screen of the device">wake</command>
+            <parameter comment="seconds to wait before next action">2</parameter>
+        </operation>
+        <operation>
+            <command comment="Unlock the phone">drag</command>
+            <parameter comment="x coordinate of the starting point">1400</parameter>
+            <parameter comment="y coordinate of the starting point">500</parameter>
+            <parameter comment="x coordinate of the ending point">1600</parameter>
+            <parameter comment="y coordinate of the ending point">500</parameter>
+            <parameter comment="seconds to wait before next action">1</parameter>
+        </operation>
+    </operationset>
+    <operationset name="go_home">
+        <operation>
+            <command comment="press the enter key to finish the input">keypress</command>
+            <parameter comment="the key to be pressed">KEYCODE_HOME</parameter>
+            <parameter comment="seconds to wait before next action">2</parameter>
+            <logcat_ouput></logcat_ouput>
+        </operation>
+    </operationset>
+    <operationset name="unlock_wizard">
+        <operation>
+            <command comment="touch">touch</command>
+            <parameter comment="x coordinate">60</parameter>
+            <parameter comment="y coordinate">60</parameter>
+            <parameter comment="seconds to wait before next action">1</parameter>
+        </operation>
+        <operation>
+            <command comment="touch">touch</command>
+            <parameter comment="x coordinate">660</parameter>
+            <parameter comment="y coordinate">60</parameter>
+            <parameter comment="seconds to wait before next action">1</parameter>
+        </operation>
+        <operation>
+            <command comment="touch">touch</command>
+            <parameter comment="x coordinate">660</parameter>
+            <parameter comment="y coordinate">1180</parameter>
+            <parameter comment="seconds to wait before next action">1</parameter>
+        </operation>
+        <operation>
+            <command comment="touch">touch</command>
+            <parameter comment="x coordinate">60</parameter>
+            <parameter comment="y coordinate">1180</parameter>
+            <parameter comment="seconds to wait before next action">1</parameter>
+        </operation>
+        <operation>
+            <command comment="wait 1s">wait</command>
+            <parameter comment="1s">5</parameter>
+        </operation>
+        <operation>
+            <command comment="touch">touch</command>
+            <parameter comment="x coordinate">600</parameter>
+            <parameter comment="y coordinate">1153</parameter>
+            <parameter comment="seconds to wait before next action">1</parameter>
+        </operation>
+        <operation>
+            <command comment="touch">touch</command>
+            <parameter comment="x coordinate">360</parameter>
+            <parameter comment="y coordinate">1153</parameter>
+            <parameter comment="seconds to wait before next action">1</parameter>
+        </operation>
+        <operation>
+            <command comment="touch">touch</command>
+            <parameter comment="x coordinate">600</parameter>
+            <parameter comment="y coordinate">1153</parameter>
+            <parameter comment="seconds to wait before next action">1</parameter>
+        </operation>
+        <operation>
+            <command comment="press the back key to go to conversation list">keypress</command>
+            <parameter comment="the key to be pressed">KEYCODE_BACK</parameter>
+        </operation>
+    </operationset>
+    <operationset name="deactivate_lockscreen">
+        <operation>
+            <command comment="exec > ChooseLockGeneric">exec</command>
+            <parameter comment="command">start -a android.intent.action.MAIN -c android.intent.category.LAUNCHER -n com.android.settings/.ChooseLockGeneric</parameter>
+            <parameter comment="seconds to wait before next action">2</parameter>
+        </operation>
+        <operation>
+            <command comment="Go to the top of the menu">keypress</command>
+            <parameter comment="the key to be pressed">KEYCODE_DPAD_UP</parameter>
+        </operation>
+        <operation>
+            <command comment="Go to the top of the menu">keypress</command>
+            <parameter comment="the key to be pressed">KEYCODE_DPAD_UP</parameter>
+        </operation>
+        <operation>
+            <command comment="Go to the top of the menu">keypress</command>
+            <parameter comment="the key to be pressed">KEYCODE_DPAD_UP</parameter>
+        </operation>
+        <operation>
+            <command comment="Go to the top of the menu">keypress</command>
+            <parameter comment="the key to be pressed">KEYCODE_DPAD_UP</parameter>
+        </operation>
+        <operation>
+            <command comment="Select the None Value">keypress</command>
+            <parameter comment="the key to be pressed">KEYCODE_DPAD_CENTER</parameter>
+        </operation>
+    </operationset>
+    <operationset name="set_2_apks_as_admin">
+        <operation>
+            <command comment="exec > DeviceAdminSettings">exec</command>
+            <parameter comment="command">start -a android.intent.action.MAIN -c android.intent.category.LAUNCHER -n com.android.settings/.DeviceAdminSettings</parameter>
+            <parameter comment="seconds to wait before next action">2</parameter>
+        </operation>
+        <operation>
+            <command comment="Go to the right of the menu to be compliant with all hardware">keypress</command>
+            <parameter comment="the key to be pressed">KEYCODE_DPAD_RIGHT</parameter>
+        </operation>
+        <operation>
+            <command comment="Go to the top of the menu">keypress</command>
+            <parameter comment="the key to be pressed">KEYCODE_DPAD_UP</parameter>
+        </operation>
+        <operation>
+            <command comment="Go to the top of the menu">keypress</command>
+            <parameter comment="the key to be pressed">KEYCODE_DPAD_UP</parameter>
+        </operation>
+        <operation>
+            <command comment="Go to the top of the menu">keypress</command>
+            <parameter comment="the key to be pressed">KEYCODE_DPAD_UP</parameter>
+        </operation>
+        <operation>
+            <command comment="Go to the top of the menu">keypress</command>
+            <parameter comment="the key to be pressed">KEYCODE_DPAD_UP</parameter>
+        </operation>
+        <operation>
+            <command comment="Move to the 1st APK">keypress</command>
+            <parameter comment="the key to be pressed">KEYCODE_DPAD_DOWN</parameter>
+        </operation>
+        <operation>
+            <command comment="Move to the 1st APK">keypress</command>
+            <parameter comment="the key to be pressed">KEYCODE_DPAD_DOWN</parameter>
+        </operation>
+        <operation>
+            <command comment="Select the 1st APK">keypress</command>
+            <parameter comment="the key to be pressed">KEYCODE_DPAD_CENTER</parameter>
+        </operation>
+        <operation>
+            <command comment="Set APK as admin">keypress</command>
+            <parameter comment="the key to be pressed">KEYCODE_DPAD_DOWN</parameter>
+        </operation>
+        <operation>
+            <command comment="Set APK as admin">keypress</command>
+            <parameter comment="the key to be pressed">KEYCODE_DPAD_DOWN</parameter>
+        </operation>
+        <operation>
+            <command comment="Set APK as admin">keypress</command>
+            <parameter comment="the key to be pressed">KEYCODE_DPAD_CENTER</parameter>
+        </operation>
+       <operation>
+            <command comment="Go to the top of the menu">keypress</command>
+            <parameter comment="the key to be pressed">KEYCODE_DPAD_UP</parameter>
+        </operation>
+        <operation>
+            <command comment="Go to the top of the menu">keypress</command>
+            <parameter comment="the key to be pressed">KEYCODE_DPAD_UP</parameter>
+        </operation>
+        <operation>
+            <command comment="Go to the top of the menu">keypress</command>
+            <parameter comment="the key to be pressed">KEYCODE_DPAD_UP</parameter>
+        </operation>
+        <operation>
+            <command comment="Go to the top of the menu">keypress</command>
+            <parameter comment="the key to be pressed">KEYCODE_DPAD_UP</parameter>
+        </operation>
+        <operation>
+            <command comment="Move to the 2nd APK">keypress</command>
+            <parameter comment="the key to be pressed">KEYCODE_DPAD_DOWN</parameter>
+        </operation>
+        <operation>
+            <command comment="Move to the 2nd APK">keypress</command>
+            <parameter comment="the key to be pressed">KEYCODE_DPAD_DOWN</parameter>
+        </operation>
+        <operation>
+            <command comment="Move to the 2nd APK">keypress</command>
+            <parameter comment="the key to be pressed">KEYCODE_DPAD_DOWN</parameter>
+        </operation>
+        <operation>
+            <command comment="Select the 2nd APK">keypress</command>
+            <parameter comment="the key to be pressed">KEYCODE_DPAD_CENTER</parameter>
+        </operation>
+        <operation>
+            <command comment="Set APK as admin">keypress</command>
+            <parameter comment="the key to be pressed">KEYCODE_DPAD_DOWN</parameter>
+        </operation>
+        <operation>
+            <command comment="Set APK as admin">keypress</command>
+            <parameter comment="the key to be pressed">KEYCODE_DPAD_DOWN</parameter>
+        </operation>
+        <operation>
+            <command comment="Set APK as admin">keypress</command>
+            <parameter comment="the key to be pressed">KEYCODE_DPAD_CENTER</parameter>
+        </operation>
+    </operationset>
+</operationsets>

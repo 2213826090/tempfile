@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase>
+  <UseCase>EXEC</UseCase>
+  <Description>Chrome open play a video for 24h</Description>
+  <b2bIteration>1</b2bIteration>
+  <b2bContinuousMode>True</b2bContinuousMode>
+  <Parameters>
+    <Parameter>
+      <Name>RUN_CMD</Name>
+      <Value>bash ./_ExecutionConfig/OTC/TC/Stress/scripts/ChromePlayVideo24h.sh</Value>
+    </Parameter>
+    <Parameter>
+      <Name>RUN_TIMEOUT</Name>
+      <Value>43200</Value>
+    </Parameter>
+    <Parameter>
+      <Name>RUN_EXPECT_RESULT</Name>
+      <Value>pass</Value>
+    </Parameter>
+  </Parameters>
+</TestCase>

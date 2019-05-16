@@ -1,0 +1,20 @@
+COMMANDS = {
+        "list":          {"description": "scan for a specific device",
+                                 "function": {"_module": "bt.scan.handler",
+                                              "_class": "ScanHandler",
+                                              "_name": "scan",
+                                              "_args": {"addr": str,"timeout": int}},
+                                 "requires": ["adapter"]},
+        "enable":        {"description": "scan for a duration",
+                                 "function": {"_module": "bt.scan.handler",
+                                              "_class": "ScanHandler",
+                                              "_name": "scan",
+                                              "_args": {"timeout": int}},
+                                 "requires": ["adapter"]},
+        "disable":       {"description": "scan for a duration",
+                                 "function": {"_module": "bt.scan.handler",
+                                              "_class": "ScanHandler",
+                                              "_name": "scan",
+                                              "_args": {"timeout": int}},
+                                 "requires": ["adapter"]}
+            }

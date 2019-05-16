@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCase version="13.49">
+    <UseCase>LAB_EM_THERMAL_CRITICAL_STATE</UseCase>
+    <Description>test what happen at thermal critical state on different sensors</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>False</b2bContinuousMode>
+    <TcMaxAttempt>1</TcMaxAttempt>
+    <TcAcceptanceCriteria>1</TcAcceptanceCriteria>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters>
+        <Parameter>
+            <!-- Temperature that bring the DUT to reach a CRITICAL temperatue state in Degree Celsius.
+                if you use the key work 'SMART', the temperature chamber will adjust its temperature to the tested sensor critical threshold and
+                this threshold may be lowered to reach the critical state quiclky -->
+            <Name>TEMPERATURE</Name>
+            <Value>SMART</Value>
+        </Parameter>
+        <Parameter>
+            <!-- The maximum temperature increasing we can apply to TEMPERATURE in order to be at CRITICAL state -->
+            <Name>TEMP_MAX_INCREASE_MARGIN</Name>
+            <Value>10</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Time in second to let the DUT adapt to the given temperature and modify its behavior -->
+            <Name>TEMPERATURE_CHANGE_TIMEOUT</Name>
+            <Value>1800</Value>
+        </Parameter>
+        <Parameter>
+            <!-- The sensor to test, it will depend of your DUT configuration, the more common are: BACKSKIN, FRONTSKIN, BATTERY -->
+            <Name>SENSOR_TO_TEST</Name>
+            <Value>BATTERY</Value>
+        </Parameter>
+        <Parameter>
+            <!-- this testcase can cover different test when you board reach the temperature targets on this file.
+                it can check different value on charger and battery at this time.
+                These checkable values have special syntaxes that allow you to indicate what sub values you want to evaluate
+                among all that they are able to read.
+                e,g:<Value>EM_INFO_AT_CRITICAL_LEVEL.BATTERY.STATUS</Value>
+                the dot allows you specifcy that you want STATUS info from BATTERY for the TAG EM_INFO
+
+                The verdict of your usecase will be based only on the result of target you put here.
+                use ; as separator
+
+                check energy_management.xml on _config folder for details on what can be tested
+            -->
+            <Name>EM_TARGET</Name>
+            <Value>SHUTDOWN_HAPPEN;LAST_BOOT_MODE_SEEN</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

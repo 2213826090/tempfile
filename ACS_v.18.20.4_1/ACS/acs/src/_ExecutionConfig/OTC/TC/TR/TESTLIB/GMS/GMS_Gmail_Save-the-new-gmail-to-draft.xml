@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='ASCII'?>
+<TestCase>
+    <UseCase>Testlib</UseCase>
+    <Description>Gmail  -- save mail as draft</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <TcMaxAttempt>1</TcMaxAttempt>
+
+    <Parameters>
+        <Parameter>
+            <Name>timeout</Name>
+            <Value>600</Value>
+        </Parameter>
+        <Parameter>
+            <Name>script-args</Name>
+            <Value>{"account":"auto3test@gmail.com","account_to":"auto3test@gmail.com","password":"testing12345"}</Value>
+        </Parameter>
+        <Parameter>
+            <Name>test</Name>
+            <Value>scripts/gms/Gmail/tests/GMS_Gmail_Save-the-new-gmail-to-draft.py</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

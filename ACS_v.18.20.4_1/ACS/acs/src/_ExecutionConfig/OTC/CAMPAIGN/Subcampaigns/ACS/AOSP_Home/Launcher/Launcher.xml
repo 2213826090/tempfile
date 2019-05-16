@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<Campaign>
+      <Parameters>
+            <Parameter isControlledPSUsed="False"/>
+            <Parameter isIoCardUsed="False"/>
+            <Parameter skipBootOnPowerCycle="False"/>
+            <Parameter bootRetryNumber="0"/>
+            <Parameter runHookScripts="False"/>
+            <Parameter powerCycleBetweenTC="False"/>
+            <Parameter powerCycleOnFailure="False"/>
+            <Parameter finalDutState="NoChange"/>
+            <Parameter stopCampaignOnCriticalFailure="False"/>
+            <Parameter stopCampaignOnFirstFailure="False"/>
+            <Parameter loggingLevel="debug"/>
+            <Parameter CampaignType="Other"/>
+      </Parameters>
+      <TestCases>
+            <TestCase Id="../../../../../TC/TR/ACS/AOSP_Home/Launcher/MOVE_APP_TO_CURRENT_SCREEN_VIEW"/>
+            <TestCase Id="../../../../../TC/TR/ACS/AOSP_Home/Launcher/UNINSTALL_AN_APP_ON_THE_DOCK"/>
+            <TestCase Id="../../../../../TC/TR/ACS/AOSP_Home/Launcher/HOMESCREEN_SLIDE_LEFT_RIGHT"/>
+            <TestCase Id="../../../../../TC/TR/ACS/AOSP_Home/Launcher/CLICK_DOCK_ITEM_TO_LAUNCH_APP"/>
+            <TestCase Id="../../../../../TC/TR/ACS/AOSP_Home/Launcher/LAUNCH_RUNNING_APPS"/>
+            <TestCase Id="../../../../../TC/TR/ACS/AOSP_Home/Launcher/LAUNCH_APPLICATION_FROM_HOME_SCREEN"/>
+            <TestCase Id="../../../../../TC/TR/ACS/AOSP_Home/Launcher/PRESS_HOME_BUTTON"/>
+            <TestCase Id="../../../../../TC/TR/ACS/AOSP_Home/Launcher/ADD_USER_INSTALLED_APPLICATIONS_INTO_SCREEN_VIEW"/>
+            <TestCase Id="../../../../../TC/TR/ACS/AOSP_Home/Launcher/MOVE_APP_TO_OTHER_SCREEN"/>
+            <TestCase Id="../../../../../TC/TR/ACS/AOSP_Home/Launcher/DELETE_ITEM_FROM_HOME_SCREEN"/>
+            <TestCase Id="../../../../../TC/TR/ACS/AOSP_Home/Launcher/REMOVE_APP_FROM_RECENT_APPS"/>
+            <TestCase Id="../../../../../TC/TR/ACS/AOSP_Home/Launcher/CHANGE_SHORTCUT_IN_DOCK"/>
+            <TestCase Id="../../../../../TC/TR/ACS/AOSP_Home/Launcher/DELETE_MOVE_SHORTCUTS_ON_DOCK"/>
+            <TestCase Id="../../../../../TC/TR/ACS/AOSP_Home/Launcher/ADD_SHORTCUTS_TO_DOCK"/>
+      </TestCases>
+</Campaign>

@@ -1,0 +1,357 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<UseCases xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../acs/src/_Catalogs/UseCase/usecase.xsd">
+    <UseCase Id="LAB_EM_DEBUG_TEST" Domain="ENERGY_MGMT" SubDomain="MISC" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.EnergyManagement.LAB_EM_DEBUG_TEST.LabEmDebugTest</ClassName>
+        <Description>EM - This UseCase valid all uecmd used in EM domain.</Description>
+        <Environment name="EMT_BATT">
+            <Dependency>EQT_EMT311</Dependency>
+        </Environment>
+        <Parameters>
+            <Parameter name="UECMD_TYPE_LIST" type="STRING" isOptional="false">
+                <Description>The UECMD type list separated with ';' You can choose it amoung these : THERMAL, AUTOLOG, MSIC, BCU, SCREEN, STATUS, CONSUMPTION, MULTIMEDIA</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="BENCH_TYPE" type="BENCH_TYPE" isOptional="false">
+                <Description>The bench type . It can be "POWER_SUPPLY_BENCH" or "BATTERY_BENCH"</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="MULTIMEDIA_FILE" type="STRING" isOptional="false">
+                <Description>if you test MULTIMEDIA then this is the file to use</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+        </Parameters>
+    </UseCase>
+    <UseCase Id="LAB_EM_INIT_BOARD" Domain="ENERGY_MGMT" SubDomain="MISC" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.EnergyManagement.LAB_EM_INIT_BOARD.LabEmInitBoard</ClassName>
+        <Description>EM - This UseCase setup the board before doing execution.</Description>
+        <Environment name="EMT_BATT">
+            <Dependency>EQT_EMT311</Dependency>
+        </Environment>
+        <Parameters>
+            <Parameter name="LOAD_TO_DEACTIVATE" type="STRING" isOptional="false">
+                <Description>The UECMD</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+        </Parameters>
+    </UseCase>
+    <UseCase Id="LAB_EM_COOLING_ACTION_VIDEO_CAPTURE" Domain="ENERGY_MGMT" SubDomain="MISC" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.EnergyManagement.BatteryBased.LAB_EM_COOLING_ACTION_VIDEO_CAPTURE.LabEmCoolingActionVideoCapture</ClassName>
+        <Description>this test do thermal measurement during a video capture</Description>
+        <Environment name="EMT_BATT">
+            <Dependency>EQT_EMT311</Dependency>
+        </Environment>
+        <Parameters>
+            <Parameter name="BATT_MIN_CAPACITY" type="BATTERY_CAPACITY_IN_PERCENT" isOptional="false">
+                <Description> minimal battery capacity to start the test. If you are below it, a charge will occur</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="SETUP_TIME_COOLDOWN_BOARD" type="STRING" isOptional="false">
+                <Description>before starting the test we need to wait this second to let the board cool down ( board is off during this time)</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="SETUP_COOLDOWN_WITH_CAMERA" type="STRING" isOptional="false">
+                <Description>If a thermal camera is present ,this option allow to use it to cooldown the board which may help to reduce the test duration</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="SETUP_START_TEMPERATURE" type="STRING" isOptional="false">
+                <Description>the max temperature in degree that the board should be below before starting the test if thermal camera is used</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="VIDEO_RECORD_DURATION" type="STRING" isOptional="false">
+                <Description>duration of the video record in second, this duration may be limited by the video record timeout of your DUT</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="THERMAL_ZONE_TO_MONITOR" type="STRING" isOptional="false">
+                <Description>thermal zone to inspect after video record is done</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="SETUP_TECHNO" type="STRING" isOptional="false">
+                <Description>technology to apply before starting the test</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="CAMERA_NAME" type="STRING" isOptional="false">
+                <Description>which camera app to use</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="QUALITY" type="STRING" isOptional="false">
+                <Description>record quality, can be 1080P, 720P, 480P, LOW, MAX</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="WIFI_ACCESS_POINT" type="STRING" isOptional="false">
+                <Description>Wifi access point on which board will connect to</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="MEDIA_TO_RECORD" type="STRING" isOptional="false">
+                <Description>the video to play on the media player on the host side, this video will be record by the DUT</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="MONITOR_ON_WHICH_MEDIA_IS_PLAY" type="STRING" isOptional="false">
+                <Description>the monitor on which the video should be displayed: 0 is the main, -1 will target the last seen, otherwise put the monitor no</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+        </Parameters>
+    </UseCase>
+    <UseCase Id="LAB_EM_TEMP_MONITOR_VIDEO_CAPTURE" Domain="ENERGY_MGMT" SubDomain="MISC" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.EnergyManagement.BatteryBased.LAB_EM_TEMP_MONITOR_VIDEO_CAPTURE.LabEmTempMonitorVideoCapture</ClassName>
+        <Description>this test do thermal measurement during a video capture</Description>
+        <Environment name="EMT_BATT">
+            <Dependency>EQT_EMT311</Dependency>
+        </Environment>
+        <Parameters>
+            <Parameter name="TARGET_MAX_TEMPERATURE" type="STRING" isOptional="false">
+                <Description>the MAX temperature in degree not to exceed during the test, if the measured temperature is above test will be FAIL</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="BATT_MIN_CAPACITY" type="BATTERY_CAPACITY_IN_PERCENT" isOptional="false">
+                <Description> minimal battery capacity to start the test. If you are below it, a charge will occur</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="SETUP_TIME_COOLDOWN_BOARD" type="STRING" isOptional="false">
+                <Description>before starting the test we need to wait this second to let the board cool down ( board is off during this time)</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="SETUP_START_TEMPERATURE" type="STRING" isOptional="false">
+                <Description>the max temperature in degree that the board should be below before starting the test</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="VIDEO_RECORD_DURATION" type="STRING" isOptional="false">
+                <Description>duration of the video record in second, this duration may be limited by the video record timeout of your DUT</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="SETUP_TECHNO" type="STRING" isOptional="false">
+                <Description>technology to apply before starting the test</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="CAMERA_NAME" type="STRING" isOptional="false">
+                <Description>which camera app to use</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="QUALITY" type="STRING" isOptional="false">
+                <Description>record quality, can be 1080P, 720P, 480P, LOW, MAX</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="WIFI_ACCESS_POINT" type="STRING" isOptional="false">
+                <Description>Wifi access point on which board will connect to</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="MEDIA_TO_RECORD" type="STRING" isOptional="false">
+                <Description>the video to play on the media player on the host side, this video will be record by the DUT</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="MONITOR_ON_WHICH_MEDIA_IS_PLAY" type="STRING" isOptional="false">
+                <Description>the monitor on which the video should be displayed: 0 is the main, -1 will target the last seen, otherwise put the monitor no</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+        </Parameters>
+    </UseCase>
+    <UseCase Id="LAB_EM_TEMP_MONITOR_BENCHMARK" Domain="ENERGY_MGMT" SubDomain="MISC" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.EnergyManagement.BatteryBased.LAB_EM_TEMP_MONITOR_BENCHMARK.LabEmTempMonitorBenchmark</ClassName>
+        <Description>This usecase measure the board temperature during a benchmark execution</Description>
+        <Environment name="EMT_BATT">
+            <Dependency>EQT_EMT311</Dependency>
+        </Environment>
+        <Parameters>
+            <Parameter name="TARGET_MAX_TEMPERATURE" type="STRING" isOptional="false">
+                <Description>the MAX temperature in degree not to exceed during the test, if the measured temperature is above test will be FAIL</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="BATT_MIN_CAPACITY" type="BATTERY_CAPACITY_IN_PERCENT" isOptional="false">
+                <Description> minimal battery capacity to start the test. If you are below it, a charge will occur</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="SETUP_TIME_COOLDOWN_BOARD" type="STRING" isOptional="false">
+                <Description>before starting the test we need to wait this second to let the board cool down ( board is off during this time)</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="SETUP_START_TEMPERATURE" type="STRING" isOptional="false">
+                <Description>the max temperature in degree that the board should be below before starting the test</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="SETUP_TECHNO" type="STRING" isOptional="false">
+                <Description>technology to apply before starting the test</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="WIFI_ACCESS_POINT" type="STRING" isOptional="false">
+                <Description>Wifi access point on which board will connect to</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="BENCHMARK_NAME" type="STRING" isOptional="false">
+                <Description>name of the benchmark to execute</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="BENCHMARK_NB_OF_RUN" type="STRING" isOptional="false">
+                <Description>Number of benchmark execution</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="BENCHMARK_DURATION" type="STRING" isOptional="false">
+                <Description>The benchmark execution duration in second, it if last less than it, it will be repeated</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="BENCHMARK_DURATION_OF_ONE_EXEC" type="STRING" isOptional="false">
+                <Description>Estimated duration of one benchmark execution in second, should always be superior to the real one, the whole test duration will be equal to BENCHMARK_DURATION_OF_ONE_EXEC * BENCHMARK_NB_OF_RUN</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="BENCHMARK_MIN_WAIT_TIME" type="STRING" isOptional="false">
+                <Description>The min duration in second before embedded agent start to monitor the end of the benchmark, this avoid charging the cpu with monitoring action</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="BENCHMARK_MAX_WAIT_TIME" type="STRING" isOptional="false">
+                <Description>The max duration in second allowed to embedded agent to monitor the benchmark end, if your above it an exception will be raised by the agent</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+        </Parameters>
+    </UseCase>
+    <UseCase Id="LAB_EM_COOLING_ACTION_BENCHMARK" Domain="ENERGY_MGMT" SubDomain="MISC" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.EnergyManagement.BatteryBased.LAB_EM_COOLING_ACTION_BENCHMARK.LabEmCoolingActionBenchmark</ClassName>
+        <Description>This usecase look for thermal cooling action during benchmark execution</Description>
+        <Environment name="EMT_BATT">
+            <Dependency>EQT_EMT311</Dependency>
+        </Environment>
+        <Parameters>
+            <Parameter name="THERMAL_ZONE_TO_MONITOR" type="STRING" isOptional="false">
+                <Description>specific thermal zone that we are monitoring for cooling action, set to ANY to consider all zones</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="BATT_MIN_CAPACITY" type="BATTERY_CAPACITY_IN_PERCENT" isOptional="false">
+                <Description> minimal battery capacity to start the test. If you are below it, a charge will occur</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="SETUP_TIME_COOLDOWN_BOARD" type="STRING" isOptional="false">
+                <Description>before starting the test we need to wait this second to let the board cool down ( board is off during this time)</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="SETUP_COOLDOWN_WITH_CAMERA" type="STRING" isOptional="false">
+                <Description>If a thermal camera is present ,this option allow to use it to cooldown the board which may help to reduce the test duration</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="SETUP_START_TEMPERATURE" type="STRING" isOptional="false">
+                <Description>the max temperature in degree that the board should be below before starting the test if thermal camera is used</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="SETUP_TECHNO" type="STRING" isOptional="false">
+                <Description>technology to apply before starting the test</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="WIFI_ACCESS_POINT" type="STRING" isOptional="false">
+                <Description>Wifi access point on which board will connect to</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="BENCHMARK_NAME" type="STRING" isOptional="false">
+                <Description>name of the benchmark to execute</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="BENCHMARK_DURATION" type="STRING" isOptional="false">
+                <Description>The benchmark execution duration in second, it if last less than it, it will be repeated</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="BENCHMARK_MIN_WAIT_TIME" type="STRING" isOptional="false">
+                <Description>The min duration in second before embedded agent start to monitor the end of the benchmark, this avoid charging the cpu with monitoring action</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="BENCHMARK_MAX_WAIT_TIME" type="STRING" isOptional="false">
+                <Description>The max duration in second allowed to embedded agent to monitor the benchmark end, if your above it an exception will be raised by the agent</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+        </Parameters>
+    </UseCase>
+</UseCases>

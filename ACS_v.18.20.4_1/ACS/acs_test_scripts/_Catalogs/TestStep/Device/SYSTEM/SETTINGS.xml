@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestSteps xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../acs/src/_Catalogs/TestStep/teststep.xsd">
+    <TestStep Id="OPEN_SETTINGS" Domain="SYSTEM" SubDomain="SETTINGS" Feature="COMMON" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.System.Settings.OpenSettings.OpenSettings</ClassName>
+        <Description>Open the settings page on the device</Description>
+        <Environment name="ANY">
+        </Environment>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="OPEN_BLUETOOTH_SETTINGS" Domain="SYSTEM" SubDomain="SETTINGS" Feature="BT" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.System.Settings.OpenBluetoothSettings.OpenBluetoothSettings</ClassName>
+        <Description>Open the Bluetooth settings page on the device</Description>
+        <Environment name="ANY">
+        </Environment>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="OPEN_WIFI_SETTINGS" Domain="SYSTEM" SubDomain="SETTINGS" Feature="WIFI" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.System.Settings.OpenWifiSettings.OpenWifiSettings</ClassName>
+        <Description>Open the WiFi settings page on the device</Description>
+        <Environment name="ANY">
+        </Environment>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="OPEN_WIFI_DIRECT_SETTINGS" Domain="SYSTEM" SubDomain="SETTINGS" Feature="WIFI" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.System.Settings.OpenWifiDirectSettings.OpenWifiDirectSettings</ClassName>
+        <Description>Open the WiFi Direct settings page on the device</Description>
+        <Environment name="ANY">
+        </Environment>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="OPEN_WIFI_ADVANCED_SETTINGS" Domain="SYSTEM" SubDomain="SETTINGS" Feature="WIFI" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.System.Settings.OpenWifiAdvancedSettings.OpenWifiAdvancedSettings</ClassName>
+        <Description>Open the WiFi advanced settings page on the device</Description>
+        <Environment name="ANY">
+        </Environment>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="OPEN_SECURITY_SETTINGS" Domain="SYSTEM" SubDomain="SETTINGS" Feature="SECURITY" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.System.Settings.OpenSecuritySettings.OpenSecuritySettings</ClassName>
+        <Description>Open the secure settings page on the device</Description>
+        <Environment name="ANY">
+        </Environment>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+        <TestStep Id="SET_DATE_TIME" Domain="SYSTEM" SubDomain="SETTINGS" Feature="COMMON" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.System.Settings.SetDateTime.SetDateTime</ClassName>
+        <Description>Set the date and the hour of the DUT</Description>
+        <Environment name="ANY"/>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device that will run the application</Description>
+                <PossibleValues/>
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="DATE_FORMAT" type="STRING" isOptional="true">
+                <Description>format to return the date with.</Description>
+                <PossibleValues/>
+                <DefaultValue>%Y-%m-%d</DefaultValue>
+            </Parameter>
+            <Parameter name="TIME_FORMAT" type="STRING" isOptional="true">
+                <Description>format to return the time with.</Description>
+                <PossibleValues/>
+                <DefaultValue>%H:%M:%S</DefaultValue>
+            </Parameter>
+            <Parameter name="DATE" type="STRING" isOptional="false">
+                <Description>Date to set</Description>
+                <PossibleValues/>
+                <DefaultValue>2014-10-21</DefaultValue>
+            </Parameter>
+            <Parameter name="TIME" type="STRING" isOptional="false">
+                <Description>Time to set</Description>
+                <PossibleValues/>
+                <DefaultValue>00:00:00</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="GET_DATE_TIME" Domain="SYSTEM" SubDomain="SETTINGS" Feature="COMMON" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.System.Settings.GetDateTime.GetDateTime</ClassName>
+        <Description>Get the date and the hour of the DUT
+        if no format specified, DATE is returned with the following format : YYYY-mm-dd
+        if no format specified, TIME is returned with the following format : HH:MM:SS</Description>
+        <Environment name="ANY"/>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device that will run the application</Description>
+                <PossibleValues/>
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="DATE_FORMAT" type="STRING" isOptional="true">
+                <Description>format to return the date with.</Description>
+                <PossibleValues/>
+                <DefaultValue>%Y-%m-%d</DefaultValue>
+            </Parameter>
+            <Parameter name="TIME_FORMAT" type="STRING" isOptional="true">
+                <Description>format to return the time with.</Description>
+                <PossibleValues/>
+                <DefaultValue>%H:%M:%S</DefaultValue>
+            </Parameter>
+            <Parameter name="SAVE_DATE_TIME_AS" type="CONTEXT" isOptional="false">
+                <Description>
+                    <Key name="DATE" type="STRING">current date of the DUT</Key>
+                    <Key name="TIME" type="STRING">current time of the DUT</Key>
+                </Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="SET_TIMEZONE" Domain="SYSTEM" SubDomain="SETTINGS" Feature="COMMON" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.System.Settings.SetTimezone.SetTimezone</ClassName>
+        <Description>Set the system time zone to the specified value.</Description>
+        <Environment name="ANY"/>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device that will run the application</Description>
+                <PossibleValues/>
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="TIMEZONE" type="STRING" isOptional="false">
+                <Description>timezone to set</Description>
+                <PossibleValues/>
+                <DefaultValue>Europe/Paris</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="SET_NTP_STATUS" Domain="SYSTEM" SubDomain="SETTINGS" Feature="COMMON" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.System.Settings.SetNtpStatus.SetNtpStatus</ClassName>
+        <Description>Takes a boolean argument. Controls whether NTP based network time synchronization is enabled (if available).</Description>
+        <Environment name="ANY"/>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device that will run the application</Description>
+                <PossibleValues/>
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="NTP_ACTIVE" type="BOOLEAN" isOptional="false">
+                <Description>if true, NTP is activated</Description>
+                <PossibleValues>true;false</PossibleValues>
+                <DefaultValue>true</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="GET_NTP_STATUS" Domain="SYSTEM" SubDomain="SETTINGS" Feature="COMMON" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.System.Settings.GetNtpStatus.GetNtpStatus</ClassName>
+        <Description>get the NTP activation status</Description>
+        <Environment name="ANY"/>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device that will run the application</Description>
+                <PossibleValues/>
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="SAVE_STATUS_AS" type="CONTEXT" isOptional="false">
+                <Description>
+                    <Key name="VALUE" type="STRING">current status of the NTP, True or False</Key>
+                </Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="SET_RTC_MODE" Domain="SYSTEM" SubDomain="SETTINGS" Feature="COMMON" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.System.Settings.SetRtcMode.SetRtcMode</ClassName>
+        <Description>Takes a boolean argument. If "false", the system is configured to maintain the RTC in universal time.
+            If "true", it will maintain the RTC in local time instead.</Description>
+        <Environment name="ANY"/>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device that will run the application</Description>
+                <PossibleValues/>
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="RTC_MODE" type="BOOLEAN" isOptional="false">
+                <Description>if true, RTC will be set in local time
+                if false, RTC will be set in UTC</Description>
+                <PossibleValues>true;false;1;0</PossibleValues>
+                <DefaultValue>false</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="GET_RTC_MODE" Domain="SYSTEM" SubDomain="SETTINGS" Feature="COMMON" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.System.Settings.GetRtcMode.GetRtcMode</ClassName>
+        <Description>get the RTC mode.
+        mode "0" is the UTC mode
+        mode "1" is the local mode</Description>
+        <Environment name="ANY"/>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device that will run the application</Description>
+                <PossibleValues/>
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="SAVE_MODE_AS" type="CONTEXT" isOptional="false">
+                <Description>
+                    <Key name="VALUE" type="STRING">current mode of the RTC</Key>
+                </Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="CHECK_DUT_TIME_VALID" Domain="SYSTEM" SubDomain="SETTINGS" Feature="COMMON" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.System.Settings.CheckTime.CheckTime</ClassName>
+        <Description>compare the host time and the DUT time and check he was contain in the gap</Description>
+        <Environment name="ANY"/>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device that will run the application</Description>
+                <PossibleValues/>
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="DATE_REF" type="STRING" isOptional="false">
+                <Description>Date to set as format YYYY-MM-DD</Description>
+                <PossibleValues/>
+                <DefaultValue>2014-10-21</DefaultValue>
+            </Parameter>
+            <Parameter name="TIME_REF" type="STRING" isOptional="false">
+                <Description>Time to set as format hh:mm:ss</Description>
+                <PossibleValues/>
+                <DefaultValue>00:00:00</DefaultValue>
+            </Parameter>
+            <Parameter name="GAP_ALLOWED" type="INTEGER" isOptional="false">
+                <Description>allowed timeshift between host and dut time in seconds</Description>
+                <PossibleValues/>
+                <DefaultValue>30</DefaultValue>
+            </Parameter>
+            <Parameter name="SAVE_AS" type="CONTEXT" isOptional="false">
+                <Description>
+                    <Key name="VALID" type="BOOLEAN">time is valid or not</Key>
+                </Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="SET_CPU_SCALING_FREQUENCY" Domain="SYSTEM" SubDomain="SETTINGS" Feature="COMMON" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.System.Settings.SetCPUScalingFrequency.SetCPUScalingFrequency</ClassName>
+        <Description>Change max/min scaling frequency of all cores</Description>
+        <Environment name="ANY">
+        </Environment>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="FREQ_MODE" type="STRING" isOptional="false">
+                <Description>Target scaling frequency mode</Description>
+                <PossibleValues />
+                <DefaultValue>MAX;MIN</DefaultValue>
+            </Parameter>
+            <Parameter name="FREQUENCY" type="INTEGER" isOptional="false">
+                <Description>Target scaling frequency value</Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="SET_AVAILABLE_MEMORY" Domain="SYSTEM" SubDomain="SETTINGS" Feature="COMMON" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.System.Settings.SetAvailableMemory.SetAvailableMemory</ClassName>
+        <Description>Explicitly set available memory</Description>
+        <Environment name="ANY">
+        </Environment>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="RESTORATION" type="BOOLEAN" isOptional="false">
+                <Description>Set available memory from the backup file when True. In that case MEMORY_TOP will be ignored</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+            <Parameter name="MEMORY_TOP" type="STRING" isOptional="false">
+                <Description>End of memory which can be used by Android. Hexadecimal, decimal, suffix M, or suffix k can be used</Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+        </Parameters>
+    </TestStep>
+</TestSteps>

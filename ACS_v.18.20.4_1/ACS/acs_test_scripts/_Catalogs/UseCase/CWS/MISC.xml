@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<UseCases xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:noNamespaceSchemaLocation="../../../../acs/src/_Catalogs/UseCase/usecase.xsd">
+    <UseCase Id="LAB_CWS_SYSTEM_DEBUG_TEST" Domain="CWS" SubDomain="MISC" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Networking.LAB_CWS_SYSTEM_DEBUG_TEST.LabCwsSystemDebugTest</ClassName>
+        <Description>Run whole available external UECmd functions used in cws tests</Description>
+        <Environment name="CWS_WIFI">
+        </Environment>
+    </UseCase>
+    <UseCase Id="LIVE_CWS_APM_CYLCE_EFFECT" Domain="CWS" SubDomain="MISC" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.LocalConnectivity.LIVE_CWS_APM_CYCLE_EFFECT.LiveCwsApmCycleEffect</ClassName>
+        <Description>Test effect on CWS components after an Air Plane Mode cycle</Description>
+        <Environment name="ANY">
+        </Environment>
+    </UseCase>
+    <UseCase Id="LAB_CWS_ETHERNET_COMMUTATION_TOOL" Domain="CWS" SubDomain="MISC" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Networking.LAB_CWS_ETHERNET_COMMUTATION_TOOL.LabCwsEthernetCommutationTool</ClassName>
+        <Description>Tool UseCase that allows to switch from Bench ethernet network to Corporate network. This usecase
+            is designed to be called at the beginning and at the end of a campaign
+        </Description>
+        <Environment name="ANY">
+        </Environment>
+    </UseCase>
+</UseCases>

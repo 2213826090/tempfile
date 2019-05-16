@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='ASCII'?>
+<TestCase>
+    <UseCase>Testlib</UseCase>
+    <Description>Check app can be opened from homescreen with enter key</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <TcMaxAttempt>1</TcMaxAttempt>
+    <TestSteps>
+        <RunTest/>
+    </TestSteps>
+    <Parameters>
+        <Parameter>
+            <Name>timeout</Name>
+            <Value>300</Value>
+        </Parameter>
+        <Parameter>
+            <Name>test</Name>
+            <Value>_ExecutionConfig/TC/TESTLIB/testlib/scripts/android/ui/homescreen/tests/05_start_app_enter_key.py</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

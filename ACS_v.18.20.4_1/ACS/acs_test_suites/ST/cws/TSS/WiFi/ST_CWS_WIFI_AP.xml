@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<Include>
+    <!--
+        Test Step Sets for Wireless Access Point interaction
+
+        AUTHOR: agoeax
+        DATE: Sept 2014
+        ORGANIZATION: MCG QCTV
+    -->
+    <TestStepSet Id="APConfig">
+        <TestStep Id="AP_CONNECTION_INIT"/>
+        <TestStep Id="AP_WIFI_SET_RADIO_STATE" WIFI_STATE="false"/>
+        <TestStep Id="AP_WIFI_CREATE_SSID" />
+        <TestStep Id="AP_WIFI_SET_STANDARD" MIMO="false"/>
+        <TestStep Id="AP_WIFI_SET_AUTHENTICATION"
+                  RADIUS_IP="192.168.0.150"
+                  RADIUS_PORT="1815"
+                  RADIUS_SECRET="RadiusPass"/>
+        <TestStep Id="AP_WIFI_SET_BANDWIDTH"/>
+        <TestStep Id="AP_WIFI_SET_CHANNEL"/>
+        <TestStep Id="AP_WIFI_SET_RADIO_STATE" WIFI_STATE="true"/>
+        <TestStep Id="AP_CONNECTION_RELEASE"/>
+    </TestStepSet>
+    <TestStepSet Id="APDown">
+        <TestStep Id="AP_CONNECTION_INIT"/>
+        <TestStep Id="AP_WIFI_SET_RADIO_STATE" WIFI_STATE="false"/>
+        <TestStep Id="AP_CONNECTION_RELEASE"/>
+    </TestStepSet>
+
+
+
+    <!-- Description : Standard Configuration for an Access Point -->
+    <!-- Parameters : EQT (Configurable AP), SSID (SSID of AP), STANDARD (WiFi standard), AUTHENTICATION_TYPE (type of authentication), PASSPHRASE (password for SSID), DTIM (dtim value), HIDDEN (ssid broadcast), MIMO (set MIMO)
+     RADIUS_IP (IP of radius server), RADIUS_PORT (port of radius server), RADIUS_SECRET (passphrase of radius server), CHANNEL (channel used), BANDWIDTH (bandwidth used), REGULATORY_DOMAIN_SAVE_AS (Regulatory domain of AP saved) -->
+    <TestStepSet Id="WiFiAPConfig">
+        <TestStep Id="AP_CONNECTION_INIT"/>
+        <TestStep Id="AP_WIFI_SET_RADIO_STATE" WIFI_STATE="false"/>
+        <TestStep Id="AP_WIFI_CREATE_SSID"/>
+        <TestStep Id="AP_WIFI_SET_STANDARD"/>
+        <TestStep Id="AP_WIFI_SET_AUTHENTICATION"/>
+        <TestStep Id="AP_WIFI_SET_BEACON" BEACON="250"/>
+        <TestStep Id="AP_WIFI_SET_DTIM"/>
+        <TestStep Id="AP_WIFI_ACL_SET_MODE" ACL_MODE="disable"/>
+        <TestStep Id="AP_WIFI_SET_CHANNEL"/>
+        <TestStep Id="AP_WIFI_SET_BANDWIDTH"/>
+        <TestStep Id="AP_WIFI_SET_RADIO_STATE"  WIFI_STATE="true"/>
+        <TestStep Id="AP_WIFI_GET_REGULATORY_DOMAIN"/>
+        <TestStep Id="AP_CONNECTION_RELEASE"/>
+    </TestStepSet>
+
+    <!-- Description : Standard Configuration for an Access Point -->
+    <!-- Parameters : EQT (Configurable AP), SSID (SSID of AP), STANDARD (WiFi standard), AUTHENTICATION_TYPE (type of authentication), PASSPHRASE (password for SSID), DTIM (dtim value)
+     RADIUS_IP (IP of radius server), RADIUS_PORT (port of radius server), RADIUS_SECRET (passphrase of radius server), CHANNEL (channel used), BANDWIDTH (bandwidth used), REGULATORY_DOMAIN_SAVE_AS (Regulatory domain of AP saved) -->
+    <TestStepSet Id="WiFiAPConfigStandard">
+        <TestStep SetId="WiFiAPConfig" DTIM="3" HIDDEN="false" MIMO="false"/>
+    </TestStepSet>
+
+    <!-- Description : Standard Configuration for CONFIGURABLE_AP1 - CISCO_12XX type -->
+    <!-- Parameters : STANDARD (WiFi standard), AUTHENTICATION_TYPE (type of authentication), PASSPHRASE (password for SSID), CHANNEL (channel used), BANDWIDTH (bandwidth used) -->
+    <!-- Returns : CONFIGURABLE_AP1_REGULATORY_DOMAIN saved in context, contains the AP regulatory domain -->
+    <TestStepSet Id="WiFiAPConfigStandardAP1">
+        <TestStep SetId="WiFiAPConfigStandard" EQT="CONFIGURABLE_AP1"
+                  SSID="FROM_BENCH:CONFIGURABLE_AP1:SSID"
+                  RADIUS_IP="FROM_BENCH:CONFIGURABLE_AP1:radiusip"
+                  RADIUS_PORT="FROM_BENCH:CONFIGURABLE_AP1:radiusport"
+                  RADIUS_SECRET="FROM_BENCH:CONFIGURABLE_AP1:radiussecret"
+                  REGULATORY_DOMAIN_SAVE_AS="CONIGURABLE_AP1_REGULATORY_DOMAIN"/>
+    </TestStepSet>
+
+    <!-- Description : Standard Configuration for CONFIGURABLE_AP2 - DLink2553-->
+    <!-- Parameters : STANDARD (WiFi standard), AUTHENTICATION_TYPE (type of authentication), PASSPHRASE (password for SSID), CHANNEL (channel used), BANDWIDTH (bandwidth used) -->
+    <!-- Returns : CONFIGURABLE_AP2_REGULATORY_DOMAIN saved in context, contains the AP regulatory domain -->
+    <TestStepSet Id="WiFiAPConfigStandardAP2">
+        <TestStep SetId="WiFiAPConfigStandard" EQT="CONFIGURABLE_AP2"
+                  SSID="FROM_BENCH:CONFIGURABLE_AP2:SSID"
+                  RADIUS_IP="FROM_BENCH:CONFIGURABLE_AP2:radiusip"
+                  RADIUS_PORT="FROM_BENCH:CONFIGURABLE_AP2:radiusport"
+                  RADIUS_SECRET="FROM_BENCH:CONFIGURABLE_AP2:radiussecret"
+                  REGULATORY_DOMAIN_SAVE_AS="CONFIGURABLE_AP2_REGULATORY_DOMAIN"/>
+    </TestStepSet>
+
+    <!-- Description : Standard Configuration for CONFIGURABLE_AP3 - Asus AC66U -->
+    <!-- Parameters : STANDARD (WiFi standard), AUTHENTICATION_TYPE (type of authentication), PASSPHRASE (password for SSID), CHANNEL (channel used), BANDWIDTH (bandwidth used) -->
+    <TestStepSet Id="WiFiAPConfigStandardAP3">
+        <TestStep Id="AP_CONNECTION_INIT" EQT="CONFIGURABLE_AP3"/>
+        <TestStep Id="AP_WIFI_SET_FULL_CONFIG" EQT="CONFIGURABLE_AP3"
+                  SSID="FROM_BENCH:CONFIGURABLE_AP3:SSID"
+                  HIDDEN="false"
+                  RADIUS_IP="FROM_BENCH:CONFIGURABLE_AP3:radiusip"
+                  RADIUS_PORT="FROM_BENCH:CONFIGURABLE_AP3:radiusport"
+                  RADIUS_SECRET="FROM_BENCH:CONFIGURABLE_AP3:radiussecret"
+                  BEACON="250"
+                  DTIM="3"
+                  WMM="false"
+                  MIMO="false"
+                  WIFI_STATE="true"
+                  POWER_LEVEL="100"/>
+        <TestStep Id="AP_CONNECTION_RELEASE" EQT="CONFIGURABLE_AP3"/>
+    </TestStepSet>
+
+    <!-- Description : Standard KPI Configuration for CONFIGURABLE_AP1 -->
+    <!-- Parameters : STANDARD (WiFi standard), AUTHENTICATION_TYPE (type of authentication), PASSPHRASE (password for SSID), CHANNEL (channel used), BANDWIDTH (bandwidth used), DTIM (dtim value) -->
+    <TestStepSet Id="WiFiAPConfigKPIAP1">
+        <TestStep SetId="WiFiAPConfig" EQT="CONFIGURABLE_AP1"
+                  SSID="FROM_BENCH:CONFIGURABLE_AP1:SSID"
+                  HIDDEN="false" MIMO="false"
+                  RADIUS_IP="FROM_BENCH:CONFIGURABLE_AP1:radiusip"
+                  RADIUS_PORT="FROM_BENCH:CONFIGURABLE_AP1:radiusport"
+                  RADIUS_SECRET="FROM_BENCH:CONFIGURABLE_AP1:radiussecret"
+                  REGULATORY_DOMAIN_SAVE_AS="CONIGURABLE_AP1_REGULATORY_DOMAIN"/>
+    </TestStepSet>
+
+    <!-- Description : Standard KPI Configuration for CONFIGURABLE_AP2 -->
+    <!-- Parameters : STANDARD (WiFi standard), AUTHENTICATION_TYPE (type of authentication), PASSPHRASE (password for SSID), CHANNEL (channel used), BANDWIDTH (bandwidth used), DTIM (dtim value) -->
+    <TestStepSet Id="WiFiAPConfigKPIAP2">
+        <TestStep SetId="WiFiAPConfig" EQT="CONFIGURABLE_AP2"
+                  SSID="FROM_BENCH:CONFIGURABLE_AP2:SSID"
+                  HIDDEN="false" MIMO="false"
+                  RADIUS_IP="FROM_BENCH:CONFIGURABLE_AP2:radiusip"
+                  RADIUS_PORT="FROM_BENCH:CONFIGURABLE_AP2:radiusport"
+                  RADIUS_SECRET="FROM_BENCH:CONFIGURABLE_AP2:radiussecret"
+                  REGULATORY_DOMAIN_SAVE_AS="CONIGURABLE_AP2_REGULATORY_DOMAIN"/>
+    </TestStepSet>
+
+    <!-- Description : Standard KPI Configuration for CONFIGURABLE_AP3 - Asus AC66U -->
+    <!-- Parameters : STANDARD (WiFi standard), AUTHENTICATION_TYPE (type of authentication), PASSPHRASE (password for SSID), CHANNEL (channel used), BANDWIDTH (bandwidth used), DTIM (dtim value) -->
+    <TestStepSet Id="WiFiAPConfigKPIAP3">
+        <TestStep Id="AP_CONNECTION_INIT" EQT="CONFIGURABLE_AP3"/>
+        <TestStep Id="AP_WIFI_SET_FULL_CONFIG" EQT="CONFIGURABLE_AP3"
+                  SSID="FROM_BENCH:CONFIGURABLE_AP3:SSID"
+                  HIDDEN="false"
+                  RADIUS_IP="FROM_BENCH:CONFIGURABLE_AP3:radiusip"
+                  RADIUS_PORT="FROM_BENCH:CONFIGURABLE_AP3:radiusport"
+                  RADIUS_SECRET="FROM_BENCH:CONFIGURABLE_AP3:radiussecret"
+                  BEACON="250"
+                  WMM="false"
+                  MIMO="false"
+                  WIFI_STATE="true"
+                  POWER_LEVEL="100"/>
+        <TestStep Id="AP_CONNECTION_RELEASE" EQT="CONFIGURABLE_AP3"/>
+    </TestStepSet>
+
+    <!-- Description : Standard Configuration for an Access Point for KPI power-->
+    <!-- Parameters : EQT (Configurable AP), SSID (SSID of AP), STANDARD (WiFi standard), AUTHENTICATION_TYPE (type of authentication), PASSPHRASE (password for SSID), DTIM (dtim value), HIDDEN (ssid broadcast), MIMO (set MIMO)
+     RADIUS_IP (IP of radius server), RADIUS_PORT (port of radius server), RADIUS_SECRET (passphrase of radius server), CHANNEL (channel used), BANDWIDTH (bandwidth used), REGULATORY_DOMAIN_SAVE_AS (Regulatory domain of AP saved) -->
+    <TestStepSet Id="WiFiAPConfigKPIPower">
+        <TestStep Id="AP_CONNECTION_INIT"/>
+        <TestStep Id="AP_WIFI_SET_RADIO_STATE" WIFI_STATE="false"/>
+        <TestStep Id="AP_WIFI_CREATE_SSID"/>
+        <TestStep Id="AP_WIFI_SET_STANDARD"/>
+        <TestStep Id="AP_WIFI_SET_AUTHENTICATION"/>
+        <TestStep Id="AP_WIFI_SET_DTIM"/>
+        <TestStep Id="AP_WIFI_ACL_SET_MODE" ACL_MODE="disable"/>
+        <TestStep Id="AP_WIFI_SET_CHANNEL"/>
+        <TestStep Id="AP_WIFI_SET_BANDWIDTH"/>
+        <TestStep Id="AP_WIFI_SET_RADIO_POWER" POWER_LEVEL="17"/>
+        <TestStep Id="AP_WIFI_SET_RADIO_STATE"  WIFI_STATE="true"/>
+        <TestStep Id="AP_WIFI_GET_REGULATORY_DOMAIN"/>
+        <TestStep Id="AP_CONNECTION_RELEASE"/>
+    </TestStepSet>
+
+    <!-- Description : Standard Configuration for an Access Point for KPI Power -->
+    <!-- Parameters : EQT (Configurable AP), SSID (SSID of AP), STANDARD (WiFi standard), AUTHENTICATION_TYPE (type of authentication), PASSPHRASE (password for SSID), DTIM (dtim value)
+     RADIUS_IP (IP of radius server), RADIUS_PORT (port of radius server), RADIUS_SECRET (passphrase of radius server), CHANNEL (channel used), BANDWIDTH (bandwidth used), REGULATORY_DOMAIN_SAVE_AS (Regulatory domain of AP saved) -->
+    <TestStepSet Id="WiFiAPConfigStandardKPIPower">
+        <TestStep SetId="WiFiAPConfigKPIPower" DTIM="3" HIDDEN="false" MIMO="false"/>
+    </TestStepSet>
+
+    <!-- Description : Standard Configuration for KPI Power - CISCO_12XX type -->
+    <!-- Parameters : STANDARD (WiFi standard), AUTHENTICATION_TYPE (type of authentication), PASSPHRASE (password for SSID), CHANNEL (channel used), BANDWIDTH (bandwidth used) -->
+    <!-- Returns : CONFIGURABLE_AP1_REGULATORY_DOMAIN saved in context, contains the AP regulatory domain -->
+    <TestStepSet Id="WiFiAPConfigStandardKPIPowerAP1">
+        <TestStep SetId="WiFiAPConfigStandardKPIPower" EQT="CONFIGURABLE_AP1"
+                  SSID="FROM_BENCH:CONFIGURABLE_AP1:SSID"
+                  RADIUS_IP="FROM_BENCH:CONFIGURABLE_AP1:radiusip"
+                  RADIUS_PORT="FROM_BENCH:CONFIGURABLE_AP1:radiusport"
+                  RADIUS_SECRET="FROM_BENCH:CONFIGURABLE_AP1:radiussecret"
+                  REGULATORY_DOMAIN_SAVE_AS="CONIGURABLE_AP1_REGULATORY_DOMAIN"/>
+    </TestStepSet>
+
+    <!-- Description : Shutdown WiFi radios of AP -->
+    <!-- Parameters : EQT (Configurable AP) -->
+    <TestStepSet Id="WiFiAPShutdown">
+        <TestStep Id="AP_CONNECTION_INIT"/>
+        <TestStep Id="AP_WIFI_SET_RADIO_STATE" WIFI_STATE="false"/>
+        <TestStep Id="AP_CONNECTION_RELEASE"/>
+    </TestStepSet>
+</Include>

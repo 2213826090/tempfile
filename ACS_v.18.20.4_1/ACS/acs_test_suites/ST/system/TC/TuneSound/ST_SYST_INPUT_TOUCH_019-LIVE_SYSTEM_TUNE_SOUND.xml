@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase>
+	<UseCase>LIVE_SYSTEM_TUNE_SOUND</UseCase>
+	<Description>Check tune sound of different types on device</Description>
+	<b2bIteration>1</b2bIteration>
+	<b2bContinuousMode>False</b2bContinuousMode>
+	<Parameters>
+		<Parameter>
+			<!--The sound type to be tested
+				The possible value could be:
+				/Ringtone/Alarm/Media
+				-->
+			<Name>TYPE</Name>
+			<Value>Media</Value>
+		</Parameter>
+	</Parameters>
+</TestCase>

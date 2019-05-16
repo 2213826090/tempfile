@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="13.37">
+    <UseCase>RSCMW500_PROTOCOL_TESTER</UseCase>
+    <Description>Usecase used to launch CMW500 sequencer equipment through SOAP requests</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>False</b2bContinuousMode>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters>
+        <Parameter>
+            <!-- Equipment IP Address, used for SOAP requests -->
+            <Name>EQUIPMENT_IP_ADDRESS</Name>
+            <Value>192.168.48.149</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Equipment Port, used for SOAP requests -->
+            <Name>EQUIPMENT_PORT</Name>
+            <Value>58083</Value>
+        </Parameter>
+        <Parameter>
+            <!-- File stored in the equipment which contains all the tests to launch from the equipment.
+                The full path should be providen. For CMW500 it should be a tpd file -->
+            <Name>CONFIGURATION_FILE</Name>
+            <Value>C:\Rohde-Schwarz\Scenarios\28.35.0\APPL\MLAPI\LTE-GSM_Handover\0\TestProjectLTE_Intel_Scn.tpd</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Name of the test case to launch on the equipment. -->
+            <Name>TESTCASE_NAME</Name>
+            <Value>LTE Default Bearer Establishment and Release/SI_LTE_DEFAULT_BEARER_001</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

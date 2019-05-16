@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!-- Usecases dedicated to System -->
+<UseCases xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:noNamespaceSchemaLocation="../../../../acs/src/_Catalogs/UseCase/usecase.xsd">
+    <UseCase Id="LAB_SYSTEM_BOOT" Domain="SYSTEM" SubDomain="BOOT" OS="ANDROID" Status="DONE">
+        <ClassName>UseCase.BootFlashSetup.LAB_SYSTEM_BOOT.LabSystemBoot</ClassName>
+        <Description>Boots the DUT if not already booted.
+                     Otherwise reboots the DUT. This test checks the boot sequence of the DUT
+        </Description>
+        <Environment name="BOOT_FLASH_SETUP">
+            <Capabilities>EQT_USB_RLY08</Capabilities>
+            <Capabilities>CAP_SWITCH_ON_OFF</Capabilities>
+        </Environment>
+        <Parameters>
+            <Parameter name="BOOT_TIMEOUT" type="BOOT_TIMEOUT_IN_SEC" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="SETTLEDOWN_DURATION" type="SETTLEDOWN_DURATION_IN_SEC" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+        </Parameters>
+    </UseCase>
+    <UseCase Id="LAB_SYSTEM_REBOOT_POS_TO_MOS" Domain="SYSTEM" SubDomain="BOOT" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.System.LAB_SYSTEM_REBOOT_POS_TO_MOS.LabSystemRebootPosToMos</ClassName>
+        <Description>Reboot the DUT in Main OS (MOS)</Description>
+        <Environment name="ANY">
+        </Environment>
+    </UseCase>
+    <UseCase Id="LAB_SYSTEM_REBOOT_MOS_TO_POS" Domain="SYSTEM" SubDomain="BOOT" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.System.LAB_SYSTEM_REBOOT_MOS_TO_POS.LabSystemRebootMosToPos</ClassName>
+        <Description>Reboot the DUT in Provisioning OS (POS)</Description>
+        <Environment name="ANY">
+        </Environment>
+    </UseCase>
+    <UseCase Id="LAB_SYSTEM_REBOOT_POS_TO_POS" Domain="SYSTEM" SubDomain="BOOT" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.System.LAB_SYSTEM_REBOOT_POS_TO_POS.LabSystemRebootPosToPos</ClassName>
+        <Description>Reboot the DUT in Provisioning OS (POS)</Description>
+        <Environment name="ANY">
+        </Environment>
+    </UseCase>
+    <UseCase Id="LAB_SYSTEM_REBOOT_MOS_TO_MOS" Domain="SYSTEM" SubDomain="BOOT" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.System.LAB_SYSTEM_REBOOT_MOS_TO_MOS.LabSystemRebootMosToMos</ClassName>
+        <Description>Reboot the DUT in Main OS (MOS)</Description>
+        <Environment name="ANY">
+        </Environment>
+    </UseCase>
+</UseCases>

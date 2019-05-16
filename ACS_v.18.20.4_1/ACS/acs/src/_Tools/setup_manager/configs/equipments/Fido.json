@@ -1,0 +1,8 @@
+{
+    "windows": {
+        "check_exists": ["winreg", ["SOFTWARE/Wow6432Node/Liewenthal/Fido"]],
+        "install": "{bin} /S",
+        "uninstall": "C:\\Program Files (x86)\\Liewenthal\\Fido\\Uninstall.exe",
+        "32": "acs/dependencies/equipment/Fido/Fido.1.9.3_win.exe"
+    }
+}

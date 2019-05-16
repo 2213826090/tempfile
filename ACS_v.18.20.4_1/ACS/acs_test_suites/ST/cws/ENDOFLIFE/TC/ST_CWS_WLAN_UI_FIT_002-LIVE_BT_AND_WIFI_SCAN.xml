@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase>
+    <UseCase>LIVE_BT_AND_WIFI_SCAN</UseCase>
+    <Description>Scan with BT and WiFi at the same time</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>False</b2bContinuousMode>
+    <TcAcceptanceCriteria>PASS</TcAcceptanceCriteria>
+    <TcMaxAttempt>2</TcMaxAttempt>
+    <Parameters>
+        <Parameter>
+            <!-- Address of BlueTooth device to search within range
+                Let field empty to use MacAddress parameter of BT_DEVICE equipment in bench_config file -->
+            <Name>REF_BT_ADDR</Name>
+            <Value></Value>
+        </Parameter>
+        <Parameter>
+            <!-- Duration of the test - Scans will loop all this time-->
+            <Name>DURATION</Name>
+            <Value>120</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Live WiFi reference access point -->
+            <Name>WIFI_ACCESS_POINT</Name>
+            <Value>B_ONLY_WIFI_ROUTER</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

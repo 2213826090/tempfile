@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="13.37">
+    <UseCase>LIVE_EM_TEST_FG_FILE</UseCase>
+    <Description> this usecase test that it is not possible to hack fuel gauging files.</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>False</b2bContinuousMode>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters>
+        <Parameter>
+            <!-- path to the fuel gauging binary -->
+            <Name>FUEL_GAUGING_BINARY</Name>
+            <Value>/etc/fg_config.bin</Value>
+        </Parameter>
+        <Parameter>
+            <!-- path of the fuel gauging application data -->
+            <Name>FUEL_GAUGING_DATA</Name>
+            <Value>/data/system/battid.dat</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

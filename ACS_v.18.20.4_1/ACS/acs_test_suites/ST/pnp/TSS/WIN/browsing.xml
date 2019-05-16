@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<Include>
+
+    <TestStepSet Id="InstallBrowser">
+        <TestStep Id="GET_MODULE_CONFIG" DEVICE="PHONE1" MODULE="PnpModule" KEY="FROM_TC:APP" MODULE_VALUE="browser_app"/>
+        <TestStep Id="GET_ARTIFACT" ARTIFACT="APPLICATIONS/CHROME/[+]FROM_CTX:browser_app" ARTIFACT_SOURCE="FROM_BENCH:ARTIFACT_MANAGER:URI" TRANSFER_TIMEOUT="DEFAULT" STORED_FILE_PATH="FILE_PATH_IN_CACHE1" EQT="DEFAULT"/>
+        <TestStep Id="INSTALL_APP" DEVICE="PHONE1" FILE_PATH="FROM_CTX:FILE_PATH_IN_CACHE1" BACKUP="false" BACKUP_FILE_PATH="FT/backup" SIGN_KEY_PATH="DEFAULT" SIGN="false" TIMEOUT="DEFAULT" ALLOW_DOWNGRADE="True"/>
+        <TestStep Id="CLEAN_APP_CACHE" DEVICE="PHONE1" APP_NAME="FROM_TC:APP_PACKAGE_NAME" />
+    </TestStepSet>
+    <TestStepSet Id="StartHttpVideoStreamingOnFullScreen">
+        <TestStep Id="STOP_BROWSING" DEVICE="PHONE1" BROWSER_TYPE="chrome"/>
+        <TestStep Id="CLEAN_APP_CACHE" DEVICE="PHONE1" APP_NAME="FROM_TC:APP_PACKAGE_NAME" />
+        <TestStep Id="SET_SCREEN_PROPERTY" DEVICE="PHONE1" PROPERTY="state" VALUE="on"/>
+        <TestStep Id="SET_ORIENTATION" DEVICE="PHONE1" ORIENTATION="landscape" API="embedded_api" />
+        <TestStep Id="UPDATE_JSON_PREFERENCES" DEVICE="PHONE1"
+                  FILE_PATH_ON_DEVICE="/data/data/com.android.chrome/app_chrome/Default/Preferences"
+                  JSON_PREFERENCES="{'translate_blocked_languages': ['en', 'fr']}" />
+
+        <TestStep Id="START_BROWSING" DEVICE="PHONE1" BROWSER_TYPE="chrome" WEBSITE_URL="http://[+]FROM_BENCH:LAB_INTERNET_SERVER:IP[+]/[+]FROM_TC:URL" />
+        <TestStep Id="SET_MEDIA_VOLUME" DEVICE="PHONE1" VOLUME="FROM_TC:MEDIA_VOLUME"/>
+        <TestStep Id="SUSPEND" DURATION_IN_SEC="15"/>
+
+        <!-- Select full screen button -->
+        <TestStep Id="ADD_TRIGGER_MSG" DEVICE="PHONE1" TRIGGER_MESSAGE="FROM_TC:REGEX_FULLSCREEN"/>
+        <TestStep Id="ADD_TRIGGER_MSG" DEVICE="PHONE1" TRIGGER_MESSAGE="FROM_TC:REGEX_PLAYING_VIDEO" />
+
+        <TestStep Id="RUN_CMD" DEVICE="PHONE1" TIMEOUT="5" COMMAND="adb shell input keyevent TAB" FORCE_EXECUTION="False" WAIT_FOR_RESPONSE="False" SILENT_MODE="False" SAVE_AS="output"/>
+        <TestStep Id="SUSPEND" DURATION_IN_SEC="1"/>
+        <TestStep Id="RUN_CMD" DEVICE="PHONE1" TIMEOUT="5" COMMAND="adb shell input keyevent TAB" FORCE_EXECUTION="False" WAIT_FOR_RESPONSE="False" SILENT_MODE="False" SAVE_AS="output"/>
+        <TestStep Id="SUSPEND" DURATION_IN_SEC="1"/>
+        <!-- Switch to full screen -->
+        <TestStep Id="RUN_CMD" DEVICE="PHONE1" TIMEOUT="5" COMMAND="adb shell input keyevent ENTER" FORCE_EXECUTION="False" WAIT_FOR_RESPONSE="False" SILENT_MODE="False" SAVE_AS="output"/>
+        <TestStep Id="CHECK_TRIGGER_MSG_STATUS" DEVICE="PHONE1" TRIGGER_MESSAGE="FROM_TC:REGEX_FULLSCREEN" TIMEOUT="15" OUTPUT_SUCCESS="Screen is successfully switched to full screen"/>
+        <!-- Start video -->
+        <TestStep Id="SUSPEND" DURATION_IN_SEC="15" />
+        <TestStep Id="RUN_CMD" DEVICE="PHONE1" TIMEOUT="5" COMMAND="adb shell input keyevent SPACE" FORCE_EXECUTION="False" WAIT_FOR_RESPONSE="False" SILENT_MODE="False" SAVE_AS="output"/>
+        <TestStep Id="CHECK_TRIGGER_MSG_STATUS" DEVICE="PHONE1" TRIGGER_MESSAGE="FROM_TC:REGEX_PLAYING_VIDEO" TIMEOUT="30" OUTPUT_SUCCESS="Video start to play properly"/>
+
+        <TestStep Id="REMOVE_TRIGGER_MSG" DEVICE="PHONE1" TRIGGER_MESSAGE="FROM_TC:REGEX_FULLSCREEN"/>
+        <TestStep Id="REMOVE_TRIGGER_MSG" DEVICE="PHONE1" TRIGGER_MESSAGE="FROM_TC:REGEX_PLAYING_VIDEO" />
+    </TestStepSet>
+    <TestStepSet Id="StartWebBrowsing">
+        <TestStep Id="STOP_BROWSING" DEVICE="PHONE1" BROWSER_TYPE="chrome"/>
+        <TestStep Id="CLEAN_APP_CACHE" DEVICE="PHONE1" APP_NAME="FROM_TC:APP_PACKAGE_NAME" />
+        <TestStep Id="SET_SCREEN_PROPERTY" DEVICE="PHONE1" PROPERTY="state" VALUE="on"/>
+        <TestStep Id="SET_ORIENTATION" DEVICE="PHONE1" ORIENTATION="FROM_TC:ORIENTATION" API="embedded_api" />
+        <TestStep Id="UPDATE_JSON_PREFERENCES" DEVICE="PHONE1"
+                  FILE_PATH_ON_DEVICE="/data/data/com.android.chrome/app_chrome/Default/Preferences"
+                  JSON_PREFERENCES="{'translate_blocked_languages': ['en', 'fr']}" />
+
+        <TestStep Id="ADD_TRIGGER_MSG" DEVICE="PHONE1" TRIGGER_MESSAGE="FROM_TC:REGEX_BROWSING"/>
+        <TestStep Id="START_BROWSING" DEVICE="PHONE1" BROWSER_TYPE="chrome" WEBSITE_URL="http://[+]FROM_BENCH:LAB_INTERNET_SERVER:IP[+]/[+]FROM_TC:URL" />
+        <TestStep Id="CHECK_TRIGGER_MSG_STATUS" DEVICE="PHONE1" TRIGGER_MESSAGE="FROM_TC:REGEX_BROWSING" TIMEOUT="30" OUTPUT_SUCCESS="Browsing is loaded"/>
+        <TestStep Id="REMOVE_TRIGGER_MSG" DEVICE="PHONE1" TRIGGER_MESSAGE="FROM_TC:REGEX_BROWSING"/>
+    </TestStepSet>
+    <TestStepSet Id="LaunchBrowsingMeasure">
+        <TestStep Id="DISCONNECT_DEVICE_FROM_FWK" DEVICE="PHONE1" />
+        <TestStep Id="SYSDEBUG_RESET" DEVICE="PHONE1" />
+
+        <TestStep Id="RUN_CMD" DEVICE="PHONE1" TIMEOUT="5" COMMAND="adb shell input keyevent TAB" FORCE_EXECUTION="True" WAIT_FOR_RESPONSE="False" SILENT_MODE="False" SAVE_AS="output"/>
+        <TestStep Id="SUSPEND" DURATION_IN_SEC="1"/>
+        <TestStep Id="MATH_OPERATION" FIRST="FROM_TC:SLEEP_DURATION" SECOND="FROM_TC:BROWSING_START_TIME" OPERATOR="ADD" SAVE_RESULT_AS="LAUNCH_BROWSING_TIME"/>
+        <TestStep Id="RUN_CMD" DEVICE="PHONE1" TIMEOUT="5" COMMAND="adb shell nohup sh -c 'sleep [+]FROM_CTX:LAUNCH_BROWSING_TIME[+]; input keyevent ENTER'" FORCE_EXECUTION="True" WAIT_FOR_RESPONSE="False" SILENT_MODE="False" SAVE_AS="output"/>
+        <TestStep Id="SYSDEBUG_SYNCHRONIZE" DEVICE="PHONE1" />
+
+        <TestStep Id="REMOVE_USB" EQT="FROM_DEVICE:PHONE1:IoCard" />
+        <TestStep Id="SUSPEND" DURATION_IN_SEC="FROM_TC:SLEEP_DURATION" />
+
+        <TestStep Id="SYSDEBUG_START_ACQUISITION" DEVICE="PHONE1" />
+        <TestStep Id="PATLIB_ACQUISITION" EQT="DEFAULT" ACTION="start"/>
+    </TestStepSet>
+</Include>

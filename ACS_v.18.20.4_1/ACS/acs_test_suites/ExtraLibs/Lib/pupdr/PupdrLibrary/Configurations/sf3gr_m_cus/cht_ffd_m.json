@@ -1,0 +1,45 @@
+{
+    "Configuration": {
+        "Boot": {
+            "BOOT_COS_ON_FORCED_SHUTDOWN_PLUG": true
+        },
+        "BootVars": null,
+        "Custom": null,
+        "Download": {
+            "ROOT_BOARD_TYPE": "cht_ffd_m"
+        },
+        "Logs": null,
+        "Timeout": null,
+        "WorkAround": null,
+        "TestDescription": {
+            "engineering": [
+                {
+                    "name": "default",
+                    "build_tag": "bootota_",
+                    "testing": [
+                        {
+                            "build_target": "r2_cht_ffd_m-userdebug",
+                            "campaign": "BOOTOTA_PREINTEGRATION"
+                        },
+                        {
+                            "build_target": "r2_cht_ffd_m-user",
+                            "campaign": "BOOTOTA_USER_EAT"
+                        }
+                    ]
+                }
+            ],
+            "release_candidate": [
+                {
+                    "name": "release",
+                    "build_tag": "",
+                    "testing": [
+                        {
+                            "build_target": "r2_cht_ffd_m-userdebug",
+                            "campaign": "BOOTOTA_RELEASE"
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}

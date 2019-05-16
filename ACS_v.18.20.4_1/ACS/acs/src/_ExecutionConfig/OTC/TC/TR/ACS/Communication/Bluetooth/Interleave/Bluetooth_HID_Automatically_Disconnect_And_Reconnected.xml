@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="13.41">
+    <UseCase>TEST_STEP_ENGINE</UseCase>
+    <Description></Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>False</b2bContinuousMode>
+    <TcMaxAttempt>1</TcMaxAttempt>
+    <TcAcceptanceCriteria>1</TcAcceptanceCriteria>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters />
+    <TestSteps>
+        <Include Src="OTC/TC/TR/ACS/Communication/Bluetooth/setup/BT/OTC_Comms_BT_Common.xml" />
+        <Setup>
+            <!-- AUTOMATION - Set default configuration -->
+            <TestStep SetId="BTFullSetupPhone1" />
+
+            <!-- SPEC - Init : Reference phone is pairable -->
+            <TestStep Id="SET_HID_MOUSE_STATE" STATE="PAIRABLE" />
+            <!-- SPEC - Init : BT is OFF -->
+            <TestStep Id="BT_SET_POWER" DEVICE="PHONE1" POWER="OFF"/>
+        </Setup>
+        <RunTest>
+            <!-- SPEC - Step 1 : BT is On -->
+            <TestStep Id="BT_SET_POWER" DEVICE="PHONE1" POWER="ON"/>
+            <!-- SPEC - Step 2 : Scan Reference device from DUT -->
+            <TestStep Id="BT_FIND_DEVICE_INTERLEAVE_SEARCH" DEVICE="PHONE1" DEVICE_TO_FIND="FROM_BENCH:BT_MOUSE:BD_Address" MUST_FIND="true" />
+            <!-- SPEC - Step 3 : Pair and connect to reference device -->
+            <TestStep Id="BT_PAIR" DEVICE="PHONE1" BDADDR="FROM_BENCH:BT_MOUSE:BD_Address" UNPAIR_FIRST="true" ACCEPT_PAIRING="true" PASS_KEY="0" PIN_CODE="0000" />
+            <TestStep Id="BT_CONNECT_PROFILE" DEVICE="PHONE1" BDADDR="FROM_BENCH:BT_MOUSE:BD_Address" PROFILE="HID" CONNECT="true" />
+            <TestStep Id="BT_CHECK_PROFILE_STATUS" DEVICE="PHONE1" BDADDR="FROM_BENCH:BT_MOUSE:BD_Address" PROFILE="HID" FAIL_IF="disconnected" SAVE_AS="PROFILE_STATUS" />
+            <!-- SPEC - Step 4 : Wait 10min and check reference phone disconnection -->
+            <TestStep Id="SUSPEND" DURATION_IN_SEC="600"/>
+            <TestStep Id="BT_CHECK_PROFILE_STATUS" DEVICE="PHONE1" BDADDR="FROM_BENCH:BT_MOUSE:BD_Address" PROFILE="HID" FAIL_IF="connected" SAVE_AS="PROFILE_STATUS" />
+            <!-- SPEC - Step 5 : Trigger an automatic reconnection of reference device -->
+            <TestStep Id="HID_MOUSE_CLICK" BUTTONS="RIGHT,LEFT,MIDDLE" INTERVAL_SECS="2" />
+            <TestStep Id="BT_CHECK_PROFILE_STATUS" DEVICE="PHONE1" BDADDR="FROM_BENCH:BT_MOUSE:BD_Address" PROFILE="HID" FAIL_IF="disconnected" SAVE_AS="PROFILE_STATUS" />
+        </RunTest>
+        <TearDown>
+            <TestStep Id="BT_UNPAIR" DEVICE="PHONE1" BDADDR="FROM_BENCH:BT_MOUSE:BD_Address" />
+            <TestStep Id="SET_HID_MOUSE_STATE" STATE="OFF" />
+            <TestStep SetId="BTCommonTeardown" DEVICE="PHONE1" />
+        </TearDown>
+    </TestSteps>
+</TestCase>

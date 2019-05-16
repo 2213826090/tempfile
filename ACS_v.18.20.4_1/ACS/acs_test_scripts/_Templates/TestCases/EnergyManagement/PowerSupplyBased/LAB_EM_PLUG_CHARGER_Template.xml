@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="13.45">
+    <UseCase>LAB_EM_PLUG_CHARGER</UseCase>
+    <Description>Plug USB charger while platform is ON.</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>False</b2bContinuousMode>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters>
+        <Parameter>
+            <!-- Charger Type : DCP (current=1.5A) | SDP (Current=0.5A) | CDP(Current=1.5A)| AC_CHGR (Current=2.5A) -->
+            <Name>CHARGER_TYPE</Name>
+            <Value>DCP</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Battery Type : BATTERY_EMULATOR or ANALOG or leave empty to use the one from device catalog-->
+            <Name>BATTERY_TYPE</Name>
+            <Value></Value>
+        </Parameter>
+        <Parameter>
+            <!-- Vbatt Voltage -->
+            <Name>VBATT</Name>
+            <Value>3.6</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Vusb Voltage -->
+            <Name>VUSB</Name>
+            <Value>5.7</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Battery Temperature (in degree Celsius) : 95, 70, 50, 25, 10, 5, 0, -15 -->
+            <Name>BATTERY_TEMPERATURE</Name>
+            <Value>25</Value>
+        </Parameter>
+        <Parameter>
+            <!-- The os to start : can be 'MOS' or 'ROS' -->
+            <Name>START_OS</Name>
+            <Value>"MOS"</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Delay in second between starting of test and first measure of ibatt, before charger plug -->
+            <Name>DELAY_TO_MEASURE_BEFORE_PLUG</Name>
+            <Value>60</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Delay in second between starting of test and second measure of ibatt, after charger plug-->
+            <Name>DELAY_TO_MEASURE_AFTER_PLUG</Name>
+            <Value>90</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

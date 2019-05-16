@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="13.41">
+    <TestSteps>
+        <Include Src="ST/pnp/TSS/common.xml" />
+        <Include Src="ST/pnp/TSS/active.xml" />
+        <Include Src="ST/pnp/TSS/browsing.xml" />
+        <Include Src="ST/pnp/TSS/amarisoft.xml"/>
+        <Initialize>
+            <TestStep SetId="UpdatePayloadOnWebServer" />
+        </Initialize>
+        <Setup>
+            <TestStep SetId="InitializePnPResources" />
+            <TestStep SetId="ConfigureRat" />
+            <TestStep SetId="DataConnection" />
+        </Setup>
+
+        <RunTest>
+            <TestStep Id="SET_SCREEN_PROPERTY" PROPERTY="state" DEVICE="PHONE1" VALUE="on"/>
+            <TestStep SetId="StartPhPWebBrowsing" />
+            <TestStep SetId="LaunchBrowsingMeasure" />
+            <TestStep Id="SUSPEND" DURATION_IN_SEC="FROM_TC:TEST_DURATION" />
+            <TestStep SetId="StopPowerMeasurement" />
+            <TestStep Id="STOP_BROWSING" DEVICE="PHONE1" BROWSER_TYPE="chrome"/>
+            <TestStep Id="SET_SCREEN_PROPERTY" DEVICE="PHONE1" PROPERTY="state" VALUE="off"/>
+        </RunTest>
+
+        <TearDown>
+            <TestStep SetId="TearDown" />
+            <TestStep Id="SET_ORIENTATION" DEVICE="PHONE1" ORIENTATION="auto" API="embedded_api" />
+            <TestStep Id="STOP_BROWSING" DEVICE="PHONE1" BROWSER_TYPE="chrome"/>
+            <TestStep Id="CLEAN_APP_CACHE" DEVICE="PHONE1" APP_NAME="FROM_TC:APP_PACKAGE_NAME" />
+        </TearDown>
+    </TestSteps>
+</TestCase>

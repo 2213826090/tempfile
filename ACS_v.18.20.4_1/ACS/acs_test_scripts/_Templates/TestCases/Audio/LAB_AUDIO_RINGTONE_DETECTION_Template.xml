@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase>
+    <UseCase>LAB_AUDIO_CSV_RINGTONEDETECTION</UseCase>
+    <Description>Check Ringtone on real network with a specified accessories</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>False</b2bContinuousMode>
+    <Parameters>
+        <Parameter>
+            <!-- Accessorie type (EARPIECE|SPEAKER|HEADSET|BLUETOOTHA2DP|BLUETOOTHHSP) -->
+            <Name>ACC_TYPE</Name>
+            <Value>EARPIECE</Value>
+        </Parameter>
+        <Parameter>
+             <!-- >Stream Call Volume in percent of dut phone -->
+            <Name>CALL_VOLUME_DUT</Name>
+            <Value>70</Value>
+        </Parameter>
+        <Parameter>
+             <!-- >Stream Call Volume in percent of ref phone -->
+            <Name>CALL_VOLUME_REF</Name>
+            <Value>70</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Call end type (NR|MR) -->
+            <Name>CALL_END_TYPE</Name>
+            <Value>MR</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Call type (2G|3G) -->
+            <Name>CALL_TYPE</Name>
+            <Value>3G</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

@@ -1,0 +1,15 @@
+{
+    "name": "PySide",
+    "import_name": "PySide",
+    "version": "1.2.2",
+    "windows": {
+        "post_install": [
+            {
+                "cmd": ":pythonexecutable: :pythonpath:/Scripts/pyside_postinstall.py -install"
+            }
+        ]
+    },
+    "linux": {
+        "post_install": []
+    }
+}

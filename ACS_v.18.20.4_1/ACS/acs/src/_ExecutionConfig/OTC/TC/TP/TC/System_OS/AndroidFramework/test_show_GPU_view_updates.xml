@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<TestCase>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Discription>
+Developers must be able to turn on the GPU Overdraw from Developer Option, the device must show the areas that is either being overdrawn, Deuteranomaly or overdraw counter(https://jira01.devtools.intel.com/browse/AREQ-2414).
+</Discription>
+    <Domain>System_OS</Domain>
+    <Phase>CORE</Phase>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <Type>FUNCTIONAL</Type>
+    <UseCase>PY_UNIT</UseCase>
+    <b2bIteration>1</b2bIteration>
+    <Parameters>
+        <Parameter>
+            <Name>HpalmName</Name>
+            <Value>Debug_Mode.DebugMode.test_show_GPU_view_updates</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TEST_DATA_ROOT</Name>
+            <Value>testplan/System_OS</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TEST_CASE</Name>
+            <Value>tests.System_OS.AndroidFramework.Debug_Mode.DebugMode.test_show_GPU_view_updates</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

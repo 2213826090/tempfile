@@ -1,0 +1,35 @@
+{
+    "Configuration": {
+        "Boot": null,
+        "BootVars": null,
+        "Custom": null,
+        "Download": {
+            "INTERNAL_DOWNLOAD": [
+                {
+                    "pft_key": "fastboot",
+                    "buildbot_artifactory_path": {"path": "device_name_id/variant_id", "detection": "cactus-absp"},
+                    "jenkins_artifactory_path": "device_name_id-variant_id/out/dist",
+                    "regexp_key": "device_name_id-flashfiles",
+                    "flash_file": "flash.json",
+                    "configuration": "blank_ECS210A",
+                    "start_state": "dnx"
+                },
+                {
+                    "local_key": "ota",
+                    "buildbot_artifactory_path": {"path": "device_name_id/variant_id", "detection": "cactus-absp"},
+                    "jenkins_artifactory_path": "device_name_id-variant_id/out/dist",
+                    "regexp_key": "device_name_id-ota",
+                    "flash_file": null,
+                    "configuration": null,
+                    "start_state": "mos"
+                }
+            ]
+        },
+        "Inherit": {
+            "BOARD": "cohol"
+        },
+        "Logs": null,
+        "Timeout": null,
+        "WorkAround": null
+    }
+}

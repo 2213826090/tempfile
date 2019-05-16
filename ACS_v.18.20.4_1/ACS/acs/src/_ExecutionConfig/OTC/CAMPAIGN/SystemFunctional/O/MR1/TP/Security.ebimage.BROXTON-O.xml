@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<Campaign version="13.49">
+    <Parameters>
+        <Parameter isControlledPSUsed="False"/>
+        <Parameter isIoCardUsed="False"/>
+        <Parameter skipBootOnPowerCycle="False"/>
+        <Parameter bootRetryNumber="0"/>
+        <Parameter runHookScripts="False"/>
+        <Parameter powerCycleBetweenTC="False"/>
+        <Parameter powerCycleOnFailure="False"/>
+        <Parameter finalDutState="NoChange"/>
+        <Parameter stopCampaignOnCriticalFailure="False"/>
+        <Parameter stopCampaignOnFirstFailure="False"/>
+        <Parameter loggingLevel="debug"/>
+        <Parameter CampaignType="Other"/>
+        <Parameter TCRReportViaRESTAPI="True"/>
+    </Parameters>
+    <TestCases>
+        <TestCase Id="../../../../../TC/TP/TC/Security/New/test_eb_image_tipc_test"/>
+        <TestCase Id="../../../../../TC/TP/TC/Security/New/test_eb_image_negative_tipc_test"/>
+        <TestCase Id="../../../../../TC/TP/TC/Security/New/test_eb_image_unit_test_secure_storage"/>
+        <TestCase Id="../../../../../TC/TP/TC/Security/New/test_eb_image_unit_test_hwcrypto"/>
+        <TestCase Id="../../../../../TC/TP/TC/Security/New/test_eb_image_alsr_variable_function_address_check"/>
+        <TestCase Id="../../../../../TC/TP/TC/Security/New/test_eb_image_tipc_test_app"/>
+        <TestCase Id="../../../../../TC/TP/TC/Security/New/test_eb_image_unit_test_hwcrypto_app"/>
+    </TestCases>
+</Campaign>

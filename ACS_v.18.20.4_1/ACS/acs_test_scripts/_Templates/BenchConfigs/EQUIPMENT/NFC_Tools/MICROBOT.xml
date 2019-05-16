@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<Equipment version="13.44" name="NFC_ROBOT1" description="Robot used for NFC tests">
+    <!-- Model possible values: MICROBOT -->
+    <Parameter name="Model" value="MICROBOT" description="Model of equipment to use. Refer to Equipment_Catalog.xml" />
+    <Parameter name="ComPort" value="COM6" description="COM port used for communication" />
+    <Parameter name="NfcReadTime" value="5" description="Time in seconds during which the Robot presents the NFC tag to the DUT for a read operation" />
+    <Parameter name="NfcWriteTime" value="5" description="Time in seconds during which the Robot presents the NFC tag to the DUT for a write operation" />
+    <!-- Define external reader coordinates -->
+    <Parameter name="ExternalReaderX" value="0" description="X coordinate for external reader" />
+    <Parameter name="ExternalReaderY" value="50000" description="Y coordinate for external reader" />
+    <Parameter name="ExternalReaderUp" value="0" description="Z coordinate (up) for external reader" />
+    <Parameter name="ExternalReaderDown" value="-65000" description="Z coordinate (down) for external reader" />
+    <!-- Define TCL2 antenna coordinates -->
+    <Parameter name="PcdAntennaX" value="-60000" description="X coordinate for PCD antenna" />
+    <Parameter name="PcdAntennaY" value="0" description="Y coordinate for PCD antenna" />
+    <Parameter name="PcdAntennaUp" value="0" description="Z coordinate (up) for PCD antenna" />
+    <Parameter name="PcdAntennaDown" value="-65000" description="Z coordinate (down) for PCD antenna" />
+    <Parameter name="PiccAntennaX" value="-60000" description="X coordinate for PICC antenna" />
+    <Parameter name="PiccAntennaY" value="0" description="Y coordinate for PICC antenna" />
+    <Parameter name="PiccAntennaUp" value="0" description="Z coordinate (up) for PICC antenna" />
+    <Parameter name="PiccAntennaDown" value="-65000" description="Z coordinate (down) for PICC antenna" />
+    <!-- Define tags coordinates -->
+    <Parameter name="TopazX" value="135000" description="X coordinate for Topaz" />
+    <Parameter name="TopazY" value="0" description="Y coordinate for Topaz" />
+    <Parameter name="TopazUp" value="0" description="Z coordinate (up) for Topaz" />
+    <Parameter name="TopazDown" value="-65000" description="Z coordinate (down) for Topaz" />
+    <Parameter name="MifareUltralightX" value="135000" description="X coordinate for Mifare Ultralight" />
+    <Parameter name="MifareUltralightY" value="-70000" description="Y coordinate for Mifare Ultralight" />
+    <Parameter name="MifareUltralightUp" value="0" description="Z coordinate (up) for Mifare Ultralight" />
+    <Parameter name="MifareUltralightDown" value="-65000" description="Z coordinate (down) for Mifare Ultralight" />
+    <Parameter name="MifareUltralightCX" value="120000" description="X coordinate for Mifare Ultralight C" />
+    <Parameter name="MifareUltralightCY" value="130000" description="Y coordinate for Mifare Ultralight C" />
+    <Parameter name="MifareUltralightCUp" value="0" description="Z coordinate (up) for Mifare Ultralight C" />
+    <Parameter name="MifareUltralightCDown" value="-65000" description="Z coordinate (down) for Mifare Ultralight C" />
+    <Parameter name="FelicaX" value="-130000" description="X coordinate for Felica" />
+    <Parameter name="FelicaY" value="130000" description="Y coordinate for Felica" />
+    <Parameter name="FelicaUp" value="0" description="Z coordinate (up) for Felica" />
+    <Parameter name="FelicaDown" value="-65000" description="Z coordinate (down) for Felica" />
+    <Parameter name="DesfireX" value="-40000" description="X coordinate for Desfire" />
+    <Parameter name="DesfireY" value="130000" description="Y coordinate for Desfire" />
+    <Parameter name="DesfireUp" value="0" description="Z coordinate (up) for Desfire" />
+    <Parameter name="DesfireDown" value="-65000" description="Z coordinate (down) for Desfire" />
+    <Parameter name="Type4BX" value="130000" description="X coordinate for Type 4B" />
+    <Parameter name="Type4BY" value="75000" description="Y coordinate for Type 4B" />
+    <Parameter name="Type4BUp" value="0" description="Z coordinate (up) for Type 4B" />
+    <Parameter name="Type4BDown" value="-65000" description="Z coordinate (down) for Type 4B" />
+    <Parameter name="MifareClassicX" value="-140000" description="X coordinate for Mifare Classic" />
+    <Parameter name="MifareClassicY" value="50000" description="Y coordinate for Mifare Classic" />
+    <Parameter name="MifareClassicUp" value="0" description="Z coordinate (up) for Mifare Classic" />
+    <Parameter name="MifareClassicDown" value="-65000" description="Z coordinate (down) for Mifare Classic" />
+    <Parameter name="MifareClassic4KX" value="50000" description="X coordinate for Mifare Classic 4K" />
+    <Parameter name="MifareClassic4KY" value="130000" description="Y coordinate for Mifare Classic 4K" />
+    <Parameter name="MifareClassic4KUp" value="0" description="Z coordinate (up) for Mifare Classic 4K" />
+    <Parameter name="MifareClassic4KDown" value="-65000" description="Z coordinate (down) for Mifare Classic 4K" />
+    <Parameter name="LibraryX" value="-140000" description="X coordinate for Library tag" />
+    <Parameter name="LibraryY" value="-30000" description="Y coordinate for Library tag" />
+    <Parameter name="LibraryUp" value="0" description="Z coordinate (up) for Library tag" />
+    <Parameter name="LibraryDown" value="-65000" description="Z coordinate (down) for Library tag" />
+</Equipment>

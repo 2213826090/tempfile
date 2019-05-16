@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<UseCases xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:noNamespaceSchemaLocation="../../../../acs/src/_Catalogs/UseCase/usecase.xsd">
+    <UseCase Id="EQUIPMENTS_CONFIGURATION" Domain="MISC" SubDomain="EQT" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Misc.EquipmentsConfiguration.EquipmentsConfiguration</ClassName>
+        <Description>Usecase used to configure equipments thanks to ACS framework</Description>
+        <Environment name="ANY">
+        </Environment>
+    </UseCase>
+    <UseCase Id="RSCMW500_PROTOCOL_TESTER" Domain="MISC" SubDomain="EQT" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Misc.RsCmw500ProtocolTester.RsCmw500ProtocolTester</ClassName>
+        <Description>Usecase used to launch CMW500 sequencer equipment through SOAP requests</Description>
+        <Environment name="MISC_PROTOCOL_TESTER">
+            <Dependency>EQT_RS_CMW500</Dependency>
+            <Dependency>CAP_PROTOCOL_TESTER</Dependency>
+        </Environment>
+    </UseCase>
+</UseCases>

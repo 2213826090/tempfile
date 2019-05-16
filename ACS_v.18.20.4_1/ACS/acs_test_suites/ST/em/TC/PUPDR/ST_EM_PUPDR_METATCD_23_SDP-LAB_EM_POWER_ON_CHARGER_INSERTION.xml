@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase>
+    <UseCase>LAB_EM_POWER_ON_CHARGER_INSERTION</UseCase>
+    <Description>Turn on by charger insertion</Description>
+    <b2bIteration>1</b2bIteration>
+    <TcMaxAttempt>2</TcMaxAttempt>
+    <TcAcceptanceCriteria>1</TcAcceptanceCriteria>
+    <b2bContinuousMode>False</b2bContinuousMode>
+    <Parameters>
+        <Parameter>
+            <!-- USB Charger Type : DCP | SDP (Current=0.5mA) | CDP(Current= 1.5mA) | ALL -->
+            <Name>CHARGER_TYPE</Name>
+            <Value>SDP</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Vbatt Voltage -->
+            <Name>VBATT</Name>
+            <Value>3.8</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Vusb Voltage -->
+            <Name>VUSB</Name>
+            <Value>6.0</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

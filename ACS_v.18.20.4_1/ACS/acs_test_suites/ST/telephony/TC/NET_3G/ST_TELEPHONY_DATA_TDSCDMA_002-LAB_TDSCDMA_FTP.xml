@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase>
+  <UseCase>LAB_TDSCDMA_FTP</UseCase>
+  <Description>FTP Upload over TDSCDMA on simulated network</Description>
+  <b2bIteration>100</b2bIteration>
+  <b2bContinuousMode>True</b2bContinuousMode>
+  <Parameters>
+    <Parameter>
+        <!-- Cell power in dBm -->
+        <Name>CELL_POWER</Name>
+        <Value>-60</Value>
+    </Parameter>
+    <Parameter>
+        <!-- Cell Band -->
+        <Name>CELL_BAND</Name>
+        <Value>34</Value>
+    </Parameter>
+    <Parameter>
+      <!-- IP version IPV4 | IPV6 | IPV4V6 -->
+      <Name>IP_VERSION</Name>
+      <Value>IPV4</Value>
+    </Parameter>
+    <Parameter>
+      <!-- FTP transfer direction: DL or UL -->
+      <Name>DIRECTION</Name>
+      <Value>UL</Value>
+    </Parameter>
+    <Parameter>
+      <!-- File to download from the server. This file shall be available on the server. If the file to transfer is located in a specific directory, you can specify its path. i.e. : acs/download_file/get5M -->
+      <Name>UL_FILENAME</Name>
+      <Value>put5M</Value>
+    </Parameter>
+    <Parameter>
+      <!-- Transfer timeout in s -->
+      <Name>XFER_TIMEOUT</Name>
+      <Value>400</Value>
+    </Parameter>
+  </Parameters>
+</TestCase>

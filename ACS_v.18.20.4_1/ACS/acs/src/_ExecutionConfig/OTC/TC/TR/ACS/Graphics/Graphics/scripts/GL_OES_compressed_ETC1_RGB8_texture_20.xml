@@ -1,0 +1,26 @@
+<?xml version='1.0'?>
+
+<ogl_es_2.0_conformance_auto>
+    <test_case id="68" name="ogles2.0_conf_GL2ExtensionTests_compressed_etc1_rgb8_texture">
+        <test_item name="">
+            <test_step fun_name="test_sequence_handler" type="fun">
+                <parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+            </test_step>
+            <test_step fun_name="ogles_conformance_test_run" type="fun">
+                <parameter name="test_file_name">GL2ExtensionTests/compressed_etc1_rgb8_texture/input.run</parameter>
+                <parameter name="test_bin_name">GTF;/data/app</parameter>
+                <parameter name="log_param">/data/app/compressed_etc1_rgb8_texture</parameter>
+            </test_step>
+            <test_step fun_name="check_result" type="fun">
+                <parameter name="result_file">/data/app/compressed_etc1_rgb8_texture.txt</parameter>
+                <parameter name="pass_string">PASSED all</parameter>
+                <parameter name="fail_string">PASSED all 0</parameter>
+            </test_step>
+            <test_step fun_name="test_sequence_handler" type="fun">
+                <parameter name="adb_cmd">adb shell rm -rf /data/app/*.txt</parameter>
+                <parameter name="adb_cmd">adb shell rm -rf /data/app/*.xml</parameter>
+            </test_step>
+        </test_item>
+    </test_case>
+</ogl_es_2.0_conformance_auto>
+

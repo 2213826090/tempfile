@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<TestCase>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Discription>
+Verify that DUT could encode successfully using embedded Mic for 200 times.
+</Discription>
+    <Domain>Multimedia_Audio</Domain>
+    <Phase>CORE</Phase>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <Type>FUNCTIONAL</Type>
+    <UseCase>PY_UNIT</UseCase>
+    <b2bIteration>1</b2bIteration>
+    <Parameters>
+        <Parameter>
+            <Name>HpalmName</Name>
+            <Value>audio_record_iterative.AudioRecordIterative.testAudioRecord_Iteration_EmbdMicCapture</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TEST_DATA_ROOT</Name>
+            <Value>testplan/Multimedia_Audio</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TEST_CASE</Name>
+            <Value>tests.Multimedia_Audio.Encode.audio_record_iterative.AudioRecordIterative.testAudioRecord_Iteration_EmbdMicCapture</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

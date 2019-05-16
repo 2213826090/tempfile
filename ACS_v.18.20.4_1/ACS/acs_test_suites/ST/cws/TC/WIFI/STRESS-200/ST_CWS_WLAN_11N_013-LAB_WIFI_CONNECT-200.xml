@@ -1,0 +1,53 @@
+<TestCase>
+  <UseCase>LAB_WIFI_CONNECT</UseCase>
+  <Description>test open and scan and connect wifi</Description>
+  <b2bIteration>200</b2bIteration>
+  <b2bContinuousMode>False</b2bContinuousMode>
+  <Parameters>
+    <Parameter>
+      <Name>WIFI_STANDARD</Name>
+      <Value>n2.4G</Value>
+    </Parameter>
+    <Parameter>
+      <Name>WIFI_SECURITY</Name>
+      <Value>WPA2-PSK-AES</Value>
+    </Parameter>
+    <Parameter>
+      <Name>EAP_METHOD</Name>
+      <Value>PEAP</Value>
+    </Parameter>
+    <Parameter>
+      <Name>PHASE2_AUTH</Name>
+      <Value>None</Value>
+    </Parameter>
+    <Parameter>
+      <Name>WIFI_PASSPHRASE</Name>
+      <Value>None</Value>
+    </Parameter>
+
+    <Parameter>
+      <Name>IP_SETTING_ENABLE</Name>
+      <Value>False</Value>
+    </Parameter> 
+    <Parameter>
+      <Name>IP_ADDRESS</Name>
+      <Value>192.168.0.149</Value>
+    </Parameter> 
+    <Parameter>
+      <Name>NETMASK</Name>
+      <Value>255.255.255.0</Value>
+    </Parameter> 
+    <Parameter>
+      <Name>GATEWAY</Name>
+      <Value>192.168.0.1</Value>
+    </Parameter> 
+    <Parameter>
+      <Name>DNS1</Name>
+      <Value>192.168.0.5</Value>
+    </Parameter> 
+    <Parameter>
+      <Name>DNS2</Name>
+      <Value>0.0.0.0</Value>
+    </Parameter>
+  </Parameters>
+</TestCase>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="13.37">
+    <UseCase>LIVE_MULTIMEDIA_HTML5_2D</UseCase>
+    <Description>This test launch an html5 animation through a local website and check if the animation is correctly played.</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters>
+        <Parameter>
+            <!-- Path to local website on the DUT  -->
+            <Name>LOCAL_WEBSITE_URL</Name>
+            <Value>file:///storage/emulated/0/acs_files/HTML5_DEMO.htm</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Browser to use.Possible values : "NATIVE", "ACS_AGENT", "CHROME"
+            Warning ! NATIVE or CHROME mode is not verbose in term of verdict, because it uses default browser
+            of the system. So the user should check manually in this mode if the page is correctly loaded -->
+            <Name>BROWSER_TYPE</Name>
+            <Value>CHROME</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Path to video file on host to compare with the screenrecord -->
+            <Name>VIDEO_REFERENCE</Name>
+            <Value>C:\Users\</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Brightness percentage of the screen -->
+            <Name>DISP_BRIGHTNESS</Name>
+            <Value>100</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Screenrecord save directory file on the DUT. -->
+            <Name>SAVE_DIRECTORY</Name>
+            <Value>/sdcard/</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Time in second, wait before launch screenrecord after start of html5 animation. -->
+            <Name>WAIT_BEFORE_RECORD</Name>
+            <Value>2</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Bit rate use for screenrecord -->
+            <Name>BIT_RATE</Name>
+            <Value>32000000</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Time limit use for screenrecord -->
+            <Name>TIME_LIMIT</Name>
+            <Value>7</Value>
+        </Parameter>
+        <Parameter>
+            <!-- OPTIONAL: If SAVE_DIRECTORY_HOST is None, Screenrecord take during test is push in report folder else
+            set this parameter to move screenrecord in particular folder on host.-->
+            <Name>SAVE_DIRECTORY_HOST</Name>
+            <Value></Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

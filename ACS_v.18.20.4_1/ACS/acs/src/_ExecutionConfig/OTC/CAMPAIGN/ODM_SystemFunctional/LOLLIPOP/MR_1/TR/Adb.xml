@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<Campaign>
+      <Parameters>
+            <Parameter isControlledPSUsed="False"/>
+            <Parameter isIoCardUsed="False"/>
+            <Parameter skipBootOnPowerCycle="False"/>
+            <Parameter bootRetryNumber="0"/>
+            <Parameter runHookScripts="False"/>
+            <Parameter powerCycleBetweenTC="False"/>
+            <Parameter powerCycleOnFailure="False"/>
+            <Parameter finalDutState="NoChange"/>
+            <Parameter stopCampaignOnCriticalFailure="False"/>
+            <Parameter stopCampaignOnFirstFailure="False"/>
+            <Parameter loggingLevel="debug"/>
+            <Parameter CampaignType="Other"/>
+      </Parameters>
+      <TestCases>
+            <TestCase Id="../../../../../TC/TR_ODM/LOLLIPOP/MR_1/Adb/ADB_LOGCAT_B"/>
+            <TestCase Id="../../../../../TC/TR_ODM/LOLLIPOP/MR_1/Adb/ADB_ROOT"/>
+            <TestCase Id="../../../../../TC/TR_ODM/LOLLIPOP/MR_1/Adb/ADB_PUSH_FAKE_DUT"/>
+            <TestCase Id="../../../../../TC/TR_ODM/LOLLIPOP/MR_1/Adb/ADB_PULL_FAKE_DUT"/>
+            <TestCase Id="../../../../../TC/TR_ODM/LOLLIPOP/MR_1/Adb/ADB_PUSH_FAKE_HOST"/>
+            <TestCase Id="../../../../../TC/TR_ODM/LOLLIPOP/MR_1/Adb/ADB_GET_STATE"/>
+      </TestCases>
+</Campaign>

@@ -1,0 +1,186 @@
+Package,Name
+Subject/SSG/System Functional Tests/System_FastBoot,Boot_Ncar_UI
+Subject/SSG/System Functional Tests/System_FastBoot/P1-SystemFailure-Watchdog,MOS-to-MOS-Watchdog-during-reboot
+Subject/SSG/System Functional Tests/System_FastBoot/P1-SystemFailure-Watchdog,MOS-TO-MOS-kill-watchdog
+Subject/SSG/System Functional Tests/System_FastBoot/P1-SystemFailure-Watchdog,CrashEventMenu-Shutdown
+Subject/SSG/System Functional Tests/System_FastBoot/P1-SystemFailure-Watchdog,CrashEventMenu-Reboot
+Subject/SSG/System Functional Tests/System_FastBoot/P1-SystemFailure-Watchdog,CrashEventMenu-Bootloader
+Subject/SSG/System Functional Tests/System_FastBoot/P1-SystemFailure-Watchdog,CrashEventMenu-Recovery
+Subject/SSG/System Functional Tests/System_FastBoot/P1-SystemFailure-Watchdog,CrashEventMenu-NormalBoot
+Subject/SSG/System Functional Tests/System_FastBoot/P1-SystemFailure-Watchdog,CrashMode-adb_commands
+Subject/SSG/System Functional Tests/System_FastBoot/P1-SystemFailure-Watchdog,WATCHDOG_COUNTER_MAXConfiguration
+Subject/SSG/System Functional Tests/System_FastBoot/P1-SystemFailure-Watchdog,KernelWatchdogToCrashMode-WATCHDOG_DELAY
+Subject/SSG/System Functional Tests/System_FastBoot/P1-SystemFailure-Watchdog,KernelWatchdogToCrashMode-WATCHDOG_COUNTER_MAX
+Subject/SSG/System Functional Tests/System_FastBoot/P1-SystemFailure-Watchdog,PanicToCrashMode-ComboButtons
+Subject/SSG/System Functional Tests/System_FastBoot/P1-SystemFailure-Watchdog,PanicToCrashMode
+Subject/SSG/System Functional Tests/System_FastBoot/P1-SystemFailure-Watchdog,BootloaderToCrashMode
+Subject/SSG/System Functional Tests/System_FastBoot/P1-SystemFailure-Watchdog,MainOSToCrashMode
+Subject/SSG/System Functional Tests/System_FastBoot/P1-SystemFailure-Watchdog,COS-to-MOS-Watchdog
+Subject/SSG/System Functional Tests/System_FastBoot/P1-SystemFailure-Watchdog,Reboot_by_trigger_kernel_panic
+Subject/SSG/System Functional Tests/System_FastBoot/P1-SystemFailure-Watchdog,Reboot_by_trigger_kernel_panic_CWP
+Subject/SSG/System Functional Tests/System_FastBoot/P1-SystemFailure-Watchdog,MOS-TO-MOS-kill-watchdog_CWP
+Subject/SSG/System Functional Tests/System_FastBoot/P1-RescueOS-BootDeviceWithOnlySystemFW,OnlySystemFW_OS_RESCUE
+Subject/SSG/System Functional Tests/System_FastBoot/P1-RescueOS-BootDeviceWithOnlySystemFW,Boot_Fastboot_OnlyFlash_IOC_IFWI
+Subject/SSG/System Functional Tests/System_FastBoot/P1-RescueOS-BootDeviceWithOnlySystemFW,Boot_Fastboot_OnlyFlash_IOC_IFWI_CWP
+Subject/SSG/System Functional Tests/System_FastBoot/P1-BootWithOOBE-FactoryResetProtection,1-17421019-FactoryReset_Protection_Untrusted_reset_Admin
+Subject/SSG/System Functional Tests/System_FastBoot/P1-BootWithOOBE-FactoryResetProtection,1-17421019-FactoryReset_Protection_Trusted_reset_from_Settings
+Subject/SSG/System Functional Tests/System_FastBoot/P1-BootWithOOBE-FactoryResetProtection,1-17421019-FactoryReset_Protection_Untrusted_reset_from_recovery
+Subject/SSG/System Functional Tests/System_FastBoot/P1-BootWithOOBE-FactoryResetProtection,OOBE_when_first_time_enters_to_MOS
+Subject/SSG/System Functional Tests/System_FastBoot/P1-BootWithOOBE-FactoryResetProtection,OOBE_cannot_back_after_passed
+Subject/SSG/System Functional Tests/System_FastBoot/P1-BootWithOOBE-FactoryResetProtection,OOBE_can_back_after_passed
+Subject/SSG/System Functional Tests/System_FastBoot/P1-BootWithOOBE-FactoryResetProtection,OOBE_when_first_time_enters_to_MOS_CWP
+Subject/SSG/System Functional Tests/System_FastBoot/P1-UpdateDeviceFlashImages,Fastboot_update_userdata_recreation
+Subject/SSG/System Functional Tests/System_FastBoot/P1-UpdateDeviceFlashImages,Flash_different_image_inABpartition
+Subject/SSG/System Functional Tests/System_FastBoot/P1-UpdateDeviceFlashImages,Fastboot_image_integrity
+Subject/SSG/System Functional Tests/System_FastBoot/P1-UpdateDeviceFlashImages,Fastboot_update_image
+Subject/SSG/System Functional Tests/System_FastBoot/P1-UpdateDeviceFlashImages,Flash_build_via_fastboot_commands
+Subject/SSG/System Functional Tests/System_FastBoot/P1-UpdateDeviceFlashImages,TouchBTWIFI_works_after_flash_build
+Subject/SSG/System Functional Tests/System_FastBoot/P1-UpdateDeviceFlashImages,OTA_update
+Subject/SSG/System Functional Tests/System_FastBoot/P1-UpdateDeviceFlashImages,Flash_BIOS_for_AIA
+Subject/SSG/System Functional Tests/System_FastBoot/P1-UpdateDeviceFlashImages/PFTSupport,1-1685376-Fastboot_PFT_Linux
+Subject/SSG/System Functional Tests/System_FastBoot/P1-UpdateDeviceFlashImages/PFTSupport,1-1685376-Fastboot_PFT_Windows
+Subject/SSG/System Functional Tests/System_FastBoot/P1-UpdateDeviceFlashImages/SecureFlashing,1-18052260-Boot_loader_secure_flashing
+Subject/SSG/System Functional Tests/System_FastBoot/P1-UpdateDeviceFlashImages/SecureFlashing,1-18052243-System_firmware_secure_flashing
+Subject/SSG/System Functional Tests/System_FastBoot/P1-UpdateDeviceFlashImages/Flash_Image_Parts/BIOS,Update BIOS in DNX mode
+Subject/SSG/System Functional Tests/System_FastBoot/P1-UpdateDeviceFlashImages/Flash_Image_Parts/PartitionDataPreservation,Data_is_erased_when_flash_image
+Subject/SSG/System Functional Tests/System_FastBoot/P1-UpdateDeviceFlashImages/Flash_Image_Parts/PartitionDataPreservation,Data_isnot_erased_when_update_boot
+Subject/SSG/System Functional Tests/System_FastBoot/P1-UpdateDeviceFlashImages/Flash_Image_Parts/PartitionDataPreservation,Data_isnot_erased_when_update_system
+Subject/SSG/System Functional Tests/System_FastBoot/P1-UpdateDeviceFlashImages/Flash_Image_Parts/PartitionDataPreservation,Data_isnot_erased_when_update_recovery
+Subject/SSG/System Functional Tests/System_FastBoot/P1-UpdateDeviceFlashImages/Flash_Image_Parts/PartitionDataPreservation,Data_isnot_erased_when_update_bootloader
+Subject/SSG/System Functional Tests/System_FastBoot/P1-UpdateDeviceFlashImages/Flash_Image_Parts/PartitionDataPreservation,Data_isnot_erased_when_update_vbmeta
+Subject/SSG/System Functional Tests/System_FastBoot/P1-UpdateDeviceFlashImages/Flash_Image_Parts/PartitionDataPreservation,Data_isnot_erased_when_update_multiboot
+Subject/SSG/System Functional Tests/System_FastBoot/P1-UpdateDeviceFlashImages/Flash_Image_Parts/PartitionDataPreservation,Data_isnot_erased_when_update_vendor
+Subject/SSG/System Functional Tests/System_FastBoot/P1-UpdateDeviceFlashImages/Flash_Image_Parts/Recovery,Flash_recovery_image_in_Fastboot
+Subject/SSG/System Functional Tests/System_FastBoot/P1-UpdateDeviceFlashImages/Flash_Image_Parts/System,Flash_system_image_in_Fastboot
+Subject/SSG/System Functional Tests/System_FastBoot/P1-UpdateDeviceFlashImages/Flash_Image_Parts/System,Update_system_image_in_Fastboot
+Subject/SSG/System Functional Tests/System_FastBoot/P1-UpdateDeviceFlashImages/Flash_Image_Parts/System/Negative,DUT_can_enter_MOS_after_reflash_right_image
+Subject/SSG/System Functional Tests/System_FastBoot/P1-UpdateDeviceFlashImages/Flash_Image_Parts/System/Negative,DUT_cannot_enter_MOS_after_flash_wrong_image
+Subject/SSG/System Functional Tests/System_FastBoot/P1-UpdateDeviceFlashImages/Flash_Image_Parts/Boot,Flash_boot_image_in_Fastboot
+Subject/SSG/System Functional Tests/System_FastBoot/P1-UpdateDeviceFlashImages/Flash_Image_Parts/Boot,Update_boot_image_in_Fastboot
+Subject/SSG/System Functional Tests/System_FastBoot/P1-UpdateDeviceFlashImages/Flash_Image_Parts/Boot/Negative,Remove_USB_cable_during_the_boot_flash
+Subject/SSG/System Functional Tests/System_FastBoot/P1-UpdateDeviceFlashImages/Flash_Image_Parts/Bootloader,Update_bootloader_image_in_Fastboot
+Subject/SSG/System Functional Tests/System_FastBoot/P1-UpdateDeviceFlashImages/Flash_Image_Parts/Bootloader,Flash_bootloader_image_in_Fastboot
+Subject/SSG/System Functional Tests/System_FastBoot/P1-UpdateDeviceFlashImages/Flash_Image_Parts/Bootloader/Negative,Remove_USB_cable_during_the_bootloader_flash
+Subject/SSG/System Functional Tests/System_FastBoot/P1-UpdateDeviceFlashImages/Flash_Image_Parts/Vendor,Update_vendor_image_in_Fastboot
+Subject/SSG/System Functional Tests/System_FastBoot/P1-UpdateDeviceFlashImages/Flash_Image_Parts/Vendor,Flash_vendor_image_in_Fastboot
+Subject/SSG/System Functional Tests/System_FastBoot/P1-UpdateDeviceFlashImages/Flash_Image_Parts/Vendor,Remove_USB_cable_during_the_vendor_flash
+Subject/SSG/System Functional Tests/System_FastBoot/P1-UpdateDeviceFlashImages/Flash_Image_Parts/Multiboot,Update_multiboot_image_in_Fastboot
+Subject/SSG/System Functional Tests/System_FastBoot/P1-UpdateDeviceFlashImages/Flash_Image_Parts/Multiboot,Flash_multiboot_image_in_Fastboot
+Subject/SSG/System Functional Tests/System_FastBoot/P1-UpdateDeviceFlashImages/Flash_Image_Parts/Multiboot,Remove_USB_cable_during_the_multiboot_flash
+Subject/SSG/System Functional Tests/System_FastBoot/P1-UpdateDeviceFlashImages/Flash_Image_Parts/Vemeta,Update_vbmeta_image_in_Fastboot
+Subject/SSG/System Functional Tests/System_FastBoot/P1-UpdateDeviceFlashImages/Flash_Image_Parts/Vemeta,Flash_vbmeta_image_in_Fastboot
+Subject/SSG/System Functional Tests/System_FastBoot/P1-ReInstallDevice,Flash_image_in_EFI_shell_mode
+Subject/SSG/System Functional Tests/System_FastBoot/P1-ReInstallDevice,Flash_IOC_LinuxHost
+Subject/SSG/System Functional Tests/System_FastBoot/P1-ReInstallDevice,Flash_IOC_windowHost
+Subject/SSG/System Functional Tests/System_FastBoot/P1-ReInstallDevice,Flash_IFWI
+Subject/SSG/System Functional Tests/System_FastBoot/P1-ReInstallDevice,Flash_IOC_Remove_USBCable
+Subject/SSG/System Functional Tests/System_FastBoot/P1-ReInstallDevice,Flash_IFWI_Remove_USBCable
+Subject/SSG/System Functional Tests/System_FastBoot/P1-ReInstallDevice/USBInstaller,1-18272741-Fastboot_Bootable_USB_Stick
+Subject/SSG/System Functional Tests/System_FastBoot/P1-RescueFW-EnterRescue,Boot_to_DNX_with_corrupt_fireware
+Subject/SSG/System Functional Tests/System_FastBoot/P1-ChargerInsertion,ChargerInsertion-above-BOOT_OS-DCP
+Subject/SSG/System Functional Tests/System_FastBoot/P1-ChargerInsertion,COS-indication
+Subject/SSG/System Functional Tests/System_FastBoot/P1-TimeManagementWhenDeviceIsOFF,Time_management_with_device_off
+Subject/SSG/System Functional Tests/System_FastBoot/P1-TimeManagementWhenDeviceIsOFF,1-19755-TimeManagementWithDevice24OFFnoSIM
+Subject/SSG/System Functional Tests/System_FastBoot/P1-TimeManagementWhenDeviceIsOFF,Time_set
+Subject/SSG/System Functional Tests/System_FastBoot/P1-PowerButtonEventInChargingMode,BootToMOS-BatteryAboveBOOT_OS-ChargerConnected
+Subject/SSG/System Functional Tests/System_FastBoot/P1-TurnOFFRequest,1-18261237-GRACEFUL_SHUTDOWN-noUSBChargerConnected
+Subject/SSG/System Functional Tests/System_FastBoot/P1-TurnOFFRequest,GRACEFUL_SHUTDOWN-USBConnection
+Subject/SSG/System Functional Tests/System_FastBoot/P1-UpdateDeviceViaFastboot,Boot_to_fastboot
+Subject/SSG/System Functional Tests/System_FastBoot/P1-UpdateDeviceViaFastboot,Fastboot_flashing_lock
+Subject/SSG/System Functional Tests/System_FastBoot/P1-UpdateDeviceViaFastboot,1-17383931-Get_unlock_ability_AND_Flashing_unlock
+Subject/SSG/System Functional Tests/System_FastBoot/P1-UpdateDeviceViaFastboot,Fastboot_lock_state_commands_rejected
+Subject/SSG/System Functional Tests/System_FastBoot/P1-UpdateDeviceViaFastboot,Fused_DUT_defaultstate_lock
+Subject/SSG/System Functional Tests/System_FastBoot/P1-UpdateDeviceViaFastboot,Failed_to_unlock_with_fusedImage
+Subject/SSG/System Functional Tests/System_FastBoot/P1-UnresponsiveDevice,FORCED_SHUTDOWN
+Subject/SSG/System Functional Tests/System_FastBoot/P1-UnresponsiveDevice,FORCED_SHUTDOWN_50times
+Subject/SSG/System Functional Tests/System_FastBoot/P1-UpdateDeviceFactoryResetMainMode,Factory_Reset_Data_Reset
+Subject/SSG/System Functional Tests/System_FastBoot/P1-UpdateDeviceFactoryResetMainMode,Factory_reset_applications_removed
+Subject/SSG/System Functional Tests/System_FastBoot/P1-UpdateDeviceFactoryResetMainMode/System,Contact_record_are_empty_after_factory_reset
+Subject/SSG/System Functional Tests/System_FastBoot/P1-UpdateDeviceFactoryResetMainMode/System,Website_record_are_empty_after_factory_reset
+Subject/SSG/System Functional Tests/System_FastBoot/P1-UpdateDeviceFactoryResetMainMode/System,All_passwd_set_cleared_after_factory_reset
+Subject/SSG/System Functional Tests/System_FastBoot/P1-UpdateDeviceFactoryResetMainMode/System/Negative,1-153127-Device can boot up after force shutdown during factory reset
+Subject/SSG/System Functional Tests/System_FastBoot/P1-UpdateDeviceFactoryResetMainMode/System/Negative,1-153127-Keys and touch pressed during factory reset
+Subject/SSG/System Functional Tests/System_FastBoot/P1-UpdateDeviceFactoryResetMainMode/System/Negative,Google account is requested when recovered from failure of a untrusted factory reset
+Subject/SSG/System Functional Tests/System_FastBoot/P1-UpdateDeviceFactoryResetMainMode/System/Iterative,Restore_factory_settings_with_reboot_10times
+Subject/SSG/System Functional Tests/System_FastBoot/P1-UpdateDeviceFactoryResetRecoveryMode,1-18272774-Reset_from_recovery
+Subject/SSG/System Functional Tests/System_FastBoot/P1-TurnONWithFASTBOOTKeyCombo,Fastboot_Magic-key
+Subject/SSG/System Functional Tests/System_FastBoot/P1-FastbootBoot,Fastboot_boot_common
+Subject/SSG/System Functional Tests/System_FastBoot/P1-FastbootBoot,Force unlock device wrong certificate
+Subject/SSG/System Functional Tests/System_FastBoot/P1-FastbootBoot,Force unlock device
+Subject/SSG/System Functional Tests/System_FastBoot/P1-FastbootBoot,Force unlock device wrong key
+Subject/SSG/System Functional Tests/System_FastBoot/P1-FastbootBoot,Force unlock device after timeout
+Subject/SSG/System Functional Tests/System_FastBoot/P1-FastbootBoot,Force unlock device after reboot
+Subject/SSG/System Functional Tests/System_FastBoot/P1-FastbootBoot,Flash partition on Unlocked Device
+Subject/SSG/System Functional Tests/System_FastBoot/P1-FastbootBoot,Flash unlock device with OEM unlock
+Subject/SSG/System Functional Tests/System_FastBoot/P1-FastbootBoot,Flash unlock device no OEM unlock
+Subject/SSG/System Functional Tests/System_FastBoot/P1-FastbootTransitions/Menu,FastbootMenu-Power-OFF-USB-cable
+Subject/SSG/System Functional Tests/System_FastBoot/P1-FastbootTransitions/Menu,FastbootMenu-Reboot-to-Recovery
+Subject/SSG/System Functional Tests/System_FastBoot/P1-FastbootTransitions/Menu,FastbootMenu-Reboot-to-Fastboot
+Subject/SSG/System Functional Tests/System_FastBoot/P1-FastbootTransitions/Menu,FastbootMenu-Reboot-to-MOS
+Subject/SSG/System Functional Tests/System_FastBoot/P1-FastbootTransitions/Menu,FastbootMenu-Normal_Boot-MOS
+Subject/SSG/System Functional Tests/System_FastBoot/P1-FastbootTransitions/Fastboot,Fastboot_reboot
+Subject/SSG/System Functional Tests/System_FastBoot/P1-FastbootTransitions/Fastboot,Fastboot_Bounds_Checks
+Subject/SSG/System Functional Tests/System_FastBoot/P1-FastbootTransitions/Fastboot,Fastboot_reboot_bootloader
+Subject/SSG/System Functional Tests/System_FastBoot/P1-FastbootTransitions/Fastboot,Fastboot_getvar_all
+Subject/SSG/System Functional Tests/System_FastBoot/P1-FastbootTransitions/Fastboot,Fastboot_continue
+Subject/SSG/System Functional Tests/System_FastBoot/P1-FastbootTransitions/Fastboot,Fastboot_erase_boot
+Subject/SSG/System Functional Tests/System_FastBoot/P1-FastbootTransitions/Fastboot,Fastboot_getvar_serialno
+Subject/SSG/System Functional Tests/System_FastBoot/P1-TurnONRequest,Boot_to_android
+Subject/SSG/System Functional Tests/System_FastBoot/P1-TurnONRequest,Turn_On_CWP
+Subject/SSG/System Functional Tests/System_FastBoot/P1-RESET-ModesTransitions,Main-to-Main
+Subject/SSG/System Functional Tests/System_FastBoot/P1-RESET-ModesTransitions,Main-to-Fastboot
+Subject/SSG/System Functional Tests/System_FastBoot/P1-RESET-ModesTransitions,Main-to-Main_50Times
+Subject/SSG/System Functional Tests/System_FastBoot/P1-RESET-ModesTransitions/Recovery-Main,Recovery-to-Main
+Subject/SSG/System Functional Tests/System_FastBoot/P1-RESET-ModesTransitions/Recovery-Main,Main-to-Recovery
+Subject/SSG/System Functional Tests/System_FastBoot/P1-GoogleVerifiedBoot/DM-Verity,System_partition_should_notbe_modifiable
+Subject/SSG/System Functional Tests/System_FastBoot/P1-GoogleVerifiedBoot/DM-Verity,Display_IOError_after_system_datablock
+Subject/SSG/System Functional Tests/System_FastBoot/P1-GoogleVerifiedBoot/DM-Verity,System_not_mount_if_hashtree_was_altered
+Subject/SSG/System Functional Tests/System_FastBoot/P1-GoogleVerifiedBoot/DM-Verity,System_not_mount_if_metadata_fail_to_verify
+Subject/SSG/System Functional Tests/System_FastBoot/P1-GoogleVerifiedBoot/DM-Verity,N-DM-verity-Power off after 30s TO
+Subject/SSG/System Functional Tests/System_FastBoot/P1-GoogleVerifiedBoot/DM-Verity,N-DM-verity-Boot to MOS with corrupted system img
+Subject/SSG/System Functional Tests/System_FastBoot/P1-GoogleVerifiedBoot/DM-Verity,N-Switch from error EIO mode to Enforcing after OTA
+Subject/SSG/System Functional Tests/System_FastBoot/P1-GoogleVerifiedBoot/DM-Verity,N-Check the enforcing behavior after flashing corrupted system image
+Subject/SSG/System Functional Tests/System_FastBoot/P1-GoogleVerifiedBoot/DM-Verity,dm-verify
+Subject/SSG/System Functional Tests/System_FastBoot/P1-GoogleVerifiedBoot/DM-Verity,dm-verify_platform
+Subject/SSG/System Functional Tests/System_FastBoot/P1-GoogleVerifiedBoot/Google Verified Boot,Class_A_ device_ boot_ in_Green
+Subject/SSG/System Functional Tests/System_FastBoot/P1-GoogleVerifiedBoot/Google Verified Boot,Class_A_device_boot_in_red_SBdisable
+Subject/SSG/System Functional Tests/System_FastBoot/P1-GoogleVerifiedBoot/Google Verified Boot,Class_A_device_boot_in_red_SBenable
+Subject/SSG/System Functional Tests/System_FastBoot/P1-AutomotiveBootloader(ABL)-HWconfigurabilitysupport,Check_ABL_config
+Subject/SSG/System Functional Tests/System_FastBoot/P1- OSImagesBootFailbackPolicy,Boot_to_fastboot_with_corrupt_boot_image
+Subject/SSG/System Functional Tests/System_FastBoot/P1- OSImagesBootFailbackPolicy,To_Fastboot_With_Corrupt_Boot_And_Bootloader
+Subject/SSG/System Functional Tests/System_FastBoot/P1- OSImagesBootFailbackPolicy,To_Fastboot_With_Erase_Boot_And_Bootloader
+Subject/SSG/System Functional Tests/System_FastBoot/P1-AutomotiveBootloader -ABL-SupportforAndroid,ABL_BootToAndroid
+Subject/SSG/System Functional Tests/System_FastBoot/P1-AutomotiveBootloader -ABL-SupportforAndroid,ABL_BootToAndroid_CWP
+Subject/SSG/System Functional Tests/System_FastBoot/P1-Automotive Bootloader (ABL) support for VT-D,Support_VT-D_enable
+Subject/SSG/System Functional Tests/System_FastBoot/P1-Manufacturing Test OS Enabler (TOE),Manufacturing_test_OS_enabler
+Subject/SSG/System Functional Tests/System_FastBoot/P1-Manufacturing Test OS Enabler (TOE),Manufacturing_test_OS_enabler_O
+Subject/SSG/System Functional Tests/System_FastBoot/P1-UEFIBootloader-SupportforAndroid,UEFI_Sopport_Android
+Subject/SSG/System Functional Tests/System_FastBoot/P1-UEFIBootloader-SupportforAndroid,Boot_EFI_Shell_mode
+Subject/SSG/System Functional Tests/System_FastBoot/P1-ABL  support for updating IFWI or PDR from a raw sector number,ABL_support_for_updating_IFWI
+Subject/SSG/System Functional Tests/System_FastBoot/P1-Automotive Bootloader (ABL) Secure Boot,Fused_device_in_userbuild_cannot_unlocked
+Subject/SSG/System Functional Tests/System_FastBoot/P1-Automotive Bootloader (ABL) Secure Boot,Corrupted_ABL_notbe_boot_because_secure_boot
+Subject/SSG/System Functional Tests/System_FastBoot/P1-Automotive Bootloader (ABL) Secure Boot,Unverified_multiboot_with_fused
+Subject/SSG/System Functional Tests/System_FastBoot/P1-Automotive Bootloader (ABL) Secure Boot,Secure_boot_enable_and_EOM_bit_set
+Subject/SSG/System Functional Tests/System_FastBoot/P1-Automotive Bootloader (ABL) Secure Boot,Fused_device_will_not_change_the_SBstatus
+Subject/SSG/System Functional Tests/System_FastBoot/P1-Boot Android Fastboot image from SPI-connected Flash Memory,Boot_to_fastboot_fromSPI
+Subject/SSG/System Functional Tests/System_FastBoot/P1-AOSP Verified Boot Reference Implementation (Verified Boot 2.0),Display_IOError_after_system_datablock_O
+Subject/SSG/System Functional Tests/System_FastBoot/P1-AOSP Verified Boot Reference Implementation (Verified Boot 2.0),System_not_mount_if_hashtree_was_altered_O
+Subject/SSG/System Functional Tests/System_FastBoot/P1-AOSP Verified Boot Reference Implementation (Verified Boot 2.0),System_not_mount_if_metadata_fail_to_verify_O
+Subject/SSG/System Functional Tests/System_FastBoot/P1-AOSP Verified Boot Reference Implementation (Verified Boot 2.0),System_partition_should_notbe_modifiable_O
+Subject/SSG/System Functional Tests/System_FastBoot/P1-AOSP Verified Boot Reference Implementation (Verified Boot 2.0),AVB_boot_in_Red_O
+Subject/SSG/System Functional Tests/System_FastBoot/P1-AOSP Verified Boot Reference Implementation (Verified Boot 2.0),Vendor_not_mount_if_hashtree_was_altered_O
+Subject/SSG/System Functional Tests/System_FastBoot/P1-AOSP Verified Boot Reference Implementation (Verified Boot 2.0),AVB_boot_in_Orange_O
+Subject/SSG/System Functional Tests/System_FastBoot/P1-AOSP Verified Boot Reference Implementation (Verified Boot 2.0),Vendor_not_mount_if_metadata_fail_to_verify_O
+Subject/SSG/System Functional Tests/System_FastBoot/P1-AOSP Verified Boot Reference Implementation (Verified Boot 2.0),Display_IOError_after_vendor_datablock_O
+Subject/SSG/System Functional Tests/System_FastBoot/P1-Tamper-evident storage used for  rollback allowable versions,Verify_rollback_of_software_versions
+Subject/SSG/System Functional Tests/System_FastBoot/P1-Tamper-evident storage used for  rollback allowable versions,Device_states_transitions
+Subject/SSG/System Functional Tests/System_FastBoot/P1-Tamper-evident storage used for  rollback allowable versions,device can enter android normal with rollback_index 2
+Subject/SSG/System Functional Tests/System_FastBoot/P1-Tamper-evident storage used for  rollback allowable versions,device can not boot to MOSl with rollback_index 2
+Subject/SSG/System Functional Tests/System_FastBoot/P1-Tamper-evident storage used for  rollback allowable versions,Devices can boot to MOS with rollback_index3
+Subject/SSG/System Functional Tests/System_FastBoot/P1-SATA support for OS Boot and Storage,SATA support for OS Boot with SSD
+Subject/SSG/System Functional Tests/System_FastBoot/P1-SATA support for OS Boot and Storage,Boot_From_2.5HDD_or_SSD
+Subject/SSG/System Functional Tests/System_FastBoot/P1-Fastboot - Flash ABL from Fastboot Menu,Flash_ABL_from_Fastboot_menu
+Subject/SSG/System Functional Tests/System_FastBoot/P1-USB Installer,Flash_build_With_empty_harddisk
+Subject/SSG/System Functional Tests/System_FastBoot/P1-USB Installer,Flash_build_From_old_build
+Subject/SSG/System Functional Tests/System_FastBoot/P1-USB Installer,Flash_build_From_MorN_build
+Subject/SSG/System Functional Tests/System_FastBoot/P1-Universal Flash Storage - UFS V2.0 - Boot,Boot_From_UFS

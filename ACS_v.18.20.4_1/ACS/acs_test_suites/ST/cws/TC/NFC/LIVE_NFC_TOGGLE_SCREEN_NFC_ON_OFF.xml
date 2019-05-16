@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase>
+    <UseCase>LIVE_NFC_TOGGLE_SCREEN_NFC_ON_OFF</UseCase>
+    <Description>Toggle screen On/Off when NFC is enabled and check Crash Log</Description>
+    <b2bIteration>5</b2bIteration>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters>
+        <Parameter>
+            <!-- Delay in second the screen must be On -->
+            <Name>ON_DURATION</Name>
+            <Value>1</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Delay in second the screen must be Off -->
+            <Name>OFF_DURATION</Name>
+            <Value>1</Value>
+        </Parameter>
+        <Parameter>
+            <!-- [OPTIONAL] If True, enable the NFC Beam prior to the test. If False, disable the NFC Beam prior to the test -->
+            <Name>NFC_BEAM_INITIAL_STATE</Name>
+            <Value></Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

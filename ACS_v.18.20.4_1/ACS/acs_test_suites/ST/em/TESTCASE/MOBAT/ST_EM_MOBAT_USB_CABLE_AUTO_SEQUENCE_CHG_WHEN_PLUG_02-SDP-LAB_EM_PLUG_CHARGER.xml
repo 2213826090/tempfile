@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase>
+    <UseCase>LAB_EM_PLUG_CHARGER</UseCase>
+    <Description>Plug USB SDP charger while platform is ON: Check the charger current when the Wall charger SDP is plugged</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>False</b2bContinuousMode>
+    <TcMaxAttempt>2</TcMaxAttempt>
+    <TcAcceptanceCriteria>1</TcAcceptanceCriteria>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters>
+        <Parameter>
+            <!-- This the Target to test. The target name and values are listed in the EnergyManagement.xml target file -->
+            <Name>EM_TARGET</Name>
+            <Value>ICHARGER2</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Charger Type : DCP | SDP (Current=0.5mA) | CDP(Current= 1.5mA) -->
+            <Name>CHARGER_TYPE</Name>
+            <Value>SDP</Value>
+        </Parameter>
+        <Parameter>
+            <!-- The os to start : can be 'MOS' or 'ROS' -->
+            <Name>START_OS</Name>
+            <Value>MOS</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Delay in second between starting of test and first measure of ibatt, before charger plug -->
+            <Name>DELAY_TO_MEASURE_BEFORE_PLUG</Name>
+            <Value>60</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Delay in second between starting of test and second measure of ibatt, after charger plug-->
+            <Name>DELAY_TO_MEASURE_AFTER_PLUG</Name>
+            <Value>90</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

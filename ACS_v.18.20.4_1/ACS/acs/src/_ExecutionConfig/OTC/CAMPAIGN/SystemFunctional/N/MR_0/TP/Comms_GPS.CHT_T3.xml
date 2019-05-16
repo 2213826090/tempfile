@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<Campaign version="13.49">
+    <Parameters>
+        <Parameter isControlledPSUsed="False"/>
+        <Parameter isIoCardUsed="False"/>
+        <Parameter skipBootOnPowerCycle="False"/>
+        <Parameter bootRetryNumber="0"/>
+        <Parameter runHookScripts="False"/>
+        <Parameter powerCycleBetweenTC="False"/>
+        <Parameter powerCycleOnFailure="False"/>
+        <Parameter finalDutState="NoChange"/>
+        <Parameter stopCampaignOnCriticalFailure="False"/>
+        <Parameter stopCampaignOnFirstFailure="False"/>
+        <Parameter loggingLevel="debug"/>
+        <Parameter CampaignType="Other"/>
+        <Parameter TCRReportViaRESTAPI="True"/>
+    </Parameters>
+    <TestCases>
+        <TestCase Id="../../../../../TC/TP/TC/Comms_GPS/SSG/test_locationStatusInQuickSettingsVsMainSettings"/>
+        <TestCase Id="../../../../../TC/TP/TC/Comms_GPS/SSG/test_turnOnOffLocationServiceAndCheckIfSettingIsObeyed"/>
+        <TestCase Id="../../../../../TC/TP/TC/Comms_GPS/SSG/test_networkPositioningWhenWifiIsConnectedAndStayIndoors"/>
+        <TestCase Id="../../../../../TC/TP/TC/Comms_GPS/SSG/test_GPSPositioningWhenWifiIsDisconnectedAndStayIndoors"/>
+        <TestCase Id="../../../../../TC/TP/TC/Comms_GPS/SSG/test_turnOnOffLocation10Times"/>
+        <TestCase Id="../../../../../TC/TP/TC/Comms_GPS/SSG/test_receiverSensitivityAndNumberOfVisibleSatellitesIndoor"/>
+        <TestCase Id="../../../../../TC/TP/TC/Comms_GPS/SSG/test_networkPositioningWhenWifiIsDisconnectedAndStayIndoors"/>
+        <TestCase Id="../../../../../TC/TP/TC/Comms_GPS/SSG/test_theDownloadingFileWouldNotPreventShowingYourLocationBatterySavingAndWifiConnected"/>
+        <TestCase Id="../../../../../TC/TP/TC/Comms_GPS/SSG/test_GPSPositioningWhenWifiIsConnectedAndStayIndoors"/>
+    </TestCases>
+</Campaign>

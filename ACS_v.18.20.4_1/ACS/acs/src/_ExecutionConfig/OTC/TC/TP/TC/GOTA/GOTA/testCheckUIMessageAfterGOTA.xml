@@ -1,0 +1,28 @@
+<?xml version="1.0" ?>
+<TestCase>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Discription>
+UI message to provide feedback to user when GOTA update finish: success or fail
+&lt;br /&gt;UI_message_feedback_to_user
+</Discription>
+    <Domain>GOTA</Domain>
+    <Phase>CORE</Phase>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <Type>FUNCTIONAL</Type>
+    <UseCase>PY_UNIT</UseCase>
+    <b2bIteration>1</b2bIteration>
+    <Parameters>
+        <Parameter>
+            <Name>HpalmName</Name>
+            <Value>check_ui_message_after_gota.CheckUIMessageAfterGOTA.testCheckUIMessageAfterGOTA</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TEST_DATA_ROOT</Name>
+            <Value>testplan/GOTA</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TEST_CASE</Name>
+            <Value>tests.GOTA.GOTA.check_ui_message_after_gota.CheckUIMessageAfterGOTA.testCheckUIMessageAfterGOTA</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

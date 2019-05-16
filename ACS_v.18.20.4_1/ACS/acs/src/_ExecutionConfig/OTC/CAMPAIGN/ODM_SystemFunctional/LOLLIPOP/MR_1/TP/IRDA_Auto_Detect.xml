@@ -1,0 +1,40 @@
+<?xml version="1.0" ?>
+<Campaign version="13.49">
+    <Parameters>
+        <Parameter isControlledPSUsed="False"/>
+        <Parameter isIoCardUsed="False"/>
+        <Parameter skipBootOnPowerCycle="False"/>
+        <Parameter bootRetryNumber="0"/>
+        <Parameter runHookScripts="False"/>
+        <Parameter powerCycleBetweenTC="False"/>
+        <Parameter powerCycleOnFailure="False"/>
+        <Parameter finalDutState="NoChange"/>
+        <Parameter stopCampaignOnCriticalFailure="False"/>
+        <Parameter stopCampaignOnFirstFailure="False"/>
+        <Parameter loggingLevel="debug"/>
+        <Parameter CampaignType="Other"/>
+    </Parameters>
+    <TestCases>
+        <TestCase Id="../../../../../TC/TP/TC/IRDA_Auto_Detect/init.start_rpc_server.StartRPCServer.testStartRPCServer"/>
+        <TestCase Id="../../../../../TC/TP/TC/IRDA_Auto_Detect/init.wake_up_and_unlock.WakeUnlock.testWakeUnlock"/>
+        <TestCase Id="../../../../../TC/TP/TC/IRDA_Auto_Detect/init.set_orientation_vertical.SetOrientationVertical.testSetOrientationVertical"/>
+        <TestCase Id="../../../../../TC/TP/TC/IRDA_Auto_Detect/init.config_first_boot_wizard.ConfigFirstBootWizard.testConfigFirstBootWizard"/>
+        <TestCase Id="../../../../../TC/TP/TC/IRDA_Auto_Detect/init.enable_developer_option.EnableDeveloperOption.testEnableDeveloperOption"/>
+        <TestCase Id="../../../../../TC/TP/TC/IRDA_Auto_Detect/init.keep_awake.KeepAwake.testKeepAwake"/>
+        <TestCase Id="../../../../../TC/TP/TC/IRDA_Auto_Detect/AutoDetect/testCheckKmod_Usage"/>
+        <TestCase Id="../../../../../TC/TP/TC/IRDA_Auto_Detect/AutoDetect/testCheck_Platform_bluetooth"/>
+        <TestCase Id="../../../../../TC/TP/TC/IRDA_Auto_Detect/AutoDetect/testCheck_Platform_Media"/>
+        <TestCase Id="../../../../../TC/TP/TC/IRDA_Auto_Detect/AutoDetect/testCheckHalctl_audio"/>
+        <TestCase Id="../../../../../TC/TP/TC/IRDA_Auto_Detect/AutoDetect/testCheck_Platform_Camera"/>
+        <TestCase Id="../../../../../TC/TP/TC/IRDA_Auto_Detect/AutoDetect/testCheck_Platform_Power"/>
+        <TestCase Id="../../../../../TC/TP/TC/IRDA_Auto_Detect/AutoDetect/testCheckHalctl_get_module"/>
+        <TestCase Id="../../../../../TC/TP/TC/IRDA_Auto_Detect/AutoDetect/testCheckHalctl_del"/>
+        <TestCase Id="../../../../../TC/TP/TC/IRDA_Auto_Detect/AutoDetect/testCheck_Platform_Sensor"/>
+        <TestCase Id="../../../../../TC/TP/TC/IRDA_Auto_Detect/AutoDetect/testCheck_Platform_Graphics"/>
+        <TestCase Id="../../../../../TC/TP/TC/IRDA_Auto_Detect/AutoDetect/testCheckKmod_N"/>
+        <TestCase Id="../../../../../TC/TP/TC/IRDA_Auto_Detect/AutoDetect/testCheck_Platform_WIFI"/>
+        <TestCase Id="../../../../../TC/TP/TC/IRDA_Auto_Detect/AutoDetect/testCheckHalctl_add"/>
+        <TestCase Id="../../../../../TC/TP/TC/IRDA_Auto_Detect/AutoDetect/testCheckHalctl_list"/>
+        <TestCase Id="../../../../../TC/TP/TC/IRDA_Auto_Detect/AutoDetect/testCheckHalctl_Usage"/>
+    </TestCases>
+</Campaign>

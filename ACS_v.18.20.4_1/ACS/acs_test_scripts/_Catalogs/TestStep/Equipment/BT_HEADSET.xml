@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestSteps xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../acs/src/_Catalogs/TestStep/teststep.xsd">
+    <TestStep Id="BT_SET_HEADSET_POWER" Domain="EQUIPMENT" SubDomain="BT_HEADSET" Feature="" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Equipment.Bluetooth.HeadSetPower.HeadSetPower</ClassName>
+        <Description>
+            Set the headset in ON, OFF or PAIRABLE state
+        </Description>
+        <Environment name="ANY">
+        </Environment>
+        <Parameters>
+            <Parameter name="EQT" type="STRING" isOptional="false">
+                <Description>The equipment name shall refer to an existing equipment the Bench config</Description>
+                <PossibleValues />
+                <DefaultValue/>
+            </Parameter>
+            <Parameter name="STATE" type="STRING" isOptional="false">
+                <Description> The sequence (comma separated) of states in which to put the headset. ON and OFF just press the headset power button without any check on its previous state. PAIRABLE, as well, presses the pairing button without any check on the headset previous state. RESET_OFF uses
+                    the DUT to verify the headset state and make sure it is turned off.
+                </Description>
+                <PossibleValues>ON;OFF;PAIRABLE;RESET_OFF</PossibleValues>
+                <DefaultValue/>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="BT_SET_HEADSET_POWER_INTERLEAVE_SEARCH" Domain="EQUIPMENT" SubDomain="BT_HEADSET" Feature="" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Equipment.Bluetooth.HeadSetPowerInterleaveSearch.HeadSetPowerInterleaveSearch</ClassName>
+        <Description>
+            Set the headset in ON, OFF or PAIRABLE state
+        </Description>
+        <Environment name="ANY">
+        </Environment>
+        <Parameters>
+            <Parameter name="EQT" type="STRING" isOptional="false">
+                <Description>The equipment name shall refer to an existing equipment the Bench config</Description>
+                <PossibleValues />
+                <DefaultValue/>
+            </Parameter>
+            <Parameter name="STATE" type="STRING" isOptional="false">
+                <Description> The sequence (comma separated) of states in which to put the headset. ON and OFF just press the headset power button without any check on its previous state. PAIRABLE, as well, presses the pairing button without any check on the headset previous state. RESET_OFF uses
+                    the DUT to verify the headset state and make sure it is turned off.
+                </Description>
+                <PossibleValues>ON;OFF;PAIRABLE;RESET_OFF</PossibleValues>
+                <DefaultValue/>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="BT_HEADSET_PRESS_BUTTONS" Domain="EQUIPMENT" SubDomain="BT_HEADSET" Feature="" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Equipment.Bluetooth.PressHeadsetButtons.PressHeadsetButtons</ClassName>
+        <Description>
+            Press the buttons on the headset (through IOCard) specified in the given sequence
+        </Description>
+        <Environment name="ANY">
+        </Environment>
+        <Parameters>
+            <Parameter name="EQT" type="STRING" isOptional="false">
+                <Description>The equipment name shall refer to an existing equipment the Bench config</Description>
+                <PossibleValues />
+                <DefaultValue/>
+            </Parameter>
+            <Parameter name="BUTTONS" type="STRING" isOptional="false">
+                <Description> The sequence (comma separated) of buttons to be pressed on the headset
+                </Description>
+                <PossibleValues>PLAY;PAUSE;STOP;FORWARD;BACKWARD;VOLUMEUP;VOLUMEDOWN;REWIND;FASTFORWARD;CALL;RECONNECT</PossibleValues>
+                <DefaultValue/>
+            </Parameter>
+            <Parameter name="WAIT_FOR" type="FLOAT" isOptional="false">
+                <Description> Time to wait for between a click and then following one.
+                </Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+</TestSteps>

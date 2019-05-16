@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" ?>
+<Campaign>
+      <Parameters>
+            <Parameter isControlledPSUsed="False"/>
+            <Parameter isIoCardUsed="False"/>
+            <Parameter skipBootOnPowerCycle="False"/>
+            <Parameter bootRetryNumber="0"/>
+            <Parameter runHookScripts="False"/>
+            <Parameter powerCycleBetweenTC="False"/>
+            <Parameter powerCycleOnFailure="False"/>
+            <Parameter finalDutState="NoChange"/>
+            <Parameter stopCampaignOnCriticalFailure="False"/>
+            <Parameter stopCampaignOnFirstFailure="False"/>
+            <Parameter loggingLevel="debug"/>
+            <Parameter CampaignType="Other"/>
+            <Parameter TCRReportViaRESTAPI="True"/>
+      </Parameters>
+      <TestCases>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/AppTesting_AOSP/AOSP_Android_Core_App_Setting/AOSP_Setting_System_Updates"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/AppTesting_AOSP/AOSP_Android_Core_App_Setting/AOSP_Setting_BT_show_available_devices"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/AppTesting_AOSP/AOSP_Android_Core_App_Setting/AOSP_Android_N_Car_Application-Menu.Dialer_A_number_input"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/AppTesting_AOSP/AOSP_Android_Core_App_Setting/AOSP_Android_N_Car_Application-Menu.Dialer_A_number_Delete"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/AppTesting_AOSP/AOSP_Android_Core_App_Setting/AOSP_Android_N_Car_Application-Menu.Dialer_A_number_hide"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/AppTesting_AOSP/AOSP_Android_Core_App_Setting/AOSP_Android_N_Car_Application-Menu.Dialer_A_number_Back_Key"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/AppTesting_AOSP/AOSP_Android_Core_App_Setting/AOSP_setting_system_serial_number"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/AppTesting_AOSP/AOSP_Android_Core_App_Setting/AOSP_Setting_System_UpTime"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/AppTesting_AOSP/AOSP_Android_Core_App_Setting/GMS_account_management_Disable_Wifi_BT"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/AppTesting_AOSP/AOSP_Android_Core_App_Setting/GMS_account_Management_enable_wifi_BT"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/AppTesting_AOSP/AOSP_Android_Core_App_Setting/GMS_account_Multi_source_mangement_Delete_Multiuser"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/AppTesting_AOSP/AOSP_Android_Core_App_Setting/AOSP_setting_connectivity_Wifi_turn_on_off"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/AppTesting_AOSP/AOSP_Android_Core_App_Setting/AOSPsetting_Turn_off_ON_airpane_mode_50times"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/AppTesting_AOSP/AOSP_Android_Core_App_Setting/aosp_automatic_updates_ON_OFF"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/AppTesting_AOSP/AOSP_Android_Core_App_Setting/GMS_account_multisource_management_security_PIN"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/AppTesting_AOSP/AOSP_Android_Core_App_Setting/GMS_account_Multisource_management_security_password"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/AppTesting_AOSP/AOSP_Android_Core_App_Setting/GMS_account_Multi_source_mangement_Create_and_Delete_Multiuser"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/AppTesting_AOSP/AOSP_Android_Core_App_Setting/GMS_multisource_mangaement_time_format"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/AppTesting_AOSP/AOSP_Android_Core_App_Setting/GMS_add_user"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/AppTesting_AOSP/AOSP_Android_Core_App_Setting/AOSP_Android_Applications_DialerApp_Menu.Dialer_A_Number_call_Null_Number"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/AppTesting_AOSP/AOSP_Android_Core_App_Setting/AOSP_Android_Application_DialerApp_Launch_(from BT connect)"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/AppTesting_AOSP/AOSP_Android_Application_DialerApp_Menu.Dialer_A_Number_Call_Unvalid_Number"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/AppTesting_AOSP/AOSP_Android_Applications_DialerApp_Menu.Dialer_A_Number_Call_Unvalid_Number_Without_BT_OR_SIM"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/AppTesting_AOSP/AOSP_Android_Applications_DialerApp_Menu.Dialer_A_Number_Call_Valid_Number"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/AOSP_Android_Applications_DialerApp_Menu.Dialer_A_Number_Call_Valid_Number_Without_BT_OR_SIM"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/AOSP_Android_Applications_DialerApp_Menu_Call_History.Back_key"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/AOSP_Android_Applications_DialerApp_Menu_Call_History"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/AppTesting_AOSP/AOSP_Android_Core_App_Setting/GMS_Car_UI_Mode"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/AppTesting_AOSP/AOSP_Android_Core_App_Setting/AOSP_Settings_Core_Setting"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/AppTesting_AOSP/AOSP_Android_Core_App_Setting/AOSP_Settings_Check_Legal_Info"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/AppTesting_AOSP/AOSP_Android_Core_App_Setting/AOSP_check_For_BT_Settings"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/AppTesting_AOSP/AOSP_Android_Core_App_Setting/AOSP_Check_For_WiFi_Setting"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/AppTesting_AOSP/AOSP_Android_Core_App_Setting/AOSP_Check_For_Phone_details"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/AppTesting_AOSP/AOSP_Android_Core_App_Setting/AOSP_Settings_DisplayProfileStatus_AirplaneMode"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/AppTesting_AOSP/AOSP_Android_Core_App_Setting/AOSP_Setting_MaximumPINNumber"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/AppTesting_AOSP/AOSP_Android_Core_App_Setting/AOSP_Settings_Developer_Options_Enable_disable"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/AppTesting_AOSP/AOSP_Android_Core_App_Setting/AOSP_Settings_Input_Incorrect_Password_To_Unlock_Screen_For_Many_Times"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/AppTesting_AOSP/AOSP_Android_Core_App_Setting/AOSP_Setting_TakesBugReport"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/AppTesting_AOSP/AOSP_Android_Core_App_Setting/AOSP_Settings_Developer_options_Enable_disable_Transition_Animation_Scale"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/AppTesting_AOSP/AOSP_Android_Core_App_Setting/AOSP_Phone_Dialer_add_and_search_contacts"/>
+
+
+      </TestCases>
+</Campaign>
+
+

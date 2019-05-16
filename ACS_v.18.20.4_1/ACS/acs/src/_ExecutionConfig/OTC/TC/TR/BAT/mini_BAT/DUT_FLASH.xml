@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase>
+    <UseCase>LAB_SYSTEM_FLASH</UseCase>
+    <Description>Flash sequence checking</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>False</b2bContinuousMode>
+    <DeviceConnection>False</DeviceConnection>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <TcMaxAttempt>5</TcMaxAttempt>
+    <TcAcceptanceCriteria>1</TcAcceptanceCriteria>
+    <IsCritical>True</IsCritical>
+    <Parameters>
+        <Parameter>
+            <Name>FLASH_FILE_PATH</Name>
+            <Value></Value>
+        </Parameter>
+        <Parameter>
+            <Name>FLASH_TIMEOUT</Name>
+            <Value>1800</Value>
+        </Parameter>
+        <Parameter>
+            <Name>BOOT_AFTER_FLASH</Name>
+            <Value>false</Value>
+        </Parameter>
+    </Parameters>
+    <TestSteps>
+        <TearDown>
+            <TestStep Id="CONNECT_DEVICE" DEVICE="PHONE1"/>
+            <TestStep Id="SUSPEND" DURATION_IN_SEC="30" />
+            <TestStep Id="REBOOT_DEVICE" WAY="soft" DEVICE="PHONE1"/>
+        </TearDown>
+    </TestSteps>
+</TestCase>

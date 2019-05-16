@@ -1,0 +1,55 @@
+<?xml version="1.0" ?>
+<Campaign version="13.49">
+    <Parameters>
+        <Parameter isControlledPSUsed="False"/>
+        <Parameter isIoCardUsed="False"/>
+        <Parameter skipBootOnPowerCycle="False"/>
+        <Parameter bootRetryNumber="0"/>
+        <Parameter runHookScripts="False"/>
+        <Parameter powerCycleBetweenTC="False"/>
+        <Parameter powerCycleOnFailure="False"/>
+        <Parameter finalDutState="NoChange"/>
+        <Parameter stopCampaignOnCriticalFailure="False"/>
+        <Parameter stopCampaignOnFirstFailure="False"/>
+        <Parameter loggingLevel="debug"/>
+        <Parameter CampaignType="Other"/>
+        <Parameter TCRReportViaRESTAPI="True"/>
+    </Parameters>
+    <TestCases>
+        <TestCase Id="../../../../../TC/TP/TC/IRDA_Auto_Detect/init.start_rpc_server.StartRPCServer.testStartRPCServer"/>
+        <TestCase Id="../../../../../TC/TP/TC/IRDA_Auto_Detect/init.wake_up_and_unlock.WakeUnlock.testWakeUnlock"/>
+        <TestCase Id="../../../../../TC/TP/TC/IRDA_Auto_Detect/init.set_orientation_vertical.SetOrientationVertical.testSetOrientationVertical"/>
+        <TestCase Id="../../../../../TC/TP/TC/IRDA_Auto_Detect/init.config_first_boot_wizard.ConfigFirstBootWizard.testConfigFirstBootWizard"/>
+        <TestCase Id="../../../../../TC/TP/TC/IRDA_Auto_Detect/init.enable_developer_option.EnableDeveloperOption.testEnableDeveloperOption"/>
+        <TestCase Id="../../../../../TC/TP/TC/IRDA_Auto_Detect/init.keep_awake.KeepAwake.testKeepAwake"/>
+        <TestCase Id="../../../../../TC/TP/TC/IRDA_Auto_Detect/AutoDetect/testCheckHalctl_NFC"/>
+        <TestCase Id="../../../../../TC/TP/TC/IRDA_Auto_Detect/AutoDetect/testCheck_Halctl_fallback"/>
+        <TestCase Id="../../../../../TC/TP/TC/IRDA_Auto_Detect/AutoDetect/testCheck_halctl_hald_not_root"/>
+        <TestCase Id="../../../../../TC/TP/TC/IRDA_Auto_Detect/AutoDetect/testCheck_Halctl_Hald_Recovery"/>
+        <TestCase Id="../../../../../TC/TP/TC/IRDA_Auto_Detect/AutoDetect/testCheck_Halctl_list_SafeMode"/>
+        <TestCase Id="../../../../../TC/TP/TC/IRDA_Auto_Detect/AutoDetect/testCheckHalctl_del"/>
+        <TestCase Id="../../../../../TC/TP/TC/IRDA_Auto_Detect/AutoDetect/testCheck_Halctl_Boot"/>
+        <TestCase Id="../../../../../TC/TP/TC/IRDA_Auto_Detect/AutoDetect/testCheck_Halctl_FirstBoot"/>
+        <TestCase Id="../../../../../TC/TP/TC/IRDA_Auto_Detect/AutoDetect/testCheckHalctl_Usage"/>
+        <TestCase Id="../../../../../TC/TP/TC/IRDA_Auto_Detect/AutoDetect/testCheckHalctl_list"/>
+        <TestCase Id="../../../../../TC/TP/TC/IRDA_Auto_Detect/AutoDetect/testCheckHalctl_add"/>
+        <TestCase Id="../../../../../TC/TP/TC/IRDA_Auto_Detect/AutoDetect/testCheckHalctl_get_module"/>
+        <TestCase Id="../../../../../TC/TP/TC/IRDA_Auto_Detect/AutoDetect/testCheck_Halctl_libhal_log_set_level"/>
+        <TestCase Id="../../../../../TC/TP/TC/IRDA_Auto_Detect/AutoDetect/testCheckKmod_Usage"/>
+        <TestCase Id="../../../../../TC/TP/TC/IRDA_Auto_Detect/AutoDetect/testCheckKmod_N"/>
+        <TestCase Id="../../../../../TC/TP/TC/IRDA_Auto_Detect/AutoDetect/testCheck_unsupported_devices"/>
+        <TestCase Id="../../../../../TC/TP/TC/IRDA_Auto_Detect/AutoDetect/testCheck_Platform_Camera"/>
+        <TestCase Id="../../../../../TC/TP/TC/IRDA_Auto_Detect/AutoDetect/testCheck_Platform_Lights"/>
+        <TestCase Id="../../../../../TC/TP/TC/IRDA_Auto_Detect/AutoDetect/testCheck_Platform_Media"/>
+        <TestCase Id="../../../../../TC/TP/TC/IRDA_Auto_Detect/AutoDetect/testCheck_Platform_Sensor"/>
+        <TestCase Id="../../../../../TC/TP/TC/IRDA_Auto_Detect/AutoDetect/testCheck_Platform_Power"/>
+        <TestCase Id="../../../../../TC/TP/TC/IRDA_Auto_Detect/AutoDetect/testCheck_Platform_Graphics"/>
+        <TestCase Id="../../../../../TC/TP/TC/IRDA_Auto_Detect/AutoDetect/testCheck_Platform_Input"/>
+        <TestCase Id="../../../../../TC/TP/TC/IRDA_Auto_Detect/AutoDetect/testCheck_Platform_WIFI"/>
+        <TestCase Id="../../../../../TC/TP/TC/IRDA_Auto_Detect/AutoDetect/testCheck_Stress_kmod_i_r_overload"/>
+        <TestCase Id="../../../../../TC/TP/TC/IRDA_Auto_Detect/AutoDetect/testCheck_Stress_kmod_i_r"/>
+        <TestCase Id="../../../../../TC/TP/TC/IRDA_Auto_Detect/AutoDetect/testCheck_stress_halctl_add_del_overload"/>
+        <TestCase Id="../../../../../TC/TP/TC/IRDA_Auto_Detect/AutoDetect/testCheck_stress_halctl_add_del"/>
+        <TestCase Id="../../../../../TC/TP/TC/Post_Test/PostTestWifiTearDownTest"/>
+    </TestCases>
+</Campaign>

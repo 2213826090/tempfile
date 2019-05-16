@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase>
+  <UseCase>LAB_TDSCDMA_IPERF</UseCase>
+  <Description>TDSCDMA Throughput Measurement using IPERF</Description>
+  <b2bIteration>5</b2bIteration>
+  <b2bContinuousMode>True</b2bContinuousMode>
+  <Parameters>
+    <Parameter>
+        <!-- Cell power in dBm -->
+        <Name>CELL_POWER</Name>
+        <Value>-60</Value>
+    </Parameter>
+    <Parameter>
+        <!-- Cell Band -->
+        <Name>CELL_BAND</Name>
+        <Value>34</Value>
+    </Parameter>
+    <Parameter>
+      <!-- IP version IPV4 | IPV6 | IPV4V6 -->
+      <Name>IP_VERSION</Name>
+      <Value>IPV4</Value>
+    </Parameter>
+    <Parameter>
+      <!-- Duration in seconds allowed to IPERF to perform measurements -->
+      <Name>DURATION</Name>
+      <Value>120</Value>
+    </Parameter>
+    <Parameter>
+      <!-- Protocol used by IPERF to perform measurements - (TCP | UDP) -->
+      <Name>IPERF_PROTOCOL</Name>
+      <Value>TCP</Value>
+    </Parameter>
+    <Parameter>
+      <!-- Computer to use as iperf server -->
+      <Name>COMPUTER</Name>
+      <Value>COMPUTER2</Value>
+    </Parameter>
+    <Parameter>
+      <!-- [Optional] Iperf direction: up/down/both.-->
+      <Name>DIRECTION</Name>
+      <Value>DL</Value>
+    </Parameter>
+    <Parameter>
+      <!-- KPI test -->
+      <Name>KPI_TEST</Name>
+      <Value>True</Value>
+    </Parameter>
+  </Parameters>
+    <TestSteps>
+    <Initialize>
+        <!-- Download the artifact from artifactory to local host -->
+        <TestStep Id="GET_ARTIFACT"
+                  EQT="ARTIFACT_MANAGER"
+                  ARTIFACT="MISCELLANEOUS/BINARIES/[+]FROM_DEVICE:PHONE1:OS[+]/COMMON/iperf"
+                  ARTIFACT_SOURCE="FROM_BENCH:ARTIFACT_MANAGER:URI"
+                  TRANSFER_TIMEOUT="DEFAULT"
+                  STORED_FILE_PATH="FILE_PATH_IN_CACHE1" />
+        <!-- Then, Push it on the device. -->
+        <!-- FILE_PATH is retrieved from test step context -->
+        <TestStep Id="INSTALL_FILE"
+                  DEVICE="PHONE1"
+                  FILE_PATH="FROM_CTX:FILE_PATH_IN_CACHE1"
+                  TYPE="bin"
+                  DESTINATION="FROM_DEVICE:PHONE1:binPath"
+                  TIMEOUT="DEFAULT"
+                  DESTINATION_STORED_PATH="FILE_PATH_IN_CACHE1" />
+    </Initialize>
+  </TestSteps>
+</TestCase>

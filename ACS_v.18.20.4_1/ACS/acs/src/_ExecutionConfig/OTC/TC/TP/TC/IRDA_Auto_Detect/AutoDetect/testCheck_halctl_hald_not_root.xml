@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<TestCase>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters/>
+    <Discription>
+Check that hald is not running as root.
+&lt;br /&gt;Auto_detect hald - not running as root
+</Discription>
+    <Parameters/>
+    <UseCase>PY_UNIT</UseCase>
+    <Parameters/>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <Parameters/>
+    <b2bIteration>1</b2bIteration>
+    <Parameters>
+        <Parameter>
+            <Name>TEST_DATA_ROOT</Name>
+            <Value>testplan/IRDA_Auto_Detect</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TEST_CASE</Name>
+            <Value>tests.IRDA_Auto_Detect.AutoDetect.check_halctl_hald_not_root.Check_halctl_hald_not_root.testCheck_halctl_hald_not_root</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

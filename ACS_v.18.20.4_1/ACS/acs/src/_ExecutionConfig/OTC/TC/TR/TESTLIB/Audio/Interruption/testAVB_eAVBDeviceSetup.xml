@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='ASCII'?>
+<TestCase>
+    <UseCase>Testlib</UseCase>
+    <Description>Setup devices as Master and Slave, ready for eAVB operations</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <TcMaxAttempt>3</TcMaxAttempt>
+    <Parameters>
+        <Parameter>
+            <Name>test</Name>
+            <Value>scripts/audio/tests/eavb_device_setup.py</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

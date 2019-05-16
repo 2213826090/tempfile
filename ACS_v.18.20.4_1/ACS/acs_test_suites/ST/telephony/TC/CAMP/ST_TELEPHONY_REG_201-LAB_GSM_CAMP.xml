@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase>
+  <UseCase>LAB_GSM_CAMP</UseCase>
+  <Description>Airplane on/off GSM Mobile Camp on simulated network</Description>
+  <b2bIteration>3</b2bIteration>
+  <b2bContinuousMode>True</b2bContinuousMode>
+  <Parameters>
+    <Parameter>
+      <!-- Switch off/on Mode -->
+      <Name>SWITCH_MODE</Name>
+      <Value>airplane</Value>
+    </Parameter>
+    <Parameter>
+      <!-- Cell Band -->
+      <Name>CELL_BAND</Name>
+      <Value>EGSM</Value>
+    </Parameter>
+    <Parameter>
+      <!-- BCH ARFCN -->
+      <Name>BCH_ARFCN</Name>
+      <Value>20</Value>
+    </Parameter>
+    <Parameter>
+      <!-- Cell Service GSM|GPRS|EGPRS -->
+      <Name>CELL_SERVICE</Name>
+      <Value>EGPRS</Value>
+    </Parameter>
+    <Parameter>
+      <!-- Cell power in dBm -->
+      <Name>CELL_POWER</Name>
+      <Value>-80</Value>
+    </Parameter>
+    <Parameter>
+      <!-- Mobile Country Code 0 to 999-->
+      <Name>MCC</Name>
+      <Value>1</Value>
+    </Parameter>
+    <Parameter>
+      <!-- Mobile Network Code 0 to 999 -->
+      <Name>MNC</Name>
+      <Value>1</Value>
+    </Parameter>
+    <Parameter>
+      <!-- PDP ACTIVATION TRUE|FALSE -->
+      <Name>PDP_ACTIVATION</Name>
+      <Value>FALSE</Value>
+    </Parameter>
+  </Parameters>
+</TestCase>

@@ -1,0 +1,111 @@
+<?xml version='1.0' encoding='ISO-8859-1'?>
+<BenchConfig>
+    <!-- Bench config for KPI LTE Bench with one CMW -->
+    <Phones>
+        <Phone name="PHONE1" deviceModel="SKL-Windows-10-Full" description="Phone to use during test campaign. Please refer to Device_Catalog.xml to add device parameters">
+            <Parameter ipAddress="10.102.161.96" />
+            <Parameter IoCard="IO_CARD" description="Give the IO card name (e.g: IO_CARD1)" />
+            <Parameter registrationTimeout="240" description="Give the time to wait before registering" />
+            <Parameter uploadCrashToServer="false" />
+            <Parameter retrieveDeviceCrashLog="False" />
+            <Parameter adbRootTimeout="120" />
+            <Parameter callSetupTimeout="20" />
+            <Parameter RFMatrixPort="1" />
+            <Parameter ServingCellDesiredPower="-70" />
+            <!-- <Parameter name="serialNumber" value="INV141401075" description="Give the Serial Number of the phone(Used for Android phone only)" /> -->
+            <Parameter milestone="PV" description="Milestone used for KPI throughput targets calculation (Possible values : ALPHA, BETA, PV) - override the default value in device model" />
+            <Parameter FailureFile="FT/pnp/BENCHCFG/bench_target_kpis_failure.csv" />
+            <!-- <Parameter name="uploadCrashToServer" value="false" description="a"/> -->
+            <!-- <Parameter name="RFMatrixPort" value="1"/> -->
+            <!-- <Parameter name="ServingCellDesiredPower" value="-80"/> -->
+            <!-- <Parameter name="serialNumber" value="INV141401075" description="Give the Serial Number of the phone(Used for Android phone only)" /> -->
+            <!-- <Parameter name="milestone" value="PV" description="Milestone used for KPI throughput targets calculation (Possible values : ALPHA, BETA, PV) - override the default value in device model"/> -->
+        </Phone>
+    </Phones>
+    <Equipments>
+        <Equipment version="14.09" name="ARTIFACT_MANAGER" description="ArtifactManager configuration to get all test case necessary artifacts">
+            <Parameter name="URI" value="https://mcg-depot.intel.com/artifactory/acs_test_artifacts/" description="Local path/URL to the artifact source" />
+            <!-- Optional options -->
+            <Parameter name="proxy" value="no_proxy" description="Proxy to use if URI is an URL - system: use HTTP_PROXY system value - no_proxy: use empty proxy - a proxy adress" />
+            <!-- <Parameter name="http_timeout" value="10" description="Response timeout if URI is an URL" />
+                <Parameter name="creds" value="anonymous" description="Credentials to use if URL is access protected - anonymous: no creds will be used - creds format user:password" />
+                <Parameter name="cache_folder" value="/tmp/artifact_cache" description="Local path to a directory to store artifacts - if not specified, your_home_folder/.acs/Artifacts will be used" /> -->
+            <Parameter name="max_cache_size" value="2000" description="Maximum cache directory size on the disk in Mb" />
+        </Equipment>
+        <Equipment name="CELLULAR_NETWORK" description="Cellular access network">
+            <Parameter name="SSID" value="CMW500" />
+            <Parameter name="APN" value="cmw500.rohde-schwarz.com.mnc01.mcc001.gprs" />
+        </Equipment>
+        <Equipment name="LAB_INTERNET_SERVER" description="Server Configuration for browsing, streaming">
+            <Parameter name="IP" value="192.168.0.110" />
+        </Equipment>
+        <Equipment name="LAB_SERVER" description="Server Configuration used for FTP, IPERF">
+            <Parameter name="IP" value="172.22.1.201" />
+            <!-- IPV6 Address should be between fc00:00.. fdff:ff.. or 2000:00.. 3fff:ff.. -->
+            <Parameter name="IPV6" value="2345:6789:abcd:ef10:f6ce:46ff:fe9a:a490" />
+            <Parameter name="username" value="" />
+            <Parameter name="password" value="" />
+            <Parameter name="ftp_path" value="ftp_anon" />
+        </Equipment>
+        <Equipment name="LAB_LTE_SERVER" description="Server Configuration used for FTP, IPERF">
+            <Parameter name="IP" value="172.22.1.201" />
+            <!-- IPV6 Address should be between fc00:00.. fdff:ff.. or 2000:00.. 3fff:ff.. -->
+            <Parameter name="IPV6" value="2345:6789:abcd:ef10:f6ce:46ff:fe9a:a490" />
+            <Parameter name="username" value="" />
+            <Parameter name="password" value="" />
+            <Parameter name="ftp_path" value="ftp_anon" />
+        </Equipment>
+        <Equipment name="RF_MATRIX" description="Micro-Circuit USB-4SPDT-A18 RF Matrix">
+            <Parameter name="Model" value="USB-4SPDT-A18" />
+            <Parameter name="SN" value="11403270007" />
+            <Parameter name="Config" value="MIMO" />
+        </Equipment>
+        <Equipment name="NETWORK_SIMULATOR1" description="CMW S/N 102383">
+            <!-- Model possible values: AGILENT_8960 | RS_CMU200 | AGILENT_E6621A | RS_CMW500 -->
+            <Parameter name="Model" value="RS_CMW500" />
+            <Parameter name="Transport" value="TCPIP" />
+            <Parameter name="GPIBBoardId" value="0" />
+            <Parameter name="GPIBAddress" value="20" />
+            <Parameter name="TcpIpAddress" value="10.102.160.248" />
+            <Parameter name="TcpIpBoardId" value="0" />
+            <Parameter name="TcpIpDeviceName" value="hislip0" />
+            <Parameter name="AmplitudeOffsetTable" value="Amplitude_Offset_Table" />
+            <Parameter name="IP_Lan1" value="172.22.1.201" />
+            <Parameter name="IP_Lan2" value="172.22.1.202" />
+            <!-- IPAttributionMode and IPv6AttributionMode configure how the DUT IP address is choosen, possible values are :
+                STATIC - use the static IP defined in this benchconfig, with given Subnet_Mask and Default_Gateway for IPv4
+                AUTOMATIC- use IP predefined by the network simulator
+                DYNAMIC - DHCP mode for IPv4 or dynamic auto configuration for IPv6
+                leave empty not to set it -->
+            <Parameter name="IPAttributionMode" value="STATIC" />
+            <Parameter name="IPv6AttributionMode" value="STATIC" />
+            <Parameter name="DUT_IP_Address" value="172.22.1.203" />
+            <Parameter name="DUT_IPV6_Address" value="12f:29ff:fe7c:8f51" />
+            <!-- <Parameter name="DNS1" value="172.22.1.1"/> -->
+            <!-- <Parameter name="DNS2" value="172.22.1.1"/> -->
+            <Parameter name="Subnet_Mask" value="255.255.0.0" />
+            <Parameter name="Default_Gateway" value="" />
+            <!-- Enables/Disables the support of Fast dormancy on the network simulator
+                Possible values: disable | enable
+                Setting the parameter to "disable" will send no specific configuration to the equipement -->
+            <Parameter name="Fast_Dormancy" value="disable" />
+        </Equipment>
+        <Equipment name="POWER_ANALYZER_TOOL" description="PAT used for power consumption measurements test cases">
+            <!-- Model possible values: STUB | NIDAQ -->
+            <Parameter name="Model" value="NIDAQ" />
+            <Parameter name="ConfFile" value="FT/pnp/EQUIPTCFG/pat_conf_dev2_ai1_50mohm.xml" />
+            <Parameter name="VerdictRail" value="V_Batt" />
+        </Equipment>
+        <Equipment name="IO_CARD" description="Input output card used for power management, energy management on I/O ports of the DUT.">
+            <!-- Model possible values: ACBN (Normal) | ACBP (Prototype) | ACBE (Enhanced) | USB_RLY08 -->
+            <Parameter name="Model" value="USB_RLY08" description="USB relay card" />
+            <Parameter name="ComPort" value="COM34" description="COM port used for communication" />
+            <Parameter name="SwitchOnOff" value="4" description="Number of the line to use for power purposes" />
+            <Parameter name="UsbHostPcConnect" value="3" description="Number of the relay used to plug or unplug USB on host PC" />
+        </Equipment>
+        <Equipment name="COMPUTER1" description="Computer connected to the local ethernet network (bench)">
+            <Parameter name="Model" value="LOCAL_COMPUTER" description="LOCAL_COMPUTER or REMOTE_COMPUTER" />
+            <Parameter name="USBInterface" value="" description="USB Interface to use (usb0)" />
+        </Equipment>
+    </Equipments>
+</BenchConfig>

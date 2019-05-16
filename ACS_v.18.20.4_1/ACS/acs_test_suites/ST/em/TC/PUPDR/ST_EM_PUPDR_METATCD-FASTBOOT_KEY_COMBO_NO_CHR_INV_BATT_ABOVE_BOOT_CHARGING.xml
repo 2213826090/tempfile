@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase>
+    <UseCase>LAB_PUPDR_PS_ACTION_SCHEDULER</UseCase>
+    <Description>test key combo when board is booted or off</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>False</b2bContinuousMode>
+    <Parameters>
+        <Parameter>
+            <!-- this describe the order of actions done in the test, actions can be composed of : BATTERY;CHARGER;BUTTON_PRESS, WAIT-->
+            <Name>RUN_TEST_ACTION</Name>
+            <Value>BATTERY_PLUG_INVALID;BUTTON_PRESS_FASTBOOT_COMBO_6;WAIT_30</Value>
+    <!-- ACTION_ORDER can be composed of following:
+
+        battery action
+        BATTERY_"plug/unplug"_"type": "plug/unplug" the battery "type" that can support your battery.
+        - BATTERY_PLUG_ANALOG
+        - BATTERY_UNPLUG_ANALOG
+        - BATTERY_PLUG_INVALID
+        - BATTERY_UNPLUG_INVALID
+        - BATTERY_PLUG_EMULATOR
+        - BATTERY_UNPLUG_EMULATOR
+
+        charger action
+        CHARGER_"plug/unplug"_"type" : "plug/unplug" the charger "type".
+        if action is plug then charger type is defined by your io card supported charger
+        - CHARGER_PLUG_DCP
+        - CHARGER_PLUG_DCP
+        - CHARGER_PLUG_CDP
+        - CHARGER_PLUG_AC_CHGR
+        - CHARGER_PLUG_WALL_CHARGER
+        else it can only be USB to unplug an usb cable and AC_CHGR for ACDC connector
+        - CHARGER_UNPLUG_USB
+        - CHARGER_UNPLUG_AC_CHGR
+        - CHARGER_UNPLUG_ALL
+        - CHARGER_UNPLUG_WALL_CHARGER
+
+        action that press on button
+        BUTTON_PRESS_"button_name"_x : press x second(s) on the combo "button_name" which is a button controllable from your io card.
+        - BUTTON_PRESS_POWER_BUTTON_5
+        - BUTTON_PRESS_FASTBOOT_COMBO_x : press x second(s) on the combo fastboot combo defined in Device_Catalog.xml.
+        - BUTTON_PRESS_KEY_COMBO_x : press x second(s) on the combo define by KEY_COMBO TC parameter
+
+        sleep action
+        WAIT_x : where x is a number in second to wait.
+        e.g., WAIT_10 -->
+        </Parameter>
+        <Parameter>
+            <!-- Battery Voltage , always set before any action done -->
+            <Name>VBATT</Name>
+            <Value>3.8</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Key combo to perform can be the key word that represent unitary (use ; as separator) button or a known combo
+                like VOLUME_UP;VOLUME_DOWN;CAMERA;POWER_BUTTON or FASTBOOT_COMBO link to ACTION_BUTTON-->
+            <Name>KEY_COMBO</Name>
+            <Value>FASTBOOT_COMBO</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

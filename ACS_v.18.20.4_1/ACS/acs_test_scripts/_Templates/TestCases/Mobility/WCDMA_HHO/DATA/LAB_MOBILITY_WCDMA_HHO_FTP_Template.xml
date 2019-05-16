@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="13.37">
+    <UseCase>LAB_MOBILITY_WCDMA_HHO_FTP</UseCase>
+    <Description> Perform several WCDMA hard handovers during data transfer</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>False</b2bContinuousMode>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters>
+        <Parameter>
+            <!-- Number of hard handovers to perform (switch between 2 cell configurations) -->
+            <Name>CELL_JUMP_NUMBER</Name>
+            <Value>1</Value>
+        </Parameter>
+        <Parameter>
+            <!-- CONFIGURATION_FILE parameter representing a xml file name (without
+                extension) in which equipments configuration is described. -->
+            <Name>CONFIGURATION_FILE</Name>
+            <Value>Configurations/INTER_FREQ_WCDMA_HHO_FTP</Value>
+        </Parameter>
+        <Parameter>
+            <!-- FTP transfer direction: DL or UL -->
+            <Name>DIRECTION</Name>
+            <Value>DL</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

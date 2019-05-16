@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Campaign>
+    <Parameters>
+        <Parameter isControlledPSUsed="False"/>
+        <Parameter isIoCardUsed="True"/>
+        <!-- Set skipBootOnPowerCycle to True to disable the acs boot procedure-->
+        <!-- Important, it means that boot will be handle inside the campaign/tc -->
+        <Parameter skipBootOnPowerCycle="False"/>
+        <Parameter runHookScripts="False"/>
+        <Parameter powerCycleBetweenTC="False"/>
+        <Parameter powerCycleOnFailure="False"/>
+        <Parameter finalPowerOff="False"/>
+        <Parameter finalDutState="NoChange"/>
+        <Parameter stopCampaignOnCriticalFailure="False"/>
+        <Parameter stopCampaignOnFirstFailure="False"/>
+        <!-- LoggingLevel possible values: info | warning | debug | error -->
+        <Parameter loggingLevel="debug"/>
+        <!-- CampaignType format -> <TEAM>_<CAMPAIGNTYPE>
+            Possible values:
+            FT(Feature Team)-> SANITY | REGRESSION | STRESS, RELIABILTY | MTBF
+            ST(System Test)-> SANITY | REGRESSION | STRESS, RELIABILTY | MTBF
+            SI(System Integration)-> EAT | STAB | PACT | CAT0 | RELIABILITY | MTBF | CTS
+            Otherwise "Others" should be used -->
+        <Parameter CampaignType="ST_RELIABILTY"/>
+        <Parameter TCRReportViaRESTAPI="true"/>
+    </Parameters>
+    <Targets>
+        <!-- Target Values -->
+        <Target targetB2bPassRate="100"/>
+    </Targets>
+    <!-- Testcase campaigns -->
+    <TestCases>
+        <!-- WIFI SECTION -->
+        <!-- WIFI SCAN SECTION -->
+        <TestCase Id="../TC/WIFI/ST_CWS_WLAN_FREQ_BAND_001-LAB_WIFI_DUAL_AP_BAND_SEL_SCAN"/>
+        <TestCase Id="../TC/WIFI/ST_CWS_WLAN_FREQ_BAND_002-LAB_WIFI_DUAL_AP_BAND_SEL_SCAN"/>
+        <TestCase Id="../TC/WIFI/ST_CWS_WLAN_FREQ_BAND_003-LAB_WIFI_DUAL_AP_BAND_SEL_SCAN"/>
+        <!-- END OF WIFI SCAN SECTION -->
+        <!-- WIFI CONNECTION SECTION -->
+        <TestCase Id="../TC/WIFI/ST_CWS_WLAN_11A_001-LAB_WIFI_CONNECT"/>
+        <TestCase Id="../TC/WIFI/ST_CWS_WLAN_11G_001-LAB_WIFI_CONNECT"/>
+        <TestCase Id="../TC/WIFI/ST_CWS_WLAN_11N2.4G_001-LAB_WIFI_CONNECT"/>
+        <TestCase Id="../TC/WIFI/ST_CWS_WLAN_11N5G_001-LAB_WIFI_CONNECT"/>
+        <TestCase Id="../TC/WIFI/ST_CWS_WLAN_WEP64_OPEN_001-LAB_WIFI_CONNECT"/>
+        <TestCase Id="../TC/WIFI/ST_CWS_WLAN_WEP128_OPEN_001-LAB_WIFI_CONNECT"/>
+        <TestCase Id="../TC/WIFI/ST_CWS_WLAN_WPA_TKIP_001-LAB_WIFI_CONNECT"/>
+        <TestCase Id="../TC/WIFI/ST_CWS_WLAN_WPA2_AES_001-LAB_WIFI_CONNECT"/>
+        <TestCase Id="../TC/WIFI/ST_CWS_WLAN_WPA2_TKIP_AES_001-LAB_WIFI_CONNECT"/>
+        <TestCase Id="../TC/WIFI/ST_CWS_WLAN_HIDDENSSID_001-LAB_WIFI_CONNECT"/>
+        <TestCase Id="../TC/WIFI/STRESS-20/ST_CWS_WLAN_11N_013-LAB_WIFI_CONNECT-20"/>
+        <TestCase Id="../TC/WIFI/STRESS-20/ST_CWS_WLAN_STATICIP_003-LAB_WIFI_CONNECT_FORGET-20"/>
+        <TestCase Id="../TC/WIFI/ST_CWS_WLAN_HIDDENSSID_001-LAB_WIFI_CONNECT"/>
+        <TestCase Id="../TC/WIFI/ST_CWS_WLAN_HIDDENSSID_005-LAB_WIFI_CONNECT"/>
+        <TestCase Id="../TC/WIFI/ST_CWS_WLAN_STATICIP_001"/>
+        <TestCase Id="../TC/WIFI/ST_CWS_WLAN_WPA2_AES_009-LAB_WIFI_CONNECT"/>
+        <TestCase Id="../TC/WIFI/ST_CWS_WLAN_WPA2_TKIP_AES_009-LAB_WIFI_CONNECT"/>
+        <TestCase Id="../TC/WIFI/STRESS-20/ST_CWS_WLAN_11N_010-LAB_WIFI_CONNECT_AFTER_LOSS_OF_COVERAGE-20"/>
+        <TestCase Id="../TC/WIFI/STRESS-20/ST_CWS_WLAN_11N_013-LAB_WIFI_CONNECT-20"/>
+        <TestCase Id="../TC/WIFI/ST_CWS_WLAN_FREQ_BAND_004-LAB_WIFI_DUAL_AP_BAND_SEL_CONNECT"/>
+        <TestCase Id="../TC/WIFI/ST_CWS_WLAN_FREQ_BAND_005-LAB_WIFI_DUAL_AP_BAND_SEL_CONNECT"/>
+        <TestCase Id="../TC/WIFI/ST_CWS_WLAN_11N_003-LAB_WIFI_CONNECT"/>
+        <TestCase Id="../TC/WIFI/ST_CWS_WLAN_11N_012-LAB_WIFI_CONNECT"/>
+        <TestCase Id="../TC/WIFI/ST_CWS_WLAN_11N_019-LAB_WIFI_CONNECT"/>
+        <TestCase Id="../TC/WIFI/ST_CWS_WLAN_11N_022-LAB_WIFI_CONNECT"/>
+        <!-- END OF WIFI CONNECTION SECTION -->
+        <!-- IPERF (TCP) SECTION -->
+        <TestCase Id="../TC/WIFI/STRESS-IPERF/TCP/ST_CWS_WLAN_11A_006-LAB_WIFI_IPERF-TCP"/>
+        <TestCase Id="../TC/WIFI/STRESS-IPERF/TCP/ST_CWS_WLAN_11A_007-LAB_WIFI_IPERF-TCP"/>
+        <TestCase Id="../TC/WIFI/STRESS-IPERF/TCP/ST_CWS_WLAN_11G_006-LAB_WIFI_IPERF-TCP"/>
+        <TestCase Id="../TC/WIFI/STRESS-IPERF/TCP/ST_CWS_WLAN_11G_007-LAB_WIFI_IPERF-TCP"/>
+        <TestCase Id="../TC/WIFI/STRESS-IPERF/TCP/ST_CWS_WLAN_11N2.4G_006-LAB_WIFI_IPERF-TCP"/>
+        <TestCase Id="../TC/WIFI/STRESS-IPERF/TCP/ST_CWS_WLAN_11N2.4G_007-LAB_WIFI_IPERF-TCP"/>
+        <TestCase Id="../TC/WIFI/STRESS-IPERF/TCP/ST_CWS_WLAN_11N5G_006-LAB_WIFI_IPERF-TCP"/>
+        <TestCase Id="../TC/WIFI/STRESS-IPERF/TCP/ST_CWS_WLAN_11N5G_007-LAB_WIFI_IPERF-TCP"/>
+        <TestCase Id="../TC/WIFI/STRESS-IPERF/TCP/ST_CWS_WLAN_WEP128_OPEN_006-LAB_WIFI_IPERF-TCP"/>
+        <TestCase Id="../TC/WIFI/STRESS-IPERF/TCP/ST_CWS_WLAN_WEP128_OPEN_007-LAB_WIFI_IPERF-TCP"/>
+        <TestCase Id="../TC/WIFI/STRESS-IPERF/TCP/ST_CWS_WLAN_WPA2_TKIP_AES_006-LAB_WIFI_IPERF-TCP"/>
+        <TestCase Id="../TC/WIFI/STRESS-IPERF/TCP/ST_CWS_WLAN_WPA2_TKIP_AES_007-LAB_WIFI_IPERF-TCP"/>
+        <!-- END OF IPERF (TCP) SECTION -->
+        <!-- FTP SECTION -->
+        <TestCase Id="../TC/WIFI/ST_CWS_WLAN_FTP_001-LAB_WIFI_FTP"/>
+        <TestCase Id="../TC/WIFI/ST_CWS_WLAN_FTP_002-LAB_WIFI_FTP"/>
+        <TestCase Id="../TC/WIFI/ST_CWS_WLAN_FTP_003-LAB_WIFI_FTP"/>
+        <TestCase Id="../TC/WIFI/ST_CWS_WLAN_FTP_004-LAB_WIFI_FTP"/>
+        <!-- END OF FTP SECTION -->
+        <!-- DEVICE BEHAVIOUR SECTION -->
+        <TestCase Id="../TC/WIFI/ST_CWS_WLAN_FTP_014"/>
+        <TestCase Id="../TC/WIFI/WINDOWS_SPECIFIC/ST_CWS_WLAN_FTP_016_WIN-LAB_WIFI_DUAL_AP_SWITCH_DUT_CHOICE"/>
+        <!-- END OF DEVICE BEHAVIOUR SECTION -->
+        <!-- PING SECTION -->
+        <TestCase Id="../TC/WIFI/BCKP_TC/LAB_WIFI_PING"/>
+        <!-- END OF PING SECTION -->
+        <!-- LOSS OF COVERAGE SECTION -->
+        <TestCase Id="../TC/WIFI/ST_CWS_WLAN_WEP128_OPEN_002-LAB_WIFI_CONNECT_AFTER_LOSS_OF_COVERAGE"/>
+        <TestCase Id="../TC/WIFI/ST_CWS_WLAN_WPA2_AES_002-LAB_WIFI_CONNECT_AFTER_LOSS_OF_COVERAGE"/>
+        <TestCase Id="../TC/WIFI/ST_CWS_WLAN_WPA2_TKIP_AES_002-LAB_WIFI_CONNECT_AFTER_LOSS_OF_COVERAGE"/>
+        <!-- END OF LOSS OF COVERAGE SECTION -->
+        <!-- END OF WIFI SECTION -->
+
+        <!-- BLUETOOTH SECTION -->
+        <!-- BLUETOOTH ON/OFF SECTION -->
+        <TestCase Id="../TC/BT/ST_CWS_BT_ONOFF_001"/>
+        <TestCase Id="../TC/BT/ST_CWS_BT_ONOFF_003"/>
+        <TestCase Id="../TC/BT/ST_CWS_BT_ONOFF_ITERATIVE_RI_001"/>
+        <!-- END OF BLUETOOTH ON/OFF SECTION -->
+        <!-- BLUETOOTH SCAN SECTION -->
+        <TestCase Id="../TC/BT/ST_CWS_BT_SCAN_001"/>
+        <TestCase Id="../TC/BT/WINDOWS_SPECIFIC/ST_CWS_BT_SCAN_003"/>
+        <TestCase Id="../TC/BT/ST_CWS_BT_SCAN_005"/>
+        <TestCase Id="../TC/BT/ST_CWS_BT_SCAN_ITERATIVE_002"/>
+        <TestCase Id="../TC/BT/ST_CWS_BT_SCAN_MULTIPLE_001"/>
+        <!-- END OF BLUETOOTH SCAN SECTION -->
+        <!-- BLUETOOTH FRIENDLY NAME SECTION -->
+        <TestCase Id="../TC/BT/ST_CWS_BT_FRIENDLY_NAME_CHANGE_ITERATIVE_001"/>
+        <!-- END OF BLUETOOTH FRIENDLY NAME SECTION -->
+        <!-- BLUETOOTH PAIR SECTION -->
+        <TestCase Id="../TC/BT/ST_CWS_BT_PAIR_LEGACY_001"/>
+        <TestCase Id="../TC/BT/ST_CWS_BT_PAIR_CONNECT_LOLA_001"/>
+        <!-- END OF BLUETOOTH PAIR SECTION -->
+        <!-- BLUETOOTH CONNECT SECTION -->
+        <TestCase Id="../TC/BT/WINDOWS_SPECIFIC/ST_CWS_BT_CONNECT_003"/>
+        <TestCase Id="../TC/BT/WINDOWS_SPECIFIC/ST_CWS_BT_CONNECT_004"/>
+        <TestCase Id="../TC/BT/WINDOWS_SPECIFIC/ST_CWS_BT_CONNECT_ITERATIVE_RI_001"/>
+        <!-- END OF BLUETOOTH CONNECT SECTION -->
+        <!-- BLUETOOTH SSPAIR SECTION -->
+        <TestCase Id="../TC/BT/ST_CWS_BT_PAIR_SSPAIR_001"/>
+        <!-- <TestCase Id="../TC/BT/ST_CWS_BT_PAIR_SSPAIR_002"/>
+        <TestCase Id="../TC/BT/ST_CWS_BT_PAIR_SSPAIR_003"/>
+        <TestCase Id="../TC/BT/ST_CWS_BT_PAIR_SSPAIR_004"/>
+        <TestCase Id="../TC/BT/ST_CWS_BT_PAIR_SSPAIR_005"/>
+        <TestCase Id="../TC/BT/ST_CWS_BT_PAIR_SSPAIR_ITERATIVE_001"/> -->
+        <!-- END OF BLUETOOTH SSPAIR SECTION -->
+        <!-- BLUETOOTH OPP CLIENT SECTION -->
+        <TestCase Id="../TC/BT/ST_CWS_BT_OPP_CLIENT_001"/>
+        <!-- <TestCase Id="../TC/BT/ST_CWS_BT_OPP_CLIENT_002"/> -->
+        <TestCase Id="../TC/BT/ST_CWS_BT_OPP_CLIENT_ITERATIVE_004"/>
+        <!-- END OF BLUETOOTH OPP CLIENT SECTION -->
+        <!-- BLUETOOTH OPP SERVER SECTION -->
+        <TestCase Id="../TC/BT/ST_CWS_BT_OPP_SERVER_001"/>
+        <TestCase Id="../TC/BT/ST_CWS_BT_OPP_SERVER_002"/>
+        <!-- <TestCase Id="../TC/BT/ST_CWS_BT_OPP_SERVER_A2DP_FIT_001"/> -->
+        <TestCase Id="../TC/BT/ST_CWS_BT_OPP_SERVER_ITERATIVE_003"/>
+        <TestCase Id="../TC/BT/ST_CWS_BT_OPP_SERVER_SCAN_FIT_001"/>
+        <!-- END OF BLUETOOTH OPP SERVER SECTION -->
+
+        <!-- END OF BLUETOOTH SECTION -->
+
+    </TestCases>
+</Campaign>

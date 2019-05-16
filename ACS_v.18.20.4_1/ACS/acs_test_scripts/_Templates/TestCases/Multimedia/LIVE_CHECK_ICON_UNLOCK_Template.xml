@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase>
+    <UseCase>LIVE_CHECK_ICON_UNLOCK</UseCase>
+    <Description>Check if unlock icon is correctly display and try to unlock the device with a swipe</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>False</b2bContinuousMode>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters>
+        <Parameter>
+            <!-- Path to the image library -->
+            <Name>LIBRARY_IMAGE_PATH</Name>
+            <Value>C:/Users/</Value>
+        </Parameter>
+        <!--Images template-->
+        <Parameter>
+            <!-- Name of unlock icon less extension (.png) -->
+            <Name>UNLOCK_ICON</Name>
+            <Value>unlock_icon</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Force screen orientation, possible value :
+                - portrait
+                - landscape
+                - reverse_landscape
+                - reverse_portrait
+                - other value set un auto orientation and use accelerometer value-->
+            <Name>FORCE_ORIENTATION</Name>
+            <Value>auto</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

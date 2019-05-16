@@ -1,0 +1,32 @@
+<?xml version="1.0" ?>
+<TestCase>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Discription>
+Check the basic function of Email send or receive mail is ok after GOTA Update
+&lt;br /&gt;
+&lt;br /&gt;How to check the version is KK or L?
+&lt;br /&gt;adb shell getprop ro.build.version.sdk
+&lt;br /&gt;21---KK
+&lt;br /&gt;22---L
+</Discription>
+    <Domain>GOTA</Domain>
+    <Phase>CORE</Phase>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <Type>FUNCTIONAL</Type>
+    <UseCase>PY_UNIT</UseCase>
+    <b2bIteration>1</b2bIteration>
+    <Parameters>
+        <Parameter>
+            <Name>HpalmName</Name>
+            <Value>Check_Email_after_GOTA</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TEST_DATA_ROOT</Name>
+            <Value>testplan/GOTA</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TEST_CASE</Name>
+            <Value>tests.GOTA.GOTA.Check_Email_after_GOTA</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

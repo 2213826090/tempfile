@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="13.37">
+    <UseCase>LAB_BT_SCAN_WITH_A2DP_PLAYING</UseCase>
+    <Description>Play music over A2DP Headset and scan multiple times</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>False</b2bContinuousMode>
+    <TcAcceptanceCriteria>PASS</TcAcceptanceCriteria>
+    <TcMaxAttempt>1</TcMaxAttempt>
+    <Parameters>
+        <Parameter>
+            <!-- Address of BlueTooth device to search within range - Let field empty to use MacAddress parameter of BT_DEVICE equipment in bench_config file -->
+            <Name>REF_BT_ADDR</Name>
+            <Value></Value>
+        </Parameter>
+        <Parameter>
+            <!-- Duration of the test -->
+            <Name>DURATION</Name>
+            <Value>120</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

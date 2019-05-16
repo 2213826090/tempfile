@@ -1,0 +1,22 @@
+<?xml version="1.0" ?>
+<Campaign version="13.49">
+    <Parameters>
+        <Parameter isControlledPSUsed="False"/>
+        <Parameter isIoCardUsed="False"/>
+        <Parameter skipBootOnPowerCycle="False"/>
+        <Parameter bootRetryNumber="0"/>
+        <Parameter runHookScripts="False"/>
+        <Parameter powerCycleBetweenTC="False"/>
+        <Parameter powerCycleOnFailure="False"/>
+        <Parameter finalDutState="NoChange"/>
+        <Parameter stopCampaignOnCriticalFailure="False"/>
+        <Parameter stopCampaignOnFirstFailure="False"/>
+        <Parameter loggingLevel="debug"/>
+        <Parameter CampaignType="Other"/>
+    </Parameters>
+    <TestCases>
+        <TestCase Id="../../../../../TC/TP/TC/GOTA/GOTA.GOTA.check_gota_fingerprint_before_gota.CheckFingerprintoBeforeGOTA.testCheckFingerprintoBeforeGOTA"/>
+        <TestCase Id="../../../../../TC/TP/TC/GOTA/GOTA.GOTA.check_gota_upgrade_package_size.Check_Gota_upgrade_package_size.testCheck_Gota_upgrade_package_size"/>
+        <TestCase Id="../../../../../TC/TP/TC/GOTA/GOTA.GOTA.check_gota_basic_gota_update.GOTAUpdate.testGOTAUpdate"/>
+    </TestCases>
+</Campaign>

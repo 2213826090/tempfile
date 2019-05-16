@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase>
+    <UseCase>EXEC</UseCase>
+    <Description>Check the internal storage mountpoint</Description>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <TestSteps>
+        <Setup>
+            <TestStep Id="RUN_CMD"
+                      DEVICE="PHONE1" TIMEOUT="20" FORCE_EXECUTION="False" WAIT_FOR_RESPONSE="True" SILENT_MODE="False" SAVE_AS="out1"
+                      COMMAND="adb shell input keyevent 82"/>
+            <TestStep Id="DISMISS_ANR_DIALOG" DEVICE="PHONE1" PRESS_HOME_FIRST="True" MAX_ATTEMPTS="5"/>
+        </Setup>
+    </TestSteps>
+    <Parameters>
+        <Parameter>
+            <Name>RUN_CMD</Name>
+            <Value>bash ./scripts/secondary_external_storage_mountpoint.sh /mnt/media_rw/sdcard1 vfat /storage/sdcard1 fuse</Value>
+        </Parameter>
+        <Parameter>
+            <Name>RUN_FROM_TCDIRECTORY</Name>
+            <Value>True</Value>
+        </Parameter>
+        <Parameter>
+            <Name>RUN_TIMEOUT</Name>
+            <Value>20</Value>
+        </Parameter>
+        <Parameter>
+            <Name>RUN_EXPECT_RESULT</Name>
+            <Value>PASS</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

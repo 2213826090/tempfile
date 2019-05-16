@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="13.41">
+    <TestSteps>
+        <Include Src="ST/pnp/TSS/common.xml" />
+        <Include Src="ST/pnp/TSS/idle.xml" />
+        <Include Src="ST/pnp/TSS/agilent8960.xml" />
+        <Initialize>
+            <TestStep SetId="InitializePnPResources" />
+        </Initialize>
+        <Setup>
+            <TestStep SetId="ConfigureRat" />
+
+            <TestStep Id="NFC_SET_POWER" DEVICE="PHONE1" POWER="on" />
+
+            <TestStep Id="CONFIGURE_SYSTEM_SLEEP_MODE" DEVICE="PHONE1" MODE="FROM_TC:MODE" />
+        </Setup>
+        <RunTest>
+            <TestStep SetId="StartPowerMeasurement" />
+            <TestStep Id="SUSPEND" DURATION_IN_SEC="FROM_TC:TEST_DURATION" />
+            <TestStep SetId="StopPowerMeasurement" />
+        </RunTest>
+        <TearDown>
+            <TestStep Id="NS_SET_PARAM" EQT="FROM_CTX:AGILENT8960_SIMULATOR" NAME="SetCellOnOff" OPTION="DEFAULT" VALUE="OFF"/>
+            <TestStep SetId="TearDown" />
+        </TearDown>
+    </TestSteps>
+</TestCase>

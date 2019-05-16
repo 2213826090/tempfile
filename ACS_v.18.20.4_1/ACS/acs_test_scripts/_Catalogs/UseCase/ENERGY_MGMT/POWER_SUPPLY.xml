@@ -1,0 +1,592 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<UseCases xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../acs/src/_Catalogs/UseCase/usecase.xsd">
+    <UseCase Id="LAB_EM_REMOVE_CHARGER" Domain="ENERGY_MGMT" SubDomain="POWER_SUPPLY" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.EnergyManagement.PowerSupplyBased.LAB_EM_REMOVE_CHARGER.LabEmRemoveCHarger</ClassName>
+        <Description>UnPlug USB charger while platform is ON, charge level is enough to carry on.</Description>
+        <Environment name="EMT_PS">
+            <Dependency>EQT_AG_66319</Dependency>
+            <Dependency>EQT_AG_E364XA</Dependency>
+            <Dependency>EQT_EMT340</Dependency>
+        </Environment>
+        <Parameters>
+            <Parameter name="CHARGER_TYPE" type="CABLE_TYPE" isOptional="false">
+                <Description>Charger Type : DCP (current=1.5A) | SDP (Current=0.5A) | CDP(Current=1.5A)| AC_CHGR (Current=2.5A)</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="VBATT" type="VOLTAGE" isOptional="false">
+                <Description>Vbatt Voltage</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="VUSB" type="VOLTAGE" isOptional="false">
+                <Description>Vusb Voltage</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="BATTERY_TEMPERATURE" type="EMULATED_BATTERY_TEMPERATURE_IN_CELSIUS" isOptional="false">
+                <Description>Battery Temperature (in degree Celsius) : 95, 70, 50, 25, 10, 5, 0, -15</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="START_OS" type="OS_STATE" isOptional="false">
+                <Description>The os to start : can be 'MOS' or 'ROS'</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="DELAY_TO_MEASURE_BEFORE_PLUG" type="INTEGER" isOptional="false">
+                <!-- Delay in second between starting of test and first measure of ibatt, before charger plug -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="DELAY_TO_MEASURE_AFTER_PLUG" type="INTEGER" isOptional="false">
+                <!-- Delay in second between starting of test and second measure of ibatt, after charger plug -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+        </Parameters>
+    </UseCase>
+    <UseCase Id="LAB_EM_USB_TEST_VOLTAGE" Domain="ENERGY_MGMT" SubDomain="POWER_SUPPLY" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.EnergyManagement.PowerSupplyBased.LAB_EM_USB_TEST_VOLTAGE.LabEmUsbTestVoltage</ClassName>
+        <Description>Monitor battery Charge when setting USB over or under voltage.</Description>
+        <Environment name="EMT_PS">
+            <Dependency>EQT_AG_66321</Dependency>
+            <Dependency>EQT_AG_E364XA</Dependency>
+            <Dependency>EQT_EMT320</Dependency>
+        </Environment>
+        <Parameters>
+            <Parameter name="CHARGER_TYPE" type="CABLE_TYPE" isOptional="false">
+                <Description>Charger Type to be plugged during the test : DCP | SDP | CDP | AC_CHGR | ACA</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="BATTERY_TEMPERATURE" type="EMULATED_BATTERY_TEMPERATURE_IN_CELSIUS" isOptional="false">
+                <Description>Battery Temperature (in degree Celsius) : 95, 70, 50, 25, 10, 5, 0, -15</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="IDLE_STATE" type="BOOLEAN" isOptional="false">
+                <Description>the idle (low power) state during the test : can be "TRUE" or "FALSE"</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="IDLE_DURATION" type="INTEGER" isOptional="false">
+                <Description>the idle (low power) duration in second when IDLE_STATE is "TRUE"</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="TEST_VOLTAGE_DURATION" type="INTEGER" isOptional="false">
+                <Description>the charger over/under voltage duration in second</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="VUSB_NORMAL" type="VOLTAGE" isOptional="false">
+                <Description>VUSB normal voltage</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="VUSB_TEST" type="VOLTAGE" isOptional="false">
+                <Description>VUSB over (8.0V) or under (4.0V) voltage</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+        </Parameters>
+    </UseCase>
+    <UseCase Id="LAB_EM_BATT_OVER_VOLTAGE" Domain="ENERGY_MGMT" SubDomain="POWER_SUPPLY" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.EnergyManagement.PowerSupplyBased.LAB_EM_BATT_OVER_VOLTAGE.LabEmBattOverVoltage</ClassName>
+        <Description>Monitor battery Charge when setting Battery over voltage.</Description>
+        <Environment name="EMT_PS">
+            <Dependency>EQT_AG_66319</Dependency>
+            <Dependency>EQT_AG_E364XA</Dependency>
+            <Dependency>EQT_EMT340</Dependency>
+        </Environment>
+        <Parameters>
+            <Parameter name="VBATT_LOW" type="VOLTAGE" isOptional="false">
+                <Description>Battery Voltage (LOW) normal (in Volt)</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="VBATT_HIGH" type="VOLTAGE" isOptional="false">
+                <Description>Battery Voltage over voltage (in Volt)</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="CHARGER_TYPE" type="CABLE_TYPE" isOptional="false">
+                <Description>Charger Type to plug during the test</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="IDLE_STATE" type="BOOLEAN" isOptional="false">
+                <Description>turn board in idle mode at beginning of the test : can be "TRUE" or "FALSE"</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="TIME_TO_WAIT_AFTER_IDLE_STATE" type="INTEGER" isOptional="false">
+                <Description>time in second to wait after IDLE mode was set to be sure that board is in idle mode</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="MAX_TIME_TO_SEE_CHANGE_FOR_VBATT_HIGH" type="INTEGER" isOptional="false">
+                <Description>the maximum time to see a change when VBATT is set to LOW value in second</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="MAX_TO_TIME_SEE_CHANGE_FOR_VBATT_LOW" type="INTEGER" isOptional="false">
+                <Description>the maximum time to see a change when VBATT is set to HIGH value in second</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+        </Parameters>
+    </UseCase>
+    <UseCase Id="LAB_EM_PLUG_CHARGER" Domain="ENERGY_MGMT" SubDomain="POWER_SUPPLY" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.EnergyManagement.PowerSupplyBased.LAB_EM_PLUG_CHARGER.LabEmPlugCharger</ClassName>
+        <Description>Plug USB charger while platform is ON.</Description>
+        <Environment name="EMT_PS">
+            <Dependency>EQT_AG_66319</Dependency>
+            <Dependency>EQT_AG_E364XA</Dependency>
+            <Dependency>EQT_EMT340</Dependency>
+        </Environment>
+        <Parameters>
+            <Parameter name="CHARGER_TYPE" type="CABLE_TYPE" isOptional="false">
+                <!-- Charger Type : DCP (current=1.5A) | SDP (Current=0.5A) | CDP(Current=1.5A)| AC_CHGR (Current=2.5A) -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="BATTERY_TYPE" type="BATTERY_TYPE" isOptional="false">
+                <!-- Battery Type : BATTERY_EMULATOR or ANALOG or leave empty to use the one from device catalog -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="VBATT" type="VOLTAGE" isOptional="false">
+                <!-- Vbatt Voltage -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="VUSB" type="VOLTAGE" isOptional="false">
+                <!-- Vusb Voltage -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="BATTERY_TEMPERATURE" type="EMULATED_BATTERY_TEMPERATURE_IN_CELSIUS" isOptional="false">
+                <!-- Battery Temperature (in degree Celsius) : 95, 70, 50, 25, 10, 5, 0, -15 -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="START_OS" type="OS_STATE" isOptional="false">
+                <!-- The os to start : can be 'MOS' or 'ROS' -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="DELAY_TO_MEASURE_BEFORE_PLUG" type="INTEGER" isOptional="false">
+                <!-- Delay in second between starting of test and first measure of ibatt, before charger plug -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="DELAY_TO_MEASURE_AFTER_PLUG" type="INTEGER" isOptional="false">
+                <!-- Delay in second between starting of test and second measure of ibatt, after charger plug -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+        </Parameters>
+    </UseCase>
+    <UseCase Id="LAB_EM_BATT_TEMP_MONITOR" Domain="ENERGY_MGMT" SubDomain="POWER_SUPPLY" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.EnergyManagement.PowerSupplyBased.LAB_EM_BATT_TEMP_MONITOR.LabEmBattTempMonitor</ClassName>
+        <Description>Control current while battery temperature is charging.</Description>
+        <Environment name="EMT_PS">
+            <Dependency>EQT_AG_66319</Dependency>
+            <Dependency>EQT_EMT340</Dependency>
+        </Environment>
+        <Parameters>
+            <Parameter name="VBATT" type="VOLTAGE" isOptional="false">
+                <Description>Initial value for VBATT</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+        </Parameters>
+    </UseCase>
+    <UseCase Id="LAB_EM_PLUG_NO_BATT" Domain="ENERGY_MGMT" SubDomain="POWER_SUPPLY" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.EnergyManagement.PowerSupplyBased.LAB_EM_PLUG_NO_BATT.LabEmPlugNoBatt</ClassName>
+        <Description>Plug USB with critical battery level.</Description>
+        <Environment name="EMT_PS">
+            <Dependency>EQT_AG_66319</Dependency>
+            <Dependency>EQT_AG_E364XA</Dependency>
+            <Dependency>EQT_EMT340</Dependency>
+        </Environment>
+        <Parameters>
+            <Parameter name="VBATT_LIST" type="STRING" isOptional="false">
+                <!-- Vbatt Voltage -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="VUSB" type="VOLTAGE" isOptional="false">
+                <!-- Vusb Voltage -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+        </Parameters>
+    </UseCase>
+    <UseCase Id="LAB_EM_TURN_OFF_DISPLAY" Domain="ENERGY_MGMT" SubDomain="POWER_SUPPLY" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.EnergyManagement.PowerSupplyBased.LAB_EM_TURN_OFF_DISPLAY.LabEmTurnOffDisplay</ClassName>
+        <Description>Monitor that the user can turn off the display.</Description>
+        <Environment name="EMT_PS">
+            <Dependency>EQT_AG_66319</Dependency>
+            <Dependency>EQT_EMT340</Dependency>
+        </Environment>
+        <Parameters>
+            <Parameter name="STABILIZATION_TIME" type="DURATION_IN_SEC" isOptional="false">
+                <!-- the time to wait to stabilize current after switch off the screen -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="LOAD" type="LOAD_TECHNOLOGY_LIST" isOptional="false">
+                <!-- the load to run at the beginning of the test -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="MULTIMEDIA_FILE" type="STRING" isOptional="false">
+                <Description>path of the file to play if VIDEO or AUDIO is on LOAD</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="VOLUME" type="STRING" isOptional="false">
+                <Description>Volume of the media file in (%)</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+        </Parameters>
+    </UseCase>
+    <UseCase Id="LAB_EM_PS_BOOT_ON_POWER_BUTTON" Domain="ENERGY_MGMT" SubDomain="POWER_SUPPLY" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.EnergyManagement.PowerSupplyBased.LAB_EM_PS_BOOT_ON_POWER_BUTTON.LabEmPsBootOnPowerButton</ClassName>
+        <Description>PUPDR - boot a board with given vbatt and press power button time.</Description>
+        <Environment name="EMT_PS">
+            <Dependency>EQT_AG_66319</Dependency>
+            <Dependency>EQT_AG_E364XA</Dependency>
+            <Dependency>EQT_EMT340</Dependency>
+        </Environment>
+        <Parameters>
+            <Parameter name="VBATT" type="VOLTAGE" isOptional="false">
+                <!-- Vbatt Voltage -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="PWR_BT_TIME_TO_ON" type="DURATION_IN_SEC" isOptional="false">
+                <!-- power button time to turn on the board -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+        </Parameters>
+    </UseCase>
+    <UseCase Id="LAB_EM_UPPER_CURRENT_DRAWN_THAN_CHG_CURRENT" Domain="ENERGY_MGMT" SubDomain="POWER_SUPPLY" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.EnergyManagement.PowerSupplyBased.LAB_EM_UPPER_CURRENT_DRAWN_THAN_CHG_CURRENT.LabEmUpperCurrentDrawnThanChgCurrent</ClassName>
+        <Description>EM - test when the charger output power is not sufficient to power the system load.</Description>
+        <Environment name="EMT_PS">
+            <Dependency>EQT_AG_66321</Dependency>
+            <Dependency>EQT_EMT320</Dependency>
+        </Environment>
+        <Parameters>
+            <Parameter name="CHARGER_TYPE" type="CABLE_TYPE" isOptional="false">
+                <!-- The type of charger for the test -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="LOAD" type="LOAD_TECHNOLOGY_LIST" isOptional="false">
+                <!-- List of feature to activate to have high current drawn. -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+        </Parameters>
+    </UseCase>
+    <UseCase Id="LAB_EM_REPORT_CRITICAL_BATT_ON_VBATT_THRESHOLD" Domain="ENERGY_MGMT" SubDomain="POWER_SUPPLY" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.EnergyManagement.PowerSupplyBased.LAB_EM_REPORT_CRITICAL_BATT_ON_VBATT_THRESHOLD.LabEmReportCriticalBattOnVbattThreshold</ClassName>
+        <Description>EM - test device when capacity reach 0 percent</Description>
+        <Environment name="EMT_PS">
+            <Dependency>EQT_AG_66321</Dependency>
+            <Dependency>EQT_EMT320</Dependency>
+        </Environment>
+        <Parameters>
+            <Parameter name="STARTING_VOLTAGE" type="VOLTAGE" isOptional="false">
+                <!-- Voltage to start the test, minor is the satrt voltage, shorter is the test -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="LOAD" type="LOAD_TECHNOLOGY_LIST" isOptional="false">
+                <!-- Feature to activate to generate a high load -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+        </Parameters>
+    </UseCase>
+    <UseCase Id="LAB_EM_PS_COS_DEAD_BATT_USB_PLUGGED" Domain="ENERGY_MGMT" SubDomain="POWER_SUPPLY" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.EnergyManagement.PowerSupplyBased.LAB_EM_PS_COS_DEAD_BATT_USB_PLUGGED.LabEmPsCosDeadBattUsbPlugged</ClassName>
+        <Description>Boot in Hardware Charging, Set the COS Voltage, CHeck if the board boot in COS</Description>
+        <Environment name="EMT_PS">
+            <Dependency>EQT_AG_66319</Dependency>
+            <Dependency>EQT_AG_E364XA</Dependency>
+            <Dependency>EQT_EMT340</Dependency>
+        </Environment>
+        <Parameters>
+            <Parameter name="CHARGER_TYPE" type="CABLE_TYPE" isOptional="false">
+                <!-- For this test you can use SDP and CDP CHarger -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="BATTERY_TYPE" type="BATTERY_TYPE" isOptional="false">
+                <!-- Battery Type : BATTERY_EMULATOR or ANALOG or DIGITAL or leave empty to use the one from device catalog -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="COS_BOOT_TIMEOUT_VALUE" type="DURATION_IN_SEC" isOptional="false">
+                <!-- Timeout value for the COS board boot (int value) -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="HARDWARE_BOOT_TIMEOUT_VALUE" type="DURATION_IN_SEC" isOptional="false">
+                <!-- Timeout value for the board boot after cable plugged (int value) -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="POWER_BUTTON_PRESS_ACTIVATION" type="BOOL" isOptional="false">
+                <!-- Activation of the power button (bool value) -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="CHARGING_OS_VOLTAGE" type="VOLTAGE" isOptional="false">
+                <!-- COS Voltage for the test (float value) -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="HARDWARE_CHARGING_VOLTAGE" type="CURRENT" isOptional="false">
+                <!-- Hardware CHarging Voltage for the test (float value) -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="HARDWARE_CHARGE_CURRENT" type="DURATION_IN_SEC" isOptional="false">
+                <!-- Hardware charging charge current value (int value) in A !Choose only positive value! -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+        </Parameters>
+    </UseCase>
+    <UseCase Id="LAB_EM_PS_CHARGER_INSERTION_DEAD_BATT" Domain="ENERGY_MGMT" SubDomain="POWER_SUPPLY" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.EnergyManagement.PowerSupplyBased.LAB_EM_PS_CHARGER_INSERTION_DEAD_BATT.LabEmPsChargerInsertionDeadBatt</ClassName>
+        <Description>Plug the charger when dead battery is present and measure the battery current or the battery/charger current ratio</Description>
+        <Environment name="EMT_PS">
+            <Dependency>EQT_AG_66319</Dependency>
+            <Dependency>EQT_AG_E364XA</Dependency>
+            <Dependency>EQT_EMT340</Dependency>
+        </Environment>
+        <Parameters>
+            <Parameter name="CHARGER_TYPE" type="CABLE_TYPE" isOptional="false">
+                <!-- For this test you can use SDP and CDP CHarger -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="BATTERY_TYPE" type="BATTERY_TYPE" isOptional="false">
+                <!-- Battery Type : BATTERY_EMULATOR or ANALOG or DIGITAL or leave empty to use the one from device catalog -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="BATTERY_VOLTAGE" type="VOLTAGE" isOptional="false">
+                <!-- Battery Voltage Value (float value) -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="EXPECTED_CHARGE_CURRENT" type="CURRENT" isOptional="false">
+                <!-- Expected charge current value (float value) -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="EXPECTED_CURRENT_RATIO" type="CURRENT" isOptional="false">
+                <!-- Expected current ratio (int value). The ratio is a division between battery and charger like this : Battery value / Charger value. The result is a %. -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="MEASURE_TYPE" type="STRING" isOptional="false">
+                <!-- Type of the measure (Should be : CURRENT or RATIO) (str value) -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="WAIT_TIME" type="DURATION_IN_SEC" isOptional="false">
+                <!-- Time to wait (int value) This time is in the test specification. You set this value in order to wait the current stabilization. Before this sleep time, the code plug the charger. After this sleep time, we check the current. We use this value for both type of measure -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="CURRENT_RANGE" type="CURRENT" isOptional="false">
+                <!-- Range of the current (float value). The current value is not exactly the same all the time. This parameter permits to add and remove a current offset in order to have a current range. -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+        </Parameters>
+    </UseCase>
+    <UseCase Id="LAB_EM_PS_STRESS_CHARGER_INSERTION_DEAD_BATT" Domain="ENERGY_MGMT" SubDomain="POWER_SUPPLY" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.EnergyManagement.PowerSupplyBased.LAB_EM_PS_STRESS_CHARGER_INSERTION_DEAD_BATT.LabEmPsStressChargerInsertionDeadBatt</ClassName>
+        <Description>Plug the charger when dead battery is present and measure the battery current or the battery/charger current ratio. Stress test start with voltage start to voltage end every battery step</Description>
+        <Environment name="EMT_PS">
+            <Dependency>EQT_AG_66319</Dependency>
+            <Dependency>EQT_AG_E364XA</Dependency>
+            <Dependency>EQT_EMT340</Dependency>
+        </Environment>
+        <Parameters>
+            <Parameter name="CHARGER_TYPE" type="CABLE_TYPE" isOptional="false">
+                <!-- For this test you can use SDP and CDP CHarger -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="BATTERY_TYPE" type="BATTERY_TYPE" isOptional="false">
+                <!-- Battery Type : BATTERY_EMULATOR or ANALOG or DIGITAL or leave empty to use the one from device catalog -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="START_BATTERY_VOLTAGE" type="VOLTAGE" isOptional="false">
+                <!-- Test begins with this voltage value (float value)Be careful, If you see the spec, start voltage should be higher than end voltage. If this condition is not respected, test will fail. -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="END_BATTERY_VOLTAGE" type="VOLTAGE" isOptional="false">
+                <!-- Test finish with this voltage value (float value)Same condition than above if the end voltage is higher than start voltage, test will fail. -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="BATTERY_STEP" type="VOLTAGE" isOptional="false">
+                <!-- This value permits to decrease the voltage to the end voltage value. In the spec, you have voltage = old_voltage - ( iteration * BATTERY_STEP). The parameter permits to decreases the old_voltage to a new voltage in order to do a new measure. (float value) -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="EXPECTED_CHARGE_CURRENT" type="CURRENT" isOptional="false">
+                <!-- Current Threshold (float value) -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+            <Parameter name="WAIT_TIME" type="DURATION_IN_SEC" isOptional="false">
+                <!-- Time to wait (int value) This time is in the test specification. You set this value in order to wait the current stabilization. Before this sleep time, the code plug the charger. After this sleep time, we check the current. We use this value for both type of measure -->
+                <Description>To be filled</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+        </Parameters>
+    </UseCase>
+    <UseCase Id="LAB_EM_PS_DIGITAL_BATTERY_IDENTIFICATION" Domain="ENERGY_MGMT" SubDomain="POWER_SUPPLY" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.EnergyManagement.PowerSupplyBased.LAB_EM_PS_DIGITAL_BATTERY_IDENTIFICATION.LabEmPsDigitalBatteryIdentification</ClassName>
+        <Description>this Usecase ensure that the digital battery profile is loaded on the board memory at the boot</Description>
+        <Environment name="EMT_PS">
+            <Dependency>EQT_AG_66319</Dependency>
+            <Dependency>EQT_AG_E364XA</Dependency>
+            <Dependency>EQT_EMT340</Dependency>
+        </Environment>
+        <Parameters>
+            <Parameter name="BATTERY_TYPE" type="BATTERY_TYPE" isOptional="false">
+                <Description>Battery Type : BATTERY_EMULATOR or ANALOG or DIGITAL or leave empty to use the one from device catalog</Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank />
+            </Parameter>
+        </Parameters>
+    </UseCase>
+</UseCases>

@@ -1,0 +1,58 @@
+<html>
+  <head>
+    <title> Test </title>
+    <style>
+      table {
+        border-collapse: collapse;
+      }
+      table, td, th {
+        border: 1px solid black
+      }
+      td {
+        padding: 5px;
+        text-align: center;
+      }
+      th {
+        padding: 10px;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <h4> These are the CTS $result_status results for build $build_no </h4>
+    <p> <b>Summary</b> </p>
+    <ul>
+      <li> <b>Test Objective:</b><br>
+        <ul>
+          <li>$objective</li>
+        </ul>
+      </li>
+      <li> <b>Run details:</b><br>
+        <ul>
+          <li>Image Version: $image</li>
+          <li>BIOS: $bios_id</li>
+          <li>CTS Version: $cts_version</li>
+          <li>Shards info: $shards_info</li>
+         </ul>
+      </li>
+    </ul>
+    <p><b>Results</b></p>
+    <table border = 1>
+      <tr>
+        <th bgcolor="green">WW</th>
+        <th bgcolor="green">Image</th>
+        <th bgcolor="green">Session</th>
+        <th bgcolor="green">Tests no</th>
+        <th bgcolor="green">Passed</th>
+        <th bgcolor="green"><font color = "red">Failed</font></th>
+        <th bgcolor="green">Not executed</th>
+        <th bgcolor="green">Start time</th>
+        <th bgcolor="green">End time</th>
+        <th bgcolor="green">Duration</th>
+      </tr>
+      $results_table
+    </table>
+    <br>
+    $failed_tests
+  </body>
+</html>

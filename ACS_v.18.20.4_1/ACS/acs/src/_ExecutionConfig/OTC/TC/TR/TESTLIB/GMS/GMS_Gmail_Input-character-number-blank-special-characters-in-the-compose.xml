@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='ASCII'?>
+<TestCase>
+    <UseCase>Testlib</UseCase>
+    <Description>Gmail -- compose email with special characters</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <TcMaxAttempt>1</TcMaxAttempt>
+    <Parameters>
+        <Parameter>
+            <Name>timeout</Name>
+            <Value>300</Value>
+        </Parameter>
+        <Parameter>
+            <Name>script-args</Name>
+            <Value>{"account":"auto2test@gmail.com","account_to":"auto3test@gmail.com","password":"testing12345","password_to":"testing12345", }</Value>
+        </Parameter>
+        <Parameter>
+            <Name>test</Name>
+            <Value>scripts/gms/Gmail/tests/GMS_Gmail_Input-character-number-blank-special-characters-in-the-compose.py</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>
+

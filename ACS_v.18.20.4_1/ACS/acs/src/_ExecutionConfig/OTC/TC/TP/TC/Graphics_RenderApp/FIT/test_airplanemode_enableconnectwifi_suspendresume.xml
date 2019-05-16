@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<TestCase>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Discription>
+Verify Graphics stability when enable airplane/wifi,connect wifi and suspend/resume DUT.
+</Discription>
+    <Domain>Graphics_RenderApp</Domain>
+    <Phase>CORE</Phase>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <Type>FUNCTIONAL</Type>
+    <UseCase>PY_UNIT</UseCase>
+    <b2bIteration>1</b2bIteration>
+    <Parameters>
+        <Parameter>
+            <Name>HpalmName</Name>
+            <Value>test_AirplaneMode_EnableConnectWIFI_SuspendResume.Fit.test_airplanemode_enableconnectwifi_suspendresume</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TEST_DATA_ROOT</Name>
+            <Value>testplan/Graphics_RenderApp</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TEST_CASE</Name>
+            <Value>tests.Graphics_RenderApp.FIT.test_AirplaneMode_EnableConnectWIFI_SuspendResume.Fit.test_airplanemode_enableconnectwifi_suspendresume</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

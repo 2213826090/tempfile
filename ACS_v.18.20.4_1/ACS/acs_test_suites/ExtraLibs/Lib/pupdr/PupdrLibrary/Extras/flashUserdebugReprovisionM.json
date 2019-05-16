@@ -1,0 +1,120 @@
+{
+ "flash" :  {
+  "commands" : [
+   {
+    "description" : "Waiting for device in DNX...",
+    "restrict" : null,
+    "state" : "dnx_os",
+    "timeout" : 60000,
+    "tool" : "waitForDevice"
+   },
+   {
+    "args" : "\"flash\" \"osloader\" \"${osloader_file}\" ",
+    "description" : "Flashing Userdebug Osloader...",
+    "mandatory" : true,
+    "restrict" : null,
+    "retry" : 2,
+    "timeout" : 120000,
+    "tool" : "fastboot"
+   },
+   {
+    "args" : "\"boot\" \"${fastboot_file}\" ",
+    "description" : "Booting Userdebug Fastboot...",
+    "mandatory" : true,
+    "restrict" : null,
+    "retry" : 2,
+    "timeout" : 120000,
+    "tool" : "fastboot"
+   },
+   {
+    "description": "Leave time to the BIOS to clear the USB stack",
+    "duration": 500,
+    "mandatory": true,
+    "restrict" : null,
+    "retry": 2,
+    "timeout": 500,
+    "tool": "sleep"
+   },
+   {
+    "description": "Wait for device to enumerate in pos",
+    "mandatory": true,
+    "restrict" : null,
+    "retry": 2,
+    "state": "pos",
+    "timeout": 60000,
+    "tool": "waitForDevice"
+   },
+   {
+    "args" : "\"flashing\" \"unlock\" ",
+    "description" : "Unlocking Device...",
+    "mandatory" : true,
+    "restrict" : null,
+    "retry" : 2,
+    "timeout" : 120000,
+    "tool" : "fastboot"
+   },
+   {
+    "args" : "\"flash\" \"oemvars\" \"${oemvars}\" ",
+    "description" : "Delete bootloader policy...",
+    "mandatory" : false,
+    "restrict" : null,
+    "retry" : 1,
+    "timeout" : 120000,
+    "tool" : "fastboot"
+   },
+   {
+    "args" : "\"oem\" \"reprovision\" ",
+    "description" : "Reprovision...",
+    "mandatory" : true,
+    "restrict" : null,
+    "retry" : 2,
+    "timeout" : 120000,
+    "tool" : "fastboot"
+   },
+   {
+    "description" : "Waiting for device in DNX...",
+    "restrict" : null,
+    "state" : "dnx_os",
+    "timeout" : 60000,
+    "tool" : "waitForDevice"
+   }
+  ],
+  "configurations" :   {
+   "default" :    {
+    "brief" : "Default configuration",
+    "default" : true,
+    "description" : "Default configuration",
+    "groupsState" :     {
+    },
+    "name" : "Default",
+    "parameters" :     {
+    },
+    "startState" : "dnx_os"
+   }
+  },
+  "groups" :   {
+  },
+  "osplatform" : "android",
+  "parameters" :   {
+   "osloader_file" :    {
+    "description" : "userdebug osloader",
+    "name" : "userdebug osloader",
+    "type" : "file",
+    "value" : null
+   },
+   "fastboot_file" :    {
+    "description" : "userdebug fastboot",
+    "name" : "userdebug fastboot",
+    "type" : "file",
+    "value" : null
+   },
+   "oemvars" :    {
+    "description" : "oemvars for blpolicy deletion",
+    "name" : "blpolicy-delete.txt",
+    "type" : "file",
+    "value" : "blpolicy-delete.txt"
+   }
+  },
+  "version" : "2.1"
+ }
+}

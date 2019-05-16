@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase>
+    <UseCase>TEST_STEP_ENGINE</UseCase>
+    <Description>12334601: Video Streaming HTML5 WLAN device display H264 720p
+        This KPI measures HTML5 Video Streaming power. The workload consists of workload script (html file) and Video file.
+        HTML script uses HTML5 tag for initiating the streaming on browser. The workload video file is 720p format and MP4/H264 content.
+        The complete workload is placed at webserver for streaming through browser.</Description>
+    <b2bIteration>3</b2bIteration>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <TcMaxAttempt>3</TcMaxAttempt>
+    <SavePatRawData>False</SavePatRawData>
+    <PowerCalculation>False</PowerCalculation>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters>
+        <Parameter>
+            <Name>SAVE_POWER_DATA</Name>
+            <Value>True</Value>
+        </Parameter>
+        <Parameter>
+            <!-- config type for agilent -->
+            <Name>CONFIG_TYPE</Name>
+            <Value>IDLE</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Sleep duration before making the measure in seconds -->
+            <Name>SLEEP_DURATION</Name>
+            <Value>60</Value>
+        </Parameter>
+        <Parameter>
+            <Name>WAIT_30_MIN</Name>
+            <Value>1800</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TEST_DURATION</Name>
+            <Value>300</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Sleep duration before making the measure in seconds -->
+            <Name>URL</Name>
+            <Value>html5/Video720pFocused.html</Value>
+        </Parameter>
+        <Parameter>
+            <!--
+                 Configuration for Sysdebug modules.
+                 Syntax is :
+                 module_name[: [param1[=value1]][, param2[=value2]]*];
+              -->
+            <Name>SYSDEBUG_MODULES</Name>
+            <Value>
+                Residency: s3,s0i3,s0i1,lpmp3;
+                S3Failure;
+                WakeLocks;
+                ModemPanic;
+                Thermals: core=40, soc=40;
+            </Value>
+         </Parameter>
+         <Parameter>
+            <Name>REGEX_FULLSCREEN</Name>
+            <Value>regex:.*chromium.*Video_Streaming - switched to fullscreen.*</Value>
+        </Parameter>
+        <Parameter>
+            <Name>REGEX_PLAYING_VIDEO</Name>
+            <Value>regex:.*chromium.*Video_Streaming - playing.*</Value>
+        </Parameter>
+        <Parameter>
+            <Name>APP</Name>
+            <Value>chrome_app</Value>
+        </Parameter>
+        <Parameter>
+            <Name>APP_PACKAGE_NAME</Name>
+            <Value>com.android.chrome</Value>
+        </Parameter>
+        <Parameter>
+            <Name>MEDIA_VOLUME</Name>
+            <Value>50</Value>
+        </Parameter>
+        <Parameter>
+            <Name>BRIGHTNESS_VALUE</Name>
+            <Value>FROM_DEVICE:PHONE1:displayBrightness</Value>
+        </Parameter>
+    </Parameters>
+    <TestSteps>
+        <Include Src="ST/pnp/TSS/common.xml"/>
+        <Include Src="ST/pnp/TSS/browsing.xml"/>
+        <Include Src="ST/pnp/TSS/active.xml"/>
+        <Include Src="ST/cws/TSS/WiFi/ST_CWS_WIFI_AP.xml"/>
+        <Include Src="ST/cws/TSS/Audio/ST_CWS_AUDIO.xml"/>
+        <Include Src="ST/cws/TSS/Video/ST_CWS_VIDEO.xml"/>
+        <Include Src="ST/cws/TSS/WiFi/ST_CWS_WIFI_COMMON.xml"/>
+        <Initialize>
+            <TestStep Id="REBOOT_DEVICE" DEVICE="PHONE1" WAY="soft" MODE="MOS"/><!-- Warning this step reset the browser version -->
+            <TestStep Id="AP_WIFI_LOAD_CONFIG_FILE" EQT="CONFIGURABLE_AP1" KPI_TEST="ST_PWR"/>
+            <!-- <TestStep SetId="WiFiAPConfigStandardKPIPowerAP1" STANDARD="n2.4G" AUTHENTICATION_TYPE="WPA2-PSK-AES" PASSPHRASE="FROM_BENCH:CONFIGURABLE_AP1:passphrase_WPA2" CHANNEL="7" BANDWIDTH="20"/> -->
+            <TestStep SetId="InitializePnPResources"/>
+            <TestStep Id="SET_SCREEN_PROPERTY" PROPERTY="brightness" DEVICE="PHONE1" VALUE="FROM_DEVICE:PHONE1:displayBrightness"/>
+            <TestStep Id="WIFI_REMOVE_NETWORK" DEVICE="PHONE1" SSID="all"/>
+            <TestStep SetId="INSTALL_THE_BROWSER_ON_THE_DUT"/>
+            <TestStep SetId="ConnectWiredHeadSet" DEVICE="PHONE1"/>
+        </Initialize>
+        <Setup>
+            <TestStep Id="SET_FLIGHT_MODE" DEVICE="PHONE1" FLIGHT_MODE="disable"/>
+            <!--All Comms OFF-->
+            <TestStep Id="SET_FLIGHT_MODE" DEVICE="PHONE1" FLIGHT_MODE="enable"/>
+            <TestStep Id="DEACTIVATE_DEVICE_PDP" DEVICE="PHONE1" INTERFACE="None" CHECK="True"/><!--Disable DATA on the DUT and check PdP context is inactive-->
+            <TestStep Id="WIFI_SET_POWER" DEVICE="PHONE1" POWER="off"/>
+            <TestStep Id="BT_SET_POWER" DEVICE="PHONE1" POWER="off"/>
+            <TestStep Id="NFC_SET_POWER" DEVICE="PHONE1" POWER="off"/>
+            <TestStep Id="GNSS_SET_POWER" DEVICE="PHONE1" POWER="off"/>
+            <TestStep Id="WIFI_SET_SCAN_ALWAYS_AVAILABLE" DEVICE="PHONE1" SCAN_ALWAYS_AVAILABLE_STATE="OFF"/>
+            <TestStep Id="SET_FLIGHT_MODE" DEVICE="PHONE1" FLIGHT_MODE="disable"/>
+            <TestStep Id="WIFI_SET_POWER" DEVICE="PHONE1" POWER="on"/>
+            <TestStep Id="SET_SCREEN_PROPERTY" PROPERTY="timeout" DEVICE="PHONE1" VALUE="1800"/>
+            <TestStep Id="SET_MEDIA_VOLUME" DEVICE="PHONE1" VOLUME="FROM_TC:MEDIA_VOLUME"/>
+            <TestStep Id="CLEAN_APP_CACHE" DEVICE="PHONE1" APP_NAME="FROM_TC:APP_PACKAGE_NAME"/>
+            <TestStep Id="CONFIGURE_SYSTEM_SLEEP_MODE" DEVICE="PHONE1" MODE="default"/>
+            <TestStep SetId="CONNECT_DUT_TO_TEST_AP"/>
+            <TestStep Id="PING" DEVICE="PHONE1" DESTINATION_IP="8.8.8.8" PACKET_SIZE="16" PACKET_COUNT="16" INTERVAL="1" FLOOD_MODE="false" BLOCKING="true" SOURCE_IP="none" SAVE_AS="PING_PACKET_LOST"/>
+            <TestStep Id="COMPARE" FIRST="FROM_CTX:PING_PACKET_LOST" SECOND="8" OPERATOR="LESS_OR_EQUAL" PASS_IF="true"/>
+            <!-- WAIT 30 MIN -->
+            <TestStep Id="SUSPEND" DURATION_IN_SEC="FROM_TC:WAIT_30_MIN" REFRESH_STDOUT_IN_SEC="60"/>
+        </Setup>
+        <RunTest>
+            <TestStep SetId="StartHttpVideoStreamingOnFullScreen"/><!--Initiate the video streaming via the browser by browsing the html streaming script and check that video start to play properly -->
+            <TestStep SetId="AutoJoinSequenceRForVideoStreaming"/>
+            <TestStep SetId="CheckFPS"/>
+            <TestStep SetId="StartPowerMeasurement"/><!-- Unplug the USB -->
+            <TestStep Id="SUSPEND" DURATION_IN_SEC="FROM_TC:TEST_DURATION" REFRESH_STDOUT_IN_SEC="60"/>
+            <TestStep SetId="StopPowerMeasurement"/><!-- Plug the USB -->
+            <TestStep Id="STOP_BROWSING" DEVICE="PHONE1" BROWSER_TYPE="chrome"/>
+            <TestStep Id="CLEAN_APP_CACHE" DEVICE="PHONE1" APP_NAME="FROM_TC:APP_PACKAGE_NAME"/>
+        </RunTest>
+        <TearDown>
+            <TestStep SetId="TearDown"/> <!-- compute_power_result -->
+            <TestStep Id="SET_ORIENTATION" DEVICE="PHONE1" ORIENTATION="auto" API="embedded_api"/>
+            <TestStep Id="CONFIGURE_SYSTEM_SLEEP_MODE" DEVICE="PHONE1" MODE="default"/>
+            <TestStep Id="SET_SCREEN_PROPERTY" DEVICE="PHONE1" PROPERTY="state" VALUE="off"/>
+            <TestStep SetId="WiFiAPShutdown" EQT="CONFIGURABLE_AP1"/>
+            <TestStep SetId="DisconnectedWiredHeadSet" DEVICE="PHONE1"/>
+        </TearDown>
+    </TestSteps>
+</TestCase>

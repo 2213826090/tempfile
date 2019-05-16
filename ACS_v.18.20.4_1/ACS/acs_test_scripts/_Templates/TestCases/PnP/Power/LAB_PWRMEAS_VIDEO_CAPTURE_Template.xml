@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="13.45">
+    <UseCase>LAB_PWRMEAS_VIDEO_CAPTURE</UseCase>
+    <Description>Power consumption measurement (in mA) during a video capture</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters>
+        <Parameter>
+            <!-- File path to save recorded video file -->
+            <!-- /sdcard/DCIM/Camera/|/sdcard/DCIM/100ANDRO/ for now -->
+            <Name>VIDEO_PATH</Name>
+            <Value>/sdcard/DCIM/100ANDRO/</Value>
+        </Parameter>
+        <Parameter>
+            <!-- which camera app to use. In r3 build there are several cameras -->
+            <!-- default camera app is 'camera'. -->
+            <!-- camera|testcamera for now -->
+            <Name>CAMERA_NAME</Name>
+            <Value>camera</Value>
+        </Parameter>
+        <Parameter>
+            <!-- which camera to use -->
+            <!-- front|back -->
+            <Name>CAMERA</Name>
+            <Value>back</Value>
+        </Parameter>
+        <Parameter>
+            <!-- record quality -->
+            <!-- 1080p|720p|480p|vga|mms|youtube|qvga|qcif -->
+            <Name>QUALITY</Name>
+            <Value>1080p</Value>
+        </Parameter>
+        <Parameter>
+            <!-- flash on or off -->
+            <!-- on|off -->
+            <Name>FLASH_MODE</Name>
+            <Value>on</Value>
+        </Parameter>
+        <Parameter>
+            <!-- which kind of color effect to set -->
+            <!-- none|mono|sepia|negative -->
+            <Name>COLOR_EFFECT</Name>
+            <Value>mono</Value>
+        </Parameter>
+        <Parameter>
+            <!-- which kind white balance effect to set -->
+            <!-- auto|cloudy-daylight|daylight|fluorescent|incandescent|manual -->
+            <Name>WHITE_BALANCE</Name>
+            <Value>auto</Value>
+        </Parameter>
+        <Parameter>
+            <!-- dvs enable or not -->
+            <!-- true|false -->
+            <Name>DVS</Name>
+            <Value>true</Value>
+        </Parameter>
+        <Parameter>
+            <!-- noise reduction enable or not -->
+            <!-- on|off -->
+            <Name>NOISE_REDUCTION</Name>
+            <Value>off</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Sleep duration before making the measure in seconds -->
+            <Name>SLEEP_DURATION</Name>
+            <Value>2</Value>
+        </Parameter>
+        <Parameter>
+            <!-- [OPTIONAL] Configuration of SysDebug module
+                 - Module is activated with its name
+                 - Modules are separated by semi-colon
+                 - Each parameter may be configured with '='
+                 - Parameters are separated by comma
+              -->
+             <Name>SYSDEBUG_MODULES</Name>
+             <Value>
+                Residency: s3,s0i3,s0i1,lpmp3;
+                Pmu: interval=30;
+                S3Failure;
+                WakeLocks;
+                ModemPanic;
+                CrashInfo;
+                Thermals;
+            </Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

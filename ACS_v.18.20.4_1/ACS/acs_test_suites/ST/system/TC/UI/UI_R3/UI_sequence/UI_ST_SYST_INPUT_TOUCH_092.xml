@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<UI_SEQ xsi:noNamespaceSchemaLocation="ACS_ANDROID_UI_CHECK.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<ACTION>
+		<CMD>exec</CMD>
+		<PARAMETERS>start -a android.intent.action.MAIN -n com.android.camera/.Camera</PARAMETERS>
+		<TIMEOUT>3</TIMEOUT>
+		<TRIG_LOG>act=android.intent.action.MAIN flg=0x10000000 cmp=com.android.camera/.Camera</TRIG_LOG>
+	</ACTION>
+    <ACTION>
+        <CMD>keypress</CMD>
+        <PARAMETERS>KEYCODE_BACK</PARAMETERS>
+    </ACTION>
+</UI_SEQ>

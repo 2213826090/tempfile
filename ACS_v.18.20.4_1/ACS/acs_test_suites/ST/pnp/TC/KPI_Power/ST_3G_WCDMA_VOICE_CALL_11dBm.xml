@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase>
+    <UseCase>TEST_STEP_ENGINE</UseCase>
+    <Description>Power consumption measurement (in mA) during a VC (WCDMA)</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <TcMaxAttempt>1</TcMaxAttempt>
+    <SavePatRawData>True</SavePatRawData>
+    <PowerCalculation>False</PowerCalculation>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters>
+        <Parameter>
+            <Name>SAVE_POWER_DATA</Name>
+            <Value>True</Value>
+        </Parameter>
+        <Parameter>
+            <Name>CELL_BAND</Name>
+            <Value>PWR_3G_COMMON;PWR_AMP11</Value>
+        </Parameter>
+        <Parameter>
+            <Name>RAT</Name>
+            <Value>3G</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Sleep duration before making the measure in seconds -->
+            <Name>SLEEP_DURATION</Name>
+            <Value>60</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Sleep duration before making the measure in seconds -->
+            <Name>TEST_DURATION</Name>
+            <Value>300</Value>
+        </Parameter>
+        <Parameter>
+            <!--
+                 Configuration for Sysdebug modules.
+                 Syntax is :
+                 module_name[: [param1[=value1]][, param2[=value2]]*];
+              -->
+             <Name>SYSDEBUG_MODULES</Name>
+            <Value>
+               Residency: s3,s0i3,s0i1,lpmp3;
+               S3Failure;
+               ActiveWakeupSource;
+               WakeLocks;
+               Alarms;
+               ModemPanic;
+               CrashInfo;
+               Thermals;
+               Dstates;
+            </Value>
+         </Parameter>
+        <Parameter>
+             <!-- Dialled Phone number (MSISDN). If value is [PHONE_NUMBER] the value used will be the phoneNumber defined in the Phone_Catalog.xml -->
+             <Name>PHONE_NUMBER</Name>
+             <Value>123</Value>
+       </Parameter>
+        <Parameter>
+            <!-- config type for agilent -->
+            <Name>CONFIG_TYPE</Name>
+            <Value>VOICE_CALL</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TX_POWER</Name>
+            <Value>11</Value>
+         </Parameter>
+        <Parameter>
+            <Name>TEST_STEP_ENGINE_ENTRY</Name>
+            <Value>ST/pnp/UC/VoiceCallWcdma.xml</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

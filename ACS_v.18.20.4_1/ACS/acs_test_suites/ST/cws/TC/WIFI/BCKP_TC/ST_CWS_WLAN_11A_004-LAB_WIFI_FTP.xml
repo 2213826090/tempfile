@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase>
+  <UseCase>LAB_WIFI_FTP</UseCase>
+  <Description>FTP Upload / Download over WLAN</Description>
+  <b2bIteration>1</b2bIteration>
+  <b2bContinuousMode>True</b2bContinuousMode> 
+  <TcMaxAttempt>2</TcMaxAttempt>
+  <TcAcceptanceCriteria>1</TcAcceptanceCriteria>
+  <Parameters>
+    <Parameter>
+      <!-- Wifi standard of wifi env to be used. Can be "a", "b", "g", "an", "bg", "gn", "bgn", "n2.4G", "n5G", "off" -->
+      <!-- Depending on AP capabilities -->
+      <Name>WIFI_STANDARD</Name>
+      <Value>a</Value>
+    </Parameter>
+    <Parameter>
+      <!-- Wifi Security of wifi env to be used. Can be "OPEN", "WEP64","WEP128","WPA-PSK-TKIP", "WPA2-PSK-AES", "EAP-WPA" or "EAP-WPA2" -->
+      <Name>WIFI_SECURITY</Name>
+      <Value>OPEN</Value>
+    </Parameter>
+    <Parameter>
+      <!-- EAP method used when WIFI_SECURTY is "EAP-WAP" or "EAP-WPA2", can be "PEAP", "TLS", "TTLS", "SIM" or "AKA" -->
+      <Name>EAP_METHOD</Name>
+      <Value>PEAP</Value>
+    </Parameter>
+    <Parameter>
+      <!-- Phase2 authentication used when WIFI_SECURTY is "EAP-WAP" or "EAP-WPA2", can be "None", "PAP", "MSCHAP", "MSCHAPV2", "GTC" -->
+      <Name>PHASE2_AUTH</Name>
+      <Value>None</Value>
+    </Parameter>
+    <Parameter>
+      <!-- Wifi passphrase when WIFI_SECURITY is not "OPEN". If it is "NONE", use the default password. This parameter can be used to test connection failure -->
+      <Name>WIFI_PASSPHRASE</Name>
+      <Value>NONE</Value>
+    </Parameter>
+    <Parameter>
+      <!-- DUT static ip setting enable:True; disable: False. only when it is enabled, below paramters setting is available-->
+      <Name>IP_SETTING_ENABLE</Name>
+      <Value>False</Value>
+    </Parameter>
+    <Parameter>
+      <!-- DUT static ip setting for ip address-->
+      <Name>IP_ADDRESS</Name>
+      <Value>192.168.0.149</Value>
+    </Parameter>
+    <Parameter>
+      <!-- DUT static ip setting for netmask-->
+      <Name>NETMASK</Name>
+      <Value>255.255.255.0</Value>
+    </Parameter>
+    <Parameter>
+      <!-- DUT static ip setting for gateway-->
+      <Name>GATEWAY</Name>
+      <Value>192.168.0.1</Value>
+    </Parameter>
+    <Parameter>
+      <!-- DUT static ip setting for dns1-->
+      <Name>DNS1</Name>
+      <Value>192.168.0.5</Value>
+    </Parameter>
+    <Parameter>
+      <!-- DUT static ip setting for dns2-->
+      <Name>DNS2</Name>
+      <Value>0.0.0.0</Value>
+    </Parameter>
+    <Parameter>
+      <!-- [Optional] Wifi channel: 1-14 for 2.4GHz, 36-165 for 5GHz, 0:auto (default is AP current setup if not specified) -->
+      <!-- 2.4GHz real channel values (MHz): 2412,2417,2422,2427,2432,2437,2442,2447,2452,2457,2462,2467,2472,2484 -->
+      <!--   5GHz real channel values (MHz): 5180,5200,5220,5240,5260,5280,5300,5320,5745,5765,5785,5805,5825 -->
+      <Name>WIFI_CHANNEL</Name>
+      <Value></Value>
+    </Parameter>
+    <Parameter>
+      <!-- [Optional] Wifi DTIM: 1,3,5 (default is AP current setup if not specified) -->
+      <Name>WIFI_DTIM</Name>
+      <Value></Value>
+    </Parameter>
+    <Parameter>
+      <!-- [Optional] Wifi WMM: 0 or 1 (default is AP current setup if not specified) -->
+      <Name>WIFI_WMM</Name>
+      <Value></Value>
+    </Parameter>
+    <Parameter>
+      <!-- [Optional] Wifi Band: 20 or 40 (MHz) (default is AP current setup if not specified) -->
+      <Name>WIFI_BAND</Name>
+      <Value></Value>
+    </Parameter>
+    <Parameter>
+      <!-- Direction of FTP transfer -->
+      <Name>DIRECTION</Name>
+      <Value>DL</Value>
+    </Parameter>
+    <Parameter>
+      <!-- File to download from the server. This file shall be available on the server. If the file to transfer is located in a specific directory, you can specify its path. i.e. : acs/download_file/get5M -->
+      <Name>DL_FILE</Name>
+      <Value>pub/get10M</Value>
+    </Parameter>
+    <Parameter>
+      <!-- File to upload on the server. This file shall be available on the device. If the file to transfer is located in a specific directory, you can specify its path. i.e. : acs/upload_file/put5M -->
+      <Name>UL_FILE</Name>
+      <Value>50MB.txt</Value>
+    </Parameter>
+    <Parameter>
+      <!-- Transfer timeout in s -->
+      <Name>XFER_TIMEOUT</Name>
+      <Value>120</Value>
+    </Parameter>
+  </Parameters>
+</TestCase>
+

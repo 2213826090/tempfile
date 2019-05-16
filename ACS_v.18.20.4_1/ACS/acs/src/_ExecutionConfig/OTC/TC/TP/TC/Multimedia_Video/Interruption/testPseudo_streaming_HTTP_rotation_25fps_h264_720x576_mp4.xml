@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<TestCase>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Discription>
+Verify Pseudo streaming over WLAN, HTTP and rotation operation with this file: 25fps_h264_720x576_Variable_High@L3.2_1199Kbps_aac-lc_48.0KHz_Constant_stereo_160Kbps.mp4
+</Discription>
+    <Domain>Multimedia_Video</Domain>
+    <Phase>CORE</Phase>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <Type>FUNCTIONAL</Type>
+    <UseCase>PY_UNIT</UseCase>
+    <b2bIteration>1</b2bIteration>
+    <Parameters>
+        <Parameter>
+            <Name>HpalmName</Name>
+            <Value>video_playback.VideoPlayBack.testPseudo_streaming_HTTP_rotation_25fps_h264_720x576_mp4</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TEST_DATA_ROOT</Name>
+            <Value>testplan/Multimedia_Video</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TEST_CASE</Name>
+            <Value>tests.Multimedia_Video.Interruption.video_playback.VideoPlayBack.testPseudo_streaming_HTTP_rotation_25fps_h264_720x576_mp4</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Campaign>
+    <Parameters>
+        <Parameter isControlledPSUsed="False"/>
+        <Parameter isIoCardUsed="True"/>
+        <!-- Set skipBootOnPowerCycle to True to disable the acs boot procedure -->
+        <!-- Important, it means that boot will be handle inside the campaign/tc -->
+        <Parameter skipBootOnPowerCycle="False"/>
+        <Parameter runHookScripts="False"/>
+        <Parameter powerCycleBetweenTC="False"/>
+        <Parameter powerCycleOnFailure="True"/>
+        <Parameter finalDutState="NoChange"/>
+        <Parameter stopCampaignOnCriticalFailure="False"/>
+        <Parameter stopCampaignOnFirstFailure="False"/>
+        <!-- LoggingLevel possible values: info | warning | debug | error -->
+        <Parameter loggingLevel="info"/>
+        <!-- CampaignType format -> <TEAM>_<CAMPAIGNTYPE>
+            Possible values:
+            FT(Feature Team)-> SANITY | REGRESSION | STRESS, RELIABILTY | MTBF
+            ST(System Test)-> SANITY | REGRESSION | STRESS, RELIABILTY | MTBF
+            SI(System Integration)-> EAT | STAB | PACT | CAT0 | RELIABILITY | MTBF
+            Otherwise "Others" should be used -->
+        <Parameter CampaignType="ST_SANITY"/>
+        <Parameter TCRReportViaRESTAPI="true"/>
+    </Parameters>
+    <Targets>
+        <!-- Target Values -->
+        <Target targetB2bPassRate="100"/>
+    </Targets>
+    <TestCases>
+
+        <!-- Live cellular tests -->
+        <TestCase Id="../TC/WIFI/ST_CWS_WLAN_TETHERING_001"/>
+        <TestCase Id="../TC/WIFI/ST_CWS_WLAN_TETHERING_002"/>
+        <TestCase Id="../TC/WIFI/ST_CWS_WLAN_TETHERING_005"/>
+        <TestCase Id="../TC/WIFI/ST_CWS_WLAN_TETHERING_006"/>
+        <TestCase Id="../TC/WIFI/ST_CWS_WLAN_TETHERING_007"/>
+        <TestCase Id="../TC/WIFI/ST_CWS_WLAN_TETHERING_008"/>
+        <TestCase Id="../TC/WIFI/ST_CWS_WLAN_TETHERING_010"/>
+        <TestCase Id="../TC/WIFI/ST_CWS_WLAN_TETHERING_012"/>
+        <TestCase Id="../TC/WIFI/ST_CWS_WLAN_TETHERING_013"/>
+        <TestCase Id="../TC/WIFI/ST_CWS_WLAN_TETHERING_014"/>
+        <TestCase Id="../TC/WIFI/ST_CWS_WLAN_TETHERING_015"/>
+        <TestCase Id="../TC/WIFI/ST_CWS_WLAN_LTE_TETHERING_001"/>
+        <TestCase Id="../TC/WIFI/ST_CWS_WLAN_LTE_TETHERING_004"/>
+        <TestCase Id="../TC/WIFI/ST_CWS_WLAN_LTE_TETHERING_5G_001"/>
+        <TestCase Id="../TC/WIFI/ST_CWS_WLAN_ROAMING_010-LAB_WIFI_LIVE_CELLULAR_SWAP"/>
+
+        <!-- Live cellular iterative tests -->
+        <TestCase Id="../TC/WIFI/STRESS-20/ST_CWS_WLAN_BROWSE_006-LIVE_WIFI_WEB_BROWSING-20"/>
+        <TestCase Id="../TC/WIFI/STRESS-20/ST_CWS_WLAN_BROWSE_013-LAB_WIFI_LIVE_CELLULAR_SWAP-20"/>
+
+        <!-- Require multiple reference devices -->
+        <!--TestCase Id="../TC/WIFI/ST_CWS_WLAN_TETHERING_004"/>
+        <TestCase Id="../TC/WIFI/ST_CWS_WLAN_TETHERING_009"/-->
+
+    </TestCases>
+</Campaign>

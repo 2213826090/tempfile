@@ -1,0 +1,46 @@
+<?xml version='1.0'?>
+
+<ogl_es_3.0_conf_auto>
+     <test_case id="1" name="ogles.0_conf_GL3Tests_etc2_compression_rgb8_pt_alpha1">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">GL3Tests/etc2_compression_rgb8_pt_alpha1/input.run</parameter>
+				<parameter name="test_bin_name">GTF;/data/app/OGLES_3.0/GTF</parameter>
+				<parameter name="log_param">/data/app/etc2_compression_rgb8_pt_alpha1</parameter>
+			</test_step>
+			<test_step fun_name="check_result" type="fun">
+				<parameter name="result_file">/data/app/etc2_compression_rgb8_pt_alpha1.txt</parameter>
+				<parameter name="pass_string">PASSED all</parameter>
+				<parameter name="fail_string">PASSED all 0</parameter>
+			</test_step>
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="adb_cmd">adb shell rm -rf /data/app/*.txt</parameter>
+				<parameter name="adb_cmd">adb shell rm -rf /data/app/*.xml</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+    <test_case id="2" name="ogles2.0_conf_GL3Tests_etc2_compression_rgba8">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">GL3Tests/etc2_compression_rgba8/input.run</parameter>
+				<parameter name="test_bin_name">GTF;/data/app/OGLES_3.0/GTF</parameter>
+				<parameter name="log_param">/data/app/etc2_compression_rgba8</parameter>
+			</test_step>
+			<test_step fun_name="check_result" type="fun">
+				<parameter name="result_file">/data/app/etc2_compression_rgba8.txt</parameter>
+				<parameter name="pass_string">PASSED all</parameter>
+				<parameter name="fail_string">PASSED all 0</parameter>
+			</test_step>
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="adb_cmd">adb shell rm -rf /data/app/*.txt</parameter>
+				<parameter name="adb_cmd">adb shell rm -rf /data/app/*.xml</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+</ogl_es_3.0_conf_auto>

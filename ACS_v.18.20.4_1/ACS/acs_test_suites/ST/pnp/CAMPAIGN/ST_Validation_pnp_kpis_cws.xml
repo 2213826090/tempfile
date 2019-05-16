@@ -1,0 +1,63 @@
+
+<Campaign>
+    <Parameters>
+        <Parameter isControlledPSUsed="False"/>
+        <Parameter isIoCardUsed="True"/>
+        <!-- Set skipBootOnPowerCycle to True to disable the accs boot procedure-->
+        <!-- Important, it means that boot will be handle inside the campaign/tc -->
+        <Parameter skipBootOnPowerCycle="False"/>
+        <Parameter runHookScripts="False"/>
+        <Parameter powerCycleBetweenTC="False"/>
+        <Parameter powerCycleOnFailure="False"/>
+        <Parameter finalDutState="NoChange" />
+        <Parameter stopCampaignOnCriticalFailure="True"/>
+        <Parameter stopCampaignOnFirstFailure="False"/>
+        <!-- LoggingLevel possible values: info | warning | debug | error -->
+        <Parameter loggingLevel="debug"/>
+        <!-- CampaignType format -> <TEAM>_<CAMPAIGNTYPE>
+        Possible values:
+        FT(Feature Team)-> SANITY | REGRESSION | STRESS, RELIABILTY | MTBF
+    ST(System Test)-> SANITY | REGRESSION | STRESS, RELIABILTY | MTBF | EM
+        SI(System Integration)-> EAT | STAB | PACT | CAT0 | RELIABILITY | MTBF | CTS
+        Otherwise "Others" should be used -->
+        <Parameter CampaignType="FT_REGRESSION"/>
+        <Parameter TCRReportViaRESTAPI="True"/>
+    </Parameters>
+    <Targets>
+        <!-- Target Values -->
+    <Target targetB2bPassRate ="80"/>
+    </Targets>
+    <TestCases>
+        <TestCase Id="SI\BBot_EAT_PACT\TC\COMMON\SYSTEM\SI_SYSTEM_SETUP_EMBEDDED" />
+        <TestCase Id="ST\telephony\TC\SETUP\ST_TELEPHONY_INSTALL" />
+        <TestCase Id="ST\pnp\TC\Setup\ST_PNP_SYSTEM_CONFIGURATION" />
+
+        <!-- CampAIGN reF-->
+        <TestCase Id="FT/pnp/TC/SETUP/SETUP_CALIBRATE_BOOT_NO_SETTLE_TIME" />
+        <TestCase Id="ST/pnp/TC/Ref_Power/ST_Ref_FLIGHT_MODE_S3_ALL_RADIO_DISABLED" />  <!--Reference TC - 360s-->
+
+        <!-- Test Cases with 3G wcdma base-->
+        <TestCase Id="ST/pnp/TC/Ref_Power/ST_Ref_3G_WCDMA_STANDBY" />               <!--Reference TC - 360s-->
+        <TestCase Id="ST/pnp/TC/KPI_Power/ST_3G_WCDMA_STANDBY_BT_IDLE" />           <!-- KPI - 60min-->
+        <TestCase Id="FT/pnp/TC/SETUP/SETUP_CALIBRATE_BOOT_NO_SETTLE_TIME" />
+        <TestCase Id="ST/pnp/TC/KPI_Power/ST_3G_WCDMA_STANDBY_WLAN_ASSOCIATED" />   <!-- KPI - 60min-->
+
+        <!-- Test Cases with Wlan Base-->
+        <TestCase Id="FT/pnp/TC/SETUP/SETUP_CALIBRATE_BOOT_NO_SETTLE_TIME" />
+        <TestCase Id="ST/pnp/TC/Ref_Power/ST_Ref_WLAN_ASSOCIATED" />                <!--Reference TC - 360s-->
+        <TestCase Id="FT/pnp/TC/SETUP/SETUP_CALIBRATE_BOOT_NO_SETTLE_TIME" />
+        <TestCase Id="ST/pnp/TC/KPI_Power/ST_WLAN_BT_IDLE" />                       <!-- KPI - 60min-->
+        <TestCase Id="FT/pnp/TC/SETUP/SETUP_CALIBRATE_BOOT_NO_SETTLE_TIME" />
+        <TestCase Id="ST/pnp/TC/KPI_Power/ST_WLAN_ACTIVE_IDLE" />                   <!-- KPI - 60min-->
+
+        <!-- Test Cases with Screen On-->
+        <TestCase Id="FT/pnp/TC/SETUP/SETUP_CALIBRATE_BOOT_NO_SETTLE_TIME" />
+        <TestCase Id="ST/pnp/TC/Ref_Power/ST_Ref_STATIC_CONTENT_ON_DISPLAY_aka_IDLE_DISPLAY_ON" />	<!--Reference TC - 360s-->
+        <TestCase Id="ST/pnp/TC/KPI_Power/ST_VIDEO_STREAMING_HTML5_WLAN_DEVICE_DISPLAY_H264_720p" />  <!-- KPI - 20min-->
+
+        <!-- Unused
+        <TestCase Id="ST/pnp/TC/KPI_Power/ST_BROWSING_I_CHROME_WLAN_HTML5" />
+        <TestCase Id="ST/pnp/TC/PI_Power/ST_PI_3G_WCDMA_STANDBY_NFC_IDLE" />
+        -->
+    </TestCases>
+</Campaign>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!-- Boot Flash Setup parameters Catalog Template : new template to automatically populate i-TAP database with exhaustive BFS TC params -->
+<Parameters xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../acs/src/_Catalogs/Parameter/parameter.xsd">
+    <Parameter name="FLASH_TIMEOUT_IN_SEC">
+        <Description>The timeout in seconds of the flash sequence. If the parameter value is emty, ACS gets its value from DeviceCatalog, BenchConfig or CLI</Description>
+        <Domain>BOOT_FLASH_SETUP</Domain>
+        <Type>int</Type>
+        <PossibleValues override="true">[0:1800]</PossibleValues>
+        <DefaultValue override="true">200</DefaultValue>
+        <Blank override="false">true</Blank>
+    </Parameter>
+    <Parameter name="SETUP_PATH">
+        <Description>Path which contains applications, binaries, FTP files. If the parameter value is emty, ACS points to _Embedded folder content</Description>
+        <Domain>BOOT_FLASH_SETUP</Domain>
+        <Type>str</Type>
+        <PossibleValues override="false"></PossibleValues>
+        <DefaultValue override="false"></DefaultValue>
+        <Blank override="false">true</Blank>
+    </Parameter>
+    <Parameter name="BOOT_TIMEOUT_IN_SEC">
+        <Description>Time left for Boot (switch on) to complete in seconds - If the parameter value is empty, ACS will read the device default value</Description>
+        <Domain>BOOT_FLASH_SETUP</Domain>
+        <Type>int</Type>
+        <PossibleValues override="true">[0:600]</PossibleValues>
+        <DefaultValue override="true">60</DefaultValue>
+        <Blank override="false">true</Blank>
+    </Parameter>
+    <Parameter name="FLASH_FILE_PATH">
+        <Description>The full path where the flash files are located. If the parameter value is emty, ACS gets its value from CLI</Description>
+        <Domain>BOOT_FLASH_SETUP</Domain>
+        <Type>str</Type>
+        <PossibleValues override="false"></PossibleValues>
+        <DefaultValue override="false"></DefaultValue>
+        <Blank override="false">true</Blank>
+    </Parameter>
+    <Parameter name="SETTLEDOWN_DURATION_IN_SEC">
+        <Description>Settle down duration after boot detection in seconds - ACS gets its value from DeviceCatalog, BenchConfig or CLI</Description>
+        <Domain>BOOT_FLASH_SETUP</Domain>
+        <Type>int</Type>
+        <PossibleValues override="true">[0:500]</PossibleValues>
+        <DefaultValue override="true">40</DefaultValue>
+        <Blank override="false">true</Blank>
+    </Parameter>
+    <Parameter name="TIMEZONE">
+        <Description>The parameter can be set with olson timezone name or with standard time name :
+                     ex:
+                        - Europe/Paris, America/Santa_Isabel, America/Tijuana, Asia/Kolkata
+                        - CET, EET, GMT, AST, DST, IST
+
+                     WARNING: some standard time name will fail for unknown reason (ex: PST).
+
+                     Output should be OK (CET or CEST in our case)
+                     If output is not ok, use Olson timezone name instead (America/Los_Angeles)</Description>
+        <Domain>BOOT_FLASH_SETUP</Domain>
+        <Type>str</Type>
+        <PossibleValues override="false">CET;EET;GMT;AST;DST;IST;PST</PossibleValues>
+        <DefaultValue override="false">GMT</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+</Parameters>

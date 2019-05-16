@@ -1,0 +1,86 @@
+<?xml version="1.0"?>
+<DeviceModel xsi:noNamespaceSchemaLocation="../../../../../acs/src/_Catalogs/Device/Models/WindowsDeviceModel.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <DeviceModule>
+    </DeviceModule>
+    <BootShutdown>
+        <Parameter pressPowerBtnTimeSwitchOff="6"/>
+        <Parameter pressPowerBtnTimeSwitchOn="3"/>
+        <Parameter bootTimeout="100"/>
+        <Parameter softShutdownSettleDownDuration="30"/>
+    </BootShutdown>
+    <Connection>
+        <Parameter ipAddress="localhost"/>
+        <Parameter servicePort="8080"/>
+        <Parameter loggerPort="8082"/>
+        <Parameter httpProxy=""/>
+        <Parameter usbSleep="10"/>
+    </Connection>
+    <Debug>
+        <Parameter logPort="8003"/>
+        <!--
+                 Define the type(s) of kernel logs to retrieve.
+                 You can define a set of filters by separating them with a comma ","
+                 (e.g : kernelLogFilter="OS,Process,Thread")
+                 Main filters are (from lowest to highest quantity of information retrieved):
+                 None, Verbose, Default, All
+                 Other specifics filters available are:
+                 AdvancedLocalProcedureCalls, ContextSwitch, DeferedProcedureCalls, DiskFileIO,
+                 DiskIO, DiskIOInit, Dispatcher, Driver, FileIO, FileIOInit, ImageLoad,
+                 Interrupt, MemoryHardFaults, MemoryPageFaults, NetworkTCPIP,
+                 OS, Process, ProcessCounters, Profile, Registry, SplitIO, SystemCall, Thread,
+                 VirtualAlloc
+                -->
+        <Parameter kernelLogFilter="None"/>
+    </Debug>
+    <Telephony>
+        <Parameter callSetupTimeout="15"/>
+        <Parameter defaultTimeout="50"/>
+        <Parameter maxDlMultislotConfig="D4U1"/>
+        <Parameter maxUlMultislotConfig="D1U4"/>
+        <Parameter maxDlWcdmaRab="384k"/>
+        <Parameter maxUlWcdmaRab="384k"/>
+        <Parameter maxDlHspaRab="HSDPA_CAT14"/>
+        <Parameter maxUlHspaRab="HSUPA_CAT6"/>
+        <Parameter maxSupportedLteCategory="3"/>
+        <!-- defaultPINCode parameter should be overwritten in bench config instead of here for security purpose (avoid to SIM lock the device). -->
+        <Parameter defaultPINCode=""/>
+        <!-- simPUKCode parameter should be overwritten in bench config instead of here in order to prevent using a bad value -->
+        <Parameter simPUKCode=""/>
+        <!-- defaultPreferredNetwork
+                "3G_PREF",
+                "2G_ONLY",
+                "3G_ONLY",
+                "2G_3G",
+                "CDMA_PREF",
+                "CDMA_ONLY",
+                "EVDO_ONLY",
+                "GLOBAL",
+                "4G_PREF_US",
+                "4G_PREF",
+                "WORLD_MODE",
+                "4G_ONLY""-->
+        <Parameter defaultPreferredNetwork="4G_PREF"/>
+        <Parameter isSpeechCallSupported="false"/>
+        <Parameter isSmsSupported="true"/>
+    </Telephony>
+    <Implementation>
+        <Parameter deviceCapabilities="Capabilities/tablet.xml"
+                   ClassName="Device.Model.WindowsDevice.WindowsDeviceBase.WindowsDeviceBase"
+                   UECmd="acs_test_scripts.Device.UECmd.Imp.Windows.Common"
+                   OS="WINDOWS" OSVersion="Win8"
+                   waitBetweenCmd="1"/>
+    </Implementation>
+    <Devices>
+        <Parameter binPath="C:\\Users\\Public\\Documents"/>
+        <Parameter cellularNetworkInterface="Mobile broadband"/>
+        <!-- Throughput Targets-->
+        <Parameter nftThroughputRatio="92" />
+        <Parameter futeThroughputRatio="70" />
+        <Parameter kpiThroughputTargetsFile="BayTrail.xml"/>
+        <Parameter milestone="PV"/>
+    </Devices>
+    <Networking>
+        <Parameter WiFiAdapterName="Wi-Fi"/>
+    </Networking>
+
+</DeviceModel>

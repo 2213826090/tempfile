@@ -1,0 +1,35 @@
+<?xml version="1.0" ?><TestCase>
+  <ClassName>UseCase.OTC.CTS.CTS_NOTELEPHONY_TCR_FORMAT.CTS</ClassName>
+  <Description>Exec CTS package android.security</Description>
+  <b2bContinuousMode>False</b2bContinuousMode>
+  <b2bIteration>1</b2bIteration>
+  <TcMaxAttempt>1</TcMaxAttempt>
+  <TcAcceptanceCriteria>1</TcAcceptanceCriteria>
+  <Parameters>
+    <Parameter>
+        <Name>CTS_LOCAL_PATH</Name>
+        <Description>Specify path/url to android CTS framework</Description>
+        <Value>OTC_CTS_FOR_CACTUS/android-cts/android-cts</Value>
+    </Parameter>
+    <Parameter>
+        <Name>TEST_CMD_LINES</Name>
+        <Description>Test cmd lines to execute. Separate with ';' if more than one.</Description>
+        <Value>run cts --package android.security -l debug --disable-reboot</Value>
+    </Parameter>
+    <Parameter>
+        <Name>TEST_FAILED_RETRY_NO</Name>
+        <Description>Number of times to rerun the failed cts test.</Description>
+        <Value>0</Value>
+    </Parameter>
+    <Parameter>
+        <Name>TEST_TIMEOUT</Name>
+        <Value>1800</Value>
+    </Parameter>
+    <Parameter>
+        <!-- Optional -->
+        <Name>CTS_REPORT_COMPARISON_PATH</Name>
+        <Description>Specify path/url to a previous CTS result. Verdict will be built according to this one</Description>
+        <Value></Value>
+    </Parameter>
+  </Parameters>
+</TestCase>

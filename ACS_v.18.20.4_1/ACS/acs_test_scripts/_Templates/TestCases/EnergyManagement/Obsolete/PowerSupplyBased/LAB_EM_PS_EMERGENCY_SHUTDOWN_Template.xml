@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="13.37">
+    <UseCase>LAB_EM_PS_EMERGENCY_SHUTDOWN</UseCase>
+    <Description>Energy Management Emergency shutdown test.
+          The test boot the board at a normal battery voltage.
+          Then it change the battery voltage to a voltage below the Emergency voltage threshold.
+          After this, we reboot the board at a normal voltage in order to control the result.</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>False</b2bContinuousMode>
+    <TcMaxAttempt>2</TcMaxAttempt>
+    <TcAcceptanceCriteria>1</TcAcceptanceCriteria>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters>
+        <Parameter>
+            <!-- The emergency battery voltage for the shutdown in Volt (float) -->
+            <Name>EMERGENCY_BATTERY_VOLTAGE</Name>
+            <Value>2.7</Value>
+        </Parameter>
+        <Parameter>
+            <!-- The normal battery voltage  in Volt (float) -->
+            <Name>NORMAL_BATTERY_VOLTAGE</Name>
+            <Value>3.8</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

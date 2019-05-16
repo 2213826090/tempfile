@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="13.41">
+    <UseCase>TEST_STEP_ENGINE</UseCase>
+    <Description>WebXPRT</Description>
+    <b2bIteration>3</b2bIteration>
+    <b2bContinuousMode>False</b2bContinuousMode>
+    <TcMaxAttempt>3</TcMaxAttempt>
+    <TcAcceptanceCriteria>1</TcAcceptanceCriteria>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters>
+        <Parameter>
+            <Name>APP</Name>
+            <Value>chrome_app</Value>
+        </Parameter>
+        <Parameter>
+            <Name>APP_PACKAGE_NAME</Name>
+            <Value>com.android.chrome</Value>
+        </Parameter>
+        <Parameter>
+            <Name>KPI_WIFI_REGULATORY_DOMAIN_DUT</Name>
+            <Value>XV</Value>
+        </Parameter>
+    </Parameters>
+    <TestSteps>
+        <Include Src="ST/cws/TSS/Wifi/ST_CWS_WIFI_KPI.xml"/>
+        <Include Src="ST/cws/TSS/WiFi/ST_CWS_WIFI_AP.xml"/>
+        <Include Src="ST/cws/TSS/WiFi/ST_CWS_WIFI_COMMON.xml"/>
+        <Include Src="SI/pnp/perf/TC/DroidbotTestStepSet.xml"/>
+        <Initialize>
+            <TestStep Id="REBOOT_DEVICE" DEVICE="PHONE1" WAY="soft" MODE="MOS"/><!-- Warning this step reset the browser version -->
+            <TestStep SetId="WiFiAPConfigStandardAP1" STANDARD="n2.4G" AUTHENTICATION_TYPE="WPA2-PSK-AES" PASSPHRASE="FROM_BENCH:CONFIGURABLE_AP1:passphrase_WPA2" CHANNEL="1" BANDWIDTH="20"/>
+            <TestStep SetId="DroibotJarInstall"/>
+            <TestStep Id="WIFI_REMOVE_NETWORK" DEVICE="PHONE1" SSID="all"/>
+        </Initialize>
+        <Setup>
+            <TestStep SetId="KPIWiFiInitAndConfigure" DEVICE="PHONE1" REGULATORY_DOMAIN="FROM_TC:KPI_WIFI_REGULATORY_DOMAIN_DUT"/>
+            <TestStep SetId="CONNECT_DUT_TO_TEST_AP"/>
+            <TestStep Id="SET_SCREEN_PROPERTY" DEVICE="PHONE1" PROPERTY="timeout" VALUE="1800"/>
+            <TestStep Id="SET_SCREEN_PROPERTY" DEVICE="PHONE1" PROPERTY="state" VALUE="on"/>
+            <TestStep Id="SET_ORIENTATION" DEVICE="PHONE1" ORIENTATION="portrait"/>
+            <TestStep Id="SET_PHONE_LOCK" DEVICE="PHONE1" VALUE="unlock" />
+        </Setup>
+        <RunTest>
+            <TestStep Id="EXEC_PNP_DROIDBOT" DEVICE="PHONE1" TIMEOUT="FROM_CTX:TimeoutLong"
+                      TEST_NAME="com.intel.droidbot.perf.WebXPRT"
+                      JAR_PATHS="FROM_CTX:JAR_FILE_PATH_DROIDBOT[+];[+]FROM_CTX:JAR_FILE_PATH_PNP_TESTS"
+                      JSON_SCORE_FILE="SCORES_BENCHMARK_WEBXPRT"
+                      EXTRA_OPTS="-e waitForCooldown [+]FROM_CTX:WaitForCooldown"/>
+            <TestStep Id="COMPUTE_PERF_RESULT_DROIDBOT"
+                      SCORE_NAME="Overall"
+                      RESULT_NAME="WebXPRT-Overall"
+                      JSON_DROIDBOT_RESULT="FROM_CTX:SCORES_BENCHMARK_WEBXPRT"
+                      OPERATION="MEDIAN"
+                      RESULT="MEDIAN_WEBXPRT_OVERALL"/>
+            <TestStep Id="COMPUTE_PERF_RESULT_DROIDBOT"
+                      SCORE_NAME="PhotoEffects"
+                      RESULT_NAME="WebXPRT-PhotoEffects"
+                      JSON_DROIDBOT_RESULT="FROM_CTX:SCORES_BENCHMARK_WEBXPRT"
+                      OPERATION="MEDIAN"
+                      RESULT="MEDIAN_WEBXPRT_PHOTO"/>
+            <TestStep Id="COMPUTE_PERF_RESULT_DROIDBOT"
+                      SCORE_NAME="FaceDetection"
+                      RESULT_NAME="WebXPRT-FaceDetection"
+                      JSON_DROIDBOT_RESULT="FROM_CTX:SCORES_BENCHMARK_WEBXPRT"
+                      OPERATION="MEDIAN"
+                      RESULT="MEDIAN_WEBXPRT_FACE"/>
+            <TestStep Id="COMPUTE_PERF_RESULT_DROIDBOT"
+                      SCORE_NAME="StocksDashboard"
+                      RESULT_NAME="WebXPRT-StocksDashboard"
+                      JSON_DROIDBOT_RESULT="FROM_CTX:SCORES_BENCHMARK_WEBXPRT"
+                      OPERATION="MEDIAN"
+                      RESULT="MEDIAN_WEBXPRT_STOCK"/>
+            <TestStep Id="COMPUTE_PERF_RESULT_DROIDBOT"
+                      SCORE_NAME="OfflineNotes"
+                      RESULT_NAME="WebXPRT-OfflineNotes"
+                      JSON_DROIDBOT_RESULT="FROM_CTX:SCORES_BENCHMARK_WEBXPRT"
+                      OPERATION="MEDIAN"
+                      RESULT="MEDIAN_WEBXPRT_OFFLINE"/>
+        </RunTest>
+        <TearDown>
+            <TestStep Id="WIFI_REMOVE_NETWORK" DEVICE="PHONE1" SSID="FROM_BENCH:WPA_WIFI_ROUTER:SSID"/>
+            <TestStep Id="WIFI_SET_POWER" DEVICE="PHONE1" POWER="off"/>
+            <TestStep Id="SET_SCREEN_PROPERTY" DEVICE="PHONE1" PROPERTY="timeout" VALUE="60"/>
+            <TestStep Id="SET_SCREEN_PROPERTY" DEVICE="PHONE1" PROPERTY="state" VALUE="off"/>
+        </TearDown>
+    </TestSteps>
+</TestCase>

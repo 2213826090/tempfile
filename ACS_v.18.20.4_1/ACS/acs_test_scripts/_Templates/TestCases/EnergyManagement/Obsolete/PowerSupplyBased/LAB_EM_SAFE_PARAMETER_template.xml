@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="13.37">
+    <UseCase>LAB_EM_SAFE_PARAMETER</UseCase>
+    <Description>Flash board with a fake IFWI and test that SAFE parameter are enable.</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>False</b2bContinuousMode>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters>
+        <Parameter>
+            <!-- Battery Voltage -->
+            <Name>VBATT</Name>
+            <Value>3.8</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Battery Full Voltage -->
+            <Name>VBATT_FULL</Name>
+            <Value>4.4</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Charge Voltage -->
+            <Name>VUSB</Name>
+            <Value>5.5</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Fake Build Path -->
+            <Name>FAKE_BUILD_PATH</Name>
+            <Value></Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<Include>
+    <TestStepSet Id="TearDown">
+        <TestStep Id="COMPUTE_POWER_RESULT" EQT="DEFAULT" STORED_PNP_RESULT="pnp_res" OPERATION="MEDIAN"/>
+        <TestStep Id="WRITE_PNP_REPORT" STORED_PNP_RESULT="pnp_res"/>
+        <TestStep Id="INSERT_USB" EQT="FROM_DEVICE:PHONE1:IoCard" />
+        <TestStep Id="CONNECT_DEVICE_TO_FWK" DEVICE="PHONE1" />
+    </TestStepSet>
+    <TestStepSet Id="StopPowerMeasurement">
+        <TestStep Id="PATLIB_ACQUISITION" EQT="DEFAULT" ACTION="stop"/>
+        <TestStep Id="SYSDEBUG_STOP_ACQUISITION" DEVICE="PHONE1" />
+
+        <TestStep Id="INSERT_USB" EQT="FROM_DEVICE:PHONE1:IoCard" />
+        <TestStep Id="WAIT_FOR_DEVICE" DEVICE="PHONE1" TIMEOUT_IN_SEC="60" />
+
+        <TestStep Id="SYSDEBUG_FETCH" DEVICE="PHONE1" />
+        <TestStep Id="CONNECT_DEVICE_TO_FWK" DEVICE="PHONE1" />
+
+        <TestStep Id="SYSDEBUG_REPORT_TO_CONTEXT" DEVICE="PHONE1" SYSDEBUG_REPORT_DEST="SYSDEBUG_REPORT" />
+        <TestStep Id="PATLIB_REPORT" EQT="DEFAULT" POWER_CALCULATION="False" SAVE_AS="POWER_REPORT"/>
+        <TestStep Id="ADD_RESULT_TO_PNP_REPORT" STORED_REPORT="POWER_REPORT" STORED_PNP_RESULT="pnp_res"/>
+        <TestStep Id="ADD_RESULT_TO_PNP_REPORT" STORED_REPORT="SYSDEBUG_REPORT" STORED_PNP_RESULT="pnp_res"/>
+        <TestStep Id="REPORT_POWER_RESULT" EQT="DEFAULT" STORE_RAW_DATA="SAVE_POWER_DATA" STORED_PNP_RESULT="pnp_res"/>
+        <TestStep Id="PATLIB_EXPORT" EQT="DEFAULT" SAVE_RAW_DATA="FROM_TC:SAVE_POWER_DATA" SAVE_AS="pat_raw_path"/>
+    </TestStepSet>
+</Include>

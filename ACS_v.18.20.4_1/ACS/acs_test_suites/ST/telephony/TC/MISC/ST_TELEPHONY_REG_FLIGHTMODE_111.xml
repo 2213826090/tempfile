@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase>
+    <UseCase>TEST_STEP_ENGINE</UseCase>
+    <Description>Perform a Flight Mode test</Description>
+    <!-- 10 iterations because test shall browse 10 pages -->
+    <b2bIteration>100</b2bIteration>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <TcMaxAttempt>1</TcMaxAttempt>
+    <SavePatRawData>False</SavePatRawData>
+    <PowerCalculation>False</PowerCalculation>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters>
+        <Parameter>
+            <Name>RAT</Name>
+            <Value>3G</Value>
+        </Parameter>
+        <Parameter>
+          <!-- Uplink Radio Access Bearer (384k | HSUPA_CAT6 | MAX [If MAX is selected, value will be taken from DeviceCatalog.xml]) -->
+          <Name>UL_RAB</Name>
+          <Value>CAT6</Value>
+        </Parameter>
+        <Parameter>
+          <!-- Downlink Radio Access Bearer (HSDPA_CAT10 | HSDPA_CAT14 | HSDPA_CAT24 | MAX [If MAX is selected, value will be taken from DeviceCatalog.xml]) -->
+          <Name>DL_RAB</Name>
+          <Value>CAT24</Value>
+        </Parameter>
+        <Parameter>
+            <Name>CELL_BAND</Name>
+            <Value>BAND1</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Web site works the following way, every 50sec a web page is loaded. So add 10 seconds to 50 in order to wait for page loaded -->
+            <Name>TEST_DURATION</Name>
+            <Value>60</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Reboot type (soft|hard) -->
+            <Name>REBOOT_MODE</Name>
+            <Value>soft</Value>
+        </Parameter>
+    </Parameters>
+    <TestSteps>
+        <Include Src="ST/telephony/TSS/Common.xml" />
+        <Include Src="ST/telephony/TSS/8960.xml" />
+        <Setup>
+            <TestStep SetId="AllCommsOff" DEVICE="PHONE1"/>
+            <TestStep SetId="Configure8960" />
+            <TestStep SetId="ConfigureHSPA" EQT="FROM_CTX:AGILENT8960_SIMULATOR_VISA"/>
+            <TestStep Id="NS_SET_PARAM" EQT="FROM_CTX:AGILENT8960_SIMULATOR_VISA" NAME="SetCellOnOff" OPTION="DEFAULT" VALUE="CALL"/>
+            <TestStep Id="SET_FLIGHT_MODE" FLIGHT_MODE="disable" DEVICE="PHONE1"/>
+            <TestStep SetId="SetDataConnection" DEVICE="PHONE1" />
+        </Setup>
+        <RunTest>
+            <TestStep Id="REBOOT_DEVICE" DEVICE="PHONE1" WAY="FROM_TC:REBOOT_MODE"/>
+            <TestStep SetId="CheckRegistration" EQT="FROM_CTX:AGILENT8960_SIMULATOR_VISA" DEVICE="PHONE1" TIMEOUT="FROM_DEVICE:PHONE1:registrationTimeout"/>
+            <TestStep Id="NS_WAIT_STATE" NAME="ConnectionStatus" EQT="FROM_CTX:AGILENT8960_SIMULATOR_VISA" STATE="PDP" OPTION="DEFAULT" TIMEOUT="FROM_DEVICE:PHONE1:registrationTimeout" />
+            <TestStep Id="SET_FLIGHT_MODE" DEVICE="PHONE1" FLIGHT_MODE="enable" />
+            <TestStep Id="REBOOT_DEVICE" DEVICE="PHONE1" WAY="FROM_TC:REBOOT_MODE"/>
+            <TestStep Id="SET_FLIGHT_MODE" DEVICE="PHONE1" FLIGHT_MODE="disable" />
+            <TestStep SetId="CheckRegistration" EQT="FROM_CTX:AGILENT8960_SIMULATOR_VISA" DEVICE="PHONE1" TIMEOUT="FROM_DEVICE:PHONE1:registrationTimeout"/>
+            <TestStep Id="NS_WAIT_STATE" NAME="ConnectionStatus" EQT="FROM_CTX:AGILENT8960_SIMULATOR_VISA" STATE="PDP" OPTION="DEFAULT" TIMEOUT="FROM_DEVICE:PHONE1:registrationTimeout" />
+        </RunTest>
+        <TearDown>
+            <TestStep Id="REBOOT_DEVICE" DEVICE="PHONE1" WAY="FROM_TC:REBOOT_MODE"/>
+            <TestStep SetId="CommonTearDown" EQT="FROM_CTX:AGILENT8960_SIMULATOR_VISA" DEVICE="PHONE1"/>
+        </TearDown>
+    </TestSteps>
+</TestCase>

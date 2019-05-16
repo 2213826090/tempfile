@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+<TestCase>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters/>
+    <Discription>
+Platform to support Battery Identification and Authentication.
+&lt;br /&gt;Usage: 
+&lt;br /&gt;--Platform to have a mechanism to identify the connected battery as valid by digital battery identification or analog method.
+&lt;br /&gt;--Platform to populate the charging profiles depending on the analog or digital battery identification.
+&lt;br /&gt;--Platform to support multiple identification methadology.
+&lt;br /&gt;--Platform to use standard protocols to interact with the digital battery. 
+&lt;br /&gt;--Platform to have a capability to read the charging profile from Digital battery.
+&lt;br /&gt;--Platform to ensure to prevent the battery hot-swap.
+</Discription>
+    <Parameters/>
+    <UseCase>PY_UNIT</UseCase>
+    <Parameters/>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <Parameters/>
+    <b2bIteration>1</b2bIteration>
+    <Parameters>
+        <Parameter>
+            <Name>TEST_DATA_ROOT</Name>
+            <Value>testplan/EnergyManagement</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TEST_CASE</Name>
+            <Value>tests.EnergyManagement.Manage_charger.battery_iden_auth_sdq_interface.BatteryIdenAuth.test_battery_iden_auth</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

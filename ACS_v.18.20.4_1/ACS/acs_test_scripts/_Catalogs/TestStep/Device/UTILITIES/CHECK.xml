@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestSteps xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../acs/src/_Catalogs/TestStep/teststep.xsd">
+    <TestStep Id="CHECK_DUT_ALIVE" Domain="UTILITIES" SubDomain="CHECKS" Feature="" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Utilities.CheckDutAlive.CheckDutAlive</ClassName>
+        <Description>Check if the DUT is alive.</Description>
+        <Environment name="ANY" />
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues/>
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="PASS_IF" type="STRING" isOptional="false">
+                <Description>
+                    Defines whether the test must pass when the test succeeds, or fails.
+                </Description>
+                <PossibleValues>alive;offline;unknown</PossibleValues>
+                <DefaultValue>alive</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="ADD_TRIGGER_MSG" Domain="UTILITIES" SubDomain="CHECKS" Feature="" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Utilities.AddTriggerMessage.AddTriggerMessage</ClassName>
+        <Description>Add a trigger message on DUT logs.</Description>
+        <Environment name="ANY" />
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues/>
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="TRIGGER_MESSAGE" type="STRING" isOptional="false">
+                <Description>The trigger message we are looking for.
+                Message can be a regex, in such a case add 'regex:' before the regex to compute
+                </Description>
+                <PossibleValues/>
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="REMOVE_TRIGGER_MSG" Domain="UTILITIES" SubDomain="CHECKS" Feature="" Status="DONE">
+            <ClassName>acs_test_scripts.TestStep.Device.Utilities.RemoveTriggerMessage.RemoveTriggerMessage</ClassName>
+            <Description>Remove a trigger message on DUT logs.</Description>
+            <Environment name="ANY" />
+            <Parameters>
+                <Parameter name="DEVICE" type="STRING" isOptional="false">
+                    <Description>Device name on which the action will be executed</Description>
+                    <PossibleValues/>
+                    <DefaultValue>PHONE1</DefaultValue>
+                </Parameter>
+                <Parameter name="TRIGGER_MESSAGE" type="STRING" isOptional="false">
+                    <Description>The trigger message to remove.</Description>
+                    <PossibleValues/>
+                    <DefaultValue/>
+                </Parameter>
+            </Parameters>
+    </TestStep>
+    <TestStep Id="CHECK_TRIGGER_MSG_STATUS" Domain="UTILITIES" SubDomain="CHECKS" Feature="" Status="DONE">
+            <ClassName>acs_test_scripts.TestStep.Device.Utilities.CheckTriggerMessageStatus.CheckTriggerMessageStatus</ClassName>
+            <Description>Check if trigger message can be found in DUT logs.</Description>
+            <Environment name="ANY" />
+            <Parameters>
+                <Parameter name="DEVICE" type="STRING" isOptional="false">
+                    <Description>Device name on which the action will be executed</Description>
+                    <PossibleValues/>
+                    <DefaultValue/>
+                </Parameter>
+                <Parameter name="TRIGGER_MESSAGE" type="STRING" isOptional="false">
+                    <Description>The trigger message to remove.</Description>
+                    <PossibleValues/>
+                    <DefaultValue>PHONE1</DefaultValue>
+                </Parameter>
+                <Parameter name="TIMEOUT" type="TIMEOUT_IN_SEC" isOptional="false">
+                    <Description>Timeout until trigger message must be found.</Description>
+                    <PossibleValues/>
+                    <DefaultValue>PHONE1</DefaultValue>
+                </Parameter>
+                <Parameter name="SUCCESS_OUTPUT" type="STRING" isOptional="true">
+                    <Description>Output to display in case of success.</Description>
+                    <PossibleValues/>
+                    <DefaultValue/>
+                </Parameter>
+            </Parameters>
+    </TestStep>
+    <TestStep Id="GET_TRIGGER_MSGS" Domain="UTILITIES" SubDomain="CHECKS" Feature="" Status="DONE">
+            <ClassName>acs_test_scripts.TestStep.Device.Utilities.GetTriggerMessages.GetTriggerMessages</ClassName>
+            <Description>get trigger messages found in DUT logs.</Description>
+            <Environment name="ANY" />
+            <Parameters>
+                <Parameter name="DEVICE" type="STRING" isOptional="false">
+                    <Description>Device name on which the action will be executed</Description>
+                    <PossibleValues/>
+                    <DefaultValue/>
+                </Parameter>
+                <Parameter name="TRIGGER_MESSAGE" type="STRING" isOptional="false">
+                    <Description>The trigger message to get.</Description>
+                    <PossibleValues/>
+                    <DefaultValue>PHONE1</DefaultValue>
+                </Parameter>
+                <Parameter name="RESULT" type="STRING" isOptional="true">
+                    <Description>List of Array with all messages or matching groups(for regex) found in DUT Logs</Description>
+                    <PossibleValues/>
+                    <DefaultValue/>
+                </Parameter>
+            </Parameters>
+    </TestStep>
+    <TestStep Id="WAIT_FOR_BATTERY" Domain="UTILITIES" SubDomain="CHECKS" Feature="" Status="DONE">
+            <ClassName>acs_test_scripts.TestStep.Device.Utilities.BatteryChecker.BatteryChecker</ClassName>
+            <Description>Check if battery level is correct and wait for charging either.</Description>
+            <Environment name="ANY" />
+            <Parameters>
+                <Parameter name="DEVICE" type="STRING" isOptional="false">
+                    <Description>Device name on which the action will be executed</Description>
+                    <PossibleValues/>
+                    <DefaultValue/>
+                </Parameter>
+                <Parameter name="LOW_THRESHOLD" type="STRING" isOptional="false">
+                    <Description>The threshold of low battery</Description>
+                    <PossibleValues/>
+                    <DefaultValue/>
+                </Parameter>
+                <Parameter name="REQUIRED_LEVEL" type="STRING" isOptional="false">
+                    <Description>Required battery level to continue.</Description>
+                    <PossibleValues/>
+                    <DefaultValue/>
+                </Parameter>
+            </Parameters>
+    </TestStep>
+</TestSteps>

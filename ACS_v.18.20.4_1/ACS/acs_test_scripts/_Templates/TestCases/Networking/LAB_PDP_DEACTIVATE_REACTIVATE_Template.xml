@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="13.45">
+    <UseCase>LAB_PDP_DEACTIVATE_REACTIVATE</UseCase>
+    <Description>Deactivate then reactivate PDP context on simulated network with ping check</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters>
+       <Parameter>
+            <!-- Cell Technology (2G|3G|HSPA) -->
+            <Name>CELL_TECH</Name>
+            <Value>WCDMA</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Cell Band. For 2G : EGSM|GSM850|PCS|DCS. For 3G : 1,2,5,8 -->
+            <Name>CELL_BAND</Name>
+            <Value>1</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Cell Service ( (GSM|GPRS|EGPRS) for 2G CELL, (CIRCUIT|PACKET|CIRCUIT_PACKET) for 3G CELL) -->
+            <Name>CELL_SERVICE</Name>
+            <Value>CIRCUIT_PACKET</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Cell power in dBm -->
+            <Name>CELL_POWER</Name>
+            <Value>-60</Value>
+        </Parameter>
+        <Parameter>
+            <!--  ARFCN Frequency  -->
+            <Name>ARFCN</Name>
+            <Value>512</Value>
+        </Parameter>
+        <Parameter>
+            <!--  CPC [Continuous Packet Connectivity] feature use (2 [TTI =2ms] | 10 [TTI =10ms])  -->
+            <Name>CPC</Name>
+            <Value>10</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="1.00">
+    <UseCase>EXEC</UseCase>
+    <Description>Get photos prerequisites</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <TcMaxAttempt>2</TcMaxAttempt>
+    <TestSteps>
+    <Initialize>
+    </Initialize>
+    <Setup>
+        <TestStep Id="GET_ARTIFACT"
+            ARTIFACT="IMAGE/PHOTOS/photo0.jpg"
+            ARTIFACT_SOURCE="FROM_BENCH:ARTIFACT_MANAGER:URI"
+            TRANSFER_TIMEOUT="DEFAULT"
+            STORED_FILE_PATH="FILE_PATH_IN_CACHE1"
+            EQT="ARTIFACT_MANAGER"/>
+        <TestStep Id="INSTALL_FILE" DEVICE="PHONE1" FILE_PATH="FROM_CTX:FILE_PATH_IN_CACHE1"
+                      TYPE="media"
+                      DESTINATION="/mnt/sdcard/" TIMEOUT="DEFAULT"
+                      DESTINATION_STORED_PATH="FILE_PATH_IN_CACHE1"/>
+        <TestStep Id="GET_ARTIFACT"
+            ARTIFACT="IMAGE/PHOTOS/photo1.jpg"
+            ARTIFACT_SOURCE="FROM_BENCH:ARTIFACT_MANAGER:URI"
+            TRANSFER_TIMEOUT="DEFAULT"
+            STORED_FILE_PATH="FILE_PATH_IN_CACHE2"
+            EQT="ARTIFACT_MANAGER"/>
+        <TestStep Id="INSTALL_FILE" DEVICE="PHONE1" FILE_PATH="FROM_CTX:FILE_PATH_IN_CACHE2"
+                      TYPE="media"
+                      DESTINATION="/mnt/sdcard/" TIMEOUT="DEFAULT"
+                      DESTINATION_STORED_PATH="FILE_PATH_IN_CACHE2"/>
+        <TestStep Id="GET_ARTIFACT"
+            ARTIFACT="IMAGE/PHOTOS/photo2.jpg"
+            ARTIFACT_SOURCE="FROM_BENCH:ARTIFACT_MANAGER:URI"
+            TRANSFER_TIMEOUT="DEFAULT"
+            STORED_FILE_PATH="FILE_PATH_IN_CACHE3"
+            EQT="ARTIFACT_MANAGER"/>
+        <TestStep Id="INSTALL_FILE" DEVICE="PHONE1" FILE_PATH="FROM_CTX:FILE_PATH_IN_CACHE3"
+                      TYPE="media"
+                      DESTINATION="/mnt/sdcard/" TIMEOUT="DEFAULT"
+                      DESTINATION_STORED_PATH="FILE_PATH_IN_CACHE3"/>
+        <TestStep Id="GET_ARTIFACT"
+                      EQT="ARTIFACT_MANAGER"
+                      ARTIFACT="INSTRUMENTATION/ANDROID/ApiTests.apk"
+                      ARTIFACT_SOURCE="FROM_BENCH:ARTIFACT_MANAGER:URI"
+                      TRANSFER_TIMEOUT="DEFAULT"
+                      STORED_FILE_PATH="FILE_PATH_IN_CACHE1"/>
+        <TestStep Id="INSTALL_APP"
+                      DEVICE="PHONE1"
+                      SIGN="False"
+                      SIGN_KEY_PATH="DEFAULT"
+                      FILE_PATH="FROM_CTX:FILE_PATH_IN_CACHE1"
+                      BACKUP="False"
+                      TIMEOUT="30"
+                      BACKUP_FILE_PATH="/backup"/>
+    </Setup>
+    <RunTest>
+    </RunTest>
+    <Finalize>
+    </Finalize>
+    </TestSteps>
+        <Parameters>
+        <Parameter>
+            <Name>RUN_CMD</Name>
+            <Value>python ../../../entry_point_scripts/Photos/Marshmallow/prereq_sync_device_photos.py</Value>
+        </Parameter>
+        <Parameter>
+            <Name>RUN_FROM_TCDIRECTORY</Name>
+            <Value>True</Value>
+        </Parameter>
+        <Parameter>
+            <Name>RUN_TIMEOUT</Name>
+            <Value>500</Value>
+        </Parameter>
+        <Parameter>
+            <Name>RUN_EXPECT_RESULT</Name>
+            <Value>PASS</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

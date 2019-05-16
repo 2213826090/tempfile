@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<Equipment version="14.08" name="KeyboardEmulator"
+           description="Equipment allowing to emulate keyboard trough USB on distant target">
+    <Parameter name="Model" value="USBKM232"/>
+    <Parameter name="ComPort" value="/dev/ttyUSB0"
+               description="USB/Serial communication port used between host sending commands and
+               target/DUT receiving keystrokes"/>
+</Equipment>
+

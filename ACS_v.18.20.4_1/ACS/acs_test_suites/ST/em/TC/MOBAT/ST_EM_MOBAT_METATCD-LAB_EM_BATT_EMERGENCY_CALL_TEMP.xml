@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCase>
+    <UseCase>LAB_EM_BATT_EMERGENCY_CALL_TEMP</UseCase>
+    <Description>Test emergency call with a temperature equal to -5, 25 and 45 degree Celsius</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>False</b2bContinuousMode>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters>
+        <Parameter>
+            <!-- Cell Band (from Band 1 to Band 8) -->
+            <Name>CELL_BAND</Name>
+            <Value>1</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Call Duration in seconds -->
+            <Name>CALL_DURATION</Name>
+            <Value>5</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Fake emergency phone number -->
+            <Name>FAKE_EMERGENCY_PHONE_NUMBER</Name>
+            <Value>12345</Value>
+        </Parameter>
+        <Parameter>
+            <!-- TCH UARFCN -->
+            <Name>UL_UARFCN</Name>
+            <Value>9750</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Mobile Power in dBm -->
+            <Name>MOBILE_POWER</Name>
+            <Value>24</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Cell Power in dBm -->
+            <Name>CELL_POWER</Name>
+            <Value>-70</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Check Call Time in seconds -->
+            <Name>CHECK_CALL_TIME</Name>
+            <Value>30</Value>
+        </Parameter>
+        <Parameter>
+            <!-- OPTIONAL PARAMETER Temperature Chamber in Degree Celsius -->
+            <Name>TEMPERATURE</Name>
+            <Value>ROOM</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

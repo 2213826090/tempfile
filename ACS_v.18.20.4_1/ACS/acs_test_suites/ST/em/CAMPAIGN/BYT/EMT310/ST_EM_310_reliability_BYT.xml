@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<Campaign>
+    <Parameters>
+        <Parameter isControlledPSUsed="False" />
+        <Parameter isIoCardUsed="True" />
+        <!-- Set skipBootOnPowerCycle to True to disable the acs boot procedure -->
+        <!-- Important, it means that boot will be handle inside the campaign/tc -->
+        <Parameter skipBootOnPowerCycle="False" />
+        <Parameter runHookScripts="False" />
+        <Parameter powerCycleBetweenTC="False" />
+        <Parameter powerCycleOnFailure="True" />
+        <Parameter finalPowerOff="True" />
+        <Parameter finalDutState="PowerOff" />
+        <Parameter stopCampaignOnCriticalFailure="False" />
+        <Parameter stopCampaignOnFirstFailure="False" />
+        <!-- LoggingLevel possible values: info | warning | debug | error -->
+        <Parameter loggingLevel="debug" />
+        <!-- CampaignType format -> <TEAM>_<CAMPAIGNTYPE>
+            Possible values:
+            FT(Feature Team)-> SANITY | REGRESSION | STRESS, RELIABILTY | MTBF
+            ST(System Test)-> SANITY | REGRESSION | STRESS, RELIABILTY | MTBF
+            SI(System Integration)-> EAT | STAB | PACT | CAT0 | RELIABILITY | MTBF | CTS
+            Otherwise "Others" should be used -->
+        <Parameter CampaignType="ST_RELIABILITY" />
+    </Parameters>
+    <Targets>
+        <!-- Target Values -->
+        <Target targetB2bPassRate="80" />
+    </Targets>
+    <TestCases>
+        <!-- Testcase campaigns -->
+        <TestCase Id="..\..\..\TC\RELIA\ST_EM_RELIA_METATCD_30_SOFT-LAB_EM_BATT_OFF_ON_NO_VC" />
+        <TestCase Id="..\..\..\TC\RELIA\ST_EM_RELIA_METATCD_32_SDP-LAB_EM_BATT_PLUG_UNPLUG" />
+        <TestCase Id="..\..\..\TC\RELIA\ST_EM_RELIA_METATCD_32_DCP-LAB_EM_BATT_PLUG_UNPLUG" />
+        <TestCase Id="..\..\..\TC\RELIA\ST_EM_RELIA_METATCD_32_CDP-LAB_EM_BATT_PLUG_UNPLUG" />
+        <!-- Video file required -->
+        <TestCase Id="..\..\..\TC\RELIA\ST_EM_RELIA_METATCD_27_VIDEO-LAB_EM_BATT_MULTIMEDIA_PLAYBACK" />
+    </TestCases>
+</Campaign>

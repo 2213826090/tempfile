@@ -1,0 +1,22 @@
+{
+    "Configuration": {
+        "Boot": {
+            "BOOT_ON_FORCED_SHUTDOWN": true
+        },
+        "BootVars": {
+            "COS_CHECK_AFTER_HARD_SHUTDOWN": "reset_source=00;reset_type=02;wake_source=02;shutdown_source=01",
+            "MOS_CHECK_AFTER_BOOT": "reset_source=00;reset_type=02;wake_source=04;shutdown_source=01"
+        },
+        "Custom": null,
+        "Flash": {
+            "DEDIPROG": {
+                "ifwi_size": 8,
+                "start_os": "offline"
+            },
+            "PARTITIONS": "/cache;/system"
+        },
+        "Logs": null,
+        "Timeout": null,
+        "WorkAround": null
+    }
+}

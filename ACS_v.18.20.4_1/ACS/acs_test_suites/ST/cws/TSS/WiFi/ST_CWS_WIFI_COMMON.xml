@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<Include>
+    <!-- Description : Standard initialization for WiFi TCs. Call it for each phone used in the TC. -->
+    <!-- Parameters : DEVICE (Phone), REGULATORY_DOMAIN (Country Code) -->
+    <TestStepSet Id="WiFiCommonSetup">
+        <TestStep Id="OPEN_WIFI_SETTINGS"/>
+        <TestStep Id="WIFI_SET_POWER" POWER="off,on"/>
+        <TestStep Id="WIFI_REMOVE_NETWORK" SSID="all"/>
+        <TestStep Id="WIFI_SET_REGULATORY_DOMAIN" INTERFACE="wlan0"/>
+        <TestStep Id="WIFI_SET_FREQUENCY_BAND" FREQUENCY="AUTO" INTERFACE="wlan0" SILENT_MODE="true"/>
+    </TestStepSet>
+
+    <!-- Description : Standard teardown for WiFi TCs. Call it for each phone used in the TC. -->
+    <!-- Parameters : DEVICE (Phone) -->
+    <TestStepSet Id="WiFiCommonTeardown">
+        <TestStep Id="WIFI_SET_POWER" POWER="on"/>
+        <TestStep Id="WIFI_REMOVE_NETWORK" SSID="all"/>
+        <TestStep Id="WIFI_SET_FREQUENCY_BAND" FREQUENCY="AUTO" INTERFACE="wlan0" SILENT_MODE="true"/>
+        <TestStep Id="WIFI_SET_POWER" POWER="off"/>
+        <TestStep Id="OPEN_HOME_PAGE"/>
+    </TestStepSet>
+
+    <!-- Description : Standard initialization for SoftAP TCs. Call it for the device which provide WiFi Tethering. -->
+    <!-- Parameters : DEVICE (Phone), REGULATORY_DOMAIN (Country Code), MAC_ADDR (WiFi MAC address to save, use it to rename hotspot) -->
+    <TestStepSet Id="SoftAPCommonSetup">
+        <TestStep SetId="WiFiCommonSetup"/>
+        <TestStep Id="WIFI_SET_POWER" POWER="off"/>
+        <TestStep Id="GET_MAC_ADDRESS" INTERFACE="wlan0"/>
+    </TestStepSet>
+
+    <!-- Description : Standard teardown for SoftAP TCs. Call it for the device which provide WiFi Tethering. -->
+    <!-- Parameters : DEVICE (Phone) -->
+    <TestStepSet Id="SoftAPCommonTeardown">
+        <TestStep Id="WIFI_SET_HOTSPOT" DEVICE="PHONE1" POWER="off" SSID="NOT_USED" SECURITY="OPEN" PASSPHRASE="NOT_USED" STANDARD="2_4GHZ_20MHZ" CHANNEL="1" HIDDEN="off"/>
+        <TestStep Id="OPEN_HOME_PAGE"/>
+    </TestStepSet>
+
+    <!-- Description : Standard initialization for WiFi Direct TCs. Call it for each phone used in the TC. -->
+    <!-- Parameters : DEVICE (Phone), REGULATORY_DOMAIN (Country Code), MAC_ADDR (WiFi MAC address to save, use it to rename P2P) -->
+    <TestStepSet Id="WiFiDirectCommonSetup">
+        <TestStep SetId="WiFiCommonSetup"/>
+        <TestStep Id="SET_PHONE_LOCK" VALUE="unlock"/>
+        <TestStep Id="SET_SCREEN_PROPERTY" PROPERTY="state" VALUE="on"/>
+        <TestStep Id="OPEN_HOME_PAGE"/>
+        <TestStep Id="OPEN_WIFI_DIRECT_SETTINGS"/>
+        <TestStep Id="WIFI_DIRECT_REMOVE_REMEMBERED_GROUPS"/>
+        <TestStep Id="GET_MAC_ADDRESS" INTERFACE="wlan0"/>
+    </TestStepSet>
+
+    <!-- Description : Standard teardown for WiFi Direct TCs. Call it for each phone used in the TC. -->
+    <!-- Parameters : DEVICE (Phone) -->
+    <TestStepSet Id="WiFiDirectCommonTeardown">
+        <TestStep Id="WIFI_DIRECT_REMOVE_REMEMBERED_GROUPS"/>
+        <TestStep SetId="WiFiCommonTeardown"/>
+    </TestStepSet>
+
+    <!-- ########################################################################################################### -->
+
+    <!-- Description : Utility to keep calm the developper -->
+    <!-- Parameters : DEVICE (phone), SSID, SECURITY, PASS_PHRASE -->
+    <TestStepSet Id="WiFiAddNetwork">
+        <TestStep Id="WIFI_ADD_NETWORK" EAP_METHOD="PEAP" EAP_USER="eap_user" EAP_PASSWORD="eap_password" PHASE2_AUTH="GTC" USE_CERTIFICATE="false"/>
+    </TestStepSet>
+
+    <!-- Description : Utility to keep calm the developper -->
+    <!-- Parameters : DEVICE (phone), SSID, SECURITY, PASS_PHRASE, EAP_METHOD, PHASE2_AUTH, EAP_USER, EAP_PASSWORD, USE_CERTIFICATE -->
+    <TestStepSet Id="WiFiAddNetworkEAP">
+        <TestStep Id="WIFI_ADD_NETWORK"/>
+    </TestStepSet>
+
+    <!-- Description : Ping DUT (PHONE1) from reference phone (PHONE2) -->
+    <!-- Parameters : NET_INTERFACE (interface to get IPV4 address) -->
+    <TestStepSet Id="WiFiPingDutFromReferencePhone">
+        <TestStep Id="GET_DEVICE_IPV4_ADDRESS" DEVICE="PHONE1" IP_ADDR="DUT_IP_ADDR"/>
+        <TestStep Id="PING" DEVICE="PHONE2" DESTINATION_IP="FROM_CTX:DUT_IP_ADDR" PACKET_SIZE="16" PACKET_COUNT="16" INTERVAL="1" FLOOD_MODE="false" BLOCKING="true" SOURCE_IP="NOT_USED" SAVE_AS="PING_PACKET_LOST"/>
+        <TestStep Id="COMPARE" FIRST="FROM_CTX:PING_PACKET_LOST" SECOND="0" OPERATOR="EQUAL" PASS_IF="true"/>
+    </TestStepSet>
+
+    <!-- Description : Ping Google (8.8.8.8) from reference phone (PHONE2) -->
+    <!-- Parameters : N/A -->
+    <TestStepSet Id="WiFiPingGoogleFromReferencePhone">
+        <TestStep Id="PING" DEVICE="PHONE2" DESTINATION_IP="8.8.8.8" PACKET_SIZE="16" PACKET_COUNT="32" INTERVAL="1" FLOOD_MODE="false" BLOCKING="true" SOURCE_IP="NOT_USED" SAVE_AS="PING_PACKET_LOST"/>
+        <TestStep Id="COMPARE" FIRST="FROM_CTX:PING_PACKET_LOST" SECOND="6" OPERATOR="LESS_OR_EQUAL" PASS_IF="true"/>
+    </TestStepSet>
+
+    <!-- Description : Ping Server (192.168.0.150) from DUT -->
+    <!-- Parameters : DESTINATION_IP (IP to ping) -->
+    <TestStepSet Id="WiFiPingFromDUT">
+        <TestStep Id="PING" DEVICE="PHONE1"  PACKET_SIZE="16" PACKET_COUNT="16" INTERVAL="1" FLOOD_MODE="false" BLOCKING="true" SOURCE_IP="NOT_USED" SAVE_AS="PING_PACKET_LOST"/>
+        <TestStep Id="COMPARE" FIRST="FROM_CTX:PING_PACKET_LOST" SECOND="0" OPERATOR="LESS_OR_EQUAL" PASS_IF="true"/>
+    </TestStepSet>
+
+    <!-- Description : Configure and check data cellular network -->
+    <!-- Parameters : DEVICE (phone), PREFERRED_NETWORK (network) -->
+    <TestStepSet Id="WiFiSetCheckCellularNetwork">
+        <TestStep Id="ACTIVATE_DEVICE_PDP" INTERFACE="None" CHECK="True"/>
+        <TestStep Id="SET_PREFERRED_NETWORK"/>
+        <TestStep Id="CHECK_RAT_WITH_PREFERRED_NETWORK" TIMEOUT="90"/>
+    </TestStepSet>
+
+    <!-- ########################################################################################################### -->
+    <!-- Description : EDISON Scan for WiFi Direct Peers and return the list of mac addresses -->
+    <!-- Parameters : DEVICE (phone), STATE (state of peers), SAVE_AS (list)  -->
+    <TestStepSet Id="ScanAndGetWiFiDirectPeers">
+        <TestStep Id="WAKE_SCREEN" />
+        <TestStep Id="WIFI_DIRECT_SCAN"/>
+        <TestStep Id="SUSPEND" DURATION_IN_SEC="10" />
+        <TestStep Id="GET_WIFI_DIRECT_PEER_DEVICES" />
+    </TestStepSet>
+
+    <!-- Description : ANDROID Scan for WiFi Direct Peers and return the list of mac addresses -->
+    <!-- Parameters : DEVICE (phone), STATE (state of peers), SAVE_AS (list)  -->
+    <TestStepSet Id="WiFiDirectScanAndGetPeers">
+        <TestStep Id="WAKE_SCREEN"/>
+        <TestStep Id="WIFI_DIRECT_SCAN" DEVICE="PHONE1"/>
+        <TestStep Id="WIFI_DIRECT_SCAN" DEVICE="PHONE2"/>
+        <TestStep Id="SUSPEND" DURATION_IN_SEC="10"/>
+        <TestStep Id="GET_WIFI_DIRECT_PEER_DEVICES"/>
+    </TestStepSet>
+
+    <!-- Description : CONNECT_DUT_TO_TEST_AP -->
+    <!-- Parameters :  none -->
+    <!-- Requirements : none -->
+    <TestStepSet Id="CONNECT_DUT_TO_TEST_AP">
+        <TestStep Id="SET_SCREEN_PROPERTY" DEVICE="PHONE1" PROPERTY="state" VALUE="on"/>
+        <TestStep Id="WIFI_SET_POWER" DEVICE="PHONE1" POWER="on"/>
+        <TestStep Id="WIFI_REMOVE_NETWORK" DEVICE="PHONE1" SSID="all"/>
+        <TestStep Id="WIFI_SET_POWER" DEVICE="PHONE1" POWER="off"/>
+        <TestStep Id="SUSPEND" DURATION_IN_SEC="5"/>
+        <TestStep Id="WIFI_SET_POWER" DEVICE="PHONE1" POWER="on"/>
+        <TestStep Id="SUSPEND" DURATION_IN_SEC="5"/>
+        <TestStep Id="WIFI_ADD_NETWORK" DEVICE="PHONE1" SSID="FROM_BENCH:CONFIGURABLE_AP1:SSID" SECURITY="WPA2-PSK-AES" PASS_PHRASE="FROM_BENCH:CONFIGURABLE_AP1:passphrase_WPA2"/>
+        <TestStep Id="WIFI_CONNECT" DEVICE="PHONE1" SSID="FROM_BENCH:CONFIGURABLE_AP1:SSID" TIMEOUT="120"/>
+        <TestStep Id="SET_SCREEN_PROPERTY" DEVICE="PHONE1" PROPERTY="state" VALUE="on"/>
+    </TestStepSet>
+
+    <!-- Description : INSTALL_THE_BROWSER_ON_THE_DUT -->
+    <!-- Parameters :  none -->
+    <!-- Requirements : none -->
+    <TestStepSet Id="INSTALL_THE_BROWSER_ON_THE_DUT">
+        <TestStep Id="GET_MODULE_CONFIG" DEVICE="PHONE1" MODULE="PnpModule" KEY="FROM_TC:APP" MODULE_VALUE="browser_app"/>
+        <TestStep Id="GET_ARTIFACT" ARTIFACT="APPLICATIONS/CHROME/[+]FROM_CTX:browser_app" ARTIFACT_SOURCE="FROM_BENCH:ARTIFACT_MANAGER:URI" TRANSFER_TIMEOUT="DEFAULT" STORED_FILE_PATH="FILE_PATH_IN_CACHE1" EQT="DEFAULT"/>
+        <TestStep Id="INSTALL_APP" DEVICE="PHONE1" FILE_PATH="FROM_CTX:FILE_PATH_IN_CACHE1" BACKUP="false" BACKUP_FILE_PATH="FT/backup" SIGN_KEY_PATH="DEFAULT" SIGN="false" TIMEOUT="DEFAULT" ALLOW_DOWNGRADE="True"/>
+        <TestStep Id="CLEAN_APP_CACHE" DEVICE="PHONE1" APP_NAME="FROM_TC:APP_PACKAGE_NAME"/>
+    </TestStepSet>
+    </Include>

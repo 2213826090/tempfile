@@ -1,0 +1,296 @@
+{
+    "Configuration": {
+        "Boot": {
+            "ACCEPT_EULA": false,
+            "ADB_ENUMERATION_FALLBACK": {"fastboot": "fastboot-adb", "normal": "main"},
+            "ADB_WITH_USER_BUILD": false,
+            "ARCH": "",
+            "BOOT_COS_ON_FORCED_SHUTDOWN_PLUG": false,
+            "BOOT_ON_FORCED_SHUTDOWN": false,
+            "COS_CHECK_INIT_SVC_CHARGER_APP": true,
+            "CSE_DNX_BOOT_WITH_COMBO": false,
+            "DNX_BOOT_ON_POWER_SUPPLY_INSERT": false,
+            "DNX_BOOT_WITH_COMBO_ONLY": false,
+            "DNX_COMBO": [
+                {"action": "relay", "relay_name": "VolumeUp", "relay_state": true},
+                {"action": "relay", "relay_name": "VolumeDown", "relay_state": true},
+                {"action": "relay", "relay_name": "SwitchOnOff", "relay_state": 5},
+                {"action": "relay", "relay_name": "UsbHostPcConnect", "relay_state": true},
+                {"action": "os", "os_name": "dnx", "timeout": 150},
+                {"action": "relay", "relay_name": "VolumeUp", "relay_state": false},
+                {"action": "relay", "relay_name": "VolumeDown", "relay_state": false}
+            ],
+            "FASTBOOT_TARGET": "bootloader",
+            "GET_OS_FALLBACK": null,
+            "GRACEFUL_BEFORE_HARD_SHUTDOWN": false,
+            "GVB_ACTIVATION": false,
+            "MODEM": true,
+            "MOS_CHECK_DEV_BOOTCOMPLETE": true,
+            "MOS_CHECK_INIT_SVC_BOOTANIM": true,
+            "MOS_CHECK_INIT_SVC_ENCRYPT": true,
+            "MOS_CHECK_PATH_ANDROID": true,
+            "MOS_CHECK_SYSTEMUI": true,
+            "MOS_CHECK_SYS_BOOT_COMPLETED": true,
+            "NOCOS": false,
+            "NODNX": false,
+            "PKP_5S": true,
+            "POS_COMBO": [
+                {"action": "relay", "relay_name": "UsbHostPcConnect", "relay_state": false},
+                {"action": "relay", "relay_name": "SwitchOnOff", "relay_state": "PKPOFF"},
+                {"action": "sleep", "duration": 15},
+                {"action": "relay", "relay_name": "VolumeDown", "relay_state": true},
+                {"action": "relay", "relay_name": "SwitchOnOff", "relay_state": "PKPON"},
+                {"action": "sleep", "duration": 20},
+                {"action": "relay", "relay_name": "VolumeDown", "relay_state": false},
+                {"action": "relay", "relay_name": "UsbHostPcConnect", "relay_state": true}
+            ],
+            "ROS_CHECK_INIT_SVC_RECOVERY": true,
+            "SHELL_IN_ROS": true,
+            "UEFI_VARS": "efi_vars",
+            "WAKESRC_ONLY": false,
+            "WATCHDOGD_ENABLED": false,
+            "WATCHDOG_PATH": ""
+        },
+        "BootVars": {
+            "BOOT_DATA_CHECK": false,
+            "COS_CHECK_AFTER_GRACEFUL_SHUTDOWN": null,
+            "COS_CHECK_AFTER_HARD_SHUTDOWN": null,
+            "COS_CHECK_AFTER_REBOOT": null,
+            "MOS_CHECK_AFTER_BOOT": null,
+            "MOS_CHECK_AFTER_KERNEL_WATCHDOG": null,
+            "MOS_CHECK_AFTER_REBOOT": null,
+            "MOS_CHECK_AFTER_REBOOT_FROM_POS": null,
+            "MOS_CHECK_AFTER_SECURITY_WATCHDOG": null,
+            "MOS_CHECK_AFTER_WATCHDOG_FALLBACK": null,
+            "POS_CHECK_AFTER_REBOOT": null,
+            "ROS_CHECK_AFTER_REBOOT": null,
+            "ROS_CHECK_AFTER_WATCHDOG": null
+        },
+        "Custom": null,
+        "Download": {
+            "DESSERT_TO_DESSERT_OTA": null,
+            "EXTERNAL_DOWNLOAD": [],
+            "INTERNAL_DOWNLOAD": [
+                {
+                    "pft_key": "blankphone",
+                    "buildbot_artifactory_path": {"path": "device_name_id/flash_files/blankphone", "detection": "cactus-absp"},
+                    "regexp_key": "blankphone",
+                    "flash_file": null,
+                    "configuration": null,
+                    "start_state": "dnx"
+                },
+                {
+                    "pft_key": "fastboot",
+                    "buildbot_artifactory_path": {"path": "device_name_id/flash_files/build-variant_id", "detection": "cactus-absp"},
+                    "regexp_key": "fastboot",
+                    "flash_file": null,
+                    "configuration": null,
+                    "start_state": "pos"
+                },
+                {
+                    "pft_key": "ota",
+                    "buildbot_artifactory_path": {"path": "device_name_id/flash_files/build-variant_id", "detection": "cactus-absp"},
+                    "regexp_key": ".*ota.*.zip",
+                    "flash_file": null,
+                    "configuration": null,
+                    "start_state": "mos"
+                }
+            ],
+            "MULTI_VARIANT_PREFIX": "",
+            "RELEASE_BUILDER": "weekly",
+            "REFERENCE_BUILD_BLACKLIST": {},
+            "ROOT_BOARD_TYPE": "",
+            "USER_DOWNLOAD": []
+        },
+        "Flash": {
+            "BOOTLOADER_CONTENT": ["::/EFI/BOOT/bootx64.efi"],
+            "CHECK_FASTBOOT": true,
+            "CHECK_GET_HASHES": null,
+            "CHECK_OSLOADER": true,
+            "CHECK_RECOVERY": true,
+            "DEDIPROG": false,
+            "FASTBOOT_FILE": "loader.efi",
+            "FORCE_FLASH_ALGO" : [],
+            "FULL_OTA_LOCAL_FLASH_FILE": null,
+            "IFWI_CHECK": ["legacy"],
+            "INCREMENTAL_OTA_LOCAL_FLASH_FILE": "Extras/flashIncrementalOtaLegacy.json",
+            "INCREMENTAL_OTA_USER_LOCAL_FLASH_FILE": "null",
+            "MERRIFIELD": false,
+            "MOOREFIELD": false,
+            "PARTITIONS": "/factory;/(oem_)*config;/cache;/system;/logs;/data",
+            "PARTITION_TYPE": "gpt",
+            "UEFI": true,
+            "UPDATE_CONFIGURATION": "",
+            "BXTP_ABL_BUILD": null,
+            "BXTP_FLASH_IOC": null
+        },
+        "Logs": {
+            "CRASHLOGS": true,
+            "LOG_PATH": "/logs",
+            "RAMDUMP": false
+        },
+        "Timeout": {
+            "ADB_ROOT_TIMEOUT": 30,
+            "BOOT_TIMEOUT": 100,
+            "COS_BOOT": 35,
+            "MOS_BOOT": 35,
+            "PKPOFF": 10,
+            "PKPON": 3,
+            "POS_BOOT": 25,
+            "ROS_BOOT": 20,
+            "REBOOT_COMMAND_TIMEOUT": 10,
+            "ROS_EXPIRATION": 130,
+            "SHUTDOWN_TIMEOUT": 40,
+            "TIMEOUT_TOLERANCE": 55,
+            "WATCHDOG_EXPIRATION": 95
+        },
+        "WorkAround": {
+            "TC": {
+                "Issue": "Only 1970",
+                "Name": "LAB_PUPDR_TIME_OFF",
+                "Pattern": "device has shifted.*device=(?!1970).*"
+            }
+        },
+        "TestDescription": {
+            "builder_list": {
+                "llp_mr1-engineering":{
+                    "mandatory_boards": {
+                        "TREKSTOR": true,
+                        "TC80RA3": true,
+                        "s3gr10m6s": true
+                    }
+                },
+                "llp_mr1-release_candidate":{
+                    "mandatory_boards": {"cht_hr": true}
+                },
+                "llp_mr1_cht-engineering":{
+                    "mandatory_boards": {
+                        "cht_cr_rvp_ti": false
+                    }
+                },
+                "llp_mr1_cht-release_candidate":{
+                    "mandatory_boards": {
+                        "cht_cr_rvp_ti": false
+                    }
+                },
+                "n_master-engineering":{
+                    "mandatory_boards": {
+                        "cht_cr_rvp": false,
+                        "cht_cr_rvp_ti": false,
+                        "cht_mrd": true,
+                        "cht_ffd": true,
+                        "bxt_rvp_b1": null,
+                        "bxt_pr10_sds_b1": null,
+                        "cht_t4_ffd_nomodem": null,
+                        "s3gr10m6s": true,
+                        "bxtp_abl_mrb": true
+                    }
+                },
+                "n_master-release_candidate":{
+                    "mandatory_boards": {
+                        "cht_cr_rvp": false,
+                        "cht_cr_rvp_ti": false,
+                        "cht_mrd": true,
+                        "cht_ffd": true,
+                        "bxt_rvp_b1": true,
+                        "cht_t4_ffd_nomodem": null
+                    }
+                },
+                "m_mr1-engineering":{
+                    "mandatory_boards": {
+                        "cht_cr_rvp": false,
+                        "cht_cr_rvp_ti": false,
+                        "cht_mrd": true,
+                        "cht_ffd": true,
+                        "cht_t4_ffd_nomodem": null,
+                        "s3gr10m6s": true
+                    }
+                },
+                "master-engineering": {
+                    "mandatory_boards": {
+                        "bxtp_abl_mrb": true
+                    }
+                },
+                "master-release_candidate": {
+                    "mandatory_boards": {
+                        "bxtp_abl_mrb": true
+                    }
+                },
+                "m_mr1-release_candidate":{
+                    "mandatory_boards": {
+                        "cht_cr_rvp": false,
+                        "cht_cr_rvp_ti": false,
+                        "cht_mrd": true,
+                        "cht_ffd": true,
+                        "cht_t4_ffd_nomodem": null
+                    }
+                },
+                "m_mr1-latest":{
+                    "mandatory_boards": {}
+                },
+                "n_dev-engineering":{
+                    "mandatory_boards": {
+                        "cht_mrd": true,
+                        "cht_ffd": true,
+                        "s3gr10m6s": true,
+                        "cht_t4_ffd_nomodem": null
+                    }
+                },
+                "m_mr1_sf3gr_maint-engineering":{
+                    "mandatory_boards":{
+                        "s3gr10m6s": true
+                    }
+                },
+                "bxtp_ivi_m-engineering": {
+                    "mandatory_boards": {
+                        "bxtp_abl_mrb": true
+                    }
+                },
+                "bxtp_ivi_m-release_candidate": {
+                    "mandatory_boards": {
+                        "bxtp_abl_mrb": true
+                    }
+                },
+                "n_mr0_cht-engineering":{
+                    "mandatory_boards": {
+                        "cht_mrd": true,
+                        "cht_ffd": true
+                    }
+                },
+                "n_mr0_cht-release_candidate":{
+                    "mandatory_boards": {
+                        "cht_mrd": true,
+                        "cht_ffd": true
+                    }
+                },
+                "n_mr1_cht-engineering":{
+                    "mandatory_boards": {
+                        "cht_mrd": true,
+                        "cht_ffd": true
+                    }
+                },
+                "n_mr1_cht-release_candidate":{
+                    "mandatory_boards": {
+                        "cht_mrd": true,
+                        "cht_ffd": true
+                    }
+                },
+                "n_car-engineering": {
+                    "mandatory_boards": {
+                        "bxtp_abl_mrb": true
+                    }
+                },
+                "n_car-release_candidate": {
+                    "mandatory_boards": {
+                        "bxtp_abl_mrb": true
+                    }
+                }
+            },
+            "engineering": [],
+            "release_candidate": [],
+            "weekly": [],
+            "latest": [],
+            "warnings": {}
+        }
+    }
+}

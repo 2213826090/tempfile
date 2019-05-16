@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase>
+	<UseCase>LIVE_SYSTEM_RETRIEVE_SYSTEM_INFO</UseCase>
+	<Description>Retrieve phone information</Description>
+	<b2bIteration>1</b2bIteration>
+	<b2bContinuousMode>False</b2bContinuousMode>
+	<Parameters>
+		<Parameter>
+			<!--The type of information to be retrieved
+				The possible value could be:
+				/id/product/cpuabi/manufacture/brand/model
+				/user/host/hardware/release/sdk/width
+				/height/pixelFormat/refreshRate/density
+				/xdpi/ydpi
+			-->
+			<Name>TYPE</Name>
+			<Value>sim_state</Value>
+		</Parameter>
+		<Parameter>
+			<!--The value of expected, this will different according to which type of 
+				information to be retrieved, and also can leave it as "reserve", in this condition
+				use case will just check the information exists or not.
+			-->
+			<Name>VALUE</Name>
+			<Value>"reserve"</Value>
+		</Parameter>
+	</Parameters>
+</TestCase>

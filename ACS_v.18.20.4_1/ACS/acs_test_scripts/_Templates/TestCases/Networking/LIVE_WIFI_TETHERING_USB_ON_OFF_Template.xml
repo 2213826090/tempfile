@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase>
+    <UseCase>LIVE_WIFI_TETHERING_USB_ON_OFF</UseCase>
+    <Description>Test the USB Tethering feature enable and disable</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters>
+        <Parameter>
+            <!--
+                Wifi access point on which board will connect to.
+                Must refers to a wifi router's name (equipment name of the bench configuration file).
+            -->
+            <Name>WIFI_ACCESS_POINT</Name>
+            <Value>WPA_WIFI_ROUTER</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Set to "True" when you want coexistence testing with bluetooth ON. "False" otherwise -->
+            <Name>WHILE_BLUETOOTH_ON</Name>
+            <Value>False</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Test USB Tethering disable on an USB unplug action (True/False) -->
+            <Name>TEST_USB_DISCONNECT</Name>
+            <Value>False</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

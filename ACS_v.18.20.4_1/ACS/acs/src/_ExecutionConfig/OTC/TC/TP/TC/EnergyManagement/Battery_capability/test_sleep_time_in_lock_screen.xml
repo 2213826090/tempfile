@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<TestCase>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Discription>
+1.In Display settings, set the screen timeout time(Example: 30 minutes)
+&lt;br /&gt;2.Connect DUT to PC via USB cable.
+&lt;br /&gt;3.Press power key to switch off the screen. 
+&lt;br /&gt;4.Press power key to switch on the screen. 
+&lt;br /&gt; -&amp;gt; lock screen displays
+&lt;br /&gt;5.Disconnect the USB cable.
+&lt;br /&gt;6.Wait the lock screen switch off.
+</Discription>
+    <Domain>EnergyManagement</Domain>
+    <Phase>CORE</Phase>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <Type>FUNCTIONAL</Type>
+    <UseCase>PY_UNIT</UseCase>
+    <b2bIteration>1</b2bIteration>
+    <Parameters>
+        <Parameter>
+            <Name>HpalmName</Name>
+            <Value>sleep_time_in_lock_screen_usb_unplug.SleepTimeInLockScreen.test_sleep_time_in_lock_screen</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TEST_DATA_ROOT</Name>
+            <Value>testplan/EnergyManagement</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TEST_CASE</Name>
+            <Value>tests.EnergyManagement.Battery_capability.sleep_time_in_lock_screen_usb_unplug.SleepTimeInLockScreen.test_sleep_time_in_lock_screen</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

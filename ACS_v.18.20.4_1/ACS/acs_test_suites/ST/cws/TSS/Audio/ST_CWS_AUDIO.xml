@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<Include>
+    <!-- Description : this TSS must be called when you want to launch -->
+    <TestStepSet Id="SetupMusicGooglePlayMusic">
+        <TestStep Id="WAKE_SCREEN"/>
+        <TestStep Id="SUSPEND" DURATION_IN_SEC="1"/>
+        <TestStep Id="RUN_CMD" TIMEOUT="60"
+                  COMMAND="adb shell uiautomator runtest [+]FROM_TC:TMP_FOLDER[+]FROM_TC:DROIDBOT_CORE_LIB[+] [+]FROM_TC:TMP_FOLDER[+]FROM_TC:DROIDBOT_CWS_TEST [+] -s -c com.intel.droidbot.perf.PlayMusic -e filename [+]FROM_TC:SONG_NAME"
+                  FORCE_EXECUTION="False" WAIT_FOR_RESPONSE="True" SILENT_MODE="False" SAVE_AS="output"/>
+        <TestStep Id="OPEN_HOME_PAGE"/>
+        <TestStep Id="WAKE_SCREEN"/>
+        <TestStep Id="SUSPEND" DURATION_IN_SEC="1"/>
+        <TestStep Id="RUN_CMD" TIMEOUT="60"
+                  COMMAND="adb shell input keyevent MEDIA_STOP"
+                  FORCE_EXECUTION="False" WAIT_FOR_RESPONSE="True" SILENT_MODE="False" SAVE_AS="output"/>
+    </TestStepSet>
+    <TestStepSet Id="LaunchMusicGooglePlayMusic">
+        <TestStep Id="WAKE_SCREEN"/>
+        <TestStep Id="SUSPEND" DURATION_IN_SEC="1"/>
+        <TestStep Id="RUN_CMD" TIMEOUT="60"
+                  COMMAND="adb shell input keyevent MEDIA_PLAY"
+                  FORCE_EXECUTION="False" WAIT_FOR_RESPONSE="True" SILENT_MODE="False" SAVE_AS="output"/>
+    </TestStepSet>
+
+    <TestStepSet Id="StopMusicGooglePlayMusic">
+        <TestStep Id="WAKE_SCREEN"/>
+        <TestStep Id="SUSPEND" DURATION_IN_SEC="1"/>
+        <TestStep Id="RUN_CMD" TIMEOUT="5" COMMAND="adb shell am force-stop com.google.android.music"
+                  FORCE_EXECUTION="False" WAIT_FOR_RESPONSE="True" SILENT_MODE="False" SAVE_AS="output"/>
+        <TestStep Id="SUSPEND" DURATION_IN_SEC="15"/>
+    </TestStepSet>
+
+    <TestStepSet Id="ConnectWiredHeadSet">
+        <TestStep Id="ADD_TRIGGER_MSG" TRIGGER_MESSAGE="device h2w connected"/>
+        <TestStep Id="CONNECT_HEADSET" EQT="FROM_DEVICE:PHONE1:IoCard"/>
+        <TestStep Id="CHECK_TRIGGER_MSG_STATUS" TRIGGER_MESSAGE="device h2w connected" TIMEOUT="120"
+                  OUTPUT_SUCCESS="HEADSET SUCCESSFULLY CONNECTED"/>
+        <TestStep Id="REMOVE_TRIGGER_MSG" TRIGGER_MESSAGE="device h2w connected"/>
+    </TestStepSet>
+
+    <TestStepSet Id="DisconnectedWiredHeadSet">
+        <TestStep Id="ADD_TRIGGER_MSG" TRIGGER_MESSAGE="device h2w disconnected"/>
+        <TestStep Id="DISCONNECT_HEADSET" EQT="FROM_DEVICE:PHONE1:IoCard"/>
+        <TestStep Id="CHECK_TRIGGER_MSG_STATUS" TRIGGER_MESSAGE="device h2w disconnected" TIMEOUT="120"
+                  OUTPUT_SUCCESS="HEADSET SUCCESSFULLY DISCONNECTED"/>
+        <TestStep Id="REMOVE_TRIGGER_MSG" TRIGGER_MESSAGE="device h2w disconnected"/>
+    </TestStepSet>
+</Include>

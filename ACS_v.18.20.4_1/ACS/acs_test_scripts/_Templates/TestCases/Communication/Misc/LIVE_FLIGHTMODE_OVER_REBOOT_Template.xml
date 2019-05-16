@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="13.37">
+    <UseCase>LIVE_FLIGHTMODE_OVER_REBOOT</UseCase>
+    <Description>This test checks that flight mode state is persistent over a reboot (initially enabled or not).</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>False</b2bContinuousMode>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters>
+        <!-- Is flight mode enabled before reboot; Possible values: true|false -->
+        <Parameter>
+            <Name>FLIGHT_MODE_ENABLED</Name>
+            <Value>true</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

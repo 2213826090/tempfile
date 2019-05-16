@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='ISO-8859-1'?>
+<BenchConfig>
+    <Phones>
+      <Phone name="PHONE1" description="Phone to use during test campaign. Please refer to Device_Catalog.xml to add device parameters">
+            <Parameter disableTcReboot="true" description="Disable TC reboot options"/>
+            <Parameter multipleDevices="false"/>
+            <!--Parameter serialNumber="DD8869FF"/-->
+        </Phone>
+    </Phones>
+    <Equipments>
+        <Equipment name="EMBEDDED_SERIAL_DEVICE" description="NFC robot">
+          <Parameter name="Model" value="Arduino"/>
+          <Parameter name="comPort" value="/dev/ttyUSB0" description="COM port used for communication"/>
+          <Parameter name="baudRate" value="9600" />
+        </Equipment>
+        <Equipment name="IO_CARD" description="Input output card used for power management, energy management on I/O ports of the DUT.">
+          <Parameter name="Model" value="USB_RLY08"/>
+        </Equipment>
+        <Equipment version="14.09" name="ARTIFACT_MANAGER" description="ArtifactManager configuration to get all test case necessary artifacts">
+          <Parameter name="URI" value="https://mcg-depot.intel.com/artifactory/acs_test_artifacts/" description="Local path/URL to the artifact source"/>
+        </Equipment>
+        <Equipment name="WEP_WIFI_ROUTER" description="Wifi router used in OTC Wifi Test Cases">
+            <!-- A stable Wifi AP to be used for connecting devices to during tests with internet access required -->
+            <Parameter name="SSID" value="'Android QA Main'"/>
+            <Parameter name="WIFI_SECURITY" value="WPA2"/>
+            <Parameter name="passphrase" value="AndroidQA"/>
+            <Parameter name="Model" value="ZyXEL Linksis" description="Wifi router"/>
+            <Parameter name="IP" value="192.168.1.1" description="ip address of the equipment"/>
+            <Parameter name="Interface" value="eth8" description="Ethernet interface used for connection"/>
+            <Parameter name="IPv6Prefix" value="" description="IPv6 prefix of the computer."/>
+            <Parameter name="SshPath" value="/usr/bin/ssh" description="[Optional] full path to local SSH client binary (default 'ssh')"/>
+            <Parameter name="ScpPath" value="/usr/bin/scp" description="[Optional] full path to local SCP client binary (default 'scp')"/>
+        </Equipment>
+    </Equipments>
+</BenchConfig>
+

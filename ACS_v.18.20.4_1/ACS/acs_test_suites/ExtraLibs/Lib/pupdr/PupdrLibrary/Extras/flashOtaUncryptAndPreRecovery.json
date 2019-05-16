@@ -1,0 +1,105 @@
+{
+ "flash" :  {
+  "commands" : [
+   {
+    "description" : "Waiting for device in MOS...",
+    "restrict" : null,
+    "state" : "mos",
+    "timeout" : 120000,
+    "tool" : "waitForDevice"
+   },
+   {
+    "args" : "\"root\"",
+    "description" : "Setting root permissions...",
+    "mandatory" : true,
+    "restrict" : null,
+    "retry" : 2,
+    "timeout" : 400000,
+    "tool" : "adb"
+   },
+   {
+    "duration" : 2000,
+    "description" : "waiting for 2s",
+    "restrict" : null,
+    "tool" : "sleep"
+   },
+   {
+    "description" : "Waiting for device in MOS...",
+    "restrict" : null,
+    "state" : "mos",
+    "timeout" : 120000,
+    "tool" : "waitForDevice"
+   },
+   {
+    "args" : "\"push\" \"${ota_file}\" \"/data/local/tmp/update.zip\"",
+    "description" : "Copying OTA image to device...",
+    "mandatory" : true,
+    "restrict" : null,
+    "retry" : 2,
+    "timeout" : 900000,
+    "tool" : "adb"
+   },
+   {
+    "args" : "\"shell\" \"uncrypt /data/local/tmp/update.zip /cache/recovery/block.map\"",
+    "description" : "Setting parameters and rebooting into recovery console...",
+    "mandatory" : true,
+    "restrict" : null,
+    "retry" : 2,
+    "timeout" : 700000,
+    "tool" : "adb"
+   },
+   {
+    "args" : "\"shell\" \"mkdir -p /cache/recovery\"",
+    "description" : "Setting parameters and rebooting into recovery console...",
+    "mandatory" : true,
+    "restrict" : null,
+    "retry" : 2,
+    "timeout" : 300000,
+    "tool" : "adb"
+   },
+   {
+    "args" : "\"shell\" \"echo '--update_package=@/cache/recovery/block.map' > /cache/recovery/command\"",
+    "description" : "Setting parameters and rebooting into recovery console...",
+    "mandatory" : true,
+    "restrict" : null,
+    "retry" : 2,
+    "timeout" : 300000,
+    "tool" : "adb"
+   },
+   {
+    "args" : "\"shell\" \"start\" \"pre-recovery\"",
+    "description" : "Starting pre-recovery...",
+    "mandatory" : true,
+    "restrict" : null,
+    "retry" : 2,
+    "timeout" : 600000,
+    "tool" : "adb"
+   }
+  ],
+  "configurations" :   {
+   "default" :    {
+    "brief" : "Default configuration",
+    "default" : true,
+    "description" : "Default configuration",
+    "groupsState" :     {
+    },
+    "name" : "Default",
+    "parameters" :     {
+    },
+    "startState" : "mos"
+   }
+  },
+  "groups" :   {
+  },
+  "osplatform" : "android",
+  "parameters" :   {
+   "ota_file" :    {
+    "description" : "OTA package",
+    "name" : "OTA package",
+    "type" : "file",
+    "value" : null
+   }
+  },
+  "version" : "2.1"
+ }
+}

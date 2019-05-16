@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="13.37">
+    <UseCase>LAB_EM_USB_HIGH_VOLTAGE</UseCase>
+    <Description>Monitor battery Charge when setting USB in high voltage.</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>False</b2bContinuousMode>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters>
+        <Parameter>
+            <!-- Battery Temperature (in degree Celsius) : 95, 70, 50, 25, 10, 5, 0, -15 -->
+            <Name>BATTERY_TEMPERATURE</Name>
+            <Value>25</Value>
+        </Parameter>
+        <Parameter>
+            <!-- VUSB normal voltage -->
+            <Name>VUSB_NORMAL</Name>
+            <Value>6</Value>
+        </Parameter>
+        <Parameter>
+            <!-- VUSB voltage (as 12V) -->
+            <Name>VUSB_HIGH</Name>
+            <Value>12.0</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

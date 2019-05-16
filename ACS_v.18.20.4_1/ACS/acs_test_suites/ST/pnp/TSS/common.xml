@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<Include>
+    <TestStepSet Id="InitializePnPResources">
+        <TestStep Id="PATLIB_INIT" EQT="DEFAULT"/>
+        <TestStep SetId="InitializePnPResources_residency_only" />
+    </TestStepSet>
+    <TestStepSet Id="InitializePnPResources_residency_only">
+        <TestStep Id="CONNECT_DEVICE_TO_FWK" DEVICE="PHONE1" />
+        <TestStep Id="INIT_PNP_RESULT" SAVE_AS="pnp_res"/>
+        <TestStep Id="SYSDEBUG_INIT" DEVICE="PHONE1" SYSDEBUG_CONFIG="FROM_TC:SYSDEBUG_MODULES" />
+        <TestStep Id="EXECUTE_BOARD_SETUP_SCRIPT" DEVICE="PHONE1"/>
+        <TestStep SetId="AllCommsOff"/>
+        <TestStep Id="OPEN_HOME_PAGE" DEVICE="PHONE1" />
+    </TestStepSet>
+    <TestStepSet Id="AllCommsOff">
+        <TestStep Id="SET_FLIGHT_MODE" DEVICE="PHONE1" FLIGHT_MODE="disable" />
+        <TestStep Id="WIFI_SET_POWER" DEVICE="PHONE1" POWER="off" />
+        <TestStep Id="BT_SET_POWER" DEVICE="PHONE1" POWER="off"/>
+        <TestStep Id="GNSS_SET_POWER" DEVICE="PHONE1" POWER="off" />
+        <TestStep Id="NFC_SET_POWER" DEVICE="PHONE1" POWER="off" />
+        <TestStep Id="DEACTIVATE_DEVICE_PDP" DEVICE="PHONE1" CHECK="True"/>
+        <TestStep Id="SET_FLIGHT_MODE" DEVICE="PHONE1" FLIGHT_MODE="enable" />
+    </TestStepSet>
+    <TestStepSet Id="EnableTDSCDMACamp">
+        <TestStep Id="SET_FLIGHT_MODE" DEVICE="PHONE1" FLIGHT_MODE="disable" />
+        <TestStep Id="SUSPEND" DURATION_IN_SEC="20" />
+        <TestStep Id="AT_PROXY" ACTION="START" BOOT_MODE="MOS" PROXY_MODE="NORMAL" SAVE_AT_PROXY_TTY_AS="at_proxy" DEVICE="PHONE1"/>
+        <TestStep Id="AT_COMMAND" SERIAL_DEVICE="FROM_CTX:at_proxy" COMMAND="at@nvm:Dyn_cps.ps_features.disable_umts_duplex_mode_dynamic_switch=1" TIMEOUT="DEFAULT" SAVE_AS="command_result" DEVICE="PHONE1"/>
+        <TestStep Id="COMPARE" OPERATOR="EQUAL" FIRST="FROM_CTX:command_result" SECOND="OK" PASS_IF="True"/>
+        <TestStep Id="AT_COMMAND" SERIAL_DEVICE="FROM_CTX:at_proxy" COMMAND="at@nvm:Dyn_cps.umts_duplexing_mode=1" TIMEOUT="DEFAULT" SAVE_AS="command_result" DEVICE="PHONE1"/>
+        <TestStep Id="COMPARE" OPERATOR="EQUAL" FIRST="FROM_CTX:command_result" SECOND="OK" PASS_IF="True"/>
+        <TestStep Id="AT_COMMAND" SERIAL_DEVICE="FROM_CTX:at_proxy" COMMAND="at@nvm:Store_nvm(dyn_cps)" TIMEOUT="DEFAULT" SAVE_AS="command_result" DEVICE="PHONE1"/>
+        <TestStep Id="AT_PROXY" ACTION="STOP" BOOT_MODE="MOS" PROXY_MODE="NORMAL" SAVE_AT_PROXY_TTY_AS="at_proxy" DEVICE="PHONE1"/>
+        <TestStep Id="SET_FLIGHT_MODE" DEVICE="PHONE1" FLIGHT_MODE="enable" />
+        <TestStep Id="REBOOT_DEVICE" DEVICE="PHONE1" WAY="soft" MODE="MOS"/>
+    </TestStepSet>
+    <TestStepSet Id="DisableTDSCDMACamp">
+        <TestStep Id="AT_PROXY" ACTION="START" BOOT_MODE="MOS" PROXY_MODE="NORMAL" SAVE_AT_PROXY_TTY_AS="at_proxy" DEVICE="PHONE1"/>
+        <TestStep Id="AT_COMMAND" SERIAL_DEVICE="FROM_CTX:at_proxy" COMMAND="at@nvm:Dyn_cps.ps_features.disable_umts_duplex_mode_dynamic_switch=0" TIMEOUT="DEFAULT" SAVE_AS="command_result" DEVICE="PHONE1"/>
+        <TestStep Id="COMPARE" OPERATOR="EQUAL" FIRST="FROM_CTX:command_result" SECOND="OK" PASS_IF="True"/>
+        <TestStep Id="AT_COMMAND" SERIAL_DEVICE="FROM_CTX:at_proxy" COMMAND="at@nvm:Dyn_cps.umts_duplexing_mode=0" TIMEOUT="DEFAULT" SAVE_AS="command_result" DEVICE="PHONE1"/>
+        <TestStep Id="COMPARE" OPERATOR="EQUAL" FIRST="FROM_CTX:command_result" SECOND="OK" PASS_IF="True"/>
+        <TestStep Id="AT_COMMAND" SERIAL_DEVICE="FROM_CTX:at_proxy" COMMAND="at@nvm:Store_nvm(dyn_cps)" TIMEOUT="DEFAULT" SAVE_AS="command_result" DEVICE="PHONE1"/>
+        <TestStep Id="AT_PROXY" ACTION="STOP" BOOT_MODE="MOS" PROXY_MODE="NORMAL" SAVE_AT_PROXY_TTY_AS="at_proxy" DEVICE="PHONE1"/>
+        <TestStep Id="REBOOT_DEVICE" DEVICE="PHONE1" WAY="soft" MODE="MOS"/>
+    </TestStepSet>
+
+    <TestStepSet Id="StartPowerMeasurement">
+        <TestStep SetId="StartResidencyMeasurement" />
+        <TestStep Id="PATLIB_ACQUISITION" EQT="DEFAULT" ACTION="start"/>
+    </TestStepSet>
+
+    <TestStepSet Id="StartResidencyMeasurement">
+        <TestStep Id="SYSDEBUG_SYNCHRONIZE" DEVICE="PHONE1" />
+        <TestStep Id="LAUNCH_SOCWATCH" DEVICE="PHONE1" INSTALL_PATH="/data/System/socwatch" DURATION="FROM_TC:TEST_DURATION" DELAY="FROM_TC:SLEEP_DURATION" FEATURE="sys" RESULT_FILENAME="socwatch_results" />
+        <TestStep Id="DISCONNECT_DEVICE_FROM_FWK" DEVICE="PHONE1" />
+        <TestStep Id="SYSDEBUG_RESET" DEVICE="PHONE1" />
+        <TestStep Id="REMOVE_USB" EQT="FROM_DEVICE:PHONE1:IoCard" />
+        <TestStep Id="SUSPEND" DURATION_IN_SEC="FROM_TC:SLEEP_DURATION" REFRESH_STDOUT_IN_SEC="60"/>
+        <TestStep Id="SYSDEBUG_START_ACQUISITION" DEVICE="PHONE1" />
+    </TestStepSet>
+
+    <TestStepSet Id="StopPowerMeasurement_common">
+    <!-- This step needs variables IDLE_TEST and POWER_MEASUREMENT set in the context, else it will raise an exception. -->
+        <If Id="powerCheckStop1" Condition="FROM_CTX:POWER_MEASUREMENT">
+            <TestStep Id="PATLIB_ACQUISITION" EQT="DEFAULT" ACTION="stop"/>
+        </If>
+        <TestStep Id="SYSDEBUG_STOP_ACQUISITION" DEVICE="PHONE1" />
+        <TestStep Id="INSERT_USB_WITH_RETRIES" RETRY="FROM_DEVICE:PHONE1:usbReplugRetries" SLEEP_BETWEEN_RETRY="10" DEVICE="PHONE1" EQT="FROM_DEVICE:PHONE1:IoCard" />
+        <TestStep Id="WAIT_FOR_DEVICE" DEVICE="PHONE1" TIMEOUT_IN_SEC="120" />
+        <TestStep Id="SYSDEBUG_FETCH" DEVICE="PHONE1" />
+        <TestStep Id="CONNECT_DEVICE_TO_FWK" DEVICE="PHONE1" />
+        <TestStep Id="UPLOAD_LOGS" DEVICE="PHONE1" FILE_PATH="/data/System/socwatch/" HOST_SUBDIR="Socwatch/" FILES="socwatch_results.csv" DESTINATION_STORED_PATH="socwatch_results" />
+        <If Id="CheckPulledSocwatchFile" Condition="FROM_CTX:socwatch_results">
+            <TestStep Id="UPLOAD_TEST_CASE_FILE" FILE="FROM_CTX:socwatch_results[+]/socwatch_results.csv" RETENTION="LONG" />
+        </If>
+        <TestStep Id="SYSDEBUG_REPORT_TO_CONTEXT" DEVICE="PHONE1" SYSDEBUG_REPORT_DEST="SYSDEBUG_REPORT" />
+        <TestStep Id="ADD_RESULT_TO_PNP_REPORT" STORED_REPORT="SYSDEBUG_REPORT" STORED_PNP_RESULT="pnp_res"/>
+        <If Id="residencyCheckStop1" Condition="FROM_CTX:IDLE_TEST">
+            <TestStep Id="REPORT_RESIDENCY_RESULT" STORED_PNP_RESULT="pnp_res"/>
+        </If>
+        <If Id="powerCheckStop2" Condition="FROM_CTX:POWER_MEASUREMENT">
+            <TestStep Id="PATLIB_REPORT" EQT="DEFAULT" POWER_CALCULATION="False" SAVE_AS="POWER_REPORT"/>
+            <TestStep Id="ADD_RESULT_TO_PNP_REPORT" STORED_REPORT="POWER_REPORT" STORED_PNP_RESULT="pnp_res"/>
+            <TestStep Id="REPORT_POWER_RESULT" EQT="DEFAULT" STORE_RAW_DATA="SAVE_POWER_DATA" STORED_PNP_RESULT="pnp_res"/>
+            <TestStep Id="PATLIB_EXPORT" EQT="DEFAULT" SAVE_RAW_DATA="FROM_TC:SAVE_POWER_DATA" SAVE_AS="pat_raw_path" STORED_PNP_RESULT="pnp_res"/>
+        </If>
+    </TestStepSet>
+
+    <TestStepSet Id="TearDown_common">
+    <!-- This step needs variables IDLE_TEST and POWER_MEASUREMENT set in the context, else it will raise an exception. -->
+        <If Id="powerCheckTD1" Condition="FROM_CTX:POWER_MEASUREMENT">
+            <TestStep Id="COMPUTE_POWER_RESULT" EQT="DEFAULT" STORED_PNP_RESULT="pnp_res" OPERATION="MEDIAN"/>
+        </If>
+        <If Id="residencyCheckTD1" Condition="FROM_CTX:IDLE_TEST">
+            <TestStep Id="COMPUTE_RESIDENCY_RESULT" STORED_PNP_RESULT="pnp_res" OPERATION="MEDIAN"/>
+        </If>
+        <TestStep Id="WRITE_PNP_REPORT" STORED_PNP_RESULT="pnp_res" CALCUL_METHOD="MEDIAN"/>
+        <TestStep Id="INSERT_USB_WITH_RETRIES" RETRY="FROM_DEVICE:PHONE1:usbReplugRetries" SLEEP_BETWEEN_RETRY="10" DEVICE="PHONE1" EQT="FROM_DEVICE:PHONE1:IoCard" />
+        <TestStep Id="CONNECT_DEVICE_TO_FWK" DEVICE="PHONE1" />
+        <If Id="residencyCheckTD2" Condition="FROM_CTX:IDLE_TEST">
+            <TestStep Id="CONFIGURE_SYSTEM_SLEEP_MODE" DEVICE="PHONE1" MODE="default"/>
+        </If>
+        <TestStep Id="OPEN_HOME_PAGE" DEVICE="PHONE1" />
+    </TestStepSet>
+
+    <TestStepSet Id="ENABLE_GMS">
+        <TestStep Id="ACTIVATE_DEVICE_PDP" DEVICE="PHONE1"/>
+        <TestStep Id="APP_ENABLE_DISABLE" DEVICE="PHONE1" APP_PACKAGE_NAME="com.android.providers.downloads" ACTION="ENABLE" />
+        <TestStep Id="APP_ENABLE_DISABLE" DEVICE="PHONE1" APP_PACKAGE_NAME="com.google.android.apps.photos" ACTION="ENABLE" />
+        <TestStep Id="APP_ENABLE_DISABLE" DEVICE="PHONE1" APP_PACKAGE_NAME="com.google.android.talk" ACTION="ENABLE" />
+        <TestStep Id="APP_ENABLE_DISABLE" DEVICE="PHONE1" APP_PACKAGE_NAME="com.google.android.partnersetup" ACTION="ENABLE" />
+        <TestStep Id="APP_ENABLE_DISABLE" DEVICE="PHONE1" APP_PACKAGE_NAME="com.google.android.gms" ACTION="ENABLE" />
+        <TestStep Id="REBOOT_DEVICE" DEVICE="PHONE1" WAY="soft" MODE="MOS"/>
+    </TestStepSet>
+
+    <TestStepSet Id="DISABLE_GMS">
+        <TestStep Id="DEACTIVATE_DEVICE_PDP" DEVICE="PHONE1" CHECK="True"/>
+        <TestStep Id="APP_ENABLE_DISABLE" DEVICE="PHONE1" APP_PACKAGE_NAME="com.android.providers.downloads" ACTION="DISABLE" />
+        <TestStep Id="APP_ENABLE_DISABLE" DEVICE="PHONE1" APP_PACKAGE_NAME="com.google.android.apps.photos" ACTION="DISABLE" />
+        <TestStep Id="APP_ENABLE_DISABLE" DEVICE="PHONE1" APP_PACKAGE_NAME="com.google.android.talk" ACTION="DISABLE" />
+        <TestStep Id="APP_ENABLE_DISABLE" DEVICE="PHONE1" APP_PACKAGE_NAME="com.google.android.partnersetup" ACTION="DISABLE" />
+        <TestStep Id="APP_ENABLE_DISABLE" DEVICE="PHONE1" APP_PACKAGE_NAME="com.google.android.gms" ACTION="DISABLE" />
+        <TestStep Id="STOP_APP" DEVICE="PHONE1" APP_PACKAGE_NAME="com.google.android.gms"/>
+        <TestStep Id="REBOOT_DEVICE" DEVICE="PHONE1" WAY="soft" MODE="MOS"/>
+    </TestStepSet>
+
+</Include>

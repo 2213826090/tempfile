@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="13.45">
+    <UseCase>LAB_EM_BATT_IDLE_3G_VC_NO_CHGR</UseCase>
+    <Description>Energy Management - idle 3G voicecall with no charger.</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>False</b2bContinuousMode>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters>
+        <Parameter>
+            <!-- Cell Band (from Band 1 to Band 10) -->
+            <Name>CELL_BAND</Name>
+            <Value>1</Value>
+        </Parameter>
+        <Parameter>
+            <!-- TCH ARFCN -->
+            <Name>UL_UARFCN</Name>
+            <Value>9750</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Mobile power in dBm -->
+            <Name>MOBILE_POWER</Name>
+            <Value>24</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Cell power in dBm -->
+            <Name>CELL_POWER</Name>
+            <Value>-70</Value>
+        </Parameter>
+        <Parameter>
+            <!-- maximal capacity limit for battery charging from 0% to 100% or 'full' -->
+            <Name>BATT_MAX_CAPACITY</Name>
+            <Value>100</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Charging time before reading information from board in seconds -->
+            <Name>CHARGE_TIME</Name>
+            <Value>300</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Time to spend in idle 3G voicecall and doing measurement in seconds -->
+            <Name>TEST_DURATION</Name>
+            <Value>150</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

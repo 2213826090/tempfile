@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="13.45">
+    <UseCase>EXEC_SCRIPT</UseCase>
+    <Description>Test case Date and Time - Settings</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters>
+        <Parameter>
+            <Name>SCRIPT_PATH</Name>
+                <Value>scripts/set_date_and_time.py</Value>
+        </Parameter>
+        <Parameter>
+            <Name>new_timezone_value</Name>
+                <Value>Bogota</Value>
+        </Parameter>
+        <Parameter>
+            <Name>new_time_value</Name>
+                <Value>12:59</Value>
+        </Parameter>
+        <Parameter>
+            <Name>new_date_value</Name>
+                <Value>13/11/2011</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

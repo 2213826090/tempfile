@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase>
+    <UseCase>LIVE_SYSTEM_FILE_NAME_OPERATION</UseCase>
+    <Description>File name operation(rename with ordinary/long name, create with invalid/multiextension/same name)in emmc</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>False</b2bContinuousMode>
+    <Parameters>
+        <Parameter>
+            <!-- The object type, file|folder -->
+            <Name>OBJECT_TYPE</Name>
+            <Value>file</Value>
+        </Parameter>
+        <Parameter>
+            <!-- The previous name of file or folder will be renamed or created -->
+            <Name>PREVIOUS_NAME</Name>
+            <Value>abcdefg.txt.xml</Value>
+        </Parameter>
+        <Parameter>
+            <!-- The following name of file or folder will be renamed -->
+            <Name>FOLLOWING_NAME</Name>
+            <Value>abcdefg.txt.xml</Value>
+        </Parameter>
+        <Parameter>
+            <!-- The operation type, rename|invalidname|multiextension|samename -->
+            <Name>OPERATION_TYPE</Name>
+            <Value>create</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

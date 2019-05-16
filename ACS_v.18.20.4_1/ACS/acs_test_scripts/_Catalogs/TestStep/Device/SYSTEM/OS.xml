@@ -1,0 +1,358 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestSteps xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../acs/src/_Catalogs/TestStep/teststep.xsd">
+    <TestStep Id="REBOOT_DEVICE" Domain="SYSTEM" SubDomain="OS" Feature="RESET" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Misc.RebootDevice.RebootDevice</ClassName>
+        <Description>Reboot the device to the specified mode</Description>
+        <Environment name="ANY"/>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues/>
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="WAY" type="STRING" isOptional="false">
+                <Description>choose reboot way among {soft, hard}</Description>
+                <PossibleValues>soft;hard</PossibleValues>
+                <DefaultValue>soft</DefaultValue>
+            </Parameter>
+            <Parameter name="MODE" type="STRING" isOptional="true">
+                <Description>mode to reboot in, support MOS, COS, POS, ROS.
+                eg: not possible to switch from ROS to COS</Description>
+                <PossibleValues>MOS;COS;POS;ROS</PossibleValues>
+                <DefaultValue>MOS</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="BOOT_DEVICE" Domain="SYSTEM" SubDomain="OS" Feature="POWERUP" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Misc.BootDevice.BootDevice</ClassName>
+        <Description>Boot the device to MOS, if not booted.  A hardware method must be available if device is not already booted.
+            A useful side effect of this is that ACS will load the status of the device, even if it was already booted.  Use this before doing
+            any uecmd operations on any device other than the first one in your bench configuration, if it was not previously (re)booted
+            by ACS, even if you're confident that the device is already booted.</Description>
+        <Environment name="ANY"/>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues/>
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="RECOVER_DEVICE" Domain="SYSTEM" SubDomain="OS" Feature="POWERUP" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Misc.RecoverDevice.RecoverDevice</ClassName>
+        <Description>Check if the device is booted and functional (connected, with adb root enabled...).
+            If not, performs a hard shutdown and then recovers the device in order to use it.</Description>
+        <Environment name="ANY"/>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues/>
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="TRY_NB" type="INTEGER" isOptional="true">
+               <Description>Max number of retries</Description>
+               <PossibleValues/>
+               <DefaultValue>3</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="SET_PHONE_LOCK" Domain="SYSTEM" SubDomain="OS" Feature="STATES" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.System.OS.SetPhoneLock.SetPhoneLock</ClassName>
+        <Description>Lock or unlock the phone</Description>
+        <Environment name="ANY"/>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues/>
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="VALUE" type="STRING" isOptional="false">
+                <Description>Set whether it is locked or unlocked</Description>
+                <PossibleValues>lock;unlock</PossibleValues>
+                <DefaultValue>unlock</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="RUN_REBOOT_LOOP" Domain="SYSTEM" SubDomain="OS" Feature="STATES" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.System.OS.RunRebootLoop.RunRebootLoop</ClassName>
+        <Description>Continuously reboot the device for the specified duration. It checks that the system UI is working. Log messages occur when rebooting starts, completes and/or fails with a date and time stamp. </Description>
+        <Environment name="ANY"/>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues/>
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="DURATION" type="INTEGER" isOptional="false">
+               <Description>How long the test will run, in minutes.</Description>
+               <PossibleValues/>
+               <DefaultValue>5</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="UI_NAVIGATION" Domain="SYSTEM" SubDomain="OS" Feature="STATES" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.System.OS.UiNavigation.UiNavigation</ClassName>
+        <Description>Repeatedly does open homepage,swipe right and left.Open settings menu, swipe up and down and close. Open calculator and close it.</Description>
+        <Environment name="ANY" />
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="DURATION" type="INTEGER" isOptional="false">
+               <Description>How long the loop will run, in minutes.</Description>
+               <PossibleValues/>
+               <DefaultValue>5</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="RUN_KEYEVENTS_LOOP" Domain="SYSTEM" SubDomain="OS" Feature="INPUTS" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.System.OS.RunKeyeventsLoop.RunKeyeventsLoop</ClassName>
+        <Description>(Android only) Runs a shell script that periodically injects keyevents for the specified amount of time.
+            The script uses keyevents that are unlikely to interfere with the operation of other apps that
+            might be running in the test.  Examples are the volume and backlight controls.  A shell script is
+            used, instead of driving each event through ADB, in order to reduce traffic on USB.
+            I do not know if there is something comparable for Windows, so for now this is written to support
+            only Android.  If it's practical on Windows, a device-side script could be written to do the same there
+            and this could be easily enhanced.
+            PREREQUISITES: The following script must be located in the path specified by SCRIPTS_PATH.
+                keyevents
+            This file can be found in Artifactory at acs_test_artifacts/CONCURRENCY/TESTS/keyevents.
+        </Description>
+        <Environment name="ANY"/>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device that will run the script.</Description>
+                <PossibleValues/>
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="DURATION" type="INTEGER" isOptional="false">
+               <Description>How long the test will run, in minutes.</Description>
+               <PossibleValues/>
+               <DefaultValue>5</DefaultValue>
+            </Parameter>
+            <Parameter name="SCRIPTS_PATH" type="STRING" isOptional="false">
+                <Description>Directory on the device where the required script has been unpacked.</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+            <Parameter name="EVENT_INTERVAL" type="STRING" isOptional="false">
+                <Description>Number of seconds to wait between events.</Description>
+                <PossibleValues/>
+                <DefaultValue>20</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="DUT_PIN_UNLOCK" Domain="SYSTEM" SubDomain="OS" Feature="STATES" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.System.OS.DutPinUnlock.DutPinUnlock</ClassName>
+        <Description>Unlocks of the DUT via PIN code method.</Description>
+        <Environment name="ANY" />
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="PIN_CODE" type="STRING" isOptional="false">
+                <Description>The code used to lock the phone.</Description>
+                <PossibleValues />
+                <DefaultValue>0000</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="SWITCH_OFF_DEVICE" Domain="SYSTEM" SubDomain="OS" Feature="POWERDOWN" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Misc.SwitchOffDevice.SwitchOffDevice</ClassName>
+        <Description>Switch off the device, if booted.</Description>
+        <Environment name="ANY"/>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues/>
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="RUN_CMD" Domain="SYSTEM" SubDomain="OS" Feature="INPUTS" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.System.OS.RunCommand.RunCommand</ClassName>
+        <Description>Execute a command on the device</Description>
+        <Environment name="ANY"/>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues/>
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="TIMEOUT" type="INTEGER" isOptional="false">
+                <Description>Timeout (in seconds) to apply to the command execution</Description>
+                <PossibleValues/>
+                <DefaultValue>5</DefaultValue>
+            </Parameter>
+            <Parameter name="COMMAND" type="STRING" isOptional="false">
+                <Description>Command to execute on the device</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+            <Parameter name="FORCE_EXECUTION" type="BOOLEAN" isOptional="false">
+                <Description>Force execution of command without preliminary check if phone is connected</Description>
+                <PossibleValues/>
+                <DefaultValue>False</DefaultValue>
+            </Parameter>
+            <Parameter name="WAIT_FOR_RESPONSE" type="BOOLEAN" isOptional="false">
+                <Description>Wait response from the device before stating on command</Description>
+                <PossibleValues/>
+                <DefaultValue>True</DefaultValue>
+            </Parameter>
+            <Parameter name="SILENT_MODE" type="BOOLEAN" isOptional="false">
+                <Description>Whether ACS log is to be hidden at execution</Description>
+                <PossibleValues/>
+                <DefaultValue>False</DefaultValue>
+            </Parameter>
+            <Parameter name="SAVE_AS" type="CONTEXT" isOptional="false">
+                <Description>
+                    <Key name="COMMAND_RESULT" type="STRING">Name of the context variable where the result string will be saved.</Key>
+                </Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="GET_ACTIVITY_TIME" Domain="SYSTEM" SubDomain="OS" Feature="STATES" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.System.OS.GetActivityTime.GetActivityTime</ClassName>
+        <Description>Get how long the device has been in active, idle or sleep state (in seconds)</Description>
+        <Environment name="ANY"/>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues/>
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="STATE" type="STRING" isOptional="false">
+                <Description>State to retrieve the duration</Description>
+                <PossibleValues>up;idle;sleep</PossibleValues>
+                <DefaultValue/>
+            </Parameter>
+            <Parameter name="STATE_DURATION" type="CONTEXT" isOptional="false">
+                <Description>Name of the context variable where the state duration will be stored</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="GET_DEVICE_INFO" Domain="SYSTEM" SubDomain="OS" Feature="STATES" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.System.OS.GetDeviceInfo.GetDeviceInfo</ClassName>
+        <Description>Get the hardware revision of the device</Description>
+        <Environment name="ANY"/>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues/>
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="INFO_TYPE" type="STRING" isOptional="false">
+                <Description>Information to retrieve</Description>
+                <PossibleValues>SwRelease;DeviceId;Imei;ModelNumber;FwVersion;BasebandVersion;KernelVersion;AcsAgentVersion;BoardType</PossibleValues>
+                <DefaultValue/>
+            </Parameter>
+            <Parameter name="FORCE_RETRIEVE" type="BOOLEAN" isOptional="true">
+                <Description>Allow to retrieve information from the device before return them</Description>
+                <PossibleValues/>
+                <DefaultValue>False</DefaultValue>
+            </Parameter>
+            <Parameter name="SAVE_AS" type="CONTEXT" isOptional="false">
+                <Description>
+                    <Key name="RES_VAR" type="STRING">Name of the context variable where the revision value will be saved</Key>
+                </Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="CHECK_CONTENT_CMD" Domain="SYSTEM" SubDomain="OS" Feature="INPUTS" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.System.OS.CheckCommandOutput.CheckCommandOutput</ClassName>
+        <Description>Check the ouptut of an executed command, if needed.</Description>
+        <Environment name="ANY"/>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues/>
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="OUTPUT_TO_CHECK" type="STRING" isOptional="false">
+                <Description>The output that you want to check.</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+            <Parameter name="CHECK_CONTENT" type="STRING" isOptional="false">
+                <Description>The content that you want to compare the output with</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="MAKE_SYSTEM_PARTITION_RW" Domain="SYSTEM" SubDomain="OS" Feature="PARTITION" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.System.OS.MakeSystemPartitionRW.MakeSystemPartitionRW</ClassName>
+        <Description>
+            set filesystem to read/write mode (/system partition)
+        </Description>
+        <Environment name="ANY"/>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues/>
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="FINALIZE_BUSYBOX_INSTALLATION" Domain="SYSTEM" SubDomain="OS" Feature="COMMANDS" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.System.OS.FinalizeBusyBoxInstallation.FinalizeBusyBoxInstallation</ClassName>
+        <Description>Install BusyBox on SUT</Description>
+        <Environment name="ANY"/>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues/>
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="BOOT_SIMICS" Domain="SYSTEM" SubDomain="OS" Feature="STATES" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.System.OS.BootSimics.BootSimics</ClassName>
+        <Description>Boots Simics to kernel shell</Description>
+        <Environment name="ANY"/>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues/>
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="SIMICS_EXEC_PATH" type="STRING" isOptional="false">
+                <Description>Installation path to simics (eg /opt/simics/simics-4.8/simics-4.8.89/bin/simics)</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+            <Parameter name="SIMICS_MODEL_PATH" type="STRING" isOptional="false">
+                <Description>Path to the simics model that contains *.simics (eg ~/gsd/gsd-gmin-android.simics)</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+            <Parameter name="BOOT_WITH_GUI" type="BOOLEAN" isOptional="true">
+                <Description>Specifies if we want to boot with Simics GUI</Description>
+                <PossibleValues/>
+                <DefaultValue>False</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="EXECUTE_BOARD_SETUP_SCRIPT" Domain="SYSTEM" SubDomain="OS" Feature="COMMANDS" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.System.OS.ExecuteBoardSetupScript.ExecuteBoardSetupScript</ClassName>
+        <Description>Boots Simics to kernel shell</Description>
+        <Environment name="ANY"/>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues/>
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+</TestSteps>

@@ -1,0 +1,57 @@
+<?xml version="1.0" ?>
+<Campaign version="13.49">
+    <Parameters>
+        <Parameter isControlledPSUsed="False"/>
+        <Parameter isIoCardUsed="False"/>
+        <Parameter skipBootOnPowerCycle="False"/>
+        <Parameter bootRetryNumber="0"/>
+        <Parameter runHookScripts="False"/>
+        <Parameter powerCycleBetweenTC="False"/>
+        <Parameter powerCycleOnFailure="False"/>
+        <Parameter finalDutState="NoChange"/>
+        <Parameter stopCampaignOnCriticalFailure="False"/>
+        <Parameter stopCampaignOnFirstFailure="False"/>
+        <Parameter loggingLevel="debug"/>
+        <Parameter CampaignType="Other"/>
+        <Parameter TCRReportViaRESTAPI="True"/>
+    </Parameters>
+    <TestCases>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_AudioComms/init.set_adb_root.AdbRoot.testAdbRoot"/>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_AudioComms/init.start_rpc_server.StartRPCServer.testStartRPCServer"/>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_AudioComms/init.wake_up_and_unlock.WakeUnlock.testWakeUnlock"/>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_AudioComms/init.set_orientation_vertical.SetOrientationVertical.testSetOrientationVertical"/>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_AudioComms/init.config_first_boot_wizard.ConfigFirstBootWizard.testConfigFirstBootWizard"/>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_AudioComms/init.enable_developer_option.EnableDeveloperOption.testEnableDeveloperOption"/>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_AudioComms/init.disable_verify_apps.DisableVerifyApp.testDisableVerifyApp"/>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_AudioComms/init.keep_awake.KeepAwake.testKeepAwake"/>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_AudioComms/init.connect_wifi.ConnectWifi.testConnectWifi"/>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_AudioComms/init.disable_screen_lock.DisableLockScreen.testDisableLockScreen"/>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_AudioComms/init.delete_camera_folder_file.DeleteCameraFolderFile.testDeleteCameraFolderFile"/>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_AudioComms/CSV_Call/testST_AUDIOCOMMS_CSV_ARM_001"/>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_AudioComms/CSV_Call/testST_AUDIOCOMMS_CSV_DTMF_010"/>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_AudioComms/CSV_Call/testST_AUDIOCOMMS_CSV_DTMF_006"/>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_AudioComms/CSV_Call/testST_AUDIOCOMMS_CSV_DTMF_003"/>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_AudioComms/CSV_Call/testST_AUDIOCOMMS_CSV_MO_063"/>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_AudioComms/CSV_Call/testST_AUDIOCOMMS_CSV_MO_059"/>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_AudioComms/CSV_Call/testST_AUDIOCOMMS_CSV_MO_056"/>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_AudioComms/CSV_Call/testST_AUDIOCOMMS_CSV_MO_001"/>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_AudioComms/CSV_Call/testST_AUDIOCOMMS_CSV_MO_012"/>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_AudioComms/CSV_Call/testST_AUDIOCOMMS_CSV_MT_004"/>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_AudioComms/CSV_Call/testST_AUDIOCOMMS_CSV_MT_016"/>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_AudioComms/CSV_Call/testST_AUDIOCOMMS_CSV_DTMF_002"/>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_AudioComms/CSV_Call/testST_AUDIOCOMMS_CSV_DTMF_001"/>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_AudioComms/CSV_Call/testST_AUDIOCOMMS_CSV_MO_009"/>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_AudioComms/CSV_Call/testST_AUDIOCOMMS_CSV_ARM_002"/>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_AudioComms/SIP_Call/testST_AUDIOCOMMS_VOIP_WLAN_116"/>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_AudioComms/SIP_Call/testST_AUDIOCOMMS_VOIP_WLAN_115"/>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_AudioComms/SIP_Call/testST_AUDIOCOMMS_VOIP_WLAN_113"/>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_AudioComms/SIP_Call/testST_AUDIOCOMMS_VOIP_WLAN_301"/>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_AudioComms/SIP_Call/testST_AUDIOCOMMS_VOIP_WLAN_117"/>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_AudioComms/SIP_Call/testST_AUDIOCOMMS_FIT_WLVOIP_021"/>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_AudioComms/SIP_Call/testST_AUDIOCOMMS_VOIP_WLAN_135"/>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_AudioComms/Call_Swap/testST_AUDIOCOMMS_VOIP_WLAN_118"/>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_AudioComms/Call_Swap/testST_AUDIOCOMMS_VOIP_WLAN_119"/>
+        <TestCase Id="../../../../../TC/TP/TC/Post_Test/postTestRemoveGoogleAccount"/>
+        <TestCase Id="../../../../../TC/TP/TC/Post_Test/postTestWifiOff"/>
+    </TestCases>
+</Campaign>

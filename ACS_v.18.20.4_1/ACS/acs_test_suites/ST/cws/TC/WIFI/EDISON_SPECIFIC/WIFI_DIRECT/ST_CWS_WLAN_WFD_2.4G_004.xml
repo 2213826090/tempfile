@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="13.41">
+    <UseCase>TEST_STEP_ENGINE</UseCase>
+    <Description></Description>
+    <b2bIteration>200</b2bIteration>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <TcMaxAttempt>1</TcMaxAttempt>
+    <TcAcceptanceCriteria>1</TcAcceptanceCriteria>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters>
+        <Parameter>
+            <Name>WIFI_DIRECT_MODE</Name>
+            <Value>CLI</Value>
+        </Parameter>
+    </Parameters>
+    <TestSteps>
+         <Include Src="ST/cws/TSS/WiFi/ST_CWS_WIFI_COMMON.xml" />
+        <Setup>
+            <!-- AUTOMATION - Set default configuration -->
+            <TestStep Id="ENABLE_WIFI_DIRECT" DEVICE="PHONE1" />
+            <TestStep Id="ENABLE_WIFI_DIRECT" DEVICE="PHONE2" />
+            <TestStep Id="WIFI_DIRECT_CONFIGURE" DEVICE="PHONE1" />
+            <TestStep Id="WIFI_DIRECT_CONFIGURE" DEVICE="PHONE2" />
+            <TestStep Id="GET_WIFI_DIRECT_MAC_ADDRESS" DEVICE="PHONE1" SAVE_AS="mac_addr_phone1"/>
+            <TestStep Id="GET_WIFI_DIRECT_MAC_ADDRESS" DEVICE="PHONE2" SAVE_AS="mac_addr_phone2"/>
+            <Fork Id="P2P_SCAN">
+                <TestStep SetId="ScanAndGetWiFiDirectPeers" DEVICE="PHONE1" STATE="available" SAVE_AS="peers_list_phone1" />
+                <TestStep SetId="ScanAndGetWiFiDirectPeers" DEVICE="PHONE2" STATE="available" SAVE_AS="peers_list_phone2" />
+            </Fork>
+            <TestStep Id="COMPARE" FIRST="FROM_CTX:mac_addr_phone1" SECOND="FROM_CTX:peers_list_phone2" OPERATOR="IN" PASS_IF="true"/>
+            <TestStep Id="COMPARE" FIRST="FROM_CTX:mac_addr_phone2" SECOND="FROM_CTX:peers_list_phone1" OPERATOR="IN" PASS_IF="true"/>
+        </Setup>
+        <RunTest>
+            <TestStep Id="WIFI_DIRECT_DISCONNECT" DEVICE="PHONE1"/>
+            <TestStep Id="WIFI_DIRECT_DISCONNECT" DEVICE="PHONE2"/>
+
+            <Fork Id="P2P_CONNECT">
+                <TestStep Id="WIFI_DIRECT_CONNECT" DEVICE="PHONE1" PEER_DEVICE="FROM_CTX:mac_addr_phone2" CONNECT_TYPE="intent" AUTHENTICATION_TYPE="WPS-PBC" GO_INTENT="0" TIMEOUT="10" P2P_COM_FREQ="2432"/>
+                <TestStep Id="WIFI_DIRECT_CONNECT" DEVICE="PHONE2" PEER_DEVICE="FROM_CTX:mac_addr_phone1" CONNECT_TYPE="intent" AUTHENTICATION_TYPE="WPS-PBC" GO_INTENT="15" TIMEOUT="10" P2P_COM_FREQ="2432"/>
+            </Fork>
+            <TestStep Id="GET_WIFI_DIRECT_INTERFACE" DEVICE="PHONE1" SAVE_AS="INTERFACE_P2P_PHONE1" />
+            <TestStep Id="WIFI_DIRECT_GET_MODE" DEVICE="PHONE1" INTERFACE="FROM_CTX:INTERFACE_P2P_PHONE1" SAVE_WIFI_DIRECT_MODE="P2P_MODE_PHONE1"/>
+            <TestStep Id="COMPARE" FIRST="FROM_CTX:P2P_MODE_PHONE1" SECOND="FROM_TC:WIFI_DIRECT_MODE" OPERATOR="IN" PASS_IF="true"/>
+
+            <TestStep Id="GET_WIFI_DIRECT_INTERFACE" DEVICE="PHONE2" SAVE_AS="INTERFACE_P2P_PHONE2" />
+            <TestStep Id="WIFI_DIRECT_DISCONNECT" DEVICE="PHONE2" WIFI_DIRECT_NAME="FROM_CTX:INTERFACE_P2P_PHONE2"/>
+            <TestStep Id="WIFI_DIRECT_REMOVE_REMEMBERED_GROUPS" DEVICE="PHONE1"/>
+            <TestStep Id="WIFI_DIRECT_REMOVE_REMEMBERED_GROUPS" DEVICE="PHONE2"/>
+        </RunTest>
+        <TearDown>
+            <TestStep Id="WIFI_DIRECT_FLUSH" DEVICE="PHONE1" />
+            <TestStep SetId="WiFiCommonTeardown" DEVICE="PHONE1"/>
+            <TestStep Id="WIFI_DIRECT_FLUSH" DEVICE="PHONE2" />
+            <TestStep SetId="WiFiCommonTeardown" DEVICE="PHONE2"/>
+        </TearDown>
+    </TestSteps>
+</TestCase>

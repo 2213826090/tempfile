@@ -1,0 +1,42 @@
+<?xml version="1.0" ?>
+<Campaign>
+      <Parameters>
+            <Parameter isControlledPSUsed="False"/>
+            <Parameter isIoCardUsed="False"/>
+            <Parameter skipBootOnPowerCycle="False"/>
+            <Parameter bootRetryNumber="0"/>
+            <Parameter runHookScripts="False"/>
+            <Parameter powerCycleBetweenTC="False"/>
+            <Parameter powerCycleOnFailure="False"/>
+            <Parameter finalDutState="NoChange"/>
+            <Parameter stopCampaignOnCriticalFailure="False"/>
+            <Parameter stopCampaignOnFirstFailure="False"/>
+            <Parameter loggingLevel="debug"/>
+            <Parameter CampaignType="Other"/>
+      </Parameters>
+      <TestCases>
+            <TestCase Id="../../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/camera/parameters/testSetJpegQuality"/>
+            <TestCase Id="../../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/camera/parameters/testSetWrongRotation"/>
+            <TestCase Id="../../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/camera/parameters/testSetPictureFormat"/>
+            <TestCase Id="../../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/camera/parameters/testSetAutoWhiteBalanceLock"/>
+            <TestCase Id="../../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/camera/parameters/testSetWhiteBalance"/>
+            <TestCase Id="../../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/camera/parameters/testSetJpegThumbnailSize"/>
+            <TestCase Id="../../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/camera/parameters/testSetJpegThumbnailQuality"/>
+            <TestCase Id="../../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/camera/parameters/testSetPreviewSize"/>
+            <TestCase Id="../../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/camera/parameters/testSetRotation"/>
+            <TestCase Id="../../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/camera/parameters/testSetRecordingHint"/>
+            <TestCase Id="../../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/camera/parameters/testSetZoom"/>
+            <TestCase Id="../../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/camera/parameters/testSetSceneMode"/>
+            <TestCase Id="../../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/camera/parameters/testSetVideoStabilization"/>
+            <TestCase Id="../../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/camera/parameters/testSetExposureCompensation"/>
+            <TestCase Id="../../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/camera/parameters/testSetPictureSize"/>
+            <TestCase Id="../../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/camera/parameters/testSetGpsParams"/>
+            <TestCase Id="../../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/camera/parameters/testSetPreviewFpsRange"/>
+            <TestCase Id="../../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/camera/parameters/testSetPreviewFormat"/>
+            <TestCase Id="../../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/camera/parameters/testSetFlattenParameters"/>
+            <TestCase Id="../../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/camera/parameters/testSetFlashMode"/>
+            <TestCase Id="../../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/camera/parameters/testSetColorEffect"/>
+            <TestCase Id="../../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/camera/parameters/testSetAutoExposureLock"/>
+            <TestCase Id="../../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/camera/parameters/testSetFocusMode"/>
+      </TestCases>
+</Campaign>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase>
+    <UseCase>EXEC_SCRIPT</UseCase>
+    <Description>Generate PASS verdict with 1 warning + CTRL-C FINALIZE</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>False</b2bContinuousMode>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <TestSteps>
+        <Initialize>
+            <TestStep Id="REBOOT_DEVICE" DEVICE="PHONE1" WAY="soft"/>
+        </Initialize>
+    </TestSteps>
+    <Parameters>
+        <Parameter>
+            <Name>SCRIPT_PATH</Name>
+            <Value>./scripts/press_home_button.py</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

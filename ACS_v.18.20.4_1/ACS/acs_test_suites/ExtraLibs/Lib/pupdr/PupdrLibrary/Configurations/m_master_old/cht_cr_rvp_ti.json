@@ -1,0 +1,56 @@
+{
+    "Configuration": {
+        "Boot": null,
+        "BootVars": null,
+        "Custom": null,
+        "Flash": null,
+        "Inherit": {
+            "BOARD": "cht_cr_rvp"
+        },
+        "Logs": null,
+        "Timeout": null,
+        "WorkAround": null,
+        "TestDescription": {
+            "warnings": {},
+            "engineering": [
+                {
+                    "name": "d2d",
+                    "build_tag": "d2dl2m_",
+                    "testing": [
+                        {
+                            "build_target": "r2_cht_cr-userdebug",
+                            "campaign": "BOOTOTA_D2D",
+                            "flash": false
+                        }
+                    ]
+                },
+                {
+                    "name": "default",
+                    "build_tag": "bootota_",
+                    "testing": [
+                        {
+                            "build_target": "r2_cht_cr-userdebug",
+                            "campaign": "BOOTOTA_PREINTEGRATION"
+                        },
+                        {
+                            "build_target": "r2_cht_cr-user",
+                            "campaign": "BOOTOTA_USER_EAT"
+                        }
+                    ]
+                }
+            ],
+            "release_candidate": [
+                {
+                    "name": "release",
+                    "build_tag": "",
+                    "testing": [
+                        {
+                            "build_target": "r2_cht_cr-userdebug",
+                            "campaign": "BOOTOTA_RELEASE"
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}

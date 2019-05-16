@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!-- Energy Management Parameters Catalog Template : new template to automatically populate i-TAP database with EM TC params -->
+<Parameters xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../acs/src/_Catalogs/Parameter/parameter.xsd">
+    <Parameter name="SLEEP_MODE">
+        <Description>System sleep mode level of the device</Description>
+        <Domain>PNP</Domain>
+        <Type>str</Type>
+        <PossibleValues override="true">S0;S3;S0I1;S0I2;S0I3;LPMP3</PossibleValues>
+        <DefaultValue override="true"></DefaultValue>
+        <Blank override="false">true</Blank>
+    </Parameter>
+    <Parameter name="MEASUREMENT_UNIT">
+        <Description>Type of measurement unit of the system sleep mode. The time spent in the given sleep mode can be reported in time (sec), residency (%) or count units</Description>
+        <Domain>PNP</Domain>
+        <Type>str</Type>
+        <PossibleValues override="true">time;residency;count</PossibleValues>
+        <DefaultValue override="true"></DefaultValue>
+        <Blank override="false">true</Blank>
+    </Parameter>
+</Parameters>

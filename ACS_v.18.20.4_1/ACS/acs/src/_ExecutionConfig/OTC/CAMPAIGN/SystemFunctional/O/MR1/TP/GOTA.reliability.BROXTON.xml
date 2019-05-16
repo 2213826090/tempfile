@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<Campaign version="13.49">
+    <Parameters>
+        <Parameter isControlledPSUsed="False"/>
+        <Parameter isIoCardUsed="False"/>
+        <Parameter skipBootOnPowerCycle="False"/>
+        <Parameter bootRetryNumber="0"/>
+        <Parameter runHookScripts="False"/>
+        <Parameter powerCycleBetweenTC="False"/>
+        <Parameter powerCycleOnFailure="False"/>
+        <Parameter finalDutState="NoChange"/>
+        <Parameter stopCampaignOnCriticalFailure="False"/>
+        <Parameter stopCampaignOnFirstFailure="False"/>
+        <Parameter loggingLevel="debug"/>
+        <Parameter CampaignType="Other"/>
+        <Parameter TCRReportViaRESTAPI="True"/>
+    </Parameters>
+    <TestCases>
+        <TestCase Id="../../../../../TC/TP/TC/GOTA/GOTA/testCheckAFWDataInAppAfterGOTA"/>
+        <TestCase Id="../../../../../TC/TP/TC/GOTA/GOTA/testGotaFiveTimes"/>
+        <TestCase Id="../../../../../TC/TP/TC/GOTA/GOTA/testWifiReconnectDuringGOTA"/>
+        <TestCase Id="../../../../../TC/TP/TC/GOTA/GOTA/testCheckDeviceOwnerAfterGOTA"/>
+        <TestCase Id="../../../../../TC/TP/TC/GOTA/GOTA/testGota_package_deleted_if_failed"/>
+    </TestCases>
+</Campaign>

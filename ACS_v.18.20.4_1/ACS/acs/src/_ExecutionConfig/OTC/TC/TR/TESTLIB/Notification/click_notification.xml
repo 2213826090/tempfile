@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='ASCII'?>
+<TestCase>
+    <UseCase>Testlib</UseCase>
+    <Description>Checks the serials DUT by getprop</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <TcMaxAttempt>1</TcMaxAttempt>
+    <TestSteps>
+        <RunTest/>
+    </TestSteps>
+    <Parameters>
+        <Parameter>
+            <Name>timeout</Name>
+            <Value>300</Value>
+        </Parameter>
+        <Parameter>
+            <Name>test</Name>
+            <Value>_ExecutionConfig/TC/TESTLIB/testlib/scripts/android/ui/notification/tests/04_click_notif.py</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

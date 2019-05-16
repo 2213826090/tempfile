@@ -1,0 +1,930 @@
+<?xml version="1.0" ?>
+<ogl_es_3.0_conformance_auto>
+	<test_case id="1" name="ogles3.0_conf_GL3Tests_blend_minmax">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">GL3Tests/blend_minmax/input.run</parameter>
+				<parameter name="test_bin_name">GTF;/data/app/GTF</parameter>
+				<parameter name="log_param">/data/app/blend_minmax</parameter>
+			</test_step>
+			<test_step fun_name="check_result" type="fun">
+				<parameter name="result_file">/data/app/blend_minmax.txt</parameter>
+				<parameter name="pass_string">PASSED all</parameter>
+				<parameter name="fail_string">PASSED all 0</parameter>
+			</test_step>
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="adb_cmd">adb shell rm -rf /data/app/*.txt</parameter>
+				<parameter name="adb_cmd">adb shell rm -rf /data/app/*.xml</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+
+	<test_case id="2" name="ogles2.0_conf_GL3Tests_color_buffer_float">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">GL3Tests/color_buffer_float/input.run</parameter>
+				<parameter name="test_bin_name">GTF;/data/app/GTF</parameter>
+				<parameter name="log_param">/data/app/color_buffer_float</parameter>
+			</test_step>
+			<test_step fun_name="check_result" type="fun">
+				<parameter name="result_file">/data/app/color_buffer_float.txt</parameter>
+				<parameter name="pass_string">PASSED all</parameter>
+				<parameter name="fail_string">PASSED all 0</parameter>
+			</test_step>
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="adb_cmd">adb shell rm -rf /data/app/*.txt</parameter>
+				<parameter name="adb_cmd">adb shell rm -rf /data/app/*.xml</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="3" name="ogles2.0_conf_GL3Tests_conditional_render">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">GL3Tests/conditional_render/input.run</parameter>
+				<parameter name="test_bin_name">GTF;/data/app/GTF</parameter>
+				<parameter name="log_param">/data/app/conditional_render</parameter>
+			</test_step>
+			<test_step fun_name="check_result" type="fun">
+				<parameter name="result_file">/data/app/conditional_render.txt</parameter>
+				<parameter name="pass_string">PASSED all</parameter>
+				<parameter name="fail_string">PASSED all 0</parameter>
+			</test_step>
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="adb_cmd">adb shell rm -rf /data/app/*.txt</parameter>
+				<parameter name="adb_cmd">adb shell rm -rf /data/app/*.xml</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="4" name="ogles2.0_conf_GL3Tests_copy_buffer">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">GL3Tests/copy_buffer/input.run</parameter>
+				<parameter name="test_bin_name">GTF;/data/app/GTF</parameter>
+				<parameter name="log_param">/data/app/copy_buffer</parameter>
+			</test_step>
+			<test_step fun_name="check_result" type="fun">
+				<parameter name="result_file">/data/app/copy_buffer.txt</parameter>
+				<parameter name="pass_string">PASSED all</parameter>
+				<parameter name="fail_string">PASSED all 0</parameter>
+			</test_step>
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="adb_cmd">adb shell rm -rf /data/app/*.txt</parameter>
+				<parameter name="adb_cmd">adb shell rm -rf /data/app/*.xml</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="5" name="ogles2.0_conf_GL3Tests_default">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">GL3Tests/default/input.run</parameter>
+				<parameter name="test_bin_name">GTF;/data/app/GTF</parameter>
+				<parameter name="log_param">/data/app/default</parameter>
+			</test_step>
+			<test_step fun_name="check_result" type="fun">
+				<parameter name="result_file">/data/app/default.txt</parameter>
+				<parameter name="pass_string">PASSED all</parameter>
+				<parameter name="fail_string">PASSED all 0</parameter>
+			</test_step>
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="adb_cmd">adb shell rm -rf /data/app/*.txt</parameter>
+				<parameter name="adb_cmd">adb shell rm -rf /data/app/*.xml</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="6" name="ogles2.0_conf_GL3Tests_depth24">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">GL3Tests/depth24/input.run</parameter>
+				<parameter name="test_bin_name">GTF;/data/app/GTF</parameter>
+				<parameter name="log_param">/data/app/depth24</parameter>
+			</test_step>
+			<test_step fun_name="check_result" type="fun">
+				<parameter name="result_file">/data/app/depth24.txt</parameter>
+				<parameter name="pass_string">PASSED all</parameter>
+				<parameter name="fail_string">PASSED all 0</parameter>
+			</test_step>
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="adb_cmd">adb shell rm -rf /data/app/*.txt</parameter>
+				<parameter name="adb_cmd">adb shell rm -rf /data/app/*.xml</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="7" name="ogles2.0_conf_GL3Tests_depth_texture">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">GL3Tests/depth_texture/input.run</parameter>
+				<parameter name="test_bin_name">GTF;/data/app/GTF</parameter>
+				<parameter name="log_param">/data/app/depth_texture</parameter>
+			</test_step>
+			<test_step fun_name="check_result" type="fun">
+				<parameter name="result_file">/data/app/depth_texture.txt</parameter>
+				<parameter name="pass_string">PASSED all</parameter>
+				<parameter name="fail_string">PASSED all 0</parameter>
+			</test_step>
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="adb_cmd">adb shell rm -rf /data/app/*.txt</parameter>
+				<parameter name="adb_cmd">adb shell rm -rf /data/app/*.xml</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="8" name="ogles2.0_conf_GL3Tests_draw_buffers">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">GL3Tests/draw_buffers/input.run</parameter>
+				<parameter name="test_bin_name">GTF;/data/app/GTF</parameter>
+				<parameter name="log_param">/data/app/draw_buffers</parameter>
+			</test_step>
+			<test_step fun_name="check_result" type="fun">
+				<parameter name="result_file">/data/app/draw_buffers.txt</parameter>
+				<parameter name="pass_string">PASSED all</parameter>
+				<parameter name="fail_string">PASSED all 0</parameter>
+			</test_step>
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="adb_cmd">adb shell rm -rf /data/app/*.txt</parameter>
+				<parameter name="adb_cmd">adb shell rm -rf /data/app/*.xml</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="9" name="ogles2.0_conf_GL3Tests_draw_elements_base_vertex">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">GL3Tests/draw_elements_base_vertex/input.run</parameter>
+				<parameter name="test_bin_name">GTF;/data/app/GTF</parameter>
+				<parameter name="log_param">/data/app/draw_elements_base_vertex</parameter>
+			</test_step>
+			<test_step fun_name="check_result" type="fun">
+				<parameter name="result_file">/data/app/draw_elements_base_vertex.txt</parameter>
+				<parameter name="pass_string">PASSED all</parameter>
+				<parameter name="fail_string">PASSED all 0</parameter>
+			</test_step>
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="adb_cmd">adb shell rm -rf /data/app/*.txt</parameter>
+				<parameter name="adb_cmd">adb shell rm -rf /data/app/*.xml</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="10" name="ogles2.0_conf_GL3Tests_draw_instanced">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">GL3Tests/draw_instanced/input.run</parameter>
+				<parameter name="test_bin_name">GTF;/data/app/GTF</parameter>
+				<parameter name="log_param">/data/app/draw_instanced</parameter>
+			</test_step>
+			<test_step fun_name="check_result" type="fun">
+				<parameter name="result_file">/data/app/draw_instanced.txt</parameter>
+				<parameter name="pass_string">PASSED all</parameter>
+				<parameter name="fail_string">PASSED all 0</parameter>
+			</test_step>
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="adb_cmd">adb shell rm -rf /data/app/*.txt</parameter>
+				<parameter name="adb_cmd">adb shell rm -rf /data/app/*.xml</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="11" name="ogles2.0_conf_GL3Tests_eac_compression_r11">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">GL3Tests/eac_compression_r11/input.run</parameter>
+				<parameter name="test_bin_name">GTF;/data/app/GTF</parameter>
+				<parameter name="log_param">/data/app/eac_compression_r11</parameter>
+			</test_step>
+			<test_step fun_name="check_result" type="fun">
+				<parameter name="result_file">/data/app/eac_compression_r11.txt</parameter>
+				<parameter name="pass_string">PASSED all</parameter>
+				<parameter name="fail_string">PASSED all 0</parameter>
+			</test_step>
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="adb_cmd">adb shell rm -rf /data/app/*.txt</parameter>
+				<parameter name="adb_cmd">adb shell rm -rf /data/app/*.xml</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="12" name="ogles2.0_conf_GL3Tests_eac_compression_rg11">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">GL3Tests/eac_compression_rg11/input.run</parameter>
+				<parameter name="test_bin_name">GTF;/data/app/GTF</parameter>
+				<parameter name="log_param">/data/app/eac_compression_rg11</parameter>
+			</test_step>
+			<test_step fun_name="check_result" type="fun">
+				<parameter name="result_file">/data/app/eac_compression_rg11.txt</parameter>
+				<parameter name="pass_string">PASSED all</parameter>
+				<parameter name="fail_string">PASSED all 0</parameter>
+			</test_step>
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="adb_cmd">adb shell rm -rf /data/app/*.txt</parameter>
+				<parameter name="adb_cmd">adb shell rm -rf /data/app/*.xml</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="13" name="ogles2.0_conf_GL3Tests_eac_compression_signed_r11">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">GL3Tests/eac_compression_signed_r11/input.run</parameter>
+				<parameter name="test_bin_name">GTF;/data/app/GTF</parameter>
+				<parameter name="log_param">/data/app/eac_compression_signed_r11</parameter>
+			</test_step>
+			<test_step fun_name="check_result" type="fun">
+				<parameter name="result_file">/data/app/eac_compression_signed_r11.txt</parameter>
+				<parameter name="pass_string">PASSED all</parameter>
+				<parameter name="fail_string">PASSED all 0</parameter>
+			</test_step>
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="adb_cmd">adb shell rm -rf /data/app/*.txt</parameter>
+				<parameter name="adb_cmd">adb shell rm -rf /data/app/*.xml</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="14" name="ogles2.0_conf_GL3Tests_eac_compression_signed_rg11">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">GL3Tests/eac_compression_signed_rg11/input.run</parameter>
+				<parameter name="test_bin_name">GTF;/data/app/GTF</parameter>
+				<parameter name="log_param">/data/app/eac_compression_signed_rg11</parameter>
+			</test_step>
+			<test_step fun_name="check_result" type="fun">
+				<parameter name="result_file">/data/app/eac_compression_signed_rg11.txt</parameter>
+				<parameter name="pass_string">PASSED all</parameter>
+				<parameter name="fail_string">PASSED all 0</parameter>
+			</test_step>
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="adb_cmd">adb shell rm -rf /data/app/*.txt</parameter>
+				<parameter name="adb_cmd">adb shell rm -rf /data/app/*.xml</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="15" name="ogles2.0_conf_GL3Tests_element_index_uint">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">GL3Tests/element_index_uint/input.run</parameter>
+				<parameter name="test_bin_name">GTF;/data/app/GTF</parameter>
+				<parameter name="log_param">/data/app/element_index_uint</parameter>
+			</test_step>
+			<test_step fun_name="check_result" type="fun">
+				<parameter name="result_file">/data/app/element_index_uint.txt</parameter>
+				<parameter name="pass_string">PASSED all</parameter>
+				<parameter name="fail_string">PASSED all 0</parameter>
+			</test_step>
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="adb_cmd">adb shell rm -rf /data/app/*.txt</parameter>
+				<parameter name="adb_cmd">adb shell rm -rf /data/app/*.xml</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="16" name="ogles2.0_conf_GL3Tests_etc2_compression_rgb8">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">GL3Tests/etc2_compression_rgb8/input.run</parameter>
+				<parameter name="test_bin_name">GTF;/data/app/GTF</parameter>
+				<parameter name="log_param">/data/app/etc2_compression_rgb8</parameter>
+			</test_step>
+			<test_step fun_name="check_result" type="fun">
+				<parameter name="result_file">/data/app/etc2_compression_rgb8.txt</parameter>
+				<parameter name="pass_string">PASSED all</parameter>
+				<parameter name="fail_string">PASSED all 0</parameter>
+			</test_step>
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="adb_cmd">adb shell rm -rf /data/app/*.txt</parameter>
+				<parameter name="adb_cmd">adb shell rm -rf /data/app/*.xml</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="17" name="ogles2.0_conf_GL3Tests_etc2_compression_rgb8_pt_alpha1">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">GL3Tests/etc2_compression_rgb8_pt_alpha1/input.run</parameter>
+				<parameter name="test_bin_name">GTF;/data/app/GTF</parameter>
+				<parameter name="log_param">/data/app/etc2_compression_rgb8_pt_alpha1</parameter>
+			</test_step>
+			<test_step fun_name="check_result" type="fun">
+				<parameter name="result_file">/data/app/etc2_compression_rgb8_pt_alpha1.txt</parameter>
+				<parameter name="pass_string">PASSED all</parameter>
+				<parameter name="fail_string">PASSED all 0</parameter>
+			</test_step>
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="adb_cmd">adb shell rm -rf /data/app/*.txt</parameter>
+				<parameter name="adb_cmd">adb shell rm -rf /data/app/*.xml</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="18" name="ogles2.0_conf_GL3Tests_etc2_compression_rgba8">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">GL3Tests/etc2_compression_rgba8/input.run</parameter>
+				<parameter name="test_bin_name">GTF;/data/app/GTF</parameter>
+				<parameter name="log_param">/data/app/etc2_compression_rgba8</parameter>
+			</test_step>
+			<test_step fun_name="check_result" type="fun">
+				<parameter name="result_file">/data/app/etc2_compression_rgba8.txt</parameter>
+				<parameter name="pass_string">PASSED all</parameter>
+				<parameter name="fail_string">PASSED all 0</parameter>
+			</test_step>
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="adb_cmd">adb shell rm -rf /data/app/*.txt</parameter>
+				<parameter name="adb_cmd">adb shell rm -rf /data/app/*.xml</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="19" name="ogles2.0_conf_GL3Tests_explicit_attrib_location">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">GL3Tests/explicit_attrib_location/input.run</parameter>
+				<parameter name="test_bin_name">GTF;/data/app/GTF</parameter>
+				<parameter name="log_param">/data/app/explicit_attrib_location</parameter>
+			</test_step>
+			<test_step fun_name="check_result" type="fun">
+				<parameter name="result_file">/data/app/explicit_attrib_location.txt</parameter>
+				<parameter name="pass_string">PASSED all</parameter>
+				<parameter name="fail_string">PASSED all 0</parameter>
+			</test_step>
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="adb_cmd">adb shell rm -rf /data/app/*.txt</parameter>
+				<parameter name="adb_cmd">adb shell rm -rf /data/app/*.xml</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="20" name="ogles2.0_conf_GL3Tests_fragment_coord_conventions">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">GL3Tests/fragment_coord_conventions/input.run</parameter>
+				<parameter name="test_bin_name">GTF;/data/app/GTF</parameter>
+				<parameter name="log_param">/data/app/fragment_coord_conventions</parameter>
+			</test_step>
+			<test_step fun_name="check_result" type="fun">
+				<parameter name="result_file">/data/app/fragment_coord_conventions.txt</parameter>
+				<parameter name="pass_string">PASSED all</parameter>
+				<parameter name="fail_string">PASSED all 0</parameter>
+			</test_step>
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="adb_cmd">adb shell rm -rf /data/app/*.txt</parameter>
+				<parameter name="adb_cmd">adb shell rm -rf /data/app/*.xml</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="21" name="ogles2.0_conf_GL3Tests_framebuffer_blit">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">GL3Tests/framebuffer_blit/input.run</parameter>
+				<parameter name="test_bin_name">GTF;/data/app/GTF</parameter>
+				<parameter name="log_param">/data/app/framebuffer_blit</parameter>
+			</test_step>
+			<test_step fun_name="check_result" type="fun">
+				<parameter name="result_file">/data/app/framebuffer_blit.txt</parameter>
+				<parameter name="pass_string">PASSED all</parameter>
+				<parameter name="fail_string">PASSED all 0</parameter>
+			</test_step>
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="adb_cmd">adb shell rm -rf /data/app/*.txt</parameter>
+				<parameter name="adb_cmd">adb shell rm -rf /data/app/*.xml</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="22" name="ogles2.0_conf_GL3Tests_framebuffer_srgb">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">GL3Tests/framebuffer_srgb/input.run</parameter>
+				<parameter name="test_bin_name">GTF;/data/app/GTF</parameter>
+				<parameter name="log_param">/data/app/framebuffer_srgb</parameter>
+			</test_step>
+			<test_step fun_name="check_result" type="fun">
+				<parameter name="result_file">/data/app/framebuffer_srgb.txt</parameter>
+				<parameter name="pass_string">PASSED all</parameter>
+				<parameter name="fail_string">PASSED all 0</parameter>
+			</test_step>
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="adb_cmd">adb shell rm -rf /data/app/*.txt</parameter>
+				<parameter name="adb_cmd">adb shell rm -rf /data/app/*.xml</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="23" name="ogles2.0_conf_GL3Tests_half_float">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">GL3Tests/half_float/input.run</parameter>
+				<parameter name="test_bin_name">GTF;/data/app/GTF</parameter>
+				<parameter name="log_param">/data/app/half_float</parameter>
+			</test_step>
+			<test_step fun_name="check_result" type="fun">
+				<parameter name="result_file">/data/app/half_float.txt</parameter>
+				<parameter name="pass_string">PASSED all</parameter>
+				<parameter name="fail_string">PASSED all 0</parameter>
+			</test_step>
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="adb_cmd">adb shell rm -rf /data/app/*.txt</parameter>
+				<parameter name="adb_cmd">adb shell rm -rf /data/app/*.xml</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="24" name="ogles2.0_conf_GL3Tests_instanced_arrays">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">GL3Tests/instanced_arrays/input.run</parameter>
+				<parameter name="test_bin_name">GTF;/data/app/GTF</parameter>
+				<parameter name="log_param">/data/app/instanced_arrays</parameter>
+			</test_step>
+			<test_step fun_name="check_result" type="fun">
+				<parameter name="result_file">/data/app/instanced_arrays.txt</parameter>
+				<parameter name="pass_string">PASSED all</parameter>
+				<parameter name="fail_string">PASSED all 0</parameter>
+			</test_step>
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="adb_cmd">adb shell rm -rf /data/app/*.txt</parameter>
+				<parameter name="adb_cmd">adb shell rm -rf /data/app/*.xml</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="25" name="ogles2.0_conf_GL3Tests_map_buffer_range">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">GL3Tests/map_buffer_range/input.run</parameter>
+				<parameter name="test_bin_name">GTF;/data/app/GTF</parameter>
+				<parameter name="log_param">/data/app/map_buffer_range</parameter>
+			</test_step>
+			<test_step fun_name="check_result" type="fun">
+				<parameter name="result_file">/data/app/map_buffer_range.txt</parameter>
+				<parameter name="pass_string">PASSED all</parameter>
+				<parameter name="fail_string">PASSED all 0</parameter>
+			</test_step>
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="adb_cmd">adb shell rm -rf /data/app/*.txt</parameter>
+				<parameter name="adb_cmd">adb shell rm -rf /data/app/*.xml</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="26" name="ogles2.0_conf_GL3Tests_occlusion_query">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">GL3Tests/occlusion_query/input.run</parameter>
+				<parameter name="test_bin_name">GTF;/data/app/GTF</parameter>
+				<parameter name="log_param">/data/app/occlusion_query</parameter>
+			</test_step>
+			<test_step fun_name="check_result" type="fun">
+				<parameter name="result_file">/data/app/occlusion_query.txt</parameter>
+				<parameter name="pass_string">PASSED all</parameter>
+				<parameter name="fail_string">PASSED all 0</parameter>
+			</test_step>
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="adb_cmd">adb shell rm -rf /data/app/*.txt</parameter>
+				<parameter name="adb_cmd">adb shell rm -rf /data/app/*.xml</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="27" name="ogles2.0_conf_GL3Tests_packed_depth_stencil">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">GL3Tests/packed_depth_stencil/input.run</parameter>
+				<parameter name="test_bin_name">GTF;/data/app/GTF</parameter>
+				<parameter name="log_param">/data/app/packed_depth_stencil</parameter>
+			</test_step>
+			<test_step fun_name="check_result" type="fun">
+				<parameter name="result_file">/data/app/packed_depth_stencil.txt</parameter>
+				<parameter name="pass_string">PASSED all</parameter>
+				<parameter name="fail_string">PASSED all 0</parameter>
+			</test_step>
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="adb_cmd">adb shell rm -rf /data/app/*.txt</parameter>
+				<parameter name="adb_cmd">adb shell rm -rf /data/app/*.xml</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="28" name="ogles2.0_conf_GL3Tests_packed_pixels">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">GL3Tests/packed_pixels/input.run</parameter>
+				<parameter name="test_bin_name">GTF;/data/app/GTF</parameter>
+				<parameter name="log_param">/data/app/packed_pixels</parameter>
+			</test_step>
+			<test_step fun_name="check_result" type="fun">
+				<parameter name="result_file">/data/app/packed_pixels.txt</parameter>
+				<parameter name="pass_string">PASSED all</parameter>
+				<parameter name="fail_string">PASSED all 0</parameter>
+			</test_step>
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="adb_cmd">adb shell rm -rf /data/app/*.txt</parameter>
+				<parameter name="adb_cmd">adb shell rm -rf /data/app/*.xml</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="29" name="ogles2.0_conf_GL3Tests_pixel_buffer_object">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">GL3Tests/pixel_buffer_object/input.run</parameter>
+				<parameter name="test_bin_name">GTF;/data/app/GTF</parameter>
+				<parameter name="log_param">/data/app/pixel_buffer_object</parameter>
+			</test_step>
+			<test_step fun_name="check_result" type="fun">
+				<parameter name="result_file">/data/app/pixel_buffer_object.txt</parameter>
+				<parameter name="pass_string">PASSED all</parameter>
+				<parameter name="fail_string">PASSED all 0</parameter>
+			</test_step>
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="adb_cmd">adb shell rm -rf /data/app/*.txt</parameter>
+				<parameter name="adb_cmd">adb shell rm -rf /data/app/*.xml</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="30" name="ogles2.0_conf_GL3Tests_primitive_restart">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">GL3Tests/primitive_restart/input.run</parameter>
+				<parameter name="test_bin_name">GTF;/data/app/GTF</parameter>
+				<parameter name="log_param">/data/app/primitive_restart</parameter>
+			</test_step>
+			<test_step fun_name="check_result" type="fun">
+				<parameter name="result_file">/data/app/primitive_restart.txt</parameter>
+				<parameter name="pass_string">PASSED all</parameter>
+				<parameter name="fail_string">PASSED all 0</parameter>
+			</test_step>
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="adb_cmd">adb shell rm -rf /data/app/*.txt</parameter>
+				<parameter name="adb_cmd">adb shell rm -rf /data/app/*.xml</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="31" name="ogles2.0_conf_GL3Tests_proxy_textures">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">GL3Tests/proxy_textures/input.run</parameter>
+				<parameter name="test_bin_name">GTF;/data/app/GTF</parameter>
+				<parameter name="log_param">/data/app/proxy_textures</parameter>
+			</test_step>
+			<test_step fun_name="check_result" type="fun">
+				<parameter name="result_file">/data/app/proxy_textures.txt</parameter>
+				<parameter name="pass_string">PASSED all</parameter>
+				<parameter name="fail_string">PASSED all 0</parameter>
+			</test_step>
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="adb_cmd">adb shell rm -rf /data/app/*.txt</parameter>
+				<parameter name="adb_cmd">adb shell rm -rf /data/app/*.xml</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="32" name="ogles2.0_conf_GL3Tests_rgb8_rgba8">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">GL3Tests/rgb8_rgba8/input.run</parameter>
+				<parameter name="test_bin_name">GTF;/data/app/GTF</parameter>
+				<parameter name="log_param">/data/app/rgb8_rgba8</parameter>
+			</test_step>
+			<test_step fun_name="check_result" type="fun">
+				<parameter name="result_file">/data/app/rgb8_rgba8.txt</parameter>
+				<parameter name="pass_string">PASSED all</parameter>
+				<parameter name="fail_string">PASSED all 0</parameter>
+			</test_step>
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="adb_cmd">adb shell rm -rf /data/app/*.txt</parameter>
+				<parameter name="adb_cmd">adb shell rm -rf /data/app/*.xml</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="33" name="ogles2.0_conf_GL3Tests_sgis_texture_lod">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">GL3Tests/sgis_texture_lod/input.run</parameter>
+				<parameter name="test_bin_name">GTF;/data/app/GTF</parameter>
+				<parameter name="log_param">/data/app/sgis_texture_lod</parameter>
+			</test_step>
+			<test_step fun_name="check_result" type="fun">
+				<parameter name="result_file">/data/app/sgis_texture_lod.txt</parameter>
+				<parameter name="pass_string">PASSED all</parameter>
+				<parameter name="fail_string">PASSED all 0</parameter>
+			</test_step>
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="adb_cmd">adb shell rm -rf /data/app/*.txt</parameter>
+				<parameter name="adb_cmd">adb shell rm -rf /data/app/*.xml</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="34" name="ogles2.0_conf_GL3Tests_shadow">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">GL3Tests/shadow/input.run</parameter>
+				<parameter name="test_bin_name">GTF;/data/app/GTF</parameter>
+				<parameter name="log_param">/data/app/shadow</parameter>
+			</test_step>
+			<test_step fun_name="check_result" type="fun">
+				<parameter name="result_file">/data/app/shadow.txt</parameter>
+				<parameter name="pass_string">PASSED all</parameter>
+				<parameter name="fail_string">PASSED all 0</parameter>
+			</test_step>
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="adb_cmd">adb shell rm -rf /data/app/*.txt</parameter>
+				<parameter name="adb_cmd">adb shell rm -rf /data/app/*.xml</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="35" name="ogles2.0_conf_GL3Tests_sync">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">GL3Tests/sync/input.run</parameter>
+				<parameter name="test_bin_name">GTF;/data/app/GTF</parameter>
+				<parameter name="log_param">/data/app/sync</parameter>
+			</test_step>
+			<test_step fun_name="check_result" type="fun">
+				<parameter name="result_file">/data/app/sync.txt</parameter>
+				<parameter name="pass_string">PASSED all</parameter>
+				<parameter name="fail_string">PASSED all 0</parameter>
+			</test_step>
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="adb_cmd">adb shell rm -rf /data/app/*.txt</parameter>
+				<parameter name="adb_cmd">adb shell rm -rf /data/app/*.xml</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="36" name="ogles2.0_conf_GL3Tests_texture_lod_bias">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">GL3Tests/texture_lod_bias/input.run</parameter>
+				<parameter name="test_bin_name">GTF;/data/app/GTF</parameter>
+				<parameter name="log_param">/data/app/texture_lod_bias</parameter>
+			</test_step>
+			<test_step fun_name="check_result" type="fun">
+				<parameter name="result_file">/data/app/texture_lod_bias.txt</parameter>
+				<parameter name="pass_string">PASSED all</parameter>
+				<parameter name="fail_string">PASSED all 0</parameter>
+			</test_step>
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="adb_cmd">adb shell rm -rf /data/app/*.txt</parameter>
+				<parameter name="adb_cmd">adb shell rm -rf /data/app/*.xml</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="37" name="ogles2.0_conf_GL3Tests_texture_storage">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">GL3Tests/texture_storage/input.run</parameter>
+				<parameter name="test_bin_name">GTF;/data/app/GTF</parameter>
+				<parameter name="log_param">/data/app/texture_storage</parameter>
+			</test_step>
+			<test_step fun_name="check_result" type="fun">
+				<parameter name="result_file">/data/app/texture_storage.txt</parameter>
+				<parameter name="pass_string">PASSED all</parameter>
+				<parameter name="fail_string">PASSED all 0</parameter>
+			</test_step>
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="adb_cmd">adb shell rm -rf /data/app/*.txt</parameter>
+				<parameter name="adb_cmd">adb shell rm -rf /data/app/*.xml</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="38" name="ogles2.0_conf_GL3Tests_transform_feedback">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">GL3Tests/transform_feedback/input.run</parameter>
+				<parameter name="test_bin_name">GTF;/data/app/GTF</parameter>
+				<parameter name="log_param">/data/app/transform_feedback</parameter>
+			</test_step>
+			<test_step fun_name="check_result" type="fun">
+				<parameter name="result_file">/data/app/transform_feedback.txt</parameter>
+				<parameter name="pass_string">PASSED all</parameter>
+				<parameter name="fail_string">PASSED all 0</parameter>
+			</test_step>
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="adb_cmd">adb shell rm -rf /data/app/*.txt</parameter>
+				<parameter name="adb_cmd">adb shell rm -rf /data/app/*.xml</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="39" name="ogles2.0_conf_GL3Tests_transform_feedback2">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">GL3Tests/transform_feedback2/input.run</parameter>
+				<parameter name="test_bin_name">GTF;/data/app/GTF</parameter>
+				<parameter name="log_param">/data/app/transform_feedback2</parameter>
+			</test_step>
+			<test_step fun_name="check_result" type="fun">
+				<parameter name="result_file">/data/app/transform_feedback2.txt</parameter>
+				<parameter name="pass_string">PASSED all</parameter>
+				<parameter name="fail_string">PASSED all 0</parameter>
+			</test_step>
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="adb_cmd">adb shell rm -rf /data/app/*.txt</parameter>
+				<parameter name="adb_cmd">adb shell rm -rf /data/app/*.xml</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="40" name="ogles2.0_conf_GL3Tests_transform_feedback3">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">GL3Tests/transform_feedback3/input.run</parameter>
+				<parameter name="test_bin_name">GTF;/data/app/GTF</parameter>
+				<parameter name="log_param">/data/app/transform_feedback3</parameter>
+			</test_step>
+			<test_step fun_name="check_result" type="fun">
+				<parameter name="result_file">/data/app/transform_feedback3.txt</parameter>
+				<parameter name="pass_string">PASSED all</parameter>
+				<parameter name="fail_string">PASSED all 0</parameter>
+			</test_step>
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="adb_cmd">adb shell rm -rf /data/app/*.txt</parameter>
+				<parameter name="adb_cmd">adb shell rm -rf /data/app/*.xml</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="41" name="ogles2.0_conf_GL3Tests_uniform_buffer_object">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">GL3Tests/uniform_buffer_object/input.run</parameter>
+				<parameter name="test_bin_name">GTF;/data/app/GTF</parameter>
+				<parameter name="log_param">/data/app/uniform_buffer_object</parameter>
+			</test_step>
+			<test_step fun_name="check_result" type="fun">
+				<parameter name="result_file">/data/app/uniform_buffer_object.txt</parameter>
+				<parameter name="pass_string">PASSED all</parameter>
+				<parameter name="fail_string">PASSED all 0</parameter>
+			</test_step>
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="adb_cmd">adb shell rm -rf /data/app/*.txt</parameter>
+				<parameter name="adb_cmd">adb shell rm -rf /data/app/*.xml</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="42" name="ogles2.0_conf_GL3Tests_vertex_array_bgra">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">GL3Tests/vertex_array_bgra/input.run</parameter>
+				<parameter name="test_bin_name">GTF;/data/app/GTF</parameter>
+				<parameter name="log_param">/data/app/vertex_array_bgra</parameter>
+			</test_step>
+			<test_step fun_name="check_result" type="fun">
+				<parameter name="result_file">/data/app/vertex_array_bgra.txt</parameter>
+				<parameter name="pass_string">PASSED all</parameter>
+				<parameter name="fail_string">PASSED all 0</parameter>
+			</test_step>
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="adb_cmd">adb shell rm -rf /data/app/*.txt</parameter>
+				<parameter name="adb_cmd">adb shell rm -rf /data/app/*.xml</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="43" name="ogles2.0_conf_GL3Tests_vertex_type_2_10_10_10_rev">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">GL3Tests/vertex_type_2_10_10_10_rev/input.run</parameter>
+				<parameter name="test_bin_name">GTF;/data/app/GTF</parameter>
+				<parameter name="log_param">/data/app/vertex_type_2_10_10_10_rev</parameter>
+			</test_step>
+			<test_step fun_name="check_result" type="fun">
+				<parameter name="result_file">/data/app/vertex_type_2_10_10_10_rev.txt</parameter>
+				<parameter name="pass_string">PASSED all</parameter>
+				<parameter name="fail_string">PASSED all 0</parameter>
+			</test_step>
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="adb_cmd">adb shell rm -rf /data/app/*.txt</parameter>
+				<parameter name="adb_cmd">adb shell rm -rf /data/app/*.xml</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+
+     <test_case name='ogles3.0_conf_gl3_GLCoverage' id='44'>
+        <test_item name=''>
+            <test_step type='fun' fun_name='test_sequence_handler'>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+            </test_step>
+            <test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">GLCoverage/input_es30.run</parameter>
+				<parameter name="test_bin_name">GTF/GTF;/data/app</parameter>
+				<parameter name="log_param">/data/app/ogles3.0_conf_gl3_GLCoverage</parameter>
+			</test_step>
+            <test_step type='fun' fun_name='check_result'>
+                <parameter name='result_file'>/data/app/ogles3.0_conf_gl3_GLCoverage.txt</parameter>
+                <parameter name='pass_string'>PASSED all</parameter>
+                <parameter name='fail_string'>PASSED all 0</parameter>
+            </test_step>
+            <test_step type='fun' fun_name='test_sequence_handler'>
+                <parameter name='adb_cmd'>adb shell rm -rf /data/app/*.txt</parameter>
+                <parameter name='adb_cmd'>adb shell rm -rf /data/app/*.xml</parameter>
+            </test_step>
+        </test_item>
+    </test_case>
+
+</ogl_es_3.0_conformance_auto>

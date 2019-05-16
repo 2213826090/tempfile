@@ -1,0 +1,13 @@
+{
+    "windows": {
+        "check_exists": ["winreg", ["SYSTEM/CurrentControlSet/Services/jwRelay"]],
+        "install": "{bin} /SW",
+        "32": "acs/dependencies/equipment/JSB291/V1.10/jwRelay_x86.zip",
+        "64": "acs/dependencies/equipment/JSB291/V1.10/jwRelay_x64.zip",
+        "zip": {
+            "bin": "DPInst.exe"
+        }
+    }
+}
+
+

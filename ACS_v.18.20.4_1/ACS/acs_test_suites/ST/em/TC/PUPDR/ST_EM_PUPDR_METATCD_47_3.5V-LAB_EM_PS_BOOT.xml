@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase>
+    <UseCase>LAB_EM_PS_BOOT</UseCase>
+    <Description>PUPDR - boot a board with given vbatt.</Description>
+    <b2bIteration>1</b2bIteration>
+    <TcMaxAttempt>2</TcMaxAttempt>
+    <TcAcceptanceCriteria>1</TcAcceptanceCriteria>
+    <b2bContinuousMode>False</b2bContinuousMode>
+    <Parameters>
+        <Parameter>
+            <!-- Vbatt Voltage -->
+            <Name>VBATT</Name>
+            <Value>3.5</Value>
+        </Parameter>
+        <Parameter>
+            <!-- initial os : MOS (for Main Os) or COS (for Charging Os) or OFF (the board is off) or OFF_NO_BATT (off without battery) -->
+            <Name>INITIAL_OS_STATE</Name>
+            <Value>OFF</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

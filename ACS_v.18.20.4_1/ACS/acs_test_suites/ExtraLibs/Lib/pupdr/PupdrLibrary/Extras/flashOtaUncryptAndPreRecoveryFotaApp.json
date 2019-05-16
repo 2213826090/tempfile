@@ -1,0 +1,78 @@
+{
+ "flash" :  {
+  "commands" : [
+   {
+    "description" : "Waiting for device in MOS...",
+    "restrict" : null,
+    "state" : "mos",
+    "timeout" : 120000,
+    "tool" : "waitForDevice"
+   },
+   {
+    "args" : "\"root\"",
+    "description" : "Setting root permissions...",
+    "mandatory" : true,
+    "restrict" : null,
+    "retry" : 2,
+    "timeout" : 400000,
+    "tool" : "adb"
+   },
+   {
+    "duration" : 2000,
+    "description" : "waiting for 2s",
+    "restrict" : null,
+    "tool" : "sleep"
+   },
+   {
+    "description" : "Waiting for device in MOS...",
+    "restrict" : null,
+    "state" : "mos",
+    "timeout" : 120000,
+    "tool" : "waitForDevice"
+   },
+   {
+    "args" : "\"push\" \"${ota_file}\" \"/data/local/tmp/update.zip\"",
+    "description" : "Copying OTA image to device...",
+    "mandatory" : true,
+    "restrict" : null,
+    "retry" : 2,
+    "timeout" : 900000,
+    "tool" : "adb"
+   },
+   {
+    "args" : "\"shell\" \"am broadcast -a com.intel.afotaapp.INSTALL_LOCAL_OTA -e com.intel.afotaapp.extra.LOCAL_OTA_PATH /data/local/tmp/update.zip\"",
+    "description" : "Installing the new OTa package on the device",
+    "mandatory" : true,
+    "restrict" : null,
+    "retry" : 2,
+    "timeout" : 700000,
+    "tool" : "adb"
+   }
+  ],
+  "configurations" :   {
+   "default" :    {
+    "brief" : "Default configuration",
+    "default" : true,
+    "description" : "Default configuration",
+    "groupsState" :     {
+    },
+    "name" : "Default",
+    "parameters" :     {
+    },
+    "startState" : "mos"
+   }
+  },
+  "groups" :   {
+  },
+  "osplatform" : "android",
+  "parameters" :   {
+   "ota_file" :    {
+    "description" : "OTA package",
+    "name" : "OTA package",
+    "type" : "file",
+    "value" : null
+   }
+  },
+  "version" : "2.1"
+ }
+}

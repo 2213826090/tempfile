@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<Campaign>
+  <Parameters>
+    <Parameter isControlledPSUsed ="False"/>
+    <Parameter isIoCardUsed ="False"/>
+    <!-- Set skipBootOnPowerCycle to True to disable the accs boot procedure-->
+    <!-- Important, it means that boot will be handle inside the campaign/tc -->
+    <Parameter skipBootOnPowerCycle ="False"/>
+    <Parameter runHookScripts = "False"/>        
+    <Parameter powerCycleBetweenTC ="False"/>
+    <Parameter powerCycleOnFailure ="False"/>
+    <Parameter finalPowerOff ="False"/>
+    <Parameter stopCampaignOnCriticalFailure = "False"/>
+    <Parameter stopCampaignOnFirstFailure = "False"/>
+    <!-- LoggingLevel possible values: info | warning | debug | error -->
+    <Parameter loggingLevel = "info"/>
+    <!-- CampaignType format -> <TEAM>_<CAMPAIGNTYPE> 
+        Possible values:        
+        FT(Feature Team)-> SANITY | REGRESSION | STRESS, RELIABILTY | MTBF
+        ST(System Test)-> SANITY | REGRESSION | STRESS, RELIABILTY | MTBF
+        SI(System Integration)-> EAT | STAB | PACT | CAT0 | RELIABILITY | MTBF | CTS
+        Otherwise "Others" should be used -->
+    <Parameter CampaignType = "ST_REGRESSION"/>
+  </Parameters> 
+  <Targets>
+    <!-- Target Values -->
+    <Target targetB2bPassRate ="80"/>
+  </Targets>
+  <TestCases>
+    <!-- Boot, Flash, Setup -->
+    <TestCase Id="SI/BBot_EAT_PACT/TC/COMMON/SYSTEM/SI_SYSTEM_SETUP_EMBEDDED"/>
+    
+    <!-- ADB -->
+      <TestCase Id="../TC/ADB/ST_SYST_USB_Gadget_ADB_003-EXEC"/>
+      <TestCase Id="../TC/ADB/ST_SYST_USB_Gadget_ADB_004-EXEC"/>
+      <TestCase Id="../TC/ADB/ST_SYST_USB_Gadget_ADB_005-EXEC"/>
+    
+    <!-- Content: SMS, MMS, Contact -->
+      <TestCase Id="../TC/Content/ST_SYST_FS_eMMC_056-LIVE_SYSTEM_CONTACT_OPERATION"/>
+      <TestCase Id="../TC/Content/ST_SYST_FS_eMMC_057-LIVE_SYSTEM_CONTACT_OPERATION"/>
+      <TestCase Id="../TC/Content/ST_SYST_FS_eMMC_058-LIVE_SYSTEM_CONTACT_OPERATION"/>
+      <TestCase Id="../TC/Content/ST_SYST_FS_eMMC_059-LIVE_SYSTEM_CONTACT_OPERATION"/>
+    
+    <!-- File -->
+      <TestCase Id="../TC/File/ST_SYST_FS_eMMC_007-LIVE_SYSTEM_FILE_OPERATION"/>
+      <TestCase Id="../TC/File/ST_SYST_FS_eMMC_008-LIVE_SYSTEM_FILE_OPERATION"/>
+      <TestCase Id="../TC/File/ST_SYST_FS_SDCARD_001-LIVE_SYSTEM_FILE_OPERATION_R3"/>
+      <TestCase Id="../TC/File/ST_SYST_FS_SDCARD_008-LIVE_SYSTEM_FILE_OPERATION_R3"/>
+      <TestCase Id="../TC/File/ST_SYST_FS_SDCARD_009-LIVE_SYSTEM_FILE_OPERATION_R3"/>
+      <TestCase Id="../TC/File/ST_SYST_FS_SDCARD_080-LIVE_SYSTEM_FILE_OPERATION_R3"/>
+      <TestCase Id="../TC/File/ST_SYST_FS_SDCARD_083-LIVE_SYSTEM_FILE_OPERATION_R3"/>
+      <TestCase Id="../TC/File/ST_SYST_FS_SDCARD_086-LIVE_SYSTEM_FILE_OPERATION_R3"/>
+      <TestCase Id="../TC/File/ST_SYST_FS_SDCARD_089-LIVE_SYSTEM_FILE_OPERATION_R3"/>
+      <TestCase Id="../TC/File/ST_SYST_FS_SDCARD_092-LIVE_SYSTEM_FILE_OPERATION"/>
+      <TestCase Id="../TC/File/ST_SYST_FS_SDCARD_093-LIVE_SYSTEM_FILE_OPERATION"/>
+      <TestCase Id="../TC/File/ST_SYST_FS_SDCARD_094-LIVE_SYSTEM_FILE_OPERATION"/>
+      <TestCase Id="../TC/File/ST_SYST_FS_SDCARD_095-LIVE_SYSTEM_FILE_OPERATION"/>
+      <TestCase Id="../TC/File/ST_SYST_FS_SDCARD_097-LIVE_SYSTEM_FILE_OPERATION"/>
+      <TestCase Id="../TC/File/ST_SYST_FS_SDCARD_099-LIVE_SYSTEM_FILE_OPERATION"/>
+      <TestCase Id="../TC/File/ST_SYST_FS_XFER_007-LIVE_SYSTEM_FILE_OPERATION_R3"/>
+      <TestCase Id="../TC/File/ST_SYST_FS_XFER_008-LIVE_SYSTEM_FILE_OPERATION_R3"/>
+      <TestCase Id="../TC/File/ST_SYST_FS_XFER_009-LIVE_SYSTEM_FILE_OPERATION_R3"/>
+      <TestCase Id="../TC/File/ST_SYST_FS_XFER_010-LIVE_SYSTEM_FILE_OPERATION_R3"/>
+    <TestCase Id="../TC/File/ST_SYST_FS_eMMC_090-LIVE_SYSTEM_FILE_OPERATION"/>
+    <TestCase Id="../TC/File/ST_SYST_FS_eMMC_091-LIVE_SYSTEM_FILE_OPERATION"/>
+    <TestCase Id="../TC/File/ST_SYST_FS_eMMC_093-LIVE_SYSTEM_FILE_OPERATION"/>
+    <TestCase Id="../TC/File/ST_SYST_FS_eMMC_094-LIVE_SYSTEM_FILE_OPERATION"/>
+    <TestCase Id="../TC/File/ST_SYST_FS_eMMC_095-LIVE_SYSTEM_FILE_OPERATION"/>
+    <TestCase Id="../TC/File/ST_SYST_FS_eMMC_096-LIVE_SYSTEM_FILE_OPERATION"/>
+    <TestCase Id="../TC/File/ST_SYST_FS_eMMC_098-LIVE_SYSTEM_FILE_OPERATION"/>
+    <TestCase Id="../TC/File/ST_SYST_FS_eMMC_099-LIVE_SYSTEM_FILE_OPERATION"/>
+    <TestCase Id="../TC/File/ST_SYST_FS_eMMC_100-LIVE_SYSTEM_FILE_OPERATION"/>
+    <TestCase Id="../TC/File/ST_SYST_FS_eMMC_101-LIVE_SYSTEM_FILE_OPERATION"/>
+    <TestCase Id="../TC/File/ST_SYST_FS_eMMC_102-LIVE_SYSTEM_FILE_OPERATION"/>
+    <TestCase Id="../TC/File/ST_SYST_FS_eMMC_103-LIVE_SYSTEM_FILE_OPERATION"/>
+    <TestCase Id="../TC/File/ST_SYST_FS_eMMC_105-LIVE_SYSTEM_FILE_OPERATION"/>
+    <TestCase Id="../TC/File/ST_SYST_FS_eMMC_106-LIVE_SYSTEM_FILE_OPERATION"/>
+    <!-- does not exist
+    <TestCase Id="../TC/File/ST_SYST_FS_eMMC_107-LIVE_SYSTEM_FILE_OPERATION"/>
+    -->
+    <TestCase Id="../TC/File/ST_SYST_FS_eMMC_108-LIVE_SYSTEM_FILE_OPERATION"/>
+    <TestCase Id="../TC/File/ST_SYST_FS_eMMC_109-LIVE_SYSTEM_FILE_OPERATION"/>
+    <TestCase Id="../TC/File/ST_SYST_FS_eMMC_110-LIVE_SYSTEM_FILE_OPERATION"/>
+    <TestCase Id="../TC/File/ST_SYST_FS_eMMC_111-LIVE_SYSTEM_FILE_OPERATION"/>
+    <TestCase Id="../TC/File/ST_SYST_FS_eMMC_112-LIVE_SYSTEM_FILE_OPERATION"/>
+    <TestCase Id="../TC/File/ST_SYST_FS_eMMC_120-LIVE_SYSTEM_FILE_OPERATION"/>
+    <TestCase Id="../TC/File/ST_SYST_FS_eMMC_121-LIVE_SYSTEM_FILE_OPERATION"/>
+    <TestCase Id="../TC/File/ST_SYST_FS_eMMC_123-LIVE_SYSTEM_FILE_OPERATION"/>
+    <TestCase Id="../TC/File/ST_SYST_FS_eMMC_124-LIVE_SYSTEM_FILE_OPERATION"/>
+    <TestCase Id="../TC/File/ST_SYST_FS_eMMC_125-LIVE_SYSTEM_FILE_OPERATION"/>
+    <TestCase Id="../TC/File/ST_SYST_FS_eMMC_127-LIVE_SYSTEM_FILE_OPERATION"/>
+    <TestCase Id="../TC/File/ST_SYST_FS_eMMC_092-LIVE_SYSTEM_FILE_NAME_OPERATION"/>
+    <TestCase Id="../TC/File/ST_SYST_FS_eMMC_097-LIVE_SYSTEM_FILE_NAME_OPERATION"/>
+    <TestCase Id="../TC/File/ST_SYST_FS_eMMC_122-LIVE_SYSTEM_FILE_NAME_OPERATION"/>
+    <TestCase Id="../TC/File/ST_SYST_FS_eMMC_126-LIVE_SYSTEM_FILE_NAME_OPERATION"/>
+    <TestCase Id="../TC/File/ST_SYST_FS_eMMC_130-LIVE_SYSTEM_FILE_NAME_OPERATION"/>
+    
+    <!-- Ringer Profile -->
+      <TestCase Id="../TC/RingerProfile/ST_SYST_STATE_INFO_733-LIVE_SYSTEM_CHECK_RINGER_PROFILE"/>
+      <TestCase Id="../TC/RingerProfile/ST_SYST_STATE_INFO_734-LIVE_SYSTEM_CHECK_RINGER_PROFILE"/>
+      <TestCase Id="../TC/RingerProfile/ST_SYST_STATE_INFO_735-LIVE_SYSTEM_CHECK_RINGER_PROFILE"/>
+      <TestCase Id="../TC/RingerProfile/ST_SYST_STATE_INFO_736-LIVE_SYSTEM_CHECK_RINGER_PROFILE"/>
+      <TestCase Id="../TC/RingerProfile/ST_SYST_STATE_INFO_737-LIVE_SYSTEM_CHECK_RINGER_PROFILE"/>
+      <TestCase Id="../TC/RingerProfile/ST_SYST_STATE_INFO_738-LIVE_SYSTEM_CHECK_RINGER_PROFILE"/>
+      <TestCase Id="../TC/RingerProfile/ST_SYST_STATE_INFO_739-LIVE_SYSTEM_CHECK_RINGER_PROFILE"/>
+      <TestCase Id="../TC/RingerProfile/ST_SYST_STATE_INFO_740-LIVE_SYSTEM_CHECK_RINGER_PROFILE"/>
+    
+    <!-- SensorInfo -->
+      <TestCase Id="../TC/SensorInfo/ST_SYST_SENSORS_001-LIVE_SYSTEM_SENSOR_INFO"/>
+      <TestCase Id="../TC/SensorInfo/ST_SYST_SENSORS_002-LIVE_SYSTEM_SENSOR_INFO"/>
+      <TestCase Id="../TC/SensorInfo/ST_SYST_SENSORS_020-LIVE_SYSTEM_SENSOR_INFO"/>
+      <TestCase Id="../TC/SensorInfo/ST_SYST_SENSORS_021-LIVE_SYSTEM_SENSOR_INFO"/>
+      <TestCase Id="../TC/SensorInfo/ST_SYST_SENSORS_040-LIVE_SYSTEM_SENSOR_INFO"/>
+      <TestCase Id="../TC/SensorInfo/ST_SYST_SENSORS_041-LIVE_SYSTEM_SENSOR_INFO"/>
+      <TestCase Id="../TC/SensorInfo/ST_SYST_SENSORS_080-LIVE_SYSTEM_SENSOR_INFO"/>
+      <TestCase Id="../TC/SensorInfo/ST_SYST_SENSORS_081-LIVE_SYSTEM_SENSOR_INFO"/>
+      <TestCase Id="../TC/SensorInfo/ST_SYST_SENSORS_170-LIVE_SYSTEM_SENSOR_INFO"/>
+      <TestCase Id="../TC/SensorInfo/ST_SYST_SENSORS_171-LIVE_SYSTEM_SENSOR_INFO"/>
+      <TestCase Id="../TC/SensorInfo/ST_SYST_SENSORS_203-LIVE_SYSTEM_SENSOR_INFO"/>
+      <TestCase Id="../TC/SensorInfo/ST_SYST_SENSORS_204-LIVE_SYSTEM_SENSOR_INFO"/>
+      <TestCase Id="../TC/SensorInfo/ST_SYST_SENSORS_211-LIVE_SYSTEM_SENSOR_INFO"/>
+      <TestCase Id="../TC/SensorInfo/ST_SYST_SENSORS_212-LIVE_SYSTEM_SENSOR_INFO"/>
+      <TestCase Id="../TC/SensorInfo/ST_SYST_SENSORS_215-LIVE_SYSTEM_SENSOR_INFO"/>
+      <TestCase Id="../TC/SensorInfo/ST_SYST_SENSORS_216-LIVE_SYSTEM_SENSOR_INFO"/>
+      <TestCase Id="../TC/SensorInfo/ST_SYST_SENSORS_219-LIVE_SYSTEM_SENSOR_INFO"/>
+      <TestCase Id="../TC/SensorInfo/ST_SYST_SENSORS_220-LIVE_SYSTEM_SENSOR_INFO"/>
+      <TestCase Id="../TC/SensorInfo/ST_SYST_SENSORS_222-LIVE_SYSTEM_SENSOR_INFO_R3"/>
+      <TestCase Id="../TC/SensorInfo/ST_SYST_SENSORS_223-LIVE_SYSTEM_SENSOR_INFO"/>
+    
+    <!-- SystemInfo -->
+      <TestCase Id="../TC/SystemInfo/ST_SYST_STATE_INFO_528-LIVE_SYSTEM_RETRIEVE_SYSTEM_INFO"/> 
+      <TestCase Id="../TC/SystemInfo/ST_SYST_STATE_INFO_529-LIVE_SYSTEM_RETRIEVE_SYSTEM_INFO"/> 
+      <TestCase Id="../TC/SystemInfo/ST_SYST_STATE_INFO_530-LIVE_SYSTEM_RETRIEVE_SYSTEM_INFO"/> 
+      <TestCase Id="../TC/SystemInfo/ST_SYST_STATE_INFO_531-LIVE_SYSTEM_RETRIEVE_SYSTEM_INFO"/> 
+      <TestCase Id="../TC/SystemInfo/ST_SYST_STATE_INFO_532-LIVE_SYSTEM_RETRIEVE_SYSTEM_INFO"/> 
+      <TestCase Id="../TC/SystemInfo/ST_SYST_STATE_INFO_533-LIVE_SYSTEM_RETRIEVE_SYSTEM_INFO"/> 
+      <TestCase Id="../TC/SystemInfo/ST_SYST_STATE_INFO_534-LIVE_SYSTEM_RETRIEVE_SYSTEM_INFO"/> 
+      <TestCase Id="../TC/SystemInfo/ST_SYST_STATE_INFO_535-LIVE_SYSTEM_RETRIEVE_SYSTEM_INFO"/>
+      <TestCase Id="../TC/SystemInfo/ST_SYST_STATE_INFO_700-LIVE_SYSTEM_RETRIEVE_SYSTEM_INFO"/>  
+      <TestCase Id="../TC/SystemInfo/ST_SYST_STATE_INFO_701-LIVE_SYSTEM_RETRIEVE_SYSTEM_INFO"/>  
+      <TestCase Id="../TC/SystemInfo/ST_SYST_STATE_INFO_702-LIVE_SYSTEM_RETRIEVE_SYSTEM_INFO"/>  
+      <TestCase Id="../TC/SystemInfo/ST_SYST_STATE_INFO_703-LIVE_SYSTEM_RETRIEVE_SYSTEM_INFO"/>        
+      <TestCase Id="../TC/SystemInfo/ST_SYST_STATE_INFO_704-LIVE_SYSTEM_RETRIEVE_SYSTEM_INFO"/>        
+      <TestCase Id="../TC/SystemInfo/ST_SYST_STATE_INFO_705-LIVE_SYSTEM_RETRIEVE_SYSTEM_INFO"/>        
+      <TestCase Id="../TC/SystemInfo/ST_SYST_STATE_INFO_706-LIVE_SYSTEM_RETRIEVE_SYSTEM_INFO"/>        
+      <TestCase Id="../TC/SystemInfo/ST_SYST_STATE_INFO_707-LIVE_SYSTEM_RETRIEVE_SYSTEM_INFO"/>        
+      <TestCase Id="../TC/SystemInfo/ST_SYST_STATE_INFO_708-LIVE_SYSTEM_RETRIEVE_SYSTEM_INFO"/>        
+      <TestCase Id="../TC/SystemInfo/ST_SYST_STATE_INFO_709-LIVE_SYSTEM_RETRIEVE_SYSTEM_INFO"/>        
+      <TestCase Id="../TC/SystemInfo/ST_SYST_STATE_INFO_710-LIVE_SYSTEM_RETRIEVE_SYSTEM_INFO"/>        
+      <TestCase Id="../TC/SystemInfo/ST_SYST_STATE_INFO_711-LIVE_SYSTEM_RETRIEVE_SYSTEM_INFO"/>        
+      <TestCase Id="../TC/SystemInfo/ST_SYST_STATE_INFO_712-LIVE_SYSTEM_RETRIEVE_SYSTEM_INFO"/>        
+      <TestCase Id="../TC/SystemInfo/ST_SYST_STATE_INFO_713-LIVE_SYSTEM_RETRIEVE_SYSTEM_INFO"/>        
+      <TestCase Id="../TC/SystemInfo/ST_SYST_STATE_INFO_714-LIVE_SYSTEM_RETRIEVE_SYSTEM_INFO"/>        
+      <TestCase Id="../TC/SystemInfo/ST_SYST_STATE_INFO_715-LIVE_SYSTEM_RETRIEVE_SYSTEM_INFO"/>        
+      <TestCase Id="../TC/SystemInfo/ST_SYST_STATE_INFO_716-LIVE_SYSTEM_RETRIEVE_SYSTEM_INFO"/>        
+      <TestCase Id="../TC/SystemInfo/ST_SYST_STATE_INFO_717-LIVE_SYSTEM_RETRIEVE_SYSTEM_INFO"/>        
+      <TestCase Id="../TC/SystemInfo/ST_SYST_STATE_INFO_718-LIVE_SYSTEM_RETRIEVE_SYSTEM_INFO"/>        
+      <TestCase Id="../TC/SystemInfo/ST_SYST_STATE_INFO_719-LIVE_SYSTEM_RETRIEVE_SYSTEM_INFO"/>        
+      <TestCase Id="../TC/SystemInfo/ST_SYST_STATE_INFO_720-LIVE_SYSTEM_RETRIEVE_SYSTEM_INFO"/>  
+      <TestCase Id="../TC/SystemInfo/ST_SYST_STATE_INFO_721-LIVE_SYSTEM_RETRIEVE_SYSTEM_INFO"/>  
+      <TestCase Id="../TC/SystemInfo/ST_SYST_STATE_INFO_722-LIVE_SYSTEM_RETRIEVE_SYSTEM_INFO"/>  
+      <TestCase Id="../TC/SystemInfo/ST_SYST_STATE_INFO_723-LIVE_SYSTEM_RETRIEVE_SYSTEM_INFO"/>  
+      <TestCase Id="../TC/SystemInfo/ST_SYST_STATE_INFO_724-LIVE_SYSTEM_RETRIEVE_SYSTEM_INFO"/>  
+      <TestCase Id="../TC/SystemInfo/ST_SYST_STATE_INFO_725-LIVE_SYSTEM_RETRIEVE_SYSTEM_INFO"/>  
+      <TestCase Id="../TC/SystemInfo/ST_SYST_STATE_INFO_726-LIVE_SYSTEM_RETRIEVE_SYSTEM_INFO"/>  
+      <TestCase Id="../TC/SystemInfo/ST_SYST_STATE_INFO_727-LIVE_SYSTEM_RETRIEVE_SYSTEM_INFO"/>  
+      <TestCase Id="../TC/SystemInfo/ST_SYST_STATE_INFO_728-LIVE_SYSTEM_RETRIEVE_SYSTEM_INFO"/>  
+      <TestCase Id="../TC/SystemInfo/ST_SYST_STATE_INFO_729-LIVE_SYSTEM_RETRIEVE_SYSTEM_INFO"/>  
+      <TestCase Id="../TC/SystemInfo/ST_SYST_STATE_INFO_730-LIVE_SYSTEM_RETRIEVE_SYSTEM_INFO"/>  
+      <TestCase Id="../TC/SystemInfo/ST_SYST_STATE_INFO_731-LIVE_SYSTEM_RETRIEVE_SYSTEM_INFO"/>  
+      <TestCase Id="../TC/SystemInfo/ST_SYST_STATE_INFO_732-LIVE_SYSTEM_RETRIEVE_SYSTEM_INFO"/> 
+    
+    <!-- Tune Sound -->
+      <TestCase Id="../TC/TuneSound/ST_SYST_INPUT_TOUCH_018-LIVE_SYSTEM_TUNE_SOUND"/>   
+      <TestCase Id="../TC/TuneSound/ST_SYST_INPUT_TOUCH_019-LIVE_SYSTEM_TUNE_SOUND"/>   
+      <TestCase Id="../TC/TuneSound/ST_SYST_INPUT_TOUCH_025-LIVE_SYSTEM_TUNE_SOUND"/>
+    
+  </TestCases>
+</Campaign>

@@ -1,0 +1,25 @@
+*************************************************************************************
+This document describes how to use the ACS to HP ALM results converter
+*************************************************************************************
+
+Parameters
+-xf <ACS_XML> : the folder containing ACS's XML results files
+-df <ALM_CSV> : the folder containing HP-ALM's testcase database. This can be obtained using the Export_csv_tool/export_from_hpalm.
+-r <Results> : the folder where the results will be generated
+
+HP ALM csv files produced by export_from_hpalm script
+Whenever the ALM Test Plan changes in the sense that tests are added/renamed/removed user should regenerate the ALM_CSV files
+using the tool in this location: ~/acs_test_suites/OTC/utils/Export_csv_tool/export_from_hpalm
+
+How to use the script
+# create a folder (for example: ACS_XML) and copy the acs xml results into that folder
+# generate the HP-ALM testcase database by running the export_from_hpalm (will consider the folder name generated is ALM_CSV)
+# run the script to obtain the csv results
+
+Ex:
+python ACS_to_ALM.py -xf ACS_XML -df ALM_CSV -r Results
+
+
+
+
+

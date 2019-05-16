@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<Campaign>
+    <Parameters>
+        <Parameter isControlledPSUsed="False" />
+        <Parameter isIoCardUsed="True" />
+        <!-- Set skipBootOnPowerCycle to True to disable the acs boot procedure -->
+        <!-- Important, it means that boot will be handle inside the campaign/tc -->
+        <Parameter skipBootOnPowerCycle="False" />
+        <Parameter runHookScripts="False" />
+        <Parameter powerCycleBetweenTC="False" />
+        <Parameter powerCycleOnFailure="True" />
+        <Parameter finalPowerOff="True" />
+        <Parameter finalDutState="PowerOff" />
+        <Parameter stopCampaignOnCriticalFailure="False" />
+        <Parameter stopCampaignOnFirstFailure="False" />
+        <!-- LoggingLevel possible values: info | warning | debug | error -->
+        <Parameter loggingLevel="debug" />
+        <!-- CampaignType format -> <TEAM>_<CAMPAIGNTYPE>
+            Possible values:
+            FT(Feature Team)-> SANITY | REGRESSION | STRESS, RELIABILTY | MTBF
+            ST(System Test)-> SANITY | REGRESSION | STRESS, RELIABILTY | MTBF
+            SI(System Integration)-> EAT | STAB | PACT | CAT0 | RELIABILITY | MTBF | CTS
+            Otherwise "Others" should be used -->
+        <Parameter CampaignType="ST_REGRESSION" />
+    </Parameters>
+    <Targets>
+        <!-- Target Values -->
+        <Target targetB2bPassRate="80" />
+    </Targets>
+    <TestCases>
+        <!-- Testcase campaigns -->
+        <TestCase Id="..\..\TESTCASE\LAB_EM_INIT_BOARD" />
+        <TestCase Id="..\..\TESTCASE\MACHR\ST_EM_MACHR_RESUME_CHARGING_UPON_BATT_OVER_TEMP_EXIT_001-LAB_EM_TEST_CHARGING_BATT_TEMP" />
+        <TestCase Id="..\..\TESTCASE\MACHR\ST_EM_MACHR_RESUME_CHARGING_UPON_BATT_OVER_TEMP_EXIT_002-LAB_EM_TEST_CHARGING_BATT_TEMP" />
+        <TestCase Id="..\..\TESTCASE\MACHR\ST_EM_MACHR_STOP_CHARGING_UPON_BATT_OVER_TEMP_001-LAB_EM_TEST_CHARGING_BATT_TEMP" />
+        <TestCase Id="..\..\TESTCASE\MACHR\ST_EM_MACHR_STOP_CHARGING_UPON_BATT_OVER_TEMP_002-LAB_EM_TEST_CHARGING_BATT_TEMP" />
+        <TestCase Id="..\..\TESTCASE\MACHR\ST_EM_MACHR_COMPLY_WITH_JAP_PSE_REG_009-CRIT_SHUTDOWN" />
+        <TestCase Id="..\..\TESTCASE\MISC\ST_EM_THMNG_GRACEFULL_SHUTDOWN_WHEN_SKIN_TEMP_CRITICAL_TRESHOLD_01-BACKSKIN" />
+        <TestCase Id="..\..\TESTCASE\MISC\ST_EM_THMNG_GRACEFULL_SHUTDOWN_WHEN_SKIN_TEMP_CRITICAL_TRESHOLD_02-FRONTSKIN" />
+        <TestCase Id="..\..\TESTCASE\MACHR\ST_EM_MACHR_FULL_CHG_ADJUST_CHG_PARAM_MAINTENANCE_CHG_09" />
+        <TestCase Id="..\..\TESTCASE\MACHR\ST_EM_MACHR_RESUME_CHARGING_UPON_BATT_UNDER_TEMP_EXIT_001-LAB_EM_TEST_CHARGING_BATT_TEMP" />
+        <TestCase Id="..\..\TESTCASE\MACHR\ST_EM_MACHR_RESUME_CHARGING_UPON_BATT_UNDER_TEMP_EXIT_002-LAB_EM_TEST_CHARGING_BATT_TEMP" />
+        <TestCase Id="..\..\TESTCASE\MACHR\ST_EM_MACHR_STOP_CHARGING_UPON_BATT_UNDER_TEMP_001-LAB_EM_TEST_CHARGING_BATT_TEMP" />
+        <TestCase Id="..\..\TESTCASE\MACHR\ST_EM_MACHR_STOP_CHARGING_UPON_BATT_UNDER_TEMP_002-LAB_EM_TEST_CHARGING_BATT_TEMP" />
+        <TestCase Id="..\..\TESTCASE\MACHR\ST_EM_MACHR_COMPLY_WITH_JAP_PSE_REG_001-COLD" />
+        <TestCase Id="..\..\TESTCASE\MACHR\ST_EM_MACHR_COMPLY_WITH_JAP_PSE_REG_002-COLD" />
+        <TestCase Id="..\..\TESTCASE\MACHR\ST_EM_MACHR_COMPLY_WITH_JAP_PSE_REG_003-COOL" />
+        <TestCase Id="..\..\TESTCASE\MACHR\ST_EM_MACHR_COMPLY_WITH_JAP_PSE_REG_004-COOL" />
+        <TestCase Id="..\..\TESTCASE\MACHR\ST_EM_MACHR_COMPLY_WITH_JAP_PSE_REG_005-WARM" />
+        <TestCase Id="..\..\TESTCASE\MACHR\ST_EM_MACHR_COMPLY_WITH_JAP_PSE_REG_006-WARM" />
+        <TestCase Id="..\..\TESTCASE\MACHR\ST_EM_MACHR_COMPLY_WITH_JAP_PSE_REG_007-HOT" />
+        <TestCase Id="..\..\TESTCASE\MACHR\ST_EM_MACHR_COMPLY_WITH_JAP_PSE_REG_008-HOT" />
+        <TestCase Id="..\..\TESTCASE\MACHR\ST_EM_MACHR_FULL_CHG_ADJUST_CHG_PARAM_MAINTENANCE_CHG_01-COLD" />
+        <TestCase Id="..\..\TESTCASE\MACHR\ST_EM_MACHR_FULL_CHG_ADJUST_CHG_PARAM_MAINTENANCE_CHG_02-COLD" />
+        <TestCase Id="..\..\TESTCASE\MACHR\ST_EM_MACHR_FULL_CHG_ADJUST_CHG_PARAM_MAINTENANCE_CHG_03-COOL" />
+        <TestCase Id="..\..\TESTCASE\MACHR\ST_EM_MACHR_FULL_CHG_ADJUST_CHG_PARAM_MAINTENANCE_CHG_04-COOL" />
+        <TestCase Id="..\..\TESTCASE\MACHR\ST_EM_MACHR_FULL_CHG_ADJUST_CHG_PARAM_MAINTENANCE_CHG_05-WARM" />
+        <TestCase Id="..\..\TESTCASE\MACHR\ST_EM_MACHR_FULL_CHG_ADJUST_CHG_PARAM_MAINTENANCE_CHG_06-WARM" />
+        <TestCase Id="..\..\TESTCASE\MACHR\ST_EM_MACHR_FULL_CHG_ADJUST_CHG_PARAM_MAINTENANCE_CHG_07-HOT" />
+        <TestCase Id="..\..\TESTCASE\MACHR\ST_EM_MACHR_FULL_CHG_ADJUST_CHG_PARAM_MAINTENANCE_CHG_08-HOT" />
+    </TestCases>
+</Campaign>

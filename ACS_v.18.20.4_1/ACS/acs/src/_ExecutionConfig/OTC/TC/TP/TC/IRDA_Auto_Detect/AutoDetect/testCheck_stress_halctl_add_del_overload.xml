@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<TestCase>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters/>
+    <Discription>
+Add/suppress devices to/from the platform
+&lt;br /&gt;Stress - halctl --add/--del system overloaded
+</Discription>
+    <Parameters/>
+    <UseCase>PY_UNIT</UseCase>
+    <Parameters/>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <Parameters/>
+    <b2bIteration>1</b2bIteration>
+    <Parameters>
+        <Parameter>
+            <Name>TEST_DATA_ROOT</Name>
+            <Value>testplan/IRDA_Auto_Detect</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TEST_CASE</Name>
+            <Value>tests.IRDA_Auto_Detect.AutoDetect.check_stress_halctl_add_del_overload.Check_stress_halctl_add_del_overload.testCheck_stress_halctl_add_del_overload</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

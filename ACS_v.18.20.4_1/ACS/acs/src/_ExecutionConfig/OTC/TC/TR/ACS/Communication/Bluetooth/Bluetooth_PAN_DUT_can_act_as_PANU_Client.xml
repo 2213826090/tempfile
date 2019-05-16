@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase>
+    <UseCase>Bluetooth_PAN_PANU_CHECK_INTERFACE</UseCase>
+    <Description>The device initiates a PAN profile connection to another device that provides
+    NAP services(Wifi). After the connection is established, it pings the AP.</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>False</b2bContinuousMode>
+    <TcAcceptanceCriteria>PASS</TcAcceptanceCriteria>
+    <TcMaxAttempt>1</TcMaxAttempt>
+    <Parameters>
+        <Parameter>
+            <!-- Name of the access point -->
+            <Name>WIFI_ACCESS_POINT</Name>
+            <Value>WEP_WIFI_ROUTER</Value>
+        </Parameter>
+        <Parameter>
+            <Name>NAP_OR_PAN_TEST</Name>
+            <Value>pan</Value>
+        </Parameter>
+         <Parameter>
+            <!-- Defines who disconnect the tethering link (NAP or PAN-U. Default is PAN-U) -->
+            <Name>WHO_DISCONNECT</Name>
+            <Value>NAP</Value>
+        </Parameter>
+         <Parameter>
+            <Name>CONNECTION_TO_SHARE</Name>
+            <Value>wifi</Value>
+        </Parameter>
+        <Parameter>
+            <Name>PAIRING_INITIATOR</Name>
+            <Value>PHONE1</Value>
+        </Parameter>
+        <Parameter>
+            <!--Enable / Disable PAN-User disconnection initiated by the NAP device (True/False) -->
+            <Name>ENABLE_BT_TETHERING_DEACTIVATION_TEST</Name>
+            <Value>False</Value>
+        </Parameter>
+        <Parameter>
+            <!-- [Optional] When should the test fail the pairing check. Default is set to "disconnected" -->
+            <Name>PAIRING_CHECK_FAIL_IF</Name>
+            <Value>disconnected</Value>
+        </Parameter>
+         <Parameter>
+            <!-- Type of WiFi activity : WIFI_WEB_BROWSING, WIFI_FTP_DOWNLOAD -->
+            <Name>WIFI_ACTIVITY</Name>
+            <Value>WIFI_WEB_BROWSING</Value>
+        </Parameter>
+        <Parameter>
+            <!-- [Optional] Address used to browse in case of WIFI_ACTIVITY = WIFI_WEB_BROWSING -->
+            <Name>URL_TO_BROWSE</Name>
+            <Value>www.google.com</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

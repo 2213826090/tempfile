@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestSteps xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../acs/src/_Catalogs/TestStep/teststep.xsd">
+    <TestStep Id="SET_DHCP_STATE" Domain="EQUIPMENT" SubDomain="COMPUTER" Feature="IP_MGMT" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Equipment.Computer.ComputerSetDHCPState.ComputerSetDHCPState</ClassName>
+        <Description>Start/stop the DHCP server on a remote computer</Description>
+        <Environment name="ANY" />
+        <Parameters>
+            <Parameter name="EQT" type="STRING" isOptional="false">
+                <Description>The equipment name shall refer to an existing equipment the Bench config</Description>
+                <PossibleValues />
+                <DefaultValue>COMPUTER2</DefaultValue>
+            </Parameter>
+            <Parameter name="DHCP_STATE" type="STRING" isOptional="false">
+                <Description>Set true to start DHCP server. Set false to stop DHCP server</Description>
+                <PossibleValues>START;STOP</PossibleValues>
+                <DefaultValue>START</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="GET_COMPUTER_IPV4_ADDRESS" Domain="EQUIPMENT" SubDomain="COMPUTER" Feature="IP_MGMT" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Equipment.Computer.GetComputerIpv4Address.GetComputerIpv4Address</ClassName>
+        <Description>gets the IPv4 address of the COMPUTER for the test network.</Description>
+        <Environment name="ANY" />
+        <Parameters>
+            <Parameter name="EQT" type="STRING" isOptional="false">
+                <Description>Equipment name on which the action will be executed</Description>
+                <PossibleValues />
+                <DefaultValue>COMPUTER1</DefaultValue>
+            </Parameter>
+            <Parameter name="IP_ADDR" type="CONTEXT" isOptional="false">
+                <Description>
+                    <Key name="IPV4_ADDRESS" type="STRING">Name of the context variable where the value will be saved.</Key>
+                </Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="COMPUTER_PING" Domain="EQUIPMENT" SubDomain="COMPUTER" Feature="IP_MGMT" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Equipment.Computer.ComputerPing.ComputerPing</ClassName>
+        <Description>Pings a given IP address from a computer and saves the percentage of packet loss. The protocol to use (IPv4 or IPv6) is computed automatically.</Description>
+        <Environment name="ANY" />
+        <Parameters>
+            <Parameter name="EQT" type="STRING" isOptional="false">
+                <Description>Equipment name on which the action will be executed</Description>
+                <PossibleValues />
+                <DefaultValue>COMPUTER1</DefaultValue>
+            </Parameter>
+            <Parameter name="DESTINATION_IP" type="STRING" isOptional="false">
+                <Description>IP address to ping.</Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+            <Parameter name="PACKET_SIZE" type="INTEGER" isOptional="false">
+                <Description>Packet size in bytes.</Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+            <Parameter name="PACKET_COUNT" type="INTEGER" isOptional="false">
+                <Description>Number of packet to send.</Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+            <Parameter name="INTERVAL" type="FLOAT" isOptional="false">
+                <Description>Interval in seconds between pings (only for IPv4).</Description>
+                <PossibleValues />
+                <DefaultValue>1</DefaultValue>
+            </Parameter>
+            <Parameter name="FLOOD_MODE" type="BOOLEAN" isOptional="false">
+                <Description>Interval in seconds between pings (only for IPv4).</Description>
+                <PossibleValues />
+                <DefaultValue>false</DefaultValue>
+            </Parameter>
+            <Parameter name="SAVE_AS" type="CONTEXT" isOptional="true">
+                <Description>
+                    <Key name="KEY_NAME_DEFINED_BY_USER" type="STRING">Name of the context variable where the packet loss in % will be saved.</Key>
+                </Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="COMPUTER_WIFI_CONNECT" Domain="EQUIPMENT" SubDomain="COMPUTER" Feature="WIFI" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Equipment.Computer.ComputerWifiConnect.ComputerWifiConnect</ClassName>
+        <Description>Connects to a wifi AP from a computer.</Description>
+        <Environment name="ANY" />
+        <Parameters>
+            <Parameter name="EQT" type="STRING" isOptional="false">
+                <Description>Equipment name on which the action will be executed</Description>
+                <PossibleValues />
+                <DefaultValue>COMPUTER1</DefaultValue>
+            </Parameter>
+            <Parameter name="SSID" type="STRING" isOptional="true">
+                <Description>The soft access point's SSID</Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+            <Parameter name="SECURITY" type="STRING" isOptional="true">
+                <Description>The soft access point's security</Description>
+                <PossibleValues>OPEN;WPA2-PSK</PossibleValues>
+                <DefaultValue>WPA2-PSK</DefaultValue>
+            </Parameter>
+            <Parameter name="PASSPHRASE" type="STRING" isOptional="true">
+                <Description>The soft access point's passphrase</Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+            <Parameter name="STANDARD" type="STRING" isOptional="false">
+                <Description>The standard used on the radio.</Description>
+                <PossibleValues>a;b;g;n;an;bg;gb;bgn;ngb;n2.4G;n5G;ac</PossibleValues>
+                <DefaultValue>bgn</DefaultValue>
+            </Parameter>
+            <Parameter name="NET_INTERFACE" type="STRING" isOptional="false">
+                <Description>Name of network interface through which the computer should connect. Must match what 'ipconfig' shows. e.g. 'wlan0' for Wifi or 'bt-pan' for BT tether.</Description>
+                <PossibleValues />
+                <DefaultValue>wlan0</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="COMPUTER_WIFI_DISCONNECT" Domain="EQUIPMENT" SubDomain="COMPUTER" Feature="WIFI" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Equipment.Computer.ComputerWifiDisconnect.ComputerWifiDisconnect</ClassName>
+        <Description>Disconnects the computer from a wifi AP.</Description>
+        <Environment name="ANY" />
+        <Parameters>
+            <Parameter name="EQT" type="STRING" isOptional="false">
+                <Description>Equipment name on which the action will be executed</Description>
+                <PossibleValues />
+                <DefaultValue>COMPUTER1</DefaultValue>
+            </Parameter>
+            <Parameter name="NET_INTERFACE" type="STRING" isOptional="false">
+                <Description>Name of network interface through which the computer should connect. Must match what 'ipconfig' shows. e.g. 'wlan0' for Wifi or 'bt-pan' for BT tether.</Description>
+                <PossibleValues />
+                <DefaultValue>wlan0</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="GET_COMPUTER_DATE_TIME" Domain="EQUIPMENT" SubDomain="COMPUTER" Feature="COMMON" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Equipment.Computer.GetComputerDateTime.GetComputerDateTime</ClassName>
+        <Description>Get current date and time of a given computer.</Description>
+        <Environment name="ANY" />
+        <Parameters>
+            <Parameter name="EQT" type="STRING" isOptional="false">
+                <Description>Equipment name on which the action will be executed</Description>
+                <PossibleValues />
+                <DefaultValue>COMPUTER1</DefaultValue>
+            </Parameter>
+            <Parameter name="COMPUTER_CURRENT_DATE_TIME" type="CONTEXT" isOptional="false">
+                <Description>
+                    <Key name="COMPUTER_CURRENT_DATE_TIME:DAY" type="STRING">Computer's current day.</Key>
+                    <Key name="COMPUTER_CURRENT_DATE_TIME:MONTH" type="STRING">Computer's current month.</Key>
+                    <Key name="COMPUTER_CURRENT_DATE_TIME:YEAR" type="STRING">Computer's current year.</Key>
+                    <Key name="COMPUTER_CURRENT_DATE_TIME:HOURS" type="STRING">Computer's current hour.</Key>
+                    <Key name="COMPUTER_CURRENT_DATE_TIME:MINUTES" type="STRING">Computer's current minutes.</Key>
+                    <Key name="COMPUTER_CURRENT_DATE_TIME:SECONDS" type="STRING">Computer's current seconds.</Key>
+                </Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="COMPUTER_CLEAN_TCP_CONFIG" Domain="EQUIPMENT" SubDomain="COMPUTER" Feature="WIFI" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Equipment.Computer.ComputerCleanTcpConfig.ComputerCleanTcpConfig</ClassName>
+        <Description>Clean TCP stack on a computer.</Description>
+        <Environment name="ANY" />
+        <Parameters>
+            <Parameter name="EQT" type="STRING" isOptional="false">
+                <Description>Equipment name on which the action will be executed</Description>
+                <PossibleValues />
+                <DefaultValue>COMPUTER1</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="SET_COMPUTER_BT_VISIBILITY" Domain="EQUIPMENT" SubDomain="COMPUTER" Feature="COMMON" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Equipment.Computer.SetComputerBtVisibility.SetComputerBtVisibility</ClassName>
+        <Description>Set on/off the BT visibility of a given computer.</Description>
+        <Environment name="ANY" />
+        <Parameters>
+            <Parameter name="EQT" type="STRING" isOptional="false">
+                <Description>Equipment name on which the action will be executed</Description>
+                <PossibleValues />
+                <DefaultValue>COMPUTER1</DefaultValue>
+            </Parameter>
+            <Parameter name="HCI_INTERFACE" type="STRING" isOptional="false">
+                <Description>The HCI interface to inquire</Description>
+                <PossibleValues />
+                <DefaultValue>hci0</DefaultValue>
+            </Parameter>
+            <Parameter name="ENABLE_VISIBILITY" type="BOOLEAN" isOptional="false">
+                <Description>The boolean to enable/disable BT visibility</Description>
+                <PossibleValues></PossibleValues>
+                <DefaultValue>true</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="COMPUTER_INSTALL_IPERF" Domain="EQUIPMENT" SubDomain="COMPUTER" Feature="COMMON" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Equipment.Computer.ComputerInstallIperf.ComputerInstallIperf</ClassName>
+        <Description>Deploy iperf utility on a computer. If another version of iperf exists, it is removed.
+            If the same iperf utility exist, nothing is done.</Description>
+        <Environment name="ANY"/>
+        <Parameters>
+            <Parameter name="EQT" type="STRING" isOptional="false">
+                <Description>Equipment name on which the action will be executed</Description>
+                <PossibleValues />
+                <DefaultValue>COMPUTER2</DefaultValue>
+            </Parameter>
+            <Parameter name="IPERF_UTILITY" type="STRING" isOptional="false">
+                <Description>Iperf utility to install</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="COMPUTER_RUN_CMD" Domain="EQUIPMENT" SubDomain="COMPUTER" Feature="COMMON" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Equipment.Computer.ComputerRunCmd.ComputerRunCmd</ClassName>
+        <Description>Run a command on a remote computer</Description>
+        <Environment name="ANY"/>
+        <Parameters>
+            <Parameter name="EQT" type="STRING" isOptional="false">
+                <Description>Equipment name on which the action will be executed</Description>
+                <PossibleValues />
+                <DefaultValue>COMPUTER2</DefaultValue>
+            </Parameter>
+            <Parameter name="CMD" type="STRING" isOptional="false">
+                <Description>command to run</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+            <Parameter name="TIMEOUT" type="INTEGER" isOptional="false">
+                <Description>Timeout in s for the command</Description>
+                <PossibleValues/>
+                <DefaultValue>60</DefaultValue>
+            </Parameter>
+            <Parameter name="SAVE_OUTPUT_TO" type="STRING" isOptional="false">
+                <Description>Name of the context entry to save the output of the command</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="COMPUTER_COPY_FILE" Domain="EQUIPMENT" SubDomain="COMPUTER" Feature="COMMON" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Equipment.Computer.ComputerCopyFile.ComputerCopyFile</ClassName>
+        <Description>Copy a file to a remote computer</Description>
+        <Environment name="ANY"/>
+        <Parameters>
+            <Parameter name="EQT" type="STRING" isOptional="false">
+                <Description>Equipment name on which the action will be executed</Description>
+                <PossibleValues />
+                <DefaultValue>COMPUTER2</DefaultValue>
+            </Parameter>
+            <Parameter name="LOCAL_FILENAME" type="STRING" isOptional="false">
+                <Description>Local file to copy</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+            <Parameter name="REMOTE_FILENAME" type="STRING" isOptional="false">
+                <Description>Complete filename (with path) on the remote computer to put the file</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="COMPUTER_WAKE_ON_LAN" Domain="EQUIPMENT" SubDomain="COMPUTER" Feature="COMMON" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Equipment.Computer.ComputerWakeOnLan.ComputerWakeOnLan</ClassName>
+        <Description>Copy a file to a remote computer</Description>
+        <Environment name="ANY"/>
+        <Parameters>
+            <Parameter name="EQT" type="STRING" isOptional="false">
+                <Description>Equipment name on which the action will be executed</Description>
+                <PossibleValues />
+                <DefaultValue>COMPUTER2</DefaultValue>
+            </Parameter>
+            <Parameter name="MAC_ADDR" type="STRING" isOptional="false">
+                <Description>Mac Address of the computer to wake</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+            <Parameter name="BOOT_TIMEOUT" type="INTEGER" isOptional="false">
+                <Description>Timeout to boot the computer</Description>
+                <PossibleValues/>
+                <DefaultValue>60</DefaultValue>
+            </Parameter>
+            <Parameter name="BOOT_EXPECTED_TIME" type="INTEGER" isOptional="false">
+                <Description>Wait some time until the computer is expected to be booted</Description>
+                <PossibleValues/>
+                <DefaultValue>30</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+</TestSteps>

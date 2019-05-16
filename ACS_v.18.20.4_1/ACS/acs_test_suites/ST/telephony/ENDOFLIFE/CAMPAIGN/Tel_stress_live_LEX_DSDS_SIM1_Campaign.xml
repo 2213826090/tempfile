@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<Campaign>
+  <Parameters>
+    <Parameter isControlledPSUsed ="False"/>
+    <Parameter isIoCardUsed ="False"/>
+    <!-- Set skipBootOnPowerCycle to True to disable the accs boot procedure-->
+    <!-- Important, it means that boot will be handle inside the campaign/tc -->
+    <Parameter skipBootOnPowerCycle ="False"/>
+    <Parameter runHookScripts = "False"/>        
+    <Parameter powerCycleBetweenTC ="False"/>
+    <Parameter powerCycleOnFailure ="False"/>
+    <Parameter stopCampaignOnCriticalFailure = "False"/>
+    <!-- LoggingLevel possible values: info | warning | debug | error -->
+    <Parameter loggingLevel = "info"/>
+    <Parameter CampaignType = "Default Acs Campaign"/> 
+  </Parameters> 
+  <Targets>
+    <!-- Target Values -->  
+    <Target targetB2bPassRate ="100"/>
+  </Targets>
+  <TestCases>
+  
+
+    <!-- <TestCase Id="..\TC\SETUP\LAB_SYSTEM_SETUP_EMBEDDED"/>
+    <TestCase Id="..\TC\SETUP\ST_PRELOAD_PUSH"/>   -->
+    
+    <!-- Test SCRIPTS -->
+    <TestCase Id="..\TC\UI_LEX_DSDS_SIM1\stability\ST_COM_MSG_MMS_230-ANDROID_UI_TEST"/>    
+    <TestCase Id="..\TC\UI_LEX_DSDS_SIM1\stability\ST_COM_MSG_MMS_228-ANDROID_UI_TEST"/>
+    
+   
+    <!-- UI_ICS  -->
+    <TestCase Id="..\TC\UI_LEX_DSDS_SIM1\stability\ST_DATA_WCDMA_R5_PS_012-ANDROID_UI_TEST"/>
+
+    <TestCase Id="..\TC\UI_LEX_DSDS_SIM1\stability\ST_COM_MSG_MMS_220-ANDROID_UI_TEST"/>
+    <TestCase Id="..\TC\UI_LEX_DSDS_SIM1\stability\ST_COM_MSG_MMS_222-ANDROID_UI_TEST"/>
+    <TestCase Id="..\TC\UI_LEX_DSDS_SIM1\stability\ST_COM_FIT_VC_MMS_016-ANDROID_UI_TEST"/>
+    <TestCase Id="..\TC\UI_LEX_DSDS_SIM1\stability\ST_COM_FIT_VC_SMS_013-ANDROID_UI_TEST"/>
+    <TestCase Id="..\TC\UI_LEX_DSDS_SIM1\stability\ST_DATA_EDGE_007-ANDROID_UI_TEST"/>
+    <TestCase Id="..\TC\UI_LEX_DSDS_SIM1\stability\ST_DATA_EDGE_009-ANDROID_UI_TEST"/>
+    <TestCase Id="..\TC\UI_LEX_DSDS_SIM1\stability\ST_DATA_WCDMA_R6_PS_016-ANDROID_UI_TEST"/>
+    <TestCase Id="..\TC\UI_LEX_DSDS_SIM1\stability\ST_DATA_WCDMA_R7_PS_010-ANDROID_UI_TEST"/>
+
+    <TestCase Id="..\TC\UI_LEX_DSDS_SIM1\stability\ST_DATA_WCDMA_R5_PS_016-ANDROID_UI_TEST"/>
+    <TestCase Id="..\TC\UI_LEX_DSDS_SIM1\stability\ST_DATA_FIT_PS_001-ANDROID_UI_TEST"/>
+    <TestCase Id="..\TC\UI_LEX_DSDS_SIM1\stability\ST_DATA_FIT_PS_002-ANDROID_UI_TEST"/>
+    <TestCase Id="..\TC\UI_LEX_DSDS_SIM1\stability\ST_DATA_FIT_PS_010-ANDROID_UI_TEST"/>
+    <TestCase Id="..\TC\UI_LEX_DSDS_SIM1\stability\ST_DATA_WCDMA_R7_PDP_003-ANDROID_UI_TEST"/>
+    <TestCase Id="..\TC\UI_LEX_DSDS_SIM1\stability\ST_COM_SIND_Flight_105-ANDROID_UI_TEST"/>
+
+
+
+  </TestCases>
+</Campaign>

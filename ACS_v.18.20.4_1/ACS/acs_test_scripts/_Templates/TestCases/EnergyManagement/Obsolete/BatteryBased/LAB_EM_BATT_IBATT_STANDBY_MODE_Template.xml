@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="13.45">
+    <UseCase>LAB_EM_BATT_IBATT_STANDBY_MODE</UseCase>
+    <Description>Energy Management - Measure Ibatt leak when phone is in special mode.</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>False</b2bContinuousMode>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters>
+        <Parameter>
+            <!-- maximal capacity limit for battery charging from 0% to 100% or 'full' -->
+            <Name>BATT_MAX_CAPACITY</Name>
+            <Value>100</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Charging time before reading information from board in seconds -->
+            <Name>CHARGE_TIME</Name>
+            <Value>300</Value>
+        </Parameter>
+        <Parameter>
+            <!-- The stand mode : FLIGHT_MODE | STANDBY | OFF -->
+            <Name>STAND_MODE</Name>
+            <Value>FLIGHT_MODE</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Time to spend in seconds in stand mode -->
+            <Name>STAND_DURATION</Name>
+            <Value>14400</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

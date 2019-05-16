@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase>
+  <UseCase>LAB_PFW_PERMISSION_RIGHTS</UseCase>
+  <Description>Check Audio Quality (PESQ) during GSM Mobile Terminated Call on simulated network</Description>
+  <b2bIteration>1</b2bIteration>
+  <b2bContinuousMode>False</b2bContinuousMode>
+  <Parameters>
+	<Parameter>
+      <!-- the type of operation to do, to test the rights permissions -->
+	  <!--  RIGHTS | WRITE| DELETE |RENAME  -->
+      <Name>OPERATION_TYPE</Name>
+      <Value>RENAME</Value>
+    </Parameter>
+    <Parameter>
+      <!-- the following name, the name to give to the file if you want to rename it -->
+      <Name>FOLLOWING_NAME</Name>
+      <Value>/system/etc/parameter-framework/CouCou.xml</Value>
+    </Parameter>
+    <Parameter>
+      <!-- the absolute path of the file to check (the name of the file used) -->
+      <Name>FILE_NAME</Name>
+      <Value>/system/etc/parameter-framework/ParameterFrameworkConfiguration.xml</Value>
+    </Parameter>
+   </Parameters>
+</TestCase>

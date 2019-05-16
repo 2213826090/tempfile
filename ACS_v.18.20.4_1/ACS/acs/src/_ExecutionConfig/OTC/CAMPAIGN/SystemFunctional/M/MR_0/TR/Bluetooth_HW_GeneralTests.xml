@@ -1,0 +1,92 @@
+<?xml version='1.0' encoding='ASCII'?>
+<Campaign version="13.49">
+    <Parameters>
+        <Parameter isControlledPSUsed="False"/>
+        <Parameter isIoCardUsed="True"/>
+        <!-- Set skipBootOnPowerCycle to True to disable the accs boot procedure -->
+        <!-- Important, it means that boot will be handle inside the campaign/tc -->
+        <Parameter skipBootOnPowerCycle="False"/>
+        <!-- Set bootRetryNumber to maximum number of boot retries during the acs boot procedure -->
+        <!-- Important, it means that bootRetryNumber is set by default to 0 if not specified -->
+        <Parameter bootRetryNumber="0"/>
+        <Parameter runHookScripts="False"/>
+        <Parameter powerCycleBetweenTC="False"/>
+        <Parameter powerCycleOnFailure="False"/>
+        <!-- finalDutState allows user to leave the DUT in a specific state at the end of the campaign
+            Possible values: PowerOn | PowerOff | Charging | NoChange
+            By default DUT is leaved in NoChange state.
+            In case the user selects Charging as final state of the DUT and that DUT fails to enter Charging,
+            ACS shall try to switch the DUT off -->
+        <Parameter finalDutState="NoChange"/>
+        <Parameter stopCampaignOnCriticalFailure="False"/>
+        <Parameter stopCampaignOnFirstFailure="False"/>
+        <!-- LoggingLevel possible values: info | warning | debug | error -->
+        <Parameter loggingLevel="debug"/>
+        <!-- CampaignType format -> <TEAM>_<CAMPAIGNTYPE>
+            Possible values:
+            FT(Feature Team)-> SANITY | REGRESSION | STRESS, RELIABILTY | MTBF
+            ST(System Test)-> SANITY | REGRESSION | STRESS, RELIABILTY | MTBF | EM
+            SI(System Integration)-> EAT | STAB | PACT | CAT0 | RELIABILITY | MTBF | CTS | ACS_CI
+            Otherwise "Others" should be used -->
+        <Parameter CampaignType="Others"/>
+        <Parameter TCRReportViaRESTAPI="True"/>
+    </Parameters>
+    <Targets>
+        <!-- Target Values -->
+        <Target targetB2bPassRate="100"/>
+    </Targets>
+    <TestCases>
+        <!--Setup, installing ACS Agents-->
+        <TestCase Id="../../../../../TC/TR/ACS/Communication/Bluetooth/setup/prereq_Bluetooth_SYSTEM_SETUP_EMBEDDED"/>
+        <TestCase Id="../../../../../TC/TR/ACS/Communication/Bluetooth/Bluetooth_GAP_pair_master"/>
+        <TestCase Id="../../../../../TC/TR/ACS/Communication/Bluetooth/Bluetooth_GeneralTest_Pair_DUT_With_Remote_Device_Cancel_on_DUT" TcMaxAttempt="2"/>
+        <TestCase Id="../../../../../TC/TR/ACS/Communication/Bluetooth/Bluetooth_GeneralTest_Pair_DUT_With_Remote_Device_Cancel_on_Remote_Device" TcMaxAttempt="2"/>
+        <TestCase Id="../../../../../TC/TR/ACS/Communication/Bluetooth/Bluetooth_GeneralTest_Pair_Remote_Device_With_DUT_Cancel_on_DUT" TcMaxAttempt="2"/>
+        <TestCase Id="../../../../../TC/TR/ACS/Communication/Bluetooth/Bluetooth_GeneralTest_Pair_Remote_Device_With_DUT_Cancel_on_Remote_Device" TcMaxAttempt="2"/>
+
+        <!--Setup, using BT Dongle-->
+        <TestCase Id="../../../../../TC/TR/TESTLIB/Bluetooth/Bluetooth_A2DP_DUT_supports_A2DP_1_2_BT_Profile"/>
+        <TestCase Id="../../../../../TC/TR/TESTLIB/Bluetooth/Bluetooth_AVRCP_DUT_support_AVRCP_1_3_BT_profile"/>
+        <TestCase Id="../../../../../TC/TR/TESTLIB/Bluetooth/Bluetooth_HSP_DUT_support_HSP_1_2_Audio_Gateway_BT_Profile"/>
+        <TestCase Id="../../../../../TC/TR/TESTLIB/Bluetooth/Bluetooth_PAN_DUT_supports_PAN_1_0_BT_Profile"/>
+        <TestCase Id="../../../../../TC/TR/TESTLIB/Bluetooth/Bluetooth_OPP_DUT_support_OBEX_Object_Push_1_1_BT_Profile"/>
+
+        <TestCase Id="../../../../../TC/TR/TESTLIB/Bluetooth/Bluetooth_GeneralTest_Pair_DUT_With_Remote_Device_DUT_Pair_Remote_Timeout"/>
+        <TestCase Id="../../../../../TC/TR/TESTLIB/Bluetooth/Bluetooth_GeneralTest_Pair_DUT_With_Remote_Device_DUT_Cancel"/>
+        <TestCase Id="../../../../../TC/TR/TESTLIB/Bluetooth/Bluetooth_GeneralTest_Pair_DUT_With_Remote_Device_DUT_Pair_Remote_Cancel"/>
+        <TestCase Id="../../../../../TC/TR/TESTLIB/Bluetooth/Bluetooth_GeneralTest_Pair_DUT_With_Remote_Device_DUT_Pair_Remote_Pair"/>
+        <TestCase Id="../../../../../TC/TR/TESTLIB/Bluetooth/Bluetooth_GeneralTest_Pair_DUT_With_Remote_Device_Remote_Cancel_DUT_Cancel"/>
+        <TestCase Id="../../../../../TC/TR/TESTLIB/Bluetooth/Bluetooth_GeneralTest_Pair_DUT_With_Remote_Device_Remote_Cancel_DUT_Pair"/>
+        <TestCase Id="../../../../../TC/TR/TESTLIB/Bluetooth/Bluetooth_GeneralTest_Pair_DUT_With_Remote_Device_Remote_Cancel_DUT_Timeout"/>
+        <TestCase Id="../../../../../TC/TR/TESTLIB/Bluetooth/Bluetooth_GeneralTest_Pair_DUT_With_Remote_Device_Remote_Pair_DUT_Cancel"/>
+        <TestCase Id="../../../../../TC/TR/TESTLIB/Bluetooth/Bluetooth_GeneralTest_Pair_DUT_With_Remote_Device_Remote_Pair_DUT_Pair"/>
+        <TestCase Id="../../../../../TC/TR/TESTLIB/Bluetooth/Bluetooth_GeneralTest_Pair_DUT_With_Remote_Device_Remote_Pair_DUT_Timeout"/>
+        <TestCase Id="../../../../../TC/TR/TESTLIB/Bluetooth/Bluetooth_GeneralTest_Pair_DUT_With_Remote_Device_Remote_Timeout"/>
+        <TestCase Id="../../../../../TC/TR/TESTLIB/Bluetooth/Bluetooth_GeneralTest_Pair_DUT_with_Remote_Device_DUT_Timeout"/>
+        <TestCase Id="../../../../../TC/TR/TESTLIB/Bluetooth/Bluetooth_GeneralTest_Pair_Remote_Device_With_DUT_DUT_Cancel_Remote_Cancel"/>
+        <TestCase Id="../../../../../TC/TR/TESTLIB/Bluetooth/Bluetooth_GeneralTest_Pair_Remote_Device_With_DUT_DUT_Cancel_Remote_Pair"/>
+        <TestCase Id="../../../../../TC/TR/TESTLIB/Bluetooth/Bluetooth_GeneralTest_Pair_Remote_Device_With_DUT_DUT_Cancel_Remote_Timeout"/>
+        <TestCase Id="../../../../../TC/TR/TESTLIB/Bluetooth/Bluetooth_GeneralTest_Pair_Remote_Device_With_DUT_DUT_Pair_Remote_Cancel"/>
+        <TestCase Id="../../../../../TC/TR/TESTLIB/Bluetooth/Bluetooth_GeneralTest_Pair_Remote_Device_With_DUT_DUT_Pair_Remote_Pair"/>
+        <TestCase Id="../../../../../TC/TR/TESTLIB/Bluetooth/Bluetooth_GeneralTest_Pair_Remote_Device_With_DUT_DUT_Pair_Remote_Timeout"/>
+        <TestCase Id="../../../../../TC/TR/TESTLIB/Bluetooth/Bluetooth_GeneralTest_Pair_Remote_Device_With_DUT_DUT_Timeout"/>
+        <TestCase Id="../../../../../TC/TR/TESTLIB/Bluetooth/Bluetooth_GeneralTest_Pair_Remote_Device_With_DUT_Remote_Cancel"/>
+        <TestCase Id="../../../../../TC/TR/TESTLIB/Bluetooth/Bluetooth_GeneralTest_Pair_Remote_Device_With_DUT_Remote_Pair_DUT_Cancel"/>
+        <TestCase Id="../../../../../TC/TR/TESTLIB/Bluetooth/Bluetooth_GeneralTest_Pair_Remote_Device_With_DUT_Remote_Pair_DUT_Pair"/>
+        <TestCase Id="../../../../../TC/TR/TESTLIB/Bluetooth/Bluetooth_GeneralTest_Pair_Remote_Device_With_DUT_Remote_Pair_DUT_Timeout"/>
+        <TestCase Id="../../../../../TC/TR/TESTLIB/Bluetooth/Bluetooth_GeneralTest_Pair_Remote_Device_With_DUT_Remote_Timeout"/>
+        <TestCase Id="../../../../../TC/TR/TESTLIB/Bluetooth/Bluetooth_GeneralTest_Unpair_with_a_device"/>
+
+        <TestCase Id="../../../../../TC/TR/ACS/Communication/Bluetooth/Bluetooth_GeneralTest_Scan_for_a_specific_device_Iteratively"/>
+        <TestCase Id="../../../../../TC/TR/ACS/Communication/Bluetooth/prereq_Bluetooth_GeneralTest_Unpair_with_a_device"/>
+        <TestCase Id="../../../../../TC/TR/ACS/Communication/Bluetooth/Bluetooth_GeneralTest_provide_service_list" TcMaxAttempt="2"/>
+
+        <TestCase Id="../../../../../TC/TR/ACS/Communication/Bluetooth/Bluetooth_GeneralTest_Make_Undiscoverable_Different_Scenarios" />
+        <TestCase Id="../../../../../TC/TR/ACS/Communication/Bluetooth/Bluetooth_GeneralTest_Refresh_Scan_Process" />
+        <TestCase Id="../../../../../TC/TR/ACS/Communication/Bluetooth/Bluetooth_GeneralTest_Make_Discoverable_Different_Scenarios" />
+        <TestCase Id="../../../../../TC/TR/ACS/Communication/Bluetooth/Bluetooth_LE_service_gatt_CTS_Verifier" TcMaxAttempt="2"/>
+
+        <!--Tests restarting the DUT-->
+        <TestCase Id="../../../../../TC/TR/ACS/Communication/Bluetooth/Bluetooth_GeneralTest_Verify_Bluetooth_keeps_its_state_after_device_restart" TcMaxAttempt="2"/>
+    </TestCases>
+</Campaign>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase>
+  <UseCase>LIVE_WIFI_FTP</UseCase>
+  <Description>FTP Upload / Download over WLAN</Description>
+  <b2bIteration>1</b2bIteration>
+  <b2bContinuousMode>True</b2bContinuousMode> 
+  <TcMaxAttempt>2</TcMaxAttempt>
+  <TcAcceptanceCriteria>1</TcAcceptanceCriteria>
+  <Parameters>
+    <Parameter>
+      <!--
+         Wifi access point on which board will connect to. 
+         Must refers to a wifi router's name (equipment name of the bench configuration file).
+     -->
+      <Name>WIFI_ACCESS_POINT</Name>
+      <Value>B_ONLY_WIFI_ROUTER</Value>
+    </Parameter>
+    <Parameter>
+      <!-- Direction of FTP transfer -->
+      <Name>DIRECTION</Name>
+      <Value>UL</Value>
+    </Parameter>
+    <Parameter>
+      <!-- File to download from the server. This file shall be available on the server. If the file to transfer is located in a specific directory, you can specify its path. i.e. : acs/download_file/get5M -->
+      <Name>DL_FILE</Name>
+      <Value>pub/get10M</Value>
+    </Parameter>
+    <Parameter>
+      <!-- File to upload on the server. This file shall be available on the device. If the file to transfer is located in a specific directory, you can specify its path. i.e. : acs/upload_file/put5M -->
+      <Name>UL_FILE</Name>
+      <Value>10MB.txt</Value>
+    </Parameter>
+    <Parameter>
+      <!-- Transfer timeout in s -->
+      <Name>XFER_TIMEOUT</Name>
+      <Value>120</Value>
+    </Parameter>
+  </Parameters>
+</TestCase>
+

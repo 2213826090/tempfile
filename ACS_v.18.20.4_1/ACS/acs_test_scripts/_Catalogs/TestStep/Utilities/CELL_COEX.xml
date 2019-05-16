@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestSteps xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../acs/src/_Catalogs/TestStep/teststep.xsd">
+    <TestStep Id="LOGIC_DATA_TO_CELLCOEX_RT" Domain="UTILITIES" SubDomain="CELL_COEX" Feature="RT_PARSER" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Utilities.CellCoex.LogicDataToCellCoexRt.LogicDataToCellCoexRt</ClassName>
+        <Description>Formats the Real-time coex data from a logic analyzer into an XML to compute pass/fail criteria.</Description>
+        <Environment name="ANY">
+        </Environment>
+        <Parameters>
+            <Parameter name="CMD_SET" type="STRING" isOptional="false">
+                <Description>Command set type.</Description>
+                <PossibleValues>standard;lnp</PossibleValues>
+                <DefaultValue>standard</DefaultValue>
+            </Parameter>
+            <Parameter name="C2M_CSV" type="STRING" isOptional="false">
+                <Description>Connectivity to modem CSV file</Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+            <Parameter name="M2C_CSV" type="STRING" isOptional="false">
+                <Description>modem to Connectivity CSV file</Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+            <Parameter name="APLOG" type="STRING" isOptional="false">
+                <Description>APlog file used to synchronize the logic analyzer events to the platform ones. Leave the field blank to get the sync events from the logcat.
+                </Description>
+                <PossibleValues />
+                <DefaultValue />
+                <Blank>True</Blank>
+            </Parameter>
+            <Parameter name="FORMATTED_DATA_OUTPUT" type="CONTEXT" isOptional="false">
+                <Description>
+                    <Key name="FORMATTED_DATA_OUTPUT" type="STRING">Where to store in the context the parser data.</Key>
+                </Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+        </Parameters>
+    </TestStep>
+</TestSteps>

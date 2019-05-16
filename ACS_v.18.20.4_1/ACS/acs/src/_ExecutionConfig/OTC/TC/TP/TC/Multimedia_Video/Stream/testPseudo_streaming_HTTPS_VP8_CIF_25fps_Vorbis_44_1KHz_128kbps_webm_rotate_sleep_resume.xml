@@ -1,0 +1,18 @@
+<?xml version="1.0" ?>
+<TestCase>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Discription>Verify Pseudo streaming over WLAN, HTTPS, VP8_CIF_25fps_Vorbis_44.1KHz_128kbps.webm, rotate, sleep/resume</Discription>
+    <UseCase>PY_UNIT</UseCase>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <b2bIteration>1</b2bIteration>
+    <Parameters>
+        <Parameter>
+            <Name>TEST_DATA_ROOT</Name>
+            <Value>testplan/Multimedia_Video</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TEST_CASE</Name>
+            <Value>tests.Multimedia_Video.Stream.video_playback.VideoPlayBack.testPseudo_streaming_HTTPS_VP8_CIF_25fps_Vorbis_44_1KHz_128kbps_webm_rotate_sleep_resume</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

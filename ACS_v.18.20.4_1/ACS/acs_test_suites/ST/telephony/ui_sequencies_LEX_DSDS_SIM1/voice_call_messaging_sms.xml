@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<UI_SEQ xsi:noNamespaceSchemaLocation="ACS_ANDROID_UI_CHECK.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <!-- every SMS must be cleared deleted before starting the test-->
+  <ACTION>
+    <CMD>call_dial</CMD>
+    <PARAMETERS>0033629059146 </PARAMETERS>
+    <TIMEOUT>1</TIMEOUT>
+    <TRIG_LOG> </TRIG_LOG>
+  <ACTION>
+  </ACTION>
+    <CMD>open_sms_menu</CMD>
+    <TIMEOUT>1</TIMEOUT>
+  </ACTION>
+  <!-- sending a SMS of 160 characters-->
+  <ACTION>
+    <CMD>sms_send</CMD>
+    <PARAMETERS>0033629059146;aaaaaaaaaabbbbbbbbbbccccccccccaaaaaaaaaabbbbbbbbbbccccccccccaaaaaaaaaabbbbbbbbbbccccccccccaaaaaaaaaabbbbbbbbbbccccccccccaaaaaaaaaabbbbbbbbbbccccccccccdddddddddd</PARAMETERS>
+    <TIMEOUT>1</TIMEOUT>
+    <TRIG_LOG>SEND_SMS</TRIG_LOG>
+  </ACTION>
+  <ACTION>
+    <CMD>open_sms_menu</CMD>
+    <TIMEOUT>1</TIMEOUT>
+    <TRIG_LOG></TRIG_LOG>
+  </ACTION>  
+  <ACTION>
+    <CMD>sms_clear_all_sms</CMD>
+    <TIMEOUT>1</TIMEOUT>
+    <TRIG_LOG>com.android.mms/.ui.ConversationList</TRIG_LOG>
+  </ACTION>  
+</UI_SEQ>

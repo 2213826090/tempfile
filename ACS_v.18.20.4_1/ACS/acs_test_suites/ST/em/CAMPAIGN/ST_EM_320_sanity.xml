@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<Campaign>
+    <Parameters>
+        <Parameter isControlledPSUsed="True" />
+        <Parameter isIoCardUsed="True" />
+        <!-- Set skipBootOnPowerCycle to True to disable the acs boot procedure -->
+        <!-- Important, it means that boot will be handle inside the campaign/tc -->
+        <Parameter skipBootOnPowerCycle="True" />
+        <Parameter runHookScripts="False" />
+        <Parameter powerCycleBetweenTC="False" />
+        <Parameter powerCycleOnFailure="False" />
+        <Parameter finalPowerOff="True" />
+        <Parameter finalDutState="PowerOff" />
+        <Parameter stopCampaignOnCriticalFailure="False" />
+        <Parameter stopCampaignOnFirstFailure="False" />
+        <!-- LoggingLevel possible values: info | warning | debug | error -->
+        <Parameter loggingLevel="debug" />
+        <!-- CampaignType format -> <TEAM>_<CAMPAIGNTYPE>
+            Possible values:
+            FT(Feature Team)-> SANITY | REGRESSION | STRESS, RELIABILTY | MTBF
+            ST(System Test)-> SANITY | REGRESSION | STRESS, RELIABILTY | MTBF
+            SI(System Integration)-> EAT | STAB | PACT | CAT0 | RELIABILITY | MTBF | CTS
+            Otherwise "Others" should be used -->
+        <Parameter CampaignType="ST_SANITY" />
+        <Parameter TCRReportViaRESTAPI="true"/>
+    </Parameters>
+    <Targets>
+        <!-- Target Values -->
+        <Target targetB2bPassRate="49" />
+    </Targets>
+    <TestCases>
+        <!-- Testcase campaigns -->
+        <TestCase Id="..\TC\SETUP\LAB_SYSTEM_FLASH" />
+        <TestCase Id="..\TC\SETUP\LAB_SYSTEM_SETUP_EMBEDDED" />
+        <TestCase Id="..\TC\MACHR\ST_EM_MACHR_METATCD_03_HW1-LAB_EM_HW_CHARGING" />
+        <TestCase Id="..\TC\MACHR\ST_EM_MACHR_METATCD_04_HW2-LAB_EM_HW_CHARGING" />
+        <TestCase Id="..\TC\MACHR\ST_EM_MACHR_METATCD_02_COS-LAB_EM_COS_CHARGING" />
+        <TestCase Id="..\TC\MACHR\ST_EM_MACHR_METATCD_06_DCP-LAB_EM_PLUG_CHARGER" />
+        <TestCase Id="..\TC\MACHR\ST_EM_MACHR_METATCD_09_DCP-LAB_EM_REMOVE_CHARGER" />
+        <TestCase Id="..\TC\MACHR\ST_EM_MACHR_METATCD_07_SDP-LAB_EM_PLUG_CHARGER" />
+        <TestCase Id="..\TC\MACHR\ST_EM_MACHR_METATCD_10_SDP-LAB_EM_REMOVE_CHARGER" />
+        <TestCase Id="..\TC\MACHR\ST_EM_MACHR_METATCD_05_CDP-LAB_EM_PLUG_CHARGER" />
+        <TestCase Id="..\TC\MACHR\ST_EM_MACHR_METATCD_08_CDP-LAB_EM_REMOVE_CHARGER" />
+    </TestCases>
+</Campaign>

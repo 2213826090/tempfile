@@ -1,0 +1,69 @@
+<?xml version="1.0" ?>
+<Campaign>
+    <Parameters>
+        <Parameter isControlledPSUsed="False"/>
+        <!-- ioCard -->
+        <Parameter isIoCardUsed="True"/>
+        <Parameter skipBootOnPowerCycle="True"/>
+        <Parameter bootRetryNumber="0"/>
+        <Parameter runHookScripts="False"/>
+        <Parameter powerCycleBetweenTC="False"/>
+        <Parameter powerCycleOnFailure="False"/>
+        <Parameter finalDutState="NoChange"/>
+        <Parameter stopCampaignOnCriticalFailure="True"/>
+        <Parameter stopCampaignOnFirstFailure="False"/>
+        <Parameter loggingLevel="debug"/>
+        <Parameter CampaignType="Other"/>
+    </Parameters>
+    <TestCases>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/init.set_adb_root.AdbRoot.testAdbRoot"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/init.start_rpc_server.StartRPCServer.testStartRPCServer"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/init.start_rpc_server.StartRPCServer.testStartRPCServer"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/init.set_orientation_vertical.SetOrientationVertical.testSetOrientationVertical"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/init.wake_up_and_unlock.WakeUnlock.testWakeUnlock"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/init.config_first_boot_wizard.ConfigFirstBootWizard.testConfigFirstBootWizard"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/init.enable_developer_option.EnableDeveloperOption.testEnableDeveloperOption"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/init.keep_awake.KeepAwake.testKeepAwake"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/init.disable_verify_apps.DisableVerifyApp.testDisableVerifyApp"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/init.disable_verify_apps.DisableVerifyApp.testDisableVerifyApp"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/init.set_language_to_United_States.SetLanguageUS.testSetLanguageUS"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/init.set_system_time.SetTimeDate.testSetTimeDate"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/EnergyManagement.em_init.reset_sleep_lock.ResetSleepClock.testResetSleepClock"/>
+        <!-- NO cutter and CPS cases -->
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/thermal_management/check_thermal_daemon_running/test_check_thermal_daemon_running"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/thermal_management/check_thermal_zone0/test_check_thermal_zone0"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/thermal_management/check_thermal_zone1/test_check_thermal_zone1"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/thermal_management/check_thermal_zone2/test_check_thermal_zone2"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/thermal_management/check_thermal_zone3/test_check_thermal_zone3"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/thermal_management/check_thermal_zone4/test_check_thermal_zone4"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/thermal_management/check_thermal_zone5/test_check_thermal_zone5"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/thermal_management/check_thermal_zone6/test_check_thermal_zone6"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/thermal_management/check_thermal_zone7/test_check_thermal_zone7"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/thermal_management/check_thermal_zone8/test_check_thermal_zone8"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/s0ix/screen_off_clock_alarm/test_screen_off_clock_alarm"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/s0ix/system_time_sync_up/test_system_time_sync_up"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/s0ix/system_resume_power_press_bt_on/test_system_resume_power_press_bt_on"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/charging_battery/sdp_charging/test_SDP_charging"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/charging_battery/power_gauge_app/test_power_gauge_app"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/charging_battery/charged_by_usb_cable/test_charged_by_usb_cable"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/charging_battery/sdp_charger_insertion_when_device_on/test_sdp_charger_insertion_when_device_on"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/charging_battery/screen_off_press_volume_key/test_screen_off_press_volume_key"/>
+
+        <!-- CPS cases (power on off) -->
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/power_on_off/test_power_off/test_power_off"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/power_on_off/test_power_on/test_power_on"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/power_on_off/test_power_option_dialog_shows/test_power_option_dialog_shows"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/power_on_off/restart_device_CPU_load/test_restart_device_CPU_load"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/power_on_off/power_on_off_with_USB_pluged/test_power_on_off_with_USB_pluged"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/power_on_off/power_off_with_SDP_charger/test_power_off_with_SDP_charger"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/power_on_off/press_power_every_2_seconds/test_press_power_every_2_seconds"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/power_on_off/power_off_in_camera_capture_screen/test_power_off_in_camera_capture_screen"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/power_on_off/power_off_in_receiving_email/test_power_off_in_receiving_email"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/power_on_off/power_off_in_music_player/test_power_off_in_music_player"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/power_on_off/power_off_in_videorecord/test_power_off_in_videorecord"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/power_on_off/reboot_with_airplane_on/test_reboot_with_airplane_on"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/power_on_off/power_off_mixedmode_on/test_power_off_mixedmode_on"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/power_on_off/power_off_with_wifi_BT_GPS_NFC_off/test_power_off_with_wifi_BT_GPS_NFC_off"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/charging_battery/programs_background_longpress_reboot/test_programs_background_longpress_reboot"/>
+    </TestCases>
+</Campaign>

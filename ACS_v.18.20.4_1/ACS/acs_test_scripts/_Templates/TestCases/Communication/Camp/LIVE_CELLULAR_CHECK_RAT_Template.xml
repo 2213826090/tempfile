@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="13.49">
+    <UseCase>LIVE_CELLULAR_CHECK_RAT</UseCase>
+    <Description>Live Cellular Check RAT: checks the user chosen preferred radio.</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters>
+        <Parameter>
+            <!-- A value indicating whether we want that the Use Case
+                fails one error or not (it may be used as a simple
+                indicator on the LIVE network on which the DUT is
+                camped).
+                Possible values: True|False
+            -->
+            <Name>FAIL_ON_ERROR</Name>
+            <Value>True</Value>
+        </Parameter>
+        <Parameter>
+            <!-- The string value corresponding to the current Network Type
+                on which the DUT is (supposed to be) camped.
+                "UNKNOWN",  # Unknown
+                "GPRS",  # GPRS - GSM
+                "EGPRS",  # EDGE
+                "UMTS",  # UMTS
+                "CDMA",  # CDMA
+                "EVDO_0",  # EVDO rev. 0
+                "EVDO_A",  # EVDO rev. A
+                "1xRTT",  # 1xRTT
+                "HSDPA",  # HSDPA
+                "HSUPA",  # HSUPA
+                "HSPA",  # HSPA
+                "IDEN",  # iDen
+                "EVDO_B",  # EVDO rev. B
+                "LTE",  # LTE
+                "EHRPD",  # eHRPD
+                "HSPAP",
+                "3xRTT",
+                "EVDV",
+                "UMB"
+            -->
+            <Name>EXPECTED_NETWORK_TYPE</Name>
+            <Value>15</Value>
+        </Parameter>
+        <Parameter>
+            <!-- The string value corresponding to the preferred Network Type
+                on which the DUT should use.
+                "2G_ONLY"
+                "3G_PREF"
+                "4G_PREF"
+                "3G_ONLY"
+                "2G_3G"
+                "CDMA_PREF"
+                "CDMA_ONLY"
+                "EVDO_ONLY"
+                "GLOBAL"
+                "4G_PREF_US"
+                "WORLD_MODE"
+                "4G_ONLY"
+            -->
+            <Name>PREFERRED_NETWORK_TYPE</Name>
+            <Value>0</Value>
+        </Parameter>
+        </Parameters>
+</TestCase>

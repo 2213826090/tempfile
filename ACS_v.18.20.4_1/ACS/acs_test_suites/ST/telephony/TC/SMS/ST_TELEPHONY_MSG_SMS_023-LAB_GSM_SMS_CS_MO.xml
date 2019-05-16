@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase>
+  <UseCase>LAB_GSM_SMS_CS_MO</UseCase>
+  <Description>GSM Mobile Originated SMS over CS on simulated network</Description>
+  <b2bIteration>100</b2bIteration>
+  <b2bContinuousMode>True</b2bContinuousMode>
+  <Parameters>
+    <Parameter>
+      <!-- Cell Band (PGSM|RGSM|EGSM|GSM450|GSM480|GSM750|GSM850|TGSM810|PCS|DCS) -->
+      <Name>CELL_BAND</Name>
+      <Value>DCS</Value>
+    </Parameter>
+    <Parameter>
+      <!-- Cell power in dB -->
+      <Name>CELL_POWER</Name>
+      <Value>-70</Value>
+    </Parameter>
+    <Parameter>
+      <!-- BCH ARFCN -->
+      <Name>BCH_ARFCN</Name>
+      <Value>512</Value>
+    </Parameter>
+    <Parameter>
+      <!-- Cell Service (GSM|GPRS|EGPRS) -->
+      <Name>CELL_SERVICE</Name>
+      <Value>GSM</Value>
+    </Parameter>
+    <Parameter>
+      <!-- Destination number.  If the value [PHONE_NUMBER] is given, the phoneNumber defined in Phone_Catalog.xml will be used -->
+      <Name>DESTINATION_NUMBER</Name>
+      <Value>0612345678</Value>
+    </Parameter>
+    <Parameter>
+      <!-- SMS text to send -->
+      <Name>SMS_TEXT</Name>
+      <Value>This is my MO SMS text (B2B testing) !</Value>
+    </Parameter>
+    <Parameter>
+      <!-- SMS Data coding scheme in hexadecimal -->
+      <Name>DATA_CODING_SCHEME</Name>
+      <Value>00</Value>
+    </Parameter>
+    <Parameter>
+      <!-- SMS transfer timeout in seconds -->
+      <Name>SMS_TRANSFER_TIMEOUT</Name>
+      <Value>10</Value>
+    </Parameter>
+  </Parameters>
+</TestCase>

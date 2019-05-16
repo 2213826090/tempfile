@@ -1,0 +1,327 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<Sequence>
+<!--     COMMON LTE Parameters for LTE CELL-->
+    <GPIBCommand type="COMMON_LTE" equipment="NETWORK_SIMULATOR1" command="SOURce:LTE:SIGN:CELL:STATe OFF" />
+    <GPIBCommand type="COMMON_LTE" equipment="NETWORK_SIMULATOR1" command="CONFigure:LTE:SIGN:ETOE ON" />
+    <GPIBCommand type="COMMON_LTE" equipment="NETWORK_SIMULATOR1" command="CONFigure:LTE:SIGN:BAND OB1" />
+    <GPIBCommand type="COMMON_LTE" equipment="NETWORK_SIMULATOR1" command="CONFigure:LTE:SIGN:CELL:BAND:DL B100" />
+    <GPIBCommand type="COMMON_LTE" equipment="NETWORK_SIMULATOR1" command="CONFigure:LTE:SIGN:CONNection:UDCHannels:DL 50,0,Q64,21" />
+    <GPIBCommand type="COMMON_LTE" equipment="NETWORK_SIMULATOR1" command="CONFigure:LTE:SIGN:CONNection:UDCHannels:UL 50,0,Q16,21" />
+    <GPIBCommand type="COMMON_LTE" equipment="NETWORK_SIMULATOR1" command="CONFigure:LTE:SIGN:CONNection:STYPE UDCH" />
+
+    <GPIBCommand type="COMMON_LTE" equipment="NETWORK_SIMULATOR1" command="CONFigure:LTE:SIGN:CELL:SEC:IALG S3G" />
+    <GPIBCommand type="COMMON_LTE" equipment="NETWORK_SIMULATOR1" command="CONFigure:LTE:SIGN:CONN:AMDB ON" />
+
+    <GPIBCommand type="COMMON_LTE" equipment="NETWORK_SIMULATOR1" command="CONFigure:LTE:SIGN:CONNection:DPCYcle P128" />
+    <GPIBCommand type="COMMON_LTE" equipment="NETWORK_SIMULATOR1" command="CONFigure:LTE:SIGN:DL:RSEPre:LEVel -85" />
+    <GPIBCommand type="COMMON_LTE" equipment="NETWORK_SIMULATOR1" command="CONFigure:LTE:SIGN:UL:PUSCh:OLNPower -20" />
+    <GPIBCommand type="COMMON_LTE" equipment="NETWORK_SIMULATOR1" command="CONFigure:LTE:SIGN:UL:PUSCh:TPC:CLTPower 10" />
+    <GPIBCommand type="COMMON_LTE" equipment="NETWORK_SIMULATOR1" command="CONFigure:LTE:SIGN:CONNection:SCHModel:ENABle OFF" />
+    <GPIBCommand type="COMMON_LTE" equipment="NETWORK_SIMULATOR1" command="CONFigure:LTE:SIGN:CONNection:PDCCh:RPDCch ON" />
+
+    <!--  Specific parameters for LTE BAND1 for LTE CELL -->
+    <GPIBCommand type="1" equipment="NETWORK_SIMULATOR1" command="CONFigure:LTE:SIGN:NCELl:GSM:CELL1 ON, G18, 512" />
+    <GPIBCommand type="1" equipment="NETWORK_SIMULATOR1" command="CONFigure:LTE:SIGN:NCELl:WCDMa:CELL1 ON, OB1, 10700, #H10A" />
+
+    <!--  Specific parameters for LTE BAND2 for LTE CELL -->
+    <GPIBCommand type="2" equipment="NETWORK_SIMULATOR1" command="CONFigure:LTE:SIGN:NCELl:GSM:CELL1 ON, G19, 540" />
+    <GPIBCommand type="2" equipment="NETWORK_SIMULATOR1" command="CONFigure:LTE:SIGN:NCELl:WCDMa:CELL1 ON, OB2, 9662, #H10A" />
+
+    <!--  Specific parameters for LTE BAND3 for LTE CELL -->
+    <GPIBCommand type="3" equipment="NETWORK_SIMULATOR1" command="CONFigure:LTE:SIGN:NCELl:GSM:CELL1 ON, G18, 512" />
+    <GPIBCommand type="3" equipment="NETWORK_SIMULATOR1" command="CONFigure:LTE:SIGN:NCELl:WCDMa:CELL1 ON, OB1, 10700, #H10A" />
+
+    <!--  Specific parameters for LTE BAND4 for LTE CELL -->
+    <GPIBCommand type="4" equipment="NETWORK_SIMULATOR1" command="CONFigure:LTE:SIGN:NCELl:GSM:CELL1 ON, G19, 540" />
+    <GPIBCommand type="4" equipment="NETWORK_SIMULATOR1" command="CONFigure:LTE:SIGN:NCELl:WCDMa:CELL1 ON, OB2, 9662, #H10A" />
+
+    <!--  Specific parameters for LTE BAND5 for LTE CELL -->
+    <GPIBCommand type="5" equipment="NETWORK_SIMULATOR1" command="CONFigure:LTE:SIGN:NCELl:GSM:CELL1 ON, G18, 512" />
+    <GPIBCommand type="5" equipment="NETWORK_SIMULATOR1" command="CONFigure:LTE:SIGN:NCELl:WCDMa:CELL1 ON, OB1, 10700, #H10A" />
+
+    <!--  Specific parameters for LTE BAND6 for LTE CELL -->
+    <GPIBCommand type="6" equipment="NETWORK_SIMULATOR1" command="CONFigure:LTE:SIGN:NCELl:GSM:CELL1 ON, G18, 512" />
+    <GPIBCommand type="6" equipment="NETWORK_SIMULATOR1" command="CONFigure:LTE:SIGN:NCELl:WCDMa:CELL1 ON, OB1, 10700, #H10A" />
+
+    <!--  Specific parameters for LTE BAND7 for LTE CELL -->
+    <GPIBCommand type="7" equipment="NETWORK_SIMULATOR1" command="CONFigure:LTE:SIGN:NCELl:GSM:CELL1 ON, G18, 512" />
+    <GPIBCommand type="7" equipment="NETWORK_SIMULATOR1" command="CONFigure:LTE:SIGN:NCELl:WCDMa:CELL1 ON, OB1, 10700, #H10A" />
+
+    <!--  Specific parameters for LTE BAND8 for LTE CELL -->
+    <GPIBCommand type="8" equipment="NETWORK_SIMULATOR1" command="CONFigure:LTE:SIGN:NCELl:GSM:CELL1 ON, G18, 512" />
+    <GPIBCommand type="8" equipment="NETWORK_SIMULATOR1" command="CONFigure:LTE:SIGN:NCELl:WCDMa:CELL1 ON, OB1, 10700, #H10A" />
+
+    <!--  Specific parameters for LTE BAND9 for LTE CELL -->
+    <GPIBCommand type="9" equipment="NETWORK_SIMULATOR1" command="CONFigure:LTE:SIGN:NCELl:GSM:CELL1 ON, G18, 512" />
+    <GPIBCommand type="9" equipment="NETWORK_SIMULATOR1" command="CONFigure:LTE:SIGN:NCELl:WCDMa:CELL1 ON, OB6, 4287, #H10A" />
+
+    <!--  Specific parameters for LTE BAND17 for LTE CELL -->
+    <GPIBCommand type="17" equipment="NETWORK_SIMULATOR1" command="CONFigure:LTE:SIGN:NCELl:GSM:CELL1 ON, G19, 540" />
+    <GPIBCommand type="17" equipment="NETWORK_SIMULATOR1" command="CONFigure:LTE:SIGN:NCELl:WCDMa:CELL1 ON, OB2, 9662, #H10A" />
+
+    <!--  Specific parameters for LTE BAND19 for LTE CELL -->
+    <GPIBCommand type="19" equipment="NETWORK_SIMULATOR1" command="CONFigure:LTE:SIGN:NCELl:GSM:CELL1 ON, G18, 512" />
+    <GPIBCommand type="19" equipment="NETWORK_SIMULATOR1" command="CONFigure:LTE:SIGN:NCELl:WCDMa:CELL1 ON, OB6, 4287, #H10A" />
+
+    <!--  Specific parameters for LTE BAND20 for LTE CELL -->
+    <GPIBCommand type="20" equipment="NETWORK_SIMULATOR1" command="CONFigure:LTE:SIGN:NCELl:GSM:CELL1 ON, G18, 512" />
+    <GPIBCommand type="20" equipment="NETWORK_SIMULATOR1" command="CONFigure:LTE:SIGN:NCELl:WCDMa:CELL1 ON, OB1, 10700, #H10A" />
+
+    <!--  Specific parameters for LTE Category 1-->
+    <GPIBCommand type="CAT_1" equipment="NETWORK_SIMULATOR1" command="CONFigure:LTE:SIGN:CELL:BAND:DL B100" />
+    <GPIBCommand type="CAT_1" equipment="NETWORK_SIMULATOR1" command="CONFigure:LTE:SIGN:CONNection:UDCHannels:DL 40,0,Q16,13" />
+    <GPIBCommand type="CAT_1" equipment="NETWORK_SIMULATOR1" command="CONFigure:LTE:SIGN:CONNection:UDCHannels:UL 50,0,QPSK,6" />
+
+    <!--  Specific parameters for LTE Category 2-->
+    <GPIBCommand type="CAT_2" equipment="NETWORK_SIMULATOR1" command="CONFigure:LTE:SIGN:CELL:BAND:DL B200" />
+    <GPIBCommand type="CAT_2" equipment="NETWORK_SIMULATOR1" command="CONFigure:LTE:SIGN:CONNection:UDCHannels:DL 100,0,Q64,21" />
+    <GPIBCommand type="CAT_2" equipment="NETWORK_SIMULATOR1" command="CONFigure:LTE:SIGN:CONNection:UDCHannels:UL 40,0,Q16,21" />
+
+    <!--  Specific parameters for LTE Category 3-->
+    <GPIBCommand type="CAT_3" equipment="NETWORK_SIMULATOR1" command="CONFigure:LTE:SIGN:CELL:BAND:DL B200" />
+    <GPIBCommand type="CAT_3" equipment="NETWORK_SIMULATOR1" command="CONFigure:LTE:SIGN:CONNection:UDCHannels:DL 100,0,Q64,21" />
+    <GPIBCommand type="CAT_3" equipment="NETWORK_SIMULATOR1" command="CONFigure:LTE:SIGN:CONNection:UDCHannels:UL 100,0,Q16,21" />
+
+    <!--  Specific parameters for LTE Category 4-->
+    <GPIBCommand type="CAT_4" equipment="NETWORK_SIMULATOR1" command="CONFigure:LTE:SIGN:NCELl:LTE:CELL1 OFF,OB1,301,503,ZERO" />
+    <GPIBCommand type="CAT_4" equipment="NETWORK_SIMULATOR1" command="CONFigure:LTE:SIGN:NCELl:LTE:CELL2 OFF,OB1,302,502,ZERO" />
+    <GPIBCommand type="CAT_4" equipment="NETWORK_SIMULATOR1" command="CONFigure:LTE:SIGN:NCELl:LTE:CELL3 OFF,OB1,303,501,ZERO" />
+    <GPIBCommand type="CAT_4" equipment="NETWORK_SIMULATOR1" command="CONFigure:LTE:SIGN:NCELl:LTE:CELL4 OFF,OB1,304,500,ZERO" />
+    <GPIBCommand type="CAT_4" equipment="NETWORK_SIMULATOR1" command="CONFigure:LTE:SIGN:NCELl:LTE:CELL5 OFF,OB1,305,499,ZERO" />
+    <GPIBCommand type="CAT_4" equipment="NETWORK_SIMULATOR1" command="CONFigure:LTE:SIGN:NCELl:LTE:CELL6 OFF,OB1,306,498,ZERO" />
+    <GPIBCommand type="CAT_4" equipment="NETWORK_SIMULATOR1" command="CONFigure:LTE:SIGN:NCELl:LTE:CELL7 OFF,OB1,307,497,ZERO" />
+    <GPIBCommand type="CAT_4" equipment="NETWORK_SIMULATOR1" command="CONFigure:LTE:SIGN:NCELl:LTE:CELL8 OFF,OB1,308,496,ZERO" />
+    <GPIBCommand type="CAT_4" equipment="NETWORK_SIMULATOR1" command="CONFigure:LTE:SIGN:NCELl:LTE:CELL9 OFF,OB1,309,495,ZERO" />
+    <GPIBCommand type="CAT_4" equipment="NETWORK_SIMULATOR1" command="CONFigure:LTE:SIGN:NCELl:LTE:CELL10 OFF,OB1,310,494,ZERO" />
+    <GPIBCommand type="CAT_4" equipment="NETWORK_SIMULATOR1" command="CONFigure:LTE:SIGN:NCELl:LTE:CELL11 OFF,OB1,311,493,ZERO" />
+    <GPIBCommand type="CAT_4" equipment="NETWORK_SIMULATOR1" command="CONFigure:LTE:SIGN:NCELl:LTE:CELL12 OFF,OB1,312,492,ZERO" />
+    <GPIBCommand type="CAT_4" equipment="NETWORK_SIMULATOR1" command="CONFigure:LTE:SIGN:NCELl:LTE:CELL13 OFF,OB1,313,491,ZERO" />
+    <GPIBCommand type="CAT_4" equipment="NETWORK_SIMULATOR1" command="CONFigure:LTE:SIGN:NCELl:LTE:CELL14 OFF,OB1,314,490,ZERO" />
+    <GPIBCommand type="CAT_4" equipment="NETWORK_SIMULATOR1" command="CONFigure:LTE:SIGN:NCELl:LTE:CELL15 OFF,OB1,315,489,ZERO" />
+    <GPIBCommand type="CAT_4" equipment="NETWORK_SIMULATOR1" command="CONFigure:LTE:SIGN:NCELl:LTE:CELL16 OFF,OB1,316,488,ZERO" />
+    <GPIBCommand type="CAT_4" equipment="NETWORK_SIMULATOR1" command="CONFigure:LTE:SIGN:CELL:BAND:DL B200" />
+    <GPIBCommand type="CAT_4" equipment="NETWORK_SIMULATOR1" command="CONFigure:LTE:SIGN:CONNection:UDCHannels:DL 100,0,Q64,26" />
+    <GPIBCommand type="CAT_4" equipment="NETWORK_SIMULATOR1" command="CONFigure:LTE:SIGN:CONNection:UDCHannels:UL 100,0,Q16,21" />
+    <GPIBCommand type="CAT_4" equipment="NETWORK_SIMULATOR1" command="CONFigure:LTE:SIGN:RFSettings:CHANnel:DL 300" />
+    <GPIBCommand type="CAT_4" equipment="NETWORK_SIMULATOR1" command="CONFigure:LTE:SIGN:CONNection:CTYPe DAPPlication" />
+    <GPIBCommand type="CAT_4" equipment="NETWORK_SIMULATOR1" command="CONFigure:LTE:SIGN:CELL:SECurity:AUTHenticat ON" />
+    <GPIBCommand type="CAT_4" equipment="NETWORK_SIMULATOR1" command="CONFigure:LTE:SIGN:CELL:SECurity:NAS ON" />
+    <GPIBCommand type="CAT_4" equipment="NETWORK_SIMULATOR1" command="CONFigure:LTE:SIGN:CELL:SECurity:AS ON" />
+    <GPIBCommand type="CAT_4" equipment="NETWORK_SIMULATOR1" command="CONFigure:LTE:SIGN:CELL:TIME:TSOurce CMWTime" />
+    <GPIBCommand type="CAT_4" equipment="NETWORK_SIMULATOR1" command="CONFigure:LTE:SIGN:CELL:TIME:SATTach ON" />
+    <GPIBCommand type="CAT_4" equipment="NETWORK_SIMULATOR1" command="CONFigure:LTE:SIGN:CONNection:CDRX:ENABle UDEF" />
+    <GPIBCommand type="CAT_4" equipment="NETWORK_SIMULATOR1" command="CONFigure:LTE:SIGN:CONNection:CDRX:ODTimer PSF2" />
+    <GPIBCommand type="CAT_4" equipment="NETWORK_SIMULATOR1" command="CONFigure:LTE:SIGN:CONNection:CDRX:ITIMer PSF100" />
+    <GPIBCommand type="CAT_4" equipment="NETWORK_SIMULATOR1" command="CONFigure:LTE:SIGN:CONNection:CDRX:RTIMer PSF1" />
+    <GPIBCommand type="CAT_4" equipment="NETWORK_SIMULATOR1" command="CONFigure:LTE:SIGN:CONNection:CDRX:LDCYcle SF80" />
+    <GPIBCommand type="CAT_4" equipment="NETWORK_SIMULATOR1" command="CONFigure:LTE:SIGN:CONNection:CDRX:SOFFset 0" />
+    <GPIBCommand type="CAT_4" equipment="NETWORK_SIMULATOR1" command="CONFigure:LTE:SIGN:CONNection:CDRX:SCENable OFF" />
+    <GPIBCommand type="CAT_4" equipment="NETWORK_SIMULATOR1" command="CONFigure:LTE:SIGN:CONNection:CDRX:SCTimer 1" />
+    <GPIBCommand type="CAT_4" equipment="NETWORK_SIMULATOR1" command="CONFigure:LTE:SIGN:CONNection:DLPadding OFF" />
+    <GPIBCommand type="CAT_4" equipment="NETWORK_SIMULATOR1" command="CONFigure:LTE:SIGN:CONNection:CDRX:UDSCheduling OFF" />
+    <GPIBCommand type="CAT_4" equipment="NETWORK_SIMULATOR1" command="CONFigure:LTE:SIGN:CONNection:RLCMode AM" />
+    <GPIBCommand type="CAT_4" equipment="NETWORK_SIMULATOR1" command="CONFigure:LTE:SIGN:CONNection:KRRC ON" />
+
+    <!--  Specific parameters for LTE IMS-->
+
+    <!-- DAU version 3.5.10 onwards -->
+    <GPIBCommand type="COMMON_IMS" equipment="NETWORK_SIMULATOR1" command="CONFigure:DATA:CONTrol:IMS2:SUSage INTernal" />
+    <GPIBCommand type="COMMON_IMS" equipment="NETWORK_SIMULATOR1" command="CONFigure:DATA:CONTrol:IMS2:SUBScriber:PRIVateid '001010123456063@ims.mnc001.mcc001.3gppnetwork.org'" />
+    <GPIBCommand type="COMMON_IMS" equipment="NETWORK_SIMULATOR1" command="CONFigure:DATA:CONTrol:IMS2:SUBScriber:AUTHenticati:SCHeme NOAuthentic" />
+    <GPIBCommand type="COMMON_IMS" equipment="NETWORK_SIMULATOR1" command="CONFigure:DATA:CONTrol:IMS2:SUBScriber:AUTHenticati:KEY '0x000102030405060708090a0b0c0d0e0f' " />
+    <GPIBCommand type="COMMON_IMS" equipment="NETWORK_SIMULATOR1" command="CONFigure:DATA:CONTrol:IMS2:SUBScriber:AUTHenticati:ALGorithm MILenage" />
+    <GPIBCommand type="COMMON_IMS" equipment="NETWORK_SIMULATOR1" command="CONFigure:DATA:CONTrol:IMS2:SUBScriber:AUTHenticati:AMF '0x0000'" />
+    <GPIBCommand type="COMMON_IMS" equipment="NETWORK_SIMULATOR1" command="CONFigure:DATA:CONTrol:IMS2:SUBScriber:AUTHenticati:OPC '0xcb9dcdc5b9258e6dca4760379fb82581'" />
+    <GPIBCommand type="COMMON_IMS" equipment="NETWORK_SIMULATOR1" command="CONFigure:DATA:CONTrol:IMS2:SUBScriber:RESLength 32" />
+    <GPIBCommand type="COMMON_IMS" equipment="NETWORK_SIMULATOR1" command="CONFigure:DATA:CONTrol:IMS2:SUBScriber:IPSec:ENABle OFF" />
+    <GPIBCommand type="COMMON_IMS" equipment="NETWORK_SIMULATOR1" command="CONFigure:DATA:CONTrol:IMS2:SUBScriber:IPSec:ALGorithm:INTegrity HMMD" />
+    <GPIBCommand type="COMMON_IMS" equipment="NETWORK_SIMULATOR1" command="CONFigure:DATA:CONTrol:IMS2:SUBScriber:IPSec:ALGorithm:ENCRyption DES" />
+    <GPIBCommand type="COMMON_IMS" equipment="NETWORK_SIMULATOR1" command="CONFigure:DATA:CONTrol:IMS2:VIRTualsub1:BEHaviour ANSWer" />
+    <GPIBCommand type="COMMON_IMS" equipment="NETWORK_SIMULATOR1" command="CONFigure:DATA:CONTrol:IMS2:VIRTualsub1:SIGNalingtyp NOPRecondit" />
+    <GPIBCommand type="COMMON_IMS" equipment="NETWORK_SIMULATOR1" command="CONFigure:DATA:CONTrol:IMS2:VIRTualsub1:MEDiaendpoin LOOP" />
+    <GPIBCommand type="COMMON_IMS" equipment="NETWORK_SIMULATOR1" command="CONFigure:LTE:SIGN1:CELL:NAS:EPSNetwork ON" />
+    <GPIBCommand type="COMMON_IMS" equipment="NETWORK_SIMULATOR1" command="CONFigure:LTE:SIGN1:CELL:NAS:IMSVops SUPPorted" />
+    <GPIBCommand type="COMMON_IMS" equipment="NETWORK_SIMULATOR1" command="CONFigure:LTE:SIGN1:CELL:NAS:EMCBs SUPPorted" />
+
+    <!--  Specific parameters for LTE TDD  -->
+
+    <!--     COMMON LTE TDD Parameters -->
+    <GPIBCommand type="TDD_COMMON" equipment="NETWORK_SIMULATOR1" command="CONF:LTE:SIGN1:CELL:CPR NORM" />
+    <GPIBCommand type="TDD_COMMON" equipment="NETWORK_SIMULATOR1" command="CONF:LTE:SIGN:ETOE ON" />
+    <GPIBCommand type="TDD_COMMON" equipment="NETWORK_SIMULATOR1" command="CONF:LTE:SIGN1:DMOD TDD" />
+    <GPIBCommand type="TDD_COMMON" equipment="NETWORK_SIMULATOR1" command="CONF:LTE:SIGN1:PCC:BAND OB38" />
+    <GPIBCommand type="TDD_COMMON" equipment="NETWORK_SIMULATOR1" command="CONF:LTE:SIGN1:CELL:BAND:PCC:DL B200" />
+    <GPIBCommand type="TDD_COMMON" equipment="NETWORK_SIMULATOR1" command="CONF:LTE:SIGN1:CELL:PCC:PCID 0" />
+    <GPIBCommand type="TDD_COMMON" equipment="NETWORK_SIMULATOR1" command="CONF:LTE:SIGN1:CELL:PHIC HALF" />
+    <GPIBCommand type="TDD_COMMON" equipment="NETWORK_SIMULATOR1" command="CONF:LTE:MEAS1:CBAN B200" />
+    <GPIBCommand type="TDD_COMMON" equipment="NETWORK_SIMULATOR1" command="CONF:LTE:SIGN1:CONN:DPCY P128" />
+    <GPIBCommand type="TDD_COMMON" equipment="NETWORK_SIMULATOR1" command="CONF:LTE:SIGN1:DL:PCC:RSEP:LEV -80" />
+    <GPIBCommand type="TDD_COMMON" equipment="NETWORK_SIMULATOR1" command="CONF:LTE:SIGN1:DL:PCC:PSS:POFF 0" />
+    <GPIBCommand type="TDD_COMMON" equipment="NETWORK_SIMULATOR1" command="CONF:LTE:SIGN1:DL:PCC:SSS:POFF 0" />
+    <GPIBCommand type="TDD_COMMON" equipment="NETWORK_SIMULATOR1" command="CONF:LTE:SIGN1:DL:PCC:PBCH:POFF 0" />
+    <GPIBCommand type="TDD_COMMON" equipment="NETWORK_SIMULATOR1" command="CONF:LTE:SIGN1:DL:PCC:PCF:POFF 0" />
+    <GPIBCommand type="TDD_COMMON" equipment="NETWORK_SIMULATOR1" command="CONF:LTE:SIGN1:DL:PCC:PDCC:POFF 0" />
+    <GPIBCommand type="TDD_COMMON" equipment="NETWORK_SIMULATOR1" command="CONF:LTE:SIGN1:DL:PCC:OCNG OFF" />
+    <GPIBCommand type="TDD_COMMON" equipment="NETWORK_SIMULATOR1" command="CONF:LTE:SIGN1:CONN:PDCC:RPDC ON" />
+    <GPIBCommand type="TDD_COMMON" equipment="NETWORK_SIMULATOR1" command="CONF:LTE:SIGN1:DL:PCC:PDSC:PA ZERO" />
+    <GPIBCommand type="TDD_COMMON" equipment="NETWORK_SIMULATOR1" command="CONF:LTE:SIGN1:DL:PCC:PDSC:RIND 0" />
+    <GPIBCommand type="TDD_COMMON" equipment="NETWORK_SIMULATOR1" command="CONF:LTE:SIGN1:UL:OLNP 0" />
+    <GPIBCommand type="TDD_COMMON" equipment="NETWORK_SIMULATOR1" command="CONF:LTE:SIGN1:UL:PUSC:TPC:SET CLO" />
+    <GPIBCommand type="TDD_COMMON" equipment="NETWORK_SIMULATOR1" command="CONF:LTE:SIGN1:UL:PMAX 24" />
+    <GPIBCommand type="TDD_COMMON" equipment="NETWORK_SIMULATOR1" command="CONF:LTE:SIGN1:UL:PUSC:TPC:CLTP 0" />
+    <GPIBCommand type="TDD_COMMON" equipment="NETWORK_SIMULATOR1" command="CONF:LTE:SIGN1:UL:PUCC:CLTP 0" />
+    <GPIBCommand type="TDD_COMMON" equipment="NETWORK_SIMULATOR1" command="CONF:LTE:SIGN1:CONN:DLE 0" />
+    <GPIBCommand type="TDD_COMMON" equipment="NETWORK_SIMULATOR1" command="CONF:LTE:SIGN1:CONN:ASEM NS01" />
+    <GPIBCommand type="TDD_COMMON" equipment="NETWORK_SIMULATOR1" command="CONF:LTE:SIGN1:CONN:PCC:STYP UDTT" />
+    <GPIBCommand type="TDD_COMMON" equipment="NETWORK_SIMULATOR1" command="CONF:LTE:SIGN1:CONN:PCC:UDTT:DL1 0,92,0,Q64,24" />
+    <GPIBCommand type="TDD_COMMON" equipment="NETWORK_SIMULATOR1" command="CONF:LTE:SIGN1:CONN:PCC:UDTT:DL1 1,92,0,Q64,24" />
+    <GPIBCommand type="TDD_COMMON" equipment="NETWORK_SIMULATOR1" command="CONF:LTE:SIGN1:CONN:PCC:UDTT:DL1 4,92,0,Q64,24" />
+    <GPIBCommand type="TDD_COMMON" equipment="NETWORK_SIMULATOR1" command="CONF:LTE:SIGN1:CONN:PCC:UDTT:DL1 5,92,0,Q64,24" />
+    <GPIBCommand type="TDD_COMMON" equipment="NETWORK_SIMULATOR1" command="CONF:LTE:SIGN1:CONN:PCC:UDTT:DL1 6,92,0,Q64,24" />
+    <GPIBCommand type="TDD_COMMON" equipment="NETWORK_SIMULATOR1" command="CONF:LTE:SIGN1:CONN:PCC:UDTT:DL1 9,92,0,Q64,24" />
+    <GPIBCommand type="TDD_COMMON" equipment="NETWORK_SIMULATOR1" command="CONF:LTE:SIGN1:CONN:PCC:UDTT:UL 2,90,0,Q16,20" />
+    <GPIBCommand type="TDD_COMMON" equipment="NETWORK_SIMULATOR1" command="CONF:LTE:SIGN1:CONN:PCC:UDTT:UL 3,90,0,Q16,20" />
+    <GPIBCommand type="TDD_COMMON" equipment="NETWORK_SIMULATOR1" command="CONF:LTE:SIGN1:CONN:PCC:UDTT:UL 7,90,0,Q16,20" />
+    <GPIBCommand type="TDD_COMMON" equipment="NETWORK_SIMULATOR1" command="CONF:LTE:SIGN1:CONN:PCC:UDTT:UL 8,90,0,Q16,20" />
+    <GPIBCommand type="TDD_COMMON" equipment="NETWORK_SIMULATOR1" command="CONF:LTE:SIGN1:CONN:FCO FC4" />
+    <GPIBCommand type="TDD_COMMON" equipment="NETWORK_SIMULATOR1" command="CONF:LTE:SIGN1:NCELl:LTE:CELL1 OFF,OB7,3100,210,N24,OFF" />
+    <GPIBCommand type="TDD_COMMON" equipment="NETWORK_SIMULATOR1" command="CONF:LTE:SIGN1:NCELl:LTE:CELL2 OFF,OB7,3100,210,N24,OFF" />
+    <GPIBCommand type="TDD_COMMON" equipment="NETWORK_SIMULATOR1" command="CONF:LTE:SIGN1:NCELl:LTE:CELL3 OFF,OB7,3100,210,N24,OFF" />
+    <GPIBCommand type="TDD_COMMON" equipment="NETWORK_SIMULATOR1" command="CONF:LTE:SIGN1:NCELl:LTE:CELL4 OFF,OB7,3100,210,N24,OFF" />
+    <GPIBCommand type="TDD_COMMON" equipment="NETWORK_SIMULATOR1" command="CONF:LTE:SIGN1:NCELl:LTE:CELL5 OFF,OB7,3100,210,N24,OFF" />
+    <GPIBCommand type="TDD_COMMON" equipment="NETWORK_SIMULATOR1" command="CONF:LTE:SIGN1:NCELl:LTE:CELL6 OFF,OB7,3100,210,N24,OFF" />
+    <GPIBCommand type="TDD_COMMON" equipment="NETWORK_SIMULATOR1" command="CONF:LTE:SIGN1:NCELl:LTE:CELL7 OFF,OB7,3100,210,N24,OFF" />
+    <GPIBCommand type="TDD_COMMON" equipment="NETWORK_SIMULATOR1" command="CONF:LTE:SIGN1:NCELl:LTE:CELL8 OFF,OB7,3100,210,N24,OFF" />
+    <GPIBCommand type="TDD_COMMON" equipment="NETWORK_SIMULATOR1" command="CONF:LTE:SIGN1:NCELl:LTE:CELL9 OFF,OB7,3100,210,N24,OFF" />
+    <GPIBCommand type="TDD_COMMON" equipment="NETWORK_SIMULATOR1" command="CONF:LTE:SIGN1:NCELl:LTE:CELL10 OFF,OB7,3100,210,N24,OFF" />
+    <GPIBCommand type="TDD_COMMON" equipment="NETWORK_SIMULATOR1" command="CONF:LTE:SIGN1:NCELl:LTE:CELL11 OFF,OB7,3100,210,N24,OFF" />
+    <GPIBCommand type="TDD_COMMON" equipment="NETWORK_SIMULATOR1" command="CONF:LTE:SIGN1:NCELl:LTE:CELL12 OFF,OB7,3100,210,N24,OFF" />
+    <GPIBCommand type="TDD_COMMON" equipment="NETWORK_SIMULATOR1" command="CONF:LTE:SIGN1:NCELl:LTE:CELL13 OFF,OB7,3100,210,N24,OFF" />
+    <GPIBCommand type="TDD_COMMON" equipment="NETWORK_SIMULATOR1" command="CONF:LTE:SIGN1:NCELl:LTE:CELL14 OFF,OB7,3100,210,N24,OFF" />
+    <GPIBCommand type="TDD_COMMON" equipment="NETWORK_SIMULATOR1" command="CONF:LTE:SIGN1:NCELl:LTE:CELL15 OFF,OB7,3100,210,N24,OFF" />
+    <GPIBCommand type="TDD_COMMON" equipment="NETWORK_SIMULATOR1" command="CONF:LTE:SIGN1:NCELl:LTE:CELL16 OFF,OB7,3100,210,N24,OFF" />
+    <GPIBCommand type="TDD_COMMON" equipment="NETWORK_SIMULATOR1" command="CONF:LTE:SIGN1:NCEL:WCDM:CELL1 OFF,OB1,10563,#H78,OFF" />
+    <GPIBCommand type="TDD_COMMON" equipment="NETWORK_SIMULATOR1" command="CONF:LTE:SIGN1:NCEL:WCDM:CELL2 OFF,OB1,10563,#H78,OFF" />
+    <GPIBCommand type="TDD_COMMON" equipment="NETWORK_SIMULATOR1" command="CONF:LTE:SIGN1:NCEL:WCDM:CELL3 OFF,OB1,10563,#H78,OFF" />
+    <GPIBCommand type="TDD_COMMON" equipment="NETWORK_SIMULATOR1" command="CONF:LTE:SIGN1:NCEL:WCDM:CELL4 OFF,OB1,10563,#H78,OFF" />
+    <GPIBCommand type="TDD_COMMON" equipment="NETWORK_SIMULATOR1" command="CONF:LTE:SIGN1:NCEL:GSM:CELL1 OFF,G09,124,OFF" />
+    <GPIBCommand type="TDD_COMMON" equipment="NETWORK_SIMULATOR1" command="CONF:LTE:SIGN1:NCEL:GSM:CELL2 OFF,G09,124,OFF" />
+    <GPIBCommand type="TDD_COMMON" equipment="NETWORK_SIMULATOR1" command="CONF:LTE:SIGN1:NCEL:GSM:CELL3 OFF,G09,124,OFF" />
+    <GPIBCommand type="TDD_COMMON" equipment="NETWORK_SIMULATOR1" command="CONF:LTE:SIGN1:NCEL:GSM:CELL4 OFF,G09,124,OFF" />
+    <GPIBCommand type="TDD_COMMON" equipment="NETWORK_SIMULATOR1" command="CONF:LTE:SIGN1:RFS:PCC:CHAN:UL 38000" />
+    <GPIBCommand type="TDD_COMMON" equipment="NETWORK_SIMULATOR1" command="CONF:LTE:SIGN1:CELL:MCC 1" />
+    <GPIBCommand type="TDD_COMMON" equipment="NETWORK_SIMULATOR1" command="CONF:LTE:SIGN1:CELL:MNC 1" />
+    <GPIBCommand type="TDD_COMMON" equipment="NETWORK_SIMULATOR1" command="CONF:LTE:SIGN1:CELL:MNC:DIG TWO" />
+    <GPIBCommand type="TDD_COMMON" equipment="NETWORK_SIMULATOR1" command="CONF:LTE:SIGN1:CELL:TAC 1" />
+    <GPIBCommand type="TDD_COMMON" equipment="NETWORK_SIMULATOR1" command="CONF:LTE:SIGN1:CELL:PCC:CID:EUTR #B0000000000000000000100000000" />
+    <GPIBCommand type="TDD_COMMON" equipment="NETWORK_SIMULATOR1" command="CONF:LTE:SIGN1:CELL:SEC:AUTH ON" />
+    <GPIBCommand type="TDD_COMMON" equipment="NETWORK_SIMULATOR1" command="CONF:LTE:SIGN1:CELL:SEC:NAS ON" />
+    <GPIBCommand type="TDD_COMMON" equipment="NETWORK_SIMULATOR1" command="CONF:LTE:SIGN1:CELL:SEC:AS ON" />
+    <GPIBCommand type="TDD_COMMON" equipment="NETWORK_SIMULATOR1" command="CONF:LTE:SIGN1:CELL:SEC:MIL OFF" />
+    <GPIBCommand type="TDD_COMMON" equipment="NETWORK_SIMULATOR1" command="CONF:LTE:SIGN1:CELL:SEC:IALG S3G" />
+    <GPIBCommand type="TDD_COMMON" equipment="NETWORK_SIMULATOR1" command="CONFigure:LTE:SIGN:CELL:BANDwidth:DL B200" />
+    <GPIBCommand type="TDD_COMMON" equipment="NETWORK_SIMULATOR1" command="CONFigure:LTE:SIGN:CONNection:SCHModel:ENABle OFF" />
+    <GPIBCommand type="TDD_COMMON" equipment="NETWORK_SIMULATOR1" command="CONFigure:LTE:SIGN:CONNection:CTYPe DAPPlication" />
+    <GPIBCommand type="TDD_COMMON" equipment="NETWORK_SIMULATOR1" command="CONFigure:LTE:SIGN:CELL:SECurity:AUTHenticat ON" />
+    <GPIBCommand type="TDD_COMMON" equipment="NETWORK_SIMULATOR1" command="CONFigure:LTE:SIGN:CELL:SECurity:NAS ON" />
+    <GPIBCommand type="TDD_COMMON" equipment="NETWORK_SIMULATOR1" command="CONFigure:LTE:SIGN:CELL:SECurity:AS ON" />
+    <GPIBCommand type="TDD_COMMON" equipment="NETWORK_SIMULATOR1" command="CONFigure:LTE:SIGN:CELL:SECurity:IALGorithm S3G" />
+    <GPIBCommand type="TDD_COMMON" equipment="NETWORK_SIMULATOR1" command="CONFigure:LTE:SIGN:CONNection:STYPe UDCHannels" />
+    <GPIBCommand type="TDD_COMMON" equipment="NETWORK_SIMULATOR1" command="CONFigure:LTE:SIGN:CONNection:UDCHannels:DL 100,0,Q64,26" />
+    <GPIBCommand type="TDD_COMMON" equipment="NETWORK_SIMULATOR1" command="CONFigure:LTE:SIGN:CONNection:PDCCh:RPDCch ON" />
+    <GPIBCommand type="TDD_COMMON" equipment="NETWORK_SIMULATOR1" command="CONFigure:LTE:SIGN:CONNection:UDCHannels:UL 100,0,Q16,21" />
+    <GPIBCommand type="TDD_COMMON" equipment="NETWORK_SIMULATOR1" command="CONFigure:LTE:SIGN:CONNection:CDRX:ENABle UDEF" />
+    <GPIBCommand type="TDD_COMMON" equipment="NETWORK_SIMULATOR1" command="CONFigure:LTE:SIGN:CONNection:CDRX:ODTimer PSF2" />
+    <GPIBCommand type="TDD_COMMON" equipment="NETWORK_SIMULATOR1" command="CONFigure:LTE:SIGN:CONNection:CDRX:ITIMer PSF100" />
+    <GPIBCommand type="TDD_COMMON" equipment="NETWORK_SIMULATOR1" command="CONFigure:LTE:SIGN:CONNection:CDRX:RTIMer PSF1" />
+    <GPIBCommand type="TDD_COMMON" equipment="NETWORK_SIMULATOR1" command="CONFigure:LTE:SIGN:CONNection:CDRX:LDCYcle SF80" />
+    <GPIBCommand type="TDD_COMMON" equipment="NETWORK_SIMULATOR1" command="CONFigure:LTE:SIGN:CONNection:CDRX:SOFFset 0" />
+    <GPIBCommand type="TDD_COMMON" equipment="NETWORK_SIMULATOR1" command="CONFigure:LTE:SIGN:CONNection:CDRX:SCENable OFF" />
+    <GPIBCommand type="TDD_COMMON" equipment="NETWORK_SIMULATOR1" command="CONFigure:LTE:SIGN:CONNection:CDRX:SCTimer 1" />
+    <GPIBCommand type="TDD_COMMON" equipment="NETWORK_SIMULATOR1" command="CONFigure:LTE:SIGN:CONNection:DLPadding OFF" />
+    <GPIBCommand type="TDD_COMMON" equipment="NETWORK_SIMULATOR1" command="CONFigure:LTE:SIGN:CONNection:CDRX:UDSCheduling OFF" />
+    <GPIBCommand type="TDD_COMMON" equipment="NETWORK_SIMULATOR1" command="CONFigure:LTE:SIGN:CONNection:RLCMode AM" />
+    <GPIBCommand type="TDD_COMMON" equipment="NETWORK_SIMULATOR1" command="CONFigure:LTE:SIGN:CONNection:KRRC ON" />
+
+    <!--  LTE TDD Configuration 0 for optimal UL data transfer  -->
+    <GPIBCommand type="TDD_CONF0" equipment="NETWORK_SIMULATOR1" command="CONF:LTE:SIGN1:CELL:ULDL 0" />
+    <GPIBCommand type="TDD_CONF0" equipment="NETWORK_SIMULATOR1" command="CONF:LTE:SIGN1:CELL:SSUBframe 7" />
+
+    <!--  LTE TDD Configuration 1 for optimal UL+DL data transfer  -->
+    <GPIBCommand type="TDD_CONF1" equipment="NETWORK_SIMULATOR1" command="CONF:LTE:SIGN1:CELL:ULDL 1" />
+    <GPIBCommand type="TDD_CONF1" equipment="NETWORK_SIMULATOR1" command="CONF:LTE:SIGN1:CELL:SSUBframe 7" />
+
+    <!--  LTE TDD Configuration 5 for optimal DL data transfer  -->
+    <GPIBCommand type="TDD_CONF5" equipment="NETWORK_SIMULATOR1" command="CONF:LTE:SIGN1:CELL:ULDL 5" />
+    <GPIBCommand type="TDD_CONF5" equipment="NETWORK_SIMULATOR1" command="CONF:LTE:SIGN1:CELL:SSUBframe 7" />
+
+    <!-- CAT6 Configuration-->
+    <GPIBCommand type="CAT6" equipment="NETWORK_SIMULATOR1" command="CONFigure:LTE:SIGN:CONNection:STYPE RMC" /> <!-- need to go back to default value -->
+    <GPIBCommand type="CAT6" equipment="NETWORK_SIMULATOR1" command="CONFigure:LTE:SIGN:CONN:AMDB OFF" /> <!-- need to go back to default value -->
+    <GPIBCommand type="CAT6" equipment="NETWORK_SIMULATOR1" command="CONFigure:LTE:SIGN:NCELl:LTE:CELL1 OFF,OB1,301,503,ZERO" />
+    <GPIBCommand type="CAT6" equipment="NETWORK_SIMULATOR1" command="CONFigure:LTE:SIGN:NCELl:LTE:CELL2 OFF,OB1,302,502,ZERO" />
+    <GPIBCommand type="CAT6" equipment="NETWORK_SIMULATOR1" command="CONFigure:LTE:SIGN:NCELl:LTE:CELL3 OFF,OB1,303,501,ZERO" />
+    <GPIBCommand type="CAT6" equipment="NETWORK_SIMULATOR1" command="CONFigure:LTE:SIGN:NCELl:LTE:CELL4 OFF,OB1,304,500,ZERO" />
+    <GPIBCommand type="CAT6" equipment="NETWORK_SIMULATOR1" command="CONFigure:LTE:SIGN:NCELl:LTE:CELL5 OFF,OB1,305,499,ZERO" />
+    <GPIBCommand type="CAT6" equipment="NETWORK_SIMULATOR1" command="CONFigure:LTE:SIGN:NCELl:LTE:CELL6 OFF,OB1,306,498,ZERO" />
+    <GPIBCommand type="CAT6" equipment="NETWORK_SIMULATOR1" command="CONFigure:LTE:SIGN:NCELl:LTE:CELL7 OFF,OB1,307,497,ZERO" />
+    <GPIBCommand type="CAT6" equipment="NETWORK_SIMULATOR1" command="CONFigure:LTE:SIGN:NCELl:LTE:CELL8 OFF,OB1,308,496,ZERO" />
+    <GPIBCommand type="CAT6" equipment="NETWORK_SIMULATOR1" command="CONFigure:LTE:SIGN:NCELl:LTE:CELL9 OFF,OB1,309,495,ZERO" />
+    <GPIBCommand type="CAT6" equipment="NETWORK_SIMULATOR1" command="CONFigure:LTE:SIGN:NCELl:LTE:CELL10 OFF,OB1,310,494,ZERO" />
+    <GPIBCommand type="CAT6" equipment="NETWORK_SIMULATOR1" command="CONFigure:LTE:SIGN:NCELl:LTE:CELL11 OFF,OB1,311,493,ZERO" />
+    <GPIBCommand type="CAT6" equipment="NETWORK_SIMULATOR1" command="CONFigure:LTE:SIGN:NCELl:LTE:CELL12 OFF,OB1,312,492,ZERO" />
+    <GPIBCommand type="CAT6" equipment="NETWORK_SIMULATOR1" command="CONFigure:LTE:SIGN:NCELl:LTE:CELL13 OFF,OB1,313,491,ZERO" />
+    <GPIBCommand type="CAT6" equipment="NETWORK_SIMULATOR1" command="CONFigure:LTE:SIGN:NCELl:LTE:CELL14 OFF,OB1,314,490,ZERO" />
+    <GPIBCommand type="CAT6" equipment="NETWORK_SIMULATOR1" command="CONFigure:LTE:SIGN:NCELl:LTE:CELL15 OFF,OB1,315,489,ZERO" />
+    <GPIBCommand type="CAT6" equipment="NETWORK_SIMULATOR1" command="CONFigure:LTE:SIGN:NCELl:LTE:CELL16 OFF,OB1,316,488,ZERO" />
+    <GPIBCommand type="CAT6" equipment="NETWORK_SIMULATOR1" command="CONFigure:LTE:SIGN:CONNection:DPCYcle P128" />
+    <GPIBCommand type="CAT6" equipment="NETWORK_SIMULATOR1" command="ROUTe:LTE:SIGN:SCENario:TRO RF1C,RX1,RF1C,TX1,RF2C,TX3" />
+    <GPIBCommand type="CAT6" equipment="NETWORK_SIMULATOR1" command="CONFigure:LTE:SIGN:CELL:BANDwidth:DL B200" />
+    <GPIBCommand type="CAT6" equipment="NETWORK_SIMULATOR1" command="CONFigure:LTE:SIGN:BAND OB3" />
+    <GPIBCommand type="CAT6" equipment="NETWORK_SIMULATOR1" command="CONFigure:LTE:SIGN:RFSettings:CHANnel:DL 1575" />
+    <GPIBCommand type="CAT6" equipment="NETWORK_SIMULATOR1" command="CONFigure:LTE:SIGN:DL:RSEPre:LEVel -70" />
+    <GPIBCommand type="CAT6" equipment="NETWORK_SIMULATOR1" command="CONFigure:LTE:SIGN:UL:PUSCh:OLNPower 0" />
+    <GPIBCommand type="CAT6" equipment="NETWORK_SIMULATOR1" command="CONFigure:LTE:SIGN:UL:PUSCh:TPC:CLTPower 0" />
+    <GPIBCommand type="CAT6" equipment="NETWORK_SIMULATOR1" command="CONFigure:LTE:SIGN:CONNection:SCHModel:ENABle OFF" />
+    <GPIBCommand type="CAT6" equipment="NETWORK_SIMULATOR1" command="CONFigure:LTE:SIGN:CONNection:CTYPe DAPPlication" />
+    <GPIBCommand type="CAT6" equipment="NETWORK_SIMULATOR1" command="CONFigure:LTE:SIGN:CELL:SECurity:AUTHenticat ON" />
+    <GPIBCommand type="CAT6" equipment="NETWORK_SIMULATOR1" command="CONFigure:LTE:SIGN:CELL:SECurity:NAS ON" />
+    <GPIBCommand type="CAT6" equipment="NETWORK_SIMULATOR1" command="CONFigure:LTE:SIGN:CELL:SECurity:AS ON" />
+    <GPIBCommand type="CAT6" equipment="NETWORK_SIMULATOR1" command="CONFigure:LTE:SIGN:CELL:SECurity:IALGorithm S3G" />
+    <GPIBCommand type="CAT6" equipment="NETWORK_SIMULATOR1" command="CONFigure:LTE:SIGN:CELL:TIME:TSOurce CMWTime" />
+    <GPIBCommand type="CAT6" equipment="NETWORK_SIMULATOR1" command="CONFigure:LTE:SIGN:CELL:TIME:SATTach ON" />
+    <GPIBCommand type="CAT6" equipment="NETWORK_SIMULATOR1" command="CONFigure:LTE:SIGN:CONNection:STYPe UDCHannels" />
+    <GPIBCommand type="CAT6" equipment="NETWORK_SIMULATOR1" command="CONFigure:LTE:SIGN:CONNection:DLEQual ON" />
+    <GPIBCommand type="CAT6" equipment="NETWORK_SIMULATOR1" command="CONFigure:LTE:SIGN:CONNection:UDCHannels:DL 100,0,Q64,26" />
+    <GPIBCommand type="CAT6" equipment="NETWORK_SIMULATOR1" command="CONFigure:LTE:SIGN:CONNection:PDCCh:RPDCch ON" />
+    <GPIBCommand type="CAT6" equipment="NETWORK_SIMULATOR1" command="CONFigure:LTE:SIGN:CONNection:UDCHannels:UL 100,0,Q16,21" />
+    <GPIBCommand type="CAT6" equipment="NETWORK_SIMULATOR1" command="CONFigure:LTE:SIGN:CONNection:CDRX:ENABle UDEF" />
+    <GPIBCommand type="CAT6" equipment="NETWORK_SIMULATOR1" command="CONFigure:LTE:SIGN:CONNection:CDRX:ODTimer PSF2" />
+    <GPIBCommand type="CAT6" equipment="NETWORK_SIMULATOR1" command="CONFigure:LTE:SIGN:CONNection:CDRX:ITIMer PSF100" />
+    <GPIBCommand type="CAT6" equipment="NETWORK_SIMULATOR1" command="CONFigure:LTE:SIGN:CONNection:CDRX:RTIMer PSF1" />
+    <GPIBCommand type="CAT6" equipment="NETWORK_SIMULATOR1" command="CONFigure:LTE:SIGN:CONNection:CDRX:LDCYcle SF320" />
+    <GPIBCommand type="CAT6" equipment="NETWORK_SIMULATOR1" command="CONFigure:LTE:SIGN:CONNection:CDRX:SOFFset 0" />
+    <GPIBCommand type="CAT6" equipment="NETWORK_SIMULATOR1" command="CONFigure:LTE:SIGN:CONNection:CDRX:SCENable OFF" />
+    <GPIBCommand type="CAT6" equipment="NETWORK_SIMULATOR1" command="CONFigure:LTE:SIGN:CONNection:CDRX:SCTimer 1" />
+    <GPIBCommand type="CAT6" equipment="NETWORK_SIMULATOR1" command="CONFigure:LTE:SIGN:CONNection:DLPadding OFF" />
+    <GPIBCommand type="CAT6" equipment="NETWORK_SIMULATOR1" command="CONFigure:LTE:SIGN:CONNection:CDRX:UDSCheduling OFF" />
+    <GPIBCommand type="CAT6" equipment="NETWORK_SIMULATOR1" command="CONFigure:LTE:SIGN:CONNection:RLCMode AM" />
+    <GPIBCommand type="CAT6" equipment="NETWORK_SIMULATOR1" command="CONFigure:LTE:SIGN:CONNection:KRRC ON" />
+    <!-- Begin HARQ config -->
+    <GPIBCommand type="CAT6" equipment="NETWORK_SIMULATOR1" command="CONFigure:LTE:SIGN:CONNection:HARQ:DL:ENABle ON" />
+    <GPIBCommand type="CAT6" equipment="NETWORK_SIMULATOR1" command="CONFigure:LTE:SIGN:CONNection:HARQ:DL:NHT 4" />
+    <GPIBCommand type="CAT6" equipment="NETWORK_SIMULATOR1" command="CONFigure:LTE:SIGN:CONNection:HARQ:DL:UDSequence:LENGth 4" />
+    <GPIBCommand type="CAT6" equipment="NETWORK_SIMULATOR1" command="CONFigure:LTE:SIGN:CONNection:HARQ:UL:ENABle ON" />
+    <GPIBCommand type="CAT6" equipment="NETWORK_SIMULATOR1" command="CONFigure:LTE:SIGN:CONNection:HARQ:UL:NHT 4" />
+    <!-- End HARQ config -->
+    <GPIBCommand type="CAT6" equipment="NETWORK_SIMULATOR1" command="ROUTe:LTE:SIGN:SCENario:CAFRfout RF1C,RX1,RF1C,TX1,RF3C,TX2,RF1C,TX3,RF3C,TX4" />
+    <GPIBCommand type="CAT6" equipment="NETWORK_SIMULATOR1" command="CONFigure:LTE:SIGN:SCC1:AMODe AUTO" />
+    <GPIBCommand type="CAT6" equipment="NETWORK_SIMULATOR1" command="CONFigure:LTE:SIGN:CELL:BANDwidth:SCC1:DL B200" />
+    <GPIBCommand type="CAT6" equipment="NETWORK_SIMULATOR1" command="CONFigure:LTE:SIGN:SCC1:BAND OB7" />
+    <GPIBCommand type="CAT6" equipment="NETWORK_SIMULATOR1" command="CONFigure:LTE:SIGN:RFSettings:SCC1:CHANnel:DL 3100" />
+    <GPIBCommand type="CAT6" equipment="NETWORK_SIMULATOR1" command="CONFigure:LTE:SIGN:DL:SCC1:RSEPre:LEVel -70" />
+    <GPIBCommand type="CAT6" equipment="NETWORK_SIMULATOR1" command="CONFigure:LTE:SIGN:CONNection:SCC1:STYPe UDCHannels" />
+    <GPIBCommand type="CAT6" equipment="NETWORK_SIMULATOR1" command="CONFigure:LTE:SIGN:CONNection:SCC1:DLEQual ON" />
+    <GPIBCommand type="CAT6" equipment="NETWORK_SIMULATOR1" command="CONFigure:LTE:SIGN:CONNection:SCC1:UDCHannels:DL1 100,0,Q64,26" />
+    <GPIBCommand type="CAT6" equipment="NETWORK_SIMULATOR1" command="CONFigure:LTE:SIGN:CONNection:SCC1:PDCCh:RPDCch ON"/>
+</Sequence>

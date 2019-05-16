@@ -1,0 +1,55 @@
+<?xml version="1.0" ?>
+<Campaign version="13.49">
+    <Parameters>
+        <Parameter isControlledPSUsed="False"/>
+        <Parameter isIoCardUsed="True"/>
+        <Parameter skipBootOnPowerCycle="False"/>
+        <Parameter bootRetryNumber="0"/>
+        <Parameter runHookScripts="False"/>
+        <Parameter powerCycleBetweenTC="False"/>
+        <Parameter powerCycleOnFailure="False"/>
+        <Parameter finalDutState="NoChange"/>
+        <Parameter stopCampaignOnCriticalFailure="False"/>
+        <Parameter stopCampaignOnFirstFailure="False"/>
+        <Parameter loggingLevel="debug"/>
+        <Parameter CampaignType="Other"/>
+        <Parameter TCRReportViaRESTAPI="True"/>
+    </Parameters>
+    <TestCases>
+        <TestCase Id="../../../../../TC/TP/TC/Sensor/init.set_adb_root.AdbRoot.testAdbRoot"/>
+        <TestCase Id="../../../../../TC/TP/TC/Sensor/init.start_rpc_server.StartRPCServer.testStartRPCServer"/>
+        <TestCase Id="../../../../../TC/TP/TC/Sensor/init.wake_up_and_unlock.WakeUnlock.testWakeUnlock"/>
+        <TestCase Id="../../../../../TC/TP/TC/Sensor/init.set_orientation_vertical.SetOrientationVertical.testSetOrientationVertical"/>
+        <TestCase Id="../../../../../TC/TP/TC/Sensor/init.config_first_boot_wizard.ConfigFirstBootWizard.testConfigFirstBootWizard"/>
+        <TestCase Id="../../../../../TC/TP/TC/Sensor/init.enable_developer_option.EnableDeveloperOption.testEnableDeveloperOption"/>
+        <TestCase Id="../../../../../TC/TP/TC/Sensor/init.keep_awake.KeepAwake.testKeepAwake"/>
+        <TestCase Id="../../../../../TC/TP/TC/Sensor/init.disable_verify_apps.DisableVerifyApp.testDisableVerifyApp"/>
+        <TestCase Id="../../../../../TC/TP/TC/Sensor/init.set_system_time.SetTimeDate.testSetTimeDate"/>
+        <TestCase Id="../../../../../TC/TP/TC/Sensor/init.set_language_to_United_States.SetLanguageUS.testSetLanguageUS"/>
+        <TestCase Id="../../../../../TC/TP/TC/System_Touch/Single_Touchscreen/test_touch_screen_turn_on_off_with_fingers"/>
+        <TestCase Id="../../../../../TC/TP/TC/System_Touch/Single_Touchscreen/test_open_notification"/>
+        <TestCase Id="../../../../../TC/TP/TC/System_Touch/Single_Touchscreen/test_touch_screen_gestures_zoom"/>
+        <TestCase Id="../../../../../TC/TP/TC/System_Touch/Single_Touchscreen/test_touch_screen_cannot_wake_up_when_screen_off"/>
+        <TestCase Id="../../../../../TC/TP/TC/System_Touch/Single_Touchscreen/test_boot_check_touch_screen_response_10_times"/>
+        <TestCase Id="../../../../../TC/TP/TC/System_Touch/Single_Touchscreen/test_boot_check_finger_sliding"/>
+        <TestCase Id="../../../../../TC/TP/TC/System_Touch/Single_Touchscreen/test_icon_hold_with_usb"/>
+        <TestCase Id="../../../../../TC/TP/TC/System_Touch/Single_Touchscreen/test_gesture_long_press_screen"/>
+        <TestCase Id="../../../../../TC/TP/TC/System_Touch/Single_Touchscreen/test_touch_screen_suspend_and_resume_10_times"/>
+        <TestCase Id="../../../../../TC/TP/TC/System_Touch/Single_Touchscreen/test_icon_long_press_2min"/>
+        <TestCase Id="../../../../../TC/TP/TC/System_Touch/Single_Touchscreen/test_getevent_output_no_touch"/>
+        <TestCase Id="../../../../../TC/TP/TC/System_Touch/Single_Touchscreen/test_get_fake_touch_status"/>
+        <TestCase Id="../../../../../TC/TP/TC/System_Touch/Single_Touchscreen/test_get_touch_screen_presence"/>
+        <TestCase Id="../../../../../TC/TP/TC/System_Touch/Single_Touchscreen/test_get_touch_screen_type"/>
+        <TestCase Id="../../../../../TC/TP/TC/System_Touch/Single_Touchscreen/test_touch_screen_gestures_swipe"/>
+        <TestCase Id="../../../../../TC/TP/TC/System_Touch/Single_Touchscreen/test_no_line_interruption_sliding_screen"/>
+        <TestCase Id="../../../../../TC/TP/TC/System_Touch/Single_Touchscreen/test_touch_operation_after_screen_off_on_getevent_no_output"/>
+        <TestCase Id="../../../../../TC/TP/TC/System_Touch/Single_Touchscreen/test_multitouch_support_with_coordinates"/>
+        <TestCase Id="../../../../../TC/TP/TC/System_Touch/Single_Touchscreen/test_single_touch_support_with_coordinates"/>
+        <TestCase Id="../../../../../TC/TP/TC/System_Touch/Single_Touchscreen/test_touch_screen_turn_on_off_screen_response_10_times"/>
+        <TestCase Id="../../../../../TC/TP/TC/System_Touch/Single_Touchscreen/test_touch_screen_api_features"/>
+        <TestCase Id="../../../../../TC/TP/TC/System_Touch/Single_Touchscreen/test_maximum_fingers_support"/>
+        <TestCase Id="../../../../../TC/TP/TC/System_Touch/Single_Touchscreen/test_check_touch_point_before_enter_S3_and_resume_S3"/>
+        <TestCase Id="../../../../../TC/TP/TC/Post_Test/postTestRemoveGoogleAccount"/>
+        <TestCase Id="../../../../../TC/TP/TC/Post_Test/postTestWifiOff"/>
+    </TestCases>
+</Campaign>

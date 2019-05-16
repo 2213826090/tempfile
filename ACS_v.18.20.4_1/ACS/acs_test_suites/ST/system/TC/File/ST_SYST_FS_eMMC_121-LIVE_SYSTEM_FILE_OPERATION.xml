@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase>
+	<UseCase>LIVE_SYSTEM_FILE_OPERATION</UseCase>
+	<Description>File operation in different storage</Description>
+	<b2bIteration>1</b2bIteration>
+	<b2bContinuousMode>False</b2bContinuousMode>
+	<Parameters>
+		<Parameter>
+			<!-- The folder level -->
+			<Name>FOLDER_LEVEL</Name>
+			<Value>0</Value>
+		</Parameter>
+		<Parameter>
+			<!-- The sub folder number in each folder -->
+			<Name>FOLDER_SUB_NUMBER</Name>
+			<Value>0</Value>
+		</Parameter>
+		<Parameter>
+			<!-- The folder name length, name will generate randomly -->
+			<Name>FOLDER_NAME_LENGTH</Name>
+			<Value>0</Value>
+		</Parameter>
+		<Parameter>
+			<!-- The file number in each folder -->
+			<Name>FILE_NUMBER</Name>
+			<Value>1</Value>
+		</Parameter>		
+		<Parameter>
+			<!-- The file size, in KB -->
+			<Name>FILE_SIZE</Name>
+			<Value>512</Value>
+		</Parameter>
+		<Parameter>
+			<!-- The file name length, name will generate randomly -->
+			<Name>FILE_NAME_LENGTH</Name>
+			<Value>251</Value>
+		</Parameter>
+		<Parameter>
+			<!-- The path of file or folder will be created, emmc|mnt_sdcard|mnt_sdcard_ext -->
+			<Name>SRC_PATH</Name>
+			<Value>emmc</Value>
+		</Parameter>
+		<Parameter>
+			<!-- The path of file or folder will be copied, emmc|mnt_sdcard|mnt_sdcard_ext -->
+			<Name>DST_PATH</Name>
+			<Value>emmc</Value>
+		</Parameter>
+		<Parameter>
+			<!-- Copy or not true/false -->
+			<Name>COPY</Name>
+			<Value>true</Value>
+		</Parameter>
+	</Parameters>
+</TestCase>

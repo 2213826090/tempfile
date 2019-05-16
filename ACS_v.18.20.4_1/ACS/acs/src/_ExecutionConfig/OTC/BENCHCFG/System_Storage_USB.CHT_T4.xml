@@ -1,0 +1,73 @@
+<?xml version='1.0' encoding='ISO-8859-1'?>
+<BenchConfig>
+    <Phones>
+        <Phone name="PHONE1" description="Phone to use during test campaign. Please refer to Device_Catalog.xml to add device parameters">
+            <Parameter uploadCrashToServer="false"/>
+            <Parameter disableTcReboot="true" description="Disable TC reboot options"/>
+            <Parameter WiFi_Support_Ap_Name="ddwrt" description="WiFi AP name used for running WiFi support and encryption tests"/>
+            <!--Parameter serialNumber="4BA34C94"/-->
+            <Parameter multipleDevices="false"/>
+            <Parameter WiFi_Connection_Ap_Name="Android Core QA" description="WiFi AP name used for running WiFi connection tests"/>
+            <Parameter WiFi_Connection_Passwd="AndroidQA" description="WiFi AP password used for running WiFi connection tests"/>
+            <Parameter WiFi_Connection_TestPage="www.google.ro" description="Test Page used for checking WiFi connection worked"/>
+        </Phone>
+        <Phone name="PHONE2" description="A second PHONE to be used for tests with miltiple devices (E.G. wifi direct tests)">
+            <Parameter multipleDevices="false"/>
+            <Parameter cleanDeviceCrashLog="true"/>
+            <!--<Parameter serialNumber="03aa6dc2e0786ad6"/>-->
+            <Parameter retrieveDeviceCrashLog="false"/>
+            <Parameter disableTcReboot="true" description="Disable TC reboot options"/>
+            <Parameter retrieveAPLog="false"/>
+        </Phone>
+    </Phones>
+    <Equipments>
+        <!--Equipment name="KeyboardEmulator"  description="Equipment allowing to emulate keyboard trough USB on distant target">
+              <Parameter name="Model" value="USBKM232"/>
+              <Parameter name="ComPort" value="/dev/serial/by-path/pci-0000:00:1d.0-usb-0:1.5:1.0-port0"  description="USB/Serial communication port "/>
+          </Equipment-->
+        <Equipment version="14.09" name="ARTIFACT_MANAGER" description="ArtifactManager configuration to get all test case necessary artifacts">
+            <Parameter name="URI" value="https://mcg-depot.intel.com/artifactory/acs_test_artifacts/" description="Local path/URL to the artifact source"/>
+            <!-- Optional options -->
+            <!--<Parameter name="proxy" value="system" description="Proxy to use if URI is an URL - system: use HTTP_PROXY system value - no_proxy: use empty proxy - a proxy adress" />-->
+            <Parameter name="http_timeout" value="10" description="Response timeout if URI is an URL" />
+            <!--<Parameter name="creds" value="anonymous" description="Credentials to use if URL is access protected - anonymous: no creds will be used - creds format user:password" />-->
+            <!--<Parameter name="cache_folder" value="/tmp/artifact_cache" description="Local path to a directory to store artifacts - if not specified, your_home_folder/.acs/Artifacts will be used" />-->
+            <!--<Parameter name="max_cache_size" value="1000" description="Maximum cache directory size on the disk in Mb" />-->
+        </Equipment>
+        <Equipment name="ARTIFACT_APKS" description="">
+            <Parameter name="ApiTests" value="INSTRUMENTATION/ANDROID/ApiTests.APILevel24.apk" description="APILevel 24"/>
+        </Equipment>
+        <Equipment name="IO_CARD" description="Input output card used for power management, energy management on I/O ports of the DUT.">
+            <Parameter name="Model" value="USB_RLY08"/>
+            <Parameter name="ComPort" value="" description="COM port used for communication"/>
+            <Parameter name="SwitchOnOff" value="" description="Number of the relay used to boot or stop the board"/>
+            <Parameter name="VolumeUp" value="" description="Number of the relay used to press DUT volume UP"/>
+            <Parameter name="VolumeDown" value="" description="Number of the relay used to press DUT volume Down"/>
+            <Parameter name="DefaultStates" value="00000000" description="Default relay states"/>
+            <Parameter name="WiringTable" value="000000000" description="Wiring Table"/>
+        </Equipment>
+        <Equipment name="AccessPoint" description="Wifi router used in OTC Wifi Test Cases">
+            <Parameter name="Model" value="REMOTE_COMPUTER" description="LOCAL_COMPUTER or REMOTE_COMPUTER (only LOCAL is currently supported)"/>
+            <Parameter name="type" value="ddwrt_atheros" description="ap type"/>
+            <Parameter name="IP" value="192.168.1.1" description="ip address of the equipment"/>
+            <Parameter name="username" value="root" description="login used for the connection"/>
+            <Parameter name="Interface" value="eth8" description="Ethernet interface used for connection"/>
+            <Parameter name="IPv6Prefix" value="" description="IPv6 prefix of the computer."/>
+            <Parameter name="SshPath" value="/usr/bin/ssh" description="[Optional] full path to local SSH client binary (default 'ssh')"/>
+            <Parameter name="ScpPath" value="/usr/bin/scp" description="[Optional] full path to local SCP client binary (default 'scp')"/>
+        </Equipment>
+        <Equipment version="14.09" name="INSTANTLogger" description="Instant Logger">
+            <Parameter name="product" value="ECS" description="Product name of device under test" />
+            <Parameter name="screen_width" value="800" description="Width resolution of screen" />
+            <Parameter name="screen_height" value="1280" description="Height resolution of screen" />
+            <Parameter name="auth" value="http://otc-livereport.sh.intel.com:8080/smartapi/accountbasic" description="Authentication URL" />
+            <Parameter name="session_create" value="http://otc-livereport.sh.intel.com:8080/smartapi/group/1/session/%s" description="Session creation URL" />
+            <Parameter name="session_update" value="http://otc-livereport.sh.intel.com:8080/smartapi/group/1/session/%s" descrition="Session update URL" />
+            <Parameter name="case_update" value="http://otc-livereport.sh.intel.com:8080/smartapi/session/%s/case" description="Case update URL" />
+            <Parameter name="file_upload" value="http://otc-livereport.sh.intel.com:8080/smartapi/session/%s/case/%s/file" description="File upload URL" />
+            <Parameter name="username" value="liverpt.test" description="Login user name" />
+            <Parameter name="password" value="123456" description="Login password" />
+            <Parameter name="logdir" value=".mtbf/logdir/" descripton="Log directory" />
+        </Equipment>
+    </Equipments>
+</BenchConfig>

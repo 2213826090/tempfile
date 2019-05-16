@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase>
+    <UseCase>LIVE_CHECK_ICON_GALLERY</UseCase>
+    <Description>Check if icon in gallery application are correctly display</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>False</b2bContinuousMode>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters>
+        <Parameter>
+            <!-- Path to the image library -->
+            <Name>LIBRARY_IMAGE_PATH</Name>
+            <Value>C:/Users/</Value>
+        </Parameter>
+        <!--Orientation parameters -->
+        <Parameter>
+            <!-- First orientation, portrait for phone and landscape for tablet -->
+            <Name>FIRST_ORIENTATION</Name>
+            <Value>portrait</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Second orientation, landscape for phone and portrait for tablet -->
+            <Name>SECOND_ORIENTATION</Name>
+            <Value>landscape</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Third orientation, reverse landscape for phone and reverse portrait for tablet -->
+            <Name>THIRD_ORIENTATION</Name>
+            <Value>reverse_landscape</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Final orientation, auto for phone and landscape for tablet -->
+            <Name>FINAL_ORIENTATION</Name>
+            <Value>auto</Value>
+        </Parameter>
+        <!--First orientation images -->
+        <Parameter>
+            <!-- Name of album icon image less extension (.png) -->
+            <Name>ALBUM_ICON_FIRST_ORIENTATION</Name>
+            <Value>album_icon_first</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Name of album text image less extension (.png) -->
+            <Name>ALBUM_TEXT_FIRST_ORIENTATION</Name>
+            <Value>album_text_first</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Name of camera icon image less extension (.png) -->
+            <Name>CAMERA_ICON_FIRST_ORIENTATION</Name>
+            <Value>camera_icon_first</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Name of option icon image less extension (.png) -->
+            <Name>OPTION_ICON_FIRST_ORIENTATION</Name>
+            <Value>option_icon_first</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Name of preview image less extension (.png) -->
+            <Name>PREVIEW_FIRST_ORIENTATION</Name>
+            <Value>preview_first</Value>
+        </Parameter>
+        <!--Second orientation image -->
+        <Parameter>
+            <!-- Name of album icon image less extension (.png) -->
+            <Name>ALBUM_ICON_SECOND_ORIENTATION</Name>
+            <Value>album_icon_second</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Name of album text image less extension (.png) -->
+            <Name>ALBUM_TEXT_SECOND_ORIENTATION</Name>
+            <Value>album_text_second</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Name of camera icon image less extension (.png) -->
+            <Name>CAMERA_ICON_SECOND_ORIENTATION</Name>
+            <Value>camera_icon_second</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Name of option icon image less extension (.png) -->
+            <Name>OPTION_ICON_SECOND_ORIENTATION</Name>
+            <Value>option_icon_second</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Name of preview image less extension (.png) -->
+            <Name>PREVIEW_SECOND_ORIENTATION</Name>
+            <Value>preview_second</Value>
+        </Parameter>
+        <!--Third orientation image -->
+        <Parameter>
+            <!-- Name of album icon image less extension (.png) -->
+            <Name>ALBUM_ICON_THIRD_ORIENTATION</Name>
+            <Value>album_icon_third</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Name of album text image less extension (.png) -->
+            <Name>ALBUM_TEXT_THIRD_ORIENTATION</Name>
+            <Value>album_text_third</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Name of camera icon image less extension (.png) -->
+            <Name>CAMERA_ICON_THIRD_ORIENTATION</Name>
+            <Value>camera_icon_third</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Name of option icon image less extension (.png) -->
+            <Name>OPTION_ICON_THIRD_ORIENTATION</Name>
+            <Value>option_icon_third</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Name of preview image less extension (.png) -->
+            <Name>PREVIEW_THIRD_ORIENTATION</Name>
+            <Value>preview_third</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

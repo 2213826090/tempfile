@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="13.41">
+    <UseCase>TEST_STEP_ENGINE</UseCase>
+    <Description></Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>False</b2bContinuousMode>
+    <TcMaxAttempt>1</TcMaxAttempt>
+    <TcAcceptanceCriteria>1</TcAcceptanceCriteria>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters>
+        <Parameter>
+            <Name>CLEAR_LOG_COMMAND</Name>
+            <Value>adb logcat -c</Value>
+        </Parameter>
+        <Parameter>
+            <Name>DUMP_LOG_COMMAND</Name>
+            <Value>adb logcat -d</Value>
+        </Parameter>
+        <Parameter>
+            <Name>CHECK_PBAB_CLOSE_STATE</Name>
+            <Value>BluetoothPbapService: Pbap state 2 -> 0, result = 1</Value>
+        </Parameter>
+        <Parameter>
+            <Name>STM_PBAP_OBEX_DISCONNECT</Name>
+            <Value>PBAP_Disconnect_Request: Function Successful</Value>
+        </Parameter>
+    </Parameters>
+    <TestSteps>
+        <Include Src="OTC/TC/TR/ACS/Communication/Bluetooth/setup/BT/OTC_Comms_BT_Common.xml" />
+        <TestStepSet Id="PairDisplayOnly" >
+            <TestStep Id="BT_INITIATE_PAIR" DEVICE="PHONE1" BDADDR="FROM_BENCH:EMBEDDED_SERIAL_DEVICE:MAC_ADDRESS" UNPAIR_FIRST="true" ACCEPT_PAIRING="true" PASS_KEY="0" PIN_CODE="0000" />
+            <TestStep Id="BT_ALLOW_PROFILE" DEVICE="PHONE1" FAIL_IF_ALREADY="FALSE" PROFILE="PBAP" MUST_EXIST="true"/>
+            <!-- Build user request string to validate User confirmation request on STM Board -->
+            <TestStep Id="SERIAL_READ_STRING" MAX_LINES="3" EQT="EMBEDDED_SERIAL_DEVICE" SAVE_AS="STMPairRequestOutput" />
+            <TestStep Id="GLUE_COMMAND" EQT="EMBEDDED_SERIAL_DEVICE" PIECE1="atIOCapabilityResponse:" PIECE2="FROM_CTX:DUTFormattedAddress" SAVE_AS="UserConfirmationRequest" />
+            <TestStep Id="CHECK_CONTENT_CMD" DEVICE="PHONE1" OUTPUT_TO_CHECK="FROM_CTX:STMPairRequestOutput" CHECK_CONTENT="FROM_CTX:UserConfirmationRequest"/>
+            <TestStep Id="SERIAL_SEND_COMMAND" COMMAND="UserConfirmationResponse 1" EQT="EMBEDDED_SERIAL_DEVICE" />
+            <TestStep Id="BT_CHECK_PAIRED" DEVICE="PHONE1" BDADDR="FROM_BENCH:EMBEDDED_SERIAL_DEVICE:MAC_ADDRESS" />
+            <TestStep Id="SERIAL_READ_STRING" MAX_LINES="10" EQT="EMBEDDED_SERIAL_DEVICE" SAVE_AS="STMPCheckLinkKey"/>
+            <TestStep Id="GLUE_COMMAND" EQT="EMBEDDED_SERIAL_DEVICE" PIECE1="atLinkKeyCreation:" PIECE2="FROM_CTX:DUTFormattedAddress" SAVE_AS="LinkKeyCreation" />
+            <TestStep Id="CHECK_CONTENT_CMD" DEVICE="PHONE1" OUTPUT_TO_CHECK="FROM_CTX:STMPCheckLinkKey" CHECK_CONTENT="FROM_CTX:LinkKeyCreation"/>
+        </TestStepSet>
+        <Setup>
+            <!-- Get and flash STM board with PBAPDemo app -->
+            <TestStep Id="GET_ARTIFACT" EQT="ARTIFACT_MANAGER" ARTIFACT="STM32F4xx/st-flash" ARTIFACT_SOURCE="FROM_BENCH:ARTIFACT_MANAGER:URI" TRANSFER_TIMEOUT="DEFAULT" STORED_FILE_PATH="FILE_PATH_IN_CACHE"/>
+            <TestStep Id="GET_ARTIFACT" EQT="ARTIFACT_MANAGER" ARTIFACT="STM32F4xx/PBAPDemo.bin" ARTIFACT_SOURCE="FROM_BENCH:ARTIFACT_MANAGER:URI" TRANSFER_TIMEOUT="DEFAULT" STORED_FILE_PATH="FILE_PATH_IN_CACHE2"/>
+            <TestStep Id="FLASH_STM32" EQT="STM32F4_Discovery" FLASHER_PATH="FROM_CTX:FILE_PATH_IN_CACHE" BINARY_NAME="FROM_CTX:FILE_PATH_IN_CACHE2" />
+            <!-- Setup the STM Board as Client with Secure Simple Pairing -->
+            <TestStep Id="SERIAL_SEND_COMMAND" COMMAND="Client" EQT="EMBEDDED_SERIAL_DEVICE" />
+            <TestStep Id="SERIAL_READ_STRING" MAX_LINES="33" EQT="EMBEDDED_SERIAL_DEVICE" TIMEOUT_LINES_STOP="2"/>
+            <TestStep Id="SERIAL_SEND_COMMAND" COMMAND="SetPairabilityMode 2" EQT="EMBEDDED_SERIAL_DEVICE" />
+            <TestStep Id="SERIAL_READ_STRING" MAX_LINES="6" EQT="EMBEDDED_SERIAL_DEVICE" TIMEOUT_LINES_STOP="4"/>
+            <TestStep Id="SERIAL_SEND_COMMAND" COMMAND="ChangeSimplePairingParameters 1 1" EQT="EMBEDDED_SERIAL_DEVICE" />
+            <TestStep Id="SERIAL_READ_STRING" MAX_LINES="6" EQT="EMBEDDED_SERIAL_DEVICE" TIMEOUT_LINES_STOP="4"/>
+
+            <TestStep Id="WAKE_SCREEN" DEVICE="PHONE1"/>
+            <TestStep Id="SET_PHONE_LOCK" DEVICE="PHONE1" VALUE="unlock"/>
+            <TestStep Id="DISMISS_ANR_DIALOG" DEVICE="PHONE1" PRESS_HOME_FIRST="True" MAX_ATTEMPTS="5"/>
+            <TestStep SetId="BTCommonSetup" DEVICE="PHONE1" SAVE_AS="BT_MAC_ADDRESS_PHONE1" MODE="none" TIMEOUT="120" />
+            <TestStep Id="FORMAT_BD_ADDRESS" EQT="EMBEDDED_SERIAL_DEVICE" INPUT_BD_ADDR="FROM_CTX:BT_MAC_ADDRESS_PHONE1" RETURN_STM_FORMAT="true" SAVE_AS="DUTFormattedAddress" />
+        </Setup>
+        <RunTest>
+            <!-- Set DUT BT discoverable -->
+            <TestStep Id="BT_SET_DISCOVERABLE" DEVICE="PHONE1" MODE="both" TIMEOUT="120" />
+
+            <!-- Send Inquiry command on STM Board to discover the DUT-->
+            <TestStep Id="SERIAL_SEND_COMMAND" COMMAND="Inquiry" EQT="EMBEDDED_SERIAL_DEVICE" />
+            <TestStep Id="SERIAL_READ_STRING" MAX_LINES="84" EQT="EMBEDDED_SERIAL_DEVICE" READLINE_TIMEOUT="15" TIMEOUT_LINES_STOP="4"/>
+
+            <!-- Get the inquiry index from STM board for further use -->
+            <TestStep Id="SERIAL_SEND_COMMAND" COMMAND="DisplayInquiryList" EQT="EMBEDDED_SERIAL_DEVICE" />
+            <TestStep Id="SERIAL_READ_STRING" MAX_LINES="25" EQT="EMBEDDED_SERIAL_DEVICE" SAVE_AS="InquiryList" READLINE_TIMEOUT="15" TIMEOUT_LINES_STOP="4"/>
+            <TestStep Id="GET_INQUIRY_INDEX" EQT="EMBEDDED_SERIAL_DEVICE" PARSE_OUTPUT="FROM_CTX:InquiryList" MAC_ADDRESS="FROM_CTX:BT_MAC_ADDRESS_PHONE1" SAVE_AS="InquiryIndex" />
+
+            <!-- Find PBAPDemo -->
+            <TestStep Id="BT_FIND_DEVICE_INTERLEAVE_SEARCH" DEVICE="PHONE1" DEVICE_TO_FIND="FROM_BENCH:EMBEDDED_SERIAL_DEVICE:MAC_ADDRESS" MUST_FIND="true" />
+
+            <!--Pair the DUT to PBAPDemo from DUT -->
+            <TestStep SetId="PairDisplayOnly" />
+
+            <!-- Open PBAP connection on STM board-->
+            <TestStep Id="GLUE_COMMAND" EQT="EMBEDDED_SERIAL_DEVICE" PIECE1="open" PIECE2="FROM_CTX:InquiryIndex" PIECE3="19" SAVE_AS="OpenConnection" />
+            <TestStep Id="SERIAL_SEND_COMMAND" COMMAND="FROM_CTX:OpenConnection" EQT="EMBEDDED_SERIAL_DEVICE" />
+            <TestStep Id="SERIAL_READ_STRING" MAX_LINES="23" EQT="EMBEDDED_SERIAL_DEVICE" SAVE_AS="CheckOpen"/>
+            <!-- Check open port confirmation response code -->
+            <TestStep Id="CHECK_CONTENT_CMD" DEVICE="PHONE1" OUTPUT_TO_CHECK="FROM_CTX:CheckOpen" CHECK_CONTENT="Response Code: 0x00"/>
+            <!-- Check open port authentication status -->
+            <TestStep Id="GLUE_COMMAND" EQT="EMBEDDED_SERIAL_DEVICE" PIECE1="atAuthenticationStatus: 0 for" PIECE2="FROM_CTX:DUTFormattedAddress" SAVE_AS="OpenAuthentication" />
+            <TestStep Id="CHECK_CONTENT_CMD" DEVICE="PHONE1" OUTPUT_TO_CHECK="FROM_CTX:CheckOpen" CHECK_CONTENT="FROM_CTX:OpenAuthentication"/>
+
+            <!-- Clear logcat to properly check the PBAP state message on DUT-->
+            <TestStep Id="RUN_CMD" DEVICE="PHONE1" TIMEOUT="10" COMMAND="FROM_TC:CLEAR_LOG_COMMAND" FORCE_EXECUTION="False" WAIT_FOR_RESPONSE="True" SILENT_MODE="False" SAVE_AS="False"/>
+            <!-- Disconnect now from STM Board -->
+            <TestStep Id="GLUE_COMMAND" EQT="EMBEDDED_SERIAL_DEVICE" PIECE1="OBEXDisconnect" PIECE2="FROM_CTX:InquiryIndex" SAVE_AS="DisconnectOBEX" />
+            <TestStep Id="SERIAL_SEND_COMMAND" COMMAND="FROM_CTX:DisconnectOBEX" EQT="EMBEDDED_SERIAL_DEVICE" />
+            <TestStep Id="SERIAL_READ_STRING" MAX_LINES="6" EQT="EMBEDDED_SERIAL_DEVICE" SAVE_AS="CheckDisconnect"/>
+            <TestStep Id="CHECK_CONTENT_CMD" DEVICE="PHONE1" OUTPUT_TO_CHECK="FROM_CTX:CheckDisconnect" CHECK_CONTENT="FROM_TC:STM_PBAP_OBEX_DISCONNECT"/>
+
+            <!-- Check that the PBAB state message desired content is found in logcat -->
+            <TestStep Id="RUN_CMD" DEVICE="PHONE1" TIMEOUT="10" COMMAND="FROM_TC:DUMP_LOG_COMMAND" FORCE_EXECUTION="False" WAIT_FOR_RESPONSE="True" SILENT_MODE="False" SAVE_AS="CommandOutput"/>
+            <TestStep Id="CHECK_CONTENT_CMD" DEVICE="PHONE1"  OUTPUT_TO_CHECK="FROM_CTX:CommandOutput" CHECK_CONTENT="FROM_TC:CHECK_PBAB_CLOSE_STATE"/>
+        </RunTest>
+        <TearDown>
+            <TestStep Id="BT_UNPAIR" DEVICE="PHONE1" BDADDR="FROM_BENCH:EMBEDDED_SERIAL_DEVICE:MAC_ADDRESS" />
+            <TestStep SetId="BTCommonTeardown" DEVICE="PHONE1" />
+        </TearDown>
+    </TestSteps>
+</TestCase>

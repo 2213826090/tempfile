@@ -1,0 +1,78 @@
+{
+ "flash" :  {
+  "commands" : [
+   {
+    "description" : "Waiting for device in MOS...",
+    "restrict" : null,
+    "state" : "mos",
+    "timeout" : 120000,
+    "tool" : "waitForDevice"
+   },
+   {
+    "args" : "\"root\"",
+    "description" : "Setting root permissions...",
+    "mandatory" : true,
+    "restrict" : null,
+    "retry" : 2,
+    "timeout" : 400000,
+    "tool" : "adb"
+   },
+   {
+    "duration" : 2000,
+    "restrict" : null,
+    "description" : "waiting for 2s",
+    "tool" : "sleep"
+   },
+   {
+    "description" : "Waiting for device in MOS...",
+    "restrict" : null,
+    "state" : "mos",
+    "timeout" : 120000,
+    "tool" : "waitForDevice"
+   },
+   {
+    "args" : "\"push\" \"${ota_file}\" \"/cache/ota.zip\"",
+    "description" : "Copying OTA image to device...",
+    "mandatory" : true,
+    "restrict" : null,
+    "retry" : 2,
+    "timeout" : 120000,
+    "tool" : "adb"
+   },
+   {
+    "args" : "\"shell\" \"am startservice -a com.intel.ota.OtaUpdate -e LOCATION /cache/ota.zip\"",
+    "description" : "Setting parameters and rebooting into recovery console...",
+    "mandatory" : true,
+    "restrict" : null,
+    "retry" : 2,
+    "timeout" : 10000,
+    "tool" : "adb"
+   }
+  ],
+  "configurations" :   {
+   "default" :    {
+    "brief" : "Default configuration",
+    "default" : true,
+    "description" : "Default configuration",
+    "groupsState" :     {
+    },
+    "name" : "Default",
+    "parameters" :     {
+    },
+    "startState" : "mos"
+   }
+  },
+  "groups" :   {
+  },
+  "osplatform" : "android",
+  "parameters" :   {
+   "ota_file" :    {
+    "description" : "OTA package",
+    "name" : "OTA package",
+    "type" : "file",
+    "value" : "cht_ffd-ota-imin-week-47.zip"
+   }
+  },
+  "version" : "2.1"
+ }
+}

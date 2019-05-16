@@ -1,0 +1,109 @@
+<?xml version='1.0' encoding='ASCII'?>
+<TestCase>
+    <UseCase>Testlib</UseCase>
+    <Description>after receiving 1 file success/fail, notification should change the success/fail number accordingly in
+        notification
+    </Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <TcMaxAttempt>1</TcMaxAttempt>
+    <TestSteps>
+        <Setup>
+
+            <TestStep Id="CONNECT_DEVICE" DEVICE="PHONE2"/>
+
+            <!--Install UiTests apks on dev-->
+            <TestStep Id="GET_ARTIFACT" ARTIFACT="UIAUTOMATOR/UiTests_M-debug.apk"
+                      ARTIFACT_SOURCE="FROM_BENCH:ARTIFACT_MANAGER:URI" TRANSFER_TIMEOUT="DEFAULT"
+                      STORED_FILE_PATH="FILE_PATH_CTX1" EQT="ARTIFACT_MANAGER"/>
+            <TestStep Id="GET_ARTIFACT" ARTIFACT="UIAUTOMATOR/UiTests_M-debug-androidTest-unaligned.apk"
+                      ARTIFACT_SOURCE="FROM_BENCH:ARTIFACT_MANAGER:URI" TRANSFER_TIMEOUT="DEFAULT"
+                      STORED_FILE_PATH="FILE_PATH_CTX2" EQT="ARTIFACT_MANAGER"/>
+            <Fork Id="Install">
+                <TestStep Id="INSTALL_APP" DEVICE="PHONE2" FILE_PATH="FROM_CTX:FILE_PATH_CTX1"
+                          BACKUP="false" SIGN="false" TIMEOUT="DEFAULT" BACKUP_FILE_PATH="None" SIGN_KEY_PATH="None"/>
+                <TestStep Id="INSTALL_APP" DEVICE="PHONE2" FILE_PATH="FROM_CTX:FILE_PATH_CTX2"
+                          BACKUP="false" SIGN="false" TIMEOUT="DEFAULT" BACKUP_FILE_PATH="None" SIGN_KEY_PATH="None"/>
+            </Fork>
+
+            <!--remove bluetooth_send_pic folder on DEV, in order to have only 1 photo in it-->
+            <TestStep Id="RUN_CMD"
+                      DEVICE="PHONE2" TIMEOUT="20" FORCE_EXECUTION="False" WAIT_FOR_RESPONSE="True" SILENT_MODE="False"
+                      SAVE_AS="out1"
+                      COMMAND="adb shell rm -rf /sdcard/bluetooth_send_pic/"/>
+
+            <!--get photo from artifactory and push on bluetooth_send_pic folder on DEV-->
+            <TestStep Id="GET_ARTIFACT" EQT="ARTIFACT_MANAGER" ARTIFACT="MISCELLANEOUS/JPG/1MB.jpg"
+                      ARTIFACT_SOURCE="FROM_BENCH:ARTIFACT_MANAGER:URI"
+                      TRANSFER_TIMEOUT="DEFAULT" STORED_FILE_PATH="FILE_PATH_IN_CACHE"/>
+            <TestStep Id="INSTALL_FILE" DEVICE="PHONE2" FILE_PATH="FROM_CTX:FILE_PATH_IN_CACHE" TYPE="media"
+                      DESTINATION="/sdcard/bluetooth_send_pic/"
+                      DESTINATION_STORED_PATH="INSTALLED_FILE_PATH" TIMEOUT="DEFAULT"/>
+
+            <!--remount media on DEV-->
+            <TestStep Id="RUN_CMD"
+                      DEVICE="PHONE2" TIMEOUT="20" FORCE_EXECUTION="False" WAIT_FOR_RESPONSE="True" SILENT_MODE="False"
+                      SAVE_AS="out1"
+                      COMMAND="adb shell am broadcast -a android.intent.action.MEDIA_MOUNTED -d file:///sdcard/bluetooth_send_pic/"/>
+
+            <!--unlock screen on both devices-->
+            <Fork Id="Unlock">
+                <TestStep Id="RUN_CMD"
+                          DEVICE="PHONE1" TIMEOUT="20" FORCE_EXECUTION="False" WAIT_FOR_RESPONSE="True"
+                          SILENT_MODE="False"
+                          SAVE_AS="out1"
+                          COMMAND="adb shell input keyevent 82"/>
+                <TestStep Id="RUN_CMD"
+                          DEVICE="PHONE2" TIMEOUT="20" FORCE_EXECUTION="False" WAIT_FOR_RESPONSE="True"
+                          SILENT_MODE="False"
+                          SAVE_AS="out1"
+                          COMMAND="adb shell input keyevent 82"/>
+            </Fork>
+
+            <!--dismiss eventual crash dialog on dut and remove google account on dev-->
+            <Fork Id="AnrAndAccount">
+                <TestStep Id="DISMISS_ANR_DIALOG" DEVICE="PHONE1" PRESS_HOME_FIRST="True" MAX_ATTEMPTS="5"/>
+                <Fork Id="Phone2" Serialize="True">
+                    <TestStep Id="RUN_CMD" DEVICE="PHONE2" TIMEOUT="10" COMMAND="adb shell pkill -l SIGKILL uiautomator"
+                              FORCE_EXECUTION="False" WAIT_FOR_RESPONSE="True" SILENT_MODE="False" SAVE_AS="False"/>
+                    <TestStep Id="RUN_CMD"
+                              DEVICE="PHONE2" TIMEOUT="20" FORCE_EXECUTION="False" WAIT_FOR_RESPONSE="True"
+                              SILENT_MODE="False"
+                              SAVE_AS="out1"
+                              COMMAND="adb shell input keyevent 3"/>
+                    <TestStep Id="RUN_ANDROID_INST" DEVICE="PHONE2"
+                              RUN_INSTR_CMD="am instrument -e class com.intel.uitests.tests.prerequisites.GoogleAccount#testRemoveAccounts -w com.intel.uitests.test/com.intel.uitests.runner.UiTestRunner"
+                              TIMEOUT="120" RETRIEVE_ARTIFACT="/sdcard/UITESTS/testFail.png"/>
+                </Fork>
+            </Fork>
+
+        </Setup>
+        <TearDown>
+
+            <!--remove bluetooth_send_pic folder on DEV and remount media-->
+            <TestStep Id="RUN_CMD"
+                      DEVICE="PHONE2" TIMEOUT="20" FORCE_EXECUTION="False" WAIT_FOR_RESPONSE="True" SILENT_MODE="False"
+                      SAVE_AS="out1"
+                      COMMAND="adb shell rm -rf /sdcard/bluetooth_send_pic/"/>
+            <TestStep Id="RUN_CMD"
+                      DEVICE="PHONE2" TIMEOUT="20" FORCE_EXECUTION="False" WAIT_FOR_RESPONSE="True" SILENT_MODE="False"
+                      SAVE_AS="out1"
+                      COMMAND="adb shell am broadcast -a android.intent.action.MEDIA_MOUNTED -d file:///sdcard/bluetooth_send_pic/"/>
+
+        </TearDown>
+    </TestSteps>
+    <Parameters>
+        <Parameter>
+            <Name>test</Name>
+            <Value>scripts/wireless/bluetooth/tests/Bluetooth_OPP_bt_notification_receive_status.py</Value>
+        </Parameter>
+        <Parameter>
+            <Name>script-args</Name>
+            <Value>photo_folder_name=bluetooth_send_pic photo_name=1MB</Value>
+        </Parameter>
+        <Parameter>
+            <Name>timeout</Name>
+            <Value>10000</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

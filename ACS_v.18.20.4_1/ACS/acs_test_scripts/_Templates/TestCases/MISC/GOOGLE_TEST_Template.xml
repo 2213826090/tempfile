@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="13.45">
+    <UseCase>GOOGLE_TEST</UseCase>
+    <Description>Sample Google Test for ICS only</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters>
+        <Parameter>
+            <Name>GTEST_TIMEOUT</Name>
+            <Description>The timeout value in seconds to use when issuing ADB shell commands to execute google test binary</Description>
+            <Value>5</Value>
+        </Parameter>
+        <Parameter>
+            <Name>GTEST_BINARY</Name>
+            <Description>The google test binary absolute file path over the device</Description>
+            <Value>/data/google_test</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

@@ -1,0 +1,163 @@
+<?xml version='1.0' encoding='ISO-8859-1'?>
+<BenchConfig>
+  <Phones>
+      <Phone name="PHONE1" description="Phone to use during test campaign. Please refer to Device_Catalog.xml to fill DeviceModel parameter" deviceModel="ECS-Android-LLP">
+            <Parameter disableTcReboot="false" description="Disable TC reboot options"/>
+            <Parameter multipleDevices="true"/>
+            <!-- serial number for device under test -->
+            <Parameter serialNumber="DD8869FF"/>
+        </Phone>
+        <Phone name="PHONE2" description="Phone to use during test campaign. Please refer to Device_Catalog.xml to fill DeviceModel parameter" deviceModel="ECS-Android-LLP">
+            <Parameter disableTcReboot="true" description="Disable TC reboot options"/>
+            <!-- serial number for reference device -->
+            <Parameter serialNumber="5063AD62"/>
+        </Phone>
+    </Phones>
+    <Equipments>
+        <Equipment version="14.09" name="ARTIFACT_MANAGER" description="ArtifactManager configuration to get all test case necessary artifacts">
+            <Parameter name="URI" value="https://mcg-depot.intel.com/artifactory/acs_test_artifacts/" description="Local path/URL to the artifact source"/>
+        </Equipment>
+        <!--If you have a USB RELAY32 Board for all the Bluetooth Hardware equipment, the you will declare a single
+        IO_CARD Equipment and you will use that one for each instance. Uncomment this one and comment the other IO_CARDS-->
+        <!--
+        <Equipment name="IO_CARD" description="Input output card for all Bluetooth Hardware equipments.">
+            <Parameter name="Model" value="USBRELAY32"/>
+            <Parameter name="ComPort" value="/dev/serial/by-path/pci-0000:00:1a.0-usb-0:1.1:1.0" description="COM port used for communication"/>
+        </Equipment>
+        -->
+        <!-- IO_CARD for BT_HEADSET -->
+        <Equipment name="IO_CARD" description="Input output card for BT_HEADSET.">
+            <Parameter name="Model" value="USB_RLY08"/>
+            <Parameter name="ComPort" value="/dev/serial/by-path/pci-0000:00:14.0-usb-0:1:1.0" description="COM port used for communication"/>
+        </Equipment>
+        <!-- IO_CARD for BT_MOUSE -->
+        <Equipment name="IO_CARD2" description="Input output card for BT_Mouse.">
+            <Parameter name="Model" value="USB_RLY08"/>
+            <Parameter name="ComPort" value="/dev/serial/by-path/pci-0000:00:14.0-usb-0:1:2.0" description="COM port used for communication"/>
+        </Equipment>
+        <Equipment name="WEP_WIFI_ROUTER" description="Wifi router used in OTC Wifi Test Cases">
+            <!-- A stable Wifi AP to be used for connecting devices to during tests with internet access required -->
+            <Parameter name="SSID" value="'Android QA Main'"/>
+            <Parameter name="WIFI_SECURITY" value="WPA2"/>
+            <Parameter name="passphrase" value="AndroidQA"/>
+            <Parameter name="Model" value="ZyXEL Linksis" description="Wifi router"/>
+            <Parameter name="IP" value="192.168.1.1" description="ip address of the equipment"/>
+            <Parameter name="Interface" value="eth8" description="Ethernet interface used for connection"/>
+            <Parameter name="IPv6Prefix" value="" description="IPv6 prefix of the computer."/>
+            <Parameter name="SshPath" value="/usr/bin/ssh" description="[Optional] full path to local SSH client binary (default 'ssh')"/>
+            <Parameter name="ScpPath" value="/usr/bin/scp" description="[Optional] full path to local SCP client binary (default 'scp')"/>
+        </Equipment>
+        <!-- Bluetooth Equipments -->
+        <!--Bluetooth Headset: comment/delete from your bench config the headset that is not included in your actual hardware-->
+        <Equipment name="BT_HEADSET" description="Bluetooth headset device reworked to be used with IOCards.">
+            <Parameter name="Model" value="NokiaBH214"/>
+            <!-- BT mac address for reworked HEADSET -->
+            <Parameter name="BD_Address" value="00:0B:E4:A4:9D:35"/>
+            <Parameter name="Name" value="Nokia BH-214" />
+            <Parameter name="IOCard" value="IO_CARD" description="name of the IO_CARD used to manage headset buttons"/>
+            <Parameter name="powerButton" value="1" description="Number of the Slave IOCard's relay used to poweronoff the headset"/>
+            <Parameter name="volUpButton" value="3" description="Number of the Slave IOCard's relay from Slave IOCard used to increase volume"/>
+            <Parameter name="volDownButton" value="5" description="Number of the Slave IOCard's relay from Slave IOCard used to decrease volume"/>
+            <Parameter name="callButton" value="8" description="Number of the Slave IOCard's relay used to place a call"/>
+            <Parameter name="fwdButton" value="7" description="Number of the Slave IOCard's relay used to fwd music"/>
+            <Parameter name="rwdButton" value="2" description="Number of the Slave IOCard's relay used to rwd music"/>
+            <Parameter name="playPauseButton" value="6" description="Number of the Slave IOCard's relay used to play/pause audio"/>
+            <Parameter name="powerOnTimer" value="1" description="Timer for poweron, in second"/>
+            <Parameter name="powerOffTimer" value="5" description="Timer for poweroff, in second"/>
+            <Parameter name="defaultReconnectProfileTimer" value="8" description="Timer for reconnect profile key press, in second"/>
+            <Parameter name="defaultShortKeyPressTimer" value="0.5" description="Timer for default short key press, in second"/>
+            <Parameter name="defaultLongKeyPressTimer" value="6" description="Timer for default long key press, in second"/>
+            <Parameter name="betweenDoubleKeyPressTimer" value="0.5" description="Timer for pause between double key press, in second"/>
+            <Parameter name="pairingTimer" value="8" description="Timer to enter in pairing mode, in second"/>
+            <Parameter name="voiceDialTimer" value="2" description="Timer to access to redial option, in second"/>
+        </Equipment>
+        <!--
+        <Equipment name="BT_HEADSET" description="Bluetooth headset device reworked to be used with IOCards.">
+          <Parameter name="Model" value="NokiaBH111"/>
+            <Parameter name="BD_Address" value="00:0D:FD:47:DB:E9"/>
+            <Parameter name="Name" value="Nokia BH-111" />
+            <Parameter name="IOCard" value="IO_CARD" description="name of the IO_CARD used to manage headset buttons"/>
+            <Parameter name="powerButton" value="0" description="Number of the Slave IOCard's relay used to poweronoff the headset"/>
+            <Parameter name="volUpButton" value="2" description="Number of the Slave IOCard's relay from Slave IOCard used to increase volume"/>
+            <Parameter name="volDownButton" value="1" description="Number of the Slave IOCard's relay from Slave IOCard used to decrease volume"/>
+            <Parameter name="callButton" value="0" description="Number of the Slave IOCard's relay used to place a call"/>
+            <Parameter name="fwdButton" value="5" description="Number of the Slave IOCard's relay used to fwd music"/>
+            <Parameter name="rwdButton" value="4" description="Number of the Slave IOCard's relay used to rwd music"/>
+            <Parameter name="playPauseButton" value="3" description="Number of the Slave IOCard's relay used to play/pause audio"/>
+            <Parameter name="powerOnTimer" value="5" description="Timer for poweron, in second"/>
+            <Parameter name="powerOffTimer" value="5" description="Timer for poweroff, in second"/>
+            <Parameter name="defaultReconnectProfileTimer" value="8" description="Timer for reconnect profile key press, in second"/>
+            <Parameter name="defaultShortKeyPressTimer" value="0.5" description="Timer for default short key press, in second"/>
+            <Parameter name="defaultLongKeyPressTimer" value="6" description="Timer for default long key press, in second"/>
+            <Parameter name="betweenDoubleKeyPressTimer" value="0.5" description="Timer for pause between double key press, in second"/>
+            <Parameter name="pairingTimer" value="8" description="Timer to enter in pairing mode, in second"/>
+            <Parameter name="voiceDialTimer" value="2" description="Timer to access to redial option, in second"/>
+        </Equipment>
+        -->
+        <Equipment name="BT_MOUSE" description="Bluetooth Mouse.">
+            <Parameter name="Model" value="MICROSOFT_SculptComfortMouse" />
+            <Parameter name="Name" value="Microsoft Sculpt Comfort Mouse" />
+            <!-- BT mac address for reworked MOUSE -->
+            <Parameter name="BD_Address" value="28:18:78:61:35:9C" />
+            <Parameter name="IOCard" value="IO_CARD2" description="name of the IO_CARD used to manage the mouse's buttons" />
+            <Parameter name="powerButton" value="1" description="Number of the Slave IOCard's relay used to power on or off the mouse" />
+            <Parameter name="pairButton" value="2" description="Number of the Slave IOCard's relay used to put the mouse in pairable mode" />
+            <Parameter name="leftButton" value="5" description="Number of the Slave IOCard's relay used to press left button" />
+            <Parameter name="rightButton" value="6" description="Number of the Slave IOCard's relay used to press the right button" />
+            <Parameter name="middleButton" value="7" description="Number of the Slave IOCard's relay used to press the middle button" />
+            <Parameter name="keyPressTimer" value="0.2" description="Timer for click (press - release), in second" />
+            <Parameter name="pairTimer" value="4" description="Period to hold the pairing button for" />
+        </Equipment>
+        <!--If you are using a Relay32 board, the following is your possible configuration. Comment the above and uncomment this one:-->
+        <!--
+        <Equipment name="BT_MOUSE" description="Bluetooth Mouse.">
+            <Parameter name="Model" value="MICROSOFT_SculptComfortMouse" />
+            <Parameter name="Name" value="Microsoft Sculpt Comfort Mouse" />
+            <Parameter name="BD_Address" value="28:18:78:61:35:9C" />
+            <Parameter name="IOCard" value="IO_CARD" description="name of the IO_CARD used to manage the mouse's buttons" />
+            <Parameter name="powerButton" value="6" description="Number of the Slave IOCard's relay used to power on or off the mouse" />
+            <Parameter name="pairButton" value="7" description="Number of the Slave IOCard's relay used to put the mouse in pairable mode" />
+            <Parameter name="leftButton" value="10" description="Number of the Slave IOCard's relay used to press left button" />
+            <Parameter name="rightButton" value="8" description="Number of the Slave IOCard's relay used to press the right button" />
+            <Parameter name="middleButton" value="9" description="Number of the Slave IOCard's relay used to press the middle button" />
+            <Parameter name="keyPressTimer" value="0.2" description="Timer for click (press - release), in second" />
+            <Parameter name="pairTimer" value="4" description="Period to hold the pairing button for" />
+        </Equipment>
+        -->
+        <Equipment name="BLE_MOUSE" description="Bluetooth Mouse.">
+            <Parameter name="Model" value="HPMouseZ8000"/>
+            <Parameter name="Name" value="HPMouseZ8000" />
+            <Parameter name="BD_Address" value="FE:9F:89:70:40:34"/>
+            <Parameter name="IOCard" value="IO_CARD" description="name of the IO_CARD used to manage the mouse's buttons" />
+            <Parameter name="powerButton" value="11" description="Number of the Slave IOCard's relay used to power on or off the mouse" />
+            <Parameter name="pairButton" value="13" description="Number of the Slave IOCard's relay used to put the mouse in pairable mode" />
+            <Parameter name="middleButton" value="12" description="Number of the Slave IOCard's relay used to press the middle button" />
+            <Parameter name="keyPressTimer" value="1" description="Timer for click (press - release), in second" />
+            <Parameter name="pairTimer" value="2" description="Period to hold the pairing button for" />
+        </Equipment>
+        <Equipment name="EMBEDDED_SERIAL_DEVICE" description="Generic device that communicates on an FTDI style serial.">
+          <Parameter name="Model" value="SerialCom"/>
+            <Parameter name="ScreenName" value="HSPDemo" />
+            <Parameter name="comPort" value="/dev/ttyUSB0" description="COM port used for communication"/>
+            <Parameter name="MAC_ADDRESS" value="00:17:E9:E5:58:A0" />
+            <Parameter name="baudRate" value="115200" />
+        </Equipment>
+        <Equipment name="STM32F4_Discovery">
+            <Parameter name="Model" value="STM32F4xx"/>
+            <Parameter name="USBAddress" value="003:046" />
+        </Equipment>
+
+        <Equipment name="EMBEDDED_SERIAL_DEVICE2" description="Generic device that communicates on an FTDI style serial.">
+          <Parameter name="Model" value="SerialCom"/>
+            <Parameter name="ScreenName" value="HSPDemo" />
+            <Parameter name="comPort" value="/dev/ttyUSB1" description="COM port used for communication"/>
+            <Parameter name="MAC_ADDRESS" value="00:17:E9:E5:58:A0" />
+            <Parameter name="baudRate" value="115200" />
+        </Equipment>
+        <Equipment name="STM32F4_Discovery2">
+            <Parameter name="Model" value="STM32F4xx"/>
+            <Parameter name="USBAddress" value="003:032" />
+        </Equipment>
+    </Equipments>
+</BenchConfig>
+

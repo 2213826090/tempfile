@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="13.37">
+    <UseCase>LIVE_BT_BD_ADDR_PROV</UseCase>
+    <Description>BlueTooth BD address provinoning UC</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters>
+        <Parameter>
+            <!-- Provisioning mode:
+                no_prov (no provisioning, DefaultBDAddress is expected to be set in device configuration file for android release before 4.2.1 JB_MR1 )
+                prov (provisioning using NEW_ADDR)
+            -->
+            <Name>PROV_MODE</Name>
+            <Value>no_prov</Value>
+        </Parameter>
+        <Parameter>
+            <!-- New BD address to set in case of "prov" mode
+                If random part is need, put x in it and ACS will put random chars in place of them.
+                BD address shall NOT be 00:00:00:00:00:00 -->
+            <Name>NEW_ADDR</Name>
+            <Value>31:32:33:34:xx:xx</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

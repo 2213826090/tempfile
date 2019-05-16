@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase>
+    <UseCase>LAB_LTE_IPERF</UseCase>
+    <Description>TCP transfer over LTE simulated network</Description>
+    <b2bIteration>5</b2bIteration>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters>
+        <Parameter>
+            <!-- Multiple-Input Multiple-Output to set : true or false -->
+            <Name>MIMO</Name>
+            <Value>TRUE</Value>
+        </Parameter>
+        <Parameter>
+            <!-- number of antennas to set : 1 or 2 -->
+            <Name>ANTENNAS_NUMBER</Name>
+            <Value>2</Value>
+        </Parameter>
+        <Parameter>
+            <!-- TRANSMISSION_MODE to set: TM1, TM2, TM3,TM4 ... -->
+            <Name>TRANSMISSION_MODE</Name>
+            <Value>TM3</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Physical Cell ID : 0 to 503 -->
+            <Name>PHYSICAL_CELL_ID</Name>
+            <Value>0</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Cell Setup : "A" for A-cell or "B" for B-cell -->
+            <Name>CELL_ID</Name>
+            <Value>A</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Cell power for RFO1 -->
+            <Name>CELL_POWER_RFO1</Name>
+            <Value>-40</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Cell power for RFO2 -->
+            <Name>CELL_POWER_RFO2</Name>
+            <Value>-40</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Mobile Country Code 0 to 999 -->
+            <Name>MCC</Name>
+            <Value>1</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Mobile Network Code 0 to 999 -->
+            <Name>MNC</Name>
+            <Value>1</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Cell Band (from Band 1 to Band 32) -->
+            <Name>CELL_BAND</Name>
+            <Value>3</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Downlink channel -->
+            <Name>DL_EARFCN</Name>
+            <Value>1575</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Port Number used by IPERF -->
+            <Name>PORT</Name>
+            <Value>5001</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Duration in seconds allowed to IPERF to perform measurements -->
+            <Name>DURATION</Name>
+            <Value>120</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Protocol used by IPERF to perform measurements - (TCP | UDP) -->
+            <Name>IPERF_PROTOCOL</Name>
+            <Value>TCP</Value>
+        </Parameter>
+        <Parameter>
+            <!-- LTE category to use for the test, should be an int. -->
+            <Name>LTE_CATEGORY</Name>
+            <Value>4</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Type of data transfer - (UL/DL) -->
+            <Name>DIRECTION</Name>
+            <Value>DL</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Cell Channel Bandwidth in MHz -->
+            <Name>CELL_CHANNEL_BANDWIDTH</Name>
+            <Value>20</Value>
+        </Parameter>
+        <Parameter>
+            <!-- KPI test -->
+            <Name>KPI_TEST</Name>
+            <Value>True</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

@@ -1,0 +1,165 @@
+<?xml version='1.0' encoding='ISO-8859-1'?>
+<BenchConfig>
+  <Phones>
+      <Phone name="PHONE1" description="Phone to use during test campaign. Please refer to Device_Catalog.xml to fill DeviceModel parameter" deviceModel="ECS-Android-LLP">
+          <Parameter disableTcReboot="false" description="Disable TC reboot options"/>
+            <!--  <Parameter serialNumber="5063AD62"/> !-->
+            <Parameter multipleDevices="true"/>
+            <!--            <Parameter serialNumber="606BB162"/> !-->
+            <Parameter serialNumber="DD8869FF"/>
+        </Phone>
+        <Phone name="PHONE2" description="Phone to use during test campaign. Please refer to Device_Catalog.xml to fill DeviceModel parameter" deviceModel="ECS-Android-KK">
+          <Parameter disableTcReboot="true" description="Disable TC reboot options"/>
+            <!--<Parameter serialNumber="5551B362"/> !-->
+            <Parameter serialNumber="5063AD62"/>
+            <Parameter WiFi_Connection_Ap_Name="Android Core QA" description="WiFi AP name used for running WiFi connection tests"/>
+            <Parameter WiFi_Connection_Passwd="AndroidQA" description="WiFi AP password used for running WiFi connection tests"/>
+        </Phone>
+    </Phones>
+    <Equipments>
+      <Equipment version="14.09" name="ARTIFACT_MANAGER" description="ArtifactManager configuration to get all test case necessary artifacts">
+          <Parameter name="URI" value="https://mcg-depot.intel.com/artifactory/acs_test_artifacts/" description="Local path/URL to the artifact source"/>
+        </Equipment>
+        <!-- IO_Cards -->
+        <Equipment name="IO_CARD" description="Input output card for BT_HEADSETl.">
+          <Parameter name="Model" value="USB_RLY08"/>
+            <Parameter name="ComPort" value="/dev/serial/by-path/pci-0000:00:14.0-usb-0:1:1.0" description="COM port used for communication"/>
+        </Equipment>
+        <!-- Live Equipments -->
+        <Equipment name="LIVE_FTP_SERVER" description="Server Configuration used for FTP">
+          <Parameter name="IP" value="134.191.242.7"/>
+            <Parameter name="username" value="lab"/>
+            <Parameter name="password" value="intellab"/>
+            <Parameter name="ftp_path" value="QCTV_CWS"/>
+        </Equipment>
+        <Equipment name="WEP_WIFI_ROUTER" description="Wifi router used in OTC Wifi Test Cases">
+          <!--   <Parameter name="Model" value="Linksys E900 Router" description="LOCAL_COMPUTER or REMOTE_COMPUTER (only LOCAL is currently supported)" />
+        <Parameter name="SSID" value="OpenWrt"/> !-->
+            <Parameter name="Model" value="ZyXEL Linksis" description="LOCAL_COMPUTER or REMOTE_COMPUTER (only LOCAL is currently supported)"/>
+            <Parameter name="SSID" value="'Android Core QA'"/>
+            <Parameter name="IP" value="192.168.1.1" description="ip address of the equipment"/>
+            <!--   <Parameter name="username" value="root" description="login used for the connection" />-->
+            <Parameter name="WIFI_SECURITY" value="WPA2"/>
+            <Parameter name="passphrase" value="AndroidQA"/>
+            <Parameter name="Interface" value="eth8" description="Ethernet interface used for connection"/>
+            <Parameter name="IPv6Prefix" value="" description="IPv6 prefix of the computer."/>
+            <Parameter name="SshPath" value="/usr/bin/ssh" description="[Optional] full path to local SSH client binary (default 'ssh')"/>
+            <Parameter name="ScpPath" value="/usr/bin/scp" description="[Optional] full path to local SCP client binary (default 'scp')"/>
+        </Equipment>
+        <Equipment name="B_ONLY_WIFI_ROUTER" description="Wifi router used in OTC Wifi Test Cases">
+          <Parameter name="Model" value="REMOTE_COMPUTER" description="LOCAL_COMPUTER or REMOTE_COMPUTER (only LOCAL is currently supported)"/>
+            <Parameter name="SSID" value="Linksys E900 Router"/>
+            <Parameter name="IP" value="192.168.1.1" description="ip address of the equipment"/>
+            <Parameter name="username" value="root" description="login used for the connection"/>
+            <Parameter name="Interface" value="eth8" description="Ethernet interface used for connection"/>
+            <Parameter name="IPv6Prefix" value="" description="IPv6 prefix of the computer."/>
+            <Parameter name="SshPath" value="/usr/bin/ssh" description="[Optional] full path to local SSH client binary (default 'ssh')"/>
+            <Parameter name="ScpPath" value="/usr/bin/scp" description="[Optional] full path to local SCP client binary (default 'scp')"/>
+        </Equipment>
+        <!-- Configurable AP -->
+        <!--        <Equipment name="CONFIGURABLE_AP1" description="Configurable Access Point">
+            <Parameter name="Model" value="CISCO_1250" description="Model of the equipment to use" />
+            <Parameter name="IP" value="192.168.1.1" description="ip address of the equipment" />
+            <Parameter name="ConfigurationWaitingTime" value="10" description="Time to wait after the configuration step (in second)" />
+            <Parameter name="username" value="Cisco" description="login used for the connection" />
+            <Parameter name="password" value="Cisco" description="password used for the connection" />
+            <Parameter name="SSID" value="Linksys E900 Router" description="SSID to create" />
+            <Parameter name="passphrase_WEP64" value="12345" description="passphrase for WEP 64 bits" />
+            <Parameter name="passphrase_WEP128" value="1234567890123" description="passphrase for WEP 128 bits" />
+            <Parameter name="passphrase_WPA" value="1234567890123" description="passphrase for WPA" />
+            <Parameter name="passphrase_WPA2" value="1234567890123" description="passphrase for WPA2" />
+            <Parameter name="radiusip" value="192.168.0.150" description="IP of the Radius server"/>
+            <Parameter name="radiusport" value="1815" description="Listening port of the radius server"/>
+            <Parameter name="radiussecret" value="RadiusPass" description="Secret password to connect AP to the Radius server"/>
+            <Parameter name="EAP_user" value="Inteluser" description="login used for EAP encryption" />
+            <Parameter name="EAP_password" value="intelpassword" description="password used for EAP encryption" />
+            <Parameter name="EAP_SIM_user" value="1001010123456705@wlan.mnc001.mcc001.3gppnetwork.org"/>
+            <Parameter name="EAP_AKA_user" value="0001010123456705@wlan.mnc001.mcc001.3gppnetwork.org"/>
+            <Parameter name="Credential_password" value="12345678" description="credential password for EAP encryption. For ICS, the credential password is also the digit PIN code to lock the phone and the phone should not be initialy locked with a PIN, password nor patern" />
+            <Parameter name="CA_guard_password" value="VPN" description="ca guard password for EAP encryption" />
+            <Parameter name="certificate_file" value="client.p12" description="Filename of the certificate to be used for WPA-enterprise authentication with EAP method=TLS. This .p12 file should be placed into: [ACS_ROOT_FOLDER]/Executable/_Embedded/CERTIFICATE"/>
+            <Parameter name="DHCP_ENABLED" value="False" description="Enable dhcp on AP" />
+            <Parameter name="LOW_EXCLUDED_IP" value="192.168.1.1" description="Defines the low end of the excluded ip range for dhcp" />
+            <Parameter name="HIGH_EXCLUDED_IP" value="192.168.1.50" description="Defines the high end of the excluded ip range for dhcp" />
+            <Parameter name="DHCP_SUBNET" value="192.168.1.0" description="Defines the dhcp subnet (with the addition of a mask)" />
+            <Parameter name="DHCP_SUBNET_MASK" value="255.255.255.0" description="Defines the dhcp subnet mask" />
+            <Parameter name="DHCP_LEASE" value="infinite" description="Defines the dhcp lease  { days [ hours ] [ minutes ] | infinite }" />
+            <Parameter name="DHCP_GATEWAY" value="192.168.1.1" description="The gateway that should be pushed to dhcp clients" />
+            <Parameter name="ConsoleTimeout" value="5" description="Time required in order for the telnet/ssh server embedded in the AP to reset the connection (in minutes)" />
+        </Equipment> !-->
+        <!-- Bluetooth Equipment -->
+        <Equipment name="BT_DEVICE" description="Bluetooth device to use for BT tests (pairing)">
+          <Parameter name="MacAddress" value="00:02:72:CF:07:14" description="MAC address of the bluetooth device available on the bench"/>
+        </Equipment>
+        <Equipment name="BT_HEADSET" description="Bluetooth headset device reworked to be used with IOCards.">
+          <Parameter name="Model" value="NokiaBH214"/>
+            <Parameter name="BD_Address" value="00:0B:E4:A4:9D:35"/>
+            <!--    <Parameter name="BD_Address" value="00:0C:A7:D0:5B:1A" /> !-->
+            <Parameter name="IOCard" value="IO_CARD" description="name of the IO_CARD used to manage headset buttons"/>
+            <Parameter name="powerButton" value="1" description="Number of the Slave IOCard's relay used to poweronoff the headset"/>
+            <Parameter name="volUpButton" value="3" description="Number of the Slave IOCard's relay from Slave IOCard used to increase volume"/>
+            <Parameter name="volDownButton" value="5" description="Number of the Slave IOCard's relay from Slave IOCard used to decrease volume"/>
+            <Parameter name="callButton" value="8" description="Number of the Slave IOCard's relay used to place a call"/>
+            <Parameter name="fwdButton" value="7" description="Number of the Slave IOCard's relay used to fwd music"/>
+            <Parameter name="rwdButton" value="2" description="Number of the Slave IOCard's relay used to rwd music"/>
+            <Parameter name="playPauseButton" value="6" description="Number of the Slave IOCard's relay used to play/pause audio"/>
+            <Parameter name="powerOnTimer" value="1" description="Timer for poweron, in second"/>
+            <Parameter name="powerOffTimer" value="5" description="Timer for poweroff, in second"/>
+            <Parameter name="defaultShortKeyPressTimer" value="0.5" description="Timer for default short key press, in second"/>
+            <Parameter name="defaultLongKeyPressTimer" value="4" description="Timer for default long key press, in second"/>
+            <Parameter name="betweenDoubleKeyPressTimer" value="0.5" description="Timer for pause between double key press, in second"/>
+            <Parameter name="pairingTimer" value="8" description="Timer to enter in pairing mode, in second"/>
+            <Parameter name="voiceDialTimer" value="2" description="Timer to access to redial option, in second"/>
+        </Equipment>
+        <!--
+        <Equipment name="BT_MOUSE" description="Bluetooth Mouse.">
+            <Parameter name="Model" value="MICROSOFT_SculptComfortMouse" />
+            <Parameter name="Name" value="Microsoft Sculpt Comfort Mouse" />
+            <Parameter name="BD_Address" value="28:18:78:61:35:9C" />
+            <Parameter name="IOCard" value="IO_CARD2" description="name of the IO_CARD used to manage the mouse's buttons" />
+            <Parameter name="powerButton" value="1" description="Number of the Slave IOCard's relay used to power on or off the mouse" />
+            <Parameter name="pairButton" value="2" description="Number of the Slave IOCard's relay used to put the mouse in pairable mode" />
+            <Parameter name="leftButton" value="5" description="Number of the Slave IOCard's relay used to press left button" />
+            <Parameter name="rightButton" value="6" description="Number of the Slave IOCard's relay used to press the right button" />
+            <Parameter name="middleButton" value="7" description="Number of the Slave IOCard's relay used to press the middle button" />
+            <Parameter name="keyPressTimer" value="0.2" description="Timer for click (press - release), in second" />
+            <Parameter name="pairTimer" value="4" description="Period to hold the pairing button for" />
+        </Equipment>
+        !-->
+        <!-- Computer Equipments -->
+        <Equipment name="COMPUTER1" description="Computer connected to the local ethernet network (bench)">
+          <Parameter name="Model" value="LOCAL_COMPUTER" description="LOCAL_COMPUTER or REMOTE_COMPUTER (only LOCAL is currently supported)"/>
+            <Parameter name="USBInterface" value="usb0" description="USB Interface to use (usb0)"/>
+            <Parameter name="BenchNetInterface" value="eth0" description="Network Interface use to connect to the Bench network (eth0) [Linux]"/>
+            <Parameter name="username" value="root"/>
+            <Parameter name="Interface" value="wlan0"/>
+        </Equipment>
+        <!--
+        <Equipment name="COMPUTER2">
+            <Parameter name="Model" value="REMOTE_COMPUTER"/>
+            <Parameter name="IP" value="192.168.0.150"/>
+            <Parameter name="username" value="root"/>
+            <Parameter name="Interface" value="wlan0"/>
+    !-->
+        <!--Parameter name="SshPath" value="C:/cygwin/bin/ssh.exe"/>
+            <Parameter name="ScpPath" value="C:/cygwin/bin/scp.exe"/-->
+        <!--</Equipment>
+        <Equipment name="COMPUTER3">
+            <Parameter name="Model" value="REMOTE_COMPUTER"/>
+            <Parameter name="IP" value="127.0.0.1"/>
+            <Parameter name="username" value="root"/>
+            <Parameter name="Interface" value="wlan0"/>
+            !-->
+        <!--Parameter name="SshPath" value="C:/cygwin/bin/ssh.exe"/>
+            <Parameter name="ScpPath" value="C:/cygwin/bin/scp.exe"/-->
+        <!--</Equipment>
+
+        <Equipment name="WIFI_SNIFFER1" description="WiFi Sniffer">
+            <Parameter name="Model" value="WireShark"/>
+            <Parameter name="Computer" value="COMPUTER3"/>
+            <Parameter name="Interface" value="wlan0"/>
+        </Equipment>
+!-->
+    </Equipments>
+</BenchConfig>
+

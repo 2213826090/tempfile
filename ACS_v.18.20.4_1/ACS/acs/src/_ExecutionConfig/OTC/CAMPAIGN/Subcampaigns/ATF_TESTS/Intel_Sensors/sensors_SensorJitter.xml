@@ -1,0 +1,47 @@
+<?xml version="1.0" ?>
+<Campaign>
+      <Parameters>
+            <Parameter isControlledPSUsed="False"/>
+            <Parameter isIoCardUsed="False"/>
+            <Parameter skipBootOnPowerCycle="False"/>
+            <Parameter bootRetryNumber="0"/>
+            <Parameter runHookScripts="False"/>
+            <Parameter powerCycleBetweenTC="False"/>
+            <Parameter powerCycleOnFailure="False"/>
+            <Parameter finalDutState="NoChange"/>
+            <Parameter stopCampaignOnCriticalFailure="False"/>
+            <Parameter stopCampaignOnFirstFailure="False"/>
+            <Parameter loggingLevel="debug"/>
+            <Parameter CampaignType="Other"/>
+      </Parameters>
+      <TestCases>
+            <TestCase Id="../../../../TC/TR/ATF_TESTS/Intel_Sensors/SensorJitter/testAccelerometerJitterNormal"/>
+            <TestCase Id="../../../../TC/TR/ATF_TESTS/Intel_Sensors/SensorJitter/testAccelerometerJitterUI"/>
+            <TestCase Id="../../../../TC/TR/ATF_TESTS/Intel_Sensors/SensorJitter/testAccelerometerJitterGame"/>
+            <TestCase Id="../../../../TC/TR/ATF_TESTS/Intel_Sensors/SensorJitter/testAccelerometerJitterFastest"/>
+            <TestCase Id="../../../../TC/TR/ATF_TESTS/Intel_Sensors/SensorJitter/testGravityJitterNormal"/>
+            <TestCase Id="../../../../TC/TR/ATF_TESTS/Intel_Sensors/SensorJitter/testGravityJitterUI"/>
+            <TestCase Id="../../../../TC/TR/ATF_TESTS/Intel_Sensors/SensorJitter/testGravityJitterGame"/>
+            <TestCase Id="../../../../TC/TR/ATF_TESTS/Intel_Sensors/SensorJitter/testGravityJitterFastest"/>
+            <TestCase Id="../../../../TC/TR/ATF_TESTS/Intel_Sensors/SensorJitter/testGyroscopeJitterNormal"/>
+            <TestCase Id="../../../../TC/TR/ATF_TESTS/Intel_Sensors/SensorJitter/testGyroscopeJitterUI"/>
+            <TestCase Id="../../../../TC/TR/ATF_TESTS/Intel_Sensors/SensorJitter/testGyroscopeJitterGame"/>
+            <TestCase Id="../../../../TC/TR/ATF_TESTS/Intel_Sensors/SensorJitter/testGyroscopeJitterFastest"/>
+            <TestCase Id="../../../../TC/TR/ATF_TESTS/Intel_Sensors/SensorJitter/testLinearAccelerationJitterNormal"/>
+            <TestCase Id="../../../../TC/TR/ATF_TESTS/Intel_Sensors/SensorJitter/testLinearAccelerationJitterUI"/>
+            <TestCase Id="../../../../TC/TR/ATF_TESTS/Intel_Sensors/SensorJitter/testLinearAccelerationJitterGame"/>
+            <TestCase Id="../../../../TC/TR/ATF_TESTS/Intel_Sensors/SensorJitter/testLinearAccelerationJitterFastest"/>
+            <TestCase Id="../../../../TC/TR/ATF_TESTS/Intel_Sensors/SensorJitter/testMagneticFieldJitterNormal"/>
+            <TestCase Id="../../../../TC/TR/ATF_TESTS/Intel_Sensors/SensorJitter/testMagneticFieldJitterUI"/>
+            <TestCase Id="../../../../TC/TR/ATF_TESTS/Intel_Sensors/SensorJitter/testMagneticFieldJitterGame"/>
+            <TestCase Id="../../../../TC/TR/ATF_TESTS/Intel_Sensors/SensorJitter/testMagneticFieldJitterFastest"/>
+            <TestCase Id="../../../../TC/TR/ATF_TESTS/Intel_Sensors/SensorJitter/testOrientationJitterNormal"/>
+            <TestCase Id="../../../../TC/TR/ATF_TESTS/Intel_Sensors/SensorJitter/testOrientationJitterUI"/>
+            <TestCase Id="../../../../TC/TR/ATF_TESTS/Intel_Sensors/SensorJitter/testOrientationJitterGame"/>
+            <TestCase Id="../../../../TC/TR/ATF_TESTS/Intel_Sensors/SensorJitter/testOrientationJitterFastest"/>
+            <TestCase Id="../../../../TC/TR/ATF_TESTS/Intel_Sensors/SensorJitter/testRotationVectorJitterNormal"/>
+            <TestCase Id="../../../../TC/TR/ATF_TESTS/Intel_Sensors/SensorJitter/testRotationVectorJitterUI"/>
+            <TestCase Id="../../../../TC/TR/ATF_TESTS/Intel_Sensors/SensorJitter/testRotationVectorJitterGame"/>
+            <TestCase Id="../../../../TC/TR/ATF_TESTS/Intel_Sensors/SensorJitter/testRotationVectorJitterFastest"/>
+      </TestCases>
+</Campaign>

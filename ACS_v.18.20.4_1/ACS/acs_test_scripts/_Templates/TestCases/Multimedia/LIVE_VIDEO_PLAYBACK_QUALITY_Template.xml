@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="13.37">
+    <UseCase>LIVE_VIDEO_PLAYBACK_QUALITY</UseCase>
+    <Description>Test the quality of video playback, it compare frame by frame screenrecord with a reference video.</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters>
+        <Parameter>
+            <!-- Path to video file to play on DUT -->
+            <Name>VIDEO_FILE</Name>
+            <Value>/sdcard/vid.mp4</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Path to video file on host to compare with VIDEO_FILE -->
+            <Name>VIDEO_REFERENCE</Name>
+            <Value>C:\Users\vir_ref.mp4</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Orientation of video playback, possible value: portrait or landscape-->
+            <Name>VIDEO_ORIENTATION</Name>
+            <Value>landscape</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Where to call stop in second -->
+            <Name>DURATION</Name>
+            <Value>20</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Brightness percentage of the screen -->
+            <Name>DISP_BRIGHTNESS</Name>
+            <Value>100</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Screenrecord save directory file on the DUT. -->
+            <Name>SAVE_DIRECTORY</Name>
+            <Value>/sdcard/</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Time in second, wait before launch screenrecord after start of video playback. -->
+            <Name>WAIT_BEFORE_RECORD</Name>
+            <Value>4</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Bit rate use for screenrecord, use the same video reference bit rate  -->
+            <Name>BIT_RATE</Name>
+            <Value>32000000</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Time limit use for screenrecord -->
+            <Name>TIME_LIMIT</Name>
+            <Value>10</Value>
+        </Parameter>
+        <Parameter>
+            <!-- OPTIONAL: If SAVE_DIRECTORY_HOST is None, Screenrecord take during test is push in report folder else
+            set this parameter to move screenrecord in particular folder on host.-->
+            <Name>SAVE_DIRECTORY_HOST</Name>
+            <Value></Value>
+        </Parameter>
+        <Parameter>
+            <!-- OPTIONAL: If POST_PROCESSING is True, enable post processing video effect (Intel Smart Video). By
+            default False.-->
+            <Name>POST_PROCESSING</Name>
+            <Value></Value>
+        </Parameter>
+        <Parameter>
+            <!-- OPTIONAL: If POST_PROCESSING is True, get dictionary with two key {ON: name of On image in image
+            library, OFF: name of Off image in image library) for enable smooth and enhance effect. -->
+            <Name>ON_OFF_IMAGE</Name>
+            <Value>OFF:off,ON:on</Value>
+        </Parameter>
+        <Parameter>
+            <!-- OPTIONAL: If POST_PROCESSING is True, get the path of image library containing Off and On image -->
+            <Name>LIBRARY_IMAGE_PATH</Name>
+            <Value></Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

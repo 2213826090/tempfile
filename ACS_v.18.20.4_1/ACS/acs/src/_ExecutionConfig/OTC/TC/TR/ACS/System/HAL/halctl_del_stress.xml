@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="13.45">
+    <UseCase>EXEC_SCRIPT</UseCase>
+    <Description>Test case for halctl del-add stress</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters>
+        <Parameter>
+            <Name>SCRIPT_PATH</Name>
+            <Value>scripts/halctl_del_stress.py</Value>
+        </Parameter>
+        <Parameter>
+            <Name>module_name</Name>
+            <Value>sensors</Value>
+        </Parameter>
+        <Parameter>
+            <Name>iterations</Name>
+            <Value>10</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

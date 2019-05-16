@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<TestCase>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Discription>
+Verify that the Gallery/photos app supports GIF 89a Animated file format (include zoom in/out)
+</Discription>
+    <Domain>Multimedia_Image</Domain>
+    <Phase>CORE</Phase>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <Type>FUNCTIONAL</Type>
+    <UseCase>PY_UNIT</UseCase>
+    <b2bIteration>1</b2bIteration>
+    <Parameters>
+        <Parameter>
+            <Name>HpalmName</Name>
+            <Value>image_api_test.ImageAPITest.testMultiMedia_Gallery3D_GIF_89a_ZoomIn_ZoomOut</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TEST_DATA_ROOT</Name>
+            <Value>testplan/Multimedia_Image</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TEST_CASE</Name>
+            <Value>tests.Multimedia_Image.Decode.image_api_test.ImageAPITest.testMultiMedia_Gallery3D_GIF_89a_ZoomIn_ZoomOut</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

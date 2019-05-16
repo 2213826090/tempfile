@@ -1,0 +1,63 @@
+<?xml version='1.0' encoding='ASCII'?>
+<Campaign version="13.49">
+    <Parameters>
+        <Parameter isControlledPSUsed="False"/>
+        <Parameter isIoCardUsed="False"/>
+        <!-- Set skipBootOnPowerCycle to True to disable the accs boot procedure -->
+        <!-- Important, it means that boot will be handle inside the campaign/tc -->
+        <Parameter skipBootOnPowerCycle="False"/>
+        <!-- Set bootRetryNumber to maximum number of boot retries during the acs boot procedure -->
+        <!-- Important, it means that bootRetryNumber is set by default to 0 if not specified -->
+        <Parameter bootRetryNumber="0"/>
+        <Parameter runHookScripts="False"/>
+        <Parameter powerCycleBetweenTC="False"/>
+        <Parameter powerCycleOnFailure="False"/>
+        <!-- finalDutState allows user to leave the DUT in a specific state at the end of the campaign
+            Possible values: PowerOn | PowerOff | Charging | NoChange
+            By default DUT is leaved in NoChange state.
+            In case the user selects Charging as final state of the DUT and that DUT fails to enter Charging,
+            ACS shall try to switch the DUT off -->
+        <Parameter finalDutState="NoChange"/>
+        <Parameter stopCampaignOnCriticalFailure="False"/>
+        <Parameter stopCampaignOnFirstFailure="False"/>
+        <!-- LoggingLevel possible values: info | warning | debug | error -->
+        <Parameter loggingLevel="debug"/>
+        <!-- CampaignType format -> <TEAM>_<CAMPAIGNTYPE>
+            Possible values:
+            FT(Feature Team)-> SANITY | REGRESSION | STRESS, RELIABILTY | MTBF
+            ST(System Test)-> SANITY | REGRESSION | STRESS, RELIABILTY | MTBF | EM
+            SI(System Integration)-> EAT | STAB | PACT | CAT0 | RELIABILITY | MTBF | CTS | ACS_CI
+            Otherwise "Others" should be used -->
+        <Parameter CampaignType="Others"/>
+    </Parameters>
+    <Targets>
+        <!-- Target Values -->
+        <Target targetB2bPassRate="100"/>
+    </Targets>
+    <TestCases>
+        <TestCase Id="../../TC/TR/MTBF_BDW/MTBF_01_H264_1920x1080_30fps_8950fps_AAC_LC_48kHz_128kbps_Stereo.MP4"/>
+        <TestCase Id="../../TC/TR/MTBF_BDW/MTBF_02_MPEG4_800x600_30fps_2075kbps_AAC_LC_48kHz_165kbps_Stereo.MP4"/>
+        <TestCase Id="../../TC/TR/MTBF_BDW/MTBF_03_MP3_48kHz_ABR_128kbps_Stereo.mp3"/>
+        <TestCase Id="../../TC/TR/MTBF_BDW/MTBF_04_DecodeGIF"/>
+        <TestCase Id="../../TC/TR/MTBF_BDW/MTBF_05_DecodeJPG"/>
+        <TestCase Id="../../TC/TR/MTBF_BDW/MTBF_06_DecodePNG"/>
+        <TestCase Id="../../TC/TR/MTBF_BDW/MTBF_07_record_playback"/>
+        <TestCase Id="../../TC/TR/MTBF_BDW/MTBF_08_take_picture"/>
+        <TestCase Id="../../TC/TR/MTBF_BDW/MTBF_09_airplane_mode"/>
+        <TestCase Id="../../TC/TR/MTBF_BDW/MTBF_10_wifi"/>
+        <TestCase Id="../../TC/TR/MTBF_BDW/MTBF_11_bluetooth"/>
+        <TestCase Id="../../TC/TR/MTBF_BDW/MTBF_00_ConnectToAP"/>
+        <TestCase Id="../../TC/TR/MTBF_BDW/MTBF_13_browser_heavy_page"/>
+        <TestCase Id="../../TC/TR/MTBF_BDW/MTBF_14_wallpaper"/>
+        <TestCase Id="../../TC/TR/MTBF_BDW/MTBF_15_streaming_media_H264"/>
+        <TestCase Id="../../TC/TR/MTBF_BDW/MTBF_16_streaming_media_MPEG4"/>
+        <TestCase Id="../../TC/TR/MTBF_BDW/MTBF_17_record_audio"/>
+        <TestCase Id="../../TC/TR/MTBF_BDW/MTBF_18_audio_streaming"/>
+        <TestCase Id="../../TC/TR/MTBF_BDW/MTBF_19_applaunch_clock"/>
+        <TestCase Id="../../TC/TR/MTBF_BDW/MTBF_20_applaunch_calculator"/>
+        <TestCase Id="../../TC/TR/MTBF_BDW/MTBF_21_applaunch_browser"/>
+        <TestCase Id="../../TC/TR/MTBF_BDW/MTBF_22_applaunch_gallery"/>
+        <TestCase Id="../../TC/TR/MTBF_BDW/MTBF_23_applaunch_camera"/>
+        <TestCase Id="../../TC/TR/MTBF_BDW/MTBF_24_applaunch_gmail"/>
+    </TestCases>
+</Campaign>

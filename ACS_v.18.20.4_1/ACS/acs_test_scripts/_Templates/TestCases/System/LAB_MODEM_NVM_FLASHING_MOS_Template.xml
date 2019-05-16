@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="13.37">
+    <UseCase>LAB_MODEM_NVM_FLASHING_MOS</UseCase>
+    <Description>Flash the modem's NVM when DUT is booted in Main OS mode (MOS).</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters>
+        <Parameter>
+            <!-- The expected flash operation result.
+                This parameters allows to test nominal conditions and error cases.
+                Possible values:
+                NVM_CONFIGURATION_APPLIED
+                NVM_CONF_NOT_APPLIED
+                NVM_CONF_COMMAND_FAILED
+            -->
+            <Name>EXPECTED_RESULT</Name>
+            <Value>NVM_CONFIGURATION_APPLIED</Value>
+        </Parameter>
+        <Parameter>
+            <Name>MODEM_FLASH_FILE_PATH</Name>
+            <!-- The path to the NVM flash file -->
+            <Value>./_ExecutionConfig/ModemFlashFiles/nvm.bin</Value>
+        </Parameter>
+        <Parameter>
+            <!-- The name of the TTY to use for the flash -->
+            <Name>FLASH_TTY</Name>
+            <Value>/dev/gsmtty14</Value>
+        </Parameter>
+        <Parameter>
+            <!-- The full path to the application to use for the flash -->
+            <Name>FLASH_APPLICATION</Name>
+            <Value>/system/bin/cmfwdl-app</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Absolute path to the temporary directory
+                where the flash file will be stored before
+                the flash is actually performed.
+            -->
+            <Name>TARGET_DIRECTORY_PATH</Name>
+            <Value>/data</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

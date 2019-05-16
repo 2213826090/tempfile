@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<TestCase>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Discription>
+This requirement aims at supporting the SW update of the device using an incremental OTA package through Recovery OS without any usage of an android OTA application and without dependency on a OTA infrastructure (client/server).
+</Discription>
+    <Domain>GOTA</Domain>
+    <Phase>CORE</Phase>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <Type>FUNCTIONAL</Type>
+    <UseCase>PY_UNIT</UseCase>
+    <b2bIteration>1</b2bIteration>
+    <Parameters>
+        <Parameter>
+            <Name>HpalmName</Name>
+            <Value>DUT_Update_Adb_sideload_IVI.OTASideloadTest.DeviceUpdateUsingIncrementalOTApackageThroughRecoveryOSoperations_adbSideload</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TEST_DATA_ROOT</Name>
+            <Value>testplan/GOTA</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TEST_CASE</Name>
+            <Value>tests.GOTA.OTA.DUT_Update_Adb_sideload_IVI.OTASideloadTest.DeviceUpdateUsingIncrementalOTApackageThroughRecoveryOSoperations_adbSideload</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

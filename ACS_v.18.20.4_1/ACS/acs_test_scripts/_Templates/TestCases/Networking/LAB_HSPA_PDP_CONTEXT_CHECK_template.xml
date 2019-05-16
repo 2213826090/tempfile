@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="13.49">
+    <UseCase>LAB_HSPA_PDP_CONTEXT_CHECK</UseCase>
+    <Description>HSPA PDP activation and PDP deactivation</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters>
+        <Parameter>
+            <!-- Cell Band (from Band 1 to Band 8) -->
+            <Name>CELL_BAND</Name>
+            <Value>1</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Downlink UARFCN Frequency -->
+            <Name>DL_UARFCN</Name>
+            <Value>10700</Value>
+        </Parameter>
+        <Parameter>
+            <!--Cell Service (CIRCUIT | PACKET | CIRCUIT_PACKET | RBTEST) -->
+            <Name>CELL_SERVICE</Name>
+            <Value>CIRCUIT_PACKET</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Cell power in dBm -->
+            <Name>CELL_POWER</Name>
+            <Value>-60</Value>
+        </Parameter>
+        <Parameter>
+            <!-- IP version IPV4 | IPV6 | IPV4V6 -->
+            <Name>IP_VERSION</Name>
+            <Value>IPV6</Value>
+        </Parameter>
+        <Parameter>
+            <!-- PDP ACTIVATION: TRUE | FALSE -->
+            <Name>PDP_ACTIVATION</Name>
+            <Value>TRUE</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Uplink Radio Access Bearer (384k | HSUPA_CAT6 | MAX [If MAX is selected, value will be taken from DeviceCatalog.xml]) -->
+            <Name>UL_RAB</Name>
+            <Value>HSUPA_CAT6</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Downlink Radio Access Bearer (HSDPA_CAT10 | HSDPA_CAT14 | HSDPA_CAT24 | MAX [If MAX is selected, value will be taken from DeviceCatalog.xml]) -->
+            <Name>DL_RAB</Name>
+            <Value>HSDPA_CAT14</Value>
+        </Parameter>
+        <Parameter>
+            <!-- CPC [Continuous Packet Connectivity] feature use (2 [TTI =2ms] | 10 [TTI =10ms]) -->
+            <Name>CPC</Name>
+            <Value>NONE</Value>
+        </Parameter>
+        <Parameter>
+            <!-- CQI scheme : Fixed value or UE reported - FIXED|REPORTED -->
+            <Name>CQI_SCHEME</Name>
+            <Value>FIXED</Value>
+        </Parameter>
+        <Parameter>
+            <!-- PS Data HS-DSCH MAC-d PDU Size - BITS336|BITS656 -->
+            <Name>MAC_D_PDU_SIZE</Name>
+            <Value>BITS336</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Specifies if the test will use ping to check status of connection. (TRUE | FALSE) -->
+            <Value>WITH_PING</Value>
+            <Value>FALSE</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Target of Ping Packet Loss Rate (in %). Only necessairy if WITH_PING is set to TRUE.-->
+            <Name>TARGET_PACKET_LOSS_RATE</Name>
+            <Value>0</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Used RRC state (NONE | IDLE | DCH | FACH). Today only FACH is supported by the Usecase.
+            Any other entry in the accepted ones will use the RRC state defined by the HSPA base.-->
+            <Name>RRC_STATE</Name>
+            <Value>NONE</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

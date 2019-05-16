@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<TestCase>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters/>
+    <Discription>
+Check if the exist OEM app can be launched well
+&lt;br /&gt;Launch OEM apps
+&lt;br /&gt;
+&lt;br /&gt;nosetests -s otcqa-oat-l/tests/tablet/IRDA_OEM_Customization/OEM/test_launch_oem_apps.py
+</Discription>
+    <Parameters/>
+    <UseCase>PY_UNIT</UseCase>
+    <Parameters/>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <Parameters/>
+    <b2bIteration>1</b2bIteration>
+    <Parameters>
+        <Parameter>
+            <Name>TEST_DATA_ROOT</Name>
+            <Value>testplan/IRDA_OEM_Customization</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TEST_CASE</Name>
+            <Value>tests.IRDA_OEM_Customization.OEM.test_launch_oem_apps.LAUNCH_APPS.testCHECK_APPS</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

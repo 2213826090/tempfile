@@ -1,0 +1,87 @@
+[tests]
+
+############Pretest
+#GOTA.GOTA.check_gota_phone_flash_dut.PhoneFlashDUT.testPhoneFlashDUT = 1
+#GOTA.GOTA.check_gota_check_basic_info_before_gota.CheckBasicInfoBeforeGOTA.testCheckBasicInfoBeforeGOTA = 1
+#init.configure_google_account.ConfigGoogleAccount.testConfigGoogleAccount = 1
+
+############Before GOTA
+GOTA.GOTA.check_gota_fingerprint_before_gota.CheckFingerprintoBeforeGOTA.testCheckFingerprintoBeforeGOTA = 1
+GOTA.GOTA.check_only_device_owner_could_gota.CheckOnlyDeviceOwnerCouldGOTA.testCheckOnlyDeviceOwnerCouldGOTA = 1
+
+############Downloading
+#GOTA.GOTA.check_suspend_resume_during_gota.SuspendResumeDuringGOTA.testSuspendResumeDuringGOTA = 1
+GOTA.GOTA.check_gota_playing_music_during_gota.PlayingMusicDuringGOTA.testPlayingMusicDuringGOTA = 1
+GOTA.GOTA.check_gota_downloading_apk_during_gota.DownloadingDuringGOTA.testDownloadingDuringGOTA = 1
+GOTA.GOTA.check_gota_rotating_screen_during_gota.RotatingScreenDuringGOTA.testRotatingScreenDuringGOTA = 1
+GOTA.GOTA.check_gota_interacting_with_app_during_gota.InteractingWithAppDuringGOTA.testInteractingWithAppDuringGOTA = 1
+GOTA.GOTA.check_gota_package_titile_description.Check_GOTA_package_titile_description.testCheck_titile_description = 1
+GOTA.GOTA.check_gota_upgrade_package_size.Check_Gota_upgrade_package_size.testCheck_Gota_upgrade_package_size = 1
+
+############Downloaded
+GOTA.GOTA.check_gota_system_updte_downloaded_notification.SystemUpdateDownloadedNotification.testNotification = 1
+GOTA.GOTA.check_gota_cancel_install_before_gota_finish.CancelGOTAUpdate.testCancelGOTAUpdate = 1
+GOTA.GOTA.check_gota_low_power_get_reasonable_prompt.LowPowerGetReasonablePrompt.testLowPowerGetReasonablePrompt = 1
+
+############During GOTA
+GOTA.GOTA.check_gota_basic_gota_update.GOTAUpdate.testGOTAUpdate = 1
+
+############After GOTA
+GOTA.GOTA.check_ui_message_after_gota.CheckUIMessageAfterGOTA.testCheckUIMessageAfterGOTA = 1
+GOTA.GOTA.check_wifi_after_gota.CheckWifiAfterGOTA.testCheckWifiAfterGOTA =1
+GOTA.GOTA.check_maps_after_gota.CheckMapsAfterGOTA.testCheckMapsAfterGOTA = 1
+GOTA.GOTA.check_contacts_after_gota.CheckContactsAfterGOTA.testCheckContactsAfterGOTA = 1
+GOTA.GOTA.check_camera_after_gota.CheckCameraAfterGOTA.testCheckCameraAfterGOTA = 1
+GOTA.GOTA.check_photos_after_gota.CheckPhotosAfterGOTA.testCheckPhotosAfterGOTA = 1
+GOTA.GOTA.check_video_after_gota.CheckVideoAfterGOTA.testCheckVideoAfterGOTA = 1
+GOTA.GOTA.check_gota_package_deleted_after_gota.GotaPackageDeletedAfterGOTA.testGotaPackageDeletedAfterGOTA = 1
+GOTA.GOTA.check_gota_bios_update_after_gota.BiosUpdateAfterGOTA.testBiosUpdateAfterGOTA = 1
+GOTA.GOTA.check_gota_data_not_erase_after_gota.DataNotEraseAfterGOTA.testDataNotEraseAfterGOTA = 1
+GOTA.GOTA.check_charging_after_gota.CheckChargingAfterGOTA.testCheckChargingAfterGOTA = 1
+GOTA.GOTA.check_clock_after_gota.CheckClockAfterGOTA.testCheckClockAfterGOTA = 1
+GOTA.GOTA.check_es_filemanager_after_gota.CheckESfilemanagerAfterGOTA.testCheckESfilemanagerAfterGOTA = 1
+GOTA.GOTA.check_calculator_after_gota.CheckCalculatorAfterGOTA.testCheckCalculatorAfterGOTA = 1
+GOTA.GOTA.check_gota_internal_emmc_data_not_erase_after_gota.InternalEmmcDataNotEraseAfterGOTA.testInternalEmmcDataNotErase = 1
+GOTA.GOTA.check_gota_fingerprint_after_gota.FingerprintUpdateAfterGOTA.testFingerprintUpdateAfterGOTA = 1
+GOTA.GOTA.check_gota_mp3_exist_after_gota.MP3ExistAfterGOTA.testMP3ExistAfterGOTA = 1
+GOTA.GOTA.check_gota_installed_apk_unerased_after_gota.InstalledAPKUnerasedAfterGOTA.testInstalledAPKUnerasedAfterGOTA = 1
+GOTA.GOTA.check_gota_apk_data_unerase_after_gota.ApkDataUneraseAfterGOTA.testApkDataUneraseAfterGOTA = 1
+GOTA.GOTA.check_gota_apk_install_after_gota.ApkInstallAfterGOTA.testApkInstallAfterGOTA = 1
+GOTA.GOTA.check_gota_apk_add_widget_after_gota.ApkAddWidgetAfterGOTA.testApkAddWidgetAfterGOTA = 1
+GOTA.GOTA.check_gota_apk_position_after_gota.ApkPositionAfterGOTA.testApkPositionAfterGOTA = 1
+GOTA.GOTA.check_gota_google_account_not_erase_after_gota.GoogleAccountNotEraseAfterGOTA.testGoogleAccountNotEraseAfterGOTA = 1
+GOTA.GOTA.check_gota_sdcard_not_erase_after_gota.SDcardNotEraseAfterGOTA.testSDcardNotEraseAfterGOTA = 1
+GOTA.GOTA.check_gota_oem_not_erase_after_gota.OEMNotEraseAfterGOTA.testOEMNotEraseAfterGOTA = 1
+GOTA.GOTA.check_gota_system_time_not_erase_after_gota.SystemTimeNotEraseAfterGOTA.testSystemTimeNotEraseAfterGOTA =1
+GOTA.GOTA.check_gota_encryption_status_after_gota.EncryptionStatusAfterGOTA.testEncryptionStatusAfterGOTA = 1
+GOTA.GOTA.check_gota_anti_roll_back_gota_update.CheckAntiRollBackGOTA.testCheckAntiRollBackGOTA = 1
+GOTA.GOTA.check_AFW_profile_work_after_gota.CheckProfileWorkAfterGOTA.testCheckProfileWorkAfterGOTA = 1
+GOTA.GOTA.check_AFW_data_in_managed_profile_after_gota.CheckAFWDataInManagedProfileAfterGOTA.testAFWDataInMangedProfile = 1
+GOTA.GOTA.check_AFW_data_in_personal_profile_after_gota.CheckAFWDataInpersonalProfileAfterGOTA.testAFWDataInPersonalProfile = 1
+GOTA.GOTA.check_AFW_chrome_restriction_after_gota.CheckAFWChromeRestrictionAfterGOTA.testCheckAFWChromeRestrictionAfterGOTA = 1
+GOTA.GOTA.check_oem_function_after_gota.OEMcheckAfterGOTA.testOEMcheckAfterGOTA = 1
+
+############Basic function check
+#GOTA.GOTA.check_wifi_after_gota.CheckWifirAfterGOTA.testCheckWifiAfterGOTA = 1
+#GOTA.GOTA.check_charging_after_gota.CheckChargingAfterGOTA.testCheckChargingAfterGOTA = 1
+#GOTA.GOTA.check_suspend_resume_after_gota.SuspendResumeAfterGOTA.testSuspendResumeAfterGOTA = 1
+#GOTA.GOTA.check_clock_after_gota.CheckClockAfterGOTA.testCheckClockAfterGOTA = 1
+#GOTA.GOTA.check_maps_after_gota.CheckMapsAfterGOTA.testCheckMapsAfterGOTA = 1
+#GOTA.GOTA.check_hangouts_after_gota.CheckHangoutsAfterGOTA.testCheckHangoutsAfterGOTA = 1
+#GOTA.GOTA.check_youtube_after_gota.CheckYouTubeAfterGOTA.testCheckYouTubeAfterGOTA = 1
+#GOTA.GOTA.check_calendar_after_gota.CheckCalendarAfterGOTA.testCheckCalendarAfterGOTA = 1
+#GOTA.GOTA.check_photos_after_gota.CheckPhotosAfterGOTA.testCheckPhotosAfterGOTA = 1
+#GOTA.GOTA.check_calculator_after_gota.CheckCalculatorAfterGOTA.testCheckCalculatorAfterGOTA = 1
+#GOTA.GOTA.check_email_after_gota.CheckEmailAfterGOTA.testCheckEmailAfterGOTA = 1
+#GOTA.GOTA.check_video_after_gota.CheckVideoAfterGOTA.testCheckVideoAfterGOTA = 1
+#GOTA.GOTA.check_contacts_after_gota.CheckContactsAfterGOTA.testCheckContactsAfterGOTA = 1
+#GOTA.GOTA.check_playStore_after_gota.CheckPlayStoreAfterGOTA.testCheckPlayStoreAfterGOTA = 1
+#GOTA.GOTA.check_browser_after_gota.CheckBrowserAfterGOTA.testCheckBrowserAfterGOTA = 1
+#GOTA.GOTA.check_gmail_after_gota.CheckGmailAfterGOTA.testCheckGmailAfterGOTA = 1
+
+############Again GOTA
+#OTA.GOTA.check_AFW_device_owner_after_gota.CheckDeviceOwnerAfterGOTA.testCheckDeviceOwnerAfterGOTA = 1
+#GOTA.GOTA.check_AFW_data_in_app_after_gota.CheckAFWDataInAppAfterGOTA.testCheckAFWDataInAppAfterGOTA = 1
+#GOTA.GOTA.check_gota_package_deleted_if_failed.Gota_package_deleted_if_failed.testGota_package_deleted_if_failed = 1
+#GOTA.GOTA.check_gota_wifi_reconnect_during_gota.WifiReconnectDuringGOTA.testWifiReconnectDuringGOTA = 1
+#GOTA.GOTA.check_gota_five_times.CheckGotaFiveTimes.testGotaFiveTimes = 1

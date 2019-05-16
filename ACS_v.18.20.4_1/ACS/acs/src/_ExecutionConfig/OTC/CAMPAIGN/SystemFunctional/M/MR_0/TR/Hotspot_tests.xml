@@ -1,0 +1,28 @@
+<?xml version="1.0" ?>
+<Campaign>
+      <Parameters>
+            <Parameter isControlledPSUsed="False"/>
+            <Parameter isIoCardUsed="False"/>
+            <Parameter skipBootOnPowerCycle="False"/>
+            <Parameter bootRetryNumber="0"/>
+            <Parameter runHookScripts="False"/>
+            <Parameter powerCycleBetweenTC="False"/>
+            <Parameter powerCycleOnFailure="False"/>
+            <Parameter finalDutState="NoChange"/>
+            <Parameter stopCampaignOnCriticalFailure="False"/>
+            <Parameter stopCampaignOnFirstFailure="False"/>
+            <Parameter loggingLevel="debug"/>
+            <Parameter CampaignType="Other"/>
+            <Parameter TCRReportViaRESTAPI="True"/>
+      </Parameters>
+      <TestCases>
+            <TestCase Id="../OTC/TC/TR/TESTLIB/WiFi/Hotspot_tests/Comms_WIFI_Softap_Configure_DUT_with_maximum_ssid_length"/>
+            <TestCase Id="..//OTC/TC/TR/TESTLIB/WiFi/Hotspot_tests/Comms_WIFI_Softap_Configure_DUT_with_minimum_ssid_length"/>
+            <TestCase Id="..//OTC/TC/TR/TESTLIB/WiFi/Hotspot_tests/Comms_WIFI_Softap_Configure_DUT_with_ssid_only_characters"/>
+            <TestCase Id="..//OTC/TC/TR/TESTLIB/WiFi/Hotspot_tests/Comms_WIFI_Softap_Configure_DUT_with_ssid_only_numerics"/>
+            <TestCase Id="../OTC/TC/TR/TESTLIB/WiFi/Hotspot_tests/Comms_WIFI_Softap_Configure_DUT_with_ssid_Starting__with_special_character_chracter_digits"/>
+            <TestCase Id="../OTC/TC/TR/TESTLIB/WiFi/Hotspot_tests/Comms_WIFI_Softap_Configure_DUT_with_ssid_Starting_with_chracter_and_ending_with_special_character"/>
+            <TestCase Id="../OTC/TC/TR/TESTLIB/WiFi/Hotspot_tests/Comms_WIFI_Softap_Configure_DUT_with_ssid_Starting_with_numeric_and_character_1intelintel"/>
+            <TestCase Id="../OTC/TC/TR/TESTLIB/WiFi/Hotspot_tests/Comms_WIFI_Softap_Configure_DUT_with_open_security"/>
+      </TestCases>
+</Campaign>

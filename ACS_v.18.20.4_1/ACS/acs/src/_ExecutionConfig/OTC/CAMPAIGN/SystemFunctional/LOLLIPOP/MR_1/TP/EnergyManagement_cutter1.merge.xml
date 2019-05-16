@@ -1,0 +1,62 @@
+<?xml version="1.0" ?>
+<Campaign>
+    <Parameters>
+        <Parameter isControlledPSUsed="False"/>
+        <!-- ioCard -->
+        <Parameter isIoCardUsed="True"/>
+        <Parameter skipBootOnPowerCycle="True"/>
+        <Parameter bootRetryNumber="0"/>
+        <Parameter runHookScripts="False"/>
+        <Parameter powerCycleBetweenTC="False"/>
+        <Parameter powerCycleOnFailure="False"/>
+        <Parameter finalDutState="NoChange"/>
+        <Parameter stopCampaignOnCriticalFailure="True"/>
+        <Parameter stopCampaignOnFirstFailure="False"/>
+        <Parameter loggingLevel="debug"/>
+        <Parameter CampaignType="Other"/>
+    </Parameters>
+    <TestCases>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/init.set_adb_root.AdbRoot.testAdbRoot"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/init.start_rpc_server.StartRPCServer.testStartRPCServer"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/init.start_rpc_server.StartRPCServer.testStartRPCServer"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/init.set_orientation_vertical.SetOrientationVertical.testSetOrientationVertical"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/init.wake_up_and_unlock.WakeUnlock.testWakeUnlock"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/init.config_first_boot_wizard.ConfigFirstBootWizard.testConfigFirstBootWizard"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/init.enable_developer_option.EnableDeveloperOption.testEnableDeveloperOption"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/init.keep_awake.KeepAwake.testKeepAwake"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/init.disable_verify_apps.DisableVerifyApp.testDisableVerifyApp"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/init.disable_verify_apps.DisableVerifyApp.testDisableVerifyApp"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/init.set_language_to_United_States.SetLanguageUS.testSetLanguageUS"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/init.set_system_time.SetTimeDate.testSetTimeDate"/>
+
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/s0ix/S0ix_power_press_Airplane/test_S0ix_power_press_Airplane"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/s0ix/S0ix_power_press_Camera/test_S0ix_power_press_Camera"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/s0ix/S0ix_power_press_Rotation/test_S0ix_power_press_Rotation"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/s0ix/S0ix_power_press_Notification/test_S0ix_power_press_Notification"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/s0ix/S0ix_power_press_Manual_Backlight_Maximum/test_S0ix_power_press_BacklightMaximum"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/s0ix/S0ix_enter_sleep_15s_idle/test_S0ix_enter_sleep_15s_idle"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/s0ix/S0ix_enter_sleep_30s_idle/test_S0ix_enter_sleep_30s_idle"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/s0ix/S0ix_enter_sleep_1m_idle/test_S0ix_enter_sleep_1m_idle"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/s0ix/S0ix_enter_sleep_2m_idle/test_S0ix_enter_sleep_2m_idle"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/s0ix/S0ix_enter_sleep_5m_idle/test_S0ix_enter_sleep_5m_idle"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/s0ix/S0ix_enter_sleep_10m_idle/test_S0ix_enter_sleep_10m_idle"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/s0ix/S0ix_resume_by_chargerplug/test_S0ix_resume_by_chargerplug"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/s0ix/S0ix_15s_idle_rotation/test_S0ix_15s_idle_rotation"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/s0ix/S0ix_15s_idle_RiptideGP/test_S0ix_15s_idle_RiptideGP"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/s0ix/S0ix_power_press_plug_not_wake/test_S0ix_power_press_plug_not_wake"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/s0ix/System_Resume_Power_Press/test_System_Resume_Power_Press"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/s0ix/S0ix_resume_by_powerbutton/test_S0ix_resume_by_powerbutton"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/s0ix/S0ix_power_press_Manual_Backlight_Minimum/test_S0ix_power_press_Manual_Backlight_Minimum"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/s0ix/S0ix_power_press_task_manage_tab/test_S0ix_power_press_task_manage_tab"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/s0ix/S0ix_battery_enter_sleep_power_press/test_S0ix_battery_enter_sleep_power_press"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/s0ix/S0ix_power_press_15m_clock_alarm/test_S0ix_power_press_15m_clock_alarm"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/s0ix/S0ix_battery_15s_idle_camera/test_S0ix_battery_15s_idle_camera"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/s0ix/power_icon_check_battery_sleep_charger_resume/test_power_icon_check_battery_sleep_charger_resume"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/s0ix/S0ix_change_brightness_level/test_S0ix_change_brightness"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/s0ix/S0ix_wifi_bt_gps_on/test_S0ix_wifi_bt_gps_on"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/charging_battery/screen_wake_after_usb_plugged/test_screen_wake_after_usb_plugged"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/charging_battery/sleep_time_in_lock_screen_usb_unplug/test_sleep_time_in_lock_screen"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/charging_battery/battery_icon_0_percent/test_battery_icon_0_percent"/>
+        <TestCase Id="../../../../../TC/TP/TC/EnergyManagement/charging_battery/battery_icon_4_percent/test_battery_icon_4_percent"/>
+    </TestCases>
+</Campaign>

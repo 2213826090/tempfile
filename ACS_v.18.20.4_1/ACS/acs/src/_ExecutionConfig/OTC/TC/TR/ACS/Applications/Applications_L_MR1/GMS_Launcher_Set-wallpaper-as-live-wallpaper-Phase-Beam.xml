@@ -1,0 +1,21 @@
+<TestCase version="13.45">
+    <UseCase>TEST_STEP_ENGINE</UseCase>
+    <Description>Set wallpaper as live wallpaper:Phase Beam.</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <TestSteps>
+        <Setup>
+            <TestStep Id="RUN_CMD"
+                      DEVICE="PHONE1" TIMEOUT="20" FORCE_EXECUTION="False" WAIT_FOR_RESPONSE="True" SILENT_MODE="False" SAVE_AS="out1"
+                      COMMAND="adb shell input keyevent 82"/>
+            <TestStep Id="DISMISS_ANR_DIALOG" DEVICE="PHONE1" PRESS_HOME_FIRST="True" MAX_ATTEMPTS="5"/>
+        </Setup>
+        <RunTest>
+            <TestStep Id="SET_LIVE_WALLPAPER_NAME" DEVICE="PHONE1" WP_NAME="Phase Beam"/>
+        </RunTest>
+        <TearDown>
+        </TearDown>
+    </TestSteps>
+
+</TestCase>

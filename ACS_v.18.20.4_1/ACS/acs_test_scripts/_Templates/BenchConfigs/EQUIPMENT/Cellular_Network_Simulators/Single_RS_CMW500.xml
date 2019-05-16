@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<Equipment version="13.44" name="NETWORK_SIMULATOR1" description="Network simulator used for non mobility test cases">
+    <Parameter name="Model" value="RS_CMW500" />
+    <Parameter name="Transport" value="GPIB" />
+    <Parameter name="GPIBBoardId" value="1" />
+    <Parameter name="GPIBAddress" value="20" />
+    <Parameter name="AmplitudeOffsetTable" value="Amplitude_Offset_Table" />
+    <Parameter name="IP_Lan1" value="172.22.1.201" />
+    <Parameter name="IP_Lan2" value="172.22.1.202" />
+    <!-- IPAttributionMode and IPv6AttributionMode configure how the DUT IP address is choosen, possible values are :
+        STATIC - use the static IP defined in this benchconfig, with given Subnet_Mask and Default_Gateway for IPv4
+        AUTOMATIC- use IP predefined by the network simulator
+        DYNAMIC - DHCP mode for IPv4 or dynamic auto configuration for IPv6
+        leave empty not to set it -->
+    <Parameter name="IPAttributionMode" value="STATIC" />
+    <Parameter name="DUT_IP_Address" value="172.22.1.203" />
+    <Parameter name="Subnet_Mask" value="255.255.0.0" />
+    <Parameter name="Default_Gateway" value="" />
+    <Parameter name="IPv6AttributionMode" value="DYNAMIC" />
+    <Parameter name="DUT_IPV6_Address" value="12f:29ff:fe7c:8f51" />
+    <!-- Enables/Disables the support of Fast dormancy on the network simulator
+        Possible values: disable | enable
+        Setting the parameter to "disable" will send no specific configuration to the equipement -->
+    <Parameter name="Fast_Dormancy" value="disable" />
+</Equipment>

@@ -1,0 +1,22 @@
+{
+    "Configuration": {
+        "Boot": null,
+        "BootVars": {
+            "BOOT_DATA_CHECK": false
+        },
+        "Custom": null,
+        "Flash": null,
+        "Inherit": {
+            "BOARD": "mofd"
+        },
+        "Logs": null,
+        "Timeout": null,
+        "WorkAround": {
+            "Function": {
+                "Issue": "IFWI version not filled in flashfile",
+                "Name": "__ifwi_check",
+                "Pattern": ".*"
+            }
+        }
+    }
+}

@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='ASCII'?>
+<TestCase>
+    <UseCase>Testlib</UseCase>
+    <Description>Test fastboot reboot via adb</Description>
+    <Description>Command:adb reboot-bootloader</Description>
+    <Description>Result: Device should be listed when issuing:</Description>
+    <Description>fastboot devices</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <TcMaxAttempt>1</TcMaxAttempt>
+    <Parameters>
+        <Parameter>
+            <Name>test</Name>
+            <Value>scripts/brillo/tests/2.0.0_fastboot_via_adb.py</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

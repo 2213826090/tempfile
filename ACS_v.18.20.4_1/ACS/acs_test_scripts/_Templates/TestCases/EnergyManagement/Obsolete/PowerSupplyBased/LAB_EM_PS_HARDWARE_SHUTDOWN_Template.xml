@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="13.37">
+    <UseCase>LAB_EM_PS_HARDWARE_SHUTDOWN</UseCase>
+    <Description>Press shutdown buton while platform is ON.</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>False</b2bContinuousMode>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters>
+        <Parameter>
+            <!-- Vbatt Voltage -->
+            <Name>VBATT</Name>
+            <Value>3.8</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Battery Temperature (in degree Celsius) : 95, 70, 50, 25, 10, 5, 0, -15 -->
+            <Name>BATTERY_TEMPERATURE</Name>
+            <Value>25</Value>
+        </Parameter>
+        <Parameter>
+            <!-- power button press time to do a Hardware shutdown -->
+            <Name>HW_SHUTDOWN_PRESS_TIME</Name>
+            <Value>9</Value>
+        </Parameter>
+        <Parameter>
+            <!-- the os test to be executed : MOS; POS ; ROS . many OS can be add in a same time with ';' to separate it -->
+            <Name>TEST_OS</Name>
+            <Value>MOS;POS;ROS</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="13.37">
+  <UseCase>LIVE_COMPONENT_GTESTER_HTA</UseCase>
+  <Description>HTA GTester Use Case</Description>
+  <b2bIteration>1</b2bIteration>
+  <b2bContinuousMode>True</b2bContinuousMode>
+  <TcExpectedResult>PASS</TcExpectedResult>
+  <Parameters>
+    <!--
+        The timeout value to use when issuing
+        ADB shell commands
+    -->
+    <Parameter>
+        <Name>COMMAND_TIMEOUT</Name>
+        <Value>240</Value>
+    </Parameter>
+    <!-- Optional -->
+    <Parameter>
+        <!--
+            A coma separated list of application paths to disable
+            before rebooting the board and executing the tests.
+        -->
+        <Name>DISABLE_APPLICATIONS_BEFORE_REBOOT</Name>
+        <Value>/system/bin/rild;/system/bin/stmd;/system/bin/cpdd;/system/bin/mmgr</Value>
+    </Parameter>
+    <Parameter>
+        <!--
+            A coma separated list of application paths to disable
+            after rebooting but before executing the tests.
+        -->
+        <Name>DISABLE_APPLICATIONS_AFTER_REBOOT</Name>
+        <Value></Value>
+        <!--
+        <Value>/system/bin/mmgr</Value>
+        -->
+    </Parameter>
+    <Parameter>
+        <Name>COMMAND</Name>
+        <Value>/system/bin/hta -n download -c hsi_download_1000M -s 1000 -g 30</Value>
+    </Parameter>
+  </Parameters>
+</TestCase>

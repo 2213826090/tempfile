@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestSteps xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../acs/src/_Catalogs/TestStep/teststep.xsd">
+    <TestStep Id="NFC_SET_POWER" Domain="WIRELESS" SubDomain="NFC" Feature="COMMON" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Wireless.NFC.NFCSetPower.NFCSetPower</ClassName>
+        <Description>
+            Set The NFC power state to ON or OFF depending on the given string param "POWER"
+        </Description>
+        <Environment name="ANY" />
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="true">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="POWER" type="STRING" isOptional="false">
+                <Description>Defines whether to Enable or Disable NFC. You can use a sequence like this : on,off,on</Description>
+                <PossibleValues>on;off</PossibleValues>
+                <DefaultValue />
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="NFC_GET_POWER" Domain="WIRELESS" SubDomain="NFC" Feature="COMMON" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Wireless.NFC.NFCGetPower.NFCGetPower</ClassName>
+        <Description>Gets the power state of the NFC interface.</Description>
+        <Environment name="ANY" />
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="true">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="SAVE_AS" type="CONTEXT" isOptional="false">
+                <Description>
+                    <Key name="KEY_NAME_DEFINED_BY_USER" type="STRING">Name of the context variable where the value will be saved. Possible values : off;on;turning_off;turning_on;unknown</Key>
+                </Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+        </Parameters>
+    </TestStep>
+</TestSteps>

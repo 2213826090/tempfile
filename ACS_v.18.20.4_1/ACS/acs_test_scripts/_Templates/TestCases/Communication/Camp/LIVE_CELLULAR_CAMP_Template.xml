@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="13.45">
+    <UseCase>LIVE_CELLULAR_CAMP</UseCase>
+    <Description>Camp on Cellular network</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters>
+        <Parameter>
+            <!-- Home Public Land Mobile Network Coverage (True | False) -->
+            <Name>HPLMN_COVERAGE</Name>
+            <Value>True</Value>
+        </Parameter>
+        <Parameter>
+            <!--
+                Optional parameter, if not indicated defaults to False.
+                Shoud only be used for DSDS phones.
+                This parameter indicates whether we should deactivate data during
+                the test or not.
+                This parameter is mostly useful for DSDS CAMP Use Cases where data
+                state can have an impact on the registered state of SIM 2.
+                Possible values: True | False.
+             -->
+            <Name>DEACTIVATE_DATA</Name>
+            <Value>False</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Preferred network to use for the test. Possible values:
+                "2G_ONLY"
+                "3G_PREF"
+                "4G_PREF"
+                "3G_ONLY"
+                "2G_3G"
+                "CDMA_PREF"
+                "CDMA_ONLY"
+                "EVDO_ONLY"
+                "GLOBAL"
+                "4G_PREF_US"
+                "WORLD_MODE"
+                "4G_ONLY" -->
+            <Name>PREFERRED_NETWORK_TYPE</Name>
+            <Value>GSM_only</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Mobile Country Code 0 to 999 as string. If MCC is empty, no operator check is done -->
+            <Name>MCC</Name>
+            <Value>208</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Mobile Network Code 0 to 99 as string. If MNC is empty, no operator check is done -->
+            <Name>MNC</Name>
+            <Value>01</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Optional parameter. Should only be used for DSDS phones. -->
+            <!-- Mobile Country Code for SIM 2: 0 to 999 as string.
+                If MCC_2 is empty, no operator check is done for SIM_2-->
+            <!-- We can also use buildbot's parameter 'operator_mcc_2' -->
+            <Name>MCC_2</Name>
+            <Value></Value>
+        </Parameter>
+        <Parameter>
+            <!-- Optional parameter. Should only be used for DSDS phones. -->
+            <!-- Mobile Network Code for SIM 2: 0 to 99 as string.
+                If MNC_2 is empty, no operator check is done for SIM_2 -->
+            <!-- We can also use buildbot's parameter 'operator_mnc_2' -->
+            <Name>MNC_2</Name>
+            <Value></Value>
+        </Parameter>
+        <Parameter>
+            <!-- Optional parameter, if not indicated defaults to False.
+             This parameter indicates if there is a check of data's state
+             when checking the camp.
+             -->
+            <Name>CHECK_DATA</Name>
+            <Value>False</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Optional parameter, if not indicated defaults to False.
+             This parameter indicates if there is a reboot instead of setting
+             flight mode on/off before checking the camp.
+             -->
+            <Name>REBOOT</Name>
+            <Value>TRUE</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

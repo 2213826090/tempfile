@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<UseCases xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:noNamespaceSchemaLocation="../../../../acs/src/_Catalogs/UseCase/usecase.xsd">
+    <UseCase Id="LIVE_MUM_VIDEO_PLAYBACK" Domain="MULTIMEDIA" SubDomain="VIDEO" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Multimedia.LIVE_MUM_VIDEO_PLAYBACK.LiveMumVideoPlayback</ClassName>
+        <Description>Test video playback</Description>
+        <Environment name="ANY">
+        </Environment>
+    </UseCase>
+    <UseCase Id="LIVE_CHECK_ICON_VIDEO" Domain="MULTIMEDIA" SubDomain="VIDEO" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Multimedia.LIVE_CHECK_ICON_VIDEO.LiveCheckIconVideo</ClassName>
+        <Description>Check if icon is display in video application in pause</Description>
+        <Environment name="ANY">
+        </Environment>
+    </UseCase>
+    <UseCase Id="LIVE_CHECK_ICON_VIDEO_RECORDED" Domain="MULTIMEDIA" SubDomain="VIDEO" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Multimedia.LIVE_CHECK_ICON_VIDEO_RECORDED.LiveCheckIconVideoRecorded</ClassName>
+        <Description>Check if icon is display in video application in pause with video recorded</Description>
+        <Environment name="ANY">
+        </Environment>
+    </UseCase>
+    <UseCase Id="LIVE_CAMERA_TAKE_PICTURE_WHILE_VIDEO_RECORD" Domain="MULTIMEDIA" SubDomain="VIDEO" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Multimedia.LIVE_CAMERA_TAKE_PICTURE_WHILE_VIDEO_RECORD.LiveCameraTakePictureWhileVideoRecord</ClassName>
+        <Description>Use Camera to take picture where it's a video recording</Description>
+        <Environment name="ANY">
+        </Environment>
+    </UseCase>
+    <UseCase Id="LIVE_CAMERA_VIDEO_RECORD" Domain="MULTIMEDIA" SubDomain="VIDEO" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Multimedia.LIVE_CAMERA_VIDEO_RECORD.LiveCameraVideoRecord</ClassName>
+        <Description>Use Camera to record video</Description>
+        <Environment name="ANY">
+        </Environment>
+    </UseCase>
+    <UseCase Id="LIVE_VIDEO_QUALITY" Domain="MULTIMEDIA" SubDomain="VIDEO" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.OTC.Media.LIVE_VIDEO_QUALITY.LiveVideoQuality</ClassName>
+        <Description>Test for the playback quality of different video formats defined for Android.
+                     The tests compare on a frame by frame basis the playback with a reference video</Description>
+        <Environment name="ANY">
+        </Environment>
+    </UseCase>
+    <UseCase Id="LIVE_VIDEO_PLAYBACK_QUALITY" Domain="MULTIMEDIA" SubDomain="VIDEO" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Multimedia.LIVE_VIDEO_PLAYBACK_QUALITY.LiveVideoPlaybackQuality</ClassName>
+        <Description>Test the quality of video playback, it compare frame by frame screenrecord with a reference video.</Description>
+        <Environment name="ANY">
+        </Environment>
+    </UseCase>
+    <UseCase Id="LIVE_MUM_VIDEO_PLAYBACK_UNPLUG_PLUG" Domain="MULTIMEDIA" SubDomain="VIDEO" OS="ANDROID" Status="DONE">
+            <ClassName>acs_test_scripts.UseCase.Multimedia.LIVE_MUM_VIDEO_PLAYBACK_UNPLUG_PLUG.LiveMumVideoPlaybackUnplugPlug</ClassName>
+            <Description>Test video playback with unplug plug during video playback</Description>
+            <Environment name="ANY">
+            </Environment>
+        </UseCase>
+</UseCases>

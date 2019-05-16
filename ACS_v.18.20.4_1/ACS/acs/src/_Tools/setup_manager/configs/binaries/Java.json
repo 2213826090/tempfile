@@ -1,0 +1,26 @@
+{
+    "windows": {
+        "check_exists": ["which", ["java.exe"]],
+        "install": "msiexec /i {bin} /qn",
+        "uninstall": "msiexec /x {bin} /qn",
+        "32": "acs/dependencies/third_parties/tools/Java/jdk-8u5-windows-i586.exe",
+        "64": "acs/dependencies/third_parties/tools/Java/jdk-8u5-windows-x64.exe"
+    },
+    "linux": {
+        "check_exists": ["which", ["java"]],
+        "pre_install": [{"cmd": "mkdir -p /usr/local/java"}],
+        "install": "tar -xzvf {bin} -C /usr/local/java",
+        "post_install": [
+            {"cmd": "sudo update-alternatives --install \"/usr/bin/java\" \"java\" \"/usr/local/java/jdk1.8.0_20/jre/bin/java\" 1"},
+            {"cmd": "sudo update-alternatives --install \"/usr/bin/javac\" \"javac\" \"/usr/local/java/jdk1.8.0_20/bin/javac\" 1"},
+            {"cmd": "sudo update-alternatives --install \"/usr/bin/javaws\" \"javaws\" \"/usr/local/java/jdk1.8.0_20/jre/bin/javaws\" 1"},
+            {"cmd": "sudo update-alternatives --set java /usr/local/java/jdk1.8.0_20/jre/bin/java"},
+            {"cmd": "sudo update-alternatives --set javac /usr/local/java/jdk1.8.0_20/bin/javac"},
+            {"cmd": "sudo update-alternatives --set javaws /usr/local/java/jdk1.8.0_20/jre/bin/javaws"}
+        ],
+        "32": "acs/dependencies/third_parties/tools/Java/jdk-8u20-linux-i586.tar.gz",
+        "64": "acs/dependencies/third_parties/tools/Java/jdk-8u20-linux-x64.tar.gz"
+    }
+}
+
+

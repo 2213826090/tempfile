@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase>
+    <UseCase>LAB_RAT_SELECTION</UseCase>
+    <Description>Modification of RAT and Registration on simulated network</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>False</b2bContinuousMode>
+    <TcExpectedResult>PASS</TcExpectedResult>
+      <Parameters>
+        <Parameter>
+            <!-- NS1 Cell Technology (2G|3G) -->
+            <Name>NS1_CELL_TECH</Name>
+            <Value>2G</Value>
+        </Parameter>
+        <Parameter>
+            <!-- NS1 Cell Band
+                For 2G : EGSM|GSM850|PCS|DCS
+                For 3G : 1,2,5,8
+            -->
+            <Name>NS1_CELL_BAND</Name>
+            <Value>EGSM</Value>
+        </Parameter>
+        <Parameter>
+            <!-- NS1 Cell Service ( (GSM|GPRS|EGPRS) for 2G CELL, (CIRCUIT|PACKET|CIRCUIT_PACKET) for 3G CELL) -->
+            <Name>NS1_CELL_SERVICE</Name>
+            <Value>EGPRS</Value>
+        </Parameter>
+        <Parameter>
+            <!-- NS1 ARFCN -->
+            <Name>NS1_ARFCN</Name>
+            <Value>20</Value>
+        </Parameter>
+        <Parameter>
+            <!-- NS1 cell power -->
+            <Name>NS1_CELL_POWER</Name>
+            <Value>-80</Value>
+        </Parameter>
+        <Parameter>
+            <!-- NS2 Cell Technology (2G|3G) -->
+            <Name>NS2_CELL_TECH</Name>
+            <Value>3G</Value>
+        </Parameter>
+        <Parameter>
+            <!-- NS2 Cell Band
+                For 2G : EGSM|GSM850|PCS|DCS
+                For 3G : 1,2,5,8
+            -->
+            <Name>NS2_CELL_BAND</Name>
+            <Value>1</Value>
+        </Parameter>
+        <Parameter>
+            <!-- NS2 Cell Service ( (GSM|GPRS|EGPRS) for 2G CELL, (CIRCUIT|PACKET|CIRCUIT_PACKET) for 3G CELL) -->
+            <Name>NS2_CELL_SERVICE</Name>
+            <Value>CIRCUIT</Value>
+        </Parameter>
+        <Parameter>
+            <!-- NS2 ARFCN -->
+            <Name>NS2_ARFCN</Name>
+            <Value>10700</Value>
+        </Parameter>
+        <Parameter>
+            <!-- NS2 cell power  -->
+            <Name>NS2_CELL_POWER</Name>
+            <Value>-80</Value>
+        </Parameter>
+        <Parameter>
+            <!-- the NS1 wanted RAT to set, the value is an integer, it can be:
+                0 for WCDMA_preferred,
+                1 for GSM_only,
+                2 for WCDMA_only,
+                3 for GSM_auto_PRL,
+                4 for CDMA_auto_PRL,
+                5 for CDMA_only,
+                6 for EvDo_only,
+                7 for GSM_CDMA_auto_PRL,
+                8 for LTE_CDMA_auto_PRL,
+                9 for LTE_GSM_auto_PRL,
+                10 for LTE_GSM_CDMA_auto_PRL,
+                11 for LTE_only,
+                12 for UNKNOWN -->
+            <Name>WANTED_NETWORK0</Name>
+            <Value>0</Value>
+        </Parameter>
+         <Parameter>
+            <!-- the second wanted RAT to set, the value is an integer, it can be:
+                0 for WCDMA_preferred,
+                1 for GSM_only,
+                2 for WCDMA_only,
+                3 for GSM_auto_PRL,
+                4 for CDMA_auto_PRL,
+                5 for CDMA_only,
+                6 for EvDo_only,
+                7 for GSM_CDMA_auto_PRL,
+                8 for LTE_CDMA_auto_PRL,
+                9 for LTE_GSM_auto_PRL,
+                10 for LTE_GSM_CDMA_auto_PRL,
+                11 for LTE_only,
+                12 for UNKNOWN -->
+            <Name>WANTED_NETWORK1</Name>
+            <Value>2</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Activate the NS2 cell with a delay : 
+                        TRUE to activate NS2 Cell with a delay
+                        FALSE to activate NS2 Cell at the beginnning of the test -->
+            <Name>NS2_DELAY_CELL_ACTIVATION</Name>
+            <Value>TRUE</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Voice call type (MO [Mobile Originated]|MT [Mobile Terminated]) -->
+            <Name>VC_TYPE</Name>
+            <Value>MT</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

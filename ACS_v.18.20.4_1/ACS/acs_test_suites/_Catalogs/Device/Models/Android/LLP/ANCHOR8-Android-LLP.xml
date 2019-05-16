@@ -1,0 +1,114 @@
+<?xml version="1.0"?>
+<DeviceModel xsi:noNamespaceSchemaLocation="../../../../../../acs/src/_Catalogs/Device/Models/AndroidDeviceModel.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <DeviceModule>
+        <FlashModule className="Device.Module.SSG.Flash.GminFlashModule.GminFlashModule" config="Config/BayTrailT.xml"/>
+        <DebugModule className="Device.Module.SSG.ExtendedDebug.ExtendedDebugModule.ExtendedDebugModule" config="Config/Default.xml"/>
+        <CrashModule className="Device.Module.Common.Crash.CrashToolUploaderModule.CrashToolUploaderModule" config="Config/CrashToolUploader/Default.xml"/>
+        <SystemModule className="Device.Module.Common.System.SystemModule.SystemModule" config="Config/Baytrail.yaml"/>
+        <PnpModule className = "Device.Module.MCG.Pnp.PnpModule.PnpModule" config = "Config/Default.yaml"/>
+        <EnergyManagementModule className="Device.Module.MCG.EnergyManagement.EmModule.EmModule" config="Config/Baytrail.yaml"/>
+    </DeviceModule>
+    <BootShutdown>
+        <Parameter bootTimeout="150"/>
+        <Parameter settleDownDuration="5"/>
+        <Parameter softShutdownDuration="5"/>
+        <Parameter hardShutdownDuration="5"/>
+        <Parameter softShutdownSettleDownDuration="30"/>
+        <Parameter pressPowerBtnTimeSwitchOn="3"/>
+        <Parameter pressPowerBtnTimeSwitchOff="15"/>
+        <Parameter waitSoftRebootCmdReturns="false"/>
+        <Parameter rebootOnRetryOnSetup="false"/>
+        <Parameter dnxKeyComboPressTimeout="10"/>
+    </BootShutdown>
+    <Connection>
+        <Parameter handleAdbRestart="true"/>
+        <Parameter adbOverEthernet="false"/>
+        <Parameter ipAddress="192.168.42.1"/>
+        <Parameter adbPort="5555"/>
+        <Parameter serialNumber=""/>
+        <Parameter adbRootTimeout="300"/>
+        <Parameter adbRootCmdTimeout="2"/>
+        <Parameter adbConnectTimeout="10"/>
+        <Parameter usbReplugRetries="1"/>
+    </Connection>
+    <Debug>
+        <Parameter retrieveApplicationLog="false"/>
+        <Parameter writeLogcat="true"/>
+        <Parameter cleanLogcat="true"/>
+        <Parameter logcatCmdLine="adb shell logcat -b events -b main -b radio -b system -v threadtime"/>
+        <Parameter retrievePTITrace="false"/>
+        <Parameter PTIProbe="FIDO"/>
+        <Parameter enableAplogptiCmdLine="adb shell setprop persist.service.aplogpti.enable 1"/>
+        <Parameter retrieveSerialTrace="false"/>
+        <Parameter serialPort=""/>
+        <Parameter serialBaudRate="115200"/>
+        <Parameter serialHdwFlowControl="false"/>
+        <Parameter takeScreenshot="false"/>
+        <Parameter enableSocwatch="false"/>
+    </Debug>
+    <UITesting>
+        <Parameter monkeyPort="8080"/>
+        <Parameter monkeyrunnerTimeout="2"/>
+        <Parameter uiDictionnaryName="AsusT100AndroidJB"/>
+        <Parameter uiTypeTimeout="2"/>
+    </UITesting>
+    <EM>
+        <!-- default wall charger: DCP -->
+        <Parameter defaultWallCharger=""/>
+        <!-- Where autolog and generated task is stored -->
+        <Parameter generatedFilePath="/sdcard*/"/>
+        <!-- This is the minimal vbatt needed to boot in MOS -->
+        <Parameter minVbattMosBoot="3.6"/>
+        <Parameter minVbattMosShutdown="3.3"/>
+        <Parameter battThermalChargingHighLim="45"/>
+        <Parameter battThermalChargingLowLim="0"/>
+        <!-- button combo to perform in order to go in POS from OFF status -->
+        <Parameter fastbootKeyCombo="POWER_BUTTON;VOLUME_DOWN;VOLUME_UP"/>
+    </EM>
+    <LocalConnectivity>
+        <Parameter TagsAppPackageName=""/>
+        <Parameter ChromeAppPackageName=""/>
+        <Parameter BrowserAppPackageName=""/>
+        <Parameter DefaultBDAddress=""/>
+        <Parameter TetheringResetAfterBtOffOn="true"/>
+        <Parameter SupportedServiceList="A2DP-SRC"/>
+    </LocalConnectivity>
+    <Devices>
+        <Parameter sdcard_ext="/sdcard"/>
+        <Parameter userdataPath="/sdcard/acs_files/"/>
+        <Parameter binPath="/data/"/>
+        <Parameter wlanDevice=""/>
+        <Parameter wlanPhyDevice=""/>
+        <Parameter gpsPropertyKey=""/>
+        <Parameter timeBeforeWifiSleep="1200"/>
+        <Parameter wlanInterface=""/>
+        <Parameter hotspotExtInterface="wlan0"/>
+        <Parameter hotspotIntInterface="mon.wlan0"/>
+        <Parameter p2pInterface="p2p-wlan0-0"/>
+        <Parameter touchsreenEventFile="/dev/input/event0"/>
+        <!-- adb shell getevent -->
+        <Parameter autoWifiRegulatoryDomain="false"/>
+        <Parameter provisioningMethod=""/>
+        <Parameter provisioningPath=""/>
+        <Parameter backlightName="psb-bl"/>
+        <Parameter appSigningKey="CERTIFICATE/SIGNING/AOSP/platform"/>
+    </Devices>
+    <Power>
+        <Parameter CameraName="Camera"/>
+        <Parameter displayBrightness="29"/>
+        <Parameter PMUStates="/sys/module/intel_soc_pmu/parameters/s0ix"/>
+        <Parameter PMediaPath="/sdcard/acs_files/music_DG09_PWM_128kbps.mp3"/>
+        <Parameter s0ixLssAcceptedBlocker="06"/>
+        <Parameter WakeLocksAcceptedBlocker="0000:00:02.3, msicbattery_wakelock, ctp_charger_wakelock"/>
+        <Parameter FailureFile="BENCHCFG/bench_target_fail.csv"/>
+        <Parameter TargetFile="BENCHCFG/bench_target.csv"/>
+    </Power>
+    <Implementation>
+        <Parameter deviceCapabilities="Capabilities/hybrid.xml"
+                   ClassName="Device.Model.AndroidDevice.EcsDevice.EcsDevice"
+                   UECmd="acs_test_scripts.Device.UECmd.Imp.Android.LLP"
+                   OS="ANDROID" OSVersion="Llp"
+                   defaultTimeout="50"
+                   waitBetweenCmd="5"/>
+    </Implementation>
+</DeviceModel>

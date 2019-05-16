@@ -1,0 +1,14 @@
+Router used: Linksys E900
+Router firmware: ddwrt v24 SP2 21676
+Router configuration: SSHd activated and authorized key from the machine you are running tests
+Router IP: 192.168.1.1 - if this is modified, you'll have to edit all test case files
+Bench config equipment:
+<Equipment name="Linksys E900 Router" description="Wifi router used in OTC Wifi Test Cases">
+    	<Parameter name="Model" value="REMOTE_COMPUTER" description="LOCAL_COMPUTER or REMOTE_COMPUTER (only LOCAL is currently supported)" />
+        <Parameter name="IP" value="192.168.1.1" description="ip address of the equipment" />
+        <Parameter name="username" value="root" description="login used for the connection" />
+        <Parameter name="Interface" value="eth8" description="Ethernet interface used for connection" />
+        <Parameter name="IPv6Prefix" value="" description="IPv6 prefix of the computer." />
+        <Parameter name="SshPath" value="/usr/bin/ssh" description="[Optional] full path to local SSH client binary (default 'ssh')" />
+        <Parameter name="ScpPath" value="/usr/bin/scp" description="[Optional] full path to local SCP client binary (default 'scp')" />
+</Equipment>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="13.41">
+    <TestSteps>
+        <Include Src="ST/pnp/TSS/common.xml" />
+        <Include Src="ST/pnp/TSS/active.xml" />
+        <Initialize>
+            <TestStep SetId="InitializePnPResources" />
+        </Initialize>
+        <Setup>
+        </Setup>
+        <RunTest>
+            <TestStep Id="DISCONNECT_DEVICE_FROM_FWK" DEVICE="PHONE1" />
+            <TestStep Id="REMOVE_USB" EQT="FROM_DEVICE:PHONE1:IoCard" />
+            <TestStep Id="SUSPEND" DURATION_IN_SEC="30"/>
+            <TestStep Id="SWITCH_OFF_DEVICE" DEVICE="PHONE1"/>
+            <TestStep Id="SUSPEND" DURATION_IN_SEC="FROM_TC:SLEEP_DURATION"/>
+            <TestStep Id="PATLIB_ACQUISITION" EQT="DEFAULT" ACTION="start"/>
+            <TestStep Id="SUSPEND" DURATION_IN_SEC="FROM_TC:TEST_DURATION"/>
+
+            <TestStep Id="PATLIB_ACQUISITION" EQT="DEFAULT" ACTION="stop"/>
+            <TestStep Id="BOOT_DEVICE" DEVICE="PHONE1"/>
+            <TestStep Id="INSERT_USB_WITH_RETRIES" RETRY="FROM_DEVICE:PHONE1:usbReplugRetries" SLEEP_BETWEEN_RETRY="10" DEVICE="PHONE1" EQT="FROM_DEVICE:PHONE1:IoCard" />
+            <TestStep Id="WAIT_FOR_DEVICE" DEVICE="PHONE1" TIMEOUT_IN_SEC="60" />
+            <TestStep Id="CONNECT_DEVICE_TO_FWK" DEVICE="PHONE1" />
+            <TestStep Id="PATLIB_REPORT" EQT="DEFAULT" POWER_CALCULATION="False" SAVE_AS="POWER_REPORT"/>
+            <TestStep Id="ADD_RESULT_TO_PNP_REPORT" STORED_REPORT="POWER_REPORT" STORED_PNP_RESULT="pnp_res"/>
+            <TestStep Id="REPORT_POWER_RESULT" EQT="DEFAULT" STORE_RAW_DATA="SAVE_POWER_DATA" STORED_PNP_RESULT="pnp_res"/>
+            <TestStep Id="PATLIB_EXPORT" EQT="DEFAULT" SAVE_RAW_DATA="FROM_TC:SAVE_POWER_DATA" SAVE_AS="pat_raw_path" STORED_PNP_RESULT="pnp_res"/>
+        </RunTest>
+        <TearDown>
+            <TestStep SetId="TearDown" />
+        </TearDown>
+    </TestSteps>
+</TestCase>
+

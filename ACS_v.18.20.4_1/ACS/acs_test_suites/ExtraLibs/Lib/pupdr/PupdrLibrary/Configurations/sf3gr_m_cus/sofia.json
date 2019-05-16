@@ -1,0 +1,87 @@
+{
+    "Configuration": {
+        "Boot": {
+            "ACCEPT_EULA": false,
+            "BOOT_COS_ON_FORCED_SHUTDOWN_PLUG": true,
+            "COS_CHECK_INIT_SVC_CHARGER_APP": false,
+            "GVB_ACTIVATION": false,
+            "FASTBOOT_TARGET": "fastboot",
+            "MODEM": false,
+            "ARCH": "sofia",
+            "PKP_5S": false,
+            "ROS_CHECK_INIT_SVC_RECOVERY": false,
+            "WATCHDOGD_ENABLED": true
+        },
+        "BootVars": {
+            "BOOT_DATA_CHECK": false,
+            "COS_CHECK_AFTER_GRACEFUL_SHUTDOWN": null,
+            "COS_CHECK_AFTER_HARD_SHUTDOWN": null,
+            "COS_CHECK_AFTER_REBOOT": null,
+            "MOS_CHECK_AFTER_BOOT": null,
+            "MOS_CHECK_AFTER_KERNEL_WATCHDOG": null,
+            "MOS_CHECK_AFTER_REBOOT": null,
+            "MOS_CHECK_AFTER_REBOOT_FROM_POS": null,
+            "MOS_CHECK_AFTER_SECURITY_WATCHDOG": null,
+            "MOS_CHECK_AFTER_WATCHDOG_FALLBACK": null,
+            "POS_CHECK_AFTER_REBOOT": null,
+            "ROS_CHECK_AFTER_REBOOT": null,
+            "ROS_CHECK_AFTER_WATCHDOG": null
+        },
+        "Custom": null,
+        "Download": {
+            "INTERNAL_DOWNLOAD": [
+                {
+                    "pft_key": "fastboot",
+                    "regexp_key": ".*flashfiles.*.zip",
+                    "flash_file": null,
+                    "configuration": "smp_fls_config",
+                    "start_state": "dnx"
+                },
+                {
+                    "local_key": "ota",
+                    "buildbot_artifactory_path": {"path": "device_name_id/variant_id", "detection": "cactus-absp"},
+                    "regexp_key": ".*ota-.*.zip",
+                    "flash_file": null,
+                    "configuration": null,
+                    "start_state": "mos"
+                }
+            ],
+            "REFERENCE_BUILD_BLACKLIST": {
+                "2015_WW47": "2015_WW48",
+                "2016_WW03": "https://mcg-depot.intel.com/artifactory/cactus-absp-jf/build/eng-builds/master/PSI/weekly/2016_WW04_B/",
+                "2016_WW04": "2016_WW06",
+                "2016_WW05": "2016_WW06",
+                "2016_WW09": "2016_WW10"
+            },
+            "USER_DOWNLOAD": []
+        },
+        "Flash": {
+            "CHECK_FASTBOOT": false,
+            "CHECK_OSLOADER": false,
+            "CHECK_RECOVERY": false,
+            "CHECK_GET_HASHES": null,
+            "DEDIPROG": false,
+            "FORCE_FLASH_ALGO" : ["force_shutdown_during_PFT_execution", "sofia_imei_flashing", "sofia_ssn_flashing"],
+            "PARTITIONS": "/cache;/system;/data",
+            "UEFI": false,
+            "UPDATE_CONFIGURATION": "fastboot_config"
+        },
+        "Inherit": {
+            "BRANCH": null
+        },
+        "Logs": {
+            "CRASHLOGS": true
+        },
+        "Timeout": {
+            "ADB_ROOT_TIMEOUT": 120,
+            "BOOT_TIMEOUT": 2000,
+            "MOS_BOOT": 200,
+            "PKPON": 5,
+            "REBOOT_COMMAND_TIMEOUT": 60,
+            "WATCHDOG_EXPIRATION": 600,
+            "TIMEOUT_TOLERANCE": 60
+        },
+        "WorkAround": null,
+        "TestDescription": null
+    }
+}

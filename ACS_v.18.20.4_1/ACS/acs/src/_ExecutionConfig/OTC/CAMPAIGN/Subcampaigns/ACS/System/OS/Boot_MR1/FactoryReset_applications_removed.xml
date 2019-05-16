@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<Campaign>
+      <Parameters>
+            <Parameter isControlledPSUsed="False"/>
+            <Parameter isIoCardUsed="False"/>
+            <Parameter skipBootOnPowerCycle="False"/>
+            <Parameter bootRetryNumber="0"/>
+            <Parameter runHookScripts="False"/>
+            <Parameter powerCycleBetweenTC="False"/>
+            <Parameter powerCycleOnFailure="False"/>
+            <Parameter finalDutState="NoChange"/>
+            <Parameter stopCampaignOnCriticalFailure="False"/>
+            <Parameter stopCampaignOnFirstFailure="True"/>
+            <Parameter loggingLevel="debug"/>
+            <Parameter CampaignType="Other"/>
+      </Parameters>
+      <TestCases>
+            <TestCase Id="../../../../../../TC/TR/ACS/System/OS/Fastboot/Factory_reset/prereq_install_apk"/>
+            <TestCase Id="../../../../../../TC/TR/ACS/System/OS/Fastboot/prereq_Factory_reset_step"/>
+            <TestCase Id="../../../../../../TC/TR/ACS/System/OS/Fastboot/Factory_reset/prereq_wait_for_android"/>
+            <TestCase Id="../../../../../../TC/TR/ACS/System/OS/Fastboot/Factory_reset/prereq_LIVE_ONE_TIME_INIT_SETUP_MR1"/>
+            <TestCase Id="../../../../../../TC/TR/ACS/System/OS/ADBPrerequisites/prereq_adb_check_file"/>
+            <TestCase Id="../../../../../../TC/TR/ACS/System/OS/Fastboot/Factory_reset/FactoryReset_applications_removed"/>
+      </TestCases>
+</Campaign>

@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestSteps xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../acs/src/_Catalogs/TestStep/teststep.xsd">
+    <TestStep Id="GET_MAC_ADDRESS" Domain="WIRELESS" SubDomain="COMMON" Feature="IP_MGMT" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Wireless.Common.IPMgmt.GetMacAddress.GetMacAddress</ClassName>
+        <Description>Gets the MAC address of a given interface.</Description>
+        <Environment name="ANY" />
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="INTERFACE" type="STRING" isOptional="false">
+                <Description>Network interface you want the MAC address of.</Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+            <Parameter name="MAC_ADDR" type="CONTEXT" isOptional="false">
+                <Description>
+                    <Key name="MAC_ADDR" type="STRING">Name of the context variable where the value will be saved.</Key>
+                </Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="GET_DEVICE_IPV4_ADDRESS" Domain="WIRELESS" SubDomain="COMMON" Feature="IP_MGMT" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Wireless.Common.IPMgmt.GetDeviceIpv4Address.GetDeviceIpv4Address</ClassName>
+        <Description>gets the IPv4 address of the DUT for the indicated interface</Description>
+        <Environment name="ANY" />
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="NET_INTERFACE" type="STRING" isOptional="false">
+                <Description>Name of the interface to retrieve IP address from. It must be a valid interface Name.</Description>
+                <PossibleValues/>
+                <DefaultValue>wlan0</DefaultValue>
+            </Parameter>
+            <Parameter name="IP_ADDR" type="CONTEXT" isOptional="false">
+                <Description>
+                    <Key name="IPV4_ADDRESS" type="STRING">Name of the context variable where the value will be saved.</Key>
+                </Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+        </Parameters>
+    </TestStep>
+   <TestStep Id="GET_DEVICE_IPV6_ADDRESS" Domain="WIRELESS" SubDomain="COMMON" Feature="IP_MGMT" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Wireless.Common.IPMgmt.GetDeviceIpv6Address.GetDeviceIpv6Address</ClassName>
+        <Description>gets the IPv6 address of the DUT for the indicated interface</Description>
+        <Environment name="ANY" />
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="NET_INTERFACE" type="STRING" isOptional="false">
+                <Description>Name of the interface to retrieve IP address from. It must be a valid interface Name.</Description>
+                <PossibleValues/>
+                <DefaultValue>wlan0</DefaultValue>
+            </Parameter>
+            <Parameter name="IP_ADDR" type="CONTEXT" isOptional="false">
+                <Description>
+                    <Key name="IPV6_ADDRESS" type="STRING">Name of the context variable where the value will be saved.</Key>
+                </Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="GET_DEVICE_IPV6_ALL_ADDRESSES" Domain="WIRELESS" SubDomain="COMMON" Feature="IP_MGMT" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Wireless.Common.IPMgmt.GetDeviceIpv6AllAddresses.GetDeviceIpv6AllAddresses</ClassName>
+        <Description>gets all IPv6 addresses of the DUT. The output parameter IP_ADDRESSES will be a list of strings</Description>
+        <Environment name="ANY" />
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues/>
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="NET_INTERFACE" type="STRING" isOptional="false">
+                <Description>Name of the interface to retrieve IP address from. It must be a valid interface Name.</Description>
+                <PossibleValues/>
+                <DefaultValue>wlan0</DefaultValue>
+            </Parameter>
+            <Parameter name="IP_ADDRS" type="CONTEXT" isOptional="false">
+                <Description>
+                    <Key name="IPV6_ADDRESSES" type="STRING">Name of the context variable where the value will be saved.</Key>
+                </Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+        </Parameters>
+    </TestStep>
+   <TestStep Id="GET_DEVICE_IPV6_SCOPELINK_ADDRESS" Domain="WIRELESS" SubDomain="COMMON" Feature="IP_MGMT" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Wireless.Common.IPMgmt.GetDeviceIpv6ScopelinkAddress.GetDeviceIpv6ScopelinkAddress</ClassName>
+        <Description>gets the IPv6 address of the DUT for the indicated interface and for which the scope is "link"</Description>
+        <Environment name="ANY" />
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="NET_INTERFACE" type="STRING" isOptional="false">
+                <Description>Name of the interface to retrieve IP address from. It must be a valid interface Name.</Description>
+                <PossibleValues/>
+                <DefaultValue>wlan0</DefaultValue>
+            </Parameter>
+            <Parameter name="IP_ADDR" type="CONTEXT" isOptional="false">
+                <Description>
+                    <Key name="IPV6_ADDRESS" type="STRING">Name of the context variable where the value will be saved.</Key>
+                </Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+       </Parameters>
+    </TestStep>
+   <TestStep Id="GET_DEVICE_IPV6_GLOBAL_ADDRESS" Domain="WIRELESS" SubDomain="COMMON" Feature="IP_MGMT" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Wireless.Common.IPMgmt.GetDeviceIpv6GlobalAddress.GetDeviceIpv6GlobalAddress</ClassName>
+        <Description>gets the IPv6 address of the DUT for the indicated interface</Description>
+        <Environment name="ANY" />
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="NET_INTERFACE" type="STRING" isOptional="false">
+                <Description>Name of the interface to retrieve IP address from. It must be a valid interface Name.</Description>
+                <PossibleValues/>
+                <DefaultValue>wlan0</DefaultValue>
+            </Parameter>
+            <Parameter name="IP_ADDR" type="CONTEXT" isOptional="false">
+                <Description>
+                    <Key name="IPV6_ADDR" type="STRING">Name of the context variable where the value will be saved.</Key>
+                </Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+        </Parameters>
+    </TestStep>
+   <TestStep Id="CHECK_DEVICE_IP_PROTOCOL" Domain="WIRELESS" SubDomain="COMMON" Feature="IP_MGMT" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Wireless.Common.IPMgmt.CheckDeviceIpProtocol.CheckDeviceIpProtocol</ClassName>
+        <Description>Checks the device is connected using the expected protocol version</Description>
+        <Environment name="ANY" />
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="PROTOCOL" type="STRING" isOptional="false">
+                <Description>Protocol version to check</Description>
+                <PossibleValues>IPV4;IPV6;IPV4V6</PossibleValues>
+                <DefaultValue>IPV4</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+   <TestStep Id="CHECK_DEVICE_NO_IP_ADDRESS" Domain="WIRELESS" SubDomain="COMMON" Feature="IP_MGMT" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Wireless.Common.IPMgmt.CheckDeviceNoIpAddress.CheckDeviceNoIpAddress</ClassName>
+        <Description>Checks the device  protocol version</Description>
+        <Environment name="ANY" />
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+        <TestStep Id="SET_DEVICE_APN" Domain="WIRELESS" SubDomain="COMMON" Feature="IP_MGMT" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Wireless.Common.IPMgmt.SetDeviceApn.SetDeviceApn</ClassName>
+        <Description>Sets an APN for the designated device</Description>
+        <Environment name="ANY" />
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues/>
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="INTERFACE" type="STRING" isOptional="false">
+                <Description>Data Cellular interface. Set to 'None' to use the default APN interface</Description>
+                <PossibleValues/>
+                <DefaultValue>None</DefaultValue>
+            </Parameter>
+            <Parameter name="APN" type="STRING" isOptional="false">
+                <Description>Cellular Access Point Name. Set to 'None' to use the default APN name</Description>
+                <PossibleValues/>
+                <DefaultValue>None</DefaultValue>
+            </Parameter>
+            <Parameter name="USER" type="STRING" isOptional="false">
+                <Description>The APN user's login. If no user's login, set to 'None'</Description>
+                <PossibleValues/>
+                <DefaultValue>None</DefaultValue>
+            </Parameter>
+            <Parameter name="PASSWORD" type="STRING" isOptional="false">
+                <Description>The APN user's password</Description>
+                <PossibleValues/>
+                <DefaultValue>None</DefaultValue>
+            </Parameter>
+            <Parameter name="PROTOCOL" type="STRING" isOptional="false">
+                <Description>The APN protocol ("IP", "IPV6", "IPV4V6"). Setting to 'None' will use the default value (IP)</Description>
+                <PossibleValues>None;IP;IPV6;IPV4V6</PossibleValues>
+                <DefaultValue>None</DefaultValue>
+            </Parameter>
+            <Parameter name="MMSC" type="STRING" isOptional="false">
+                <Description>The APN MMSC (ex: http://10.102.161.47:8080/8960=8960). If there is no APN MMSC, set to 'None'</Description>
+                <PossibleValues/>
+                <DefaultValue>None</DefaultValue>
+            </Parameter>
+            <Parameter name="APN_TYPE" type="STRING" isOptional="false">
+                <Description>The APN Type (ex : default,mms). If no specific type, set to 'None'</Description>
+                <PossibleValues/>
+                <DefaultValue>None</DefaultValue>
+            </Parameter>
+            <Parameter name="SET_DEFAULT" type="BOOLEAN" isOptional="false">
+                <Description>Boolean determining if new APN is set as default APN</Description>
+                <PossibleValues>True;False</PossibleValues>
+                <DefaultValue>True</DefaultValue>
+            </Parameter>
+            <Parameter name="CLEAR_APN" type="BOOLEAN" isOptional="false">
+                <Description>Boolean determining if existing APN(s) is/are kept or removed</Description>
+                <PossibleValues>True;False</PossibleValues>
+                <DefaultValue>True</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="REMOVE_DEVICE_APN" Domain="WIRELESS" SubDomain="COMMON" Feature="IP_MGMT" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Wireless.Common.IPMgmt.RemoveDeviceApn.RemoveDeviceApn</ClassName>
+        <Description>Sets an APN for the designated device</Description>
+        <Environment name="ANY" />
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues/>
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="ACTIVATE_DEVICE_PDP" Domain="WIRELESS" SubDomain="COMMON" Feature="IP_MGMT" Status="WIP">
+        <ClassName>acs_test_scripts.TestStep.Device.Wireless.Common.IPMgmt.ActivateDevicePdp.ActivateDevicePdp</ClassName>
+        <Description>Checks the device  protocol version</Description>
+        <Environment name="ANY" />
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="INTERFACE" type="STRING" isOptional="true">
+                <Description>Data Cellular interface. Set to 'None' for Android devices (not used)</Description>
+                <PossibleValues/>
+                <DefaultValue>None</DefaultValue>
+            </Parameter>
+            <Parameter name="CHECK" type="BOOLEAN" isOptional="true">
+                <Description>indicate whether PDP context activation is checked or not (no check for GSM)</Description>
+                <PossibleValues>True;False</PossibleValues>
+                <DefaultValue>True</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="DEACTIVATE_DEVICE_PDP" Domain="WIRELESS" SubDomain="COMMON" Feature="IP_MGMT" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Wireless.Common.IPMgmt.DeactivateDevicePdp.DeactivateDevicePdp</ClassName>
+        <Description>Checks the device  protocol version</Description>
+        <Environment name="ANY" />
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="INTERFACE" type="STRING" isOptional="true">
+                <Description>Data Cellular interface. Set to 'None' for Android devices (not used)</Description>
+                <PossibleValues/>
+                <DefaultValue>None</DefaultValue>
+            </Parameter>
+            <Parameter name="CHECK" type="BOOLEAN" isOptional="true">
+                <Description>indicate whether PDP context deactivation is checked or not (no check for GSM)</Description>
+                <PossibleValues>True;False</PossibleValues>
+                <DefaultValue>True</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="CHECK_DEVICE_IPV4_ADDRESS" Domain="WIRELESS" SubDomain="COMMON" Feature="IP_MGMT" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Wireless.Common.IPMgmt.CheckDeviceIpv4Address.CheckDeviceIpv4Address</ClassName>
+        <Description>Compares the IPv4 address of the DUT for the indicated interface to one one statically assigned</Description>
+        <Environment name="ANY" />
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="NET_INTERFACE" type="STRING" isOptional="false">
+                <Description>Name of the interface to retrieve IP address from. It must be a valid interface Name.</Description>
+                <PossibleValues/>
+                <DefaultValue>wlan0</DefaultValue>
+            </Parameter>
+            <Parameter name="IP_ADDR" type="STRING" isOptional="false">
+                <Description>IP address used as reference</Description>
+                <PossibleValues/>
+                <DefaultValue />
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="DEVICE_CLEAN_TCP_CONFIG" Domain="WIRELESS" SubDomain="COMMON" Feature="SETTINGS" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Wireless.Common.DeviceCleanTcpConfig.DeviceCleanTcpConfig</ClassName>
+        <Description>Clean TCP stack on a device.</Description>
+        <Environment name="ANY" />
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues />
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+</TestSteps>

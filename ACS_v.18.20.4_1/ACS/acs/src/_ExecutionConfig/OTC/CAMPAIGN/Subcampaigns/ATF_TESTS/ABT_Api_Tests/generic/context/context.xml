@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<Campaign>
+      <Parameters>
+            <Parameter isControlledPSUsed="False"/>
+            <Parameter isIoCardUsed="False"/>
+            <Parameter skipBootOnPowerCycle="False"/>
+            <Parameter bootRetryNumber="0"/>
+            <Parameter runHookScripts="False"/>
+            <Parameter powerCycleBetweenTC="False"/>
+            <Parameter powerCycleOnFailure="False"/>
+            <Parameter finalDutState="NoChange"/>
+            <Parameter stopCampaignOnCriticalFailure="False"/>
+            <Parameter stopCampaignOnFirstFailure="False"/>
+            <Parameter loggingLevel="debug"/>
+            <Parameter CampaignType="Other"/>
+      </Parameters>
+      <TestCases>
+            <TestCase Id="../../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/generic/context/testProcessName"/>
+            <TestCase Id="../../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/generic/context/testDataDir"/>
+            <TestCase Id="../../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/generic/context/testCacheDir"/>
+            <TestCase Id="../../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/generic/context/testSourceDir"/>
+            <TestCase Id="../../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/generic/context/testUid"/>
+            <TestCase Id="../../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/generic/context/testSharedLibraryFiles"/>
+            <TestCase Id="../../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/generic/context/testExternalCacheDir"/>
+            <TestCase Id="../../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/generic/context/testScreenSizeLimits"/>
+            <TestCase Id="../../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/generic/context/testGetDir"/>
+            <TestCase Id="../../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/generic/context/testDatabasePath"/>
+      </TestCases>
+</Campaign>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase>
+    <UseCase>LAB_AUDIO_QUALITY_CSV</UseCase>
+    <Description>Check Audio Quality during GSM Mobile Originated Call on real network with a specified accessories</Description>
+    <b2bIteration>50</b2bIteration>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <Parameters>
+        <Parameter>
+            <!-- Call origin (MO|MT) -->
+            <Name>CALL_ORIGIN_TYPE</Name>
+            <Value>MO</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Accessorie type (EARPIECE|SPEAKER|    |BLUETOOTHA2DP|BLUETOOTHHSP) -->
+            <Name>ACC_TYPE</Name>
+            <Value>HEADPHONE</Value>
+        </Parameter>
+        <Parameter>
+             <!-- >Stream Call Volume in percent of dut phone -->
+            <Name>CALL_VOLUME_DUT</Name>
+            <Value>70</Value>
+        </Parameter>
+        <Parameter>
+             <!-- >Stream Call Volume in percent of ref phone -->
+            <Name>CALL_VOLUME_REF</Name>
+            <Value>70</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Call end type (NR|MR) -->
+            <Name>CALL_END_TYPE</Name>
+            <Value>MR</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Call type (2G|3G) -->
+            <Name>CALL_TYPE</Name>
+            <Value>3G</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Signal tested direction (UL|DL) -->
+            <Name>SIGNAL_TESTED_DIRECTION</Name>
+            <Value>both</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Call duration in seconds -->
+            <Name>DURATION</Name>
+            <Value>5</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

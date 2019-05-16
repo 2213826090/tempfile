@@ -1,0 +1,28 @@
+<?xml version="1.0" ?>
+<Campaign>
+      <Parameters>
+            <Parameter isControlledPSUsed="False"/>
+            <Parameter isIoCardUsed="False"/>
+            <Parameter skipBootOnPowerCycle="False"/>
+            <Parameter bootRetryNumber="0"/>
+            <Parameter runHookScripts="False"/>
+            <Parameter powerCycleBetweenTC="False"/>
+            <Parameter powerCycleOnFailure="False"/>
+            <Parameter finalDutState="NoChange"/>
+            <Parameter stopCampaignOnCriticalFailure="False"/>
+            <Parameter stopCampaignOnFirstFailure="False"/>
+            <Parameter loggingLevel="debug"/>
+            <Parameter CampaignType="Other"/>
+      </Parameters>
+      <TestCases>
+            <!--Not supported <TestCase Id="../../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/video/change_orientation_rotate/Video_Playback_Change_Orientation_Rotate_Video(HD_1280x720p@30_fps)"/>
+            <TestCase Id="../../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/video/change_orientation_rotate/Video_Playback_Change_Orientation_Rotate_Video_(D1SD_720x480@25_fps)"/>-->
+            <TestCase Id="../../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/video/change_orientation_rotate/Video_Playback_Change_Orientation_Rotate_Video(QCIF_176x144@10fps)"/>
+            <!--
+            <TestCase Id="../../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/video/change_orientation_rotate/Video_Playback_Change_Orientation_Rotate_Video(HD_1280x720p@60_fps)"/>-->
+            <TestCase Id="../../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/video/change_orientation_rotate/Video_Playback_Change_Orientation_Rotate_Video(CIF_352x288@30_fps)"/>
+            <!--<TestCase Id="../../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/video/change_orientation_rotate/Video_Playback_Change_Orientation_Rotate_Video(QVGA@15_fps)"/>-->
+            <TestCase Id="../../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/video/change_orientation_rotate/Video_Playback_Change_Orientation_Rotate_Video_(D1SD_720x480@30_fps)"/>
+            <!--<TestCase Id="../../../../../../TC/TR/ATF_TESTS/ABT_Api_Tests/video/change_orientation_rotate/Video_Playback_Change_Orientation_Rotate_Video(WVGA_864x480@30_fps)"/>-->
+      </TestCases>
+</Campaign>

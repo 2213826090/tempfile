@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<Equipments>
+    <Equipment version="13.44" name="IO_CARD" description="Input output card used for power management, energy management on I/O ports of the DUT.">
+        <Parameter name="Model" value="EMT350" />
+        <!-- below parameter is to used to communicate with equipment -->
+        <Parameter name="AutomaticComPortDetection" value="True" description="Automatic detection of EMT 350 com port" />
+        <Parameter name="ComPort" value="0" description="COM port used for communication" />
+        <Parameter name="BaudRate" value="9600" description="Baud rate used for serial port communication" />
+        <Parameter name="ConnectionRetry" value="1" description="The number of retry in case of SERIAL connection" />
+        <!-- below parameter is for multi campaign used, if set to true we use a server client system to communicate with the board -->
+        <Parameter name="HandleMultiExecution" value="False" description="Set to True if you want to do multi campaign execution, ServerIp and ServerPort become mandatory in this case" />
+        <!-- following parameter is used to create a server for multi device purpose -->
+        <Parameter name="ServerIp" value="localhost" description="The server ip to connect or create" />
+        <Parameter name="ServerPort" value="8002" description="The server port to connect or create" />
+        <!-- here are the equipment setup that affect your testing -->
+        <Parameter name="ExtPowerSupplyAsCharger" value="False" />
+        <!-- Below are the plugged cards declaration
+            remenber that it is a example and the card may not be plug in this order.
+
+            you CANT have 2 cards with the same No (No is equal to the slot position)
+            the slot position are defined on emt350 documentation
+            you CANT define which relay is affected to a DUT on a given CARD, they are all already mapped
+            which mean that you CANT replace a broken relay by an unused one on the same card -->
+        <!-- card used for adb connection -->
+        <CARD name="USB_1">
+            <!-- when you declare a platform, it will automatically configure the right relays to use for your platform
+                below is the element that will be mapped to your platform.
+                "USB" is the card type separate by an "_" to the slot it is plugged on.
+
+                OUTPUT for this card are named "OUTPUT" + "_" + the port No
+                each port can be affect to one DUT
+
+                for multi device purpose (for parrallel execution) here are the restriction:
+                - you cant use both OUTPUT at the same time which mean that an error will occur if one output is already used by another device
+            -->
+            <parameter name="OUTPUT_1" value="PHONE1" />
+            <parameter name="OUTPUT_2" value="PHONE2" />
+        </CARD>
+        <CARD name="USB_2">
+            <parameter name="OUTPUT_1" value="" />
+            <parameter name="OUTPUT_2" value="" />
+        </CARD>
+        <!-- card used for power supply like battery emulation or ac charger emulation -->
+        <CARD name="POWER_3">
+            <parameter name="OUTPUT_AC_1" value="" />
+            <parameter name="OUTPUT_EMU_BATT_1" value="" />
+            <parameter name="OUTPUT_AC_2" value="" />
+            <parameter name="OUTPUT_EMU_BATT_2" value="" />
+        </CARD>
+        <!-- when you declare a platform, it will automatically configure the right relays to use for your platform
+            below is the element that will be mapped to your platform.
+            "POWER" is the card type separate by an "_" to the slot it is plugged on.
+
+            each output can be affect to one DUT only
+            the right output to used are
+            "OUTPUT_AC"+"_"+ and 2 possible port (1,2)
+            "OUTPUT_EMU_BATT"+"_"+ and 2 possible port (1,2)
+            OUTPUT for this card are named "OUTPUTxxxx" + "_" + the port No
+
+            for multi device purpose (for parrallel execution) here are the restriction:
+            - you CANT use 2 same outputs at the same time, e.g: "OUTPUT_AC_1" value="PHONE1" "OUTPUT_AC_1" value="PHONE2"
+            - you CANT use 2 differents outputs with different port number at the same time, e.g: "OUTPUT_AC_1" value="PHONE1" "OUTPUT_EMU_BATT_2" value="PHONE2"
+            - you CAN use 2 differents outputs with the same port number at the same time, e.g: "OUTPUT_AC_1" value="PHONE1" "OUTPUT_EMU_BATT_1" value="PHONE2"
+        -->
+        <CARD name="POWER_4">
+            <parameter name="OUTPUT_AC_1" value="PHONE1" />
+            <parameter name="OUTPUT_EMU_BATT_1" value="PHONE1" />
+            <parameter name="OUTPUT_AC_2" value="PHONE2" />
+            <parameter name="OUTPUT_EMU_BATT_2" value="PHONE2" />
+        </CARD>
+    </Equipment>

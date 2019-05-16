@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="13.37">
+    <UseCase>LAB_EM_REPORT_CRITICAL_BATT_ON_VBATT_THRESHOLD</UseCase>
+    <Description>EM - test device when voltage OCV reached critical threshold</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>False</b2bContinuousMode>
+    <TcMaxAttempt>1</TcMaxAttempt>
+    <TcAcceptanceCriteria>1</TcAcceptanceCriteria>
+    <Parameters>
+        <Parameter>
+            <!--Battery voltage at the beginning of the test-->
+            <Name>VBATT</Name>
+            <Value>4.0</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Features to enable for the test -->
+            <!-- Features avaible are :     -->
+            <!-- VIDEO, AUDIO, WIFI, BLUETOOTH, TORCHLIGHT, VIBRA, SCREEN ON  -->
+            <Name>LOAD</Name>
+            <Value>SCREEN_ON;WIFI;BLUETOOTH;TORCHLIGHT;VIBRA</Value>
+        </Parameter>
+        <Parameter>
+            <Name>CRITICAL_THRESHOLD</Name>
+            <Value>3.5</Value>
+        </Parameter>
+        <Parameter>
+           <!--accuracy in % of the critical treshold-->
+            <Name>ACCURACY</Name>
+            <Value>3</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

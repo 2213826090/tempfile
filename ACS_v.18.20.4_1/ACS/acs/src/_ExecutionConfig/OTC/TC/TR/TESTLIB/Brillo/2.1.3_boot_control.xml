@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='ASCII'?>
+<TestCase>
+    <UseCase>Testlib</UseCase>
+    <Description>Test boot control</Description>
+    <Description>Command:adb shell bootctl get-current-slot</Description>
+    <Description>Result: Return value should be 0</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <TcMaxAttempt>1</TcMaxAttempt>
+    <Parameters>
+        <Parameter>
+            <Name>test</Name>
+            <Value>scripts/brillo/tests/2.1.3_boot_control.py</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

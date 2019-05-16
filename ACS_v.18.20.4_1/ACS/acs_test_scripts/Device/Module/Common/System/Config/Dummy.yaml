@@ -1,0 +1,42 @@
+ModuleConfiguration:
+    dpst_file: ""
+    vibrator_path: ""
+    backlight_path: ""
+    poweroff_menu:
+        "reference_position": []
+        "ok": []
+        "cancel": []
+    # APLOG RELATED VALUE
+    aplog_folder: ""
+    message_dict:
+        "WINDOW": ""
+        "BOOT_REASON_IRQ": ""
+        "MODEM_OFF": ""
+        "SHUTDOWN_REASON": ""
+        "SHUTDOWN_REASON2": ""
+        "BCU_WARNING_A": ""
+        "BCU_WARNING_B": ""
+        "BCU_VCRIT": ""
+        "MAINTENANCE_STARTED": ""
+        "BATTERY_LEVEL_0": ""
+
+    PUPDR_SHUTDOWN_REASON:
+        "COLD_OFF": ""
+        "COLD_RESET": ""
+        "WARM_RESET": ""
+        "FORCE_SHTN": ""
+        "WD_RESET": ""
+        "COLD_BOOT": ""
+
+    PUPDR_MISC_TAG:
+        # special syntax for text that have several patterns to match
+        "SHUTDOWN_REASON": {"MAIN": ""}
+        "KERNEL_BOOT": {"MAIN": ""}
+        "MAIN_BOOT": {"MAIN": ""}
+
+    EM_TAG:
+        "BATTERY_EMPTY": {"MAIN": ""}
+        "BATTERY_INFO": {"MAIN": ""}
+
+    THERMAL_TAG:
+      "COOLING_INTENT": {"MAIN": "ThermalCooling: Received THERMAL INTENT:"}

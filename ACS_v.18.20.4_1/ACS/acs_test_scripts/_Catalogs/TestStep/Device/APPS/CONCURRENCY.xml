@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestSteps xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../acs/src/_Catalogs/TestStep/teststep.xsd">
+    <TestStep Id="RUN_SPLIT_SCREEN_GEARS_VIDEORECORD" Domain="APPS" SubDomain="CONCURRENCY" Feature="" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Apps.Concurrency.RunSplitScreenGearsVideoRecord.RunSplitScreenGearsVideoRecord</ClassName>
+        <Description>(Android only) Run a custom app that overlays graphics rendering stress on top of video recording preview.
+            This is not needed for Windows since similar concurrency can be acheived without a special application, and using
+            separate test steps for each of the activities.
+        </Description>
+        <Environment name="ANY" />
+        <Parameters>
+            <Parameter name="APP_PACKAGE" type="STRING" isOptional="false">
+                <Description>Package name for Gears+Video Recording, as it appears in PackageManager</Description>
+                <PossibleValues/>
+                <DefaultValue>com.example.gfx_videocapture</DefaultValue>
+            </Parameter>
+            <Parameter name="ACTIVITY" type="STRING" isOptional="false">
+                <Description>Activity to invoke for Gears+Video Recording</Description>
+                <PossibleValues />
+                <DefaultValue>Gfx_VideoCapture</DefaultValue>
+            </Parameter>
+            <Parameter name="DURATION" type="INTEGER" isOptional="false">
+                <Description>How long the application will run, in minutes.</Description>
+                <PossibleValues />
+                <DefaultValue>1</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="RUN_SPLIT_SCREEN_YOUTUBE_CAMERA_GFX" Domain="APPS" SubDomain="CONCURRENCY" Feature="" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Apps.Concurrency.RunSplitScreenYoutubeCameraGfx.RunSplitScreenYoutubeCameraGfx</ClassName>
+        <Description>(Android only) Run a custom app that splits the screen into 2 views, one with YouTube video playback
+            and the other with the camera app doing still image captures.  On top of these, in the middle of the screen, it overlays
+            a graphics stress app that renders some spinning gears.
+            This is not needed for Windows since similar concurrency can be acheived without a special application, and using
+            separate test steps for each of the activities.
+        </Description>
+        <Environment name="ANY" />
+        <Parameters>
+            <Parameter name="APP_PACKAGE" type="STRING" isOptional="false">
+                <Description>Package name for the YouTube+Camera+Gears app, as it appears in PackageManager</Description>
+                <PossibleValues />
+                <DefaultValue>com.example.youtube_camera_gfx</DefaultValue>
+            </Parameter>
+            <Parameter name="ACTIVITY" type="STRING" isOptional="false">
+                <Description>Activity to invoke to start the YouTube+Camera+Gears app</Description>
+                <PossibleValues />
+                <DefaultValue>Youtube_Camera_Gfx</DefaultValue>
+            </Parameter>
+            <Parameter name="DURATION" type="INTEGER" isOptional="false">
+                <Description>How long the application will run, in minutes.</Description>
+                <PossibleValues />
+                <DefaultValue>1</DefaultValue>
+            </Parameter>
+            <Parameter name="ENABLE_GFX" type="INTEGER" isOptional="false">
+                <Description>Enable/disable the spinning cube graphics stress.  0 = disable, 1 = enable.</Description>
+                <PossibleValues>0;1</PossibleValues>
+                <DefaultValue>1</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="RUN_SPLIT_SCREEN_CAMERA_VIDEO_GFX" Domain="APPS" SubDomain="CONCURRENCY" Feature="" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Apps.Concurrency.RunSplitScreenCameraVideoGfx.RunSplitScreenCameraVideoGfx</ClassName>
+        <Description>(Android only) Run a custom app that splits the screen into two views, one with a local video playback,
+            and the other with the camera app doing still image captures.  On top of these, in the middle of the screen, it overlays
+            a graphics stress app that renders some spinning gears.
+            This is not needed for Windows since similar concurrency can be acheived without a special application, and using
+            separate test steps for each of the activities.
+        </Description>
+        <Environment name="ANY" />
+        <Parameters>
+            <Parameter name="APP_PACKAGE" type="STRING" isOptional="false">
+                <Description>Package name for the Camera+Video+Gears app, as it appears in PackageManager</Description>
+                <PossibleValues />
+                <DefaultValue>com.example.videocapture_videoplayback_gfx</DefaultValue>
+            </Parameter>
+            <Parameter name="ACTIVITY" type="STRING" isOptional="false">
+                <Description>Activity to invoke to start the Camera+Video+Gears app</Description>
+                <PossibleValues />
+                <DefaultValue>JB_Video_StillImage_GFxActivity_v2</DefaultValue>
+            </Parameter>
+            <Parameter name="DURATION" type="INTEGER" isOptional="false">
+                <Description>How long the application will run, in minutes.</Description>
+                <PossibleValues />
+                <DefaultValue>1</DefaultValue>
+            </Parameter>
+             <Parameter name="VIDEO_FILE" type="STRING" isOptional="false">
+                <Description>Video file to be played</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+            <Parameter name="ENABLE_GFX" type="INTEGER" isOptional="false">
+                <Description>Enable/disable the spinning cube graphics stress.  0 = disable, 1 = enable.</Description>
+                <PossibleValues>0;1</PossibleValues>
+                <DefaultValue>1</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="RUN_SPLIT_SCREEN_VIDEO_CAP_VIDEO_PLAYBACK" Domain="APPS" SubDomain="CONCURRENCY" Feature="" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Apps.Concurrency.RunSplitScreenVideoCapVideoPlayback.RunSplitScreenVideoCapVideoPlayback</ClassName>
+        <Description>(Android only) Run a custom app for the specified duration that splits the screen into two views, one with a local video playback,
+            and the other with the camera app doing Video Capturing.
+            This is not needed for Windows since similar concurrency can be achieved without a special application, and using
+            separate test steps for each of the activities.
+        </Description>
+        <Environment name="ANY" />
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues/>
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="APP_PACKAGE" type="STRING" isOptional="false">
+                <Description>Package name for the Camera+Video+Gears app, as it appears in PackageManager</Description>
+                <PossibleValues />
+                <DefaultValue>com.cv.cv_videocapture_videoplayback</DefaultValue>
+            </Parameter>
+            <Parameter name="ACTIVITY" type="STRING" isOptional="false">
+                <Description>Activity to invoke to start the Camera+Video+Gears app</Description>
+                <PossibleValues />
+                <DefaultValue>CVVideoCaptureVideoPlaybackActivity</DefaultValue>
+            </Parameter>
+            <Parameter name="DURATION" type="INTEGER" isOptional="false">
+                <Description>How long the application will run, in minutes.</Description>
+                <PossibleValues />
+                <DefaultValue>1</DefaultValue>
+            </Parameter>
+             <Parameter name="VIDEO_FILE" type="STRING" isOptional="false">
+                <Description>The path where the downloaded video is stored.</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="RUN_AUGMENT_REALITY" Domain="APPS" SubDomain="CONCURRENCY" Feature="" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Apps.Concurrency.RunAugmentReality.RunAugmentReality</ClassName>
+        <Description>(Android only) Run a custom app for the specified duration that plays a video on the host, does audio playback and Image capture.
+        </Description>
+        <Environment name="ANY" />
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues/>
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="AUG_PACKAGE" type="STRING" isOptional="false">
+                <Description>Package name for the Augment Reality app, as it appears in PackageManager</Description>
+                <PossibleValues />
+                <DefaultValue>edu.dhbw.andarmodelviewer</DefaultValue>
+            </Parameter>
+            <Parameter name="AUG_ACTIVITY" type="STRING" isOptional="false">
+                <Description>Activity to invoke to start the Augment Reality app </Description>
+                <PossibleValues />
+                <DefaultValue>edu.dhbw.andobjviewer.AugmentedModelViewerActivity</DefaultValue>
+            </Parameter>
+            <Parameter name="DURATION" type="INTEGER" isOptional="false">
+                <Description>How long the application will run, in minutes.</Description>
+                <PossibleValues />
+                <DefaultValue>5</DefaultValue>
+            </Parameter>
+            <Parameter name="VIDEO_FILE_PATH" type="STRING" isOptional="false">
+                <Description>The path where the downloaded video is stored.</Description>
+                <PossibleValues />
+                <DefaultValue/>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+</TestSteps>

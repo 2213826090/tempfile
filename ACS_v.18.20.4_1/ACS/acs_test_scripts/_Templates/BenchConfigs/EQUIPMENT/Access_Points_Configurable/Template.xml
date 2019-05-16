@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<Equipment version="13.44" name="CONFIGURABLE_AP1" description="Configurable Access Point">
+    <!-- Model possible values: DLINK_DAP2553 | CISCO_1250 | CISCO_WAP4410N | CISCO_WRVS4400N | CISCO_AP541N | AP_CONTROLLER -->
+    <Parameter name="Model" value="" description="Model of the equipment to use" />
+    <Parameter name="IP" value="" description="ip address of the equipment. Port to connect to can be optionnaly specified with [:port]" />
+    <Parameter name="username" value="" description="login used for the connection" />
+    <Parameter name="password" value="" description="password used for the connection" />
+    <Parameter name="ConfigurationWaitingTime" value="" description="Time to wait after the configuration step (in second)" />
+    <Parameter name="ConsoleTimeout" value="" description="Time required in order for the telnet/ssh server embedded in the AP to reset the connection (in minutes)" />
+    
+    <!-- The 12 next paramters are optional and should only be filled when Model = AP_CONTROLLER -->
+    <Parameter name="APC_AccessPoint" value="" description="Name of the AP to use behind the AP controller of the conformance bench" />
+    <Parameter name="APC_IP" value="" description="IP address of the AP to use behind the AP controller of the conformance bench" />
+    <Parameter name="APC_UserName" value="" description="Username to use to connect to the AP to use behind the AP controller of the conformance bench" />
+    <Parameter name="APC_Password" value="" description="Password to use to connect to the AP to use behind the AP controller of the conformance bench" />
+    <Parameter name="APC_SerialPortIP" value="" description="Virtual IP address and port (space separated) of the serial port connected to the AP to use behind the AP controller of the conformance bench" />
+    <Parameter name="APC_HostName" value="" description="Hostname of the AP to use behind the AP controller of the conformance bench" />
+    <Parameter name="APC_PowerSwitchIPAddress" value="" description="Power switch IP address" />
+    <Parameter name="APC_PowerSwitchHostname" value="" description="Power switch IP address" />
+    <Parameter name="APC_PowerSwitchUsername" value="" description="Power switch username" />
+    <Parameter name="APC_PowerSwitchPassword" value="" description="Power switch password" />
+    <Parameter name="APC_PowerSwitchPort" value="" description="Power switch port to use to control the reboot of the AP to use behind the AP controller of the conformance bench" />
+    <Parameter name="APC_PowerSwitchPorts" value="x,y,z" description="List of ports available for controlling power of all AP of the bench" />
+    
+    <Parameter name="SSID" value="" description="SSID to create" />
+    <Parameter name="passphrase_WEP64" value="" description="passphrase for WEP 64 bits" />
+    <Parameter name="passphrase_WEP128" value="" description="passphrase for WEP 128 bits" />
+    <Parameter name="passphrase_WPA" value="" description="passphrase for WPA" />
+    <Parameter name="passphrase_WPA2" value="" description="passphrase for WPA2" />
+    <Parameter name="radiusip" value="" description="IP of the Radius server" />
+    <Parameter name="radiusport" value="1812" description="Listening port of the radius server" />
+    <Parameter name="radiussecret" value="" description="Secret password to connect AP to the Radius server" />
+    <Parameter name="EAP_user" value="" description="login used for EAP encryption" />
+    <Parameter name="EAP_password" value="" description="password used for EAP encryption" />
+    <Parameter name="EAP_SIM_user" value="" description="SIM user specified in radius server configuration" />
+    <Parameter name="EAP_AKA_user" value="" description="AKA user specified in radius server configuration" />
+    <Parameter name="Credential_password" value="" description="credential password for EAP encryption. For ICS, the credential password is also the digit PIN code to lock the phone and the phone should not be initialy locked with a PIN, password nor patern" />
+    <Parameter name="CA_guard_password" value="" description="ca guard password for EAP encryption" />
+    <Parameter name="certificate_file" value="" description="Filename of the certificate to be used for WPA-enterprise authentication with EAP method=TLS. This .p12 file should be placed into: [ACS_ROOT_FOLDER]/Executable/_Embedded/CERTIFICATE" />
+    
+    <Parameter name="DHCP_ENABLED" value="False" description="Enable dhcp on AP" />
+    <Parameter name="LOW_EXCLUDED_IP" value="192.168.1.1" description="Defines the low end of the excluded ip range for dhcp" />
+    <Parameter name="HIGH_EXCLUDED_IP" value="192.168.1.50" description="Defines the high end of the excluded ip range for dhcp" />
+    <Parameter name="DHCP_SUBNET" value="192.168.1.0" description="Defines the dhcp subnet (with the addition of a mask)" />
+    <Parameter name="DHCP_SUBNET_MASK" value="255.255.255.0" description="Defines the dhcp subnet mask" />
+    <Parameter name="DHCP_LEASE" value="infinite" description="Defines the dhcp lease  { days [ hours ] [ minutes ] | infinite }" />
+    <Parameter name="DHCP_GATEWAY" value="192.168.1.1" description="The gateway that should be pushed to dhcp clients" />
+</Equipment>

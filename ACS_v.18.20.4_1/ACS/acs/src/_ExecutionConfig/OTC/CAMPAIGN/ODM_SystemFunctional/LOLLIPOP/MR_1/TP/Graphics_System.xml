@@ -1,0 +1,43 @@
+<?xml version="1.0" ?>
+<Campaign version="13.49">
+    <Parameters>
+        <Parameter isControlledPSUsed="False"/>
+        <Parameter isIoCardUsed="False"/>
+        <Parameter skipBootOnPowerCycle="False"/>
+        <Parameter bootRetryNumber="0"/>
+        <Parameter runHookScripts="False"/>
+        <Parameter powerCycleBetweenTC="False"/>
+        <Parameter powerCycleOnFailure="False"/>
+        <Parameter finalDutState="NoChange"/>
+        <Parameter stopCampaignOnCriticalFailure="False"/>
+        <Parameter stopCampaignOnFirstFailure="False"/>
+        <Parameter loggingLevel="debug"/>
+        <Parameter CampaignType="Other"/>
+    </Parameters>
+    <TestCases>
+        <TestCase Id="../../../../../TC/TP/TC/Graphics_System/init.start_rpc_server.StartRPCServer.testStartRPCServer"/>
+        <TestCase Id="../../../../../TC/TP/TC/Graphics_System/init.set_adb_root.AdbRoot.testAdbRoot"/>
+        <TestCase Id="../../../../../TC/TP/TC/Graphics_System/init.set_orientation_vertical.SetOrientationVertical.testSetOrientationVertical"/>
+        <TestCase Id="../../../../../TC/TP/TC/Graphics_System/init.config_first_boot_wizard.ConfigFirstBootWizard.testConfigFirstBootWizard"/>
+        <TestCase Id="../../../../../TC/TP/TC/Graphics_System/init.wake_up_and_unlock.WakeUnlock.testWakeUnlock"/>
+        <TestCase Id="../../../../../TC/TP/TC/Graphics_System/init.enable_developer_option.EnableDeveloperOption.testEnableDeveloperOption"/>
+        <TestCase Id="../../../../../TC/TP/TC/Graphics_System/init.keep_awake.KeepAwake.testKeepAwake"/>
+        <TestCase Id="../../../../../TC/TP/TC/Graphics_System/init.disable_screen_lock.DisableLockScreen.testDisableLockScreen"/>
+        <TestCase Id="../../../../../TC/TP/TC/Graphics_System/init.disable_verify_apps.DisableVerifyApp.testDisableVerifyApp"/>
+        <TestCase Id="../../../../../TC/TP/TC/Graphics_System/init.connect_wifi.ConnectWifi.testConnectWifi"/>
+        <TestCase Id="../../../../../TC/TP/TC/Graphics_System/init.configure_google_account.ConfigGoogleAccount.testConfigGoogleAccount"/>
+        <TestCase Id="../../../../../TC/TP/TC/Graphics_System/init.init_play_store_app.InitPlayStore.testInitPlayStore"/>
+        <TestCase Id="../../../../../TC/TP/TC/Graphics_System/init.init_camera_app.InitCamera.testInitCamera"/>
+        <TestCase Id="../../../../../TC/TP/TC/Graphics_System/init.init_photos_app.InitPhotos.testInitPhotos"/>
+        <TestCase Id="../../../../../TC/TP/TC/Graphics_System/init.init_chrome_app.InitChrome.testInitChrome"/>
+        <TestCase Id="../../../../../TC/TP/TC/Graphics_System/Gralloc/test_gralloc_alloc_free_hal_pixel_format_rgba_8888"/>
+        <TestCase Id="../../../../../TC/TP/TC/Graphics_System/Gralloc/test_gralloc_alloc_free_hal_pixel_format_ycbcr_420_888"/>
+        <TestCase Id="../../../../../TC/TP/TC/Graphics_System/Gralloc/test_gralloc_async_lock_hal_pixel_format_rgba_8888"/>
+        <TestCase Id="../../../../../TC/TP/TC/Graphics_System/Gralloc/test_gralloc_async_lock_hal_pixel_format_ycbcr_420_888"/>
+        <TestCase Id="../../../../../TC/TP/TC/Graphics_System/Gralloc/test_gralloc_hal_pixel_format_raw_opaque"/>
+        <TestCase Id="../../../../../TC/TP/TC/Graphics_System/Gralloc/test_gralloc_hal_pixel_format_raw16"/>
+        <TestCase Id="../../../../../TC/TP/TC/Graphics_System/Gralloc/test_gralloc_hal_pixel_format_srgb_a_8888"/>
+        <TestCase Id="../../../../../TC/TP/TC/Graphics_System/Gralloc/test_gralloc_hal_pixel_format_srgb_x_8888"/>
+        <TestCase Id="../../../../../TC/TP/TC/Graphics_System/Gralloc/test_gralloc_open_close_gralloc"/>
+    </TestCases>
+</Campaign>

@@ -1,0 +1,1481 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<UseCases xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:noNamespaceSchemaLocation="../../../../acs/src/_Catalogs/UseCase/usecase.xsd">
+    <UseCase Id="LAB_WCDMA_VC_MOMR" Domain="CELLULAR" SubDomain="VOICECALL" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Communication.VoiceCall.LAB_WCDMA_VC_MOMR.LabWcdmaVcMoMr</ClassName>
+        <Description>Test WCDMA Mobile Call Originated and Mobile Call Released</Description>
+        <Environment name="TEL">
+            <Capabilities>EQT_AG_8960</Capabilities>
+        </Environment>
+        <Parameters>
+            <Parameter name="CELL_BAND" type="CELL_BAND_3G" isOptional="false">
+                <!-- Field optional (PossibleValues, DefaultValue, Blank) if possible value not override available -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue>1</DefaultValue>
+                <Blank/>
+                <Dependencies>
+                    <Dependency isOptional="false">DL_UARFCN</Dependency>
+                </Dependencies>
+            </Parameter>
+            <Parameter name="CELL_SERVICE" type="CELL_SERVICE_3G" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="CELL_POWER" type="CELL_POWER_IN_DBM" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="VOICE_CODER_RATE" type="VOICE_CODER_RATE_3G" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="PHONE_NUMBER" type="PHONE_NUMBER" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="CALL_DURATION" type="DURATION_IN_SEC" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+        </Parameters>
+    </UseCase>
+    <UseCase Id="LAB_WCDMA_VC_MONR" Domain="CELLULAR" SubDomain="VOICECALL" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Communication.VoiceCall.LAB_WCDMA_VC_MONR.LabWcdmaVcMoNr</ClassName>
+        <Description>Test WCDMA Mobile Call Originated and Network Call Released</Description>
+        <Environment name="TEL">
+            <Capabilities>EQT_AG_8960</Capabilities>
+        </Environment>
+        <Parameters>
+            <Parameter name="CELL_BAND" type="CELL_BAND_3G" isOptional="false">
+                <!-- Field optional (PossibleValues, DefaultValue, Blank) if possible value not override available -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue>1</DefaultValue>
+                <Blank/>
+                <Dependencies>
+                    <Dependency isOptional="false">DL_UARFCN</Dependency>
+                </Dependencies>
+            </Parameter>
+            <Parameter name="CELL_SERVICE" type="CELL_SERVICE_3G" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="CELL_POWER" type="CELL_POWER_IN_DBM" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="VOICE_CODER_RATE" type="VOICE_CODER_RATE_3G" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="PHONE_NUMBER" type="PHONE_NUMBER" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="CALL_DURATION" type="DURATION_IN_SEC" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+        </Parameters>
+    </UseCase>
+    <UseCase Id="LAB_WCDMA_VC_MTMR" Domain="CELLULAR" SubDomain="VOICECALL" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Communication.VoiceCall.LAB_WCDMA_VC_MTMR.LabWcdmaVcMtMr</ClassName>
+        <Description>Test WCDMA Mobile Call Terminated and Mobile Call Released</Description>
+        <Environment name="TEL">
+            <Capabilities>EQT_AG_8960</Capabilities>
+        </Environment>
+        <Parameters>
+            <Parameter name="CELL_BAND" type="CELL_BAND_3G" isOptional="false">
+                <!-- Field optional (PossibleValues, DefaultValue, Blank) if possible value not override available -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue>1</DefaultValue>
+                <Blank/>
+                <Dependencies>
+                    <Dependency isOptional="false">DL_UARFCN</Dependency>
+                </Dependencies>
+            </Parameter>
+            <Parameter name="CELL_SERVICE" type="CELL_SERVICE_3G" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="CELL_POWER" type="CELL_POWER_IN_DBM" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="VOICE_CODER_RATE" type="VOICE_CODER_RATE_3G" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="CALL_DURATION" type="DURATION_IN_SEC" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+        </Parameters>
+    </UseCase>
+    <UseCase Id="LAB_WCDMA_VC_MTNR" Domain="CELLULAR" SubDomain="VOICECALL" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Communication.VoiceCall.LAB_WCDMA_VC_MTNR.LabWcdmaVcMtNr</ClassName>
+        <Description>Test WCDMA Mobile Call Terminated and Network Call Released</Description>
+        <Environment name="TEL">
+            <Capabilities>EQT_AG_8960</Capabilities>
+        </Environment>
+        <Parameters>
+            <Parameter name="CELL_BAND" type="CELL_BAND_3G" isOptional="false">
+                <!-- Field optional (PossibleValues, DefaultValue, Blank) if possible value not override available -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue>1</DefaultValue>
+                <Blank/>
+                <Dependencies>
+                    <Dependency isOptional="false">DL_UARFCN</Dependency>
+                </Dependencies>
+            </Parameter>
+            <Parameter name="CELL_SERVICE" type="CELL_SERVICE_3G" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="CELL_POWER" type="CELL_POWER_IN_DBM" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="VOICE_CODER_RATE" type="VOICE_CODER_RATE_3G" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="CALL_DURATION" type="DURATION_IN_SEC" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+        </Parameters>
+    </UseCase>
+    <UseCase Id="LAB_GSM_VC_MOMR" Domain="CELLULAR" SubDomain="VOICECALL" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Communication.VoiceCall.LAB_GSM_VC_MOMR.LabGsmVcMoMr</ClassName>
+        <Description>Test GSM Mobile Call Originated and Mobile Call Released</Description>
+        <Environment name="TEL">
+            <Capabilities>EQT_AG_8960</Capabilities>
+        </Environment>
+        <Parameters>
+            <Parameter name="CELL_BAND" type="CELL_BAND_2G" isOptional="false">
+                <!-- Field optional (PossibleValues, DefaultValue, Blank) if possible value not override available -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue>RGSM</DefaultValue>
+                <Blank/>
+                <Dependencies>
+                    <Dependency isOptional="false">BCH_ARFCN</Dependency>
+                    <Dependency isOptional="false">TCH_ARFCN</Dependency>
+                </Dependencies>
+            </Parameter>
+            <Parameter name="CELL_SERVICE" type="CELL_SERVICE_2G" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="CELL_POWER" type="CELL_POWER_IN_DBM" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="CALL_DURATION" type="DURATION_IN_SEC" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="PHONE_NUMBER" type="PHONE_NUMBER" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="VOICE_CODER_RATE" type="VOICE_CODER_RATE_2G" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="MCC" type="MCC" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="MNC" type="MNC" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+        </Parameters>
+    </UseCase>
+    <UseCase Id="LAB_GSM_VC_MONR" Domain="CELLULAR" SubDomain="VOICECALL" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Communication.VoiceCall.LAB_GSM_VC_MONR.LabGsmVcMoNr</ClassName>
+        <Description>Test GSM Mobile Call Originated and Network Call Released</Description>
+        <Environment name="TEL">
+            <Capabilities>EQT_AG_8960</Capabilities>
+        </Environment>
+        <Parameters>
+            <Parameter name="CELL_BAND" type="CELL_BAND_2G" isOptional="false">
+                <!-- Field optional (PossibleValues, DefaultValue, Blank) if possible value not override available -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue>RGSM</DefaultValue>
+                <Blank/>
+                <Dependencies>
+                    <Dependency isOptional="false">BCH_ARFCN</Dependency>
+                    <Dependency isOptional="false">TCH_ARFCN</Dependency>
+                </Dependencies>
+            </Parameter>
+            <Parameter name="CELL_SERVICE" type="CELL_SERVICE_2G" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="CELL_POWER" type="CELL_POWER_IN_DBM" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="CALL_DURATION" type="DURATION_IN_SEC" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="PHONE_NUMBER" type="PHONE_NUMBER" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="VOICE_CODER_RATE" type="VOICE_CODER_RATE_2G" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="MCC" type="MCC" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="MNC" type="MNC" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+        </Parameters>
+    </UseCase>
+    <UseCase Id="LAB_GSM_VC_MTMR" Domain="CELLULAR" SubDomain="VOICECALL" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Communication.VoiceCall.LAB_GSM_VC_MTMR.LabGsmVcMtMr</ClassName>
+        <Description>Test GSM Mobile Call Terminated and Mobile Call Released</Description>
+        <Environment name="TEL">
+            <Capabilities>EQT_AG_8960</Capabilities>
+        </Environment>
+        <Parameters>
+            <Parameter name="CELL_BAND" type="CELL_BAND_2G" isOptional="false">
+                <!-- Field optional (PossibleValues, DefaultValue, Blank) if possible value not override available -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue>RGSM</DefaultValue>
+                <Blank/>
+                <Dependencies>
+                    <Dependency isOptional="false">BCH_ARFCN</Dependency>
+                    <Dependency isOptional="false">TCH_ARFCN</Dependency>
+                </Dependencies>
+            </Parameter>
+            <Parameter name="CELL_SERVICE" type="CELL_SERVICE_2G" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="CELL_POWER" type="CELL_POWER_IN_DBM" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="CALL_DURATION" type="DURATION_IN_SEC" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="PHONE_NUMBER" type="PHONE_NUMBER" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="VOICE_CODER_RATE" type="VOICE_CODER_RATE_2G" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="MCC" type="MCC" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="MNC" type="MNC" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+        </Parameters>
+    </UseCase>
+    <UseCase Id="LAB_GSM_VC_MTNR" Domain="CELLULAR" SubDomain="VOICECALL" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Communication.VoiceCall.LAB_GSM_VC_MTNR.LabGsmVcMtNr</ClassName>
+        <Description>Test GSM Mobile Call Terminated and network Call Released</Description>
+        <Environment name="TEL">
+            <Capabilities>EQT_AG_8960</Capabilities>
+        </Environment>
+        <Parameters>
+            <Parameter name="CELL_BAND" type="CELL_BAND_2G" isOptional="false">
+                <!-- Field optional (PossibleValues, DefaultValue, Blank) if possible value not override available -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue>RGSM</DefaultValue>
+                <Blank/>
+                <Dependencies>
+                    <Dependency isOptional="false">BCH_ARFCN</Dependency>
+                    <Dependency isOptional="false">TCH_ARFCN</Dependency>
+                </Dependencies>
+            </Parameter>
+            <Parameter name="CELL_SERVICE" type="CELL_SERVICE_2G" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="CELL_POWER" type="CELL_POWER_IN_DBM" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="CALL_DURATION" type="DURATION_IN_SEC" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="PHONE_NUMBER" type="PHONE_NUMBER" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="VOICE_CODER_RATE" type="VOICE_CODER_RATE_2G" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="MCC" type="MCC" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="MNC" type="MNC" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+        </Parameters>
+    </UseCase>
+    <UseCase Id="LIVE_VC_MOMR" Domain="CELLULAR" SubDomain="VOICECALL" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Communication.VoiceCall.LIVE_VC_MOMR.LiveVcMoMr</ClassName>
+        <Description>Mobile Originated_Mobile Release on live network</Description>
+        <Environment name="TEL">
+            <Capabilities>EQT_LIVE_USIM</Capabilities>
+        </Environment>
+        <Parameters>
+            <Parameter name="PHONE_NUMBER" type="PHONE_NUMBER" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="CALL_DURATION" type="DURATION_IN_SEC" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="CALL_HOLD_RESUME" type="CALL_HOLD_RESUME" isOptional="true">
+                <Description>Perform call on hold/resume procedure and checks the call status</Description>
+                <PossibleValues>TRUE;FALSE</PossibleValues>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="PREFERRED_NETWORK_TYPE" type="PREFERRED_NETWORK_TYPE" isOptional="true">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+        </Parameters>
+    </UseCase>
+    <UseCase Id="LIVE_LTE_CSFB_VC_MOMR" Domain="CELLULAR" SubDomain="VOICECALL" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Communication.VoiceCall.LIVE_LTE_CSFB_VC_MOMR.LiveLteCsfbVcMoMr</ClassName>
+        <Description>LTE CSB Voice call - Mobile Originated_Mobile Release</Description>
+        <Environment name="TEL">
+            <Capabilities>EQT_LIVE_USIM</Capabilities>
+        </Environment>
+        <Parameters>
+            <Parameter name="PHONE_NUMBER" type="PHONE_NUMBER" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="CALL_DURATION" type="DURATION_IN_SEC" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+        </Parameters>
+    </UseCase>
+    <UseCase Id="LIVE_VC_MO_SUCC" Domain="CELLULAR" SubDomain="VOICECALL" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Communication.VoiceCall.LIVE_VC_MO_SUCC.LiveVcMoSucc</ClassName>
+        <Description>Succesive Voice Calls and Cancelations</Description>
+        <Environment name="TEL">
+            <Capabilities>EQT_LIVE_USIM</Capabilities>
+        </Environment>
+        <Parameters>
+            <Parameter name="PHONE_NUMBER" type="PHONE_NUMBER" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="CALL_DURATION" type="DURATION_IN_SEC" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="ITERATION_NO" type="NUMBER_OF_CALLS" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+        </Parameters>
+    </UseCase>
+    <UseCase Id="LIVE_DUAL_PHONE_VC_MOMR" Domain="CELLULAR" SubDomain="VOICECALL" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Communication.VoiceCall.LIVE_DUAL_PHONE_VC_MOMR.LiveDualPhoneVcMoMr</ClassName>
+        <Description>Mobile Originated Mobile Release on live network</Description>
+        <Environment name="TEL">
+            <Dependency>CAP_DUAL_DEVICE</Dependency>
+            <Dependency>EQT_LIVE_USIM</Dependency>
+        </Environment>
+        <Parameters>
+            <Parameter name="CALL_DURATION" type="DURATION_IN_SEC" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+        </Parameters>
+    </UseCase>
+    <UseCase Id="LIVE_DUAL_PHONE_VC_MONR" Domain="CELLULAR" SubDomain="VOICECALL" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Communication.VoiceCall.LIVE_DUAL_PHONE_VC_MONR.LiveDualPhoneVcMoNr</ClassName>
+        <Description>Mobile Originated Network Release on live network</Description>
+        <Environment name="TEL">
+            <Dependency>CAP_DUAL_DEVICE</Dependency>
+            <Dependency>EQT_LIVE_USIM</Dependency>
+        </Environment>
+        <Parameters>
+            <Parameter name="CALL_DURATION" type="DURATION_IN_SEC" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+        </Parameters>
+    </UseCase>
+    <UseCase Id="LIVE_DUAL_PHONE_VC_MTMR" Domain="CELLULAR" SubDomain="VOICECALL" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Communication.VoiceCall.LIVE_DUAL_PHONE_VC_MTMR.LiveDualPhoneVcMtMr</ClassName>
+        <Description>Mobile Terminated Mobile Release on live network</Description>
+        <Environment name="TEL">
+            <Dependency>CAP_DUAL_DEVICE</Dependency>
+            <Dependency>EQT_LIVE_USIM</Dependency>
+        </Environment>
+        <Parameters>
+            <Parameter name="CALL_DURATION" type="DURATION_IN_SEC" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+        </Parameters>
+    </UseCase>
+    <UseCase Id="LIVE_DUAL_PHONE_VC_MTNR" Domain="CELLULAR" SubDomain="VOICECALL" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Communication.VoiceCall.LIVE_DUAL_PHONE_VC_MTNR.LiveDualPhoneVcMtNr</ClassName>
+        <Description>Mobile Terminated Network Release on live network</Description>
+        <Environment name="TEL">
+            <Dependency>CAP_DUAL_DEVICE</Dependency>
+            <Dependency>EQT_LIVE_USIM</Dependency>
+        </Environment>
+        <Parameters>
+            <Parameter name="CALL_DURATION" type="DURATION_IN_SEC" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+        </Parameters>
+    </UseCase>
+    <UseCase Id="LIVE_DUAL_PHONE_VC_MT_CALL" Domain="CELLULAR" SubDomain="VOICECALL" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Communication.VoiceCall.LIVE_DUAL_PHONE_VC_MT_CALL.LiveDualPhoneVcMtCall</ClassName>
+        <Description>MT Voice Call using two phones</Description>
+        <Environment name="TEL">
+            <Dependency>CAP_DUAL_DEVICE</Dependency>
+            <Dependency>EQT_LIVE_USIM</Dependency>
+        </Environment>
+        <Parameters>
+            <Parameter name="ACTION" type="ACTION" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="STATE" type="SCREEN_STATE" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="CALL_DURATION" type="DURATION_IN_SEC" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+        </Parameters>
+    </UseCase>
+    <UseCase Id="LIVE_DUAL_PHONE_VC_SS" Domain="CELLULAR" SubDomain="VOICECALL" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Communication.VoiceCall.LIVE_DUAL_PHONE_VC_SS.LiveDualPhoneVcSs</ClassName>
+        <Description>Supplementary services using two phone setup</Description>
+        <Environment name="TEL">
+            <Dependency>CAP_DUAL_DEVICE</Dependency>
+            <Dependency>EQT_LIVE_USIM</Dependency>
+        </Environment>
+        <Parameters>
+            <Parameter name="PHONE_NUMBER" type="PHONE_NUMBER" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="CALL_DURATION" type="DURATION_IN_SEC" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="SS_FEATURE" type="ACTION" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="SS_MODE" type="SCREEN_STATE" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="SS_PHONE_NUMBER" type="PHONE_NUMBER" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+        </Parameters>
+    </UseCase>
+    <UseCase Id="LIVE_DSDS_VC_MOMR" Domain="CELLULAR" SubDomain="VOICECALL" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Communication.VoiceCall.LIVE_DSDS_VC_MOMR.LiveDsdsVcMoMr</ClassName>
+        <Description>Mobile Originated and Mobile Release on live network using both SIM</Description>
+        <Environment name="TEL">
+            <Capabilities>CAP_DUAL_DEVICE</Capabilities>
+            <Capabilities>EQT_LIVE_USIM</Capabilities>
+        </Environment>
+        <Parameters>
+            <Parameter name="PHONE_NUMBER1" type="PHONE_NUMBER" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="PHONE_NUMBER2" type="PHONE_NUMBER" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="CALL_DURATION" type="DURATION_IN_SEC" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+        </Parameters>
+    </UseCase>
+    <UseCase Id="LAB_GSM_VC_CLIP" Domain="CELLULAR" SubDomain="VOICECALL" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Communication.VoiceCall.LAB_GSM_VC_CLIP.LabGsmVcClip</ClassName>
+        <Description>CLIP test. Setup: Build 2G connection with DUT. Test: step 1: turn the CLIP off on the network
+            simulator. step 2: call the DUT from network simulator. (No need to answer the call) step 3: check in the
+            call logs of the DUT that the call number has not been displayed. step 4: turn
+            the CLIP on on the network simulator. step 5: call the DUT from network simulator. (No need to answer the
+            call) step 6: check in the DUT call logs that the call number has been displayed. WARNING: does not test if
+            the *#30# call returns the right info.
+        </Description>
+        <Environment name="TEL">
+            <Capabilities>EQT_AG_8960</Capabilities>
+        </Environment>
+        <Parameters>
+            <Parameter name="CELL_BAND" type="CELL_BAND_2G" isOptional="false">
+                <!-- Field optional (PossibleValues, DefaultValue, Blank) if possible value not override available -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue>RGSM</DefaultValue>
+                <Blank/>
+                <Dependencies>
+                    <Dependency isOptional="false">BCH_ARFCN</Dependency>
+                    <Dependency isOptional="false">TCH_ARFCN</Dependency>
+                </Dependencies>
+            </Parameter>
+            <Parameter name="CELL_SERVICE" type="CELL_SERVICE_2G" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="CELL_POWER" type="CELL_POWER_IN_DBM" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="CALL_DURATION" type="DURATION_IN_SEC" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="PHONE_NUMBER" type="PHONE_NUMBER" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="VOICE_CODER_RATE" type="VOICE_CODER_RATE_2G" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="MCC" type="MCC" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="MNC" type="MNC" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+        </Parameters>
+    </UseCase>
+    <UseCase Id="LAB_WCDMA_VC_CLIP" Domain="CELLULAR" SubDomain="VOICECALL" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Communication.VoiceCall.LAB_WCDMA_VC_CLIP.LabWcdmaVcClip</ClassName>
+        <Description>CLIP test. Setup: Build 3G connection with DUT. Test: step 1: turn the CLIP off on the network
+            simulator. step 2: call the DUT from network simulator. (No need to answer the call) step 3: check in the
+            call logs of the DUT that the call number has not been displayed. step 4: turn
+            the CLIP on on the network simulator. step 5: call the DUT from network simulator. (No need to answer the
+            call) step 6: check in the DUT call logs that the call number has been displayed. WARNING: does not test if
+            the *#30# call returns the right info.
+        </Description>
+        <Environment name="TEL">
+            <Capabilities>EQT_AG_8960</Capabilities>
+        </Environment>
+        <Parameters>
+            <Parameter name="CELL_BAND" type="CELL_BAND_3G" isOptional="false">
+                <!-- Field optional (PossibleValues, DefaultValue, Blank) if possible value not override available -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue>1</DefaultValue>
+                <Blank/>
+                <Dependencies>
+                    <Dependency isOptional="false">DL_UARFCN</Dependency>
+                </Dependencies>
+            </Parameter>
+            <Parameter name="CELL_SERVICE" type="CELL_SERVICE_3G" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="CELL_POWER" type="CELL_POWER_IN_DBM" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="VOICE_CODER_RATE" type="VOICE_CODER_RATE_3G" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="PHONE_NUMBER" type="PHONE_NUMBER" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="CALL_DURATION" type="DURATION_IN_SEC" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+        </Parameters>
+    </UseCase>
+    <UseCase Id="LAB_LTE_IMS_VC" Domain="CELLULAR" SubDomain="VOICECALL" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Communication.VoiceCall.LAB_LTE_IMS_VC.LabLteImsVc</ClassName>
+        <Description>Registration over LTE simulated network and then Ping</Description>
+        <Environment name="TEL">
+            <Capabilities>EQT_RS_CMW500</Capabilities>
+        </Environment>
+        <Parameters>
+            <Parameter name="IMS" type="IS_IMS_ENABLED" isOptional="false">
+                <!-- Description: IMS service status on call box : on or off -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="MIMO" type="IS_MIMO_ENABLED" isOptional="false">
+                <!-- Description: Multiple-Input Multiple-Output to set : TRUE or FALSE -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="ANTENNAS_NUMBER" type="ANTENNA" isOptional="false">
+                <!-- Description: number of antennas to set : 1 or 2 -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="TRANSMISSION_MODE" type="LTE_TRANSMISSION_MODE" isOptional="false">
+                <!-- Description: TRANSMISSION_MODE to set: TM1, TM2, TM3,TM4 ... -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="DL_RB_SIZE" type="LTE_RB_SIZE" isOptional="false">
+                <!-- Description: DL RB_SIZE to set: 1.4 MHz = 1 to 6 3 MHz = 1 to 15 5 MHz = 1 to 25 10 MHz = 1 to 50 15 MHz = 1 to 75 20 MHz = 1 to 100 -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="UL_RB_SIZE" type="LTE_RB_SIZE" isOptional="false">
+                <!-- Description: UL RB_SIZE to set: 1.4 MHz = 1 to 6 3 MHz = 1 to 15 5 MHz = 1 to 25 10 MHz = 1 to 50 15 MHz = 1 to 75 20 MHz = 1 to 100 -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="TYPE0_BITMAP" type="TYPE0_BITMAP" isOptional="true">
+                <!-- Description: TYPE0_BITMAP to be set only on TM3 or TM4 profile and MIMO to be set in scenario file
+                1.4 MHz = 1 to 63 (0x3F) 3 MHz = 1 to 255 (0xFF) 5 MHz = 1 to 8191 (0x1FFF) 10 MHz = 1 to 131071 (0x1FFFF) 15 MHz = 1 to 524287 (0x7FFFF) 20 MHz = 1 to 33554431 (0x1FFFFFF) -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="UL_GRANT_MODE" type="UL_GRANT_MODE" isOptional="false">
+                <!-- Description: UL GRANT MODE to set: AUTO or FIXEDMAC -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="DL_I_MCS" type="DL_I_MCS" isOptional="false">
+                <!-- Description: DL_I_MCS to set: 0 to 28 -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="UL_I_MCS" type="UL_I_MCS" isOptional="false">
+                <!-- Description: UL_I_MCS to set: 0 to 23, and 29 -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="CELL_CHANNEL_BANDWIDTH" type="LTE_CELL_CHANNEL_BANDWIDTH" isOptional="false">
+                <!-- Description: Cell Channel Bandwidth in MHz -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="SIGNAL_MODE" type="LTE_SIGNAL_MODE" isOptional="false">
+                <!-- Description: Operation mode to set : BSE or SA -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="PHYSICAL_CELL_ID" type="LTE_PHYSICAL_CELL_ID" isOptional="false">
+                <!-- Description: Physical Cell ID : 0 to 503 -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="CELL_POWER_RFO1" type="CELL_POWER_IN_DBM" isOptional="false">
+                <!-- Description: Cell power for RFO1 -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="CELL_POWER_RFO2" type="CELL_POWER_IN_DBM" isOptional="false">
+                <!-- Description: Cell power for RFO2 -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="MCC" type="MCC" isOptional="false">
+                <!-- Description: Mobile Country Code 0 to 999 -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="MNC" type="MNC" isOptional="false">
+                <!-- Description: Mobile Network Code 0 to 999 -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="CELL_BAND" type="CELL_BAND_4G" isOptional="false">
+                <!-- Description: Cell Band (from Band 1 to Band 32 for FDD; from Band 33 to Band 63 for TDD) -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="DL_EARFCN" type="DL_EARFCN" isOptional="false">
+                <!-- Description: Downlink channel -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="IP_VERSION" type="IP_VERSION" isOptional="true">
+                <!-- Description>the IP version to use to connect to the mobile network. IPV4 | IPV6 | IPV4V6 -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="SCENARIO_PATH" type="SCENARIO_PATH" isOptional="true">
+                <!-- Description: Path to the scenario filename to load on PXT -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="VC_TYPE" type="VC_TYPE" isOptional="false">
+                <!-- Description: Voice Call type (MO [Mobile Originated] by default | MT [Mobile Terminated]) -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="RELEASE_VC_TYPE" type="RELEASE_VC_TYPE" isOptional="false">
+                <!-- Description: Release Voice Call type (MR [Mobile Release] by default | NR [Network Release]) -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="PHONE_NUMBER" type="PHONE_NUMBER" isOptional="false">
+                <!-- Description:  -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="CALL_DURATION" type="DURATION_IN_SEC" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+        </Parameters>
+    </UseCase>
+    <UseCase Id="LIVE_DUAL_PHONE_VC_LINE_IDENTIFICATION" Domain="CELLULAR" SubDomain="VOICECALL" OS="ANDROID"
+             Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Communication.VoiceCall.LIVE_DUAL_PHONE_VC_LINE_IDENTIFICATION.LiveDualPhoneVcLineIdentification</ClassName>
+        <Description>Live Cellular check of call details when private number is used.</Description>
+        <Environment name="ANY"/>
+        <Parameters>
+            <Parameter name="CALL_DURATION" type="DURATION_IN_SEC" isOptional="false">
+                <!-- An integer indicating the call duration in seconds -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+        </Parameters>
+    </UseCase>
+    <UseCase Id="LIVE_LTE_IMS_MO_VC" Domain="CELLULAR" SubDomain="VOICECALL" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Communication.VoiceCall.LIVE_LTE_IMS_MO_VC.LiveLteImsMoVc</ClassName>
+        <Description>IMS IR92 Voice Call</Description>
+        <Environment name="TEL">
+            <Capabilities>EQT_LIVE_USIM</Capabilities>
+        </Environment>
+        <Parameters>
+            <Parameter name="IMS_REGISTRATION_OPERATION" type="IMS_REGISTRATION_OPERATION" isOptional="false">
+                <Description>Indicates the action to perform for IMS registration.
+                    REGISTER (perform IMS registration normally) or
+                    CHECK_ONLY (only check that the IMS status is REGISTERED).</Description>
+                <PossibleValues>REGISTER;CHECK_ONLY</PossibleValues>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="IMS_REGISTRATION_TIMEOUT" type="TIMEOUT_IN_SEC" isOptional="false">
+                <Description>The additional timeout for IMS registration.</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="IMS_PARAMETER_FILE" type="IMS_CONFIG_FILE" isOptional="false">
+                <Description> The path to the IMS parameter file to use to create the IMS_Config.ini file on the device. </Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="IMS_AUTHENTICATION" type="IMS_PARAMETER" isOptional="false">
+                <Description>The authentication mode to use ("digest"|"aka").</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="IMS_PRECONDITIONS" type="IMS_PARAMETER" isOptional="false">
+                <Description>The precondition parameters ("3gpp" with preconditions, "ietf" without preconditions).</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="IMS_DIGEST_PASSWORD" type="IMS_PARAMETER" isOptional="true">
+                <Description>The DIGEST password to use when chosing DIGEST authentication mode.</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="IP_VERSION" type="IP_VERSION" isOptional="true">
+                <Description>IP version used for the APN to connect to the C4I network. IPV4 | IPV6 | IPV4V6</Description>
+                <PossibleValues>IPV4;IPV4V6;IPV6</PossibleValues>
+                <DefaultValue>IPV4</DefaultValue>
+                <Blank/>
+            </Parameter>
+        </Parameters>
+    </UseCase>
+    <UseCase Id="LIVE_LTE_IMS_VC_DUAL" Domain="CELLULAR" SubDomain="VOICECALL" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Communication.VoiceCall.LIVE_LTE_IMS_VC_DUAL.LiveLteImsVcDual</ClassName>
+        <Description>IMS MO/MT Voice Call using two phones</Description>
+        <Environment name="TEL">
+            <Capabilities>EQT_LIVE_USIM</Capabilities>
+        </Environment>
+        <Parameters>
+            <Parameter name="IMS_REGISTRATION_OPERATION" type="IMS_REGISTRATION_OPERATION" isOptional="false">
+                <Description>Indicates the action to perform for IMS registration.
+                    REGISTER (perform IMS registration normally) or
+                    CHECK_ONLY (only check that the IMS status is REGISTERED).</Description>
+                <PossibleValues>REGISTER;CHECK_ONLY</PossibleValues>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="IMS_REGISTRATION_TIMEOUT" type="TIMEOUT_IN_SEC" isOptional="false">
+                <Description>The additional timeout for IMS registration.</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="IMS_PARAMETER_FILE" type="IMS_CONFIG_FILE" isOptional="false">
+                <Description> The path to the IMS parameter file to use to create the IMS_Config.ini file on the device. </Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="IMS_AUTHENTICATION" type="IMS_PARAMETER" isOptional="false">
+                <Description>The authentication mode to use ("digest"|"aka").</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="IMS_PRECONDITIONS" type="IMS_PARAMETER" isOptional="false">
+                <Description>The precondition parameters ("3gpp" with preconditions, "ietf" without preconditions).</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="IMS_DIGEST_PASSWORD" type="IMS_PARAMETER" isOptional="true">
+                <Description>The DIGEST password to use when chosing DIGEST authentication mode.</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="IP_VERSION" type="IP_VERSION" isOptional="true">
+                <Description>IP version used for the APN to connect to the C4I network. IPV4 | IPV6 | IPV4V6</Description>
+                <PossibleValues>IPV4;IPV4V6;IPV6</PossibleValues>
+                <DefaultValue>IPV4</DefaultValue>
+                <Blank/>
+            </Parameter>
+            <Parameter name="CALL_DIRECTION" type="CALL_DIRECTION" isOptional="false">
+                <Description>Mobile Originating or Mobile terminated call</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="CALL_RELEASE" type="CALL_RELEASE" isOptional="false">
+                <Description>The parameters that controls who's releaseing the IMS voice call
+                                 MR: Mobile Release
+                                 NR: Network Release
+                </Description>
+                <PossibleValues>MR;NR</PossibleValues>
+                <DefaultValue>MR</DefaultValue>
+                <Blank/>
+            </Parameter>
+            <Parameter name="CALL_TYPE" type="IMS_CALL_TYPE" isOptional="false">
+                <Description>IMS call type</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="PHONE_NUMBER" type="PHONE_NUMBER" isOptional="false">
+                <!-- Description:  -->
+                <Description>The phone number to be called</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="CALL_DURATION" type="DURATION_IN_SEC" isOptional="false">
+                <Description>Seconds to wait while call is establised</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="CHECK_CALL_ON_HOLD_RESUME" type="CHECK_CALL_ON_HOLD_RESUME" isOptional="true">
+                <Description>Perform call on hold/resume procedure and checks the call status</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="REMOTE_PARTY_ACTION" type="REMOTE_PARTY_ACTION" isOptional="true">
+                <Description>Remote party action regarding the call initiated by the main DUT
+                                 - BUSY: The remote party will reject the call
+                                 - NO_ANSWER: The remote party will not answer the call
+                </Description>
+                <PossibleValues>BUSY;NO_ANSWER</PossibleValues>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="RINGING_TIME" type="DURATION_IN_SEC" isOptional="true">
+                <Description>The minimum ringing time to wait in seconds (defaults to 15s). This parameter is associated to the Remote Party Action: NO_ANSWER.</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="FTP_TRANSFER" type="FTP_TRANSFER" isOptional="true">
+                <Description>Perform FTP data transfer during IMS call</Description>
+                <PossibleValues>TRUE;FALSE</PossibleValues>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="FTP_DIRECTION" type="FTP_DIRECTION" isOptional="true">
+                <Description>FTP data transfer direction:
+                                 - DL: Download
+                                 - UL: Upload
+                                 - BOTH: Download and upload
+                </Description>
+                <PossibleValues>DL;UL;BOTH</PossibleValues>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="IP_VERSION" type="IP_VERSION" isOptional="true">
+                <Description>The IP version to use to connect to the mobile network. IPV4 | IPV6</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="DL_FILENAME" type="STRING" isOptional="true">
+                <Description>
+                    File to download from the server. This file shall be available on the server.
+                    ACS gets its path value from BenchConfig using ftp_path key of SERVER equipments (WIFI_SERVER,
+                    LAB_SERVER...)
+                    If the file to transfer is located in an other specific directory,
+                    you can specify its path. i.e. : acs/download_file/get5M
+                </Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="UL_FILENAME" type="STRING" isOptional="true">
+                <Description>
+                    File to upload on the server. This file shall be available on the device.
+                    ACS gets its path value from DeviceCatalog, BenchConfig or CLI using key ftpPath
+                    If the file to transfer is located in an other specific directory,
+                    you can specify its path. i.e. : acs/upload_file/put5M
+                </Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="XFER_TIMEOUT" type="TIMEOUT_IN_SEC" isOptional="true">
+                <Description>Transfer timeout in second.</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+        </Parameters>
+    </UseCase>
+    <UseCase Id="LIVE_LTE_IMS_VC_SS_DUAL" Domain="CELLULAR" SubDomain="VOICECALL" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Communication.VoiceCall.LIVE_LTE_IMS_VC_SS_DUAL.LiveLteImsVcSSDual</ClassName>
+        <Description>IMS Supplementary Services using two phones</Description>
+        <Environment name="TEL">
+            <Capabilities>EQT_LIVE_USIM</Capabilities>
+        </Environment>
+        <Parameters>
+            <Parameter name="IMS_REGISTRATION_OPERATION" type="IMS_REGISTRATION_OPERATION" isOptional="false">
+                <Description>Indicates the action to perform for IMS registration.
+                    REGISTER (perform IMS registration normally) or
+                    CHECK_ONLY (only check that the IMS status is REGISTERED).</Description>
+                <PossibleValues>REGISTER;CHECK_ONLY</PossibleValues>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="IMS_REGISTRATION_TIMEOUT" type="TIMEOUT_IN_SEC" isOptional="false">
+                <Description>The additional timeout for IMS registration.</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="IMS_PARAMETER_FILE" type="IMS_CONFIG_FILE" isOptional="false">
+                <Description>The path to the IMS parameter file to use to create the IMS_Config.ini file on the device.</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="IMS_AUTHENTICATION" type="IMS_PARAMETER" isOptional="false">
+                <Description>The authentication mode to use ("digest"|"aka").</Description>
+                <PossibleValues>DIGEST;AKA</PossibleValues>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="IMS_DIGEST_PASSWORD" type="IMS_PARAMETER" isOptional="true">
+                <Description>The DIGEST password to use when chosing DIGEST authentication mode.</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="IMS_PRECONDITIONS" type="IMS_PARAMETER" isOptional="false">
+                <Description>The precondition parameters ("3gpp" with preconditions, "ietf" without preconditions).</Description>
+                <PossibleValues>3GPP;IETF</PossibleValues>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="CALL_TYPE" type="IMS_CALL_TYPE" isOptional="false">
+                <Description>IMS call type</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="SS_FEATURE" type="SS_FEATURE" isOptional="false">
+                <Description>Supplementary Service</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="SS_MODE" type="SS_MODE" isOptional="false">
+                <Description>The mode of Supplementary Service</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="CB_ACTIVATION_CODE" type="CB_ACTIVATION_CODE" isOptional="true">
+                <Description>Call barring activation/deactivate password</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="SS_PHONE_NUMBER" type="PHONE_NUMBER" isOptional="false">
+                <Description>The phone number used for Supplementary Service</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+        </Parameters>
+    </UseCase>
+    <UseCase Id="LIVE_DUAL_PHONE_VC_SMS_FLIGHT_MODE" Domain="CELLULAR" SubDomain="VOICECALL" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Communication.VoiceCall.LIVE_DUAL_PHONE_VC_SMS_FLIGHT_MODE.LiveDualPhoneVcSmsFlightmode</ClassName>
+        <Description>Live Voice Call and SMS test while DUT is in Flight Mode </Description>
+        <Environment name="TEL">
+            <Capabilities>CAP_DUAL_DEVICE</Capabilities>
+            <Capabilities>EQT_LIVE_USIM</Capabilities>
+        </Environment>
+        <Parameters>
+            <Parameter name="MESSAGE_CONTENT" type="TEXT_MESSAGE" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="SMS_TRANSFER_TIMEOUT" type="TIMEOUT_IN_SEC" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="CALL_DURATION" type="DURATION_IN_SEC" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+        </Parameters>
+    </UseCase>
+    <UseCase Id="LIVE_LTE_IMS_VC_TRANSITION_DUAL" Domain="CELLULAR" SubDomain="VOICECALL" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Communication.VoiceCall.LIVE_LTE_IMS_VC_TRANSITION_DUAL.LiveLteImsVcTransitionDual</ClassName>
+        <Description>Identification of LTE IMS IR94 video Call and IR92 IR94 transition using two phones setup</Description>
+        <Environment name="TEL">
+            <Capabilities>EQT_LIVE_USIM</Capabilities>
+        </Environment>
+        <Parameters>
+            <Parameter name="IMS_REGISTRATION_OPERATION" type="IMS_REGISTRATION_OPERATION" isOptional="false">
+                <Description>Indicates the action to perform for IMS registration.
+                    REGISTER (perform IMS registration normally) or
+                    CHECK_ONLY (only check that the IMS status is REGISTERED).</Description>
+                <PossibleValues>REGISTER;CHECK_ONLY</PossibleValues>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="IMS_REGISTRATION_TIMEOUT" type="TIMEOUT_IN_SEC" isOptional="false">
+                <Description>The additional timeout for IMS registration.</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="IMS_PARAMETER_FILE" type="IMS_CONFIG_FILE" isOptional="false">
+                <Description> The path to the IMS parameter file to use to create the IMS_Config.ini file on the device. </Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="IMS_AUTHENTICATION" type="IMS_PARAMETER" isOptional="false">
+                <Description>The authentication mode to use ("digest"|"aka").</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="IMS_PRECONDITIONS" type="IMS_PARAMETER" isOptional="false">
+                <Description>The precondition parameters ("3gpp" with preconditions, "ietf" without preconditions).</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="IMS_DIGEST_PASSWORD" type="IMS_PARAMETER" isOptional="true">
+                <Description>The DIGEST password to use when choosing DIGEST authentication mode.</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="IP_VERSION" type="IP_VERSION" isOptional="true">
+                <Description>IP version used for the APN to connect to the C4I network. IPV4 | IPV6 | IPV4V6</Description>
+                <PossibleValues>IPV4;IPV4V6;IPV6</PossibleValues>
+                <DefaultValue>IPV4</DefaultValue>
+                <Blank/>
+            </Parameter>
+            <Parameter name="CALL_DIRECTION" type="CALL_DIRECTION" isOptional="false">
+                <Description>Mobile Originating or Mobile terminated call</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="CALL_RELEASE" type="CALL_RELEASE" isOptional="false">
+                <Description>The parameters that controls who's releasing the IMS voice call
+                                 MR: Mobile Release
+                                 NR: Network Release
+                </Description>
+                <PossibleValues>MR;NR</PossibleValues>
+                <DefaultValue>MR</DefaultValue>
+                <Blank/>
+            </Parameter>
+            <Parameter name="CALL_TYPE" type="IMS_CALL_TYPE" isOptional="false">
+                <Description>IMS call type</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="PHONE_NUMBER" type="PHONE_NUMBER" isOptional="false">
+                <!-- Description:  -->
+                <Description>The phone number to be called</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="CALL_DURATION" type="DURATION_IN_SEC" isOptional="false">
+                <Description>Seconds to wait while call is established</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="CALL_TRANSITION_DOWNGRADE" type="CALL_TRANSITION_DOWNGRADE" isOptional="true">
+                <Description>IR94 Call transition, video downgrade to audio call</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="REMOTE_PARTY_ACTION" type="REMOTE_PARTY_ACTION" isOptional="true">
+                <Description>Remote party action regarding the call initiated by the main DUT
+                                 - BUSY: The remote party will reject the call
+                                 - NO_ANSWER: The remote party will not answer the call
+                </Description>
+                <PossibleValues>BUSY;NO_ANSWER</PossibleValues>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="RINGING_TIME" type="DURATION_IN_SEC" isOptional="true">
+                <Description>The minimum ringing time to wait in seconds (defaults to 15s). This parameter is associated to the Remote Party Action: NO_ANSWER.</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+        </Parameters>
+    </UseCase>
+    <UseCase Id="LIVE_DSDS_PS_VC" Domain="CELLULAR" SubDomain="VOICECALL" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Communication.DSDS.LIVE_DSDS_PS_VC.LiveDsdsFtpVc</ClassName>
+        <Description>Live browsing with sms sending simultaneously</Description>
+        <Environment name="TEL">
+            <Capabilities>EQT_LIVE_USIM</Capabilities>
+        </Environment>
+        <Parameters>
+            <Parameter name="DESTINATION_NUMBER" type="PHONE_NUMBER" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="PREFERRED_NETWORK_TYPE" type="NETWORK_PREFERENCES" isOptional="true">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="TIMEOUT" type="TIMEOUT_IN_SEC" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="SERVER_NAME" type="SERVER_DETAILS" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="XFER_TIMEOUT" type="TIMEOUT_IN_SEC" isOptional="false">
+                <Description>Transfer timeout in second.</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="DIRECTION" type="XFER_DIRECTION" isOptional="false">
+                <Description>Direction of FTP transfer</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="DL_FILE" type="STRING" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="BASENAME" type="STRING" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+        </Parameters>
+    </UseCase>
+</UseCases>

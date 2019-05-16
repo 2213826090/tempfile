@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<TestCase>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Discription>
+Use apk to get Orientation frequency: Fastest should be equal or over 100HZ, and frequency should have basic rule as: Fastest&amp;gt;Game&amp;gt;UI&amp;gt;Normal,
+</Discription>
+    <Domain>Sensor</Domain>
+    <Phase>CORE</Phase>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <Type>FUNCTIONAL</Type>
+    <UseCase>PY_UNIT</UseCase>
+    <b2bIteration>1</b2bIteration>
+    <Parameters>
+        <Parameter>
+            <Name>HpalmName</Name>
+            <Value>frequency_orientation_fastest.frequency_orientation_fastest.test_frequency_orientation_fastest</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TEST_DATA_ROOT</Name>
+            <Value>testplan/Sensor</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TEST_CASE</Name>
+            <Value>tests.Sensor.Fusion_Sensor.frequency_orientation_fastest.frequency_orientation_fastest.test_frequency_orientation_fastest</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<TestCase>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Discription>
+Verify Video playback: MP4_h264(HiP@4.0)_1080p_30FPS_25Mbps_AAC-LC_48KHz_256Kbps_1Min(179MB)_BBB.mp4
+</Discription>
+    <Domain>Multimedia_Video</Domain>
+    <Phase>CORE</Phase>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <Type>FUNCTIONAL</Type>
+    <UseCase>PY_UNIT</UseCase>
+    <b2bIteration>1</b2bIteration>
+    <Parameters>
+        <Parameter>
+            <Name>HpalmName</Name>
+            <Value>video_api_test.VideoAPITest.testPlayback_MP4_h264_HiP_4_0_1080p_30FPS_25Mbps_AAC_LC_48KHz_256Kbps_1Min_179MB_BBB_mp4</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TEST_DATA_ROOT</Name>
+            <Value>testplan/Multimedia_Video</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TEST_CASE</Name>
+            <Value>tests.Multimedia_Video.Decode.video_api_test.VideoAPITest.testPlayback_MP4_h264_HiP_4_0_1080p_30FPS_25Mbps_AAC_LC_48KHz_256Kbps_1Min_179MB_BBB_mp4</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

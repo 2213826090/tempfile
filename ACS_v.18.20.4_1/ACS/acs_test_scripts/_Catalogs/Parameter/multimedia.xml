@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!-- Multimedia Parameters Catalog Template : new template to automatically populate i-TAP database with exhaustive Multimedia TC params -->
+<Parameters xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../acs/src/_Catalogs/Parameter/parameter.xsd">
+    <Parameter name="IS_RECORDED_ENABLED">
+        <Description>Enable/Disable record audio file onto host PC while playing on DUT</Description>
+        <Domain>MULTIMEDIA</Domain>
+        <Type>bool</Type>
+        <PossibleValues override="false">true;false</PossibleValues>
+        <DefaultValue override="true">false</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="DEVIATION_IN_MSEC">
+        <Description>Deviation for total playtime in millisecond</Description>
+        <Domain>MULTIMEDIA</Domain>
+        <Type>int</Type>
+        <PossibleValues override="true">[0:5000]</PossibleValues>
+        <DefaultValue override="true">2500</DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="DISP_BRIGHTNESS_IN_PERCENT">
+        <Description>Display brightness in percent</Description>
+        <Domain>MULTIMEDIA</Domain>
+        <Type>int</Type>
+        <PossibleValues override="false">[0:100]</PossibleValues>
+        <DefaultValue override="true">50</DefaultValue>
+        <Blank override="true">false</Blank>
+    </Parameter>
+    <Parameter name="DEVIATION_IN_PERCENT">
+        <Description>Deviation rate in percent</Description>
+        <Domain>MULTIMEDIA</Domain>
+        <Type>int</Type>
+        <PossibleValues override="false">[0:100]</PossibleValues>
+        <DefaultValue override="true">50</DefaultValue>
+        <Blank override="true">false</Blank>
+    </Parameter>
+    <Parameter name="DEVIATION_IN_PERCENT">
+        <Description>Deviation rate in percent</Description>
+        <Domain>MULTIMEDIA</Domain>
+        <Type>int</Type>
+        <PossibleValues override="false">[0:100]</PossibleValues>
+        <DefaultValue override="true">50</DefaultValue>
+        <Blank override="true">false</Blank>
+    </Parameter>
+    <Parameter name="MULTIMEDIA_TYPE">
+        <Description>the type of multimedia to use during your test AUDIO or VIDEO </Description>
+        <Domain>MULTIMEDIA</Domain>
+        <Type>str</Type>
+        <PossibleValues override="true">AUDIO;VIDEO</PossibleValues>
+        <DefaultValue override="true"></DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+</Parameters>

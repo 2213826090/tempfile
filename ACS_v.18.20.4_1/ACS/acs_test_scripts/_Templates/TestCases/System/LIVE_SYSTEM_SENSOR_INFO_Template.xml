@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="13.37">
+    <UseCase>LIVE_SYSTEM_SENSOR_INFO</UseCase>
+    <Description>Live System Sensor Test</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>False</b2bContinuousMode>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters>
+        <Parameter>
+            <!--The name of sensor to be test
+                The possible value could be
+                accelerometer/compass/gyroscope/orientation/
+                barometer/proximity/light/temperature/gravity/
+                rotation_vector/linear_accelerometer
+            -->
+            <Name>SENSOR</Name>
+            <Value>accelerometer</Value>
+        </Parameter>
+        <Parameter>
+            <!--The information to be check
+                The possible value could be
+                name/vendor/version/maximumrange/resolution/
+                power/type/data/delay/frequency/number/list
+            -->
+            <Name>INFORMATION</Name>
+            <Value>name</Value>
+        </Parameter>
+        <Parameter>
+            <!--The value expect to get
+                The value is different according to the INFORMATION you want get.
+                For example, when you check the SENSOR accelerometer's INFORMATION name,
+                the VALUE could be "LIS3DH 3-axis Accelerometer"
+            -->
+            <Name>VALUE</Name>
+            <Value>"LIS3DH 3-axis Accelerometer"</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

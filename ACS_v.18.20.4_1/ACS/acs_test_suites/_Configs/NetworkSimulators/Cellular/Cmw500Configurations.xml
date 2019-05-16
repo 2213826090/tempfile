@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<Configs>
+    <Config name="COMMON_LTE">
+        <!-- COMMON LTE Parameters for LTE CELL -->
+        <GPIB command="SOURce:LTE:SIGN:CELL:STATe OFF" />
+        <GPIB command="CONFigure:LTE:SIGN:ETOE ON" />
+        <GPIB command="CONFigure:LTE:SIGN:BAND OB1" />
+        <GPIB command="CONFigure:LTE:SIGN:CELL:BAND:DL B100" />
+        <GPIB command="CONFigure:LTE:SIGN:CONNection:UDCHannels:DL 50,0,Q64,21" />
+        <GPIB command="CONFigure:LTE:SIGN:CONNection:UDCHannels:UL 50,0,Q16,21" />
+        <GPIB command="CONFigure:LTE:SIGN:CONNection:STYPE UDCH" />
+        <GPIB command="CONFigure:LTE:SIGN:CELL:SEC:IALG S3G" />
+        <GPIB command="CONFigure:LTE:SIGN:CONN:AMDB ON" />
+        <GPIB command="CONFigure:LTE:SIGN:CONNection:DPCYcle P128" />
+        <GPIB command="CONFigure:LTE:SIGN:DL:RSEPre:LEVel -85" />
+        <GPIB command="CONFigure:LTE:SIGN:UL:PUSCh:OLNPower -20" />
+        <GPIB command="CONFigure:LTE:SIGN:UL:PUSCh:TPC:CLTPower 10" />
+        <GPIB command="CONFigure:LTE:SIGN:CONNection:SCHModel:ENABle OFF" />
+        <GPIB command="CONFigure:LTE:SIGN:CONNection:PDCCh:RPDCch ON" />
+        <GPIB command="CONFigure:LTE:SIGN:CELL:PCID 0" />
+        <GPIB command="CONF:LTE:SIGN:RFS:CHAN:DL 300" />
+        <GPIB command="CONF:LTE:SIGN:CELL:MCC 1" />
+        <GPIB command="CONF:LTE:SIGN:CELL:MNC 1" />
+    </Config>
+    <Config name="BAND1" apply_to="COMMON_LTE">
+        <!-- Specific parameters for LTE BAND1 for LTE CELL -->
+        <GPIB command="CONFigure:LTE:SIGN:NCELl:GSM:CELL1 ON, G18, 512" />
+        <GPIB command="CONFigure:LTE:SIGN:NCELl:WCDMa:CELL1 ON, OB1, 10700, #H10A" />
+    </Config>
+    <Config name="BAND2" apply_to="COMMON_LTE">
+        <!-- Specific parameters for LTE BAND2 for LTE CELL -->
+        <GPIB command="CONFigure:LTE:SIGN:NCELl:GSM:CELL1 ON, G19, 540" />
+        <GPIB command="CONFigure:LTE:SIGN:NCELl:WCDMa:CELL1 ON, OB2, 9662, #H10A" />
+    </Config>
+    <Config name="BAND3" apply_to="COMMON_LTE">
+        <!-- Specific parameters for LTE BAND3 for LTE CELL -->
+        <GPIB command="CONFigure:LTE:SIGN:NCELl:GSM:CELL1 ON, G18, 512" />
+        <GPIB command="CONFigure:LTE:SIGN:NCELl:WCDMa:CELL1 ON, OB1, 10700, #H10A" />
+    </Config>
+    <Config name="BAND4" apply_to="COMMON_LTE">
+        <!-- Specific parameters for LTE BAND4 for LTE CELL -->
+        <GPIB command="CONFigure:LTE:SIGN:NCELl:GSM:CELL1 ON, G19, 540" />
+        <GPIB command="CONFigure:LTE:SIGN:NCELl:WCDMa:CELL1 ON, OB2, 9662, #H10A" />
+    </Config>
+    <Config name="BAND5" apply_to="COMMON_LTE">
+        <!-- Specific parameters for LTE BAND5 for LTE CELL -->
+        <GPIB command="CONFigure:LTE:SIGN:NCELl:GSM:CELL1 ON, G18, 512" />
+        <GPIB command="CONFigure:LTE:SIGN:NCELl:WCDMa:CELL1 ON, OB1, 10700, #H10A" />
+    </Config>
+    <Config name="BAND6" apply_to="COMMON_LTE">
+        <!-- Specific parameters for LTE BAND6 for LTE CELL -->
+        <GPIB command="CONFigure:LTE:SIGN:NCELl:GSM:CELL1 ON, G18, 512" />
+        <GPIB command="CONFigure:LTE:SIGN:NCELl:WCDMa:CELL1 ON, OB1, 10700, #H10A" />
+    </Config>
+    <Config name="BAND7" apply_to="COMMON_LTE">
+        <!-- Specific parameters for LTE BAND7 for LTE CELL -->
+        <GPIB command="CONFigure:LTE:SIGN:NCELl:GSM:CELL1 ON, G18, 512" />
+        <GPIB command="CONFigure:LTE:SIGN:NCELl:WCDMa:CELL1 ON, OB1, 10700, #H10A" />
+    </Config>
+    <Config name="BAND8" apply_to="COMMON_LTE">
+        <!-- Specific parameters for LTE BAND8 for LTE CELL -->
+        <GPIB command="CONFigure:LTE:SIGN:NCELl:GSM:CELL1 ON, G18, 512" />
+        <GPIB command="CONFigure:LTE:SIGN:NCELl:WCDMa:CELL1 ON, OB1, 10700, #H10A" />
+    </Config>
+    <Config name="BAND9" apply_to="COMMON_LTE">
+        <!-- Specific parameters for LTE BAND9 for LTE CELL -->
+        <GPIB command="CONFigure:LTE:SIGN:NCELl:GSM:CELL1 ON, G18, 512" />
+        <GPIB command="CONFigure:LTE:SIGN:NCELl:WCDMa:CELL1 ON, OB6, 4287, #H10A" />
+    </Config>
+    <Config name="BAND17" apply_to="COMMON_LTE">
+        <!-- Specific parameters for LTE BAND17 for LTE CELL -->
+        <GPIB command="CONFigure:LTE:SIGN:NCELl:GSM:CELL1 ON, G19, 540" />
+        <GPIB command="CONFigure:LTE:SIGN:NCELl:WCDMa:CELL1 ON, OB2, 9662, #H10A" />
+    </Config>
+    <Config name="BAND19" apply_to="COMMON_LTE">
+        <!-- Specific parameters for LTE BAND19 for LTE CELL -->
+        <GPIB command="CONFigure:LTE:SIGN:NCELl:GSM:CELL1 ON, G18, 512" />
+        <GPIB command="CONFigure:LTE:SIGN:NCELl:WCDMa:CELL1 ON, OB6, 4287, #H10A" />
+    </Config>
+    <Config name="" apply_to="COMMON_LTE">
+        <!-- Specific parameters for LTE BAND20 for LTE CELL -->
+        <GPIB command="CONFigure:LTE:SIGN:NCELl:GSM:CELL1 ON, G18, 512" />
+        <GPIB command="CONFigure:LTE:SIGN:NCELl:WCDMa:CELL1 ON, OB1, 10700, #H10A" />
+    </Config>
+    <Config name="CAT_1" apply_to="COMMON_LTE">
+        <!-- Specific parameters for LTE Category 1 -->
+        <GPIB command="CONFigure:LTE:SIGN:CELL:BAND:DL B100" />
+        <GPIB command="CONFigure:LTE:SIGN:CONNection:STYPe UDCH" />
+        <GPIB command="CONFigure:LTE:SIGN:CONNection:UDCHannels:DL 40,0,Q16,13" />
+        <GPIB command="CONFigure:LTE:SIGN:CONNection:UDCHannels:UL 50,0,QPSK,6" />
+    </Config>
+    <Config name="CAT_2" apply_to="COMMON_LTE">
+        <!-- Specific parameters for LTE Category 2 -->
+        <GPIB command="CONFigure:LTE:SIGN:CELL:BAND:DL B200" />
+        <GPIB command="CONFigure:LTE:SIGN:CONNection:STYPe UDCH" />
+        <GPIB command="CONFigure:LTE:SIGN:CONNection:UDCHannels:DL 100,0,Q64,21" />
+        <GPIB command="CONFigure:LTE:SIGN:CONNection:UDCHannels:UL 40,0,Q16,21" />
+    </Config>
+    <Config name="CAT_3" apply_to="COMMON_LTE">
+        <!-- Specific parameters for LTE Category 3 -->
+        <GPIB command="CONFigure:LTE:SIGN:CELL:BAND:DL B200" />
+        <GPIB command="CONFigure:LTE:SIGN:CONNection:STYPe UDCH" />
+        <GPIB command="CONFigure:LTE:SIGN:CONNection:UDCHannels:DL 100,0,Q64,21" />
+        <GPIB command="CONFigure:LTE:SIGN:CONNection:UDCHannels:UL 100,0,Q16,21" />
+    </Config>
+    <Config name="CAT_4" apply_to="COMMON_LTE">
+        <!-- Specific parameters for LTE Category 4 -->
+        <GPIB command="CONFigure:LTE:SIGN:CELL:BAND:DL B200" />
+        <GPIB command="CONFigure:LTE:SIGN:CONNection:STYPe UDCH" />
+        <GPIB command="CONFigure:LTE:SIGN:CONNection:UDCHannels:DL 100,0,Q64,26" />
+        <GPIB command="CONFigure:LTE:SIGN:CONNection:UDCHannels:UL 100,0,Q16,21" />
+    </Config>
+    <Config name="MIMO">
+        <!-- Specific parameters for MIMO -->
+        <GPIB command="ROUT:LTE:SIGN:SCEN:TRO RF1C,RX1,RF1C,TX1,RF3C,TX2" />
+        <GPIB command="CONF:LTE:SIGN:CONN:TSCH OLSM" />
+        <GPIB command="CONFigure:LTE:SIGN:CONNection:NENBantennas TWO" />
+        <GPIB command="CONFigure:LTE:SIGN:CONNection:SCHModel:ENABle ON" />
+        <GPIB command="CONFigure:LTE:SIGN:CONNection:SCHModel 0.9,0,45,0.1,45,0" />
+    </Config>
+    <Config name="COMMON_IMS">
+        <!-- Specific parameters for LTE IMS -->
+        <GPIB command="CONFigure:DATA:CONTrol:IMS:SUSage INTernal" />
+        <GPIB command="CONFigure:DATA:CONTrol:IMS:INTern:PCSCf:ATYPe IPVFour" />
+        <GPIB command="CONFigure:DATA:CONTrol:IMS:UAUThentic OFF" />
+        <GPIB command="CONFigure:DATA:CONTrol:IMS:UAUThentic:ALGorithm MILenage" />
+        <GPIB command="CONFigure:DATA:CONTrol:IMS:UAUThentic:KEY #H000102030405060708090A" />
+        <GPIB command="CONFigure:DATA:CONTrol:IMS:UAUThentic:RAND #H36A7ABC1234" />
+        <GPIB command="CONFigure:DATA:CONTrol:IMS:UAUThentic:AMF #H8005" />
+        <GPIB command="CONFigure:DATA:CONTrol:IMS:UAUThentic:AKAVersion AKA1" />
+        <GPIB command="CONFigure:DATA:CONTrol:IMS:UAUThentic:KTYPe OPC" />
+        <GPIB command="CONFigure:DATA:CONTrol:IMS:UAUThentic:AOPC #HCB9DCD65B9258E6DC14760379" />
+        <GPIB command="CONFigure:DATA:CONTrol:IMS:UAUThentic:AOP #H0" />
+        <GPIB command="CONFigure:DATA:CONTrol:IMS:UAUThentic:RESLength 128" />
+        <GPIB command="CONFigure:DATA:CONTrol:IMS:UAUThentic:IPSec OFF" />
+        <GPIB command="CONFigure:DATA:CONTrol:IMS:UAUThentic:IPSec:IALGorithm HMMD" />
+        <GPIB command="CONFigure:DATA:CONTrol:IMS:UAUThentic:IPSec:EALGorithm DES" />
+        <GPIB command="CONFigure:DATA:CONTrol:IMS:UAUThentic:PUID '001010123456063@ims.mnc001.mcc001.3gppnetwork.org'" />
+        <GPIB command="CONFigure:DATA:CONTrol:IMS:VOICe:PRECondition WNPRecondit" />
+        <GPIB command="CONFigure:DATA:CONTrol:IMS:VOICe:LOOPback ON" />
+        <GPIB command="CONFigure:LTE:SIGN1:CELL:NAS:EPSNetwork ON" />
+        <GPIB command="CONFigure:LTE:SIGN1:CELL:NAS:IMSVops SUPPorted" />
+        <GPIB command="CONFigure:LTE:SIGN1:CELL:NAS:EMCBs SUPPorted" />
+    </Config>
+    <Config name="TDD_COMMON">
+        <!-- Specific parameters for LTE TDD -->
+        <!-- COMMON LTE TDD Parameters -->
+        <GPIB command="CONF:LTE:SIGN1:CELL:CPR NORM" />
+        <GPIB command="CONFigure:LTE:SIGN:ETOE ON" />
+        <GPIB command="CONF:LTE:SIGN1:DMOD TDD" />
+        <GPIB command="CONF:LTE:SIGN1:PCC:BAND OB38" />
+        <GPIB command="CONF:LTE:SIGN1:CELL:BAND:PCC:DL B200" />
+        <GPIB command="CONF:LTE:SIGN1:CELL:PCC:PCID 0" />
+        <GPIB command="CONF:LTE:SIGN1:CELL:PHIC HALF" />
+        <GPIB command="CONF:LTE:MEAS1:CBAN B200" />
+        <GPIB command="CONF:LTE:SIGN1:CONN:DPCY P128" />
+        <GPIB command="CONF:LTE:SIGN1:DL:PCC:RSEP:LEV -80" />
+        <GPIB command="CONF:LTE:SIGN1:DL:PCC:PSS:POFF 0" />
+        <GPIB command="CONF:LTE:SIGN1:DL:PCC:SSS:POFF 0" />
+        <GPIB command="CONF:LTE:SIGN1:DL:PCC:PBCH:POFF 0" />
+        <GPIB command="CONF:LTE:SIGN1:DL:PCC:PCF:POFF 0" />
+        <GPIB command="CONF:LTE:SIGN1:DL:PCC:PDCC:POFF 0" />
+        <GPIB command="CONF:LTE:SIGN1:DL:PCC:OCNG OFF" />
+        <GPIB command="CONF:LTE:SIGN1:CONN:PDCC:RPDC ON" />
+        <GPIB command="CONF:LTE:SIGN1:DL:PCC:PDSC:PA ZERO" />
+        <GPIB command="CONF:LTE:SIGN1:DL:PCC:PDSC:RIND 0" />
+        <GPIB command="CONF:LTE:SIGN1:UL:OLNP 0" />
+        <GPIB command="CONF:LTE:SIGN1:UL:PUSC:TPC:SET CLO" />
+        <GPIB command="CONF:LTE:SIGN1:UL:PMAX 24" />
+        <GPIB command="CONF:LTE:SIGN1:UL:PUSC:TPC:CLTP 0" />
+        <GPIB command="CONF:LTE:SIGN1:UL:PUCC:CLTP 0" />
+        <GPIB command="CONF:LTE:SIGN1:CONN:DLE 0" />
+        <GPIB command="CONF:LTE:SIGN1:CONN:ASEM NS01" />
+        <GPIB command="CONF:LTE:SIGN1:CONN:PCC:STYP UDTT" />
+        <GPIB command="CONF:LTE:SIGN1:CONN:PCC:UDTT:DL1 0,92,0,Q64,24" />
+        <GPIB command="CONF:LTE:SIGN1:CONN:PCC:UDTT:DL1 1,92,0,Q64,24" />
+        <GPIB command="CONF:LTE:SIGN1:CONN:PCC:UDTT:DL1 4,92,0,Q64,24" />
+        <GPIB command="CONF:LTE:SIGN1:CONN:PCC:UDTT:DL1 5,92,0,Q64,24" />
+        <GPIB command="CONF:LTE:SIGN1:CONN:PCC:UDTT:DL1 6,92,0,Q64,24" />
+        <GPIB command="CONF:LTE:SIGN1:CONN:PCC:UDTT:DL1 9,92,0,Q64,24" />
+        <GPIB command="CONF:LTE:SIGN1:CONN:PCC:UDTT:UL 2,90,0,Q16,20" />
+        <GPIB command="CONF:LTE:SIGN1:CONN:PCC:UDTT:UL 3,90,0,Q16,20" />
+        <GPIB command="CONF:LTE:SIGN1:CONN:PCC:UDTT:UL 7,90,0,Q16,20" />
+        <GPIB command="CONF:LTE:SIGN1:CONN:PCC:UDTT:UL 8,90,0,Q16,20" />
+        <GPIB command="CONF:LTE:SIGN1:CONN:FCO FC4" />
+        <GPIB command="CONF:LTE:SIGN1:NCELl:LTE:CELL1 OFF,OB7,3100,210,N24,OFF" />
+        <GPIB command="CONF:LTE:SIGN1:NCELl:LTE:CELL2 OFF,OB7,3100,210,N24,OFF" />
+        <GPIB command="CONF:LTE:SIGN1:NCELl:LTE:CELL3 OFF,OB7,3100,210,N24,OFF" />
+        <GPIB command="CONF:LTE:SIGN1:NCELl:LTE:CELL4 OFF,OB7,3100,210,N24,OFF" />
+        <GPIB command="CONF:LTE:SIGN1:NCELl:LTE:CELL5 OFF,OB7,3100,210,N24,OFF" />
+        <GPIB command="CONF:LTE:SIGN1:NCELl:LTE:CELL6 OFF,OB7,3100,210,N24,OFF" />
+        <GPIB command="CONF:LTE:SIGN1:NCELl:LTE:CELL7 OFF,OB7,3100,210,N24,OFF" />
+        <GPIB command="CONF:LTE:SIGN1:NCELl:LTE:CELL8 OFF,OB7,3100,210,N24,OFF" />
+        <GPIB command="CONF:LTE:SIGN1:NCELl:LTE:CELL9 OFF,OB7,3100,210,N24,OFF" />
+        <GPIB command="CONF:LTE:SIGN1:NCELl:LTE:CELL10 OFF,OB7,3100,210,N24,OFF" />
+        <GPIB command="CONF:LTE:SIGN1:NCELl:LTE:CELL11 OFF,OB7,3100,210,N24,OFF" />
+        <GPIB command="CONF:LTE:SIGN1:NCELl:LTE:CELL12 OFF,OB7,3100,210,N24,OFF" />
+        <GPIB command="CONF:LTE:SIGN1:NCELl:LTE:CELL13 OFF,OB7,3100,210,N24,OFF" />
+        <GPIB command="CONF:LTE:SIGN1:NCELl:LTE:CELL14 OFF,OB7,3100,210,N24,OFF" />
+        <GPIB command="CONF:LTE:SIGN1:NCELl:LTE:CELL15 OFF,OB7,3100,210,N24,OFF" />
+        <GPIB command="CONF:LTE:SIGN1:NCELl:LTE:CELL16 OFF,OB7,3100,210,N24,OFF" />
+        <GPIB command="CONF:LTE:SIGN1:NCEL:WCDM:CELL1 OFF,OB1,10563,#H78,OFF" />
+        <GPIB command="CONF:LTE:SIGN1:NCEL:WCDM:CELL2 OFF,OB1,10563,#H78,OFF" />
+        <GPIB command="CONF:LTE:SIGN1:NCEL:WCDM:CELL3 OFF,OB1,10563,#H78,OFF" />
+        <GPIB command="CONF:LTE:SIGN1:NCEL:WCDM:CELL4 OFF,OB1,10563,#H78,OFF" />
+        <GPIB command="CONF:LTE:SIGN1:NCEL:GSM:CELL1 OFF,G09,124,OFF" />
+        <GPIB command="CONF:LTE:SIGN1:NCEL:GSM:CELL2 OFF,G09,124,OFF" />
+        <GPIB command="CONF:LTE:SIGN1:NCEL:GSM:CELL3 OFF,G09,124,OFF" />
+        <GPIB command="CONF:LTE:SIGN1:NCEL:GSM:CELL4 OFF,G09,124,OFF" />
+        <GPIB command="CONF:LTE:SIGN1:RFS:PCC:CHAN:UL 38000" />
+        <GPIB command="CONF:LTE:SIGN1:CELL:MCC 1" />
+        <GPIB command="CONF:LTE:SIGN1:CELL:MNC 1" />
+        <GPIB command="CONF:LTE:SIGN1:CELL:MNC:DIG TWO" />
+        <GPIB command="CONF:LTE:SIGN1:CELL:TAC 1" />
+        <GPIB command="CONF:LTE:SIGN1:CELL:PCC:CID:EUTR #B0000000000000000000100000000" />
+        <GPIB command="CONF:LTE:SIGN1:CELL:SEC:AUTH ON" />
+        <GPIB command="CONF:LTE:SIGN1:CELL:SEC:NAS ON" />
+        <GPIB command="CONF:LTE:SIGN1:CELL:SEC:AS ON" />
+        <GPIB command="CONF:LTE:SIGN1:CELL:SEC:MIL OFF" />
+        <GPIB command="CONF:LTE:SIGN1:CELL:SEC:IALG S3G" />
+        <GPIB command="CONFigure:LTE:SIGN:CELL:BANDwidth:DL B200" />
+        <GPIB command="CONFigure:LTE:SIGN:CONNection:SCHModel:ENABle OFF" />
+        <GPIB command="CONFigure:LTE:SIGN:CONNection:CTYPe DAPPlication" />
+        <GPIB command="CONFigure:LTE:SIGN:CELL:SECurity:AUTHenticat ON" />
+        <GPIB command="CONFigure:LTE:SIGN:CELL:SECurity:NAS ON" />
+        <GPIB command="CONFigure:LTE:SIGN:CELL:SECurity:AS ON" />
+        <GPIB command="CONFigure:LTE:SIGN:CELL:SECurity:IALGorithm S3G" />
+        <GPIB command="CONFigure:LTE:SIGN:CONNection:STYPe UDCHannels" />
+        <GPIB command="CONFigure:LTE:SIGN:CONNection:UDCHannels:DL 100,0,Q64,26" />
+        <GPIB command="CONFigure:LTE:SIGN:CONNection:PDCCh:RPDCch ON" />
+        <GPIB command="CONFigure:LTE:SIGN:CONNection:UDCHannels:UL 100,0,Q16,21" />
+        <GPIB command="CONFigure:LTE:SIGN:CONNection:CDRX:ENABle UDEF" />
+        <GPIB command="CONFigure:LTE:SIGN:CONNection:CDRX:ODTimer PSF2" />
+        <GPIB command="CONFigure:LTE:SIGN:CONNection:CDRX:ITIMer PSF100" />
+        <GPIB command="CONFigure:LTE:SIGN:CONNection:CDRX:RTIMer PSF1" />
+        <GPIB command="CONFigure:LTE:SIGN:CONNection:CDRX:LDCYcle SF80" />
+        <GPIB command="CONFigure:LTE:SIGN:CONNection:CDRX:SOFFset 0" />
+        <GPIB command="CONFigure:LTE:SIGN:CONNection:CDRX:SCENable OFF" />
+        <GPIB command="CONFigure:LTE:SIGN:CONNection:CDRX:SCTimer 1" />
+        <GPIB command="CONFigure:LTE:SIGN:CONNection:DLPadding OFF" />
+        <GPIB command="CONFigure:LTE:SIGN:CONNection:CDRX:UDSCheduling OFF" />
+        <GPIB command="CONFigure:LTE:SIGN:CONNection:RLCMode AM" />
+        <GPIB command="CONFigure:LTE:SIGN:CONNection:KRRC ON" />
+    </Config>
+    <Config name="TDD_CONF0" apply_to="TDD_COMMON">
+        <!-- LTE TDD Configuration 0 for optimal UL data transfer -->
+        <GPIB command="CONF:LTE:SIGN1:CELL:ULDL 0" />
+        <GPIB command="CONF:LTE:SIGN1:CELL:SSUBframe 7" />
+    </Config>
+    <Config name="TDD_CONF1" apply_to="TDD_COMMON">
+        <!-- LTE TDD Configuration 1 for optimal UL+DL data transfer -->
+        <GPIB command="CONF:LTE:SIGN1:CELL:ULDL 1" />
+        <GPIB command="CONF:LTE:SIGN1:CELL:SSUBframe 7" />
+    </Config>
+    <Config name="TDD_CONF5" apply_to="TDD_COMMON">
+        <!-- LTE TDD Configuration 5 for optimal DL data transfer -->
+        <GPIB command="CONF:LTE:SIGN1:CELL:ULDL 5" />
+        <GPIB command="CONF:LTE:SIGN1:CELL:SSUBframe 7" />
+    </Config>
+    <Config name="COMMON_LTE_COEX">
+        <!-- COMMON LTE Parameters for LTE CELL - Sophia-Antipolis configuration -->
+        <GPIB command="SOURce:LTE:SIGN:CELL:STATe OFF" />
+        <GPIB command="CONFigure:LTE:SIGN:BAND OB1" />
+        <GPIB command="CONFigure:LTE:SIGN:CELL:BAND:DL B100" />
+        <GPIB command="CONFigure:LTE:SIGN:CONNection:UDCHannels:DL 50,0,Q64,21" />
+        <GPIB command="CONFigure:LTE:SIGN:CONNection:UDCHannels:UL 50,0,Q16,21" />
+        <GPIB command="CONFigure:LTE:SIGN:CONNection:STYPE UDTT" />
+        <GPIB command="CONFigure:LTE:SIGN:CELL:SEC:IALG S3G" />
+        <GPIB command="CONFigure:LTE:SIGN:CONN:AMDB ON" />
+        <GPIB command="CONFigure:LTE:SIGN:CONNection:DPCYcle P064" />
+        <GPIB command="CONFigure:LTE:SIGN:DL:RSEPre:LEVel -65" />
+        <GPIB command="CONFigure:LTE:SIGN:UL:PUSCh:OLNPower 10" />
+        <GPIB command="CONFigure:LTE:SIGN:UL:PUSCh:TPC:CLTPower 23" />
+        <!-- <GPIB command="CONFigure:LTE:SIGN:CONNection:SCHModel:ENABle OFF" /> -->
+        <GPIB command="CONFigure:LTE:SIGN:CONNection:PDCCh:RPDCch OFF" />
+    </Config>
+    <Config name="CAT_4_LTE_COEX" apply_to="COMMON_LTE_COEX">
+        <!-- Specific parameters for LTE Category 4 -->
+        <GPIB command="CONFigure:LTE:SIGN:CELL:BAND:DL B200" />
+        <GPIB command="CONFigure:LTE:SIGN:CONNection:UDCHannels:DL 100,0,QPSK,5" />
+        <GPIB command="CONFigure:LTE:SIGN:CONNection:UDCHannels:UL 100,0,QPSK,2" />
+    </Config>
+    <Config name="DAU_LTE_COEX" apply_to="COMMON_LTE_COEX">
+        <!-- DAU IP address shall be static -->
+        <GPIB command="CONFigure:DATA:CONTrol:IPVFour:ADDRess:TYPE STATic" />
+        <!-- DAU IP address -->
+        <GPIB command="CONFigure:DATA:CONTrol:IPVFour:STATic:IPADdress '192.168.48.100'" />
+        <!-- DAU IP submask -->
+        <GPIB command="CONFigure:DATA:CONTrol:IPVFour:STATic:SMASk '255.255.255.0'" />
+        <!-- DAU Gateway IP address -->
+        <GPIB command="CONFigure:DATA:CONTrol:IPVFour:STATic:GIP '192.168.48.10'" />
+        <!-- Delete first 3 IP addresses for UE in DAU - forget errors reported in case IP addresses do not exist -->
+        <!-- Errors reported in case IP addresses do not exist -> IGNORE IT -->
+        <GPIB command="CONFigure:DATA:CONTrol:IPVFour:STATic:ADDResses:DELete 0" />
+        <GPIB command="CONFigure:DATA:CONTrol:IPVFour:STATic:ADDResses:DELete 0" />
+        <GPIB command="CONFigure:DATA:CONTrol:IPVFour:STATic:ADDResses:DELete 0" />
+        <!-- Add IP addresses for UE in DAU -->
+        <GPIB command="CONFigure:DATA:CONTrol:IPVFour:STATic:ADDResses:ADD '192.168.48.101'" />
+        <GPIB command="CONFigure:DATA:CONTrol:IPVFour:STATic:ADDResses:ADD '192.168.48.102'" />
+        <GPIB command="CONFigure:DATA:CONTrol:IPVFour:STATic:ADDResses:ADD '192.168.48.103'" />
+        <!-- Enable external DNS -->
+        <GPIB command="CONFigure:DATA:CONTrol:DNS:PRIMary:STYPe FOReign" />
+        <GPIB command="CONFigure:DATA:CONTrol:DNS:FOReign:IPVFour:PRIMary:ADDRess '192.168.48.10'" />
+        <GPIB command="CONFigure:DATA:CONTrol:DNS:SECondary:STYPe NONE" />
+        <GPIB command="CONFigure:LTE:SIGN:CONNection:CTYPe DAPPlication" />
+        <GPIB command="CONFigure:LTE:SIGN:ETOE ON" />
+        <!-- Switch ON DAU - Don't worry, it takes long to complete -->
+        <GPIB command="SOURce:DATA:CONTrol:STATe ON" />
+        <!-- Switch ON HTTP server -->
+        <!-- <GPIB command="SOURce:DATA:CONTrol:HTTP:STATe ON" /> -->
+    </Config>
+</Configs>

@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='ASCII'?>
+<TestCase>
+    <UseCase>Testlib</UseCase>
+    <Description>fastboot</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <TcMaxAttempt>3</TcMaxAttempt>
+    <Parameters/>
+    <Domain>System_FastBoot</Domain>
+    <Parameters/>
+    <Phase>CORE</Phase>
+    <Parameters/>
+    <Type>FUNCTIONAL</Type>
+    <Parameters>
+        <Parameter>
+            <Name>test</Name>
+            <Value>scripts/android/fastboot/tests_bxt-p/data_partition_is_not_erased_when_update_image.py</Value>
+        </Parameter>
+        <Parameter>
+            <Name>timeout</Name>
+            <Value>2400</Value>
+        </Parameter>
+        <Parameter>
+            <Name>script-args</Name>
+            <Value>partition_name=bootloader file_name=bootloader_gr_mrb_b1</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

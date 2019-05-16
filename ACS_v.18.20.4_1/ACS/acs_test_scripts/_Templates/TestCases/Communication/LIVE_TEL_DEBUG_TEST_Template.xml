@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="13.37">
+    <UseCase>LIVE_TEL_DEBUG_TEST</UseCase>
+    <Description>TEL - This UseCase valid all uecmd used in TEL domain.</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>False</b2bContinuousMode>
+    <Parameters>
+        <Parameter>
+            <!-- The UECMD type list separated with ';'
+                You can choose it amoung these :
+                MODEM, VOICECALL, MESSAGING, NETWORKING -->
+            <Name>UECMD_TYPE_LIST</Name>
+            <Value>NETWORKING</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='ASCII'?>
+<TestCase>
+    <UseCase>Testlib</UseCase>
+    <Description>Youtube -- upload a video</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <TcMaxAttempt>1</TcMaxAttempt>
+    <TestSteps>
+        <Initialize>
+            <TestStep Id="GET_ARTIFACT" EQT="ARTIFACT_MANAGER" ARTIFACT="VIDEO/H263/FULLTIME_h263_25fps_1248kbps_44khz_32kbps.MP4" ARTIFACT_SOURCE="FROM_BENCH:ARTIFACT_MANAGER:URI" TRANSFER_TIMEOUT="DEFAULT" STORED_FILE_PATH="FILE_PATH_IN_CACHE1"/>
+            <TestStep Id="INSTALL_FILE" DEVICE="PHONE1" FILE_PATH="FROM_CTX:FILE_PATH_IN_CACHE1" TYPE="media" DESTINATION="/storage/sdcard0/Movies/" DESTINATION_STORED_PATH="/storage/sdcard0/Movies/" TIMEOUT="DEFAULT"/>
+        </Initialize>
+        <Finalize>
+            <TestStep Id="UNINSTALL_FILE" DEVICE="PHONE1" DEVICE_FOLDER="/storage/sdcard0/Movies/" FILENAME="FULLTIME_h263_25fps_1248kbps_44khz_32kbps.MP4"/>
+        </Finalize>
+    </TestSteps>
+    <Parameters>
+        <Parameter>
+            <Name>timeout</Name>
+            <Value>300</Value>
+        </Parameter>
+        <Parameter>
+            <Name>script-args</Name>
+            <Value>{"video_file":"FULLTIME_h263_25fps_1248kbps_44khz_32kbps.MP4","account":"auto2test@gmail.com","password":"testing12345"}</Value>
+        </Parameter>
+        <Parameter>
+            <Name>test</Name>
+            <Value>scripts/gms/youtube/tests/upload_video.py</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

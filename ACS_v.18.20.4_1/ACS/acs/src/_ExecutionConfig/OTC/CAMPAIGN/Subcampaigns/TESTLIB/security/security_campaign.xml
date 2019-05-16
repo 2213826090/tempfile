@@ -1,0 +1,43 @@
+<?xml version="1.0" ?>
+<Campaign>
+      <Parameters>
+            <Parameter isControlledPSUsed="False"/>
+            <Parameter isIoCardUsed="False"/>
+            <Parameter skipBootOnPowerCycle="False"/>
+            <Parameter bootRetryNumber="0"/>
+            <Parameter runHookScripts="False"/>
+            <Parameter powerCycleBetweenTC="False"/>
+            <Parameter powerCycleOnFailure="False"/>
+            <Parameter finalDutState="NoChange"/>
+            <Parameter stopCampaignOnCriticalFailure="False"/>
+            <Parameter stopCampaignOnFirstFailure="False"/>
+            <Parameter loggingLevel="debug"/>
+            <Parameter CampaignType="Other"/>
+            <Parameter TCRReportViaRESTAPI="True"/>
+      </Parameters>
+      <TestCases>
+          <TestCase Id="../../../../TC/TR/TESTLIB/Security/selinux"/>
+          <TestCase Id="../../../../TC/TR/TESTLIB/Security/system_mount_ro"/>
+          <TestCase Id="../../../../TC/TR/TESTLIB/Security/keymaster"/>
+          <TestCase Id="../../../../TC/TR/TESTLIB/Security/hardware_backed"/>
+          <TestCase Id="../../../../TC/TR/TESTLIB/Security/disk_encryption"/>
+          <TestCase Id="../../../../TC/TR/TESTLIB/Security/instant_lock"/>
+          <TestCase Id="../../../../TC/TR/TESTLIB/Security/lock_timer"/>
+          <TestCase Id="../../../../TC/TR/TESTLIB/Security/lock_protected_options"/>
+          <TestCase Id="../../../../TC/TR/TESTLIB/Security/dm_verity"/>
+          <TestCase Id="../../../../TC/TR/TESTLIB/Security/brute_force_deterrent"/>
+          <TestCase Id="../../../../TC/TR/TESTLIB/Security/secure_storage_widevine_keys"/>
+          <TestCase Id="../../../../TC/TR/TESTLIB/Security/safe_mode"/>
+          <TestCase Id="../../../../TC/TR/TESTLIB/Security/fastboot_mode"/>
+          <TestCase Id="../../../../TC/TR/TESTLIB/Security/unlock_to_lock_switch"/>
+          <TestCase Id="../../../../TC/TR/TESTLIB/Security/gvb_green"/>
+          <TestCase Id="../../../../TC/TR/TESTLIB/Security/fastboot_unlock_bootloader"/>
+          <TestCase Id="../../../../TC/TR/TESTLIB/Security/flash_unlock_with_oem_unlock"/>
+          <TestCase Id="../../../../TC/TR/TESTLIB/Security/gvb_orange"/>
+          <TestCase Id="../../../../TC/TR/TESTLIB/Security/fastboot_unlock_and_Widevine_DRM_Level1"/>
+          <TestCase Id="../../../../TC/TR/TESTLIB/Security/smart_lock_trusted_location"/>
+          <TestCase Id="../../../../TC/TR/TESTLIB/Security/data_integrity_after_PIN_setup"/>
+          <TestCase Id="../../../../TC/TR/TESTLIB/Security/lock_screen_at_boot_time"/>
+          <TestCase Id="../../../../TC/TR/TESTLIB/Security/brute_force_deterrent_at_boot_time"/>
+      </TestCases>
+</Campaign>

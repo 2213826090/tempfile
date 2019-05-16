@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase>
+    <UseCase>LAB_EM_BATT_BENCH_CYCLE_2G</UseCase>
+    <Description>battery monitoring - Bench cycle in 2G</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>False</b2bContinuousMode>
+    <Parameters>
+        <Parameter>
+            <!-- Start capacity for this test from 0% to 100% or 'full', if you are
+                above board will discharge to adjust its capacity -->
+            <Name>BATT_START_CAPACITY</Name>
+            <Value>50</Value>
+        </Parameter>
+        <Parameter>
+            <!-- maximal capacity limit for battery charging from 0% to 100%,
+                or 'FULL' to reach full state -->
+            <Name>BATT_MAX_CAPACITY</Name>
+            <Value>FULL</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Charging time before reading information from board in seconds -->
+            <Name>CHARGE_TIME</Name>
+            <Value>900</Value>
+        </Parameter>
+        <Parameter>
+            <!-- minimal capacity limit for battery discharging from 0% to 100% -->
+            <Name>BATT_MIN_CAPACITY</Name>
+            <Value>0</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Cell Service GSM|GPRS|EGPRS -->
+            <Name>CELL_SERVICE</Name>
+            <Value>GPRS</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Cell Band (PGSM|RGSM|EGSM|GSM450|GSM480|GSM750|GSM850|TGSM810|PCS|DCS) -->
+            <Name>CELL_BAND</Name>
+            <Value>EGSM</Value>
+        </Parameter>
+        <Parameter>
+            <!-- TCH ARFCN -->
+            <Name>TCH_ARFCN</Name>
+            <Value>62</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Cell power in dBm -->
+            <Name>CELL_POWER</Name>
+            <Value>-70</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Uplink data channel in dBm -->
+            <Name>UPLINK_CHANNEL</Name>
+            <Value>33</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Choose which device do the call: SIMULATOR|PHONE -->
+            <Name>CALL_ORIGIN</Name>
+            <Value>SIMULATOR</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Data call test mode : TEST_MODE_A|TEST_MODE_B -->
+            <Name>DATA_CALL_MODE</Name>
+            <Value>TEST_MODE_A</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Activate burst slot 3 (True/False) -->
+            <Name>USE_SLOT_3</Name>
+            <Value>True</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Activate burst slot 4 (True/False) -->
+            <Name>USE_SLOT_4</Name>
+            <Value>True</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Activate burst slot 5 (True/False) -->
+            <Name>USE_SLOT_5</Name>
+            <Value>True</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Activate burst slot 6 (True/False) -->
+            <Name>USE_SLOT_6</Name>
+            <Value>True</Value>
+        </Parameter>
+        <Parameter>
+            <!-- configure slot 3 uplink/Gamma PCL level :a value of 3 is equal to 33dBm -->
+            <Name>SLOT_3_PCL</Name>
+            <Value>3</Value>
+        </Parameter>
+        <Parameter>
+            <!-- configure slot 4 uplink/Gamma PCL level :a value of 3 is equal to 33dBm -->
+            <Name>SLOT_4_PCL</Name>
+            <Value>3</Value>
+        </Parameter>
+        <Parameter>
+            <!-- configure slot 5 uplink/Gamma PCL level :a value of 3 is equal to 33dBm -->
+            <Name>SLOT_5_PCL</Name>
+            <Value>3</Value>
+        </Parameter>
+        <Parameter>
+            <!-- configure slot 6 uplink/Gamma PCL level :a value of 3 is equal to 33dBm -->
+            <Name>SLOT_6_PCL</Name>
+            <Value>3</Value>
+        </Parameter>
+        <Parameter>
+            <!-- OPTIONAL PARAMETER Temperature Chamber Temperature in degree Celsius,
+                its use require that a temperature chamber is present. -->
+            <Name>TCT</Name>
+            <Value></Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

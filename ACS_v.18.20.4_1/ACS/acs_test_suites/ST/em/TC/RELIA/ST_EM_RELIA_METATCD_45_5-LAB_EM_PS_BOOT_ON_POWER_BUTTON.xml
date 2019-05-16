@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase>
+    <UseCase>LAB_EM_PS_BOOT_ON_POWER_BUTTON</UseCase>
+    <Description>PUPDR - boot a board with given vbatt and power button time.</Description>
+    <b2bIteration>5</b2bIteration>
+    <b2bContinuousMode>False</b2bContinuousMode>
+    <Parameters>
+        <Parameter>
+            <!-- Vbatt Voltage -->
+            <Name>VBATT</Name>
+            <Value>3.7</Value>
+        </Parameter>
+        <Parameter>
+            <!-- power button time to turn on the board -->
+            <Name>PWR_BT_TIME_TO_ON</Name>
+            <Value>2.3</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

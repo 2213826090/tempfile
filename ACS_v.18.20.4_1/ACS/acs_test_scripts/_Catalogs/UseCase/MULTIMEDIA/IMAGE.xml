@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<UseCases xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:noNamespaceSchemaLocation="../../../../acs/src/_Catalogs/UseCase/usecase.xsd">
+    <UseCase Id="LIVE_DISPLAY_IMAGE_BASIC" Domain="MULTIMEDIA" SubDomain="IMAGE" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Multimedia.LIVE_DISPLAY_IMAGE_BASIC.LiveDisplayImageBasic</ClassName>
+        <Description>Check if a picture is correctly displayed by photos</Description>
+        <Environment name="ANY">
+        </Environment>
+    </UseCase>
+    <UseCase Id="LIVE_DISPLAY_IMAGE_ROTATE" Domain="MULTIMEDIA" SubDomain="IMAGE" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Multimedia.LIVE_DISPLAY_IMAGE_ROTATE.LiveDisplayImageRotate</ClassName>
+        <Description>Check if a picture is correctly displayed by photos where there is a screen rotation</Description>
+        <Environment name="ANY">
+        </Environment>
+    </UseCase>
+    <UseCase Id="LIVE_DISPLAY_IMAGE_ZOOM_IN" Domain="MULTIMEDIA" SubDomain="IMAGE" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Multimedia.LIVE_DISPLAY_IMAGE_ZOOM_IN.LiveDisplayImageZoomIn</ClassName>
+        <Description>Check if a zoom in on a picture is correctly displayed by photos</Description>
+        <Environment name="ANY">
+        </Environment>
+    </UseCase>
+    <UseCase Id="LIVE_DISPLAY_IMAGE_ZOOM_IN_ZOOM_OUT" Domain="MULTIMEDIA" SubDomain="IMAGE" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Multimedia.LIVE_DISPLAY_IMAGE_ZOOM_IN_ZOOM_OUT.LiveDisplayImageZoomInZoomOut</ClassName>
+        <Description>Check if a zoom in/ swipe/ zoom out in a picture is correctly displayed by photos</Description>
+        <Environment name="ANY">
+        </Environment>
+    </UseCase>
+    <UseCase Id="LIVE_IMAGE_WALLPAPER" Domain="MULTIMEDIA" SubDomain="IMAGE" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Multimedia.LIVE_IMAGE_WALLPAPER.LiveImageWallpaper</ClassName>
+        <Description>set a static or live wallpaper</Description>
+        <Environment name="ANY">
+        </Environment>
+    </UseCase>
+</UseCases>

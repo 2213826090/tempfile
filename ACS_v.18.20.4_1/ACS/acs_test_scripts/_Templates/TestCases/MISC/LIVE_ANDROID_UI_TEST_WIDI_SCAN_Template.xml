@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="13.37">
+    <UseCase>ANDROID_UI_TEST_WIDI_SCAN</UseCase>
+    <Description>Use case that will scan for WiDi adapter and show list</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters>
+        <Parameter>
+            <Name>ERROR_MANAGEMENT_POLICY</Name>
+            <!--
+                The error management policy. Possible values:
+                - RAISE_EXCEPTION: usual exception management, raises an exception.
+                - LOG_WARNING: simply log a warning, but do not raise an exception.
+
+                Default value (if parameter is not indicated here): LOG_WARNING
+            -->
+            <Value>LOG_WARNING</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

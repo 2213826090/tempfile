@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="13.37">
+  <UseCase>LAB_MOBILITY_CRESEL_FTP</UseCase>
+  <Description> Perform several cell reselection 2G/3G during data transfer</Description>
+  <Requirements>
+    <Contour>
+        <Global_ID>16418791</Global_ID>
+        <Test_Case_ID>ST_TELEPHONY_DATA_IRAT_CCO_002</Test_Case_ID>
+        <Name>Inter-RAT 3G Band II DCH to EDGE PCS and back during FTP Upload transfer</Name>
+    </Contour>
+  </Requirements>
+  <b2bIteration>1</b2bIteration>
+  <b2bContinuousMode>True</b2bContinuousMode>
+  <Parameters>
+    <Parameter>
+        <!-- NS1 Cell Technology (2G|3G) -->
+        <Name>NS1_CELL_TECH</Name>
+        <Value>3G</Value>
+    </Parameter>
+    <Parameter>
+        <!-- Compressed mode to activate-->
+        <Name>COMPRESSED_MODE_ACTIVE</Name>
+        <Value>True</Value>
+    </Parameter>
+    <Parameter>
+        <!-- NS1 Cell Band
+            For 2G : EGSM|GSM850|PCS|DCS
+            For 3G : 1,2,5,8
+        -->
+        <Name>NS1_CELL_BAND</Name>
+        <Value>2</Value>
+    </Parameter>
+    <Parameter>
+        <!-- NS1 Cell Service ( (GSM|GPRS|EGPRS) for 2G CELL, (CIRCUIT|PACKET|CIRCUIT_PACKET) for 3G CELL) -->
+        <Name>NS1_CELL_SERVICE</Name>
+        <Value>PACKET</Value>
+    </Parameter>
+    <Parameter>
+        <!-- NS1 cell power -->
+        <Name>NS1_CELL_POWER</Name>
+        <Value>-75</Value>
+    </Parameter>
+    <Parameter>
+        <!-- NS1 limit cell power -->
+        <Name>NS1_LIMIT_POWER</Name>
+        <Value>-85</Value>
+    </Parameter>
+    <Parameter>
+        <!-- NS1 limit cell power after first resel -->
+        <Name>NS1_LIMIT_POWER_FIRST_RESEL</Name>
+        <Value>-110</Value>
+    </Parameter>
+    <Parameter>
+        <!-- NS1 Cell LAC, For 2G and 3G: 0 to 65535-->
+        <Name>NS1_LAC</Name>
+        <Value>2</Value>
+    </Parameter>
+    <Parameter>
+        <!-- NS1 Cell Routing Area, For 2G and 3G: 1 to 255-->
+        <Name>NS1_RAC</Name>
+        <Value>2</Value>
+    </Parameter>
+    <Parameter>
+        <!-- NS1 ARFCN -->
+        <Name>NS1_ARFCN</Name>
+        <Value>9700</Value>
+    </Parameter>
+    <Parameter>
+        <!-- Decrementation step for NS1 cell power in dBm (must be positive, can be decimal value like 0,20 or 2,6) -->
+        <Name>DECREMENTATION_STEP_POWER</Name>
+        <Value>2</Value>
+    </Parameter>
+    <Parameter>
+        <!-- Decrementation step timer in seconds between 2 steps (must be positive, can be decimal value like 0,3 or 3,5) -->
+        <Name>DECREMENTATION_STEP_TIMER</Name>
+        <Value>4</Value>
+    </Parameter>
+     <Parameter>
+        <!-- NS2 Cell Technology (2G|3G) -->
+        <Name>NS2_CELL_TECH</Name>
+        <Value>2G</Value>
+    </Parameter>
+    <Parameter>
+        <!-- NS2 Cell Band
+            For 2G : EGSM|GSM850|PCS|DCS
+            For 3G : 1,2,5,8
+        -->
+        <Name>NS2_CELL_BAND</Name>
+        <Value>PCS</Value>
+    </Parameter>
+    <Parameter>
+        <!-- NS2 Cell Service ( (GSM|GPRS|EGPRS) for 2G CELL, (CIRCUIT|PACKET|CIRCUIT_PACKET) for 3G CELL) -->
+        <Name>NS2_CELL_SERVICE</Name>
+        <Value>EGPRS</Value>
+    </Parameter>
+    <Parameter>
+        <!-- NS2 cell power -->
+        <Name>NS2_CELL_POWER</Name>
+        <Value>-70</Value>
+    </Parameter>
+    <Parameter>
+        <!-- NS2 limit cell power -->
+        <Name>NS2_LIMIT_POWER</Name>
+        <Value>-100</Value>
+    </Parameter>
+    <Parameter>
+        <!-- NS2 Cell LAC, For 2G and 3G: 0 to 65535-->
+        <Name>NS2_LAC</Name>
+        <Value>1</Value>
+    </Parameter>
+    <Parameter>
+        <!-- NS2 Cell Routing Area, For 2G and 3G: 1 to 255-->
+        <Name>NS2_RAC</Name>
+        <Value>1</Value>
+    </Parameter>
+    <Parameter>
+        <!-- NS2 Arfcn -->
+        <Name>NS2_ARFCN</Name>
+        <Value>540</Value>
+    </Parameter>
+    <Parameter>
+        <!-- Incrementation step for NS1 cell power in dBm (must be positive, can be decimal value like 0,20 or 2,6) -->
+        <Name>INCREMENTATION_STEP_POWER</Name>
+        <Value>4</Value>
+    </Parameter>
+    <Parameter>
+        <!-- Incrementation step timer in seconds between 2 steps (must be positive, can be decimal value like 0,3 or 3,5) -->
+        <Name>INCREMENTATION_STEP_TIMER</Name>
+        <Value>4</Value>
+    </Parameter>
+    <Parameter>
+      <!-- FTP transfer direction: DL or UL -->
+      <Name>DIRECTION</Name>
+      <Value>UL</Value>
+    </Parameter>
+    <Parameter>
+        <!-- File to download from the server. This file shall be available on the server. If the file to transfer is located in a specific directory, you can specify its path. i.e. : acs/download_file/get5M -->
+        <Name>DL_FILENAME</Name>
+        <Value>get10M</Value>
+    </Parameter>
+    <Parameter>
+        <!-- File to upload on the server. This file shall be available on the device. If the file to transfer is located in a specific directory, you can specify its path. i.e. : acs/upload_file/put5M -->
+        <Name>UL_FILENAME</Name>
+        <Value>5MB.txt</Value>
+    </Parameter>
+    <Parameter>
+        <!-- Transfer timeout in s -->
+        <Name>XFER_TIMEOUT</Name>
+        <Value>800</Value>
+    </Parameter>
+        <Parameter>
+        <!-- Uplink Radio Access Bearer (64k | 128k | 384k | MAX [If MAX is selected, value will be taken from DeviceCatalog.xml]) -->
+        <Name>UL_RAB</Name>
+        <Value>64k</Value>
+    </Parameter>
+    <Parameter>
+        <!-- Downlink Radio Access Bearer (64k | 128k | 384k | MAX [If MAX is selected, value will be taken from DeviceCatalog.xml]) -->
+        <Name>DL_RAB</Name>
+        <Value>384k</Value>
+    </Parameter>
+    <Parameter>
+        <!-- HSPA, WCDMA or GSM -->
+        <Name>CATEGORY</Name>
+        <Value>WCDMA</Value>
+    </Parameter>
+  </Parameters>
+</TestCase>

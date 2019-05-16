@@ -1,0 +1,2712 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<UseCases xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:noNamespaceSchemaLocation="../../../../acs/src/_Catalogs/UseCase/usecase.xsd">
+    <UseCase Id="LAB_MOBILITY_EXT_HO_VC" Domain="CELLULAR" SubDomain="MOBILITY" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Mobility.LAB_MOBILITY_EXT_HO_VC.LabMobilityExtHoVc</ClassName>
+        <Description>Perform several 2G/3G Handovers during Voice Call</Description>
+        <Environment name="TEL">
+            <Capabilities>EQT_AG_8960</Capabilities>
+            <Capabilities>CAP_DUAL_NS</Capabilities>
+        </Environment>
+        <Parameters>
+            <Parameter name="CELL_JUMP_NUMBER" type="ITERATION" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="CONFIGURATION_FILE" type="ST_EQUIPMENT_CONFIG_FILE" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="PHONE_NUMBER" type="PHONE_NUMBER" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="MULTISLOT_CONFIG" type="MULTISLOT_CONFIG" isOptional="true">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+        </Parameters>
+    </UseCase>
+    <UseCase Id="LAB_MOBILITY_EXT_HO_FTP" Domain="CELLULAR" SubDomain="MOBILITY" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Mobility.LAB_MOBILITY_EXT_HO_FTP.LabMobilityExtHoFtp</ClassName>
+        <Description>Perform several 2G/3G Handovers during a FTP transfer</Description>
+        <Environment name="TEL">
+            <Capabilities>EQT_AG_8960</Capabilities>
+            <Capabilities>CAP_DUAL_NS</Capabilities>
+            <Capabilities>SW_FTP_SERVER</Capabilities>
+        </Environment>
+        <Parameters>
+            <Parameter name="CELL_JUMP_NUMBER" type="ITERATION" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="CONFIGURATION_FILE" type="ST_EQUIPMENT_CONFIG_FILE" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="DIRECTION" type="XFER_DIRECTION" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="MULTISLOT_CONFIG" type="MULTISLOT_CONFIG" isOptional="true">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+        </Parameters>
+    </UseCase>
+    <UseCase Id="LAB_MOBILITY_CRESEL_IDLE" Domain="CELLULAR" SubDomain="MOBILITY" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Mobility.LAB_MOBILITY_CRESEL_IDLE.LabMobilityCreselIdle</ClassName>
+        <Description>Several cell reselections 2G/3G UC</Description>
+        <Environment name="TEL">
+            <Capabilities>EQT_AG_8960</Capabilities>
+            <Capabilities>CAP_DUAL_NS</Capabilities>
+        </Environment>
+    </UseCase>
+    <UseCase Id="LAB_MOBILITY_CRESEL_FTP" Domain="CELLULAR" SubDomain="MOBILITY" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Mobility.LAB_MOBILITY_CRESEL_FTP.LabMobilityCreselFtp</ClassName>
+        <Description>Several cell reselection 2G/3G during data transfer</Description>
+        <Environment name="TEL">
+            <Capabilities>EQT_AG_8960</Capabilities>
+            <Capabilities>CAP_DUAL_NS</Capabilities>
+            <Capabilities>SW_FTP_SERVER</Capabilities>
+        </Environment>
+    </UseCase>
+    <UseCase Id="LAB_MOBILITY_WCDMA_HHO_VC" Domain="CELLULAR" SubDomain="MOBILITY" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Mobility.LAB_MOBILITY_WCDMA_HHO_VC.LabMobilityWcdmaHHOVc</ClassName>
+        <Description>Perform several WCDMA hard handovers during a voice call</Description>
+        <Environment name="TEL">
+            <Capabilities>EQT_AG_8960</Capabilities>
+        </Environment>
+        <Parameters>
+            <Parameter name="CELL_JUMP_NUMBER" type="ITERATION" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="CONFIGURATION_FILE" type="ST_EQUIPMENT_CONFIG_FILE" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="PHONE_NUMBER" type="PHONE_NUMBER" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+        </Parameters>
+    </UseCase>
+    <UseCase Id="LAB_MOBILITY_WCDMA_HHO_FTP" Domain="CELLULAR" SubDomain="MOBILITY" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Mobility.LAB_MOBILITY_WCDMA_HHO_FTP.LabMobilityWcdmaHHOFtp</ClassName>
+        <Description>Perform several WCDMA hard handovers during an ftp transfer</Description>
+        <Environment name="TEL">
+            <Capabilities>EQT_AG_8960</Capabilities>
+            <Capabilities>SW_FTP_SERVER</Capabilities>
+        </Environment>
+        <Parameters>
+            <Parameter name="CELL_JUMP_NUMBER" type="ITERATION" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="CONFIGURATION_FILE" type="ST_EQUIPMENT_CONFIG_FILE" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="DIRECTION" type="XFER_DIRECTION" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+        </Parameters>
+    </UseCase>
+    <UseCase Id="LAB_HSPA_HHO_FTP" Domain="CELLULAR" SubDomain="MOBILITY" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Networking.LAB_HSPA_HHO_FTP.LabHspaHhoFtp</ClassName>
+        <Description>Hard Handover during FTP Upload_Download over HSUPA_HSDPA on simulated network</Description>
+        <Environment name="TEL">
+            <Capabilities>EQT_AG_8960</Capabilities>
+            <Capabilities>SW_FTP_SERVER</Capabilities>
+        </Environment>
+        <Parameters>
+            <Parameter name="CELL_BAND" type="CELL_BAND_3G" isOptional="false">
+                <!-- Field optional (PossibleValues, DefaultValue, Blank) if possible value not override available -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue>1</DefaultValue>
+                <Blank/>
+                <Dependencies>
+                    <Dependency isOptional="false">DL_UARFCN</Dependency>
+                </Dependencies>
+            </Parameter>
+            <Parameter name="CELL_SERVICE" type="CELL_SERVICE_3G" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="CELL_POWER" type="CELL_POWER_IN_DBM" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="IP_VERSION" type="IP_VERSION" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="UL_RAB" type="RADIO_ACCESS_BEARER" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="DL_RAB" type="RADIO_ACCESS_BEARER" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="CPC" type="CPC_TTI" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="CQI_SCHEME" type="CQI_REPORTING_SCHEME" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="MAC_D_PDU_SIZE" type="MAC_D_PDU_SIZE" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="DIRECTION" type="XFER_DIRECTION" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="DL_FILENAME" type="DL_FILENAME" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="UL_FILENAME" type="UL_FILENAME" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="XFER_TIMEOUT" type="TIMEOUT_IN_SEC" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+        </Parameters>
+    </UseCase>
+    <UseCase Id="LAB_MOBILITY_EXT_HO_DTM_ON" Domain="CELLULAR" SubDomain="MOBILITY" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Mobility.LAB_MOBILITY_EXT_HO_DTM_ON.LabMobilityExtHoDtmOn</ClassName>
+        <Description>Perform several 3G/2G Handovers while FTP transfer and voice call are both active (DTM ON)
+        </Description>
+        <Environment name="TEL">
+            <Capabilities>EQT_AG_8960</Capabilities>
+            <Capabilities>CAP_DUAL_NS</Capabilities>
+            <Capabilities>SW_FTP_SERVER</Capabilities>
+        </Environment>
+    </UseCase>
+    <UseCase Id="LAB_MOBILITY_EXT_HO_DTM_OFF" Domain="CELLULAR" SubDomain="MOBILITY" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Mobility.LAB_MOBILITY_EXT_HO_DTM_OFF.LabMobilityExtHoDtmOff</ClassName>
+        <Description>Perform several 3G/2G Handovers while FTP transfer and voice call are both active (DTM OFF)
+        </Description>
+        <Environment name="TEL">
+            <Capabilities>EQT_AG_8960</Capabilities>
+            <Capabilities>CAP_DUAL_NS</Capabilities>
+            <Capabilities>SW_FTP_SERVER</Capabilities>
+        </Environment>
+    </UseCase>
+    <UseCase Id="LAB_MOBILITY_EXT_HO_VC_AND_CRESEL" Domain="CELLULAR" SubDomain="MOBILITY" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Mobility.LAB_MOBILITY_EXT_HO_VC_AND_CRESEL.LabMobilityExtHoVcAndCresel</ClassName>
+        <Description>Perform several 2G/3G Handovers during Voice Call and after VC release a Cell reselection
+        </Description>
+        <Environment name="TEL">
+            <Capabilities>EQT_AG_8960</Capabilities>
+            <Capabilities>CAP_DUAL_NS</Capabilities>
+        </Environment>
+    </UseCase>
+    <UseCase Id="LAB_CAMP_TUNNEL" Domain="CELLULAR" SubDomain="MOBILITY" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Mobility.LAB_CAMP_TUNNEL.LabCampTunnel</ClassName>
+        <Description>Network registration from initial cell technology to a target cell</Description>
+        <Environment name="TEL">
+            <Dependency>EQT_AG_8960</Dependency>
+            <Dependency>CAP_DUAL_NS</Dependency>
+        </Environment>
+    </UseCase>
+    <UseCase Id="LAB_MOBILITY_LTE_CSFB" Domain="CELLULAR" SubDomain="MOBILITY" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Mobility.LAB_MOBILITY_LTE_CSFB.LabMobilityLteCsfb</ClassName>
+        <Description>TEL - This UseCase valid Circuit Switched Fallback from LTE to 3GSM (2G or 3G)</Description>
+        <Environment name="TEL">
+            <Capabilities>EQT_AG_8960</Capabilities>
+            <Capabilities>EQT_AG_E6621A</Capabilities>
+            <Capabilities>CAP_DUAL_NS</Capabilities>
+        </Environment>
+    </UseCase>
+    <UseCase Id="LAB_MOBILITY_LTE_SMS" Domain="CELLULAR" SubDomain="MOBILITY" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Mobility.LAB_MOBILITY_LTE_SMS.LabMobilityLteSms</ClassName>
+        <Description>TEL - This UseCase valid SMS on LTE over SG</Description>
+        <Environment name="TEL">
+            <Capabilities>EQT_AG_8960</Capabilities>
+            <Capabilities>EQT_AG_E6621A</Capabilities>
+            <Capabilities>CAP_DUAL_NS</Capabilities>
+        </Environment>
+    </UseCase>
+    <UseCase Id="LAB_MOBILITY_LTE_SMS_DATA_INTERACTION" Domain="CELLULAR" SubDomain="MOBILITY" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Mobility.LAB_MOBILITY_LTE_SMS_DATA_INTERACTION.LabMobilityLteSmsDataInteraction</ClassName>
+        <Description>TEL - This UseCase valid LTE Network Registration - Interaction with Data option</Description>
+        <Environment name="TEL">
+            <Capabilities>EQT_AG_8960</Capabilities>
+            <Capabilities>EQT_AG_E6621A</Capabilities>
+            <Capabilities>CAP_DUAL_NS</Capabilities>
+        </Environment>
+    </UseCase>
+    <UseCase Id="LAB_RAT_SELECTION" Domain="CELLULAR" SubDomain="MOBILITY" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Mobility.LAB_RAT_SELECTION.LabRatSelection</ClassName>
+        <Description>RAT SELECTION using two Network Simulators NS1 and NS2</Description>
+        <Environment name="TEL">
+            <Capabilities>EQT_AG_8960</Capabilities>
+            <Capabilities>CAP_DUAL_NS</Capabilities>
+        </Environment>
+        <Parameters>
+            <Parameter name="NS1_CELL_POWER" type="CELL_POWER_IN_DBM" isOptional="false">
+                <!-- NS1 cell power -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="NS1_CELL_TECH" type="CELL_TECHNOLOGY" isOptional="false">
+                <!-- NS1 Cell Technology (2G|3G) -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="NS1_CELL_BAND" type="CELL_BAND" isOptional="false">
+                <!-- NS1 Cell Band For 2G (EGSM|GSM850|PCS|DCS) For 3G (1,2,5,8) -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="NS1_CELL_SERVICE" type="CELL_BAND" isOptional="false">
+                <!-- NS1 Cell Service ( (GSM|GPRS|EGPRS) for 2G CELL, (PACKET|CIRCUIT_PACKET) for 3G CELL) -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="NS1_ARFCN" type="CELL_ARFCN" isOptional="false">
+                <!-- NS1 ARFCN -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="NS2_CELL_POWER" type="CELL_POWER_IN_DBM" isOptional="false">
+                <!-- NS2 cell power -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="NS2_CELL_TECH" type="CELL_TECHNOLOGY" isOptional="false">
+                <!-- NS2 Cell Technology (2G|3G) -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="NS2_CELL_BAND" type="CELL_BAND" isOptional="false">
+                <!-- NS2 Cell Band For 2G (EGSM|GSM850|PCS|DCS) For 3G (1,2,5,8) -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="NS2_CELL_SERVICE" type="CELL_BAND" isOptional="false">
+                <!-- NS2 Cell Service ( (GSM|GPRS|EGPRS) for 2G CELL, (PACKET|CIRCUIT_PACKET) for 3G CELL) -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="NS2_ARFCN" type="CELL_ARFCN" isOptional="false">
+                <!-- NS2 ARFCN -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="WANTED_NETWORK1" type="NETWORK_PREFERENCES" isOptional="false">
+                <!-- the initial RAT to set, the value is an integer, it can be: 0 for WCDMA_preferred, 1 for GSM_only, 2 for WCDMA_only, 3 for GSM_auto_PRL, 4 for CDMA_auto_PRL, 5 for CDMA_only, 6 for EvDo_only, 7 for GSM_CDMA_auto_PRL, 8 for LTE_CDMA_auto_PRL, 9 for LTE_GSM_auto_PRL, 10
+                    for LTE_GSM_CDMA_auto_PRL, 11 for LTE_only, 12 for UNKNOWN
+                 -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="WANTED_NETWORK2" type="NETWORK_PREFERENCES" isOptional="false">
+                <!-- the second RAT to set, the value is an integer, it can be: 0 for WCDMA_preferred, 1 for GSM_only, 2 for WCDMA_only, 3 for GSM_auto_PRL, 4 for CDMA_auto_PRL, 5 for CDMA_only, 6 for EvDo_only, 7 for GSM_CDMA_auto_PRL, 8 for LTE_CDMA_auto_PRL, 9 for LTE_GSM_auto_PRL, 10 for
+                    LTE_GSM_CDMA_auto_PRL, 11 for LTE_only, 12 for UNKNOWN
+                 -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="NETWORK1_REG_TIMEOUT" type="TIMEOUT" isOptional="false">
+                <!-- Network 1 registration time-out (in seconds) -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="NETWORK2_REG_TIMEOUT" type="TIMEOUT" isOptional="false">
+                <!-- Network 2 registration time-out (in seconds) -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="NS2_DELAY_CELL_ACTIVATION" type="TIMEOUT" isOptional="true">
+                <!-- Activate the NS2 cell with a delay : TRUE to activate NS2 Cell with a delay, FALSE to activate NS2 Cell at the beginning of the test -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="VC_TYPE" type="VC_TYPE" isOptional="false">
+                <!-- Voice call type (MO [Mobile Originated]|MT [Mobile Terminated]) -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="SMS_TYPE" type="SMS_TYPE" isOptional="false">
+                <!-- SMS type (MO [Mobile Originated]|MT [Mobile Terminated]) -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="SMS_TEXT" type="SMS_TEXT" isOptional="false">
+                <!-- SMS text to send -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="DATA_CODING_SCHEME" type="DATA_CODING_SCHEME" isOptional="false">
+                <!-- SMS Data coding scheme in hexadecimal -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="SMS_TRANSFER_TIMEOUT" type="TIMEOUT" isOptional="false">
+                <!-- SMS transfer timeout in seconds -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+        </Parameters>
+    </UseCase>
+    <UseCase Id="LAB_RAT_SELECTION_DUAL_MODE" Domain="CELLULAR" SubDomain="MOBILITY" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Mobility.LAB_RAT_SELECTION_DUAL_MODE.LabRatSelectionDualMode</ClassName>
+        <Description>RAT SELECTION using two Network Simulators NS1 and NS2 with back and forth registration or
+            reselection.
+        </Description>
+        <Environment name="TEL">
+            <Capabilities>EQT_AG_8960</Capabilities>
+            <Capabilities>CAP_DUAL_NS</Capabilities>
+        </Environment>
+        <Parameters>
+            <Parameter name="NS1_CELL_POWER" type="CELL_POWER_IN_DBM" isOptional="false">
+                <!-- NS1 cell power -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="NS1_CELL_TECH" type="CELL_TECHNOLOGY" isOptional="false">
+                <!-- NS1 Cell Technology (2G|3G) -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="NS1_CELL_BAND" type="CELL_BAND" isOptional="false">
+                <!-- NS1 Cell Band For 2G (EGSM|GSM850|PCS|DCS) For 3G (1,2,5,8) -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="NS1_CELL_SERVICE" type="CELL_BAND" isOptional="false">
+                <!-- NS1 Cell Service ( (GSM|GPRS|EGPRS) for 2G CELL, (PACKET|CIRCUIT_PACKET) for 3G CELL) -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="NS1_ARFCN" type="CELL_ARFCN" isOptional="false">
+                <!-- NS1 ARFCN -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="NS2_CELL_POWER" type="CELL_POWER_IN_DBM" isOptional="false">
+                <!-- NS2 cell power -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="NS2_CELL_TECH" type="CELL_TECHNOLOGY" isOptional="false">
+                <!-- NS2 Cell Technology (2G|3G) -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="NS2_CELL_BAND" type="CELL_BAND" isOptional="false">
+                <!-- NS2 Cell Band For 2G (EGSM|GSM850|PCS|DCS) For 3G (1,2,5,8) -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="NS2_CELL_SERVICE" type="CELL_BAND" isOptional="false">
+                <!-- NS2 Cell Service ( (GSM|GPRS|EGPRS) for 2G CELL, (PACKET|CIRCUIT_PACKET) for 3G CELL) -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="NS2_ARFCN" type="CELL_ARFCN" isOptional="false">
+                <!-- NS2 ARFCN -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="WANTED_NETWORK1" type="NETWORK_PREFERENCES" isOptional="false">
+                <!-- the initial RAT to set, the value is an integer, it can be: 0 for WCDMA_preferred, 1 for GSM_only, 2 for WCDMA_only, 3 for GSM_auto_PRL, 4 for CDMA_auto_PRL, 5 for CDMA_only, 6 for EvDo_only, 7 for GSM_CDMA_auto_PRL, 8 for LTE_CDMA_auto_PRL, 9 for LTE_GSM_auto_PRL, 10
+                    for LTE_GSM_CDMA_auto_PRL, 11 for LTE_only, 12 for UNKNOWN
+                 -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="WANTED_NETWORK2" type="NETWORK_PREFERENCES" isOptional="false">
+                <!-- the second RAT to set, the value is an integer, it can be: 0 for WCDMA_preferred, 1 for GSM_only, 2 for WCDMA_only, 3 for GSM_auto_PRL, 4 for CDMA_auto_PRL, 5 for CDMA_only, 6 for EvDo_only, 7 for GSM_CDMA_auto_PRL, 8 for LTE_CDMA_auto_PRL, 9 for LTE_GSM_auto_PRL, 10 for
+                    LTE_GSM_CDMA_auto_PRL, 11 for LTE_only, 12 for UNKNOWN
+                 -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="NETWORK1_REG_TIMEOUT" type="TIMEOUT" isOptional="false">
+                <!-- Network 1 registration time-out (in seconds) -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="NETWORK2_REG_TIMEOUT" type="TIMEOUT" isOptional="false">
+                <!-- Network 2 registration time-out (in seconds) -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="NS2_DELAY_CELL_ACTIVATION" type="TIMEOUT" isOptional="true">
+                <!-- Activate the NS2 cell with a delay : TRUE to activate NS2 Cell with a delay, FALSE to activate NS2 Cell at the beginning of the test -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="VC_TYPE" type="VC_TYPE" isOptional="false">
+                <!-- Voice call type (MO [Mobile Originated]|MT [Mobile Terminated]) -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="SMS_TYPE" type="SMS_TYPE" isOptional="false">
+                <!-- SMS type (MO [Mobile Originated]|MT [Mobile Terminated]) -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="SMS_TEXT" type="SMS_TEXT" isOptional="false">
+                <!-- SMS text to send -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="DATA_CODING_SCHEME" type="DATA_CODING_SCHEME" isOptional="false">
+                <!-- SMS Data coding scheme in hexadecimal -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="SMS_TRANSFER_TIMEOUT" type="TIMEOUT" isOptional="false">
+                <!-- SMS transfer timeout in seconds -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="RESEL" type="IS_RESELECTION_ACTIVATED" isOptional="true">
+                <!-- Optional (default: False).
+                True: perform a reselection between both cells by decreasing camped cell power and increasing target cell power.
+                False: perform a change of DUT's preferred RAT and check registration status on target cell. -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="RETRY_COUNT" type="COUNTER" isOptional="true">
+                <!-- Optional (default: 1). Number of times reselection or registration is done between both cells. -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="DECREMENTATION_STEP_POWER" type="DELTA_CELL_POWER_IN_DBM" isOptional="true">
+                <!-- Decrementing Step Power in dB -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="DECREMENTATION_STEP_TIMER" type="TIMEOUT" isOptional="true">
+                <!--  -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="CRESEL_LIMIT_POWER" type="CELL_POWER_IN_DBM" isOptional="true">
+                <!-- Limit power to stop the cell reselection power if reached -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+        </Parameters>
+    </UseCase>
+    <UseCase Id="LAB_MOBILITY_LTE_CRESEL_IDLE_LTE_3GSM" Domain="CELLULAR" SubDomain="MOBILITY" OS="ANDROID"
+             Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Mobility.LAB_MOBILITY_LTE_CRESEL_IDLE_LTE_3GSM.LabMobilityLteCreselIdleLte3gsm</ClassName>
+        <Description>Idle Cell reselection LTE/3GSM</Description>
+        <Environment name="TEL">
+            <Capabilities>EQT_AG_8960</Capabilities>
+            <Capabilities>EQT_AG_E6621A</Capabilities>
+            <Capabilities>CAP_DUAL_NS</Capabilities>
+        </Environment>
+        <Parameters>
+            <Parameter name="LTE_MIMO" type="LTE_MIMO" isOptional="false">
+                <!-- Multiple-Input Multiple-Output to set : true or false -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="GO_BACK" type="GO_BACK" isOptional="false">
+                <!-- reselection two timesoptionnal parameter to set : true or false -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="LTE_SIGNAL_MODE" type="LTE_SIGNAL_MODE" isOptional="false">
+                <!-- Operation mode to set : BSE or SA -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="LTE_PHYSICAL_CELL_ID" type="LTE_PHYSICAL_CELL_ID" isOptional="false">
+                <!-- Physical Cell ID : 0 to 503 -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="LTE_CELL_ID" type="LTE_CELL_ID" isOptional="false">
+                <!-- Cell Setup : "A" for A-cell or "B" for B-cell -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="LTE_CELL_POWER_RFO1" type="LTE_CELL_POWER_RFO1" isOptional="false">
+                <!-- Cell power for RFO1 -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="LTE_CELL_POWER_RFO2" type="LTE_CELL_POWER_RFO2" isOptional="false">
+                <!-- Cell power for RFO2 -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="LTE_MCC" type="LTE_MCC" isOptional="false">
+                <!-- Mobile Country Code 0 to 999 -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="LTE_MNC" type="LTE_MNC" isOptional="false">
+                <!-- Mobile Network Code 0 to 99 -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="LTE_CELL_BAND" type="LTE_CELL_BAND" isOptional="false">
+                <!-- Cell Band (from Band 1 to Band 32) -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="LTE_CELL_POWER" type="LTE_CELL_POWER" isOptional="false">
+                <!-- LTE Cell Power -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="LTE_DL_EARFCN" type="LTE_DL_EARFCN" isOptional="false">
+                <!-- Downlink channel -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="LTE_SCENARIO_PATH" type="LTE_SCENARIO_PATH" isOptional="false">
+                <!-- Scenario filename and path to load on PXT -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="3GSM_CELL_TECH" type="3GSM_CELL_TECH" isOptional="false">
+                <!-- 3GSM Cell Technology (2G|3G) -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="3GSM_CELL_BAND" type="3GSM_CELL_BAND" isOptional="false">
+                <!-- 3GSM Cell Band. For 2G : EGSM|GSM850|PCS|DCS. For 3G : 1,2,5,8. For 4G : 1 to 27 -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="3GSM_MCC" type="3GSM_MCC" isOptional="false">
+                <!-- Mobile Country Code 0 to 999 -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="3GSM_MNC" type="3GSM_MNC" isOptional="false">
+                <!-- Mobile Network Code 0 to 99 -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="3GSM_ARFCN" type="3GSM_ARFCN" isOptional="false">
+                <!-- 3GSM Arfcn -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="3GSM_CELL_SERVICE" type="3GSM_CELL_SERVICE" isOptional="false">
+                <!-- 3GSM Cell Service ( (GSM|GPRS|EGPRS) for 2G CELL, (CIRCUIT|PACKET|CIRCUIT_PACKET) for 3G CELL) -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="3GSM_CELL_POWER" type="3GSM_CELL_POWER" isOptional="false">
+                <!-- 3GSM cell power -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="3GSM_LAC" type="3GSM_LAC" isOptional="false">
+                <!-- 3GSM Cell LAC, For 2G and 3G: 0 to 65535 -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="3GSM_RAC" type="3GSM_RAC" isOptional="false">
+                <!-- 3GSM Cell Routing Area, For 2G and 3G: 1 to 255 -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="CRESEL_POWER" type="CRESEL_POWER" isOptional="false">
+                <!-- Cell Reselection power set on NS2 before decrementation of NS1 cell power -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="CRESEL_LIMIT_POWER" type="CRESEL_LIMIT_POWER" isOptional="false">
+                <!-- Limit power to stop the cell reselection power if reached (after a timeout) -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="DECREMENTATION_STEP_POWER" type="DECREMENTATION_STEP_POWER" isOptional="false">
+                <!-- Decrementation step for NS1 cell power in dBm (must be positive, can be decimal value like 0,20 or 2,6) -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="DECREMENTATION_STEP_TIMER" type="DECREMENTATION_STEP_TIMER" isOptional="false">
+                <!-- Decrementation step timer in seconds between 2 steps (must be positive, can be decimal value like 0,3 or 3,5) -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="PACKET_COUNT" type="PACKET_COUNT" isOptional="false">
+                <!-- Number of Packet to be sent -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="PACKET_SIZE" type="PACKET_SIZE" isOptional="false">
+                <!-- Size of a data packet (in bytes) sent when trying to ping the network -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="TARGET_PACKET_LOSS_RATE" type="TARGET_PACKET_LOSS_RATE" isOptional="false">
+                <!-- Target of Ping Packet Loss Rate (in %) -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="MULTISLOT_CONFIG" type="MULTISLOT_CONFIG" isOptional="true">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+        </Parameters>
+    </UseCase>
+    <UseCase Id="LAB_MOBILITY_LTE_CRESEL_IDLE_3GSM_LTE" Domain="CELLULAR" SubDomain="MOBILITY" OS="ANDROID"
+             Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Mobility.LAB_MOBILITY_LTE_CRESEL_IDLE_3GSM_LTE.LabMobilityLteCreselIdle3gsmLte</ClassName>
+        <Description>Idle Cell reselection LTE/3GSM</Description>
+        <Environment name="TEL">
+            <Capabilities>EQT_AG_8960</Capabilities>
+            <Capabilities>EQT_AG_E6621A</Capabilities>
+            <Capabilities>CAP_DUAL_NS</Capabilities>
+        </Environment>
+        <Parameters>
+            <Parameter name="LTE_MIMO" type="LTE_MIMO" isOptional="false">
+                <!-- Multiple-Input Multiple-Output to set : true or false -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="GO_BACK" type="GO_BACK" isOptional="false">
+                <!-- reselection two timesoptionnal parameter to set : true or false -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="LTE_SIGNAL_MODE" type="LTE_SIGNAL_MODE" isOptional="false">
+                <!-- Operation mode to set : BSE or SA -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="LTE_PHYSICAL_CELL_ID" type="LTE_PHYSICAL_CELL_ID" isOptional="false">
+                <!-- Physical Cell ID : 0 to 503 -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="LTE_CELL_ID" type="LTE_CELL_ID" isOptional="false">
+                <!-- Cell Setup : "A" for A-cell or "B" for B-cell -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="LTE_CELL_POWER_RFO1" type="LTE_CELL_POWER_RFO1" isOptional="false">
+                <!-- Cell power for RFO1 -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="LTE_CELL_POWER_RFO2" type="LTE_CELL_POWER_RFO2" isOptional="false">
+                <!-- Cell power for RFO2 -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="LTE_MCC" type="LTE_MCC" isOptional="false">
+                <!-- Mobile Country Code 0 to 999 -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="LTE_MNC" type="LTE_MNC" isOptional="false">
+                <!-- Mobile Network Code 0 to 99 -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="LTE_CELL_BAND" type="LTE_CELL_BAND" isOptional="false">
+                <!-- Cell Band (from Band 1 to Band 32) -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="LTE_CELL_POWER" type="LTE_CELL_POWER" isOptional="false">
+                <!-- LTE Cell Power -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="LTE_DL_EARFCN" type="LTE_DL_EARFCN" isOptional="false">
+                <!-- Downlink channel -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="LTE_SCENARIO_PATH" type="LTE_SCENARIO_PATH" isOptional="false">
+                <!-- Scenario filename and path to load on PXT -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="3GSM_CELL_TECH" type="3GSM_CELL_TECH" isOptional="false">
+                <!-- 3GSM Cell Technology (2G|3G) -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="3GSM_CELL_BAND" type="3GSM_CELL_BAND" isOptional="false">
+                <!-- 3GSM Cell Band. For 2G : EGSM|GSM850|PCS|DCS. For 3G : 1,2,5,8. For 4G : 1 to 27 -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="3GSM_MCC" type="3GSM_MCC" isOptional="false">
+                <!-- Mobile Country Code 0 to 999 -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="3GSM_MNC" type="3GSM_MNC" isOptional="false">
+                <!-- Mobile Network Code 0 to 99 -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="3GSM_ARFCN" type="3GSM_ARFCN" isOptional="false">
+                <!-- 3GSM Arfcn -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="3GSM_CELL_SERVICE" type="3GSM_CELL_SERVICE" isOptional="false">
+                <!-- 3GSM Cell Service ( (GSM|GPRS|EGPRS) for 2G CELL, (CIRCUIT|PACKET|CIRCUIT_PACKET) for 3G CELL) -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="3GSM_CELL_POWER" type="3GSM_CELL_POWER" isOptional="false">
+                <!-- 3GSM cell power -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="3GSM_LAC" type="3GSM_LAC" isOptional="false">
+                <!-- 3GSM Cell LAC, For 2G and 3G: 0 to 65535 -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="3GSM_RAC" type="3GSM_RAC" isOptional="false">
+                <!-- 3GSM Cell Routing Area, For 2G and 3G: 1 to 255 -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="CRESEL_POWER" type="CRESEL_POWER" isOptional="false">
+                <!-- Cell Reselection power set on NS2 before decrementation of NS1 cell power -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="CRESEL_LIMIT_POWER" type="CRESEL_LIMIT_POWER" isOptional="false">
+                <!-- Limit power to stop the cell reselection power if reached (after a timeout) -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="DECREMENTATION_STEP_POWER" type="DECREMENTATION_STEP_POWER" isOptional="false">
+                <!-- Decrementation step for NS1 cell power in dBm (must be positive, can be decimal value like 0,20 or 2,6) -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="DECREMENTATION_STEP_TIMER" type="DECREMENTATION_STEP_TIMER" isOptional="false">
+                <!-- Decrementation step timer in seconds between 2 steps (must be positive, can be decimal value like 0,3 or 3,5) -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="PACKET_COUNT" type="PACKET_COUNT" isOptional="false">
+                <!-- Number of Packet to be sent -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="PACKET_SIZE" type="PACKET_SIZE" isOptional="false">
+                <!-- Size of a data packet (in bytes) sent when trying to ping the network -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="TARGET_PACKET_LOSS_RATE" type="TARGET_PACKET_LOSS_RATE" isOptional="false">
+                <!-- Target of Ping Packet Loss Rate (in %) -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="MULTISLOT_CONFIG" type="MULTISLOT_CONFIG" isOptional="true">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+        </Parameters>
+    </UseCase>
+    <UseCase Id="LAB_MOBILITY_CRESEL_OUT_OF_COVERAGE" Domain="CELLULAR" SubDomain="MOBILITY" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Mobility.LAB_MOBILITY_CRESEL_OUT_OF_COVERAGE.LabMobilityCreselOutOfCoverage</ClassName>
+        <Description>Several cell reselections 2G/3G but going out of coverage between each reselections UC
+        </Description>
+        <Environment name="TEL">
+            <Capabilities>EQT_AG_8960</Capabilities>
+            <Capabilities>CAP_DUAL_NS</Capabilities>
+        </Environment>
+        <Parameters>
+            <Parameter name="NS1_CELL_TECH" type="NS1_CELL_TECH" isOptional="false">
+                <!-- NS1 Cell Technology (2G|3G) -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="NS1_CELL_BAND" type="NS1_CELL_BAND" isOptional="false">
+                <!-- NS1 Cell Band For 2G (EGSM|GSM850|PCS|DCS) For 3G (1,2,5,8) -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="NS1_CELL_SERVICE" type="NS1_CELL_SERVICE" isOptional="false">
+                <!-- NS1 Cell Service ( (GSM|GPRS|EGPRS) for 2G CELL, (PACKET|CIRCUIT_PACKET) for 3G CELL) -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="NS1_CELL_POWER" type="NS1_CELL_POWER" isOptional="false">
+                <!-- NS1 cell power -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="NS1_LAC" type="NS1_LAC" isOptional="false">
+                <!-- NS1 Cell LAC, For 2G and 3G: 0 to 65535 -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="NS1_RAC" type="NS1_RAC" isOptional="false">
+                <!-- NS1 Cell LAC, For 2G and 3G: 0 to 255 -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="NS1_PSC" type="NS1_PSC" isOptional="false">
+                <!-- NS1 Primary Scrambling code (PSC) -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="NS2_CELL_TECH" type="NS2_CELL_TECH" isOptional="false">
+                <!-- NS2 Cell Technology (2G|3G) -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="NS2_CELL_BAND" type="NS2_CELL_BAND" isOptional="false">
+                <!-- NS2 Cell Band For 2G (EGSM|GSM850|PCS|DCS) For 3G (1,2,5,8) -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="NS2_CELL_SERVICE" type="NS2_CELL_SERVICE" isOptional="false">
+                <!-- NS2 Cell Service ( (GSM|GPRS|EGPRS) for 2G CELL, (PACKET|CIRCUIT_PACKET) for 3G CELL) -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="NS2_CELL_POWER" type="NS2_CELL_POWER" isOptional="false">
+                <!-- NS2 cell power -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="CRESEL_POWER" type="CRESEL_POWER" isOptional="false">
+                <!-- Cell Reselection power set on NS2 before decrementation of NS1 cell power -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="NS2_LAC" type="NS2_LAC" isOptional="false">
+                <!-- NS2 Cell LAC, For 2G and 3G: 0 to 65535 -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="NS2_RAC" type="NS2_RAC" isOptional="false">
+                <!-- NS2 Cell RAC, For 2G and 3G: 0 to 255 -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="NS2_PSC" type="NS2_PSC" isOptional="false">
+                <!-- NS2 Primary Scrambling code (PSC) -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="CRESEL_TIME_OUT" type="CRESEL_TIME_OUT" isOptional="false">
+                <!-- Maximum time autorised to resel from no coverage zone -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="CRESEL_NO_COVERAGE_TIME" type="CRESEL_NO_COVERAGE_TIME" isOptional="false">
+                <!-- Time to stay in no coverage -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="MULTISLOT_CONFIG" type="MULTISLOT_CONFIG" isOptional="true">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+        </Parameters>
+    </UseCase>
+    <UseCase Id="LAB_LTE_HO_INTRA_FREQUENCY" Domain="CELLULAR" SubDomain="MOBILITY" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Networking.LAB_LTE_HO_INTRA_FREQUENCY.LabLteHoIntraFrequency</ClassName>
+        <Description>LTE HO Intra Frequency</Description>
+        <Environment name="TEL">
+            <Dependency>EQT_AG_8960</Dependency>
+        </Environment>
+        <Parameters>
+            <Parameter name="MIMO" type="MIMO" isOptional="false">
+                <!-- Multiple-Input Multiple-Output to set : true or false -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="ANTENNAS_NUMBER" type="ANTENNAS_NUMBER" isOptional="false">
+                <!-- number of antennas to set : 1 or 2 -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="TRANSMISSION_MODE" type="TRANSMISSION_MODE" isOptional="false">
+                <!-- TRANSMISSION_MODE to set: TM1, TM2, TM3,TM4 ... -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="DL_RB_SIZE" type="DL_RB_SIZE" isOptional="false">
+                <!-- DL RB_SIZE to set -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="UL_RB_SIZE" type="UL_RB_SIZE" isOptional="false">
+                <!-- UL RB_SIZE to set -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="DL_I_MCS" type="DL_I_MCS" isOptional="false">
+                <!-- DL I_MCS to set: 0 to 28 -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="UL_I_MCS" type="UL_I_MCS" isOptional="false">
+                <!-- UL I_MCS to set: 0 to 28 -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="TYPE0_BITMAP" type="TYPE0_BITMAP" isOptional="false">
+                <!-- TYPE0_BITMAP to set: requires to set TM3 or TM4 profile, MIMO to be set in scenario file -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="UL_GRANT_MODE" type="UL_GRANT_MODE" isOptional="false">
+                <!-- UL GRANT MODE to set: AUTO or FIXEDMAC -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="SIGNAL_MODE" type="SIGNAL_MODE" isOptional="false">
+                <!-- Operation mode to set : BSE or SA -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="PHYSICAL_CELL_ID" type="PHYSICAL_CELL_ID" isOptional="false">
+                <!-- Physical Cell ID  cell A: 0 to 503 -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="PHYSICAL_CELL_B_ID" type="PHYSICAL_CELL_B_ID" isOptional="false">
+                <!-- Physical Cell ID for cell B: 0 to 503 -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="CELL_ID" type="CELL_ID" isOptional="false">
+                <!-- Cell Setup : "A" for A-cell or "B" for B-cell -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="CELL_POWER_RFO1" type="CELL_POWER_RFO1" isOptional="false">
+                <!-- Cell power for RFO1 -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="CELL_POWER_RFO2" type="CELL_POWER_RFO2" isOptional="false">
+                <!-- Cell power for RFO2 -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="MCC" type="MCC" isOptional="false">
+                <!-- Mobile Country Code 0 to 999 -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="MNC" type="MNC" isOptional="false">
+                <!-- Mobile Network Code 0 to 999 -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="CELL_BAND" type="CELL_BAND" isOptional="false">
+                <!-- Cell Band (from Band 1 to Band 32) -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="DL_EARFCN" type="DL_EARFCN" isOptional="false">
+                <!-- Downlink channel -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="CELL_CHANNEL_BANDWIDTH" type="CELL_CHANNEL_BANDWIDTH" isOptional="false">
+                <!-- Cell channel bandwidth -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="SCENARIO_PATH" type="SCENARIO_PATH" isOptional="false">
+                <!-- Scenario filename and path to load on PXT for cell A -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="SCENARIO_PATH_B" type="SCENARIO_PATH_B" isOptional="false">
+                <!-- Scenario filename and path to load on PXT for cell B -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+        </Parameters>
+    </UseCase>
+    <UseCase Id="LAB_MOBILITY_LTE_CSFB_CALLS" Domain="CELLULAR" SubDomain="MOBILITY" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Mobility.LAB_MOBILITY_LTE_CSFB_CALLS.LabMobilityLteCsfbCalls</ClassName>
+        <Description>TEL - This UseCase validate specifics calls
+            (cancellation, rejection, loss) from LTE to UTRAN, on circuit switched fallback
+        </Description>
+        <Environment name="TEL">
+            <Capabilities>EQT_AG_8960</Capabilities>
+            <Capabilities>EQT_AG_E6621A</Capabilities>
+            <Capabilities>CAP_DUAL_NS</Capabilities>
+        </Environment>
+        <Parameters>
+            <Parameter name="REJECTION_CAUSE" type="REJECTION_CAUSE" isOptional="false">
+                <!-- When setting CALL_RELEASE_MODE parameter to 'REJECTION'
+                Rejection depends on equipment used. Here is an exhaustive list of causes
+                for the Agilent 8930 (2G):
+                2 - IMSI Unknown inHLR
+                3 - Illegal MS
+                4 - IMSI Unknown in VLR
+                5 - IMEI Not Accepted
+                6 - Illegal ME
+                7 - GPRS Services Not Allowed
+                8 - GPRS/Non-GPRS Services Not Allowed
+                9 - MS Identity Cannot Be Derived
+                10 - Implicitly Detached
+                11 - PLMN Not Allowed
+                12 - Location Area Not Allowed
+                13 - Roaming Not allowed In This LA
+                14 - GPRS Services Not Allowed In This PLMN
+                15 - No Suitable Cells In Location Area
+                16 - MSC Temporarily Not Reachable
+                17 - Network Failure
+                20 - MAC Failure
+                21 - Synch Failure
+                22 - Congestion
+                23 - GSM Authentication Unacceptable
+                32 - Service Option Not Supported
+                33 - Requested Service Option Not Subscribed
+                34 - Service Option Temporarily Out of Order
+                38 - Call Cannot Be Identified
+                40 - No PDP Context Activated
+                48 - Retry Upon Entry Into a New Cell
+                95 - Semantically Incorrect Message
+                96 - Invalid Mandatory Information
+                97 - Message Type Non-Existent or Not Implemented
+                98 - Message Type Not Compatible With the Protocol State
+                99 - Information Element Non-Existent Or Not Implemented
+                100 - Conditional IE Error
+                101 - Message Not Compatible With The Protocol State
+                111 - Protocol Error, Unspecified -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="LTE_MIMO" type="LTE_MIMO" isOptional="false">
+                <!-- Multiple-Input Multiple-Output to set : true or false -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="LTE_SIGNAL_MODE" type="LTE_SIGNAL_MODE" isOptional="false">
+                <!-- Operation mode to set : BSE or SA -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="LTE_PHYSICAL_CELL_ID" type="LTE_PHYSICAL_CELL_ID" isOptional="false">
+                <!-- Physical Cell ID : 0 to 503 -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="LTE_CELL_ID" type="LTE_CELL_ID" isOptional="false">
+                <!-- Cell Setup : "A" for A-cell or "B" for B-cell -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="LTE_CELL_POWER_RFO1" type="LTE_CELL_POWER_RFO1" isOptional="false">
+                <!-- Cell power for RFO1 -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="LTE_CELL_POWER_RFO2" type="LTE_CELL_POWER_RFO2" isOptional="false">
+                <!-- Cell power for RFO2 -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="LTE_MCC" type="LTE_MCC" isOptional="false">
+                <!-- Mobile Country Code 0 to 999 -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="LTE_MNC" type="LTE_MNC" isOptional="false">
+                <!-- Mobile Network Code 0 to 99 -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="LTE_CELL_BAND" type="LTE_CELL_BAND" isOptional="false">
+                <!-- Cell Band (from Band 1 to Band 32) -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="LTE_DL_EARFCN" type="LTE_DL_EARFCN" isOptional="false">
+                <!-- Downlink channel -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="LTE_SCENARIO_PATH" type="LTE_SCENARIO_PATH" isOptional="false">
+                <!-- Scenario filename and path to load on PXT -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="3GSM_CELL_TECH" type="3GSM_CELL_TECH" isOptional="false">
+                <!-- 3GSM Cell Technology (2G|3G) -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="3GSM_CELL_BAND" type="3GSM_CELL_BAND" isOptional="false">
+                <!-- 3GSM Cell Band. For 2G : EGSM|GSM850|PCS|DCS. For 3G : 1,2,5,8. For 4G : 1 to 27 -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="3GSM_ARFCN" type="3GSM_ARFCN" isOptional="false">
+                <!-- 3GSM Arfcn -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="3GSM_CELL_SERVICE" type="3GSM_CELL_SERVICE" isOptional="false">
+                <!-- 3GSM Cell Service ( (GSM|GPRS|EGPRS) for 2G CELL, (CIRCUIT|PACKET|CIRCUIT_PACKET) for 3G CELL) -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="3GSM_CELL_POWER" type="3GSM_CELL_POWER" isOptional="false">
+                <!-- 3GSM cell power -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="3GSM_LAC" type="3GSM_LAC" isOptional="false">
+                <!-- 3GSM Cell LAC, For 2G and 3G: 0 to 65535 -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="3GSM_RAC" type="3GSM_RAC" isOptional="false">
+                <!-- 3GSM Cell Routing Area, For 2G and 3G: 1 to 255 -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="LOSS_COVERAGE_SIDE" type="LOSS_COVERAGE_SIDE" isOptional="false">
+                <!-- Loss of coverage side : LTE | 3GSM | NONE -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="LOSS_COVERAGE_TYPE" type="LOSS_COVERAGE_TYPE" isOptional="false">
+                <!-- Loss of coverage by a CELL OFF or by decreasing cell power : CELL_OFF | DECREASE | NONE -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="VC_TYPE" type="VC_TYPE" isOptional="false">
+                <!-- Voice call type (MO [Mobile Originated] by default |MT [Mobile Terminated]) -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="RELEASE_VC_TYPE" type="RELEASE_VC_TYPE" isOptional="false">
+                <!-- Release Voice Call type (MR [Mobile Release] by default | NR [Network Release]) -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="PHONE_NUMBER" type="PHONE_NUMBER" isOptional="false">
+                <!-- Dialled Phone number (MSISDN). If value is [PHONE_NUMBER] the value used will be the phoneNumber defined in the Phone_Catalog.xml -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="CALL_DURATION" type="CALL_DURATION" isOptional="false">
+                <!-- Call Duration (in seconds) -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="PACKET_COUNT" type="PACKET_COUNT" isOptional="false">
+                <!-- Number of Packet to be sent -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="PACKET_SIZE" type="PACKET_SIZE" isOptional="false">
+                <!-- Size of a data packet (in bytes) sent when trying to ping the network -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="TARGET_PACKET_LOSS_RATE" type="TARGET_PACKET_LOSS_RATE" isOptional="false">
+                <!-- Target of Ping Packet Loss Rate (in %) -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="MULTISLOT_CONFIG" type="MULTISLOT_CONFIG" isOptional="true">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+        </Parameters>
+    </UseCase>
+    <UseCase Id="LAB_MOBILITY_LTE_CRESEL_IDLE_3GSM_LTE_CELL_BARRED" Domain="CELLULAR" SubDomain="MOBILITY" OS="ANDROID"
+             Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Mobility.LAB_MOBILITY_LTE_CRESEL_IDLE_3GSM_LTE_CELL_BARRED.LabMobilityLteCreselIdle3gsmLteCellBarred</ClassName>
+        <Description>Idle Cell reselection LTE/3GSM</Description>
+        <Environment name="TEL">
+            <Capabilities>EQT_AG_8960</Capabilities>
+            <Capabilities>EQT_AG_E6621A</Capabilities>
+            <Capabilities>CAP_DUAL_NS</Capabilities>
+        </Environment>
+        <Parameters>
+            <Parameter name="LTE_MIMO" type="LTE_MIMO" isOptional="false">
+                <!-- Multiple-Input Multiple-Output to set : true or false -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="GO_BACK" type="GO_BACK" isOptional="false">
+                <!-- reselection two timesoptionnal parameter to set : true or false -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="LTE_SIGNAL_MODE" type="LTE_SIGNAL_MODE" isOptional="false">
+                <!-- Operation mode to set : BSE or SA -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="LTE_PHYSICAL_CELL_ID" type="LTE_PHYSICAL_CELL_ID" isOptional="false">
+                <!-- Physical Cell ID : 0 to 503 -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="LTE_CELL_ID" type="LTE_CELL_ID" isOptional="false">
+                <!-- Cell Setup : "A" for A-cell or "B" for B-cell -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="LTE_CELL_POWER_RFO1" type="LTE_CELL_POWER_RFO1" isOptional="false">
+                <!-- Cell power for RFO1 -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="LTE_CELL_POWER_RFO2" type="LTE_CELL_POWER_RFO2" isOptional="false">
+                <!-- Cell power for RFO2 -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="LTE_MCC" type="LTE_MCC" isOptional="false">
+                <!-- Mobile Country Code 0 to 999 -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="LTE_MNC" type="LTE_MNC" isOptional="false">
+                <!-- Mobile Network Code 0 to 99 -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="LTE_CELL_BAND" type="LTE_CELL_BAND" isOptional="false">
+                <!-- Cell Band (from Band 1 to Band 32) -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="LTE_DL_EARFCN" type="LTE_DL_EARFCN" isOptional="false">
+                <!-- Downlink channel -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="LTE_SCENARIO_PATH" type="LTE_SCENARIO_PATH" isOptional="false">
+                <!-- Scenario filename and path to load on PXT -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="3GSM_CELL_TECH" type="3GSM_CELL_TECH" isOptional="false">
+                <!-- 3GSM Cell Technology (2G|3G) -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="3GSM_CELL_BAND" type="3GSM_CELL_BAND" isOptional="false">
+                <!-- 3GSM Cell Band. For 2G : EGSM|GSM850|PCS|DCS. For 3G : 1,2,5,8. For 4G : 1 to 27 -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="3GSM_MCC" type="3GSM_MCC" isOptional="false">
+                <!-- Mobile Country Code 0 to 999 -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="3GSM_MNC" type="3GSM_MNC" isOptional="false">
+                <!-- Mobile Network Code 0 to 99 -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="3GSM_ARFCN" type="3GSM_ARFCN" isOptional="false">
+                <!-- 3GSM Arfcn -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="3GSM_CELL_SERVICE" type="3GSM_CELL_SERVICE" isOptional="false">
+                <!-- 3GSM Cell Service ( (GSM|GPRS|EGPRS) for 2G CELL, (CIRCUIT|PACKET|CIRCUIT_PACKET) for 3G CELL) -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="3GSM_CELL_POWER" type="3GSM_CELL_POWER" isOptional="false">
+                <!-- 3GSM cell power -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="3GSM_LAC" type="3GSM_LAC" isOptional="false">
+                <!-- 3GSM Cell LAC, For 2G and 3G: 0 to 65535 -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="3GSM_RAC" type="3GSM_RAC" isOptional="false">
+                <!-- 3GSM Cell Routing Area, For 2G and 3G: 1 to 255 -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="CRESEL_POWER" type="CRESEL_POWER" isOptional="false">
+                <!-- Cell Reselection power set on NS2 before decrementation of NS1 cell power -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="CRESEL_LIMIT_POWER" type="CRESEL_LIMIT_POWER" isOptional="false">
+                <!-- Limit power to stop the cell reselection power if reached (after a timeout) -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="DECREMENTATION_STEP_POWER" type="DECREMENTATION_STEP_POWER" isOptional="false">
+                <!-- Decrementation step for NS1 cell power in dBm (must be positive, can be decimal value like 0,20 or 2,6) -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="DECREMENTATION_STEP_TIMER" type="DECREMENTATION_STEP_TIMER" isOptional="false">
+                <!-- Decrementation step timer in seconds between 2 steps (must be positive, can be decimal value like 0,3 or 3,5) -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="PACKET_COUNT" type="PACKET_COUNT" isOptional="false">
+                <!-- Number of Packet to be sent -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="PACKET_SIZE" type="PACKET_SIZE" isOptional="false">
+                <!-- Size of a data packet (in bytes) sent when trying to ping the network -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="TARGET_PACKET_LOSS_RATE" type="TARGET_PACKET_LOSS_RATE" isOptional="false">
+                <!-- Target of Ping Packet Loss Rate (in %) -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+        </Parameters>
+    </UseCase>
+    <UseCase Id="LAB_MOBILITY_LTE_CRESEL_3GSM_OUT_OF_COVERAGE" Domain="CELLULAR" SubDomain="MOBILITY" OS="ANDROID"
+             Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Mobility.LAB_MOBILITY_LTE_CRESEL_3GSM_OUT_OF_COVERAGE.LabMobilityLteCrese3gsmOutOfCoverage</ClassName>
+        <Description>Idle Cell reselection LTE/3GSM</Description>
+        <Environment name="TEL">
+            <Capabilities>EQT_AG_8960</Capabilities>
+            <Capabilities>EQT_AG_E6621A</Capabilities>
+            <Capabilities>CAP_DUAL_NS</Capabilities>
+        </Environment>
+        <Parameters>
+            <Parameter name="LTE_MIMO" type="LTE_MIMO" isOptional="false">
+                <!-- Multiple-Input Multiple-Output to set : true or false -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="GO_BACK" type="GO_BACK" isOptional="false">
+                <!-- reselection two timesoptionnal parameter to set : true or false -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="LTE_SIGNAL_MODE" type="LTE_SIGNAL_MODE" isOptional="false">
+                <!-- Operation mode to set : BSE or SA -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="LTE_PHYSICAL_CELL_ID" type="LTE_PHYSICAL_CELL_ID" isOptional="false">
+                <!-- Physical Cell ID : 0 to 503 -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="LTE_CELL_ID" type="LTE_CELL_ID" isOptional="false">
+                <!-- Cell Setup : "A" for A-cell or "B" for B-cell -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="LTE_CELL_POWER_RFO1" type="LTE_CELL_POWER_RFO1" isOptional="false">
+                <!-- Cell power for RFO1 -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="LTE_CELL_POWER_RFO2" type="LTE_CELL_POWER_RFO2" isOptional="false">
+                <!-- Cell power for RFO2 -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="LTE_MCC" type="LTE_MCC" isOptional="false">
+                <!-- Mobile Country Code 0 to 999 -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="LTE_MNC" type="LTE_MNC" isOptional="false">
+                <!-- Mobile Network Code 0 to 99 -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="LTE_CELL_BAND" type="LTE_CELL_BAND" isOptional="false">
+                <!-- Cell Band (from Band 1 to Band 32) -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="LTE_CELL_POWER" type="LTE_CELL_POWER" isOptional="false">
+                <!-- LTE Cell Power -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="LTE_DL_EARFCN" type="LTE_DL_EARFCN" isOptional="false">
+                <!-- Downlink channel -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="LTE_SCENARIO_PATH" type="LTE_SCENARIO_PATH" isOptional="false">
+                <!-- Scenario filename and path to load on PXT -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="3GSM_CELL_TECH" type="3GSM_CELL_TECH" isOptional="false">
+                <!-- 3GSM Cell Technology (2G|3G) -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="3GSM_CELL_BAND" type="3GSM_CELL_BAND" isOptional="false">
+                <!-- 3GSM Cell Band. For 2G : EGSM|GSM850|PCS|DCS. For 3G : 1,2,5,8. For 4G : 1 to 27 -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="3GSM_MCC" type="3GSM_MCC" isOptional="false">
+                <!-- Mobile Country Code 0 to 999 -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="3GSM_MNC" type="3GSM_MNC" isOptional="false">
+                <!-- Mobile Network Code 0 to 99 -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="3GSM_ARFCN" type="3GSM_ARFCN" isOptional="false">
+                <!-- 3GSM Arfcn -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="3GSM_CELL_SERVICE" type="3GSM_CELL_SERVICE" isOptional="false">
+                <!-- 3GSM Cell Service ( (GSM|GPRS|EGPRS) for 2G CELL, (CIRCUIT|PACKET|CIRCUIT_PACKET) for 3G CELL) -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="3GSM_CELL_POWER" type="3GSM_CELL_POWER" isOptional="false">
+                <!-- 3GSM cell power -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="3GSM_LAC" type="3GSM_LAC" isOptional="false">
+                <!-- 3GSM Cell LAC, For 2G and 3G: 0 to 65535 -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="3GSM_RAC" type="3GSM_RAC" isOptional="false">
+                <!-- 3GSM Cell Routing Area, For 2G and 3G: 1 to 255 -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="CRESEL_POWER" type="CRESEL_POWER" isOptional="false">
+                <!-- Cell Reselection power set on NS2 before decrementation of NS1 cell power -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="CRESEL_LIMIT_POWER" type="CRESEL_LIMIT_POWER" isOptional="false">
+                <!-- Limit power to stop the cell reselection power if reached (after a timeout) -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="DECREMENTATION_STEP_POWER" type="DECREMENTATION_STEP_POWER" isOptional="true">
+                <!-- Decrementation step for NS1 cell power in dBm (must be positive, can be decimal value like 0,20 or 2,6) -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="DECREMENTATION_STEP_TIMER" type="DECREMENTATION_STEP_TIMER" isOptional="true">
+                <!-- Decrementation step timer in seconds between 2 steps (must be positive, can be decimal value like 0,3 or 3,5) -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="PACKET_COUNT" type="PACKET_COUNT" isOptional="false">
+                <!-- Number of Packet to be sent -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="PACKET_SIZE" type="PACKET_SIZE" isOptional="false">
+                <!-- Size of a data packet (in bytes) sent when trying to ping the network -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="TARGET_PACKET_LOSS_RATE" type="TARGET_PACKET_LOSS_RATE" isOptional="false">
+                <!-- Target of Ping Packet Loss Rate (in %) -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+        </Parameters>
+    </UseCase>
+    <UseCase Id="LAB_MOBILITY_LTE_EMERGENCY_CALL_CSFB" Domain="CELLULAR" SubDomain="MOBILITY" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Mobility.LAB_MOBILITY_LTE_EMERGENCY_CALL_CSFB.LabMobilityLteEmergencyCallCsfb</ClassName>
+        <Description>TEL - This UseCase validate specifics calls
+            (cancellation, rejection, loss) from LTE to UTRAN and to 2G, on circuit switched fallback
+        </Description>
+        <Environment name="TEL">
+            <Capabilities>EQT_AG_8960</Capabilities>
+            <Capabilities>EQT_AG_E6621A</Capabilities>
+            <Capabilities>CAP_DUAL_NS</Capabilities>
+        </Environment>
+        <Parameters>
+            <Parameter name="REJECTION_CAUSE" type="REJECTION_CAUSE" isOptional="false">
+                <!-- When setting CALL_RELEASE_MODE parameter to 'REJECTION'
+                Rejection depends on equipment used. Here is an exhaustive list of causes
+                for the Agilent 8930 (2G):
+                2 - IMSI Unknown inHLR
+                3 - Illegal MS
+                4 - IMSI Unknown in VLR
+                5 - IMEI Not Accepted
+                6 - Illegal ME
+                7 - GPRS Services Not Allowed
+                8 - GPRS/Non-GPRS Services Not Allowed
+                9 - MS Identity Cannot Be Derived
+                10 - Implicitly Detached
+                11 - PLMN Not Allowed
+                12 - Location Area Not Allowed
+                13 - Roaming Not allowed In This LA
+                14 - GPRS Services Not Allowed In This PLMN
+                15 - No Suitable Cells In Location Area
+                16 - MSC Temporarily Not Reachable
+                17 - Network Failure
+                20 - MAC Failure
+                21 - Synch Failure
+                22 - Congestion
+                23 - GSM Authentication Unacceptable
+                32 - Service Option Not Supported
+                33 - Requested Service Option Not Subscribed
+                34 - Service Option Temporarily Out of Order
+                38 - Call Cannot Be Identified
+                40 - No PDP Context Activated
+                48 - Retry Upon Entry Into a New Cell
+                95 - Semantically Incorrect Message
+                96 - Invalid Mandatory Information
+                97 - Message Type Non-Existent or Not Implemented
+                98 - Message Type Not Compatible With the Protocol State
+                99 - Information Element Non-Existent Or Not Implemented
+                100 - Conditional IE Error
+                101 - Message Not Compatible With The Protocol State
+                111 - Protocol Error, Unspecified -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="LTE_MIMO" type="LTE_MIMO" isOptional="false">
+                <!-- Multiple-Input Multiple-Output to set : true or false -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="LTE_SIGNAL_MODE" type="LTE_SIGNAL_MODE" isOptional="false">
+                <!-- Operation mode to set : BSE or SA -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="LTE_PHYSICAL_CELL_ID" type="LTE_PHYSICAL_CELL_ID" isOptional="false">
+                <!-- Physical Cell ID : 0 to 503 -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="LTE_CELL_ID" type="LTE_CELL_ID" isOptional="false">
+                <!-- Cell Setup : "A" for A-cell or "B" for B-cell -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="LTE_CELL_POWER_RFO1" type="LTE_CELL_POWER_RFO1" isOptional="false">
+                <!-- Cell power for RFO1 -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="LTE_CELL_POWER_RFO2" type="LTE_CELL_POWER_RFO2" isOptional="false">
+                <!-- Cell power for RFO2 -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="LTE_MCC" type="LTE_MCC" isOptional="false">
+                <!-- Mobile Country Code 0 to 999 -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="LTE_MNC" type="LTE_MNC" isOptional="false">
+                <!-- Mobile Network Code 0 to 99 -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="LTE_CELL_BAND" type="LTE_CELL_BAND" isOptional="false">
+                <!-- Cell Band (from Band 1 to Band 32) -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="LTE_DL_EARFCN" type="LTE_DL_EARFCN" isOptional="false">
+                <!-- Downlink channel -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="LTE_SCENARIO_PATH" type="LTE_SCENARIO_PATH" isOptional="false">
+                <!-- Scenario filename and path to load on PXT -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="3GSM_CELL_TECH" type="3GSM_CELL_TECH" isOptional="false">
+                <!-- 3GSM Cell Technology (2G|3G) -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="3GSM_CELL_BAND" type="3GSM_CELL_BAND" isOptional="false">
+                <!-- 3GSM Cell Band. For 2G : EGSM|GSM850|PCS|DCS. For 3G : 1,2,5,8. For 4G : 1 to 27 -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="3GSM_ARFCN" type="3GSM_ARFCN" isOptional="false">
+                <!-- 3GSM Arfcn -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="3GSM_CELL_SERVICE" type="3GSM_CELL_SERVICE" isOptional="false">
+                <!-- 3GSM Cell Service ( (GSM|GPRS|EGPRS) for 2G CELL, (CIRCUIT|PACKET|CIRCUIT_PACKET) for 3G CELL) -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="3GSM_CELL_POWER" type="3GSM_CELL_POWER" isOptional="false">
+                <!-- 3GSM cell power -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="3GSM_LAC" type="3GSM_LAC" isOptional="false">
+                <!-- 3GSM Cell LAC, For 2G and 3G: 0 to 65535 -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="3GSM_RAC" type="3GSM_RAC" isOptional="false">
+                <!-- 3GSM Cell Routing Area, For 2G and 3G: 1 to 255 -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="LOSS_COVERAGE_SIDE" type="LOSS_COVERAGE_SIDE" isOptional="false">
+                <!-- Loss of coverage side : LTE | 3GSM | NONE -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="LOSS_COVERAGE_TYPE" type="LOSS_COVERAGE_TYPE" isOptional="false">
+                <!-- Loss of coverage by a CELL OFF or by decreasing cell power : CELL_OFF | DECREASE | NONE -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="FLIGHT_MODE" type="FLIGHT_MODE" isOptional="false">
+                <!-- Flight mode : FALSE | TRUE -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="VC_TYPE" type="VC_TYPE" isOptional="false">
+                <!-- Voice call type (MO [Mobile Originated] by default |MT [Mobile Terminated]) -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="RELEASE_VC_TYPE" type="RELEASE_VC_TYPE" isOptional="false">
+                <!-- Release Voice Call type (MR [Mobile Release] by default | NR [Network Release]) -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="PHONE_NUMBER" type="PHONE_NUMBER" isOptional="false">
+                <!-- Dialled Phone number (MSISDN). If value is [PHONE_NUMBER] the value used will be the phoneNumber defined in the Phone_Catalog.xml -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="CALL_DURATION" type="CALL_DURATION" isOptional="false">
+                <!-- Call Duration (in seconds) -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="PACKET_COUNT" type="PACKET_COUNT" isOptional="false">
+                <!-- Number of Packet to be sent -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="PACKET_SIZE" type="PACKET_SIZE" isOptional="false">
+                <!-- Size of a data packet (in bytes) sent when trying to ping the network -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="TARGET_PACKET_LOSS_RATE" type="TARGET_PACKET_LOSS_RATE" isOptional="false">
+                <!-- Target of Ping Packet Loss Rate (in %) -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+        </Parameters>
+    </UseCase>
+    <UseCase Id="LAB_MOBILITY_LTE_3GSM_REDIR_FTP" Domain="CELLULAR" SubDomain="MOBILITY" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Mobility.LAB_MOBILITY_LTE_3GSM_REDIR_FTP.LabMobilityLte3gsmRedirFtp</ClassName>
+        <Description>I-RAT redirection from LTE to UTRAN during FTP DL</Description>
+        <Environment name="TEL">
+            <Capabilities>EQT_AG_8960</Capabilities>
+            <Capabilities>EQT_AG_E6621A</Capabilities>
+            <Capabilities>CAP_DUAL_NS</Capabilities>
+        </Environment>
+        <Parameters>
+            <Parameter name="REJECTION_CAUSE" type="REJECTION_CAUSE" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="LTE_MIMO" type="LTE_MIMO" isOptional="false">
+                <!-- Multiple-Input Multiple-Output to set : true or false -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="LTE_SIGNAL_MODE" type="LTE_SIGNAL_MODE" isOptional="false">
+                <!-- Operation mode to set : BSE or SA -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="LTE_PHYSICAL_CELL_ID" type="LTE_PHYSICAL_CELL_ID" isOptional="false">
+                <!-- Physical Cell ID : 0 to 503 -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="LTE_CELL_ID" type="LTE_CELL_ID" isOptional="false">
+                <!-- Cell Setup : "A" for A-cell or "B" for B-cell -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="LTE_CELL_POWER_RFO1" type="LTE_CELL_POWER_RFO1" isOptional="false">
+                <!-- Cell power for RFO1 -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="LTE_CELL_POWER_RFO2" type="LTE_CELL_POWER_RFO2" isOptional="false">
+                <!-- Cell power for RFO2 -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="LTE_MCC" type="LTE_MCC" isOptional="false">
+                <!-- Mobile Country Code 0 to 999 -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="LTE_MNC" type="LTE_MNC" isOptional="false">
+                <!-- Mobile Network Code 0 to 99 -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="LTE_CELL_BAND" type="LTE_CELL_BAND" isOptional="false">
+                <!-- Cell Band (from Band 1 to Band 32) -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="LTE_DL_EARFCN" type="LTE_DL_EARFCN" isOptional="false">
+                <!-- Downlink channel -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="LTE_SCENARIO_PATH" type="LTE_SCENARIO_PATH" isOptional="false">
+                <!-- Scenario filename and path to load on PXT -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="3GSM_CELL_TECH" type="3GSM_CELL_TECH" isOptional="false">
+                <!-- 3GSM Cell Technology (2G|3G) -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="3GSM_CELL_BAND" type="3GSM_CELL_BAND" isOptional="false">
+                <!-- 3GSM Cell Band. For 2G : EGSM|GSM850|PCS|DCS. For 3G : 1,2,5,8. For 4G : 1 to 27 -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="3GSM_ARFCN" type="3GSM_ARFCN" isOptional="false">
+                <!-- 3GSM Arfcn -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="3GSM_CELL_SERVICE" type="3GSM_CELL_SERVICE" isOptional="false">
+                <!-- 3GSM Cell Service ( (GSM|GPRS|EGPRS) for 2G CELL, (CIRCUIT|PACKET|CIRCUIT_PACKET) for 3G CELL) -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="3GSM_CELL_POWER" type="3GSM_CELL_POWER" isOptional="false">
+                <!-- 3GSM cell power -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="3GSM_LAC" type="3GSM_LAC" isOptional="false">
+                <!-- 3GSM Cell LAC, For 2G and 3G: 0 to 65535 -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="3GSM_RAC" type="3GSM_RAC" isOptional="false">
+                <!-- 3GSM Cell Routing Area, For 2G and 3G: 1 to 255 -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="DIRECTION" type="DIRECTION" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="DL_FILENAME" type="DL_FILENAME" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="XFER_TIMEOUT" type="XFER_TIMEOUT" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="DL_RB_SIZE" type="DL_RB_SIZE" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="UL_RB_SIZE" type="UL_RB_SIZE" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="TYPE0_BITMAP" type="TYPE0_BITMAP" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="UL_GRANT_MODE" type="UL_GRANT_MODE" isOptional="false">
+                <!-- Call Duration (in seconds) -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="DL_I_MCS" type="DL_I_MCS" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="UL_I_MCS" type="UL_I_MCS" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="CELL_CHANNEL_BANDWIDTH" type="CELL_CHANNEL_BANDWIDTH" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="TWO_EPS_BEARER" type="TWO_EPS_BEARER" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="I-RAT_TYPE" type="I-RAT_TYPE" isOptional="false">
+				<!-- Inter-Redirection type: NORMAL or BLIND -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+        </Parameters>
+    </UseCase>
+    <UseCase Id="LAB_MOBILITY_LTE_3GSM_CAMP" Domain="CELLULAR" SubDomain="MOBILITY" OS="ANDROID"
+             Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Mobility.LAB_MOBILITY_LTE_3GSM_CAMP.LabMobilityLte3gsmCamp</ClassName>
+        <Description>LTE cell registration with 3G neighbor cell</Description>
+        <Environment name="TEL">
+            <Capabilities>EQT_AG_8960</Capabilities>
+            <Capabilities>EQT_AG_E6621A</Capabilities>
+            <Capabilities>CAP_DUAL_NS</Capabilities>
+        </Environment>
+        <Parameters>
+            <Parameter name="LTE_MIMO" type="LTE_MIMO" isOptional="false">
+                <!-- Multiple-Input Multiple-Output to set : true or false -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="LTE_SIGNAL_MODE" type="LTE_SIGNAL_MODE" isOptional="false">
+                <!-- Operation mode to set : BSE or SA -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="LTE_PHYSICAL_CELL_ID" type="LTE_PHYSICAL_CELL_ID" isOptional="false">
+                <!-- Physical Cell ID : 0 to 503 -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="LTE_CELL_ID" type="LTE_CELL_ID" isOptional="false">
+                <!-- Cell Setup : "A" for A-cell or "B" for B-cell -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="LTE_CELL_POWER_RFO1" type="LTE_CELL_POWER_RFO1" isOptional="false">
+                <!-- Cell power for RFO1 -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="LTE_CELL_POWER_RFO2" type="LTE_CELL_POWER_RFO2" isOptional="false">
+                <!-- Cell power for RFO2 -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="LTE_MCC" type="LTE_MCC" isOptional="false">
+                <!-- Mobile Country Code 0 to 999 -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="LTE_MNC" type="LTE_MNC" isOptional="false">
+                <!-- Mobile Network Code 0 to 99 -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="LTE_CELL_BAND" type="LTE_CELL_BAND" isOptional="false">
+                <!-- Cell Band (from Band 1 to Band 32) -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="LTE_CELL_POWER" type="LTE_CELL_POWER" isOptional="false">
+                <!-- LTE Cell Power -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="LTE_DL_EARFCN" type="LTE_DL_EARFCN" isOptional="false">
+                <!-- Downlink channel -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="LTE_SCENARIO_PATH" type="LTE_SCENARIO_PATH" isOptional="false">
+                <!-- Scenario filename and path to load on PXT -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="3GSM_CELL_TECH" type="3GSM_CELL_TECH" isOptional="false">
+                <!-- 3GSM Cell Technology (2G|3G) -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="3GSM_CELL_BAND" type="3GSM_CELL_BAND" isOptional="false">
+                <!-- 3GSM Cell Band. For 2G : EGSM|GSM850|PCS|DCS. For 3G : 1,2,5,8. For 4G : 1 to 27 -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="3GSM_MCC" type="3GSM_MCC" isOptional="false">
+                <!-- Mobile Country Code 0 to 999 -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="3GSM_MNC" type="3GSM_MNC" isOptional="false">
+                <!-- Mobile Network Code 0 to 99 -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="3GSM_ARFCN" type="3GSM_ARFCN" isOptional="false">
+                <!-- 3GSM Arfcn -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="3GSM_CELL_SERVICE" type="3GSM_CELL_SERVICE" isOptional="false">
+                <!-- 3GSM Cell Service ( (GSM|GPRS|EGPRS) for 2G CELL, (CIRCUIT|PACKET|CIRCUIT_PACKET) for 3G CELL) -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="3GSM_CELL_POWER" type="3GSM_CELL_POWER" isOptional="false">
+                <!-- 3GSM cell power -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="3GSM_LAC" type="3GSM_LAC" isOptional="false">
+                <!-- 3GSM Cell LAC, For 2G and 3G: 0 to 65535 -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="3GSM_RAC" type="3GSM_RAC" isOptional="false">
+                <!-- 3GSM Cell Routing Area, For 2G and 3G: 1 to 255 -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="PACKET_COUNT" type="PACKET_COUNT" isOptional="false">
+                <!-- Number of Packet to be sent -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="PACKET_SIZE" type="PACKET_SIZE" isOptional="false">
+                <!-- Size of a data packet (in bytes) sent when trying to ping the network -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="TARGET_PACKET_LOSS_RATE" type="TARGET_PACKET_LOSS_RATE" isOptional="false">
+                <!-- Target of Ping Packet Loss Rate (in %) -->
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+        </Parameters>
+    </UseCase>
+</UseCases>

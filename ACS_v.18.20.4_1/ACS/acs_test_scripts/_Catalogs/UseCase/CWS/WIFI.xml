@@ -1,0 +1,734 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<UseCases xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:noNamespaceSchemaLocation="../../../../acs/src/_Catalogs/UseCase/usecase.xsd">
+    <UseCase Id="LIVE_WIFI_FTP" Domain="CWS" SubDomain="WIFI" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Networking.LIVE_WIFI_FTP.LiveWifiFtp</ClassName>
+        <Description>FTP Upload_Download over WLAN</Description>
+        <Environment name="CWS_WIFI">
+            <Capabilities>EQT_LIVE_AP</Capabilities>
+            <Capabilities>SW_FTP_SERVER</Capabilities>
+        </Environment>
+        <Parameters>
+            <Parameter name="DIRECTION" type="XFER_DIRECTION" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="DL_FILENAME" type="DL_FILENAME" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="UL_FILENAME" type="UL_FILENAME" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="XFER_TIMEOUT" type="TIMEOUT_IN_SEC" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="WIFI_ACCESS_POINT" type="WIFI_ACCESS_POINT" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+        </Parameters>
+    </UseCase>
+    <UseCase Id="LIVE_WIFI_SCAN" Domain="CWS" SubDomain="WIFI" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Networking.LIVE_WIFI_SCAN.LiveWifiScan</ClassName>
+        <Description>test scan wifi</Description>
+        <Environment name="CWS_WIFI">
+            <Dependency>EQT_LIVE_AP</Dependency>
+        </Environment>
+    </UseCase>
+    <UseCase Id="LIVE_WIFI_PING" Domain="CWS" SubDomain="WIFI" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Networking.LIVE_WIFI_PING.LiveWifiPing</ClassName>
+        <Description>Ping an IP address over WLAN</Description>
+        <Environment name="CWS_WIFI">
+            <Dependency>EQT_LIVE_AP</Dependency>
+        </Environment>
+    </UseCase>
+    <UseCase Id="LIVE_WIFI_IPERF" Domain="CWS" SubDomain="WIFI" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Networking.LIVE_WIFI_IPERF.LiveWifiIperf</ClassName>
+        <Description>WIFI Throuhput Measurement using IPERF</Description>
+        <Environment name="CWS_WIFI">
+            <Dependency>EQT_LIVE_AP</Dependency>
+            <Dependency>SW_IPERF_SERVER</Dependency>
+        </Environment>
+    </UseCase>
+    <UseCase Id="LIVE_WIFI_WEB_BROWSING" Domain="CWS" SubDomain="WIFI" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Networking.LIVE_WIFI_WEB_BROWSING.LiveWifiWebBrowsing</ClassName>
+        <Description>Browsing web pages over WLAN</Description>
+        <Environment name="CWS_WIFI">
+            <Dependency>EQT_LIVE_AP</Dependency>
+            <Dependency>SW_WEB_SERVER</Dependency>
+        </Environment>
+    </UseCase>
+    <UseCase Id="LAB_WIFI_OPEN_CLOSE" Domain="CWS" SubDomain="WIFI" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Networking.LAB_WIFI_OPEN_CLOSE.LabWifiOpenClose</ClassName>
+        <Description>test open and close wifi</Description>
+        <Environment name="ANY">
+        </Environment>
+    </UseCase>
+    <UseCase Id="LAB_WIFI_SCAN" Domain="CWS" SubDomain="WIFI" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Networking.LAB_WIFI_SCAN.LabWifiScan</ClassName>
+        <Description>test scan wifi</Description>
+        <Environment name="CWS_WIFI">
+            <Dependency>EQT_LAB_AP</Dependency>
+            <Dependency>SW_RADIUS_SERVER</Dependency>
+        </Environment>
+    </UseCase>
+    <UseCase Id="LAB_WIFI_CONNECT" Domain="CWS" SubDomain="WIFI" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Networking.LAB_WIFI_CONNECT.LabWifiConnect</ClassName>
+        <Description>test connect to wifi</Description>
+        <Environment name="CWS_WIFI">
+            <Dependency>EQT_LAB_AP</Dependency>
+            <Dependency>SW_RADIUS_SERVER</Dependency>
+            <Dependency>EQT_LAB_USIM</Dependency>
+            <Dependency>CAP_EAP_AKA</Dependency>
+            <Dependency>CAP_EAP_SIM</Dependency>
+        </Environment>
+    </UseCase>
+    <UseCase Id="LAB_WIFI_DFS" Domain="CWS" SubDomain="WIFI" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Networking.LAB_WIFI_DFS.LabWifiDfs</ClassName>
+        <Description>Test the DFS frequency change capabilities</Description>
+        <Environment name="CWS_WIFI">
+            <Dependency>EQT_LAB_AP</Dependency>
+            <Dependency>CAP_DFS</Dependency>
+        </Environment>
+    </UseCase>
+    <UseCase Id="LAB_WIFI_DFS_FTP" Domain="CWS" SubDomain="WIFI" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Networking.LAB_WIFI_DFS_FTP.LabWifiDfsFtp</ClassName>
+        <Description>FTP Upload_Download continuity over WLAN while DFS is triggered</Description>
+         <Environment name="CWS_WIFI">
+            <Dependency>EQT_LAB_AP</Dependency>
+            <Dependency>SW_RADIUS_SERVER</Dependency>
+            <Dependency>SW_FTP_SERVER</Dependency>
+            <Dependency>CAP_DFS</Dependency>
+        </Environment>
+    </UseCase>
+    <UseCase Id="LAB_WIFI_DUAL_AP_DFS" Domain="CWS" SubDomain="WIFI" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Networking.LAB_WIFI_DUAL_AP_DFS.LabWifiDualApDfs</ClassName>
+        <Description>trigger dfs on ap1 while ap2 is remembered then checks that dut doesn't connect to ap2
+        </Description>
+        <Environment name="CWS_WIFI">
+            <Dependency>EQT_LAB_AP</Dependency>
+            <Dependency>SW_RADIUS_SERVER</Dependency>
+            <Dependency>CAP_DUAL_AP</Dependency>
+            <Dependency>CAP_DFS</Dependency>
+        </Environment>
+    </UseCase>
+    <UseCase Id="LAB_WIFI_PING" Domain="CWS" SubDomain="WIFI" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Networking.LAB_WIFI_PING.LabWifiPing</ClassName>
+        <Description>Ping an IP address over WLAN</Description>
+        <Environment name="CWS_WIFI">
+            <Dependency>EQT_LAB_AP</Dependency>
+            <Dependency>SW_RADIUS_SERVER</Dependency>
+        </Environment>
+    </UseCase>
+    <UseCase Id="LAB_WIFI_IPERF" Domain="CWS" SubDomain="WIFI" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Networking.LAB_WIFI_IPERF.LabWifiIperf</ClassName>
+        <Description>WIFI Throuhput Measurement using IPERF</Description>
+        <Environment name="CWS_WIFI">
+            <Dependency>EQT_LAB_AP</Dependency>
+            <Dependency>SW_RADIUS_SERVER</Dependency>
+            <Dependency>SW_IPERF_SERVER</Dependency>
+        </Environment>
+    </UseCase>
+    <UseCase Id="LAB_WIFI_FTP" Domain="CWS" SubDomain="WIFI" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Networking.LAB_WIFI_FTP.LabWifiFtp</ClassName>
+        <Description>FTP Upload_Download over WLAN</Description>
+        <Environment name="CWS_WIFI">
+            <Dependency>EQT_LAB_AP</Dependency>
+            <Dependency>SW_RADIUS_SERVER</Dependency>
+            <Dependency>SW_FTP_SERVER</Dependency>
+        </Environment>
+    </UseCase>
+    <UseCase Id="LAB_WIFI_TETHERING_PING" Domain="CWS" SubDomain="WIFI" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Networking.LAB_WIFI_TETHERING_PING.LabWifiTetheringPing</ClassName>
+        <Description>test connect and ping the host spot tethered by phone and ping</Description>
+        <Environment name="CWS_WIFI">
+            <Dependency>EQT_AG_8960</Dependency>
+            <Dependency>CAP_DUAL_DEVICE</Dependency>
+            <Dependency>EQT_WIFI_DONGLE</Dependency>
+        </Environment>
+    </UseCase>
+    <UseCase Id="LAB_WIFI_TETHERING_FTP" Domain="CWS" SubDomain="WIFI" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Networking.LAB_WIFI_TETHERING_FTP.LabWifiTetheringFtp</ClassName>
+        <Description>test ftp download and upload through the network tethered by phone</Description>
+        <Environment name="CWS_WIFI">
+            <Dependency>EQT_AG_8960</Dependency>
+            <Dependency>CAP_DUAL_DEVICE</Dependency>
+            <Dependency>EQT_WIFI_DONGLE</Dependency>
+            <Dependency>SW_FTP_SERVER</Dependency>
+        </Environment>
+    </UseCase>
+    <UseCase Id="LAB_WIFI_WAKES_UP" Domain="CWS" SubDomain="WIFI" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Networking.LAB_WIFI_WAKES_UP.LabWifiWakesUp</ClassName>
+        <Description>Test Wifi interface wakes up on screen resume</Description>
+        <Environment name="CWS_WIFI">
+            <Dependency>EQT_LAB_AP</Dependency>
+            <Dependency>SW_RADIUS_SERVER</Dependency>
+        </Environment>
+    </UseCase>
+    <UseCase Id="LAB_WIFI_CONNECT_AFTER_LOSS_OF_COVERAGE" Domain="CWS" SubDomain="WIFI" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Networking.LAB_WIFI_CONNECT_AFTER_LOSS_OF_COVERAGE.LabWifiConnectAfterLossOfCoverage</ClassName>
+        <Description>Test Wifi reconnection after a loss of coverage</Description>
+        <Environment name="CWS_WIFI">
+            <Dependency>EQT_LAB_AP</Dependency>
+            <Dependency>SW_RADIUS_SERVER</Dependency>
+        </Environment>
+    </UseCase>
+    <UseCase Id="LAB_WIFI_WEB_BROWSING" Domain="CWS" SubDomain="WIFI" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Networking.LAB_WIFI_WEB_BROWSING.LabWifiWebBrowsing</ClassName>
+        <Description>Browsing web pages over WLAN though controlled Wifi router</Description>
+        <Environment name="CWS_WIFI">
+            <Dependency>EQT_LAB_AP</Dependency>
+            <Dependency>SW_RADIUS_SERVER</Dependency>
+            <Dependency>SW_WEB_SERVER</Dependency>
+        </Environment>
+    </UseCase>
+    <UseCase Id="LAB_WIFI_DUAL_AP_SWITCH_DUT_CHOICE" Domain="CWS" SubDomain="WIFI" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Networking.LAB_WIFI_DUAL_AP_SWITCH_DUT_CHOICE.LabWifiDualApSwitchDutChoice</ClassName>
+        <Description>Switch from an AP to another on the request of DUT</Description>
+        <Environment name="CWS_WIFI">
+            <Dependency>EQT_LAB_AP</Dependency>
+            <Dependency>SW_RADIUS_SERVER</Dependency>
+            <Dependency>CAP_DUAL_AP</Dependency>
+        </Environment>
+    </UseCase>
+    <UseCase Id="LAB_WIFI_DUAL_AP_SWITCH_AP_LOSS" Domain="CWS" SubDomain="WIFI" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Networking.LAB_WIFI_DUAL_AP_SWITCH_AP_LOSS.LabWifiDualApSwitchApLoss</ClassName>
+        <Description>Switch from an AP to another on DUT autoreselection by AP fall over</Description>
+        <Environment name="CWS_WIFI">
+            <Dependency>EQT_LAB_AP</Dependency>
+            <Dependency>SW_RADIUS_SERVER</Dependency>
+            <Dependency>CAP_DUAL_AP</Dependency>
+        </Environment>
+    </UseCase>
+    <UseCase Id="LAB_WIFI_DUAL_AP_BAND_SEL_SCAN" Domain="CWS" SubDomain="WIFI" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Networking.LAB_WIFI_DUAL_AP_BAND_SEL_SCAN.LabWifiDualApBandSelScan</ClassName>
+        <Description>Scan networks after setting Frequency Band selection</Description>
+        <Environment name="CWS_WIFI">
+            <Dependency>EQT_LAB_AP</Dependency>
+            <Dependency>SW_RADIUS_SERVER</Dependency>
+            <Dependency>CAP_DUAL_AP</Dependency>
+            <Dependency>CAP_DUAL_FREQUENCY</Dependency>
+        </Environment>
+    </UseCase>
+    <UseCase Id="LAB_WIFI_DUAL_AP_BAND_SEL_CONNECT" Domain="CWS" SubDomain="WIFI" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Networking.LAB_WIFI_DUAL_AP_BAND_SEL_CONNECT.LabWifiDualApBandSelConnect</ClassName>
+        <Description>Check AP reconnection after setting Frequency Band selection</Description>
+        <Environment name="CWS_WIFI">
+            <Dependency>EQT_LAB_AP</Dependency>
+            <Dependency>SW_RADIUS_SERVER</Dependency>
+            <Dependency>CAP_DUAL_AP</Dependency>
+            <Dependency>CAP_DUAL_FREQUENCY</Dependency>
+        </Environment>
+    </UseCase>
+    <UseCase Id="LAB_WIFI_DUAL_AP_CONNECTION_FAIL" Domain="CWS" SubDomain="WIFI" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Networking.LAB_WIFI_DUAL_AP_CONNECTION_FAIL.LabWifiDualApConnectionFail</ClassName>
+        <Description>Connect successfully to a 1st AP, then try to connect to a 2nd AP with corrupted passphrase, then
+            control the auto reconnection on the 1st AP, then connect back to the 2nd AP with the correct passphrase
+        </Description>
+        <Environment name="CWS_WIFI">
+            <Dependency>EQT_LAB_AP</Dependency>
+            <Dependency>SW_RADIUS_SERVER</Dependency>
+            <Dependency>CAP_DUAL_AP</Dependency>
+        </Environment>
+    </UseCase>
+    <UseCase Id="LIVE_WIFI_TETHERING_PING" Domain="CWS" SubDomain="WIFI" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Networking.LIVE_WIFI_TETHERING_PING.LiveWifiTetheringPing</ClassName>
+        <Description>test connect and ping the hotspot tethered by phone</Description>
+        <Environment name="CWS_WIFI">
+            <Dependency>EQT_LIVE_AP</Dependency>
+            <Dependency>CAP_DUAL_DEVICE</Dependency>
+            <Dependency>EQT_WIFI_DONGLE</Dependency>
+            <Dependency>EQT_LIVE_USIM</Dependency>
+        </Environment>
+    </UseCase>
+    <UseCase Id="LIVE_WIFI_TETHERING_REMEMBERED_SSID" Domain="CWS" SubDomain="WIFI" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Networking.LIVE_WIFI_TETHERING_REMEMBERED_SSID.LiveWifiTetheringRememberedSsid</ClassName>
+        <Description>Test reconnection to remembered hostspot tethered by phone and ping</Description>
+        <Environment name="CWS_WIFI">
+            <Dependency>CAP_DUAL_DEVICE</Dependency>
+            <Dependency>EQT_LIVE_USIM</Dependency>
+        </Environment>
+    </UseCase>
+    <UseCase Id="LIVE_WIFI_TETHERING_ADDRESS_PROVISIONING" Domain="CWS" SubDomain="WIFI" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Networking.LIVE_WIFI_TETHERING_ADDRESS_PROVISIONING.LiveWifiTetheringAddressProvisioning</ClassName>
+        <Description>Checks that the mac address is correct for DUT wifi hotspot</Description>
+        <Environment name="ANY">
+        </Environment>
+    </UseCase>
+    <UseCase Id="LAB_WIFI_DHCP_LEASE" Domain="CWS" SubDomain="WIFI" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Networking.LAB_WIFI_DHCP_LEASE.LabWifiDhcpLease</ClassName>
+        <Description>test dhcp lease time interval according to dhcp server lease time</Description>
+        <Environment name="CWS_WIFI">
+            <Dependency>EQT_LAB_AP</Dependency>
+            <Dependency>SW_RADIUS_SERVER</Dependency>
+        </Environment>
+    </UseCase>
+    <UseCase Id="LAB_WIFI_CONNECT_FORGET" Domain="CWS" SubDomain="WIFI" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Networking.LAB_WIFI_CONNECT_FORGET.LabWifiConnectForget</ClassName>
+        <Description>Test Wifi reconnection after switching off and back on Wifi interface and check that AP care
+            successfully forgotten
+        </Description>
+        <Environment name="CWS_WIFI">
+            <Dependency>EQT_LAB_AP</Dependency>
+            <Dependency>SW_RADIUS_SERVER</Dependency>
+        </Environment>
+    </UseCase>
+    <UseCase Id="LAB_WIFI_ADDRESS_PROVISIONING" Domain="CWS" SubDomain="WIFI" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Networking.LAB_WIFI_ADDRESS_PROVISIONING.LabWifiAddressProvisioning</ClassName>
+        <Description>Test Wifi connection with MAC adress Provisioning</Description>
+        <Environment name="CWS_WIFI">
+            <Dependency>EQT_LAB_AP</Dependency>
+        </Environment>
+    </UseCase>
+    <UseCase Id="LAB_WIFI_CONNECTION_FAIL" Domain="CWS" SubDomain="WIFI" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Networking.LAB_WIFI_CONNECTION_FAIL.LabWifiConnectionFail</ClassName>
+        <Description>Test Wifi connection with corrupted passphrase fails and then wifi connection with good passphrase
+            passes
+        </Description>
+        <Environment name="CWS_WIFI">
+            <Dependency>EQT_LAB_AP</Dependency>
+            <Dependency>SW_RADIUS_SERVER</Dependency>
+        </Environment>
+    </UseCase>
+    <UseCase Id="LIVE_WIFI_TETHERING_IPERF" Domain="CWS" SubDomain="WIFI" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Networking.LIVE_WIFI_TETHERING_IPERF.LiveWifiTetheringIperf</ClassName>
+        <Description>test connect to the hotspot tethered by phone and run iperf</Description>
+        <Environment name="CWS_WIFI">
+            <Dependency>CAP_DUAL_DEVICE</Dependency>
+            <Dependency>EQT_WIFI_DONGLE</Dependency>
+            <Dependency>SW_IPERF_SERVER</Dependency>
+        </Environment>
+    </UseCase>
+    <UseCase Id="LIVE_WIFI_TETHERING_ON_OFF" Domain="CWS" SubDomain="WIFI" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Networking.LIVE_WIFI_TETHERING_ON_OFF.LiveWifiTetheringOnOff</ClassName>
+        <Description>test activate the hotspot tethered by phone</Description>
+        <Environment name="ANY">
+        </Environment>
+    </UseCase>
+    <UseCase Id="LIVE_WIFI_TETHERING_CONNECT" Domain="CWS" SubDomain="WIFI" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Networking.LIVE_WIFI_TETHERING_BASE.LiveWifiTetheringBase</ClassName>
+        <Description>test connection to the hotspot tethered by phone</Description>
+        <Environment name="CWS_WIFI">
+            <Dependency>EQT_LIVE_AP</Dependency>
+            <Dependency>CAP_DUAL_DEVICE</Dependency>
+            <Dependency>EQT_WIFI_DONGLE</Dependency>
+        </Environment>
+    </UseCase>
+    <UseCase Id="LIVE_WIFI_GETBAND" Domain="CWS" SubDomain="WIFI" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Networking.LIVE_WIFI_GETBAND.LiveWifiGetband</ClassName>
+        <Description>Switch between wifi bands (2.4Ghz - 5Ghz)</Description>
+        <Environment name="ANY">
+        </Environment>
+    </UseCase>
+    <UseCase Id="LAB_WIFI_TETHERING_USB" Domain="CWS" SubDomain="WIFI" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Networking.LAB_WIFI_TETHERING_USB.LabWifiTetheringUSB</ClassName>
+        <Description>test connect and ping the USB tethered by phone</Description>
+        <Environment name="CWS_WIFI">
+            <Dependency>EQT_LAB_AP</Dependency>
+            <Dependency>SW_RADIUS_SERVER</Dependency>
+            <Dependency>EQT_COMPUTER</Dependency>
+            <Dependency>EQT_USB_CABLE</Dependency>
+        </Environment>
+    </UseCase>
+    <UseCase Id="LIVE_WIFI_TETHERING_USB_ON_OFF" Domain="CWS" SubDomain="WIFI" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Networking.LIVE_WIFI_TETHERING_USB_ON_OFF.LiveWifiTetheringUsbOnOff</ClassName>
+        <Description>Test the USB Tethering feature enable and disable</Description>
+        <Environment name="CWS_WIFI">
+            <Dependency>EQT_LIVE_AP</Dependency>
+            <Dependency>EQT_USB_CABLE</Dependency>
+        </Environment>
+    </UseCase>
+    <UseCase Id="LAB_WIFI_TETHERING_USB_WEB_BROWSING" Domain="CWS" SubDomain="WIFI" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Networking.LAB_WIFI_TETHERING_USB_WEB_BROWSING.LabWifiTetheringUsbWebBrowsing</ClassName>
+        <Description>Test connection to web server using wifi AP though USB tethering</Description>
+        <Environment name="CWS_WIFI">
+            <Dependency>EQT_LAB_AP</Dependency>
+            <Dependency>SW_RADIUS_SERVER</Dependency>
+            <Dependency>EQT_COMPUTER</Dependency>
+            <Dependency>EQT_USB_CABLE</Dependency>
+            <Dependency>SW_WEB_SERVER</Dependency>
+        </Environment>
+    </UseCase>
+    <UseCase Id="LAB_WIFI_TETHERING_USB_FTP" Domain="CWS" SubDomain="WIFI" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Networking.LAB_WIFI_TETHERING_USB_FTP.LabWifiTetheringUsbFtp</ClassName>
+        <Description>Test connection to web server using wifi AP though USB tethering</Description>
+        <Environment name="CWS_WIFI">
+            <Dependency>EQT_LAB_AP</Dependency>
+            <Dependency>SW_RADIUS_SERVER</Dependency>
+            <Dependency>EQT_COMPUTER</Dependency>
+            <Dependency>EQT_USB_CABLE</Dependency>
+            <Dependency>SW_FTP_SERVER</Dependency>
+        </Environment>
+    </UseCase>
+    <UseCase Id="LAB_WIFI_DUAL_AP_SCAN" Domain="CWS" SubDomain="WIFI" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Networking.LAB_WIFI_DUAL_AP_SCAN.LabWifiDualAPScan</ClassName>
+        <Description>Scan for duplicate SSID and same security</Description>
+        <Environment name="CWS_WIFI">
+            <Dependency>EQT_LAB_AP</Dependency>
+            <Dependency>SW_RADIUS_SERVER</Dependency>
+            <Dependency>CAP_DUAL_AP</Dependency>
+        </Environment>
+    </UseCase>
+    <UseCase Id="LAB_WIFI_SLEEP_POLICY" Domain="CWS" SubDomain="WIFI" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Networking.LAB_WIFI_SLEEP_POLICY.LabWifiSleepPolicy</ClassName>
+        <Description>Test Wifi sleep policies</Description>
+        <Environment name="CWS_WIFI">
+            <Dependency>EQT_LAB_AP</Dependency>
+            <Dependency>SW_RADIUS_SERVER</Dependency>
+            <Dependency>EQT_SNIFFER</Dependency>
+            <Dependency>EQT_USB_RLY08</Dependency>
+        </Environment>
+    </UseCase>
+    <UseCase Id="LAB_WIFI_PING_BROWSE" Domain="CWS" SubDomain="WIFI" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Networking.LAB_WIFI_PING_BROWSE.LabWifiPingBrowse</ClassName>
+        <Description>Connects to an AP, pings a server and browse a webpage.</Description>
+        <Environment name="CWS_WIFI">
+            <Dependency>EQT_LAB_AP</Dependency>
+            <Dependency>SW_WEB_SERVER</Dependency>
+            <Dependency>SW_BIND_SERVER</Dependency>
+            <Dependency>SW_ROUTER_ADV_SERVER</Dependency>
+        </Environment>
+    </UseCase>
+    <UseCase Id="LAB_WIFI_DEBUG_TEST" Domain="CWS" SubDomain="WIFI" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Networking.LAB_WIFI_DEBUG_TEST.LabWifiDebugTest</ClassName>
+        <Description>Run whole available WiFi (Networking) UECmd functions</Description>
+        <Environment name="CWS_WIFI">
+            <Dependency>EQT_LAB_AP</Dependency>
+            <Dependency>SW_FTP_SERVER</Dependency>
+            <Dependency>SW_IPERF_SERVER</Dependency>
+            <Dependency>EQT_LIVE_USIM</Dependency>
+        </Environment>
+    </UseCase>
+    <UseCase Id="LAB_WIFI_CRDA" Domain="CWS" SubDomain="WIFI" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Networking.LAB_WIFI_CRDA.LabWifiCrda</ClassName>
+        <Description>Run CRDA (regulatory domain) testing. Test unavailable channel in specific regions</Description>
+        <Environment name="CWS_WIFI">
+            <Dependency>EQT_LAB_CONFORMANCE_BENCH</Dependency>
+            <Dependency>EQT_LAB_AP</Dependency>
+        </Environment>
+    </UseCase>
+    <UseCase Id="LAB_WIFI_DIRECT_CONNECT" Domain="CWS" SubDomain="WIFI" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Networking.LAB_WIFI_DIRECT_CONNECT.LabWifiDirectConnect</ClassName>
+        <Description>Test Wifi connect using peer to peer</Description>
+        <Environment name="CWS_WIFI">
+            <Dependency>EQT_COMPUTER</Dependency>
+            <Dependency>EQT_WIFI_DONGLE</Dependency>
+        </Environment>
+    </UseCase>
+    <UseCase Id="LAB_WIFI_DIRECT_PING" Domain="CWS" SubDomain="WIFI" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Networking.LAB_WIFI_DIRECT_PING.LabWifiDirectPing</ClassName>
+        <Description>Test Wifi connect using peer to peer ping</Description>
+        <Environment name="CWS_WIFI">
+            <Dependency>EQT_COMPUTER</Dependency>
+            <Dependency>EQT_WIFI_DONGLE</Dependency>
+        </Environment>
+    </UseCase>
+    <UseCase Id="LAB_WIFI_FORGET_RECONNECT" Domain="CWS" SubDomain="WIFI" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Networking.LAB_WIFI_FORGET_RECONNECT.LabWifiForgetReconnect</ClassName>
+        <Description>Test Wifi connect/forget then reconnection and check that AP care successfully forgotten
+        </Description>
+        <Environment name="CWS_WIFI">
+            <Dependency>EQT_LAB_AP</Dependency>
+            <Dependency>SW_RADIUS_SERVER</Dependency>
+        </Environment>
+    </UseCase>
+    <UseCase Id="LAB_WIFI_KPI_IPERF" Domain="CWS" SubDomain="WIFI" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Networking.WiFi_KRI_KPI.LAB_WIFI_KPI_IPERF.LabWifiKPIIperf</ClassName>
+        <Description>KPI with WiFi</Description>
+        <Environment name="CWS_WIFI">
+            <Dependency>EQT_LAB_AP</Dependency>
+            <Dependency>SW_RADIUS_SERVER</Dependency>
+            <Dependency>SW_IPERF_SERVER</Dependency>
+        </Environment>
+    </UseCase>
+    <UseCase Id="LIVE_WIFI_KPI_IPERF" Domain="CWS" SubDomain="WIFI" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Networking.WiFi_KRI_KPI.LIVE_WIFI_KPI_IPERF.LiveWifiKPIIperf</ClassName>
+        <Description>WIFI Throuhput Measurement using IPERF</Description>
+        <Environment name="CWS_WIFI">
+            <Dependency>EQT_LIVE_AP</Dependency>
+            <Dependency>SW_IPERF_SERVER</Dependency>
+        </Environment>
+    </UseCase>
+    <UseCase Id="LAB_WIFI_KPI_TIME" Domain="CWS" SubDomain="WIFI" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Networking.WiFi_KRI_KPI.LAB_WIFI_KPI_TIME.LabWifiKPITime</ClassName>
+        <Description>test connect to wifi</Description>
+        <Environment name="CWS_WIFI">
+            <Dependency>EQT_LAB_AP</Dependency>
+            <Dependency>SW_RADIUS_SERVER</Dependency>
+            <Dependency>EQT_LAB_USIM</Dependency>
+            <Dependency>CAP_EAP_AKA</Dependency>
+            <Dependency>CAP_EAP_SIM</Dependency>
+        </Environment>
+    </UseCase>
+    <UseCase Id="LAB_WIFI_KPI_TIME" Domain="CWS" SubDomain="WIFI" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Networking.WiFi_KRI_KPI.LAB_WIFI_KPI_TIME.LabWifiKPITime</ClassName>
+        <Description>test connect to wifi</Description>
+        <Environment name="CWS_WIFI">
+            <Dependency>EQT_LAB_AP</Dependency>
+            <Dependency>SW_RADIUS_SERVER</Dependency>
+            <Dependency>EQT_LAB_USIM</Dependency>
+            <Dependency>CAP_EAP_AKA</Dependency>
+            <Dependency>CAP_EAP_SIM</Dependency>
+        </Environment>
+    </UseCase>
+    <UseCase Id="LIVE_WIFI_TURN_ON_OFF" Domain="CWS" SubDomain="WIFI" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Networking.LIVE_WIFI_TURN_ON_OFF.LiveWifiTurnOnOff</ClassName>
+        <Description>Wifi turn on off in required mode</Description>
+        <Environment name="ANY"/>
+        <Parameters>
+            <Parameter name="TURN_WIFI_SEQUENCE" type="STRING" isOptional="false">
+                <Description>on off sequence separated by space. Ex: "ON OFF ON"</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="FLIGHT_MODE" type="BOOLEAN" isOptional="true">
+                <Description>
+                    Is set to True, the flight mode will be enables before setting wifi on and disabled at tear down.
+                </Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+        </Parameters>
+    </UseCase>
+    <UseCase Id="LAB_WIFI_CHANGE_SECURITY" Domain="CWS" SubDomain="WIFI" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Networking.LAB_WIFI_CHANGE_SECURITY.LabWifiChangeSecurity</ClassName>
+        <Description>Test Wifi disconnect and reconnect after change AP security type</Description>
+        <Environment name="CWS_WIFI">
+            <Dependency>EQT_LAB_AP</Dependency>
+            <Dependency>SW_RADIUS_SERVER</Dependency>
+        </Environment>
+        <Parameters>
+            <Parameter name="WIFI_STANDARD" type="STRING" isOptional="false">
+                <Description>Wifi standard of wifi env to be used. Depending on AP capabilities</Description>
+                <PossibleValues>a;b;g;an;bg;gn;bgn;n2.4G;n5G;off</PossibleValues>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="WIFI_SECURITY" type="STRING" isOptional="false">
+                <Description>Wifi Security of wifi env to be used.</Description>
+                <PossibleValues>OPEN;WEP64;WEP64-OPEN;WEP128;WEP128-OPEN;WPA-PSK-TKIP;WPA2-PSK-AES;EAP-WPA;EAP-WPA2</PossibleValues>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="EAP_METHOD" type="STRING" isOptional="false">
+                <Description>EAP method used when WIFI_SECURITY is "EAP-WAP" or "EAP-WPA2".</Description>
+                <PossibleValues>PEAP;TLS;TTLS;SIM;AKA;FAST</PossibleValues>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="PHASE2_AUTH" type="STRING" isOptional="false">
+                <Description>Phase2 authentication used when WIFI_SECURTY is "EAP-WAP" or "EAP-WPA2".</Description>
+                <PossibleValues>None;PAP;MSCHAP;MSCHAPV2;GTC</PossibleValues>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="MANDATORY_CERT" type="BOOLEAN" isOptional="false">
+                <Description>Set to 'true' if you need to use certificates at the same time as TTLS or PEAP. If ommited, the default value for this parameter is false.</Description>
+                <PossibleValues>true;false</PossibleValues>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="WIFI_PASSPHRASE" type="STRING" isOptional="true">
+                <Description>Wifi passphrase when WIFI_SECURITY is not "OPEN". If it is "NONE", use the default password. This parameter can be used to test connection failure.</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="IP_SETTING_ENABLE" type="STRING" isOptional="false">
+                <Description>DUT static ip setting enable:True; disable: False. only when it is enabled, below parameters setting is available.</Description>
+                <PossibleValues>true;false</PossibleValues>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="IP_ADDRESS" type="STRING" isOptional="false">
+                <Description>DUT static ip setting for ip address.</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="NETMASK" type="STRING" isOptional="false">
+                <Description>DUT static ip setting for netmask.</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="GATEWAY" type="STRING" isOptional="false">
+                <Description>DUT static ip setting for gateway.</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="DNS1" type="STRING" isOptional="false">
+                <Description>DUT static ip setting for dns1.</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="DNS2" type="STRING" isOptional="false">
+                <Description>DUT static ip setting for dns2.</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="WIFI_CHANNEL" type="INTEGER" isOptional="true">
+                <Description>[Optional] Wifi channel: 1-14 for 2.4GHz, 36-165 for 5GHz, 0:auto (default is AP current setup if not specified).</Description>
+                <PossibleValues>0;1;2;3;4;5;6;7;8;9;10;11;12;13;14;36;40;44;48;52;56;60;64;100;104;108;112;116;120;124;128;132;136;140;149;153;157;161;165</PossibleValues>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="WIFI_DTIM" type="INTEGER" isOptional="true">
+                <Description>[Optional] Wifi DTIM: 1,3,5 (default is AP current setup if not specified).</Description>
+                <PossibleValues>1;3;5</PossibleValues>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="WIFI_BEACON" type="INTEGER" isOptional="true">
+                <Description>[Optional] Wifi beacon interval in ms: 50..500 (default is AP current setup if not specified).</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="WIFI_WMM" type="INTEGER" isOptional="true">
+                <Description>[Optional] Wifi WMM: 0 or 1 (default is AP current setup if not specified).</Description>
+                <PossibleValues>0;1</PossibleValues>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="WIFI_BAND" type="INTEGER" isOptional="true">
+                <Description>[Optional] Wifi Band: 20 or 40 (MHz) (default is AP current setup if not specified).</Description>
+                <PossibleValues>0;1</PossibleValues>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="WIFI_MIMO" type="INTEGER" isOptional="true">
+                <Description>[Optional] Enable WIFI Multiple Input Multiple Output (default value is Single Input Single Output).</Description>
+                <PossibleValues>0;1</PossibleValues>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="WIFI_SNIFF" type="INTEGER" isOptional="true">
+                <Description>[Optional] Sniffer capture: 0 or 1 (WIFI_CHANNEL must be specified).</Description>
+                <PossibleValues>0;1</PossibleValues>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="FLIGHT_MODE" type="BOOLEAN" isOptional="true">
+                <Description>[Optional] Set to "True" for using flight mode instead of disabling/enabling Wifi interface only.</Description>
+                <PossibleValues>true;false</PossibleValues>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="PACKAGES_TO_DISABLE" type="STRING" isOptional="true">
+                <Description>[Optional] comma separated list containing packages you want to disable before testing.</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="REGULATORY_DOMAIN" type="STRING" isOptional="true">
+                <Description>[Optional] Regulatory Domain to use for both AP and DUT (US, GB, FR, ...).</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="KEY_EXCHANGE_MODE" type="STRING" isOptional="false">
+                <Description>Ways to exchange the ciphering key.</Description>
+                <PossibleValues>WPS-PBC;WPS-PIN-DUT;WPS-PIN-AP</PossibleValues>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="KEY_EXCHANGE_PIN" type="STRING" isOptional="false">
+                <Description>PIN to exchange key (in "WPS-PIN-xx").</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="MAKE_WPS_TEST_FAIL" type="BOOLEAN" isOptional="false">
+                <Description>True if we want to simulate a test failure (PBC timeout or wrong pin).</Description>
+                <PossibleValues>true;false</PossibleValues>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="RESTART_DUT" type="STRING" isOptional="false">
+                <Description>Activate the restart Wifi interface or whole DUT.</Description>
+                <PossibleValues>OFF;INTERFACE;PHONE</PossibleValues>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="RESTART_AP_RADIO" type="BOOLEAN" isOptional="false">
+                <Description>Switch OFF then back ON the Access Point radio (True / False).</Description>
+                <PossibleValues>true;false</PossibleValues>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="CONFIGURABLE_AP_TO_USE" type="STRING" isOptional="true">
+                <Description>[OPTIONAL] To force an access point for this test.</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="USE_IPV6" type="STRING" isOptional="true">
+                <Description>[OPTIONAL] IPV6 (True) or IPV4 (False).</Description>
+                <PossibleValues>true;false</PossibleValues>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="IPV6_CONFIGURATION_MODE" type="STRING" isOptional="true">
+                <Description>[OPTIONAL] If USE_IPV6 == True, the is the way to configure the IPV6 client.</Description>
+                <PossibleValues>STATEFUL;STATELESS;STATELESS_RDNSSD</PossibleValues>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="IPV6_COMPUTER" type="BOOLEAN" isOptional="true">
+                <Description>[OPTIONAL] If USE_IPV6 == True, Computer where the IPV6 server will be started.</Description>
+                <PossibleValues>true;false</PossibleValues>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="WHILE_BLUETOOTH_ON" type="STRING" isOptional="true">
+                <Description>[OPTIONAL] If 'ON', Bluetooth is activated prior to the test to perform FIT tests, and is restaured to initial value at the end of the test. If 'OFF', BT is de-activated.</Description>
+                <PossibleValues>ON;OFF</PossibleValues>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="WIFI_HIDDEN" type="INTEGER" isOptional="false">
+                <Description>Wifi SSID broadcast disabled: 0 (visible) or 1 (hidden).</Description>
+                <PossibleValues>0;1</PossibleValues>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="WIFI_SECURITY_2" type="STRING" isOptional="false">
+                <Description>New Wifi Security to be used during the test when DUT is connected to the AP.</Description>
+                <PossibleValues>OPEN;WEP64;WEP64-OPEN;WEP128;WEP128-OPEN;WPA-PSK-TKIP;WPA2-PSK-AES;EAP-WPA;EAP-WPA2</PossibleValues>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="EAP_METHOD_2" type="STRING" isOptional="true">
+                <Description>EAP method used when WIFI_SECURITY_2 is "EAP-WAP" or "EAP-WPA2".</Description>
+                <PossibleValues>PEAP;TLS;TTLS;SIM;AKA;FAST</PossibleValues>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="PHASE2_AUTH_2" type="STRING" isOptional="true">
+                <Description>Phase2 authentication used when WIFI_SECURITY_2 is "EAP-WAP" or "EAP-WPA2".</Description>
+                <PossibleValues>None;PAP;MSCHAP;MSCHAPV2;GTC</PossibleValues>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+        </Parameters>
+    </UseCase>
+</UseCases>

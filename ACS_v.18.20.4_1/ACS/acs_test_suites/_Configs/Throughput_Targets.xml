@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Sections>
+    <!-- Sections for LAB TESTING -->
+    <Section Name="GPRS" Description="Target throughputs values for GPRS in kbps">
+        <CodingSchemes>
+            <CodingScheme Name="CS1" Throughput="8" />
+            <CodingScheme Name="CS2" Throughput="12" />
+            <CodingScheme Name="CS3" Throughput="14.4" />
+            <CodingScheme Name="CS4" Throughput="20" />
+        </CodingSchemes>
+    </Section>
+    <Section Name="EGPRS" Description="Target throughputs values for EGPRS in kbps">
+        <CodingSchemes>
+            <CodingScheme Name="MCS1" Throughput="8.8" />
+            <CodingScheme Name="MCS2" Throughput="11.2" />
+            <CodingScheme Name="MCS3" Throughput="14.8" />
+            <CodingScheme Name="MCS4" Throughput="17.6" />
+            <CodingScheme Name="MCS5" Throughput="22.4" />
+            <CodingScheme Name="MCS6" Throughput="29.6" />
+            <CodingScheme Name="MCS7" Throughput="44.8" />
+            <CodingScheme Name="MCS8" Throughput="54.4" />
+            <CodingScheme Name="MCS9" Throughput="59.2" />
+        </CodingSchemes>
+    </Section>
+    <Section Name="WCDMA" Description="Target throughputs values for WCDMA in kbps">
+            <RABs>
+                <RAB Name="64k" Throughput="64.0" />
+                <RAB Name="128k" Throughput="128.0" />
+                <RAB Name="384k" Throughput="384.0" />
+            </RABs>
+    </Section>
+    <Section Name="HSDPA" Description="Target throughputs values for HSDPA in kbps">
+            <Categories> <!-- Categories values are MS reported categories (not user defined) -->
+                <Category Name="1" CQI="22" Throughput="1195.0" />
+                <Category Name="2" CQI="22" Throughput="1195.0" />
+                <Category Name="3" CQI="22" Throughput="1792.0" />
+                <Category Name="4" CQI="22" Throughput="1792.0" />
+                <Category Name="5" CQI="22" Throughput="3584.0" />
+                <Category Name="6" CQI="22" Throughput="3584.0" />
+                <Category Name="7" CQI="25" Throughput="7206.0" />
+                <Category Name="8" CQI="25" Throughput="7206.0" />
+                <Category Name="9" CQI="25" Throughput="10200.0" />
+                <Category Name="10" CQI="25" Throughput="14400.0" />
+                <Category Name="11" CQI="15" Throughput="830.0" />
+                <Category Name="12" CQI="15" Throughput="1660.0" />
+                <Category Name="13" CQI="25" Throughput="17600.0" />
+                <Category Name="14" CQI="25" Throughput="21100.0" />
+                <Category Name="15" CQI="25" Throughput="23400.0" />
+                <Category Name="16" CQI="25" Throughput="28000.0" />
+                <Category Name="19" CQI="25" Throughput="35300.0" />
+                <Category Name="20" CQI="25" Throughput="42200.0" />
+                <Category Name="21" CQI="25" Throughput="23400.0" />
+                <Category Name="22" CQI="25" Throughput="28000.0" />
+                <Category Name="23" CQI="25" Throughput="35300.0" />
+                <Category Name="24" CQI="25" Throughput="42200.0" />
+                <Category Name="25" CQI="25" Throughput="46700.0" />
+                <Category Name="26" CQI="25" Throughput="55900.0" />
+                <Category Name="27" CQI="25" Throughput="70600.0" />
+                <Category Name="28" CQI="25" Throughput="84400.0" />
+            </Categories>
+    </Section>
+    <Section Name="HSUPA" Description="Target throughputs values for HSUPA in kbps">
+            <Categories> <!-- Categories values are MS reported categories (not user defined) -->
+                <Category Name="1" TTI="10" Throughput="730.0" />
+                <Category Name="2" TTI="10" Throughput="1460.0" />
+                <Category Name="3" TTI="10" Throughput="1460.0" />
+                <Category Name="4" TTI="10" Throughput="2930.0" />
+                <Category Name="5" TTI="10" Throughput="2000.0" />
+                <Category Name="6" TTI="2" Throughput="5760.0" />
+                <Category Name="7" TTI="2" Throughput="11500.0" />
+                <Category Name="8" TTI="2" Throughput="11500.0" />
+                <Category Name="9" TTI="2" Throughput="23000.0" />
+            </Categories>
+    </Section>
+    <Section Name="TD-SCDMA" Description="Target throughputs values for TD-SCDMA in kbps">
+        <Categories>
+            <Category Direction="DL" DL_Throughput="2840"/>
+            <Category Direction="UL" UL_Throughput="2220" />
+            <Category Direction="BOTH" DL_Throughput="1540" UL_Throughput="1030" />
+        </Categories>
+    </Section>
+    <Section Name="LTE" Description="Target throughputs values for LTE in kbps">
+            <Categories> <!-- Categories values are MS reported categories (not user defined) -->
+                <!-- Todo: When MIMO uplink is supported, update Throughput_Targets.xml for UL -->
+                <!-- Cat 1 -->
+                <Category Name="1" Bandwidth="5" Antenna="1" DL_Throughput="5148" UL_Throughput="2580" max_BLER="0.03" dl_nb_rb= "25" ul_nb_rb= "25" dl_i_mcs = "20" ul_i_mcs = "11" tm_mode = "TM1" />
+                <Category Name="1" Bandwidth="10" Antenna="1" DL_Throughput="10296" UL_Throughput="5160" max_BLER="0.03" dl_nb_rb= "50" ul_nb_rb= "50" dl_i_mcs = "20" ul_i_mcs = "11" tm_mode = "TM1"/>
+                <!-- Cat 2 -->
+                <Category Name="2" Bandwidth="5" Antenna="1" DL_Throughput="12756" UL_Throughput="12728" max_BLER="0.03" dl_nb_rb= "25" ul_nb_rb= "25" dl_i_mcs = "23" ul_i_mcs = "20" tm_mode = "TM1"/>
+                <Category Name="2" Bandwidth="5" Antenna="2" DL_Throughput="25512" UL_Throughput="12728"  max_BLER="0.03" dl_nb_rb= "25" ul_nb_rb= "25" dl_i_mcs = "23" ul_i_mcs = "20" tm_mode = "TM3"/>
+                <Category Name="2" Bandwidth="10" Antenna="1" DL_Throughput="25512" UL_Throughput="25456" max_BLER="0.03" dl_nb_rb= "50" ul_nb_rb= "50" dl_i_mcs = "23" ul_i_mcs = "20" tm_mode = "TM1"/>
+                <Category Name="2" Bandwidth="10" Antenna="2" DL_Throughput="51024" UL_Throughput="25456" max_BLER="0.03" dl_nb_rb= "50" ul_nb_rb= "50" dl_i_mcs = "23" ul_i_mcs = "20" tm_mode = "TM3"/>
+                <!-- Cat 3 -->
+                <Category Name="3" Bandwidth="5" Antenna="1" DL_Throughput="12756" UL_Throughput="12756" max_BLER="0.03" dl_nb_rb= "25" ul_nb_rb= "25" dl_i_mcs = "23" ul_i_mcs = "23" tm_mode = "TM1"/>
+                <Category Name="3" Bandwidth="5" Antenna="2" DL_Throughput="25512" UL_Throughput="12756" max_BLER="0.03" dl_nb_rb= "25" ul_nb_rb= "25" dl_i_mcs = "23" ul_i_mcs = "23" tm_mode = "TM3"/>
+                <Category Name="3" Bandwidth="10" Antenna="1" DL_Throughput="25512" UL_Throughput="25512" max_BLER="0.03" dl_nb_rb= "50" ul_nb_rb= "50" dl_i_mcs = "23" ul_i_mcs = "23" tm_mode = "TM1"/>
+                <Category Name="3" Bandwidth="10" Antenna="2" DL_Throughput="51024" UL_Throughput="25512" max_BLER="0.03" dl_nb_rb= "50" ul_nb_rb= "50" dl_i_mcs = "23" ul_i_mcs = "23" tm_mode = "TM3"/>
+                <Category Name="3" Bandwidth="20" Antenna="1" DL_Throughput="51024" UL_Throughput="51024" max_BLER="0.03" dl_nb_rb= "100" ul_nb_rb= "100" dl_i_mcs = "23" ul_i_mcs = "23" tm_mode = "TM1"/>
+                <Category Name="3" Bandwidth="20" Antenna="2" DL_Throughput="102048" UL_Throughput="51024" max_BLER="0.03" dl_nb_rb= "100" ul_nb_rb= "100" dl_i_mcs = "23" ul_i_mcs = "23" tm_mode = "TM3"/>
+                <!-- Cat 4 -->
+                <Category Name="4" Bandwidth="5" Antenna="1" DL_Throughput="18844" UL_Throughput="12756" max_BLER="0.03" dl_nb_rb= "25" ul_nb_rb= "25" dl_i_mcs = "27" ul_i_mcs = "23" tm_mode = "TM1"/>
+                <Category Name="4" Bandwidth="5" Antenna="2" DL_Throughput="37688" UL_Throughput="12756" max_BLER="0.03" dl_nb_rb= "25" ul_nb_rb= "25" dl_i_mcs = "27" ul_i_mcs = "23" tm_mode = "TM3"/>
+                <Category Name="4" Bandwidth="10" Antenna="1" DL_Throughput="37688" UL_Throughput="25512" max_BLER="0.03" dl_nb_rb= "50" ul_nb_rb= "50" dl_i_mcs = "28" ul_i_mcs = "23" tm_mode = "TM1"/>
+                <Category Name="4" Bandwidth="10" Antenna="2" DL_Throughput="75376" UL_Throughput="25512" max_BLER="0.03" dl_nb_rb= "50" ul_nb_rb= "50" dl_i_mcs = "28" ul_i_mcs = "23" tm_mode = "TM3"/>
+                <Category Name="4" Bandwidth="20" Antenna="1" DL_Throughput="75376" UL_Throughput="51024" max_BLER="0.03" dl_nb_rb= "100" ul_nb_rb= "100" dl_i_mcs = "28" ul_i_mcs = "23" tm_mode = "TM1"/>
+                <Category Name="4" Bandwidth="20" Antenna="2" DL_Throughput="150752" UL_Throughput="51024" max_BLER="0.03" dl_nb_rb= "100" ul_nb_rb= "100" dl_i_mcs = "28" ul_i_mcs = "23" tm_mode = "TM3"/>
+                <!-- Cat 6 -->
+                <Category Name="6" Bandwidth="5" Antenna="1" DL_Throughput="18844" UL_Throughput="12756" max_BLER="0.03" dl_nb_rb= "25" ul_nb_rb= "25" dl_i_mcs = "27" ul_i_mcs = "23" tm_mode = "TM1"/>
+                <Category Name="6" Bandwidth="5" Antenna="2" DL_Throughput="37688" UL_Throughput="12756" max_BLER="0.03" dl_nb_rb= "25" ul_nb_rb= "25" dl_i_mcs = "27" ul_i_mcs = "23" tm_mode = "TM3"/>
+                <Category Name="6" Bandwidth="10" Antenna="1" DL_Throughput="37688" UL_Throughput="25512" max_BLER="0.03" dl_nb_rb= "50" ul_nb_rb= "50" dl_i_mcs = "28" ul_i_mcs = "23" tm_mode = "TM1"/>
+                <Category Name="6" Bandwidth="10" Antenna="2" DL_Throughput="75376" UL_Throughput="25512" max_BLER="0.03" dl_nb_rb= "50" ul_nb_rb= "50" dl_i_mcs = "28" ul_i_mcs = "23" tm_mode = "TM3"/>
+                <Category Name="6" Bandwidth="20" Antenna="1" DL_Throughput="75376" UL_Throughput="51024" max_BLER="0.03" dl_nb_rb= "100" ul_nb_rb= "100" dl_i_mcs = "28" ul_i_mcs = "23" tm_mode = "TM1"/>
+                <Category Name="6" Bandwidth="20" Antenna="2" DL_Throughput="150752" UL_Throughput="51024" max_BLER="0.03" dl_nb_rb= "100" ul_nb_rb= "100" dl_i_mcs = "28" ul_i_mcs = "23" tm_mode = "TM3"/>
+            </Categories>
+    </Section>
+    <Section Name="LTE_TDD" Description="Target throughputs values for LTE TDD in kbps">
+            <Categories> <!-- Categories values are MS reported categories (not user defined) -->
+                <!-- Todo: When MIMO uplink is supported, update Throughput_Targets.xml for UL -->
+                <!-- Cat 4 -->
+                <Category Name="4" Direction="DL" DL_Throughput="120600" TDD_Configuration="TDD_CONF5" max_BLER="0.03"/>
+                <Category Name="4" Direction="UL" UL_Throughput="30600" TDD_Configuration="TDD_CONF0" max_BLER="0.03"/>
+                <Category Name="4" Direction="BOTH" DL_Throughput="60300" UL_Throughput="20400" TDD_Configuration="TDD_CONF1" max_BLER="0.00"/>
+                <!-- Cat 6 -->
+                <Category Name="6" Direction="DL" DL_Throughput="120600" TDD_Configuration="TDD_CONF5" max_BLER="0.03"/>
+                <Category Name="6" Direction="UL" UL_Throughput="30600" TDD_Configuration="TDD_CONF0" max_BLER="0.03"/>
+                <Category Name="6" Direction="BOTH" DL_Throughput="60300" UL_Throughput="20400" TDD_Configuration="TDD_CONF1" max_BLER="0.00"/>
+            </Categories>
+    </Section>
+
+
+
+
+    <!-- Sections for LIVE TESTING -->
+    <Section Name="LIVE_WCDMA">
+        <ThroughputTypes>
+            <ThroughputType Name="TARGET" Description="Target throughputs values for LIVE WCDMA in Kbps">
+                <Directions> <!-- Directions values are MS reported categories (not user defined) -->
+                    <Direction Name="UL" Throughput="1700.0" />
+                    <Direction Name="DL" Throughput="63000.0" />
+                </Directions>
+            </ThroughputType>
+            <ThroughputType Name="FAILURE" Description="Failure throughputs values for LIVE WCDMA in Kbps">
+                <Directions> <!-- Directions values are MS reported categories (not user defined) -->
+                    <Direction Name="UL" Throughput="1000.0" />
+                    <Direction Name="DL" Throughput="6000.0" />
+                </Directions>
+            </ThroughputType>
+        </ThroughputTypes>
+    </Section>
+</Sections>

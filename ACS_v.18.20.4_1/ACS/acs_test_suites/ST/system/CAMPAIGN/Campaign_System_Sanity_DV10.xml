@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<Campaign>
+  <Parameters>
+    <Parameter isControlledPSUsed ="False"/>
+    <Parameter isIoCardUsed ="False"/>
+    <!-- Set skipBootOnPowerCycle to True to disable the accs boot procedure-->
+    <!-- Important, it means that boot will be handle inside the campaign/tc -->
+    <Parameter skipBootOnPowerCycle ="False"/>
+    <Parameter runHookScripts = "False"/>        
+    <Parameter powerCycleBetweenTC ="False"/>
+    <Parameter powerCycleOnFailure ="False"/>
+    <Parameter finalPowerOff ="False"/>
+    <Parameter stopCampaignOnCriticalFailure = "False"/>
+    <Parameter stopCampaignOnFirstFailure = "False"/>
+    <!-- LoggingLevel possible values: info | warning | debug | error -->
+    <Parameter loggingLevel = "info"/>
+    <!-- CampaignType format -> <TEAM>_<CAMPAIGNTYPE> 
+        Possible values:        
+        FT(Feature Team)-> SANITY | REGRESSION | STRESS, RELIABILTY | MTBF
+        ST(System Test)-> SANITY | REGRESSION | STRESS, RELIABILTY | MTBF
+        SI(System Integration)-> EAT | STAB | PACT | CAT0 | RELIABILITY | MTBF | CTS
+        Otherwise "Others" should be used -->
+    <Parameter CampaignType = "ST_SANITY"/>
+  </Parameters> 
+  <Targets>
+    <!-- Target Values -->  
+    <Target targetB2bPassRate ="80"/>
+  </Targets>
+  <TestCases>
+    <!-- Boot, Flash, Setup -->
+    <TestCase Id="SI/BBot_EAT_PACT/TC/COMMON/SYSTEM/SI_SYSTEM_SETUP_EMBEDDED"/>
+    
+    <!-- ADB -->
+      <TestCase Id="../TC/ADB/ST_SYST_USB_Gadget_ADB_003-EXEC"/>
+    
+    <!-- Content: SMS, MMS, Contact -->
+      <TestCase Id="../TC/Content/ST_SYST_FS_eMMC_056-LIVE_SYSTEM_CONTACT_OPERATION"/>
+    
+    <!-- File -->
+    <TestCase Id="../TC/File/ST_SYST_FS_eMMC_090-LIVE_SYSTEM_FILE_OPERATION"/>
+    <TestCase Id="../TC/File/ST_SYST_FS_eMMC_092-LIVE_SYSTEM_FILE_NAME_OPERATION"/>
+    
+    <!-- Ringer Profile -->
+      <TestCase Id="../TC/RingerProfile/ST_SYST_STATE_INFO_733-LIVE_SYSTEM_CHECK_RINGER_PROFILE"/>
+    
+    <!-- SensorInfo -->
+      <TestCase Id="../TC/SensorInfo/ST_SYST_SENSORS_001-LIVE_SYSTEM_SENSOR_INFO"/>
+    
+    <!-- SystemInfo -->
+    <TestCase Id="../TC/SystemInfo/ST_SYST_STATE_INFO_700-LIVE_SYSTEM_RETRIEVE_SYSTEM_INFO"/> 
+    
+    <!-- Tune Sound -->
+      <TestCase Id="../TC/TuneSound/ST_SYST_INPUT_TOUCH_018-LIVE_SYSTEM_TUNE_SOUND"/>
+    
+  </TestCases>
+</Campaign>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="13.37">
+    <UseCase>LAB_EM_COS_CHARGING</UseCase>
+    <Description>Platform shall charge the battery to CRITICAL level before entering NORMAL mode. Platform shall be able to boot in CHARGING ONLY mode when battery DEAD threashold is reached and charger connected.</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>False</b2bContinuousMode>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters>
+        <Parameter>
+            <!-- Charger to use for the test -->
+            <Name>CHARGER_TYPE</Name>
+            <Value>DCP</Value>
+        </Parameter>
+        <Parameter>
+            <Name>SCU_CHARGING_HI_VOLTAGE</Name>
+            <Value>3.35</Value>
+        </Parameter>
+        <Parameter>
+            <Name>COS_CHARGING_HI_VOLTAGE</Name>
+            <Value>3.55</Value>
+        </Parameter>
+        <Parameter>
+            <Name>MOS_CHARGING_LO_VOLTAGE</Name>
+            <Value>3.71</Value>
+        </Parameter>
+        <Parameter>
+            <!-- active or not the external power supply, can be TRUE or FALSE -->
+            <Name>EXT_PS</Name>
+            <Value>TRUE</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

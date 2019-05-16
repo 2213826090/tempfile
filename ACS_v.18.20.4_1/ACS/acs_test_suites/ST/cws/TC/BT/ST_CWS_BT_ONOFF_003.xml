@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="13.41">
+    <UseCase>TEST_STEP_ENGINE</UseCase>
+    <Description></Description>
+    <b2bIteration>3</b2bIteration>
+    <b2bContinuousMode>False</b2bContinuousMode>
+    <TcMaxAttempt>1</TcMaxAttempt>
+    <TcAcceptanceCriteria>1</TcAcceptanceCriteria>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters></Parameters>
+    <TestSteps>
+        <Include Src="ST/cws/TSS/Common/ST_CWS_COMMON.xml" />
+        <Setup>
+            <!-- AUTOMATION - Set default configuration -->
+            <TestStep SetId="InitPhoneCWS" DEVICE="PHONE1" />
+            <!-- SPEC - Init : BT is OFF -->
+            <TestStep Id="BT_SET_POWER" DEVICE="PHONE1" POWER="OFF"/>
+            <TestStep Id="OPEN_BLUETOOTH_SETTINGS" DEVICE="PHONE1" />
+        </Setup>
+        <RunTest>
+            <!-- SPEC - Step 1 : Turn On Bluetooth -->
+            <TestStep Id="BT_SET_POWER" DEVICE="PHONE1" POWER="ON"/>
+            <TestStep Id="SUSPEND" DURATION_IN_SEC="2"/>
+            <!-- SPEC - Step 2&3 : Reboot the device and check BT is On -->
+            <TestStep Id="REBOOT_DEVICE" DEVICE="PHONE1" WAY="soft"/>
+            <TestStep Id="BT_GET_POWER" DEVICE="PHONE1" SAVE_AS="BT_POWER_STATUS"/>
+            <TestStep Id="COMPARE" FIRST="on" SECOND="FROM_CTX:BT_POWER_STATUS" OPERATOR="EQUAL" PASS_IF="true"/>
+        </RunTest>
+        <TearDown>
+            <TestStep Id="BT_SET_POWER" DEVICE="PHONE1" POWER="OFF"/>
+            <TestStep Id="OPEN_HOME_PAGE" DEVICE="PHONE1" />
+        </TearDown>
+    </TestSteps>
+</TestCase>

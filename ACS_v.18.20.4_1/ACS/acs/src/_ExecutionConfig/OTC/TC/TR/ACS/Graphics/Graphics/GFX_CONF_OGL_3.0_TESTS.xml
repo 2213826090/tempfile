@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase>
+    <UseCase>LIVE_ANDROID_GFX_APK_KHRONOS_VALIDATION</UseCase>
+    <Description>Run a GFX test sequence</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <TestSteps>
+        <Initialize>
+            <TestStep Id="GET_ARTIFACT" EQT="ARTIFACT_MANAGER" ARTIFACT="GFX_CONFORMANCE/CTS-debug.apk" ARTIFACT_SOURCE="FROM_BENCH:ARTIFACT_MANAGER:URI" TRANSFER_TIMEOUT="DEFAULT" STORED_FILE_PATH="FILE_PATH_IN_CACHE1"/>
+            <TestStep Id="INSTALL_APP" DEVICE="PHONE1" FILE_PATH="FROM_CTX:FILE_PATH_IN_CACHE1" SIGN="False" BACKUP="False" BACKUP_FILE_PATH="." SIGN_KEY_PATH="." TIMEOUT="60"/>
+        </Initialize>
+        <Finalize>
+            <TestStep Id="UNINSTALL_APP" DEVICE="PHONE1" APP_NAME="org.khronos.gl_cts" BACKUP_APP_NAME="NO_BACKUP" BACKUP_FILE_PATH="FROM_CTX:FILE_PATH_IN_CACHE1" TIMEOUT="60"/>
+        </Finalize>
+    </TestSteps>
+    <Parameters>
+        <Parameter>
+            <Name>RUN_TYPE</Name>
+            <Value>FULL</Value>
+        </Parameter>
+        <Parameter>
+            <Name>CERT_MODE</Name>
+            <Value>False</Value>
+        </Parameter>
+         <Parameter>
+            <Name>ACTIVITY_NAME</Name>
+            <Value>ES3</Value>
+        </Parameter>
+        <Parameter>
+            <Name>DEVICE_LOGDIR</Name>
+            <Value>gfx-mockup</Value>
+        </Parameter>
+        <Parameter>
+            <Name>GROUPS_FILENAME</Name>
+            <Value>ES3-CTS-groups.txt</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

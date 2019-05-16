@@ -1,0 +1,43 @@
+{
+    "Configuration": {
+        "Boot": null,
+        "BootVars": null,
+        "Custom": null,
+        "Download": {
+            "INTERNAL_DOWNLOAD": [
+                {
+                    "pft_key": "fastboot",
+                    "regexp_key": ".*flashfiles.*.zip",
+                    "flash_file": null,
+                    "configuration": "blank",
+                    "groups": {
+                        "tel-disable": true,
+                        "tel-7260_V2_NA_EU": false,
+                        "fake-battery": true
+                    },
+                    "start_state": "dnx",
+                    "pft_fallback": {
+                        "groups": {
+                            "Disable_Telephony": true,
+                            "tel-7260_V2_NA_EU": false
+                        }
+                    }
+                },
+                {
+                    "local_key": "ota",
+                    "buildbot_artifactory_path": {"path": "device_name_id/variant_id", "detection": "cactus-absp"},
+                    "regexp_key": ".*ota-.*.zip",
+                    "flash_file": null,
+                    "configuration": null,
+                    "start_state": "mos"
+                }
+            ]
+        },
+        "Inherit": {
+            "BOARD": "cht_hr"
+        },
+        "Logs": null,
+        "Timeout": null,
+        "WorkAround": null
+    }
+}

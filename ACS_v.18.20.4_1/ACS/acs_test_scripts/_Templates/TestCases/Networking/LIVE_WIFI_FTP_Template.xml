@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="13.45">
+    <UseCase>LIVE_WIFI_FTP</UseCase>
+    <Description>FTP Upload / Download over WLAN</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters>
+        <Parameter>
+            <!-- Wifi access point on which board will connect to.
+            Must refers to a wifi router's name (equipment name of the bench configuration file).
+            If no value has been set, a default router will be choosen in the bench configuration,
+            depending on WIFI_SECURITY.-->
+            <Name>WIFI_ACCESS_POINT</Name>
+            <Value>WPA_WIFI_ROUTER</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Direction of FTP transfer -->
+            <Name>DIRECTION</Name>
+            <Value>DL</Value>
+        </Parameter>
+        <Parameter>
+            <!-- File to download from the server. This file shall be available on the server. If the file to transfer is located in a specific directory, you can specify its path. i.e. : acs/download_file/get5M -->
+            <Name>DL_FILE</Name>
+            <Value>get50M</Value>
+        </Parameter>
+        <Parameter>
+            <!-- File to upload on the server. This file shall be available on the device. If the file to transfer is located in a specific directory, you can specify its path. i.e. : acs/upload_file/put5M -->
+            <Name>UL_FILE</Name>
+            <Value>50MB.txt</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Transfer timeout in s -->
+            <Name>XFER_TIMEOUT</Name>
+            <Value>120</Value>
+        </Parameter>
+        <Parameter>
+            <!-- [OPTIONAL] If 'ON', Bluetooth is activated prior to the test to perform FIT tests, and is restaured to initial value at the end of the test. If 'OFF', BT is de-activated. -->
+            <Name>WHILE_BLUETOOTH_ON</Name>
+            <Value></Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

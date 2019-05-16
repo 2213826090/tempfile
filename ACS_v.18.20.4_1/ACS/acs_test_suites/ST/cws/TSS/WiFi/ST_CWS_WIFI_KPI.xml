@@ -1,0 +1,417 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<Include>
+    <!-- Description : Common setup for all CWS WiFi STA KPI -->
+    <!-- Parameters : DEVICE (Phone), REGULATORY_DOMAIN (Country Code) -->
+    <TestStepSet Id="KPIWiFiInitAndConfigureSTA">
+        <TestStep SetId="KPIWiFiInitAndConfigure"/>
+        <!-- Configure WiFi STA -->
+        <TestStep Id="WIFI_SET_POWER" POWER="on"/>
+        <TestStep Id="WIFI_SET_NETWORK_NOTIFICATIONS" NETWORK_NOTIFICATIONS="false"/>
+        <TestStep Id="WIFI_REMOVE_NETWORK" SSID="all"/>
+        <TestStep Id="WIFI_SET_REGULATORY_DOMAIN" INTERFACE="wlan0"/>
+        <TestStep Id="WIFI_SET_FREQUENCY_BAND" FREQUENCY="AUTO" INTERFACE="wlan0" SILENT_MODE="true"/>
+        <TestStep Id="OPEN_HOME_PAGE"/>
+    </TestStepSet>
+
+    <!-- Description : Common setup for all CWS WiFi P2P KPI -->
+    <!-- Parameters : DEVICE (Phone), REGULATORY_DOMAIN (Country Code), MAC_ADDR (WiFi MAC address to save, use it to rename P2P) -->
+    <TestStepSet Id="KPIWiFiInitAndConfigureP2P">
+        <TestStep SetId="KPIWiFiInitAndConfigure"/>
+        <!-- Configure WiFi P2P -->
+        <TestStep SetId="WiFiCommonSetup"/>
+        <TestStep Id="WIFI_SET_NETWORK_NOTIFICATIONS" NETWORK_NOTIFICATIONS="false"/>
+        <TestStep Id="SET_PHONE_LOCK" VALUE="unlock"/>
+        <TestStep Id="SET_SCREEN_PROPERTY" PROPERTY="state" VALUE="on"/>
+        <TestStep Id="OPEN_HOME_PAGE"/>
+        <TestStep Id="OPEN_WIFI_DIRECT_SETTINGS"/>
+        <TestStep Id="WIFI_DIRECT_REMOVE_REMEMBERED_GROUPS"/>
+        <TestStep Id="GET_MAC_ADDRESS" INTERFACE="wlan0"/>
+    </TestStepSet>
+
+    <!-- Description : Common setup for all CWS WiFi KPI -->
+    <!-- Parameters : DEVICE (Phone), REGULATORY_DOMAIN (Country Code) -->
+    <TestStepSet Id="KPIWiFiInitAndConfigure">
+        <TestStep Id="CONNECT_DEVICE"/>
+        <!-- SPEC - Check battery -->
+        <TestStep Id="BATTERY_GET_CAPACITY" DEVICE="PHONE1" SAVE_BATTERY_CAPACITY_AS="PHONE1_BATTERY_CAPACITY"/>
+        <TestStep Id="COMPARE" FIRST="FROM_CTX:PHONE1_BATTERY_CAPACITY" SECOND="90" OPERATOR="GREATER_OR_EQUAL" PASS_IF="true"/>
+        <!-- Screen On -->
+        <TestStep Id="WAKE_SCREEN"/>
+        <TestStep Id="SET_PHONE_LOCK" VALUE="unlock"/>
+        <TestStep Id="OPEN_HOME_PAGE"/>
+        <TestStep Id="SET_FLIGHT_MODE" FLIGHT_MODE="disable"/>
+        <Fork Id="KPIForkConfigRadiosAndDisplay">
+            <!-- Disable all radios -->
+            <TestStep Id="GNSS_SET_POWER" POWER="off"/>
+            <TestStep Id="BT_SET_POWER" POWER="OFF"/>
+            <TestStep Id="WIFI_SET_POWER" POWER="off"/>
+            <TestStep Id="NFC_SET_POWER" POWER="off"/>
+            <TestStep Id="DEACTIVATE_DEVICE_PDP" INTERFACE="None" CHECK="True"/>
+            <!-- Configure display options -->
+            <TestStep Id="SET_STAYON_POLICY" POLICY="true" AGENT="true"/>
+            <TestStep Id="SET_SCREEN_PROPERTY" PROPERTY="timeout" VALUE="0"/>
+            <TestStep Id="SET_SCREEN_PROPERTY" PROPERTY="brightness" VALUE="69"/>
+        </Fork>
+        <!-- Airplane mode On -->
+        <TestStep Id="WIFI_SET_SCAN_ALWAYS_AVAILABLE" SCAN_ALWAYS_AVAILABLE_STATE="OFF"/>
+        <TestStep Id="SET_FLIGHT_MODE" FLIGHT_MODE="enable"/>
+    </TestStepSet>
+
+    <!-- ########################################################################################################### -->
+    <!-- #### KPI 802.11AC 80MHz #### -->
+    <!-- Description : Setup for KPI 80MHz with 802.11AC ASUS (CONFIGURABLE_AP3) -->
+    <!-- Parameters :  DIRECTION (transfer direction) -->
+    <!-- Requirements : FROM_TC : KPI_STANDARD, KPI_SECURITY, KPI_WIFI_CHANNEL, KPI_AP_DTIM, KPI_RSSI_MIN,
+                                  KPI_RSSI_MAX,KPI_IPERF_PROTOCOL, KPI_REGULATORY_DOMAIN -->
+    <TestStepSet Id="WiFiKPI80MHZSetup">
+        <!-- Install utilities -->
+        <TestStep Id="CONNECT_DEVICE" DEVICE="PHONE1"/>
+        <TestStep SetId="CWSInstallIperfDevice" DEVICE="PHONE1"/>
+        <TestStep SetId="CWSInstallRegulatoryUtilityDevice" DEVICE="PHONE1"/>
+        <!-- SPEC - Set default configuration -->
+        <Fork Id="ForkDUTAndWiFiAPs">
+            <TestStep SetId="KPIWiFiInitAndConfigureSTA" DEVICE="PHONE1" REGULATORY_DOMAIN="FROM_TC:KPI_REGULATORY_DOMAIN"/>
+            <TestStep SetId="CWSInstallIperfComputer2" DEVICE="PHONE1"/>
+        </Fork>
+        <!-- SPEC - Connect to AP and configure RSSI -->
+        <TestStep SetId="WiFiAddNetwork" DEVICE="PHONE1" SSID="FROM_BENCH:CONFIGURABLE_AP3:SSID" SECURITY="FROM_TC:KPI_SECURITY" PASS_PHRASE="FROM_BENCH:CONFIGURABLE_AP3:passphrase_WPA2"/>
+        <TestStep Id="WIFI_CONNECT" DEVICE="PHONE1" SSID="FROM_BENCH:CONFIGURABLE_AP3:SSID" TIMEOUT="90"/>
+        <TestStep Id="WIFI_WAIT_FOR_SSID_STATE" DEVICE="PHONE1" SSID="FROM_BENCH:CONFIGURABLE_AP3:SSID" STATE="CONNECTED,REMEMBERED,VISIBLE" TIMEOUT="90"/>
+        <TestStep Id="CONFIGURE_WIFI_RSSI" DEVICE="PHONE1"
+                  CONFIGURABLE_AP="CONFIGURABLE_AP3"
+                  RSSI_MIN="FROM_TC:KPI_RSSI_MIN"
+                  RSSI_MAX="FROM_TC:KPI_RSSI_MAX"
+                  STANDARD="FROM_TC:KPI_STANDARD"/>
+        <!-- SPEC - Check bandwidth -->
+        <TestStep Id="WIFI_GET_BANDWIDTH" DEVICE="PHONE1" INTERFACE="wlan0" SAVE_WIFI_BANDWIDTH="DUT_CURRENT_BANDWIDTH"/>
+        <TestStep Id="COMPARE" FIRST="FROM_CTX:DUT_CURRENT_BANDWIDTH" SECOND="80" OPERATOR="EQUAL" PASS_IF="true"/>
+        <!-- SPEC - Go to home page -->
+        <TestStep Id="OPEN_HOME_PAGE" DEVICE="PHONE1"/>
+        <!-- SPEC - Clean TCP on DUT and iperf computer -->
+        <TestStep Id="DEVICE_CLEAN_TCP_CONFIG" DEVICE="PHONE1"/>
+        <TestStep Id="COMPUTER_CLEAN_TCP_CONFIG" EQT="COMPUTER2"/>
+        <!-- AUTOMATION - Get throughput target -->
+        <TestStep Id="GET_WIFI_THROUGHPUT_TARGETS" DEVICE="PHONE1" STANDARD="FROM_TC:KPI_STANDARD" BANDWIDTH="80"
+                  WIFI_SECURITY="FROM_TC:KPI_SECURITY" IPERF_PROTOCOL="FROM_TC:KPI_IPERF_PROTOCOL"
+                  TARGET_THROUGHPUT="KPI_TARGET"/>
+        <TestStep Id="WIFI_GET_RSSI" DEVICE="PHONE1" SSID="FROM_BENCH:CONFIGURABLE_AP3:SSID" SAVE_WIFI_RSSI="DUT_RSSI_VALUE"/>
+    </TestStepSet>
+
+    <!-- Description : Teardown for KPI 80MHz with 802.11AC ASUS (CONFIGURABLE_AP3) -->
+    <!-- Parameters :  N/A -->
+    <TestStepSet Id="WiFiKPI80MHZTeardown">
+            <Fork Id="ForkTeardown">
+                <TestStep SetId="WiFiAPShutdown" EQT="CONFIGURABLE_AP3"/>
+                <TestStep SetId="WiFiCommonTeardown" DEVICE="PHONE1"/>
+            </Fork>
+    </TestStepSet>
+
+    <!-- ##########################"################################################################################ -->
+    <!-- #### KPI 802.11N 20/40MHz #### -->
+    <!-- Description : Setup for KPI with Cisco1250 (CONFIGURABLE_AP1) -->
+    <!-- Parameters :  DIRECTION (transfer direction) -->
+    <!-- Requirements : FROM_TC : KPI_STANDARD, KPI_SECURITY, KPI_WIFI_CHANNEL, KPI_BANDWIDTH, KPI_AP_DTIM,
+                                  KPI_RSSI_MIN, KPI_RSSI_MAX, KPI_IPERF_PROTOCOL -->
+    <TestStepSet Id="WiFiKPI802.11NSetupIperf">
+        <!-- SPEC - Set default configuration -->
+        <TestStep SetId="WiFiKPI802.11NSetup"/>
+        <!-- Install utilities -->
+        <TestStep SetId="CWSInstallIperfDevice" DEVICE="PHONE1"/>
+        <!-- SPEC - Go to home page -->
+        <TestStep Id="OPEN_HOME_PAGE" DEVICE="PHONE1"/>
+        <!-- SPEC - Clean TCP on DUT and iperf computer -->
+        <TestStep Id="DEVICE_CLEAN_TCP_CONFIG" DEVICE="PHONE1"/>
+        <TestStep Id="COMPUTER_CLEAN_TCP_CONFIG" EQT="COMPUTER2"/>
+        <!-- AUTOMATION - Get throughput target -->
+        <TestStep Id="GET_WIFI_THROUGHPUT_TARGETS" DEVICE="PHONE1"
+                  STANDARD="FROM_TC:KPI_STANDARD"
+                  BANDWIDTH="FROM_TC:KPI_BANDWIDTH"
+                  WIFI_SECURITY="FROM_TC:KPI_SECURITY"
+                  IPERF_PROTOCOL="FROM_TC:KPI_IPERF_PROTOCOL"
+                  TARGET_THROUGHPUT="KPI_TARGET"/>
+    </TestStepSet>
+
+    <!-- #### KPI 802.11N 20/40MHz #### -->
+    <!-- Description : Setup for KPI iperf with Cisco1250 (CONFIGURABLE_AP1) -->
+    <!-- Parameters :  N/A -->
+    <!-- Requirements : FROM_TC : KPI_STANDARD, KPI_SECURITY, KPI_WIFI_CHANNEL, KPI_BANDWIDTH, KPI_AP_DTIM,
+                                  KPI_RSSI_MIN, KPI_RSSI_MAX -->
+    <TestStepSet Id="WiFiKPI802.11NSetup">
+        <!-- Install utilities -->
+        <TestStep Id="CONNECT_DEVICE" DEVICE="PHONE1"/>
+        <TestStep SetId="CWSInstallRegulatoryUtilityDevice" DEVICE="PHONE1"/>
+        <!-- SPEC - Set default configuration -->
+        <Fork Id="ForkDUTAndWiFiAPs">
+            <TestStep SetId="KPIWiFiInitAndConfigureSTA" DEVICE="PHONE1"
+                      REGULATORY_DOMAIN="FROM_TC:KPI_REGULATORY_DOMAIN"/>
+            <TestStep SetId="CWSInstallIperfComputer2" DEVICE="PHONE1"/>
+        </Fork>
+        <!-- SPEC - Connect to AP and configure RSSI -->
+        <TestStep SetId="WiFiAddNetwork" DEVICE="PHONE1"
+                  SSID="FROM_BENCH:CONFIGURABLE_AP1:SSID"
+                  SECURITY="FROM_TC:KPI_SECURITY"
+                  PASS_PHRASE="FROM_BENCH:CONFIGURABLE_AP1:passphrase_WPA2"/>
+        <TestStep Id="WIFI_CONNECT" DEVICE="PHONE1"
+                  SSID="FROM_BENCH:CONFIGURABLE_AP1:SSID"
+                  TIMEOUT="90"/>
+        <TestStep Id="WIFI_WAIT_FOR_SSID_STATE" DEVICE="PHONE1"
+                  SSID="FROM_BENCH:CONFIGURABLE_AP1:SSID"
+                  STATE="CONNECTED,REMEMBERED,VISIBLE"
+                  TIMEOUT="90"/>
+        <!-- SPEC - Configure RSSI -->
+        <TestStep Id="CONFIGURE_WIFI_RSSI" DEVICE="PHONE1"
+                  CONFIGURABLE_AP="CONFIGURABLE_AP1"
+                  RSSI_MIN="FROM_TC:KPI_RSSI_MIN"
+                  RSSI_MAX="FROM_TC:KPI_RSSI_MAX"
+                  STANDARD="FROM_TC:KPI_STANDARD"/>
+
+        <TestStep Id="WIFI_GET_RSSI" DEVICE="PHONE1"
+                  SSID="FROM_BENCH:CONFIGURABLE_AP1:SSID"
+                  SAVE_WIFI_RSSI="DUT_RSSI_VALUE"/>
+        <!-- SPEC - Check bandwidth -->
+        <TestStep Id="WIFI_GET_BANDWIDTH" DEVICE="PHONE1"
+                  INTERFACE="wlan0"
+                  SAVE_WIFI_BANDWIDTH="DUT_CURRENT_BANDWIDTH"/>
+        <TestStep Id="COMPARE"
+                  FIRST="FROM_CTX:DUT_CURRENT_BANDWIDTH"
+                  SECOND="FROM_TC:KPI_BANDWIDTH"
+                  OPERATOR="EQUAL"
+                  PASS_IF="true"/>
+    </TestStepSet>
+
+    <!-- Description : Teardown for KPI with Cisco1250 (CONFIGURABLE_AP1) -->
+    <!-- Parameters :  N/A -->
+    <TestStepSet Id="WiFiKPI802.11NTeardown">
+            <Fork Id="ForkTeardown">
+                <TestStep SetId="WiFiAPShutdown" EQT="CONFIGURABLE_AP1"/>
+                <TestStep SetId="WiFiCommonTeardown" DEVICE="PHONE1"/>
+            </Fork>
+    </TestStepSet>
+
+    <!-- ########################################################################################################### -->
+    <!-- Description : RunTest for KPI Upload -->
+    <!-- Parameters :  N/A -->
+    <!-- Requirements : FROM_TC : KPI_IPERF_PROTOCOL, KPI_IPERF_OPTIONS
+                        FROM_CTX : KPI_TARGET (target of KPI)
+    -->
+    <TestStepSet Id="WiFiKPIRunTestUpload">
+        <!-- SPEC - Perform iperf transfer -->
+        <TestStep Id="RUN_IPERF" DEVICE="PHONE1" DURATION="1" IPERF_PROTOCOL="FROM_TC:KPI_IPERF_PROTOCOL"
+                  DIRECTION="up" SERVER_TYPE="equipment" SERVER_NAME="COMPUTER2"
+                  NET_INTERFACE="wlan0" WINDOW_SIZE="compute" NO_DELAY="False" NR_OF_THREADS="1"
+                  IPERF_OPTIONS="FROM_TC:KPI_IPERF_OPTIONS" MEASURED_THROUGHPUT="IPERF_RESULT"/>
+        <!-- AUTOMATION - Save results in a specific file -->
+        <TestStep Id="SAVE_KPI_MEASURE" TARGET_VALUE="FROM_CTX:KPI_TARGET:FAILURE_VALUE"
+                  TARGET_UNIT="FROM_CTX:KPI_TARGET:FAILURE_UNITS"
+                  MEASURE_VALUE="FROM_CTX:IPERF_RESULT:UL_VALUE"
+                  MEASURE_UNIT="FROM_CTX:IPERF_RESULT:UL_UNITS" WIFI_RSSI="FROM_CTX:DUT_RSSI_VALUE"/>
+        <!-- SPEC - Control throughput result -->
+        <TestStep Id="COMPARE_THROUGHPUTS" VALUE="FROM_CTX:IPERF_RESULT:UL_VALUE" TARGET="FROM_CTX:KPI_TARGET:FAILURE_VALUE"
+                  VALUE_UNIT="FROM_CTX:IPERF_RESULT:UL_UNITS" TARGET_UNIT="FROM_CTX:KPI_TARGET:FAILURE_UNITS"/>
+    </TestStepSet>
+
+    <!-- Description : RunTest for KPI Download -->
+    <!-- Parameters :  N/A -->
+    <!-- Requirements : FROM_TC : KPI_IPERF_PROTOCOL, KPI_IPERF_OPTIONS
+                        FROM_CTX : KPI_TARGET (target of KPI)
+    -->
+    <TestStepSet Id="WiFiKPIRunTestDownload">
+        <!-- SPEC - Perform iperf transfer -->
+        <TestStep Id="RUN_IPERF" DEVICE="PHONE1" DURATION="1" IPERF_PROTOCOL="FROM_TC:KPI_IPERF_PROTOCOL"
+                  DIRECTION="down" SERVER_TYPE="equipment" SERVER_NAME="COMPUTER2"
+                  NET_INTERFACE="wlan0" WINDOW_SIZE="compute" NO_DELAY="False" NR_OF_THREADS="1"
+                  IPERF_OPTIONS="FROM_TC:KPI_IPERF_OPTIONS" MEASURED_THROUGHPUT="IPERF_RESULT"/>
+        <!-- AUTOMATION - Save results in a specific file -->
+        <TestStep Id="SAVE_KPI_MEASURE" TARGET_VALUE="FROM_CTX:KPI_TARGET:FAILURE_VALUE"
+                  TARGET_UNIT="FROM_CTX:KPI_TARGET:FAILURE_UNITS"
+                  MEASURE_VALUE="FROM_CTX:IPERF_RESULT:DL_VALUE"
+                  MEASURE_UNIT="FROM_CTX:IPERF_RESULT:DL_UNITS" WIFI_RSSI="FROM_CTX:DUT_RSSI_VALUE"/>
+        <!-- SPEC - Control throughput result -->
+        <TestStep Id="COMPARE_THROUGHPUTS" VALUE="FROM_CTX:IPERF_RESULT:DL_VALUE" TARGET="FROM_CTX:KPI_TARGET:FAILURE_VALUE"
+                  VALUE_UNIT="FROM_CTX:IPERF_RESULT:DL_UNITS" TARGET_UNIT="FROM_CTX:KPI_TARGET:FAILURE_UNITS"/>
+    </TestStepSet>
+
+    <!-- ########################################################################################################### -->
+    <!-- #### KPI WiFi Direct #### -->
+    <!-- Description : Setup for KPI WiFi Direct (P2P) -->
+    <!-- Parameters :  N/A -->
+    <!-- Requirements : FROM_TC : KPI_WIFI_CHANNEL, KPI_WIFI_FREQUENCY, KPI_BANDWIDTH, KPI_IPERF_PROTOCOL
+                                  KPI_WIFI_REGULATORY_DOMAIN_DUT, KPI_WIFI_REGULATORY_DOMAIN_REF,
+                                  KPI_WIFI_DIRECT_MODE_DUT, KPI_WIFI_DIRECT_MODE_REF
+                                  KPI_P2P_RSSI_MIN, KPI_P2P_RSSI_MAX, KPI_DIRECTION -->
+    <TestStepSet Id="WiFiDirectKPISetup">
+        <!-- Install utilities -->
+        <TestStep Id="CONNECT_DEVICE" DEVICE="PHONE1"/>
+        <TestStep Id="CONNECT_DEVICE" DEVICE="PHONE2"/>
+        <TestStep SetId="CWSInstallIperfDevice" DEVICE="PHONE1"/>
+        <TestStep SetId="CWSInstallIperfDevice" DEVICE="PHONE2"/>
+        <TestStep SetId="CWSInstallRegulatoryUtilityDevice" DEVICE="PHONE1"/>
+        <TestStep SetId="CWSInstallRegulatoryUtilityDevice" DEVICE="PHONE2"/>
+        <!-- AUTOMATION - Set default configuration -->
+        <Fork Id="ForkPhonesConfig">
+            <TestStep SetId="KPIWiFiInitAndConfigureP2P" DEVICE="PHONE1"
+                      REGULATORY_DOMAIN="FROM_TC:KPI_WIFI_REGULATORY_DOMAIN_DUT"
+                      MAC_ADDR="MAC_ADDR_PHONE1"/>
+            <TestStep SetId="KPIWiFiInitAndConfigureP2P" DEVICE="PHONE2"
+                      REGULATORY_DOMAIN="FROM_TC:KPI_WIFI_REGULATORY_DOMAIN_REF"
+                      MAC_ADDR="MAC_ADDR_PHONE2"/>
+        </Fork>
+        <TestStep Id="SET_WIFI_DIRECT_DEV_NAME" DEVICE="PHONE1" PEER_DEVICE_NAME="FROM_CTX:MAC_ADDR_PHONE1"/>
+        <TestStep Id="SET_WIFI_DIRECT_DEV_NAME" DEVICE="PHONE2" PEER_DEVICE_NAME="FROM_CTX:MAC_ADDR_PHONE2"/>
+        <TestStep Id="DEVICE_CLEAN_TCP_CONFIG" DEVICE="PHONE1"/>
+        <TestStep Id="DEVICE_CLEAN_TCP_CONFIG" DEVICE="PHONE2"/>
+
+        <!-- Scan and get MAC addresses -->
+        <TestStep SetId="WiFiDirectScanAndGetPeers" DEVICE="PHONE1" STATE="all" SAVE_AS="PHONE1_VISIBLE_DEVICES"/>
+        <TestStep Id="COMPARE"
+                  FIRST="FROM_CTX:MAC_ADDR_PHONE2"
+                  SECOND="FROM_CTX:PHONE1_VISIBLE_DEVICES"
+                  OPERATOR="IN"
+                  PASS_IF="true"/>
+        <TestStep Id="GET_WIFI_DIRECT_DEV_ADDRESS_FROM_NAME" DEVICE="PHONE1"
+                  WIFI_DIRECT_NAME="FROM_CTX:MAC_ADDR_PHONE2"
+                  SAVE_AS="P2P_MAC_ADDRESS_PHONE2"/>
+        <TestStep SetId="WiFiDirectScanAndGetPeers" DEVICE="PHONE2"
+                  STATE="all"
+                  SAVE_AS="PHONE2_VISIBLE_DEVICES"/>
+        <TestStep Id="COMPARE"
+                  FIRST="FROM_CTX:MAC_ADDR_PHONE1"
+                  SECOND="FROM_CTX:PHONE2_VISIBLE_DEVICES"
+                  OPERATOR="IN"
+                  PASS_IF="true"/>
+        <TestStep Id="GET_WIFI_DIRECT_DEV_ADDRESS_FROM_NAME" DEVICE="PHONE2"
+                  WIFI_DIRECT_NAME="FROM_CTX:MAC_ADDR_PHONE1"
+                  SAVE_AS="P2P_MAC_ADDRESS_PHONE1"/>
+
+        <!-- Connect devices -->
+        <TestStep Id="WIFI_DIRECT_FORCE_CONFIGURATION" DEVICE="PHONE2"
+                  P2P_MODE="FROM_TC:KPI_WIFI_DIRECT_MODE_REF"
+                  P2P_FREQUENCY="FROM_TC:KPI_WIFI_FREQUENCY"/>
+        <TestStep Id="SUSPEND" DURATION_IN_SEC="2"/>
+        <TestStep Id="WIFI_DIRECT_ACCEPT_CONNECT" DEVICE="PHONE2" PEER_DEV_MAC="FROM_CTX:P2P_MAC_ADDRESS_PHONE1"/>
+        <TestStep Id="SUSPEND" DURATION_IN_SEC="2"/>
+        <TestStep Id="WIFI_DIRECT_CONNECT" DEVICE="PHONE1" PEER_DEVICE="FROM_CTX:P2P_MAC_ADDRESS_PHONE2" TIMEOUT="30"/>
+
+        <!-- Check all KPI Spec requirements -->
+        <TestStep Id="GET_WIFI_DIRECT_INTERFACE" DEVICE="PHONE1" SAVE_AS="INTERFACE_P2P_PHONE1"/>
+        <TestStep Id="GET_WIFI_DIRECT_INTERFACE" DEVICE="PHONE2" SAVE_AS="INTERFACE_P2P_PHONE2"/>
+        <TestStep Id="WIFI_GET_CHANNEL" DEVICE="PHONE1"
+                  INTERFACE="FROM_CTX:INTERFACE_P2P_PHONE1"
+                  SAVE_WIFI_CHANNEL="CHANNEL_PHONE1"/>
+        <TestStep Id="COMPARE"
+                  FIRST="FROM_CTX:CHANNEL_PHONE1"
+                  SECOND="FROM_TC:KPI_WIFI_CHANNEL"
+                  OPERATOR="IN"
+                  PASS_IF="true"/>
+        <TestStep Id="WIFI_DIRECT_GET_MODE" DEVICE="PHONE1"
+                  INTERFACE="FROM_CTX:INTERFACE_P2P_PHONE1"
+                  SAVE_WIFI_DIRECT_MODE="P2P_MODE_PHONE1"/>
+        <TestStep Id="COMPARE"
+                  FIRST="FROM_CTX:P2P_MODE_PHONE1"
+                  SECOND="FROM_TC:KPI_WIFI_DIRECT_MODE_DUT"
+                  OPERATOR="IN"
+                  PASS_IF="true"/>
+        <TestStep Id="WIFI_GET_BANDWIDTH" DEVICE="PHONE1"
+                  INTERFACE="FROM_CTX:INTERFACE_P2P_PHONE1"
+                  SAVE_WIFI_BANDWIDTH="DUT_CURRENT_BANDWIDTH"/>
+        <TestStep Id="COMPARE"
+                  FIRST="FROM_CTX:DUT_CURRENT_BANDWIDTH"
+                  SECOND="FROM_TC:KPI_BANDWIDTH"
+                  OPERATOR="EQUAL"
+                  PASS_IF="true"/>
+        <!-- Check RSSI -->
+        <TestStep Id="WIFI_DIRECT_GET_RSSI" DEVICE="PHONE2"
+                  INTERFACE="FROM_CTX:INTERFACE_P2P_PHONE2"
+                  SAVE_WIFI_DIRECT_RSSI="RSSI_PHONE2"/>
+        <TestStep Id="COMPARE"
+                  FIRST="FROM_CTX:RSSI_PHONE2"
+                  SECOND="FROM_TC:KPI_P2P_RSSI_MIN"
+                  OPERATOR="GREATER_OR_EQUAL"
+                  PASS_IF="true"/>
+        <TestStep Id="COMPARE"
+                  FIRST="FROM_CTX:RSSI_PHONE2"
+                  SECOND="FROM_TC:KPI_P2P_RSSI_MAX"
+                  OPERATOR="LESS_OR_EQUAL"
+                  PASS_IF="true"/>
+
+        <!-- Get Targets -->
+        <TestStep Id="GET_WIFI_DIRECT_THROUGHPUT_TARGETS" DEVICE="PHONE1"
+                  BANDWIDTH="FROM_TC:KPI_BANDWIDTH"
+                  IPERF_PROTOCOL="FROM_TC:KPI_IPERF_PROTOCOL"
+                  DIRECTION="FROM_TC:KPI_DIRECTION"
+                  TARGET_THROUGHPUT="KPI_TARGET"/>
+    </TestStepSet>
+
+
+    <!-- Description : RunTest for WiFi Direct KPI Download -->
+    <!-- Parameters :  WIFI_RSSI (WiFi Direct RSSI to save) -->
+    <!-- Requirements : FROM_TC : KPI_IPERF_PROTOCOL, KPI_IPERF_OPTIONS
+                        FROM_CTX : KPI_TARGET (target of KPI), INTERFACE_P2P_PHONE2 (P2P interface of client)
+    -->
+    <TestStepSet Id="WiFiDirectKPIRunTestDownload">
+        <!-- SPEC - Go to home menu before download -->
+        <TestStep Id="OPEN_HOME_PAGE" DEVICE="PHONE1"/>
+        <TestStep Id="OPEN_HOME_PAGE" DEVICE="PHONE2"/>
+        <!-- SPEC - Perform iperf transfer -->
+        <TestStep Id="RUN_IPERF" DEVICE="PHONE1"
+                  DURATION="1"
+                  IPERF_PROTOCOL="FROM_TC:KPI_IPERF_PROTOCOL"
+                  DIRECTION="down"
+                  SERVER_TYPE="phone"
+                  SERVER_NAME="PHONE2"
+                  NET_INTERFACE="FROM_CTX:INTERFACE_P2P_PHONE1"
+                  WINDOW_SIZE="compute"
+                  NO_DELAY="False"
+                  NR_OF_THREADS="1"
+                  IPERF_OPTIONS="FROM_TC:KPI_IPERF_OPTIONS"
+                  MEASURED_THROUGHPUT="IPERF_RESULT"/>
+        <!-- AUTOMATION - Save results in a specific file -->
+        <TestStep Id="SAVE_KPI_MEASURE"
+                  TARGET_VALUE="FROM_CTX:KPI_TARGET:FAILURE_VALUE"
+                  TARGET_UNIT="FROM_CTX:KPI_TARGET:FAILURE_UNIT"
+                  MEASURE_VALUE="FROM_CTX:IPERF_RESULT:DL_VALUE"
+                  MEASURE_UNIT="FROM_CTX:IPERF_RESULT:DL_UNITS"/>
+        <!-- SPEC - Control throughput result -->
+        <TestStep Id="COMPARE_THROUGHPUTS"
+                  VALUE="FROM_CTX:IPERF_RESULT:DL_VALUE"
+                  TARGET="FROM_CTX:KPI_TARGET:FAILURE_VALUE"
+                  VALUE_UNIT="FROM_CTX:IPERF_RESULT:DL_UNITS"
+                  TARGET_UNIT="FROM_CTX:KPI_TARGET:FAILURE_UNIT"/>
+    </TestStepSet>
+
+    <!-- Description : RunTest for WiFi Direct KPI Upload -->
+    <!-- Parameters :  WIFI_RSSI (WiFi Direct RSSI to save) -->
+    <!-- Requirements : FROM_TC : KPI_IPERF_PROTOCOL, KPI_IPERF_OPTIONS
+                        FROM_CTX : KPI_TARGET (target of KPI), INTERFACE_P2P_PHONE1 (P2P interface of client)
+    -->
+    <TestStepSet Id="WiFiDirectKPIRunTestUpload">
+        <!-- SPEC - Go to home menu before upload -->
+        <TestStep Id="OPEN_HOME_PAGE" DEVICE="PHONE1"/>
+        <TestStep Id="OPEN_HOME_PAGE" DEVICE="PHONE2"/>
+        <!-- SPEC - Perform iperf transfer -->
+        <TestStep Id="RUN_IPERF" DEVICE="PHONE1"
+                  DURATION="1"
+                  IPERF_PROTOCOL="FROM_TC:KPI_IPERF_PROTOCOL"
+                  DIRECTION="up"
+                  SERVER_TYPE="phone"
+                  SERVER_NAME="PHONE2"
+                  NET_INTERFACE="FROM_CTX:INTERFACE_P2P_PHONE1"
+                  WINDOW_SIZE="compute"
+                  NO_DELAY="False"
+                  NR_OF_THREADS="1"
+                  IPERF_OPTIONS="FROM_TC:KPI_IPERF_OPTIONS"
+                  MEASURED_THROUGHPUT="IPERF_RESULT"/>
+        <!-- AUTOMATION - Save results in a specific file -->
+        <TestStep Id="SAVE_KPI_MEASURE"
+                  TARGET_VALUE="FROM_CTX:KPI_TARGET:FAILURE_VALUE"
+                  TARGET_UNIT="FROM_CTX:KPI_TARGET:FAILURE_UNIT"
+                  MEASURE_VALUE="FROM_CTX:IPERF_RESULT:UL_VALUE"
+                  MEASURE_UNIT="FROM_CTX:IPERF_RESULT:UL_UNITS"/>
+        <!-- SPEC - Control throughput result -->
+        <TestStep Id="COMPARE_THROUGHPUTS"
+                  VALUE="FROM_CTX:IPERF_RESULT:UL_VALUE"
+                  TARGET="FROM_CTX:KPI_TARGET:FAILURE_VALUE"
+                  VALUE_UNIT="FROM_CTX:IPERF_RESULT:UL_UNITS"
+                  TARGET_UNIT="FROM_CTX:KPI_TARGET:FAILURE_UNIT"/>
+    </TestStepSet>
+</Include>

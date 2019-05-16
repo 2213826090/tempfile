@@ -1,0 +1,59 @@
+<?xml version='1.0' encoding='ASCII'?>
+<Campaign version="13.49">
+    <Parameters>
+        <Parameter isControlledPSUsed="False"/>
+        <Parameter isIoCardUsed="False"/>
+        <!-- Set skipBootOnPowerCycle to True to disable the accs boot procedure -->
+        <!-- Important, it means that boot will be handle inside the campaign/tc -->
+        <Parameter skipBootOnPowerCycle="False"/>
+        <!-- Set bootRetryNumber to maximum number of boot retries during the acs boot procedure -->
+        <!-- Important, it means that bootRetryNumber is set by default to 0 if not specified -->
+        <Parameter bootRetryNumber="0"/>
+        <Parameter runHookScripts="False"/>
+        <Parameter powerCycleBetweenTC="False"/>
+        <Parameter powerCycleOnFailure="False"/>
+        <!-- finalDutState allows user to leave the DUT in a specific state at the end of the campaign
+            Possible values: PowerOn | PowerOff | Charging | NoChange
+            By default DUT is leaved in NoChange state.
+            In case the user selects Charging as final state of the DUT and that DUT fails to enter Charging,
+            ACS shall try to switch the DUT off -->
+        <Parameter finalDutState="NoChange"/>
+        <Parameter stopCampaignOnCriticalFailure="False"/>
+        <Parameter stopCampaignOnFirstFailure="False"/>
+        <!-- LoggingLevel possible values: info | warning | debug | error -->
+        <Parameter loggingLevel="debug"/>
+        <!-- CampaignType format -> <TEAM>_<CAMPAIGNTYPE>
+            Possible values:
+            FT(Feature Team)-> SANITY | REGRESSION | STRESS, RELIABILTY | MTBF
+            ST(System Test)-> SANITY | REGRESSION | STRESS, RELIABILTY | MTBF | EM
+            SI(System Integration)-> EAT | STAB | PACT | CAT0 | RELIABILITY | MTBF | CTS | ACS_CI
+            Otherwise "Others" should be used -->
+        <Parameter CampaignType="Others"/>
+        <Parameter TCRReportViaRESTAPI="True"/>
+    </Parameters>
+    <Targets>
+        <!-- Target Values -->
+        <Target targetB2bPassRate="100"/>
+    </Targets>
+        <TestCases>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/Bluetooth/Bluetooth_A2DP_Audio_play_through_bluetooth_IVI_device"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/Bluetooth/Bluetooth_A2DP_IVI_reconnect_to_phone_and_audio_streaming"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/Bluetooth/Bluetooth_A2DP_audio_streaming_and_unpairing_from_IVI"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/Bluetooth/Bluetooth_A2DP_audio_streaming_and_unpairing_from_phone"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/Bluetooth/Bluetooth_A2DP_audiostreaming_and_disconnect_from_IVI"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/Bluetooth/Bluetooth_A2DP_audiostreaming_and_disconnect_from_phone"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/Bluetooth/Bluetooth_A2DP_phone_reconnect_to_IVI_and_audio_streaming"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/Bluetooth/Bluetooth_A2DP_switch_the_audio_path_from_IVI_to_phone"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/Bluetooth/Bluetooth_A2DP_switch_the_audio_path_from_phone_to_IVI"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/Bluetooth/Bluetooth_PBAP_disconnection_from_referencedevice"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/Bluetooth/Bluetooth_PBAP_A2DP_streaming_over_IVI"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/Bluetooth/Bluetooth_GeneralTest_Check_that_DUT_supports_BT_4.0"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/Bluetooth/Bluetooth_HID_LE_Mouse_connect"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/Bluetooth/Bluetooth_AVRCP_METADATA_IVI_as_controller"/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/Bluetooth/Bluetooth_AVRCP_METADATA_Target_Power_Cycle "/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/Bluetooth/Bluetooth_AVRCP_Adjust_Volume_From_Phone_While_Playing_Audio_With_IVI "/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/Bluetooth/Bluetooth_AVRCP_Pause_The_Audio_And_Resume_From_Phone_While_Playing_Audio_With_IVI_System "/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/Bluetooth/Bluetooth_AVRCP_Switch_To_Next_Previous_Song_From_IVI_While_Playing_Audio_With_IVI_system "/>
+            <TestCase Id="../../../../../TC/TR/TESTLIB/Bluetooth/Bluetooth_A2DP_Switch_To_Next_Previous_Song_From_Phone_While_Playing_Audio_With_IVI_system "/>
+        </TestCases>
+</Campaign>

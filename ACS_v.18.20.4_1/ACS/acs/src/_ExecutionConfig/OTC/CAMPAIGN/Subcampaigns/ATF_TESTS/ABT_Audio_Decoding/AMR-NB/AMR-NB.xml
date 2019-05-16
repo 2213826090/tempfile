@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<Campaign>
+      <Parameters>
+            <Parameter isControlledPSUsed="False"/>
+            <Parameter isIoCardUsed="False"/>
+            <Parameter skipBootOnPowerCycle="False"/>
+            <Parameter bootRetryNumber="0"/>
+            <Parameter runHookScripts="False"/>
+            <Parameter powerCycleBetweenTC="False"/>
+            <Parameter powerCycleOnFailure="False"/>
+            <Parameter finalDutState="NoChange"/>
+            <Parameter stopCampaignOnCriticalFailure="False"/>
+            <Parameter stopCampaignOnFirstFailure="False"/>
+            <Parameter loggingLevel="debug"/>
+            <Parameter CampaignType="Other"/>
+      </Parameters>
+      <TestCases>
+            <TestCase Id="../../../../../TC/TR/ATF_TESTS/ABT_Audio_Decoding/AMR-NB/AMR_NB_8kHz_10.2kbps_Mono"/>
+            <TestCase Id="../../../../../TC/TR/ATF_TESTS/ABT_Audio_Decoding/AMR-NB/AMR_NB_8kHz_7.4kbps_Mono"/>
+            <TestCase Id="../../../../../TC/TR/ATF_TESTS/ABT_Audio_Decoding/AMR-NB/AMR_NB_8kHz_7.95kbps_Mono"/>
+            <TestCase Id="../../../../../TC/TR/ATF_TESTS/ABT_Audio_Decoding/AMR-NB/AMR_NB_8kHz_12.2kbps_Mono"/>
+            <TestCase Id="../../../../../TC/TR/ATF_TESTS/ABT_Audio_Decoding/AMR-NB/AMR_NB_8kHz_4.75kbps_Mono"/>
+            <TestCase Id="../../../../../TC/TR/ATF_TESTS/ABT_Audio_Decoding/AMR-NB/AMR_NB_8kHz_5.15kbps_Mono"/>
+      </TestCases>
+</Campaign>

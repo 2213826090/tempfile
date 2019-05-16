@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<UseCases xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:noNamespaceSchemaLocation="../../../../acs/src/_Catalogs/UseCase/usecase.xsd">
+    <UseCase Id="LIVE_ANDROID_GFX_KHRONOS_VALIDATION" Domain="GRAPHICS" SubDomain="CONFORMANCE" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.OTC.Graphics.LIVE_ANDROID_GFX_KHRONOS_VALIDATION.LiveGFXKhronosValidation</ClassName>
+        <Description>Test Khronos Conformance</Description>
+        <Environment name="ANY">
+        </Environment>
+        <Parameters>
+            <Parameter name="MANIFEST_FILENAME" type="STRING" isOptional="false">
+                <Description>The name of the manifest file in which al the subcases for the test ar being kept.
+                Manifest files are stored in the '/scripts/' sub-folder of the Graphics/TC folder.
+                </Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="RESULT_FILENAME" type="STRING" isOptional="false">
+                <Description>Name of the .csv file that will store the results in CSV format
+                </Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="REMOVE_PARAMS" type="STRING" isOptional="true">
+                <Description>Binaries and files that are to be removed after the test has ran. This parameter
+                is optional because it is a workaround until the UNISTALL_FILE TestStep is reviewed and usable.
+                Multiple parameters can be served, separated by a ";".
+                </Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+        </Parameters>
+    </UseCase>
+    <UseCase Id="LIVE_ANDROID_EGL_MIX_VALIDATION" Domain="GRAPHICS" SubDomain="CONFORMANCE" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.OTC.Graphics.LIVE_ANDROID_EGL_MIX_VALIDATION.LiveEGLMixValidation</ClassName>
+        <Description>Test OGLConform Conformance</Description>
+        <Environment name="ANY">
+        </Environment>
+        <Parameters>
+            <Parameter name="FEATURE_NAME" type="STRING" isOptional="false">
+                <Description>Name of the feature under test.
+                </Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="DIAG_PARAMETER" type="STRING" isOptional="true">
+                <Description>Diag options for the oglconform binary. Multiple parameters can be served, separated by a ";".
+                </Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="TEST_PARAMETER" type="STRING" isOptional="true">
+                <Description>Test options for features that also require a specific test for the oglconform
+                conformance. Multiple parameters can be served, separated by a ";".
+                </Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="KHRONOS_PARAMETER" type="STRING" isOptional="true">
+                <Description> xml manifest file containing the subcase(s) needed to be run this conformance
+                to pass. Manifest files are stored in the '/scripts/' sub-folder of the Graphics/TC folder.
+                </Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="REMOVE_PARAMS" type="STRING" isOptional="true">
+                <Description>Binaries and files that are to be removed after the test has ran. This parameter
+                is optional because it is a workaround until the UNISTALL_FILE TestStep is reviewed and usable.
+                Multiple parameters can be served, separated by a ";".
+                </Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+        </Parameters>
+    </UseCase>
+    <UseCase Id="LIVE_ANDROID_EGL_MIX_APK_VALIDATION" Domain="GRAPHICS" SubDomain="CONFORMANCE" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.OTC.Graphics.LIVE_ANDROID_EGL_MIX_APK_VALIDATION.LiveEGLMixAPKValidation</ClassName>
+        <Description>Test OGLConform Conformance</Description>
+        <Environment name="ANY">
+        </Environment>
+        <Parameters>
+            <Parameter name="CERT_MODE" type="BOOLEAN" isOptional="false">
+            <Description>This parameter makes the difference between running all of the conformance tests for EGL 1.4 API level
+                or single test(s) run. If "True", all of the tests will be generated and ran. If "False", certain parameters only
+                will be taken into consideration.
+                </Description>
+
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="FEATURE_NAME" type="STRING" isOptional="true">
+                <Description>Name of the feature under test.
+                </Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="DIAG_PARAMETER" type="STRING" isOptional="true">
+                <Description>Diag options for the oglconform binary. Multiple parameters can be served, separated by a ";".
+                </Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="TEST_PARAMETER" type="STRING" isOptional="true">
+                <Description>Test options for features that also require a specific test for the oglconform
+                conformance. Multiple parameters can be served, separated by a ";".
+                </Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="KHRONOS_PARAMETER" type="STRING" isOptional="true">
+                <Description> xml manifest file containing the subcase(s) needed to be run this conformance
+                to pass. Manifest files are stored in the '/scripts/' sub-folder of the Graphics/TC folder.
+                </Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="CERT_MODE" type="BOOLEAN" isOptional="true">
+            <Description> xml manifest file containing the subcase(s) needed to be run this conformance
+                to pass. Manifest files are stored in the '/scripts/' sub-folder of the Graphics/TC folder.
+                </Description>
+
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="REMOVE_PARAMS" type="STRING" isOptional="true">
+                <Description>Binaries and files that are to be removed after the test has ran. This parameter
+                is optional because it is a workaround until the UNISTALL_FILE TestStep is reviewed and usable.
+                Multiple parameters can be served, separated by a ";".
+                </Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name = "DEVICE_LOGDIR" type="STRING" isOptional="true">
+                  <Description> xml manifest file containing the subcase(s) needed to be run this conformance
+                to pass. Manifest files are stored in the '/scripts/' sub-folder of the Graphics/TC folder.
+                </Description>
+
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+        </Parameters>
+    </UseCase>
+    <UseCase Id="LIVE_ANDROID_GFX_APK_KHRONOS_VALIDATION" Domain="GRAPHICS" SubDomain="CONFORMANCE" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.OTC.Graphics.LIVE_ANDROID_GFX_APK_KHRONOS_VALIDATION.LiveGFXAPKKhronosValidation</ClassName>
+        <Description>Test Khronos Conformance</Description>
+        <Environment name="ANY">
+        </Environment>
+        <Parameters>
+            <Parameter name = "RUN_TYPE" type="STRING" isOptional="true">
+            <Description> xml manifest file containing the subcase(s) needed to be run this conformance
+                to pass. Manifest files are stored in the '/scripts/' sub-folder of the Graphics/TC folder.
+                </Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="CERT_MODE" type="BOOLEAN" isOptional="true">
+            <Description> xml manifest file containing the subcase(s) needed to be run this conformance
+                to pass. Manifest files are stored in the '/scripts/' sub-folder of the Graphics/TC folder.
+                </Description>
+
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter isOptional="true" name="SINGLE_TEST_PARAM" type="STRING">
+                <Description>This is the string parameter containing a single test line that the user wants included
+                </Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name = "DEVICE_LOGDIR" type="STRING" isOptional="true">
+                  <Description> xml manifest file containing the subcase(s) needed to be run this conformance
+                to pass. Manifest files are stored in the '/scripts/' sub-folder of the Graphics/TC folder.
+                </Description>
+
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name = "LOCAL_PULL_PATH" type="STRING" isOptional="true">
+                    <Description> xml manifest file containing the subcase(s) needed to be run this conformance
+                to pass. Manifest files are stored in the '/scripts/' sub-folder of the Graphics/TC folder.
+                </Description>
+
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+        </Parameters>
+    </UseCase>
+    <UseCase Id="LIVE_ANDROID_GFX_KHRONOS" Domain="GRAPHICS" SubDomain="CONFORMANCE" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.OTC.Graphics.LIVE_ANDROID_GFX_KHRONOS.LiveGFXKhronos</ClassName>
+        <Description>Test Khronos Conformance</Description>
+        <Environment name="ANY">
+        </Environment>
+        <Parameters>
+            <Parameter name="REMOVE_PARAMS" type="STRING" isOptional="true">
+                <Description>Binaries and files that are to be removed after the test has ran. This parameter
+                is optional because it is a workaround until the UNISTALL_FILE TestStep is reviewed and usable.
+                Multiple parameters can be served, separated by a ";".
+                </Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+        </Parameters>
+    </UseCase>
+    <UseCase Id="LIVE_ANDROID_LIBGUI_TEST" Domain="GRAPHICS" SubDomain="CONFORMANCE" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.OTC.Graphics.LIVE_ANDROID_LIBGUI_TEST.LiveLibguiTest</ClassName>
+        <Description>Test SurfaceTexture functionalities</Description>
+        <Environment name="ANY">
+        </Environment>
+        <Parameters>
+            <Parameter name="LIBGUI_TEST" type="STRING" isOptional="true">
+                <Description>The specific test to be ran using the libgui_test utility.
+                </Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+        </Parameters>
+    </UseCase>
+</UseCases>

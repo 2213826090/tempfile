@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase>
+    <UseCase>TEST_STEP_ENGINE</UseCase>
+    <Description>Perform a video streaming test</Description>
+    <!-- 3 iteration because test shall last 30 minutes and video is 10 minutes long -->
+    <b2bIteration>3</b2bIteration>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <TcMaxAttempt>1</TcMaxAttempt>
+    <SavePatRawData>False</SavePatRawData>
+    <PowerCalculation>False</PowerCalculation>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters>
+        <Parameter>
+            <Name>CELL_BAND</Name>
+            <Value>BAND1</Value>
+        </Parameter>
+        <Parameter>
+            <Name>RAT</Name>
+            <Value>3G</Value>
+        </Parameter>
+        <Parameter>
+          <!-- Uplink Radio Access Bearer (384k | HSUPA_CAT6 | MAX [If MAX is selected, value will be taken from DeviceCatalog.xml]) -->
+          <Name>UL_RAB</Name>
+          <Value>CAT6</Value>
+        </Parameter>
+        <Parameter>
+          <!-- Downlink Radio Access Bearer (HSDPA_CAT10 | HSDPA_CAT14 | HSDPA_CAT24 | MAX [If MAX is selected, value will be taken from DeviceCatalog.xml]) -->
+          <Name>DL_RAB</Name>
+          <Value>CAT24</Value>
+        </Parameter>
+        <Parameter>
+            <Name>CELL_BAND</Name>
+            <Value>BAND1</Value>
+        </Parameter>
+        <Parameter>
+        <!-- Video duration 10 min + 50 sec to handle first video buffering-->
+            <Name>TEST_DURATION</Name>
+            <Value>650</Value>
+        </Parameter>
+        <Parameter>
+            <Name>APP</Name>
+            <Value>chrome_app</Value>
+        </Parameter>
+        <Parameter>
+            <Name>APP_PACKAGE_NAME</Name>
+            <Value>com.android.chrome</Value>
+        </Parameter>
+        <Parameter>
+            <Name>URL</Name>
+            <Value>http://10.102.161.98/html5/Video720p.html</Value>
+        </Parameter>
+         <Parameter>
+            <Name>REGEX_FULLSCREEN</Name>
+            <Value>regex:.*chromium.*Video_Streaming - switched to fullscreen.*</Value>
+        </Parameter>
+        <Parameter>
+            <Name>REGEX_PLAYING_VIDEO</Name>
+            <Value>regex:.*chromium.*Video_Streaming - playing.*</Value>
+        </Parameter>
+        <Parameter>
+            <Name>REGEX_END_VIDEO</Name>
+            <Value>regex:.*chromium.*Video_Streaming - end.*</Value>
+        </Parameter>
+    </Parameters>
+    <TestSteps>
+        <Include Src="ST/telephony/TSS/Web_browsing.xml" />
+        <Include Src="ST/telephony/TSS/Common.xml" />
+        <Include Src="ST/telephony/TSS/8960.xml" />
+        <Initialize>
+            <!-- Install Chrome -->
+            <TestStep Id="GET_MODULE_CONFIG" DEVICE="PHONE1" MODULE="PnpModule" KEY="FROM_TC:APP" MODULE_VALUE="browser_app"/>
+            <TestStep Id="GET_ARTIFACT" ARTIFACT="APPLICATIONS/CHROME/[+]FROM_CTX:browser_app" ARTIFACT_SOURCE="FROM_BENCH:ARTIFACT_MANAGER:URI" TRANSFER_TIMEOUT="DEFAULT" STORED_FILE_PATH="FILE_PATH_IN_CACHE1" EQT="DEFAULT"/>
+            <TestStep Id="INSTALL_APP" DEVICE="PHONE1" FILE_PATH="FROM_CTX:FILE_PATH_IN_CACHE1" BACKUP="false" BACKUP_FILE_PATH="FT/backup" SIGN_KEY_PATH="DEFAULT" SIGN="false" TIMEOUT="DEFAULT" ALLOW_DOWNGRADE="True"/>
+            <TestStep Id="CLEAN_APP_CACHE" DEVICE="PHONE1" APP_NAME="FROM_TC:APP_PACKAGE_NAME" />
+        </Initialize>
+        <Setup>
+            <TestStep SetId="AllCommsOff" DEVICE="PHONE1"/>
+            <Fork Id="InitFork">
+                <TestStep Id="DISABLE_LOCK_SCREEN" DEVICE="PHONE1" WAIT_SETTLE_DOWN="True" />
+                <TestStep SetId="Configure8960"/>
+            </Fork>
+            <TestStep SetId="ConfigureHSPA" EQT="FROM_CTX:AGILENT8960_SIMULATOR_VISA"/>
+            <TestStep SetId="Registration" EQT="FROM_CTX:AGILENT8960_SIMULATOR_VISA" DEVICE="PHONE1" TIMEOUT="FROM_DEVICE:PHONE1:registrationTimeout"/>
+            <TestStep SetId="DataConnection" EQT="FROM_CTX:AGILENT8960_SIMULATOR_VISA" DEVICE="PHONE1" TIMEOUT="FROM_DEVICE:PHONE1:registrationTimeout"/>
+        </Setup>
+        <RunTest>
+            <TestStep SetId="HttpVideoStreamingOnFullScreen"  DEVICE="PHONE1"/>
+        </RunTest>
+        <TearDown>
+            <TestStep SetId="CommonTearDown" EQT="FROM_CTX:AGILENT8960_SIMULATOR_VISA" DEVICE="PHONE1"/>
+            <TestStep Id="SET_ORIENTATION" DEVICE="PHONE1" ORIENTATION="auto" API="embedded_api" />
+        </TearDown>
+    </TestSteps>
+</TestCase>

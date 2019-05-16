@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="13.37">
+    <UseCase>ANDROID_CTS</UseCase>
+    <Description>CTS Test</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters>
+        <Parameter>
+            <Name>CTS_PATH</Name>
+            <Description>Specify path/url to android CTS framework</Description>
+            <Value>http://jfumgbuild-depot.jf.intel.com/build/eng-builds/r3/PSI/cts/release/android-cts.zip</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Optional -->
+            <Name>CTS_MEDIA_PATH</Name>
+            <Description>Specify path/url to android CTS videos media files</Description>
+            <Value></Value>
+        </Parameter>
+        <Parameter>
+            <!-- Optional -->
+            <Name>CTS_REPORT_COMPARISON_PATH</Name>
+            <Description>Specify path/url to a previous CTS result. Verdict will be built according to this one</Description>
+            <Value></Value>
+        </Parameter>
+        <Parameter>
+            <Name>WIFI_ACCESS_POINT</Name>
+            <Description> Wifi access point to use for test</Description>
+            <Value>WIFI_CTS</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TEST_CMD_LINES</Name>
+            <!-- Look to CTS documentation for more informations (plan/packages available, options ...)
+                Basic commands :
+                - run cts --package <PACKAGE_1> --package <PACKAGE_2> ... --package <PACKAGE_N>
+                - run cts --plan PLAN_TO_RUN
+            -->
+            <Description>Test cmd lines to execute. Separate with ";" if more than one.</Description>
+            <Value>run cts --plan CTS</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TEST_TIMEOUT</Name>
+            <Value>36000</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase>
+    <UseCase>LIVE_PERFMEAS_APPLICATION</UseCase>
+    <Description>Andebench benchmark</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters>
+        <Parameter>
+            <Name>APPLICATION_NAME</Name>
+            <Value>Andebench</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TIMEOUT</Name>
+            <Value>120</Value>
+        </Parameter>
+        <Parameter>
+            <Name>MEASURE_NB</Name>
+            <Value>2</Value>
+        </Parameter>
+        <Parameter>
+            <Name>APPURI</Name>
+            <Value>
+                DEFAULT: artifact://BENCHMARKS/ANDEBENCH/AndeBench.apk;
+            </Value>
+        </Parameter>
+        <Parameter>
+            <Name>ARGUMENTS</Name>
+            <Value>Java</Value>
+        </Parameter>
+        <Parameter>
+            <Name>SYSDEBUG_MODULES</Name>
+            <Value></Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

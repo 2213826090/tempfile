@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="13.37">
+    <UseCase>LIVE_WIFI_TETHERING_ADDRESS_PROVISIONING</UseCase>
+    <Description>Checks that the mac address is correct for DUT wifi hotspot</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>False</b2bContinuousMode>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters>
+        <Parameter>
+            <!-- The ssid of configure wifi hostspot -->
+            <Name>HOTSPOT_SSID</Name>
+            <Value>hotspot1</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Wifi Security of the hotspot. Can be "OPEN", "WPA2-PSK" -->
+            <Name>HOTSPOT_SECURITY</Name>
+            <Value>OPEN</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Wifi password of the hotspot. useful only when HOTSPOT_SECURITY is "WPA2-PSK-AES" -->
+            <Name>HOTSPOT_PASSWORD</Name>
+            <Value>1234567890123</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

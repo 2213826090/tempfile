@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<TestCase>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Discription>
+Verify video playback with these meta info : MPEG4 part 2 SP (Simple Profile), Level 3 (CIF 352x288@30 fps) NO audio
+</Discription>
+    <Domain>Multimedia_Video</Domain>
+    <Phase>CORE</Phase>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <Type>FUNCTIONAL</Type>
+    <UseCase>PY_UNIT</UseCase>
+    <b2bIteration>1</b2bIteration>
+    <Parameters>
+        <Parameter>
+            <Name>HpalmName</Name>
+            <Value>video_playback.VideoPlayBack.testMPEG4_part_2_SP_Simple_Profile_Level3_CIF_352x288_30fps_NO_audio</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TEST_DATA_ROOT</Name>
+            <Value>testplan/Multimedia_Video</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TEST_CASE</Name>
+            <Value>tests.Multimedia_Video.Decode.video_playback.VideoPlayBack.testMPEG4_part_2_SP_Simple_Profile_Level3_CIF_352x288_30fps_NO_audio</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

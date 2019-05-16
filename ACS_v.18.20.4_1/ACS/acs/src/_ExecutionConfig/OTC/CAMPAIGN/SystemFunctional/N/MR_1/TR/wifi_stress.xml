@@ -1,0 +1,30 @@
+<?xml version="1.0" ?>
+<Campaign>
+    <Parameters>
+        <Parameter isControlledPSUsed="False"/>
+        <Parameter isIoCardUsed="False"/>
+        <Parameter skipBootOnPowerCycle="False"/>
+        <Parameter bootRetryNumber="0"/>
+        <Parameter runHookScripts="False"/>
+        <Parameter powerCycleBetweenTC="False"/>
+        <Parameter powerCycleOnFailure="False"/>
+        <Parameter finalDutState="NoChange"/>
+        <Parameter stopCampaignOnCriticalFailure="False"/>
+        <Parameter stopCampaignOnFirstFailure="False"/>
+        <Parameter loggingLevel="debug"/>
+        <Parameter CampaignType="Other"/>
+        <Parameter TCRReportViaRESTAPI="True"/>
+    </Parameters>
+    <TestCases>
+        <TestCase Id="../../../../../TC/TR/TESTLIB/WiFi/prereq_disable_captive_portal_detection"/>
+        <TestCase Id="../../../../../TC/TR/TESTLIB/WiFi/Comms_WIFI_ComponentRelated_UI_Toggle-WiFi-Switch-Settings-Iterative"/>
+        <!--TestCase Id="../../../../../TC/TR/TESTLIB/WiFi/Comms_WIFI_ComponentRelated_UI_Toggle-WiFi-Quick-Settings-Iterative"/-->
+        <TestCase Id="../../../../../TC/TR/TESTLIB/WiFi/Comms_WIFI_ComponentRelated_UI_Toggle-WiFi-Quick-Settings-Scan-Window-Iterative"/>
+        <TestCase Id="../../../../../TC/TR/TESTLIB/WiFi/Comms_WIFI_ComponentRelated_UI_Toggle-Airplane-Mode-Settings-Iterative"/>
+        <TestCase Id="../../../../../TC/TR/TESTLIB/WiFi/Comms_WIFI_ComponentRelated_UI_Toggle-Airplane-Mode-Quick-Settings-Iterative"/>
+        <TestCase Id="../../../../../TC/TR/TESTLIB/WiFi/Comms_WIFI_ComponentRelated_UI_Connect-Disconnect-Settings-Iterative"/>
+        <TestCase Id="../../../../../TC/TR/TESTLIB/WiFi/Comms_WIFI_ComponentRelated_UI_Connect-Disconnect-Quick-Settings-Iterative"/>
+        <TestCase Id="../../../../../TC/TR/TESTLIB/WiFi/Comms_WIFI_FlightMode_FeatureRelated_Radios-Coexistence-AM-ON-OFF-Iterative"/>
+        <TestCase Id="../../../../../TC/TR/TESTLIB/WiFi/prereq_enable_captive_portal_detection"/>
+    </TestCases>
+</Campaign>

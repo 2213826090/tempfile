@@ -1,0 +1,54 @@
+<?xml version='1.0' encoding='ASCII'?>
+<Campaign version="13.49">
+    <Parameters>
+            <Parameter isControlledPSUsed="False"/>
+            <Parameter isIoCardUsed="False"/>
+            <Parameter skipBootOnPowerCycle="False"/>
+            <Parameter bootRetryNumber="0"/>
+            <Parameter runHookScripts="False"/>
+            <Parameter powerCycleBetweenTC="False"/>
+            <Parameter powerCycleOnFailure="False"/>
+            <Parameter finalDutState="NoChange"/>
+            <Parameter stopCampaignOnCriticalFailure="False"/>
+            <Parameter stopCampaignOnFirstFailure="False"/>
+            <Parameter loggingLevel="debug"/>
+            <Parameter CampaignType="Other"/>
+    </Parameters>
+    <Targets>
+        <!-- Target Values -->
+        <Target targetB2bPassRate="100"/>
+    </Targets>
+    <TestCases>
+        <TestCase Id="../../TC/TR/Stress/BT_ON_OFF"/>
+        <TestCase Id="../../TC/TR/Stress/AIRPLANE_ON_OFF"/>
+        <TestCase Id="../../TC/TR/Stress/MonkeyStressAll"/>
+        <TestCase Id="../../TC/TR/Stress/LIVE_LOGCAT_PARSER"/>
+        <TestCase Id="../../TC/TR/Stress/CHROME_OPEN_30_TABS"/>
+        <TestCase Id="../../TC/TR/Stress/CHROME_PLAY_VIDEO_24h"/>
+        <!-- video -->
+        <SubCampaign Id="../Subcampaigns/ATF_TESTS/MTBF/Subcampaign_Stress_Video"/>
+        <SubCampaign Id="../Subcampaigns/ATF_TESTS/MTBF/Subcampaign_Stress_Video"/>
+        <SubCampaign Id="../Subcampaigns/ATF_TESTS/MTBF/Subcampaign_Stress_Video"/>
+        <!-- audio -->
+        <SubCampaign Id="../Subcampaigns/ATF_TESTS/MTBF/Subcampaign_Stress_Audio"/>
+        <SubCampaign Id="../Subcampaigns/ATF_TESTS/MTBF/Subcampaign_Stress_Audio"/>
+        <SubCampaign Id="../Subcampaigns/ATF_TESTS/MTBF/Subcampaign_Stress_Audio"/>
+        <SubCampaign Id="../Subcampaigns/ATF_TESTS/MTBF/Subcampaign_Stress_Audio"/>
+        <SubCampaign Id="../Subcampaigns/ATF_TESTS/MTBF/Subcampaign_Stress_Audio"/>
+        <SubCampaign Id="../Subcampaigns/ATF_TESTS/MTBF/Subcampaign_Stress_Audio"/>
+        <SubCampaign Id="../Subcampaigns/ATF_TESTS/MTBF/Subcampaign_Stress_Audio"/>
+        <SubCampaign Id="../Subcampaigns/ATF_TESTS/MTBF/Subcampaign_Stress_Audio"/>
+        <SubCampaign Id="../Subcampaigns/ATF_TESTS/MTBF/Subcampaign_Stress_Audio"/>
+        <SubCampaign Id="../Subcampaigns/ATF_TESTS/MTBF/Subcampaign_Stress_Audio"/>
+        <SubCampaign Id="../Subcampaigns/ATF_TESTS/MTBF/Subcampaign_Stress_Audio"/>
+        <SubCampaign Id="../Subcampaigns/ATF_TESTS/MTBF/Subcampaign_Stress_Audio"/>
+        <SubCampaign Id="../Subcampaigns/ATF_TESTS/MTBF/Subcampaign_Stress_Audio"/>
+        <SubCampaign Id="../Subcampaigns/ATF_TESTS/MTBF/Subcampaign_Stress_Audio"/>
+        <SubCampaign Id="../Subcampaigns/ATF_TESTS/MTBF/Subcampaign_Stress_Audio"/>
+        <SubCampaign Id="../Subcampaigns/ATF_TESTS/MTBF/Subcampaign_Stress_Audio"/>
+        <SubCampaign Id="../Subcampaigns/ATF_TESTS/MTBF/Subcampaign_Stress_Audio"/>
+        <SubCampaign Id="../Subcampaigns/ATF_TESTS/MTBF/Subcampaign_Stress_Audio"/>
+        <SubCampaign Id="../Subcampaigns/ATF_TESTS/MTBF/Subcampaign_Stress_Audio"/>
+        <SubCampaign Id="../Subcampaigns/ATF_TESTS/MTBF/Subcampaign_Stress_Audio"/>
+    </TestCases>
+</Campaign>

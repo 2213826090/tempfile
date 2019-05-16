@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase>
+    <UseCase>Testlib</UseCase>
+    <Description>Storage.USB_SDCard_UnmountDuringADBcopy</Description>
+	<b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <TcMaxAttempt>1</TcMaxAttempt>
+    <TestSteps>
+	        <Setup>
+            <!--unlock screen on both devices and dismiss eventual crash dialog-->
+            <TestStep Id="RUN_CMD"
+                      DEVICE="PHONE1" TIMEOUT="20" FORCE_EXECUTION="False" WAIT_FOR_RESPONSE="True" SILENT_MODE="False" SAVE_AS="out1"
+                      COMMAND="adb shell input keyevent 82"/>
+        </Setup>
+    </TestSteps>
+    <Parameters>
+        <Parameter>
+            <Name>test</Name>
+            <Value>scripts/storage_usb/tests/Storage.USB_EmulatedStorage_Wifi.download.while.multitasking.py</Value>
+        </Parameter>
+        <Parameter>
+            <Name>test-args</Name>
+            <Value>protocol=ftp port_number=80 device_path=/storage/sdcard0/Download/ mode=bg security=none ap_name=qwe1234 dut_security=None conf_security=NONE airplane_mode=ON compare_method=md5 ap_module=ddwrt_atheros</Value>
+        </Parameter>
+        <Parameter>
+            <Name>timeout</Name>
+            <Value>10000</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

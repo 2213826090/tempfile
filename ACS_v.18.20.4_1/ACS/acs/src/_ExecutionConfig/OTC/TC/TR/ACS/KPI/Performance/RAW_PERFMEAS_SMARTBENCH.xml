@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase>
+    <UseCase>LIVE_PERFMEAS_APPLICATION</UseCase>
+    <Description>Smartbench benchmark</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <TestSteps>
+        <Initialize>
+            <TestStep Id="GET_ARTIFACT" EQT="ARTIFACT_MANAGER" ARTIFACT="UIAUTOMATOR/Performance.jar" ARTIFACT_SOURCE="FROM_BENCH:ARTIFACT_MANAGER:URI" TRANSFER_TIMEOUT="DEFAULT" STORED_FILE_PATH="FILE_PATH_IN_CACHE1"/>
+        </Initialize>
+    </TestSteps>
+    <Parameters>
+        <Parameter>
+            <Name>APPLICATION_NAME</Name>
+            <Value>SmartBenchOTC</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TIMEOUT</Name>
+            <Value>120</Value>
+        </Parameter>
+        <Parameter>
+            <Name>MEASURE_NB</Name>
+            <Value>2</Value>
+        </Parameter>
+        <Parameter>
+            <Name>APPURI</Name>
+            <Value>
+                DEFAULT: artifact://BENCHMARKS/SMARTBENCH/smartbench.2012-1.apk;
+            </Value>
+        </Parameter>
+        <Parameter>
+            <Name>ARGUMENTS</Name>
+            <Value>/UIAUTOMATOR/Performance.jar;Game</Value>
+        </Parameter>
+        <Parameter>
+            <Name>SYSDEBUG_MODULES</Name>
+            <Value></Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

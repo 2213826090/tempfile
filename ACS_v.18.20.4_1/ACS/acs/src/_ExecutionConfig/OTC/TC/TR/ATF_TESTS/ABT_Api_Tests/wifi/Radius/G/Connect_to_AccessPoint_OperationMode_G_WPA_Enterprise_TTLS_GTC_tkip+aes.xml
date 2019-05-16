@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase>
+    <ClassName>UseCase.OTC.Communications.Wifi.LAB_CONNECT_TO_AP.ConnectToAP</ClassName>
+    <Description>Wifi test case for unsecured networks</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>False</b2bContinuousMode>
+    <Parameters>
+        <Parameter>
+            <Name>OPERATION_MODE</Name>
+            <Value>g</Value>
+        </Parameter>
+        <Parameter>
+            <Name>SECURITY_MODE</Name>
+            <Value>wpa_enterprise</Value>
+        </Parameter>
+        <Parameter>
+            <Name>WIFI_PASSWORD</Name>
+            <Value></Value>
+        </Parameter>
+        <Parameter>
+            <Name>ALGORITHM</Name>
+            <Value>tkip+aes</Value>
+        </Parameter>
+        <Parameter>
+            <Name>RADIUS_IP</Name>
+            <Value>192.168.1.138</Value>
+        </Parameter>
+        <Parameter>
+            <Name>RADIUS_KEY</Name>
+            <Value>testing123</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TIMEOUT</Name>
+            <Value>60</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TEST_APK</Name>
+            <Value>INSTRUMENTATION/ANDROID/ApiTests.apk</Value>
+        </Parameter>
+        <Parameter>
+            <Name>PROCESS_NAME</Name>
+            <Value>com.intel.test.apitests/com.intel.test.apitests.runners.WifiEncryptionTestRunner</Value>
+        </Parameter>
+        <Parameter>
+            <Name>AM_EXTRA</Name>
+            <Value>-e apName "ddwrt" -e apPassword "hello" -e apTestPage http://192.168.1.1/ -e eapMethod "TTLS" -e phase2Method "GTC" -e identity "bob" -e class com.intel.test.apitests.tests.WiFiConnectionTest#testWifiAP_Eap
+            </Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

@@ -1,0 +1,12 @@
+{
+    "windows": {
+        "install": "{bin} /VERYSILENT /SUPPRESSMSGBOXES /NORESTART /SP-",
+        "32": "acs/dependencies/third_parties/tools/wxPython/wxPython2.8-win32-2.8.12.1-py{pyversion}.exe",
+        "64": "acs/dependencies/third_parties/tools/wxPython/wxPython2.8-win64-2.8.12.1-py{pyversion}.exe"
+    },
+    "linux": {
+        "check_exists": ["dpkg --get-selections ", ["python-wxgtk2.8"]],
+        "install": "apt-get install python-wxgtk2.8 python-wxtools wx2.8-i18n -y",
+        "uninstall": "apt-get remove python-wxgtk2.8 python-wxtools wx2.8-i18n -y"
+    }
+}

@@ -1,0 +1,41 @@
+<?xml version="1.0" ?>
+<TestCase>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Discription> 
+&lt;div align=&quot;left&quot; style=&quot;min-height:9pt&quot;&gt;
+&lt;font face=&quot;Arial&quot;&gt;&lt;span style=&quot;font-size:8pt&quot;&gt;Precondition: 1. Flash latest build to DUT 2. Power on DUT 3. Install and running Antutu for CPU&lt;/span&gt;&lt;/font&gt;
+&lt;/div&gt; 
+&lt;div align=&quot;left&quot; style=&quot;min-height:9pt&quot;&gt;&lt;/div&gt; 
+&lt;div align=&quot;left&quot; style=&quot;min-height:9pt&quot;&gt;
+&lt;font face=&quot;Arial&quot;&gt;&lt;span style=&quot;font-size:8pt&quot;&gt;Postcondition: Command &amp;quot;adb shell cat /sys/devices/system/cpu/cpu0/cpufreq/cpuinfo_cur_freq&amp;quot; and command &amp;quot;adb shell cat /sys/class/thermal/thermal_zone0/temp&amp;quot;&lt;/span&gt;&lt;/font&gt;
+&lt;/div&gt; 
+&lt;div align=&quot;left&quot; style=&quot;min-height:9pt&quot;&gt;&lt;/div&gt; 
+&lt;div align=&quot;left&quot; style=&quot;min-height:9pt&quot;&gt;
+&lt;font face=&quot;Arial&quot;&gt;&lt;span style=&quot;font-size:8pt&quot;&gt;Detailed test steps: 1. Flash latest build to DUT 2. Power on DUT 3. Install and running Antutu for CPU 4. Command &amp;quot;adb shell cat /sys/devices/system/cpu/cpu0/cpufreq/cpuinfo_cur_freq&amp;quot; 5. Command &amp;quot;adb shell cat /sys/class/thermal/thermal_zone0/temp&amp;quot;&lt;/span&gt;&lt;/font&gt;
+&lt;/div&gt; 
+&lt;div align=&quot;left&quot; style=&quot;min-height:9pt&quot;&gt;&lt;/div&gt; 
+&lt;div align=&quot;left&quot; style=&quot;min-height:9pt&quot;&gt;
+&lt;font face=&quot;Arial&quot;&gt;&lt;span style=&quot;font-size:8pt&quot;&gt;Expected result: &amp;nbsp;System should be monitor temp and CPU freq when running Antutu for CPU&lt;/span&gt;&lt;/font&gt;
+&lt;/div&gt;  
+</Discription>
+    <Domain>ThermalManagement</Domain>
+    <Phase>CORE</Phase>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <Type>FUNCTIONAL</Type>
+    <UseCase>PY_UNIT</UseCase>
+    <b2bIteration>1</b2bIteration>
+    <Parameters>
+        <Parameter>
+            <Name>HpalmName</Name>
+            <Value>monitor_cpu_temp_freq_antutu.Monitor_CPU_Temp_Freq_Antutu.test_monitor_cpu_temp_freq_antutu</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TEST_DATA_ROOT</Name>
+            <Value>testplan/ThermalManagement</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TEST_CASE</Name>
+            <Value>tests.ThermalManagement.Automotive_Thermal_Management.monitor_cpu_temp_freq_antutu.Monitor_CPU_Temp_Freq_Antutu.test_monitor_cpu_temp_freq_antutu</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

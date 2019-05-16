@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<UI_SEQ xsi:noNamespaceSchemaLocation="ACS_ANDROID_UI_CHECK.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+ 
+  <ACTION>
+    <!--Go back to home page-->
+    <CMD>go_home</CMD>
+    <TIMEOUT>1</TIMEOUT>
+  </ACTION>  
+   <ACTION>
+    <CMD>call_dial_sim1</CMD>
+    <PARAMETERS>0033493001498</PARAMETERS>
+    <TIMEOUT>1</TIMEOUT>
+  </ACTION>
+  <ACTION>
+    <CMD>wait</CMD>
+    <PARAMETERS>10</PARAMETERS>
+    <TIMEOUT />
+    <TRIG_LOG>GET_CURRENT_CALLS  [id=1,ACTIVE</TRIG_LOG>
+  </ACTION>
+  <ACTION>
+    <CMD>open_sms_menu</CMD>
+    <TIMEOUT>1</TIMEOUT>
+  </ACTION>
+  <!-- sending a SMS of 160 characters-->
+  <ACTION>
+    <CMD>sms_send_sim1</CMD>
+    <PARAMETERS>0637272659;aaaaaaaaaabbbbbbbbbbccccccccccaaaaaaaaaabbbbbbbbbbccccccccccaaaaaaaaaabbbbbbbbbbccccccccccaaaaaaaaaabbbbbbbbbbccccccccccaaaaaaaaaabbbbbbbbbbccccccccccdddddddddd</PARAMETERS>
+    <TIMEOUT>5</TIMEOUT>
+    <!--<TRIG_LOG>SMS send complete</TRIG_LOG>-->
+	<TRIG_LOG>SEND_SMS</TRIG_LOG>	
+  </ACTION>
+  <ACTION>
+    <CMD>wait</CMD>
+    <PARAMETERS>15</PARAMETERS>
+  </ACTION>  
+  <ACTION>
+	<CMD>keypress</CMD>
+	<PARAMETERS>KEYCODE_HOME</PARAMETERS>
+	<TIMEOUT>2</TIMEOUT>
+  </ACTION>
+  <ACTION>
+    <CMD>call_release</CMD>
+	<TIMEOUT>15</TIMEOUT>
+	<TRIG_LOG>onDisconnect: cause = LOCAL</TRIG_LOG> 
+  </ACTION>
+  <ACTION>
+    <CMD>wait</CMD>
+    <PARAMETERS>15</PARAMETERS>
+  </ACTION>     
+  <ACTION>
+    <!--Go back to home page-->
+    <CMD>go_home</CMD>
+    <TIMEOUT>1</TIMEOUT>
+  </ACTION>     
+</UI_SEQ>

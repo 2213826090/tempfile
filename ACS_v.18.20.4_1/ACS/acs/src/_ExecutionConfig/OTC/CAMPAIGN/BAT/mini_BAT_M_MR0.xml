@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Campaign>
+      <Parameters>
+            <Parameter isControlledPSUsed="False"/>
+            <Parameter isIoCardUsed="True"/>
+            <Parameter skipBootOnPowerCycle="False"/>
+            <Parameter bootRetryNumber="0"/>
+            <Parameter runHookScripts="False"/>
+            <Parameter powerCycleBetweenTC="False"/>
+            <Parameter powerCycleOnFailure="False"/>
+            <Parameter finalDutState="NoChange"/>
+            <Parameter stopCampaignOnCriticalFailure="True"/>
+            <Parameter stopCampaignOnFirstFailure="False"/>
+            <Parameter loggingLevel="debug"/>
+            <Parameter CampaignType="Other"/>
+      </Parameters>
+      <TestCases>
+             <TestCase Id="../../TC/TR/BAT/mini_BAT/DUT_FLASH"/>
+             <TestCase Id="../../TC/TR/ACS/Communication/Bluetooth/setup/prereq_Bluetooth_SYSTEM_SETUP_EMBEDDED"/>
+             <TestCase Id="../../TC/TR/BAT/mini_BAT/RebootDevice"/>
+             <TestCase Id="../../TC/TR/DeviceSetup/LIVE_ONE_TIME_INIT_SETUP_M_DESSERT"/>
+             <TestCase Id="../../TC/TR/BAT/mini_BAT/BatteryCharger" TcMaxAttempt="3"/>
+             <TestCase Id="../../TC/TR/BAT/mini_BAT/PushPullFile" TcMaxAttempt="3"/>
+             <!--TestCase Id="../../TC/TR/BAT/mini_BAT/AP_Connect_Disconnect"/-->
+             <TestCase Id="../../TC/TR/BAT/mini_BAT/Enable_Disable_Wifi" TcMaxAttempt="3"/>
+             <TestCase Id="../../TC/TR/BAT/mini_BAT/SDcardRW" TcMaxAttempt="3"/>
+             <TestCase Id="../../TC/TR/BAT/mini_BAT/CameraVideoRecording_front" TcMaxAttempt="3"/>
+             <TestCase Id="../../TC/TR/BAT/mini_BAT/CameraTakePictures_front" TcMaxAttempt="3"/>
+             <TestCase Id="../../TC/TR/BAT/mini_BAT/VideoPlayback_h264" TcMaxAttempt="3"/>
+             <TestCase Id="../../TC/TR/BAT/mini_BAT/VideoPlayback_mpeg" TcMaxAttempt="3"/>
+             <TestCase Id="../../TC/TR/BAT/mini_BAT/AudioPlayback_encode" TcMaxAttempt="3"/>
+             <TestCase Id="../../TC/TR/BAT/mini_BAT/AudioPlayback" TcMaxAttempt="3"/>
+             <TestCase Id="../../TC/TR/BAT/mini_BAT/VolumeControl" TcMaxAttempt="3"/>
+             <TestCase Id="../../TC/TR/BAT/mini_BAT/CameraTakePictures_back" TcMaxAttempt="3"/>
+             <TestCase Id="../../TC/TR/BAT/mini_BAT/CameraVideoRecording_back" TcMaxAttempt="3"/>
+             <TestCase Id="../../TC/TR/BAT/mini_BAT/AccelerometerSensor" TcMaxAttempt="3"/>
+             <TestCase Id="../../TC/TR/BAT/mini_BAT/Houdini_test" TcMaxAttempt="3"/>
+             <TestCase Id="../../TC/TR/BAT/mini_BAT/Enable_Disable_Bluetooth" TcMaxAttempt="3"/>
+             <!--TestCase Id="../../TC/TR/BAT/mini_BAT/GMS_Camera"/>
+             <TestCase Id="../../TC/TR/BAT/mini_BAT/GMS_ChromeBrowser"/>
+             <TestCase Id="../../TC/TR/BAT/mini_BAT/GMS_Email"/>
+             <TestCase Id="../../TC/TR/BAT/mini_BAT/GMS_Maps,Street_View"/>
+             <TestCase Id="../../TC/TR/BAT/mini_BAT/GMS_PlayMusic"/>
+             <TestCase Id="../../TC/TR/BAT/mini_BAT/GMS_Googleplus,photos"/>
+             <TestCase Id="../../TC/TR/BAT/mini_BAT/GMS_PlayStore"/>
+             <TestCase Id="../../TC/TR/BAT/mini_BAT/GMS_Hangouts,Talk"/>
+             <TestCase Id="../../TC/TR/BAT/mini_BAT/GMS_YouTube"/-->
+     </TestCases>
+</Campaign>

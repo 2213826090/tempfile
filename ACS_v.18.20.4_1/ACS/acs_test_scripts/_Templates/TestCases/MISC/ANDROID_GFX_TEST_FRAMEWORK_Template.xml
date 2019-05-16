@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="13.37">
+    <UseCase>ANDROID_GFX_TEST_FRAMEWORK</UseCase>
+    <Description>Run a GFX test sequence</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters>
+            <Parameter>
+                <Name>GFX_FWK_TEST</Name>
+                <Description>Specify the gfx test python file path</Description>
+                <Value>/home/session/gfx/component/gfx/2d/2d_auto.py</Value>
+            </Parameter>
+            <Parameter>
+                <Name>CMD_TIMEOUT</Name>
+                <Description>Timeout until tests must have finished</Description>
+                <Value>3600</Value>
+            </Parameter>
+            <Parameter>
+                <Name>TEST_CMD_LINES</Name>
+                <Description>Optional cmd options to specify to the GFX test framework</Description>
+                <Value></Value>
+            </Parameter>
+      </Parameters>
+</TestCase>

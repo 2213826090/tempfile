@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase>
+    <UseCase>LAB_EM_BATT_INSERTION</UseCase>
+    <Description>Insert a valid battery as single power source.</Description>
+    <b2bIteration>1</b2bIteration>
+    <TcMaxAttempt>2</TcMaxAttempt>
+    <TcAcceptanceCriteria>1</TcAcceptanceCriteria>
+    <b2bContinuousMode>False</b2bContinuousMode>
+    <Parameters>
+        <Parameter>
+            <!-- Battery Type (ANALOG|BATTERY_EMULATOR|DIGITAL|TEST2|INVALID|REMOVED) -->
+            <Name>BATTERY_TYPE</Name>
+            <Value>ANALOG</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Charger Type : None | ALL | DCP (current=1.5A) | SDP (Current=0.5A) | CDP(Current=1.5A)| AC_CHGR (Current=2.5A) -->
+            <Name>CHARGER_TYPE</Name>
+            <Value>SDP</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Battery Temperature (in degree Celsius) : 95, 70, 50, 25, 10, 5, 0, -15 -->
+            <Name>BATTERY_TEMP</Name>
+            <Value>25</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

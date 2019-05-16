@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestSteps xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../acs/src/_Catalogs/TestStep/teststep.xsd">
+    <TestStep Id="GET_ARTIFACT" Domain="EQUIPMENT" SubDomain="ARTIFACT_MGMT" Feature="" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Equipment.Tool.GetArtifact.GetArtifact</ClassName>
+        <Description>Get an artifact from http/https server or local path and store it in ACS file cache.
+                     If artifact is already available in cache folder, download/local copy will be skipped</Description>
+        <Environment name="ANY"/>
+        <Parameters>
+            <Parameter name="EQT" type="STRING" isOptional="false">
+                   <Description>The equipment name shall refer to an existing equipment the Bench config</Description>
+                   <PossibleValues/>
+                   <DefaultValue>ARTIFACT_MANAGER</DefaultValue>
+            </Parameter>
+            <Parameter name="ARTIFACT" type="STRING" isOptional="false">
+                   <Description>Relative path to the file from artifact source reference</Description>
+                   <PossibleValues/>
+                   <DefaultValue/>
+            </Parameter>
+            <Parameter name="ARTIFACT_SOURCE" type="STRING" isOptional="false">
+                   <Description>the artifacts source reference</Description>
+                   <PossibleValues/>
+                   <DefaultValue/>
+            </Parameter>
+            <Parameter name="TRANSFER_TIMEOUT" type="INTEGER" isOptional="false">
+                    <Description>Http timeout</Description>
+                    <PossibleValues/>
+                    <DefaultValue>600</DefaultValue>
+            </Parameter>
+            <Parameter name="STORED_FILE_PATH" type="CONTEXT" isOptional="false">
+                    <Description>
+                         <Key name="FILE_PATH_IN_CACHE" type="STRING">Artifact path in cache</Key>
+                    </Description>
+                    <PossibleValues/>
+                    <DefaultValue/>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="UNZIP_ARTIFACT" Domain="EQUIPMENT" SubDomain="ARTIFACT_MGMT" Feature="" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Equipment.Tool.UnzipArtifact.UnzipArtifact</ClassName>
+        <Description>Unzip an Artifact that has been previously downloaded into cache.
+                     If artifact is already available in cache folder un-archived,no unzip action will be performed.</Description>
+        <Environment name="ANY"/>
+        <Parameters>
+            <Parameter name="EQT" type="STRING" isOptional="false">
+                   <Description>The equipment name shall refer to an existing equipment the Bench config</Description>
+                   <PossibleValues/>
+                   <DefaultValue>ARTIFACT_MANAGER</DefaultValue>
+            </Parameter>
+            <Parameter name="ARTIFACT_NAME" type="STRING" isOptional="false">
+                   <Description>Name of the Artifact archive that is being referenced</Description>
+                   <PossibleValues/>
+                   <DefaultValue/>
+            </Parameter>
+            <Parameter name="STORED_FILE_PATH" type="CONTEXT" isOptional="false">
+            <Description>
+                 <Key name="FILE_PATH_IN_CACHE" type="STRING">Artifact path in cache</Key>
+            </Description>
+            <PossibleValues/>
+            <DefaultValue/>
+            </Parameter>
+             <Parameter name="EXTRACT_LOCATION" type="CONTEXT" isOptional="false">
+            <Description>
+                 <Key name="ZIP_EXTRACT_LOCATION" type="STRING">Artifact path in cache</Key>
+            </Description>
+            <PossibleValues/>
+            <DefaultValue/>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+</TestSteps>

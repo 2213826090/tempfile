@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase>
+    <UseCase>LIVE_CHECK_ICON_VIDEO</UseCase>
+    <Description>Check if icon is display correctly in video application in pause</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>False</b2bContinuousMode>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters>
+        <Parameter>
+            <!-- Path to the image library -->
+            <Name>LIBRARY_IMAGE_PATH</Name>
+            <Value>C:/Users/</Value>
+        </Parameter>
+        <!--Images template-->
+        <Parameter>
+            <!-- Name of album icon image less extension (.png) -->
+            <Name>ALBUM_VIDEO</Name>
+            <Value>album_video</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Name of pause icon image less extension (.png) -->
+            <Name>PAUSE_VIDEO</Name>
+            <Value>pause_video</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Name of share icon image less extension (.png) -->
+            <Name>SHARE_VIDEO</Name>
+            <Value>share_video</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Path of the video played on the DUT. -->
+            <Name>VIDEO_PATH</Name>
+            <Value>/emulated/storage/0/acs_files/H264_L2.1_BP_CIF_30fps_AAC+_ST_56kb_48KHz.mp4</Value>
+        </Parameter>
+        <Parameter>
+            <!-- [OPTIONAL] Set the video playback orientation, three possible value
+                    - "" : use the default orientation (landscape for tablet and portrait for phone)
+                    - portrait: force video playback in portrait orientation
+                    - landscape: force video playback in landscape orientation -->
+            <Name>VIDEO_ORIENTATION</Name>
+            <Value></Value>
+        </Parameter>
+    </Parameters>
+    <TestSteps>
+        <Initialize>
+            <!-- Get the artifact on local host -->
+            <TestStep Id="GET_ARTIFACT" ARTIFACT="MISCELLANEOUS/MP4/[+]FROM_TC:VIDEO_PATH"
+                      ARTIFACT_SOURCE="FROM_BENCH:ARTIFACT_MANAGER:URI" TRANSFER_TIMEOUT="DEFAULT"
+                      STORED_FILE_PATH="FILE_PATH_IN_CACHE1" EQT="DEFAULT"/>
+            <!-- Then, Push it on the device. Device destination folder will be the default device media folder (/sdcard/acs_media) -->
+            <!-- FILE_PATH is retrieved from test step context -->
+            <TestStep Id="INSTALL_FILE" DEVICE="PHONE1" FILE_PATH="FROM_CTX:FILE_PATH_IN_CACHE1" TYPE="media"
+                      DESTINATION="/emulated/storage/0/acs_files/" TIMEOUT="DEFAULT"
+                      DESTINATION_STORED_PATH="FILE_PATH_IN_CACHE1"
+                    />
+        </Initialize>
+        <Finalize>
+            <!-- When test has been run, we can remove the mp3 files if necessary -->
+            <TestStep Id="UNINSTALL_FILE" DEVICE="PHONE1" DEVICE_FOLDER="/emulated/storage/0/acs_files/"
+                      FILENAME="FROM_TC:VIDEO_PATH"/>
+        </Finalize>
+    </TestSteps>
+</TestCase>

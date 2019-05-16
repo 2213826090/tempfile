@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase>
+  <UseCase>LIVE_NFC_TURN_ON_OFF</UseCase>
+  <Description>Check NFC interface can be turned on/off</Description>
+  <b2bIteration>5000</b2bIteration>
+  <b2bContinuousMode>True</b2bContinuousMode>
+  <Parameters>
+        <Parameter>
+            <!-- [OPTIONAL] If True, enable the NFC Beam prior to the test. If False, disable the NFC Beam prior to the test -->
+            <Name>NFC_BEAM_INITIAL_STATE</Name>
+            <Value>False</Value>
+        </Parameter>
+        <Parameter>
+            <!-- [OPTIONAL] If True, check the NFC Beam in the test. If False, disable this check -->
+            <Name>NFC_BEAM_CHECK</Name>
+            <Value>True</Value>
+        </Parameter>
+  </Parameters>
+</TestCase>

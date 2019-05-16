@@ -1,0 +1,18 @@
+<?xml version="1.0" ?>
+<TestCase>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Discription>The Battery Historian tool (historian.par) analyzes Android bug reports from the L Developer Preview and creates an HTML visualization of power-related events. It can also visualize power consumption data from a power monitor, and attempts to map power usage to the wake locks seen. You can find the Battery Historian tool in sdk/tools.</Discription>
+    <UseCase>PY_UNIT</UseCase>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <b2bIteration>1</b2bIteration>
+    <Parameters>
+        <Parameter>
+            <Name>TEST_DATA_ROOT</Name>
+            <Value>testplan/EnergyManagement</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TEST_CASE</Name>
+            <Value>tests.EnergyManagement.battery_saver.battery_life_compared_glbenchmark27.BatteryLifeComparedGLBenchmark27.test_battery_life_compared_glbenchmark27</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

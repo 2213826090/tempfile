@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase>
+    <TestSteps>
+        <Setup>
+            <TestStep Id="GET_ARTIFACT" ARTIFACT="APPLICATIONS/ChessARM.apk"
+                      ARTIFACT_SOURCE="FROM_BENCH:ARTIFACT_MANAGER:URI" TRANSFER_TIMEOUT="DEFAULT"
+                      STORED_FILE_PATH="FILE_PATH_IN_CACHE1" EQT="DEFAULT"/>
+            <TestStep Id="INSTALL_APP" DEVICE="PHONE1" SIGN="False" SIGN_KEY_PATH="DEFAULT" FILE_PATH="FROM_CTX:FILE_PATH_IN_CACHE1"
+                      BACKUP="False" TIMEOUT="30" BACKUP_FILE_PATH="/backup"/>
+        </Setup>
+    </TestSteps>
+    <UseCase>EXEC_SCRIPT</UseCase>
+    <Description>Adds a user installed application to home screen</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>False</b2bContinuousMode>
+    <TcExpectedResult>PASS</TcExpectedResult>
+
+    <Parameters>
+        <Parameter>
+            <Name>SCRIPT_PATH</Name>
+            <Value>./scripts/uninstall_an_app_on_the_dock.py</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

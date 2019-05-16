@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='ASCII'?>
+<TestCase>
+    <UseCase>Testlib</UseCase>
+    <Description>wifi</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <TcMaxAttempt>3</TcMaxAttempt>
+    <Parameters>
+        <Parameter>
+            <Name>test</Name>
+            <Value>scripts/wireless/wifi_generic/tests/reconnect_after_ap_reboot.py</Value>
+        </Parameter>
+        <Parameter>
+            <Name>script-args</Name>
+            <Value>mode=n encryption=aes ap_name=ddwrt security=wpa_enterprise_mixed radius_ip=192.168.1.138 radius_secret=testing123 radius_identity=bob passphrase=hello dut_security=EAP EAP_method=PEAP phase_2_auth=None</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

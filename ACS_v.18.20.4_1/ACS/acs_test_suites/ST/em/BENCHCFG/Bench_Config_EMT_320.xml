@@ -1,0 +1,121 @@
+<?xml version='1.0' encoding='ISO-8859-1'?>
+<BenchConfig>
+  <Phones>
+      <Phone name="PHONE1" description="Phone to use during test campaign. Please refer to Device_Catalog.xml to add device parameters">
+          <!-- You can override value of a specific parameter from Device_Catalog
+            e.g:
+
+            <Parameter name="PowerSupply" value="ACCHG" description="Give the Power Supply Output type (e.g: ACCHG1)" />
+            <Parameter name="IoCard" value="IO_CARD" description="Give the IO card name (e.g: IO_CARD1)" />
+            <Parameter name="serialNumber" value="" description="Give the Serial Number of the phone (Used for Android phone only)" />
+            <Parameter name="phoneNumber" value="" description="Give the phone number of the phone" />
+            <Parameter name="adbOverEthernet" value="" description="Use ADB over Ethernet (Used for Android phone only)" />
+            <Parameter name="ipAddress" value="" description="Give the IP address of the phone (Used for Android phone only)" />
+            <Parameter name="adbPort" value="" description="Give ADB ethernet port of the phone (Used for Android phone only)" />
+            <Parameter name="waitBetweenCmd" value="" description="Give the time to wait between ue command execution"/>
+            -->
+            <Parameter uploadCrashToServer="false"/>
+            <Parameter retrieveApplicationLog="false"/>
+        </Phone>
+    </Phones>
+    <Equipments>
+      <Equipment name="ARTIFACT_MANAGER" description="ArtifactManager configuration to get all test case necessary artifacts">
+          <Parameter name="URI" value="https://mcg-depot.intel.com/artifactory/acs_test_artifacts/" description="Local path/URL to the artifact source"/>
+            <!-- Optional options
+            <Parameter name="proxy" value="system" description="Proxy to use if URI is an URL - system: use HTTP_PROXY system value - no_proxy: use empty proxy - a proxy adress" />
+            <Parameter name="http_timeout" value="10" description="Response timeout if URI is an URL" />
+            <Parameter name="creds" value="anonymous" description="Credentials to use if URL is access protected - anonymous: no creds will be used - creds format user:password" />
+            <Parameter name="cache_folder" value="/tmp/artifact_cache" description="Local path to a directory to store artifacts - if not specified, your_home_folder/.acs/Artifacts will be used" />
+            <Parameter name="max_cache_size" value="1000" description="Maximum cache directory size on the disk in Mb" />
+            -->
+        </Equipment>
+        <Equipment name="POWER_SUPPLY1" description="Power supply used for device Power cycle. Type used MUST be AGILENT_663xxD (66319D) dual output">
+          <Parameter name="Model" value="AGILENT_66319D"/>
+            <Parameter name="Transport" value="GPIB"/>
+            <Parameter name="SpecificService" value="Base.Extended"/>
+            <Parameter name="GPIBBoardId" value="0"/>
+            <Parameter name="GPIBAddress" value="5"/>
+            <Parameter name="CouplingMode" value="NONE" description="Enable/disable the couple mode of outputs. Possible value : ALL|NONE. Set value to 'none' if the resistance is not supported by the Power Supply"/>
+            <Parameter name="CompensationMode" value="HREMOTE" description="Set the compensation mode. Possible value : (Agilent66319) LREMOTE|LLOCAL|HLOCAL|HREMOTE - (Agilent66311) LOW|HIGH|H2"/>
+            <Parameter name="SenseProtect" value="ON" description="Enable/disable the sense protection. Possible value : ON|OFF"/>
+            <Parameter name="OverProtectState" value="ON" description="Enable/disable the over protection state. Possible value : ON|OFF"/>
+            <Parameter name="CurrentSource" value="DC" description="Configure the current source. Possible value : DC|ACDC"/>
+            <Parameter name="Resistance" value="0.13" description="Set the value of the resistance. Set value to 'none' if the resistance is not supported by the Power Supply"/>
+            <Parameter name="VoltageProtectLevel" value="8.0" description="Set the value of the voltage protection level."/>
+            <Output name="OUTPUT1">
+              <Parameter name="Type" value="BATT" description="VBATT MUST be on output1 (for setting resistance parameter)"/>
+                <Parameter name="PortNumber" value="1"/>
+                <Parameter name="MaxCurrent" value="3"/>
+                <Parameter name="Voltage" value="3.8"/>
+            </Output>
+            <Output name="OUTPUT2">
+              <Parameter name="Type" value="USB" description="Output Type used : ACCHG (AC Charger) | USB"/>
+                <Parameter name="PortNumber" value="2"/>
+                <Parameter name="MaxCurrent" value="1.5"/>
+                <Parameter name="Voltage" value="5.2"/>
+            </Output>
+            <Output name="OUTPUT3">
+              <Parameter name="Type" value="ACCHG" description="Output Type used : ACCHG (AC Charger) | USB"/>
+                <Parameter name="PortNumber" value="2"/>
+                <Parameter name="MaxCurrent" value="1.5"/>
+                <Parameter name="Voltage" value="5.2"/>
+            </Output>
+        </Equipment>
+        <Equipment name="IO_CARD" description="Input output card used for power management, energy management on I/O ports of the DUT.">
+          <!-- Model possible values: ACBN (Normal) | ACBP (Prototype) | ACBE (Enhanced) |
+                ACBT (Enhanced for Tablet) | EMT311 (support AC CHARGER and DCP) | USB_RLY08 -->
+            <Parameter name="Model" value="ACBE"/>
+            <!-- USB_RLY08 parameters -->
+            <!-- <Parameter name="ComPort" value="" description="COM port used for communication"/> -->
+            <!-- <Parameter name="SwitchOnOff" value="" description="Number of the relay used to boot or stop the board"/> -->
+            <!-- <Parameter name="UsbHostPcConnect" value="" description="Number of the relay used to plug or unplug USB on host PC"/> -->
+            <!-- <Parameter name="WallCharger" value="" description="Number of the relay used to plug or unplug USB on host PC"/> -->
+            <!-- Optional PowerSupply parameter (default : unused)
+                 Using this PowerSupply with relay may damage system : If a device is "ON", the initialization of the IO_CARD will
+                 remove power of the device.
+                 Consider using FT/pnp/TC/SETUP/LAB_SYSTEM_ALL_SWITCH_OFF test case
+              -->
+            <!-- <Parameter name="PowerSupply" value="" description="Number of the relay used to link power supply to DUT"/> -->
+            <!-- Optional DefaultStates parameter (default: all relays are opened)
+                This parameter indicates for each relay of the card if the relay
+                is by initially opened or closed when connected to USB Relay card.
+                This parameter is a string of 8 bits value "b8|b7|b6|b5|b4|b3|b2|b1"
+                where bi is the bit representing the relay number i.
+                If the bit is set to 1, the relay is closed.
+                If the bit is set to 0, the relay is opened.
+                For example, if relays 1, 2 and 6 are closed,
+                set default state is "00100011".
+
+                If DefaultStates is present and has empty value the IO_CARD relays state will remains unchanged
+              -->
+            <!-- <Parameter name="DefaultStates" value="00000000" description="Default relay states"/> -->
+            <!-- Optional WiringTable parameter (default: all relays are considered normally opened)
+                This parameter indicates for each relay of the card if the relay
+                is wired to NO (normally opened) or NC (normally closed) terminal.
+                This parameter is a string of 8 bits value "b8|b7|b6|b5|b4|b3|b2|b1"
+                where bi is the bit representing the relay number i.
+                If the bit is set to 1, the relay is normally closed.
+                If the bit is set to 0, the relay is normally opened.
+                For example, if relays 1, 2 and 6 are normally closed,
+                set wiring table "00100011". -->
+            <!-- <Parameter name="WiringTable" value="000000000" description="Wiring Table"/> -->
+            <!-- Parameters for ACBN | ACBP | ACBE | ACBT | EMT311 -->
+            <!-- <Parameter name="serialNumber" value=""/> -->
+        </Equipment>
+        <Equipment name="NETWORK_SIMULATOR1" description="Network simulator used for non mobility test cases">
+          <Parameter name="Model" value="RS_CMU200"/>
+            <Parameter name="Transport" value="GPIB"/>
+            <Parameter name="GPIBBoardId" value="0"/>
+            <Parameter name="GPIBAddress" value="20"/>
+            <Parameter name="AmplitudeOffsetTable" value="Amplitude_Offset_Table"/>
+            <Parameter name="IP_Lan1" value=""/>
+            <Parameter name="IP_Lan2" value=""/>
+            <Parameter name="DUT_IP_Address" value=""/>
+            <Parameter name="DNS1" value="172.28.128.126"/>
+            <Parameter name="DNS2" value="172.28.128.146"/>
+            <Parameter name="Subnet_Mask" value="255.0.0.0"/>
+            <Parameter name="Default_Gateway" value="10.237.190.3"/>
+        </Equipment>
+    </Equipments>
+</BenchConfig>
+

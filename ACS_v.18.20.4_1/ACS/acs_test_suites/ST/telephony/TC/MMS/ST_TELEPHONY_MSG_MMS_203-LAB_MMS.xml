@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase>
+    <UseCase>LAB_MMS</UseCase>
+    <Description>LAB MMS MO / MT Test Case</Description>
+    <Requirements>
+        <Contour>
+            <Global_ID>11245439</Global_ID>
+            <Test_Case_ID>ST_TELEPHONY_MSG_MMS_203</Test_Case_ID>
+            <Name>2G Mobile Terminated MMS with video (different formats)</Name>
+        </Contour>
+    </Requirements>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters>
+        <Parameter>
+            <!-- Cell Technology (2G|3G) -->
+            <Name>CELL_TECH</Name>
+            <Value>2G</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Cell Band
+                    For 2G : EGSM|GSM850|PCS|DCS
+                    For 3G : 1,2,5,8
+            -->
+            <Name>CELL_BAND</Name>
+            <Value>DCS</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Cell Service ( (GSM|GPRS|EGPRS) for 2G CELL, (CIRCUIT|PACKET|CIRCUIT_PACKET) for 3G CELL) -->
+            <Name>CELL_SERVICE</Name>
+            <Value>EGPRS</Value>
+        </Parameter>
+        <Parameter>
+            <!-- ARFCN -->
+            <Name>ARFCN</Name>
+            <Value>512</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Cell Power -->
+            <Name>CELL_POWER</Name>
+            <Value>-75</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Cell LAC, For 2G and 3G: 0 to 65535-->
+            <Name>LAC</Name>
+            <Value>10</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Cell Routing Area, For 2G and 3G: 1 to 255-->
+            <Name>RAC</Name>
+            <Value>25</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Mobile Country Code 0 to 999 -->
+            <Name>MCC</Name>
+            <Value>1</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Mobile Network Code 0 to 999 -->
+            <Name>MNC</Name>
+            <Value>1</Value>
+        </Parameter>
+        <Parameter>
+            <!-- MMS destination phone number. If the value [PHONE_NUMBER] is given, the phoneNumber defined in Phone_Catalog.xml will be used -->
+            <Name>MMS_DESTINATION_NUMBER</Name>
+            <Value>0123456789</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Text to add to the MMS subject. -->
+            <Name>MMS_SUBJECT</Name>
+            <Value>MMS subject</Value>
+        </Parameter>
+        <Parameter>
+            <!-- MMS text message -->
+            <Name>MMS_TEXT</Name>
+            <Value>This is my MMS text.</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Describes the type of MMS that will be build.
+                Should be "picture" or "text".
+                "picture" for a MMS with subject, text and an attached picture.
+                "text" fot a MMS with subject and text. -->
+            <Name>MMS_MEDIA</Name>
+            <Value>video</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Name of a file, present in the multimedia path of the device, that will be attach to the MMS. -->
+            <Name>MMS_ATTACHMENT_NAME</Name>
+            <Value>ACS_test_H264.mp4</Value>
+        </Parameter>
+        <Parameter>
+            <!-- MMS Direction: (MO [Mobile Originated]|MT [Mobile Terminated]) -->
+            <Name>MMS_DIRECTION</Name>
+            <Value>MT</Value>
+        </Parameter>
+        <Parameter>
+            <!-- MMS sending and reception timeout in seconds -->
+            <Name>MMS_TIMEOUT</Name>
+            <Value>240</Value>
+        </Parameter>
+        <Parameter>
+            <!-- NowSms Server user name-->
+            <Name>NOWSMS_USER_NAME</Name>
+            <Value>telephony</Value>
+        </Parameter>
+        <Parameter>
+            <!-- NowSms Server user password -->
+            <Name>NOWSMS_USER_PASSWORD</Name>
+            <Value>telephony</Value>
+        </Parameter>
+    </Parameters>
+    <TestSteps>
+        <Initialize>
+            <!-- Get the artifact on local host -->
+            <TestStep Id="GET_ARTIFACT" ARTIFACT="MISCELLANEOUS/MP4/[+]FROM_TC:MMS_ATTACHMENT_NAME"
+                      ARTIFACT_SOURCE="FROM_BENCH:ARTIFACT_MANAGER:URI" TRANSFER_TIMEOUT="DEFAULT"
+                      STORED_FILE_PATH="FILE_PATH_IN_CACHE1" EQT="DEFAULT"/>
+            <!-- Then, Push it on the device. Device destination folder will be the default device media folder (/sdcard/acs_media) -->
+            <!-- FILE_PATH is retrieved from test step context -->
+            <TestStep Id="INSTALL_FILE" DEVICE="PHONE1" FILE_PATH="FROM_CTX:FILE_PATH_IN_CACHE1" TYPE="media"
+                      DESTINATION="FROM_DEVICE:PHONE1:userdataPath" TIMEOUT="DEFAULT" DESTINATION_STORED_PATH="FILE_PATH_IN_CACHE1"/>
+        </Initialize>
+    </TestSteps>
+</TestCase>

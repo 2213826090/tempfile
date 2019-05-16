@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase>
+    <UseCase>TEST_STEP_ENGINE</UseCase>
+    <Description />
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <TcMaxAttempt />
+    <TcAcceptanceCriteria>1</TcAcceptanceCriteria>
+    <TestSteps>
+        <Include Src="ST/cws/TSS/WiFi/ST_CWS_WIFI_AP.xml" />
+        <Setup>
+            <TestStep SetId="APConfig"
+                      EQT="CONFIGURABLE_AP1"
+                      SSID="FROM_BENCH:CONFIGURABLE_AP1:SSID"
+                      HIDDEN="false"
+                      STANDARD="bgn"
+                      AUTHENTICATION_TYPE="WPA2-PSK-AES"
+                      PASSPHRASE="FROM_BENCH:CONFIGURABLE_AP1:passphrase_WPA2"
+                      BANDWIDTH="20"
+                      CHANNEL="6"/>
+            <TestStep Id="SET_DHCP_STATE" EQT="COMPUTER2" DHCP_STATE="STOP"/>
+        </Setup>
+        <RunTest>
+            <TestStep Id="WIFI_SET_POWER" DEVICE="PHONE1" POWER="on" />
+            <TestStep Id="SUSPEND" DURATION_IN_SEC="5" />
+            <TestStep Id="WIFI_REQUEST_SCAN" DEVICE="PHONE1"  />
+            <TestStep Id="SUSPEND" DURATION_IN_SEC="5" />
+            <TestStep Id="WIFI_LIST_SSIDS" DEVICE="PHONE1" SAVE_AS="ssid_list"  />
+            <TestStep Id="WIFI_REMOVE_NETWORK" DEVICE="PHONE1"  SSID="FROM_BENCH:CONFIGURABLE_AP1:SSID"/>
+            <TestStep Id="WIFI_ADD_NETWORK" DEVICE="PHONE1"
+                      SSID="FROM_BENCH:CONFIGURABLE_AP1:SSID"
+                      PASS_PHRASE="FROM_BENCH:CONFIGURABLE_AP1:passphrase_WPA2"
+                      SECURITY="WPA2-PSK-AES"
+                      EAP_METHOD="NONE"
+                      EAP_USER="NONE"
+                      EAP_PASSWORD="NONE"
+                      PHASE2_AUTH="NONE"
+                      CERTIFICAT_NAME="NONE"
+                      USE_CERTIFICATE="false"
+                      STATIC_IP="static"
+                      IP_ADDRESS="192.168.1.36"
+                      IP_NETMASK="255.255.255.0"
+                      IP_GATEWAY="192.168.0.1"
+                      IP_DNS1="0.0.0.0"
+                      IP_DNS2="0.0.0.0"/>
+            <TestStep Id="WIFI_CONNECT" DEVICE="PHONE1" SSID="FROM_BENCH:CONFIGURABLE_AP1:SSID" TIMEOUT="30"/>
+            <TestStep Id="PING" DEVICE="PHONE1" DESTINATION_IP="FROM_BENCH:COMPUTER2:IP"
+                      PACKET_SIZE="32"
+                      PACKET_COUNT="5"
+                      INTERVAL="1"
+                      FLOOD_MODE="False"
+                      BLOCKING="False"
+                      SOURCE_IP="127.0.0.1"
+                      SAVE_AS="ping_result" />
+            <TestStep Id="COMPARE" FIRST="FROM_CTX:ping_result" SECOND="0" OPERATOR="LESS_OR_EQUAL" PASS_IF="true" />
+            <TestStep Id="WIFI_REMOVE_NETWORK" DEVICE="PHONE1"  SSID="FROM_BENCH:CONFIGURABLE_AP1:SSID"/>
+            <TestStep Id="WIFI_ADD_NETWORK" DEVICE="PHONE1"
+                      SSID="FROM_BENCH:CONFIGURABLE_AP1:SSID"
+                      PASS_PHRASE="FROM_BENCH:CONFIGURABLE_AP1:passphrase_WPA2"
+                      SECURITY="WPA2-PSK-AES"
+                      EAP_METHOD="NONE"
+                      EAP_USER="NONE"
+                      EAP_PASSWORD="NONE"
+                      PHASE2_AUTH="NONE"
+                      CERTIFICAT_NAME="NONE"
+                      USE_CERTIFICATE="false"
+                      STATIC_IP="static"
+                      IP_ADDRESS="192.168.0.142"
+                      IP_NETMASK="255.255.255.0"
+                      IP_GATEWAY="192.168.0.1"
+                      IP_DNS1="0.0.0.0"
+                      IP_DNS2="0.0.0.0"/>
+            <TestStep Id="WIFI_CONNECT" DEVICE="PHONE1" SSID="FROM_BENCH:CONFIGURABLE_AP1:SSID" TIMEOUT="30"/>
+            <TestStep Id="PING" DEVICE="PHONE1" DESTINATION_IP="FROM_BENCH:COMPUTER2:IP"
+                      PACKET_SIZE="32"
+                      PACKET_COUNT="5"
+                      INTERVAL="1"
+                      FLOOD_MODE="False"
+                      BLOCKING="True"
+                      SOURCE_IP="127.0.0.1"
+                      SAVE_AS="ping_result" />
+            <TestStep Id="COMPARE" FIRST="FROM_CTX:ping_result" SECOND="0" OPERATOR="EQUAL" PASS_IF="true" />
+        </RunTest>
+        <TearDown>
+            <TestStep Id="SET_DHCP_STATE" EQT="COMPUTER2" DHCP_STATE="START"/>
+            <TestStep SetId="APDown" EQT="CONFIGURABLE_AP1"/>
+            <TestStep Id="WIFI_REMOVE_NETWORK" DEVICE="PHONE1" SSID="FROM_BENCH:CONFIGURABLE_AP1:SSID"/>
+            <TestStep Id="WIFI_SET_POWER" DEVICE="PHONE1" POWER="off" />
+        </TearDown>
+    </TestSteps>
+</TestCase>

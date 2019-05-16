@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<Include>
+    <!-- File with CMW500 configuration test step set for QCTV telephony team -->
+    <!-- Basic CMW500 configuration (Initialisation,Preset, IP configuration, Band configuration, Stop RF emission -->
+    <TestStepSet Id="ConfigureCMW">
+        <TestStep Id="FIND_NETWORK_SIMULATOR" EQT_NAME="RS_CMW500_VISA" FEATURE="FROM_TC:RAT" />
+        <TestStep Id="INIT_NETWORK_SIMULATOR" EQT="FROM_CTX:RS_CMW500_VISA" FEATURE="FROM_TC:RAT" />
+        <TestStep Id="NS_CONFIGURE_CELL" EQT="FROM_CTX:RS_CMW500_VISA" CONFIG="FROM_TC:CELL_BAND" CONFIG_FILE_NAME="CMW500Configurations.xml"/>
+        <TestStep Id="NS_CONFIGURE_CELL" EQT="FROM_CTX:RS_CMW500_VISA" CONFIG="FROM_TC:CAT" CONFIG_FILE_NAME="CMW500Configurations.xml"/>
+        <TestStep Id="NS_CONFIGURE_CELL" EQT="FROM_CTX:RS_CMW500_VISA" CONFIG="MIMO" CONFIG_FILE_NAME="CMW500Configurations.xml"/>
+        <TestStep Id="NS_SET_PARAM" EQT="FROM_CTX:RS_CMW500_VISA" NAME="LteSetCellOnOff" OPTION="DEFAULT" VALUE="ON"/>
+        <TestStep Id="NS_WAIT_STATE" EQT="FROM_CTX:RS_CMW500_VISA" NAME="LteSetCellOnOff" STATE="ON" OPTION="DEFAULT" TIMEOUT="300"/>
+    </TestStepSet>
+</Include>

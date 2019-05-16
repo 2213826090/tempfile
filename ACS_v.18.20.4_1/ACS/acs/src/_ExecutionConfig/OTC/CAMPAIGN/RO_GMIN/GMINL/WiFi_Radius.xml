@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<Campaign>
+      <Parameters>
+            <Parameter isControlledPSUsed="False"/>
+            <Parameter isIoCardUsed="False"/>
+            <Parameter skipBootOnPowerCycle="False"/>
+            <Parameter bootRetryNumber="0"/>
+            <Parameter runHookScripts="False"/>
+            <Parameter powerCycleBetweenTC="False"/>
+            <Parameter powerCycleOnFailure="False"/>
+            <Parameter finalDutState="NoChange"/>
+            <Parameter stopCampaignOnCriticalFailure="False"/>
+            <Parameter stopCampaignOnFirstFailure="False"/>
+            <Parameter loggingLevel="debug"/>
+            <Parameter CampaignType="Other"/>
+      </Parameters>
+      <TestCases>
+            <SubCampaign Id="../../Subcampaigns/ATF_TESTS/ABT_Api_Tests/wifi/Radius/add_certificate"/>
+            <SubCampaign Id="../../Subcampaigns/ATF_TESTS/ABT_Api_Tests/wifi/Radius/B/B"/>
+            <SubCampaign Id="../../Subcampaigns/ATF_TESTS/ABT_Api_Tests/wifi/Radius/BG/BG"/>
+            <SubCampaign Id="../../Subcampaigns/ATF_TESTS/ABT_Api_Tests/wifi/Radius/G/G"/>
+            <SubCampaign Id="../../Subcampaigns/ATF_TESTS/ABT_Api_Tests/wifi/Radius/Mixed/Mixed"/>
+            <SubCampaign Id="../../Subcampaigns/ATF_TESTS/ABT_Api_Tests/wifi/Radius/N/N"/>
+            <SubCampaign Id="../../Subcampaigns/ATF_TESTS/ABT_Api_Tests/wifi/Radius/NG/NG"/>
+            <SubCampaign Id="../../Subcampaigns/ATF_TESTS/ABT_Api_Tests/wifi/Radius/remove-certificate"/>
+      </TestCases>
+</Campaign>

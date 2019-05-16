@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<Include>
+    <TestStepSet Id="StartVideoPlaybackMeasurement">
+        <TestStep Id="SYSDEBUG_SYNCHRONIZE" DEVICE="PHONE1" />
+        <TestStep Id="CONNECT_HEADSET" EQT="FROM_DEVICE:PHONE1:IoCard"/>
+        <TestStep Id="PLAY_NATIVE_VIDEO" DEVICE="PHONE1" VOLUME="FROM_TC:VOLUME" VIDEO_FILE="FROM_CTX:FILE_PATH_IN_CACHE1"
+                  DELAY_S="30" SAVE_AS="START_TIMESTAMP" />
+
+        <TestStep Id="DISCONNECT_DEVICE_FROM_FWK" DEVICE="PHONE1" />
+        <TestStep Id="SYSDEBUG_RESET" DEVICE="PHONE1" />
+
+        <TestStep Id="REMOVE_USB" EQT="FROM_DEVICE:PHONE1:IoCard" />
+        <TestStep Id="SUSPEND_TO_TIME" TO_TIME="FROM_CTX:START_TIMESTAMP" />
+
+        <TestStep Id="SUSPEND" DURATION_IN_SEC="FROM_TC:SLEEP_DURATION" />
+
+        <TestStep Id="SYSDEBUG_START_ACQUISITION" DEVICE="PHONE1" />
+        <TestStep Id="PATLIB_ACQUISITION" EQT="DEFAULT" ACTION="start"/>
+    </TestStepSet>
+    <TestStepSet Id="DownloadVideoFromArtifactory" >
+        <!-- Get the artifact on local host -->
+        <TestStep Id="GET_MODULE_CONFIG" DEVICE="PHONE1" MODULE="PnpModule" KEY="FROM_TC:VIDEO_PAYLOAD"
+                  MODULE_VALUE="VIDEO_PAYLOAD"/>
+        <TestStep Id="GET_ARTIFACT" ARTIFACT="FROM_TC:VIDEO_PREFIX[+]/[+]FROM_CTX:VIDEO_PAYLOAD"
+                  ARTIFACT_SOURCE="FROM_BENCH:ARTIFACT_MANAGER:URI" TRANSFER_TIMEOUT="800"
+                  STORED_FILE_PATH="FILE_PATH_IN_CACHE1" EQT="DEFAULT"/>
+    </TestStepSet>
+    <TestStepSet Id="InstallVideoFile">
+        <TestStep SetId="DownloadVideoFromArtifactory" />
+            <!-- Then, Push it on the device. Device destination folder will be the default device media folder (/sdcard/acs_media) -->
+            <!-- FILE_PATH is retrieved from test step context -->
+        <TestStep Id="INSTALL_FILE" DEVICE="PHONE1" FILE_PATH="FROM_CTX:FILE_PATH_IN_CACHE1" TYPE="media"
+                  DESTINATION="FROM_DEVICE:PHONE1:userdataPath" TIMEOUT="1200" DESTINATION_STORED_PATH="FILE_PATH_IN_CACHE1"/>
+    </TestStepSet>
+    <TestStepSet Id="UninstallVideoFile">
+        <TestStep Id="UNINSTALL_FILE"
+                  DEVICE="PHONE1"
+                  DEVICE_FOLDER="FROM_DEVICE:PHONE1:userdataPath"
+                  FILENAME="FROM_CTX:VIDEO_PAYLOAD"/>
+    </TestStepSet>
+    <TestStepSet Id="InstallRefCamConfigurationFile">
+        <TestStep Id="DELETE_DIR" DEVICE_FOLDER="/data/data/[+]FROM_DEVICE:PHONE1:CameraPackageName[+]/shared_prefs" DEVICE="PHONE1" />
+        <TestStep Id="GET_MODULE_CONFIG" DEVICE="PHONE1" MODULE="PnpModule" KEY="FROM_TC:CAMERA_CONFIG_FILE"
+                  MODULE_VALUE="CONFIG_FILE"/>
+        <TestStep Id="GET_ARTIFACT" ARTIFACT="CAMERA/camera_scripts/[+]FROM_DEVICE:PHONE1:CameraName[+]/[+]FROM_CTX:CONFIG_FILE"
+            ARTIFACT_SOURCE="FROM_BENCH:ARTIFACT_MANAGER:URI" TRANSFER_TIMEOUT="DEFAULT"
+            STORED_FILE_PATH="FILE_PATH_IN_CACHE" EQT="DEFAULT" />
+        <TestStep Id="INSTALL_FILE" DEVICE="PHONE1" FILE_PATH="FROM_CTX:FILE_PATH_IN_CACHE"
+            TYPE="xml" DESTINATION="/data/data/[+]FROM_DEVICE:PHONE1:CameraPackageName[+]/shared_prefs" TIMEOUT="DEFAULT" DESTINATION_STORED_PATH="camera_config_path" />
+    </TestStepSet>
+    <TestStepSet Id="StartIntelVideoRecorder">
+        <TestStep SetId="DownloadVideoFromArtifactory" />
+        <TestStep Id="SYSDEBUG_SYNCHRONIZE" DEVICE="PHONE1" />
+
+        <TestStep SetId="InstallRefCamConfigurationFile"/>
+        <TestStep Id="CHECK_PREVIEW_SIZE" HOST_CONFIG_FILE="FROM_CTX:FILE_PATH_IN_CACHE" ATTRIBUTE="CONTROL_VIDEO_SIZE" PREVIEW_WIDTH="PREVIEW_WIDTH" PREVIEW_HEIGTH="PREVIEW_HEIGTH"/>
+        <TestStep Id="ADD_TRIGGER_MSG" DEVICE="PHONE1" TRIGGER_MESSAGE="regex:.*size:.*[+]FROM_CTX:PREVIEW_WIDTH[+].*[+]FROM_CTX:PREVIEW_HEIGTH[+].*"/>
+        <TestStep Id="LAUNCH_INTEL_REFCAM" DEVICE="PHONE1" CONFIG_FILE="FROM_CTX:camera_config_path" />
+        <TestStep Id="SUSPEND" DURATION_IN_SEC="5" />
+        <TestStep Id="CHECK_TRIGGER_MSG_STATUS" DEVICE="PHONE1" TRIGGER_MESSAGE="regex:.*size:.*[+]FROM_CTX:PREVIEW_WIDTH[+].*[+]FROM_CTX:PREVIEW_HEIGTH[+].*" TIMEOUT="30" OUTPUT_SUCCESS="Screen preview size is OK"/>
+        <TestStep Id="REMOVE_TRIGGER_MSG" DEVICE="PHONE1" TRIGGER_MESSAGE="regex:.*size:.*[+]FROM_CTX:PREVIEW_WIDTH[+].*[+]FROM_CTX:PREVIEW_HEIGTH[+].*"/>
+        <TestStep Id="CAPTURE_SCREENSHOT" DEVICE="PHONE1" FILEPATH="SCREEN/RefCam_Start_Screenshot.png"/>
+        <TestStep Id="START_CAPTURE_INTEL_REFCAM" DEVICE="PHONE1"/>
+        <TestStep Id="DISCONNECT_DEVICE_FROM_FWK" DEVICE="PHONE1" />
+        <TestStep Id="SYSDEBUG_RESET" DEVICE="PHONE1" />
+        <TestStep Id="REMOVE_USB" EQT="FROM_DEVICE:PHONE1:IoCard" />
+
+        <TestStep Id="SUSPEND" DURATION_IN_SEC="FROM_TC:SLEEP_DURATION" />
+        <TestStep Id="PLAY_VIDEO_WITH_VLC" INSTANCE_NAME="VLC_INSTANCE" PAYLOAD="FROM_CTX:FILE_PATH_IN_CACHE1"
+                  SCREEN="0" VIDEO_TRANSFORM="FROM_BENCH:VIDEOLAN:VIDEO_TRANSFORM"/>
+        <TestStep Id="SUSPEND" DURATION_IN_SEC="5" />
+
+        <TestStep Id="SYSDEBUG_START_ACQUISITION" DEVICE="PHONE1" />
+        <TestStep Id="PATLIB_ACQUISITION" EQT="DEFAULT" ACTION="start"/>
+    </TestStepSet>
+        <TestStepSet Id="StopIntelVideoRecorder">
+        <TestStep Id="STOP_VIDEO_WITH_VLC" INSTANCE_NAME="VLC_INSTANCE" />
+        <TestStep Id="STOP_INTEL_REFCAM" DEVICE="PHONE1" />
+    </TestStepSet>
+    <TestStepSet Id="StartNativeVideoRecorder">
+        <TestStep SetId="DownloadVideoFromArtifactory" />
+        <TestStep Id="SYSDEBUG_SYNCHRONIZE" DEVICE="PHONE1" />
+        <TestStep Id="SET_ORIENTATION" DEVICE="PHONE1" ORIENTATION="landscape" API="embedded_api" />
+        <TestStep Id="START_NATIVE_VIDEO_RECORDER" DEVICE="PHONE1" VIDEO_SAVE_PATH="FROM_TC:VIDEO_PATH"
+                  CAMERA="back" QUALITY="large" FLASH_MODE="OFF"
+                  COLOR_EFFECT="none" WHITE_BALANCE="auto"
+                  DVS="true" NOISE_REDUCTION="1" SAVE_AS="OUTPUT_FILENAME" />
+        <TestStep Id="SUSPEND" DURATION_IN_SEC="5" />
+        <TestStep Id="CAPTURE_SCREENSHOT" DEVICE="PHONE1" FILEPATH="SCREEN/NativeVideoRecord_Start_Screenshot.png"/>
+        <TestStep Id="DISCONNECT_DEVICE_FROM_FWK" DEVICE="PHONE1" />
+        <TestStep Id="SYSDEBUG_RESET" DEVICE="PHONE1" />
+        <TestStep Id="REMOVE_USB" EQT="FROM_DEVICE:PHONE1:IoCard" />
+
+        <TestStep Id="SUSPEND" DURATION_IN_SEC="FROM_TC:SLEEP_DURATION" />
+        <TestStep Id="PLAY_VIDEO_WITH_VLC" INSTANCE_NAME="VLC_INSTANCE" PAYLOAD="FROM_CTX:FILE_PATH_IN_CACHE1"
+                  SCREEN="0" VIDEO_TRANSFORM="FROM_BENCH:VIDEOLAN:VIDEO_TRANSFORM"/>
+        <TestStep Id="SUSPEND" DURATION_IN_SEC="5" />
+
+        <TestStep Id="SYSDEBUG_START_ACQUISITION" DEVICE="PHONE1" />
+        <TestStep Id="PATLIB_ACQUISITION" EQT="DEFAULT" ACTION="start"/>
+    </TestStepSet>
+    <TestStepSet Id="StopNativeVideoRecorder">
+        <TestStep Id="STOP_VIDEO_WITH_VLC" INSTANCE_NAME="VLC_INSTANCE" />
+        <TestStep Id="STOP_NATIVE_VIDEO_RECORDER" DEVICE="PHONE1" VIDEO_SAVE_PATH="FROM_TC:VIDEO_PATH"
+                  FILENAME="FROM_CTX:OUTPUT_FILENAME" />
+    </TestStepSet>
+    <TestStepSet Id="StartUserModeImageCapture">
+        <TestStep Id="GET_ARTIFACT" ARTIFACT="IMAGE/PNG/Color-chart.png"
+                  ARTIFACT_SOURCE="FROM_BENCH:ARTIFACT_MANAGER:URI" TRANSFER_TIMEOUT="DEFAULT"
+                  STORED_FILE_PATH="COLOR_CHART" EQT="DEFAULT"/>
+
+        <TestStep SetId="InstallRefCamConfigurationFile"/>
+
+        <TestStep Id="SYSDEBUG_SYNCHRONIZE" DEVICE="PHONE1" />
+        <TestStep Id="CHECK_PREVIEW_SIZE" HOST_CONFIG_FILE="FROM_CTX:FILE_PATH_IN_CACHE" ATTRIBUTE="CONTROL_PREVIEW_SIZE" PREVIEW_WIDTH="PREVIEW_WIDTH" PREVIEW_HEIGTH="PREVIEW_HEIGTH"/>
+        <TestStep Id="ADD_TRIGGER_MSG" DEVICE="PHONE1" TRIGGER_MESSAGE="regex:.*size:.*[+]FROM_CTX:PREVIEW_WIDTH[+].*[+]FROM_CTX:PREVIEW_HEIGTH[+].*"/>
+        <TestStep Id="LAUNCH_INTEL_REFCAM" DEVICE="PHONE1" CONFIG_FILE="FROM_CTX:camera_config_path"/>
+        <TestStep Id="SUSPEND" DURATION_IN_SEC="5" />
+        <TestStep Id="CHECK_TRIGGER_MSG_STATUS" DEVICE="PHONE1" TRIGGER_MESSAGE="regex:.*size:.*[+]FROM_CTX:PREVIEW_WIDTH[+].*[+]FROM_CTX:PREVIEW_HEIGTH[+].*" TIMEOUT="30" OUTPUT_SUCCESS="Screen preview size is OK"/>
+        <TestStep Id="REMOVE_TRIGGER_MSG" DEVICE="PHONE1" TRIGGER_MESSAGE="regex:.*size:.*[+]FROM_CTX:PREVIEW_WIDTH[+].*[+]FROM_CTX:PREVIEW_HEIGTH[+].*"/>
+        <TestStep Id="CAPTURE_SCREENSHOT" DEVICE="PHONE1" FILEPATH="SCREEN/UMIC_Start_Screenshot.png"/>
+
+        <TestStep Id="DISPLAY_IMAGE_ON_HOST_SCREEN" IMAGE_PATHNAME="FROM_CTX:COLOR_CHART" />
+        <TestStep Id="DISCONNECT_DEVICE_FROM_FWK" DEVICE="PHONE1" />
+        <TestStep Id="SYSDEBUG_RESET" DEVICE="PHONE1" />
+
+        <TestStep Id="REMOVE_USB" EQT="FROM_DEVICE:PHONE1:IoCard" />
+        <TestStep Id="SUSPEND_TO_TIME" TO_TIME="FROM_TC:SLEEP_DURATION" />
+        <TestStep Id="SYSDEBUG_START_ACQUISITION" DEVICE="PHONE1" />
+        <TestStep Id="PATLIB_ACQUISITION" EQT="DEFAULT" ACTION="start"/>
+    </TestStepSet>
+    <TestStepSet Id="StopUserModeImageCapture" >
+        <TestStep Id="STOP_INTEL_REFCAM" DEVICE="PHONE1" />
+        <TestStep Id="CLOSE_IMAGE_ON_HOST_SCREEN" />
+    </TestStepSet>
+</Include>

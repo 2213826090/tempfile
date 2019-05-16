@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<Equipment version="13.44" name="POWER_SUPPLY1" description="Power supply used for device Power cycle.">
+    <Parameter name="Model" value="AGILENT_66319D" />
+    <Parameter name="Transport" value="GPIB" />
+    <Parameter name="SpecificService" value="Base.Extended" />
+    <Parameter name="GPIBBoardId" value="0" />
+    <Parameter name="GPIBAddress" value="5" />
+    <Parameter name="CouplingMode" value="NONE" description="Enable/disable the couple mode of outputs. Possible value : ALL|NONE. Set value to 'none' if the resistance is not supported by the Power Supply" />
+    <Parameter name="CompensationMode" value="HREMOTE" description="Set the compensation mode. Possible value : (Agilent66319) LREMOTE|LLOCAL|HLOCAL|HREMOTE - (Agilent66311) LOW|HIGH|H2" />
+    <Parameter name="SenseProtect" value="ON" description="Enable/disable the sense protection. Possible value : ON|OFF" />
+    <Parameter name="OverProtectState" value="ON" description="Enable/disable the over protection state. Possible value : ON|OFF" />
+    <Parameter name="CurrentSource" value="DC" description="Configure the current source. Possible value : DC|ACDC" />
+    <Parameter name="Resistance" value="0.13" description="Set the value of the resistance. Set value to 'none' if the resistance is not supported by the Power Supply" />
+    <Parameter name="VoltageProtectLevel" value="8.0" description="Set the value of the voltage protection level." />
+    <Parameter name="ProtectDelay" value="2.0" description="Set the value of the protection delay" />
+    <Output name="OUTPUT1">
+        <Parameter name="Type" value="ACCHG" description="Output Type used : ACCHG (AC Charger) | USB" />
+        <Parameter name="PortNumber" value="2" />
+        <Parameter name="MaxCurrent" value="1.5" />
+        <Parameter name="Voltage" value="5.2" />
+    </Output>
+</Equipment>

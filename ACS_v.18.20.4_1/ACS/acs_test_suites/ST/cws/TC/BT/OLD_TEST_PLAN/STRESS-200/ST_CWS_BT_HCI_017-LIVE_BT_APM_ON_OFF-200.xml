@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="13.37">
+  <UseCase>LIVE_BT_APM_ON_OFF</UseCase>
+  <Description>Device is initialized with normal mode (flight mode disabled) Airplane mode turn on off in Bluetooth required mode Check Bluetooth power is correctly restored after airplanemode sequence
+  </Description>
+  <b2bIteration>200</b2bIteration>
+  <b2bContinuousMode>True</b2bContinuousMode>
+  <TcExpectedResult>PASS</TcExpectedResult>
+  <Parameters>
+    <Parameter>
+      <!-- Device is initialized with normal mode (flight mode disabled) -->
+      <!-- [optional, default value="on"] initial BT mode (on|off) -->
+      <Name>BT_INIT_MODE</Name>
+      <Value>on</Value>
+    </Parameter>
+    <Parameter>
+    <!-- Airplane mode turn flight/normal sequence -->
+      <Name>TURN_APM_SEQUENCE</Name>
+      <Value>flight normal</Value>
+    </Parameter>
+    <Parameter>
+      <!-- Max time in second for BT to change mode after airplane mode switch -->
+      <Name>BT_GETMODE_TIMEOUT</Name>
+      <Value>30</Value>
+    </Parameter>
+  </Parameters>
+</TestCase>

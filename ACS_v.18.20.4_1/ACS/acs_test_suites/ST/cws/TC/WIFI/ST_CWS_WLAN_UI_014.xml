@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="13.41">
+    <UseCase>TEST_STEP_ENGINE</UseCase>
+    <Description></Description>
+    <b2bIteration>4</b2bIteration>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <TcMaxAttempt>2</TcMaxAttempt>
+    <TcAcceptanceCriteria>1</TcAcceptanceCriteria>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters/>
+    <TestSteps>
+        <Include Src="ST/cws/TSS/Common/ST_CWS_COMMON.xml"/>
+        <Include Src="ST/cws/TSS/WiFi/ST_CWS_WIFI_AP.xml"/>
+
+        <TestStepSet Id="WiFiProcess">
+            <TestStep Id="WIFI_SET_POWER" DEVICE="PHONE1" POWER="on"/>
+            <TestStep Id="WIFI_WAIT_FOR_SSID_STATE" DEVICE="PHONE1" SSID="FROM_BENCH:CONFIGURABLE_AP1:SSID" STATE="VISIBLE" TIMEOUT="90"/>
+        </TestStepSet>
+
+        <Setup>
+            <!-- AUTOMATION - Set default configuration -->
+            <Fork Id="ForkDUTReferencePhoneAndWiFiAP">
+                <TestStep SetId="InitPhoneCWS" DEVICE="PHONE1" />
+                <TestStep SetId="WiFiAPConfigStandardAP1" STANDARD="bgn" AUTHENTICATION_TYPE="OPEN" PASSPHRASE="NOT_USED" CHANNEL="1" BANDWIDTH="20"/>
+            </Fork>
+        </Setup>
+        <RunTest>
+            <!-- SPEC - Step 1 : Enable all radios -->
+            <Fork Id="EnableAllRadios">
+                <TestStep SetId="WiFiProcess"/>
+                <TestStep Id="BT_SET_POWER" DEVICE="PHONE1" POWER="ON"/>
+                <TestStep Id="NFC_SET_POWER" DEVICE="PHONE1" POWER="on"/>
+                <TestStep Id="GNSS_SET_POWER" DEVICE="PHONE1" POWER="on"/>
+            </Fork>
+            <!-- SPEC - Step 2 : Disable all radios -->
+            <Fork Id="DisableAllRadios">
+                <TestStep Id="BT_SET_POWER" DEVICE="PHONE1" POWER="OFF"/>
+                <TestStep Id="NFC_SET_POWER" DEVICE="PHONE1" POWER="off"/>
+                <TestStep Id="GNSS_SET_POWER" DEVICE="PHONE1" POWER="off"/>
+                <TestStep Id="WIFI_SET_POWER" DEVICE="PHONE1" POWER="off"/>
+            </Fork>
+        </RunTest>
+        <TearDown>
+            <Fork Id="ForkTeardown">
+                <TestStep Id="BT_SET_POWER" DEVICE="PHONE1" POWER="OFF"/>
+                <TestStep Id="NFC_SET_POWER" DEVICE="PHONE1" POWER="off"/>
+                <TestStep Id="GNSS_SET_POWER" DEVICE="PHONE1" POWER="off"/>
+                <TestStep Id="WIFI_SET_POWER" DEVICE="PHONE1" POWER="off"/>
+                <TestStep SetId="WiFiAPShutdown" EQT="CONFIGURABLE_AP1"/>
+            </Fork>
+        </TearDown>
+    </TestSteps>
+</TestCase>

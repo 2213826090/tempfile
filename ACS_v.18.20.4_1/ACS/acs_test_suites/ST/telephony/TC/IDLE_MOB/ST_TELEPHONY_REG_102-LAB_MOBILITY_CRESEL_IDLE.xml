@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase>
+  <UseCase>LAB_MOBILITY_CRESEL_IDLE</UseCase>
+  <Description> Perform several cell reselections IDLE 2G/3G </Description>
+  <b2bIteration>1</b2bIteration>
+  <b2bContinuousMode>False</b2bContinuousMode>
+  <Parameters>
+    <Parameter>
+        <!-- NS1 Cell Technology (2G|3G) -->
+        <Name>NS1_CELL_TECH</Name>
+        <Value>2G</Value>
+    </Parameter>
+    <Parameter>
+        <!-- NS1 Cell Band
+                For 2G : EGSM|GSM850|PCS|DCS
+                For 3G : 1,2,5,8
+        -->
+        <Name>NS1_CELL_BAND</Name>
+        <Value>EGSM</Value>
+    </Parameter>
+    <Parameter>
+        <!-- NS1 Cell Service ( (GSM|GPRS|EGPRS) for 2G CELL, (CIRCUIT|PACKET|CIRCUIT_PACKET) for 3G CELL) -->
+        <Name>NS1_CELL_SERVICE</Name>
+        <Value>EGPRS</Value>
+    </Parameter>
+    <Parameter>
+        <!-- NS1 cell power -->
+        <Name>NS1_CELL_POWER</Name>
+        <Value>-75</Value>
+    </Parameter>
+    <Parameter>
+        <!-- NS1 Cell LAC, For 2G and 3G: 0 to 65535-->
+        <Name>NS1_LAC</Name>
+        <Value>10</Value>
+    </Parameter>
+    <Parameter>
+        <!-- NS2 Cell Routing Area, For 2G and 3G: 1 to 255-->
+        <Name>NS1_RAC</Name>
+        <Value>10</Value>
+    </Parameter>
+    <Parameter>
+        <!-- NS1 ARFCN -->
+        <Name>NS1_ARFCN</Name>
+        <Value>20</Value>
+    </Parameter>
+    <Parameter>
+        <!-- NS2 Cell Technology (2G|3G) -->
+        <Name>NS2_CELL_TECH</Name>
+        <Value>2G</Value>
+    </Parameter>
+    <Parameter>
+        <!-- NS2 Cell Band
+                For 2G : EGSM|GSM850|PCS|DCS
+                For 3G : 1,2,5,8
+        -->
+        <Name>NS2_CELL_BAND</Name>
+        <Value>EGSM</Value>
+    </Parameter>
+    <Parameter>
+        <!-- NS2 Cell Service ( (GSM|GPRS|EGPRS) for 2G CELL, (CIRCUIT|PACKET|CIRCUIT_PACKET) for 3G CELL) -->
+        <Name>NS2_CELL_SERVICE</Name>
+        <Value>EGPRS</Value>
+    </Parameter>
+    <Parameter>
+        <!-- NS2 cell power -->
+        <Name>NS2_CELL_POWER</Name>
+        <Value>-120</Value>
+    </Parameter>
+    <Parameter>
+        <!-- Cell Reselection power set on NS2 before decrementation of NS1 cell power -->
+        <Name>CRESEL_POWER</Name>
+        <Value>-75</Value>
+    </Parameter>
+    <Parameter>
+        <!-- NS2 Cell LAC, For 2G and 3G: 0 to 65535-->
+        <Name>NS2_LAC</Name>
+        <Value>20</Value>
+    </Parameter>
+    <Parameter>
+        <!-- NS2 Cell Routing Area, For 2G and 3G: 1 to 255-->
+        <Name>NS2_RAC</Name>
+        <Value>1</Value>
+    </Parameter>
+    <Parameter>
+        <!-- NS2 ARFCN -->
+        <Name>NS2_ARFCN</Name>
+        <Value>20</Value>
+    </Parameter>
+    <Parameter>
+        <!-- Limit power to stop the cell reselection power if reached (after a timeout) -->
+        <Name>CRESEL_LIMIT_POWER</Name>
+        <Value>-110</Value>
+    </Parameter>
+    <Parameter>
+        <!-- Decrementation step for NS1 cell power in dBm (must be positive, can be decimal value like 0,20 or 2,6) -->
+        <Name>DECREMENTATION_STEP_POWER</Name>
+        <Value>2</Value>
+    </Parameter>
+    <Parameter>
+        <!-- Decrementation step timer in seconds between 2 steps (must be positive, can be decimal value like 0,3 or 3,5) -->
+        <Name>DECREMENTATION_STEP_TIMER</Name>
+        <Value>4</Value>
+    </Parameter>
+  </Parameters>
+</TestCase>

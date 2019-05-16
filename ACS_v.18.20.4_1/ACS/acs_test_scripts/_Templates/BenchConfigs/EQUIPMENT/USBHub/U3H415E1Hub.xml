@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<Equipment version="14.04" name="USB_HUB" description="Equipment used to activate and deactivate usb port">
+   <Parameter name="Model" value="U3H415E1Hub" />
+   <Parameter name="HostDUTPortNumber" value="1" description="USB Port Number used to link the DUT to the host"/>
+   <Parameter name="ProductId" value="0x8043" description="Product identifier of the USB hub for enumeration"/>
+   <Parameter name="VendorId"  value="0x0451" description="Vendor identifier of the USB hub for enumeration"/>
+   <Parameter name="Bus" value="1" description="[optional] Bus is used to discriminate 2 hub with same {ProductId, VendorId}"/>
+</Equipment>

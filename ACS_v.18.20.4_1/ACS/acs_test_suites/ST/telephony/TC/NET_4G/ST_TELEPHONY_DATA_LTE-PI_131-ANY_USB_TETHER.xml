@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="13.44">
+    <UseCase>ANY_USB_TETHER</UseCase>
+    <Description>Enable USB tethering interface, download a file from the FTP server, then disable thethering.</Description>
+    <b2bIteration>5</b2bIteration>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters>
+        <!-- Parameters for the USB tethering test case itself -->
+        <Parameter>
+            <!-- KPI test -->
+            <Name>KPI_TEST</Name>
+            <Value>True</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Duplex type TDD or FDD -->
+            <Name>DUPLEX_TYPE</Name>
+            <Value>TDD</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Select band : 1 or 2  -->
+            <Name>CELL_BAND</Name>
+            <Value>38</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Downlink channel -->
+            <Name>DL_EARFCN</Name>
+            <Value>38000</Value>
+         </Parameter>
+        <Parameter>
+            <!--Optional: full path to the FTP file (UL: name used to store local file on FTP server - DL: name of the file to download). FTP server address is given in the Bench_Config ("LAB_SERVER" or "LAB_LTE_SERVER"). If the value is empty, test case will use not perform FTP transfer-->
+            <Name>FTP_FILE</Name>
+            <Value>get1G</Value>
+        </Parameter>
+        <Parameter>
+            <!--overall timeout for ftp connection, ftp transfer, usb tethering connection-->
+            <Name>TIMEOUT</Name>
+            <Value>200</Value>
+        </Parameter>
+        <Parameter>
+            <!-- 2G | 3G | 4G | LIVE-->
+            <Name>RAT</Name>
+            <Value>4G</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Multiple-Input Multiple-Output to set : true or false -->
+            <Name>MIMO</Name>
+            <Value>TRUE</Value>
+        </Parameter>
+        <Parameter>
+            <!-- number of antennas to set : 1 or 2  -->
+            <Name>ANTENNAS_NUMBER</Name>
+            <Value>2</Value>
+        </Parameter>
+        <Parameter>
+            <!-- LTE category to use for the test, should be an int. -->
+            <Name>LTE_CATEGORY</Name>
+            <Value>4</Value>
+        </Parameter>
+        <Parameter>
+            <!--  Type of data transfer - (UL/DL) -->
+            <Name>DIRECTION</Name>
+            <Value>DL</Value>
+        </Parameter>
+        <Parameter>
+            <!-- RRC STATE Before FTP start (RRC_CONNECTED | RRC_IDLE )-->
+            <Name>RRC_STATE</Name>
+            <Value>RRC_CONNECTED</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

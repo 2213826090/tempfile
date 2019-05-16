@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase>
+    <UseCase>LAB_EM_MONITOR_FUEL_GAUGING</UseCase>
+    <Description>Control fuel gauging while the board is charging and not charging.</Description>
+    <b2bIteration>1</b2bIteration>
+    <TcMaxAttempt>2</TcMaxAttempt>
+    <TcAcceptanceCriteria>1</TcAcceptanceCriteria>
+    <b2bContinuousMode>False</b2bContinuousMode>
+    <Parameters>
+        <Parameter>
+            <!-- Initial value for VBATT -->
+            <Name>VBATT</Name>
+            <Value>3.8</Value>
+        </Parameter>
+        <Parameter>
+            <!-- time to wait for check aplog when DCP plugged -->
+            <Name>WAITING_TIME</Name>
+            <Value>10</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

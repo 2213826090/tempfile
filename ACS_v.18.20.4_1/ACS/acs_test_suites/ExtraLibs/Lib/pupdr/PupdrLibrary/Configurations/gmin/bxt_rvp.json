@@ -1,0 +1,56 @@
+{
+    "Configuration": {
+        "Boot": {
+            "CSE_DNX_BOOT_WITH_COMBO": true,
+            "DNX_BOOT_WITH_COMBO_ONLY": true
+        },
+        "BootVars": null,
+        "Custom": null,
+        "Download": {
+            "INTERNAL_DOWNLOAD": [
+                {
+                    "local_key": "firmware",
+                    "buildbot_artifactory_path": {"path": "device_name_id/variant_id", "detection": "cactus-absp"},
+                    "regexp_key": ".*flashfiles.*.zip",
+                    "flash_file": null,
+                    "configuration": "fw_update",
+                    "start_state": "dnx_fw"
+                },
+                {
+                    "local_key": "fastboot",
+                    "buildbot_artifactory_path": {"path": "device_name_id/variant_id", "detection": "cactus-absp"},
+                    "regexp_key": ".*flashfiles.*.zip",
+                    "flash_file": null,
+                    "configuration": "blank",
+                    "start_state": "dnx_os"
+                }
+            ]
+        },
+        "Flash": {
+            "CHECK_GET_HASHES": null,
+            "DEDIPROG": true,
+            "PARTITIONS": "/(oem_)*config;/cache;/system"
+        },
+        "Inherit": {
+            "BRANCH": null
+        },
+        "Logs": null,
+        "Timeout": {
+            "MOS_BOOT": 140
+        },
+        "WorkAround": {
+            "Function": {
+                "Issue": "No efi vars check",
+                "Name": "bootDataCheck",
+                "Pattern": ".*"
+            },
+            "TestCase": [
+                {
+                  "Issue": "Not applicable on BXT",
+                  "Name": "AdbRebootDnxTestCase",
+                  "Skip": true
+                }
+            ]
+        }
+    }
+}

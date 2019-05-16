@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="13.37">
+    <UseCase>LIVE_CAMERA_FLASH</UseCase>
+    <Description>Use Camera to captue image</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>False</b2bContinuousMode>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <TcMaxAttempt>3</TcMaxAttempt>
+   <TcAcceptanceCriteria>1</TcAcceptanceCriteria>
+    <Parameters>
+         <Parameter>
+             <Name>FLASH_MODE</Name>
+             <Value>on</Value>
+         </Parameter>
+         <Parameter>
+             <Name>SAVE_DIRECTORY</Name>
+             <Value>sdcard/</Value>
+         </Parameter>
+    </Parameters>
+</TestCase>

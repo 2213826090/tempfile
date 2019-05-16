@@ -1,0 +1,172 @@
+<Campaign version="13.49">
+  <Parameters>
+    <Parameter isControlledPSUsed="False"/>
+    <Parameter isIoCardUsed="False"/>
+    <!-- Set skipBootOnPowerCycle to True to disable the accs boot procedure -->
+    <!-- Important, it means that boot will be handle inside the campaign/tc -->
+    <Parameter skipBootOnPowerCycle="False"/>
+    <!-- Set bootRetryNumber to maximum number of boot retries during the acs boot procedure -->
+    <!-- Important, it means that bootRetryNumber is set by default to 0 if not specified -->
+    <Parameter bootRetryNumber="0"/>
+    <Parameter runHookScripts="False"/>
+    <Parameter powerCycleBetweenTC="False"/>
+    <Parameter powerCycleOnFailure="False"/>
+    <!-- finalDutState allows user to leave the DUT in a specific state at the end of the campaign
+            Possible values: PowerOn | PowerOff | Charging | NoChange
+            By default DUT is leaved in NoChange state.
+            In case the user selects Charging as final state of the DUT and that DUT fails to enter Charging,
+            ACS shall try to switch the DUT off -->
+    <Parameter finalDutState="NoChange"/>
+    <Parameter stopCampaignOnCriticalFailure="False"/>
+    <Parameter stopCampaignOnFirstFailure="False"/>
+    <!-- LoggingLevel possible values: info | warning | debug | error -->
+    <Parameter loggingLevel="debug"/>
+    <!-- CampaignType format -> <TEAM>_<CAMPAIGNTYPE>
+            Possible values:
+            FT(Feature Team)-> SANITY | REGRESSION | STRESS, RELIABILTY | MTBF
+            ST(System Test)-> SANITY | REGRESSION | STRESS, RELIABILTY | MTBF | EM
+            SI(System Integration)-> EAT | STAB | PACT | CAT0 | RELIABILITY | MTBF | CTS | ACS_CI
+            Otherwise "Others" should be used -->
+    <Parameter CampaignType="MTBF"/>
+    <Parameter TCRReportViaRESTAPI="True"/>
+  </Parameters>
+  <Targets>
+    <!-- Target Values -->
+    <Target targetB2bPassRate="100"/>
+  </Targets>
+  <TestCases>
+    <TestCase Id="../../../../../TC/TR/ACS/Applications/Chrome/prereq_ConnectToAP"/>
+    <TestCase Id="../../../../../TC/TR/ACS/Applications/Applications_L_MR1/prerequisites/prereq_UPDATE_ALL_APPS"/>
+    <TestCase Id="../../../../../TC/TR/ACS/Applications/Applications_L_MR1/prerequisites/prereq_GMS_Reboot_Device"/>
+    <TestCase Id="../../../../../TC/TR/ACS/Applications/Applications_L_MR1/GMS_PlayNewsstand_Downloaded-only"/>
+    <TestCase Id="../../../../../TC/TR/ACS/Applications/Applications_L_MR1/GMS_PlayNewsstand_Lock-screen-when-read-News"/>
+    <TestCase Id="../../../../../TC/TR/ACS/Applications/Applications_L_MR1/GMS_PlayNewsstand_Search-newsstand"/>
+    <TestCase Id="../../../../../TC/TR/ACS/Applications/Applications_L_MR1/GMS_PlayNewsstand_Explore"/>
+    <TestCase Id="../../../../../TC/TR/ACS/Applications/Applications_L_MR1/GMS_PlayNewsstand_Open-a-newsstand-for-reading"/>
+    <TestCase Id="../../../../../TC/TR/ACS/Applications/Applications_L_MR1/GMS_PlayNewsstand_Read-Now-page"/>
+    <TestCase Id="../../../../../TC/TR/ACS/Applications/Applications_L_MR1/GMS_PlayNewsstand_Add-newsstand-in-My-Library"/>
+    <TestCase Id="../../../../../TC/TR/ACS/Applications/Applications_L_MR1/GMS_PlayNewsstand_Remove-News-from-My-Library"/>
+    <TestCase Id="../../../../../TC/TR/ACS/Applications/Applications_L_MR1/GMS_PlayNewsstand_Move-a-News-to-top"/>
+    <!--<TestCase Id="../../../../../TC/TR/ACS/Applications/Applications_L_MR1/GMS_PlayNewsstand_Mini-cards"/>-->
+    <TestCase Id="../../../../../TC/TR/ACS/Applications/Applications_L_MR1/GMS_PlayNewsstand_Bookmarks-an-article-to-read-later"/>
+    <TestCase Id="../../../../../TC/TR/ACS/Applications/Applications_L_MR1/GMS_PlayNewsstand_Turn-on-airplane-mode-when-read-a-news"/>
+    <TestCase Id="../../../../../TC/TR/ACS/Applications/Chrome/prereq_ConnectToAP"/>
+    <!--<TestCase Id="../../../../../TC/TR/ACS/Applications/Applications_L_MR1/GMS_GooglePlus_Create-an-event"/>-->
+    <!--<TestCase Id="../../../../../TC/TR/ACS/Applications/Applications_L_MR1/GMS_GooglePlus_Add-a-link"/>-->
+    <!--<TestCase Id="../../../../../TC/TR/ACS/Applications/Applications_L_MR1/GMS_GooglePlus_Add-location"/>-->
+    <!--<TestCase Id="../../../../../TC/TR/ACS/Applications/Applications_L_MR1/GMS_GooglePlus_Post-a-message"/>-->
+    <!--<TestCase Id="../../../../../TC/TR/ACS/Applications/Applications_L_MR1/GMS_GooglePlus_disable-comments"/>-->
+    <!--<TestCase Id="../../../../../TC/TR/ACS/Applications/Applications_L_MR1/GMS_GooglePlus_Change-circle-settings"/>-->
+    <!--<TestCase Id="../../../../../TC/TR/ACS/Applications/Applications_L_MR1/GMS_GooglePlus_Search-button"/>-->
+    <!--<TestCase Id="../../../../../TC/TR/ACS/Applications/Applications_L_MR1/GMS_GooglePlus_Join-community"/>-->
+    <!--<TestCase Id="../../../../../TC/TR/ACS/Applications/Applications_L_MR1/GMS_GooglePlus_change-location-settings"/>-->
+    <!--<TestCase Id="../../../../../TC/TR/ACS/Applications/Applications_L_MR1/GMS_Sheets_Search-sheet-file"/>-->
+    <!--<TestCase Id="../../../../../TC/TR/ACS/Applications/Applications_L_MR1/GMS_Sheets_Sort-sheet-files"/>-->
+    <!--<TestCase Id="../../../../../TC/TR/ACS/Applications/Applications_L_MR1/GMS_Sheets_Keep-on-device-for-a-sheet-file"/>-->
+    <!--<TestCase Id="../../../../../TC/TR/ACS/Applications/Applications_L_MR1/GMS_Sheets_Rename-a-sheet-file"/>-->
+    <!--<TestCase Id="../../../../../TC/TR/ACS/Applications/Applications_L_MR1/GMS_Sheets_add-multiple-sheets-in-a-spreadsheet-file"/>-->
+    <!--<TestCase Id="../../../../../TC/TR/ACS/Applications/Applications_L_MR1/GMS_PlayBooks_My-Library-books"/>-->
+    <!--<TestCase Id="../../../../../TC/TR/ACS/Applications/Applications_L_MR1/GMS_PlayBooks_Switch-between-diferent-view-mode"/>-->
+    <!--<TestCase Id="../../../../../TC/TR/ACS/Applications/Applications_L_MR1/GMS_PlayBooks_Cancel-note"/>-->
+    <!--<TestCase Id="../../../../../TC/TR/ACS/Applications/Applications_L_MR1/GMS_PlayBooks_Search-web"/>-->
+    <!--<TestCase Id="../../../../../TC/TR/ACS/Applications/Applications_L_MR1/GMS_PlayBooks_Open-a-book-for-reading"/>-->
+    <!--<TestCase Id="../../../../../TC/TR/ACS/Applications/Applications_L_MR1/GMS_PlayBooks_Settings-page-from-app"/>-->
+    <!--<TestCase Id="../../../../../TC/TR/ACS/Applications/Applications_L_MR1/GMS_PlayBooks_Settings-page-from-book"/>-->
+    <!--<TestCase Id="../../../../../TC/TR/ACS/Applications/Applications_L_MR1/GMS_PlayBooks_Remove-bookmark"/>-->
+    <!--<TestCase Id="../../../../../TC/TR/ACS/Applications/Applications_L_MR1/GMS_PlayBooks_Add-bookmark"/>-->
+    <!--<TestCase Id="../../../../../TC/TR/ACS/Applications/Applications_L_MR1/GMS_PlayBooks_Share-book"/>-->
+    <!--<TestCase Id="../../../../../TC/TR/ACS/Applications/Applications_L_MR1/GMS_PlayBooks_Check-Book-search"/>-->
+    <!--<TestCase Id="../../../../../TC/TR/ACS/Applications/Applications_L_MR1/GMS_PlayBooks_Adjust-brightness-for-reading"/>-->
+    <TestCase Id="../../../../../TC/TR/ACS/Applications/Applications_L_MR1/GMS_Hangouts_Leave-Hangout-from-a-group"/>
+    <TestCase Id="../../../../../TC/TR/ACS/Applications/Applications_L_MR1/prerequisites/prereq_GMS_Reboot_Device"/>
+    <TestCase Id="../../../../../TC/TR/ACS/Applications/Applications_L_MR1/GMS_Gmail_Reply-all"/>
+    <TestCase Id="../../../../../TC/TR/ACS/Applications/Applications_L_MR1/GMS_Gmail_Send-gmail-from-draft"/>
+    <TestCase Id="../../../../../TC/TR/ACS/Applications/Applications_L_MR1/GMS_Gmail_Forward-mail"/>
+    <TestCase Id="../../../../../TC/TR/ACS/Applications/Applications_L_MR1/GMS_Gmail_Attach-different-file-formats-and-send"/>
+    <TestCase Id="../../../../../TC/TR/ACS/Applications/Applications_L_MR1/GMS_Gmail_Remove-attachements"/>
+    <!--<TestCase Id="../../../../../TC/TR/ACS/Applications/Applications_L_MR1/GMS_Gmail_Attach-multiple-documents-from-Drive-and-send"/>-->
+    <!--<TestCase Id="../../../../../TC/TR/ACS/Applications/Applications_L_MR1/GMS_Gmail_Attach-multiple-pdf-files-from-Drive-and-send"/>-->
+    <TestCase Id="../../../../../TC/TR/ACS/Applications/Applications_L_MR1/GMS_GoogleNow_Launch-Google-Now"/>
+    <TestCase Id="../../../../../TC/TR/ACS/Applications/Applications_L_MR1/GMS_GoogleNow_Customize-Google-Now"/>
+    <!--<TestCase Id="../../../../../TC/TR/ACS/Applications/Applications_L_MR1/GMS_Slides_NewPresentationt-Shortcut-set-to-screen"/>-->
+    <!--<TestCase Id="../../../../../TC/TR/ACS/Applications/Applications_L_MR1/GMS_Sheets_NewSpreadsheet-Shortcut-set-to-screen"/>-->
+    <!--<TestCase Id="../../../../../TC/TR/ACS/Applications/Applications_L_MR1/GMS_Docs_NewDocumentWidget-Set-shortcut-to-screen"/>-->
+    <TestCase Id="../../../../../TC/TR/ACS/Applications/Applications_L_MR1/GMS_PlayStore_Widget-functionality"/>
+    <TestCase Id="../../../../../TC/TR/ACS/Applications/Applications_L_MR1/GMS_PlayNewsstand_Set-widget-to-screen"/>
+    <TestCase Id="../../../../../TC/TR/ACS/Applications/Applications_L_MR1/GMS_Drive_Set-widget-to-screen"/>
+    <TestCase Id="../../../../../TC/TR/ACS/Applications/Applications_L_MR1/GMS_Drive-Widget-shortcut-set-to-homescreen"/>
+    <!--<TestCase Id="../../../../../TC/TR/ACS/Applications/Applications_L_MR1/GMS_Keep_Set-2x1-widget-to-screen"/>-->
+    <!--<TestCase Id="../../../../../TC/TR/ACS/Applications/Applications_L_MR1/GMS_Keep_Set-2x2-widget-to-screen"/>-->
+    <!--<TestCase Id="../../../../../TC/TR/ACS/Applications/Applications_L_MR1/GMS_PlayBooks_Add-book-widget"/>-->
+    <!--<TestCase Id="../../../../../TC/TR/ACS/Applications/Applications_L_MR1/GMS_PlayBooks_Use-google-play-books-widget"/>-->
+    <TestCase Id="../../../../../TC/TR/ACS/Applications/Applications_L_MR1/GMS_Gmail_Widget-Label-Functionality"/>
+    <!--<TestCase Id="../../../../../TC/TR/ACS/Applications/Applications_L_MR1/GMS_Googleplus_Posts-Widget-Functionality"/>-->
+    <TestCase Id="../../../../../TC/TR/ACS/Applications/Applications_L_MR1/prerequisites/prereq_SKIP_LAUNCHER_TUTORIAL"/>
+    <TestCase Id="../../../../../TC/TR/ACS/Applications/Applications_L_MR1/GMS_PlayStore_install-app"/>
+    <TestCase Id="../../../../../TC/TR/ACS/Applications/Applications_L_MR1/GMS_PlayStore_uninstall-apks"/>
+    <TestCase Id="../../../../../TC/TR/ACS/Applications/Applications_L_MR1/GMS_PlayStore_update-app"/>
+    <TestCase Id="../../../../../TC/TR/ACS/Applications/Applications_L_MR1/GMS_PlayStore_Apps-page"/>
+    <TestCase Id="../../../../../TC/TR/ACS/Applications/Applications_L_MR1/GMS_PlayStore_Cancel-download"/>
+    <TestCase Id="../../../../../TC/TR/ACS/Applications/Applications_L_MR1/GMS_PlayStore_Add-an-app-to-wishlist"/>
+    <TestCase Id="../../../../../TC/TR/ACS/Applications/Applications_L_MR1/GMS_PlayStore_Add-to-wishlist"/>
+    <TestCase Id="../../../../../TC/TR/ACS/Applications/Applications_L_MR1/GMS_PlayStore_Add-a-game-in-wishlist"/>
+    <TestCase Id="../../../../../TC/TR/ACS/Applications/Applications_L_MR1/GMS_PlayStore_Add-a-book-in-wishlist"/>
+    <TestCase Id="../../../../../TC/TR/ACS/Applications/Applications_L_MR1/GMS_PlayStore_remove_the-app-from-wishlist"/>
+    <TestCase Id="../../../../../TC/TR/ACS/Applications/Applications_L_MR1/GMS_PlayStore_Store-Home-page"/>
+    <TestCase Id="../../../../../TC/TR/ACS/Applications/Applications_L_MR1/GMS_PlayStore_Search-app"/>
+    <TestCase Id="../../../../../TC/TR/ACS/Applications/Applications_L_MR1/GMS_PlayStore_clear-the-search-history"/>
+    <TestCase Id="../../../../../TC/TR/ACS/Applications/Applications_L_MR1/GMS_PlayStore_Settings-page"/>
+    <TestCase Id="../../../../../TC/TR/ACS/Applications/Applications_L_MR1/GMS_Drive_Switch-different-account-in-Drive"/>
+    <TestCase Id="../../../../../TC/TR/ACS/Applications/Applications_L_MR1/GMS_Drive_Set-edit-permission-for-a-file-in-Drive"/>
+    <TestCase Id="../../../../../TC/TR/ACS/Applications/Applications_L_MR1/GMS_Drive_Set-No-access-permission-for-a-file-in-Drive"/>
+    <TestCase Id="../../../../../TC/TR/ACS/Applications/Applications_L_MR1/GMS_Drive_Share-file"/>
+    <TestCase Id="../../../../../TC/TR/ACS/Applications/Applications_L_MR1/GMS_Drive_Send-link-for-file"/>
+    <!--<TestCase Id="../../../../../TC/TR/ACS/Applications/Applications_L_MR1/GMS_GoogleEar_Stop-sound-search"/>-->
+    <TestCase Id="../../../../../TC/TR/ACS/Applications/Applications_L_MR1/GMS_GoogleSearch_Web-Search"/>
+    <TestCase Id="../../../../../TC/TR/ACS/Applications/Applications_L_MR1/GMS_GoogleSearch_Apps-search"/>
+    <TestCase Id="../../../../../TC/TR/ACS/Applications/Applications_L_MR1/GMS_GoogleSearch_Search-Maps"/>
+    <TestCase Id="../../../../../TC/TR/ACS/Applications/Applications_L_MR1/GMS_GoogleSearch_Search-in-Books-tab"/>
+    <TestCase Id="../../../../../TC/TR/ACS/Applications/Applications_L_MR1/GMS_GoogleSearch_News-search"/>
+    <TestCase Id="../../../../../TC/TR/ACS/Applications/Applications_L_MR1/GMS_GoogleSearch_Search-Videos"/>
+    <TestCase Id="../../../../../TC/TR/ACS/Applications/Applications_L_MR1/GMS_GoogleSearch_Images-search"/>
+    <TestCase Id="../../../../../TC/TR/ACS/Applications/Applications_L_MR1/GMS_GoogleSearch_Search-web-history-log"/>
+    <TestCase Id="../../../../../TC/TR/ACS/Applications/Applications_L_MR1/GMS_GoogleSearch_Search-for-installed-apk"/>
+    <TestCase Id="../../../../../TC/TR/ACS/Applications/Applications_L_MR1/GMS_GoogleSearch_Delete-the-searched-files"/>
+    <TestCase Id="../../../../../TC/TR/ACS/Applications/Applications_L_MR1/GMS_Clock_Add-analog-clock-widget-from-list"/>
+    <TestCase Id="../../../../../TC/TR/ACS/Applications/Applications_L_MR1/GMS_Clock_Add-digital-clock-widget-from-list"/>
+    <TestCase Id="../../../../../TC/TR/ACS/Applications/Applications_L_MR1/prerequisites/prereq_SKIP_LAUNCHER_TUTORIAL"/>
+    <TestCase Id="../../../../../TC/TR/ACS/Applications/Applications_L_MR1/GMS_Clock_Stopwatch-continue-count-during-lockscreen"/>
+    <TestCase Id="../../../../../TC/TR/ACS/Applications/Applications_L_MR1/prerequisites/prereq_REMOVE_GOOGLE_ACCOUNTS"/>
+    <TestCase Id="../../../../../TC/TR/ACS/Applications/Applications_L_MR1/prerequisites/prereq_GMS_Reboot_Device"/>
+    <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Camera/GMS_Camera_Rotate-screen-when-preview-camera"/>
+    <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Camera/GMS_Camera_Set-manual--Exposure"/>
+    <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Camera/GMS_Camera_Set-picture-size-for-Back-camera"/>
+    <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Camera/GMS_Camera_Set-picture-size-for-front-camera"/>
+    <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Camera/GMS_Camera_Set-video-resolution-for-Back-camera"/>
+    <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Camera/GMS_Camera_Set-video-resolution-for-front-camera"/>
+    <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Camera/GMS_Camera_Take-a-photo"/>
+    <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Camera/GMS_Camera_Take-a-video"/>
+    <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Camera/GMS_Camera_View-the-captured-photo-video"/>
+    <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Keyboard/GMS_AppsSupport_LatinIME"/>
+    <!--<TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Keyboard/GMS_AppsSupport_PinyinIME"/>-->
+    <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Keyboard/GMS_Latin-IME_delete-all-inputted-latin-strings"/>
+    <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Keyboard/GMS_Latin-IME_Input-characters-by-sliding-through-latin"/>
+    <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Keyboard/GMS_Latin-IME_Switch-between-letters-and-special-characters"/>
+    <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Keyboard/GMS_Latin-IME_Test-Caps-Lock-key-behaviour"/>
+    <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Keyboard/GMS_Latin-IME_Test-Shift-key-behaviour"/>
+    <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Keyboard/GMS_Latin-IME_Type-numbers-from-letters-page-via-long-tap-in-Latin"/>
+    <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Keyboard/GMS_Latin-IME_Rotate-screen-when-show-Latin-IME"/>
+    <!--<TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Keyboard/GMS_PinyinIME_delete-inputted-character-with-pinyin-IME"/>-->
+    <!--<TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Keyboard/GMS_PinyinIME_enable-disable-Pinyin-IME"/>-->
+    <!--<TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Keyboard/GMS_PinyinIME_Input-characters-by-sliding-through-Pinyin"/>-->
+    <!--<TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Keyboard/GMS_PinyinIME_Input-Chinese-characters"/>-->
+    <!--<TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Keyboard/GMS_PinyinIME_Rotate-screen-when-show-Pinyin-IME"/>-->
+    <!--<TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Keyboard/GMS_PinyinIME_Switch-between-Chinese-and-English-keyboard"/>-->
+    <!--<TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Keyboard/GMS_PinyinIME_Switch-between-letters-and-special-characters"/>-->
+    <!--<TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Keyboard/GMS_PinyinIME_Type-numbers-from-letters-page-via-long-tap-in-Pinyin"/>-->
+    <TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Keyboard/GMS_Latin-IME_Lock-screen-when-display-Latin-IME"/>
+    <!--<TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Keyboard/GMS_PinyinIME_Lock-screen-when-display-Pinyin-IME"/>-->
+    <!--<TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Keyboard/GMS_PinyinIME_Change_keyboard_theme"/>-->
+    <!--<TestCase Id="../../../../../TC/TR/PyUiApiTests/acs_xml_test_files/Keyboard/GMS_PinyinIME_Pinyin_IME_take_effect_with_browser"/>-->
+  </TestCases>
+</Campaign>

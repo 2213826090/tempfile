@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase>
+    <UseCase>LAB_NFC_CARD_EMUL_FELICA</UseCase>
+    <Description>Check embedded/UICC secure element supports felica</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>False</b2bContinuousMode>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters>
+        <Parameter>
+            <!-- Define secure element to communicate with : EMBEDDED or UICC -->
+            <Name>SECURE_ELEMENT</Name>
+            <Value></Value>
+        </Parameter>
+        <Parameter>
+            <!-- Define script name :
+                TestB1-1_212K_POLREQ_TSN0_v1.0.MPScr,
+                TestB1-2_212K_POLREQ_TSN1_v1.0.MPScr,
+                TestB1-3_212K_POLREQ_TSN3_v1.0.MPScr,
+                TestB1-4_212K_POLREQ_TSN7_v1.0.MPScr,
+                TestB1-5_212K_POLREQ_TSNF_v1.0.MPScr,
+                TestB2-1_424K_POLREQ_TSN0_v1.0.MPScr,
+                TestB2-2_424K_POLREQ_TSN1_v1.0.MPScr,
+                TestB2-3_424K_POLREQ_TSN3_v1.0.MPScr,
+                TestB2-4_424K_POLREQ_TSN7_v1.0.MPScr,
+                TestB2-5_424K_POLREQ_TSNF_v1.0.MPScr,
+                TestB3-1_212K_successive_POL_REQ_SC_FFFF_v1.0.MPScr,
+                TestB3-2_212K_successive_POL_REQ_SC_AAAA_v1.0.MPScr,
+                TestB4-1_424K_successive_POL_REQ_SC_FFFF_v1.0.MPScr,
+                TestB4-2_424K_successive_POL_REQ_SC_AAAA_v1.0.MPScr,
+                TestB5-1_212K_POL_REQ_RC01_check_v1.0.MPScr,
+                TestB5-2_212K_POL_REQ_RC02_check_v1.0.MPScr,
+                TestB6-1_424K_POL_REQ_RC01_check_v1.0.MPScr,
+                TestB6-2_424K_POL_REQ_RC02_check_v1.0.MPScr,
+                TestB7-1_212K_HCP_REQ_all_length_receipt_v1.0.MPScr,
+                TestB7-2_424K_HCP_REQ_all_length_receipt_v1.0.MPScr -->
+            <Name>SCRIPT</Name>
+            <Value></Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

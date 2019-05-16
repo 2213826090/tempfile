@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<Include>
+    <TestStepSet Id="ConfigureBt">
+           <TestStep Id="BT_SET_POWER" DEVICE="PHONE1" POWER="on"/>
+            <!-- Pair DUT to the headset -->
+            <TestStep Id="BT_SET_HEADSET_POWER" EQT="BT_HEADSET" STATE="RESET_OFF,PAIRABLE"/>
+            <TestStep Id="BT_PAIR" DEVICE="PHONE1" BDADDR="FROM_BENCH:BT_HEADSET:BD_Address" UNPAIR_FIRST="True" ACCEPT_PAIRING="True" PASS_KEY="0" PIN_CODE="0000"/>
+            <TestStep Id="BT_CHECK_PAIRED" DEVICE="PHONE1" BDADDR="FROM_BENCH:BT_HEADSET:BD_Address"/>
+            <!--Disconnect the DUT from the BT Headset and verify that it is STILL PAIRED to the device-->
+            <TestStep Id="BT_CONNECT_PROFILE" DEVICE="PHONE1" BDADDR="FROM_BENCH:BT_HEADSET:BD_Address" PROFILE="A2DP" CONNECT="False"/>
+            <TestStep Id="BT_CHECK_PROFILE_STATUS" DEVICE="PHONE1" BDADDR="FROM_BENCH:BT_HEADSET:BD_Address" PROFILE="A2DP" FAIL_IF="connected" SAVE_AS="PROFILE_STATUS"/>
+            <TestStep Id="BT_CHECK_PAIRED" DEVICE="PHONE1" BDADDR="FROM_BENCH:BT_HEADSET:BD_Address"/>
+    </TestStepSet>
+</Include>

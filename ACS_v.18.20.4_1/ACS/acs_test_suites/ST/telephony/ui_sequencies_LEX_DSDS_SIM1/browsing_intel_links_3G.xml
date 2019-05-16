@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<UI_SEQ xsi:noNamespaceSchemaLocation="ACS_ANDROID_UI_CHECK.xsd"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <ACTION>
+                <CMD>keypress</CMD>
+		<PARAMETERS>KEYCODE_HOME</PARAMETERS>
+	</ACTION>
+	<ACTION>
+		<CMD>exec</CMD>
+		<PARAMETERS>start -a android.intent.action.MAIN -c
+			android.intent.category.LAUNCHER -n
+			com.android.browser/.BrowserActivity</PARAMETERS>
+		<TIMEOUT>5</TIMEOUT>
+	</ACTION>
+	<ACTION>
+		<CMD>search</CMD>
+		<PARAMETERS>http://www.intel.com/</PARAMETERS>
+	    <TIMEOUT>10</TIMEOUT>
+	</ACTION>
+	<ACTION>
+		<CMD>wait</CMD>
+		<PARAMETERS>30</PARAMETERS>
+	</ACTION>
+	<ACTION>
+		<CMD>screenshot</CMD>
+		<PARAMETERS>browse_result_intel_links</PARAMETERS>
+	</ACTION>
+	<ACTION>
+		<CMD>keypress</CMD>
+		<PARAMETERS>KEYCODE_DPAD_DOWN</PARAMETERS>
+		<ITERATION>[RAND(5)]</ITERATION>
+	</ACTION>
+	<ACTION>
+		<CMD>keypress</CMD>
+		<PARAMETERS>KEYCODE_DPAD_CENTER </PARAMETERS>
+	</ACTION>
+	<ACTION>
+		<CMD>wait</CMD>
+		<PARAMETERS>30</PARAMETERS>
+	</ACTION>
+	<ACTION>
+		<CMD>keypress</CMD>
+		<PARAMETERS>KEYCODE_DPAD_DOWN</PARAMETERS>
+		<ITERATION>[RAND(5)]</ITERATION>
+	</ACTION>
+	<ACTION>
+		<CMD>keypress</CMD>
+		<PARAMETERS>KEYCODE_DPAD_CENTER </PARAMETERS>
+	</ACTION>
+	<ACTION>
+		<CMD>wait</CMD>
+		<PARAMETERS>30</PARAMETERS>
+	</ACTION>
+	<ACTION>
+		<CMD>screenshot</CMD>
+		<PARAMETERS>browse_result_intel_link</PARAMETERS>
+	</ACTION>
+	<ACTION>
+		<CMD>keypress</CMD>
+		<PARAMETERS>KEYCODE_HOME</PARAMETERS>
+	</ACTION>
+    <!--Close browser-->    
+	<ACTION>
+		<CMD>keypress</CMD>
+		<PARAMETERS>KEYCODE_MENU</PARAMETERS>
+	</ACTION>
+	<ACTION>
+		<!-- Initial position on Menu -->
+		<CMD>touch</CMD>
+		<PARAMETERS>300;930</PARAMETERS>
+		<TIMEOUT>1</TIMEOUT>
+	</ACTION>
+	<ACTION>
+		<!-- Click on Manage apps -->
+		<CMD>keypress</CMD>
+		<PARAMETERS>KEYCODE_DPAD_CENTER</PARAMETERS>
+		<TIMEOUT>1</TIMEOUT>
+	</ACTION>
+	<ACTION>
+		<!-- Click on ALL -->
+		<CMD>touch</CMD>
+		<PARAMETERS>505;145</PARAMETERS>
+		<TIMEOUT>1</TIMEOUT>
+	</ACTION>
+	<ACTION>
+		<!-- Go down until browser is found -->
+		<CMD>keypress</CMD>
+		<PARAMETERS>KEYCODE_DPAD_DOWN</PARAMETERS>
+		<ITERATION>61</ITERATION>
+	</ACTION>
+	<ACTION>
+		<!-- Press center pad to select Force close until browser is closed -->
+		<CMD>keypress</CMD>
+		<PARAMETERS>KEYCODE_DPAD_CENTER</PARAMETERS>
+		<ITERATION>2</ITERATION>
+	</ACTION>
+	<ACTION>
+		<CMD>keypress</CMD>
+		<PARAMETERS>KEYCODE_DPAD_RIGHT</PARAMETERS>
+	</ACTION>
+	<ACTION>
+		<CMD>keypress</CMD>
+		<PARAMETERS>KEYCODE_DPAD_CENTER</PARAMETERS>
+	</ACTION>
+	<ACTION>
+		<CMD>wait</CMD>
+		<PARAMETERS>3</PARAMETERS>
+	</ACTION>
+	<ACTION>
+        <CMD>keypress</CMD>
+        <PARAMETERS>KEYCODE_BACK</PARAMETERS>
+   	</ACTION>
+	<ACTION>
+	<CMD>keypress</CMD>
+		<PARAMETERS>KEYCODE_DPAD_UP</PARAMETERS>
+		<ITERATION>61</ITERATION>
+	</ACTION>
+	<ACTION>
+        <CMD>keypress</CMD>
+        <PARAMETERS>KEYCODE_HOME</PARAMETERS>
+    </ACTION>    
+</UI_SEQ>

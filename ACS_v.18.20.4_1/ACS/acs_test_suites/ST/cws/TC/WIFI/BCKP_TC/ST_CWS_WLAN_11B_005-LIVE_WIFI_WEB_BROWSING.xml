@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase>
+  <UseCase>LIVE_WIFI_WEB_BROWSING</UseCase>
+  <Description>Browsing web pages over WLAN</Description>
+  <b2bIteration>3</b2bIteration>
+  <b2bContinuousMode>True</b2bContinuousMode> 
+  <Parameters>
+    <Parameter>
+      <!-- Wifi Security of wifi env to be used. Can be "OPEN", "WEP", "WPA" or "WPA2".
+      If a WIFI_ACCESS_POINT has been choosen, this parameter refers to the access point's security. -->
+      <Name>WIFI_SECURITY</Name>
+      <Value>WEP</Value>
+    </Parameter>
+    <Parameter>
+      <!-- Wifi access point on which board will connect to. 
+      Must refers to a wifi router's name (equipment name of the bench configuration file).
+      If no value has been set, a default router will be choosen in the bench configuration, 
+      depending on WIFI_SECURITY.-->
+      <Name>WIFI_ACCESS_POINT</Name>
+      <Value>B_ONLY_WIFI_ROUTER</Value>
+    </Parameter>
+    <Parameter>
+        <!-- Browser to use.Possible values : "NATIVE", "ACS_AGENT"
+        Warning ! NATIVE mode is not verbose in term of verdict, because it uses the default browser of the system.
+        So the user should check manually in this mode if the page is correctly loaded -->
+        <Name>BROWSER_TYPE</Name>
+        <Value>ACS_AGENT</Value>
+    </Parameter>
+    <Parameter>
+        <!-- [Optional] Website url to open String as follow : http://www.intel.com. If undefined, uses the WIFI_SERVER in bench config file -->
+        <Name>WEBSITE_URL</Name>
+        <Value></Value>
+    </Parameter>
+    <Parameter>
+        <!-- Timeout (in second) to load web page -->
+        <Name>TIMEOUT</Name>
+        <Value>10</Value>
+    </Parameter>
+  </Parameters>
+</TestCase>

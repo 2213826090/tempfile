@@ -1,0 +1,122 @@
+#
+# -*- coding: utf-8; tab-width: 4; c-basic-offset: 4; indent-tabs-mode: nil -*-
+
+# -----------------------------------------------------------------------------
+# VP Simics configuration
+# -----------------------------------------------------------------------------
+
+add-directory "/home/buildbot/simics-project/simics-broxton-4.8.pre91/targets/x86-bxt"
+
+$emmc_boot1_image = "/home/buildbot/simics-project/simics-broxton-4.8.pre91/targets/x86-bxt/images/BXTM_IFWI_X64_D_2014_43_4_00_BP1.bin"
+
+$emmc_boot2_image = "/home/buildbot/simics-project/simics-broxton-4.8.pre91/targets/x86-bxt/images/BXTM_IFWI_X64_D_2014_43_4_00_BP2.bin"
+
+$bios = "/home/buildbot/simics-project/simics-broxton-4.8.pre91/targets/x86-bxt/images/BXTM_IFWI_X64_D_2014_43_4_00_CSE_SRAM.bin"
+
+# define OS image ans her size to run VP Simics
+$os_image =  "<os_image>"
+
+$os_image_size = 8589934592
+
+# enable UART output
+$uart_output_enable = TRUE
+
+# enable mouse support
+$usb_hibs = TRUE
+
+# enable ethernet
+$platform = "bxtp"
+
+# Workaround to don't use HostFS module support
+# $simicsfs_phys_addr = 0x0
+
+# Workaround for fuzzy color
+# broxton.board.phys_mem.write 0xc0071180 0x84100000
+
+run-command-file "/home/buildbot/simics-project/simics-broxton-4.8.pre91/targets/x86-bxt/bxt-mcg-bios.include"
+
+# Enable real time mode
+enable-real-time-mode
+echo "#1#2#3 realtime mode enabled #3#2#1"
+
+# Enable simulated ethernet device
+connect-real-network 192.168.10.10
+connect-real-network-port-in ethernet-link = default_eth_switch0 target-ip = 192.168.10.10 target-port = 5555 host-port = 5558 -tcp
+echo "#1#2#3 ethernet device enabled #3#2#1"
+
+# define TTY used
+$con = $system.serconsole.con
+
+# -----------------------------------------------------------------------------
+# Boot steps
+# -----------------------------------------------------------------------------
+
+# Default step, OS isn't booted
+$step = 1
+
+# step 1.1 wait operating system is booted without additional patch to detect
+# boot is okay
+script-branch {
+    $con.wait-for-string "EXT4-fs (dm-0) : mounted filesystem"
+
+    # if boot isn't already detected by a another thread
+    if ($step < 2) {
+       echo "#1#2#3 system booted #3#2#1"
+       $step = 2
+    }
+}
+
+# step 1.2 wait operating system is booted with additional patch to detect boot
+# is okay
+# A patch adding bootcheck: https://android.intel.com/#/c/248055/
+script-branch {
+    # $con.wait-for-string "#1#2#3 kernel boot OK #3#2#1"
+    # NB: Often, this string is cut by kernel message
+    # $con.wait-for-string "#1#2#3 kernel"
+
+    # if boot isn't already detected by a another thread
+    if ($step < 2) {
+       echo "#1#2#3 system booted #3#2#1"
+       $step = 2
+    }
+}
+
+# step 2. establish TCP connection
+script-branch {
+    while ($step < 2) {
+        echo "#1#2#3 wait to establish TCP connection... #3#2#1"
+        $system.board.processor0.core[0][0].wait-for-time 8 -relative
+    }
+    $con.input string = "ifconfig eth0 192.168.10.10\r"
+    echo "#1#2#3 eth0 connection established #3#2#1"
+    $step = 3
+}
+
+# step 3. enable ADB over TCP feature after kernel has booted
+script-branch {
+    while ($step < 3) {
+        echo "#1#2#3 wait to enable ADB over TCP... #3#2#1"
+        $system.board.processor0.core[0][0].wait-for-time 16 -relative
+    }
+    $con.input string = "setprop service.adb.tcp.port 5555\r"
+    echo "#1#2#3 ADB over TCP enabled #3#2#1"
+    $step = 4
+}
+
+# step 4. simulation timeout
+script-branch {
+    echo "#1#2#3 VP Simics will stop after <timeout>s #3#2#1"
+    $system.board.processor0.core[0][0].wait-for-time <timeout> -relative
+    echo "#1#2#3 VP Simics stopped by timeout (<timeout>s) #3#2#1"
+    if ($step < 4) {
+        echo "#1#2#3 test failure #3#2#1"
+    } else {
+        echo "#1#2#3 test done #3#2#1"
+    }
+    stop
+    exit
+}
+
+# start simulation
+echo "#1#2#3 start simulation #3#2#1"
+run

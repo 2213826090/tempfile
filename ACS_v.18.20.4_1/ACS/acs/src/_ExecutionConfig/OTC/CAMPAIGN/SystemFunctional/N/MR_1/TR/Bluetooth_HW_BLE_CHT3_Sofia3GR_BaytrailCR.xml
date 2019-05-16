@@ -1,0 +1,67 @@
+<?xml version='1.0' encoding='ASCII'?>
+<Campaign version="13.49">
+    <Parameters>
+        <Parameter isControlledPSUsed="False"/>
+        <Parameter isIoCardUsed="False"/>
+        <!-- Set skipBootOnPowerCycle to True to disable the accs boot procedure -->
+        <!-- Important, it means that boot will be handle inside the campaign/tc -->
+        <Parameter skipBootOnPowerCycle="False"/>
+        <!-- Set bootRetryNumber to maximum number of boot retries during the acs boot procedure -->
+        <!-- Important, it means that bootRetryNumber is set by default to 0 if not specified -->
+        <Parameter bootRetryNumber="0"/>
+        <Parameter runHookScripts="False"/>
+        <Parameter powerCycleBetweenTC="False"/>
+        <Parameter powerCycleOnFailure="False"/>
+        <!-- finalDutState allows user to leave the DUT in a specific state at the end of the campaign
+            Possible values: PowerOn | PowerOff | Charging | NoChange
+            By default DUT is leaved in NoChange state.
+            In case the user selects Charging as final state of the DUT and that DUT fails to enter Charging,
+            ACS shall try to switch the DUT off -->
+        <Parameter finalDutState="NoChange"/>
+        <Parameter stopCampaignOnCriticalFailure="False"/>
+        <Parameter stopCampaignOnFirstFailure="False"/>
+        <!-- LoggingLevel possible values: info | warning | debug | error -->
+        <Parameter loggingLevel="debug"/>
+        <!-- CampaignType format -> <TEAM>_<CAMPAIGNTYPE>
+            Possible values:
+            FT(Feature Team)-> SANITY | REGRESSION | STRESS, RELIABILTY | MTBF
+            ST(System Test)-> SANITY | REGRESSION | STRESS, RELIABILTY | MTBF | EM
+            SI(System Integration)-> EAT | STAB | PACT | CAT0 | RELIABILITY | MTBF | CTS | ACS_CI
+            Otherwise "Others" should be used -->
+        <Parameter CampaignType="Others"/>
+        <Parameter TCRReportViaRESTAPI="True"/>
+    </Parameters>
+    <Targets>
+        <!-- Target Values -->
+        <Target targetB2bPassRate="100"/>
+    </Targets>
+    <TestCases>
+        <TestCase Id="../../../../../TC/TR/ACS/Communication/Bluetooth/setup/prereq_Bluetooth_SYSTEM_SETUP_EMBEDDED"/>
+        <TestCase Id="../../../../../TC/TR/ACS/Communication/Bluetooth/BLE_check_BLE_feature_present" />
+        <TestCase Id="../../../../../TC/TR/ACS/Communication/Bluetooth/BLE_GAP_Observer_scan_for_ble_broadcasts_low_latency" />
+        <TestCase Id="../../../../../TC/TR/ACS/Communication/Bluetooth/BLE_GAP_Central_scan_for_ble_advertising_filter_by_service_UUID" />
+        <TestCase Id="../../../../../TC/TR/ACS/Communication/Bluetooth/BLE_GAP_Central_scan_for_ble_advertising_filter_by_service_data" />
+        <TestCase Id="../../../../../TC/TR/ACS/Communication/Bluetooth/BLE_GAP_Central_scan_for_ble_advertising_filter_by_manufacturer_data_single_device" />
+        <TestCase Id="../../../../../TC/TR/ACS/Communication/Bluetooth/BLE_GAP_Central_scan_for_ble_advertising_filter_by_manufacturer_data_power_level" />
+        <TestCase Id="../../../../../TC/TR/ACS/Communication/Bluetooth/BLE_GAP_Central_scan_for_ble_advertising_filter_by_device_name" />
+        <TestCase Id="../../../../../TC/TR/ACS/Communication/Bluetooth/BLE_GATT_DUT_as_GATT_CLIENT_can_discover_services" />
+        <TestCase Id="../../../../../TC/TR/ACS/Communication/Bluetooth/BLE_GATT_DUT_as_GATT_CLIENT_read_characteristic" />
+        <TestCase Id="../../../../../TC/TR/ACS/Communication/Bluetooth/BLE_GATT_DUT_as_GATT_CLIENT_read_descriptor" />
+        <TestCase Id="../../../../../TC/TR/ACS/Communication/Bluetooth/BLE_GATT_DUT_as_GATT_CLIENT_read_rssi" />
+        <TestCase Id="../../../../../TC/TR/ACS/Communication/Bluetooth/BLE_GATT_DUT_as_GATT_CLIENT_reliable_write" />
+        <TestCase Id="../../../../../TC/TR/ACS/Communication/Bluetooth/BLE_GATT_DUT_as_GATT_CLIENT_write_characteristic" />
+        <TestCase Id="../../../../../TC/TR/ACS/Communication/Bluetooth/BLE_GATT_DUT_as_GATT_CLIENT_write_descriptor" />
+        <TestCase Id="../../../../../TC/TR/ACS/Communication/Bluetooth/BLE_GATT_DUT_can_connect_to_GATT_Server_as_GATT_Client" />
+        <TestCase Id="../../../../../TC/TR/ACS/Communication/Bluetooth/BLE_GATT_DUT_disconnect_from_GATT_Server" />
+        <TestCase Id="../../../../../TC/TR/ACS/Communication/Bluetooth/BLE_No_Advertising/BLE_GATT_Server_add_characteristic" />
+        <TestCase Id="../../../../../TC/TR/ACS/Communication/Bluetooth/BLE_No_Advertising/BLE_GATT_Server_add_descriptor" />
+        <TestCase Id="../../../../../TC/TR/ACS/Communication/Bluetooth/BLE_No_Advertising/BLE_GATT_Server_add_service" />
+        <TestCase Id="../../../../../TC/TR/ACS/Communication/Bluetooth/BLE_No_Advertising/BLE_GATT_Server_advertise_start_server" />
+        <TestCase Id="../../../../../TC/TR/ACS/Communication/Bluetooth/BLE_No_Advertising/BLE_GATT_Server_Read_characteristic_Callback_is_successfully_reached" />
+        <TestCase Id="../../../../../TC/TR/ACS/Communication/Bluetooth/BLE_No_Advertising/BLE_GATT_Server_Read_Descriptor_Callback_is_successfully_reached" />
+        <TestCase Id="../../../../../TC/TR/ACS/Communication/Bluetooth/BLE_No_Advertising/BLE_GATT_Server_Reliable_Write_Callback_is_successfully_reached" />
+        <TestCase Id="../../../../../TC/TR/ACS/Communication/Bluetooth/BLE_No_Advertising/BLE_GATT_Server_Write_Characteristic_Callback_is_successfully_reached" />
+        <TestCase Id="../../../../../TC/TR/ACS/Communication/Bluetooth/BLE_No_Advertising/BLE_GATT_Server_Write_Descriptor_Callback_is_successfully_reached" />
+        <TestCase Id="../../../../../TC/TR/ACS/Communication/Bluetooth/BLE_No_Advertising/BLE_GATT_Server_stop_server" />
+    </TestCases>
+</Campaign>

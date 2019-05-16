@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="13.37">
+    <UseCase>LAB_SYSTEM_SLEEP_MT_VC_WAKE</UseCase>
+    <Description>Sleep 60 seconds in S3 and MT VC wake-up</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters>
+        <Parameter>
+            <!-- Sleep target duration in seconds -->
+            <Name>DURATION</Name>
+            <Value>60</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Sleep time before 1st iteration, or all for b2bContinuousMode = False -->
+            <Name>SETTLE_TIME</Name>
+            <Value>60</Value>
+        </Parameter>
+        <Parameter>
+            <!-- VC ringing time, it should be long enough to handle USB init,
+                ADB connection, answer command, and VC_USB_TIMER
+            -->
+            <Name>VC_RINGING_TIMER</Name>
+            <Value>60</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Sleep time, between MT VC and USB plug,
+                to avoid USB plug wake-up instead of MT VC
+            -->
+            <Name>VC_USB_TIMER</Name>
+            <Value>10</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

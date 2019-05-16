@@ -1,0 +1,30 @@
+<?xml version="1.0" ?>
+<Campaign version="13.49">
+    <Parameters>
+        <Parameter isControlledPSUsed="False"/>
+        <Parameter isIoCardUsed="False"/>
+        <Parameter skipBootOnPowerCycle="False"/>
+        <Parameter bootRetryNumber="0"/>
+        <Parameter runHookScripts="False"/>
+        <Parameter powerCycleBetweenTC="False"/>
+        <Parameter powerCycleOnFailure="False"/>
+        <Parameter finalDutState="NoChange"/>
+        <Parameter stopCampaignOnCriticalFailure="False"/>
+        <Parameter stopCampaignOnFirstFailure="False"/>
+        <Parameter loggingLevel="debug"/>
+        <Parameter CampaignType="Other"/>
+        <Parameter TCRReportViaRESTAPI="True"/>
+    </Parameters>
+    <TestCases>
+        <TestCase Id="../../../../../TC/TP/TC/ThermalManagement/thermal_management/test_check_thermal_zone0"/>
+        <TestCase Id="../../../../../TC/TP/TC/ThermalManagement/thermal_management/test_check_thermal_zone2"/>
+        <TestCase Id="../../../../../TC/TP/TC/ThermalManagement/thermal_management/test_check_thermal_zone1"/>
+        <TestCase Id="../../../../../TC/TP/TC/ThermalManagement/thermal_management/test_check_thermal_daemon_running"/>
+        <TestCase Id="../../../../../TC/TP/TC/ThermalManagement/thermal_management/test_check_thermal_zone6"/>
+        <TestCase Id="../../../../../TC/TP/TC/ThermalManagement/thermal_management/test_check_thermal_zone3"/>
+        <TestCase Id="../../../../../TC/TP/TC/ThermalManagement/thermal_management/test_check_thermal_zone4"/>
+        <TestCase Id="../../../../../TC/TP/TC/ThermalManagement/thermal_management/test_check_thermal_zone5"/>
+        <TestCase Id="../../../../../TC/TP/TC/ThermalManagement/thermal_management/test_check_thermal_zone7"/>
+        <TestCase Id="../../../../../TC/TP/TC/ThermalManagement/thermal_management/test_check_thermal_zone8"/>
+    </TestCases>
+</Campaign>

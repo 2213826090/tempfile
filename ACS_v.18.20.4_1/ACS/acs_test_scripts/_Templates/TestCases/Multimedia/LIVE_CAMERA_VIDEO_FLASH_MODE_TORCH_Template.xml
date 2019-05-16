@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase>
+   <UseCase>LIVE_CAMERA_VIDEO_FLASH_MODE_TORCH</UseCase>
+   <Description>Use Camera to record video setting flash mode to torch</Description>
+   <b2bIteration>1</b2bIteration>
+   <b2bContinuousMode>True</b2bContinuousMode>
+   <TcMaxAttempt>1</TcMaxAttempt>
+   <TcAcceptanceCriteria>1</TcAcceptanceCriteria>
+   <Parameters>
+       <Parameter>
+            <!-- Duration of the video to record in ms -->
+            <Name>RECORD_DURATION</Name>
+            <Value>10000</Value>
+       </Parameter>
+       <Parameter>
+           <!-- Directory where to save videos recorded, should be an existing directory -->
+           <Name>SAVE_DIRECTORY</Name>
+           <Value>sdcard/</Value>
+       </Parameter>
+   </Parameters>
+</TestCase>

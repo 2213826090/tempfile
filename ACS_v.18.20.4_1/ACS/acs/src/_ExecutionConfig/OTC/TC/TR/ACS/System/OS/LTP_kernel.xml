@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase>
+  <UseCase>EXEC_SCRIPT</UseCase>
+  <Description>LTP</Description>
+  <b2bIteration>1</b2bIteration>
+  <b2bContinuousMode>True</b2bContinuousMode>
+  <TcMaxAttempt>1</TcMaxAttempt>
+  <TcAcceptanceCriteria>1</TcAcceptanceCriteria>
+  <Parameters>
+    <Parameter>
+        <Name>SETUP_SCRIPT_PATH</Name>
+        <Value>scripts/LTP_INIT.py</Value>
+    </Parameter>
+    <Parameter>
+        <Name>SCRIPT_PATH</Name>
+        <Value>scripts/LTP_RUN.py</Value>
+    </Parameter>
+  </Parameters>
+</TestCase>

@@ -1,0 +1,53 @@
+<?xml version="1.0" ?>
+<Campaign version="13.49">
+    <Parameters>
+        <Parameter isControlledPSUsed="False"/>
+        <Parameter isIoCardUsed="False"/>
+        <Parameter skipBootOnPowerCycle="False"/>
+        <Parameter bootRetryNumber="0"/>
+        <Parameter runHookScripts="False"/>
+        <Parameter powerCycleBetweenTC="False"/>
+        <Parameter powerCycleOnFailure="False"/>
+        <Parameter finalDutState="NoChange"/>
+        <Parameter stopCampaignOnCriticalFailure="False"/>
+        <Parameter stopCampaignOnFirstFailure="False"/>
+        <Parameter loggingLevel="debug"/>
+        <Parameter CampaignType="Other"/>
+        <Parameter TCRReportViaRESTAPI="True"/>
+    </Parameters>
+    <TestCases>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_Audio/Interruption/testAVB_AlsaPlaybackToAVB"/>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_Audio/Interruption/testAVB_ALsaPlaybackToAVB_8kHz"/>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_Audio/Interruption/025kHz"/>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_Audio/Interruption/testAVB_ALsaPlaybackToAVB_12kHz"/>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_Audio/Interruption/testAVB_ALsaPlaybackToAVB_16kHz"/>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_Audio/Interruption/050kHz"/>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_Audio/Interruption/testAVB_ALsaPlaybackToAVB_24kHz"/>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_Audio/Interruption/testAVB_ALsaPlaybackToAVB_32kHz"/>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_Audio/Interruption/testAVB_ALsaPlaybackToAVB_48kHz"/>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_Audio/Interruption/1kHz"/>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_Audio/Interruption/testAVB_alsa_TX_to_speaker"/>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_Audio/Interruption/testAVB_alsa_RX_to_speaker"/>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_Audio/Interruption/testAVB_Alsa_TX_to_speaker_Long"/>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_Audio/Interruption/testAVB_alsa_TX_record_to_file"/>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_Audio/Interruption/testAVB_alsa_TX_record_to_file_eavbNavigation"/>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_Audio/Interruption/testAVB_alsa_TX_record_to_file_eavbHmi"/>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_Audio/Interruption/testAVB_alsa_TX_record_to_file_rate24000"/>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_Audio/Interruption/testAVB_alsa_TX_to_speaker_eavbNavigation"/>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_Audio/Interruption/testAVB_alsa_TX_to_speaker_eavbHmi"/>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_Audio/Interruption/testAVB_alsa_RX_record_to_file"/>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_Audio/Interruption/testAVB_alsa_RX_record_to_file_eavbNavigation"/>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_Audio/Interruption/testAVB_alsa_RX_record_to_file_eavbHmi"/>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_Audio/Interruption/testAVB_alsa_RX_record_to_file_rate24000"/>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_Audio/Interruption/testAVB_alsa_RX_to_speaker_eavbNavigation"/>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_Audio/Interruption/testAVB_alsa_RX_to_speaker_eavbHmi"/>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_Audio/Interruption/testAVB_alsa_RX_to_speaker_rate24000"/>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_Audio/Interruption/testAVB_alsa_RX_multichannel_record_to_file"/>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_Audio/Interruption/testAVB_alsa_TX_multichannel_record_to_file"/>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_Audio/Interruption/testAVB_alsa_TX_record_to_file_Long"/>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_Audio/Interruption/testAVB_alsa_RX_record_to_file_Long"/>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_Audio/Interruption/testAVB_alsa_RX_to_speaker_long"/>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_Audio/Interruption/testAVB_alsa_avbstreamhandler_service_stop_start"/>
+        <TestCase Id="../../../../../TC/TP/TC/Multimedia_Audio/Interruption/testAVB_alsa_gptp_service_stop_start"/>
+    </TestCases>
+</Campaign>

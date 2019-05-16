@@ -1,0 +1,3454 @@
+<?xml version="1.0" ?>
+<oglconform_auto>
+	<test_case id="1" name="oglconform_egl-basic basic.eglSupport">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-basic basic.eglSupport</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es2"/>
+				<parameter name="result_check_string">basic.eglSupport subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="2" name="oglconform_egl-basic basic.config.getAllConfigs">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-basic basic.config.getAllConfigs</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es2"/>
+				<parameter name="result_check_string">basic.config.getAllConfigs subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="3" name="oglconform_egl-basic basic.config.getAttributes">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-basic basic.config.getAttributes</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es2"/>
+				<parameter name="result_check_string">basic.config.getAttributes subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+
+	<test_case id="4" name="oglconform_egl-basic basic.config.multiSample">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-basic basic.config.multiSample</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es2"/>
+				<parameter name="result_check_string">basic.config.multiSample subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="5" name="oglconform_egl-basic basic.config.choose">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-basic basic.config.choose</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es2"/>
+				<parameter name="result_check_string">basic.config.choose subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="6" name="oglconform_egl-basic basic.config.chooseByID">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-basic basic.config.chooseByID</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es2"/>
+				<parameter name="result_check_string">basic.config.chooseByID subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="7" name="oglconform_egl-basic basic.drawables.createSurface">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-basic basic.drawables.createSurface</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es2"/>
+				<parameter name="result_check_string">basic.drawables.createSurface subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="8" name="oglconform_egl-basic basic.drawables.createSurfaces">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-basic basic.drawables.createSurfaces</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es2"/>
+				<parameter name="result_check_string">basic.drawables.createSurfaces subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="9" name="oglconform_egl-basic basic.drawables.createPbuffers">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-basic basic.drawables.createPbuffers</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es2"/>
+				<parameter name="result_check_string">basic.drawables.createPbuffers subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="10" name="oglconform_egl-basic basic.drawables.pbuffersStress">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-basic basic.drawables.pbuffersStress</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es2"/>
+				<parameter name="result_check_string">basic.drawables.pbuffersStress subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="11" name="oglconform_egl-basic basic.drawables.pbufferLargest">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-basic basic.drawables.pbufferLargest</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es2"/>
+				<parameter name="result_check_string">basic.drawables.pbufferLargest subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="12" name="oglconform_egl-basic basic.drawables.queryWinDefaults">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-basic basic.drawables.queryWinDefaults</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es2"/>
+				<parameter name="result_check_string">basic.drawables.queryWinDefaults subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="13" name="oglconform_egl-basic basic.drawables.queryWinSurface">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-basic basic.drawables.queryWinSurface</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es2"/>
+				<parameter name="result_check_string">basic.drawables.queryWinSurface subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="14" name="oglconform_egl-basic basic.drawables.queryPbufferDefaults">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-basic basic.drawables.queryPbufferDefaults</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es2"/>
+				<parameter name="result_check_string">basic.drawables.queryPbufferDefaults subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+    <!-- Suspicious behaviour
+	<test_case id="15" name="oglconform_egl-basic basic.drawables.queryPbufferSurface">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-basic basic.drawables.queryPbufferSurface</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es2"/>
+				<parameter name="result_check_string">basic.drawables.queryPbufferSurface subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	!-->
+	<test_case id="16" name="oglconform_egl-basic basic.drawables.multibox">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-basic basic.drawables.multibox</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es2"/>
+				<parameter name="result_check_string">basic.drawables.multibox subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="17" name="oglconform_egl-basic basic.contexts.api">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-basic basic.contexts.api</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es2"/>
+				<parameter name="result_check_string">basic.contexts.api subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="18" name="oglconform_egl-basic basic.contexts.create">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-basic basic.contexts.create</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es2"/>
+				<parameter name="result_check_string">basic.contexts.create subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="19" name="oglconform_egl-basic basic.contexts.createES1">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-basic basic.contexts.createES1</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es2"/>
+				<parameter name="result_check_string">basic.contexts.createES1 subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="20" name="oglconform_egl-basic basic.contexts.binding">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-basic basic.contexts.binding</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es2"/>
+				<parameter name="result_check_string">basic.contexts.binding subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="21" name="oglconform_egl-basic basic.contexts.bindingPbuffer">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-basic basic.contexts.bindingPbuffer</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es2"/>
+				<parameter name="result_check_string">basic.contexts.bindingPbuffer subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="22" name="oglconform_egl-basic basic.contexts.binding2Pbuffer">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-basic basic.contexts.binding2Pbuffer</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es2"/>
+				<parameter name="result_check_string">basic.contexts.binding2Pbuffer subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="23" name="oglconform_egl-basic basic.contexts.stress">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-basic basic.contexts.stress</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es2"/>
+				<parameter name="result_check_string">basic.contexts.stress subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="24" name="oglconform_egl-basic basic.copyBuffers">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-basic basic.copyBuffers</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es2"/>
+				<parameter name="result_check_string">basic.copyBuffers subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="25" name="oglconform_egl-basic basic.androidRecordable.getConfigAttrib">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-basic basic.androidRecordable.getConfigAttrib</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es2"/>
+				<parameter name="result_check_string">basic.androidRecordable.getConfigAttrib subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="26" name="oglconform_egl-basic basic.androidRecordable.configChoose">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-basic basic.androidRecordable.configChoose</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es2"/>
+				<parameter name="result_check_string">basic.androidRecordable.configChoose subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="27" name="oglconform_egl-basic basic.es3Context">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-basic basic.es3Context</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es2"/>
+				<parameter name="result_check_string">basic.es3Context subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="28" name="oglconform_egl-basic negative.config.badDisplay">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-basic negative.config.badDisplay</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es2"/>
+				<parameter name="result_check_string">negative.config.badDisplay subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="29" name="oglconform_egl-basic negative.config.getConfigsBadDpy">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-basic negative.config.getConfigsBadDpy</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es2"/>
+				<parameter name="result_check_string">negative.config.getConfigsBadDpy subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="30" name="oglconform_egl-basic negative.config.getConfigsBadParam">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-basic negative.config.getConfigsBadParam</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es2"/>
+				<parameter name="result_check_string">negative.config.getConfigsBadParam subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="31" name="oglconform_egl-basic negative.config.chooseConfigsBadParam">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-basic negative.config.chooseConfigsBadParam</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es2"/>
+				<parameter name="result_check_string">negative.config.chooseConfigsBadParam subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="32" name="oglconform_egl-basic negative.config.chooseConfigsBadAttrib">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-basic negative.config.chooseConfigsBadAttrib</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es2"/>
+				<parameter name="result_check_string">negative.config.chooseConfigsBadAttrib subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="33" name="oglconform_egl-basic negative.config.getAttribsBadAttrib">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-basic negative.config.getAttribsBadAttrib</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es2"/>
+				<parameter name="result_check_string">negative.config.getAttribsBadAttrib subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="34" name="oglconform_egl-basic negative.drawables.winSurfBadAttrib">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-basic negative.drawables.winSurfBadAttrib</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es2"/>
+				<parameter name="result_check_string">negative.drawables.winSurfBadAttrib subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+    <!-- Suspicious behaviour
+	<test_case id="35" name="oglconform_egl-basic negative.drawables.winSurfBadWin">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-basic negative.drawables.winSurfBadWin</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es2"/>
+				<parameter name="result_check_string">negative.drawables.winSurfBadWin subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	!-->
+	<test_case id="36" name="oglconform_egl-basic negative.drawables.winSurfBadAlloc">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-basic negative.drawables.winSurfBadAlloc</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es2"/>
+				<parameter name="result_check_string">negative.drawables.winSurfBadAlloc subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="37" name="oglconform_egl-basic negative.drawables.pbufferSurfBadParam">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-basic negative.drawables.pbufferSurfBadParam</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es2"/>
+				<parameter name="result_check_string">negative.drawables.pbufferSurfBadParam subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="38" name="oglconform_egl-basic negative.drawables.pbufferSurfBadMatch">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-basic negative.drawables.pbufferSurfBadMatch</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es2"/>
+				<parameter name="result_check_string">negative.drawables.pbufferSurfBadMatch subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+    <!-- Suspicious behaviour
+	<test_case id="39" name="oglconform_egl-basic negative.drawables.pbindTexImageBadMatch">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-basic negative.drawables.pbindTexImageBadMatch</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es2"/>
+				<parameter name="result_check_string">negative.drawables.pbindTexImageBadMatch subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	!-->
+	<test_case id="40" name="oglconform_egl-basic negative.contexts.notCompatible">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-basic negative.contexts.notCompatible</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es2"/>
+				<parameter name="result_check_string">negative.contexts.notCompatible subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="41" name="oglconform_egl-basic negative.contexts.invalidShared">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-basic negative.contexts.invalidShared</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es2"/>
+				<parameter name="result_check_string">negative.contexts.invalidShared subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="42" name="oglconform_egl-basic negative.contexts.invalidCtx">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-basic negative.contexts.invalidCtx</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es2"/>
+				<parameter name="result_check_string">negative.contexts.invalidCtx subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="43" name="oglconform_egl-basic negative.contexts.invalidSurface">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-basic negative.contexts.invalidSurface</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es2"/>
+				<parameter name="result_check_string">negative.contexts.invalidSurface subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="44" name="oglconform_egl-basic negative.surface.invalidConfig">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-basic negative.surface.invalidConfig</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es2"/>
+				<parameter name="result_check_string">negative.surface.invalidConfig subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+    <!-- Suspicious behaviour
+	<test_case id="45" name="oglconform_egl-basic negative.surface.invalidSurfaceAttrib">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-basic negative.surface.invalidSurfaceAttrib</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es2"/>
+				<parameter name="result_check_string">negative.surface.invalidSurfaceAttrib subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+
+	<test_case id="46" name="oglconform_egl-basic negative.window.invalidWindowSwapBuffers">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-basic negative.window.invalidWindowSwapBuffers</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es2"/>
+				<parameter name="result_check_string">negative.window.invalidWindowSwapBuffers subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	!-->
+	<test_case id="47" name="oglconform_egl-config basic.idCompactness">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-config basic.idCompactness</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es2"/>
+				<parameter name="result_check_string">basic.idCompactness subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="48" name="oglconform_egl-config basic.conformant">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-config basic.conformant</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es2"/>
+				<parameter name="result_check_string">basic.conformant subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="49" name="oglconform_egl-config basic.bufferType">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-config basic.bufferType</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es2"/>
+				<parameter name="result_check_string">basic.bufferType subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="50" name="oglconform_egl-config basic.transparentValue">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-config basic.transparentValue</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es2"/>
+				<parameter name="result_check_string">basic.transparentValue subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="51" name="oglconform_egl-config basic.multiSample">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-config basic.multiSample</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es2"/>
+				<parameter name="result_check_string">basic.multiSample subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="52" name="oglconform_egl-config basic.getAllAttributes">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-config basic.getAllAttributes</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es2"/>
+				<parameter name="result_check_string">basic.getAllAttributes subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="53" name="oglconform_egl-config basic.usableType">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-config basic.usableType</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es2"/>
+				<parameter name="result_check_string">basic.usableType subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="54" name="oglconform_egl-config basic.bothGLES">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-config basic.bothGLES</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es2"/>
+				<parameter name="result_check_string">basic.bothGLES subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="55" name="oglconform_egl-config basic.caveat">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-config basic.caveat</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es2"/>
+				<parameter name="result_check_string">basic.caveat subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="56" name="oglconform_egl-config basic.pbufferAttribs">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-config basic.pbufferAttribs</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es2"/>
+				<parameter name="result_check_string">basic.pbufferAttribs subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="57" name="oglconform_egl-config basic.bindToTex">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-config basic.bindToTex</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es2"/>
+				<parameter name="result_check_string">basic.bindToTex subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="58" name="oglconform_egl-config advanced.selectionCriteria.bufferSize">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-config advanced.selectionCriteria.bufferSize</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es2"/>
+				<parameter name="result_check_string">advanced.selectionCriteria.bufferSize subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="59" name="oglconform_egl-config advanced.selectionCriteria.componentsSize">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-config advanced.selectionCriteria.componentsSize</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es2"/>
+				<parameter name="result_check_string">advanced.selectionCriteria.componentsSize subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="60" name="oglconform_egl-config advanced.selectionCriteria.luminanceSize">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-config advanced.selectionCriteria.luminanceSize</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es2"/>
+				<parameter name="result_check_string">advanced.selectionCriteria.luminanceSize subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="61" name="oglconform_egl-config advanced.selectionCriteria.alphaMaskSize">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-config advanced.selectionCriteria.alphaMaskSize</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es2"/>
+				<parameter name="result_check_string">advanced.selectionCriteria.alphaMaskSize subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="62" name="oglconform_egl-config advanced.selectionCriteria.depthSize">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-config advanced.selectionCriteria.depthSize</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es2"/>
+				<parameter name="result_check_string">advanced.selectionCriteria.depthSize subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="63" name="oglconform_egl-config advanced.selectionCriteria.stencilSize">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-config advanced.selectionCriteria.stencilSize</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es2"/>
+				<parameter name="result_check_string">advanced.selectionCriteria.stencilSize subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="64" name="oglconform_egl-config advanced.selectionCriteria.sampleBuffers">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-config advanced.selectionCriteria.sampleBuffers</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es2"/>
+				<parameter name="result_check_string">advanced.selectionCriteria.sampleBuffers subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="65" name="oglconform_egl-config advanced.selectionCriteria.samples">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-config advanced.selectionCriteria.samples</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es2"/>
+				<parameter name="result_check_string">advanced.selectionCriteria.samples subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="66" name="oglconform_egl-config advanced.selectionCriteria.exactMatch">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-config advanced.selectionCriteria.exactMatch</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es2"/>
+				<parameter name="result_check_string">advanced.selectionCriteria.exactMatch subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+    <!-- Suspicious behavior
+	<test_case id="67" name="oglconform_egl-config advanced.selectionCriteria.bufferType">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-config advanced.selectionCriteria.bufferType</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es2"/>
+				<parameter name="result_check_string">advanced.selectionCriteria.bufferType subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	!-->
+	<test_case id="68" name="oglconform_egl-config advanced.sorting.getConfigOrder">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-config advanced.sorting.getConfigOrder</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es2"/>
+				<parameter name="result_check_string">advanced.sorting.getConfigOrder subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="69" name="oglconform_egl-config advanced.sorting.chooseConfigOrder">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-config advanced.sorting.chooseConfigOrder</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es2"/>
+				<parameter name="result_check_string">advanced.sorting.chooseConfigOrder subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="70" name="oglconform_egl-config advanced.sorting.chooseConfigOrder2">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-config advanced.sorting.chooseConfigOrder2</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es2"/>
+				<parameter name="result_check_string">advanced.sorting.chooseConfigOrder2 subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="71" name="oglconform_egl-config advanced.sorting.chooseConfigOrder3">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-config advanced.sorting.chooseConfigOrder3</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es2"/>
+				<parameter name="result_check_string">advanced.sorting.chooseConfigOrder3 subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="72" name="oglconform_egl-config negative.badDispaly">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-config negative.badDispaly</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es2"/>
+				<parameter name="result_check_string">negative.badDispaly subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="73" name="oglconform_egl-config negative.noNumConfig">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-config negative.noNumConfig</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es2"/>
+				<parameter name="result_check_string">negative.noNumConfig subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="74" name="oglconform_egl-config negative.configBadAttribList">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-config negative.configBadAttribList</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es2"/>
+				<parameter name="result_check_string">negative.configBadAttribList subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="75" name="oglconform_egl-config negative.configMovingBadAttribList">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-config negative.configMovingBadAttribList</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es2"/>
+				<parameter name="result_check_string">negative.configMovingBadAttribList subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="76" name="oglconform_egl-config negative.configBadAttrib">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-config negative.configBadAttrib</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es2"/>
+				<parameter name="result_check_string">negative.configBadAttrib subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="77" name="oglconform_egl-context basic.ContextQuery">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-context basic.ContextQuery</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es2"/>
+				<parameter name="result_check_string">basic.ContextQuery subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="78" name="oglconform_egl-context basic.ContextQueryRenderBuffer">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-context basic.ContextQueryRenderBuffer</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es2"/>
+				<parameter name="result_check_string">basic.ContextQueryRenderBuffer subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="79" name="oglconform_egl-context basic.ContextCurrentContext">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-context basic.ContextCurrentContext</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es2"/>
+				<parameter name="result_check_string">basic.ContextCurrentContext subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="80" name="oglconform_egl-context basic.ContextCurrentSurface">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-context basic.ContextCurrentSurface</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es2"/>
+				<parameter name="result_check_string">basic.ContextCurrentSurface subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="81" name="oglconform_egl-context basic.ContextSwitchVsResources">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-context basic.ContextSwitchVsResources</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es2"/>
+				<parameter name="result_check_string">basic.ContextSwitchVsResources subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="82" name="oglconform_egl-context basic.TwoContextShareTwoTextures">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-context basic.TwoContextShareTwoTextures</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es2"/>
+				<parameter name="result_check_string">basic.TwoContextShareTwoTextures subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="83" name="oglconform_egl-context basic.TwoContextShareProgram">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-context basic.TwoContextShareProgram</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es2"/>
+				<parameter name="result_check_string">basic.TwoContextShareProgram subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="84" name="oglconform_egl-context advanced.series.ContextStressTest">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-context advanced.series.ContextStressTest</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es2"/>
+				<parameter name="result_check_string">advanced.series.ContextStressTest subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="85" name="oglconform_egl-context advanced.series.ContextDrawTest">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-context advanced.series.ContextDrawTest</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es2"/>
+				<parameter name="result_check_string">advanced.series.ContextDrawTest subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="86" name="oglconform_egl-context advanced.SharingContextDrawTest">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-context advanced.SharingContextDrawTest</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es2"/>
+				<parameter name="result_check_string">advanced.SharingContextDrawTest subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="87" name="oglconform_egl-context advanced.threads.CurrentContext">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-context advanced.threads.CurrentContext</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es2"/>
+				<parameter name="result_check_string">advanced.threads.CurrentContext subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="88" name="oglconform_egl-context advanced.threads.ContextShareTexture">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-context advanced.threads.ContextShareTexture</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es2"/>
+				<parameter name="result_check_string">advanced.threads.ContextShareTexture subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="89" name="oglconform_egl-context advanced.threads.SharingContextDrawTest">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-context advanced.threads.SharingContextDrawTest</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es2"/>
+				<parameter name="result_check_string">advanced.threads.SharingContextDrawTest subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="90" name="oglconform_egl-context advanced.threads.SharingContextResourcesManagement">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-context advanced.threads.SharingContextResourcesManagement</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es2"/>
+				<parameter name="result_check_string">advanced.threads.SharingContextResourcesManagement subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="91" name="oglconform_egl-context misc.ChainContextShareTexture">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-context misc.ChainContextShareTexture</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es2"/>
+				<parameter name="result_check_string">misc.ChainContextShareTexture subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="92" name="oglconform_egl-context negative.NBadContextAttrib">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-context negative.NBadContextAttrib</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es2"/>
+				<parameter name="result_check_string">negative.NBadContextAttrib subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+    <!-- Suspicious behavior
+	<test_case id="93" name="oglconform_egl-context negative.NBadContextConfig">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-context negative.NBadContextConfig</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es2"/>
+				<parameter name="result_check_string">negative.NBadContextConfig subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	!-->
+	<test_case id="94" name="oglconform_egl-context negative.NDestroyContext">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-context negative.NDestroyContext</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es2"/>
+				<parameter name="result_check_string">negative.NDestroyContext subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="95" name="oglconform_egl-context negative.threads.NThreadsSameContext">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-context negative.threads.NThreadsSameContext</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es2"/>
+				<parameter name="result_check_string">negative.threads.NThreadsSameContext subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="96" name="oglconform_egl-image basic.texture2D.createSimple">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-image basic.texture2D.createSimple</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es2"/>
+				<parameter name="result_check_string">basic.texture2D.createSimple subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="97" name="oglconform_egl-image basic.texture2D.createPreserved">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-image basic.texture2D.createPreserved</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es2"/>
+				<parameter name="result_check_string">basic.texture2D.createPreserved subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="98" name="oglconform_egl-image basic.texture2D.createTexTarget">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-image basic.texture2D.createTexTarget</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es2"/>
+				<parameter name="result_check_string">basic.texture2D.createTexTarget subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="99" name="oglconform_egl-image basic.androidNativeBuffer.createAndroidNative">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-image basic.androidNativeBuffer.createAndroidNative</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es2"/>
+				<parameter name="result_check_string">basic.androidNativeBuffer.createAndroidNative subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="100" name="oglconform_egl-image basic.androidNativeBuffer.createAndroidNativePreserved">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-image basic.androidNativeBuffer.createAndroidNativePreserved</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es2"/>
+				<parameter name="result_check_string">basic.androidNativeBuffer.createAndroidNativePreserved subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="101" name="oglconform_egl-image basic.androidNativeBuffer.create2DTex">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-image basic.androidNativeBuffer.create2DTex</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es2"/>
+				<parameter name="result_check_string">basic.androidNativeBuffer.create2DTex subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+    <!-- Suspicious behavior
+	<test_case id="102" name="oglconform_egl-image basic.texture3D.create3DSimple">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-image basic.texture3D.create3DSimple</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es2"/>
+				<parameter name="result_check_string">basic.texture3D.create3DSimple subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+
+	<test_case id="103" name="oglconform_egl-image basic.texture3D.create3DPreserved">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-image basic.texture3D.create3DPreserved</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es2"/>
+				<parameter name="result_check_string">basic.texture3D.create3DPreserved subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	!-->
+	<test_case id="104" name="oglconform_egl-image basic.cubeMap.createSimpleCube">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-image basic.cubeMap.createSimpleCube</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es2"/>
+				<parameter name="result_check_string">basic.cubeMap.createSimpleCube subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="105" name="oglconform_egl-image basic.cubeMap.createCubePreserved">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-image basic.cubeMap.createCubePreserved</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es2"/>
+				<parameter name="result_check_string">basic.cubeMap.createCubePreserved subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="106" name="oglconform_egl-image basic.renderbuffer.createSimpleRbo">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-image basic.renderbuffer.createSimpleRbo</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es2"/>
+				<parameter name="result_check_string">basic.renderbuffer.createSimpleRbo subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="107" name="oglconform_egl-image basic.renderbuffer.createRboPreserved">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-image basic.renderbuffer.createRboPreserved</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es2"/>
+				<parameter name="result_check_string">basic.renderbuffer.createRboPreserved subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="108" name="oglconform_egl-image basic.renderbuffer.rbo2Dtex">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-image basic.renderbuffer.rbo2Dtex</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es2"/>
+				<parameter name="result_check_string">basic.renderbuffer.rbo2Dtex subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="109" name="oglconform_egl-image basic.renderbuffer.rbo2rbo">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-image basic.renderbuffer.rbo2rbo</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es2"/>
+				<parameter name="result_check_string">basic.renderbuffer.rbo2rbo subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="110" name="oglconform_egl-image advanced.texture2D.create2DTargetCtx">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-image advanced.texture2D.create2DTargetCtx</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es2"/>
+				<parameter name="result_check_string">advanced.texture2D.create2DTargetCtx subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="111" name="oglconform_egl-image advanced.texture2D.mipmaps2images2D">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-image advanced.texture2D.mipmaps2images2D</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es2"/>
+				<parameter name="result_check_string">advanced.texture2D.mipmaps2images2D subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="112" name="oglconform_egl-image advanced.ics.simpleICS">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-image advanced.ics.simpleICS</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es2"/>
+				<parameter name="result_check_string">advanced.ics.simpleICS subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="113" name="oglconform_egl-image advanced.ics.modifyNativeICS">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-image advanced.ics.modifyNativeICS</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es2"/>
+				<parameter name="result_check_string">advanced.ics.modifyNativeICS subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="114" name="oglconform_egl-image advanced.ics.simpleSurfFlinger">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-image advanced.ics.simpleSurfFlinger</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es2"/>
+				<parameter name="result_check_string">advanced.ics.simpleSurfFlinger subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="115" name="oglconform_egl-image advanced.ics.surfFlinger">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-image advanced.ics.surfFlinger</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es2"/>
+				<parameter name="result_check_string">advanced.ics.surfFlinger subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="116" name="oglconform_egl-android advanced.pixmapDraw">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-android advanced.pixmapDraw</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es2"/>
+				<parameter name="result_check_string">advanced.pixmapDraw subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="117" name="oglconform_egl-android advanced.pixmapRead">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-android advanced.pixmapRead</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es2"/>
+				<parameter name="result_check_string">advanced.pixmapRead subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="118" name="oglconform_egl-android advanced.cameraPath.rgba">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-android advanced.cameraPath.rgba</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es2"/>
+				<parameter name="result_check_string">advanced.cameraPath.rgba subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="119" name="oglconform_egl-android advanced.cameraPath.yv12">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-android advanced.cameraPath.yv12</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es2"/>
+				<parameter name="result_check_string">advanced.cameraPath.yv12 subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="120" name="oglconform_egl-android advanced.ANativewindow.GetSize">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-android advanced.ANativewindow.GetSize</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es2"/>
+				<parameter name="result_check_string">advanced.ANativewindow.GetSize subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="121" name="oglconform_egl-android advanced.ANativewindow.ResizeGetSize">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-android advanced.ANativewindow.ResizeGetSize</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es2"/>
+				<parameter name="result_check_string">advanced.ANativewindow.ResizeGetSize subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="122" name="oglconform_egl-android advanced.ANativewindow.GetFormat">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-android advanced.ANativewindow.GetFormat</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es2"/>
+				<parameter name="result_check_string">advanced.ANativewindow.GetFormat subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="123" name="oglconform_egl-android advanced.ANativewindow.SetBufferGeometry">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-android advanced.ANativewindow.SetBufferGeometry</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es2"/>
+				<parameter name="result_check_string">advanced.ANativewindow.SetBufferGeometry subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="124" name="oglconform_egl-android advanced.ANativewindow.SetBufferGeometryZero">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-android advanced.ANativewindow.SetBufferGeometryZero</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es2"/>
+				<parameter name="result_check_string">advanced.ANativewindow.SetBufferGeometryZero subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="125" name="oglconform_egl-android advanced.ANativewindow.GetBuffer">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-android advanced.ANativewindow.GetBuffer</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es2"/>
+				<parameter name="result_check_string">advanced.ANativewindow.GetBuffer subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="126" name="oglconform_egl-android misc.formatBufferAllocation.RGBA_8888">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-android misc.formatBufferAllocation.RGBA_8888</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es2"/>
+				<parameter name="result_check_string">misc.formatBufferAllocation.RGBA_8888 subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="127" name="oglconform_egl-android misc.formatBufferAllocation.RGBA_5551">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-android misc.formatBufferAllocation.RGBA_5551</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es2"/>
+				<parameter name="result_check_string">misc.formatBufferAllocation.RGBA_5551 subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="128" name="oglconform_egl-android misc.formatBufferAllocation.RGBA_4444">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-android misc.formatBufferAllocation.RGBA_4444</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es2"/>
+				<parameter name="result_check_string">misc.formatBufferAllocation.RGBA_4444 subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="129" name="oglconform_egl-android misc.formatBufferAllocation.BGRA_8888">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-android misc.formatBufferAllocation.BGRA_8888</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es2"/>
+				<parameter name="result_check_string">misc.formatBufferAllocation.BGRA_8888 subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="130" name="oglconform_egl-android misc.formatBufferAllocation.RGBX_8888">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-android misc.formatBufferAllocation.RGBX_8888</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es2"/>
+				<parameter name="result_check_string">misc.formatBufferAllocation.RGBX_8888 subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="131" name="oglconform_egl-android misc.formatBufferAllocation.RGB_888">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-android misc.formatBufferAllocation.RGB_888</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es2"/>
+				<parameter name="result_check_string">misc.formatBufferAllocation.RGB_888 subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="132" name="oglconform_egl-android misc.formatBufferAllocation.RGB_565">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-android misc.formatBufferAllocation.RGB_565</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es2"/>
+				<parameter name="result_check_string">misc.formatBufferAllocation.RGB_565 subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="133" name="oglconform_egl-android misc.formatBufferAllocation.YV12">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-android misc.formatBufferAllocation.YV12</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es2"/>
+				<parameter name="result_check_string">misc.formatBufferAllocation.YV12 subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="134" name="oglconform_egl-android misc.formatBufferAllocation.YCbCr_422_SP">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-android misc.formatBufferAllocation.YCbCr_422_SP</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es2"/>
+				<parameter name="result_check_string">misc.formatBufferAllocation.YCbCr_422_SP subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="135" name="oglconform_egl-android misc.formatBufferAllocation.YCbCr_422_I">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-android misc.formatBufferAllocation.YCbCr_422_I</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es2"/>
+				<parameter name="result_check_string">misc.formatBufferAllocation.YCbCr_422_I subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="136" name="oglconform_egl-android misc.formatBufferAllocation.YCrCb_420_SP">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-android misc.formatBufferAllocation.YCrCb_420_SP</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es2"/>
+				<parameter name="result_check_string">misc.formatBufferAllocation.YCrCb_420_SP subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="137" name="oglconform_egl-surface basic.simpleChecks.winRenderBuffer">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-surface basic.simpleChecks.winRenderBuffer</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es2"/>
+				<parameter name="result_check_string">basic.simpleChecks.winRenderBuffer subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="138" name="oglconform_egl-surface basic.simpleChecks.pbufferRenderBuffer">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-surface basic.simpleChecks.pbufferRenderBuffer</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es2"/>
+				<parameter name="result_check_string">basic.simpleChecks.pbufferRenderBuffer subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="139" name="oglconform_egl-surface basic.simpleChecks.pixmapRenderBuffer">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-surface basic.simpleChecks.pixmapRenderBuffer</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es2"/>
+				<parameter name="result_check_string">basic.simpleChecks.pixmapRenderBuffer subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="140" name="oglconform_egl-surface basic.simpleChecks.makeCurrent.wnd">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-surface basic.simpleChecks.makeCurrent.wnd</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es2"/>
+				<parameter name="result_check_string">basic.simpleChecks.makeCurrent.wnd subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="141" name="oglconform_egl-surface basic.simpleChecks.makeCurrent.pbuf">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-surface basic.simpleChecks.makeCurrent.pbuf</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es2"/>
+				<parameter name="result_check_string">basic.simpleChecks.makeCurrent.pbuf subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="142" name="oglconform_egl-surface basic.simpleChecks.makeCurrent.pixm">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-surface basic.simpleChecks.makeCurrent.pixm</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es2"/>
+				<parameter name="result_check_string">basic.simpleChecks.makeCurrent.pixm subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="143" name="oglconform_egl-surface basic.simpleChecks.deleteCurrent.wnd">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-surface basic.simpleChecks.deleteCurrent.wnd</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es2"/>
+				<parameter name="result_check_string">basic.simpleChecks.deleteCurrent.wnd subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="144" name="oglconform_egl-surface basic.simpleChecks.deleteCurrent.pbuf">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-surface basic.simpleChecks.deleteCurrent.pbuf</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es2"/>
+				<parameter name="result_check_string">basic.simpleChecks.deleteCurrent.pbuf subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="145" name="oglconform_egl-surface basic.simpleChecks.deleteCurrent.pixm">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-surface basic.simpleChecks.deleteCurrent.pixm</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es2"/>
+				<parameter name="result_check_string">basic.simpleChecks.deleteCurrent.pixm subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="146" name="oglconform_egl-surface basic.querySize.winInitialSize">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-surface basic.querySize.winInitialSize</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es2"/>
+				<parameter name="result_check_string">basic.querySize.winInitialSize subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="147" name="oglconform_egl-surface basic.querySize.winReize">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-surface basic.querySize.winReize</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es2"/>
+				<parameter name="result_check_string">basic.querySize.winReize subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="148" name="oglconform_egl-surface basic.querySize.pbufferSize">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-surface basic.querySize.pbufferSize</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es2"/>
+				<parameter name="result_check_string">basic.querySize.pbufferSize subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="149" name="oglconform_egl-surface basic.surfaceAttribs.pbuffer">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-surface basic.surfaceAttribs.pbuffer</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es2"/>
+				<parameter name="result_check_string">basic.surfaceAttribs.pbuffer subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="150" name="oglconform_egl-surface advanced.perConfigWinSepNative">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-surface advanced.perConfigWinSepNative</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es2"/>
+				<parameter name="result_check_string">advanced.perConfigWinSepNative subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="151" name="oglconform_egl-surface advanced.winOneNative">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-surface advanced.winOneNative</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es2"/>
+				<parameter name="result_check_string">advanced.winOneNative subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+    <!-- Suspicious behavior
+	<test_case id="152" name="oglconform_egl-surface advanced.rndr2tex.simple">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-surface advanced.rndr2tex.simple</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es2"/>
+				<parameter name="result_check_string">advanced.rndr2tex.simple subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="153" name="oglconform_egl-surface advanced.rndr2tex.simple2">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-surface advanced.rndr2tex.simple2</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es2"/>
+				<parameter name="result_check_string">advanced.rndr2tex.simple2 subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	!-->
+	<test_case id="154" name="oglconform_egl-surface advanced.stressSurface">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-surface advanced.stressSurface</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es2"/>
+				<parameter name="result_check_string">advanced.stressSurface subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="155" name="oglconform_egl-surface advanced.surfaceResize.setSize.After">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-surface advanced.surfaceResize.setSize.After</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es2"/>
+				<parameter name="result_check_string">advanced.surfaceResize.setSize.After subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="156" name="oglconform_egl-surface advanced.surfaceResize.setSize.Before">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-surface advanced.surfaceResize.setSize.Before</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es2"/>
+				<parameter name="result_check_string">advanced.surfaceResize.setSize.Before subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="157" name="oglconform_egl-surface advanced.surfaceResize.setBuffersGeometry.After">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-surface advanced.surfaceResize.setBuffersGeometry.After</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es2"/>
+				<parameter name="result_check_string">advanced.surfaceResize.setBuffersGeometry.After subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="158" name="oglconform_egl-surface advanced.surfaceResize.setBuffersGeometry.Before">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-surface advanced.surfaceResize.setBuffersGeometry.Before</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es2"/>
+				<parameter name="result_check_string">advanced.surfaceResize.setBuffersGeometry.Before subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="159" name="oglconform_egl-surface negative.badDisplay">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-surface negative.badDisplay</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es2"/>
+				<parameter name="result_check_string">negative.badDisplay subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="160" name="oglconform_egl-surface negative.badConfig">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-surface negative.badConfig</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es2"/>
+				<parameter name="result_check_string">negative.badConfig subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="161" name="oglconform_egl-surface negative.badAllocWin">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-surface negative.badAllocWin</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es2"/>
+				<parameter name="result_check_string">negative.badAllocWin subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="162" name="oglconform_egl-surface negative.secondDestroy">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-surface negative.secondDestroy</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es2"/>
+				<parameter name="result_check_string">negative.secondDestroy subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="163" name="oglconform_egl-surface negative.queryInvalidSurface">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-surface negative.queryInvalidSurface</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es2"/>
+				<parameter name="result_check_string">negative.queryInvalidSurface subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="164" name="oglconform_egl-initialization basic.GetDisplay">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-initialization basic.GetDisplay</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es2"/>
+				<parameter name="result_check_string">basic.GetDisplay subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="165" name="oglconform_egl-initialization basic.UninitializeDisplay">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-initialization basic.UninitializeDisplay</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es2"/>
+				<parameter name="result_check_string">basic.UninitializeDisplay subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="166" name="oglconform_egl-initialization basic.InitializeDisplay">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-initialization basic.InitializeDisplay</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es2"/>
+				<parameter name="result_check_string">basic.InitializeDisplay subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="167" name="oglconform_egl-initialization basic.MultiTerminate">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-initialization basic.MultiTerminate</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es2"/>
+				<parameter name="result_check_string">basic.MultiTerminate subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="168" name="oglconform_egl-initialization basic.UninitializeDisplayContext">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-initialization basic.UninitializeDisplayContext</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es2"/>
+				<parameter name="result_check_string">basic.UninitializeDisplayContext subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="169" name="oglconform_egl-initialization basic.UninitializeDisplaySurface">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-initialization basic.UninitializeDisplaySurface</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es2"/>
+				<parameter name="result_check_string">basic.UninitializeDisplaySurface subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+    <!-- Suspicious behavior
+	<test_case id="170" name="oglconform_egl-initialization advanced.multiInitialization.UninitializeDisplayContext">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-initialization advanced.multiInitialization.UninitializeDisplayContext</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es2"/>
+				<parameter name="result_check_string">advanced.multiInitialization.UninitializeDisplayContext subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="171" name="oglconform_egl-initialization advanced.multiInitialization.UninitializeDisplaySurface">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-initialization advanced.multiInitialization.UninitializeDisplaySurface</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es2"/>
+				<parameter name="result_check_string">advanced.multiInitialization.UninitializeDisplaySurface subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	!-->
+	<test_case id="172" name="oglconform_egl-initialization miscellaneous.stress.ContextTermination">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-initialization miscellaneous.stress.ContextTermination</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es2"/>
+				<parameter name="result_check_string">miscellaneous.stress.ContextTermination subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="173" name="oglconform_egl-initialization miscellaneous.stress.LargePbufferTermination">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-initialization miscellaneous.stress.LargePbufferTermination</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es2"/>
+				<parameter name="result_check_string">miscellaneous.stress.LargePbufferTermination subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="174" name="oglconform_egl-initialization miscellaneous.stress.WindowTermination">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-initialization miscellaneous.stress.WindowTermination</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es2"/>
+				<parameter name="result_check_string">miscellaneous.stress.WindowTermination subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="175" name="oglconform_egl-initialization negative.notInitiatedDpy">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-initialization negative.notInitiatedDpy</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es2"/>
+				<parameter name="result_check_string">negative.notInitiatedDpy subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="176" name="oglconform_egl-sync basic.ExtensionPresence">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-sync basic.ExtensionPresence</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es2"/>
+				<parameter name="result_check_string">basic.ExtensionPresence subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="177" name="oglconform_egl-sync basic.CreateDestroySync">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-sync basic.CreateDestroySync</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es2"/>
+				<parameter name="result_check_string">basic.CreateDestroySync subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="178" name="oglconform_egl-sync basic.GetSyncAttribs">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-sync basic.GetSyncAttribs</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es2"/>
+				<parameter name="result_check_string">basic.GetSyncAttribs subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="179" name="oglconform_egl-sync basic.SyncWait">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-sync basic.SyncWait</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es2"/>
+				<parameter name="result_check_string">basic.SyncWait subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="180" name="oglconform_egl-sync basic.SyncWithSwap">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-sync basic.SyncWithSwap</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es2"/>
+				<parameter name="result_check_string">basic.SyncWithSwap subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="181" name="oglconform_egl-sync basic.timeoutExpired">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-sync basic.timeoutExpired</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es2"/>
+				<parameter name="result_check_string">basic.timeoutExpired subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="182" name="oglconform_egl-sync advanced.SyncQueue.NoOrderNoAcross">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-sync advanced.SyncQueue.NoOrderNoAcross</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es2"/>
+				<parameter name="result_check_string">advanced.SyncQueue.NoOrderNoAcross subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="183" name="oglconform_egl-sync advanced.SyncQueue.OrderNoAcross">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-sync advanced.SyncQueue.OrderNoAcross</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es2"/>
+				<parameter name="result_check_string">advanced.SyncQueue.OrderNoAcross subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="184" name="oglconform_egl-sync advanced.SyncQueue.NoOrderAcross">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-sync advanced.SyncQueue.NoOrderAcross</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es2"/>
+				<parameter name="result_check_string">advanced.SyncQueue.NoOrderAcross subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="185" name="oglconform_egl-sync advanced.SyncQueue.OrderAcross">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-sync advanced.SyncQueue.OrderAcross</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es2"/>
+				<parameter name="result_check_string">advanced.SyncQueue.OrderAcross subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="186" name="oglconform_egl-sync advanced.MultiContextSync">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-sync advanced.MultiContextSync</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es2"/>
+				<parameter name="result_check_string">advanced.MultiContextSync subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="187" name="oglconform_egl-sync advanced.thread.ThreadWait">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-sync advanced.thread.ThreadWait</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es2"/>
+				<parameter name="result_check_string">advanced.thread.ThreadWait subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="188" name="oglconform_egl-sync advanced.thread.ThreadDeleteWaiting">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-sync advanced.thread.ThreadDeleteWaiting</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es2"/>
+				<parameter name="result_check_string">advanced.thread.ThreadDeleteWaiting subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="189" name="oglconform_egl-sync negative.CreateSync.BadDisplay">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-sync negative.CreateSync.BadDisplay</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es2"/>
+				<parameter name="result_check_string">negative.CreateSync.BadDisplay subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="190" name="oglconform_egl-sync negative.CreateSync.BadAttrib">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-sync negative.CreateSync.BadAttrib</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es2"/>
+				<parameter name="result_check_string">negative.CreateSync.BadAttrib subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="191" name="oglconform_egl-sync negative.CreateSync.BadType">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-sync negative.CreateSync.BadType</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es2"/>
+				<parameter name="result_check_string">negative.CreateSync.BadType subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="192" name="oglconform_egl-sync negative.CreateSync.NoContext">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-sync negative.CreateSync.NoContext</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es2"/>
+				<parameter name="result_check_string">negative.CreateSync.NoContext subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="193" name="oglconform_egl-sync negative.WaitBadSync">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-sync negative.WaitBadSync</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es2"/>
+				<parameter name="result_check_string">negative.WaitBadSync subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="194" name="oglconform_egl-sync negative.GetSyncAttrib.BadSync">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-sync negative.GetSyncAttrib.BadSync</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es2"/>
+				<parameter name="result_check_string">negative.GetSyncAttrib.BadSync subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="195" name="oglconform_egl-sync negative.GetSyncAttrib.BadAttrib">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-sync negative.GetSyncAttrib.BadAttrib</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es2"/>
+				<parameter name="result_check_string">negative.GetSyncAttrib.BadAttrib subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="196" name="oglconform_egl-sync negative.DestrySyncBadSync">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-sync negative.DestrySyncBadSync</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es2"/>
+				<parameter name="result_check_string">negative.DestrySyncBadSync subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+    <!-- Suspicious behavior
+	<test_case id="197" name="oglconform_egl-android-sync basic.CreateDestroyNativeSync">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-android-sync basic.CreateDestroyNativeSync</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es2"/>
+				<parameter name="result_check_string">basic.CreateDestroyNativeSync subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="198" name="oglconform_egl-android-sync basic.GetNativeSyncAttribs">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-android-sync basic.GetNativeSyncAttribs</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es2"/>
+				<parameter name="result_check_string">basic.GetNativeSyncAttribs subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="199" name="oglconform_egl-android-sync basic.NativeSyncWithSwap">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-android-sync basic.NativeSyncWithSwap</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es2"/>
+				<parameter name="result_check_string">basic.NativeSyncWithSwap subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="200" name="oglconform_egl-android-sync basic.NativeSyncDuplicateDestroy">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-android-sync basic.NativeSyncDuplicateDestroy</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es2"/>
+				<parameter name="result_check_string">basic.NativeSyncDuplicateDestroy subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="201" name="oglconform_egl-android-sync basic.NativeSyncDuplicateWait">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-android-sync basic.NativeSyncDuplicateWait</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es2"/>
+				<parameter name="result_check_string">basic.NativeSyncDuplicateWait subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="202" name="oglconform_egl-android-sync basic.NativeSyncWaitSync.simple">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-android-sync basic.NativeSyncWaitSync.simple</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es2"/>
+				<parameter name="result_check_string">basic.NativeSyncWaitSync.simple subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="203" name="oglconform_egl-android-sync basic.NativeSyncWaitSync.syncWait">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-android-sync basic.NativeSyncWaitSync.syncWait</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es2"/>
+				<parameter name="result_check_string">basic.NativeSyncWaitSync.syncWait subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="204" name="oglconform_egl-android-sync basic.NativeSyncWaitSync.syncWaitSwap">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-android-sync basic.NativeSyncWaitSync.syncWaitSwap</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es2"/>
+				<parameter name="result_check_string">basic.NativeSyncWaitSync.syncWaitSwap subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="205" name="oglconform_egl-android-sync advanced.ThreadsBasic">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-android-sync advanced.ThreadsBasic</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es2"/>
+				<parameter name="result_check_string">advanced.ThreadsBasic subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="206" name="oglconform_egl-android-sync misc.ProcBasic">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-android-sync misc.ProcBasic</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es2"/>
+				<parameter name="result_check_string">misc.ProcBasic subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="207" name="oglconform_egl-android-sync negative.NativeSyncWaitSync.noContext">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-android-sync negative.NativeSyncWaitSync.noContext</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es2"/>
+				<parameter name="result_check_string">negative.NativeSyncWaitSync.noContext subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="208" name="oglconform_egl-android-sync negative.NativeSyncWaitSync.badFlag">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-android-sync negative.NativeSyncWaitSync.badFlag</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es2"/>
+				<parameter name="result_check_string">negative.NativeSyncWaitSync.badFlag subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	!-->
+	<test_case id="209" name="oglconform_egl-gpa_es1 basic.SmokeTest.Hard">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-gpa_es1 basic.SmokeTest.Hard</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es1"/>
+				<parameter name="result_check_string">basic.SmokeTest.Hard subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+    <!-- Suspicious behavior
+	<test_case id="210" name="oglconform_egl-gpa_es1 basic.SmokeTest.Soft">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-gpa_es1 basic.SmokeTest.Soft</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es1"/>
+				<parameter name="result_check_string">basic.SmokeTest.Soft subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	!-->
+	<test_case id="211" name="oglconform_egl-gpa_es1 basic.FixedClearColor.Hard">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-gpa_es1 basic.FixedClearColor.Hard</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es1"/>
+				<parameter name="result_check_string">basic.FixedClearColor.Hard subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+    <!-- Suspicious behavior
+	<test_case id="212" name="oglconform_egl-gpa_es1 basic.FixedClearColor.Soft">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-gpa_es1 basic.FixedClearColor.Soft</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es1"/>
+				<parameter name="result_check_string">basic.FixedClearColor.Soft subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	!-->
+	<test_case id="213" name="oglconform_egl-gpa_es1 basic.FixedLoadMatrix.Hard">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-gpa_es1 basic.FixedLoadMatrix.Hard</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es1"/>
+				<parameter name="result_check_string">basic.FixedLoadMatrix.Hard subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+    <!-- Suspicious behavior
+	<test_case id="214" name="oglconform_egl-gpa_es1 basic.FixedLoadMatrix.Soft">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-gpa_es1 basic.FixedLoadMatrix.Soft</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es1"/>
+				<parameter name="result_check_string">basic.FixedLoadMatrix.Soft subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	!-->
+	<test_case id="215" name="oglconform_egl-gpa_es1 basic.BindFramebufferOES.Hard">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-gpa_es1 basic.BindFramebufferOES.Hard</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es1"/>
+				<parameter name="result_check_string">basic.BindFramebufferOES.Hard subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+    <!-- says test not applicable
+	<test_case id="216" name="oglconform_egl-gpa_es1 basic.BindFramebufferOES.Soft">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-gpa_es1 basic.BindFramebufferOES.Soft</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es1"/>
+				<parameter name="result_check_string">basic.BindFramebufferOES.Soft subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	!-->
+	<test_case id="217" name="oglconform_egl-gpa_es1 basic.egl.GetConfigs">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-gpa_es1 basic.egl.GetConfigs</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es1"/>
+				<parameter name="result_check_string">basic.egl.GetConfigs subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="218" name="oglconform_egl-gpa_es1 basic.egl.CreateSync">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-gpa_es1 basic.egl.CreateSync</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es1"/>
+				<parameter name="result_check_string">basic.egl.CreateSync subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="219" name="oglconform_egl-gpa_es1 basic.egl.DeleteSync">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-gpa_es1 basic.egl.DeleteSync</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es1"/>
+				<parameter name="result_check_string">basic.egl.DeleteSync subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="220" name="oglconform_egl-gpa_es1 basic.egl.CreatePbuffer">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-gpa_es1 basic.egl.CreatePbuffer</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es1"/>
+				<parameter name="result_check_string">basic.egl.CreatePbuffer subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="221" name="oglconform_egl-gpa_es1 basic.es.IsEnabled">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-gpa_es1 basic.es.IsEnabled</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es1"/>
+				<parameter name="result_check_string">basic.es.IsEnabled subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="222" name="oglconform_egl-gpa_es1 basic.es.GetTexParameter">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-gpa_es1 basic.es.GetTexParameter</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es1"/>
+				<parameter name="result_check_string">basic.es.GetTexParameter subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="223" name="oglconform_egl-gpa_es1 basic.es.GetGraphicsResetStatus">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-gpa_es1 basic.es.GetGraphicsResetStatus</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es1"/>
+				<parameter name="result_check_string">basic.es.GetGraphicsResetStatus subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+    <!-- Suspicious behavior, probabbly the es1 switch instead of es2
+	<test_case id="224" name="oglconform_egl-gpa_es2 basic.SmokeTest">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-gpa_es2 basic.SmokeTest</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es1"/>
+				<parameter name="result_check_string">basic.SmokeTest subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	!-->
+	<test_case id="225" name="oglconform_egl-gpa_es2 basic.BindFramebuffer">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-gpa_es2 basic.BindFramebuffer</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es2"/>
+				<parameter name="result_check_string">basic.BindFramebuffer subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="226" name="oglconform_egl-gpa_es2 basic.UseProgram">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-gpa_es2 basic.UseProgram</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es2"/>
+				<parameter name="result_check_string">basic.UseProgram subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="227" name="oglconform_egl-gpa_es2 basic.egl.GetConfigs">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-gpa_es2 basic.egl.GetConfigs</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es2"/>
+				<parameter name="result_check_string">basic.egl.GetConfigs subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="228" name="oglconform_egl-gpa_es2 basic.egl.CreateSync">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-gpa_es2 basic.egl.CreateSync</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es2"/>
+				<parameter name="result_check_string">basic.egl.CreateSync subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="229" name="oglconform_egl-gpa_es2 basic.egl.DeleteSync">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-gpa_es2 basic.egl.DeleteSync</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es2"/>
+				<parameter name="result_check_string">basic.egl.DeleteSync subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="230" name="oglconform_egl-gpa_es2 basic.egl.CreatePbuffer">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-gpa_es2 basic.egl.CreatePbuffer</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es2"/>
+				<parameter name="result_check_string">basic.egl.CreatePbuffer subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="231" name="oglconform_egl-gpa_es2 basic.es.IsEnabled">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-gpa_es2 basic.es.IsEnabled</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es2"/>
+				<parameter name="result_check_string">basic.es.IsEnabled subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="232" name="oglconform_egl-gpa_es2 basic.es.GetShader">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-gpa_es2 basic.es.GetShader</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es2"/>
+				<parameter name="result_check_string">basic.es.GetShader subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="233" name="oglconform_egl-gpa_es2 basic.es.GetTexParameter">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-gpa_es2 basic.es.GetTexParameter</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es2"/>
+				<parameter name="result_check_string">basic.es.GetTexParameter subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="234" name="oglconform_egl-gpa_es2 basic.es.GetGraphicsResetStatus">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-gpa_es2 basic.es.GetGraphicsResetStatus</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es2"/>
+				<parameter name="result_check_string">basic.es.GetGraphicsResetStatus subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="235" name="oglconform_egl-gpa_es2 advanced.ImageTargetTexture">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-gpa_es2 advanced.ImageTargetTexture</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es2"/>
+				<parameter name="result_check_string">advanced.ImageTargetTexture subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="236" name="oglconform_egl-gpa_es2 advanced.ImageTargetRenderbufferStorage">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-gpa_es2 advanced.ImageTargetRenderbufferStorage</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es2"/>
+				<parameter name="result_check_string">advanced.ImageTargetRenderbufferStorage subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+    <!-- Suspicious behavior
+	<test_case id="237" name="oglconform_egl-android-fb basic.token.getConfigAttrib">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-android-fb basic.token.getConfigAttrib</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es2"/>
+				<parameter name="result_check_string">basic.token.getConfigAttrib subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="238" name="oglconform_egl-android-fb basic.token.chooseConfig">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-android-fb basic.token.chooseConfig</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es2"/>
+				<parameter name="result_check_string">basic.token.chooseConfig subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="239" name="oglconform_egl-android-fb basic.integrity">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-android-fb basic.integrity</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es2"/>
+				<parameter name="result_check_string">basic.integrity subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	!-->
+	<test_case id="240" name="oglconform_egl-reusable-sync basic.api.creation">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-reusable-sync basic.api.creation</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es2"/>
+				<parameter name="result_check_string">basic.api.creation subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="241" name="oglconform_egl-reusable-sync basic.api.wait">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-reusable-sync basic.api.wait</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es2"/>
+				<parameter name="result_check_string">basic.api.wait subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="242" name="oglconform_egl-reusable-sync basic.api.signal">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-reusable-sync basic.api.signal</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es2"/>
+				<parameter name="result_check_string">basic.api.signal subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="243" name="oglconform_egl-reusable-sync basic.api.getAttribs">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-reusable-sync basic.api.getAttribs</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es2"/>
+				<parameter name="result_check_string">basic.api.getAttribs subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+	<test_case id="244" name="oglconform_egl-reusable-sync basic.changeState">
+		<test_item name="">
+			<test_step fun_name="test_sequence_handler" type="fun">
+				<parameter name="push_native_app">oglconform;/data/app</parameter>
+				<parameter name="adb_cmd">adb shell chmod -R 777 /data/app</parameter>
+			</test_step>
+			<test_step fun_name="ogles_conformance_test_run" type="fun">
+				<parameter name="test_file_name">egl-reusable-sync basic.changeState</parameter>
+				<parameter name="test_bin_name">oglconform;/data/app</parameter>
+				<parameter name="run_ext_es2"/>
+				<parameter name="result_check_string">basic.changeState subcase</parameter>
+			</test_step>
+		</test_item>
+	</test_case>
+</oglconform_auto>

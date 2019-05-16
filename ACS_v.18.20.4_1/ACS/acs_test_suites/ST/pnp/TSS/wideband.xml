@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<Include>
+    <TestStepSet Id="CheckTxPower">
+        <TestStep Id="SUSPEND" DURATION_IN_SEC="5" />
+        <TestStep Id="NS_SET_PARAM" EQT="FROM_CTX:AGILENT8960_SIMULATOR" NAME="WCPowerInit" OPTION="DEFAULT"/>
+        <TestStep Id="NS_GET_PARAM" EQT="FROM_CTX:AGILENT8960_SIMULATOR" NAME="WCPowerValue" OPTION="DEFAULT" VALUE="WC_POWER" />
+        <TestStep Id="COMPARE" FIRST="FROM_CTX:WC_POWER" SECOND="FROM_TC:TX_POWER[+],1" OPERATOR="WITHIN_BOUNDS" PASS_IF="True"/>
+    </TestStepSet>
+</Include>

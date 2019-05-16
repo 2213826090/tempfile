@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="13.37">
+    <UseCase>LAB_EM_UPPER_CURRENT_DRAWN_THAN_CHG_CURRENT</UseCase>
+    <Description>EM - test when the charger output power is not sufficient to power the system load.</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>False</b2bContinuousMode>
+    <TcMaxAttempt>1</TcMaxAttempt>
+    <TcAcceptanceCriteria>1</TcAcceptanceCriteria>
+    <Parameters>
+        <Parameter>
+            <!-- Charger type for the test (DCP SDP CDP) -->
+            <Name>CHARGER_TYPE</Name>
+            <Value>DCP</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Features to enable for the test -->
+            <!-- Features avaible are :     -->
+            <!-- VIDEO, AUDIO, WIFI, BLUETOOTH, TORCHLIGHT, VIBRA, SCREEN ON  -->
+            <Name>LOAD</Name>
+            <Value>SCREEN_ON;WIFI;BLUETOOTH;TORCHLIGHT</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

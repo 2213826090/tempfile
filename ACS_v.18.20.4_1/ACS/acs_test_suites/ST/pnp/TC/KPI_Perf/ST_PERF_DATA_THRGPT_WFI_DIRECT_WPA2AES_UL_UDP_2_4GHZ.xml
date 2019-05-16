@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="13.41">
+    <UseCase>TEST_STEP_ENGINE</UseCase>
+    <Description></Description>
+    <b2bIteration>5</b2bIteration>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <TcMaxAttempt>1</TcMaxAttempt>
+    <TcAcceptanceCriteria>1</TcAcceptanceCriteria>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters>
+        <Parameter>
+            <Name>KPI_P2P_RSSI_MIN</Name>
+            <Value>-40</Value>
+        </Parameter>
+        <Parameter>
+            <Name>KPI_P2P_RSSI_MAX</Name>
+            <Value>-35</Value>
+        </Parameter>
+        <Parameter>
+            <Name>KPI_WIFI_CHANNEL</Name>
+            <Value>1</Value>
+        </Parameter>
+        <Parameter>
+            <Name>KPI_WIFI_FREQUENCY</Name>
+            <Value>2412</Value>
+        </Parameter>
+        <Parameter>
+            <Name>KPI_BANDWIDTH</Name>
+            <Value>20</Value>
+        </Parameter>
+        <Parameter>
+            <Name>KPI_IPERF_PROTOCOL</Name>
+            <Value>udp</Value>
+        </Parameter>
+        <Parameter>
+            <Name>KPI_DIRECTION</Name>
+            <Value>up</Value>
+        </Parameter>
+        <Parameter>
+            <Name>KPI_IPERF_OPTIONS</Name>
+            <Value>-i 61 -b400M</Value>
+        </Parameter>
+        <Parameter>
+            <Name>KPI_WIFI_REGULATORY_DOMAIN_DUT</Name>
+            <Value>CN</Value>
+        </Parameter>
+        <Parameter>
+            <Name>KPI_WIFI_REGULATORY_DOMAIN_REF</Name>
+            <Value>XV</Value>
+        </Parameter>
+        <Parameter>
+            <Name>KPI_WIFI_DIRECT_MODE_DUT</Name>
+            <Value>GO</Value>
+        </Parameter>
+        <Parameter>
+            <Name>KPI_WIFI_DIRECT_MODE_REF</Name>
+            <Value>CLI</Value>
+        </Parameter>
+    </Parameters>
+    <TestSteps>
+        <Include Src="ST/cws/TSS/Common/ST_CWS_COMMON.xml"/>
+        <Include Src="ST/cws/TSS/WiFi/ST_CWS_WIFI_COMMON.xml"/>
+        <Include Src="ST/cws/TSS/WiFi/ST_CWS_WIFI_AP.xml"/>
+        <Include Src="ST/cws/TSS/WiFi/ST_CWS_WIFI_KPI.xml"/>
+
+        <Setup>
+            <!-- AUTOMATION - Set default configuration -->
+            <TestStep SetId="WiFiDirectKPISetup"/>
+        </Setup>
+        <RunTest>
+            <!-- AUTOMATION - Run KPI -->
+            <TestStep SetId="WiFiDirectKPIRunTestUpload" WIFI_RSSI="FROM_CTX:RSSI_PHONE2"/>
+        </RunTest>
+        <TearDown>
+            <!-- AUTOMATION - Reset configuration -->
+            <Fork Id="ForkTeardown">
+                <TestStep SetId="WiFiDirectCommonTeardown" DEVICE="PHONE1"/>
+                <TestStep SetId="WiFiDirectCommonTeardown" DEVICE="PHONE2"/>
+            </Fork>
+        </TearDown>
+    </TestSteps>
+</TestCase>

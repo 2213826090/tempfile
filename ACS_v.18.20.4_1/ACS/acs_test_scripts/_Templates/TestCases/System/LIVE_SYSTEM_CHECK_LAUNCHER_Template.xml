@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="14.14">
+    <UseCase>LIVE_SYSTEM_CHECK_LAUNCHER</UseCase>
+    <Description>Check launcher application availability</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>False</b2bContinuousMode>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters>
+        <Parameter>
+            <!-- Name of the launcher application to search
+            (eg. com.android.launcher for default android launcher) -->
+            <Name>LAUNCHER_NAME</Name>
+            <Value></Value>
+        </Parameter>
+        <Parameter>
+            <!-- Whether force dut to open a chooser windows to select launcher to use. True|False -->
+            <Name>OPEN_CHOOSER</Name>
+            <Value></Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

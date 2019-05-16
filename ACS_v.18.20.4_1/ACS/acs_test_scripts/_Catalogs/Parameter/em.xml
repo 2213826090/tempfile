@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!-- Energy Management Parameters Catalog Template : new template to automatically populate i-TAP database with EM TC params -->
+<Parameters xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../acs/src/_Catalogs/Parameter/parameter.xsd">
+    <Parameter name="BATTERY_TYPE">
+        <Description>Battery Type, leave empty to use the one from device catalog</Description>
+        <Domain>EM</Domain>
+        <Type>str</Type>
+        <PossibleValues override="true">ANALOG;BATTERY_EMULATOR;DIGITAL;TEST2;INVALID;REMOVED</PossibleValues>
+        <DefaultValue override="true"></DefaultValue>
+        <Blank override="false">true</Blank>
+    </Parameter>
+    <Parameter name="CABLE_TYPE">
+        <Description>Cable Type supported by both your DUT and io card</Description>
+        <Domain>EM</Domain>
+        <Type>str</Type>
+        <PossibleValues override="true">SDP;CDP;DCP;NONE;WALL_CHARGER;AC_CHGR</PossibleValues>
+        <DefaultValue override="true"></DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="EMULATED_BATTERY_TEMPERATURE_IN_CELSIUS">
+        <Description>Battery temperature in degree celsius forced on your DUT</Description>
+        <Domain>EM</Domain>
+        <Type>int</Type>
+        <PossibleValues override="true">95;70;50;25;10;5;0;-15</PossibleValues>
+        <DefaultValue override="true"></DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="OUTSIDE_TEMPERATURE_IN_CELSIUS">
+        <Description>Outside temperature in degree celsius to apply on the board, request a thermal chamber to apply the change</Description>
+        <Domain>EM</Domain>
+        <Type>int</Type>
+        <PossibleValues override="true">[]</PossibleValues>
+        <DefaultValue override="true"></DefaultValue>
+        <Blank override="true">true</Blank>
+    </Parameter>
+    <Parameter name="VOLTAGE">
+        <Description>A voltage value in V, always superior or equal to 0 </Description>
+        <Domain>EM</Domain>
+        <Type>float</Type>
+        <PossibleValues override="true">[0:100]</PossibleValues>
+        <DefaultValue override="true"></DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="OS_STATE">
+        <Description>all boot mode that your dut can boot in</Description>
+        <Domain>EM</Domain>
+        <Type>str</Type>
+        <PossibleValues override="true">COS;ROS;MOS;POS</PossibleValues>
+        <DefaultValue override="true"></DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="LOAD_TECHNOLOGY_LIST">
+        <Description>List of feature considered as load for EM domain to choose a combination of WIFI;BLUETOOTH;AUDIO;VIDEO;TORCHLIGHT;VIBRA;SCREEN_ON</Description>
+        <Domain>EM</Domain>
+        <Type>str</Type>
+        <PossibleValues override="true"></PossibleValues>
+        <DefaultValue override="true"></DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="BATTERY_STATUS">
+        <Description>The charge status displayed by your battery</Description>
+        <Domain>EM</Domain>
+        <Type>str</Type>
+        <PossibleValues override="true">NOT CHARGING;FULL;CHARGING;DISCHARGING</PossibleValues>
+        <DefaultValue override="true"></DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="BATTERY_CAPACITY_IN_PERCENT">
+        <Description>The capacity of your battery, from 0 to 100% and can take 2 keywords: full and dead</Description>
+        <Domain>EM</Domain>
+        <Type>str</Type>
+        <PossibleValues override="true">[0:100];FULL;DEAD</PossibleValues>
+        <DefaultValue override="true"></DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="WAY_TO_BOOT_DUT">
+        <Description>the way to boot/reboot your DUT</Description>
+        <Domain>EM</Domain>
+        <Type>str</Type>
+        <PossibleValues override="false">SOFT;HARD</PossibleValues>
+        <DefaultValue override="true"></DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="WAY_TO_FREEZE_DUT">
+        <Description>Type of shutdown to perform : SOFT or HARD</Description>
+        <Domain>EM</Domain>
+        <Type>str</Type>
+        <PossibleValues override="false">SOFT;HARD</PossibleValues>
+        <DefaultValue override="true"></DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="WAY_TO_SHUTDOWN_DUT">
+        <Description>type of board freeze to do : SOFT (software) or HARD (hardware) </Description>
+        <Domain>EM</Domain>
+        <Type>str</Type>
+        <PossibleValues override="false">SOFT;HARD</PossibleValues>
+        <DefaultValue override="true"></DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+    <Parameter name="BENCH_TYPE">
+        <Description>the type of bench you are using with your EM test, it will affect test behaviors</Description>
+        <Domain>EM</Domain>
+        <Type>str</Type>
+        <PossibleValues override="false">POWER_SUPPLY_BENCH;BATTERY_BENCH</PossibleValues>
+        <DefaultValue override="true"></DefaultValue>
+        <Blank override="true">false</Blank>
+    </Parameter>
+    <Parameter name="FUEL_GAUGING_CYCLE_BEHAVIOR">
+        <Description>Action to perform like charge or discharge during the next fuel gauging related action</Description>
+        <Domain>EM</Domain>
+        <Type>int</Type>
+        <PossibleValues override="true">CHARGE_DISCHARGE;DISCHARGE_CHARGE;CHARGE_ONLY;DISCHARGE_ONLY</PossibleValues>
+        <DefaultValue override="true"></DefaultValue>
+        <Blank override="false">false</Blank>
+    </Parameter>
+</Parameters>

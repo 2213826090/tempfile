@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase>
+    <UseCase>TEST_STEP_ENGINE</UseCase>
+    <Description>Power consumption measurement (in mA) when signal is lost</Description>
+    <b2bIteration>3</b2bIteration>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <TcMaxAttempt>3</TcMaxAttempt>
+    <SavePatRawData>True</SavePatRawData>
+    <PowerCalculation>False</PowerCalculation>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters>
+        <Parameter>
+            <Name>SAVE_POWER_DATA</Name>
+            <Value>True</Value>
+        </Parameter>
+        <Parameter>
+            <Name>CELL_BAND</Name>
+            <Value>PWR_4G_DATA</Value>
+        </Parameter>
+        <Parameter>
+            <Name>RAT</Name>
+            <Value>LTE</Value>
+        </Parameter>
+        <Parameter>
+            <Name>SLEEP_DURATION</Name>
+            <Value>60</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Time ins sec to adjust browsing start sequence -->
+            <Name>BROWSING_START_TIME</Name>
+            <Value>7</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TEST_DURATION</Name>
+            <Value>420</Value>
+        </Parameter>
+        <Parameter>
+            <Name>ORIENTATION</Name>
+            <Value>portrait</Value>
+        </Parameter>
+        <Parameter>
+            <Name>URL</Name>
+            <Value>browsing58/index_auto.html</Value>
+        </Parameter>
+        <Parameter>
+            <!--
+                 Configuration for Sysdebug modules.
+                 Syntax is :
+                 module_name[: [param1[=value1]][, param2[=value2]]*];
+              -->
+             <Name>SYSDEBUG_MODULES</Name>
+             <Value>
+                Residency: s3,s0i3,s0i1,lpmp3;
+                ModemPanic;
+                CrashInfo;
+                Thermals;
+                Dstates;
+             </Value>
+         </Parameter>
+        <Parameter>
+            <Name>REGEX_BROWSING</Name>
+            <Value>regex:.*chromium.*Web_Browsing - loaded.*</Value>
+        </Parameter>
+        <Parameter>
+            <Name>APP_PACKAGE_NAME</Name>
+            <Value>com.android.chrome</Value>
+        </Parameter>
+        <Parameter>
+            <!-- config type for agilent -->
+            <Name>CONFIG_TYPE</Name>
+            <Value>BROWSING</Value>
+        </Parameter>
+        <Parameter>
+            <Name>TEST_STEP_ENGINE_ENTRY</Name>
+            <Value>ST/pnp/UC/BrowsingCmw500.xml</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="13.37">
+    <UseCase>LAB_WIFI_DEBUG_TEST</UseCase>
+    <Description>Run whole available WiFi (Networking) UECmd functions</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <TcMaxAttempt>1</TcMaxAttempt>
+    <TcAcceptanceCriteria>1</TcAcceptanceCriteria>
+    <Parameters>
+        <Parameter>
+            <!-- Wifi standard of wifi env to be used. Can be "a", "an", "gb", "ngb", "n2.4G", "n5G" -->
+            <Name>WIFI_STANDARD</Name>
+            <Value>ngb</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Wifi Security of wifi env to be used. Can be "OPEN","WEP64","WEP64-OPEN","WEP128","WEP128-OPEN","WPA-PSK-TKIP", "WPA2-PSK-AES", "EAP-WPA" or "EAP-WPA2" -->
+            <Name>WIFI_SECURITY</Name>
+            <Value>WPA2-PSK-AES</Value>
+        </Parameter>
+        <Parameter>
+            <!-- EAP method used when WIFI_SECURTY is "EAP-WAP" or "EAP-WPA2", can be "PEAP", "TLS", "TTLS", "SIM" or "AKA" -->
+            <Name>EAP_METHOD</Name>
+            <Value></Value>
+        </Parameter>
+        <Parameter>
+            <!-- Phase2 authentication used when WIFI_SECURTY is "EAP-WAP" or "EAP-WPA2", can be "None", "PAP", "MSCHAP", "MSCHAPV2", "GTC" -->
+            <Name>PHASE2_AUTH</Name>
+            <Value></Value>
+        </Parameter>
+        <Parameter>
+            <!-- Set to 'True' if you need to use certificates at the same time as TTLS or PEAP. If ommited, the default value for this parameter is false. -->
+            <Name>MANDATORY_CERT</Name>
+            <Value></Value>
+        </Parameter>
+        <Parameter>
+            <!-- Ways to exchange the ciphering key ("WPS-PBC", "WPS-PIN-DUT" or "WPS-PIN-AP") -->
+            <Name>KEY_EXCHANGE_MODE</Name>
+            <Value></Value>
+        </Parameter>
+        <Parameter>
+            <!-- PIN to exchange key (in "WPS-PIN-xx") -->
+            <Name>KEY_EXCHANGE_PIN</Name>
+            <Value></Value>
+        </Parameter>
+        <Parameter>
+            <!-- [OPTIONAL] IPV6 (True) or IPV4 (False) -->
+            <Name>USE_IPV6</Name>
+            <Value>False</Value>
+        </Parameter>
+        <Parameter>
+            <!-- [OPTIONAL] If USE_IPV6 == True, the is the way to configure the IPV6 client (STATEFUL, STATELESS or STATELESS_RDNSSD) -->
+            <Name>IPV6_CONFIGURATION_MODE</Name>
+            <Value></Value>
+        </Parameter>
+        <Parameter>
+            <!-- [OPTIONAL] If USE_IPV6 == True, Computer where the IPV6 server will be started -->
+            <Name>IPV6_COMPUTER</Name>
+            <Value></Value>
+        </Parameter>
+        <Parameter>
+            <!-- [OPTIONAL] Test-specific username for EAP authentication. If not provided, the bench config one will be used. -->
+            <Name>EAP_USER</Name>
+            <Value></Value>
+        </Parameter>
+        <Parameter>
+            <!-- Run the basic tests (interface ON/OFF, get address) -->
+            <Name>RUN_BASIC_TEST</Name>
+            <Value>True</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Run the connection base tests (scan, set passphrase, connect, list ssid, disconnect) -->
+            <Name>RUN_CONNECT_TEST</Name>
+            <Value>True</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Run the network base tests (PDP context, flight mode) -->
+            <Name>RUN_NET_TEST</Name>
+            <Value>True</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Run the data transfer base tests (iperf, ping, FTP) -->
+            <Name>RUN_DATA_TEST</Name>
+            <Value>True</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Run the other tests (sleep policy, frequency band, regulatory domain, tethering, dhcp) -->
+            <Name>RUN_OTHER_TEST</Name>
+            <Value>True</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Run the WPS specific tests -->
+            <Name>RUN_WPS_TEST</Name>
+            <Value>False</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Run the IPv6 specific tests -->
+            <Name>RUN_IPV6_TEST</Name>
+            <Value>False</Value>
+        </Parameter>
+        <Parameter>
+            <!-- FTP uplink file to transfer -->
+            <Name>FTP_UL_FILE</Name>
+            <Value>500kB.txt</Value>
+        </Parameter>
+        <Parameter>
+            <!-- FTP downlink file to transfer -->
+            <Name>FTP_DL_FILE</Name>
+            <Value>pub/get10M</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Iperf options that will be concatened into iperf command line.
+                -p [port]: Specify the port to be used. 5001 for TCP 5009 for UDP (Mandatory)
+                -t [duration]: The time in seconds to transmit for (Mandatory)
+                -u : UDP mode instead of TCP default mode
+                -P [threads_number]: Number of iperf thread to use. If not use the value is compute depending on expected throughput
+                -w [window size]: Sets the socket buffer sizes to the specified value. If not use the value is compute depending on expected throughput. ex: "-w 512K" or "-w 1M"
+                -l [buffer_length]: Sets the length of the buffer to read or write. If not use the value is compute depending on expected throughput
+                -b [bandwidth]: UDP bandwidth to send at, in bits/sec. This implies the -u option. ex: "-b 1M" or "-b 512K".
+                -N: Set the TCP no delay option, disabling Nagle's algorithm
+                See http://iperf.fr/ for more information -->
+            <Name>IPERF_OPTIONS</Name>
+            <Value>-u -p5009 -t15 -P1 -b54M</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Internet URL to test web browser UE command -->
+            <Name>WEBSITE_URL</Name>
+            <Value>www.intel.com</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

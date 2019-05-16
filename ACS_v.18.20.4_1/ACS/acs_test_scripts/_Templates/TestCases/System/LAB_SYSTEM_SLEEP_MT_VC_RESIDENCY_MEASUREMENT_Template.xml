@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="13.37">
+    <UseCase>LAB_SYSTEM_SLEEP_MT_VC_RESIDENCY_MEASUREMENT</UseCase>
+    <Description>Measure sleep mode residency during MT voice call</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <Parameters>
+        <Parameter>
+            <!-- Sleep mode possible values : s0i1/s0i3/s3/lpmp3 -->
+            <Name>MODE</Name>
+            <Value>s3</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Sleep time before 1st iteration, or all for b2bContinuousMode = False -->
+            <Name>SETTLE_TIME</Name>
+            <Value>60</Value>
+        </Parameter>
+        <Parameter>
+            <!-- VC ringing time, it should be long enough to handle USB init, ADB connection, answer command, and VC_USB_TIMER -->
+            <Name>VC_RINGING_TIMER</Name>
+            <Value>60</Value>
+        </Parameter>
+        <Parameter>
+            <!-- Voice call duration in second -->
+            <Name>VC_CALL_DURATION</Name>
+            <Value>30</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

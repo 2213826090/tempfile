@@ -1,0 +1,42 @@
+<?xml version="1.0" ?>
+<Campaign>
+      <Parameters>
+            <Parameter isControlledPSUsed="False"/>
+            <Parameter isIoCardUsed="False"/>
+            <Parameter skipBootOnPowerCycle="False"/>
+            <Parameter bootRetryNumber="0"/>
+            <Parameter runHookScripts="False"/>
+            <Parameter powerCycleBetweenTC="False"/>
+            <Parameter powerCycleOnFailure="False"/>
+            <Parameter finalDutState="NoChange"/>
+            <Parameter stopCampaignOnCriticalFailure="False"/>
+            <Parameter stopCampaignOnFirstFailure="False"/>
+            <Parameter loggingLevel="debug"/>
+            <Parameter CampaignType="Other"/>
+      </Parameters>
+      <TestCases>
+            <!-- Not supportedSubCampaign Id="../../Subcampaigns/ATF_TESTS/ABT_Video_Decoding/H.263/16CIF/16CIF"/>
+            <SubCampaign Id="../../Subcampaigns/ATF_TESTS/ABT_Video_Decoding/H.263/4CIF/4CIF"/>-->
+            <SubCampaign Id="../../Subcampaigns/ATF_TESTS/ABT_Video_Decoding/H.263/CIF/CIF"/>
+            <SubCampaign Id="../../Subcampaigns/ATF_TESTS/ABT_Video_Decoding/H.263/QCIF/QCIF"/>
+            <SubCampaign Id="../../Subcampaigns/ATF_TESTS/ABT_Video_Decoding/H.263/SQCIF/SQCIF"/>
+            <SubCampaign Id="../../Subcampaigns/ATF_TESTS/ABT_Video_Decoding/H.264/480x320/480x320"/>
+            <SubCampaign Id="../../Subcampaigns/ATF_TESTS/ABT_Video_Decoding/H.264/CIF/CIF"/>
+            <SubCampaign Id="../../Subcampaigns/ATF_TESTS/ABT_Video_Decoding/H.264/QCIF/QCIF"/>
+            <SubCampaign Id="../../Subcampaigns/ATF_TESTS/ABT_Video_Decoding/H.264/QVGA/QVGA"/>
+            <SubCampaign Id="../../Subcampaigns/ATF_TESTS/ABT_Video_Decoding/H.264/SQCIF/SQCIF"/>
+            <SubCampaign Id="../../Subcampaigns/ATF_TESTS/ABT_Video_Decoding/H.264/SQVGA/SQVGA"/>
+            <SubCampaign Id="../../Subcampaigns/ATF_TESTS/ABT_Video_Decoding/H.264/VGA/VGA"/>
+            <SubCampaign Id="../../Subcampaigns/ATF_TESTS/ABT_Video_Decoding/H.264/XGA/XGA"/>
+            <SubCampaign Id="../../Subcampaigns/ATF_TESTS/ABT_Video_Decoding/H.264/hd1080/hd1080"/>
+            <SubCampaign Id="../../Subcampaigns/ATF_TESTS/ABT_Video_Decoding/H.264/hd480/hd480"/>
+            <SubCampaign Id="../../Subcampaigns/ATF_TESTS/ABT_Video_Decoding/H.264/hd720/hd720"/>
+            <SubCampaign Id="../../Subcampaigns/ATF_TESTS/ABT_Video_Decoding/MPEG4/CIF/CIF"/>
+            <SubCampaign Id="../../Subcampaigns/ATF_TESTS/ABT_Video_Decoding/MPEG4/QCIF/QCIF"/>
+            <SubCampaign Id="../../Subcampaigns/ATF_TESTS/ABT_Video_Decoding/MPEG4/SQCIF/SQCIF"/>
+            <SubCampaign Id="../../Subcampaigns/ATF_TESTS/ABT_Video_Decoding/MPEG4/SVGA/SVGA"/>
+            <SubCampaign Id="../../Subcampaigns/ATF_TESTS/ABT_Video_Decoding/VP8/VP8"/>
+            <SubCampaign Id="../../Subcampaigns/ATF_TESTS/ABT_Video_Decoding/VP9/VP9"/>
+            <SubCampaign Id="../../Subcampaigns/ATF_TESTS/ABT_Video_Decoding/MilestoneRun/MilestoneRun"/>
+      </TestCases>
+</Campaign>

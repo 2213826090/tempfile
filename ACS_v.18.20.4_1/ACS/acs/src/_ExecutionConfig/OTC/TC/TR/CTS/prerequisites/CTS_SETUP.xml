@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase version="13.45">
+    <ClassName>UseCase.OTC.CTS.Install_cts_apks.InstallCTSApks</ClassName>
+    <Description>Install cts apks</Description>
+    <b2bIteration>1</b2bIteration>
+    <b2bContinuousMode>True</b2bContinuousMode>
+    <TcExpectedResult>PASS</TcExpectedResult>
+    <TcMaxAttempt>3</TcMaxAttempt>
+    <TcAcceptanceCriteria>1</TcAcceptanceCriteria>
+    <IsCritical>True</IsCritical>
+    <Parameters>
+        <Parameter>
+            <Name>CTS_PATH</Name>
+            <Description>Specify path/url to android CTS framework</Description>
+            <Value>OTC_CTS_FOR_CACTUS/android-cts.zip</Value>
+        </Parameter>
+        <Parameter>
+            <Name>CTS_MEDIA_PATH</Name>
+            <Description>Specify path/url to android CTS media files</Description>
+            <Value>OTC_CTS_FOR_CACTUS/android-cts-media.zip</Value>
+        </Parameter>
+        <Parameter>
+            <Name>DOWNLOAD_TIMEOUT</Name>
+            <Value>8000</Value>
+        </Parameter>
+    </Parameters>
+</TestCase>

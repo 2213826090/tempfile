@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase>
+  <UseCase>LAB_AUDIO_GSM_CSV</UseCase>
+  <Description>Check Audio is routed successfully to the DUT audio output in 2G</Description>
+  <b2bIteration>100</b2bIteration>
+  <b2bContinuousMode>True</b2bContinuousMode>
+  <Parameters>
+    <Parameter>
+        <!-- Cell Band (PGSM|RGSM|EGSM|GSM450|GSM480|GSM750|GSM850|TGSM810|PCS|DCS) -->
+        <Name>CELL_BAND</Name>
+        <Value>EGSM</Value>
+    </Parameter>
+    <Parameter>
+        <!-- Cell Service (GSM|GPRS|EGPRS) -->
+        <Name>CELL_SERVICE</Name>
+        <Value>GSM</Value>
+    </Parameter>
+    <Parameter>
+        <!-- Voice coder rate
+          Possible values:
+             FR
+             EFR
+             HR
+             FR_AMR_NB_[1220|1020|795|740|670|590|515|475]
+             HR_AMR_NB_[795|740|670|590|515|475]
+             AMR_WB_[1265|885|660]
+        -->
+        <Name>CODEC</Name>
+        <Value>EFR</Value>
+    </Parameter>
+    <Parameter>
+        <!-- Voice call type (MO [Mobile Originated]|MT [Mobile Terminated]) -->
+        <Name>VC_TYPE</Name>
+        <Value>MO</Value>
+    </Parameter>
+    <Parameter>
+        <!-- Phone number to dial for a MO CSV Call  -->
+        <Name>PHONE_NUMBER</Name>
+        <Value>1234</Value>
+    </Parameter>
+    <Parameter>
+        <!-- Threshold for audio routing detection  -->
+        <Name>THRESHOLD</Name>
+        <Value>20</Value>
+    </Parameter>
+    <Parameter>
+        <!-- Call duration in seconds -->
+        <Name>CALL_DURATION</Name>
+        <Value>30</Value>
+    </Parameter>
+    <Parameter>
+        <!-- Call volume in % -->
+        <Name>CALL_VOLUME</Name>
+        <Value>100</Value>
+    </Parameter>
+    <Parameter>
+        <!-- Test signal duration in s -->
+        <Name>TEST_SIGNAL_DURATION</Name>
+        <Value>10</Value>
+    </Parameter>
+    <Parameter>
+        <!-- Keep the recorded audio file whether the test result is good or not (TRUE|FALSE) -->
+        <Name>KEEP_RECORD</Name>
+        <Value>True</Value>
+    </Parameter>
+    <Parameter>
+        <!-- Duration between 2 successive measurement in seconds -->
+        <Name>WAIT_BETWEEN_MEASURE</Name>
+        <Value>0</Value>
+    </Parameter>
+    <Parameter>
+      <!-- Audio file to play -->
+      <Name>AUDIO_FILE</Name>
+      <Value>em01_s001_NBn.wav</Value>
+    </Parameter>
+  </Parameters>
+</TestCase>

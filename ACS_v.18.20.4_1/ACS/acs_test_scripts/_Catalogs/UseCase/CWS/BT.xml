@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<UseCases xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:noNamespaceSchemaLocation="../../../../acs/src/_Catalogs/UseCase/usecase.xsd">
+    <UseCase Id="LIVE_BT_PAIRING" Domain="CWS" SubDomain="BT" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.LocalConnectivity.LIVE_BT_PAIRING.LiveBTPairing</ClassName>
+        <Description>Pairing to BlueTooth device</Description>
+        <Environment name="CWS_BT">
+            <Capabilities>EQT_BT_DEVICE</Capabilities>
+            <Capabilities>CAP_AUTO_PAIRING</Capabilities>
+        </Environment>
+        <Parameters>
+            <Parameter name="DEVICE_BT_ADDRESS" type="BT_DEVICE_ADDRESS" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="CODE_PIN" type="BT_CODE_PIN" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="PASSPHRASE" type="BT_PASSPHRASE" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="FLIGHT_MODE" type="IS_FLIGHT_MODE_ENABLED" isOptional="true">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+        </Parameters>
+    </UseCase>
+    <UseCase Id="LIVE_DUAL_PHONE_BT_OPP_TRANSFER" Domain="CWS" SubDomain="BT" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.LocalConnectivity.LIVE_DUAL_PHONE_BT_OPP_TRANSFER.LiveDualPhoneBTOppTransfer</ClassName>
+        <Description>Send file using Bluetooth OPP transfer between DUT and reference phone</Description>
+        <Environment name="CWS_BT">
+            <Capabilities>CAP_DUAL_DEVICE</Capabilities>
+        </Environment>
+        <Parameters>
+            <Parameter name="DIRECTION" type="XFER_DIRECTION" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="BOTH_DIRECTIONS" type="ARE_BOTH_DIRECTIONS_SUPPORTED" isOptional="true">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="FILENAME" type="MUM_FILE" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="FLIGHT_MODE" type="IS_FLIGHT_MODE_ENABLED" isOptional="true">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+        </Parameters>
+    </UseCase>
+    <UseCase Id="LIVE_DUAL_PHONE_BT_OPP_CANCEL" Domain="CWS" SubDomain="BT" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.LocalConnectivity.LIVE_DUAL_PHONE_BT_OPP_CANCEL.LiveDualPhoneBTOppCancel</ClassName>
+        <Description>Send / Cancel / Resend file using Bluetooth OPP transfer between DUT and reference phone
+        </Description>
+        <Environment name="CWS_BT">
+            <Capabilities>CAP_DUAL_DEVICE</Capabilities>
+        </Environment>
+        <Parameters>
+            <Parameter name="DIRECTION" type="XFER_DIRECTION" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="FILENAME" type="UL_FILENAME" isOptional="false">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+            <Parameter name="FLIGHT_MODE" type="IS_FLIGHT_MODE_ENABLED" isOptional="true">
+                <Description>To be filled</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+                <Blank/>
+            </Parameter>
+        </Parameters>
+    </UseCase>
+    <UseCase Id="LIVE_BT_BD_ADDR_PROV" Domain="CWS" SubDomain="BT" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.LocalConnectivity.LIVE_BT_BD_ADDR_PROV.LiveBTBdProv</ClassName>
+        <Description>BlueTooth BD address provinoning UC</Description>
+        <Environment name="ANY">
+        </Environment>
+    </UseCase>
+    <UseCase Id="LIVE_BT_SCAN" Domain="CWS" SubDomain="BT" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.LocalConnectivity.LIVE_BT_SCAN.LiveBTScan</ClassName>
+        <Description>BlueTooth Scan of list of devices in range</Description>
+        <Environment name="CWS_BT">
+            <Dependency>EQT_BT_DEVICE</Dependency>
+        </Environment>
+    </UseCase>
+    <UseCase Id="LIVE_BT_TURN_ON_OFF" Domain="CWS" SubDomain="BT" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.LocalConnectivity.LIVE_BT_TURN_ON_OFF.LiveBTTurnOnOff</ClassName>
+        <Description>BlueTooth turn on off in required mode</Description>
+        <Environment name="ANY">
+        </Environment>
+    </UseCase>
+    <UseCase Id="LIVE_BT_TETHERING_TURN_ON_OFF" Domain="CWS" SubDomain="BT" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.LocalConnectivity.LIVE_BT_TETHERING_TURN_ON_OFF.LiveBTTetheringTurnOnOff</ClassName>
+        <Description>BlueTooth tethering turn on off</Description>
+        <Environment name="ANY">
+        </Environment>
+    </UseCase>
+    <UseCase Id="LIVE_BT_APM_ON_OFF" Domain="CWS" SubDomain="BT" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.LocalConnectivity.LIVE_BT_APM_ON_OFF.LiveBTApmOnOff</ClassName>
+        <Description>Device is initialized with normal mode (flight mode disabled) Airplane mode turn on off in
+            Bluetooth required mode Check Bluetooth power is correctly restored after airplanemode sequence
+        </Description>
+        <Environment name="ANY">
+        </Environment>
+    </UseCase>
+    <UseCase Id="LIVE_DUAL_PHONE_BT_PAIRING" Domain="CWS" SubDomain="BT" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.LocalConnectivity.LIVE_DUAL_PHONE_BT_PAIRING.LiveDualPhoneBTPairing</ClassName>
+        <Description>Pairing to BlueTooth device</Description>
+        <Environment name="CWS_BT">
+            <Dependency>CAP_DUAL_DEVICE</Dependency>
+        </Environment>
+    </UseCase>
+    <UseCase Id="LIVE_DUAL_PHONE_BT_CONNECT" Domain="CWS" SubDomain="BT" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.LocalConnectivity.LIVE_DUAL_PHONE_BT_CONNECT.LiveDualPhoneBTConnect</ClassName>
+        <Description>Connect to another phone through BlueTooth</Description>
+        <Environment name="CWS_BT">
+            <Dependency>CAP_DUAL_DEVICE</Dependency>
+        </Environment>
+    </UseCase>
+    <UseCase Id="LIVE_DUAL_PHONE_BT_CHECK_DISCOVERABLE_MODE" Domain="CWS" SubDomain="BT" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.LocalConnectivity.LIVE_DUAL_PHONE_BT_CHECK_DISCOVERABLE_MODE.LiveDualPhoneBTCheckDiscoverableMode</ClassName>
+        <Description>Check BlueTooth discoverable mode with another devices(reference phone).</Description>
+        <Environment name="CWS_BT">
+            <Dependency>CAP_DUAL_DEVICE</Dependency>
+        </Environment>
+    </UseCase>
+    <UseCase Id="LIVE_DUAL_PHONE_BT_CHECK_DISCOVERABLE_TO" Domain="CWS" SubDomain="BT" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.LocalConnectivity.LIVE_DUAL_PHONE_BT_CHECK_DISCOVERABLE_TO.LiveDualPhoneBTCheckDiscoverableTO</ClassName>
+        <Description>Check BlueTooth discoverable mode and timeout with another devices(reference phone).</Description>
+        <Environment name="CWS_BT">
+            <Dependency>CAP_DUAL_DEVICE</Dependency>
+        </Environment>
+    </UseCase>
+    <UseCase Id="LIVE_DUAL_PHONE_BT_TETHERING_PING" Domain="CWS" SubDomain="BT" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.LocalConnectivity.LIVE_DUAL_PHONE_BT_TETHERING_PING.LiveDualPhoneBTTetheringPing</ClassName>
+        <Description>Use Bluetooth tethering between 2 phones and ping remote server through the tethered connection
+        </Description>
+        <Environment name="CWS_BT">
+            <Dependency>CAP_DUAL_DEVICE</Dependency>
+            <Dependency>EQT_LIVE_USIM</Dependency>
+            <Dependency>EQT_LIVE_AP</Dependency>
+        </Environment>
+    </UseCase>
+    <UseCase Id="LAB_DUAL_PHONE_BT_TETHERING_PING" Domain="CWS" SubDomain="BT" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.LocalConnectivity.LAB_DUAL_PHONE_BT_TETHERING_PING.LabDualPhoneBTTetheringPing</ClassName>
+        <Description>Use Bluetooth tethering between 2 phones and ping remote LAB WiFi Access Point through the tethered
+            connection
+        </Description>
+         <Environment name="CWS_BT">
+            <Dependency>CAP_DUAL_DEVICE</Dependency>
+            <Dependency>EQT_LAB_AP</Dependency>
+            <Dependency>SW_RADIUS_SERVER</Dependency>
+        </Environment>
+    </UseCase>
+    <UseCase Id="LIVE_BT_L2CAP_PING" Domain="CWS" SubDomain="BT" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.LocalConnectivity.LIVE_BT_L2CAP_PING.LiveBTL2CAPPing</ClassName>
+        <Description>Ping Remote BlueTooth Device using BD address</Description>
+        <Environment name="CWS_BT">
+            <Dependency>EQT_BT_DEVICE</Dependency>
+        </Environment>
+    </UseCase>
+    <UseCase Id="LIVE_DUAL_PHONE_BT_SERVICE_BROWSING" Domain="CWS" SubDomain="BT" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.LocalConnectivity.LIVE_DUAL_PHONE_BT_SERVICE_BROWSING.LiveDualBTServiceBrowsing</ClassName>
+        <Description>Initiator Phone Browses BlueTooth Services of responder Phone
+        </Description>
+        <Environment name="CWS_BT">
+            <Dependency>CAP_DUAL_DEVICE</Dependency>
+        </Environment>
+    </UseCase>
+    <UseCase Id="LAB_BT_A2DP" Domain="CWS" SubDomain="BT" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.LocalConnectivity.LAB_BT_A2DP.LabBTA2dp</ClassName>
+        <Description>Connect DUT to remote Headset and received commands from it like play, pause, FW, RW
+        </Description>
+        <Environment name="CWS_BT">
+            <Dependency>EQT_LAB_BT_HEADSET</Dependency>
+        </Environment>
+    </UseCase>
+    <UseCase Id="LIVE_DUAL_PHONE_BT_DEBUG_TEST" Domain="CWS" SubDomain="BT" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.LocalConnectivity.LIVE_DUAL_PHONE_BT_DEBUG_TEST.LiveDualPhoneBTDebugTest</ClassName>
+        <Description>Run whole available BT UECmd functions</Description>
+        <Environment name="CWS_WIFI">
+            <Dependency>CAP_DUAL_DEVICE</Dependency>
+        </Environment>
+    </UseCase>
+    <UseCase Id="LIVE_DUAL_PHONE_BT_TRANSFER_WITH_SCAN" Domain="CWS" SubDomain="BT" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.Fit.CWS.LIVE_DUAL_PHONE_BT_TRANSFER_WITH_SCAN.LiveDualPhoneBTTransferWithScan</ClassName>
+        <Description>Send file using BT OPP Profile and do a scan in the same time</Description>
+        <Environment name="CWS_BT">
+            <Capabilities>CAP_DUAL_DEVICE</Capabilities>
+        </Environment>
+    </UseCase>
+    <UseCase Id="Bluetooth_PAN_NAP_OPP" Domain="CWS" SubDomain="BT" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.OTC.Communications.BT.BluetoothPanNapOpp.BluetoothPanNapOpp</ClassName>
+        <Description>Send file using BT OPP Profile and do a scan in the same time</Description>
+        <Environment name="CWS_BT">
+            <Capabilities>CAP_DUAL_DEVICE</Capabilities>
+        </Environment>
+    </UseCase>
+     <UseCase Id="Bluetooth_PAN_PANU_NAP_PING" Domain="CWS" SubDomain="BT" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.OTC.Communications.BT.BluetoothPanUNapPing.BluetoothPanUNapPing</ClassName>
+        <Description>Send file using BT OPP Profile and do a scan in the same time</Description>
+        <Environment name="CWS_BT">
+            <Capabilities>CAP_DUAL_DEVICE</Capabilities>
+        </Environment>
+    </UseCase>
+     <UseCase Id="Bluetooth_PAN_PANU_CHECK_INTERFACE" Domain="CWS" SubDomain="BT" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.OTC.Communications.BT.BluetoothPanUInterface.BluetoothPanUInterface</ClassName>
+        <Description>Send file using BT OPP Profile and do a scan in the same time</Description>
+        <Environment name="CWS_BT">
+            <Capabilities>CAP_DUAL_DEVICE</Capabilities>
+        </Environment>
+    </UseCase>
+    <UseCase Id="Bluetooth_PAN_AIRPLANE" Domain="CWS" SubDomain="BT" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.OTC.Communications.BT.BluetoothPanAirplane.BluetoothPanAirplane</ClassName>
+        <Description>Send file using BT OPP Profile and do a scan in the same time</Description>
+        <Environment name="CWS_BT">
+            <Capabilities>CAP_DUAL_DEVICE</Capabilities>
+        </Environment>
+    </UseCase>
+    <UseCase Id="Bluetooth_PAN_NAP_AIRPLANE" Domain="CWS" SubDomain="BT" OS="ANDROID" Status="DONE">
+        <ClassName>acs_test_scripts.UseCase.OTC.Communications.BT.BluetoothPanNapAirplane.BluetoothPanNapAirplane</ClassName>
+        <Description>Send file using BT OPP Profile and do a scan in the same time</Description>
+        <Environment name="CWS_BT">
+            <Capabilities>CAP_DUAL_DEVICE</Capabilities>
+        </Environment>
+    </UseCase>
+</UseCases>

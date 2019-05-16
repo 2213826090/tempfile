@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Campaign>
+    <Parameters>
+        <Parameter isControlledPSUsed="False"/>
+        <Parameter isIoCardUsed="True"/>
+        <!-- Set skipBootOnPowerCycle to True to disable the acs boot procedure -->
+        <!-- Important, it means that boot will be handle inside the campaign/tc -->
+        <Parameter skipBootOnPowerCycle="False"/>
+        <Parameter runHookScripts="False"/>
+        <Parameter powerCycleBetweenTC="False"/>
+        <Parameter powerCycleOnFailure="True"/>
+        <Parameter finalDutState="NoChange"/>
+        <Parameter stopCampaignOnCriticalFailure="False"/>
+        <Parameter stopCampaignOnFirstFailure="False"/>
+        <!-- LoggingLevel possible values: info | warning | debug | error -->
+        <Parameter loggingLevel="info"/>
+        <!-- CampaignType format -> <TEAM>_<CAMPAIGNTYPE>
+            Possible values:
+            FT(Feature Team)-> SANITY | REGRESSION | STRESS, RELIABILTY | MTBF
+            ST(System Test)-> SANITY | REGRESSION | STRESS, RELIABILTY | MTBF
+            SI(System Integration)-> EAT | STAB | PACT | CAT0 | RELIABILITY | MTBF
+            Otherwise "Others" should be used -->
+        <Parameter CampaignType="ST_SANITY"/>
+        <Parameter TCRReportViaRESTAPI="true"/>
+    </Parameters>
+    <Targets>
+        <!-- Target Values -->
+        <Target targetB2bPassRate="100"/>
+    </Targets>
+    <TestCases>
+
+        <!-- Iperf 2.GHz -->
+        <TestCase Id="../TC/WIFI/STRESS-IPERF/TCP/ST_CWS_WLAN_FTP_026-LAB_WIFI_IPERF"/>
+        <TestCase Id="../TC/WIFI/STRESS-IPERF/TCP/ST_CWS_WLAN_FTP_027-LAB_WIFI_IPERF"/>
+        <TestCase Id="../TC/WIFI/STRESS-IPERF/TCP/ST_CWS_WLAN_11B_006-LAB_WIFI_IPERF-TCP"/>
+        <TestCase Id="../TC/WIFI/STRESS-IPERF/TCP/ST_CWS_WLAN_11B_007-LAB_WIFI_IPERF-TCP"/>
+        <TestCase Id="../TC/WIFI/STRESS-IPERF/TCP/ST_CWS_WLAN_11G_006-LAB_WIFI_IPERF-TCP"/>
+        <TestCase Id="../TC/WIFI/STRESS-IPERF/TCP/ST_CWS_WLAN_11G_007-LAB_WIFI_IPERF-TCP"/>
+        <TestCase Id="../TC/WIFI/STRESS-IPERF/TCP/ST_CWS_WLAN_11N2.4G_006-LAB_WIFI_IPERF-TCP"/>
+        <TestCase Id="../TC/WIFI/STRESS-IPERF/TCP/ST_CWS_WLAN_11N2.4G_007-LAB_WIFI_IPERF-TCP"/>
+        <TestCase Id="../TC/WIFI/STRESS-IPERF/TCP/ST_CWS_WLAN_WEP128_OPEN_006-LAB_WIFI_IPERF-TCP"/>
+        <TestCase Id="../TC/WIFI/STRESS-IPERF/TCP/ST_CWS_WLAN_WEP128_OPEN_007-LAB_WIFI_IPERF-TCP"/>
+        <TestCase Id="../TC/WIFI/STRESS-IPERF/TCP/ST_CWS_WLAN_WEP128_SHAREDKEY_006-LAB_WIFI_IPERF-TCP"/>
+        <TestCase Id="../TC/WIFI/STRESS-IPERF/TCP/ST_CWS_WLAN_WEP128_SHAREDKEY_007-LAB_WIFI_IPERF-TCP"/>
+        <TestCase Id="../TC/WIFI/STRESS-IPERF/TCP/ST_CWS_WLAN_WPA_WPA2_AUTO_006-LAB_WIFI_IPERF-TCP"/>
+        <TestCase Id="../TC/WIFI/STRESS-IPERF/TCP/ST_CWS_WLAN_WPA_WPA2_AUTO_007-LAB_WIFI_IPERF-TCP"/>
+        <TestCase Id="../TC/WIFI/STRESS-IPERF/TCP/ST_CWS_WLAN_WPA2_AES_006-LAB_WIFI_IPERF-TCP"/>
+        <TestCase Id="../TC/WIFI/STRESS-IPERF/TCP/ST_CWS_WLAN_WPA2_AES_007-LAB_WIFI_IPERF-TCP"/>
+        <TestCase Id="../TC/WIFI/STRESS-IPERF/TCP/ST_CWS_WLAN_WPA2_EAP_FAST_GTC_006-LAB_WIFI_IPERF-TCP"/>
+        <TestCase Id="../TC/WIFI/STRESS-IPERF/TCP/ST_CWS_WLAN_WPA2_EAP_FAST_GTC_007-LAB_WIFI_IPERF-TCP"/>
+        <TestCase Id="../TC/WIFI/STRESS-IPERF/TCP/ST_CWS_WLAN_WPA2_EAP_FAST_MSCHAPV2_007-LAB_WIFI_IPERF-TCP"/>
+        <TestCase Id="../TC/WIFI/STRESS-IPERF/TCP/ST_CWS_WLAN_WPA2_EAP_PEAP_GTC_007-LAB_WIFI_IPERF-TCP"/>
+        <TestCase Id="../TC/WIFI/STRESS-IPERF/TCP/ST_CWS_WLAN_WPA2_EAP_PEAP_MSCHAPV2_006-LAB_WIFI_IPERF-TCP"/>
+        <TestCase Id="../TC/WIFI/STRESS-IPERF/TCP/ST_CWS_WLAN_WPA2_EAP_PEAP_MSCHAPV2_007-LAB_WIFI_IPERF-TCP"/>
+        <TestCase Id="../TC/WIFI/STRESS-IPERF/TCP/ST_CWS_WLAN_WPA2_EAP_TLS_006-LAB_WIFI_IPERF-TCP"/>
+        <TestCase Id="../TC/WIFI/STRESS-IPERF/TCP/ST_CWS_WLAN_WPA2_EAP_TLS_007-LAB_WIFI_IPERF-TCP"/>
+        <TestCase Id="../TC/WIFI/STRESS-IPERF/TCP/ST_CWS_WLAN_WPA2_EAP_TTLS_MSCHAP_007-LAB_WIFI_IPERF-TCP"/>
+        <TestCase Id="../TC/WIFI/STRESS-IPERF/TCP/ST_CWS_WLAN_WPA2_EAP_TTLS_MSCHAPV2_007-LAB_WIFI_IPERF-TCP"/>
+        <TestCase Id="../TC/WIFI/STRESS-IPERF/TCP/ST_CWS_WLAN_WPA2_EAP_TTLS_PAP_006-LAB_WIFI_IPERF-TCP"/>
+        <TestCase Id="../TC/WIFI/STRESS-IPERF/TCP/ST_CWS_WLAN_WPA2_EAP_TTLS_PAP_007-LAB_WIFI_IPERF-TCP"/>
+        <TestCase Id="../TC/WIFI/STRESS-IPERF/TCP/ST_CWS_WLAN_WPA2_TKIP_AES_006-LAB_WIFI_IPERF-TCP"/>
+        <TestCase Id="../TC/WIFI/STRESS-IPERF/TCP/ST_CWS_WLAN_WPA2_TKIP_AES_007-LAB_WIFI_IPERF-TCP"/>
+
+        <!-- Iperf 5GHz -->
+        <TestCase Id="../TC/WIFI/STRESS-IPERF/TCP/ST_CWS_WLAN_11A_006-LAB_WIFI_IPERF-TCP"/>
+        <TestCase Id="../TC/WIFI/STRESS-IPERF/TCP/ST_CWS_WLAN_11A_007-LAB_WIFI_IPERF-TCP"/>
+        <TestCase Id="../TC/WIFI/STRESS-IPERF/TCP/ST_CWS_WLAN_11N5G_006-LAB_WIFI_IPERF-TCP"/>
+        <TestCase Id="../TC/WIFI/STRESS-IPERF/TCP/ST_CWS_WLAN_11N5G_007-LAB_WIFI_IPERF-TCP"/>
+        <TestCase Id="../TC/WIFI/STRESS-IPERF/TCP/ST_CWS_WLAN_CHANNEL_40M_003"/>
+        <TestCase Id="../TC/WIFI/STRESS-IPERF/TCP/ST_CWS_WLAN_CHANNEL_40M_004"/>
+
+    </TestCases>
+</Campaign>

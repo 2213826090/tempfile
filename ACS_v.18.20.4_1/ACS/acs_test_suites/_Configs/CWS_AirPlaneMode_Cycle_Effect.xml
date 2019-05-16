@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<features>
+    <feature name="WIFI">
+        <incompatibilities>HOTSPOT_WIFI</incompatibilities>
+        <state_after_apm_cycle>ON</state_after_apm_cycle>
+    </feature>
+    <feature name="BT">
+        <incompatibilities></incompatibilities>
+        <state_after_apm_cycle>ON</state_after_apm_cycle>
+    </feature>
+    <feature name="NFC">
+        <incompatibilities></incompatibilities>
+        <state_after_apm_cycle>ON</state_after_apm_cycle>
+    </feature>
+    <feature name="NFC_BEAM">
+        <incompatibilities></incompatibilities>
+        <state_after_apm_cycle>ON</state_after_apm_cycle>
+    </feature>
+    <feature name="HOTSPOT_WIFI">
+        <incompatibilities>WIFI</incompatibilities>
+        <state_after_apm_cycle>OFF</state_after_apm_cycle>
+    </feature>
+    <feature name="HOTSPOT_BT">
+        <incompatibilities></incompatibilities>
+        <state_after_apm_cycle>OFF</state_after_apm_cycle>
+    </feature>
+</features>

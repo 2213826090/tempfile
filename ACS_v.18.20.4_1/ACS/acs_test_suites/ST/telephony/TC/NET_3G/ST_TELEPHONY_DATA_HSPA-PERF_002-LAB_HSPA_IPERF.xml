@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestCase>
+  <UseCase>LAB_HSPA_IPERF</UseCase>
+  <Description>HSPA Throughput Measurement using IPERF</Description>
+  <Requirements>
+      <Contour>
+          <Global_ID>13730450</Global_ID>
+          <Test_Case_ID>ST_TELEPHONY_DATA_HSPA-PERF_002</Test_Case_ID>
+          <Name>HSPA - Throughput - TCP download HSDPA Cat24 DL</Name>
+      </Contour>
+  </Requirements>
+  <b2bIteration>1</b2bIteration>
+  <b2bContinuousMode>True</b2bContinuousMode>
+  <Parameters>
+    <Parameter>
+      <!-- Cell Band (from Band 1 to Band 8)-->
+      <Name>CELL_BAND</Name>
+      <Value>1</Value>
+    </Parameter>
+    <Parameter>
+      <!-- Downlink UARFCN Frequency-->
+      <Name>DL_UARFCN</Name>
+      <Value>10700</Value>
+    </Parameter>
+    <Parameter>
+      <!--Cell Service (CIRCUIT | PACKET | CIRCUIT_PACKET | RBTEST) -->
+      <Name>CELL_SERVICE</Name>
+      <Value>PACKET</Value>
+    </Parameter>
+    <Parameter>
+      <!-- Cell power in dBm -->
+      <Name>CELL_POWER</Name>
+      <Value>-60</Value>
+    </Parameter>
+    <Parameter>
+      <!-- IP version IPV4 | IPV6 | IPV4V6 -->
+      <Name>IP_VERSION</Name>
+      <Value>IPV4</Value>
+    </Parameter>
+    <Parameter>
+      <!-- Uplink Radio Access Bearer (384k | HSUPA_CAT6 | MAX [If MAX is selected, value will be taken from DeviceCatalog.xml]) -->
+      <Name>UL_RAB</Name>
+      <Value>HSUPA_CAT6</Value>
+    </Parameter>
+    <Parameter>
+      <!-- Downlink Radio Access Bearer (HSDPA_CAT10 | HSDPA_CAT14 | HSDPA_CAT24 | MAX [If MAX is selected, value will be taken from DeviceCatalog.xml]) -->
+      <Name>DL_RAB</Name>
+      <Value>HSDPA_CAT24</Value>
+    </Parameter>
+    <Parameter>
+      <!-- CPC [Continuous Packet Connectivity] feature use (2 [TTI =2ms] | 10 [TTI =10ms]) -->
+      <Name>CPC</Name>
+      <Value></Value>
+    </Parameter>
+    <Parameter>
+      <!--  CQI scheme : Fixed value or UE reported  - FIXED|REPORTED -->
+      <Name>CQI_SCHEME</Name>
+      <Value>FIXED</Value>
+    </Parameter>
+    <Parameter>
+      <!--  PS Data HS-DSCH MAC-d PDU Size - BITS336|BITS656  -->
+      <Name>MAC_D_PDU_SIZE</Name>
+      <Value>BITS656</Value>
+    </Parameter>
+    <Parameter>
+      <!-- Port Number used by IPERF -->
+      <Name>PORT</Name>
+      <Value>5009</Value>
+    </Parameter>
+    <Parameter>
+      <!-- Duration in seconds allowed to IPERF to perform measurements -->
+      <Name>DURATION</Name>
+      <Value>120</Value>
+    </Parameter>
+    <Parameter>
+      <!-- Protocol used by IPERF to perform measurements - (TCP | UDP) -->
+      <Name>IPERF_PROTOCOL</Name>
+      <Value>TCP</Value>
+    </Parameter>
+    <Parameter>
+      <!-- Computer to use as iperf server -->
+      <Name>COMPUTER</Name>
+      <Value>COMPUTER2</Value>
+    </Parameter>
+    <Parameter>
+        <!--  Type of data transfer - (UL/DL) -->
+        <Name>DIRECTION</Name>
+        <Value>DL</Value>
+    </Parameter>
+  </Parameters>
+  <TestSteps>
+    <Initialize>
+        <!-- Download the artifact from artifactory to local host -->
+        <TestStep Id="GET_ARTIFACT"
+                  EQT="ARTIFACT_MANAGER"
+                  ARTIFACT="MISCELLANEOUS/BINARIES/[+]FROM_DEVICE:PHONE1:OS[+]/COMMON/iperf"
+                  ARTIFACT_SOURCE="FROM_BENCH:ARTIFACT_MANAGER:URI"
+                  TRANSFER_TIMEOUT="DEFAULT"
+                  STORED_FILE_PATH="FILE_PATH_IN_CACHE1" />
+        <!-- Then, Push it on the device. -->
+        <!-- FILE_PATH is retrieved from test step context -->
+        <TestStep Id="INSTALL_FILE"
+                  DEVICE="PHONE1"
+                  FILE_PATH="FROM_CTX:FILE_PATH_IN_CACHE1"
+                  TYPE="bin"
+                  DESTINATION="FROM_DEVICE:PHONE1:binPath"
+                  TIMEOUT="DEFAULT"
+                  DESTINATION_STORED_PATH="FILE_PATH_IN_CACHE1" />
+    </Initialize>
+  </TestSteps>
+</TestCase>

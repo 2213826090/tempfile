@@ -1,0 +1,22 @@
+<?xml version="1.0" ?>
+<Campaign>
+      <Parameters>
+            <Parameter isControlledPSUsed="False"/>
+            <Parameter isIoCardUsed="False"/>
+            <Parameter skipBootOnPowerCycle="False"/>
+            <Parameter bootRetryNumber="0"/>
+            <Parameter runHookScripts="False"/>
+            <Parameter powerCycleBetweenTC="False"/>
+            <Parameter powerCycleOnFailure="False"/>
+            <Parameter finalDutState="NoChange"/>
+            <Parameter stopCampaignOnCriticalFailure="False"/>
+            <Parameter stopCampaignOnFirstFailure="False"/>
+            <Parameter loggingLevel="debug"/>
+            <Parameter CampaignType="Other"/>
+      </Parameters>
+      <TestCases>
+            <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/Download_greater_than_500MB_size_multiple_files_simultaneously_from_FTP_server_opensecurity_band_2dot4ghz"/>
+            <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/Download_greater_than_500MB_size_multiple_files_simultaneously_from_FTP_server_wpa-psk_band_2dot4ghz"/>
+            <TestCase Id="../../../../TC/TR/TESTLIB/WiFi/Download_greater_than_500MB_size_multiple_files_simultaneously_from_FTP_server_wpa-psk_band_5ghz"/>
+      </TestCases>
+</Campaign>

@@ -1,0 +1,39 @@
+<?xml version="1.0" ?>
+<Campaign>
+      <Parameters>
+            <Parameter isControlledPSUsed="False"/>
+            <Parameter isIoCardUsed="True"/>
+            <Parameter skipBootOnPowerCycle="False"/>
+            <Parameter bootRetryNumber="0"/>
+            <Parameter runHookScripts="False"/>
+            <Parameter powerCycleBetweenTC="False"/>
+            <Parameter powerCycleOnFailure="False"/>
+            <Parameter finalDutState="NoChange"/>
+            <Parameter stopCampaignOnCriticalFailure="False"/>
+            <Parameter stopCampaignOnFirstFailure="False"/>
+            <Parameter loggingLevel="debug"/>
+            <Parameter CampaignType="Other"/>
+      </Parameters>
+      <TestCases>
+            <TestCase Id="../../../TC/TR/ATF_TESTS/SETUP/ABT_FLASH" b2bIteration="1" TcMaxAttempt="3" TcAcceptanceCriteria="1"/>
+            <SubCampaign Id="../../Subcampaigns/ATF_TESTS/ABT_Api_Tests/camera/parameters/parameters"/>
+            <SubCampaign Id="../../Subcampaigns/ATF_TESTS/ABT_Api_Tests/camera/picture/back_camera_effects/back_camera_effects"/>
+            <SubCampaign Id="../../Subcampaigns/ATF_TESTS/ABT_Api_Tests/camera/picture/back_camera_exif/back_camera_exif"/>
+            <!--<SubCampaign Id="../../Subcampaigns/ATF_TESTS/ABT_Api_Tests/camera/picture/back_camera_exposure/back_camera_exposure"/>-->
+            <SubCampaign Id="./Camera_reviewed"/>
+            <!--<SubCampaign Id="../../Subcampaigns/ATF_TESTS/ABT_Api_Tests/camera/picture/front_camera_effects/front_camera_effects"/>-->
+            <SubCampaign Id="../../Subcampaigns/ATF_TESTS/ABT_Api_Tests/camera/picture/front_camera_exif/front_camera_exif"/>
+            <!--<SubCampaign Id="../../Subcampaigns/ATF_TESTS/ABT_Api_Tests/camera/picture/front_camera_exposure/front_camera_exposure"/>-->
+            <!--<SubCampaign Id="../../Subcampaigns/ATF_TESTS/ABT_Api_Tests/camera/picture/back_camera/back_camera"/>-->
+            <!--<SubCampaign Id="../../Subcampaigns/ATF_TESTS/ABT_Api_Tests/camera/picture/front_camera/front_camera"/>-->
+            <!--<SubCampaign Id="../../Subcampaigns/ATF_TESTS/ABT_Api_Tests/camera/picture/picture"/>-->
+            <!--<SubCampaign Id="../../Subcampaigns/ATF_TESTS/ABT_Api_Tests/camera/video/back_camera/back_camera"/>-->
+            <!--<SubCampaign Id="../../Subcampaigns/ATF_TESTS/ABT_Api_Tests/camera/video/front_camera/front_camera"/>-->
+            <!--<SubCampaign Id="../../Subcampaigns/ATF_TESTS/ABT_Api_Tests/camera/video/video"/>-->
+            <!--SubCampaign Id="../../Subcampaigns/ACS/Multimedia/Camera/camera_exif/camera_exif"/>
+            <SubCampaign Id="../../Subcampaigns/ACS/Multimedia/Camera/camera_parameters/camera_parameters"/>
+            <SubCampaign Id="../../Subcampaigns/ACS/Multimedia/Camera/take_picture/take_picture"/-->
+            <!--<SubCampaign Id="../../Subcampaigns/ATF_TESTS/ABT_Api_Tests/camera/picture/back_camera/back_camera"/>-->
+            <!--<SubCampaign Id="../../Subcampaigns/ATF_TESTS/ABT_Api_Tests/camera/regression"/>-->
+      </TestCases>
+</Campaign>

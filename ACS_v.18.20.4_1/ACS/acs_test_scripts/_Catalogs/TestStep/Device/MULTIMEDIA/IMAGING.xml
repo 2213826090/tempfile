@@ -1,0 +1,390 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TestSteps xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../acs/src/_Catalogs/TestStep/teststep.xsd">
+    <TestStep Id="MONITOR_VIDEO_RECORD_ERRORS" Domain="MULTIMEDIA" SubDomain="IMAGING" Feature="VIDEO" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Multimedia.Imaging.MonitorVideoRecordErrors.MonitorVideoRecordErrors</ClassName>
+        <Description>Set up log trigger messages to watch for errors resulting from video recording.  Invoke this before running the application, and invoke CHECK_VIDEO_RECORD_ERRORS afterwards.</Description>
+        <Environment name="ANY"/>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues/>
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="CHECK_VIDEO_RECORD_ERRORS" Domain="MULTIMEDIA" SubDomain="IMAGING" Feature="VIDEO" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Multimedia.Imaging.CheckVideoRecordErrors.CheckVideoRecordErrors</ClassName>
+        <Description>Check the status of log trigger messages that were set up by MONITOR_VIDEO_RECORD_ERRORS, which you should have invoked before running the application.</Description>
+        <Environment name="ANY"/>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues/>
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="TAKE_PICTURES_LOOP" Domain="MULTIMEDIA" SubDomain="IMAGING" Feature="STILL" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Multimedia.Imaging.TakePicturesLoop.TakePicturesLoop</ClassName>
+        <Description>Repeatedly take pictures for the specified amount of time.
+            PREREQUISITES:
+                Installed application: a Camera application (currently only supports the Intel and Google Camera apps on Android)
+        </Description>
+        <Environment name="ANY"/>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues/>
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="DURATION" type="INTEGER" isOptional="false">
+               <Description>How long the test will run, in minutes.</Description>
+               <PossibleValues/>
+               <DefaultValue>5</DefaultValue>
+            </Parameter>
+            <Parameter name="CAMERA_APP" type="STRING" isOptional="false">
+                <Description>Camera application to use.  It must be one of the supported ones listed in PossibleValues.</Description>
+                <PossibleValues>Android_Google_Camera;Android_Intel_Camera</PossibleValues>
+                <DefaultValue>Android_Intel_Camera_v2.2</DefaultValue>
+            </Parameter>
+            <Parameter name="CAMERA_TO_USE" type="STRING" isOptional="false">
+                <Description>Specifies which camera sensor to use. The PossibleValues listed below may be expanded later for future platforms that include more sensors, as long as the meaning of currently-defined values does not change on existing platforms. It is valid only if the Intel camera app is used.</Description>
+                <PossibleValues>FRONT;BACK</PossibleValues>
+                <DefaultValue>BACK</DefaultValue>
+            </Parameter>
+            <Parameter name="CAMERA_MODE" type="STRING" isOptional="false">
+                <Description>Camera mode(NORMAL or BURST). It must be one of the supported ones listed in PossibleValues. It is valid only if the Intel camera app is used.</Description>
+                <PossibleValues>NORMAL;BURST</PossibleValues>
+                <DefaultValue>NORMAL</DefaultValue>
+            </Parameter>
+            <Parameter name="RESTART_APP" type="BOOLEAN" isOptional="false">
+                <Description>If True, this test step will stop and restart the app between each image capture.</Description>
+                <PossibleValues/>
+                <DefaultValue>False</DefaultValue>
+            </Parameter>
+            <Parameter name="PICTURE_INTERVAL_MIN" type="INTEGER" isOptional="false">
+                <Description>Minimum number of seconds to wait between each image capture loop.</Description>
+                <PossibleValues/>
+                <DefaultValue>10</DefaultValue>
+            </Parameter>
+            <Parameter name="PICTURE_INTERVAL_MAX" type="INTEGER" isOptional="false">
+                <Description>Maximum number of seconds to wait between each image capture loop.</Description>
+                <PossibleValues/>
+                <DefaultValue>10</DefaultValue>
+            </Parameter>
+            <Parameter name="GUI_LOCK_WAIT_TIME" type="INTEGER" isOptional="false">
+               <Description>How long in seconds the step will wait for gui focus lock file to be freed.  Focus lock file created to prevent other apps from taking focus.</Description>
+               <PossibleValues/>
+               <DefaultValue>120</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="RECORD_VIDEO_LOOP" Domain="MULTIMEDIA" SubDomain="IMAGING" Feature="VIDEO" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Multimedia.Imaging.RecordVideoLoop.RecordVideoLoop</ClassName>
+        <Description>Repeatedly capture videos of varying lengths for the specified amount of time.
+            PREREQUISITES:
+                Installed application: a Camera application (currently only supports the Intel and Google Camera apps in Android)
+        </Description>
+        <Environment name="ANY"/>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues/>
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="DURATION" type="INTEGER" isOptional="false">
+               <Description>How long the test will run, in minutes.</Description>
+               <PossibleValues/>
+               <DefaultValue>5</DefaultValue>
+            </Parameter>
+            <Parameter name="CAMERA_APP" type="STRING" isOptional="false">
+                <Description>Camera application to use.  It must be one of the supported ones listed in PossibleValues.</Description>
+                <PossibleValues>Android_Intel_Camera_v2.2;Android_Intel_Refcam2_v0.9;Android_Google_Camera</PossibleValues>
+                <DefaultValue>Android_Intel_Camera_v2.2</DefaultValue>
+            </Parameter>
+            <Parameter name="RESTART_APP" type="BOOLEAN" isOptional="false">
+                <Description>If True, this test step will stop and restart the app between each video capture.</Description>
+                <PossibleValues/>
+                <DefaultValue>False</DefaultValue>
+            </Parameter>
+            <Parameter name="RECORD_TYPE" type="STRING" isOptional="false">
+                <Description>If DIFFRES, the camera records different resolution videos. </Description>
+                <PossibleValues>NORMAL;DIFFRES</PossibleValues>
+                <DefaultValue>NORMAL</DefaultValue>
+            </Parameter>
+            <Parameter name="VIDEO_LENGTH_MIN" type="INTEGER" isOptional="false">
+                <Description>Minimum length (seconds) of captured videos.</Description>
+                <PossibleValues/>
+                <DefaultValue>1</DefaultValue>
+            </Parameter>
+            <Parameter name="VIDEO_LENGTH_MAX" type="INTEGER" isOptional="false">
+                <Description>Maximum length (seconds) of captured videos.</Description>
+                <PossibleValues/>
+                <DefaultValue>120</DefaultValue>
+            </Parameter>
+            <Parameter name="VIDEO_INTERVAL_MIN" type="INTEGER" isOptional="false">
+                <Description>Minimum number of seconds to wait between each video capture.</Description>
+                <PossibleValues/>
+                <DefaultValue>10</DefaultValue>
+            </Parameter>
+            <Parameter name="VIDEO_INTERVAL_MAX" type="INTEGER" isOptional="false">
+                <Description>Maximum number of seconds to wait between each video capture.</Description>
+                <PossibleValues/>
+                <DefaultValue>20</DefaultValue>
+            </Parameter>
+            <Parameter name="VIDEO_UPLOAD_MODULUS" type="INTEGER" isOptional="false">
+                <Description>How often the captured videos should be uploaded to the ACS host and deleted from the DUT.
+                    Specified as number of videos captured between each upload.</Description>
+                <PossibleValues/>
+                <DefaultValue>5</DefaultValue>
+            </Parameter>
+            <Parameter name="GUI_LOCK_WAIT_TIME" type="INTEGER" isOptional="false">
+               <Description>How long in seconds the step will wait for gui focus lock file to be freed.  Focus lock file created to prevent other apps from taking focus.</Description>
+               <PossibleValues/>
+               <DefaultValue>120</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="RUN_VIDEO_ENCODING_DIFF_FORMAT" Domain="MULTIMEDIA" SubDomain="IMAGING" Feature="VIDEO" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Multimedia.Imaging.RunVideoEncodingDiffFormat.RunVideoEncodingDiffFormat</ClassName>
+        <Description>(Android only) Run a custom app for a specified amount of time that records videos of different formats(mp4,3gp) and then saves them on the host.
+        </Description>
+        <Environment name="ANY" />
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues/>
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="APP_PACKAGE" type="STRING" isOptional="false">
+                <Description>Package to run the recording diff format video app</Description>
+                <PossibleValues />
+                <DefaultValue>com.cv.cv_different_format_video_capture</DefaultValue>
+            </Parameter>
+            <Parameter name="ACTIVITY" type="STRING" isOptional="false">
+                <Description>Activity to invoke to start the recording diff format app</Description>
+                <PossibleValues />
+                <DefaultValue>cv_different_format_video_captureActivity</DefaultValue>
+            </Parameter>
+            <Parameter name="DURATION" type="INTEGER" isOptional="false">
+                <Description>How long the application will run, in minutes.</Description>
+                <PossibleValues />
+                <DefaultValue>5</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="RUN_PICS_AND_VIDEO_LOOP" Domain="MULTIMEDIA" SubDomain="IMAGING" Feature="VIDEO" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Multimedia.Imaging.RunPicsAndVideoLoop.RunPicsAndVideoLoop</ClassName>
+        <Description>Switches between Camera(Image Capture) and Videocamera(Video Recording) for the specified amount of time.
+            PREREQUISITES:
+                Installed application: a Camera application (currently only supports the Intel in Android)
+        </Description>
+        <Environment name="ANY"/>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues/>
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="DURATION" type="INTEGER" isOptional="false">
+               <Description>How long the test will run, in minutes.</Description>
+               <PossibleValues/>
+               <DefaultValue>5</DefaultValue>
+            </Parameter>
+            <Parameter name="CAMERA_APP" type="STRING" isOptional="false">
+                <Description>Camera application to use.  It must be one of the supported ones listed in PossibleValues.</Description>
+                <PossibleValues>Android_Intel_Camera_v2.2;Android_Google_Camera</PossibleValues>
+                <DefaultValue>Android_Intel_Camera_v2.2</DefaultValue>
+            </Parameter>
+            <Parameter name="RESTART_APP" type="BOOLEAN" isOptional="false">
+                <Description>If True, this test step will stop and restart the app between each video capture.</Description>
+                <PossibleValues/>
+                <DefaultValue>False</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="TAKE_PICTURES_NO_PREVIEW_LOOP" Domain="MULTIMEDIA" SubDomain="IMAGING" Feature="STILL" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Multimedia.Imaging.TakePicturesNoPreviewLoop.TakePicturesNoPreviewLoop</ClassName>
+        <Description>Repeatedly take pictures without preview for the specified amount of time. This will take several images(NUM_IMAGES) at one time,
+            and wait for DELAY_BETWEEN_SHOTS until next shot. Note that captured image size depends on WIDTH and HEIGHT.
+            Because of this reason, EXPECTED_IMAGE_SIZE is required for verification of operation. If EXPECTED_IMAGE_SIZE > 0, the size of
+            each captured image will be compared with EXPECTED_IMAGE_SIZE, and the test will fail in the case of a mismatch.
+            If EXPECTED_IMAGE_SIZE = 0 then it simply makes sure that the expected number of files are created on each iteration.
+            The image size can be get from TAKE_RAW_IMAGE_NO_PREVIEW TestStep.
+            PREREQUISITES:
+                Android: This requires v4l2n and take_pictures_no_preview.sh to be installed.
+                         The app can be found in Artifactory at acs_test_artifacts/CONCURRENCY/TESTS/nopreview_imaging.
+                         The script can be found in ACS repo at acs_test_scripts/Lib/ShellScripts/Android/Imaging/take_pictures_no_preview.
+                Windows: Device-side script not yet created. We don't yet know of a Windows application that will allow us to take pictures without preview.
+        </Description>
+        <Environment name="ANY"/>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues/>
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="DURATION" type="INTEGER" isOptional="false">
+               <Description>How long the test will run, in minutes.</Description>
+               <PossibleValues/>
+               <DefaultValue>5</DefaultValue>
+            </Parameter>
+            <Parameter name="SCRIPTS_PATH" type="STRING" isOptional="false">
+                <Description>Directory on the device where the required script and binary have been unpacked.</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+            <Parameter name="DELAY_BETWEEN_SHOTS" type="INTEGER" isOptional="false">
+               <Description>Delay bettwen taking shots in seconds</Description>
+               <PossibleValues/>
+               <DefaultValue>5</DefaultValue>
+            </Parameter>
+            <Parameter name="NUM_IMAGES" type="INTEGER" isOptional="false">
+                <Description>Number of images to capture at once</Description>
+                <PossibleValues />
+                <DefaultValue>1</DefaultValue>
+            </Parameter>
+            <Parameter name="WIDTH" type="INTEGER" isOptional="false">
+               <Description>width of the image</Description>
+               <PossibleValues/>
+               <DefaultValue>4192</DefaultValue>
+            </Parameter>
+            <Parameter name="HEIGHT" type="INTEGER" isOptional="false">
+               <Description>height of the image</Description>
+               <PossibleValues/>
+               <DefaultValue>3104</DefaultValue>
+            </Parameter>
+            <Parameter name="EXPECTED_IMAGE_SIZE" type="INTEGER" isOptional="false">
+               <Description>Expected file size of the image. This is required for verification purpose. If EXPECTED_IMAGE_SIZE > 0, the size of
+                    each captured image will be compared with EXPECTED_IMAGE_SIZE, and the test will fail in the case of a mismatch.
+                    If EXPECTED_IMAGE_SIZE = 0 then it simply makes sure that the expected number of files are created on each iteration.</Description>
+               <PossibleValues/>
+               <DefaultValue />
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="TAKE_RAW_IMAGE_NO_PREVIEW" Domain="MULTIMEDIA" SubDomain="IMAGING" Feature="STILL" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Multimedia.Imaging.TakeRawImageNoPreview.TakeRawImageNoPreview</ClassName>
+        <Description>Take a single picture without preview and download it to host. This returns a file path on the host pc (RAW_IMAGE_PATH) and file size(RAW_IMAGE_SIZE)
+            PREREQUISITES:
+                Android: This requires v4l2n to be installed.
+                         v4l2n can be found in Artifactory at acs_test_artifacts/CONCURRENCY/TESTS/nopreview_imaging.
+                Windows: Device-side script not yet created.
+        </Description>
+        <Environment name="ANY"/>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues/>
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="TARGET_APP_PATH" type="STRING" isOptional="false">
+                <Description>Path to app on the device which will be used to take picture.</Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+            <Parameter name="WIDTH" type="INTEGER" isOptional="false">
+               <Description>width of the image</Description>
+               <PossibleValues/>
+               <DefaultValue>4192</DefaultValue>
+            </Parameter>
+            <Parameter name="HEIGHT" type="INTEGER" isOptional="false">
+               <Description>height of the image</Description>
+               <PossibleValues/>
+               <DefaultValue>3104</DefaultValue>
+            </Parameter>
+            <Parameter name="RAW_IMAGE_PATH" type="CONTEXT" isOptional="false">
+                <Description>
+                    <Key name="VALUE_IMAGE_PATH" type="STRING">Path of the captured picture on the host pc</Key>
+                </Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+            <Parameter name="RAW_IMAGE_SIZE" type="CONTEXT" isOptional="false">
+                <Description>
+                    <Key name="VALUE_IMAGE_SIZE" type="INTEGER">Size of the captured picture</Key>
+                </Description>
+                <PossibleValues/>
+                <DefaultValue/>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="STOP_INTEL_REFCAM" Domain="MULTIMEDIA" SubDomain="IMAGING" Feature="STILL" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Multimedia.Imaging.RefCamCapture.RefCamStop</ClassName>
+        <Description>Launch Intel RefCam camera</Description>
+        <Environment name="ANY"/>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues/>
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="LAUNCH_INTEL_REFCAM" Domain="MULTIMEDIA" SubDomain="IMAGING" Feature="STILL" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Multimedia.Imaging.RefCamCapture.RefCamLaunch</ClassName>
+        <Description>Launch Intel RefCam camera</Description>
+        <Environment name="ANY"/>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues/>
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="CONFIG_FILE" type="STRING" isOptional="false">
+                <Description>Camera Configuration file path</Description>
+                <PossibleValues/>
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="START_CAPTURE_INTEL_REFCAM" Domain="MULTIMEDIA" SubDomain="IMAGING" Feature="STILL" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Multimedia.Imaging.RefCamCapture.RefCamPushCaptureButton</ClassName>
+        <Description>Launch Intel RefCam camera</Description>
+        <Environment name="ANY"/>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues/>
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+        </Parameters>
+    </TestStep>
+    <TestStep Id="LAUNCH_USER_MODE_IMAGE_CAPTURE_WITH_INTELREFCAM" Domain="MULTIMEDIA" SubDomain="IMAGING" Feature="STILL" Status="DONE">
+        <ClassName>acs_test_scripts.TestStep.Device.Multimedia.Imaging.RefCamCapture.RefCamUserModeImageCapture</ClassName>
+        <Description>Launch User mode image capture script on Intel RefCam camera</Description>
+        <Environment name="ANY"/>
+        <Parameters>
+            <Parameter name="DEVICE" type="STRING" isOptional="false">
+                <Description>Device name on which the action will be executed</Description>
+                <PossibleValues/>
+                <DefaultValue>PHONE1</DefaultValue>
+            </Parameter>
+            <Parameter name="TEST_DURATION" type="INTEGER" isOptional="false">
+                <Description>Duration of the test</Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+            <Parameter name="SLEEP_BETWEEN_CAPTURE" type="INTEGER" isOptional="false">
+                <Description>Time to wait between two single capture</Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+            <Parameter name="SLEEP_DURATION" type="INTEGER" isOptional="false">
+                <Description>Current stabilization time</Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+            <Parameter name="DELAY" type="INTEGER" isOptional="false">
+                <Description>Delay before first capture, after sleep duration</Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+            <Parameter name="SAVE_START_DATE_AS" type="STRING" isOptional="false">
+                <Description>Save the date when camera has been launched</Description>
+                <PossibleValues />
+                <DefaultValue />
+            </Parameter>
+        </Parameters>
+    </TestStep>
+</TestSteps>
